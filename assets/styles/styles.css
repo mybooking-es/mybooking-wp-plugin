@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media screen and (min-width: 1024px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+.entry .entry-content .reservation-step {
+    max-width: initial;
+    font-size: 1rem;
+}
+
+.reservation-step .button, .reservation-step button, .reservation-step input[type="button"], 
+.reservation-step input[type="reset"], .reservation-step input[type="submit"] {
+    padding-bottom: calc(.375em - 1px);
+    padding-left: .75em;
+    padding-right: .75em;
+    padding-top: calc(.375em - 1px);   
+}
+
+.entry .entry-content .reservation-step a.button {
+    display: flex;
+}
+
+.widget_mybooking_rent_engine_selector {
+    padding: 20px;
+    color: initial;
+}
+
+
+/* Override jqueryui styles to adapt to Bulma */
+
+input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
+    display: inline-block;
+		padding-bottom: calc(.375em - 1px);
+    padding-left: calc(.625em - 1px);
+    padding-right: calc(.625em - 1px);
+    padding-top: calc(.375em - 1px);
+    font-size: 1rem;
+    line-height: 1.5;
+
+		border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+
+}
