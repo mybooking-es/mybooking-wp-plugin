@@ -73,5 +73,6 @@
         <div id="reservation_detail" class="tile is-ancestor">
         </div>
       </aside>
+      <?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
     </div>
 </div>

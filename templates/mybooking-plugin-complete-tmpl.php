@@ -74,7 +74,7 @@
       <div class="content">
         <p class="has-text-weight-semibold">Duración del alquiler: <%=shopping_cart.days%> día/s</p>
         <div class="is-pulled-right">
-          <a class="button is-primary" href="">Modificar reserva</a> 
+          <button id="modify_reservation_button" class="button is-primary">Modificar reserva</button> 
         </div>  
       </div> 
     </div> 

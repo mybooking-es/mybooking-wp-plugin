@@ -1,3 +1,4 @@
+    <!-- Script to show product search -->
     <script type="text/tpml" id="script_detailed_product">
       <% for (var idxP=0;idxP<products.length;idxP++) { %>
         <% var product = products[idxP]; %>
@@ -42,3 +43,32 @@
         </div>
       <% } %>
     </script>
+
+    <!-- Script detailed for reservation summary -->
+    <script type="text/tmpl" id="script_reservation_summary">
+      <div class="tile is-parent is-vertical">
+        <div class="tile is-child notification has-background-light">
+          <p class="title">Reserva</h4>
+          <div class="content">
+            <p class="subtitle has-text-weight-semibold has-text-grey">Entrega</p>
+            <ul>
+              <li><%=shopping_cart.pickup_place_customer_translation%></li>
+              <li><%=shopping_cart.date_from_full_format%> <%=shopping_cart.time_from%></li>
+            </ul>
+          </div>
+          <div class="content">
+            <p class="subtitle has-text-weight-semibold has-text-grey">Devolución</p>
+            <ul>
+              <li><%=shopping_cart.return_place_customer_translation%></li>
+              <li><%=shopping_cart.date_to_full_format%> <%=shopping_cart.time_to%></li>
+            </ul>
+          </div>
+          <div class="content">
+            <p class="has-text-weight-semibold">Duración del alquiler: <%=shopping_cart.days%> día/s</p>
+            <div class="is-pulled-right">
+              <button id="modify_reservation_button" class="button is-primary">Modificar reserva</button>  
+            </div>  
+          </div> 
+        </div> 
+      </div>
+    </script> 

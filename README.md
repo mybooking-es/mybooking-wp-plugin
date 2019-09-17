@@ -1,1 +1,1 @@
-# Mybooking WordPress Rent Plugin
+# Mybooking WordPress Plugin
