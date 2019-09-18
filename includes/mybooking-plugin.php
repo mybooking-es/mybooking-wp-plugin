@@ -274,24 +274,34 @@
 		 */
 		public function wp_selector_shortcode() {
 
-			return mybooking_engine_get_template('mybooking-plugin-selector-form.php');
-			
+			return mybooking_engine_load_template('mybooking-plugin-selector-form.php'); 
+
 		}
 
 		/**
 		 * Mybooking rent engine Product Listing shortcode
 		 */
 		public function wp_product_listing_shortcode() {
-
-			return mybooking_engine_get_template('mybooking-plugin-choose-product.php');
-
+			
+			if (is_admin()) {
+				return mybooking_engine_load_template('mybooking-plugin-choose-product.php');
+			}
+			else {
+				return mybooking_engine_get_template('mybooking-plugin-choose-product.php');
+			}
 		}
 
 		/**
 		 * Mybooking rent engine Complete shortcode
 		 */
 		public function wp_complete_shortcode() {
-			return mybooking_engine_get_template('mybooking-plugin-complete.php');
+			
+			if (is_admin()) {
+				return mybooking_engine_load_template('mybooking-plugin-complete.php');
+			} 
+			else {
+				return mybooking_engine_get_template('mybooking-plugin-complete.php');
+			}
 
 		}
 
@@ -299,7 +309,13 @@
 		 * Mybooking rent engine Complete shortcode
 		 */
 		public function wp_summary_shortcode() {
-			return mybooking_engine_get_template('mybooking-plugin-summary.php');
+			
+			if (is_admin()) {
+				return mybooking_engine_load_template('mybooking-plugin-summary.php');
+			}
+			else {
+				return mybooking_engine_get_template('mybooking-plugin-summary.php');
+			}
 
 		}
 
