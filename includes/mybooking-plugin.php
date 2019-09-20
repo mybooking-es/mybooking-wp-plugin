@@ -268,13 +268,16 @@
 		}
 
 		// == Shortcodes
+		// See https://konstantin.blog/2013/get_template_part-within-shortcodes/
 
 		/**
 		 * Mybooking rent engine selector shortcode
 		 */
 		public function wp_selector_shortcode() {
 
-			return mybooking_engine_load_template('mybooking-plugin-selector-form.php'); 
+			ob_start();
+			mybooking_engine_get_template('mybooking-plugin-selector-form.php'); 
+			return ob_get_clean();
 
 		}
 
@@ -283,12 +286,10 @@
 		 */
 		public function wp_product_listing_shortcode() {
 			
-			if (is_admin()) {
-				return mybooking_engine_load_template('mybooking-plugin-choose-product.php');
-			}
-			else {
-				return mybooking_engine_get_template('mybooking-plugin-choose-product.php');
-			}
+			ob_start();
+	    mybooking_engine_get_template('mybooking-plugin-choose-product.php');
+	    return ob_get_clean();
+	
 		}
 
 		/**
@@ -296,12 +297,9 @@
 		 */
 		public function wp_complete_shortcode() {
 			
-			if (is_admin()) {
-				return mybooking_engine_load_template('mybooking-plugin-complete.php');
-			} 
-			else {
-				return mybooking_engine_get_template('mybooking-plugin-complete.php');
-			}
+			ob_start();
+			mybooking_engine_get_template('mybooking-plugin-complete.php');
+			return ob_get_clean();
 
 		}
 
@@ -310,12 +308,9 @@
 		 */
 		public function wp_summary_shortcode() {
 			
-			if (is_admin()) {
-				return mybooking_engine_load_template('mybooking-plugin-summary.php');
-			}
-			else {
-				return mybooking_engine_get_template('mybooking-plugin-summary.php');
-			}
+			ob_start();
+			mybooking_engine_get_template('mybooking-plugin-summary.php');
+			return ob_get_clean();
 
 		}
 
