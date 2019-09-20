@@ -19,12 +19,12 @@ function mybooking_engine_locate_template( $template_name, $template_path = '', 
 
 	// Set variable to search in mybooking-plugin-templates folder of theme.
 	if ( ! $template_path ) :
-		$template_path = 'templates/';
+		$template_path = 'mybooking-templates/';
 	endif;
 
 	// Set default plugin templates path.
 	if ( ! $default_path ) :
-		$default_path = dirname(plugin_dir_path( __FILE__ )) . '/templates/'; // Path to the template folder
+		$default_path = dirname(plugin_dir_path( __FILE__ )) . '/mybooking-templates/'; // Path to the template folder
 	endif;
 
 	// Search template file in theme folder.

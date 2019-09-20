@@ -1,7 +1,6 @@
     <section class="widget widget_mybooking_rent_engine_selector reservation-step has-background-grey-lighter">
       <form
         name="search_form"
-        action="/choose-product"
         method="get"
         enctype="application/x-www-form-urlencoded">
         
