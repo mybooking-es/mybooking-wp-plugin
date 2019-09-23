@@ -13,7 +13,7 @@ class MyBookingRentEngineSelectorWidget extends WP_Widget {
  
     public function widget( $args, $instance ) {
         // outputs the content of the widget
-    	mybooking_engine_get_template('mybooking-plugin-selector-form.php');
+    	mybooking_engine_get_template('mybooking-plugin-selector-widget.php');
     }
  
     public function form( $instance ) {
