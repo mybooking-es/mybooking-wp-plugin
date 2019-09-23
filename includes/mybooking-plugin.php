@@ -276,7 +276,7 @@
 		public function wp_selector_shortcode() {
 
 			ob_start();
-			mybooking_engine_get_template('mybooking-plugin-selector-form.php'); 
+			mybooking_engine_get_template('mybooking-plugin-selector-widget.php'); 
 			return ob_get_clean();
 
 		}
