@@ -4,10 +4,10 @@
         var baseURL = 'https://<?php echo $args['mybooking_account_id']?>.mybooking.es';
         var apiKey = '<?php echo $args['mybooking_api_key']?>';
         var extrasStep = false;
-        var chooseProductUrl = '/<?php echo $args['mybooking_choose_products_page']?>';
-        var chooseExtrasUrl = '/<?php echo $args['mybooking_choose_extras_page']?>';
-        var completeUrl = '/<?php echo $args['mybooking_checkout_page']?>';
-        var summaryUrl = '/<?php echo $args['mybooking_summary_page']?>';
+        var chooseProductUrl = '<?php echo $args['mybooking_choose_products_page']?>';
+        var chooseExtrasUrl = '<?php echo $args['mybooking_choose_extras_page']?>';
+        var completeUrl = '<?php echo $args['mybooking_checkout_page']?>';
+        var summaryUrl = '<?php echo $args['mybooking_summary_page']?>';
         function getBaseURL() {
           return baseURL;
         }
