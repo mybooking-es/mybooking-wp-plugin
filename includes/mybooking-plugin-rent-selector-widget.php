@@ -7,7 +7,8 @@ class MyBookingRentEngineSelectorWidget extends WP_Widget {
 							'classname' => 'mybooking_rent_engine_selector_widget',
 							'description' => 'Mybooking Rent Engine Selector Widget',
 						);
-				parent::__construct( 'mybooking_rent_engine_selector_widget', 'Mybooking Rent Engine Selector Widget', $widget_ops );    	
+				parent::__construct( 'mybooking_rent_engine_selector_widget',
+                                     'Mybooking Rent Engine Selector Widget', $widget_ops );    	
     }
  
     public function widget( $args, $instance ) {

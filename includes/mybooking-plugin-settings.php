@@ -58,13 +58,7 @@
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section');
 
-		  // Creates pages fields 
-		  add_settings_field('mybooking_plugin_settings_home_page',
-		                     'Home page',
-		                     array($this, 'field_mybooking_plugin_settings_home_page_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section');
-		  
+		  // Creates pages fields 	  
 		  add_settings_field('mybooking_plugin_settings_choose_products_page',
 		                     'Choose products page',
 		                     array($this, 'field_mybooking_plugin_settings_choose_products_page_callback'),
@@ -141,17 +135,6 @@
 		  
 		  echo "<input type='text' name='mybooking_plugin_settings[$field]' value='$value' class='regular-text' />";
 		}
-
-
-		/**
-		 * Render Mybooking settings fields
-		 */
-		public function field_mybooking_plugin_settings_home_page_callback() {
-
-		  $this->field_mybooking_plugin_settings_page("mybooking_plugin_settings_home_page");
-
-		}
-
 
 		/**
 		 * Render Mybooking settings fields
