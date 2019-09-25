@@ -182,7 +182,7 @@
 		  $value = esc_attr( $settings[$field] );
 		  
 		  $checked = ($value == '1') ? 'checked' : '';
-
+      echo "<input type='hidden' name='mybooking_plugin_settings[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings[$field]' value='1' $checked class='regular-text' />";
 		}
 

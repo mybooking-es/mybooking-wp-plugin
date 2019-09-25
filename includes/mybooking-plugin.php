@@ -175,13 +175,13 @@
 				$classes[] = 'mybooking-selector-widget';
 			}		
 		  
-		  if ( is_page( $registry->mybooking_rent_plugin_choose_products_page) ) {
+		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && is_page( $registry->mybooking_rent_plugin_choose_products_page) ) {
 		  	$classes[] = 'choose_product';
 		  }
-		  else if ( is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
+		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
 		  	$classes[] = 'complete';
 		  }
-		  else if ( is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
+		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
 		  	$classes[] = 'summary';
 		  }
 
