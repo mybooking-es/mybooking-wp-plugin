@@ -14,40 +14,44 @@
 <script type="text/template" id="script_detailed_extra">
   <h4 class="is-size-4 has-text-weight-semibold has-text-grey">Extras</h4>
   <% for (var idx=0;idx<extras.length;idx++) { %>
-  <% var extra = extras[idx]; %>
-  <div class="columns">
-    <div class="column is-one-third">
-      <label for="select<%=extra.code%>" class="is-size-5 has-text-weight-bold"><%=extra.name%></label>
-      <% if (extra.photo_path != null) { %>
-      <img src="<%=extra.photo_path%>"/>
-      <% } %>
-    </div>
-    <div class="column is-one-third hero">
-      <div>
-      <%= extra.description %>
+    <% var extra = extras[idx]; %>
+    <section class="hero <% if (idx % 2 == 0) { %>is-light<%}%>">
+      <div class="hero-body">
+        <div class="columns">
+          <div class="column is-one-third">
+            <label for="select<%=extra.code%>" class="is-size-5 has-text-weight-bold"><%=extra.name%></label>
+            <% if (extra.photo_path != null) { %>
+            <img src="<%=extra.photo_path%>"/>
+            <% } %>
+          </div>
+          <div class="column is-one-third">
+            <% if (extra.max_quantity > 1) { %>
+              <div class="field is-grouped">
+                <button class="button is-primary btn-minus-extra" 
+                        data-value="<%=extra.code%>"
+                        data-max-quantity="<%=extra.max_quantity%>">-</button>           
+                <div class="field">
+                  <div class="control">
+                  <% value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
+                  <input type="text" id="extra-<%=extra.code%>-quantity" 
+                         class="has-text-centered" readonly size="3" value="<%=value%>"/>
+                  </div>
+                </div>
+                <button class="button is-primary btn-plus-extra" 
+                        data-value="<%=extra.code%>"
+                        data-max-quantity="<%=extra.max_quantity%>">+</button>
+              </div>
+            <% } else { %>
+              <input id="checkboxl<%=extra.code%>" type="checkbox" class="extra-checkbox" data-value="<%=extra.code%>" <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>          
+            <% } %>
+          </div>
+          <div class="column is-one-third">
+            <p class="is-size-4 has-text-weight-bold"><%= configuration.formatCurrency(extra.unit_price)%></p>
+          </div>  
+        </div>
       </div>
-      <div class="hero-foot">
-        <p><span class="fa fa-plus-circle"></span>&nbsp;más info</p>
-      </div>
     </div>
-    <div class="column is-one-third">
-      <p class="is-size-3 has-text-weight-bold"><%= configuration.formatCurrency(extra.unit_price)%></p>
-      <% if (extra.max_quantity > 1) { %>
-        <select name="select<%=extra.code%>" class="extra-select" id="select<%=extra.code%>" data-value="<%=extra.code%>">
-          <% for (var idx=0;idx<=extra.max_quantity;idx++) { %>
-          <option value="<%=idx%>"
-            <% if (extrasInShoppingCart[extra.code] && extrasInShoppingCart[extra.code] == idx) { %>
-              selected="selected"
-             <%}%> >
-                <%=idx%> un. <%if (idx>0){%>(<%=configuration.formatCurrency(extra.unit_price*idx)%>)<%}%>
-          </option>
-          <% } %>
-        </select>
-      <% } else { %>
-        <input id="checkboxl<%=extra.code%>" type="checkbox" class="extra-checkbox" data-value="<%=extra.code%>" <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>          
-      <% } %>
-    </div>
-  </div>
+  </section>  
   <% } %>
 </script>
 
