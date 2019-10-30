@@ -8,6 +8,7 @@
 	require_once('mybooking-plugin-registry.php');
 	// Widget definition
 	require_once('mybooking-plugin-rent-selector-widget.php');
+	require_once('mybooking-plugin-contact-widget.php');
 	// Settings
 	require_once('mybooking-plugin-settings.php');
 
@@ -23,8 +24,7 @@
    * How it works?
    * ----------------------------
    *
-   * The user selects what kind of mybooking wants to apply to the 
-   * web site.
+   * It allows to add to WordPress the following functionalities:
    *
    * 1. Reservation wizard for Renting / Accommodation / Car Rental
    *
@@ -32,7 +32,17 @@
    *
    * 3. Reservation engine for Activities / Tours
    *
+   * 4. Contact form
+   *
    * Details 
+   * ----------------------------
+   * 
+   * Sort codes:
+   *
+   *
+   *
+   *
+   * More information
    * ----------------------------
    *
    * 1.) Reservation Wizard for Renting / Accommodation / Car Rental
@@ -56,6 +66,8 @@
    *    1. Add to shopping cart
    *    2. Checkout
    *    3. Summary
+   *
+   * 4.) Contact form
    *
    */
   class MyBookingPlugin
@@ -144,13 +156,19 @@
 
 			// -- Widgets
 
-			// Register Widget
-			add_action( 'widgets_init', array($this, 'wp_selector_widget'));
+			// Register Renting Selector Widget
+			add_action( 'widgets_init', array($this, 'wp_selector_widget') );
+
+      // Register Contact widget
+      add_action( 'widgets_init', array($this, 'wp_contact_widget') );
 
 			// -- Shortcodes
 
+      // Shortcode contact widget
+      add_shortcode('mybooking_engine_contact', array($this, 'wp_contact_shortcode' ));
+
 			// Shortcode widget selector
-			add_shortcode('mybooking_rent_engine_selector', array($this, 'wp_selector_shortcode'));
+			add_shortcode('mybooking_rent_engine_selector', array($this, 'wp_selector_shortcode' ));
 
 			// Shortcode product listing
 			add_shortcode('mybooking_rent_engine_product_listing', array($this, 'wp_product_listing_shortcode' ));
@@ -174,6 +192,10 @@
 			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ) {
 				$classes[] = 'mybooking-selector-widget';
 			}		
+
+			if ( is_active_widget( false, false, 'mybooking_engine_contact_widget', false ) ) {
+				$classes[] = 'mybooking-contact-widget';
+			}
 		  
 		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && is_page( $registry->mybooking_rent_plugin_choose_products_page) ) {
 		  	$classes[] = 'choose_product';
@@ -267,8 +289,28 @@
 
 		}
 
+		/**
+		 * Register contact Widget
+		 */
+		public function wp_contact_widget() {
+
+      register_widget( 'MyBookingEngineContactWidget' );
+
+		}
+
 		// == Shortcodes
 		// See https://konstantin.blog/2013/get_template_part-within-shortcodes/
+
+    /**
+     * Mybooking contact select shortcode
+     */
+		public function wp_contact_shortcode() {
+
+       ob_start();
+       mybooking_engine_get_template('mybooking-plugin-contact-widget.php');
+       return ob_get_clean();
+
+		}
 
 		/**
 		 * Mybooking rent engine selector shortcode
