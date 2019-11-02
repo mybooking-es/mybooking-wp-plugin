@@ -83,6 +83,20 @@
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section');
 
+		  // Creates activity pages fields 	  
+
+		  add_settings_field('mybooking_plugin_settings_activities_shopping_cart_page',
+		                     'Activities shopping cart page',
+		                     array($this, 'field_mybooking_plugin_settings_activities_shopping_cart_page_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section');
+
+		  add_settings_field('mybooking_plugin_settings_activities_order_page',
+		                     'Activities order page',
+		                     array($this, 'field_mybooking_plugin_settings_activities_order_page_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section');
+
 		  // Create custom css fields
 		  add_settings_field('mybooking_plugin_settings_custom_css',
 		                     'Include plugin CSS',
@@ -169,6 +183,24 @@
 		public function field_mybooking_plugin_settings_summary_page_callback() {
 		  
 		  $this->field_mybooking_plugin_settings_page("mybooking_plugin_settings_summary_page");
+
+		}
+
+		/**
+		 * Render Mybooking settings fields
+		 */
+		public function field_mybooking_plugin_settings_activities_shopping_cart_page_callback() {
+		  
+		  $this->field_mybooking_plugin_settings_page("mybooking_plugin_activities_shopping_cart_page");
+
+		}
+
+		/**
+		 * Render Mybooking settings fields
+		 */
+		public function field_mybooking_plugin_settings_activities_order_page_callback() {
+		  
+		  $this->field_mybooking_plugin_settings_page("mybooking_plugin_settings_activities_order_page");
 
 		}
 
