@@ -8,6 +8,7 @@
 	require_once('mybooking-plugin-registry.php');
 	// Widget definition
 	require_once('mybooking-plugin-rent-selector-widget.php');
+	require_once('mybooking-plugin-activity-widget.php');
 	require_once('mybooking-plugin-contact-widget.php');
 	// Settings
 	require_once('mybooking-plugin-settings.php');
@@ -21,53 +22,47 @@
    * 
    * Extends WordPress to build a reservation engine that uses mybooking.es
    *
-   * How it works?
+   * What is does?
    * ----------------------------
    *
-   * It allows to add to WordPress the following functionalities:
+   * It extends WordPress with the following functions in order to manage a 
+   * renting or accommodation web site.
    *
-   * 1. Reservation wizard for Renting / Accommodation / Car Rental
+   * 1. Contact form
    *
    * 2. Reservation engine for Renting / Accommodation / Car Rental
    *
    * 3. Reservation engine for Activities / Tours
    *
-   * 4. Contact form
    *
-   * Details 
+   * How it works?
    * ----------------------------
    * 
-   * Sort codes:
+   * It adds some widgets and shortcodes to integrate the reservation engine
+   *
+   * 1. Widgets
+   *
+   * -- Contact
+   *
+   * -- Renting / Accommodation
+   *
+   * -- Activities
    *
    *
+   * 2. Sort codes:
    *
+   * -- Contact
    *
-   * More information
-   * ----------------------------
+   * -- Renting / Accommodation
    *
-   * 1.) Reservation Wizard for Renting / Accommodation / Car Rental
+   * [mybooking_rent_engine_product_listing]
+   * [mybooking_rent_engine_complete]
+   * [mybooking_rent_engine_summary]
    *
-   * - 4/5 Steps (each one represented in a page)
-   * 
-   *    1. Select dates [Widget]
-   *    2. Select product(s) [Page]
-   *    ?. Select extras [Page]
-   *    3. Complete / Checkout [Page]
-   *    4. Summary [Page]
-   *   
-   * 2.) Reservation Engine for Renting / Accommodation / Car Rental
+   * -- Activities
    *
-   *    1. Add to renting shopping cart
-   *    2. Checkout
-   *    3. Summary 
+   * [mybooking_activities_engine_activity activity_id=Number]
    *
-   * 3.) Reservation Engine for Activities/Tours
-   *
-   *    1. Add to shopping cart
-   *    2. Checkout
-   *    3. Summary
-   *
-   * 4.) Contact form
    *
    */
   class MyBookingPlugin
@@ -159,25 +154,25 @@
 			// Register Renting Selector Widget
 			add_action( 'widgets_init', array($this, 'wp_selector_widget') );
 
+			// Register Activities Activity Widget
+			add_action( 'widgets_init', array($this, 'wp_activities_activity_widget') );
+
       // Register Contact widget
       add_action( 'widgets_init', array($this, 'wp_contact_widget') );
 
 			// -- Shortcodes
 
-      // Shortcode contact widget
-      add_shortcode('mybooking_engine_contact', array($this, 'wp_contact_shortcode' ));
-
-			// Shortcode widget selector
-			add_shortcode('mybooking_rent_engine_selector', array($this, 'wp_selector_shortcode' ));
-
-			// Shortcode product listing
+			// Shortcode Renting Wizard - Product listing
 			add_shortcode('mybooking_rent_engine_product_listing', array($this, 'wp_product_listing_shortcode' ));
 
-			// Shortcode complete
+			// Shortcode Renting Wizard - Complete
 			add_shortcode('mybooking_rent_engine_complete', array($this, 'wp_complete_shortcode' ));
 
-			// Shortcode summary
+			// Shortcode Renting Wizard - Summary
 			add_shortcode('mybooking_rent_engine_summary', array($this, 'wp_summary_shortcode' ));
+
+			// Shortcode Activities - Activity
+			add_shortcode('mybooking_activities_engine_activity', array($this, 'wp_activities_activity_shortcode' ));	
 
 	  }
 
@@ -186,6 +181,9 @@
 		 * Add body classes to the pages
 		 */
 		public function wp_body_class ( $classes ) {
+
+      // Get the post outside a loop
+			global $post;
 
 		  $registry = Mybooking_Registry::getInstance();
 
@@ -197,6 +195,7 @@
 				$classes[] = 'mybooking-contact-widget';
 			}
 		  
+		  // Renting pages : Choose product, complete, summary
 		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && is_page( $registry->mybooking_rent_plugin_choose_products_page) ) {
 		  	$classes[] = 'choose_product';
 		  }
@@ -205,6 +204,11 @@
 		  }
 		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
 		  	$classes[] = 'summary';
+		  }
+
+		  // Shortcodes : mybooking_activities_engine_activity
+		  if ( has_shortcode( $post->post_content , 'mybooking_activities_engine_activity') ) {
+		  	$classes[] = 'mybooking-activity';
 		  }
 
 		  return $classes;
@@ -289,6 +293,15 @@
 
 		}
 
+    /**
+     * Register the activity widget
+     */
+    public function wp_activities_activity_widget() {
+
+      register_widget( 'MyBookingActivitiesEngineActivityWidget' );
+
+    }
+
 		/**
 		 * Register contact Widget
 		 */
@@ -301,32 +314,10 @@
 		// == Shortcodes
 		// See https://konstantin.blog/2013/get_template_part-within-shortcodes/
 
-    /**
-     * Mybooking contact select shortcode
-     */
-		public function wp_contact_shortcode() {
-
-       ob_start();
-       mybooking_engine_get_template('mybooking-plugin-contact-widget.php');
-       return ob_get_clean();
-
-		}
-
-		/**
-		 * Mybooking rent engine selector shortcode
-		 */
-		public function wp_selector_shortcode() {
-
-			ob_start();
-			mybooking_engine_get_template('mybooking-plugin-selector-widget.php'); 
-			return ob_get_clean();
-
-		}
-
 		/**
 		 * Mybooking rent engine Product Listing shortcode
 		 */
-		public function wp_product_listing_shortcode() {
+		public function wp_product_listing_shortcode($atts = [], $content = null, $tag = '') {
 			
 			ob_start();
 	    mybooking_engine_get_template('mybooking-plugin-choose-product.php');
@@ -337,7 +328,7 @@
 		/**
 		 * Mybooking rent engine Complete shortcode
 		 */
-		public function wp_complete_shortcode() {
+		public function wp_complete_shortcode($atts = [], $content = null, $tag = '') {
 			
 			ob_start();
 			mybooking_engine_get_template('mybooking-plugin-complete.php');
@@ -348,12 +339,37 @@
 		/**
 		 * Mybooking rent engine Complete shortcode
 		 */
-		public function wp_summary_shortcode() {
+		public function wp_summary_shortcode($atts = [], $content = null, $tag = '') {
 			
 			ob_start();
 			mybooking_engine_get_template('mybooking-plugin-summary.php');
 			return ob_get_clean();
 
 		}
+
+		/**
+		 * Mybooking activities engine Activity shortcode
+		 *
+		 * Attributes:
+		 * -----------
+		 * activity_id:: Show the activity selector for the activity Id
+		 */
+		public function wp_activities_activity_shortcode($atts = [], $content = null, $tag = '') {
+
+      // Extract the shortcode attributes			
+			extract( shortcode_atts( array('activity_id' => '' ), $atts ) );
+
+			// If the shortcode attributes include activity_id and it is not null load the data
+			if ( $activity_id != '' ) {
+			  $data = array(
+			      'activity_id' => $activity_id,
+			  );
+
+				ob_start();
+		    mybooking_engine_get_template('mybooking-plugin-activities-activity-widget.php', $data);
+		    return ob_get_clean();
+	  	}
+	
+		}    
 
   }
