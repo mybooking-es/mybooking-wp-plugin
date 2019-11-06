@@ -5,6 +5,7 @@
 	require_once('mybooking-plugin-locate-template.php');
 	require_once('mybooking-plugin-get-template.php');
 	require_once('mybooking-plugin-load-template.php');
+	require_once('mybooking-plugin-is-page.php');
 	// Registry
 	require_once('mybooking-plugin-registry.php');
 	// Widget definition
@@ -211,20 +212,20 @@
 			}
 		  
 		  // Renting pages : Choose product, complete, summary
-		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && is_page( $registry->mybooking_rent_plugin_choose_products_page) ) {
+		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
 		  	$classes[] = 'choose_product';
 		  }
-		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
+		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
 		  	$classes[] = 'complete';
 		  }
-		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
+		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
 		  	$classes[] = 'summary';
 		  }
 		  // Activities page 
-		  else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
+		  else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
 		  	$classes[] = 'mybooking-activity-shopping-cart';
 		  }
-		  else if ( $registry->mybooking_activities_plugin_order_page != '' && is_page( $registry->mybooking_activities_plugin_order_page ) ) {
+		  else if ( $registry->mybooking_activities_plugin_order_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_order_page ) ) {
 		  	$classes[] = 'mybooking-activity-order';
 		  }
 
@@ -279,21 +280,21 @@
 		      'mybooking_activities_order_page' => $registry->mybooking_activities_plugin_order_page
 		  );
 		  mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
-			
+		
 		  // Load scripts
-		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && is_page( $registry->mybooking_rent_plugin_choose_products_page) ) {
+		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php');
 		  }
-		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
+		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php');
 		  }
-		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
+		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-summary-tmpl.php');
 		  }	
-		  else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
+		  else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-activities-shopping-cart-tmpl.php');
 		  }
-		  else if ( $registry->mybooking_activities_plugin_order_page != '' && is_page( $registry->mybooking_activities_plugin_order_page ) ) {
+		  else if ( $registry->mybooking_activities_plugin_order_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_order_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-activities-order-tmpl.php');
 		  }
 
