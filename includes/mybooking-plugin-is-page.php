@@ -12,6 +12,7 @@
  */
 function mybooking_engine_is_page( $page_id ) {
 	
+	// WMPL verification
 	if ( function_exists('icl_object_id') ) {
 
 	  $page = get_page_by_path( $page_id );
@@ -23,7 +24,7 @@ function mybooking_engine_is_page( $page_id ) {
 	  else {
 	  	$result = is_page ( $page_id );
 	  }
-	  
+
 	}
 	else {
 		$result = is_page ( $page_id );
