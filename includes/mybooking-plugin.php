@@ -170,6 +170,9 @@
 
       // -- Renting shortcodes
 
+      // Shortcode Renting Wizard - Selector
+      add_shortcode('mybooking_rent_engine_selector', array($this, 'wp_rent_selector_shortcode') );
+
 			// Shortcode Renting Wizard - Product listing
 			add_shortcode('mybooking_rent_engine_product_listing', array($this, 'wp_product_listing_shortcode' ));
 
@@ -203,7 +206,9 @@
 
 		  $registry = Mybooking_Registry::getInstance();
 
-			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ) {
+      // Selector widget or shortcode 
+			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
+			     has_shortcode( $post->post_content , 'mybooking_rent_engine_selector') ) {
 				$classes[] = 'mybooking-selector-widget';
 			}		
 
@@ -228,6 +233,7 @@
 		  else if ( $registry->mybooking_activities_plugin_order_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_order_page ) ) {
 		  	$classes[] = 'mybooking-activity-order';
 		  }
+		 
 
 		  // Shortcodes : mybooking_activities_engine_activity
 		  if ( has_shortcode( $post->post_content , 'mybooking_activities_engine_activity') ) {
@@ -347,6 +353,33 @@
 		// @see https://konstantin.blog/2013/get_template_part-within-shortcodes/
 
 		// -- Renting 
+    public function wp_rent_selector_shortcode($atts = [], $content = null, $tag = '') {
+			
+      // Extract the shortcode attributes			
+			extract( shortcode_atts( array('sales_channel_code' => '', 
+				                             'family_id' => '',
+			                               'selector_type' => '' ), $atts ) );
+
+		  $data = array();
+
+      if ( $sales_channel_code != '' ) {
+      	$data['sales_channel_code'] = $sales_channel_code;
+      }
+
+      if ( $family_id != '' ) {
+      	$data['family_id'] = $family_id;
+      }
+
+			ob_start();
+			if ( $selector_type == 'horizontal' ) {
+	      mybooking_engine_get_template('mybooking-plugin-selector-widget-horizontal.php', $data);
+      }
+      else {
+      	mybooking_engine_get_template('mybooking-plugin-selector-widget.php', $data);
+      }
+	    return ob_get_clean();
+	
+		}
 
 		/**
 		 * Mybooking rent engine Product Listing shortcode

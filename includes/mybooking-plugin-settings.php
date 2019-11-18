@@ -39,13 +39,17 @@
 		  register_setting('mybooking_plugin_settings_group',
 		                   'mybooking_plugin_settings');
 
-		  // Creates a settings section in "mybooking_plugin_settings_page"
+		  // == Creates a settings section in "mybooking_plugin_settings_page"
 		  add_settings_section('mybooking_plugin_settings_section',
 		                       'Mybooking settings',
-		                       '',
+		                       'mybooking_plugin_settings_connection_callback',
 		                       'mybooking-plugin-configuration');
 
 		  // Creates account id and api key fields
+		  add_settings_section('mybooking_plugin_settings_section',
+		                       'Mybooking settings',
+		                       'mybooking_plugin_settings_connection_callback',
+		                       'mybooking-plugin-configuration');
 		  add_settings_field('mybooking_plugin_settings_account_id',
 		                     'Mybooking Id',
 		                     array($this, 'field_mybooking_plugin_settings_account_id_callback'),
@@ -58,7 +62,8 @@
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section');
 
-		  // Creates pages fields 	  
+
+		  // Creates renting / accommodation pages fields 	  
 		  add_settings_field('mybooking_plugin_settings_choose_products_page',
 		                     'Choose products page',
 		                     array($this, 'field_mybooking_plugin_settings_choose_products_page_callback'),
@@ -127,7 +132,7 @@
 		}
 
 		/**
-		 * Render Mybooking settings fields
+		 * Render Mybooking Account Id
 		 */
 		public function field_mybooking_plugin_settings_account_id_callback() {
 		  
@@ -139,7 +144,7 @@
 		}
 
 		/**
-		 * Render Mybooking settings fields
+		 * Render Mybooking API Key 
 		 */
 		public function field_mybooking_plugin_settings_api_key_callback() {
 		  
@@ -151,7 +156,7 @@
 		}
 
 		/**
-		 * Render Mybooking settings fields
+		 * Render Mybooking Renting/Accommodation Choose products page
 		 */
 		public function field_mybooking_plugin_settings_choose_products_page_callback() {
 
@@ -160,7 +165,7 @@
 		}
 
 		/**
-		 * Render Mybooking settings fields
+		 * Render Mybooking Renting/Accommodation Choose extras page
 		 */
 		public function field_mybooking_plugin_settings_choose_extras_page_callback() {
 		  
@@ -169,7 +174,7 @@
 		}
 
 		/**
-		 * Render Mybooking settings fields
+		 * Render Mybooking Renting/Accommodation Checkout page
 		 */
 		public function field_mybooking_plugin_settings_checkout_page_callback() {
 		  
@@ -178,7 +183,7 @@
 		}
 
 		/**
-		 * Render Mybooking settings fields
+		 * Render Mybooking Renting/Accommodation Summary page
 		 */
 		public function field_mybooking_plugin_settings_summary_page_callback() {
 		  
@@ -187,7 +192,7 @@
 		}
 
 		/**
-		 * Render Mybooking settings fields
+		 * Render Mybooking Activities Shopping cart page
 		 */
 		public function field_mybooking_plugin_settings_activities_shopping_cart_page_callback() {
 		  
@@ -196,7 +201,7 @@
 		}
 
 		/**
-		 * Render Mybooking settings fields
+		 * Render Mybooking Activities order/reservation page
 		 */
 		public function field_mybooking_plugin_settings_activities_order_page_callback() {
 		  
@@ -205,7 +210,7 @@
 		}
 
 		/**
-		 * Render Mybooking settings fields
+		 * Render Mybooking Custom CSS
 		 */
 		public function field_mybooking_plugin_settings_custom_css_callback() {
 		  
