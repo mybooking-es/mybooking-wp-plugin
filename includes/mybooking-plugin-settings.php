@@ -42,14 +42,10 @@
 		  // == Creates a settings section in "mybooking_plugin_settings_page"
 		  add_settings_section('mybooking_plugin_settings_section',
 		                       'Mybooking settings',
-		                       'mybooking_plugin_settings_connection_callback',
+		                       '',
 		                       'mybooking-plugin-configuration');
 
 		  // Creates account id and api key fields
-		  add_settings_section('mybooking_plugin_settings_section',
-		                       'Mybooking settings',
-		                       'mybooking_plugin_settings_connection_callback',
-		                       'mybooking-plugin-configuration');
 		  add_settings_field('mybooking_plugin_settings_account_id',
 		                     'Mybooking Id',
 		                     array($this, 'field_mybooking_plugin_settings_account_id_callback'),
