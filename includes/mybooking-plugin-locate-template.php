@@ -4,9 +4,10 @@
  *
  * Locate the called template.
  * Search Order:
- * 1. /themes/theme/mybooking-plugin-templates/$template_name
- * 2. /themes/theme/$template_name
- * 3. /plugins/mybooking-plugin/templates/$template_name.
+ * 1. /wp-content/mybooking-templates/$template_name
+ * 2. /themes/theme/mybooking-plugin-templates/$template_name
+ * 3. /themes/theme/$template_name
+ * 4. /plugins/mybooking-plugin/templates/$template_name.
  *
  * @since 1.0.0
  *
@@ -27,13 +28,23 @@ function mybooking_engine_locate_template( $template_name, $template_path = '', 
 		$default_path = dirname(plugin_dir_path( __FILE__ )) . '/mybooking-templates/'; // Path to the template folder
 	endif;
 
-	// Search template file in theme folder.
-	$template = locate_template( array(
-		$template_path . $template_name,
-		$template_name
-	) );
+  $template = null;
 
-	// Get plugins template file.
+  // (1) Search template file in wp-content/mybooking-templates folder
+  $content_template = WP_CONTENT_DIR.'/'.$template_path.$template_name;
+  if ( file_exists( $content_template )) {
+  	$template = $content_template;
+  }
+
+	// (2) and (3) Search template file in theme folder.
+	if ( ! $template ) {
+		$template = locate_template( array(
+			$template_path . $template_name,
+			$template_name
+		) );
+  }
+
+	// (4) Get plugins template file.
 	if ( ! $template ) :
 		$template = $default_path . $template_name;
 	endif;
