@@ -19,11 +19,13 @@
               <div class="hero">
                 <div class="hero-head">&nbsp;</div>
                 <div class="hero-foot">
-                  <!-- Offer -->
-                  <% if (product.price != product.base_price) { %>             
-                    <% if (product.offer_discount_type == 'percentage') { %>
+                  <!-- Offer or Promotion Code-->
+                  <% if (product.price != product.base_price) { %>
+                    <!-- Offer -->             
+                    <% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
                       <p><%=new Number(product.offer_value)%>% <%=product.offer_name%></p>
                     <% } %>
+                    <!-- Offer or promotion code -->
                     <p class="has-text-centered"><small style="text-decoration: line-through"><%= configuration.formatCurrency(product.base_price)%></small></p>
                   <% } %>
                   <h3 class="has-text-info is-size-3 has-text-weight-bold has-text-centered"><%= configuration.formatCurrency(product.price)%></h3>

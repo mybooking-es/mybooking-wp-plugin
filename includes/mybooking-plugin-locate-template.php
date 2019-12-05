@@ -2,7 +2,8 @@
 /**
  * Locate template.
  *
- * Locate the called template.
+ * @see https://jeroensormani.com/how-to-add-template-files-in-your-plugin/ 
+ *
  * Search Order:
  * 1. /wp-content/mybooking-templates/$template_name
  * 2. /themes/theme/mybooking-plugin-templates/$template_name

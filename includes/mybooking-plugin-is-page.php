@@ -3,6 +3,8 @@
  * is page.
  *
  * check if the pageId is a page
+ * 
+ * WPML integration
  *
  * @since 1.0.0
  *

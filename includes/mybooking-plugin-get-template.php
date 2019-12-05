@@ -4,6 +4,8 @@
  *
  * Search for the template and include the file.
  *
+ * @see https://jeroensormani.com/how-to-add-template-files-in-your-plugin/ 
+ *
  * @since 1.0.0
  *
  * @see mybooking_engine_get_template()

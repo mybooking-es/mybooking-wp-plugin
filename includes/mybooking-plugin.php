@@ -1,19 +1,31 @@
 <?php
 
-	// Utilities 
-	// from https://jeroensormani.com/how-to-add-template-files-in-your-plugin/  
+	// == Registry
+	require_once('registry/mybooking-plugin-registry.php');
+
+	// == Utilities 
+	
+	// Templates (https://jeroensormani.com/how-to-add-template-files-in-your-plugin/)
 	require_once('mybooking-plugin-locate-template.php');
 	require_once('mybooking-plugin-get-template.php');
 	require_once('mybooking-plugin-load-template.php');
+  // https://github.com/Upstatement/routes
+  // https://github.com/dannyvankooten/AltoRouter
+  require_once('routes/altorouter.php');
+  require_once('routes/routes.php');
+	// Check is page WMPL integration
 	require_once('mybooking-plugin-is-page.php');
-	// Registry
-	require_once('mybooking-plugin-registry.php');
-	// Widget definition
-	require_once('mybooking-plugin-rent-selector-widget.php');
-	require_once('mybooking-plugin-activity-widget.php');
-	require_once('mybooking-plugin-contact-widget.php');
+
+  require_once('api/mybooking-plugin-api-client.php');
+
+  // == WordPress components
+
+	// Widgets
+	require_once('widgets/mybooking-plugin-rent-selector-widget.php');
+	require_once('widgets/mybooking-plugin-activity-widget.php');
+	require_once('widgets/mybooking-plugin-contact-widget.php');
 	// Settings
-	require_once('mybooking-plugin-settings.php');
+	require_once('settings/mybooking-plugin-settings.php');
 
   /**
    * =======================================================================
@@ -82,6 +94,7 @@
 	  private function __construct()
 	  {
 	    	$this->init_reservation_process_pages();
+	    	$this->init_routes();
 	    	$this->wp_init();
 	    	$settings = new MyBookingPluginSettings();
 	  }
@@ -110,6 +123,7 @@
 		  $settings = (array) get_option("mybooking_plugin_settings");
 
 		  $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
+		  $registry->mybooking_rent_plugin_api_url_prefix = 'https://'.$registry->mybooking_rent_plugin_account_id.'.mybooking.es';
 		  $registry->mybooking_rent_plugin_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_api_key"] ));
 		  $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
 		  $registry->mybooking_rent_plugin_choose_extras_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_extras_page"] )));
@@ -133,6 +147,60 @@
 
 		}
 
+		// ------------ Custom routes ---------------------
+
+    /**
+     * Initialize custom routes to show all renting products and activities
+     *
+     */
+		private function init_routes() {
+
+      // Renting products route
+			Routes::map('products', function($params){
+
+				  $registry = Mybooking_Registry::getInstance();
+          
+          // Call the API 
+          $api_client = new MybookingApiClient($registry->mybooking_rent_plugin_api_url_prefix,
+          	                                   $registry->mybooking_rent_plugin_api_key);
+          $data =$api_client->get_products();
+          
+          // Error in API
+          if ( $data == null) {
+          	$this->routes_not_found();
+          }
+
+          mybooking_engine_get_template('mybooking-plugin-routes-products.php', $data);
+          die;
+
+			});
+ 
+      // Renting product detail route
+			Routes::map('products/:id', function($params){
+
+				  $registry = Mybooking_Registry::getInstance();
+
+          // Call the API 
+          $api_client = new MybookingApiClient($registry->mybooking_rent_plugin_api_url_prefix,
+          	                                   $registry->mybooking_rent_plugin_api_key);
+          $data =$api_client->get_product($params['id']);
+
+          // Error in API
+          if ( $data == null) {
+          	$this->routes_not_found();
+          }
+          
+          mybooking_engine_get_template('mybooking-plugin-routes-product.php', $data);
+          die;
+			});
+
+		}
+
+		private function routes_not_found() {
+          status_header(404);
+          nocache_headers();
+          include( get_query_template( '404' ) );			
+		}
 
 	  // ------------ WordPress plugin init -------------
 	  
