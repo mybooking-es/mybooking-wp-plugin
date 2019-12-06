@@ -10,12 +10,12 @@
 	require_once('mybooking-plugin-get-template.php');
 	require_once('mybooking-plugin-load-template.php');
   // https://github.com/Upstatement/routes
-  // https://github.com/dannyvankooten/AltoRouter
   require_once('routes/altorouter.php');
+  // https://github.com/dannyvankooten/AltoRouter
   require_once('routes/routes.php');
 	// Check is page WMPL integration
 	require_once('mybooking-plugin-is-page.php');
-
+  // Mybooking Api Client + UI  
   require_once('ui/mybooking-plugin-ui-pages.php');
   require_once('ui/mybooking-plugin-ui-pagination.php');
   require_once('api/mybooking-plugin-api-client.php');
