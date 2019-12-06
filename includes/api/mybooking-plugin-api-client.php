@@ -7,6 +7,7 @@
 
     const GET_PRODUCTS = '/api/booking/frontend/products';
     const GET_PRODUCT = '/api/booking/frontend/products/';
+    
     private $url_prefix;
     private $api_key;
 		
@@ -23,9 +24,9 @@
      * @param number $offset The offset on pagination
      * @param number $limit The number of records on pagination
      */
-    public function get_products($offset=0, $limit=10) {
+    public function get_products($offset=0, $limit=20) {
 
-          $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCTS;
+          $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCTS.'?offset='.$offset.'&limit='.$limit;
 
           // Query data
 					$request = wp_remote_get( $url );
