@@ -496,7 +496,7 @@
 		  $registry = Mybooking_Registry::getInstance();
 
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
-		  if ($settings) {
+		  if ($settings && $settings['mybooking_plugin_settings_account_id']) {
 		    $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
 		    $registry->mybooking_rent_plugin_api_url_prefix = 'https://'.$registry->mybooking_rent_plugin_account_id.'.mybooking.es';
 		    $registry->mybooking_rent_plugin_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_api_key"] ));
@@ -508,7 +508,7 @@
       }
 
 		  $settings = (array) get_option("mybooking_plugin_settings_renting_wizard");
-		  if ($settings) {
+		  if ($settings && $settings['mybooking_plugin_settings_choose_products_page']) {
 		    $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
 		    $registry->mybooking_rent_plugin_choose_extras_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_extras_page"] )));
 		    $registry->mybooking_rent_plugin_checkout_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_checkout_page"] )));
