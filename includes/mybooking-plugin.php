@@ -96,7 +96,7 @@
 	  private function __construct()
 	  {
 	    	$this->init_reservation_process_pages();
-	    	$this->init_routes();
+	    	//$this->init_routes();
 	    	$this->wp_init();
 	    	$settings = new MyBookingPluginSettings();
 	  }
@@ -243,13 +243,14 @@
 		  }
 		 
 		  // Renting shortcode : product (resource) [availability and selector]
-		  if ( has_shortcode( $post->post_content , 'mybooking_rent_engine_product') ) {
+		  if ( $post && has_shortcode( $post->post_content , 'mybooking_rent_engine_product') ) {
 		  	$classes[] = 'mybooking-product';
 		  }
 		  // Activities shortcodes : mybooking_activities_engine_activity [selector]
-		  if ( has_shortcode( $post->post_content , 'mybooking_activities_engine_activity') ) {
+		  if ( $post && has_shortcode( $post->post_content , 'mybooking_activities_engine_activity') ) {
 		  	$classes[] = 'mybooking-activity';
 		  }
+
 
       // Only for product page
       $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
