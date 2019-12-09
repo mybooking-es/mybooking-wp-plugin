@@ -9,7 +9,7 @@
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
 			  	<?php foreach( $args->photos as $key => $photo ) { ?>
-			    <div class="carousel-item <?php if ($key == key($args->photos)) {?>active<?php}?>">
+			    <div class="carousel-item <?php if ($key == key($args->photos)) { ?>active<?php } ?>">
 			      <img class="d-block w-100" src="<?php echo $photo->full_photo_path?>" alt="<?php echo $args->name?>">
 			    </div>
 			    <?php } ?>

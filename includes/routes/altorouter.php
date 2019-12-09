@@ -192,7 +192,7 @@ class AltoRouter
         $params = [];
 
         // set Request Url if it isn't passed as parameter
-        if ($requestUrl === null || empty($requestUrl) ) {
+        if ($requestUrl === null) {
             $requestUrl = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
         }
 
