@@ -14,6 +14,7 @@
      public function products($page, $limit) {
 
 				  $registry = Mybooking_Registry::getInstance();
+          $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
           $offset = ($page - 1) * $limit;
 
           // Call the API 
@@ -34,7 +35,8 @@
           $data = array('data' => $data,
           	            'total_pages' => $total_pages,
           	            'current_page' => $current_page,
-          	            'pages' => $pages);
+          	            'pages' => $pages,
+                        'url' => $url);
 
           mybooking_engine_get_template('mybooking-plugin-routes-products.php', $data);
           die;    

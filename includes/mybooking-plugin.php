@@ -4,14 +4,11 @@
 	require_once('registry/mybooking-plugin-registry.php');
 
 	// == Utilities 
-	
 	// Templates (https://jeroensormani.com/how-to-add-template-files-in-your-plugin/)
-	require_once('mybooking-plugin-locate-template.php');
-	require_once('mybooking-plugin-get-template.php');
-	require_once('mybooking-plugin-load-template.php');
-  // https://github.com/Upstatement/routes
+	require_once('mybooking-plugin-templates.php');
+  // Routes (https://github.com/Upstatement/routes)
   require_once('routes/altorouter.php');
-  // https://github.com/dannyvankooten/AltoRouter
+  // Routes (https://github.com/dannyvankooten/AltoRouter)
   require_once('routes/routes.php');
 	// Check is page WMPL integration
 	require_once('mybooking-plugin-is-page.php');
@@ -255,7 +252,8 @@
 		  }
 
       // Only for product page
-    	if ( preg_match_all('`/products/(\w)+`', $_SERVER['REQUEST_URI']) ) {
+      $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
+    	if ( preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
     	  $classes[] = 'mybooking-product';
       }
 
@@ -302,7 +300,8 @@
 		  }
 
       // Only for product page
-      if ( preg_match_all('`/products/(\w)+`', $_SERVER['REQUEST_URI']) ) {
+      $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
+    	if ( preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
         mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
       }
 
@@ -496,17 +495,25 @@
 
 		  $registry = Mybooking_Registry::getInstance();
 
-		  $settings = (array) get_option("mybooking_plugin_settings");
-
+		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
 		  $registry->mybooking_rent_plugin_api_url_prefix = 'https://'.$registry->mybooking_rent_plugin_account_id.'.mybooking.es';
 		  $registry->mybooking_rent_plugin_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_api_key"] ));
+
+		  $settings = (array) get_option("mybooking_plugin_settings_renting_wizard");
 		  $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
 		  $registry->mybooking_rent_plugin_choose_extras_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_extras_page"] )));
 		  $registry->mybooking_rent_plugin_checkout_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_checkout_page"] )));
 		  $registry->mybooking_rent_plugin_summary_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_summary_page"] )));
+
+		  $settings = (array) get_option("mybooking_plugin_settings_renting_navigation");	  
+		  $registry->mybooking_rent_plugin_navigation_products_url = $settings["mybooking_plugin_settings_products_url"] ? $settings["mybooking_plugin_settings_products_url"] : 'products';
+		  
+		  $settings = (array) get_option("mybooking_plugin_settings_activities");	
 		  $registry->mybooking_activities_plugin_shopping_cart_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_activities_shopping_cart_page"] )));
 		  $registry->mybooking_activities_plugin_order_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_order_page"] )));
+
+		  $settings = (array) get_option("mybooking_plugin_settings_css");	  
 		  $registry->mybooking_rent_plugin_custom_css = (trim(esc_attr( $settings["mybooking_plugin_settings_custom_css"] )) == '1');
 
 		}
@@ -531,11 +538,14 @@
      */
 		private function init_routes() {
 
+      $registry = Mybooking_Registry::getInstance();
+      $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
+
       // Renting products route
-			Routes::map('products', array($this, 'products_page'));
+			Routes::map($url, array($this, 'products_page'));
  
       // Renting product detail route
-			Routes::map('products/:id', function($params) {
+			Routes::map($url.'/:id', function($params) {
 				$this->product_page($params);
 			});
 
