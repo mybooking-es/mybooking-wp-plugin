@@ -286,7 +286,12 @@ EOF;
 		  
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  $field = "mybooking_plugin_settings_account_id";
-		  $value = esc_attr( $settings[$field] );
+		  if (array_key_exists('mybooking_plugin_settings_account_id', $settings) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
 		  
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
 		}
@@ -298,7 +303,12 @@ EOF;
 		  
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  $field = "mybooking_plugin_settings_api_key";
-		  $value = esc_attr( $settings[$field] );
+		  if (array_key_exists('mybooking_plugin_settings_account_id', $settings) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
 		  
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
 		}
