@@ -496,14 +496,22 @@
 		  $registry = Mybooking_Registry::getInstance();
 
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
-		  if ($settings && $settings['mybooking_plugin_settings_account_id']) {
+		  if ($settings && array_key_exists('mybooking_plugin_settings_account_id', $settings)) {
 		    $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
+		  }
+		  else {
+		  	$registry->mybooking_rent_plugin_account_id = '';
+		  }
+		  if ($settings && array_key_exists('mybooking_plugin_settings_account_id', $settings)) {
 		    $registry->mybooking_rent_plugin_api_url_prefix = 'https://'.$registry->mybooking_rent_plugin_account_id.'.mybooking.es';
+		  }
+		  else {
+        $registry->mybooking_rent_plugin_api_url_prefix = '';
+		  }
+		  if ($settings && array_key_exists('mybooking_plugin_settings_api_key', $settings)) {
 		    $registry->mybooking_rent_plugin_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_api_key"] ));
       }
       else {
-		    $registry->mybooking_rent_plugin_account_id = '';
-		    $registry->mybooking_rent_plugin_api_url_prefix = '';;
 		    $registry->mybooking_rent_plugin_api_key = '';      	
       }
 
