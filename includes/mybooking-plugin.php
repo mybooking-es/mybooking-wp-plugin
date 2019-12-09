@@ -96,7 +96,7 @@
 	  private function __construct()
 	  {
 	    	$this->init_reservation_process_pages();
-	    	//$this->init_routes();
+	    	$this->init_routes();
 	    	$this->wp_init();
 	    	$settings = new MyBookingPluginSettings();
 	  }
