@@ -682,8 +682,8 @@
     function products_page() {
 
           // GET the pagination query parameters
-          $page = $_GET['page'] ? $_GET['page'] : 1;
-          $limit = $_GET['limit'] ? $_GET['limit'] : 12;
+          $page = array_key_exists('page', $_GET) ? $_GET['page'] : 1;
+          $limit = array_key_exists('limit', $_GET) ? $_GET['limit'] : 12;
 
           $ui_products = new MyBookingUIPages();
           $ui_products->products($page, $limit);

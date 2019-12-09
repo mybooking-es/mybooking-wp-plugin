@@ -1,18 +1,18 @@
 <?php get_header();?>
 
-<h1><? echo $args->name ?></h1>
-<? echo $args->description ?>
+<h1><?php echo $args->name ?></h1>
+<?php echo $args->description ?>
 
 <div class="content">
 	<div class="row">
     <div class="col-md-6">
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
-			  	<? foreach( $args->photos as $key => $photo ) { ?>
-			    <div class="carousel-item <? if ($key == key($args->photos)) {?>active<?}?>">
+			  	<?php foreach( $args->photos as $key => $photo ) { ?>
+			    <div class="carousel-item <?php if ($key == key($args->photos)) {?>active<?php}?>">
 			      <img class="d-block w-100" src="<?php echo $photo->full_photo_path?>" alt="<?php echo $args->name?>">
 			    </div>
-			    <? } ?>
+			    <?php } ?>
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
 			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
