@@ -360,8 +360,12 @@ EOF;
 		  
 		  $settings = (array) get_option("mybooking_plugin_settings_renting_navigation");
 		  $field = "mybooking_plugin_settings_products_url";
-		  $value = $settings[$field] ? esc_attr( $settings[$field] ) : 'products';
-		  
+		  if (array_key_exists('mybooking_plugin_settings_products_url', $settings)) {
+		    $value = $settings[$field] ? esc_attr( $settings[$field] ) : 'products';
+		  }
+		  else {
+		  	$value = '';
+		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_renting_navigation[$field]' value='$value' class='regular-text' />";
 		  echo "<p class=\"description\">The URL prefix that will show the products. The default is <em>products</em> but you can replace it depending on the context. Use vehicles, rooms, ...</p>";
       echo "<p class=\"description\">A new route /the-value will be accessible and this url will show the products retrieved from <b>mybooking API</b></p>";
@@ -394,7 +398,12 @@ EOF;
 		  
 		  $settings = (array) get_option("mybooking_plugin_settings_css");
 		  $field = "mybooking_plugin_settings_custom_css";
-		  $value = esc_attr( $settings[$field] );
+		  if (array_key_exists('mybooking_plugin_settings_custom_css', $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  } 
 		  
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
@@ -410,7 +419,12 @@ EOF;
 		  }   
 
 		  $settings = (array) get_option("mybooking_plugin_settings_renting_wizard");
-		  $value = esc_attr( $settings[$field] );
+		  if (array_key_exists($field, $settings)) {		  
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
 		  
 		  $select = "<select name='mybooking_plugin_settings_renting_wizard[$field]'>";
 		  $select .= "<option value=''>[Choose page]</option>";
@@ -437,7 +451,12 @@ EOF;
 		  }   
 
 		  $settings = (array) get_option("mybooking_plugin_settings_activities");
-		  $value = esc_attr( $settings[$field] );
+		  if (array_key_exists($field, $settings)) {		  
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
 		  
 		  $select = "<select name='mybooking_plugin_settings_activities[$field]'>";
 		  $select .= "<option value=''>[Choose page]</option>";
