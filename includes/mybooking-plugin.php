@@ -530,7 +530,7 @@
       }
 
       // Renting
-		  $settings = (array) get_option("mybooking_plugin_settings_renting_wizard");
+		  $settings = (array) get_option("mybooking_plugin_settings_renting");
 		  if ($settings && array_key_exists('mybooking_plugin_settings_choose_products_page', $settings)) {
 		    $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
 		  }

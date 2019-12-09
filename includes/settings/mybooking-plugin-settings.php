@@ -678,7 +678,7 @@ EOF;
 		    $my_pages[$page->ID] = $page->post_title; // $page->post_name
 		  }   
 
-		  $settings = (array) get_option("mybooking_plugin_settings_renting_wizard");
+		  $settings = (array) get_option("mybooking_plugin_settings_renting");
 		  if (array_key_exists($field, $settings)) {		  
 		    $value = esc_attr( $settings[$field] );
 		  }
@@ -686,7 +686,7 @@ EOF;
 		  	$value = '';
 		  }
 		  
-		  $select = "<select name='mybooking_plugin_settings_renting_wizard[$field]'>";
+		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
 		  $select .= "<option value=''>[Choose page]</option>";
 		  foreach ($my_pages as $page => $title) {
 		     if ($value == $page) {
