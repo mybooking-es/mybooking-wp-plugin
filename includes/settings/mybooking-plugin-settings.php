@@ -60,7 +60,7 @@
 
 		      <form action="options.php" method="POST">
                
-	            <? 
+	            <?php 
 	             if ($active_tab == 'connection_options') { 
 			      	   settings_fields('mybooking_plugin_settings_group_connection'); 
 			           echo '<table class="form-table">';
