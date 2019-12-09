@@ -62,37 +62,9 @@
                
 	            <? 
 
-               $renting_wizard_info = <<<EOF
-                 <p>This settings allows to build a <em>reservation engine wizard</em> like a <em>car rental company</em> or <em>accommodation</em> using the following steps:</p>
-                 <ol style="list-style:square; margin-left: 20px">
-                   <li>Selector widget in home page</li>
-                   <li><b>Choose vehicle/room/product</b> page</li>
-                   <li><b>Choose extras</b> page (optional)</li>
-                   <li><b>Complete reservation</b> page</li>
-                   <li>Payment</li>
-                   <li><b>Summary</b> page</li>
-                 </ol>
-                 <p>It is an option when having a few number of products 
-                 and we want to show all them in a single page with avalability and price information</p> 
-                 <hr>
-EOF;
-
-               $renting_navigation_info = <<<EOF
-                 <p>This settings allows to build a <em>reservation engine</em> with a <u>detailed page for each product</u>.</p>
-                 <p>It connects to <strong>mybooking API</strong> to retrieve the products, so it is not necessary to create a custom post type.</p>
-                 <p>There is a <em>"products"</em> pages where the user can select a product and a detail page which shows the
-                 availability calendar and from which the user can make a reservation.</p>
-EOF;
-
-               $activity_info = <<<EOF
-                 <p>Build an activities reservation site.</p>
-                 <ol style="list-style:square; margin-left: 20px">
-                   <li><b>Selector widget</b> in any of the activities page</li>
-                   <li><b>Shopping cart / Checkout</b> page</li>
-                   <li>Payment</li>
-                   <li><b>Summary</b> page</li>
-                 </ol>
-EOF;
+	             $renting_wizard_info = '';
+	             $renting_navigation_info = '';
+	             $activity_info = '';
 
 	             if ($active_tab == 'connection_options') { 
 			      	   settings_fields('mybooking_plugin_settings_group_connection'); 
