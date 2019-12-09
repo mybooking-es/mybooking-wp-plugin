@@ -254,7 +254,7 @@
 
       // Only for product page
       $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
-    	if ( preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
+    	if ( isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
     	  $classes[] = 'mybooking-product';
       }
 
@@ -310,7 +310,7 @@
 
       // Only for product page
       $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
-    	if ( preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
+    	if ( isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
         mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
       }
 
@@ -520,6 +520,7 @@
       else {
 		    $registry->mybooking_rent_plugin_api_key = '';      	
       }
+
       // Configuration
 		  $settings = (array) get_option("mybooking_plugin_settings_configuration");	  
       if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_selector', $settings)) {
