@@ -61,11 +61,6 @@
 		      <form action="options.php" method="POST">
                
 	            <? 
-
-	             $renting_wizard_info = '';
-	             $renting_navigation_info = '';
-	             $activity_info = '';
-
 	             if ($active_tab == 'connection_options') { 
 			      	   settings_fields('mybooking_plugin_settings_group_connection'); 
 			           echo '<table class="form-table">';
@@ -73,21 +68,18 @@
 			           echo '</table>';
 			         }	     
 			         else if ($active_tab == 'renting_wizard_options') {
-			         	 echo $renting_wizard_info;
 			      	   settings_fields('mybooking_plugin_settings_group_renting_wizard'); 
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_renting_wizard'); 
 			           echo '</table>';
 			         }   
 			         else if ($active_tab == 'renting_navigation_options') {
-			         	 echo $renting_navigation_info;
 			      	   settings_fields('mybooking_plugin_settings_group_renting_navigation'); 
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_renting_navigation'); 
 			           echo '</table>';
 			         }   			         
 			         else if ($active_tab == 'activities_options') {
-			         	 echo $activity_info;
 			      	   settings_fields('mybooking_plugin_settings_group_activities'); 
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_activities'); 
