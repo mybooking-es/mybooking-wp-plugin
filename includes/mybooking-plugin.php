@@ -496,26 +496,56 @@
 		  $registry = Mybooking_Registry::getInstance();
 
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
-		  $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
-		  $registry->mybooking_rent_plugin_api_url_prefix = 'https://'.$registry->mybooking_rent_plugin_account_id.'.mybooking.es';
-		  $registry->mybooking_rent_plugin_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_api_key"] ));
+		  if ($settings) {
+		    $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
+		    $registry->mybooking_rent_plugin_api_url_prefix = 'https://'.$registry->mybooking_rent_plugin_account_id.'.mybooking.es';
+		    $registry->mybooking_rent_plugin_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_api_key"] ));
+      }
+      else {
+		    $registry->mybooking_rent_plugin_account_id = '';
+		    $registry->mybooking_rent_plugin_api_url_prefix = '';;
+		    $registry->mybooking_rent_plugin_api_key = '';      	
+      }
 
 		  $settings = (array) get_option("mybooking_plugin_settings_renting_wizard");
-		  $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
-		  $registry->mybooking_rent_plugin_choose_extras_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_extras_page"] )));
-		  $registry->mybooking_rent_plugin_checkout_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_checkout_page"] )));
-		  $registry->mybooking_rent_plugin_summary_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_summary_page"] )));
+		  if ($settings) {
+		    $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
+		    $registry->mybooking_rent_plugin_choose_extras_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_extras_page"] )));
+		    $registry->mybooking_rent_plugin_checkout_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_checkout_page"] )));
+		    $registry->mybooking_rent_plugin_summary_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_summary_page"] )));
+      }
+      else {
+		    $registry->mybooking_rent_plugin_choose_products_page = ''; 
+		    $registry->mybooking_rent_plugin_choose_extras_page = ''; 
+		    $registry->mybooking_rent_plugin_checkout_page = '';
+		    $registry->mybooking_rent_plugin_summary_page = '';      	
+      }
 
-		  $settings = (array) get_option("mybooking_plugin_settings_renting_navigation");	  
-		  $registry->mybooking_rent_plugin_navigation_products_url = $settings["mybooking_plugin_settings_products_url"] ? $settings["mybooking_plugin_settings_products_url"] : 'products';
-		  
+		  $settings = (array) get_option("mybooking_plugin_settings_renting_navigation");	 
+		  if ($settings) { 
+		    $registry->mybooking_rent_plugin_navigation_products_url = $settings["mybooking_plugin_settings_products_url"] ? $settings["mybooking_plugin_settings_products_url"] : 'products';
+		  }
+		  else {
+		  	$registry->mybooking_rent_plugin_navigation_products_url = 'products';
+		  }
+
 		  $settings = (array) get_option("mybooking_plugin_settings_activities");	
-		  $registry->mybooking_activities_plugin_shopping_cart_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_activities_shopping_cart_page"] )));
-		  $registry->mybooking_activities_plugin_order_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_order_page"] )));
+		  if ($settings) {
+		    $registry->mybooking_activities_plugin_shopping_cart_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_activities_shopping_cart_page"] )));
+		    $registry->mybooking_activities_plugin_order_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_order_page"] )));
+      }
+      else {
+		    $registry->mybooking_activities_plugin_shopping_cart_page = ''; 
+		    $registry->mybooking_activities_plugin_order_page = ''; 
+      }
 
 		  $settings = (array) get_option("mybooking_plugin_settings_css");	  
-		  $registry->mybooking_rent_plugin_custom_css = (trim(esc_attr( $settings["mybooking_plugin_settings_custom_css"] )) == '1');
-
+      if ($settings) {
+		    $registry->mybooking_rent_plugin_custom_css = (trim(esc_attr( $settings["mybooking_plugin_settings_custom_css"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_custom_css = '';
+      }
 		}
 
 
