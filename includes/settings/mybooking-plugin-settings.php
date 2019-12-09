@@ -499,7 +499,7 @@ EOF;
 		  else {
 		  	$value = 'products';
 		  }
-		  echo "<input type='text' name='mybooking_plugin_settings_renting_navigation[$field]' value='$value' class='regular-text' />";
+		  echo "<input type='text' name='mybooking_plugin_settings_renting[$field]' value='$value' class='regular-text' />";
 		  echo "<p class=\"description\">The URL prefix that will show the products. The default is <em>products</em> but you can replace it depending on the context. Use vehicles, rooms, ...</p>";
       echo "<p class=\"description\">A new route /the-value will be accessible and this url will show the products retrieved from <b>mybooking API</b></p>";
 		}
