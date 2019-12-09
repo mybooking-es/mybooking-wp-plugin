@@ -495,6 +495,7 @@
 
 		  $registry = Mybooking_Registry::getInstance();
 
+      // Connection
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  if ($settings && array_key_exists('mybooking_plugin_settings_account_id', $settings)) {
 		    $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
@@ -515,40 +516,71 @@
 		    $registry->mybooking_rent_plugin_api_key = '';      	
       }
 
+      // Renting
 		  $settings = (array) get_option("mybooking_plugin_settings_renting_wizard");
-		  if ($settings && $settings['mybooking_plugin_settings_choose_products_page']) {
+		  if ($settings && array_key_exists('mybooking_plugin_settings_choose_products_page', $settings)) {
 		    $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
+		  }
+		  else {
+		    $registry->mybooking_rent_plugin_choose_products_page = ''; 
+		  }
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_choose_products_page', $settings)) {
+		    $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
+		  }
+		  else {
+		    $registry->mybooking_rent_plugin_choose_products_page = ''; 
+		  }
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_choose_extras_page', $settings)) {
 		    $registry->mybooking_rent_plugin_choose_extras_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_extras_page"] )));
+		  }
+		  else {
+		    $registry->mybooking_rent_plugin_choose_extras_page = ''; 
+		  }
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_checkout_page', $settings)) {
 		    $registry->mybooking_rent_plugin_checkout_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_checkout_page"] )));
+		  }
+		  else {
+		    $registry->mybooking_rent_plugin_checkout_page = '';
+		  }
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_summary_page', $settings)) {
 		    $registry->mybooking_rent_plugin_summary_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_summary_page"] )));
       }
       else {
-		    $registry->mybooking_rent_plugin_choose_products_page = ''; 
-		    $registry->mybooking_rent_plugin_choose_extras_page = ''; 
-		    $registry->mybooking_rent_plugin_checkout_page = '';
 		    $registry->mybooking_rent_plugin_summary_page = '';      	
       }
-
+      
+      // Renting navigation
 		  $settings = (array) get_option("mybooking_plugin_settings_renting_navigation");	 
-		  if ($settings) { 
+		  if ($settings && array_key_exists('mybooking_plugin_settings_summary_page', $settings)) { 
 		    $registry->mybooking_rent_plugin_navigation_products_url = $settings["mybooking_plugin_settings_products_url"] ? $settings["mybooking_plugin_settings_products_url"] : 'products';
 		  }
 		  else {
 		  	$registry->mybooking_rent_plugin_navigation_products_url = 'products';
 		  }
 
+      // Activities
 		  $settings = (array) get_option("mybooking_plugin_settings_activities");	
-		  if ($settings) {
+		  if ($settings && array_key_exists('mybooking_plugin_activities_shopping_cart_page', $settings)) {
 		    $registry->mybooking_activities_plugin_shopping_cart_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_activities_shopping_cart_page"] )));
-		    $registry->mybooking_activities_plugin_order_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_order_page"] )));
       }
       else {
 		    $registry->mybooking_activities_plugin_shopping_cart_page = ''; 
+      }
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_activities_order_page', $settings)) {
+		    $registry->mybooking_activities_plugin_order_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_order_page"] )));
+      }
+      else {
 		    $registry->mybooking_activities_plugin_order_page = ''; 
       }
 
+      // CSS
 		  $settings = (array) get_option("mybooking_plugin_settings_css");	  
-      if ($settings) {
+      if ($settings && array_key_exists('mybooking_plugin_settings_custom_css', $settings)) {
 		    $registry->mybooking_rent_plugin_custom_css = (trim(esc_attr( $settings["mybooking_plugin_settings_custom_css"] )) == '1');
       }
       else {
