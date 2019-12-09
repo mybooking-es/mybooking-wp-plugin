@@ -10,6 +10,27 @@
         var summaryUrl = '<?php echo $args['mybooking_summary_page']?>';
         var shoppingCartUrl = '<?php echo $args['mybooking_activities_shopping_cart_page']?>';
         var orderUrl = '<?php echo $args['mybooking_activities_order_page']?>';        
+        <?php if ($args['mybooking_google_api_places']) { ?>
+        var useGoogleMaps = true;
+        var googleMapsSettings = {
+          apiKey: '<?php echo $args['mybooking_google_api_places_api_key']?>',
+          settings: {
+            googleMapsRestrictCountryCode: '<?php echo $args['mybooking_google_api_places_restrict_country_code']?>',
+            <?php if ($args['mybooking_google_api_places_restrict_bounds']) { ?>
+            googlePlacesRetrictBounds: true,
+            googleMapsBoundsSWLat: <?php echo $args['mybooking_google_api_places_bounds_sw_lat'] ? $args['mybooking_google_api_places_bounds_sw_lat'] : 0 ?>,
+            googleMapsBoundsSWLng: <?php echo $args['mybooking_google_api_places_bounds_sw_lng'] ? $args['mybooking_google_api_places_bounds_sw_lng'] : 0 ?>,
+            googleMapsBoundsNELat: <?php echo $args['mybooking_google_api_places_bounds_ne_lat'] ? $args['mybooking_google_api_places_bounds_ne_lat'] : 0 ?>,
+            googleMapsBoundsNELng: <?php echo $args['mybooking_google_api_places_bounds_ne_lng'] ? $args['mybooking_google_api_places_bounds_ne_lng'] : 0 ?>            
+            <?php } else { ?>
+            googlePlacesRetrictBounds: false
+            <?php } ?>  
+          }
+        };
+        <?php } else { ?>
+        var useGoogleMaps = false;
+        <?php } ?> 
+
         function getBaseURL() {
           return baseURL;
         }
@@ -36,10 +57,22 @@
         }
         function getOrderUrl() {
           return orderUrl;
-        }        
+        }       
+        <?php if ($args['mybooking_google_api_places']) { ?>
+        function getUseGoogleMaps() {
+          return useGoogleMaps;
+        }
+        function getGoogleMapsSettings() {
+          return googleMapsSettings;
+        }
+        <?php } ?>
         return{
           baseURL: getBaseURL,
           apiKey: getApiKey,
+          <?php if ($args['mybooking_google_api_places']) { ?>          
+          useGoogleMaps: getUseGoogleMaps,
+          googleMapsSettings: getGoogleMapsSettings,  
+          <?php } ?>            
           extrasStep: getExtrasStep,
           chooseProductUrl: getChooseProductUrl,
           chooseExtrasUrl: getChooseExtrasUrl,

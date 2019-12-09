@@ -44698,7 +44698,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     custom_return_place_selector: 'input[name=custom_return_place]',
     return_place_container_selector: '.return_place',
     return_place_group_selector: '.return_place_group',
-    another_pickup_place_group_close: '.another_return_place_group_close',
+    another_return_place_group_close: '.another_return_place_group_close',
     
     date_from_selector: '#date_from',
     time_from_id: 'time_from',

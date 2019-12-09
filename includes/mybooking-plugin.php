@@ -278,7 +278,15 @@
 		      'mybooking_checkout_page' => $registry->mybooking_rent_plugin_checkout_page,
 		      'mybooking_summary_page' => $registry->mybooking_rent_plugin_summary_page,
 		      'mybooking_activities_shopping_cart_page' => $registry->mybooking_activities_plugin_shopping_cart_page,
-		      'mybooking_activities_order_page' => $registry->mybooking_activities_plugin_order_page
+		      'mybooking_activities_order_page' => $registry->mybooking_activities_plugin_order_page,
+		      'mybooking_google_api_places' => $registry->mybooking_plugin_google_api_places,
+		      'mybooking_google_api_places_api_key' => $registry->mybooking_plugin_google_api_places_api_key,
+		      'mybooking_google_api_places_restrict_country_code' => $registry->mybooking_plugin_google_api_places_restrict_country_code,
+		      'mybooking_google_api_places_restrict_bounds' => $registry->mybooking_plugin_google_api_places_restrict_bounds,
+		      'mybooking_google_api_places_bounds_sw_lat' => $registry->mybooking_plugin_google_api_places_bounds_sw_lat,
+		      'mybooking_google_api_places_bounds_sw_lng' => $registry->mybooking_plugin_google_api_places_bounds_sw_lng,
+		      'mybooking_google_api_places_bounds_ne_lat' => $registry->mybooking_plugin_google_api_places_bounds_ne_lat,
+		      'mybooking_google_api_places_bounds_ne_lng' => $registry->mybooking_plugin_google_api_places_bounds_ne_lng	      
 		  );
 		  mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
 		
@@ -499,21 +507,25 @@
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  if ($settings && array_key_exists('mybooking_plugin_settings_account_id', $settings)) {
 		    $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
-		  }
-		  else {
-		  	$registry->mybooking_rent_plugin_account_id = '';
-		  }
-		  if ($settings && array_key_exists('mybooking_plugin_settings_account_id', $settings)) {
 		    $registry->mybooking_rent_plugin_api_url_prefix = 'https://'.$registry->mybooking_rent_plugin_account_id.'.mybooking.es';
 		  }
 		  else {
-        $registry->mybooking_rent_plugin_api_url_prefix = '';
+		  	$registry->mybooking_rent_plugin_account_id = '';
+        $registry->mybooking_rent_plugin_api_url_prefix = '';		  	
 		  }
 		  if ($settings && array_key_exists('mybooking_plugin_settings_api_key', $settings)) {
 		    $registry->mybooking_rent_plugin_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_api_key"] ));
       }
       else {
 		    $registry->mybooking_rent_plugin_api_key = '';      	
+      }
+      // Configuration
+		  $settings = (array) get_option("mybooking_plugin_settings_configuration");	  
+      if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_selector', $settings)) {
+		    $registry->mybooking_plugin_google_api_places = (trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_selector"] )) == '1');
+      }
+      else {
+        $registry->mybooking_plugin_google_api_places = false;
       }
 
       // Renting
@@ -552,10 +564,8 @@
       else {
 		    $registry->mybooking_rent_plugin_summary_page = '';      	
       }
-      
-      // Renting navigation
-		  $settings = (array) get_option("mybooking_plugin_settings_renting_navigation");	 
-		  if ($settings && array_key_exists('mybooking_plugin_settings_summary_page', $settings)) { 
+ 
+		  if ($settings && array_key_exists('mybooking_plugin_settings_products_url', $settings)) { 
 		    $registry->mybooking_rent_plugin_navigation_products_url = $settings["mybooking_plugin_settings_products_url"] ? $settings["mybooking_plugin_settings_products_url"] : 'products';
 		  }
 		  else {
@@ -564,20 +574,64 @@
 
       // Activities
 		  $settings = (array) get_option("mybooking_plugin_settings_activities");	
-		  if ($settings && array_key_exists('mybooking_plugin_activities_shopping_cart_page', $settings)) {
-		    $registry->mybooking_activities_plugin_shopping_cart_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_activities_shopping_cart_page"] )));
+		  if ($settings && array_key_exists('mybooking_plugin_settings_activities_shopping_cart_page', $settings)) {
+		    $registry->mybooking_activities_plugin_shopping_cart_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_shopping_cart_page"] )));
       }
       else {
 		    $registry->mybooking_activities_plugin_shopping_cart_page = ''; 
       }
 
 		  if ($settings && array_key_exists('mybooking_plugin_settings_activities_order_page', $settings)) {
-		    $registry->mybooking_activities_plugin_order_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_order_page"] )));
+		    $registry->mybooking_activities_plugin_order_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_settings_activities_order_page"] )));
       }
       else {
 		    $registry->mybooking_activities_plugin_order_page = ''; 
       }
-
+      
+      // Google Places API
+      $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
+      if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_api_key', $settings)) {
+        $registry->mybooking_plugin_google_api_places_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_api_key"] ));
+      }
+      else {
+        $registry->mybooking_plugin_google_api_places_api_key = null;
+      }
+      if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_restrict_country_code', $settings)) {
+        $registry->mybooking_plugin_google_api_places_restrict_country_code = trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_restrict_country_code"] ));
+      }
+      else {
+        $registry->mybooking_plugin_google_api_places_restrict_country_code = null;
+      }
+      if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_restrict_bounds', $settings)) {
+        $registry->mybooking_plugin_google_api_places_restrict_bounds = (trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_restrict_bounds"] )) == '1');
+      }
+      else {
+        $registry->mybooking_plugin_google_api_places_restrict_bounds = false;
+      }
+      if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_bounds_sw_lat', $settings)) {
+        $registry->mybooking_plugin_google_api_places_bounds_sw_lat = floatval(trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_bounds_sw_lat"] )));
+      }
+      else {
+        $registry->mybooking_plugin_google_api_places_bounds_sw_lat = null;
+      }
+      if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_bounds_sw_lng', $settings)) {
+        $registry->mybooking_plugin_google_api_places_bounds_sw_lng = floatval(trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_bounds_sw_lng"] )));
+      }
+      else {
+        $registry->mybooking_plugin_google_api_places_bounds_sw_lng = null;
+      }      
+      if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_bounds_ne_lat', $settings)) {
+        $registry->mybooking_plugin_google_api_places_bounds_ne_lat = trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_bounds_ne_lat"] ));
+      }
+      else {
+        $registry->mybooking_plugin_google_api_places_bounds_ne_lat = null;
+      }
+      if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_bounds_ne_lng', $settings)) {
+        $registry->mybooking_plugin_google_api_places_bounds_ne_lng = trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_bounds_ne_lng"] ));
+      }
+      else {
+        $registry->mybooking_plugin_google_api_places_bounds_ne_lng = null;
+      }       
       // CSS
 		  $settings = (array) get_option("mybooking_plugin_settings_css");	  
       if ($settings && array_key_exists('mybooking_plugin_settings_custom_css', $settings)) {
