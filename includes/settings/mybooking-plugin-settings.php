@@ -286,7 +286,7 @@ EOF;
 		  
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  $field = "mybooking_plugin_settings_account_id";
-		  if (array_key_exists('mybooking_plugin_settings_account_id', $settings) {
+		  if (array_key_exists('mybooking_plugin_settings_account_id', $settings)) {
 		    $value = esc_attr( $settings[$field] );
 		  }
 		  else {
@@ -303,7 +303,7 @@ EOF;
 		  
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  $field = "mybooking_plugin_settings_api_key";
-		  if (array_key_exists('mybooking_plugin_settings_account_id', $settings) {
+		  if (array_key_exists('mybooking_plugin_settings_account_id', $settings)) {
 		    $value = esc_attr( $settings[$field] );
 		  }
 		  else {
