@@ -77,25 +77,14 @@
 	            <?php
 
                $renting_wizard_info = <<<EOF
-                 <p>This settings allows to build a <em>reservation engine wizard</em> like a <em>car rental company</em> or <em>accommodation</em> using the following steps:</p>
+                 <p>The following settings allows to build a <em>reservation engine</em> for a <u>car rental company</u> or <u>accommodation</u> using the following steps:</p>
                  <ol style="list-style:square; margin-left: 20px">
-                   <li>Selector widget in home page</li>
                    <li><b>Choose vehicle/room/product</b> page</li>
                    <li><b>Choose extras</b> page (optional)</li>
                    <li><b>Complete reservation</b> page</li>
-                   <li>Payment</li>
                    <li><b>Summary</b> page</li>
                  </ol>
-                 <p>It is an option when having a few number of products 
-                 and we want to show all them in a single page with avalability and price information</p> 
                  <hr>
-EOF;
-
-               $renting_navigation_info = <<<EOF
-                 <p>This settings allows to build a <em>reservation engine</em> with a <u>detailed page for each product</u>.</p>
-                 <p>It connects to <strong>mybooking API</strong> to retrieve the products, so it is not necessary to create a custom post type.</p>
-                 <p>There is a <em>"products"</em> pages where the user can select a product and a detail page which shows the
-                 availability calendar and from which the user can make a reservation.</p>
 EOF;
 
                $activity_info = <<<EOF
@@ -236,7 +225,7 @@ EOF;
 
       // == Creates connection fields
 		  add_settings_field('mybooking_plugin_settings_account_id',
-		                     'Mybooking Id',
+		                     'Mybooking Id or URL',
 		                     array($this, 'field_mybooking_plugin_settings_account_id_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_connection');
@@ -273,6 +262,12 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
+		  add_settings_field('mybooking_plugin_settings_products_url',
+		                     '<em>Products list page</em>',
+		                     array($this, 'field_mybooking_plugin_settings_products_url_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');
+
 		  add_settings_field('mybooking_plugin_settings_choose_extras_page',
 		                     'Choose extras page',
 		                     array($this, 'field_mybooking_plugin_settings_choose_extras_page_callback'),
@@ -290,13 +285,6 @@ EOF;
 		                     array($this, 'field_mybooking_plugin_settings_summary_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
-
-		  add_settings_field('mybooking_plugin_settings_products_url',
-		                     'Products URL',
-		                     array($this, 'field_mybooking_plugin_settings_products_url_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
-
 
       // == Creates activities section fields
 
@@ -383,6 +371,9 @@ EOF;
 		  }
 		  
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
+		  echo "<p class=\"description\">If you have a <b>mybooking subdomain</b> like <em>mycompany.mybookig.es</em>, input the subdomain name, <u>mycompany</u>."; 
+		  echo "<p class=\"description\">If your account is in other platform, like karyasala.com, just write the full domain, <em>https://karyasala.com</em>.</p>";
+
 		}
 
 		/**
@@ -469,6 +460,10 @@ EOF;
 		public function field_mybooking_plugin_settings_choose_products_page_callback() {
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_choose_products_page");
+		  echo "<p class=\"description\">This page is shown after the <u>reservation selector submit</u>."; 
+		  echo "<p class=\"description\">It shows <b>all</b> the <em>company products</em> and <u>availability</u> for the selected dates and allows the customer to pickup the product.</p>";
+		  echo "<p class=\"description\">This page is recommeded when the company offers a reduced set of categories, and holds an inventary of each one. For example, a <u>car rental company</u> or a <u>hotel</u>.</p>";
+		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://avis.com\" target=\"_blank\">avis.com</a>, <a href=\"https://www.hotelpalacebarcelona.com/\" target=\"_blank\">hotelpalacebarcelona.com</a></p>";
 
 		}
 
@@ -478,6 +473,7 @@ EOF;
 		public function field_mybooking_plugin_settings_choose_extras_page_callback() {
 		  
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_choose_extras_page");
+		  echo "<p class=\"description\">An <em>optional</em> step page that shows and allows to select the reservation extras.</p>";
 
 		}
 
@@ -487,6 +483,7 @@ EOF;
 		public function field_mybooking_plugin_settings_checkout_page_callback() {
 		  
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_checkout_page");
+		  echo "<p class=\"description\">The complete reservation or checkout page. It shows the fill data form to finish the reservation process.</p>";
 
 		}
 
@@ -496,6 +493,7 @@ EOF;
 		public function field_mybooking_plugin_settings_summary_page_callback() {
 		  
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_summary_page");
+		  echo "<p class=\"description\">The summary page. It shows the reservation information and allows the customer to fill the contract information and to pay.</p>";
 
 		}
 
@@ -513,8 +511,11 @@ EOF;
 		  	$value = 'products';
 		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_renting[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">The URL prefix that will show the products. The default is <em>products</em> but you can replace it depending on the context. Use vehicles, rooms, ...</p>";
-      echo "<p class=\"description\">A new route /the-value will be accessible and this url will show the products retrieved from <b>mybooking API</b></p>";
+		  echo "<p class=\"description\">This page shows the company products, paginating the results and links to the product detail page where a calendar with availability is shown."; 
+		  echo "<p class=\"description\">It creates a new URL route and access <em>mybooking</em> <b>API</b> to retrieve the data.</p>";
+		  echo "<p class=\"description\">This page is recommeded when the company offers a big quantity of products instead a reduced set of categories.</p>";
+		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://yescapa.com\" target=\"_blank\">yescapa.com</a>, <a href=\"https://www.airbnb.com/\" target=\"_blank\">airbnb.com</a></p>";
+      echo "<hr>";
 		}
 
     // == Activities

@@ -1,7 +1,7 @@
 	  <!-- Initialize mybookingEngine -->
 	  <script type="text/javascript">
       window.mybookingEngine = function(){
-        var baseURL = 'https://<?php echo $args['mybooking_account_id']?>.mybooking.es';
+        var baseURL = '<?php echo $args['mybooking_api_url_prefix']?>';
         var apiKey = '<?php echo $args['mybooking_api_key']?>';
         var extrasStep = false;
         var chooseProductUrl = '<?php echo $args['mybooking_choose_products_page']?>';

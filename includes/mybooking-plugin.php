@@ -52,30 +52,36 @@
    *
    * 1. Widgets
    *
-   * -- Contact
-   *
-   * Mybooking Engine Contact Widget
-   *
-   * -- Renting / Accommodation
-   *
-   * Mybooking Rent Engine Selector Widget
-   *
-   * -- Activities
-   *
-   * Mybooking Activities Engine Activity Widget
+   * - Contact widget
+   * - Renting selector widget
+   * - Activity buy tickets widget
    *
    * 2. Sort codes:
    *
-   * -- Renting / Accommodation
+   * 2.1 Renting
+   *
+   * - Show renting selector: The starting point for a reservation
    *
    * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number selector_type=horizontal]
+   *
+   * - Renting search results:
+   *
    * [mybooking_rent_engine_product_listing]
+   *
+   * - Renting complete: Checkout process
+   *
    * [mybooking_rent_engine_complete]
+   *
+   * - Renting summary page: It shows the reservation information
+   *
    * [mybooking_rent_engine_summary]
+   *
+   * - Product availability and calendar
+   *
    * [mybooking_rent_engine_product product_code=String]
    *
    *
-   * -- Activities
+   * 2.2 Activities
    *
    * [mybooking_activities_engine_activity activity_id=Number]
    * [mybooking_activities_engine_shopping_cart]
@@ -272,6 +278,7 @@
 
 		  // Include the initializer plugin
 		  $data = array(
+		  	  'mybooking_api_url_prefix' => $registry->mybooking_rent_plugin_api_url_prefix,
 		      'mybooking_account_id' => $registry->mybooking_rent_plugin_account_id,
 		      'mybooking_api_key' => $registry->mybooking_rent_plugin_api_key,
 		      'mybooking_choose_products_page' => $registry->mybooking_rent_plugin_choose_products_page,
@@ -508,7 +515,12 @@
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  if ($settings && array_key_exists('mybooking_plugin_settings_account_id', $settings)) {
 		    $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
-		    $registry->mybooking_rent_plugin_api_url_prefix = 'https://'.$registry->mybooking_rent_plugin_account_id.'.mybooking.es';
+		    if (filter_var($registry->mybooking_rent_plugin_account_id, FILTER_VALIDATE_URL)) { 
+		      $registry->mybooking_rent_plugin_api_url_prefix = $registry->mybooking_rent_plugin_account_id;
+		    }
+		    else {
+		      $registry->mybooking_rent_plugin_api_url_prefix = 'https://'.$registry->mybooking_rent_plugin_account_id.'.mybooking.es';
+		    }
 		  }
 		  else {
 		  	$registry->mybooking_rent_plugin_account_id = '';

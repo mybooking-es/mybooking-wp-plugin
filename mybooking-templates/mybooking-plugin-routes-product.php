@@ -1,11 +1,8 @@
 <?php get_header();?>
-
-<h1><?php echo $args->name ?></h1>
-<?php echo $args->description ?>
-
-<div class="content">
+<br>
+<div class="container">
 	<div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
 			  	<?php foreach( $args->photos as $key => $photo ) { ?>
@@ -23,8 +20,11 @@
 			    <span class="sr-only">Next</span>
 			  </a>
 			</div>
+			<h1 class="h2 mt-3"><?php echo $args->name ?></h1>
+			<h2 class="h4 mt-2">Acerca de</h2>
+      <?php echo $args->description ?>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-4">
       <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>			
 		</div>
 	</div>
