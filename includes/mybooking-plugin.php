@@ -170,6 +170,9 @@
 			// Shortcode Renting Product
 			add_shortcode('mybooking_rent_engine_product', array($this, 'wp_rent_product_shortcode' ));
 
+			// Shortcode Renting products
+			add_shortcode('mybooking_rent_engine_products', array($this, 'wp_rent_products_shortcode' ));
+
 			// -- Activities shortcodes
 
 			// Shortcode Activities - Activity
@@ -449,6 +452,45 @@
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-product-widget.php', $data);
       return ob_get_clean();
+
+    }
+
+    /**
+     * Mybooking products
+     */
+    public function wp_rent_products_shortcode($atts = [], $content = null, $tag = '') {
+
+			global $post;
+
+      $page = array_key_exists('page', $_GET) ? $_GET['page'] : 1;
+      $limit = array_key_exists('limit', $_GET) ? $_GET['limit'] : 12;
+      $offset = ($page - 1) * $limit;
+
+      // Get the products from the API
+      $registry = Mybooking_Registry::getInstance();
+      $url = $post->post_name;
+      $api_client = new MybookingApiClient($registry->mybooking_rent_plugin_api_url_prefix,
+      	                                   $registry->mybooking_rent_plugin_api_key);
+      $data =$api_client->get_products($offset, $limit);
+      if ( $data == null) {
+      	$data = (object) array('total' => 0,
+      		                     'data' => []);
+      }
+
+      // Pagination
+      $total_pages = ceil($data->total / $limit);
+      $current_page = floor($data->offset / $limit) + 1; 
+      $pagination = new MyBookingUIPagination();          
+      $pages = $pagination->pages($total_pages, $current_page);
+
+      $data = array('data' => $data,
+      	            'total_pages' => $total_pages,
+      	            'current_page' => $current_page,
+      	            'pages' => $pages,
+                    'url' => $url);
+			ob_start();
+      mybooking_engine_get_template('mybooking-plugin-products.php', $data);
+		  return ob_get_clean();
 
     }
 
