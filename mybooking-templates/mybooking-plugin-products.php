@@ -8,7 +8,7 @@
 					  <div class="card-body">
 					    <h5 class="card-title"><?php echo $product->name ?></h5>
 					    <p class="card-text"><?php echo $product->short_description ?></p>
-					    <a href="/<?php echo $args['url']?>/<?php echo $product->code?>" class="btn btn-primary">Más información</a>
+					    <a href="/<?php echo $args['url_detail']?>/<?php echo $product->code?>" class="btn btn-primary">Más información</a>
 					  </div>
 					</div>
 			  </div>
@@ -22,7 +22,7 @@
 				<nav aria-label="Page navigation example" class="pull-right">
 				  <ul class="pagination">
 				    <li class="page-item <?php if ($args['current_page'] == 1) { ?>disabled<?php } ?>">
-				    	  <a class="page-link" href="/<?php echo $args['url']?>?page=<?php echo $args['current_page']-1 ?>">Previous</a>
+				    	  <a class="page-link" href="/<?php echo $args['url']?>?offsetpage=<?php echo $args['current_page']-1 ?>">Previous</a>
 				    </li>
 	          <?php foreach ($args['pages'] as $page) { ?>
 		          <?php if ($page == $args['current_page']) { ?>
@@ -33,12 +33,12 @@
 						    </li>			          
 		          <?php } else { ?> 
 		            <li class="page-item">
-		      	      <a class="page-link" href="/<?php echo $args['url']?>?page=<?php echo $page ?>"><?php echo $page ?></a>
+		      	      <a class="page-link" href="/<?php echo $args['url']?>?offsetpage=<?php echo $page ?>"><?php echo $page ?></a>
 		      	    </li>  
 		      	  <?php } ?>
 				    <?php } ?>	    
 				    <li class="page-item <?php if ($args['current_page'] == $args['total_pages']) { ?>disabled<?php } ?>">
-				    	  <a class="page-link" href="/<?php echo $args['url']?>?page=<?php echo $args['current_page']+1 ?>">Next</a>
+				    	  <a class="page-link" href="/<?php echo $args['url']?>?offsetpage=<?php echo $args['current_page']+1 ?>">Next</a>
 				    </li>
 				  </ul>
 				</nav>

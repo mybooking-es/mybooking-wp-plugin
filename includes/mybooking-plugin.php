@@ -462,13 +462,16 @@
 
 			global $post;
 
-      $page = array_key_exists('page', $_GET) ? $_GET['page'] : 1;
+      $page = array_key_exists('offsetpage', $_GET) ? $_GET['offsetpage'] : 1;
       $limit = array_key_exists('limit', $_GET) ? $_GET['limit'] : 12;
       $offset = ($page - 1) * $limit;
 
+      // URL for pagination
+      $url = $post->post_name;
+
       // Get the products from the API
       $registry = Mybooking_Registry::getInstance();
-      $url = $post->post_name;
+      $url_detail = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
       $api_client = new MybookingApiClient($registry->mybooking_rent_plugin_api_url_prefix,
       	                                   $registry->mybooking_rent_plugin_api_key);
       $data =$api_client->get_products($offset, $limit);
@@ -487,7 +490,8 @@
       	            'total_pages' => $total_pages,
       	            'current_page' => $current_page,
       	            'pages' => $pages,
-                    'url' => $url);
+                    'url' => $url,
+                    'url_detail' => $url_detail);
 			ob_start();
       mybooking_engine_get_template('mybooking-plugin-products.php', $data);
 		  return ob_get_clean();
