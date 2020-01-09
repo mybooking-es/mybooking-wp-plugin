@@ -204,7 +204,12 @@ class AltoRouter
             $requestUrl = substr($requestUrl, 0, $strpos);
         }
 
-        $lastRequestUrlChar = $requestUrl[strlen($requestUrl)-1];
+        if (strlen($requestUrl) === 0) {
+          $lastRequestUrlChar = '';  
+        } 
+        else {
+          $lastRequestUrlChar = $requestUrl[strlen($requestUrl)-1];
+        }
 
         // set Request Method if it isn't passed as a parameter
         if ($requestMethod === null) {
