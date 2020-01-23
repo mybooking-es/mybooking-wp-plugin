@@ -79,7 +79,10 @@
    * - Product availability and calendar
    *
    * [mybooking_rent_engine_product product_code=String]
+   * 
+   * - Reservation 
    *
+   * [mybooking_rent_engine_reservation]
    *
    * 2.2 Activities
    *
