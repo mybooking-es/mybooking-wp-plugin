@@ -167,6 +167,9 @@
 			// Shortcode Renting Wizard - Summary
 			add_shortcode('mybooking_rent_engine_summary', array($this, 'wp_summary_shortcode' ));
 
+      // Shortcode Renting Reservation
+			add_shortcode('mybooking_rent_engine_reservation', array($this, 'wp_reservation_shortcode' ));
+
 			// Shortcode Renting Product
 			add_shortcode('mybooking_rent_engine_product', array($this, 'wp_rent_product_shortcode' ));
 
@@ -251,6 +254,11 @@
 		  	$classes[] = 'mybooking-activity-order';
 		  }
 		 
+      // Renting shortcode : reservation
+      if ( $post && has_shortcode( $post->post_content, 'mybooking_rent_engine_reservation') ) {
+      	$classes[] = 'reservation';
+      } 
+
 		  // Renting shortcode : product (resource) [availability and selector]
 		  if ( $post && has_shortcode( $post->post_content , 'mybooking_rent_engine_product') ) {
 		  	$classes[] = 'mybooking-product';
@@ -277,6 +285,9 @@
 		 */
 		public function wp_setup_script() {
 
+      // Get the post outside a loop
+			global $post;
+		  
 		  $registry = Mybooking_Registry::getInstance();
 
 		  // Include the initializer plugin
@@ -317,6 +328,11 @@
 		  else if ( $registry->mybooking_activities_plugin_order_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_order_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-activities-order-tmpl.php');
 		  }
+
+      // Renting shortcode : reservation
+      if ( $post && has_shortcode( $post->post_content, 'mybooking_rent_engine_reservation') ) {
+      	mybooking_engine_get_template('mybooking-plugin-reservation-tmpl.php');
+      } 
 
       // Only for product page
       $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
@@ -434,6 +450,17 @@
 			
 			ob_start();
 			mybooking_engine_get_template('mybooking-plugin-summary.php');
+			return ob_get_clean();
+
+		}
+
+		/**
+		 * Mybooking rent engine Complete shortcode
+		 */
+		public function wp_reservation_shortcode($atts = [], $content = null, $tag = '') {
+			
+			ob_start();
+			mybooking_engine_get_template('mybooking-plugin-reservation.php');
 			return ob_get_clean();
 
 		}
