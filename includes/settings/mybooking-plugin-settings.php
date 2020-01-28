@@ -346,11 +346,19 @@ EOF;
 
 		  // == Create css section fields
 
+		  add_settings_field('mybooking_plugin_settings_components_css',
+		                     'Include CSS Components',
+		                     array($this, 'field_mybooking_plugin_settings_components_css_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_css');
+
+
 		  add_settings_field('mybooking_plugin_settings_custom_css',
-		                     'Include plugin CSS',
+		                     'Include CSS Framework',
 		                     array($this, 'field_mybooking_plugin_settings_custom_css_callback'),
 		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');  
+		                     'mybooking_plugin_settings_css');
+
 
 		}
 
@@ -664,7 +672,31 @@ EOF;
     // == CSS
 
 		/**
-		 * Render Mybooking Custom CSS
+		 * Render Mybooking CSS components
+		 */
+		public function field_mybooking_plugin_settings_components_css_callback() {
+		  
+		  $settings = (array) get_option("mybooking_plugin_settings_css");
+		  $field = "mybooking_plugin_settings_components_css";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  } 
+		  
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Include <b>CSS</b> for <u>JS components</u> like <em>Jquery UI datepicker</em> and <em>Jquery DateRange</em>."; 
+		  echo "<p class=\"description\">It's recommended to include it if your are developing your own theme.</p>";
+
+
+		}
+
+		/**
+		 * Render Mybooking CSS Framework
 		 */
 		public function field_mybooking_plugin_settings_custom_css_callback() {
 		  
@@ -680,6 +712,9 @@ EOF;
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Include <b>CSS Framework</b> to build the <u>UI</u> (default Bulma)."; 
+		  echo "<p class=\"description\">It's recommended to include it you are not planning to override the plugin templates.</p>";
 		}
 
     // ------------------------

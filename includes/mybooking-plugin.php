@@ -199,19 +199,21 @@
 
 		  $registry = Mybooking_Registry::getInstance();
 
-		  if ($registry->mybooking_rent_plugin_custom_css) {
-
+		  if ($registry->mybooking_rent_plugin_components_css) {
 			  // Load JQUERY UI Style
-			  wp_enqueue_style('wp_style_jqueryui',
+			  wp_enqueue_style('wp_css_components_jqueryui',
 			                   'https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/css/custom-theme/jquery-ui-1.10.0.custom.css');
-			  // Load Bulma Style
-			  wp_enqueue_style('wp_style_bulma',
-			                   'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css');
 			  // Load JQUERY Date Range
-        wp_enqueue_style('wp_style_jquery_date_range',
+        wp_enqueue_style('wp_css_components_jquery_date_range',
         	               'https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.20.0/daterangepicker.css');
+		  }
+
+		  if ($registry->mybooking_rent_plugin_custom_css) {
+			  // Load Bulma Style
+			  wp_enqueue_style('wp_css_framework_bulma',
+			                   'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css');
 			  // Load custom style
-			  wp_enqueue_style('wp_custom_style',
+			  wp_enqueue_style('wp_css_framework_custom_style',
 			                   plugins_url('/assets/styles/styles.css', dirname(__FILE__) ) );
 
 			}
@@ -723,7 +725,13 @@
         $registry->mybooking_plugin_google_api_places_bounds_ne_lng = null;
       }       
       // CSS
-		  $settings = (array) get_option("mybooking_plugin_settings_css");	  
+		  $settings = (array) get_option("mybooking_plugin_settings_css");	 
+		  if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {
+				$registry->mybooking_rent_plugin_components_css = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css"] )) == '1');
+		  }
+		  else {
+		  	$registry->mybooking_rent_plugin_components_css = '';
+		  }
       if ($settings && array_key_exists('mybooking_plugin_settings_custom_css', $settings)) {
 		    $registry->mybooking_rent_plugin_custom_css = (trim(esc_attr( $settings["mybooking_plugin_settings_custom_css"] )) == '1');
       }
