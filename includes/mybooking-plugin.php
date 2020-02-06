@@ -674,7 +674,7 @@
       }
 
 		  if ($settings && array_key_exists('mybooking_plugin_settings_activities_order_page', $settings)) {
-		    $registry->mybooking_activities_plugin_order_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_settings_activities_order_page"] )));
+		    $registry->mybooking_activities_plugin_order_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_order_page"] )));
       }
       else {
 		    $registry->mybooking_activities_plugin_order_page = ''; 

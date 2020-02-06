@@ -24,10 +24,17 @@
           <div class="tile is-child">
             <form name="select_date_form" id="select_date_form">
               <input type="hidden" name="activity_id" id="activity_id" value="<%=activity.id%>"/>
-              <select name="activity_date_id" id="activity_date_id"
-                      class="selectpicker" data-live-search="true" data-width="auto"
-                      data-toggle="tooltip" title="Select" data-container="body">
-              </select>
+              <div>
+                <div class="field">
+                  <div class="control">
+                    <div class="select is-fullwidth">              
+                      <select name="activity_date_id" id="activity_date_id"
+                              class="selectpicker" data-live-search="true" data-width="auto"
+                              data-toggle="tooltip" title="Select" data-container="body">
+                      </select>
+                  </div>
+                </div>
+              </div>
               <div id="tickets"></div>
             </form>
           </div>

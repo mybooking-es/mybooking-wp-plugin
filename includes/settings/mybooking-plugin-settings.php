@@ -533,7 +533,7 @@ EOF;
 		 */
 		public function field_mybooking_plugin_settings_activities_shopping_cart_page_callback() {
 		  
-		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_activities_shopping_cart_page");
+		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_shopping_cart_page");
 
 		}
 
