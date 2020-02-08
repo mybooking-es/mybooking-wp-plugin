@@ -1,33 +1,33 @@
     <!-- Activities : Shopping cart page -->
     <section class="section reservation-step">
-      <div class="columns">
-          <!-- CONTENT -->
-          <div class="column is-two-thirds">
+      <div class="container">
+        <div class="row mt-5">
 
+          <!-- CONTENT -->
+          <div class="col-md-7">
             <!-- Products -->
             <div id="selected_products"></div>
-
-            <form id="form-reservation" name="reservation_form" class="form-delivery" method="post" autocomplete="off">
-              <div id="reservation_container"></div>
-              <div id="payment_detail"></div>
-            </form>
-
-            <!-- Reservation buttons -->
-
-            <div id="reservation_error" class="alert alert-danger" style="display:none">
-            </div>
-
           </div>
           <!-- /CONTENT -->
 
           <!-- SIDEBAR -->
-          <div class="column is-one-third">
-            <div class="widget shadow widget-details-reservation">
+          <div class="col-md-5">
+
+            <!-- Reservation form -->
+            <form id="form-reservation" name="reservation_form" class="form-delivery" method="post" autocomplete="off">
+              <div id="reservation_container"></div>
               <div id="reservation_detail">
               </div>
+              <div id="payment_detail"></div>
+            </form>
+            <!-- Reservation error -->
+            <div id="reservation_error" class="alert alert-danger" style="display:none">
             </div>
+            <br>
+
           </div>
           <!-- /SIDEBAR -->
+        </div>
       </div>  
     </section>
     <!-- /Activities : Shopping cart page -->

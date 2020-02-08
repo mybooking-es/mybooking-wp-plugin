@@ -1,51 +1,38 @@
     <section class="widget widget_mybooking_engine_contact">
       <form id="widget_contact_form" name="widget_contact_form" autocomplete="off">
 
-              <div class="field field-body">
-                <div class="field">
-                  <label class="label">Nombre*</label>
-                  <div class="control is-expanded">
-                      <input name="customer_name" id="customer_name" type="text" class="input" placeholder="Nombre:*">
-                  </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="customer_name">Nombre*</label>
+                <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="Nombre:*">
                 </div>
-                <div class="field">
-                  <label class="label">Apellidos*</label>
-                  <div class="control is-expanded">
-                      <input name="customer_surname" id="customer_surname" type="text" class="input"  placeholder="Apellidos:*">
-                  </div>
+                <div class="form-group col-md-6">
+                <label for="customer_surname">Apellidos*</label>
+                <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="Apellidos:*">
                 </div>
               </div>
 
-              <div class="field">
-                <label class="label">Correo electrónico*</label>
-                <div class="control is-expanded">
-                    <input name="customer_email" id="customer_email" type="text" class="input"  placeholder="Correo electrónico:*">
-                </div>
+              <div class="form-group">
+                <label for="customer_email">Correo electrónico*</label>
+                <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="Correo electrónico:*">
               </div>
 
-              <div class="field">
-                <label class="label">Teléfono*</label>
-                <div class="control is-expanded">
-                    <input name="customer_phone" id="customer_phone" type="text" class="input"  placeholder="Teléfono:*">
-                </div>
+              <div class="form-group">
+                <label for="customer_phone">Teléfono*</label>
+                <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="Teléfono:*">
+              </div>                    
+
+              <div class="form-group">
+                <label for="customer_name">Mensaje*</label>
+                <textarea class="form-control" name="comments" id="comments" placeholder="Mensaje"></textarea>
+              </div>   
+
+              <div class="form-group">
+                <div class="alert alert-danger" id="contact_form_errors" style="display: none"></div>
               </div>
 
-              <div class="field">
-                <label class="label">Mensaje*</label>
-                <div class="control is-expanded">
-                    <textarea name="comments" id="comments" class="textarea" placeholder="Mensaje"></textarea>
-                </div>
-              </div>
-
-              <div class="field">
-                  <div class="message is-danger" id="contact_form_errors" style="display: none">
-                   </div>
-              </div>
-
-              <div class="field is-grouped">
-                <div class="control">
-                  <button id="send_message_button" type="submit" class="button is-primary">Enviar</a>
-                </div>
+              <div class="form-group">
+                <button id="send_message_button" type="submit" class="btn btn-primary">Enviar</a> 
               </div>  
 
       </form>

@@ -201,21 +201,37 @@
 
 		  if ($registry->mybooking_rent_plugin_components_css) {
 			  // Load JQUERY UI Style
-			  wp_enqueue_style('wp_css_components_jqueryui',
+			  wp_enqueue_style('mybooking_wp_css_components_jqueryui',
 			                   'https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/css/custom-theme/jquery-ui-1.10.0.custom.css');
 			  // Load JQUERY Date Range
-        wp_enqueue_style('wp_css_components_jquery_date_range',
+        wp_enqueue_style('mybooking_wp_css_components_jquery_date_range',
         	               'https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.20.0/daterangepicker.css');
+
+        // Custom style
+			  wp_enqueue_style('mybooking_wp_css_components_custom_style',
+			                   plugins_url('/assets/styles/custom-styles.css', dirname(__FILE__) ) );
 		  }
 
 		  if ($registry->mybooking_rent_plugin_custom_css) {
 			  // Load Bulma Style
+/*
 			  wp_enqueue_style('wp_css_framework_bulma',
 			                   'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css');
 			  // Load custom style
 			  wp_enqueue_style('wp_css_framework_custom_style',
 			                   plugins_url('/assets/styles/styles.css', dirname(__FILE__) ) );
+*/
+				// Load bootstrap Style
+			  wp_enqueue_style('mybooking_wp_css_framework_bootstrap',
+			                   'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
 
+			  wp_enqueue_style('mybooking_wp_css_framework_fontawesom',
+			  								 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*
+			  wp_enqueue_style('wp_css_framework_custom_style',
+			                   plugins_url('/assets/styles/custom-styles.css', dirname(__FILE__) ) );
+*/
 			}
 
 		}
