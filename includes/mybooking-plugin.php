@@ -21,6 +21,7 @@
 
 	// Widgets
 	require_once('widgets/mybooking-plugin-rent-selector-widget.php');
+	require_once('widgets/mybooking-plugin-rent-selector-wizard-widget.php');	
 	require_once('widgets/mybooking-plugin-activity-widget.php');
 	require_once('widgets/mybooking-plugin-contact-widget.php');
 	// Settings
@@ -149,6 +150,9 @@
 			// Register Renting Selector Widget
 			add_action( 'widgets_init', array($this, 'wp_selector_widget') );
 
+			// Register Renting Selector Wizard Widget
+			add_action( 'widgets_init', array($this, 'wp_selector_wizard_widget') );
+
 			// Register Activities Activity Widget
 			add_action( 'widgets_init', array($this, 'wp_activities_activity_widget') );
 
@@ -159,8 +163,11 @@
 
       // -- Renting shortcodes
 
-      // Shortcode Renting Wizard - Selector
+      // Shortcode Renting Selector
       add_shortcode('mybooking_rent_engine_selector', array($this, 'wp_rent_selector_shortcode') );
+
+      // Shortcode Renting Selector Wizard
+      add_shortcode('mybooking_rent_engine_selector_wizard', array($this, 'wp_rent_selector_wizard_shortcode') );
 
 			// Shortcode Renting Wizard - Product listing
 			add_shortcode('mybooking_rent_engine_product_listing', array($this, 'wp_product_listing_shortcode' ));
@@ -264,6 +271,12 @@
 			     has_shortcode( $post->post_content , 'mybooking_rent_engine_selector') ) {
 				$classes[] = 'mybooking-selector-widget';
 			}		
+
+			// Selector Wizard widget or shortcode
+			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
+			     has_shortcode( $post->post_content , 'mybooking_rent_engine_selector_wizard') ) {
+				$classes[] = 'mybooking-selector-wizard';
+			}		
 		  
 		  // Renting reservation steps pages
 		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
@@ -348,6 +361,12 @@
 		  );
 		  mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
 		
+		  // Renting Selector Wizard shortcode / widget
+			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
+			     has_shortcode( $post->post_content , 'mybooking_rent_engine_selector_wizard') ) {
+				mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
+			}		
+
 		  // Load scripts
 		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php');
@@ -404,6 +423,15 @@
 		 */
 		public function wp_selector_widget() {
 
+		  register_widget( 'MyBookingRentEngineSelectorWizardWidget' );
+
+		}
+
+		/**
+		 * Register selector Widget 
+		 */
+		public function wp_selector_wizard_widget() {
+
 		  register_widget( 'MyBookingRentEngineSelectorWidget' );
 
 		}
@@ -458,6 +486,31 @@
       else {
       	mybooking_engine_get_template('mybooking-plugin-selector-widget.php', $data);
       }
+	    return ob_get_clean();
+	
+		}
+
+    /**
+     * Wizard selector wizard shortcode
+     */
+    public function wp_rent_selector_wizard_shortcode($atts = [], $content = null, $tag = '') {
+			
+      // Extract the shortcode attributes			
+			extract( shortcode_atts( array('sales_channel_code' => '', 
+				                             'family_id' => ''), $atts ) );
+
+		  $data = array();
+
+      if ( $sales_channel_code != '' ) {
+      	$data['sales_channel_code'] = $sales_channel_code;
+      }
+
+      if ( $family_id != '' ) {
+      	$data['family_id'] = $family_id;
+      }
+
+			ob_start();
+     	mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget.php', $data);
 	    return ob_get_clean();
 	
 		}
