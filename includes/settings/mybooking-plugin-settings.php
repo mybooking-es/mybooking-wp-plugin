@@ -294,9 +294,9 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
 
-		  add_settings_field('mybooking_plugin_settings_activities_order_page',
+		  add_settings_field('mybooking_plugin_settings_activities_summary_page',
 		                     'Summary page',
-		                     array($this, 'field_mybooking_plugin_settings_activities_order_page_callback'),
+		                     array($this, 'field_mybooking_plugin_settings_activities_summary_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
 
@@ -540,9 +540,9 @@ EOF;
 		/**
 		 * Render Mybooking Activities order/reservation page
 		 */
-		public function field_mybooking_plugin_settings_activities_order_page_callback() {
+		public function field_mybooking_plugin_settings_activities_summary_page_callback() {
 		  
-		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_order_page");
+		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_summary_page");
 
 		}
 

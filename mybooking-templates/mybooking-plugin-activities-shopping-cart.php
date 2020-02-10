@@ -1,5 +1,8 @@
     <!-- Activities : Shopping cart page -->
     <section class="section reservation-step">
+      <div class="jumbotron">
+        <h1 class="display-6 text-center">Su compra</h1>
+      </div>
       <div class="container">
         <div class="row mt-5">
 

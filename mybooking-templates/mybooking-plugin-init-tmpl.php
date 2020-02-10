@@ -9,7 +9,7 @@
         var completeUrl = '<?php echo $args['mybooking_checkout_page']?>';
         var summaryUrl = '<?php echo $args['mybooking_summary_page']?>';
         var shoppingCartUrl = '<?php echo $args['mybooking_activities_shopping_cart_page']?>';
-        var orderUrl = '<?php echo $args['mybooking_activities_order_page']?>';        
+        var orderUrl = '<?php echo $args['mybooking_activities_summary_page']?>';        
         <?php if ($args['mybooking_google_api_places']) { ?>
         var useGoogleMaps = true;
         var googleMapsSettings = {

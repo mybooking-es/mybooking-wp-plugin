@@ -16,7 +16,7 @@
               <p class="card-text text-muted"><%= configuration.formatDate(shopping_cart.items[idx].date) %> <%= shopping_cart.items[idx].time %></p>
               <br>
               <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table">
                   <tbody>
                     <% for (var x=0; x<shopping_cart.items[idx]['items'].length; x++) { %>
                       <tr>
@@ -24,14 +24,14 @@
                               <%=shopping_cart.items[idx]['items'][x].item_price_description %> x
                               <%=configuration.formatCurrency(shopping_cart.items[idx]['items'][x].item_unit_cost) %>
                           </td>
-                          <td class="has-text-right">
+                          <td class="text-right">
                               <%=configuration.formatCurrency(shopping_cart.items[idx]['items'][x].item_cost) %>
                           </td>
                       </tr>
                     <% } %>    
                     <tr>
-                      <td class="has-text-weight-bold">Total</td>
-                      <td class="has-text-weight-bold has-text-right"><%=configuration.formatCurrency(shopping_cart.items[idx]['total'])%></td>
+                      <td><strong>Total</strong></td>
+                      <td class="text-right"><strong><%=configuration.formatCurrency(shopping_cart.items[idx]['total'])%></strong></td>
                   </tbody>
                 </table>
               </div>
@@ -100,31 +100,12 @@
 
       <div class="jumbotron mb-3">
         <h2 class="h5">Importe total <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.total_cost)%></span></h2>
+        <hr>
       </div>
 
       <input type="hidden" name="payment" value="none">
 
-      <%
-         var canPay = (shopping_cart.can_pay_deposit || shopping_cart.can_pay_total);
-         var paymentAmount = 0;
-         var selectionOptions = 0;
-
-         if (shopping_cart.can_make_request) {
-           selectionOptions += 1;
-         }
-
-         if (canPay) {
-           selectionOptions += 1;
-           if (shopping_cart.can_pay_deposit) {
-              paymentAmount = shopping_cart.deposit_payment_amount;
-           }
-           else {
-              paymentAmount = shopping_cart.total_payment_amount;
-           }           
-         }
-      %>
-
-      <% if (selectionOptions > 1) { %>
+      <% if (canRequestAndPay) { %>
         <hr>
         <div class="form-row">
            <% if (shopping_cart.can_make_request) { %>
@@ -147,7 +128,7 @@
       <!-- Request reservation -->
 
       <% if (shopping_cart.can_make_request) { %>
-      <div id="request_reservation_container" <% if (selectionOptions > 1 || !shopping_cart.can_make_request) { %>style="display:none"<%}%>>
+      <div id="request_reservation_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>>
         <div class="border p-4">
           <div class="form-row">
             <div class="form-group col-md-12">
@@ -166,10 +147,9 @@
       </div>
       <% } %>
 
-
       <% if (canPay) { %>
 
-        <div id="payment_now_container" <% if (selectionOptions > 1 || !canPay) { %>style="display:none"<%}%>>
+        <div id="payment_now_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>>
 
             <div class="border p-4">
                 <h4><%=i18next.t('complete.reservationForm.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%></h4>
