@@ -37,8 +37,6 @@ class MyBookingRentEngineSelectorWizardWidget extends WP_Widget {
             $data['family_id'] = '';
         }
 
-        echo 'data-array'.var_dump($data);
-
     	mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget.php', $data);
     }
  
