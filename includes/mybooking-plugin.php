@@ -61,6 +61,8 @@
    *
    * 2.1 Renting
    *
+   * 2.1.1 Reservation Wizard
+   *
    * - Show renting selector: The starting point for a reservation
    *
    * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number selector_type=horizontal]
@@ -77,13 +79,19 @@
    *
    * [mybooking_rent_engine_summary]
    *
+   * - My reservation
+   *
+   * [mybooking_rent_engine_reservation]
+   *
+   * 2.1.2 Products explorer
+   *
+   * - Products
+   *
+   * [mybooking_rent_engine_products]
+   *
    * - Product availability and calendar
    *
    * [mybooking_rent_engine_product product_code=String]
-   * 
-   * - Reservation 
-   *
-   * [mybooking_rent_engine_reservation]
    *
    * 2.2 Activities
    *
@@ -181,11 +189,11 @@
       // Shortcode Renting Reservation
 			add_shortcode('mybooking_rent_engine_reservation', array($this, 'wp_reservation_shortcode' ));
 
-			// Shortcode Renting Product
-			add_shortcode('mybooking_rent_engine_product', array($this, 'wp_rent_product_shortcode' ));
-
 			// Shortcode Renting products
 			add_shortcode('mybooking_rent_engine_products', array($this, 'wp_rent_products_shortcode' ));
+
+			// Shortcode Renting Product
+			add_shortcode('mybooking_rent_engine_product', array($this, 'wp_rent_product_shortcode' ));
 
 			// -- Activities shortcodes
 
@@ -236,7 +244,7 @@
 			  wp_enqueue_style('mybooking_wp_css_framework_bootstrap',
 			                   'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
 
-			  wp_enqueue_style('mybooking_wp_css_framework_fontawesom',
+			  wp_enqueue_style('mybooking_wp_css_framework_fontawesome',
 			  								 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 /*

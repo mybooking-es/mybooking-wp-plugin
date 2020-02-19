@@ -17,6 +17,16 @@
 
 /** OVERRIDE JQUERY UI **/
 
+  /**
+   * Include datepicker in full-size-datepicker-container to make it 100%
+   */
+  .full-size-datepicker-container .ui-datepicker,
+  .full-size-datepicker-container .ui-datepicker table {
+      width: 100% !important;
+      height: 100% !important;
+  }
+
+
  /* Header */
   .ui-datepicker .ui-datepicker-header {
     background-color: transparent !important;
@@ -40,14 +50,15 @@
   }
 
   .ui-datepicker {
+/*    
     width: 100% !important;
     height: 100% !important;
-    border: 0 !important;
+*/    border: 0 !important;
   }
   .ui-datepicker table {
-    width: 100% !important;
+/*    width: 100% !important;
     height: 100% !important;
-  }
+*/  }
   .ui-datepicker table th span {
     font-size: 1.4em !important;
     text-align: center !important;

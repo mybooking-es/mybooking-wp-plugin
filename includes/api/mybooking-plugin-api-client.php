@@ -28,6 +28,10 @@
 
           $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCTS.'?offset='.$offset.'&limit='.$limit;
 
+          if ( isset($this->api_key) && !empty($this->api_key)) {
+            $url = $url.'&api_key='.$this->api_key;
+          }
+
           // Query data
 					$request = wp_remote_get( $url );
 					if( is_wp_error( $request ) ) {
@@ -47,6 +51,10 @@
     public function get_product($code) {
 
           $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCT.$code;
+
+          if ( isset($this->api_key) && !empty($this->api_key)) {
+            $url = $url.'&api_key='.$this->api_key;
+          }
 
           // Query data
 					$request = wp_remote_get( $url );

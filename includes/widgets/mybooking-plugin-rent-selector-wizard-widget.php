@@ -21,10 +21,15 @@ class MyBookingRentEngineSelectorWizardWidget extends WP_Widget {
     public function widget( $args, $instance ) {
 
         // outputs the content of the widget
-        $data = array(
-             'sales_channel_code' => $instance['sales_channel_code'],
-             'family_id' => $instance['family_id']
-        );
+        $data = array();
+
+        if ( array_key_exists('sales_channel_code', $instance) ) {
+            $data['sales_channel_code'] = $instance['sales_channel_code'];
+        }
+
+        if ( array_key_exists('family_id', $instance) ) {
+            $data['family_id'] = $instance['family_id'];
+        }
 
     	mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget.php', $data);
     }
