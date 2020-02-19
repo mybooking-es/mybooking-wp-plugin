@@ -26,17 +26,28 @@ class MyBookingRentEngineSelectorWidget extends WP_Widget {
         if ( array_key_exists('sales_channel_code', $instance) ) {
             $data['sales_channel_code'] = $instance['sales_channel_code'];
         }
+        else {
+            $data['sales_channel_code'] = '';
+        }
 
         if ( array_key_exists('family_id', $instance) ) {
             $data['family_id'] = $instance['family_id'];
         }
+        else {
+            $data['family_id'] = '';
+        }
 
-        if ( $instance['selector_type'] == 'horizontal' ) {
-          mybooking_engine_get_template('mybooking-plugin-selector-widget-horizontal.php', $data);
+        if ( array_key_exists('selector_type', $instance) ) {
+            if ( $instance['selector_type'] == 'horizontal' ) {
+              mybooking_engine_get_template('mybooking-plugin-selector-widget-horizontal.php', $data);
+            }
+            else {
+        	  mybooking_engine_get_template('mybooking-plugin-selector-widget.php', $data);
+            }
         }
         else {
-    	  mybooking_engine_get_template('mybooking-plugin-selector-widget.php', $data);
-        }
+           mybooking_engine_get_template('mybooking-plugin-selector-widget.php', $data); 
+        }   
     }
  
     public function form( $instance ) {
