@@ -37,6 +37,8 @@ class MyBookingRentEngineSelectorWidget extends WP_Widget {
             $data['family_id'] = '';
         }
 
+        echo 'data-array'.var_dump($data);
+
         if ( array_key_exists('selector_type', $instance) ) {
             if ( $instance['selector_type'] == 'horizontal' ) {
               mybooking_engine_get_template('mybooking-plugin-selector-widget-horizontal.php', $data);
