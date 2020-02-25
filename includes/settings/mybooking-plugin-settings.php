@@ -262,12 +262,6 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
-		  add_settings_field('mybooking_plugin_settings_products_url',
-		                     '<em>Products list page</em>',
-		                     array($this, 'field_mybooking_plugin_settings_products_url_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
-
 		  add_settings_field('mybooking_plugin_settings_choose_extras_page',
 		                     'Choose extras page',
 		                     array($this, 'field_mybooking_plugin_settings_choose_extras_page_callback'),
@@ -286,6 +280,12 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
+		  add_settings_field('mybooking_plugin_settings_products_url',
+		                     '<em>Product page URL prefix</em>',
+		                     array($this, 'field_mybooking_plugin_settings_products_url_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');
+
       // == Creates activities section fields
 
 		  add_settings_field('mybooking_plugin_settings_activities_shopping_cart_page',
@@ -297,6 +297,12 @@ EOF;
 		  add_settings_field('mybooking_plugin_settings_activities_summary_page',
 		                     'Summary page',
 		                     array($this, 'field_mybooking_plugin_settings_activities_summary_page_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_activities');
+
+		  add_settings_field('mybooking_plugin_settings_activities_url',
+		                     '<em>Activity page URL prefix</em>',
+		                     array($this, 'field_mybooking_plugin_settings_activities_url_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
 
@@ -519,11 +525,13 @@ EOF;
 		  	$value = 'products';
 		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_renting[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">This page shows the company products, paginating the results and links to the product detail page where a calendar with availability is shown."; 
+		  echo "<p class=\"description\">This page shows a company product detail page. This page includes a calendar with its availability."; 
+		  echo "<p class=\"description\">This should be used with a <b>products navigation page</b> created with the [mybooking_rent_engine_products] shortcode."; 
+      echo "<p class=\"description\">Create the navigation page with a slug of <em>products</em> and then select <u>products</u> as the <em>product page url prefix</em>.";
 		  echo "<p class=\"description\">It creates a new URL route and access <em>mybooking</em> <b>API</b> to retrieve the data.</p>";
 		  echo "<p class=\"description\">This page is recommeded when the company offers a big quantity of products instead a reduced set of categories.</p>";
 		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://yescapa.com\" target=\"_blank\">yescapa.com</a>, <a href=\"https://www.airbnb.com/\" target=\"_blank\">airbnb.com</a></p>";
-      echo "<hr>";
+
 		}
 
     // == Activities
@@ -545,6 +553,30 @@ EOF;
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_summary_page");
 
 		}
+
+		/**
+		 * Render Mybooking Products URL 
+		 */
+		public function field_mybooking_plugin_settings_activities_url_callback() {
+		  
+		  $settings = (array) get_option("mybooking_plugin_settings_activities");
+		  $field = "mybooking_plugin_settings_activities_url";
+		  if (array_key_exists($field, $settings)) {
+		    $value = $settings[$field] ? esc_attr( $settings[$field] ) : 'activities';
+		  }
+		  else {
+		  	$value = 'activities';
+		  }
+		  echo "<input type='text' name='mybooking_plugin_settings_activities[$field]' value='$value' class='regular-text' />";
+		  echo "<p class=\"description\">This page shows a company activity detail page. This page includes a calendar with its availability."; 
+		  echo "<p class=\"description\">This should be used with an <b>activities navigation page</b> created with the [mybooking_rent_engine_activities] shortcode."; 
+      echo "<p class=\"description\">Create the navigation page with a slug of <em>activities</em> and then select <u>activities</u> as the <em>activity page url prefix</em>.";
+		  echo "<p class=\"description\">It creates a new URL route and access <em>mybooking</em> <b>API</b> to retrieve the data.</p>";
+		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://getyourguide.com\" target=\"_blank\">getyourguide.com</a></p>";
+
+		}
+
+		
 
     // == Google API Places
 

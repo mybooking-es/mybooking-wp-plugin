@@ -16,6 +16,8 @@
   require_once('ui/mybooking-plugin-ui-pages.php');
   require_once('ui/mybooking-plugin-ui-pagination.php');
   require_once('api/mybooking-plugin-api-client.php');
+  require_once('ui/mybooking-plugin-activities-ui-pages.php');  
+  require_once('api/mybooking-plugin-activities-api-client.php');  
 
   // == WordPress components
 
@@ -67,6 +69,8 @@
    *
    * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number selector_type=horizontal]
    *
+   * [mybooking_rent_enting_selector_wizard]
+   *
    * - Renting search results:
    *
    * [mybooking_rent_engine_product_listing]
@@ -95,6 +99,7 @@
    *
    * 2.2 Activities
    *
+   * [mybooking_activities_engine_activities]
    * [mybooking_activities_engine_activity activity_id=Number]
    * [mybooking_activities_engine_shopping_cart]
    * [mybooking_activities_engine_summary]
@@ -196,6 +201,9 @@
 			add_shortcode('mybooking_rent_engine_product', array($this, 'wp_rent_product_shortcode' ));
 
 			// -- Activities shortcodes
+
+			// Shortcode Activities - Activities
+			add_shortcode('mybooking_activities_engine_activities', array($this, 'wp_activities_activities_shortcode' ));	
 
 			// Shortcode Activities - Activity
 			add_shortcode('mybooking_activities_engine_activity', array($this, 'wp_activities_activity_shortcode' ));	
@@ -310,10 +318,12 @@
 		  // == Activities
 
 		  // Activities reservation steps pages 
-		  if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
+		  if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && 
+		  		 mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
 		  	$classes[] = 'mybooking-activity-shopping-cart';
 		  }
-		  else if ( $registry->mybooking_activities_plugin_summary_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_summary_page ) ) {
+		  else if ( $registry->mybooking_activities_plugin_summary_page != '' && 
+		  		      mybooking_engine_is_page( $registry->mybooking_activities_plugin_summary_page ) ) {
 		  	$classes[] = 'mybooking-activity-summary';
 		  }
 
@@ -332,6 +342,11 @@
     	  $classes[] = 'mybooking-product';
       }
 
+      // Only for activity page
+      $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
+    	if ( isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
+    	  $classes[] = 'mybooking-activity';
+      }
 
 		  return $classes;
 
@@ -407,6 +422,13 @@
     	if ( isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
         mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
       }
+
+      // Activity page : reservation widget
+      $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
+    	if ( isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
+        mybooking_engine_get_template('mybooking-plugin-activity-widget-tmpl.php');
+      }
+
 
 		}
 
@@ -627,6 +649,48 @@
 
     }
 
+    /**
+     * Mybooking activities
+     */
+    public function wp_activities_activities_shortcode($atts = [], $content = null, $tag = '') {
+
+			global $post;
+
+      $page = array_key_exists('offsetpage', $_GET) ? $_GET['offsetpage'] : 1;
+      $limit = array_key_exists('limit', $_GET) ? $_GET['limit'] : 12;
+      $offset = ($page - 1) * $limit;
+
+      // URL for pagination
+      $url = $post->post_name;
+
+      // Get the products from the API
+      $registry = Mybooking_Registry::getInstance();
+      $url_detail = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
+      $api_client = new MyBookingActivitiesApiClient($registry->mybooking_rent_plugin_api_url_prefix,
+      	                                   					$registry->mybooking_rent_plugin_api_key);
+      $data =$api_client->get_activities($offset, $limit);
+      if ( $data == null) {
+      	$data = (object) array('total' => 0,
+      		                     'data' => []);
+      }
+
+      // Pagination
+      $total_pages = ceil($data->total / $limit);
+      $current_page = floor($data->offset / $limit) + 1; 
+      $pagination = new MyBookingUIPagination();          
+      $pages = $pagination->pages($total_pages, $current_page);
+
+      $data = array('data' => $data,
+      	            'total_pages' => $total_pages,
+      	            'current_page' => $current_page,
+      	            'pages' => $pages,
+                    'url' => $url,
+                    'url_detail' => $url_detail);
+			ob_start();
+      mybooking_engine_get_template('mybooking-plugin-activities.php', $data);
+		  return ob_get_clean();
+
+    }
 
     // -- Activities
 
@@ -787,6 +851,13 @@
       else {
 		    $registry->mybooking_activities_plugin_summary_page = ''; 
       }
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_activities_url', $settings)) { 
+		    $registry->mybooking_rent_plugin_navigation_activities_url = $settings["mybooking_plugin_settings_activities_url"] ? $settings["mybooking_plugin_settings_activities_url"] : 'activities';
+		  }
+		  else {
+		  	$registry->mybooking_rent_plugin_navigation_activities_url = 'activities';
+		  }
       
       // Google Places API
       $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
@@ -869,31 +940,22 @@
 		private function init_routes() {
 
       $registry = Mybooking_Registry::getInstance();
-      $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
 
-      // Renting products route
-			Routes::map($url, array($this, 'products_page'));
- 
+
       // Renting product detail route
+      $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
 			Routes::map($url.'/:id', function($params) {
 				$this->product_page($params);
 			});
 
+			// Activity detail route
+      $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
+			Routes::map($url.'/:id', function($params) {
+				$this->activity_page($params);
+			});
+
+
 		}
-
-    /**
-     * Load the products page
-     */
-    function products_page() {
-
-          // GET the pagination query parameters
-          $page = array_key_exists('page', $_GET) ? $_GET['page'] : 1;
-          $limit = array_key_exists('limit', $_GET) ? $_GET['limit'] : 12;
-
-          $ui_products = new MyBookingUIPages();
-          $ui_products->products($page, $limit);
-        
-    }
 
     /**
      * Load the product page
@@ -907,6 +969,19 @@
           $ui_products->product($code);         
 
     }
+
+    /**
+     * Load the activity page
+     */
+    function activity_page($params) {
+ 
+          // Get the product code
+          $code = $params['id'];
+
+          $ui_products = new MyBookingUIActivitiesPages();
+          $ui_products->activity($code);         
+
+    }    
 
 
   }

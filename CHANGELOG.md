@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.4]
+
+### Added
+
+- Activities module: Activities Api client
+- Activities module: Activities list and pagination shortcode
+- Activities module: Activity detail page route
+
 ## [0.5.3] 2020-02-10
 
 ### Added
