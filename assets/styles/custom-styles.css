@@ -17,75 +17,145 @@
 
 /** OVERRIDE JQUERY UI **/
 
-  /**
-   * Include datepicker in full-size-datepicker-container to make it 100%
-   */
-  .full-size-datepicker-container .ui-datepicker,
-  .full-size-datepicker-container .ui-datepicker table {
-      width: 100% !important;
-      height: 100% !important;
-  }
-
-
- /* Header */
-  .ui-datepicker .ui-datepicker-header {
-    background-color: transparent !important;
-    padding: 20px !important;
-    border-bottom: 1px solid #EEE;
-    padding-bottom: 0px !important;
-    margin-bottom: 5px !important;
-
-  }
-
-  /* Title */
-  .ui-datepicker-title {
-    position: relative !important;
-    top: -15px !important;
-    margin: 0 !important;
-  }
-
-  /* Month and year */
-  .ui-datepicker-month, .ui-datepicker-year {
-    font-size: 1.4em !important;
-  }
-
-  .ui-datepicker {
-/*    
+/**
+ * Include datepicker in full-size-datepicker-container to make it 100%
+ */
+.full-size-datepicker-container .ui-datepicker,
+.full-size-datepicker-container .ui-datepicker table {
     width: 100% !important;
     height: 100% !important;
+}
+
+
+/* Header */
+.ui-datepicker .ui-datepicker-header {
+  background-color: transparent !important;
+  padding: 20px !important;
+  border-bottom: 1px solid #EEE;
+  padding-bottom: 0px !important;
+  margin-bottom: 5px !important;
+
+}
+
+/* Title */
+.ui-datepicker-title {
+  position: relative !important;
+  top: -15px !important;
+  margin: 0 !important;
+}
+
+/* Month and year */
+.ui-datepicker-month, .ui-datepicker-year {
+  font-size: 1.4em !important;
+}
+
+.ui-datepicker {
+/*    
+  width: 100% !important;
+  height: 100% !important;
 */    border: 0 !important;
-  }
-  .ui-datepicker table {
+}
+.ui-datepicker table {
 /*    width: 100% !important;
-    height: 100% !important;
+  height: 100% !important;
 */  }
-  .ui-datepicker table th span {
-    font-size: 1.4em !important;
-    text-align: center !important;
-    color: #d7d6d6;
-  }
+.ui-datepicker table th span {
+  font-size: 1.4em !important;
+  text-align: center !important;
+  color: #d7d6d6;
+}
 
-  .ui-datepicker table td span,
-  .ui-datepicker table td a {
-    height: 100%;
-    font-size: 1.4em !important;
-    box-shadow: none !important; /* Avoid shadow on cells */
-  }
+.ui-datepicker table td span,
+.ui-datepicker table td a {
+  height: 100%;
+  font-size: 1.4em !important;
+  box-shadow: none !important; /* Avoid shadow on cells */
+}
 
-  .ui-datepicker-prev:before{
-      content: '\f053';
-      font-family: 'FontAwesome';
-      font-size: 20px;
-      /*left: -6px !important;*/
-  }
+.ui-datepicker-prev:before{
+    content: '\f053';
+    font-family: 'FontAwesome';
+    font-size: 20px;
+    /*left: -6px !important;*/
+}
 
-  .ui-datepicker-next:before {
-      content: '\f054';
-      font-family: 'FontAwesome';
-      font-size: 20px;
-      /*right: -6px !important;*/
-  }
+.ui-datepicker-next:before {
+    content: '\f054';
+    font-family: 'FontAwesome';
+    font-size: 20px;
+    /*right: -6px !important;*/
+}
 
-  .ui-icon {
-        background-image: none !important;
-  }
+.ui-icon {
+      background-image: none !important;
+}
+
+/** Override Jquery daterange **/
+
+.bg-warning {
+   background-color: #ffbe4a;
+   color: #000000 !important;
+}
+
+.bg-danger {
+   background-color: #f18484;
+   color: #ffffff !important;
+}
+
+.not-selectable-day {
+   color: #ccc !important;
+}
+
+.date-picker-wrapper .month-wrapper table .day {
+  font-size: 14px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.month-name .month-element {
+  font-size: 24px;
+}
+.date-picker-wrapper .month-wrapper table .caption {
+  height: 90px;
+}  
+.date-picker-wrapper .month-wrapper table .week-name {
+  height: 40px;
+}  
+.week-name th {
+  font-size: 14px; 
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.date-picker-wrapper {
+  border: none;
+  background-color: none;
+  padding: 0;
+}
+.date-picker-wrapper .month-wrapper {
+  border: none;
+}
+.date-picker-wrapper.no-topbar {
+  padding-top: 0;
+}
+.date-picker-wrapper.no-shortcuts {
+  padding-bottom: 0;
+}
+.date-picker-wrapper{
+  background-color: transparent;
+}
+.date-picker-wrapper .footer {  
+  background-color: transparent;
+  padding-bottom: 0px;
+}
+.date-picker-wrapper .gap {
+  height: 0px !important;
+}
+.disabled-picker {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/** Google Autocomplete **/
+
+.pac-container {
+    z-index: 10000 !important;
+}

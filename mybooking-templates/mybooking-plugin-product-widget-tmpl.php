@@ -1,14 +1,14 @@
     <script type="text/tmpl" id="script_reservation_summary">
-        <div class="tile is-parent is-vertical">
-          <div class="tile is-child notification has-background-light">
-            <p class="title">Reserva</h4>
-            <div class="content">
-              <p class="has-text-weight-semibold">Duración del alquiler: <%=shopping_cart.days%> día/s</p>
-            </div> 
-          </div> 
-          <div class="tile is-child notification has-background-light">
-            <p class="title">Importe total</p>
-            <p class="subtitle"><span class="is-pulled-right"><%= configuration.formatCurrency(shopping_cart.total_cost)%></span></p>
-          </div>
+        <hr>
+        <div class="jumbotron mb-3">
+          <h2 class="h4">Resumen de la reserva</h2>
+          <hr>
+          <% if (shopping_cart.days) { %>
+          <p class="lead">Duración del alquiler: <span class="pull-right"><%=shopping_cart.days%> día/s</span></p>
+          <% } else if (shopping_cart.hours) { %>
+					<p class="lead">Duración del alquiler: <span class="pull-right"><%=shopping_cart.hours%> hora/s</span></p>
+          <% } %>
+          <p class="lead">Importe total: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.total_cost)%></span></p>
         </div>
+
     </script>

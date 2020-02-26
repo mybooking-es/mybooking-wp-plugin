@@ -417,6 +417,11 @@
       	mybooking_engine_get_template('mybooking-plugin-activities-order-tmpl.php');
       }       
 
+      // Renting shortcode : Product calendar
+      if ( $post && has_shortcode( $post->post_content, 'mybooking_rent_engine_product') ) {
+      	mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
+      } 
+
       // Product page : reservation widget
       $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
     	if ( isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
