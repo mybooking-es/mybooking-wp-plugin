@@ -1,12 +1,9 @@
-			<div class="reservation-step">
-				<div class="columns">
-          <div class="column is-three-fifths">
-            <div id="product_listing"></div>
-          </div>
-          <aside class="column is-two-fifths">
-            <div id="reservation_detail" class="tile is-ancestor">
-            </div>            	
-          </aside>					
-				</div>
-				<?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
-      </div>
+<div class="row">
+  <div class="col-lg-3">
+    <div id="reservation_detail"></div>
+  </div>
+  <div class="col-lg-9">
+    <div id="product_listing"></div>
+  </div>
+</div>
+<?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>

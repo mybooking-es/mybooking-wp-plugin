@@ -1,87 +1,69 @@
-		    <!-- Modal to change selection -->
-		    <div class="modal">
-		      <div class="modal-background">
-		      </div>
-		      <div class="modal-card">
-		        <header class="modal-card-head">
-		          <p class="modal-card-title">Modificar búsqueda</p>
-		          <button id="close_modal_button" class="delete" aria-label="close"></button>
-		        </header>        
-		        <section class="modal-card-body">
-		          <form
-		            name="search_form"
-		            method="get"
-		            enctype="application/x-www-form-urlencoded">
-		            <!-- Entrega -->
-		            <div class="field">
-		              <label class="label">Entrega</label>
-		              <div class="control">
-		                <div class="select is-fullwidth">
-		                  <select id="pickup_place" name="pickup_place"> </select>
-		                </div>
-		              </div>
-		            </div>
-		            <div class="field">
-		              <div class="control">
-		                <label class="checkbox">
-		                    <input type="checkbox" id="same_pickup_return_place" name="same_pickup_return_place" 
-		                           checked/>&nbsp;&nbsp;Devolver en la misma oficina
-		                </label>
-		              </div>
-		            </div>
-		            <div class="field field-body">
-		              <div class="field">
-		                <div class="control is-expanded">
-		                  <input
-		                          type="text"
-		                          id="date_from"
-		                          name="date_from"
-		                          class="input"
-		                          autocomplete="off"
-		                        />
-		                </div>
-		              </div>
-		              <div class="field">
-		                <div class="control">
-		                  <div class="select is-fullwidth">
-		                    <select id="time_from" name="time_from"> </select>
-		                  </div>
-		                </div>
-		              </div>
-		            </div>
-		            <!-- Devolución -->
-		            <div class="field">
-		              <label class="label">Devolución</label>
-		              <div class="control return_place">
-		                <div class="select is-fullwidth">
-		                  <select id="return_place" name="return_place"> </select>
-		                </div>
-		              </div>          
-		            </div>
-		            <div class="field field-body">
-		              <div class="field">
-		                <div class="control is-expanded">
-		                  <input type="text" id="date_to" name="date_to" autocomplete="off" class="input"/>
-		                </div>
-		              </div>
-		              <div class="field">
-		                <div class="control">
-		                  <div class="select is-fullwidth">
-		                    <select id="time_to" name="time_to"> </select>
-		                  </div>
-		                </div>
-		              </div>
-		            </div>
-		            <div class="field is-horizontal">
-		              <div class="field-body">
-		                <div class="field">
-		                  <div class="control">
-		                    <input class="button is-primary" type="submit" value="Nueva búsqueda" />
-		                  </div>
-		                </div>
-		              </div>
-		            </div>        
-		          </form>
-		        </section>
-		      </div>
-		    </div> 
+<div style="position:absolute">
+  <div class="modal fade" 
+       id="choose_productModal" tabindex="-1" role="dialog" aria-labelledby="choose_productModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modificar reserva</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form
+            name="search_form"
+            method="get"
+            enctype="application/x-www-form-urlencoded">
+            
+		        <!-- Entrega -->
+		        <div class="form-row">
+		          <div class="form-group col-md-12">
+		              <label for="date_from">Lugar de entrega</label>
+		              <select class="form-control" name="pickup_place" id="pickup_place"></select>
+		          </div>
+		        </div>
+
+		        <div class="form-row">
+		          <div class="form-group col-md-6">
+		              <label for="date_from">Fecha de entrega</label>
+		              <input type="text" class="form-control" name="date_from" id="date_from" autocomplete="off">
+		          </div>
+		          <div class="form-group col-md-6">
+		              <label for="time_to">Hora de entrega</label>
+		              <select class="form-control" name="time_from" id="time_from"></select>
+		          </div>
+		        </div>
+
+		        <!-- Devolución -->
+		        <div class="form-row">
+		          <div class="form-group col-md-12">
+		            <label for="date_from">Lugar de devolución</label>
+		            <select class="form-control" name="return_place" id="return_place"></select>
+		          </div>
+		        </div>       
+
+		        <div class="form-row">
+		          <div class="form-group col-md-6">
+		              <label for="date_from">Fecha de devolución</label>
+		              <input type="text" class="form-control" name="date_to" id="date_to" autocomplete="off">
+		          </div>
+		          <div class="form-group col-md-6">
+		              <label for="time_to">Hora de devolución</label>
+		              <select class="form-control" name="time_to" id="time_to"></select>
+		          </div>
+		        </div>
+        
+            
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <input class="btn btn-success" type="submit" value="Nueva búsqueda" />
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

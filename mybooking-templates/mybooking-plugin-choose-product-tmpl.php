@@ -1,76 +1,120 @@
     <!-- Script to show product search -->
     <script type="text/tpml" id="script_detailed_product">
-      <% for (var idxP=0;idxP<products.length;idxP++) { %>
-        <% var product = products[idxP]; %>
-        <div class="<% if (idxP % 2 == 1) {%>has-background-light<%}%>">
-          <div class="columns">
-            <div class="column">
-              <h2 class="title"><%=product.name%></h2>
+      <div class="row">
+        <% for (var idxP=0;idxP<products.length;idxP++) { %>
+          <% if (idxP % 2 == 0 && idxP > 0) { %>
             </div>
-          </div>
-          <div class="columns">
-            <div class="column is-one-third">
-              <img src="<%=product.photo%>" alt="">           
-            </div>
-            <div class="column is-one-third">
-              <%=product.description%>
-            </div>
-            <div class="column is-one-third">
-              <div class="hero">
-                <div class="hero-head">&nbsp;</div>
-                <div class="hero-foot">
-                  <!-- Offer or Promotion Code-->
-                  <% if (product.price != product.base_price) { %>
-                    <!-- Offer -->             
-                    <% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
-                      <p><%=new Number(product.offer_value)%>% <%=product.offer_name%></p>
-                    <% } %>
-                    <!-- Offer or promotion code -->
-                    <p class="has-text-centered"><small style="text-decoration: line-through"><%= configuration.formatCurrency(product.base_price)%></small></p>
-                  <% } %>
-                  <h3 class="has-text-info is-size-3 has-text-weight-bold has-text-centered"><%= configuration.formatCurrency(product.price)%></h3>
+            <div class="row">
+          <% } %>
+          <% var product = products[idxP]; %>
+          <div class="col-md-6">
+            <div class="product-card card d-flex flex-column mb-2">
+              <img class="card-img-top" src="<%=product.full_photo%>" alt="<%=product.name%>">
+              <div class="card-body">
+                <h5 class="card-title text-center"><%=product.short_description%></h5>
+                <p class="card-text text-center text-muted"><%=product.name%></p>
+                <!-- Multiple products -->
+                <% if (configuration.multipleProductsSelection) { %>  
                   <% if (product.availability) { %>
-                    <% if (product.few_available_units) { %>
-                    <p class="has-text-danger has-text-centered">¡Quedan pocas unidades!</p>  
-                    <br>
-                    <% } %>              
-                    <a class="button is-primary btn-choose-product is-fullwidth" role="button" data-product="<%=product.code%>">Reservar</a>
+                  <div class="car-listing-selector">
+                    <select class="form-control select-choose-product" data-value="<%=product.code%>">
+                      <% for (var idx=0;idx<=(product.available);idx++) { %>
+                        <option value="<%=idx%>" <% if (product.code && product.code == idx) { %>selected="selected"<%}%>>
+                          <%=idx%> (<%= configuration.formatCurrency(product.price * idx) %>)
+                        </option>
+                      <% } %>
+                      </select>
+                    </div>
                   <% } else { %>
-                    <p class="has-text-centered">Modelo no disponible en la oficina y fechas seleccionadas</p>
+                    <p class="text-center text-muted">No hay productos disponibles</p>
                   <% } %>
-                </div>
+                <% } else { %>  
+                  <!-- Offer name -->
+                  <% if (product.price != product.base_price) { %>
+                    <% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
+                      <div class="card-info-container">
+                         <div class="card-info">
+                            <span class="badge badge-info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
+                         </div>
+                      </div>
+                    <% } %>
+                  <% } %>
+                  <!-- Price -->
+                  <h3 class="text-center mt-5 mb-2">
+                     <% if (product.price != product.base_price) { %>
+                     <small class="h6" style="text-decoration: line-through"><%= configuration.formatCurrency(product.base_price)%></small>
+                     <% } %>
+                     <%= configuration.formatCurrency(product.price)%>
+                  </h3>
+                  <!-- Few units -->
+                  <% if (product.availability && product.few_available_units) { %>
+                    <div class="card-info-container">
+                       <div class="card-info text-danger">
+                          <span class="text-danger"><small>¡Quedan pocas unidades!</small></span>
+                       </div>  
+                    </div>
+                  <% } %>
+                <% } %>  
               </div>
+              <% if (!configuration.multipleProductsSelection) { %>
+              <div class="card-body">
+                  <% if (product.availability) { %>
+                    <button class="btn btn-primary btn-choose-product w-100" data-product="<%=product.code%>">Reservar</button>
+                  <% } else { %>
+                    <div class="card-info-container">
+                       <div class="card-info">
+                          <span class="badge badge-dark">Modelo no disponible en la oficina y fechas seleccionadas</span>
+                       </div>  
+                    </div>
+                  <% } %>
+              </div>
+              <% } %>
             </div>
           </div>
+        <% } %>
+      </div>
+      <br>
+      <% if (configuration.multipleProductsSelection) { %>
+      <div class="row">
+        <div class="col-md-12">
+          <button id="go_to_complete" class="btn btn-primary">Siguiente</button>
         </div>
+      </div>
       <% } %>
     </script>
 
     <!-- Script detailed for reservation summary -->
     <script type="text/tmpl" id="script_reservation_summary">
-      <div class="tile is-parent is-vertical">
-        <div class="tile is-child notification has-background-light">
-          <p class="title">Reserva</h4>
-          <div class="content">
-            <p class="subtitle has-text-weight-semibold has-text-grey">Entrega</p>
-            <ul>
-              <li><%=shopping_cart.pickup_place_customer_translation%></li>
-              <li><%=shopping_cart.date_from_full_format%> <%=shopping_cart.time_from%></li>
-            </ul>
-          </div>
-          <div class="content">
-            <p class="subtitle has-text-weight-semibold has-text-grey">Devolución</p>
-            <ul>
-              <li><%=shopping_cart.return_place_customer_translation%></li>
-              <li><%=shopping_cart.date_to_full_format%> <%=shopping_cart.time_to%></li>
-            </ul>
-          </div>
-          <div class="content">
-            <p class="has-text-weight-semibold">Duración del alquiler: <%=shopping_cart.days%> día/s</p>
-            <div class="is-pulled-right">
-              <button id="modify_reservation_button" class="button is-primary">Modificar reserva</button>  
-            </div>  
-          </div> 
-        </div> 
+
+      <div class="reservation-summary-card card mb-3">
+        <div class="card-header">
+          <b>Su reserva</b>
+        </div>
+        <ul class="list-group list-group-flush">
+          <% if (configuration.pickupReturnPlace) {%>
+          <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.pickup_place_customer_translation%></li>
+          <% } %>
+          <li class="list-group-item reservation-summary-card-detail">
+            <i class="fa fa-calendar-o"></i>&nbsp;
+            <%=shopping_cart.date_from_full_format%>
+            <% if (configuration.timeToFrom) { %>
+              <%=shopping_cart.time_from%>
+            <% } %>  
+          </li>
+          <% if (configuration.pickupReturnPlace) {%>
+          <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.return_place_customer_translation%></li>
+          <% } %>
+          <li class="list-group-item reservation-summary-card-detail">
+            <i class="fa fa-calendar-o"></i>&nbsp;
+            <%=shopping_cart.date_to_full_format%>
+            <% if (configuration.timeToFrom) { %>
+              <%=shopping_cart.time_to%>
+            <% } %> 
+          </li>
+          <li class="list-group-item reservation-summary-card-detail">Duración del alquiler: <%=shopping_cart.days%> día/s</li>
+          <li class="list-group-item"><button id="modify_reservation_button" class="btn btn-primary w-100" data-toggle="modal" data-target="#choose_productModal">Modificar reserva</button></li>
+        </ul>
       </div>
+
+      
     </script> 

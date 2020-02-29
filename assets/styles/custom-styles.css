@@ -1,3 +1,81 @@
+/** ======== Reservation Engine ========= **/
+
+/* -- Selector -- */
+
+/* -- Select product -- */
+
+.reservation-summary-card-detail {
+  font-size: 0.8em;
+}  
+
+@media (max-width: 576px) { 
+  .product-card {
+    height: 620px;
+  }
+}
+
+@media (max-width: 992px) {
+  .reservation-summary-card-detail {
+    font-size: 1em !important;
+  }    
+}
+
+@media (min-width: 768px) { 
+  .product-card {
+    height: 560px;
+  }
+}
+
+@media (min-width: 992px) {
+  .reservation-summary-card {
+     position: fixed !important;
+  }
+}
+
+.card-info-container {
+  left: 50%;
+  position: absolute;
+}
+
+.card-info {
+  position: relative;
+  left: -50%;
+}
+
+/* --- Complete ---- */
+
+.complete-section-bg {
+  background-color: #dddddd;
+}
+
+.extra-plus-minus {
+  height: 40px;
+  text-align: center !important;
+}
+.extra-plus-minus input[type=text] {
+  width: 40px;
+}
+
+.extra-check {
+  height: 40px;
+  text-align: center !important;
+}
+
+.product-img {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.extra-img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/** =========== COMPONENTS ==================== **/
+
 /** Font awesome 4.7 **/
 
 @font-face {

@@ -360,7 +360,7 @@ EOF;
 
 
 		  add_settings_field('mybooking_plugin_settings_custom_css',
-		                     'Include CSS Framework',
+		                     'Include CSS/JS Framework',
 		                     array($this, 'field_mybooking_plugin_settings_custom_css_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
@@ -745,7 +745,7 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Include <b>CSS Framework</b> to build the <u>UI</u> (default Bulma)."; 
+		  echo "<p class=\"description\">Include <b>CSS Framework</b> to build the <u>UI</u> (default Bootstrap 4.4.1)."; 
 		  echo "<p class=\"description\">It's recommended to include it you are not planning to override the plugin templates.</p>";
 		}
 

@@ -66,7 +66,6 @@
         <div class="form-group">  
           <label for="customer_surname">Apellidos*</label>
           <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="Apellidos:*">
-          </div>
         </div>
 
         <div class="form-group">
