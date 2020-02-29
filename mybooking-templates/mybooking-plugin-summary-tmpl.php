@@ -1,135 +1,97 @@
     <!-- Reservation summary -->
     <script type="text/tmpl" id="script_reservation_summary">
-      <div class="tile is-parent is-vertical">
-
-        <!-- Summary message -->
-        <div class="hero <% if (booking.status == 'confirmed'){ %>is-primary<%} else if (booking.status == 'pending_confirmation') {%>is-warning<%}%> ">
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="title">
-                <%= booking.summary_status %>
-              </h1>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="hero">
-          <div class="hero-body">
-            <div class="container">
-              <h2 class="subtitle">
-                LOCALIZADOR: <%= booking.id %>
-              </h2>
-            </div>
-          </div>
-        </div>
-        <!-- Pickup/return information -->
-        <div class="tile is-parent notification">
-          <div class="tile is-child notification has-background-light">
-            <div class="content">
-              <p class="subtitle has-text-weight-semibold has-text-grey">Entrega</p>
-              <ul>
-                <li><%=booking.pickup_place_customer_translation%></li>
-                <li><%=booking.date_from_full_format%> <%=booking.time_from%></li>
-              </ul>
-              <p class="has-text-weight-semibold">Duración del alquiler: <%=booking.days%> día/s</p>
-            </div>
-          </div> 
-          <div class="tile is-child notification has-background-light">
-            <div class="content">
-              <p class="subtitle has-text-weight-semibold has-text-grey">Devolución</p>
-              <ul>
-                <li><%=booking.return_place_customer_translation%></li>
-                <li><%=booking.date_to_full_format%> <%=booking.time_to%></li>
-              </ul>
-            </div>
-          </div>
-          <div class="tile is-child notification has-background-light">
-            <div class="content">
-              <p class="subtitle has-text-weight-semibold has-text-grey">Modelo</p>
-              <% for (var idx=0; idx<booking.booking_lines.length; idx++) { %>
-                <p><%=booking.booking_lines[idx].item_description_customer_translation%></p>
-                <p>GRUPO <%=booking.booking_lines[idx].item_id%></p>
-                <img src="<%=booking.booking_lines[idx].photo_medium%>"/>  
-              <% } %>              
-            </div>
-          </div>            
-        </div>
-        <!-- Extras -->
-        <% if (booking.booking_extras.length > 0) { %>
-        <div class="tile is-parent is-vertical notification">
-          <div class="tile is-child notification has-background-light">
-            <p class="title">Extras seleccionados</h4>
-            <div class="content">
-              <ul>
-            <% for (var idx=0; idx<booking.booking_extras.length; idx++) { %>
-              <li><%=booking.booking_extras[idx].quantity%>x <%=booking.booking_extras[idx].extra_description_customer_translation%> <span class="is-pulled-right"><%=configuration.formatCurrency(booking.booking_extras[idx].extra_cost)%></span></li>
-            <% } %>
-              </ul>          
-            </div>
-          </div>
-        </div>
-        <% } %>
-        <!-- Driver information -->
-        <div class="tile is-parent notification">
-          <div class="tile is-child notification has-background-light">
-            <div class="content">
-              <p class="subtitle has-text-weight-semibold has-text-grey">Datos del conductor</p>
-              <ul>
-                <li>Nombre: <%=booking.customer_name%></li>
-                <li>Apellidos: <%=booking.customer_surname%></li>
-                <li>Fecha de nacimiento: <%=booking.driver_date_of_birth%>
-                <li>Documento de identidad: <%=booking.driver_document_id%></li>
-              </ul>
-            </div>
-          </div> 
-          <div class="tile is-child notification has-background-light">
-            <div class="content">
-              <p class="subtitle has-text-weight-semibold has-text-grey">Datos de contacto</p>
-              <ul>
-                <li>Email: <%=booking.customer_email%></li>
-                <li>Teléfono: <%=booking.customer_phone%> <%=booking.customer_mobile_phone%></li>
-                <li>Dirección: <% if (booking.driver_address) { %>
-                    <%=booking.driver_address.street%> <%=booking.driver_address.number%> <%=booking.driver_address.complement%>
-                    <% } %>
-                </li>
-                <li>Ciudad/Lugar: <% if (booking.driver_address) { %>
-                    <%= booking.driver_address.city %>
-                    <% } %>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="tile is-child notification has-background-light">
-            <div class="content">
-              <p class="subtitle has-text-weight-semibold has-text-grey">Resumen</p>
-              <ul>
-                <li>Total vehículo: <%=configuration.formatCurrency(booking.item_cost)%></li>
-                <li>Extras: <%= configuration.formatCurrency(booking.extras_cost)%></li>  
-                <li>Total alquiler: <%= configuration.formatCurrency(booking.total_cost)%></li>         
-            </div>
-          </div>            
-        </div>
-        <% if (booking.total_paid > 0) { %>
-        <div class="hero is-warning">
-          <div class="hero-body">
-            <div class="container">
-              <p class="subtitle">
-                El importe restante (<%= configuration.formatCurrency(booking.total_pending)%>) deberá ser pagado en el momento de la 
-                recogida del vehículo
-              </p>
-            </div>
-          </div>
-        </div>
-        <% } %>  
+      <div class="jumbotron mb-3">
+        <h2 class="h3 text-center"><%= booking.summary_status %></h2>
       </div>
-    </script>
 
-    <!-- Payment -->
-    <script type="text/tmpl" id="script_payment_detail">
-      <input type="hidden" name="payment" value="redsys256" data-payment-method="redsys256">
-      <div class="field is-grouped">
-        <div class="control">
-          <button type="submit" class="button is-primary">Pagar</a>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-header">
+              <b>Su reserva</b>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item reservation-summary-card-detail h3"><%=booking.id%></li>
+              <% if (configuration.pickupReturnPlace) {%>
+              <li class="list-group-item reservation-summary-card-detail"><%=booking.pickup_place_customer_translation%></li>
+              <% } %>
+              <li class="list-group-item reservation-summary-card-detail">
+                <i class="fa fa-calendar-o"></i>&nbsp;
+                <%=booking.date_from_full_format%>
+                <% if (configuration.timeToFrom) { %>
+                  <%=booking.time_from%>
+                <% } %>  
+              </li>
+              <% if (configuration.pickupReturnPlace) {%>
+              <li class="list-group-item reservation-summary-card-detail"><%=booking.return_place_customer_translation%></li>
+              <% } %>
+              <li class="list-group-item reservation-summary-card-detail">
+                <i class="fa fa-calendar-o"></i>&nbsp;
+                <%=booking.date_to_full_format%>
+                <% if (configuration.timeToFrom) { %>
+                  <%=booking.time_to%>
+                <% } %> 
+              </li>
+              <li class="list-group-item reservation-summary-card-detail">Duración del alquiler: <%=booking.days%> día/s</li>
+            </ul>
+          </div>
         </div>
-      </div>  
+        
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-header">
+              <b>Datos del cliente</b>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_name%> <%=booking.customer_surname%></li>
+              <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_phone%> <%=booking.customer_mobile_phone%></li>
+              <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_email%></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-header">
+              <b>Productos</b>
+            </div>  
+            <ul class="list-group list-group-flush">
+              <% for (var idx=0;idx<booking.booking_lines.length;idx++) { %>
+              <li class="list-group-item reservation-summary-card-detail">
+                 <img class="product-img" style="width: 120px" src="<%=booking.booking_lines[idx].photo_medium%>"/>
+                 <br>
+                 <span class="product-name"><b><%=booking.booking_lines[idx].item_description_customer_translation%></b></span>
+                 <% if (configuration.multipleProductsSelection) { %>
+                 <span class="badge badge-info"><%=booking.booking_lines[idx].quantity%></span>
+                 <% } %>
+                 <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%></span>
+              </li>
+              <% } %>
+            </ul>
+          </div>
+          <% if (booking.booking_extras.length > 0) { %>
+          <div class="card mb-3">
+            <div class="card-header">
+              <b>Extras</b>
+            </div>  
+            <ul class="list-group list-group-flush">
+              <% for (var idx=0;idx<booking.booking_extras.length;idx++) { %>
+              <li class="list-group-item reservation-summary-card-detail">
+                  <span class="extra-name"><b><%=booking.booking_extras[idx].extra_description%></b></span>
+                  <span class="badge badge-info"><%=booking.booking_extras[idx].quantity%></span>
+                  <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.booking_extras[idx].extra_cost)%></span>
+              </li>
+              <% } %>       
+            </ul>
+          </div>
+          <% } %>   
+          <div class="jumbotron mb-3">
+            <h2 class="h5 text-center">Importe total</h2>
+            <h2 class="h3 text-center"><%=configuration.formatCurrency(booking.total_cost)%></h2>
+          </div>            
+        </div>
+        
+      </div>
+
     </script>

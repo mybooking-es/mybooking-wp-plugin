@@ -88,7 +88,6 @@
           <% } %> 
         </li>
         <li class="list-group-item reservation-summary-card-detail">Duración del alquiler: <%=shopping_cart.days%> día/s</li>
-        <li 
         <li class="list-group-item"><button id="modify_reservation_button" class="btn btn-primary w-100" data-toggle="modal" data-target="#choose_productModal">Modificar reserva</button></li>
       </ul>
     </div>
@@ -259,25 +258,25 @@
                        <div class="form-group col-md-12">
                          <label for="payments_paypal_standard">
                           <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard">&nbsp;Paypal
-                          <img src="<?php echo get_stylesheet_directory_uri() ?>/images/pm-paypal.jpg"/>
+                          <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-paypal.jpg"/>
                          </label>
                        </div>
                        <div class="form-group col-md-12">
                          <label for="payments_credit_card">
                           <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>">&nbsp;<?php _e('Tarjeta de crédito/débito','mybooking') ?>
-                          <img src="<?php echo get_stylesheet_directory_uri() ?>/images/pm-visa.jpg"/>
-                          <img src="<?php echo get_stylesheet_directory_uri() ?>/images/pm-mastercard.jpg"/>
+                          <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-visa.jpg"/>
+                          <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-mastercard.jpg"/>
                          </label>
                        </div>
                     </div>
                     <div id="payment_method_select_error" class="form-row">
                     </div>
                 <% } else if (sales_process.payment_methods.paypal_standard) { %>
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/images/pm-paypal.jpg"/>
+                    <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-paypal.jpg"/>
                     <input type="hidden" id="payment_method_value" value="paypal_standard">
                 <% } else if (sales_process.payment_methods.tpv_virtual) { %>
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/images/pm-mastercard.jpg"/>
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/images/pm-visa.jpg"/>
+                    <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-mastercard.jpg"/>
+                    <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-visa.jpg"/>
                     <input type="hidden" id="payment_method_value" value="<%=sales_process.payment_methods.tpv_virtual%>">
                 <% } %>
 
