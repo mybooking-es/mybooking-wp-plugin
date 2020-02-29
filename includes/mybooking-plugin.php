@@ -233,32 +233,21 @@
 			  // Load JQUERY Date Range
         wp_enqueue_style('mybooking_wp_css_components_jquery_date_range',
         	               'https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.20.0/daterangepicker.css');
-
         // Custom style
 			  wp_enqueue_style('mybooking_wp_css_components_custom_style',
 			                   plugins_url('/assets/styles/custom-styles.css', dirname(__FILE__) ) );
 		  }
 
 		  if ($registry->mybooking_rent_plugin_custom_css) {
-			  // Load Bulma Style
-/*
-			  wp_enqueue_style('wp_css_framework_bulma',
-			                   'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css');
-			  // Load custom style
-			  wp_enqueue_style('wp_css_framework_custom_style',
-			                   plugins_url('/assets/styles/styles.css', dirname(__FILE__) ) );
-*/
-				// Load bootstrap Style
+				// Load bootstrap CSS
 			  wp_enqueue_style('mybooking_wp_css_framework_bootstrap',
 			                   'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
-
+			  // Load bootstrap JS
+			  wp_enqueue_script('mybooking_wp_js_framework_bootstrap', 
+			  	                'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js', array( 'jquery' ));
+			  // Load font awesome 4.7
 			  wp_enqueue_style('mybooking_wp_css_framework_fontawesome',
 			  								 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
-/*
-			  wp_enqueue_style('wp_css_framework_custom_style',
-			                   plugins_url('/assets/styles/custom-styles.css', dirname(__FILE__) ) );
-*/
 			}
 
 		}
@@ -290,7 +279,7 @@
 
 			// Selector Wizard widget or shortcode
 			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
-			     has_shortcode( $post->post_content , 'mybooking_rent_engine_selector_wizard') ) {
+			     ( $post && has_shortcode( $post->post_content , 'mybooking_rent_engine_selector_wizard') ) ) {
 				$classes[] = 'mybooking-selector-wizard';
 			}		
 		  
@@ -386,7 +375,7 @@
 		
 		  // Renting Selector Wizard shortcode / widget
 			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
-			     has_shortcode( $post->post_content , 'mybooking_rent_engine_selector_wizard') ) {
+			     ( $post && has_shortcode( $post->post_content , 'mybooking_rent_engine_selector_wizard') ) ) {
 				mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
 			}		
 
