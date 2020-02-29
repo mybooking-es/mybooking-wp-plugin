@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.5]
+
+### Added
+
+- Bootstrap Javascript integration
+
 ## [0.5.4]
 
 ### Added
