@@ -1,29 +1,20 @@
 /** ======== Reservation Engine ========= **/
 
-/* -- Selector -- */
+/** ----- Renting ------- */
 
 /* -- Select product -- */
 
+/**
+ * Reservation summary
+ */
 .reservation-summary-card-detail {
   font-size: 0.8em;
 }  
-
-@media (max-width: 576px) { 
-  .product-card {
-    height: 620px;
-  }
-}
 
 @media (max-width: 992px) {
   .reservation-summary-card-detail {
     font-size: 1em !important;
   }    
-}
-
-@media (min-width: 768px) { 
-  .product-card {
-    height: 560px;
-  }
 }
 
 @media (min-width: 992px) {
@@ -32,12 +23,34 @@
   }
 }
 
-.card-info-container {
+/**
+ * Product card
+ */ 
+@media (max-width: 576px) { 
+  .product-card {
+    height: 620px;
+  }
+}
+
+@media (min-width: 768px) { 
+  .product-card {
+    height: 560px;
+  }
+}
+
+
+/**
+ * Product card extra data container
+ */
+.product-card-info-container {
   left: 50%;
   position: absolute;
 }
 
-.card-info {
+/**
+ * Product card extra data
+ */
+.product-card-info {
   position: relative;
   left: -50%;
 }
@@ -71,6 +84,39 @@
   height: 60px;
   display: block;
   margin: 0 auto;
+}
+
+/** ----- Activities ------ **/
+
+.activity-card {
+  height: 320px;
+}
+
+.activity-card-img {
+  min-height: 7rem;
+  object-fit: cover;
+}
+
+.activity-card-title {
+  text-align: center !important;
+  height: 40px;
+}
+
+@media (max-width: 992px) { 
+
+  .activity-card {
+    height: 400px;
+  }
+
+  .activity-card-img {
+    min-height: 10rem;
+  }
+
+  .activity-card-info {
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+  }
+
 }
 
 

@@ -32,8 +32,8 @@
                   <!-- Offer name -->
                   <% if (product.price != product.base_price) { %>
                     <% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
-                      <div class="card-info-container">
-                         <div class="card-info">
+                      <div class="product-card-info-container">
+                         <div class="product-card-info">
                             <span class="badge badge-info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
                          </div>
                       </div>
@@ -48,8 +48,8 @@
                   </h3>
                   <!-- Few units -->
                   <% if (product.availability && product.few_available_units) { %>
-                    <div class="card-info-container">
-                       <div class="card-info text-danger">
+                    <div class="product-card-info-container">
+                       <div class="product-card-info text-danger">
                           <span class="text-danger"><small>¡Quedan pocas unidades!</small></span>
                        </div>  
                     </div>

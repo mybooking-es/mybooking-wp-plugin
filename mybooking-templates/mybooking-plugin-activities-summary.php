@@ -1,3 +1,2 @@
-    <div id="reservation_detail" class="reservation-step">
-
+    <div id="reservation_detail">
     </div>
