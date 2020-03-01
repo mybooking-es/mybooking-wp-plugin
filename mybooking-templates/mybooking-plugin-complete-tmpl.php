@@ -13,48 +13,51 @@
 <!-- Extra representation -->
 
 <script type="text/template" id="script_detailed_extra">
-  <h4 class="mb-2 p-4 complete-section-bg">Extras</h4>
-  <% for (var idx=0;idx<extras.length;idx++) { %>
-    <% var extra = extras[idx]; %>
-    <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
-    <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
-    <div class="extra-card <%=bg%>">
-      <div class="row">
-        <div class="col-2">
-          <% if (extra.photo_path) { %>
-          <img class="extra-img p-2" src="<%=extra.photo_path%>" alt="<%=extra.name%>">
-          <% } %>
-        </div>
-        <div class="col-4">
-          <div class="text-left p-3"><b><%=extra.name%></b></div>
-        </div>
-        <div class="col-4">
-          <% if (extra.max_quantity > 1) { %>
-            <div class="extra-plus-minus p-2">
-              <button class="btn btn-primary btn-minus-extra" 
-                      data-value="<%=extra.code%>"
-                      data-max-quantity="<%=extra.max_quantity%>">-</button>           
-              <input type="text" id="extra-<%=extra.code%>-quantity"
-                     class="form-control disabled text-center extra-input" value="<%=value%>" data-extra-code="<%=extra.code%>" readonly/>
-              <button class="btn btn-primary btn-plus-extra" 
-                      data-value="<%=extra.code%>"
-                      data-max-quantity="<%=extra.max_quantity%>">+</button>
-            </div>
-          <% } else { %>
-            <div class="extra-check p-3">
-              <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=extra.code%>" data-value="<%=extra.code%>" 
-                <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>
-                <label class="custom-control-label" for="checkboxl<%=extra.code%>"></label>
+  <% if (extras.length > 0) {%>
+    <h4 class="p-4 complete-section-bg mb-3">Extras</h4>
+    <% for (var idx=0;idx<extras.length;idx++) { %>
+      <% var extra = extras[idx]; %>
+      <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
+      <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
+      <div class="extra-card <%=bg%>">
+        <div class="row">
+          <div class="col-2">
+            <% if (extra.photo_path) { %>
+            <img class="extra-img p-2" src="<%=extra.photo_path%>" alt="<%=extra.name%>">
+            <% } %>
+          </div>
+          <div class="col-4">
+            <div class="text-left p-3"><b><%=extra.name%></b></div>
+          </div>
+          <div class="col-4">
+            <% if (extra.max_quantity > 1) { %>
+              <div class="extra-plus-minus p-2">
+                <button class="btn btn-primary btn-minus-extra" 
+                        data-value="<%=extra.code%>"
+                        data-max-quantity="<%=extra.max_quantity%>">-</button>           
+                <input type="text" id="extra-<%=extra.code%>-quantity"
+                       class="form-control disabled text-center extra-input" value="<%=value%>" data-extra-code="<%=extra.code%>" readonly/>
+                <button class="btn btn-primary btn-plus-extra" 
+                        data-value="<%=extra.code%>"
+                        data-max-quantity="<%=extra.max_quantity%>">+</button>
               </div>
-            </div>       
-          <% } %>         
-        </div>
-        <div class="col-2">
-         <p class="text-right p-3"><b><%= configuration.formatCurrency(extra.unit_price)%></b></p>
+            <% } else { %>
+              <div class="extra-check p-3">
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=extra.code%>" data-value="<%=extra.code%>" 
+                  <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>
+                  <label class="custom-control-label" for="checkboxl<%=extra.code%>"></label>
+                </div>
+              </div>       
+            <% } %>         
+          </div>
+          <div class="col-2">
+           <p class="text-right p-3"><b><%= configuration.formatCurrency(extra.unit_price)%></b></p>
+          </div>
         </div>
       </div>
-    </div>
+    <% } %>
+    <hr class="mt-3 mb-4">
   <% } %>
 </script>
 
@@ -88,7 +91,9 @@
           <% } %> 
         </li>
         <li class="list-group-item reservation-summary-card-detail">Duración del alquiler: <%=shopping_cart.days%> día/s</li>
-        <li class="list-group-item"><button id="modify_reservation_button" class="btn btn-primary w-100" data-toggle="modal" data-target="#choose_productModal">Modificar reserva</button></li>
+        <li class="list-group-item">
+          <button id="modify_reservation_button" class="btn btn-primary w-100" data-toggle="modal" data-target="#choose_productModal">Modificar reserva</button>
+        </li>
       </ul>
     </div>
     <% if (shopping_cart.items.length > 0) { %>

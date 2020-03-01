@@ -1,8 +1,65 @@
-/** ======== Reservation Engine ========= **/
+/** ============================================= **/
+/** ======== Reservation Engine Renting ========= **/
+/** ============================================= **/
 
-/** ----- Renting ------- */
+/** ----- Product catalog ------- **/
 
-/* -- Select product -- */
+.resource-product-card-img {
+  min-height: 7rem;
+  object-fit: cover;
+}
+
+.resource-product-card-title {
+  text-align: center !important;
+  height: 1.5em;
+}
+
+@media (max-width: 992px) { 
+
+  .resource-product-card {
+    height: 400px;
+  }
+
+  .resource-product-card-img {
+    min-height: 10rem;
+  }
+
+  .resource-product-card-info {
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+  }
+
+}
+
+@media (max-width: 576px) { 
+  .resource-product-card {
+    height: 480px;
+  }
+}
+
+@media (min-width: 768px) { 
+  .resource-product-card {
+    height: 420px;
+  }
+}
+
+/** ----- Product catalog calendar ---- **/
+
+.date-picker-wrapper .date-available {
+  background-color: #aeecbc;
+  color: black;
+}
+
+.date-picker-wrapper .first-date-selected, .date-picker-wrapper .last-date-selected, .date-picker-wrapper .date-selected {
+  background-color: #4499ee !important;
+  color: white !important;
+}
+
+/** ============================================= **/
+/** ==== Reservation Engine Renting Wizard ====== **/
+/** ============================================= **/
+
+/* -- 1. Choose product -- */
 
 /**
  * Reservation summary
@@ -42,20 +99,24 @@
 /**
  * Product card extra data container
  */
+
 .product-card-info-container {
   left: 50%;
   position: absolute;
 }
 
+
 /**
  * Product card extra data
  */
+
 .product-card-info {
   position: relative;
   left: -50%;
 }
 
-/* --- Complete ---- */
+
+/* --- 2. Complete ---- */
 
 .complete-section-bg {
   background-color: #dddddd;
@@ -86,7 +147,9 @@
   margin: 0 auto;
 }
 
-/** ----- Activities ------ **/
+/** ============================================= **/
+/** ======= Reservation Engine Activities ======= **/
+/** ============================================= **/
 
 .activity-card {
   height: 320px;

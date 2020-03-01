@@ -2,13 +2,15 @@
 		<!-- Products -->
 		<div class="row">
 			<?php foreach( $args['data']->data as $product ) { ?>
-			  <div class="col-md-3">
-					<div class="card text-center">
-					  <img class="card-img-top" src="<?php echo $product->photo_path?>" alt="?php echo $product->name?>">
-					  <div class="card-body">
-					    <h5 class="card-title"><?php echo $product->name ?></h5>
-					    <p class="card-text"><?php echo $product->short_description ?></p>
-					    <a href="/<?php echo $args['url_detail']?>/<?php echo $product->code?>" class="btn btn-primary">Más información</a>
+			  <div class="col-md-4">
+					<div class="resource-product-card card d-flex flex-column mb-2">
+					  <img class="resource-product-card-img card-img-top" src="<?php echo $product->photo_path?>" alt="?php echo $product->name?>">
+					  <div class="card-body d-flex flex-column justify-content-center">
+					    <h5 class="h6 card-title resource-product-card-title"><?php echo $product->name ?></h5>
+					    <p class="card-text text-center text-muted"><?php echo $product->short_description ?></p>
+					  </div>
+					  <div class="card-body d-flex flex-column justify-content-end">
+					    <a href="/<?php echo $args['url_detail']?>/<?php echo $product->code?>" class="btn btn-primary w-100">Más información</a>
 					  </div>
 					</div>
 			  </div>

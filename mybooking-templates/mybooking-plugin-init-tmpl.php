@@ -1,6 +1,7 @@
 	  <!-- Initialize mybookingEngine -->
 	  <script type="text/javascript">
       window.mybookingEngine = function(){
+        var siteURL = '<?php echo get_site_url() ?>';     
         var baseURL = '<?php echo $args['mybooking_api_url_prefix']?>';
         var apiKey = '<?php echo $args['mybooking_api_key']?>';
         var extrasStep = false;
@@ -9,7 +10,7 @@
         var completeUrl = '<?php echo $args['mybooking_checkout_page']?>';
         var summaryUrl = '<?php echo $args['mybooking_summary_page']?>';
         var shoppingCartUrl = '<?php echo $args['mybooking_activities_shopping_cart_page']?>';
-        var orderUrl = '<?php echo $args['mybooking_activities_summary_page']?>';        
+        var orderUrl = '<?php echo $args['mybooking_activities_summary_page']?>';   
         <?php if ($args['mybooking_google_api_places']) { ?>
         var useGoogleMaps = true;
         var googleMapsSettings = {
@@ -30,7 +31,9 @@
         <?php } else { ?>
         var useGoogleMaps = false;
         <?php } ?> 
-
+        function getSiteURL() {
+          return siteURL;
+        }
         function getBaseURL() {
           return baseURL;
         }
@@ -67,6 +70,7 @@
         }
         <?php } ?>
         return{
+          siteURL: getSiteURL,
           baseURL: getBaseURL,
           apiKey: getApiKey,
           <?php if ($args['mybooking_google_api_places']) { ?>          

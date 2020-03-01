@@ -112,7 +112,9 @@
             <% } %> 
           </li>
           <li class="list-group-item reservation-summary-card-detail">Duración del alquiler: <%=shopping_cart.days%> día/s</li>
-          <li class="list-group-item"><button id="modify_reservation_button" class="btn btn-primary w-100" data-toggle="modal" data-target="#choose_productModal">Modificar reserva</button></li>
+          <li class="list-group-item">
+            <button id="modify_reservation_button" class="btn btn-primary w-100" data-toggle="modal" data-target="#choose_productModal">Modificar reserva</button>
+          </li>
         </ul>
       </div>
 

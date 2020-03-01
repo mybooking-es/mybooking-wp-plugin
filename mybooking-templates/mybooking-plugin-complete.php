@@ -11,7 +11,7 @@
     <div id="extras_listing">
     </div>
     <!-- Reservation complete -->
-    <h4 class="mb-2 mt-2 p-4 complete-section-bg">Datos del cliente</h4>
+    <h4 class="mb-2 p-4 complete-section-bg">Datos del cliente</h4>
     <form id="form-reservation" name="reservation_form" autocomplete="off">
               
         <div class="form-group">

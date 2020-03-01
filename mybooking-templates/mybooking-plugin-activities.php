@@ -10,7 +10,6 @@
 					    <p class="text-center"><span class="text-muted">Desde</span><span class="h5 text-primary mt-10"> <strong><?php echo $activity->from_price ?></strong></span></p>
 					  </div>
 					  <div class="card-body activity-more-information d-flex flex-column justify-content-center">
-							
 					    <a href="/<?php echo $args['url_detail']?>/<?php echo $activity->id?>" class="btn btn-primary">Más información</a>
 					  </div>
 					</div>
