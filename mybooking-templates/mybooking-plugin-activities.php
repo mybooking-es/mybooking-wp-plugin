@@ -7,7 +7,7 @@
 					  <img class="activity-card-img card-img-top" src="<?php echo $activity->photo_url_full?>" alt="?php echo $activity->name?>">
 					  <div class="card-body d-flex flex-column justify-content-center">
 					    <h3 class="h6 card-title activity-card-title"><?php echo $activity->name ?></h3>
-					    <p class="text-center"><span class="text-muted">Desde</span><span class="h5 text-primary mt-10"> <strong><?php echo $activity->from_price ?></strong></span></p>
+					    <p class="text-center"><span class="text-muted">Desde</span><span class="h5 text-primary mt-10"> <strong><?php echo $activity->from_price_formatted ?></strong></span></p>
 					  </div>
 					  <div class="card-body activity-more-information d-flex flex-column justify-content-center">
 					    <a href="/<?php echo $args['url_detail']?>/<?php echo $activity->id?>" class="btn btn-primary">Más información</a>

@@ -67,7 +67,7 @@
               </div>
 
 
-              <% if (canPay) { %>
+              <% if (canPay && paymentAmount > 0) { %>
 
                 <form name="payment_form">  
                   <div id="payment_now_container">

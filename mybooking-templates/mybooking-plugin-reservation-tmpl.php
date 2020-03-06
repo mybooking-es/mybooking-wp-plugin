@@ -94,6 +94,15 @@
         
       </div>
 
+      <div class="row">
+        <div class="col-md-6">
+          <div id="reservation_form_container" style="display:none">
+        </div>
+        <div class="col-md-6">
+          <div id="payment_detail" class="col bg-white shadow-bottom py-3 px-3" style="display:none"></div>
+        </div>
+      </div>
+
     </script>
 
     <!-- Reservation form -->
