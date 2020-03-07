@@ -356,12 +356,20 @@
 		  	  'mybooking_api_url_prefix' => $registry->mybooking_rent_plugin_api_url_prefix,
 		      'mybooking_account_id' => $registry->mybooking_rent_plugin_account_id,
 		      'mybooking_api_key' => $registry->mybooking_rent_plugin_api_key,
+		      // Renting
 		      'mybooking_choose_products_page' => $registry->mybooking_rent_plugin_choose_products_page,
 		      'mybooking_choose_extras_page' => $registry->mybooking_rent_plugin_choose_extras_page,
 		      'mybooking_checkout_page' => $registry->mybooking_rent_plugin_checkout_page,
 		      'mybooking_summary_page' => $registry->mybooking_rent_plugin_summary_page,
+		      'mybooking_terms_page' => $registry->mybooking_rent_plugin_terms_page,
+		      'mybooking_detail_pages' => $registry->mybooking_rent_plugin_detail_pages,
+		      'mybooking_selector_in_process' => $registry->mybooking_rent_plugin_selector_in_process,
+		      // Activities
 		      'mybooking_activities_shopping_cart_page' => $registry->mybooking_activities_plugin_shopping_cart_page,
 		      'mybooking_activities_summary_page' => $registry->mybooking_activities_plugin_summary_page,
+		      'mybooking_activities_terms_page' => $registry->mybooking_activities_plugin_terms_page,
+		      'mybooking_activities_detail_pages' => $registry->mybooking_activities_plugin_detail_pages,
+		      // Google API integration
 		      'mybooking_google_api_places' => $registry->mybooking_plugin_google_api_places,
 		      'mybooking_google_api_places_api_key' => $registry->mybooking_plugin_google_api_places_api_key,
 		      'mybooking_google_api_places_restrict_country_code' => $registry->mybooking_plugin_google_api_places_restrict_country_code,
@@ -369,7 +377,9 @@
 		      'mybooking_google_api_places_bounds_sw_lat' => $registry->mybooking_plugin_google_api_places_bounds_sw_lat,
 		      'mybooking_google_api_places_bounds_sw_lng' => $registry->mybooking_plugin_google_api_places_bounds_sw_lng,
 		      'mybooking_google_api_places_bounds_ne_lat' => $registry->mybooking_plugin_google_api_places_bounds_ne_lat,
-		      'mybooking_google_api_places_bounds_ne_lng' => $registry->mybooking_plugin_google_api_places_bounds_ne_lng	      
+		      'mybooking_google_api_places_bounds_ne_lng' => $registry->mybooking_plugin_google_api_places_bounds_ne_lng,
+		      // Custom Loader
+		      'mybooking_custom_loader' => $registry->mybooking_rent_plugin_custom_loader	      
 		  );
 		  mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
 		
@@ -823,6 +833,27 @@
 		    $registry->mybooking_rent_plugin_summary_page = '';      	
       }
  
+		  if ($settings && array_key_exists('mybooking_plugin_settings_terms_page', $settings)) {
+		    $registry->mybooking_rent_plugin_terms_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_terms_page"] )));
+      }
+      else {
+		    $registry->mybooking_rent_plugin_terms_page = '';      	
+      }
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_selector_in_process', $settings)) { 
+		    $registry->mybooking_rent_plugin_selector_in_process = $settings["mybooking_plugin_settings_selector_in_process"] ? $settings["mybooking_plugin_settings_selector_in_process"] : 'products';
+		  }
+		  else {
+		  	$registry->mybooking_rent_plugin_selector_in_process = 'Form';
+		  }
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_use_product_detail_pages', $settings)) {
+				$registry->mybooking_rent_plugin_detail_pages = (trim(esc_attr( $settings["mybooking_plugin_settings_use_product_detail_pages"] )) == '1');
+		  }
+		  else {
+		  	$registry->mybooking_rent_plugin_detail_pages = '';
+		  }	
+
 		  if ($settings && array_key_exists('mybooking_plugin_settings_products_url', $settings)) { 
 		    $registry->mybooking_rent_plugin_navigation_products_url = $settings["mybooking_plugin_settings_products_url"] ? $settings["mybooking_plugin_settings_products_url"] : 'products';
 		  }
@@ -845,6 +876,20 @@
       else {
 		    $registry->mybooking_activities_plugin_summary_page = ''; 
       }
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_activities_terms_page', $settings)) {
+		    $registry->mybooking_activities_plugin_terms_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_terms_page"] )));
+      }
+      else {
+		    $registry->mybooking_activities_plugin_terms_page = ''; 
+      }      
+
+		  if ($settings && array_key_exists('mybooking_plugin_settings_use_activities_detail_pages', $settings)) {
+				$registry->mybooking_activities_plugin_detail_pages = (trim(esc_attr( $settings["mybooking_plugin_settings_use_activities_detail_pages"] )) == '1');
+		  }
+		  else {
+		  	$registry->mybooking_activities_plugin_detail_pages = '';
+		  }	
 
 		  if ($settings && array_key_exists('mybooking_plugin_settings_activities_url', $settings)) { 
 		    $registry->mybooking_rent_plugin_navigation_activities_url = $settings["mybooking_plugin_settings_activities_url"] ? $settings["mybooking_plugin_settings_activities_url"] : 'activities';
@@ -899,6 +944,12 @@
       }       
       // CSS
 		  $settings = (array) get_option("mybooking_plugin_settings_css");	 
+		  if ($settings && array_key_exists('mybooking_plugin_settings_components_custom_loader', $settings)) {
+				$registry->mybooking_rent_plugin_custom_loader = (trim(esc_attr( $settings["mybooking_plugin_settings_components_custom_loader"] )) == '1');
+		  }
+		  else {
+		  	$registry->mybooking_rent_plugin_custom_loader = '';
+		  }		  
 		  if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {
 				$registry->mybooking_rent_plugin_components_css = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css"] )) == '1');
 		  }

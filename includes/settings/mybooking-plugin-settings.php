@@ -322,7 +322,7 @@ EOF;
 		                     'mybooking_plugin_settings_section_activities');
 
 		  add_settings_field('mybooking_plugin_settings_activities_terms_page',
-		                     'Summary page',
+		                     'Terms & conditions page',
 		                     array($this, 'field_mybooking_plugin_settings_activities_terms_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');

@@ -11,6 +11,12 @@
         var summaryUrl = '<?php echo $args['mybooking_summary_page']?>';
         var shoppingCartUrl = '<?php echo $args['mybooking_activities_shopping_cart_page']?>';
         var orderUrl = '<?php echo $args['mybooking_activities_summary_page']?>';   
+        <?php if ($args['mybooking_custom_loader'] == '1') { ?>
+        var customLoader = true;
+        <?php } else { ?>
+        var customLoader = false;
+        <?php } ?>
+
         <?php if ($args['mybooking_google_api_places']) { ?>
         var useGoogleMaps = true;
         var googleMapsSettings = {
@@ -61,6 +67,9 @@
         function getOrderUrl() {
           return orderUrl;
         }       
+        function getCustomLoader() {
+          return customLoader;
+        }
         <?php if ($args['mybooking_google_api_places']) { ?>
         function getUseGoogleMaps() {
           return useGoogleMaps;
@@ -83,7 +92,8 @@
           completeUrl: getCompleteUrl,
           summaryUrl: getSummaryUrl,
           shoppingCartUrl: getShoppingCartUrl,
-          orderUrl: getOrderUrl          
+          orderUrl: getOrderUrl,
+          customLoader: getCustomLoader,          
         }
       }();
     </script> 
