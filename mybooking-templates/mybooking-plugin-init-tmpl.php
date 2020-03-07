@@ -4,19 +4,25 @@
         var siteURL = '<?php echo get_site_url() ?>';     
         var baseURL = '<?php echo $args['mybooking_api_url_prefix']?>';
         var apiKey = '<?php echo $args['mybooking_api_key']?>';
+        // Renting
         var extrasStep = false;
         var chooseProductUrl = '<?php echo $args['mybooking_choose_products_page']?>';
         var chooseExtrasUrl = '<?php echo $args['mybooking_choose_extras_page']?>';
         var completeUrl = '<?php echo $args['mybooking_checkout_page']?>';
         var summaryUrl = '<?php echo $args['mybooking_summary_page']?>';
+        var termsUrl = '<?php echo $args['mybooking_terms_page']?>';
+        var selectorInProcess = '<?php echo $args['mybooking_selector_in_process']?>';
+        // Activities
         var shoppingCartUrl = '<?php echo $args['mybooking_activities_shopping_cart_page']?>';
-        var orderUrl = '<?php echo $args['mybooking_activities_summary_page']?>';   
+        var orderUrl = '<?php echo $args['mybooking_activities_summary_page']?>';  
+        var activitiesTermsUrl = '<?php echo $args['mybooking_activities_terms_page']?>'; 
+        // Common
         <?php if ($args['mybooking_custom_loader'] == '1') { ?>
         var customLoader = true;
         <?php } else { ?>
         var customLoader = false;
         <?php } ?>
-
+        // Google Integration
         <?php if ($args['mybooking_google_api_places']) { ?>
         var useGoogleMaps = true;
         var googleMapsSettings = {
@@ -46,6 +52,7 @@
         function getApiKey() {
           return apiKey;
         }
+        // -- Renting
         function getExtrasStep() {
           return extrasStep;
         }
@@ -61,12 +68,23 @@
         function getSummaryUrl() {
           return summaryUrl;
         }
+        function getTermsUrl() {
+          return termsUrl;
+        }
+        function getSelectorInProcess() {
+          return selectorInProcess;
+        }
+        // -- Activities
         function getShoppingCartUrl() {
           return shoppingCartUrl;
         }
         function getOrderUrl() {
           return orderUrl;
         }       
+        function getActivitiesTermsUrl() {
+          return activitiesTermsUrl;
+        }        
+        // -- Utilities
         function getCustomLoader() {
           return customLoader;
         }
@@ -82,17 +100,24 @@
           siteURL: getSiteURL,
           baseURL: getBaseURL,
           apiKey: getApiKey,
-          <?php if ($args['mybooking_google_api_places']) { ?>          
+          <?php if ($args['mybooking_google_api_places']) { ?>   
+          // Google API Integration       
           useGoogleMaps: getUseGoogleMaps,
           googleMapsSettings: getGoogleMapsSettings,  
-          <?php } ?>            
+          <?php } ?>         
+          // Renting   
           extrasStep: getExtrasStep,
           chooseProductUrl: getChooseProductUrl,
           chooseExtrasUrl: getChooseExtrasUrl,
           completeUrl: getCompleteUrl,
           summaryUrl: getSummaryUrl,
+          termsUrl: getTermsUrl,
+          selectorInProcess: getSelectorInProcess,
+          // Activities
           shoppingCartUrl: getShoppingCartUrl,
           orderUrl: getOrderUrl,
+          activitiesUrl: getActivitiesTermsUrl,
+          // Common
           customLoader: getCustomLoader,          
         }
       }();

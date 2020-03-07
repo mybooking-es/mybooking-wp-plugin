@@ -128,6 +128,7 @@
 }
 .extra-plus-minus input[type=text] {
   width: 40px;
+  display: inline-block;
 }
 
 .extra-check {
