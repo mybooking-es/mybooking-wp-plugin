@@ -144,8 +144,11 @@
 .extra-img {
   width: 60px;
   height: 60px;
-  display: block;
+  display: inline-block;
   margin: 0 auto;
+}
+.extra-name {
+  display: inline-block;
 }
 
 /** ============================================= **/

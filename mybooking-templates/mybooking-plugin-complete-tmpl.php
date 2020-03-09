@@ -13,6 +13,56 @@
 <!-- Extra representation -->
 
 <script type="text/template" id="script_detailed_extra">
+
+  <% if (coverages.length > 0) {%>
+    <h4 class="p-4 complete-section-bg mb-3">Coberturas</h4>
+    <% for (var idx=0;idx<coverages.length;idx++) { %>
+      <% var coverage = coverages[idx]; %>
+      <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
+      <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
+      <div class="extra-card <%=bg%>">
+        <div class="row">
+          <div class="col-5">
+            <% if (coverage.photo_path) { %>
+            <img class="extra-img p-2" src="<%=coverage.photo_path%>" alt="<%=coverage.name%>">
+            <% } %>
+            <div class="extra-name text-left p-3"><b><%=coverage.name%></b></div>
+          </div>
+          <div class="col-4">
+            <% if (coverage.max_quantity > 1) { %>
+              <div class="extra-plus-minus p-2">
+                <button class="btn btn-primary btn-minus-extra" 
+                        data-value="<%=coverage.code%>"
+                        data-max-quantity="<%=coverage.max_quantity%>">-</button>           
+                <input type="text" id="extra-<%=coverage.code%>-quantity"
+                       class="form-control disabled text-center extra-input" value="<%=value%>" data-extra-code="<%=coverage.code%>" readonly/>
+                <button class="btn btn-primary btn-plus-extra" 
+                        data-value="<%=coverage.code%>"
+                        data-max-quantity="<%=coverage.max_quantity%>">+</button>
+              </div>
+            <% } else { %>
+              <div class="extra-check p-3">
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=coverage.code%>" data-value="<%=coverage.code%>" 
+                  <% if (extrasInShoppingCart[coverage.code] &&  extrasInShoppingCart[coverage.code] > 0) { %> checked="checked" <% } %>>
+                  <label class="custom-control-label" for="checkboxl<%=coverage.code%>"></label>
+                </div>
+              </div>       
+            <% } %>         
+          </div>
+          <div class="col-3">
+           <p class="text-right p-3">
+              <b><%= configuration.formatExtraAmount(i18next, coverage.one_unit_price, coverage.price_calculation,
+                                                     shopping_cart.days, shopping_cart.hours, 
+                                                     coverage.unit_price)%></b>
+           </p>
+          </div>
+        </div>
+      </div>
+    <% } %>
+    <hr class="mt-3 mb-4">
+  <% } %>
+
   <% if (extras.length > 0) {%>
     <h4 class="p-4 complete-section-bg mb-3">Extras</h4>
     <% for (var idx=0;idx<extras.length;idx++) { %>
@@ -21,13 +71,11 @@
       <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
       <div class="extra-card <%=bg%>">
         <div class="row">
-          <div class="col-2">
+          <div class="col-5">
             <% if (extra.photo_path) { %>
             <img class="extra-img p-2" src="<%=extra.photo_path%>" alt="<%=extra.name%>">
             <% } %>
-          </div>
-          <div class="col-4">
-            <div class="text-left p-3"><b><%=extra.name%></b></div>
+            <div class="extra-name text-left p-3"><b><%=extra.name%></b></div>
           </div>
           <div class="col-4">
             <% if (extra.max_quantity > 1) { %>
@@ -51,14 +99,21 @@
               </div>       
             <% } %>         
           </div>
-          <div class="col-2">
-           <p class="text-right p-3"><b><%= configuration.formatCurrency(extra.unit_price)%></b></p>
+          <div class="col-3">
+           <p class="text-right p-3">
+              <b><%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation,
+                                                     shopping_cart.days, shopping_cart.hours, 
+                                                     extra.unit_price)%></b>
+           </p>
           </div>
         </div>
       </div>
     <% } %>
     <hr class="mt-3 mb-4">
   <% } %>
+
+
+
 </script>
 
 <!-- Reservation summary -->
