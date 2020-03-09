@@ -14,7 +14,7 @@
 
 <script type="text/template" id="script_detailed_extra">
 
-  <% if (coverages.length > 0) {%>
+  <% if (coverages && coverages.length > 0) {%>
     <h4 class="p-4 complete-section-bg mb-3">Coberturas</h4>
     <% for (var idx=0;idx<coverages.length;idx++) { %>
       <% var coverage = coverages[idx]; %>
@@ -63,7 +63,7 @@
     <hr class="mt-3 mb-4">
   <% } %>
 
-  <% if (extras.length > 0) {%>
+  <% if (extras && extras.length > 0) {%>
     <h4 class="p-4 complete-section-bg mb-3">Extras</h4>
     <% for (var idx=0;idx<extras.length;idx++) { %>
       <% var extra = extras[idx]; %>
