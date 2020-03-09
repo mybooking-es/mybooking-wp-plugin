@@ -12,7 +12,8 @@
         <div class="row">
           <div class="col-5">
             <% if (coverage.photo_path) { %>
-            <img class="extra-img p-2" src="<%=coverage.photo_path%>" alt="<%=coverage.name%>">
+            <img class="extra-img p-2 js-extra-info-btn" src="<%=coverage.photo_path%>" 
+                 alt="<%=coverage.name%>" data-extra="<%=coverage.code%>">
             <% } %>
             <div class="extra-name text-left p-3"><b><%=coverage.name%></b></div>
           </div>
@@ -61,7 +62,8 @@
         <div class="row">
           <div class="col-5">
             <% if (extra.photo_path) { %>
-            <img class="extra-img p-2" src="<%=extra.photo_path%>" alt="<%=extra.name%>">
+            <img class="extra-img p-2 js-extra-info-btn" src="<%=extra.photo_path%>" 
+                  alt="<%=extra.name%>" data-extra="<%=extra.code%>">
             <% } %>
             <div class="extra-name text-left p-3"><b><%=extra.name%></b></div>
           </div>
@@ -101,6 +103,37 @@
   <% } %>
 
 
+
+</script>
+
+
+<!-- Script that shows the extra detail -->
+<script type="text/tmpl" id="script_extra_modal">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <% for (var idx=0; idx<extra.photos.length; idx++) { %>
+            <div class="carousel-item <% if (idx==0) {%>active<%}%>">
+              <img class="d-block w-100" src="<%=extra.photos[idx].full_photo_path%>" alt="<%=extra.name%>">
+            </div>
+            <% } %>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="mt-3 text-muted"><%=extra.description%></div>
+      </div>
+    </div>
+  </div>
 
 </script>
 
