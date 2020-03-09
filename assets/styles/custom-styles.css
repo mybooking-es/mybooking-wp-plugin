@@ -64,6 +64,7 @@
 /**
  * Reservation summary
  */
+/*
 .reservation-summary-card-detail {
   font-size: 0.8em;
 }  
@@ -73,6 +74,7 @@
     font-size: 1em !important;
   }    
 }
+*/
 
 @media (min-width: 992px) {
   .reservation-summary-card {
@@ -149,6 +151,10 @@
 }
 .extra-name {
   display: inline-block;
+}
+.extra-total {
+    font-size: 0.8em;
+    color: #aaaaaa;
 }
 
 /** ============================================= **/

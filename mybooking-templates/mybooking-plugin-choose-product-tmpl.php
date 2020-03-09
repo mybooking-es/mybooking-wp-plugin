@@ -116,35 +116,37 @@
 
     <!-- Script detailed for reservation summary -->
     <script type="text/tmpl" id="script_reservation_summary">
-      <div class="reservation-summary-card card mb-3">
-        <div class="card-header">
-          <b>Su reserva</b>
+      <div class="reservation-summary-card">
+        <div class="card mb-3">
+          <div class="card-header">
+            <b>Su reserva</b>
+          </div>
+          <ul class="list-group list-group-flush">
+            <% if (configuration.pickupReturnPlace) {%>
+            <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.pickup_place_customer_translation%></li>
+            <% } %>
+            <li class="list-group-item reservation-summary-card-detail">
+              <i class="fa fa-calendar-o"></i>&nbsp;
+              <%=shopping_cart.date_from_full_format%>
+              <% if (configuration.timeToFrom) { %>
+                <%=shopping_cart.time_from%>
+              <% } %>  
+            </li>
+            <% if (configuration.pickupReturnPlace) {%>
+            <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.return_place_customer_translation%></li>
+            <% } %>
+            <li class="list-group-item reservation-summary-card-detail">
+              <i class="fa fa-calendar-o"></i>&nbsp;
+              <%=shopping_cart.date_to_full_format%>
+              <% if (configuration.timeToFrom) { %>
+                <%=shopping_cart.time_to%>
+              <% } %> 
+            </li>
+            <li class="list-group-item reservation-summary-card-detail">Duración del alquiler: <%=shopping_cart.days%> día/s</li>
+            <li class="list-group-item">
+              <button id="modify_reservation_button" class="btn btn-primary w-100" data-toggle="modal" data-target="#choose_productModal">Modificar reserva</button>
+            </li>
+          </ul>
         </div>
-        <ul class="list-group list-group-flush">
-          <% if (configuration.pickupReturnPlace) {%>
-          <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.pickup_place_customer_translation%></li>
-          <% } %>
-          <li class="list-group-item reservation-summary-card-detail">
-            <i class="fa fa-calendar-o"></i>&nbsp;
-            <%=shopping_cart.date_from_full_format%>
-            <% if (configuration.timeToFrom) { %>
-              <%=shopping_cart.time_from%>
-            <% } %>  
-          </li>
-          <% if (configuration.pickupReturnPlace) {%>
-          <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.return_place_customer_translation%></li>
-          <% } %>
-          <li class="list-group-item reservation-summary-card-detail">
-            <i class="fa fa-calendar-o"></i>&nbsp;
-            <%=shopping_cart.date_to_full_format%>
-            <% if (configuration.timeToFrom) { %>
-              <%=shopping_cart.time_to%>
-            <% } %> 
-          </li>
-          <li class="list-group-item reservation-summary-card-detail">Duración del alquiler: <%=shopping_cart.days%> día/s</li>
-          <li class="list-group-item">
-            <button id="modify_reservation_button" class="btn btn-primary w-100" data-toggle="modal" data-target="#choose_productModal">Modificar reserva</button>
-          </li>
-        </ul>
       </div>
     </script> 

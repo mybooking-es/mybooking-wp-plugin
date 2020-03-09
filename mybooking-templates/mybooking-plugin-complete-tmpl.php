@@ -3,7 +3,7 @@
 <script type="text/template" id="script_detailed_extra">
 
   <% if (coverages && coverages.length > 0) {%>
-    <h4 class="p-4 complete-section-bg mb-3">Coberturas</h4>
+    <h4 class="p-4 complete-section-bg mb-3">Cobertura</h4>
     <% for (var idx=0;idx<coverages.length;idx++) { %>
       <% var coverage = coverages[idx]; %>
       <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
@@ -173,6 +173,7 @@
       </ul>
     </div>
     <% if (shopping_cart.items.length > 0) { %>
+    <!-- Products -->
     <div class="card mb-3">
       <div class="card-header">
         <b>Productos</b>
@@ -193,6 +194,7 @@
     </div>
     <% } %> 
     <% if (shopping_cart.extras.length > 0) { %>
+    <!-- Extras -->
     <div class="card mb-3">
       <div class="card-header">
         <b>Extras</b>
@@ -208,6 +210,77 @@
       </ul>
     </div>
     <% } %>
+    <% if (shopping_cart.time_from_cost > 0 ||
+          shopping_cart.pickup_place_cost > 0 ||
+          shopping_cart.time_to_cost > 0 ||
+          shopping_cart.return_place_cost > 0 ||
+          shopping_cart.driver_age_cost > 0 ||
+          shopping_cart.category_supplement_1_cost > 0) { %>
+      <!-- Supplements -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <b>Suplementos</b>
+        </div>     
+        <ul class="list-group list-group-flush">
+          <!-- Supplements -->
+          <% if (shopping_cart.time_from_cost > 0) { %>
+          <li class="list-group-item">
+            <span class="extra-name"><?php _e('Suplemento hora de entrega', 'mybooking') ?></span>
+            <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.time_from_cost)%></span>
+          </li>
+          <% } %>
+          <% if (shopping_cart.pickup_place_cost > 0) { %>
+          <li class="list-group-item">
+            <span class="extra-name"><?php _e('Suplemento lugar de entrega', 'mybooking') ?></span>
+            <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.pickup_place_cost)%></span>
+          </li>
+          <% } %>
+          <% if (shopping_cart.time_to_cost > 0) { %>
+          <li class="list-group-item">
+            <span class="extra-name"><?php _e('Suplemento hora de devolución', 'mybooking') ?></span>
+            <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.time_to_cost)%></span>
+          </li>
+          <% } %>
+          <% if (shopping_cart.return_place_cost > 0) { %>
+          <li class="list-group-item">
+            <span class="extra-name"><?php _e('Suplemento lugar de devolución', 'mybooking') ?></span>
+            <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.return_place_cost)%></span>
+          </li>
+          <% } %>
+          <% if (shopping_cart.driver_age_cost > 0) { %>
+          <li class="list-group-item">
+            <span class="extra-name"><?php _e('Suplemento edad del conductor', 'mybooking') ?></span>
+            <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.driver_age_cost)%></span>
+          </li>
+          <% } %>
+          <% if (shopping_cart.category_supplement_1_cost > 0) { %>
+          <li class="list-group-item">
+            <span class="product-amount pull-right"><?php _e('Suplemento combustible', 'mybooking') ?></span>
+            <span
+              class="extra-price"><%=configuration.formatCurrency(shopping_cart.category_supplement_1_cost)%></span>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    <% } %>
+    <% if (shopping_cart.total_deposit > 0) { %>
+      <!-- Deposit -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <b>Fianza</b>
+        </div>     
+        <ul class="list-group list-group-flush">
+          <!-- Deposit -->
+          <% if (shopping_cart.total_deposit > 0) { %>
+          <li class="list-group-item">
+            <span class="extra-name"><?php _e('Fianza', 'mybooking') ?></span>
+            <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.total_deposit)%></span>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    <% } %>
+
     <div class="jumbotron mb-3">
       <h2 class="h5 text-center">Importe total</h2>
       <h2 class="h3 text-center"><%=configuration.formatCurrency(shopping_cart.total_cost)%></h2>

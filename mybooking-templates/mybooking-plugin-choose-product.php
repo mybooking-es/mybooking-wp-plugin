@@ -33,10 +33,10 @@
 */
 ?>
 <div class="row">
-  <div class="col-lg-3">
+  <div class="col-lg-4">
     <div id="reservation_detail"></div>
   </div>
-  <div class="col-lg-9">
+  <div class="col-lg-8">
     <div id="product_listing"></div>
   </div>
 </div>
