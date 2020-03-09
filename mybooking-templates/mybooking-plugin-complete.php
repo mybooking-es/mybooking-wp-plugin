@@ -1,21 +1,37 @@
 <?php
 /**
-*   PLUGIN COMPLETE PAGE
-*   --------------------
+*   PLUGIN RENTING MODULE COMPLETE PAGE
+*   -----------------------------------
 *
 *   Versión: 0.5.5
 *   @package WordPress
 *   @subpackage Mybooking WordPress Plugin
 *   @since Mybooking WordPress Theme 0.0.1
 *
-*   Areas managed by the Reservation engine
+*   Description:
+*   ------------
+*
+*   This template renders the complete step page. It manages the following:
+*
+*      - Select the coverage 
+*      - Select the extras
+*      - Fill in the reservation from
+*      - Request reservation or pay
+*
+*   Elements & Scripts:
+*   -------------------
 *
 *   Container                        Script
-*   ----------------------------     ------------------------
+*   ----------------------------     ---------------------------------
 *   id=reservation_detail_sticky ->  script_reservation_summary_sticky 
 *   id=reservation_detail        ->  script_reservation_summary
 *   id=extras_listing            ->  script_detailed_extra
 *   id=payment_detail            ->  script_payment_detail
+*
+*   Notes:
+*   ------
+*
+*   The scripts are defined in mybooking-plugin-complete-tmpl.php
 */
 ?>
 <div class="row">
@@ -24,9 +40,6 @@
     </div>
   </aside>
   <div class="col-lg-8">
-    <!-- Products -->
-    <!--div id="selected_product">
-    </div-->
     <!-- Extras -->
     <div id="extras_listing">
     </div>

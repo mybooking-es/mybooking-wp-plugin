@@ -1,15 +1,3 @@
-<!-- Product detail (#selected_product) -->
-
-<script type="text/tpml" id="script_product_detail">
-
-  <h4>Productos</h4>
-  <% for (var idx=0; idx<shopping_cart.items.length; idx++) { %>
-    <p><%=shopping_cart.items[idx].item_description_customer_translation%> <span class="is-pulled-right"><%= configuration.formatCurrency(shopping_cart.items[idx].item_cost)%></span></p>
-    <img src="<%=shopping_cart.items[idx].photo_medium%>"/>  
-  <% } %>  
-
-</script>
-
 <!-- Extra representation -->
 
 <script type="text/template" id="script_detailed_extra">

@@ -9,7 +9,8 @@
           <% var product = products[idxP]; %>
           <div class="col-md-6">
             <div class="product-card card d-flex flex-column mb-2">
-              <img class="card-img-top" src="<%=product.full_photo%>" alt="<%=product.name%>">
+              <img class="card-img-top js-product-info-btn" src="<%=product.full_photo%>" alt="<%=product.name%>"
+                    data-product="<%=product.code%>">
               <div class="card-body">
                 <h5 class="card-title text-center"><%=product.short_description%></h5>
                 <p class="card-text text-center text-muted"><%=product.name%></p>
@@ -83,9 +84,38 @@
       <% } %>
     </script>
 
+    <!-- Script that shows the product detail -->
+    <script type="text/tmpl" id="script_product_modal">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <% for (var idx=0; idx<product.photos.length; idx++) { %>
+                <div class="carousel-item <% if (idx==0) {%>active<%}%>">
+                  <img class="d-block w-100" src="<%=product.photos[idx].full_photo_path%>" alt="<%=product.name%>">
+                </div>
+                <% } %>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <div class="mt-3 text-muted"><%=product.description%></div>
+          </div>
+        </div>
+      </div>
+
+    </script>
+
     <!-- Script detailed for reservation summary -->
     <script type="text/tmpl" id="script_reservation_summary">
-
       <div class="reservation-summary-card card mb-3">
         <div class="card-header">
           <b>Su reserva</b>
@@ -117,6 +147,4 @@
           </li>
         </ul>
       </div>
-
-      
     </script> 
