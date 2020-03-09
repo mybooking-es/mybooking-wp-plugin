@@ -1,3 +1,23 @@
+<?php
+/**
+*   PLUGIN COMPLETE PAGE
+*   --------------------
+*
+*   Versión: 0.5.5
+*   @package WordPress
+*   @subpackage Mybooking WordPress Plugin
+*   @since Mybooking WordPress Theme 0.0.1
+*
+*   Areas managed by the Reservation engine
+*
+*   Container                        Script
+*   ----------------------------     ------------------------
+*   id=reservation_detail_sticky ->  script_reservation_summary_sticky 
+*   id=reservation_detail        ->  script_reservation_summary
+*   id=extras_listing            ->  script_detailed_extra
+*   id=payment_detail            ->  script_payment_detail
+*/
+?>
 <div class="row">
   <aside class="col-lg-4">
     <div id="reservation_detail">
