@@ -869,7 +869,7 @@
 				$registry->mybooking_rent_plugin_detail_pages = (trim(esc_attr( $settings["mybooking_plugin_settings_use_product_detail_pages"] )) == '1');
 		  }
 		  else {
-		  	$registry->mybooking_rent_plugin_detail_pages = '';
+		  	$registry->mybooking_rent_plugin_detail_pages = false;
 		  }	
 
 		  if ($settings && array_key_exists('mybooking_plugin_settings_products_url', $settings)) { 
@@ -906,7 +906,7 @@
 				$registry->mybooking_activities_plugin_detail_pages = (trim(esc_attr( $settings["mybooking_plugin_settings_use_activities_detail_pages"] )) == '1');
 		  }
 		  else {
-		  	$registry->mybooking_activities_plugin_detail_pages = '';
+		  	$registry->mybooking_activities_plugin_detail_pages = false;
 		  }	
 
 		  if ($settings && array_key_exists('mybooking_plugin_settings_activities_url', $settings)) { 
@@ -1006,16 +1006,20 @@
 
 
       // Renting product detail route
-      $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
-			Routes::map($url.'/:id', function($params) {
-				$this->product_page($params);
-			});
+      if ( $registry->mybooking_rent_plugin_detail_pages ) {
+	      $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
+				Routes::map($url.'/:id', function($params) {
+					$this->product_page($params);
+				});
+		  }
 
 			// Activity detail route
-      $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
-			Routes::map($url.'/:id', function($params) {
-				$this->activity_page($params);
-			});
+			if ( $registry->mybooking_activities_plugin_detail_pages ) {
+	      $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
+				Routes::map($url.'/:id', function($params) {
+					$this->activity_page($params);
+				});
+		  }
 
 
 		}
