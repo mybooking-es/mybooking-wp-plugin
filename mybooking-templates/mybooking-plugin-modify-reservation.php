@@ -1,3 +1,4 @@
+<!-- Modify reservation modal -->
 <div style="position:absolute">
   <div class="modal fade" 
        id="choose_productModal" tabindex="-1" role="dialog" aria-labelledby="choose_productModal"

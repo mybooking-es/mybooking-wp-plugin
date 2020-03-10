@@ -392,12 +392,14 @@
 		  // Load scripts
 		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php');
+		  	// If selector in process Wizard, load the micro-templates for the process
 		  	if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
 		  	  mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
 		    }
 		  }
 		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php');
+		  	// If selector in process Wizard, load the micro-templates for the process
 		  	if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
   		  	mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
   		  }
@@ -560,8 +562,13 @@
 		 */
 		public function wp_product_listing_shortcode($atts = [], $content = null, $tag = '') {
 			
+			// Get the selector to apply in choose product
+			$registry = Mybooking_Registry::getInstance();
+	  	$data = array();
+	  	$data['selector_in_process'] = $registry->mybooking_rent_plugin_selector_in_process;
+
 			ob_start();
-	    mybooking_engine_get_template('mybooking-plugin-choose-product.php');
+	    mybooking_engine_get_template('mybooking-plugin-choose-product.php', $data);
 	    return ob_get_clean();
 	
 		}
@@ -571,8 +578,13 @@
 		 */
 		public function wp_complete_shortcode($atts = [], $content = null, $tag = '') {
 			
+			// Get the selector to apply in complete
+			$registry = Mybooking_Registry::getInstance();
+	  	$data = array();
+	  	$data['selector_in_process'] = $registry->mybooking_rent_plugin_selector_in_process;
+
 			ob_start();
-			mybooking_engine_get_template('mybooking-plugin-complete.php');
+			mybooking_engine_get_template('mybooking-plugin-complete.php', $data);
 			return ob_get_clean();
 
 		}

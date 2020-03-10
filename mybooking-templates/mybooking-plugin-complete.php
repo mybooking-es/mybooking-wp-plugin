@@ -35,11 +35,12 @@
 */
 ?>
 
-<!-- Modify reservation wizard : take into account the theme due to HTML elements -->
-<?php mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php') ?>
-
-<!-- Modify reservation form -->
-<?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
+<!-- Complement to modify reservation dates -->
+<?php if ( $args['selector_in_process'] == 'wizard' ) { ?>
+  <?php mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php') ?>
+<?php } else { ?>
+  <?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
+<?php } ?>
 
 <div class="row">
   <aside class="col-lg-4">

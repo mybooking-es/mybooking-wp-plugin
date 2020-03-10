@@ -32,14 +32,16 @@
 *   The scripts are defined in mybooking-plugin-choose-product-tmpl.php
 */
 ?>
+  
+<!-- Complement to modify reservation dates -->
+<?php if ( $args['selector_in_process'] == 'wizard' ) { ?>
+  <?php mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php') ?>
+<?php } else { ?>
+  <?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
+<?php } ?>
+
 <section class="section">
   
-  <!-- Modify reservation wizard : take into account the theme due to HTML elements -->
-  <?php mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php') ?>
-  
-  <!-- Modify reservation form -->
-  <?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
-
   <div class="row">
     <div class="col-lg-4">
       <div id="reservation_detail"></div>
