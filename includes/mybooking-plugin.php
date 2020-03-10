@@ -1005,7 +1005,7 @@
       $registry = Mybooking_Registry::getInstance();
 
 
-      // Renting product detail route
+      // Renting product detail route (depends on the settings)
       if ( $registry->mybooking_rent_plugin_detail_pages ) {
 	      $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
 				Routes::map($url.'/:id', function($params) {
@@ -1013,7 +1013,7 @@
 				});
 		  }
 
-			// Activity detail route
+			// Activity detail route (depends on the settings)
 			if ( $registry->mybooking_activities_plugin_detail_pages ) {
 	      $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
 				Routes::map($url.'/:id', function($params) {

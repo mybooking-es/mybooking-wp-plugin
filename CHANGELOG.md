@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.6]
+
+### Added
+
+- Wizard integration
+
+### Fixed
+
+- Multiple quantities
+
 ## [0.5.5]
 
 ### Added

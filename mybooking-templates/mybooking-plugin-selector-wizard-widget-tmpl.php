@@ -1,5 +1,5 @@
     <!-- ===================================================== -->
-    <!--         Selector Wizard  Microtemplates               -->
+    <!--         Selector Wizard Microtemplates                -->
     <!-- ===================================================== -->
 
     <!-- Steps summary -->

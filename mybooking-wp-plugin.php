@@ -3,7 +3,7 @@
 * Plugin Name: MyBooking Reservation Engine for WordPress
 * Plugin URI: https://www.mybooking.es/
 * Description: Reservation Engine WordPress frontend for Mybooking. Transforms wordpress into a rental / accommodation / tours reservation engine.
-* Version: 0.5.5
+* Version: 0.5.6
 * Author: juanmiqueo
 * Author URI: https://mybooking.es/
 **/
