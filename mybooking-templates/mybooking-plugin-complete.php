@@ -43,11 +43,12 @@
 
 <div class="row">
   <aside class="col-lg-4">
+    <!-- Reservation detail/summary (script_reservation_summary) -->
     <div id="reservation_detail">
     </div>
   </aside>
   <div class="col-lg-8">
-    <!-- Extras -->
+    <!-- Extras Selection (script_detailed_extra) -->
     <div id="extras_listing">
     </div>
     <!-- Reservation complete -->
@@ -89,13 +90,14 @@
           <textarea class="form-control" name="comments" id="comments" placeholder="Comentarios"></textarea>
         </div>   
 
-        <!-- Reservation : payment -->
+        <!-- Reservation : payment (script_payment_detail) -->
         <div id="payment_detail">
         </div>
     </form>
   </div>
 </div>
 
+<!-- Show extra detail modal -->
 <div class="modal" tabindex="-1" role="dialog" id="modalExtraDetail">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
