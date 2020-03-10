@@ -20,7 +20,7 @@
                   <div class="car-listing-selector">
                     <select class="form-control select-choose-product" data-value="<%=product.code%>">
                       <% for (var idx=0;idx<=(product.available);idx++) { %>
-                        <option value="<%=idx%>" <% if (product.code && product.code == idx) { %>selected="selected"<%}%>>
+                        <option value="<%=idx%>" <% if (shoppingCartProductQuantities[product.code] && idx == shoppingCartProductQuantities[product.code]) { %>selected="selected"<%}%>>
                           <%=idx%> (<%= configuration.formatCurrency(product.price * idx) %>)
                         </option>
                       <% } %>
@@ -144,7 +144,7 @@
             </li>
             <li class="list-group-item reservation-summary-card-detail">Duración del alquiler: <%=shopping_cart.days%> día/s</li>
             <li class="list-group-item">
-              <button id="modify_reservation_button" class="btn btn-primary w-100" data-toggle="modal" data-target="#choose_productModal">Modificar reserva</button>
+              <button id="modify_reservation_button" class="btn btn-primary w-100">Modificar reserva</button>
             </li>
           </ul>
         </div>

@@ -379,7 +379,7 @@
 		      'mybooking_google_api_places_bounds_ne_lat' => $registry->mybooking_plugin_google_api_places_bounds_ne_lat,
 		      'mybooking_google_api_places_bounds_ne_lng' => $registry->mybooking_plugin_google_api_places_bounds_ne_lng,
 		      // Custom Loader
-		      'mybooking_custom_loader' => $registry->mybooking_rent_plugin_custom_loader	      
+		      'mybooking_custom_loader' => $registry->mybooking_rent_plugin_custom_loader
 		  );
 		  mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
 		
@@ -392,9 +392,15 @@
 		  // Load scripts
 		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php');
+		  	if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
+		  	  mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
+		    }
 		  }
 		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php');
+		  	if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
+  		  	mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
+  		  }
 		  }
 		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-summary-tmpl.php');
@@ -841,10 +847,10 @@
       }
 
 		  if ($settings && array_key_exists('mybooking_plugin_settings_selector_in_process', $settings)) { 
-		    $registry->mybooking_rent_plugin_selector_in_process = $settings["mybooking_plugin_settings_selector_in_process"] ? $settings["mybooking_plugin_settings_selector_in_process"] : 'products';
+		    $registry->mybooking_rent_plugin_selector_in_process = $settings["mybooking_plugin_settings_selector_in_process"] ? $settings["mybooking_plugin_settings_selector_in_process"] : 'form';
 		  }
 		  else {
-		  	$registry->mybooking_rent_plugin_selector_in_process = 'Form';
+		  	$registry->mybooking_rent_plugin_selector_in_process = 'form';
 		  }
 
 		  if ($settings && array_key_exists('mybooking_plugin_settings_use_product_detail_pages', $settings)) {

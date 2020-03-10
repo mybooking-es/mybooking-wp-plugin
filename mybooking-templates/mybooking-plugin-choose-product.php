@@ -32,27 +32,35 @@
 *   The scripts are defined in mybooking-plugin-choose-product-tmpl.php
 */
 ?>
-<div class="row">
-  <div class="col-lg-4">
-    <div id="reservation_detail"></div>
-  </div>
-  <div class="col-lg-8">
-    <div id="product_listing"></div>
-  </div>
-</div>
-<?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
+<section class="section">
+  
+  <!-- Modify reservation wizard : take into account the theme due to HTML elements -->
+  <?php mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php') ?>
+  
+  <!-- Modify reservation form -->
+  <?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
 
-<div class="modal" tabindex="-1" role="dialog" id="modalProductDetail">
-  <div class="modal-dialog" role="document">
-	  <div class="modal-content">
-			<div class="modal-header">
-	      <h5 class="modal-title modal-product-detail-title"></h5>
-	      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	        <span aria-hidden="true">&times;</span>
-	      </button>
-	    </div>
-      <div class="modal-body modal-product-detail-content">
-      </div>
-  	</div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div id="reservation_detail"></div>
+    </div>
+    <div class="col-lg-8">
+      <div id="product_listing"></div>
+    </div>
   </div>
-</div>
+
+  <div class="modal" tabindex="-1" role="dialog" id="modalProductDetail">
+    <div class="modal-dialog" role="document">
+  	  <div class="modal-content">
+  			<div class="modal-header">
+  	      <h5 class="modal-title modal-product-detail-title"></h5>
+  	      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  	        <span aria-hidden="true">&times;</span>
+  	      </button>
+  	    </div>
+        <div class="modal-body modal-product-detail-content">
+        </div>
+    	</div>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,29 @@
     <!-- ===================================================== -->
-    <!--                      Microtemplates                   -->
+    <!--         Selector Wizard  Microtemplates               -->
     <!-- ===================================================== -->
+
+    <!-- Steps summary -->
+
+    <script id="wizard_steps_summary" type="txt/tmpl">
+
+      <div class="wizard-summary container">
+        <div class="row">
+          <div class="wizard-summary_item col">
+            <span class="wizard-summary_pickup"><%= summary.pickupPlace %></span>
+            <% if (summary.dateFrom != null) {%>
+              <span class="wizard-summary_datefrom"><%= summary.dateFrom %> <% if (summary.timeFrom != null) {%><%= summary.timeFrom %><% } %> </span>
+            <% } %>
+          </div>
+          <div class="wizard-summary_item col">
+            <span class="wizard-summary_return"><%= summary.returnPlace %></span>
+            <% if (summary.dateTo != null) {%>
+              <span class="wizard-summary_dateto"><%= summary.dateTo %> <% if (summary.timeTo != null) {%><%= summary.timeTo %><% } %></span>
+            <% } %>
+          </div>
+        </div>
+      </div>
+
+    </script>
 
     <!-- Select place micro-template -->
 
@@ -11,7 +34,7 @@
           <div class="col-md-12">
             <ul style="list-style: none" class="pt-3">
               <% for (var idx=0; idx<places.length; idx++) { %>
-              <li><a class="selector_place text-primary" role="button"><%=places[idx].name%></a></li>
+              <li><a class="selector_place text-primary" role="button" data-place-id="<%=places[idx].name%>"><%=places[idx].name%></a></li>
               <% } %>
             </ul>
           </div>
@@ -59,7 +82,7 @@
 
       <div class="container p-0">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 full-size-datepicker-container">
              <div id="selector_date" class="pt-3"></div>
           </div>
         </div>

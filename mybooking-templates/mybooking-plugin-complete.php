@@ -34,6 +34,13 @@
 *   The scripts are defined in mybooking-plugin-complete-tmpl.php
 */
 ?>
+
+<!-- Modify reservation wizard : take into account the theme due to HTML elements -->
+<?php mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php') ?>
+
+<!-- Modify reservation form -->
+<?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
+
 <div class="row">
   <aside class="col-lg-4">
     <div id="reservation_detail">
@@ -87,7 +94,6 @@
         </div>
     </form>
   </div>
-  <?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
 </div>
 
 <div class="modal" tabindex="-1" role="dialog" id="modalExtraDetail">
