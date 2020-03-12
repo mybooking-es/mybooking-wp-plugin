@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-12 03:22+0000\n"
-"PO-Revision-Date: 2020-03-12 03:23+0000\n"
+"POT-Creation-Date: 2020-03-12 07:27+0000\n"
+"PO-Revision-Date: 2020-03-12 07:28+0000\n"
 "Last-Translator: mybooking <info@mybooking.es>\n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -16,14 +16,15 @@ msgstr ""
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:18
 #: mybooking-templates/mybooking-plugin-selector-widget.php:18
+msgctxt "form_selector"
 msgid "Pick-up place"
-msgstr "Lugar entrega"
+msgstr "Lugar de entrega"
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:22
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:38
 #: mybooking-templates/mybooking-plugin-selector-widget.php:25
 #: mybooking-templates/mybooking-plugin-selector-widget.php:44
-#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:21
+msgctxt "form_selector"
 msgid "Date"
 msgstr "Fecha"
 
@@ -31,32 +32,44 @@ msgstr "Fecha"
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:42
 #: mybooking-templates/mybooking-plugin-selector-widget.php:29
 #: mybooking-templates/mybooking-plugin-selector-widget.php:48
+msgctxt "form_selector"
 msgid "Time"
 msgstr "Hora"
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:34
 #: mybooking-templates/mybooking-plugin-selector-widget.php:37
+msgctxt "form_selector"
 msgid "Return place"
 msgstr "Lugar devolución"
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:49
 #: mybooking-templates/mybooking-plugin-selector-widget.php:55
+msgctxt "form_selector"
 msgid "Search"
 msgstr "Buscar"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:14
+msgctxt "form_selector_wizard"
 msgid "Where?"
 msgstr "¿Dónde?"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:16
+msgctxt "form_selector_wizard"
 msgid "Select a location"
-msgstr "Elige un lugar"
+msgstr "Seleccionar lugar"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:19
+msgctxt "form_selector_wizard"
 msgid "When?"
-msgstr "¿Cuando?"
+msgstr "¿Cuándo?"
+
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:21
+msgctxt "form_selector_wizard"
+msgid "Select dates"
+msgstr "Seleccionar fechas"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:25
+msgctxt "form_selector_wizard"
 msgid "Book"
 msgstr "Reservar"
 

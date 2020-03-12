@@ -11,18 +11,18 @@
             <input type="hidden" name="time_to">
             <div class="row">
               <div class="col-md-3">
-                  <label for="place_holder"><?php _e( 'Where?', 'mybooking-wp-plugin') ?></label>
+                  <label for="place_holder"><?php echo _x( 'Where?', 'form_selector_wizard', 'mybooking-wp-plugin') ?></label>
                   <input type="text" class="form-control form-control-lg bg-white" id="place_holder" 
-                         aria-describedby="pickupPlaceHolder" placeholder="<?php _e( 'Select a location', 'mybooking-wp-plugin') ?>" readonly="true">
+                         aria-describedby="pickupPlaceHolder" placeholder="<?php echo _x( 'Select a location', 'form_selector_wizard', 'mybooking-wp-plugin') ?>" readonly="true">
               </div>
               <div class="col-md-3">
-                  <label for="from_holder"><?php _e( 'When?', 'mybooking-wp-plugin') ?></label>
+                  <label for="from_holder"><?php echo _x( 'When?', 'form_selector_wizard', 'mybooking-wp-plugin') ?></label>
                   <input type="text" class="form-control form-control-lg bg-white" id="from_holder" 
-                         aria-describedby="FromHolder" placeholder="<?php _e( 'Date', 'mybooking-wp-plugin') ?>" readonly="true">
+                         aria-describedby="FromHolder" placeholder="<?php echo _x( 'Select dates', 'form_selector_wizard', 'mybooking-wp-plugin') ?>" readonly="true">
               </div>    
               <br>
               <div class="col-md-1 d-flex align-items-end">
-                  <button id="btn_reservation" type="button" class="btn btn-success"><?php _e( 'Book', 'mybooking-wp-plugin') ?></button> 
+                  <button id="btn_reservation" type="button" class="btn btn-success"><?php echo _x( 'Book', 'form_selector_wizard', 'mybooking-wp-plugin') ?></button> 
               </div>                                     
             </div>           
           </div>
