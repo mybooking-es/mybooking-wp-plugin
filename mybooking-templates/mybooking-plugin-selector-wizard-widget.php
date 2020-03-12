@@ -11,22 +11,18 @@
             <input type="hidden" name="time_to">
             <div class="row">
               <div class="col-md-3">
-                  <label for="place_holder">¿Dónde?</label>
+                  <label for="place_holder"><?php _e( 'Where?', 'mybooking-wp-plugin') ?></label>
                   <input type="text" class="form-control form-control-lg bg-white" id="place_holder" 
-                         aria-describedby="pickupPlaceHolder" placeholder="Elige un lugar" readonly="true">
+                         aria-describedby="pickupPlaceHolder" placeholder="<?php _e( 'Select a location', 'mybooking-wp-plugin') ?>" readonly="true">
               </div>
               <div class="col-md-3">
-                  <label for="from_holder">¿Cuando?</label>
+                  <label for="from_holder"><?php _e( 'When?', 'mybooking-wp-plugin') ?></label>
                   <input type="text" class="form-control form-control-lg bg-white" id="from_holder" 
-                         aria-describedby="FromHolder" placeholder="Fecha de salida" readonly="true">
+                         aria-describedby="FromHolder" placeholder="<?php _e( 'Date', 'mybooking-wp-plugin') ?>" readonly="true">
               </div>    
-              <!--div class="col-md-3 d-flex align-items-end">
-                  <input type="text" class="form-control form-control-lg bg-white" id="to_holder" 
-                         aria-describedby="FromHolder" placeholder="Fecha de salida" readonly="true">
-              </div-->   
               <br>
               <div class="col-md-1 d-flex align-items-end">
-                  <button id="btn_reservation" type="button" class="btn btn-success">Reservar</button> 
+                  <button id="btn_reservation" type="button" class="btn btn-success"><?php _e( 'Book', 'mybooking-wp-plugin') ?></button> 
               </div>                                     
             </div>           
           </div>

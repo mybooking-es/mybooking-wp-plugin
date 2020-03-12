@@ -13,90 +13,43 @@
         <?php endif; ?>
         
         <!-- Entrega -->
-        <div class="field">
-          <label class="label">Entrega</label>
-          <div class="control">
-            <div class="select is-fullwidth">
-              <select id="widget_pickup_place" name="pickup_place"> </select>
-            </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="date_from"><?php _e( 'Pick-up place', 'mybooking-wp-plugin') ?></label>
+              <select class="form-control" name="pickup_place" id="widget_pickup_place"></select>
+          </div>
+          <div class="form-group col-md-4">
+              <label for="date_from"><?php _e( 'Date', 'mybooking-wp-plugin' ) ?></label>
+              <input type="text" class="form-control" name="date_from" id="widget_date_from" autocomplete="off">
+          </div>
+          <div class="form-group col-md-2">
+              <label for="time_to"><?php _e( 'Time', 'mybooking-wp-plugin' ) ?></label>
+              <select class="form-control" name="time_from" id="widget_time_from"></select>
           </div>
         </div>
-
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-                <input type="checkbox" id="widget_same_pickup_return_place" name="same_pickup_return_place" 
-                       checked/>&nbsp;&nbsp;Devolver en la misma oficina
-            </label>
-          </div>
-        </div>
-
-        <div class="field field-body">
-          <div class="field">
-            <div class="control is-expanded">
-              <input
-                      type="text"
-                      id="widget_date_from"
-                      name="date_from"
-                      class="input"
-                      autocomplete="off"
-                    />
-            </div>
-          </div>
-          <div class="field">
-            <div class="control">
-              <div class="select is-fullwidth">
-                <select id="widget_time_from" name="time_from"> </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
 
         <!-- Devolución -->
-        <div class="field">
-          <label class="label">Devolución</label>
-          <div class="control widget_return_place">
-            <div class="select is-fullwidth">
-              <select id="widget_return_place" name="return_place"> </select>
-            </div>
-          </div>          
-        </div>
-        
-        <div class="field field-body">
-          <div class="field">
-            <div class="control is-expanded">
-              <input type="text" id="widget_date_to" name="date_to" autocomplete="off" class="input"/>
-            </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="date_from"><?php _e( 'Return place', 'mybooking-wp-plugin' ) ?></label>
+            <select class="form-control" name="return_place" id="widget_return_place"></select>
           </div>
-          <div class="field">
-            <div class="control">
-              <div class="select is-fullwidth">
-                <select id="widget_time_to" name="time_to"> </select>
-              </div>
-            </div>
+          <div class="form-group col-md-4">
+              <label for="date_from"><?php _e( 'Date', 'mybooking-wp-plugin' ) ?></label>
+              <input type="text" class="form-control" name="date_to" id="widget_date_to" autocomplete="off">
+          </div>
+          <div class="form-group col-md-2">
+              <label for="time_to"><?php _e( 'Time', 'mybooking-wp-plugin' ) ?></label>
+              <select class="form-control" name="time_to" id="widget_time_to"></select>
           </div>
         </div>
         
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-                <div>
-                  <input type="checkbox" id="widget_accept_age" name="accept_age"/>&nbsp;Soy mayor de 21 años
-                </div>
-            </label>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <input class="btn btn-success" type="submit" value="<?php _e( 'Search', 'mybooking-wp-plugin') ?>" />
           </div>
         </div>
-
-        <div class="field is-horizontal">
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input class="button is-primary" type="submit" value="Buscar" />
-              </div>
-            </div>
-          </div>
-        </div>        
+     
         
       </form>
     </section>

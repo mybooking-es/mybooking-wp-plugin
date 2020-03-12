@@ -15,18 +15,18 @@
         <!-- Entrega -->
         <div class="form-row">
           <div class="form-group col-md-12">
-              <label for="date_from">Lugar de entrega</label>
+              <label for="date_from"><?php _e( 'Pick-up place', 'mybooking-wp-plugin') ?></label>
               <select class="form-control" name="pickup_place" id="widget_pickup_place"></select>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md-6">
-              <label for="date_from">Fecha de entrega</label>
+              <label for="date_from"><?php _e( 'Date', 'mybooking-wp-plugin' ) ?></label>
               <input type="text" class="form-control" name="date_from" id="widget_date_from" autocomplete="off">
           </div>
           <div class="form-group col-md-6">
-              <label for="time_to">Hora de entrega</label>
+              <label for="time_to"><?php _e( 'Time', 'mybooking-wp-plugin' ) ?></label>
               <select class="form-control" name="time_from" id="widget_time_from"></select>
           </div>
         </div>
@@ -34,25 +34,25 @@
         <!-- Devolución -->
         <div class="form-row">
           <div class="form-group col-md-12">
-            <label for="date_from">Lugar de devolución</label>
+            <label for="date_from"><?php _e( 'Return place', 'mybooking-wp-plugin' ) ?></label>
             <select class="form-control" name="return_place" id="widget_return_place"></select>
           </div>
         </div>       
 
         <div class="form-row">
           <div class="form-group col-md-6">
-              <label for="date_from">Fecha de devolución</label>
+              <label for="date_from"><?php _e( 'Date', 'mybooking-wp-plugin' ) ?></label>
               <input type="text" class="form-control" name="date_to" id="widget_date_to" autocomplete="off">
           </div>
           <div class="form-group col-md-6">
-              <label for="time_to">Hora de devolución</label>
+              <label for="time_to"><?php _e( 'Time', 'mybooking-wp-plugin' ) ?></label>
               <select class="form-control" name="time_to" id="widget_time_to"></select>
           </div>
         </div>
         
         <div class="form-row">
           <div class="form-group col-md-12">
-            <input class="btn btn-success" type="submit" value="Buscar" />
+            <input class="btn btn-success" type="submit" value="<?php _e( 'Search', 'mybooking-wp-plugin') ?>" />
           </div>
         </div>
 

@@ -138,11 +138,14 @@
 	  }  	
 
 	  // ------------ WordPress plugin init -------------
-	  
+
 	  /*
 	   * Initialize the WordPress Plugin
 	   */
 	  private function wp_init() {
+
+	  	// Load translations
+	  	add_action( 'plugins_loaded', array($this, 'wp_load_plugin_textdomain') );
 
 			// Apply body tags on reservation pages
 			add_filter( 'body_class', array($this, 'wp_body_class'));
@@ -218,6 +221,19 @@
 			add_shortcode('mybooking_activities_engine_order', array($this, 'wp_activities_order_shortcode' ));				
 
 	  }
+
+	  /**
+	   * Load the plugin textdomain languages
+	   */
+	  function wp_load_plugin_textdomain() {
+
+	  	 // This module is located in includes and the languages is in the 
+	  	 // root directory of the plugin : 'mybooking-wp-plugin/languages/'
+
+	  	 $languages_folder = dirname(plugin_basename(__DIR__)).'/languages';
+			 load_plugin_textdomain( 'mybooking-wp-plugin', FALSE, $languages_folder );
+
+		}
 
 		/**
 		 * Custom CSS

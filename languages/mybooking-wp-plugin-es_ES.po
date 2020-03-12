@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-12 03:22+0000\n"
+"PO-Revision-Date: 2020-03-12 03:23+0000\n"
+"Last-Translator: mybooking <info@mybooking.es>\n"
+"Language-Team: Español\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.1; wp-5.3.2"
+
+#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:18
+#: mybooking-templates/mybooking-plugin-selector-widget.php:18
+msgid "Pick-up place"
+msgstr "Lugar entrega"
+
+#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:22
+#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:38
+#: mybooking-templates/mybooking-plugin-selector-widget.php:25
+#: mybooking-templates/mybooking-plugin-selector-widget.php:44
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:21
+msgid "Date"
+msgstr "Fecha"
+
+#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:26
+#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:42
+#: mybooking-templates/mybooking-plugin-selector-widget.php:29
+#: mybooking-templates/mybooking-plugin-selector-widget.php:48
+msgid "Time"
+msgstr "Hora"
+
+#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:34
+#: mybooking-templates/mybooking-plugin-selector-widget.php:37
+msgid "Return place"
+msgstr "Lugar devolución"
+
+#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:49
+#: mybooking-templates/mybooking-plugin-selector-widget.php:55
+msgid "Search"
+msgstr "Buscar"
+
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:14
+msgid "Where?"
+msgstr "¿Dónde?"
+
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:16
+msgid "Select a location"
+msgstr "Elige un lugar"
+
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:19
+msgid "When?"
+msgstr "¿Cuando?"
+
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:25
+msgid "Book"
+msgstr "Reservar"
+
+#. Name of the plugin
+msgid "MyBooking Reservation Engine for WordPress"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Reservation Engine WordPress frontend for Mybooking. Transforms wordpress "
+"into a rental / accommodation / tours reservation engine."
+msgstr ""
+
+#. URI of the plugin
+msgid "https://www.mybooking.es/"
+msgstr ""
+
+#. Author of the plugin
+msgid "mybooking"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://mybooking.es/"
+msgstr ""
