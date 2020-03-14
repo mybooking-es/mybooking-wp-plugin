@@ -6,18 +6,18 @@
 
     <script id="wizard_steps_summary" type="txt/tmpl">
 
-      <div class="wizard-summary container">
+      <div class="selector_wizard_step_summary_container container">
         <div class="row">
-          <div class="wizard-summary_item col">
-            <span class="wizard-summary_pickup"><%= summary.pickupPlace %></span>
+          <div class="selector_wizard_step_summary_container_item col text-right">
+            <div class="wizard-summary_pickup"><%= summary.pickupPlace %></div>
             <% if (summary.dateFrom != null) {%>
-              <span class="wizard-summary_datefrom"><%= summary.dateFrom %> <% if (summary.timeFrom != null) {%><%= summary.timeFrom %><% } %> </span>
+              <div class="wizard-summary_datefrom"><%= summary.dateFrom %> <% if (summary.timeFrom != null) {%><%= summary.timeFrom %><% } %> </div>
             <% } %>
           </div>
-          <div class="wizard-summary_item col">
-            <span class="wizard-summary_return"><%= summary.returnPlace %></span>
+          <div class="wizard-selector_wizard_step_summary_container_item col">
+            <div class="wizard-summary_return"><%= summary.returnPlace %></div>
             <% if (summary.dateTo != null) {%>
-              <span class="wizard-summary_dateto"><%= summary.dateTo %> <% if (summary.timeTo != null) {%><%= summary.timeTo %><% } %></span>
+              <div class="wizard-summary_dateto"><%= summary.dateTo %> <% if (summary.timeTo != null) {%><%= summary.timeTo %><% } %></div>
             <% } %>
           </div>
         </div>

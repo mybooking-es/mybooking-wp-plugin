@@ -2,7 +2,7 @@
 /** ======== Reservation Engine Renting ========= **/
 /** ============================================= **/
 
-/** ----- Product catalog ------- **/
+/** ------------ 1. Products catalog ------------------- **/
 
 .resource-product-card-img {
   min-height: 7rem;
@@ -43,7 +43,7 @@
   }
 }
 
-/** ----- Product catalog calendar ---- **/
+/** ------------ 2. Product catalog calendar --------------- **/
 
 .date-picker-wrapper .date-available {
   background-color: #aeecbc;
@@ -55,26 +55,60 @@
   color: white !important;
 }
 
-/** ============================================= **/
-/** ==== Reservation Engine Renting Wizard ====== **/
-/** ============================================= **/
+/** ------------ 3. Selector Wizard ---------------------- **/
 
-/* -- 1. Choose product -- */
-
-/**
- * Reservation summary
- */
-/*
-.reservation-summary-card-detail {
-  font-size: 0.8em;
-}  
-
-@media (max-width: 992px) {
-  .reservation-summary-card-detail {
-    font-size: 1em !important;
-  }    
+/* The container that holds everything */
+.selector_wizard_container { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: 1040; 
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden;
 }
-*/
+
+/* The container step title */
+
+.selector_wizard_step_title {
+
+  position: relative; 
+  top: 20px; 
+  border-bottom: 1px solid #eee;
+
+}
+
+.selector_wizard_close_btn {
+  position: fixed; 
+  top: 20px; 
+  right: 20px; 
+  margin-right: 10px;
+}
+
+.selector_wizard_close_btn i {
+  font-size:1.2em; 
+  font-weight: 200;
+}
+
+.selector_wizard_step_container {
+  position: fixed; 
+  top: 50px; 
+  left: 0; 
+  z-index: 2000; 
+  width: 100%; 
+  height: 100%; 
+  overflow-y: auto; 
+  overflow-x: hidden;
+}
+
+.selector_wizard_step_summary_container {
+  padding-top: 1em;
+  padding-bottom: 1em
+
+}
+
+
+/** ------------ 4. Reservation Wizard : Choose product ------- **/
 
 @media (min-width: 992px) {
   .reservation-summary-card {
@@ -87,38 +121,63 @@
  */ 
 @media (max-width: 576px) { 
   .product-card {
-    height: 620px;
+    height: 700px;
   }
 }
 
 @media (min-width: 768px) { 
   .product-card {
-    height: 560px;
+    height: 640px;
   }
 }
 
+.product-card-characteristics {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 30px;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
 
-/**
- * Product card extra data container
- */
+.product-card-characteristics .icon {
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 50%;
+    margin-bottom: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.product-card-characteristics .icon img {
+    height: 30px;
+    width: 30px;
+}
+
 
 .product-card-info-container {
   left: 50%;
   position: absolute;
 }
 
-
-/**
- * Product card extra data
- */
-
 .product-card-info {
   position: relative;
   left: -50%;
 }
 
-
-/* --- 2. Complete ---- */
+/** ------------ 5. Reservation Wizard : Complete ------- **/
 
 .complete-section-bg {
   background-color: #dddddd;

@@ -14,20 +14,32 @@
               <div class="card-body">
                 <h5 class="card-title text-center"><%=product.short_description%></h5>
                 <p class="card-text text-center text-muted"><%=product.name%></p>
+
+                <div class="product-card-characteristics">
+                  <% if (product.key_characteristics) { %> 
+                    <% for (characteristic in product.key_characteristics) { %>
+                      <div class="icon">
+                        <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/key_characteristics/<%=characteristic%>.svg"/>
+                        <span><%=product.key_characteristics[characteristic]%> </span>
+                      </div>
+                    <% } %>
+                  <% } %>
+                </div>
+
                 <!-- Multiple products -->
                 <% if (configuration.multipleProductsSelection) { %>  
                   <% if (product.availability) { %>
-                  <div class="car-listing-selector">
-                    <select class="form-control select-choose-product" data-value="<%=product.code%>">
-                      <% for (var idx=0;idx<=(product.available);idx++) { %>
-                        <option value="<%=idx%>" <% if (shoppingCartProductQuantities[product.code] && idx == shoppingCartProductQuantities[product.code]) { %>selected="selected"<%}%>>
-                          <%=idx%> (<%= configuration.formatCurrency(product.price * idx) %>)
-                        </option>
-                      <% } %>
+                    <div class="car-listing-selector">
+                      <select class="form-control select-choose-product" data-value="<%=product.code%>">
+                        <% for (var idx=0;idx<=(product.available);idx++) { %>
+                          <option value="<%=idx%>" <% if (shoppingCartProductQuantities[product.code] && idx == shoppingCartProductQuantities[product.code]) { %>selected="selected"<%}%>>
+                            <%=idx%> (<%= configuration.formatCurrency(product.price * idx) %>)
+                          </option>
+                        <% } %>
                       </select>
                     </div>
                   <% } else { %>
-                    <p class="text-center text-muted">No hay productos disponibles</p>
+                    <p class="text-center text-muted"><?php echo _x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></p>
                   <% } %>
                 <% } else { %>  
                   <!-- Offer name -->
@@ -51,7 +63,7 @@
                   <% if (product.availability && product.few_available_units) { %>
                     <div class="product-card-info-container">
                        <div class="product-card-info text-danger">
-                          <span class="text-danger"><small>¡Quedan pocas unidades!</small></span>
+                          <span class="text-danger"><small><?php echo _x( 'Few units left!', 'renting_choose_product', 'mybooking-wp-plugin') ?></small></span>
                        </div>  
                     </div>
                   <% } %>
@@ -60,11 +72,11 @@
               <% if (!configuration.multipleProductsSelection) { %>
               <div class="card-body">
                   <% if (product.availability) { %>
-                    <button class="btn btn-primary btn-choose-product w-100" data-product="<%=product.code%>">Reservar</button>
+                    <button class="btn btn-primary btn-choose-product w-100" data-product="<%=product.code%>"><?php echo _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
                   <% } else { %>
                     <div class="card-info-container">
                        <div class="card-info">
-                          <span class="badge badge-dark">Modelo no disponible en la oficina y fechas seleccionadas</span>
+                          <span class="badge badge-dark"><?php echo _x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
                        </div>  
                     </div>
                   <% } %>
@@ -78,7 +90,7 @@
       <% if (configuration.multipleProductsSelection) { %>
       <div class="row">
         <div class="col-md-12">
-          <button id="go_to_complete" class="btn btn-primary">Siguiente</button>
+          <button id="go_to_complete" class="btn btn-primary"><?php echo _x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
         </div>
       </div>
       <% } %>
@@ -100,11 +112,11 @@
               </div>
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only">&lt;</span>
               </a>
               <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only">&gt;</span>
               </a>
             </div>
             <div class="mt-3 text-muted"><%=product.description%></div>
@@ -119,7 +131,7 @@
       <div class="reservation-summary-card">
         <div class="card mb-3">
           <div class="card-header">
-            <b>Su reserva</b>
+            <b><?php echo _x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></b>
           </div>
           <ul class="list-group list-group-flush">
             <% if (configuration.pickupReturnPlace) {%>
@@ -142,9 +154,9 @@
                 <%=shopping_cart.time_to%>
               <% } %> 
             </li>
-            <li class="list-group-item reservation-summary-card-detail">Duración del alquiler: <%=shopping_cart.days%> día/s</li>
+            <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_choose_product', 'mybooking-wp-plugin' ) ?> <%=shopping_cart.days%> <?php echo _x( 'day(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></li>
             <li class="list-group-item">
-              <button id="modify_reservation_button" class="btn btn-primary w-100">Modificar reserva</button>
+              <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo _x( 'Modify reservation', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></button>
             </li>
           </ul>
         </div>

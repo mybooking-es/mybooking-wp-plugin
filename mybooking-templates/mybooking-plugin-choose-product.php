@@ -11,12 +11,10 @@
 *   Description:
 *   ------------
 *
-*   This template renders the complete step page. It manages the following:
+*   This template renders the choose product. It manages the following:
 *
-*      - Select the coverage 
-*      - Select the extras
-*      - Fill in the reservation from
-*      - Request reservation or pay
+*      - Select the product
+*      - Select the products and quantities (multiple products reservation)
 *
 *   Elements & Scripts:
 *   -------------------

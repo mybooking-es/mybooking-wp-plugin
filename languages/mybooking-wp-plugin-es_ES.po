@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-12 07:27+0000\n"
-"PO-Revision-Date: 2020-03-12 07:28+0000\n"
+"POT-Creation-Date: 2020-03-14 18:40+0000\n"
+"PO-Revision-Date: 2020-03-14 18:42+0000\n"
 "Last-Translator: mybooking <info@mybooking.es>\n"
-"Language-Team: Español\n"
+"Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -14,9 +14,50 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.3.1; wp-5.3.2"
 
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:42
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:79
+msgctxt "renting_choose_product"
+msgid "Model not available in the office and selected dates"
+msgstr "Modelo no disponible en la oficina y fechas seleccionadas"
+
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:66
+msgctxt "renting_choose_product"
+msgid "Few units left!"
+msgstr "¡Quedan pocas unidades!"
+
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:75
+msgctxt "renting_choose_product"
+msgid "Book it!"
+msgstr "Reservar"
+
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:93
+msgctxt "renting_choose_product"
+msgid "Next"
+msgstr "Siguiente"
+
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:134
+msgctxt "renting_choose_product"
+msgid "Reservation summary"
+msgstr "Su reserva"
+
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:157
+msgctxt "renting_choose_product"
+msgid "Rental duration"
+msgstr "Duración del alquiler"
+
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:157
+msgctxt "renting_choose_product"
+msgid "day(s)"
+msgstr "día/s"
+
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:159
+msgctxt "renting_choose_product"
+msgid "Modify reservation"
+msgstr "Modificar reserva"
+
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:18
 #: mybooking-templates/mybooking-plugin-selector-widget.php:18
-msgctxt "form_selector"
+msgctxt "renting_form_selector"
 msgid "Pick-up place"
 msgstr "Lugar de entrega"
 
@@ -24,7 +65,7 @@ msgstr "Lugar de entrega"
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:38
 #: mybooking-templates/mybooking-plugin-selector-widget.php:25
 #: mybooking-templates/mybooking-plugin-selector-widget.php:44
-msgctxt "form_selector"
+msgctxt "renting_form_selector"
 msgid "Date"
 msgstr "Fecha"
 
@@ -32,44 +73,44 @@ msgstr "Fecha"
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:42
 #: mybooking-templates/mybooking-plugin-selector-widget.php:29
 #: mybooking-templates/mybooking-plugin-selector-widget.php:48
-msgctxt "form_selector"
+msgctxt "renting_form_selector"
 msgid "Time"
 msgstr "Hora"
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:34
 #: mybooking-templates/mybooking-plugin-selector-widget.php:37
-msgctxt "form_selector"
+msgctxt "renting_form_selector"
 msgid "Return place"
-msgstr "Lugar devolución"
+msgstr "Lugar de devolución"
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:49
 #: mybooking-templates/mybooking-plugin-selector-widget.php:55
-msgctxt "form_selector"
+msgctxt "renting_form_selector"
 msgid "Search"
 msgstr "Buscar"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:14
-msgctxt "form_selector_wizard"
+msgctxt "renting_form_selector_wizard"
 msgid "Where?"
 msgstr "¿Dónde?"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:16
-msgctxt "form_selector_wizard"
+msgctxt "renting_form_selector_wizard"
 msgid "Select a location"
-msgstr "Seleccionar lugar"
+msgstr "Seleccione un lugar"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:19
-msgctxt "form_selector_wizard"
+msgctxt "renting_form_selector_wizard"
 msgid "When?"
-msgstr "¿Cuándo?"
+msgstr "¿Cuando?"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:21
-msgctxt "form_selector_wizard"
+msgctxt "renting_form_selector_wizard"
 msgid "Select dates"
-msgstr "Seleccionar fechas"
+msgstr "Seleccione las fechas"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:25
-msgctxt "form_selector_wizard"
+msgctxt "renting_form_selector_wizard"
 msgid "Book"
 msgstr "Reservar"
 
