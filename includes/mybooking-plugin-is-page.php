@@ -20,7 +20,7 @@ function mybooking_engine_is_page( $page_id ) {
 	  $page = get_page_by_path( $page_id );
 	  $pageId = $page ? $page->ID : null;
 	  if ($pageId != null) {
-	    $translated_id = icl_object_id($pageId, $page->$post_type);
+	    $translated_id = icl_object_id( $pageId, 'page' );
 		  $result = is_page ( $page_id ) || ($translated_id != '' && is_page( $translated_id ));
 	  }
 	  else {
@@ -37,9 +37,9 @@ function mybooking_engine_is_page( $page_id ) {
 }
 
 /**
- * is page.
+ * translated_slug.
  *
- * get the translated slug
+ * Get the translated url
  * 
  * WPML integration
  *
@@ -51,17 +51,23 @@ function mybooking_engine_is_page( $page_id ) {
  */
 function mybooking_engine_translated_slug( $page_id ) {
 
+
 	// WMPL verification
-	if ( function_exists('icl_object_id') ) {
+  if ( function_exists('icl_object_id') ) {
 
-		$page = get_page_by_path( $page_id );
-	  $pageId = $page ? $page->ID : null;
-	  if ($pageId != null) {
-	    $translated_id = icl_object_id($pageId, $page->$post_type);
-	    return $translated_id;
-	  }
+			$page = get_page_by_path( $page_id );
+		  $pageId = $page ? $page->ID : null;
+		  if ($pageId != null) {
+		    $translated_id = icl_object_id( $pageId, 'page' );
+				if ( $translated_id ) {
+				  $page = get_page($translated_id);
+				  if ( $page ) {
+				    return get_permalink( $page->ID  ); // $page->post_name
+			    }
+			  }
+		  }
 
-	}
+  }
 
 	return $page_id;
 
