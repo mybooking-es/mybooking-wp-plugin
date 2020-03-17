@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-14 18:40+0000\n"
-"PO-Revision-Date: 2020-03-14 18:42+0000\n"
+"PO-Revision-Date: 2020-03-14 18:47+0000\n"
 "Last-Translator: mybooking <info@mybooking.es>\n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
@@ -116,13 +116,15 @@ msgstr "Reservar"
 
 #. Name of the plugin
 msgid "MyBooking Reservation Engine for WordPress"
-msgstr ""
+msgstr "Mybooking: Motor de reservas para WordPress"
 
 #. Description of the plugin
 msgid ""
 "Reservation Engine WordPress frontend for Mybooking. Transforms wordpress "
 "into a rental / accommodation / tours reservation engine."
 msgstr ""
+"Motor de reservas para Wordpress. Transforma tu WordPress en un motor de "
+"reservas para alquiler, alojamientos y tours."
 
 #. URI of the plugin
 msgid "https://www.mybooking.es/"
