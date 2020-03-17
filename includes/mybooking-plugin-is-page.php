@@ -51,6 +51,13 @@ function mybooking_engine_is_page( $page_id ) {
  */
 function mybooking_engine_translated_slug( $page_id ) {
 
+	if ( $page_id == null ) {
+		return $page_id;
+	}
+	
+	if ( $page_id == '' ) {
+		return $page_id;
+	}
 
 	// WMPL verification
   if ( function_exists('icl_object_id') ) {
