@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.8]
+
+### Integration WMPL slugs
+
 ## [0.5.7]
 
 ### Added
