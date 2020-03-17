@@ -15,7 +15,7 @@
 
     <script type="text/tmpl" id="script_multiple_dates_selector">
 
-        <h2 class="h5 mt-3 mb-3"><b>Seleccionar fecha</b></h2>
+        <h2 class="h5 mt-3 mb-3"><b><?php echo _x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
         <form name="select_date_form" id="select_date_form">
           <input type="hidden" name="activity_id" id="activity_id" value="<%=activity.id%>"/>
           <div class="form-group">
@@ -31,7 +31,7 @@
 
     <script type="text/tmpl" id="script_cyclic_calendar">
 
-        <h2 class="h5 mt-3 mb-3 text-muted"><b>Seleccionar fecha</b></h2>
+        <h2 class="h5 mt-3 mb-3 text-muted"><b><?php echo _x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
         <form name="select_date_form" id="select_date_form">
           <input type="hidden" name="activity_id" id="activity_id" value="<%=activity_id%>"/>
           <div id="datepicker"></div>
@@ -45,11 +45,11 @@
 
         <% if (turns.length == 0) {%>
           <div class="alert alert-warning">
-             <p>Lo sentimos, no hay horarios disponibles</p>
+             <p><?php echo _x( 'We are sorry. There are not schedules available', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></p>
           </div>
         <% } else { %>
           <br>
-          <h2 class="h5 mt-3 mb-3 text-muted"><b>Seleccionar hora</b></h2>
+          <h2 class="h5 mt-3 mb-3 text-muted"><b><?php echo _x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
 
           <div class="form-group">
           <% for (var idx=0;idx<turns.length;idx++) { %>
@@ -65,7 +65,7 @@
 
     <script type="text/tmpl" id="script_tickets">
 
-        <h2 class="h5 mt-5 mb-3 text-muted"><b>Seleccionar personas</b></h2>
+        <h2 class="h5 mt-5 mb-3 text-muted"><b><?php echo _x( 'People', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
 
         <% for (item in tickets) { %>
            <div class="form-group">
@@ -78,8 +78,7 @@
         <% } %>
 
         <div class="form-group">
-          <button type="button" id="btn_reservation" class="btn btn-primary w-100">Reservar</button>
-          <!--a id="btn_reservation" href="#" class="btn btn-primary w-100" role="button">Reservar</a-->
+          <button type="button" id="btn_reservation" class="btn btn-primary w-100"><?php echo _x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></button>
         </div>  
 
     </script>

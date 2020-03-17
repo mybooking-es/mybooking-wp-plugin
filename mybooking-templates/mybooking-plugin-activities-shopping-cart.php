@@ -1,7 +1,7 @@
     <!-- Activities : Shopping cart page -->
     <section class="section reservation-step">
       <div class="jumbotron">
-        <h1 class="display-6 text-center">Su compra</h1>
+        <h2 class="display-6 text-center"><?php echo _x( 'Shopping cart', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?></h2>
       </div>
       <div class="container">
         <div class="row mt-5">

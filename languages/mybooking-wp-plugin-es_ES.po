@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-17 15:07+0000\n"
-"PO-Revision-Date: 2020-03-17 15:12+0000\n"
+"POT-Creation-Date: 2020-03-17 16:30+0000\n"
+"PO-Revision-Date: 2020-03-17 16:33+0000\n"
 "Last-Translator: mybooking <info@mybooking.es>\n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -13,6 +13,196 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.3.1; wp-5.3.2"
+
+#: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:18
+#: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:34
+msgctxt "activity_tickets_form_selector"
+msgid "Select date"
+msgstr "Seleccionar fecha"
+
+#: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:48
+msgctxt "activity_tickets_form_selector"
+msgid "We are sorry. There are not schedules available"
+msgstr "Lo sentimos. No hay horarios disponibles"
+
+#: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:52
+msgctxt "activity_tickets_form_selector"
+msgid "Select hour"
+msgstr "Seleccionar horario"
+
+#: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:68
+msgctxt "activity_tickets_form_selector"
+msgid "People"
+msgstr "Personas"
+
+#: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:81
+msgctxt "activity_tickets_form_selector"
+msgid "Book now"
+msgstr "Reservar"
+
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:37
+msgctxt "activity_order_item"
+msgid "Total"
+msgstr "Total"
+
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:63
+msgctxt "activity_order"
+msgid "Total"
+msgstr "Total"
+
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:65
+msgctxt "activity_order"
+msgid "Paid"
+msgstr "Pagado"
+
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:66
+msgctxt "activity_order"
+msgid "Pending"
+msgstr "Pendiente"
+
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:90
+msgctxt "activity_order"
+msgid "Paypal"
+msgstr "Paypal"
+
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:96
+msgctxt "activity_order"
+msgid "Credit or debit card"
+msgstr "Tarjeta de crédito/débito"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:5
+msgctxt "activity_shopping_cart"
+msgid "Shopping cart is empty"
+msgstr "El carrito de la compra está vacío"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:33
+msgctxt "activity_shopping_cart_item"
+msgid "Total"
+msgstr "Total"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:43
+msgctxt "activity_shopping_cart_item"
+msgid "Remove"
+msgstr "Eliminar"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:62
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:63
+msgctxt "activity_shopping_cart"
+msgid "Name"
+msgstr "Nombre"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:67
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:68
+msgctxt "activity_shopping_cart"
+msgid "Surname"
+msgstr "Apellidos"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:72
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:73
+msgctxt "activity_shopping_cart"
+msgid "E-mail"
+msgstr "Correo electrónico"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:76
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:77
+msgctxt "activity_shopping_cart"
+msgid "Confirm E-mail"
+msgstr "Confirmar correo electrónico"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:81
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:82
+msgctxt "activity_shopping_cart"
+msgid "Phone number"
+msgstr "Teléfono"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:85
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:86
+msgctxt "activity_shopping_cart"
+msgid "Alternative phone number"
+msgstr "Teléfono alternativo"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:90
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:91
+msgctxt "activity_shopping_cart"
+msgid "Comments"
+msgstr "Comentarios"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:101
+msgctxt "activity_shopping_cart"
+msgid "Total"
+msgstr "Total"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:113
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:142
+msgctxt "activity_shopping_cart"
+msgid "Request reservation"
+msgstr "Solicitar reserva"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:120
+msgctxt "activity_shopping_cart"
+msgid "Pay now"
+msgstr "Pagar ahora"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:135
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:195
+msgctxt "activity_shopping_cart"
+msgid "I have read and hereby accept the terms and conditions"
+msgstr "He leído y acepto los términos y condiciones"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:168
+msgctxt "activity_shopping_cart"
+msgid "Paypal"
+msgstr "Paypal"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:174
+msgctxt "activity_shopping_cart"
+msgid "Credit or debit card"
+msgstr "Tarjeta de crédito/débito"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart.php:4
+msgctxt "activity_shopping_cart"
+msgid "Shopping cart"
+msgstr "Su compra"
+
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:37
+msgctxt "activity_summary_item"
+msgid "Total"
+msgstr "Total"
+
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:63
+msgctxt "activity_summary"
+msgid "Total"
+msgstr "Total"
+
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:65
+msgctxt "activity_summary"
+msgid "Paid"
+msgstr "Pagado"
+
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:66
+msgctxt "activity_summary"
+msgid "Pending"
+msgstr "Pendiente"
+
+#: mybooking-templates/mybooking-plugin-activities.php:10
+msgctxt "activities_list"
+msgid "From"
+msgstr "Desde"
+
+#: mybooking-templates/mybooking-plugin-activities.php:13
+msgctxt "activities_list"
+msgid "More information"
+msgstr "Más información"
+
+#: mybooking-templates/mybooking-plugin-activities.php:27
+msgctxt "activities_list"
+msgid "Previous"
+msgstr "Anterior"
+
+#: mybooking-templates/mybooking-plugin-activities.php:43
+msgctxt "activities_list"
+msgid "Next"
+msgstr "Siguiente"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:42
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:79

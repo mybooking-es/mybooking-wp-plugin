@@ -68,7 +68,7 @@
 
         <div class="form-group">
           <label for="customer_email"><?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="<?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>o:*">
+          <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="<?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
         </div>
 
         <div class="form-group">  

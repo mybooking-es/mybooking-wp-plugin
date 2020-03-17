@@ -34,7 +34,7 @@
                               </tr>
                             <% } %>    
                             <tr>
-                              <td><strong>Total</strong></td>
+                              <td><strong><?php echo _x( 'Total', 'activity_summary_item', 'mybooking-wp-plugin' ) ?></strong></td>
                               <td class="text-right"><strong><%=configuration.formatCurrency(order.items[idx]['total'])%></strong></td>
                           </tbody>
                         </table>
@@ -60,10 +60,10 @@
               </div>
 
               <div class="jumbotron mb-3">
-                <h2 class="h5">Importe total <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
+                <h2 class="h5"><?php echo _x( 'Total', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
                 <hr>
-                <p class="lead">Pagado <span class="pull-right"><%=configuration.formatCurrency(order.total_paid)%></span></p>
-                <p class="lead">Pendiente <span class="pull-right"><%=configuration.formatCurrency(order.total_pending)%></span></p>
+                <p class="lead"><?php echo _x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_paid)%></span></p>
+                <p class="lead"><?php echo _x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_pending)%></span></p>
               </div>
 
             </div>
