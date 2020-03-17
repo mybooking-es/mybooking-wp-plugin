@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.7]
+
+### Added
+
+- Renting translations
+
 ## [0.5.6]
 
 ### Added
