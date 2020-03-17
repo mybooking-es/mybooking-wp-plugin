@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-14 18:40+0000\n"
-"PO-Revision-Date: 2020-03-14 18:47+0000\n"
+"POT-Creation-Date: 2020-03-17 15:07+0000\n"
+"PO-Revision-Date: 2020-03-17 15:12+0000\n"
 "Last-Translator: mybooking <info@mybooking.es>\n"
-"Language-Team: Spanish (Spain)\n"
+"Language-Team: Español\n"
 "Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -55,6 +55,301 @@ msgctxt "renting_choose_product"
 msgid "Modify reservation"
 msgstr "Modificar reserva"
 
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:6
+msgctxt "renting_complete"
+msgid "Coverage"
+msgstr "Cobertura"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:56
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:200
+msgctxt "renting_complete"
+msgid "Extras"
+msgstr "Extras"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:146
+msgctxt "renting_complete"
+msgid "Reservation summary"
+msgstr "Su reserva"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:169
+msgctxt "renting_complete"
+msgid "Rental duration"
+msgstr "Duración del alquiler"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:169
+msgctxt "renting_complete"
+msgid "day(s)"
+msgstr "día(s)"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:171
+msgctxt "renting_complete"
+msgid "Modify reservation"
+msgstr "Modificar reserva"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:179
+msgctxt "renting_complete"
+msgid "Products"
+msgstr "Productos contratados"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:222
+msgctxt "renting_complete"
+msgid "Supplements"
+msgstr "Suplementos"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:228
+msgctxt "renting_complete"
+msgid "Pick-up time supplement"
+msgstr "Suplemento hora de entrega"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:234
+msgctxt "renting_complete"
+msgid "Pick-up place supplement"
+msgstr "Suplemento lugar de entrega"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:240
+msgctxt "renting_complete"
+msgid "Return time supplement"
+msgstr "Suplemento hora de devolución"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:246
+msgctxt "renting_complete"
+msgid "Return place supplement"
+msgstr "Suplemento lugar devolución"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:252
+msgctxt "renting_complete"
+msgid "Driver's age supplement"
+msgstr "Suplemento edad conductor"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:258
+msgctxt "renting_complete"
+msgid "Petrol supplement"
+msgstr "Suplemento combustible"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:270
+msgctxt "renting_complete"
+msgid "Deposit"
+msgstr "Fianza"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:285
+msgctxt "renting_complete"
+msgid "Total"
+msgstr "Total"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:325
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:362
+msgctxt "renting_complete"
+msgid "Request reservation"
+msgstr "Solicitar reserva"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:332
+msgctxt "renting_complete"
+msgid "Pay on arrival"
+msgstr "Pagar en destino"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:339
+msgctxt "renting_complete"
+msgid "Pay now"
+msgstr "Pagar ahora"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:355
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:380
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:441
+msgctxt "renting_complete"
+msgid "I have read and hereby accept the conditions of rental"
+msgstr "He leído y acepto las condiciones del alquiler"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:387
+msgctxt "renting_complete"
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:414
+msgctxt "renting_complete"
+msgid "Paypal"
+msgstr "Paypal"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:420
+msgctxt "renting_complete"
+msgid "Credit or debit card"
+msgstr "Tarjeta de crédito/débito"
+
+#: mybooking-templates/mybooking-plugin-complete.php:56
+msgctxt "renting_complete"
+msgid "Customer's details"
+msgstr "Datos del cliente"
+
+#: mybooking-templates/mybooking-plugin-complete.php:60
+#: mybooking-templates/mybooking-plugin-complete.php:61
+msgctxt "renting_complete"
+msgid "Name"
+msgstr "Nombre"
+
+#: mybooking-templates/mybooking-plugin-complete.php:65
+#: mybooking-templates/mybooking-plugin-complete.php:66
+msgctxt "renting_complete"
+msgid "Surname"
+msgstr "Apellidos"
+
+#: mybooking-templates/mybooking-plugin-complete.php:70
+#: mybooking-templates/mybooking-plugin-complete.php:71
+msgctxt "renting_complete"
+msgid "E-mail"
+msgstr "Correo electrónico"
+
+#: mybooking-templates/mybooking-plugin-complete.php:75
+#: mybooking-templates/mybooking-plugin-complete.php:76
+msgctxt "renting_complete"
+msgid "Confirm E-mail"
+msgstr "Confirmar correo electrónico"
+
+#: mybooking-templates/mybooking-plugin-complete.php:80
+#: mybooking-templates/mybooking-plugin-complete.php:81
+msgctxt "renting_complete"
+msgid "Phone number"
+msgstr "Teléfono"
+
+#: mybooking-templates/mybooking-plugin-complete.php:85
+#: mybooking-templates/mybooking-plugin-complete.php:86
+msgctxt "renting_complete"
+msgid "Alternative phone number"
+msgstr "Teléfono alternativo"
+
+#: mybooking-templates/mybooking-plugin-complete.php:90
+msgctxt "renting_complete"
+msgid "Comments"
+msgstr "Comentarios"
+
+#: mybooking-templates/mybooking-plugin-modify-reservation.php:9
+msgctxt "renting_form_modify_reservation"
+msgid "Modify reservation"
+msgstr "Modificar reserva"
+
+#: mybooking-templates/mybooking-plugin-modify-reservation.php:23
+msgctxt "renting_form_modify_reservation"
+msgid "Pick-up place"
+msgstr "Lugar de entrega"
+
+#: mybooking-templates/mybooking-plugin-modify-reservation.php:30
+msgctxt "renting_form_modify_reservation"
+msgid "Pick-up date"
+msgstr "Fecha entrega"
+
+#: mybooking-templates/mybooking-plugin-modify-reservation.php:34
+msgctxt "renting_form_modify_reservation"
+msgid "Pick-up time"
+msgstr "Hora entrega"
+
+#: mybooking-templates/mybooking-plugin-modify-reservation.php:42
+msgctxt "renting_form_modify_reservation"
+msgid "Return place"
+msgstr "Lugar de devolución"
+
+#: mybooking-templates/mybooking-plugin-modify-reservation.php:49
+msgctxt "renting_form_modify_reservation"
+msgid "Return date"
+msgstr "Fecha devolución"
+
+#: mybooking-templates/mybooking-plugin-modify-reservation.php:53
+msgctxt "renting_form_modify_reservation"
+msgid "Return time"
+msgstr "Hora devolución"
+
+#: mybooking-templates/mybooking-plugin-modify-reservation.php:60
+msgctxt "renting_form_modify_reservation"
+msgid "New search"
+msgstr "Nueva búsqueda"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:13
+msgctxt "renting_my_reservation"
+msgid "Reservation summary"
+msgstr "Su reserva"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:37
+msgctxt "renting_my_reservation"
+msgid "Rental duration"
+msgstr "Duración del alquiler"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:37
+msgctxt "renting_my_reservation"
+msgid "day(s)"
+msgstr "día(s)"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:45
+msgctxt "renting_my_reservation"
+msgid "Customer's details"
+msgstr "Datos del cliente"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:72
+msgctxt "renting_my_reservation"
+msgid "Products"
+msgstr "Productos contratados"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:91
+msgctxt "renting_my_reservation"
+msgid "Extras"
+msgstr "Extras"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:113
+msgctxt "renting_my_reservation"
+msgid "Supplements"
+msgstr "Suplementos"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:119
+msgctxt "renting_my_reservation"
+msgid "Pick-up time supplement"
+msgstr "Suplemento hora de entrega"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:125
+msgctxt "renting_my_reservation"
+msgid "Pick-up place supplement"
+msgstr "Suplemento lugar de entrega"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:131
+msgctxt "renting_my_reservation"
+msgid "Return time supplement"
+msgstr "Suplemento hora devolución"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:137
+msgctxt "renting_my_reservation"
+msgid "Return place supplement"
+msgstr "Suplemento lugar devolución"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:143
+msgctxt "renting_my_reservation"
+msgid "Driver's age supplement"
+msgstr "Suplemento edad conductor"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:149
+msgctxt "renting_my_reservation"
+msgid "Petrol supplement"
+msgstr "Suplemento combustible"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:161
+msgctxt "renting_my_reservation"
+msgid "Deposit"
+msgstr "Fianza"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:176
+msgctxt "renting_my_reservation"
+msgid "Total"
+msgstr "Total"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:193
+msgctxt "renting_my_reservation"
+msgid "Pay"
+msgstr "Pagar"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:204
+msgctxt "renting_my_reservation"
+msgid "Paypal"
+msgstr "Paypal"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:210
+msgctxt "renting_my_reservation"
+msgid "Credit or debit card"
+msgstr "Tarjeta de crédito/débito"
+
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:18
 #: mybooking-templates/mybooking-plugin-selector-widget.php:18
 msgctxt "renting_form_selector"
@@ -62,26 +357,34 @@ msgid "Pick-up place"
 msgstr "Lugar de entrega"
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:22
-#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:38
 #: mybooking-templates/mybooking-plugin-selector-widget.php:25
-#: mybooking-templates/mybooking-plugin-selector-widget.php:44
 msgctxt "renting_form_selector"
-msgid "Date"
-msgstr "Fecha"
+msgid "Pick-up date"
+msgstr "Fecha entrega"
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:26
-#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:42
 #: mybooking-templates/mybooking-plugin-selector-widget.php:29
-#: mybooking-templates/mybooking-plugin-selector-widget.php:48
 msgctxt "renting_form_selector"
-msgid "Time"
-msgstr "Hora"
+msgid "Pick-up time"
+msgstr "Hora entrega"
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:34
 #: mybooking-templates/mybooking-plugin-selector-widget.php:37
 msgctxt "renting_form_selector"
 msgid "Return place"
 msgstr "Lugar de devolución"
+
+#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:38
+#: mybooking-templates/mybooking-plugin-selector-widget.php:44
+msgctxt "renting_form_selector"
+msgid "Return date"
+msgstr "Fecha devolución"
+
+#: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:42
+#: mybooking-templates/mybooking-plugin-selector-widget.php:48
+msgctxt "renting_form_selector"
+msgid "Return time"
+msgstr "Hora devolución"
 
 #: mybooking-templates/mybooking-plugin-selector-widget-horizontal.php:49
 #: mybooking-templates/mybooking-plugin-selector-widget.php:55
@@ -114,6 +417,81 @@ msgctxt "renting_form_selector_wizard"
 msgid "Book"
 msgstr "Reservar"
 
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:11
+msgctxt "renting_summary"
+msgid "Reservation summary"
+msgstr "Su reserva"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:35
+msgctxt "renting_summary"
+msgid "Rental duration"
+msgstr "Duración del alquiler"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:35
+msgctxt "renting_summary"
+msgid "day(s)"
+msgstr "día(s)"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:43
+msgctxt "renting_summary"
+msgid "Customer's details"
+msgstr "Datos del cliente"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:61
+msgctxt "renting_summary"
+msgid "Products"
+msgstr "Productos contratados"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:80
+msgctxt "renting_summary"
+msgid "Extras"
+msgstr "Extras"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:102
+msgctxt "renting_summary"
+msgid "Supplements"
+msgstr "Suplementos"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:108
+msgctxt "renting_summary"
+msgid "Pick-up time supplement"
+msgstr "Suplemento hora de entrega"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:114
+msgctxt "renting_summary"
+msgid "Pick-up place supplement"
+msgstr "Suplemento lugar entrega"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:120
+msgctxt "renting_summary"
+msgid "Return time supplement"
+msgstr "Suplemento hora devolución"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:126
+msgctxt "renting_summary"
+msgid "Return place supplement"
+msgstr "Suplemento lugar devolución"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:132
+msgctxt "renting_summary"
+msgid "Driver's age supplement"
+msgstr "Suplemento edad conductor"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:138
+msgctxt "renting_summary"
+msgid "Petrol supplement"
+msgstr "Suplemento combustible"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:150
+msgctxt "renting_summary"
+msgid "Deposit"
+msgstr "Fianza"
+
+#: mybooking-templates/mybooking-plugin-summary-tmpl.php:165
+msgctxt "renting_summary"
+msgid "Total"
+msgstr "Total"
+
 #. Name of the plugin
 msgid "MyBooking Reservation Engine for WordPress"
 msgstr "Mybooking: Motor de reservas para WordPress"
@@ -128,12 +506,12 @@ msgstr ""
 
 #. URI of the plugin
 msgid "https://www.mybooking.es/"
-msgstr ""
+msgstr "https://www.mybooking.es/"
 
 #. Author of the plugin
 msgid "mybooking"
-msgstr ""
+msgstr "mybooking"
 
 #. Author URI of the plugin
 msgid "https://mybooking.es/"
-msgstr ""
+msgstr "https://www.mybooking.es/"

@@ -53,41 +53,41 @@
     <div id="extras_listing">
     </div>
     <!-- Reservation complete -->
-    <h4 class="mb-2 p-4 complete-section-bg">Datos del cliente</h4>
+    <h4 class="mb-2 p-4 complete-section-bg"><?php echo _x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
     <form id="form-reservation" name="reservation_form" autocomplete="off">
               
         <div class="form-group">
-          <label for="customer_name">Nombre*</label>
-          <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="Nombre:*">
+          <label for="customer_name"><?php echo _x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="<?php echo _x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
         </div>
 
         <div class="form-group">  
-          <label for="customer_surname">Apellidos*</label>
-          <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="Apellidos:*">
+          <label for="customer_surname"><?php echo _x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo _x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
         </div>
 
         <div class="form-group">
-          <label for="customer_email">Correo electrónico*</label>
-          <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="Correo electrónico:*">
+          <label for="customer_email"><?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="<?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>o:*">
         </div>
 
         <div class="form-group">  
-          <label for="customer_email">Confirmar correo electrónico*</label>
-          <input type="text" class="form-control" name="confirm_customer_email" id="confirm_customer_email" placeholder="Confirmar correo electrónico:*">
+          <label for="customer_email"><?php echo _x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="confirm_customer_email" id="confirm_customer_email" placeholder="<?php echo _x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
         </div>
 
         <div class="form-group">
-            <label for="customer_phone">Teléfono*</label>
-            <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="Teléfono:*">
+            <label for="customer_phone"><?php echo _x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+            <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo _x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
         </div>
         
         <div class="form-group">            
-            <label for="customer_mobile_phone">Teléfono alternativo</label>
-            <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="Teléfono alternativo:">
+            <label for="customer_mobile_phone"><?php echo _x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+            <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo _x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:">
         </div>                
 
         <div class="form-group">
-          <label for="comments">Comentarios</label>
+          <label for="comments"><?php echo _x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
           <textarea class="form-control" name="comments" id="comments" placeholder="Comentarios"></textarea>
         </div>   
 

@@ -19,11 +19,11 @@
               <select class="form-control" name="pickup_place" id="widget_pickup_place"></select>
           </div>
           <div class="form-group col-md-4">
-              <label for="date_from"><?php echo _x( 'Date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+              <label for="date_from"><?php echo _x( 'Pick-up date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
               <input type="text" class="form-control" name="date_from" id="widget_date_from" autocomplete="off">
           </div>
           <div class="form-group col-md-2">
-              <label for="time_to"><?php echo _x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+              <label for="time_to"><?php echo _x( 'Pick-up time', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
               <select class="form-control" name="time_from" id="widget_time_from"></select>
           </div>
         </div>
@@ -35,11 +35,11 @@
             <select class="form-control" name="return_place" id="widget_return_place"></select>
           </div>
           <div class="form-group col-md-4">
-              <label for="date_from"><?php echo _x( 'Date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+              <label for="date_from"><?php echo _x( 'Return date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
               <input type="text" class="form-control" name="date_to" id="widget_date_to" autocomplete="off">
           </div>
           <div class="form-group col-md-2">
-              <label for="time_to"><?php echo _x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+              <label for="time_to"><?php echo _x( 'Return time', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
               <select class="form-control" name="time_to" id="widget_time_to"></select>
           </div>
         </div>
