@@ -111,7 +111,7 @@
 
   	private $registry;
   	private $settings;
-  	private $version;
+  	private $version = null;
 
 		// Hold the class instance.
 	  private static $instance = null;
@@ -1100,14 +1100,14 @@
     private function get_plugin_version() {
 
 			// Get plugin version
-			if ( $this->$version == null) {
+			if ( $this->version == null) {
 				$plugin_file = dirname(__DIR__).'/mybooking-wp-plugin.php';
 				//$plugin_data = get_plugin_data( $plugin_file );
 				$plugin_data = get_file_data( $plugin_file, ['Version' => 'Version'] );
-				$this->$version = $plugin_data['Version'];
+				$this->version = $plugin_data['Version'];
 		  }
 
-			return $this->$version;
+			return $this->version;
 
     }
 
