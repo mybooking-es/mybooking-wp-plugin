@@ -316,8 +316,8 @@
 		 */
 		public function wp_body_class ( $classes ) {
 
-      // Get the post outside a loop
-			global $post;
+      // Get the current page content
+      $content = $this->get_current_page()->post_content;
 
 		  $registry = Mybooking_Registry::getInstance();
 
@@ -331,13 +331,13 @@
 
       // Selector widget or shortcode 
 			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
-			     has_shortcode( $post->post_content , 'mybooking_rent_engine_selector') ) {
+			     has_shortcode( $content , 'mybooking_rent_engine_selector') ) {
 				$classes[] = 'mybooking-selector-widget';
 			}		
 
 			// Selector Wizard widget or shortcode
 			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
-			     ( $post && has_shortcode( $post->post_content , 'mybooking_rent_engine_selector_wizard') ) ) {
+			     ( has_shortcode( $content , 'mybooking_rent_engine_selector_wizard') ) ) {
 				$classes[] = 'mybooking-selector-wizard';
 			}		
 		  
@@ -353,12 +353,12 @@
 		  }
 
       // Renting shortcode : reservation
-      if ( $post && has_shortcode( $post->post_content, 'mybooking_rent_engine_reservation') ) {
+      if ( has_shortcode( $content, 'mybooking_rent_engine_reservation') ) {
       	$classes[] = 'reservation';
       } 
 
 		  // Renting shortcode : product (resource) [availability and selector]
-		  if ( $post && has_shortcode( $post->post_content , 'mybooking_rent_engine_product') ) {
+		  if ( has_shortcode( $content , 'mybooking_rent_engine_product') ) {
 		  	$classes[] = 'mybooking-product';
 		  }
 
@@ -375,11 +375,11 @@
 		  }
 
 		  // Activities shortcodes : Activity
-		  if ( $post && has_shortcode( $post->post_content , 'mybooking_activities_engine_activity') ) {
+		  if ( has_shortcode( $content, 'mybooking_activities_engine_activity') ) {
 		  	$classes[] = 'mybooking-activity';
 		  }
 		  // Activities shortcodes : Order
-		  if ( $post && has_shortcode( $post->post_content , 'mybooking_activities_engine_order') ) {
+		  if ( has_shortcode( $content, 'mybooking_activities_engine_order') ) {
 		  	$classes[] = 'mybooking-activity-order';
 		  }
 
@@ -406,9 +406,6 @@
 		 * This method includes the current page necessary micro-templates on the footer 
 		 */
 		public function wp_include_micro_templates() {
-
-      // Get the post outside a loop
-			global $post;
 		  
 		  $registry = Mybooking_Registry::getInstance();
 
@@ -444,49 +441,57 @@
 		  );
 		  mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
 		
+			// The the current page content
+		  $content = $this->get_current_page()->post_content;
+		  
 		  // Renting Selector Wizard shortcode / widget
 			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
-			     ( $post && has_shortcode( $post->post_content , 'mybooking_rent_engine_selector_wizard') ) ) {
+			     ( has_shortcode( $content , 'mybooking_rent_engine_selector_wizard') ) ) {
 				mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
 			}		
 
 		  // Load scripts
-		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
+		  if ( $registry->mybooking_rent_plugin_choose_products_page != '' && 
+		  	   mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php');
 		  	// If selector in process Wizard, load the micro-templates for the process
 		  	if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
 		  	  mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
 		    }
 		  }
-		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
+		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && 
+		  	        mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php');
 		  	// If selector in process Wizard, load the micro-templates for the process
 		  	if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
   		  	mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
   		  }
 		  }
-		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
+		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && 
+		  	        mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-summary-tmpl.php');
 		  }	
-		  else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
+		  else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && 
+		  	        mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-activities-shopping-cart-tmpl.php');
 		  }
-		  else if ( $registry->mybooking_activities_plugin_summary_page != '' && mybooking_engine_is_page( $registry->mybooking_activities_plugin_summary_page ) ) {
+		  else if ( $registry->mybooking_activities_plugin_summary_page != '' && 
+		  	        mybooking_engine_is_page( $registry->mybooking_activities_plugin_summary_page ) ) {
 		  	mybooking_engine_get_template('mybooking-plugin-activities-summary-tmpl.php');
 		  }
 
-      // Renting shortcode : My reservation
-      if ( $post && has_shortcode( $post->post_content, 'mybooking_rent_engine_reservation') ) {
+      // Renting shortcode : My reservation - reservation
+      if ( has_shortcode( $content, 'mybooking_rent_engine_reservation') ) {
       	mybooking_engine_get_template('mybooking-plugin-reservation-tmpl.php');
       } 
 
-      // Activities shortcode : My order
-      if ( $post && has_shortcode( $post->post_content, 'mybooking_activities_engine_order') ) {
+      // Activities shortcode : My reservation - activities 
+      if ( has_shortcode( $content, 'mybooking_activities_engine_order') ) {
       	mybooking_engine_get_template('mybooking-plugin-activities-order-tmpl.php');
       }       
 
       // Renting shortcode : Product calendar
-      if ( $post && has_shortcode( $post->post_content, 'mybooking_rent_engine_product') ) {
+      if ( has_shortcode( $content, 'mybooking_rent_engine_product') ) {
       	mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
       } 
 
@@ -680,14 +685,12 @@
      */
     public function wp_rent_products_shortcode($atts = [], $content = null, $tag = '') {
 
-			global $post;
-
       $page = array_key_exists('offsetpage', $_GET) ? $_GET['offsetpage'] : 1;
       $limit = array_key_exists('limit', $_GET) ? $_GET['limit'] : 12;
       $offset = ($page - 1) * $limit;
 
       // URL for pagination
-      $url = $post->post_name;
+      $url = $this->get_current_page()->post_name;
 
       // Get the products from the API
       $registry = Mybooking_Registry::getInstance();
@@ -723,14 +726,12 @@
      */
     public function wp_activities_activities_shortcode($atts = [], $content = null, $tag = '') {
 
-			global $post;
-
       $page = array_key_exists('offsetpage', $_GET) ? $_GET['offsetpage'] : 1;
       $limit = array_key_exists('limit', $_GET) ? $_GET['limit'] : 12;
       $offset = ($page - 1) * $limit;
 
       // URL for pagination
-      $url = $post->post_name;
+      $url = $this->get_current_page()->post_name;
 
       // Get the products from the API
       $registry = Mybooking_Registry::getInstance();
@@ -1093,6 +1094,25 @@
     }    
 
     // ----------------- Utilities --------------------------------------------
+
+    /**
+     * Get the current page
+     *
+     * Accessing to the current page has been changed from global $post to 
+     * $GLOBALS['wp_the_query']->get_queried_object() because some website 
+     * components running queries on custom post types alter the global $post
+     * object in some cases. 
+     *
+     * https://wordpress.stackexchange.com/questions/291056/get-the-current-page-slug-name
+		 * https://wordpress.stackexchange.com/questions/220619/globalswp-the-query-vs-global-wp-query
+		 * Get the current page content (in order to check if it includes the shortcode)
+     *
+     */
+    private function get_current_page() {
+    	//$current_page = sanitize_post( $GLOBALS['wp_the_query']->get_queried_object() );
+    	$current_page = get_queried_object();
+    	return $current_page;
+    }
 
     /*
      * Get the plugin version

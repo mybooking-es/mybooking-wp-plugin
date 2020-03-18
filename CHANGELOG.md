@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.11]
+
+### Fixed
+
+- Use get_queried_object() in order to get the current page in order 
+  to prepare it for mybooking-js-engine library. (check shortcodes)
+
 ## [0.5.10]
 
 ### Fixed
