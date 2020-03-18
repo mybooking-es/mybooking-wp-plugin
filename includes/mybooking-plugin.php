@@ -1102,7 +1102,8 @@
 			// Get plugin version
 			if ( $version == null) {
 				$plugin_file = dirname(__DIR__).'/mybooking-wp-plugin.php';
-				$plugin_data = get_plugin_data( $plugin_file );
+				//$plugin_data = get_plugin_data( $plugin_file );
+				$plugin_data = get_file_data( $plugin_file, ['Version' => 'Version'] );
 				$version = $plugin_data['Version'];
 		  }
 
