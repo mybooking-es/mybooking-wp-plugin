@@ -1,12 +1,22 @@
 # Changelog
 
+## [0.5.10]
+
+### Fixed
+
+- Custom JS and CSS enqueue version adjust : Use get_file_data
+
 ## [0.5.9]
 
-### Custom JS and CSS enqueue version
+### Added
+
+- Custom JS and CSS enqueue version
 
 ## [0.5.8]
 
-### Integration WMPL slugs
+### Added 
+
+- Integration WMPL slugs
 
 ## [0.5.7]
 
