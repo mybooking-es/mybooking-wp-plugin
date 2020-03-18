@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.9]
+
+### Custom JS and CSS enqueue version
+
 ## [0.5.8]
 
 ### Integration WMPL slugs

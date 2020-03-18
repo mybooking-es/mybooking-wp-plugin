@@ -120,9 +120,13 @@
 	  // to prevent initiation with outer code.
 	  private function __construct()
 	  {
+	  	  // Load the plugin options into the $registry
 	    	$this->load_options();
+	    	// Initialize the custom routes for activities and products
 	    	$this->init_routes();
+	    	// Initialize the plugin
 	    	$this->wp_init();
+	    	// Prepare the plugin settings page
 	    	$settings = new MyBookingPluginSettings();
 	  }
 	 
@@ -137,22 +141,6 @@
 	 
 	    return self::$instance;
 	  }  	
-
-    /*
-     * Get the plugin version
-     */
-    private function get_plugin_version() {
-
-			// Get plugin version
-			if ( $version == null) {
-				$plugin_file = dirname(__DIR__).'/mybooking-wp-plugin.php';
-				$plugin_data = get_plugin_data( $plugin_file );
-				$version = $plugin_data['Version'];
-		  }
-
-			return $version;
-
-    }
 
 	  // ------------ WordPress plugin init -------------
 
@@ -1053,7 +1041,6 @@
 
     /**
      * Initialize custom routes to show all renting products and activities
-     *
      */
 		private function init_routes() {
 
@@ -1107,16 +1094,32 @@
 
     // ----------------- Utilities --------------------------------------------
 
+    /*
+     * Get the plugin version
+     */
+    private function get_plugin_version() {
+
+			// Get plugin version
+			if ( $version == null) {
+				$plugin_file = dirname(__DIR__).'/mybooking-wp-plugin.php';
+				$plugin_data = get_plugin_data( $plugin_file );
+				$version = $plugin_data['Version'];
+		  }
+
+			return $version;
+
+    }
+
 		/**
 		 * Get the page slug from the page Id
 		 */
-		function page_slug( $pageId ) {
+		private function page_slug( $pageId ) {
 
 		  if ( $page = get_post( $pageId ) ) {
 		    return $page->post_name;
 		  }
 
 		}
-    
+
 
   }
