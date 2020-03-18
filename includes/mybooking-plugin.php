@@ -1099,6 +1099,8 @@
      */
     private function get_plugin_version() {
 
+    	$version = null;
+    	
 			// Get plugin version
 			if ( $version == null) {
 				$plugin_file = dirname(__DIR__).'/mybooking-wp-plugin.php';
