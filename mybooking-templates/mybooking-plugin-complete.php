@@ -88,7 +88,7 @@
 
         <div class="form-group">
           <label for="comments"><?php echo _x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-          <textarea class="form-control" name="comments" id="comments" placeholder="Comentarios"></textarea>
+          <textarea class="form-control" name="comments" id="comments" placeholder="<?php echo _x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
         </div>   
 
         <!-- Reservation : payment (script_payment_detail) -->

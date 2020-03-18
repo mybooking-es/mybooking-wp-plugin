@@ -111,6 +111,7 @@
 
   	private $registry;
   	private $settings;
+  	private $version;
 
 		// Hold the class instance.
 	  private static $instance = null;
@@ -119,7 +120,7 @@
 	  // to prevent initiation with outer code.
 	  private function __construct()
 	  {
-	    	$this->init_reservation_process_pages();
+	    	$this->load_options();
 	    	$this->init_routes();
 	    	$this->wp_init();
 	    	$settings = new MyBookingPluginSettings();
@@ -137,10 +138,33 @@
 	    return self::$instance;
 	  }  	
 
+    /*
+     * Get the plugin version
+     */
+    private function get_plugin_version() {
+
+			// Get plugin version
+			if ( $version == null) {
+				$plugin_file = dirname(__DIR__).'/mybooking-wp-plugin.php';
+				$plugin_data = get_plugin_data( $plugin_file );
+				$version = $plugin_data['Version'];
+		  }
+
+			return $version;
+
+    }
+
 	  // ------------ WordPress plugin init -------------
 
 	  /*
 	   * Initialize the WordPress Plugin
+	   *
+	   * - Load the language translations
+	   * - Setup the body class for mybooking_engine.js
+	   * - Enqueue styles and javascript
+	   * - Include micro-templates
+	   * - Registers shortcodes and widgets
+	   *
 	   */
 	  private function wp_init() {
 
@@ -152,14 +176,14 @@
 
 			// == Custom CSS and JavaScript
 
-			// Add Header CSS
-			add_action( 'wp_enqueue_scripts', array($this, 'wp_setup_css'));
+			// Enqueue CSS
+			add_action( 'wp_enqueue_scripts', array($this, 'wp_enqueue_css'));
 
-			// Add Footer Scripts
-			add_action( 'wp_footer', array($this, 'wp_setup_script'));
+			// Add micro templates
+			add_action( 'wp_footer', array($this, 'wp_include_micro_templates'));
 
-			// Add mybooking-engine.js
-			add_action( 'wp_enqueue_scripts', array($this, 'wp_script_load'));
+			// Enqueue JS
+			add_action( 'wp_enqueue_scripts', array($this, 'wp_enqueue_js'));
 
 			// == Widgets
 
@@ -236,10 +260,14 @@
 		}
 
 		/**
-		 * Custom CSS
+		 * Enqueue plugin CSS
 		 */
-		public function wp_setup_css() {
+		public function wp_enqueue_css() {
 
+			// Get plugin version
+			$version = $this->get_plugin_version();
+
+			// Get the registry information
 		  $registry = Mybooking_Registry::getInstance();
 
 		  if ($registry->mybooking_rent_plugin_components_css) {
@@ -251,16 +279,14 @@
         	               'https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.20.0/daterangepicker.css');
         // Custom style
 			  wp_enqueue_style('mybooking_wp_css_components_custom_style',
-			                   plugins_url('/assets/styles/custom-styles.css', dirname(__FILE__) ) );
+			                   plugins_url('/assets/styles/custom-styles.css', dirname(__FILE__) ),
+			                   array(), $version );
 		  }
 
 		  if ($registry->mybooking_rent_plugin_custom_css) {
 				// Load bootstrap CSS
 			  wp_enqueue_style('mybooking_wp_css_framework_bootstrap',
 			                   'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
-			  // Load bootstrap JS
-			  wp_enqueue_script('mybooking_wp_js_framework_bootstrap', 
-			  	                'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js', array( 'jquery' ));
 			  // Load font awesome 4.7
 			  wp_enqueue_style('mybooking_wp_css_framework_fontawesome',
 			  								 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -268,6 +294,34 @@
 
 		}
 
+		/**
+		 * Enqueue plugin JS
+		 *
+		 * TODO: Improve loading only on engine pages
+		 */
+		public function wp_enqueue_js() {
+
+			// Get plugin version
+			$version = $this->get_plugin_version();
+
+			// Get the registry information
+			$registry = Mybooking_Registry::getInstance();
+
+		  // Registers the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
+			wp_register_script('mybooking-rent-engine-script', 
+		  									 plugins_url( '/assets/js/mybooking-engine.js', dirname(__FILE__) ), 
+		  									 array(), $version, true);
+		  wp_enqueue_script( 'mybooking-rent-engine-script');
+
+		  if ($registry->mybooking_rent_plugin_custom_css) {
+			  // Load bootstrap JS
+			  wp_register_script('mybooking_wp_js_framework_bootstrap', 
+			  	                 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js', 
+			  	                 array( 'jquery' ), $version, true);
+			  wp_enqueue_script('mybooking_wp_js_framework_bootstrap');
+			}
+
+		}
 
 		/**
 		 * Add body classes to the pages
@@ -358,9 +412,12 @@
 		}
 
 		/**
-		 * Reservation Engine Templates + JS setup
+		 * Include micro templates
+		 * -----------------------
+		 * Microtemplates are responsible of rendering parts of the reservation engine.
+		 * This method includes the current page necessary micro-templates on the footer 
 		 */
-		public function wp_setup_script() {
+		public function wp_include_micro_templates() {
 
       // Get the post outside a loop
 			global $post;
@@ -460,21 +517,7 @@
 
 		}
 
-		/**
-		 * Custom JS : Mybooking Engine JS
-		 */
-		public function wp_script_load() {
-
-		  // Registers the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
-			wp_register_script('mybooking-rent-engine-script', 
-		  									 plugins_url( '/assets/js/mybooking-engine.js', dirname(__FILE__) ), array(),' ',true);
-
-			// TODO Improve and load only on the reservation process pages
-		  wp_enqueue_script( 'mybooking-rent-engine-script');
-
-		}
-
-		// == Widget
+		// == Widgets
 
 		/**
 		 * Register selector Widget 
@@ -486,7 +529,7 @@
 		}
 
 		/**
-		 * Register selector Widget 
+		 * Register selector wizard Widget 
 		 */
 		public function wp_selector_wizard_widget() {
 
@@ -793,9 +836,17 @@
 	  // ------------ Plugin setup -----------------------
 
 	  /**
-	   * Init Reservation Process pages
+	   * Load the plugin options in the registry
+	   *
+	   * - mybooking_plugin_settings_connection
+	   * - mybooking_plugin_settings_configuration
+	   * - mybooking_plugin_settings_renting
+	   * - mybooking_plugin_settings_activities
+	   * - mybooking_plugin_settings_google_api_places
+	   * - mybooking_plugin_settings_css
+	   *
 	   */
-	  private function init_reservation_process_pages() {
+	  private function load_options() {
 
 		  $registry = Mybooking_Registry::getInstance();
 
@@ -998,18 +1049,6 @@
       }
 		}
 
-
-		/**
-		 * Get the page slug from the page Id
-		 */
-		function page_slug( $pageId ) {
-
-		  if ( $page = get_post( $pageId ) ) {
-		    return $page->post_name;
-		  }
-
-		}
-
 		// ------------ Custom routes ---------------------
 
     /**
@@ -1066,5 +1105,18 @@
 
     }    
 
+    // ----------------- Utilities --------------------------------------------
+
+		/**
+		 * Get the page slug from the page Id
+		 */
+		function page_slug( $pageId ) {
+
+		  if ( $page = get_post( $pageId ) ) {
+		    return $page->post_name;
+		  }
+
+		}
+    
 
   }
