@@ -55,6 +55,116 @@
   color: white !important;
 }
 
+/** ------------ 3. Selector Form ------------------------ **/
+
+.flex-form-horizontal {
+  display: flex;
+  flex-direction: column;
+  background-color: $transparent-white;
+  padding: 10px;
+  color: #333;
+}
+
+.flex-form-group-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+
+.flex-form-group {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.flex-form-group input.hasDatepicker {
+  flex-grow: 1;
+}
+
+/* Form group without label (search button) */
+
+.flex-form-group-no-label {
+  flex-direction: row;
+  align-items: flex-end!important;
+}
+
+.flex-form-group-no-label input {
+  margin-left: 10px;
+}
+
+
+/* */
+
+.flex-form-horizontal-box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.flex-form-horizontal-item {
+  display: flex;
+}
+
+.flex-form-horizontal-item select {
+  display: flex;
+  flex-grow: 1;
+}
+
+// Media Queries
+
+@media (max-width: 575.98px) {
+  .flex-form-horizontal {
+    min-width: 100vw;
+  }
+  input.hasDatepicker {
+    max-width: 130px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .flex-form-group-no-label {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: inherit !important;
+  }
+
+  .flex-form-group-no-label input {
+    width: 100% !important;
+    margin-left: 0;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .flex-form-group-wrapper {
+    flex-direction: row;
+  }
+
+  .flex-form-group:nth-child(2n) {
+    margin-left: 10px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .flex-form-horizontal {
+    width: 100%;
+    padding: 20px;
+  }
+
+}
+
+@media (max-width: 1199.98px) {
+  .flex-form-horizontal-item select {
+    width: 100%;
+  }
+}
+
 /** ------------ 3. Selector Wizard ---------------------- **/
 
 /* The container that holds everything */

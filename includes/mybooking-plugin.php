@@ -67,7 +67,7 @@
    *
    * - Show renting selector: The starting point for a reservation
    *
-   * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number selector_type=horizontal]
+   * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number]
    *
    * [mybooking_rent_enting_selector_wizard]
    *
@@ -407,8 +407,6 @@
 		 */
 		public function wp_include_micro_templates() {
 		  
-			global $post;
-
 		  $registry = Mybooking_Registry::getInstance();
 
 		  // Include the initializer plugin
@@ -446,6 +444,12 @@
 			// The the current page content
 		  $content = $this->get_current_page()->post_content;
 		  
+		  // Renting Form
+		  if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
+		  	   ( has_shortcode ( $content, 'mybooking_rent_engine_selector') ) ) {
+		  	mybooking_engine_get_template( 'mybooking-plugin-selector-widget-tmpl.php', $data);
+		  }
+
 		  // Renting Selector Wizard shortcode / widget
 			if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
 			     ( has_shortcode( $content , 'mybooking_rent_engine_selector_wizard') ) ) {
@@ -460,6 +464,9 @@
 		  	if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
 		  	  mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
 		    }
+		    else {
+		    	mybooking_engine_get_template('mybooking-plugin-modify-reservation-tmpl.php');
+		    }
 		  }
 		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && 
 		  	        mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
@@ -468,6 +475,9 @@
 		  	if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
   		  	mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
   		  }
+		    else {
+		    	mybooking_engine_get_template('mybooking-plugin-modify-reservation-tmpl.php');
+		    }  		  
 		  }
 		  else if ( $registry->mybooking_rent_plugin_summary_page != '' && 
 		  	        mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
@@ -562,8 +572,7 @@
 			
       // Extract the shortcode attributes			
 			extract( shortcode_atts( array('sales_channel_code' => '', 
-				                             'family_id' => '',
-			                               'selector_type' => '' ), $atts ) );
+				                             'family_id' => '' ), $atts ) );
 
 		  $data = array();
 
@@ -576,12 +585,7 @@
       }
 
 			ob_start();
-			if ( $selector_type == 'horizontal' ) {
-	      mybooking_engine_get_template('mybooking-plugin-selector-widget-horizontal.php', $data);
-      }
-      else {
-      	mybooking_engine_get_template('mybooking-plugin-selector-widget.php', $data);
-      }
+     	mybooking_engine_get_template('mybooking-plugin-selector-widget.php', $data);
 	    return ob_get_clean();
 	
 		}

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.12]
+
+### Added
+
+- Selector form micro-templates integration. Selector form adapts fields
+depending on the instance configuration.
+
 ## [0.5.11]
 
 ### Fixed

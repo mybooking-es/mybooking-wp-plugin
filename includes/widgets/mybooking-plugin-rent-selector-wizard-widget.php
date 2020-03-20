@@ -44,7 +44,6 @@ class MyBookingRentEngineSelectorWizardWidget extends WP_Widget {
         // outputs the options form in the admin
         $sales_channel_code = ! empty( $instance['sales_channel_code'] ) ? $instance['sales_channel_code'] : esc_html__( '', 'text_domain' );
         $family_id = ! empty( $instance['family_id'] ) ? $instance['family_id'] : esc_html__( '', 'text_domain' );
-        $selector_type = ! empty( $instance['selector_type'] ) ? $instance['selector_type'] : esc_html__( '', 'text_domain' );
             ?>
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'sales_channel_code' ) ); ?>">

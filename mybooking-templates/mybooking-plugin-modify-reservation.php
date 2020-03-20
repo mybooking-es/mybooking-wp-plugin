@@ -1,3 +1,14 @@
+<?php
+/**
+*   Renting Modify Reservation Form Template
+*   -----------------------------------------
+*
+*   Versión: 0.0.1
+*   @package WordPress
+*   @subpackage Mybooking WordPress Plugin
+*   @since Mybooking WordPress Plugin 0.0.1
+*/
+?>
 <!-- Modify reservation modal -->
 <div style="position:absolute">
   <div class="modal fade" 
@@ -15,52 +26,8 @@
           <form
             name="search_form"
             method="get"
-            enctype="application/x-www-form-urlencoded">
-            
-		        <!-- Entrega -->
-		        <div class="form-row">
-		          <div class="form-group col-md-12">
-		              <label for="date_from"><?php echo _x( 'Pick-up place', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></label>
-		              <select class="form-control" name="pickup_place" id="pickup_place"></select>
-		          </div>
-		        </div>
-
-		        <div class="form-row">
-		          <div class="form-group col-md-6">
-		              <label for="date_from"><?php echo _x( 'Pick-up date', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></label>
-		              <input type="text" class="form-control" name="date_from" id="date_from" autocomplete="off">
-		          </div>
-		          <div class="form-group col-md-6">
-		              <label for="time_to"><?php echo _x( 'Pick-up time', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></label>
-		              <select class="form-control" name="time_from" id="time_from"></select>
-		          </div>
-		        </div>
-
-		        <!-- Devolución -->
-		        <div class="form-row">
-		          <div class="form-group col-md-12">
-		            <label for="date_from"><?php echo _x( 'Return place', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></label>
-		            <select class="form-control" name="return_place" id="return_place"></select>
-		          </div>
-		        </div>       
-
-		        <div class="form-row">
-		          <div class="form-group col-md-6">
-		              <label for="date_from"><?php echo _x( 'Return date', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></label>
-		              <input type="text" class="form-control" name="date_to" id="date_to" autocomplete="off">
-		          </div>
-		          <div class="form-group col-md-6">
-		              <label for="time_to"><?php echo _x( 'Return time', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></label>
-		              <select class="form-control" name="time_to" id="time_to"></select>
-		          </div>
-		        </div>
-            
-            <div class="form-row">
-              <div class="form-group col-md-12">
-                <input class="btn btn-success" type="submit" value="<?php echo _x( 'New search', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?>" />
-              </div>
-            </div>
-
+            enctype="application/x-www-form-urlencoded"
+            class="flex-form-horizontal">
           </form>
         </div>
       </div>
