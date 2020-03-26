@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.13]
+
+### Update
+
+- Product calendar : Updated engine library + translations
+
 ## [0.5.12]
 
 ### Added

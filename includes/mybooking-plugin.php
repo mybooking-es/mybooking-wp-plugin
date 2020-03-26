@@ -232,6 +232,10 @@
 			// Shortcode Activities - Order
 			add_shortcode('mybooking_activities_engine_order', array($this, 'wp_activities_order_shortcode' ));				
 
+			// -- Contact shortcode 
+
+			// Shortcode Contact Form
+			add_shortcode('mybooking_contact', array($this, 'wp_contact_shortcode' ));
 	  }
 
 	  /**
@@ -323,7 +327,8 @@
 
 		  // == Contact
 
-			if ( is_active_widget( false, false, 'mybooking_engine_contact_widget', false ) ) {
+			if ( is_active_widget( false, false, 'mybooking_engine_contact_widget', false ) || 
+				   has_shortcode( $content, 'mybooking_contact' )) {
 				$classes[] = 'mybooking-contact-widget';
 			}
 
@@ -824,6 +829,17 @@
 
 			ob_start();
 			mybooking_engine_get_template('mybooking-plugin-activities-order.php');
+			return ob_get_clean();
+
+		}
+
+    /**
+     * Mybooking activities engine Order shortcode
+     */
+		public function wp_contact_shortcode($atts = [], $content = null, $tag = '') {
+
+			ob_start();
+			mybooking_engine_get_template('mybooking-plugin-contact-widget.php');
 			return ob_get_clean();
 
 		}
