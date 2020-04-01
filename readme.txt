@@ -1,4 +1,4 @@
-=== MyBooking Reservation Engine for WordPress ===
+=== MyBooking Reservation Engine ===
 Contributors: juanmiqueo
 Donate link: https://mybooking.es/
 Tags: reservation engine
