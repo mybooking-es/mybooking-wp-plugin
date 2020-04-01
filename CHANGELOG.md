@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.15]
+
+### Fixed
+
+- Engine support coverage in choose product. Allow uncheck a coverage
+
 ## [0.5.14]
 
 ### Update
