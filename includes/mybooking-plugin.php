@@ -7,9 +7,13 @@
 	// Templates (https://jeroensormani.com/how-to-add-template-files-in-your-plugin/)
 	require_once('mybooking-plugin-templates.php');
   // Routes (https://github.com/Upstatement/routes)
-  require_once('routes/altorouter.php');
+  if ( !class_exists('AltoRouter') ) {
+    require_once('routes/altorouter.php');
+  }
   // Routes (https://github.com/dannyvankooten/AltoRouter)
-  require_once('routes/routes.php');
+  if ( !class_exists('Routes') ) {
+  	require_once('routes/routes.php');
+  }
 	// Check is page WMPL integration
 	require_once('mybooking-plugin-is-page.php');
   // Mybooking Api Client + UI  
@@ -263,25 +267,25 @@
 		  $registry = Mybooking_Registry::getInstance();
 
 		  if ($registry->mybooking_rent_plugin_components_css) {
-			  // Load JQUERY UI Style
-			  wp_enqueue_style('mybooking_wp_css_components_jqueryui',
-			                   'https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/css/custom-theme/jquery-ui-1.10.0.custom.css');
+			  // Load JQUERY UI Boostrap like Style
+			  wp_enqueue_style( 'mybooking_wp_css_components_jqueryui',
+			  									plugins_url('/assets/styles/jquery-ui-1.10.0.custom.css', dirname( __FILE__ ) ) );
 			  // Load JQUERY Date Range
-        wp_enqueue_style('mybooking_wp_css_components_jquery_date_range',
-        	               'https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.20.0/daterangepicker.css');
+        wp_enqueue_style( 'mybooking_wp_css_components_jquery_date_range',
+        								  plugins_url('/assets/styles/daterangepicker-0.20.0.min.css', dirname( __FILE__ ) ) );
         // Custom style
 			  wp_enqueue_style('mybooking_wp_css_components_custom_style',
-			                   plugins_url('/assets/styles/custom-styles.css', dirname(__FILE__) ),
+			                   plugins_url('/assets/styles/custom-styles.css', dirname( __FILE__ ) ),
 			                   array(), $version );
 		  }
 
 		  if ($registry->mybooking_rent_plugin_custom_css) {
 				// Load bootstrap CSS
-			  wp_enqueue_style('mybooking_wp_css_framework_bootstrap',
-			                   'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+			  wp_enqueue_style( 'mybooking_wp_css_framework_bootstrap',
+			  									plugins_url('/assets/styles/bootstrap-4.4.1.min.css', dirname( __FILE__ ) ) );
 			  // Load font awesome 4.7
-			  wp_enqueue_style('mybooking_wp_css_framework_fontawesome',
-			  								 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+			  wp_enqueue_style( 'mybooking_wp_css_framework_fontawesome',
+			  									plugins_url('/assets/styles/font-awesome-4.7.0.min.css', dirname( __FILE__ ) ) );
 			}
 
 		}
@@ -301,14 +305,14 @@
 
 		  // Registers the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
 			wp_register_script('mybooking-rent-engine-script', 
-		  									 plugins_url( '/assets/js/mybooking-engine.js', dirname(__FILE__) ), 
-		  									 array(), $version, true);
+		  									 plugins_url( '/assets/js/mybooking-js-engine-bundle.js', dirname(__FILE__) ), 
+		  									 array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker' ), $version, true);
 		  wp_enqueue_script( 'mybooking-rent-engine-script');
 
 		  if ($registry->mybooking_rent_plugin_custom_css) {
 			  // Load bootstrap JS
 			  wp_register_script('mybooking_wp_js_framework_bootstrap', 
-			  	                 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js', 
+			  									 plugins_url( 'bootstrap.bundle-4.4.1.min.js', dirname(__FILE__) ),	
 			  	                 array( 'jquery' ), $version, true);
 			  wp_enqueue_script('mybooking_wp_js_framework_bootstrap');
 			}
@@ -696,8 +700,16 @@
      */
     public function wp_rent_products_shortcode($atts = [], $content = null, $tag = '') {
 
-      $page = array_key_exists('offsetpage', $_GET) ? $_GET['offsetpage'] : 1;
-      $limit = array_key_exists('limit', $_GET) ? $_GET['limit'] : 12;
+    	// Get the page and the limit from the request parameters
+      $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
+      $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
+      if ( is_null($page) || $page === false ) {
+      	$page = 1;
+      }
+      if ( is_null($limit) || $limit === false || $limit > 12 ) {
+      	$limit = 12;
+      }
+      // Build the offset
       $offset = ($page - 1) * $limit;
 
       // URL for pagination
@@ -737,8 +749,16 @@
      */
     public function wp_activities_activities_shortcode($atts = [], $content = null, $tag = '') {
 
-      $page = array_key_exists('offsetpage', $_GET) ? $_GET['offsetpage'] : 1;
-      $limit = array_key_exists('limit', $_GET) ? $_GET['limit'] : 12;
+    	// Get the page and the limit from the request parameters
+      $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
+      $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
+      if ( is_null($page) || $page === false ) {
+      	$page = 1;
+      }
+      if ( is_null($limit) || $limit === false || $limit > 12 ) {
+      	$limit = 12;
+      }
+      // Build the offset
       $offset = ($page - 1) * $limit;
 
       // URL for pagination

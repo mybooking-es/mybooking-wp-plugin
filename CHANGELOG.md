@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.16]
+
+### Updated
+
+- JS integration. Use of jquery and jquery-ui built in libraries
+
 ## [0.5.15]
 
 ### Fixed
@@ -8,13 +14,13 @@
 
 ## [0.5.14]
 
-### Update
+### Updated
 
 - Engine to support coverage in choose product
 
 ## [0.5.13]
 
-### Update
+### Updated
 
 - Product calendar : Updated engine library + translations
 

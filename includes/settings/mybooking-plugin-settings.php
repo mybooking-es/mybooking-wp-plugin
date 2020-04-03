@@ -47,7 +47,12 @@
 		  	  <h1>Mybooking</h1>
 
 					<?php
-	            $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'connection_options';
+	            $active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_title( $_GET[ 'tab' ] ) : 'connection_options';
+	            $tabs = array('connection_options', 'configuration_options', 'renting_options',
+	            						  'activities_options', 'google_api_places_options', 'css_options');
+	            if ( !in_array( $active_tab, $tabs) ) {
+	            	$active_tab = 'connection_options';
+	            }
 	        ?>
 
 	        <?php
