@@ -13,7 +13,7 @@ Mybooking reservation engine WordPress plugin.
 
 == Description ==
 
-Mybooking reservation engine WordPress plugin. Build a reservation engine connected to your mybooking account.
+Mybooking Reservation Engine WordPress plugin. Build a reservation engine connected to your mybooking account.
 
 Mybooking plugin can be used to create reservation engine for:
 
@@ -52,14 +52,15 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 1. Activity/Tour checkout page
 2. Activity/Tour calendar widget
 3. Renting choose product page
-4. Renting checkout page
+4. Renting choose product page (multiple products)
+5. Renting checkout page
 
 == Changelog ==
 
-= 0.5.14 =
+= 0.5.16 =
 * First release.
 
 == Upgrade Notice ==
 
-= 0.5.14 =
+= 0.5.16 =
 * First release
