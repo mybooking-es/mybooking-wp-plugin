@@ -53,7 +53,7 @@
           $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCT.$code;
 
           if ( isset($this->api_key) && !empty($this->api_key)) {
-            $url = $url.'&api_key='.$this->api_key;
+            $url = $url.'?api_key='.$this->api_key;
           }
 
           // Query data
