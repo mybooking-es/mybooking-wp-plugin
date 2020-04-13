@@ -1,6 +1,6 @@
 # Changelog
 
-## [Working in Progress]
+## [0.5.17]
 
 ### Fixed
 
