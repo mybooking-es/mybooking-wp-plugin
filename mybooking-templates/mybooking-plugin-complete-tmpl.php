@@ -291,7 +291,6 @@
 <!-- Payment detail -->
 <!-- Payment detail -->
 <script type="text/tmpl" id="script_payment_detail">
-  <input type="hidden" name="payment" value="none">
 
     <%
        var paymentAmount = 0;
@@ -315,6 +314,23 @@
          }
        }
     %>
+
+    <!-- Payment -->
+
+    <% if (sales_process.can_pay) { %>
+      <% if (sales_process.payment_methods.paypal_standard && sales_process.payment_methods.tpv_virtual) { %>
+        <!-- The payment method will be selected later -->
+        <input type="hidden" name="payment" value="none">
+      <% } else if (sales_process.payment_methods.paypal_standard) { %>   
+        <!-- Fixed paypal standard -->
+        <input type="hidden" name="payment" value="paypal_standard">
+      <% } else  if (sales_process.payment_methods.tpv_virtual) { %>
+        <!-- Fixed tpv -->
+        <input type="hidden" name="payment" value="<%=sales_process.payment_methods.tpv_virtual%>">  
+      <% } %>  
+    <% } else { %>
+      <input type="hidden" name="payment" value="none"> 
+    <% } %>  
 
     <% if (selectionOptions > 1) { %>
       <hr>
@@ -427,11 +443,9 @@
                     </div>
                 <% } else if (sales_process.payment_methods.paypal_standard) { %>
                     <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-paypal.jpg"/>
-                    <input type="hidden" id="payment_method_value" value="paypal_standard">
                 <% } else if (sales_process.payment_methods.tpv_virtual) { %>
                     <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-mastercard.jpg"/>
                     <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-visa.jpg"/>
-                    <input type="hidden" id="payment_method_value" value="<%=sales_process.payment_methods.tpv_virtual%>">
                 <% } %>
 
                 <hr>

@@ -1,5 +1,15 @@
 # Changelog
 
+## [Working in Progress]
+
+### Fixed
+
+- Renting module. Complete step. Just pay now (without request reservation) not connecting to payment gateway
+
+### Updated
+
+- Product calendar. JS Library. Single date => Just one month
+
 ## [0.5.16]
 
 ### Updated
