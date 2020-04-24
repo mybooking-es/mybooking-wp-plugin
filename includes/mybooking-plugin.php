@@ -109,6 +109,10 @@
    * [mybooking_activities_engine_summary]
    * [mybooking_activities_engine_order]
    *
+   * 2.3 Contact
+   *
+   * [mybooking_contact]
+   *
    */
   class MyBookingPlugin
   {
@@ -312,7 +316,7 @@
 		  if ($registry->mybooking_rent_plugin_custom_css) {
 			  // Load bootstrap JS
 			  wp_register_script('mybooking_wp_js_framework_bootstrap', 
-			  									 plugins_url( 'bootstrap.bundle-4.4.1.min.js', dirname(__FILE__) ),	
+			  									 plugins_url( '/assets/js/bootstrap.bundle-4.4.1.min.js', dirname(__FILE__) ),	
 			  	                 array( 'jquery' ), $version, true);
 			  wp_enqueue_script('mybooking_wp_js_framework_bootstrap');
 			}

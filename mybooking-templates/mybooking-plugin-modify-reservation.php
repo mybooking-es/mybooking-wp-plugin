@@ -11,8 +11,9 @@
 ?>
 <!-- Modify reservation modal -->
 <div style="position:absolute">
+
   <div class="modal fade" 
-       id="choose_productModal" tabindex="-1" role="dialog" aria-labelledby="choose_productModal"
+       id="modify_reservation_modal" tabindex="-1" role="dialog" aria-labelledby="modifyReservationModal"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -33,4 +34,5 @@
       </div>
     </div>
   </div>
+  
 </div>

@@ -91,12 +91,12 @@
 		</div>
 
 		<% if (configuration.promotionCode) { %>
-			<!--div class="flex-form-horizontal-box">
+			<div class="flex-form-horizontal-box">
 		      <label for="date_from"><?php echo _x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
 		      <div class="flex-form-horizontal-item">
 			      <input type="text" class="form-control" name="promotion_code" id="widget_promotion_code" autocomplete="off">
 			    </div>
-			</div-->
+			</div>
 		<% } %>
 
 		<div class="flex-form-horizontal-box">

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-26 20:00+0000\n"
-"PO-Revision-Date: 2020-03-26 20:01+0000\n"
-"Last-Translator: mybooking <info@mybooking.es>\n"
+"POT-Creation-Date: 2020-04-24 07:43+0000\n"
+"PO-Revision-Date: 2020-04-24 07:43+0000\n"
+"Last-Translator: \n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.1; wp-5.3.2"
+"X-Loco-Version: 2.3.3; wp-5.4"
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:18
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:34
@@ -326,40 +326,40 @@ msgctxt "renting_complete"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:325
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:362
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:341
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:378
 msgctxt "renting_complete"
 msgid "Request reservation"
 msgstr "Solicitar reserva"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:332
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:348
 msgctxt "renting_complete"
 msgid "Pay on arrival"
 msgstr "Pagar en destino"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:339
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:355
 msgctxt "renting_complete"
 msgid "Pay now"
 msgstr "Pagar ahora"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:355
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:380
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:441
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:371
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:396
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:455
 msgctxt "renting_complete"
 msgid "I have read and hereby accept the conditions of rental"
 msgstr "He leído y acepto las condiciones del alquiler"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:387
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:403
 msgctxt "renting_complete"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:414
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:430
 msgctxt "renting_complete"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:420
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:436
 msgctxt "renting_complete"
 msgid "Credit or debit card"
 msgstr "Tarjeta de crédito/débito"
@@ -411,6 +411,36 @@ msgctxt "renting_complete"
 msgid "Comments"
 msgstr "Comentarios"
 
+#: mybooking-templates/mybooking-plugin-contact-widget.php:6
+#: mybooking-templates/mybooking-plugin-contact-widget.php:7
+msgctxt "contact_form"
+msgid "Name"
+msgstr "Nombre"
+
+#: mybooking-templates/mybooking-plugin-contact-widget.php:10
+#: mybooking-templates/mybooking-plugin-contact-widget.php:11
+msgctxt "contact_form"
+msgid "Surname"
+msgstr "Apellidos"
+
+#: mybooking-templates/mybooking-plugin-contact-widget.php:17
+#: mybooking-templates/mybooking-plugin-contact-widget.php:18
+msgctxt "contact_form"
+msgid "E-mail"
+msgstr "Correo electrónico"
+
+#: mybooking-templates/mybooking-plugin-contact-widget.php:24
+#: mybooking-templates/mybooking-plugin-contact-widget.php:25
+msgctxt "contact_form"
+msgid "Phone number"
+msgstr "Teléfono"
+
+#: mybooking-templates/mybooking-plugin-contact-widget.php:31
+#: mybooking-templates/mybooking-plugin-contact-widget.php:32
+msgctxt "contact_form"
+msgid "Message"
+msgstr "Mensaje"
+
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:20
 #: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:51
 msgctxt "renting_form_selector"
@@ -439,12 +469,12 @@ msgstr "Fecha devolución"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:63
 #: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:36
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:94
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:103
 msgctxt "renting_form_selector"
 msgid "Search"
 msgstr "Buscar"
 
-#: mybooking-templates/mybooking-plugin-modify-reservation.php:20
+#: mybooking-templates/mybooking-plugin-modify-reservation.php:21
 msgctxt "renting_form_modify_reservation"
 msgid "Modify reservation"
 msgstr "Modificar reserva"
@@ -597,6 +627,16 @@ msgctxt "renting_my_reservation"
 msgid "Credit or debit card"
 msgstr "Tarjeta de crédito/débito"
 
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:95
+msgctxt "renting_form_selector"
+msgid "Promotion code"
+msgstr "Código de promoción"
+
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget-tmpl.php:54
+msgctxt "renting_form_selector_wizard"
+msgid "All"
+msgstr "Todos"
+
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:14
 msgctxt "renting_form_selector_wizard"
 msgid "Where?"
@@ -698,8 +738,8 @@ msgid "Total"
 msgstr "Total"
 
 #. Name of the plugin
-msgid "MyBooking Reservation Engine for WordPress"
-msgstr "Mybooking: Motor de reservas para WordPress"
+msgid "MyBooking Reservation Engine"
+msgstr "MyBooking Reservation Engine"
 
 #. Description of the plugin
 msgid ""

@@ -9,13 +9,13 @@
       <div class="selector_wizard_step_summary_container container">
         <div class="row">
           <div class="selector_wizard_step_summary_container_item col text-right">
-            <div class="wizard-summary_pickup"><%= summary.pickupPlace %></div>
+            <div class="wizard-summary_pickup"><%= summary.pickupPlaceDescription %></div>
             <% if (summary.dateFrom != null) {%>
               <div class="wizard-summary_datefrom"><%= summary.dateFrom %> <% if (summary.timeFrom != null) {%><%= summary.timeFrom %><% } %> </div>
             <% } %>
           </div>
           <div class="wizard-selector_wizard_step_summary_container_item col">
-            <div class="wizard-summary_return"><%= summary.returnPlace %></div>
+            <div class="wizard-summary_return"><%= summary.returnPlaceDescription %></div>
             <% if (summary.dateTo != null) {%>
               <div class="wizard-summary_dateto"><%= summary.dateTo %> <% if (summary.timeTo != null) {%><%= summary.timeTo %><% } %></div>
             <% } %>
@@ -34,7 +34,7 @@
           <div class="col-md-12">
             <ul style="list-style: none" class="pt-3">
               <% for (var idx=0; idx<places.length; idx++) { %>
-              <li><a class="selector_place text-primary" role="button" data-place-id="<%=places[idx].name%>"><%=places[idx].name%></a></li>
+              <li><a class="selector_place text-primary" role="button" data-place-id="<%=places[idx].id%>"  data-place-name="<%=places[idx].name%>"><%=places[idx].name%></a></li>
               <% } %>
             </ul>
           </div>
@@ -51,7 +51,7 @@
         <!-- Destinations selector -->
         <div class="row mt-3">
           <div class="col-md-12">
-            <button class="btn btn-primary destination-selector" type="button" data-destination-id="all">Todos</button>
+            <button class="btn btn-primary destination-selector" type="button" data-destination-id="all"><?php echo _x( 'All', 'renting_form_selector_wizard', 'mybooking-wp-plugin' ) ?></button>
             <% for (var idx=0; idx<places.destinations.length; idx++) { %>
               <button class="btn btn-primary destination-selector"  type="button" 
                  data-destination-id="<%=places.destinations[idx].id%>"><%=places.destinations[idx].name%></button>
@@ -66,7 +66,7 @@
               <h3 class="destination-group" data-destination-id="<%=places.destinations[idx].id%>"><a name="<%=places.destinations[idx].id%>"><%=places.destinations[idx].name%></a></h3>
               <ul style="list-style: none" class="destination-group pt-3" data-destination-id="<%=places.destinations[idx].id%>">
               <% for (var idy=0; idy<places.destinations[idx].places.length; idy++) { %>               
-                <li><a class="selector_place text-primary" role="button" data-place-id="<%=places.destinations[idx].places[idy].name%>"><%=places.destinations[idx].places[idy].name%></a></li>
+                <li><a class="selector_place text-primary" role="button" data-place-id="<%=places.destinations[idx].places[idy].id%>"  data-place-name="<%=places.destinations[idx].places[idy].name%>"><%=places.destinations[idx].places[idy].name%></a></li>
               <% } %>
               </ul>
             <% } %>

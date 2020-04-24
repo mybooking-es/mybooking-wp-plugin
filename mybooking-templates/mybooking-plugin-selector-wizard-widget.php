@@ -22,7 +22,7 @@
               </div>    
               <br>
               <div class="col-md-1 d-flex align-items-end">
-                  <button id="btn_reservation" type="button" class="btn btn-success"><?php echo _x( 'Book', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?></button> 
+                  <input id="btn_reservation" type="button" class="btn btn-success" value="<?php echo _x( 'Book', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?>"> 
               </div>                                     
             </div>           
           </div>

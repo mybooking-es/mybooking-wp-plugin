@@ -57,6 +57,15 @@
 
 /** ------------ 3. Selector Form ------------------------ **/
 
+/* Search form */
+form[name=widget_search_form] input, form[name=widget_search_form] select {
+  height: 38px;
+}
+
+form[name=widget_search_form] input[type=submit] {
+  margin-bottom: 0;
+}
+
 .flex-form-horizontal {
   display: flex;
   flex-direction: column;
@@ -217,6 +226,13 @@
 
 }
 
+.selector_wizard_step_container li a {
+  cursor: pointer;
+}
+
+#btn_reservation {
+  margin-bottom: 0;
+}
 
 /** ------------ 4. Reservation Wizard : Choose product ------- **/
 
@@ -231,13 +247,13 @@
  */ 
 @media (max-width: 576px) { 
   .product-card {
-    height: 700px;
+    /*height: 700px;*/
   }
 }
 
 @media (min-width: 768px) { 
   .product-card {
-    height: 640px;
+    /*height: 640px;*/
   }
 }
 
@@ -326,12 +342,22 @@
     color: #aaaaaa;
 }
 
+form[name=reservation_form] input[type=radio], form[name=reservation_form] input[type=checkbox] {
+  width: auto !important;
+}
+
+/** --------------- 6. Reservation Wizard : MyReservation ----------- **/
+
+form[name=payment_form] input[type=radio], form[name=payment_form] input[type=checkbox] {
+  width: auto !important;
+}
+
 /** ============================================= **/
 /** ======= Reservation Engine Activities ======= **/
 /** ============================================= **/
 
 .activity-card {
-  height: 320px;
+  /*height: 320px;*/
 }
 
 .activity-card-img {
@@ -389,7 +415,7 @@ input[type=text] {
     width: 100%;
     padding: .375rem .75rem;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1;
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
@@ -398,6 +424,11 @@ input[type=text] {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     box-shadow: none;
 }
+
+.ui-datepicker {
+  min-width: 300px;
+}
+
 
 /**
  * Include datepicker in full-size-datepicker-container to make it 100%
@@ -540,4 +571,17 @@ input[type=text] {
 
 .pac-container {
     z-index: 10000 !important;
+}
+/** Boostrap fade alternative **/
+.fade-scale {
+  transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+}
+
+.fade-scale.in {
+  opacity: 1;
+  transform: scale(1);
 }
