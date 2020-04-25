@@ -319,6 +319,13 @@
 			  									 plugins_url( '/assets/js/bootstrap.bundle-4.4.1.min.js', dirname(__FILE__) ),	
 			  	                 array( 'jquery' ), $version, true);
 			  wp_enqueue_script('mybooking_wp_js_framework_bootstrap');
+			  // Bootstrap and Jquery modal compatibility 
+			  if ($registry->mybooking_plugin_js_bs_modal_no_conflict) {
+			    wp_register_script('mybooking_wp_js_app', 
+			  	  								 plugins_url( '/assets/js/noConflict.js', dirname(__FILE__) ),	
+			  	                   array( 'jquery', 'mybooking_wp_js_framework_bootstrap' ), $version, true);
+			    wp_enqueue_script('mybooking_wp_js_app');
+			  }
 			}
 
 		}
@@ -450,7 +457,8 @@
 		      'mybooking_google_api_places_bounds_ne_lat' => $registry->mybooking_plugin_google_api_places_bounds_ne_lat,
 		      'mybooking_google_api_places_bounds_ne_lng' => $registry->mybooking_plugin_google_api_places_bounds_ne_lng,
 		      // Custom Loader
-		      'mybooking_custom_loader' => $registry->mybooking_rent_plugin_custom_loader
+		      'mybooking_custom_loader' => $registry->mybooking_rent_plugin_custom_loader,
+		      'mybooking_js_bs_modal_no_conflict' => $registry->mybooking_plugin_js_bs_modal_no_conflict
 		  );
 		  mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
 		
@@ -1062,26 +1070,37 @@
       else {
         $registry->mybooking_plugin_google_api_places_bounds_ne_lng = null;
       }       
-      // CSS
+      // == CSS
 		  $settings = (array) get_option("mybooking_plugin_settings_css");	 
+		  // Custom Loader
 		  if ($settings && array_key_exists('mybooking_plugin_settings_components_custom_loader', $settings)) {
 				$registry->mybooking_rent_plugin_custom_loader = (trim(esc_attr( $settings["mybooking_plugin_settings_components_custom_loader"] )) == '1');
 		  }
 		  else {
 		  	$registry->mybooking_rent_plugin_custom_loader = '';
 		  }		  
+		  // JS BS Modal No Conflict
+		  if ($settings && array_key_exists('mybooking_plugin_settings_components_js_bs_modal_no_conflict', $settings)) {
+				$registry->mybooking_plugin_js_bs_modal_no_conflict = (trim(esc_attr( $settings["mybooking_plugin_settings_components_js_bs_modal_no_conflict"] )) == '1');
+		  }
+		  else {
+		  	$registry->mybooking_plugin_js_bs_modal_no_conflict = '';
+		  }	
+		  // Components CSS
 		  if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {
 				$registry->mybooking_rent_plugin_components_css = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css"] )) == '1');
 		  }
 		  else {
 		  	$registry->mybooking_rent_plugin_components_css = '';
 		  }
+		  // Custom CSS
       if ($settings && array_key_exists('mybooking_plugin_settings_custom_css', $settings)) {
 		    $registry->mybooking_rent_plugin_custom_css = (trim(esc_attr( $settings["mybooking_plugin_settings_custom_css"] )) == '1');
       }
       else {
         $registry->mybooking_rent_plugin_custom_css = '';
       }
+
 		}
 
 		// ------------ Custom routes ---------------------

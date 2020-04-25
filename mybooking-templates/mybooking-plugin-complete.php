@@ -99,7 +99,7 @@
 </div>
 
 <!-- Show extra detail modal -->
-<div class="modal" tabindex="-1" role="dialog" id="modalExtraDetail">
+<div class="modal fade modal-mybooking" tabindex="-1" role="dialog" id="modalExtraDetail">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

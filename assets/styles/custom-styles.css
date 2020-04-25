@@ -187,6 +187,10 @@ form[name=widget_search_form] input[type=submit] {
   overflow: hidden;
 }
 
+.selector_wizard_container a {
+  text-decoration: none !important;
+}
+
 /* The container step title */
 
 .selector_wizard_step_title {
@@ -396,6 +400,20 @@ form[name=payment_form] input[type=radio], form[name=payment_form] input[type=ch
     font-family: "FontAwesome";
     font-weight: normal;
     font-style : normal;
+}
+
+/** Jquery modal / bootstrap integration **/
+/** Compatibility with themes that uses jquery-modal **/
+.modal.modal-mybooking{
+    position: fixed !important;
+    z-index: 1050 !important;
+    width: 100% !important;
+    background: transparent !important;
+    max-width: inherit !important;
+}
+
+.modal-mybooking .carousel {
+    max-width: 440px !important;
 }
 
 

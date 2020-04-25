@@ -22,6 +22,12 @@
         <?php } else { ?>
         var customLoader = false;
         <?php } ?>
+        // Modal JS compatibility
+        <?php if ($args['mybooking_js_bs_modal_no_conflict'] == '1') { ?>
+        var jsBsModalNoConflict = true;
+        <?php } else { ?>
+        var jsBsModalNoConflict = false;
+        <?php } ?>  
         // Google Integration
         <?php if ($args['mybooking_google_api_places']) { ?>
         var useGoogleMaps = true;
@@ -88,6 +94,9 @@
         function getCustomLoader() {
           return customLoader;
         }
+        function getJsBsModalNoConflict(){
+          return jsBsModalNoConflict;
+        }
         <?php if ($args['mybooking_google_api_places']) { ?>
         function getUseGoogleMaps() {
           return useGoogleMaps;
@@ -118,7 +127,8 @@
           orderUrl: getOrderUrl,
           activitiesUrl: getActivitiesTermsUrl,
           // Common
-          customLoader: getCustomLoader,          
+          customLoader: getCustomLoader,  
+          jsBsModalNoConflict: getJsBsModalNoConflict         
         }
       }();
     </script> 

@@ -57,6 +57,13 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.5.18 =
+* Spanish translations (contact form and wizard destinations)
+* Better themes integration 
+ * Compatibility with bootstrap $.modal (fixed conflict with jquery-modal)
+ * Font awesome fonts added
+ * Bootstrap 4.4.1
+
 = 0.5.17 =
 * Rent complete. Just pay now option not connecting to payment gateway
 * Product calendar choose Just One Date

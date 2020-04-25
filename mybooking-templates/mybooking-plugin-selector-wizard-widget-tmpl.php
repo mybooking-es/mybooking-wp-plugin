@@ -99,7 +99,7 @@
               <% if (idx % 2 == 0) { %>
               <div class="row">
               <% } %>
-                <div class="col">
+                <div class="col-6">
                   <button type="button" class="btn btn-light selector_time text-center mb-2 p-3" style="width: 100%" data-value="<%=times[idx]%>"><%= times[idx] %></button>
                 </div>
               <% if (idx % 2 == 1) { %>                

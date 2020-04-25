@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.5.18]
+
+### Updated
+
+- Translations
+	- Contact form translations
+  - Selector wizard
+ 
+### Fixed
+
+- Better themes integration. 
+  - Compatibility with themes that overrides bootstrap $.modal (fixed conflict with jquery-modal)
+  - Common use of buttons instead of a mix of buttons/input.
+  - Review of CSS
+- Fontawesome fonts added
+- Bootstrap 4.4.1
+
 ## [0.5.17]
 
 ### Fixed
