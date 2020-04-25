@@ -73,6 +73,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
+= 0.5.18 =
+* Better themes integration and completed translations to Spanish
+
 = 0.5.17 =
 * JS Engine Library: complete and product calendar
 
