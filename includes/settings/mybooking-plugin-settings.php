@@ -69,7 +69,7 @@
 					    <a href="?page=mybooking-plugin-configuration&tab=renting_options" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">Renting</a>
               <?php } ?>
 					    <?php if ($activities) { ?>              
-					    <a href="?page=mybooking-plugin-configuration&tab=activities_options" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">Activities</a>
+					    <a href="?page=mybooking-plugin-configuration&tab=activities_options" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">Activities or Appointments</a>
 					    <?php } ?>
 					    <?php if ($google_api_places) { ?>
 					    <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">Google Api Places</a>
@@ -93,10 +93,10 @@
 EOF;
 
                $activity_info = <<<EOF
-                 <p>Build an activities reservation site.</p>
+                 <p>Build appointments or activities reservation site.</p>
                  <ol style="list-style:square; margin-left: 20px">
                    <li><b>Selector widget</b> in any of the activities page</li>
-                   <li><b>Shopping cart / Checkout</b> page</li>
+                   <li><b>Checkout</b> page</li>
                    <li>Payment</li>
                    <li><b>Summary</b> page</li>
                  </ol>
@@ -210,7 +210,7 @@ EOF;
 
 		  // Creates an activities settings section "mybooking_plugin_settings_section_activities"
 		  add_settings_section('mybooking_plugin_settings_section_activities',
-		                       'Activities',
+		                       'Activities or Appointments',
 		                       '',
 		                       'mybooking-plugin-configuration');
 
@@ -249,7 +249,7 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_configuration');
 		  add_settings_field('mybooking_plugin_settings_activities_selector',
-		                     'Activities',
+		                     'Activities or Appointments',
 		                     array($this, 'field_mybooking_plugin_settings_activities_selector_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_configuration');
@@ -315,7 +315,7 @@ EOF;
       // == Creates activities section fields
 
 		  add_settings_field('mybooking_plugin_settings_activities_shopping_cart_page',
-		                     'Shopping cart page',
+		                     'Checkout page',
 		                     array($this, 'field_mybooking_plugin_settings_activities_shopping_cart_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
@@ -335,13 +335,13 @@ EOF;
 		  // Activity detail pages
 
 		  add_settings_field('mybooking_plugin_settings_use_activities_detail_pages',
-		  									'<em>Use activities detail pages</em>',
+		  									'<em>Use detail pages</em>',
 		  									array($this, 'field_mybooking_plugin_settings_use_activities_detail_pages_callback'),
 		  									'mybooking-plugin-configuration',
 		  									'mybooking_plugin_settings_section_activities');
 
 		  add_settings_field('mybooking_plugin_settings_activities_url',
-		                     '<em>Activities detail pages URL prefix</em>',
+		                     '<em>Detail pages URL prefix</em>',
 		                     array($this, 'field_mybooking_plugin_settings_activities_url_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
@@ -709,9 +709,9 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_activities[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_activities[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Use activity detail pages."; 
-		  echo "<p class=\"description\">Activate if you are fetching the activities from the back-office using the <u>[mybooking_activities_engine_activities]</u> shortcode.</p>"; 
-		  echo "<p class=\"description\">Do not activate if you are using the <u>[mybooking_activities_engine_activity]</u> shortcode on your activities pages.</p>";
+		  echo "<p class=\"description\">Use detail pages."; 
+		  echo "<p class=\"description\">Activate if you are fetching data from the back-office using the <u>[mybooking_activities_engine_activities]</u> shortcode.</p>"; 
+		  echo "<p class=\"description\">Do not activate if you are using the <u>[mybooking_activities_engine_activity]</u> shortcode on your custom pages.</p>";
 
 
 		}
@@ -730,9 +730,9 @@ EOF;
 		  	$value = 'activities';
 		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_activities[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">This page shows a company activity detail page. This page includes a calendar with its availability."; 
-		  echo "<p class=\"description\">This should be used with an <b>activities navigation page</b> created with the [mybooking_rent_engine_activities] shortcode."; 
-      echo "<p class=\"description\">Create the navigation page with a slug of <em>activities</em> and then select <u>activities</u> as the <em>activity page url prefix</em>.";
+		  echo "<p class=\"description\">This page shows a company product detail page. This page includes a calendar with its availability."; 
+		  echo "<p class=\"description\">This should be used with a <b>product navigation page</b> created with the [mybooking_rent_engine_activities] shortcode."; 
+      echo "<p class=\"description\">Create the navigation page with a slug of <b>activities</b> and then select <u>activities</u> as the <em>activity page url prefix</em>.";
 		  echo "<p class=\"description\">It creates a new URL route and access <em>mybooking</em> <b>API</b> to retrieve the data.</p>";
 		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://getyourguide.com\" target=\"_blank\">getyourguide.com</a></p>";
 

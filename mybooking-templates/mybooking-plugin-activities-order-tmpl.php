@@ -18,27 +18,45 @@
                     <div class="card-body">
                       <h5 class="card-title"><%=order.items[idx].item_description_customer_translation%></h5>
                       <p class="card-text text-muted"><%= configuration.formatDate(order.items[idx].date) %> <%= order.items[idx].time %></p>
-                      <br>
-                      <div class="table-responsive">
-                        <table class="table">
-                          <tbody>
-                            <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
-                              <tr>
-                                  <td><%=order.items[idx]['items'][x].quantity %>
-                                      <%=order.items[idx]['items'][x].item_price_description %> x
-                                      <%=configuration.formatCurrency(order.items[idx]['items'][x].item_unit_cost) %>
-                                  </td>
-                                  <td class="text-right">
-                                      <%=configuration.formatCurrency(order.items[idx]['items'][x].item_cost) %>
-                                  </td>
-                              </tr>
-                            <% } %>    
-                            <tr>
-                              <td><strong><?php echo _x( 'Total', 'activity_order_item', 'mybooking-wp-plugin' ) ?></strong></td>
-                              <td class="text-right"><strong><%=configuration.formatCurrency(order.items[idx]['total'])%></strong></td>
-                          </tbody>
-                        </table>
-                      </div>
+                      <% if (order.allow_select_places_for_reservation || order.use_rates) { %>
+                        <br>
+                        <div class="table-responsive">
+                          <table class="table">
+                            <tbody>
+                              <% if (order.allow_select_places_for_reservation) { %>
+                                <% if (order.use_rates) { %>
+                                  <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
+                                    <tr>
+                                        <td><%=order.items[idx]['items'][x].quantity %>
+                                            <%=order.items[idx]['items'][x].item_price_description %> x
+                                            <%=configuration.formatCurrency(order.items[idx]['items'][x].item_unit_cost) %>
+                                        </td>
+                                        <td class="text-right">
+                                            <%=configuration.formatCurrency(order.items[idx]['items'][x].item_cost) %>
+                                        </td>
+                                    </tr>
+                                  <% } %>    
+                                <% } else { %>
+                                  <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
+                                    <tr>
+                                        <td><%=order.items[idx]['items'][x].quantity %>
+                                            <%=order.items[idx]['items'][x].item_price_description %> 
+                                        </td>
+                                    </tr>
+                                  <% } %>  
+                                <% } %>
+                              <% } %>   
+                              <% if (order.use_rates) { %> 
+                                <!-- Show the total -->
+                                <tr>
+                                  <td><strong><?php echo _x( 'Total', 'activity_order_item', 'mybooking-wp-plugin' ) ?></strong></td>
+                                  <td class="text-right"><strong><%=configuration.formatCurrency(order.items[idx]['total'])%></strong></td>
+                                </tr>
+                              <% } %>
+                            </tbody>
+                          </table>
+                        </div>
+                      <% } %>
                     </div>
                   </div>
                <% } %>
@@ -59,12 +77,14 @@
                 </ul>
               </div>
 
-              <div class="jumbotron mb-3">
-                <h2 class="h5"><?php echo _x( 'Total', 'activity_order', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
-                <hr>
-                <p class="lead"><?php echo _x( 'Paid', 'activity_order', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_paid)%></span></p>
-                <p class="lead"><?php echo _x( 'Pending', 'activity_order', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_pending)%></span></p>
-              </div>
+              <% if (order.use_rates) { %>
+                <div class="jumbotron mb-3">
+                  <h2 class="h5"><?php echo _x( 'Total', 'activity_order', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
+                  <hr>
+                  <p class="lead"><?php echo _x( 'Paid', 'activity_order', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_paid)%></span></p>
+                  <p class="lead"><?php echo _x( 'Pending', 'activity_order', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_pending)%></span></p>
+                </div>
+              <% } %>
 
 
               <% if (canPay && paymentAmount > 0) { %>

@@ -14,27 +14,45 @@
             <div class="card-body">
               <h5 class="card-title"><%=shopping_cart.items[idx].item_description_customer_translation%></h5>
               <p class="card-text text-muted"><%= configuration.formatDate(shopping_cart.items[idx].date) %> <%= shopping_cart.items[idx].time %></p>
-              <br>
-              <div class="table-responsive">
-                <table class="table">
-                  <tbody>
-                    <% for (var x=0; x<shopping_cart.items[idx]['items'].length; x++) { %>
-                      <tr>
-                          <td><%=shopping_cart.items[idx]['items'][x].quantity %>
-                              <%=shopping_cart.items[idx]['items'][x].item_price_description %> x
-                              <%=configuration.formatCurrency(shopping_cart.items[idx]['items'][x].item_unit_cost) %>
-                          </td>
-                          <td class="text-right">
-                              <%=configuration.formatCurrency(shopping_cart.items[idx]['items'][x].item_cost) %>
-                          </td>
-                      </tr>
-                    <% } %>    
-                    <tr>
-                      <td><strong><?php echo _x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?></strong></td>
-                      <td class="text-right"><strong><%=configuration.formatCurrency(shopping_cart.items[idx]['total'])%></strong></td>
-                  </tbody>
-                </table>
-              </div>
+              <% if (shopping_cart.allow_select_places_for_reservation || shopping_cart.use_rates) { %>
+                <br>
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                      <% if (shopping_cart.allow_select_places_for_reservation) { %>
+                        <% if (shopping_cart.use_rates) { %>
+                          <% for (var x=0; x<shopping_cart.items[idx]['items'].length; x++) { %>
+                            <tr>
+                                <td><%=shopping_cart.items[idx]['items'][x].quantity %>
+                                    <%=shopping_cart.items[idx]['items'][x].item_price_description %> x
+                                    <%=configuration.formatCurrency(shopping_cart.items[idx]['items'][x].item_unit_cost) %>
+                                </td>
+                                <td class="text-right">
+                                    <%=configuration.formatCurrency(shopping_cart.items[idx]['items'][x].item_cost) %>
+                                </td>
+                            </tr>
+                          <% } %>   
+                        <% } else { %>
+                          <% for (var x=0; x<shopping_cart.items[idx]['items'].length; x++) { %>
+                            <tr>
+                                <td><%=shopping_cart.items[idx]['items'][x].quantity %>
+                                    <%=shopping_cart.items[idx]['items'][x].item_price_description %> 
+                                </td>
+                            </tr>
+                          <% } %>   
+                        <% } %>
+                      <% } %>
+                      <% if (shopping_cart.use_rates) { %> 
+                        <!-- Show the total -->
+                        <tr>
+                          <td><strong><?php echo _x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?></strong></td>
+                          <td class="text-right"><strong><%=configuration.formatCurrency(shopping_cart.items[idx]['total'])%></strong></td>
+                        </tr>
+                      <% } %>
+                    </tbody>
+                  </table>
+                </div>
+              <% } %>
             </div>
             <div class="card-footer">
                 <button class="btn btn-danger btn-delete-shopping-cart-item pull-right"
@@ -81,10 +99,6 @@
             <label for="customer_phone"><?php echo _x( 'Phone number', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>*</label>
             <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo _x( 'Phone number', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>:*">
         </div>
-        <div class="form-group">            
-            <label for="customer_mobile_phone"><?php echo _x( 'Alternative phone number', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?></label>
-            <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo _x( 'Alternative phone number', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>:">
-        </div>                
 
         <div class="form-group">
           <label for="comments"><?php echo _x( 'Comments', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?></label>
@@ -97,10 +111,12 @@
 
     <script type="text/tmpl" id="script_payment_detail">
 
-      <div class="jumbotron mb-3">
-        <h2 class="h5"><?php echo _x( 'Total', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.total_cost)%></span></h2>
-        <hr>
-      </div>
+      <% if (shopping_cart.use_rates) { %>
+        <div class="jumbotron mb-3">
+          <h2 class="h5"><?php echo _x( 'Total', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.total_cost)%></span></h2>
+          <hr>
+        </div>
+      <% } %>
 
       <input type="hidden" name="payment" value="none">
 

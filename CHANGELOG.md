@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.19]
+
+### Added
+
+- Implemented appointments characteristics on Activity/Tickets module
+
 ## [0.5.18]
 
 ### Updated

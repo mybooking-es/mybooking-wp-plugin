@@ -447,6 +447,12 @@ input[type=text] {
   min-width: 300px;
 }
 
+/** Datepicker text-danger **/
+.ui-datepicker td.text-danger .ui-state-default {
+  color: black !important;
+  font-weight: 800 !important;
+  opacity: 1 !important;      
+}
 
 /**
  * Include datepicker in full-size-datepicker-container to make it 100%

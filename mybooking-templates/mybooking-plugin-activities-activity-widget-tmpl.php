@@ -6,6 +6,23 @@
 
         <form name="select_date_form" id="select_date_form">
           <input type="hidden" name="activity_id" id="activity_id" value="<%=activity.id%>"/>
+
+            <% if (typeof activity.available !== 'undefined') { %>
+              <% if (activity.available == 0) { %>
+                <div class="alert alert-danger">
+                  <p><%=i18next.t('activities.calendarWidget.fullPlaces')%></p>
+                </div>
+              <% } else if (activity.available == 2) {%>
+                <div class="alert alert-warning">
+                  <% if (activity.allow_select_places_for_reservation) { %>
+                  <p><%=i18next.t('activities.calendarWidget.fewPlacesWarning')%></p>
+                  <% } else { %>
+                  <p><%=i18next.t('activities.calendarWidget.fewNoPlacesWarning')%></p>  
+                  <% } %>
+                </div>                  
+              <% } %> 
+            <% } %>  
+
           <div id="tickets"></div>
         </form>
 
@@ -43,23 +60,25 @@
 
     <script type="text/tmpl" id="script_cyclic_turns">
 
-        <% if (turns.length == 0) {%>
-          <div class="alert alert-warning">
+      <% if (isEmptyTurns) {%>
+        <div class="alert alert-warning">
              <p><?php echo _x( 'We are sorry. There are not schedules available', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></p>
-          </div>
-        <% } else { %>
-          <br>
-          <h2 class="h5 mt-3 mb-3 text-muted"><b><?php echo _x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
-
-          <div class="form-group">
-          <% for (var idx=0;idx<turns.length;idx++) { %>
+        </div>
+      <% } else { %>
+        <br>
+        <h2 class="h5 mt-3 mb-3 text-muted"><b><?php echo _x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
+        <div class="form-group">
+          <% for (turn in turns) { %>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="turn" id="turn" value="<%=turns[idx]%>">
-              <label class="form-check-label" for="turn"><%=turns[idx]%></label>
+              <input class="form-check-input" type="radio" name="turn" id="turn" value="<%=turn%>"
+                     <% if (!turns[turn]) {%>disabled<%}%>>
+              <label class="form-check-label" for="turn">
+                  <% if (!turns[turn]) {%><span class="text-danger"><%=turn%></span><% } else {%><%=turn%><% } %>
+              </label>
             </div>
-          <% } %>
-          </div>
-        <% } %>
+          <% } %> 
+        </div>
+      <% }%>
 
     </script>
 
@@ -82,3 +101,15 @@
         </div>  
 
     </script>
+
+    <script type="text/tmpl" id="script_fixed_ticket">
+        <% for (item in tickets) { %>
+          <input type="hidden" name="quantity_rate_<%=item%>" class="quantity_rate" value="1"/>
+        <% } %>
+
+        <div class="form-group">
+          <button type="button" id="btn_reservation" class="btn btn-primary w-100"><?php echo _x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></button>
+        </div>  
+
+    </script>
+
