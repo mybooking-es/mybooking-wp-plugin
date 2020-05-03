@@ -4,29 +4,36 @@
 	<div class="row">
     <div class="col-md-8">
     	<?php if (sizeof($args->photos) > 1) { ?>
-			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-			  <div class="carousel-inner">
-			  	<?php foreach( $args->photos as $key => $photo ) { ?>
-			    <div class="carousel-item <?php if ($key == key($args->photos)) { ?>active<?php } ?>">
-			      <img class="d-block w-100" src="<?php echo $photo->full_photo_path?>" alt="<?php echo $args->name?>">
-			    </div>
-			    <?php } ?>
-			  </div>
-			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			    <span class="sr-only">Previous</span>
-			  </a>
-			  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			    <span class="sr-only">Next</span>
-			  </a>
-			</div>
+				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+				  <div class="carousel-inner">
+				  	<?php foreach( $args->photos as $key => $photo ) { ?>
+				    <div class="carousel-item <?php if ($key == key($args->photos)) { ?>active<?php } ?>">
+				      <img class="d-block w-100" src="<?php echo $photo->full_photo_path?>" alt="<?php echo $args->name?>">
+				    </div>
+				    <?php } ?>
+				  </div>
+				  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
 			<?php } else if (sizeof($args->photos) == 1) { ?>
 					<img class="d-block w-100" src="<?php echo $args->photos[0]->full_photo_path?>" alt="<?php echo $args->name?>">
+			<?php } else { ?>
+			    <div class="text-center no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
 			<?php } ?>
 			<h1 class="h2 mt-3"><?php echo $args->name ?></h1>
-      <?php echo $args->description ?>
       <hr>
+      <?php if ($args->address) { ?>
+	      <div><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<?php echo $args->address->street ?>, <?php echo $args->address->city ?> <?php echo $args->address->zip ?></div>
+	    	<br>
+	    <?php } ?>
+      <?php echo $args->description ?>
+
  
       <div class="row">
 

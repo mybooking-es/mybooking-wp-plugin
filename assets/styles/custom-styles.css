@@ -242,7 +242,7 @@ form[name=widget_search_form] input[type=submit] {
 
 @media (min-width: 992px) {
   .reservation-summary-card {
-     position: fixed !important;
+     /*position: fixed !important;*/
   }
 }
 
@@ -391,6 +391,12 @@ form[name=payment_form] input[type=radio], form[name=payment_form] input[type=ch
 
 }
 
+/** =========================================== **/
+
+.no-product-photo i {
+  font-size: 240px;
+  color: #eeeeee;
+}
 
 /** =========== COMPONENTS ==================== **/
 

@@ -4,10 +4,23 @@
 			<?php foreach( $args['data']->data as $activity ) { ?>
 			  <div class="col-lg-4">
 					<div class="activity-card card mb-2">
-					  <img class="activity-card-img card-img-top" src="<?php echo $activity->photo_url_full?>" alt="?php echo $activity->name?>">
+						<?php if ( !empty( $activity->photo_url_full ) ) { ?>
+								  <img class="activity-card-img card-img-top" src="<?php echo $activity->photo_url_full?>" alt="<?php echo $activity->name?>">
+						<?php } else { ?>
+						      <div class="text-center no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
+						<?php } ?>
 					  <div class="card-body d-flex flex-column justify-content-center">
 					    <h3 class="h6 card-title activity-card-title"><?php echo $activity->name ?></h3>
-					    <p class="text-center"><span class="text-muted"><?php echo _x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?></span><span class="h5 text-primary mt-10"> <strong><?php echo $activity->from_price_formatted ?></strong></span></p>
+				      <hr>
+				      <?php if ($activity->address) { ?>
+					      <div class="text-center"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<?php echo $activity->address->street ?>, <?php echo $activity->address->city ?> <?php echo $activity->address->zip ?></div>
+					    <?php } ?>
+					    <?php if ( $activity->use_rates ) { ?>
+					    <p class="text-center">
+					    	<span class="text-muted"><?php echo _x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?></span>
+					    	<span class="h5 text-primary mt-10"> <strong><?php echo $activity->from_price_formatted ?></strong></span>
+					    </p>
+					  	<?php } ?>
 					  </div>
 					  <div class="card-body activity-more-information d-flex flex-column justify-content-center">
 					    <a href="/<?php echo $args['url_detail']?>/<?php echo $activity->id?>" class="btn btn-primary"><?php echo _x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?></a>
