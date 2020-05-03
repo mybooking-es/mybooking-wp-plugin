@@ -291,7 +291,6 @@
 <!-- Payment detail -->
 <!-- Payment detail -->
 <script type="text/tmpl" id="script_payment_detail">
-
     <%
        var paymentAmount = 0;
        var selectionOptions = 0;
@@ -368,7 +367,12 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="payments_paypal_standard">
-                <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;<?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;
+                <?php if ( empty($args['terms_and_conditions']) ) { ?>
+                  <?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                <?php } else { ?>  
+                  <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?>
+                <?php } ?>  
               </label>
             </div>
           </div>
@@ -393,7 +397,12 @@
                 <div class="form-row">
                   <div class="form-group col-md-12">
                     <label for="payments_paypal_standard">
-                      <input type="checkbox" id="conditions_read_payment_on_delivery" name="conditions_read_payment_on_delivery">&nbsp;<?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <input type="checkbox" id="conditions_read_payment_on_delivery" name="conditions_read_payment_on_delivery">&nbsp;
+                      <?php if ( empty($args['terms_and_conditions']) ) { ?>
+                        <?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <?php } else { ?>  
+                        <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?>
+                      <?php } ?>  
                     </label>
                   </div>
                 </div>
@@ -452,7 +461,12 @@
                 <div class="form-row">
                   <div class="form-group col-md-12">
                     <label for="payments_paypal_standard">
-                      <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">&nbsp;<?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">&nbsp;
+                          <?php if ( empty($args['terms_and_conditions']) ) { ?>
+                            <?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                          <?php } else { ?>  
+                            <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?>
+                          <?php } ?>  
                     </label>
                   </div>
                 </div>

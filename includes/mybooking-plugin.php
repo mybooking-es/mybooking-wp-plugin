@@ -491,7 +491,15 @@
 		  }
 		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && 
 		  	        mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
-		  	mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php');
+		  	$data = array();
+		    if ( empty($registry->mybooking_rent_plugin_terms_page) ) {
+		    	$data['terms_and_conditions'] = '';
+		    }
+		    else {
+		  		$data['terms_and_conditions'] = get_site_url().'/'.$registry->mybooking_rent_plugin_terms_page;
+		  	}
+				mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php', $data);
+		  	//mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php');	  	
 		  	// If selector in process Wizard, load the micro-templates for the process
 		  	if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
   		  	mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
