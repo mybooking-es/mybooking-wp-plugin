@@ -4,7 +4,14 @@
 
 ### Added
 
-- Implemented appointments characteristics on Activity/Tickets module
+- Renting module
+  - Wizard steps title translations
+  - Wizard collection point
+  - Terms and conditions link
+- Activities module (now Activities and Appointments module)
+  - Activities module is now Activities and Appointments module.
+    Implemented appointments characteristics on Activity module with use_rates and allow_select_places_for_reservation
+	- Translations to the activities/appointment module.
 
 ## [0.5.18]
 
