@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-06 06:01+0000\n"
-"PO-Revision-Date: 2020-05-06 06:04+0000\n"
+"POT-Creation-Date: 2020-05-06 22:42+0000\n"
+"PO-Revision-Date: 2020-05-06 22:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
@@ -49,25 +49,30 @@ msgstr "Total"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:86
 msgctxt "activity_order"
+msgid "Cancel Reservation"
+msgstr "Cancelar Reserva"
+
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:93
+msgctxt "activity_order"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:88
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:95
 msgctxt "activity_order"
 msgid "Paid"
 msgstr "Pagado"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:89
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:96
 msgctxt "activity_order"
 msgid "Pending"
 msgstr "Pendiente"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:114
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:121
 msgctxt "activity_order"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:120
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:127
 msgctxt "activity_order"
 msgid "Credit or debit card"
 msgstr "Tarjeta de crédito/débito"
