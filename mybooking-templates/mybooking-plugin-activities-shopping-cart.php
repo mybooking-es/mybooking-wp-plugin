@@ -1,8 +1,8 @@
     <!-- Activities : Shopping cart page -->
     <section class="section reservation-step">
-      <div class="jumbotron">
+      <!--div class="jumbotron">
         <h2 class="display-6 text-center"><?php echo _x( 'Complete reservation', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?></h2>
-      </div>
+      </div-->
       <div class="container">
         <div class="row mt-5">
 

@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.5.20]
+
+### Added
+
+- Activities/Appointments module:
+  - Terms and conditions link
+  - One or multiple items reservation
+  - Adjust product cards css/style
+  - Access activity/appointment calendar page by slug
+
+### Fixed
+
+- Activities/Appointments module:
+  - Activities Api: Error management when then activity is not found by id or slug
+  - Shopping cart/Summary/Reservation. Show empty photo if it does not exist
+- Renting module
+  - Products Api: Error management when then activity is not found by id or slug
+
 ## [0.5.19]
 
 ### Added

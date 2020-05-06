@@ -14,7 +14,11 @@
               <div id="selected_products">
               <% for (idx in order.items) { %>
                   <div class="card mb-3">
-                    <img class="card-img-top" src="<%=order.items[idx].photo_full%>" alt="">
+                    <% if (order.items[idx].photo_full != null) { %>
+                      <img class="card-img-top order-product-photo" src="<%=order.items[idx].photo_full%>" alt="">
+                    <% } else { %>
+                      <div class="text-center order-no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
+                    <% } %>                    
                     <div class="card-body">
                       <h5 class="card-title"><%=order.items[idx].item_description_customer_translation%></h5>
                       <p class="card-text text-muted"><%= configuration.formatDate(order.items[idx].date) %> <%= order.items[idx].time %></p>

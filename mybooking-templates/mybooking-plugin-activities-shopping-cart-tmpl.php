@@ -10,7 +10,13 @@
 
       <% for (idx in shopping_cart.items) { %>
           <div class="card mb-3">
-            <img class="card-img-top" src="<%=shopping_cart.items[idx].photo_full%>" alt="">
+
+            <% if (shopping_cart.items[idx].photo_full != null) { %>
+              <img class="card-img-top shopping-cart-product-photo" src="<%=shopping_cart.items[idx].photo_full%>" alt="">
+            <% } else { %>
+              <div class="text-center shopping-cart-no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
+            <% } %>
+
             <div class="card-body">
               <h5 class="card-title"><%=shopping_cart.items[idx].item_description_customer_translation%></h5>
               <p class="card-text text-muted"><%= configuration.formatDate(shopping_cart.items[idx].date) %> <%= shopping_cart.items[idx].time %></p>
@@ -55,13 +61,13 @@
               <% } %>
             </div>
             <div class="card-footer">
-                <button class="btn btn-danger btn-delete-shopping-cart-item pull-right"
-                       data-item-id="<%=shopping_cart.items[idx].item_id%>"
-                       data-date="<%=shopping_cart.items[idx].date%>"
-                       data-time="<%=shopping_cart.items[idx].time%>"><?php echo _x( 'Remove', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?></button>
-              </div>              
-
-            </div>
+                <% if (configuration.activityReservationMultipleItems) { %>
+                  <button class="btn btn-danger btn-delete-shopping-cart-item pull-right"
+                         data-item-id="<%=shopping_cart.items[idx].item_id%>"
+                         data-date="<%=shopping_cart.items[idx].date%>"
+                         data-time="<%=shopping_cart.items[idx].time%>"><?php echo _x( 'Remove', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?></button>
+                <% } %>
+            </div>              
           </div>
        <% } %>
 
@@ -148,7 +154,12 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <label>
-                <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;<?php echo _x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+                <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;
+                  <?php if ( empty($args['terms_and_conditions']) ) { ?>
+                    <?php echo _x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+                  <?php } else { ?>
+                    <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">terms and conditions</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?> 
+                  <?php } ?>  
               </label>
             </div>
           </div>
@@ -208,7 +219,12 @@
                 <div class="form-row">
                   <div class="form-group col-md-12">
                     <label for="payments_paypal_standard">
-                      <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">&nbsp;<?php echo _x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+                      <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">&nbsp;
+                      <?php if ( empty($args['terms_and_conditions']) ) { ?>
+                        <?php echo _x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+                      <?php } else { ?>
+                        <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">terms and conditions</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?> 
+                      <?php } ?>  
                     </label>
                   </div>
                 </div>

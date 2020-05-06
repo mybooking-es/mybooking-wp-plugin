@@ -18,10 +18,9 @@
           $api_client = new MyBookingActivitiesApiClient($registry->mybooking_rent_plugin_api_url_prefix,
           	                                             $registry->mybooking_rent_plugin_api_key);
           $data =$api_client->get_activity($id);
-          if ( $data == null) {
+          if ( $data == null || empty($data) ) {
           	$this->routes_not_found();
           }
-          
           // Build the page
           mybooking_engine_get_template('mybooking-plugin-routes-activity.php', $data);
           die;

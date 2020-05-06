@@ -22,7 +22,7 @@
 				  </a>
 				</div>
 			<?php } else if (sizeof($args->photos) == 1) { ?>
-					<img class="d-block w-100" src="<?php echo $args->photos[0]->full_photo_path?>" alt="<?php echo $args->name?>">
+					<img class="d-block product-photo" src="<?php echo $args->photos[0]->full_photo_path?>" alt="<?php echo $args->name?>">
 			<?php } else { ?>
 			    <div class="text-center no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
 			<?php } ?>

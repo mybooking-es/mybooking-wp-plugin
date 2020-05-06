@@ -360,8 +360,8 @@ form[name=payment_form] input[type=radio], form[name=payment_form] input[type=ch
 /** ======= Reservation Engine Activities ======= **/
 /** ============================================= **/
 
-.activity-card {
-  /*height: 320px;*/
+.activity-card > img.activity-card-img.card-img-top {
+    height: 300px;
 }
 
 .activity-card-img {
@@ -391,11 +391,51 @@ form[name=payment_form] input[type=radio], form[name=payment_form] input[type=ch
 
 }
 
+/** Shopping cart **/
+
+img.shopping-cart-product-photo {
+  /*height: 300px;*/
+}
+
+div.shopping-cart-no-product-photo {
+  height: 300px;
+}
+
+.shopping-cart-no-product-photo i {
+  font-size: 240px;
+  color: #eeeeee;
+  padding-top: 30px;
+}
+
+/** Order/Summary **/
+
+/** Shopping cart **/
+
+img.order-product-photo {
+  /*height: 300px;*/
+}
+
+div.order-no-product-photo {
+  height: 300px;
+}
+
+.order-no-product-photo i {
+  font-size: 240px;
+  color: #eeeeee;
+  padding-top: 30px;
+}
+
+
 /** =========================================== **/
 
 .no-product-photo i {
   font-size: 240px;
   color: #eeeeee;
+}
+
+.product-photo {
+  display: block;
+  margin: 0 auto;
 }
 
 /** =========== COMPONENTS ==================== **/

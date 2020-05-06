@@ -23,7 +23,13 @@
 					  	<?php } ?>
 					  </div>
 					  <div class="card-body activity-more-information d-flex flex-column justify-content-center">
-					    <a href="/<?php echo $args['url_detail']?>/<?php echo $activity->id?>" class="btn btn-primary"><?php echo _x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?></a>
+					  	<?php if ( !empty( $activity->slug) ) {
+					  					$activityIdAnchor = $activity->slug;
+					  				} else {
+					  					$activityIdAnchor = $activity->id;
+					  				}
+					  		?>
+					    	<a href="/<?php echo $args['url_detail']?>/<?php echo $activityIdAnchor?>" class="btn btn-primary"><?php echo _x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?></a>
 					  </div>
 					</div>
 			  </div>

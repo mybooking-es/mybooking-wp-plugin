@@ -491,6 +491,7 @@
 		  }
 		  else if ( $registry->mybooking_rent_plugin_checkout_page != '' && 
 		  	        mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
+		  	// Terms and conditions
 		  	$data = array();
 		    if ( empty($registry->mybooking_rent_plugin_terms_page) ) {
 		    	$data['terms_and_conditions'] = '';
@@ -514,7 +515,15 @@
 		  }	
 		  else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && 
 		  	        mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
-		  	mybooking_engine_get_template('mybooking-plugin-activities-shopping-cart-tmpl.php');
+		  	// Terms and conditions
+		  	$data = array();
+		    if ( empty($registry->mybooking_activities_plugin_terms_page) ) {
+		    	$data['terms_and_conditions'] = '';
+		    }
+		    else {
+		  		$data['terms_and_conditions'] = get_site_url().'/'.$registry->mybooking_activities_plugin_terms_page;
+		  	}
+		  	mybooking_engine_get_template('mybooking-plugin-activities-shopping-cart-tmpl.php', $data);
 		  }
 		  else if ( $registry->mybooking_activities_plugin_summary_page != '' && 
 		  	        mybooking_engine_is_page( $registry->mybooking_activities_plugin_summary_page ) ) {
