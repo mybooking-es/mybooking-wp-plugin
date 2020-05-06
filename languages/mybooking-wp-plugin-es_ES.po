@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-02 19:19+0000\n"
-"PO-Revision-Date: 2020-05-02 19:20+0000\n"
+"POT-Creation-Date: 2020-05-06 06:01+0000\n"
+"PO-Revision-Date: 2020-05-06 06:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.3; wp-5.4"
+"X-Loco-Version: 2.3.3; wp-5.4.1"
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:35
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:51
@@ -41,33 +41,33 @@ msgctxt "activity_tickets_form_selector"
 msgid "Book now"
 msgstr "Reservar"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:52
-#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:52
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:56
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:56
 msgctxt "activity_order_item"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:82
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:86
 msgctxt "activity_order"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:84
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:88
 msgctxt "activity_order"
 msgid "Paid"
 msgstr "Pagado"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:85
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:89
 msgctxt "activity_order"
 msgid "Pending"
 msgstr "Pendiente"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:110
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:114
 msgctxt "activity_order"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:116
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:120
 msgctxt "activity_order"
 msgid "Credit or debit card"
 msgstr "Tarjeta de crédito/débito"
@@ -77,80 +77,91 @@ msgctxt "activity_shopping_cart"
 msgid "Shopping cart is empty"
 msgstr "El carrito de la compra está vacío"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:48
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:54
 msgctxt "activity_shopping_cart_item"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:61
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:68
 msgctxt "activity_shopping_cart_item"
 msgid "Remove"
 msgstr "Eliminar"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:80
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:81
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:86
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:87
 msgctxt "activity_shopping_cart"
 msgid "Name"
 msgstr "Nombre"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:85
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:86
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:91
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:92
 msgctxt "activity_shopping_cart"
 msgid "Surname"
 msgstr "Apellidos"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:90
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:91
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:96
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:97
 msgctxt "activity_shopping_cart"
 msgid "E-mail"
 msgstr "Correo electrónico"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:94
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:95
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:100
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:101
 msgctxt "activity_shopping_cart"
 msgid "Confirm E-mail"
 msgstr "Confirmar correo electrónico"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:99
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:100
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:105
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:106
 msgctxt "activity_shopping_cart"
 msgid "Phone number"
 msgstr "Teléfono"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:104
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:105
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:110
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:111
 msgctxt "activity_shopping_cart"
 msgid "Comments"
 msgstr "Comentarios"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:116
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:122
 msgctxt "activity_shopping_cart"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:129
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:158
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:135
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:169
 msgctxt "activity_shopping_cart"
 msgid "Request reservation"
 msgstr "Solicitar reserva"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:136
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:142
 msgctxt "activity_shopping_cart"
 msgid "Pay now"
 msgstr "Pagar ahora"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:151
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:211
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:159
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:224
 msgctxt "activity_shopping_cart"
 msgid "I have read and hereby accept the terms and conditions"
 msgstr "He leído y acepto los términos y condiciones"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:184
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:161
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:226
+#, php-format
+msgctxt "activity_shopping_cart"
+msgid ""
+"I have read and hereby accept the <a href=\"%s\" target=\"_blank\">terms and "
+"conditions</a>"
+msgstr ""
+"He leído y acepto los <a href=\"%s\" target=\"_blank\">términos y "
+"condiciones</a>"
+
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:195
 msgctxt "activity_shopping_cart"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:190
+#: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:201
 msgctxt "activity_shopping_cart"
 msgid "Credit or debit card"
 msgstr "Tarjeta de crédito/débito"
@@ -160,37 +171,37 @@ msgctxt "activity_shopping_cart"
 msgid "Complete reservation"
 msgstr "Completar reserva"
 
-#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:81
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:85
 msgctxt "activity_summary"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:83
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:87
 msgctxt "activity_summary"
 msgid "Paid"
 msgstr "Pagado"
 
-#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:84
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:88
 msgctxt "activity_summary"
 msgid "Pending"
 msgstr "Pendiente"
 
-#: mybooking-templates/mybooking-plugin-activities.php:10
+#: mybooking-templates/mybooking-plugin-activities.php:20
 msgctxt "activities_list"
 msgid "From"
 msgstr "Desde"
 
-#: mybooking-templates/mybooking-plugin-activities.php:13
+#: mybooking-templates/mybooking-plugin-activities.php:32
 msgctxt "activities_list"
 msgid "More information"
 msgstr "Más información"
 
-#: mybooking-templates/mybooking-plugin-activities.php:27
+#: mybooking-templates/mybooking-plugin-activities.php:46
 msgctxt "activities_list"
 msgid "Previous"
 msgstr "Anterior"
 
-#: mybooking-templates/mybooking-plugin-activities.php:43
+#: mybooking-templates/mybooking-plugin-activities.php:62
 msgctxt "activities_list"
 msgid "Next"
 msgstr "Siguiente"
@@ -317,40 +328,52 @@ msgctxt "renting_complete"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:341
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:378
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:340
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:382
 msgctxt "renting_complete"
 msgid "Request reservation"
 msgstr "Solicitar reserva"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:348
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:347
 msgctxt "renting_complete"
 msgid "Pay on arrival"
 msgstr "Pagar en destino"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:355
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:354
 msgctxt "renting_complete"
 msgid "Pay now"
 msgstr "Pagar ahora"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:371
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:396
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:455
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:372
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:402
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:466
 msgctxt "renting_complete"
 msgid "I have read and hereby accept the conditions of rental"
 msgstr "He leído y acepto las condiciones del alquiler"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:403
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:374
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:404
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:468
+#, php-format
+msgctxt "renting_complete"
+msgid ""
+"I have read and hereby accept the <a href=\"%s\" target=\"_blank\">"
+"conditions</a> of rental"
+msgstr ""
+"He leído y acepto las <a href=\"%s\" target=\"_blank\">condiciones</a> del "
+"alquiler"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:412
 msgctxt "renting_complete"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:430
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:439
 msgctxt "renting_complete"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:436
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:445
 msgctxt "renting_complete"
 msgid "Credit or debit card"
 msgstr "Tarjeta de crédito/débito"
