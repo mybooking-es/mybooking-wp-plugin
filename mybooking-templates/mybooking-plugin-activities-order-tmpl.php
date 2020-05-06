@@ -75,10 +75,17 @@
                 <div class="card-header">
                   <%=order.customer_name%> <%=order.customer_surname%>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><%=order.customer_email%></li>
-                  <li class="list-group-item"><%=order.customer_phone%></li>
-                </ul>
+                <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%=order.customer_email%></li>
+                    <li class="list-group-item"><%=order.customer_phone%></li>
+                  </ul>
+                </div>
+                <% if (order.allow_reservation_cancel) { %>
+                  <div class="card-footer">
+                    <button id="btn_cancel_reservation" class="btn btn-danger btn-cancel-reservation pull-right"><?php echo _x( 'Cancel Reservation', 'activity_order', 'mybooking-wp-plugin' ) ?></button>
+                  </div>  
+                <% } %>
               </div>
 
               <% if (order.use_rates) { %>
