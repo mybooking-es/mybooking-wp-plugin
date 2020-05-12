@@ -24,9 +24,12 @@
      * @param number $offset The offset on pagination
      * @param number $limit The number of records on pagination
      */
-    public function get_activities($offset=0, $limit=20) {
+    public function get_activities($q, $offset=0, $limit=20) {
 
           $url = $this->url_prefix.MyBookingActivitiesApiClient::GET_ACTIVITIES.'?offset='.$offset.'&limit='.$limit;
+          if ( $q != null && !empty($q) ) {
+            $url.='&q='.urlencode( $q );
+          }
 
           if ( isset($this->api_key) && !empty($this->api_key)) {
             $url = $url.'&api_key='.$this->api_key;

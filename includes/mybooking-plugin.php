@@ -103,6 +103,7 @@
    *
    * 2.2 Activities
    *
+   * [mybooking_activities_engine_search]
    * [mybooking_activities_engine_activities]
    * [mybooking_activities_engine_activity activity_id=Number]
    * [mybooking_activities_engine_shopping_cart]
@@ -224,6 +225,9 @@
 			add_shortcode('mybooking_rent_engine_product', array($this, 'wp_rent_product_shortcode' ));
 
 			// -- Activities shortcodes
+
+			// Shortcode Activities Search
+			add_shortcode('mybooking_activities_engine_search', array($this, 'wp_activities_search_shortcode') );
 
 			// Shortcode Activities - Activities
 			add_shortcode('mybooking_activities_engine_activities', array($this, 'wp_activities_activities_shortcode' ));	
@@ -774,11 +778,27 @@
     }
 
     /**
+     * Mybooking search
+     */
+    public function wp_activities_search_shortcode($atts = [], $content = null, $tag = '') {
+
+    	// Get the query parameter
+    	$q = array_key_exists('q', $_GET) ? filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED) : '';
+    	$data = array('q' => $q);
+
+			ob_start();
+      mybooking_engine_get_template('mybooking-plugin-activities-search.php', $data);
+		  return ob_get_clean();
+
+    }
+
+    /**
      * Mybooking activities
      */
     public function wp_activities_activities_shortcode($atts = [], $content = null, $tag = '') {
 
     	// Get the page and the limit from the request parameters
+    	$q = array_key_exists('q', $_GET) ? filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED) : '';
       $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
       $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
       if ( is_null($page) || $page === false ) {
@@ -798,7 +818,7 @@
       $url_detail = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
       $api_client = new MyBookingActivitiesApiClient($registry->mybooking_rent_plugin_api_url_prefix,
       	                                   					$registry->mybooking_rent_plugin_api_key);
-      $data =$api_client->get_activities($offset, $limit);
+      $data =$api_client->get_activities($q, $offset, $limit);
       if ( $data == null) {
       	$data = (object) array('total' => 0,
       		                     'data' => []);

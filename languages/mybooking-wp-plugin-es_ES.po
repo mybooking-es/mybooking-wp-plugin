@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-06 22:42+0000\n"
-"PO-Revision-Date: 2020-05-06 22:42+0000\n"
+"POT-Creation-Date: 2020-05-12 06:54+0000\n"
+"PO-Revision-Date: 2020-05-12 06:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
@@ -76,6 +76,11 @@ msgstr "Paypal"
 msgctxt "activity_order"
 msgid "Credit or debit card"
 msgstr "Tarjeta de crédito/débito"
+
+#: mybooking-templates/mybooking-plugin-activities-search.php:6
+msgctxt "activities_search"
+msgid "Search"
+msgstr "Buscar"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:5
 msgctxt "activity_shopping_cart"
