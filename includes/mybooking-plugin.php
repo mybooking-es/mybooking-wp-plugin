@@ -797,7 +797,7 @@
      */
     public function wp_activities_activities_shortcode($atts = [], $content = null, $tag = '') {
 
-    	// Get the page and the limit from the request parameters
+    	// Get the query, page and the limit from the request parameters
     	$q = array_key_exists('q', $_GET) ? filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED) : '';
       $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
       $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
