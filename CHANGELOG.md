@@ -10,6 +10,7 @@
   - Adjust product cards css/style
   - Access activity/appointment calendar page by slug
   - Cancel reservation
+  - Activities search
 
 ### Fixed
 
