@@ -1,5 +1,5 @@
-	  <!-- Initialize mybookingEngine -->
-	  <script type="text/javascript">
+    <!-- Initialize mybookingEngine -->
+    <script type="text/javascript">
       window.mybookingEngine = function(){
         var siteURL = '<?php echo get_site_url() ?>';     
         var baseURL = '<?php echo $args['mybooking_api_url_prefix']?>';
@@ -27,6 +27,11 @@
         var jsBsModalNoConflict = true;
         <?php } else { ?>
         var jsBsModalNoConflict = false;
+        <?php } ?>  
+        <?php if ($args['mybooking_js_bs_modal_backdrop_compatibility'] == '1') { ?>
+        var jsBsModalBackdropCompatibility = true;
+        <?php } else { ?>
+        var jsBsModalBackdropCompatibility = false;  
         <?php } ?>  
         // Google Integration
         <?php if ($args['mybooking_google_api_places']) { ?>
@@ -97,6 +102,9 @@
         function getJsBsModalNoConflict(){
           return jsBsModalNoConflict;
         }
+        function getJsBsModalBackdropCompatibility(){
+          return jsBsModalBackdropCompatibility;
+        }
         <?php if ($args['mybooking_google_api_places']) { ?>
         function getUseGoogleMaps() {
           return useGoogleMaps;
@@ -128,7 +136,8 @@
           activitiesUrl: getActivitiesTermsUrl,
           // Common
           customLoader: getCustomLoader,  
-          jsBsModalNoConflict: getJsBsModalNoConflict         
+          jsBsModalNoConflict: getJsBsModalNoConflict,
+          jsBsModalBackdropCompatibility: getJsBsModalBackdropCompatibility         
         }
       }();
     </script> 

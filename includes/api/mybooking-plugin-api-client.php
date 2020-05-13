@@ -37,6 +37,14 @@
 					if( is_wp_error( $request ) ) {
 						return null; // TODO
 					}
+
+          // Check status code
+          $status_code = wp_remote_retrieve_response_code( $request );
+          if ( $status_code == 404 || $status_code == 500) {
+            return null;
+          }
+
+          // Get the response body
 					$body = wp_remote_retrieve_body( $request );
 					$data = json_decode( $body );
 					return $data;	

@@ -8,16 +8,16 @@
       <% var coverage = coverages[idx]; %>
       <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
       <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
-      <div class="extra-card <%=bg%>">
+      <div class="extra-wrapper extra-card <%=bg%> <% if (value > 0) {%>selected-coverage<%}%>" data-extra="<%=coverage.code%>">
         <div class="row">
-          <div class="col-5">
+          <div class="col-4">
             <% if (coverage.photo_path) { %>
             <img class="extra-img p-2 js-extra-info-btn" src="<%=coverage.photo_path%>" 
                  alt="<%=coverage.name%>" data-extra="<%=coverage.code%>">
             <% } %>
             <div class="extra-name text-left p-3"><b><%=coverage.name%></b></div>
           </div>
-          <div class="col-4">
+          <div class="col-5">
             <% if (coverage.max_quantity > 1) { %>
               <div class="extra-plus-minus p-2">
                 <button class="btn btn-primary btn-minus-extra" 
@@ -40,7 +40,7 @@
             <% } %>         
           </div>
           <div class="col-3">
-           <p class="text-right p-3">
+           <p class="extra-price text-right p-3">
               <b><%= configuration.formatExtraAmount(i18next, coverage.one_unit_price, coverage.price_calculation,
                                                      shopping_cart.days, shopping_cart.hours, 
                                                      coverage.unit_price)%></b>
@@ -58,16 +58,16 @@
       <% var extra = extras[idx]; %>
       <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
       <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
-      <div class="extra-card <%=bg%>">
+      <div class="extra-wrapper extra-card <%=bg%>" data-extra="<%=extra.code%>">
         <div class="row">
-          <div class="col-5">
+          <div class="col-4">
             <% if (extra.photo_path) { %>
             <img class="extra-img p-2 js-extra-info-btn" src="<%=extra.photo_path%>" 
                   alt="<%=extra.name%>" data-extra="<%=extra.code%>">
             <% } %>
             <div class="extra-name text-left p-3"><b><%=extra.name%></b></div>
           </div>
-          <div class="col-4">
+          <div class="col-5">
             <% if (extra.max_quantity > 1) { %>
               <div class="extra-plus-minus p-2">
                 <button class="btn btn-primary btn-minus-extra" 
@@ -90,7 +90,7 @@
             <% } %>         
           </div>
           <div class="col-3">
-           <p class="text-right p-3">
+           <p class="extra-price text-right p-3">
               <b><%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation,
                                                      shopping_cart.days, shopping_cart.hours, 
                                                      extra.unit_price)%></b>

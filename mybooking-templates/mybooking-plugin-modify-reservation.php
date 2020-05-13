@@ -13,7 +13,7 @@
 <div class="modal fade modal-mybooking" 
      id="modify_reservation_modal" tabindex="-1" role="dialog" aria-labelledby="modifyReservationModal"
   aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title"><?php echo _x( 'Modify reservation', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></h5>

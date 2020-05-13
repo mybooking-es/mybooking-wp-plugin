@@ -462,7 +462,8 @@
 		      'mybooking_google_api_places_bounds_ne_lng' => $registry->mybooking_plugin_google_api_places_bounds_ne_lng,
 		      // Custom Loader
 		      'mybooking_custom_loader' => $registry->mybooking_rent_plugin_custom_loader,
-		      'mybooking_js_bs_modal_no_conflict' => $registry->mybooking_plugin_js_bs_modal_no_conflict
+		      'mybooking_js_bs_modal_no_conflict' => $registry->mybooking_plugin_js_bs_modal_no_conflict,
+		      'mybooking_js_bs_modal_backdrop_compatibility' => $registry->mybooking_plugin_js_bs_modal_backdrop_compatibility
 		  );
 		  mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
 		
@@ -1122,6 +1123,13 @@
 		  }
 		  else {
 		  	$registry->mybooking_plugin_js_bs_modal_no_conflict = '';
+		  }
+		  // JS BS backdrop compatibility
+		  if ($settings && array_key_exists('mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility', $settings)) {
+				$registry->mybooking_plugin_js_bs_modal_backdrop_compatibility = (trim(esc_attr( $settings["mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility"] )) == '1');
+		  }
+		  else {
+		  	$registry->mybooking_plugin_js_bs_modal_backdrop_compatibility = '';
 		  }	
 		  // Components CSS
 		  if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {

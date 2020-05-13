@@ -148,7 +148,7 @@ form[name=widget_search_form] input[type=submit] {
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 
   .flex-form-group-wrapper {
     flex-direction: row;
@@ -313,37 +313,55 @@ form[name=widget_search_form] input[type=submit] {
   background-color: #dddddd;
 }
 
+/* Extras */
+
+.extra-img {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.extra-name {
+  display: inline-block;
+}
+
 .extra-plus-minus {
   height: 40px;
   text-align: center !important;
+  margin-top: 30px;
 }
 .extra-plus-minus input[type=text] {
   width: 40px;
   display: inline-block;
+  position: relative;
+  top: 2px;
+}
+
+.extra-plus-minus button {
+  width: 40px;
 }
 
 .extra-check {
   height: 40px;
   text-align: center !important;
+  margin-top: 25px;
 }
+
+.extra-price {
+  margin-top: 10px;
+}
+
+.extra-total {
+    font-size: 0.8em;
+    color: #aaaaaa;
+}
+
+/* Product */
 
 .product-img {
   width: 120px;
   margin-bottom: 10px;
-}
-
-.extra-img {
-  width: 60px;
-  height: 60px;
-  display: inline-block;
-  margin: 0 auto;
-}
-.extra-name {
-  display: inline-block;
-}
-.extra-total {
-    font-size: 0.8em;
-    color: #aaaaaa;
 }
 
 form[name=reservation_form] input[type=radio], form[name=reservation_form] input[type=checkbox] {

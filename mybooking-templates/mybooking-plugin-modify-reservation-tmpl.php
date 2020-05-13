@@ -11,8 +11,9 @@
 ?>
 <script type="text/tmpl" id="form_selector_tmpl">
 
-  <!-- Delivery / Collection place -->
+<div class="flex-form-group-wrapper">
 
+  <!-- Delivery / Collection place -->
   <% if (configuration.pickupReturnPlace) { %>    
 		<div class="flex-form-group">
 	    <!-- Delivery place -->
@@ -29,7 +30,6 @@
   <% } %>
 
   <!-- Delivery / Collection dates and times -->
-
   <div class="flex-form-group">
     <!-- Delivery date -->
     <div class="flex-form-horizontal-box">

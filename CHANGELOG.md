@@ -11,6 +11,8 @@
   - Access activity/appointment calendar page by slug
   - Cancel reservation
   - Activities search
+- Renting
+  - Selected coverage / extras
 
 ### Fixed
 
@@ -19,6 +21,8 @@
   - Shopping cart/Summary/Reservation. Show empty photo if it does not exist
 - Renting module
   - Products Api: Error management when then activity is not found by id or slug
+- Bootstrap Modal
+  - Backdrop compatibility for some themes -> Use backdrop false when showing a modal
 
 ## [0.5.19]
 
