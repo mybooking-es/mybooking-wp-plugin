@@ -61,8 +61,8 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * Appointments/Activities
   * Cancel reservation
   * Terms and conditions link
-  * Mybooking/Activity integratin : access activity by slug
-  * Activities search shortcode
+  * Mybooking/Activity integration : access activity by slug
+  * Appointments/Activities search shortcode
 * Renting
   * Terms and conditions link
 * UX
