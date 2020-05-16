@@ -1,5 +1,10 @@
 # Changelog
 
+### Added
+
+- Activities/Appointments modules:
+  - Search by destination and category (two classifiers)
+
 ## [0.5.20]
 
 ### Added

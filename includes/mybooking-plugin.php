@@ -281,6 +281,11 @@
 			  // Load JQUERY Date Range
         wp_enqueue_style( 'mybooking_wp_css_components_jquery_date_range',
         								  plugins_url('/assets/styles/daterangepicker-0.20.0.min.css', dirname( __FILE__ ) ) );
+        // Load select2 
+        wp_enqueue_style( 'mybooking_wp_css_components_select2',
+        	                plugins_url('/assets/styles/select2-4.0.1.css', dirname( __FILE__ ) ) );
+        wp_enqueue_style( 'mybooking_wp_css_components_select2_bootstrap',
+        	                plugins_url('/assets/styles/select2-bootstrap.css', dirname( __FILE__ ) ) );        
         // Custom style
 			  wp_enqueue_style('mybooking_wp_css_components_custom_style',
 			                   plugins_url('/assets/styles/custom-styles.css', dirname( __FILE__ ) ),
@@ -397,6 +402,11 @@
 		  		      mybooking_engine_is_page( $registry->mybooking_activities_plugin_summary_page ) ) {
 		  	$classes[] = 'mybooking-activity-summary';
 		  }
+
+		  // Activities shortcodes : Activity
+		  if ( has_shortcode( $content, 'mybooking_activities_engine_search') ) {
+		  	$classes[] = 'mybooking-activity-search';
+		  }		  
 
 		  // Activities shortcodes : Activity
 		  if ( has_shortcode( $content, 'mybooking_activities_engine_activity') ) {
@@ -539,6 +549,12 @@
       if ( has_shortcode( $content, 'mybooking_rent_engine_reservation') ) {
       	mybooking_engine_get_template('mybooking-plugin-reservation-tmpl.php');
       } 
+
+      // Activities search shortcode
+      if ( has_shortcode( $content, 'mybooking_activities_engine_search') ) {
+      	$data = $this->wp_activities_extract_query_string();
+      	mybooking_engine_get_template('mybooking-plugin-activities-search-tmpl.php', $data);
+      }         
 
       // Activities shortcode : My reservation - activities 
       if ( has_shortcode( $content, 'mybooking_activities_engine_order') ) {
@@ -779,13 +795,12 @@
     }
 
     /**
-     * Mybooking search
+     * Mybooking search shortcode
      */
     public function wp_activities_search_shortcode($atts = [], $content = null, $tag = '') {
 
-    	// Get the query parameter
-    	$q = array_key_exists('q', $_GET) ? filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED) : '';
-    	$data = array('q' => $q);
+    	// Get the query parameters
+    	$data = $this->wp_activities_extract_query_string();
 
 			ob_start();
       mybooking_engine_get_template('mybooking-plugin-activities-search.php', $data);
@@ -794,11 +809,13 @@
     }
 
     /**
-     * Mybooking activities
+     * Mybooking activities shortcode
      */
     public function wp_activities_activities_shortcode($atts = [], $content = null, $tag = '') {
 
     	// Get the query, page and the limit from the request parameters
+    	$destination_id = array_key_exists('destination_id', $_GET) ? filter_input(INPUT_GET, 'destination_id', FILTER_VALIDATE_INT) : null;
+    	$family_id = array_key_exists('family_id', $_GET) ? filter_input(INPUT_GET, 'family_id', FILTER_VALIDATE_INT) : null;
     	$q = array_key_exists('q', $_GET) ? filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED) : '';
       $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
       $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
@@ -818,25 +835,32 @@
       $registry = Mybooking_Registry::getInstance();
       $url_detail = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
       $api_client = new MyBookingActivitiesApiClient($registry->mybooking_rent_plugin_api_url_prefix,
-      	                                   					$registry->mybooking_rent_plugin_api_key);
-      $data =$api_client->get_activities($q, $offset, $limit);
+      	                                   					 $registry->mybooking_rent_plugin_api_key);
+      $data =$api_client->get_activities($destination_id, $family_id, $q, $offset, $limit);
       if ( $data == null) {
       	$data = (object) array('total' => 0,
       		                     'data' => []);
       }
 
       // Pagination
+      $total = $data->total;
       $total_pages = ceil($data->total / $limit);
       $current_page = floor($data->offset / $limit) + 1; 
       $pagination = new MyBookingUIPagination();          
       $pages = $pagination->pages($total_pages, $current_page);
+      $querystring = $this->wp_activities_build_query_string();
+      if ( !empty($querystring) ) {
+      	$querystring = '&'.$querystring;
+      }
 
-      $data = array('data' => $data,
+      $data = array('total' => $total,
+      							'data' => $data,
       	            'total_pages' => $total_pages,
       	            'current_page' => $current_page,
       	            'pages' => $pages,
                     'url' => $url,
-                    'url_detail' => $url_detail);
+                    'url_detail' => $url_detail,
+                    'querystring' => $querystring );
 			ob_start();
       mybooking_engine_get_template('mybooking-plugin-activities.php', $data);
 		  return ob_get_clean();
@@ -913,6 +937,62 @@
 			return ob_get_clean();
 
 		}
+
+		// ------------ Support methods --------------------
+
+    /**
+     * Extract Query String parameters for activities
+     *
+     * @returns [Array] with the following elements:
+     *
+     *  - destination_id
+     *  - family_id
+     *  - q
+     *
+     */
+    private function wp_activities_extract_query_string() {
+
+    	// Get the query parameter
+    	$destination_id = array_key_exists('destination_id', $_GET) ? filter_input(INPUT_GET, 'destination_id', FILTER_VALIDATE_INT) : null;
+    	$family_id = array_key_exists('family_id', $_GET) ? filter_input(INPUT_GET, 'family_id', FILTER_VALIDATE_INT) : null;
+    	$q = array_key_exists('q', $_GET) ? filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED) : '';
+    	// Build the result
+    	$data = array( 'q' => urldecode($q) );
+    	if ( !empty($family_id) ) {
+    		$data['family_id'] = $family_id;
+    	}
+    	if ( !empty($destination_id) ) {
+    		$data['destination_id'] = $destination_id;
+    	}
+
+    	return $data;
+
+    }
+
+    /**
+     * Build query string from Query string
+     *
+     */
+    private function wp_activities_build_query_string() {
+
+    	$result = '';
+    	$data = $this->wp_activities_extract_query_string();
+    	foreach($data as $key => $value) {
+    		if ( !empty($result) ) {
+    			$result.='&';
+    		}
+    		if ( !empty($value) && is_int( $value ) ) {
+    			$result.=$key.'='.$value;
+    		}
+    		else if ( !empty($value) && is_string( $value ) ) {
+    			$result.=$key.'='.urlencode($value);
+    		}
+    	}
+
+    	return $result;
+
+    }
+
 
 	  // ------------ Plugin setup -----------------------
 

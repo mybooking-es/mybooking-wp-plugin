@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-12 06:54+0000\n"
+"POT-Creation-Date: 2020-05-16 14:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -78,7 +78,17 @@ msgctxt "activity_order"
 msgid "Credit or debit card"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-activities-search.php:6
+#: mybooking-templates/mybooking-plugin-activities-search-tmpl.php:6
+msgctxt "activities_search"
+msgid "Destination"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-activities-search-tmpl.php:14
+msgctxt "activities_search"
+msgid "Category"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-activities-search.php:12
 msgctxt "activities_search"
 msgid "Search"
 msgstr ""
@@ -195,22 +205,35 @@ msgctxt "activity_summary"
 msgid "Pending"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-activities.php:20
+#: mybooking-templates/mybooking-plugin-activities.php:6
+msgctxt "activities_list"
+msgid "No results found"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-activities.php:29
 msgctxt "activities_list"
 msgid "From"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-activities.php:32
+#: mybooking-templates/mybooking-plugin-activities.php:41
 msgctxt "activities_list"
 msgid "More information"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-activities.php:46
+#: mybooking-templates/mybooking-plugin-activities.php:49
+#, php-format
+msgctxt "activity_shopping_cart"
+msgid "<b>%d</b> result found"
+msgid_plural "<b>%d</b> results found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: mybooking-templates/mybooking-plugin-activities.php:60
 msgctxt "activities_list"
 msgid "Previous"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-activities.php:62
+#: mybooking-templates/mybooking-plugin-activities.php:76
 msgctxt "activities_list"
 msgid "Next"
 msgstr ""
@@ -462,13 +485,13 @@ msgctxt "contact_form"
 msgid "Message"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:20
+#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:21
 #: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:51
 msgctxt "renting_form_selector"
 msgid "Pick-up place"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:25
+#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:26
 #: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:56
 msgctxt "renting_form_selector"
 msgid "Return place"

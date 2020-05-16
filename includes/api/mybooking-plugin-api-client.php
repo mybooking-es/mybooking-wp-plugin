@@ -7,7 +7,9 @@
 
     const GET_PRODUCTS = '/api/booking/frontend/products';
     const GET_PRODUCT = '/api/booking/frontend/products/';
-    
+    const GET_DESTINATIONS = '/api/booking/frontend/destinations';
+    const GET_CATEGORIES = '/api/booking/frontend/categories';
+
     private $url_prefix;
     private $api_key;
 		
@@ -17,6 +19,66 @@
        $this->url_prefix = $the_url_prefix;
        $this->api_key = $the_api_key;
 	  }
+
+    /**
+     * Get the destinations
+     */
+    public function get_destinations() {
+
+          $url = $this->url_prefix.MyBookingApiClient::GET_DESTINATIONS;
+
+          if ( isset($this->api_key) && !empty($this->api_key)) {
+            $url = $url.'&api_key='.$this->api_key;
+          }
+
+          // Query data
+          $request = wp_remote_get( $url );
+          if( is_wp_error( $request ) ) {
+            return null; // TODO
+          }
+
+          // Check status code
+          $status_code = wp_remote_retrieve_response_code( $request );
+          if ( $status_code == 404 || $status_code == 500) {
+            return null;
+          }
+
+          // Get the response body
+          $body = wp_remote_retrieve_body( $request );
+          $data = json_decode( $body );
+          return $data; 
+
+    }
+
+    /**
+     * Get the destinations
+     */
+    public function get_categories() {
+
+          $url = $this->url_prefix.MyBookingApiClient::GET_CATEGORIES;
+
+          if ( isset($this->api_key) && !empty($this->api_key)) {
+            $url = $url.'&api_key='.$this->api_key;
+          }
+
+          // Query data
+          $request = wp_remote_get( $url );
+          if( is_wp_error( $request ) ) {
+            return null; // TODO
+          }
+
+          // Check status code
+          $status_code = wp_remote_retrieve_response_code( $request );
+          if ( $status_code == 404 || $status_code == 500) {
+            return null;
+          }
+
+          // Get the response body
+          $body = wp_remote_retrieve_body( $request );
+          $data = json_decode( $body );
+          return $data; 
+
+    }
 
     /**
      * Get the renting products
