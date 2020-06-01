@@ -46,7 +46,7 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<p class="text-right"><?php printf( _nx( '<b>%d</b> result found', '<b>%d</b> results found', $args['total'], 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['total'] ) ?>
+				<p class="text-right"><?php printf( _nx( '<b>%d</b> result found', '<b>%d</b> results found', $args['total'], 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['total'] ) ?></p>
 			</div>
 		</div>
 	  

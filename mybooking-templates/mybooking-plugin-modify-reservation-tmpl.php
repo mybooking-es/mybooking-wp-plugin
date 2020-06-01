@@ -39,7 +39,7 @@
 	    	<% if (configuration.timeToFrom) { %>
 		      <select class="form-control ml-1" name="time_from" id="time_from"></select>
 		    <% } else { %>
-		     	<input type="hidden" name="time_from" value="10:00"/>
+		     	<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
 		    <% } %>
 		  </div>
     </div>
@@ -51,7 +51,7 @@
 		    <% if (configuration.timeToFrom) { %>
 	          <select class="form-control ml-1" name="time_to" id="time_to"></select>
 	      <% } else { %>
-	      	  <input type="hidden" name="time_to" value="20:00"/>
+	      	  <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
 	      <% } %>    
 	    </div>
     </div>

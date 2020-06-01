@@ -2,8 +2,14 @@
 
 ### Added
 
+- Renting:
+  - Affiliates integration.
+  - Boats characteristics icons
+  - Product detail with calendar
+
 - Activities/Appointments modules:
   - Search by destination and category (two classifiers)
+  - default start time and end time depending on business configuration
 
 ## [0.5.20]
 

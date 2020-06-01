@@ -14,11 +14,11 @@
 				  </div>
 				  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
 				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
+				    <span class="sr-only"><? echo _x('Previous', 'activity_detail', 'mybooking-wp-plugin' ) ?></span>
 				  </a>
 				  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
 				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
+				    <span class="sr-only"><? echo _x('Next', 'activity_detail', 'mybooking-wp-plugin' ) ?></span>
 				  </a>
 				</div>
 			<?php } else if (sizeof($args->photos) == 1) { ?>
@@ -101,6 +101,9 @@
 
 		</div>
 		<div class="col-md-4">
+			<h2 class="h2"><?php echo $args->name ?></h2>
+			<p class="mt-1 text-muted"><? echo _x('Please choose your dates in the availability calendar', 'activity_detail', 'mybooking-wp-plugin' ) ?>
+			<hr>
       <?php mybooking_engine_get_template('mybooking-plugin-activities-activity-widget.php', array('activity_id' => $args->id)) ?>			
 		</div>
 	</div>

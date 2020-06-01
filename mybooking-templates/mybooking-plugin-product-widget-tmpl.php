@@ -1,12 +1,12 @@
     <script type="text/tmpl" id="form_calendar_selector_tmpl">
             <% if (configuration.pickupReturnPlace) { %> 
-              <!-- Entrega -->
+              <!-- Delivery -->
               <div class="form-group">
                 <select id="pickup_place" name="pickup_place" 
                         placeholder="<?php echo _x( 'Select pick-up place', 'renting_product_calendar', 'mybooking-wp-plugin') ?>" class="form-control w-100"> </select>
                 </select>
               </div>
-              <!-- Devolución -->
+              <!-- Collection -->
               <div class="form-group">
                 <select id="return_place" name="return_place" 
                         placeholder="<?php echo _x( 'Select return place', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>" class="form-control w-100" disabled> </select>
@@ -21,18 +21,21 @@
             </div>
 
             <% if (configuration.timeToFrom) { %>
-              <!-- Hora de entrega -->
+              <!-- Delivery time -->
               <div class="form-group">
                 <select id="time_from" name="time_from" 
                         placeholder="hh:mm" class="form-control" disabled> </select>
                 </select>
               </div>
-              <!-- Hora de devolución -->
+              <!-- Collection time -->
               <div class="form-group">
                 <select id="time_to" name="time_to" 
                         placeholder="hh:mm" class="form-control" disabled> </select>
                 </select>
               </div>
+            <% } else { %>
+              <input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
+              <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>   
             <% } %>  
 
             <div id="reservation_detail" class="form-group">

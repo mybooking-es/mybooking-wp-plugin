@@ -21,14 +21,14 @@
 	      <label for="date_from"><?php echo _x( 'Pick-up date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
 	      <div class="flex-form-horizontal-item">
 		      <input type="text" class="form-control" name="date_from" id="widget_date_from" autocomplete="off">
-		      <input type="hidden" name="time_from" value="10:00"/>
+		      <input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
 			  </div>
 	    </div>
 	    <div class="flex-form-group">
 	      <label for="date_from"><?php echo _x( 'Return date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
 	      <div class="flex-form-horizontal-item">
 		      <input type="text" class="form-control" name="date_to" id="widget_date_to" autocomplete="off">
-		      <input type="hidden" name="time_to" value="20:00"/>
+		      <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
  		    </div>
 	    </div>
 	    <div class="flex-form-group flex-form-group-no-label">
@@ -70,7 +70,7 @@
 			    	<% if (configuration.timeToFrom) { %>
 				      <select class="form-control ml-1" name="time_from" id="widget_time_from"></select>
 				    <% } else { %>
-				     	<input type="hidden" name="time_from" value="10:00"/>
+				     	<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
 				    <% } %>
 				  </div>
 		    </div>
@@ -82,7 +82,7 @@
 				    <% if (configuration.timeToFrom) { %>
 			          <select class="form-control ml-1" name="time_to" id="widget_time_to"></select>
 			      <% } else { %>
-			      	  <input type="hidden" name="time_to" value="20:00"/>
+			      	  <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
 			      <% } %>    
 			    </div>
 		    </div>
