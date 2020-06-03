@@ -58,32 +58,32 @@
               
         <div class="form-group">
           <label for="customer_name"><?php echo _x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="<?php echo _x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
+          <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="<?php echo _x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
         </div>
 
         <div class="form-group">  
           <label for="customer_surname"><?php echo _x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo _x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
+          <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo _x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
         </div>
 
         <div class="form-group">
           <label for="customer_email"><?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="<?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
+          <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="<?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
         </div>
 
         <div class="form-group">  
           <label for="customer_email"><?php echo _x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="confirm_customer_email" id="confirm_customer_email" placeholder="<?php echo _x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
+          <input type="text" class="form-control" name="confirm_customer_email" id="confirm_customer_email" placeholder="<?php echo _x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
         </div>
 
         <div class="form-group">
             <label for="customer_phone"><?php echo _x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-            <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo _x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*">
+            <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo _x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="15">
         </div>
         
         <div class="form-group">            
             <label for="customer_mobile_phone"><?php echo _x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-            <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo _x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:">
+            <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo _x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
         </div>                
 
         <div class="form-group">
