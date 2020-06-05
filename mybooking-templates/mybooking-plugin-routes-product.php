@@ -39,7 +39,7 @@
 		      <?php } ?>
 					<!-- From price -->
 		      <?php if ($args->from_price > 0) { ?>
-		      <h2 class="h3 mt-3 text-danger font-weight-normal"><? printf( _x('From <b>%d€</b>', 'renting_product_detail', 'mybooking-wp-plugin' ), $args->from_price ) ?></h2>
+		      <h2 class="h3 mt-3 text-danger font-weight-normal"><? printf( _x('From <b>%s</b>', 'renting_product_detail', 'mybooking-wp-plugin' ), $args->from_price ) ?></h2>
 		      <?php } ?>
 		      <?php if ( isset( $args->characteristic_length ) && !empty( $args->characteristic_length ) ) { ?>
 		      <div class="mt-4">

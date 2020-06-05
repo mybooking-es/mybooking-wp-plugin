@@ -547,21 +547,21 @@
                       </div>             
                       <% if (configuration.rentingFormFillDataNamedResourcesHeight) { %>   
                         <div class="form-group col-md-2">
-                          <label for="customer_name"><?php echo _x( 'Height', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                          <label for="customer_name"><?php echo _x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                           <input name="booking_line_resources[<%=booking_line_resource.id%>][customer_height]"
-                                 title="<?php echo _x( 'Height', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
-                                 class="form-control alt" type="text"
-                                 placeholder="<?php echo _x( 'Height', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="3"
+                                 title="<?php echo _x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                 class="form-control alt" type="number"
+                                 placeholder="<?php echo _x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" min="0" max="250"
                                  value="<%=booking_line_resource.customer_height%>">
                         </div>
                       <% } %>
                       <% if (configuration.rentingFormFillDataNamedResourcesWeight) { %>                        
                         <div class="form-group col-md-2">
-                          <label for="customer_name"><?php echo _x( 'Weight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                          <label for="customer_name"><?php echo _x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                           <input name="booking_line_resources[<%=booking_line_resource.id%>][customer_weight]"
-                                 title="<?php echo _x( 'Weight', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
-                                 class="form-control alt" type="text"
-                                 placeholder="<?php echo _x( 'Weight', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="3"
+                                 title="<?php echo _x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                 class="form-control alt" type="number"
+                                 placeholder="<?php echo _x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:"  min="0" max="200"
                                  value="<%=booking_line_resource.customer_weight%>">
                         </div>
                       <% } %>
@@ -613,21 +613,21 @@
                         </div>        
                         <% if (configuration.rentingFormFillDataNamedResourcesHeight) { %>           
                           <div class="form-group col-md-2">
-                            <label for="customer_name"><?php echo _x( 'Height', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                            <label for="customer_name"><?php echo _x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                             <input name="booking_line_resources[<%=booking_line_resource.id%>][customer_2_height]"
-                                   title="<?php echo _x( 'Height', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
-                                   class="form-control alt" type="text"
-                                   placeholder="<?php echo _x( 'Height', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="3"
+                                   title="<?php echo _x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                   class="form-control alt" type="number"
+                                   placeholder="<?php echo _x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" min="0" max="250"
                                    value="<%=booking_line_resource.customer_2_height%>">
                           </div>
                         <% } %>
                         <% if (configuration.rentingFormFillDataNamedResourcesWeight) { %>                             
                           <div class="form-group col-md-2">
-                            <label for="customer_name"><?php echo _x( 'Weight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                            <label for="customer_name"><?php echo _x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                             <input name="booking_line_resources[<%=booking_line_resource.id%>][customer_2_weight]"
-                                   title="<?php echo _x( 'Weight', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
-                                   class="form-control alt" type="text"
-                                   placeholder="<?php echo _x( 'Weight', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="3"
+                                   title="<?php echo _x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                   class="form-control alt" type="number"
+                                   placeholder="<?php echo _x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" min="0" max="200"
                                    value="<%=booking_line_resource.customer_2_weight%>">
                           </div>
                         <% } %>
