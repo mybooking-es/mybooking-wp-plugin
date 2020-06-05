@@ -12,6 +12,11 @@
   - Search by destination and category (two classifiers)
   - default start time and end time depending on business configuration
 
+### Fixed
+
+- Renting:
+  - Show promotion code on inline form without pickup place / time
+
 ## [0.5.20]
 
 ### Added
