@@ -16,7 +16,8 @@
 
 	<% if (!configuration.pickupReturnPlace && !configuration.timeToFrom) { %>
 
-		<div class="flex-form-group-wrapper">
+	<div class="flex-form-group-wrapper inline-form">
+	    
 	    <div class="flex-form-group">
 	      <label for="date_from"><?php echo _x( 'Pick-up date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
 	      <div class="flex-form-horizontal-item">
@@ -31,6 +32,16 @@
 		      <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
  		    </div>
 	    </div>
+
+		<% if (configuration.promotionCode) { %>
+			<div class="flex-form-group">
+		      <label for="promotion_code"><?php echo _x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+		      <div class="flex-form-horizontal-item">
+			      <input type="text" class="form-control" name="promotion_code" id="widget_promotion_code" autocomplete="off">
+			    </div>
+			</div>
+		<% } %>
+
 	    <div class="flex-form-group flex-form-group-no-label">
 	      <div class="flex-form-horizontal-item">
    		    <input class="btn btn-success" type="submit" value="<?php echo _x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />

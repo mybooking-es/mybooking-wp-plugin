@@ -6,6 +6,7 @@
   - Affiliates integration.
   - Boats characteristics icons
   - Product detail with calendar
+  - My reservation: Fill data
 
 - Activities/Appointments modules:
   - Search by destination and category (two classifiers)

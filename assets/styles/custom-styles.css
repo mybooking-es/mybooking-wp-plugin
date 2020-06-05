@@ -102,6 +102,9 @@ form[name=widget_search_form] input[type=submit] {
   margin-left: 10px;
 }
 
+.inline-form .flex-form-group-no-label input {
+  margin-left: 0;
+}
 
 /* */
 
@@ -155,6 +158,10 @@ form[name=widget_search_form] input[type=submit] {
   }
 
   .flex-form-group:nth-child(2n) {
+    margin-left: 10px;
+  }
+
+  .inline-form .flex-form-group:nth-child(n+2) {
     margin-left: 10px;
   }
 
