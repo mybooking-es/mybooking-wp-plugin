@@ -9,20 +9,22 @@
   object-fit: cover;
 }
 
-.resource-product-card-title {
-  text-align: center !important;
-  height: 1.5em;
+.resource-product-card .resource-product-card-title {
+  margin-bottom: 0.2em;
+  font-size: 1.25em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;  
+}
+
+.resource-product-card .card-text {
+  margin-bottom: 0.2em !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;    
 }
 
 @media (max-width: 992px) { 
-
-  .resource-product-card {
-    height: 400px;
-  }
-
-  .resource-product-card-img {
-    min-height: 10rem;
-  }
 
   .resource-product-card-info {
     padding-top: 0.2em !important;
@@ -31,19 +33,53 @@
 
 }
 
-@media (max-width: 576px) { 
-  .resource-product-card {
-    height: 480px;
-  }
+.key-characteristics .icon-list-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-@media (min-width: 768px) { 
-  .resource-product-card {
-    height: 420px;
-  }
+.resource-product-card .key-characteristics .icon-list-items {
+    height: 160px;
+}
+
+.key-characteristics .icon-list-items:not(.inline-items) .icon-list-item:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.key-characteristics .icon-list-item,  .icon-list-item a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.key-characteristics .icon-list-item {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.key-characteristics .icon-list-icon {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+.key-characteristics .icon-list-icon img {
+    width: 20px;
+}
+.key-characteristics .icon-list-icon+.icon-list-text {
+    -ms-flex-item-align: center;
+    align-self: center;
+    padding-left: 10px;
 }
 
 /** ------------ 2. Product catalog calendar --------------- **/
+
+.product-container .product-photo {
+  width: 100%;
+}
+
+.product-container .
 
 .date-picker-wrapper .date-available {
   background-color: #aeecbc;

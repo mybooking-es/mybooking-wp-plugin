@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 11:51+0000\n"
+"POT-Creation-Date: 2020-06-08 09:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -244,12 +244,18 @@ msgctxt "renting_product_detail"
 msgid "From <b>%s</b>"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-routes-product.php:64
+#: mybooking-templates/mybooking-plugin-routes-product.php:53
+#, php-format
+msgctxt "renting_product_detail"
+msgid "<b>%.2f</b> m."
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-routes-product.php:71
 msgctxt "renting_product_detail"
 msgid "Details"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-routes-product.php:76
+#: mybooking-templates/mybooking-plugin-routes-product.php:84
 msgctxt "renting_product_detail"
 msgid "Please choose your dates in the availability calendar"
 msgstr ""
@@ -882,6 +888,33 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:201
 msgctxt "activity_shopping_cart"
 msgid "Credit or debit card"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-products.php:13
+#, php-format
+msgctxt "renting_products"
+msgid "From <b>%s</b>"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-products.php:25
+#, php-format
+msgctxt "renting_products"
+msgid "<b>%.2f</b> m."
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-products.php:40
+msgctxt "renting_products"
+msgid "More information"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-products.php:54
+msgctxt "renting_products"
+msgid "Previous"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-products.php:70
+msgctxt "renting_products"
+msgid "Next"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:85
