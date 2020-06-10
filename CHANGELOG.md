@@ -5,12 +5,13 @@
 - Renting:
   - Affiliates integration.
   - Boats characteristics icons
-  - Product detail with calendar
+  - Default start time and end time depending on business configuration
   - My reservation: Fill data
+  - Choose products: Multiple products literals and units
 
 - Activities/Appointments modules:
   - Search by destination and category (two classifiers)
-  - default start time and end time depending on business configuration
+  - My reservation: Fill data
 
 ### Fixed
 

@@ -31,9 +31,11 @@
                   <% if (product.availability) { %>
                     <div class="car-listing-selector">
                       <select class="form-control select-choose-product" data-value="<%=product.code%>">
-                        <% for (var idx=0;idx<=(product.available);idx++) { %>
+                        <option value="0"><%=i18next.t('chooseProduct.selectUnits')%></option>
+                        <% for (var idx=1;idx<=(product.available);idx++) { %>
                           <option value="<%=idx%>" <% if (shoppingCartProductQuantities[product.code] && idx == shoppingCartProductQuantities[product.code]) { %>selected="selected"<%}%>>
-                            <%=idx%> (<%= configuration.formatCurrency(product.price * idx) %>)
+                            <%=i18next.t('chooseProduct.units', {count: idx})%>
+                            (<%= configuration.formatCurrency(product.price * idx) %>)
                           </option>
                         <% } %>
                       </select>
