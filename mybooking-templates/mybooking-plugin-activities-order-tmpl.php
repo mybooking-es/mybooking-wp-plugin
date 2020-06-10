@@ -57,7 +57,7 @@
                                 <% if (order.use_rates) { %> 
                                   <!-- Show the total -->
                                   <tr>
-                                    <td><strong><?php echo _x( 'Total', 'activity_order_item', 'mybooking-wp-plugin' ) ?></strong></td>
+                                    <td><strong><?php echo _x( 'Total', 'activity_my_reservation_item', 'mybooking-wp-plugin' ) ?></strong></td>
                                     <td class="text-right"><strong><%=configuration.formatCurrency(order.items[idx]['total'])%></strong></td>
                                   </tr>
                                 <% } %>
@@ -69,15 +69,18 @@
                     </div>
                   <% } %>
               </div>
+              <!-- Customers data -->
               <% if (customers_data) { %>
-                <!-- Customers data -->
                 <div id="customers_data">
-                  <form id="order_information_form" name="order_information_form" class="form-delivery" method="post">
+                  <form id="order_information_form" name="order_information_form">
                     <div class="card mb-3">  
                       <div class="card-header">
-                         <?php echo _x( 'Complete reservation', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+                         <?php echo _x( 'Complete reservation', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
                       </div>
                       <div class="card-body">
+                        <div class="alert alert-info">
+                          <p><?php echo _x( 'Please complete the information to speed up the delivery process on the scheduled date', 'activity_my_reservation', 'mybooking-wp-plugin') ?></p>
+                        </div> 
                         <% var index = 0; %>
                         <% for (idx in order.items) { %>
                             <!-- Customer questions and details -->
@@ -89,63 +92,63 @@
                                    <% order_item_customer= order.items[idx].customers[idxCustomers]; %>
                                    <% index += 1; %>
                                    <input type="hidden" name="order_item_customers[<%=index%>][id]" value="<%=order_item_customer.id%>"/>
-                                   <h6 class="h6 border p-2 text-right bg-light"><b><?php echo _x( 'Partipant', 'activity_order', 'mybooking-wp-plugin' ) ?> #<%=index%></b></h6> 
+                                   <h6 class="h6 border p-2 text-right bg-light"><b><?php echo _x( 'Partipant', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?> #<%=index%></b></h6> 
 
                                    <div class="form-row">
                                       <div class="form-group col-md-4">
-                                        <label for="customer_name"><?php echo _x( 'Name', 'activity_order', 'mybooking-wp-plugin') ?></label>
+                                        <label for="customer_name"><?php echo _x( 'Name', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                         <input name="order_item_customers[<%=index%>][customer_name]"
-                                               title="<?php echo _x( 'Name', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                               title="<?php echo _x( 'Name', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                class="form-control alt" type="text"
-                                               placeholder="<?php echo _x( 'Name', 'activity_order', 'mybooking-wp-plugin') ?>:" maxlength="80"
+                                               placeholder="<?php echo _x( 'Name', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="80"
                                                value="<%=order_item_customer.customer_name%>">
                                       </div>
                                       <div class="form-group col-md-4">
-                                        <label for="customer_name"><?php echo _x( 'Surname', 'activity_order', 'mybooking-wp-plugin') ?></label>
+                                        <label for="customer_name"><?php echo _x( 'Surname', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                         <input name="order_item_customers[<%=index%>][customer_surname]"
-                                               title="<?php echo _x( 'Surname', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                               title="<?php echo _x( 'Surname', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                class="form-control alt" type="text"
-                                               placeholder="<?php echo _x( 'Surname', 'activity_order', 'mybooking-wp-plugin') ?>:" maxlength="80"
+                                               placeholder="<?php echo _x( 'Surname', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="80"
                                                value="<%=order_item_customer.customer_surname%>">
                                       </div>
                                       <% if (customer_questions.request_customer_document_id) { %>
                                         <div class="form-group col-md-4">
-                                          <label for="customer_document_id"><?php echo _x( 'Document ID', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                          <label for="customer_document_id"><?php echo _x( 'Document ID', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           <input name="order_item_customers[<%=index%>][customer_document_id]"
-                                                 title="<?php echo _x( 'Document ID', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                 title="<?php echo _x( 'Document ID', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                  class="form-control alt" type="text"
-                                                 placeholder="<?php echo _x( 'Document ID', 'activity_order', 'mybooking-wp-plugin') ?>:" maxlength="50"
+                                                 placeholder="<?php echo _x( 'Document ID', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="50"
                                                  value="<%=order_item_customer.customer_document_id%>">
                                         </div>
                                       <% } %>
                                       <% if (customer_questions.request_customer_date_of_birth) { %>
                                         <div class="form-group col-md-4">
-                                          <label for="customer_date_of_birth"><?php echo _x( 'Date of birth', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                          <label for="customer_date_of_birth"><?php echo _x( 'Date of birth', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           <input name="order_item_customers[<%=index%>][customer_date_of_birth]"
-                                                 title="<?php echo _x( 'Date of birth', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                 title="<?php echo _x( 'Date of birth', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                  class="form-control alt" type="date"
-                                                 placeholder="<?php echo _x( 'Date of birth', 'activity_order', 'mybooking-wp-plugin') ?>:" maxlength="50"
+                                                 placeholder="<?php echo _x( 'Date of birth', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="50"
                                                  value="<%=order_item_customer.customer_date_of_birth%>">
                                         </div>
                                       <% } %>
 
                                       <% if (customer_questions.request_customer_phone) { %>
                                         <div class="form-group col-md-4">
-                                          <label for="customer_phone"><?php echo _x( 'Phone number', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                          <label for="customer_phone"><?php echo _x( 'Phone number', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           <input name="order_item_customers[<%=index%>][customer_phone]"
-                                                 title="<?php echo _x( 'Phone number', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                 title="<?php echo _x( 'Phone number', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                  class="form-control alt" type="text"
-                                                 placeholder="<?php echo _x( 'Phone number', 'activity_order', 'mybooking-wp-plugin') ?>:" maxlength="50"
+                                                 placeholder="<?php echo _x( 'Phone number', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="50"
                                                  value="<%=order_item_customer.customer_phone%>">
                                         </div>
                                       <% } %>
                                       <% if (customer_questions.request_customer_email) { %>
                                         <div class="form-group col-md-4">
-                                          <label for="customer_email"><?php echo _x( 'E-mail', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                          <label for="customer_email"><?php echo _x( 'E-mail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           <input name="order_item_customers[<%=index%>][customer_email]"
-                                                 title="<?php echo _x( 'E-mail', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                 title="<?php echo _x( 'E-mail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                  class="form-control alt" type="text"
-                                                 placeholder="<?php echo _x( 'E-mail', 'activity_order', 'mybooking-wp-plugin') ?>:" maxlength="50"
+                                                 placeholder="<?php echo _x( 'E-mail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="50"
                                                  value="<%=order_item_customer.customer_email%>">
                                         </div>
                                       <% } %>
@@ -155,21 +158,21 @@
                                      <div class="form-row">
                                         <% if (customer_questions.request_customer_height) { %>
                                           <div class="form-group col-md-4">
-                                            <label for="customer_height"><?php echo _x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_height"><?php echo _x( 'Height (cm)', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <input name="order_item_customers[<%=index%>][customer_height]"
-                                                   title="<?php echo _x( 'Height (cm)', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                   title="<?php echo _x( 'Height (cm)', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                    class="form-control alt" type="number"
-                                                   placeholder="<?php echo _x( 'Height (cm)', 'activity_order', 'mybooking-wp-plugin') ?>:" min="0" max="250"
+                                                   placeholder="<?php echo _x( 'Height (cm)', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" min="0" max="250"
                                                    value="<%=order_item_customer.customer_height%>">
                                           </div>
                                         <% } %>
                                         <% if (customer_questions.request_customer_weight) { %>
                                           <div class="form-group col-md-4">
-                                            <label for="customer_weight"><?php echo _x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_weight"><?php echo _x( 'Weight (kg)', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <input name="order_item_customers[<%=index%>][customer_weight]"
-                                                   title="<?php echo _x( 'Weight (kg)', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                   title="<?php echo _x( 'Weight (kg)', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                    class="form-control alt" type="number"
-                                                   placeholder="<?php echo _x( 'Weight (kg)', 'activity_order', 'mybooking-wp-plugin') ?>:" min="0" max="200"
+                                                   placeholder="<?php echo _x( 'Weight (kg)', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" min="0" max="200"
                                                    value="<%=order_item_customer.customer_weight%>">
                                           </div>
                                         <% } %>
@@ -181,36 +184,36 @@
                                         <div class="form-group col-md-4">
                                           <div class="form-check">
                                             <input name="order_item_customers[<%=index%>][customer_allergies]"
-                                                   title="<?php echo _x( 'Allergies', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                   title="<?php echo _x( 'Allergies', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                    class="form-check-input" type="checkbox"
                                                    <% if (order_item_customer.customer_allergies){%>checked<%}%>>
-                                            <label for="customer_allergies" class="form-check-label"><?php echo _x( 'Allergies', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_allergies" class="form-check-label"><?php echo _x( 'Allergies', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           </div>       
                                         </div>
                                         <div class="form-group col-md-8">
-                                            <label for="customer_allergies_detail"><?php echo _x( 'Allergies detail', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_allergies_detail"><?php echo _x( 'Allergies detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <textarea name="order_item_customers[<%=index%>][customer_allergies_detail]"
-                                                      title="<?php echo _x( 'Allergies detail', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                      title="<?php echo _x( 'Allergies detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                       class="form-control alt" type="number"
-                                                      placeholder="<?php echo _x( 'Allergies detail', 'activity_order', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_allergies_detail%></textarea>                                      
+                                                      placeholder="<?php echo _x( 'Allergies detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_allergies_detail%></textarea>                                      
                                         </div>
                                      </div>
                                      <div class="form-row">
                                         <div class="form-group col-md-4">
                                           <div class="form-check">
                                             <input name="order_item_customers[<%=index%>][customer_intolerances]"
-                                                   title="<?php echo _x( 'Intolerances', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                   title="<?php echo _x( 'Intolerances', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                    class="form-check-input" type="checkbox"
                                                    <% if (order_item_customer.customer_intolerances){%>checked<%}%>>
-                                            <label for="customer_intolerances" class="form-check-label"><?php echo _x( 'Intolerances', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_intolerances" class="form-check-label"><?php echo _x( 'Intolerances', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           </div>
                                         </div>
                                         <div class="form-group col-md-8">
-                                            <label for="customer_intolerances_detail"><?php echo _x( 'Intolerances detail', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_intolerances_detail"><?php echo _x( 'Intolerances detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <textarea name="order_item_customers[<%=index%>][customer_intolerances_detail]"
-                                                      title="<?php echo _x( 'Intolerances detail', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                      title="<?php echo _x( 'Intolerances detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                       class="form-control alt" type="number"
-                                                      placeholder="<?php echo _x( 'Intolerances detail', 'activity_order', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_intolerances_detail%></textarea>                                      
+                                                      placeholder="<?php echo _x( 'Intolerances detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_intolerances_detail%></textarea>                                      
                                         </div>
                                      </div>
                                    <% } %>
@@ -219,18 +222,18 @@
                                         <div class="form-group col-md-4">
                                           <div class="form-check">
                                             <input name="order_item_customers[<%=index%>][customer_slight_injuries]"
-                                                   title="<?php echo _x( 'Slight injuries', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                   title="<?php echo _x( 'Slight injuries', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                    class="form-check-input" type="checkbox"
                                                    <% if (order_item_customer.customer_slight_injuries){%>checked<%}%>>
-                                            <label for="customer_slight_injuries" class="form-check-label"><?php echo _x( 'Slight injuries', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_slight_injuries" class="form-check-label"><?php echo _x( 'Slight injuries', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           </div>       
                                         </div>
                                         <div class="form-group col-md-8">
-                                            <label for="customer_slight_injuries_detail"><?php echo _x( 'Slight injuries detail', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_slight_injuries_detail"><?php echo _x( 'Slight injuries detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <textarea name="order_item_customers[<%=index%>][customer_slight_injuries_detail]"
-                                                      title="<?php echo _x( 'Slight injuries detail', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                      title="<?php echo _x( 'Slight injuries detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                       class="form-control alt" type="number"
-                                                      placeholder="<?php echo _x( 'Slight injuries detail', 'activity_order', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_slight_injuries_detail%></textarea>                                      
+                                                      placeholder="<?php echo _x( 'Slight injuries detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_slight_injuries_detail%></textarea>                                      
                                         </div>
                                      </div>
                                    <% } %>
@@ -239,18 +242,18 @@
                                         <div class="form-group col-md-4">
                                           <div class="form-check">
                                             <input name="order_item_customers[<%=index%>][customer_diseases]"
-                                                   title="<?php echo _x( 'Diseases', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                   title="<?php echo _x( 'Diseases', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                    class="form-check-input" type="checkbox"
                                                    <% if (order_item_customer.customer_diseases){%>checked<%}%>>
-                                            <label for="customer_diseases" class="form-check-label"><?php echo _x( 'Diseases', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_diseases" class="form-check-label"><?php echo _x( 'Diseases', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           </div>       
                                         </div>
                                         <div class="form-group col-md-8">
-                                            <label for="customer_diseases_detail"><?php echo _x( 'Diseases detail', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                                            <label for="customer_diseases_detail"><?php echo _x( 'Diseases detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <textarea name="order_item_customers[<%=index%>][customer_diseases_detail]"
-                                                      title="<?php echo _x( 'Diseases detail', 'activity_order', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
+                                                      title="<?php echo _x( 'Diseases detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                       class="form-control alt" type="number"
-                                                      placeholder="<?php echo _x( 'Diseases detail', 'activity_order', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_diseases_detail%></textarea>                                      
+                                                      placeholder="<?php echo _x( 'Diseases detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_diseases_detail%></textarea>                                      
                                         </div>
                                      </div>
                                    <% } %>
@@ -263,54 +266,64 @@
                                           </div>
                                           <% if (customer_questions.request_customer_experience_product_1) { %>
                                           <div class="form-group col-md-6">
-                                            <label for="customer_experience_product_1"><%=customer_questions.request_customer_experience_product_1_text%></label>
-                                            <input name="order_item_customers[<%=index%>][customer_experience_product_1]"
-                                                   title="<%=customer_questions.request_customer_experience_product_1_text%>" data-toggle="tooltip"
-                                                   class="form-control alt" type="number"
-                                                   placeholder="<%=customer_questions.request_customer_experience_product_1_text%>"
-                                                   value="<%=order_item_customer.customer_experience_product_1%>">
+                                            <label for="customer_experience_product_1" class="form-check-label"><%=customer_questions.request_customer_experience_product_1_text%></label>
+                                            <select name="order_item_customers[<%=index%>][customer_experience_product_1]"
+                                                   class="form-control">
+                                              <option value=""><?php echo _x( 'Select the option', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>     
+                                              <option value="0" <% if (order_item_customer.customer_experience_product_1 == '0'){%>selected<%}%>><?php echo _x( 'Never', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                              <option value="1" <% if (order_item_customer.customer_experience_product_1 == '1'){%>selected<%}%>><?php echo _x( 'Once', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                              <option value="2" <% if (order_item_customer.customer_experience_product_1 == '2'){%>selected<%}%>><?php echo _x( 'Twice', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                              <option value="3" <% if (order_item_customer.customer_experience_product_1 == '3'){%>selected<%}%>><?php echo _x( 'Three or more times', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>                                         
+                                            </select>
                                           </div>
                                           <% } %>
                                           <% if (customer_questions.request_customer_experience_product_2) { %>
                                           <div class="form-group col-md-6">
-                                            <label for="customer_experience_product_2"><%=customer_questions.request_customer_experience_product_2_text%></label>
-                                            <input name="order_item_customers[<%=index%>][customer_experience_product_2]"
-                                                   title="<%=customer_questions.request_customer_experience_product_2_text%>" data-toggle="tooltip"
-                                                   class="form-control alt" type="number"
-                                                   placeholder="<%=customer_questions.request_customer_experience_product_2_text%>"
-                                                   value="<%=order_item_customer.customer_experience_product_2%>">
+                                            <label for="customer_experience_product_2" class="form-check-label"><%=customer_questions.request_customer_experience_product_2_text%></label>
+                                            <select name="order_item_customers[<%=index%>][customer_experience_product_2]"
+                                                   class="form-control">
+                                              <option value=""><?php echo _x( 'Select the option', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>     
+                                              <option value="0" <% if (order_item_customer.customer_experience_product_2 == '0'){%>selected<%}%>><?php echo _x( 'Never', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                              <option value="1" <% if (order_item_customer.customer_experience_product_2 == '1'){%>selected<%}%>><?php echo _x( 'Once', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                              <option value="2" <% if (order_item_customer.customer_experience_product_2 == '2'){%>selected<%}%>><?php echo _x( 'Twice', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                              <option value="3" <% if (order_item_customer.customer_experience_product_2 == '3'){%>selected<%}%>><?php echo _x( 'Three or more times', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>                                         
+                                            </select>
                                           </div>
                                           <% } %>
                                      </div>
                                    <% } %>
-                                   <% if (customer_questions.request_customer_experience_course) { %>
-                                    <div class="form-group col-md-12">
-                                      <div class="form-check">
-                                        <input name="order_item_customers[<%=index%>][customer_experience_tecnical_course]"
-                                               title="<%=customer_questions.request_customer_experience_course_text%>" data-toggle="tooltip"
-                                               class="form-check-input" type="checkbox"
-                                               <% if (order_item_customer.customer_experience_tecnical_course){%>checked<%}%>>
+                                   <% if (customer_questions.request_customer_experience_course || customer_questions.request_customer_experience_activity) { %>
+                                   <div class="form-row mb-2">
+                                     <% if (customer_questions.request_customer_experience_course) { %>
+                                      <div class="form-group col-md-6">
                                         <label for="customer_experience_tecnical_course" class="form-check-label"><%=customer_questions.request_customer_experience_course_text%></label>
-                                      </div>    
-                                    </div>
-                                   <% } %>
-                                   <% if (customer_questions.request_customer_experience_activity) { %>
-                                    <div class="form-group col-md-12">
-                                      <div class="form-check">
-                                        <input name="order_item_customers[<%=index%>][customer_experience_activities]"
-                                               title="<%=customer_questions.request_customer_experience_activity_text%>" data-toggle="tooltip"
-                                               class="form-check-input" type="checkbox"
-                                               <% if (order_item_customer.customer_experience_activities){%>checked<%}%>>
+                                        <select name="order_item_customers[<%=index%>][customer_experience_tecnical_course]"
+                                               class="form-control">
+                                          <option value=""><?php echo _x( 'Select the option', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                          <option value="false" <% if (!order_item_customer.customer_experience_tecnical_course){%>selected<%}%>><?php echo _x( 'No', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                          <option value="true" <% if (order_item_customer.customer_experience_tecnical_course){%>selected<%}%>><?php echo _x( 'Yes', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                        </select>
+                                      </div>
+                                     <% } %>
+                                     <% if (customer_questions.request_customer_experience_activity) { %>
+                                      <div class="form-group col-md-6">
                                         <label for="customer_experience_activities" class="form-check-label"><%=customer_questions.request_customer_experience_activity_text%></label>
-                                      </div>    
-                                    </div>
+                                        <select name="order_item_customers[<%=index%>][customer_experience_activities]"
+                                               class="form-control">
+                                          <option value=""><?php echo _x( 'Select the option', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                          <option value="false" <% if (!order_item_customer.customer_experience_activities){%>selected<%}%>><?php echo _x( 'No', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                          <option value="true" <% if (order_item_customer.customer_experience_activities){%>selected<%}%>><?php echo _x( 'Yes', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
+                                        </select>
+                                      </div>
+                                     <% } %>
+                                   </div> 
                                    <% } %>
                                 <% } %>  
                             <% } %>
                         <% } %>
                       </div>
                       <div class="card-footer">
-                        <button class="btn btn-primary pull-right" id="btn_update_order" type="button"><?php echo _x( 'Update', 'activity_order', 'mybooking-wp-plugin') ?></button>
+                        <button class="btn btn-primary pull-right" id="btn_update_order" type="button"><?php echo _x( 'Update', 'activity_my_reservation', 'mybooking-wp-plugin') ?></button>
                       </div> 
                     </div>
                   </form>
@@ -322,6 +335,8 @@
             <!-- SIDEBAR -->
             <div class="col-md-4">
 
+              <!-- Summary -->
+
               <div class="card mb-3">
                 <div class="card-header">
                   <%=order.customer_name%> <%=order.customer_surname%>
@@ -332,20 +347,23 @@
                 </ul>
                 <% if (order.allow_reservation_cancel) { %>
                   <div class="card-footer">
-                    <button id="btn_cancel_reservation" class="btn btn-danger btn-cancel-reservation pull-right"><?php echo _x( 'Cancel Reservation', 'activity_order', 'mybooking-wp-plugin' ) ?></button>
+                    <button id="btn_cancel_reservation" class="btn btn-danger btn-cancel-reservation pull-right"><?php echo _x( 'Cancel Reservation', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?></button>
                   </div>  
                 <% } %>
               </div>
 
+              <!-- Total -->
+
               <% if (order.use_rates) { %>
                 <div class="jumbotron mb-3">
-                  <h2 class="h5"><?php echo _x( 'Total', 'activity_order', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
+                  <h2 class="h5"><?php echo _x( 'Total', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
                   <hr>
-                  <p class="lead"><?php echo _x( 'Paid', 'activity_order', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_paid)%></span></p>
-                  <p class="lead"><?php echo _x( 'Pending', 'activity_order', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_pending)%></span></p>
+                  <p class="lead"><?php echo _x( 'Paid', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_paid)%></span></p>
+                  <p class="lead"><?php echo _x( 'Pending', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_pending)%></span></p>
                 </div>
               <% } %>
 
+              <!-- Payment -->
 
               <% if (canPay && paymentAmount > 0) { %>
 
@@ -367,13 +385,13 @@
                               <div class="form-row">
                                  <div class="form-group col-md-12">
                                    <label for="payments_paypal_standard">
-                                    <input type="radio" id="payments_paypal_standard" name="payment_method_value" class="payment_method_select" value="paypal_standard">&nbsp;<?php echo _x( 'Paypal', 'activity_order', 'mybooking-wp-plugin' ) ?>
+                                    <input type="radio" id="payments_paypal_standard" name="payment_method_value" class="payment_method_select" value="paypal_standard">&nbsp;<?php echo _x( 'Paypal', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?>
                                     <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-paypal.jpg"/>
                                    </label>
                                  </div>
                                  <div class="form-group col-md-12">
                                    <label for="payments_credit_card">
-                                    <input type="radio" id="payments_credit_card" name="payment_method_value" class="payment_method_select" value="<%=order.payment_methods.tpv_virtual%>">&nbsp;<?php echo _x( 'Credit or debit card', 'activity_order', 'mybooking-wp-plugin' ) ?>
+                                    <input type="radio" id="payments_credit_card" name="payment_method_value" class="payment_method_select" value="<%=order.payment_methods.tpv_virtual%>">&nbsp;<?php echo _x( 'Credit or debit card', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?>
                                     <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-visa.jpg"/>
                                     <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-mastercard.jpg"/>
                                    </label>
