@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:34+0000\n"
-"PO-Revision-Date: 2020-06-10 15:35+0000\n"
+"POT-Creation-Date: 2020-06-10 15:58+0000\n"
+"PO-Revision-Date: 2020-06-10 15:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
@@ -47,43 +47,43 @@ msgctxt "renting_form_selector"
 msgid "Search"
 msgstr "Buscar"
 
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:42
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:79
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:44
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:81
 msgctxt "renting_choose_product"
 msgid "Model not available in the office and selected dates"
 msgstr "Modelo no disponible en la oficina y fechas seleccionadas"
 
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:66
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:68
 msgctxt "renting_choose_product"
 msgid "Few units left!"
 msgstr "¡Quedan pocas unidades!"
 
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:75
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:77
 msgctxt "renting_choose_product"
 msgid "Book it!"
 msgstr "Reservar"
 
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:93
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:95
 msgctxt "renting_choose_product"
 msgid "Next"
 msgstr "Siguiente"
 
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:134
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:136
 msgctxt "renting_choose_product"
 msgid "Reservation summary"
 msgstr "Su reserva"
 
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:157
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:159
 msgctxt "renting_choose_product"
 msgid "Rental duration"
 msgstr "Duración del alquiler"
 
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:157
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:159
 msgctxt "renting_choose_product"
 msgid "day(s)"
 msgstr "día/s"
 
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:159
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:161
 msgctxt "renting_choose_product"
 msgid "Modify reservation"
 msgstr "Modificar reserva"
@@ -1111,17 +1111,27 @@ msgctxt "activity_order_item"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:85
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:78
+msgctxt "activity_summary"
+msgid "Reservation ID"
+msgstr "Localizador reserva"
+
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:89
+msgctxt "activity_summary"
+msgid "Customer's details"
+msgstr "Datos del cliente"
+
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:100
 msgctxt "activity_summary"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:87
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:102
 msgctxt "activity_summary"
 msgid "Paid"
 msgstr "Pagado"
 
-#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:88
+#: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:103
 msgctxt "activity_summary"
 msgid "Pending"
 msgstr "Pendiente"

@@ -9,7 +9,7 @@
       <section class="section">
         <div class="container">
           <div class="row mt-5">
-            <div class="col-md-7">
+            <div class="col-md-8">
               <!-- Products -->
               <div id="selected_products">
               <% for (idx in order.items) { %>
@@ -69,17 +69,32 @@
             <!-- /CONTENT -->
 
             <!-- SIDEBAR -->
-            <div class="col-md-5">
+            <div class="col-md-4">
+
+              <!-- Reservation -->
 
               <div class="card mb-3">
                 <div class="card-header">
-                  <%=order.customer_name%> <%=order.customer_surname%>
+                  <b><?php echo _x( 'Reservation ID', 'activity_summary', 'mybooking-wp-plugin') ?></b>
                 </div>
                 <ul class="list-group list-group-flush">
+                  <li class="list-group-item h3"><%=order.id%></li>
+                </ul>
+              </div>
+
+              <!-- Customers detail -->
+
+              <div class="card mb-3">
+                <div class="card-header">
+                  <b><?php echo _x( "Customer's details", 'activity_summary', 'mybooking-wp-plugin') ?></b>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><%=order.customer_name%> <%=order.customer_surname%></li>
                   <li class="list-group-item"><%=order.customer_email%></li>
                   <li class="list-group-item"><%=order.customer_phone%></li>
                 </ul>
               </div>
+
               <% if (order.use_rates) { %>
                 <div class="jumbotron mb-3">
                   <h2 class="h5"><?php echo _x( 'Total', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
