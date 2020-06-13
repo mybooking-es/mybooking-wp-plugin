@@ -1,5 +1,4 @@
 <!-- Extra representation -->
-
 <script type="text/template" id="script_detailed_extra">
 
   <% if (coverages && coverages.length > 0) {%>
@@ -102,8 +101,6 @@
     <hr class="mt-3 mb-4">
   <% } %>
 
-
-
 </script>
 
 
@@ -138,7 +135,6 @@
 </script>
 
 <!-- Reservation summary -->
-
 <script type="text/tmpl" id="script_reservation_summary">
   <div class="complete-reservation-summary-card ">
     <div class="card mb-3">
@@ -288,7 +284,6 @@
   </div>
 </script>
 
-<!-- Payment detail -->
 <!-- Payment detail -->
 <script type="text/tmpl" id="script_payment_detail">
     <%

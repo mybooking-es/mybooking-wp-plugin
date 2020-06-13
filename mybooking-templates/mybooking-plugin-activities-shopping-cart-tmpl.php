@@ -178,13 +178,13 @@
         <div id="payment_now_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>>
 
             <div class="border p-4">
-                <h4><%=i18next.t('complete.reservationForm.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%></h4>
+                <h4><%=i18next.t('activities.payment.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%></h4>
                 <br>
 
                 <!-- Payment amount -->
 
                 <div class="alert alert-info">
-                   <p><%=i18next.t('complete.reservationForm.booking_amount',{amount: configuration.formatCurrency(paymentAmount)})%></p>
+                   <p><%=i18next.t('activities.payment.deposit_amount',{amount: configuration.formatCurrency(paymentAmount)})%></p>
                 </div>
 
                 <% if (shopping_cart.payment_methods.paypal_standard &&
@@ -231,7 +231,7 @@
 
                 <div class="form-row">
                   <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-success w-100"><%=i18next.t('complete.reservationForm.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%></a>
+                    <button type="submit" class="btn btn-success w-100"><%=i18next.t('activities.payment.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%></a>
                   </div>
                 </div>
             </div>

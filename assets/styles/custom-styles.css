@@ -415,6 +415,27 @@ form[name=payment_form] input[type=radio], form[name=payment_form] input[type=ch
   width: auto !important;
 }
 
+.custom-date-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.custom-date-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.custom-date-form>div:nth-child(2n) {
+    margin: 0 5px;
+}
+
 /** ============================================= **/
 /** ======= Reservation Engine Activities ======= **/
 /** ============================================= **/

@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.22]
+
+### Added
+
+- Renting module:
+  - My reservation: Fill driver, additional driver and flight data
+
+- Activities/Appointment module:
+  - Pay pending amount.
+
 ## [0.5.21]
 
 ### Added

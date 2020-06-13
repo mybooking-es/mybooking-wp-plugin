@@ -22,6 +22,8 @@ Mybooking plugin can be used to create reservation engine for:
 - Boats rental
 - Accommodation
 - Activities or tours
+- Appointments
+- Sport courts
 
 == Installation ==
 
@@ -56,6 +58,12 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 5. Renting checkout page
 
 == Changelog ==
+
+= 0.5.22 =
+* Renting module:
+  * My reservation: Fill driver, additional driver and flight data
+* Activities/Appointments module:
+  * Allow to pay pending amount
 
 = 0.5.21 =
 * Renting:
@@ -98,6 +106,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.5.22 =
+* Fill-in contract data and activities allow pay pending amount.
 
 = 0.5.21 =
 * Affiliates, filters and fill-in my reservation data.
