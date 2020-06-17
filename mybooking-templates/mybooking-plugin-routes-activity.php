@@ -1,4 +1,5 @@
-<?php get_header();?>
+<?php 
+get_header();?>
 <br>
 <div class="container">
 	<div class="row">

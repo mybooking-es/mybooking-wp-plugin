@@ -85,7 +85,7 @@
           </div>
         </div>
       </div>
-      <hr class="pb-3">
+      <hr>
           <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>     
     </div>
   </div>

@@ -345,7 +345,11 @@
 		public function wp_body_class ( $classes ) {
 
       // Get the current page content
-      $content = $this->get_current_page()->post_content;
+		  $current_page = $this->get_current_page();
+		  $content = '';
+		  if ( !is_null( $current_page ) && property_exists($current_page, 'post_content') ) {
+		  	$content = $this->get_current_page()->post_content;
+		  }
 
 		  $registry = Mybooking_Registry::getInstance();
 
@@ -478,8 +482,12 @@
 		  mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
 		
 			// The the current page content
-		  $content = $this->get_current_page()->post_content;
-		  
+		  $current_page = $this->get_current_page();
+		  $content = '';
+		  if ( !is_null( $current_page ) && property_exists($current_page, 'post_content') ) {
+		  	$content = $this->get_current_page()->post_content;
+		  }
+
 		  // Renting Form
 		  if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
 		  	   ( has_shortcode ( $content, 'mybooking_rent_engine_selector') ) ) {
