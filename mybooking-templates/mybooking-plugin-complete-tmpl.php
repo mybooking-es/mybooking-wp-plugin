@@ -168,51 +168,100 @@
         </li>
       </ul>
     </div>
-    <% if (shopping_cart.items.length > 0) { %>
-    <!-- Products -->
-    <div class="card mb-3">
-      <div class="card-header">
-        <b><?php echo _x( 'Products', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+
+    <% if (configuration.promotionCode) { %>
+      <!-- Promotion code -->
+      <div class="card mb-3">
+          <div class="card-header">
+            <b><?php echo _x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+          </div>  
+          <div class="card-body">
+            <form name="complete_promotion_code" class="form-inline">
+              <input type="text" class="form-control mb-2 mr-sm-2" size="32" maxlength="30"
+                     id="promotion_code" placeholder="<?php echo _x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?>"
+                     <%if (shopping_cart.promotion_code){%>value="<%=shopping_cart.promotion_code%>" disabled<%}%>>
+              <button type="button" class="btn btn-primary mb-2" id="apply_promotion_code_btn" <%if (shopping_cart.promotion_code){%>disabled<%}%>><?php echo _x( 'Apply', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+            </form>
+          </div>        
       </div>  
-      <ul class="list-group list-group-flush">
-        <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>
-        <li class="list-group-item reservation-summary-card-detail">
-           <img class="product-img" style="width: 120px" src="<%=shopping_cart.items[idx].photo_medium%>"/>
-           <br>
-           <span class="product-name"><b><%=shopping_cart.items[idx].item_description_customer_translation%></b></span>
-           <% if (configuration.multipleProductsSelection) { %>
-           <span class="badge badge-info"><%=shopping_cart.items[idx].quantity%></span>
-           <% } %>
-           <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.items[idx].item_cost)%></span>
-        </li>
-        <% } %>
-      </ul>
-    </div>
-    <% } %> 
-    <% if (shopping_cart.extras.length > 0) { %>
-    <!-- Extras -->
-    <div class="card mb-3">
-      <div class="card-header">
-        <b><?php echo _x( 'Extras', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
-      </div>  
-      <ul class="list-group list-group-flush">
-        <% for (var idx=0;idx<shopping_cart.extras.length;idx++) { %>
-        <li class="list-group-item reservation-summary-card-detail">
-            <span class="extra-name"><b><%=shopping_cart.extras[idx].extra_description%></b></span>
-            <span class="badge badge-info"><%=shopping_cart.extras[idx].quantity%></span>
-            <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.extras[idx].extra_cost)%></span>
-        </li>
-        <% } %>       
-      </ul>
-    </div>
     <% } %>
+
+    <!-- Products -->
+    <% if (shopping_cart.items.length > 0) { %>
+      <div class="card mb-3">
+        <div class="card-header">
+          <b><?php echo _x( 'Products', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+        </div>  
+        <ul class="list-group list-group-flush">
+          <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>
+          <li class="list-group-item reservation-summary-card-detail">
+             <!-- Photo -->
+             <img class="product-img" style="width: 120px" src="<%=shopping_cart.items[idx].photo_medium%>"/>
+             <br>
+             <!-- Description -->
+             <span class="product-name"><b><%=shopping_cart.items[idx].item_description_customer_translation%></b></span>
+             <!-- Quantity -->
+             <% if (configuration.multipleProductsSelection) { %>
+             <span class="badge badge-info"><%=shopping_cart.items[idx].quantity%></span>
+             <% } %>
+             <!-- Price -->
+             <span class="product-amount pull-right">
+               <%=configuration.formatCurrency(shopping_cart.items[idx].item_cost)%>
+             </span>
+             <!-- Offer/Promotion Code Appliance -->
+             <% if (shopping_cart.items[idx].item_unit_cost_base != shopping_cart.items[idx].item_unit_cost) { %>
+               <br>
+               <div class="pull-right">
+                 <!-- Offer -->
+                 <% if (typeof shopping_cart.items[idx].offer_name !== 'undefined' && 
+                        shopping_cart.items[idx].offer_name !== null && shopping_cart.items[idx].offer_name !== '') { %>
+                    <span class="badge badge-info"><%=shopping_cart.items[idx].offer_name%></span>
+                    <% if (shopping_cart.items[idx].offer_discount_type === 'percentage' && shopping_cart.items[idx].offer_value !== '') {%>
+                      <span class="text-danger"><%=parseInt(shopping_cart.items[idx].offer_value)%>&#37;</span>
+                    <% } %>
+                 <% } %>
+                 <!-- Promotion Code -->
+                 <% if (typeof shopping_cart.promotion_code !== 'undefined' && shopping_cart.promotion_code !== '' && 
+                        typeof shopping_cart.items[idx].promotion_code_value !== 'undefined' && shopping_cart.items[idx].promotion_code_value !== '') { %>
+                    <span class="badge badge-success"><%=shopping_cart.promotion_code%></span>
+                    <% if (shopping_cart.items[idx].promotion_code_discount_type === 'percentage' && shopping_cart.items[idx].promotion_code !== '') {%>
+                      <span class="text-danger"><%=parseInt(shopping_cart.items[idx].promotion_code_value)%>&#37;</span>
+                    <% } %>
+                 <% } %>
+                 <span class="text-muted">
+                   <del><%=configuration.formatCurrency(shopping_cart.items[idx].item_unit_cost_base * shopping_cart.items[idx].quantity)%></del>
+                 </span>
+               </div>   
+             <% } %>  
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    <% } %> 
+    <!-- Extras -->
+    <% if (shopping_cart.extras.length > 0) { %>
+      <div class="card mb-3">
+        <div class="card-header">
+          <b><?php echo _x( 'Extras', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+        </div>  
+        <ul class="list-group list-group-flush">
+          <% for (var idx=0;idx<shopping_cart.extras.length;idx++) { %>
+          <li class="list-group-item reservation-summary-card-detail">
+              <span class="extra-name"><b><%=shopping_cart.extras[idx].extra_description%></b></span>
+              <span class="badge badge-info"><%=shopping_cart.extras[idx].quantity%></span>
+              <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.extras[idx].extra_cost)%></span>
+          </li>
+          <% } %>       
+        </ul>
+      </div>
+    <% } %>
+    <!-- Supplements -->
     <% if (shopping_cart.time_from_cost > 0 ||
           shopping_cart.pickup_place_cost > 0 ||
           shopping_cart.time_to_cost > 0 ||
           shopping_cart.return_place_cost > 0 ||
           shopping_cart.driver_age_cost > 0 ||
           shopping_cart.category_supplement_1_cost > 0) { %>
-      <!-- Supplements -->
       <div class="card mb-3">
         <div class="card-header">
           <b><?php echo _x( 'Supplements', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
@@ -259,8 +308,8 @@
         </ul>
       </div>
     <% } %>
+    <!-- Deposit -->
     <% if (shopping_cart.total_deposit > 0) { %>
-      <!-- Deposit -->
       <div class="card mb-3">
         <div class="card-header">
           <b><?php echo _x( "Deposit", 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
@@ -276,7 +325,7 @@
         </ul>
       </div>
     <% } %>
-
+    <!-- Total -->
     <div class="jumbotron mb-3">
       <h2 class="h5 text-center"><?php echo _x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?></h2>
       <h2 class="h3 text-center"><%=configuration.formatCurrency(shopping_cart.total_cost)%></h2>

@@ -52,6 +52,13 @@
                             <span class="badge badge-info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
                          </div>
                       </div>
+                    <% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' &&
+                                  (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
+                      <div class="product-card-info-container">
+                         <div class="product-card-info">
+                            <span class="badge badge-success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
+                         </div>
+                      </div>
                     <% } %>
                   <% } %>
                   <!-- Price -->

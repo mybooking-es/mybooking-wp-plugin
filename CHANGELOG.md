@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.5.23]
+
+### Added
+
+- Renting module
+  - Choose product: 
+    - Show promotion code discount
+  - Complete: 
+    - Apply promotion code
+  - Summary : 
+    - Show promotion code / offer discount
+  - My Reservation
+    - Show promotion code / offer discount
+
 ## [0.5.22]
 
 ### Added

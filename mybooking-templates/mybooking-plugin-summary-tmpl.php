@@ -24,7 +24,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item reservation-summary-card-detail h3"><%=booking.id%></li>
           <% if (configuration.pickupReturnPlace) {%>
-          <li class="list-group-item reservation-summary-card-detail"><%=booking.pickup_place_customer_translation%></li>
+            <li class="list-group-item reservation-summary-card-detail"><%=booking.pickup_place_customer_translation%></li>
           <% } %>
           <li class="list-group-item reservation-summary-card-detail">
             <i class="fa fa-calendar-o"></i>&nbsp;
@@ -34,7 +34,7 @@
             <% } %>  
           </li>
           <% if (configuration.pickupReturnPlace) {%>
-          <li class="list-group-item reservation-summary-card-detail"><%=booking.return_place_customer_translation%></li>
+            <li class="list-group-item reservation-summary-card-detail"><%=booking.return_place_customer_translation%></li>
           <% } %>
           <li class="list-group-item reservation-summary-card-detail">
             <i class="fa fa-calendar-o"></i>&nbsp;
@@ -73,15 +73,44 @@
         </div>  
         <ul class="list-group list-group-flush">
           <% for (var idx=0;idx<booking.booking_lines.length;idx++) { %>
-          <li class="list-group-item reservation-summary-card-detail">
-             <img class="product-img" style="width: 120px" src="<%=booking.booking_lines[idx].photo_medium%>"/>
-             <br>
-             <span class="product-name"><b><%=booking.booking_lines[idx].item_description_customer_translation%></b></span>
-             <% if (configuration.multipleProductsSelection) { %>
-             <span class="badge badge-info"><%=booking.booking_lines[idx].quantity%></span>
-             <% } %>
-             <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%></span>
-          </li>
+            <li class="list-group-item reservation-summary-card-detail">
+               <!-- Photo -->
+               <img class="product-img" style="width: 120px" src="<%=booking.booking_lines[idx].photo_medium%>"/>
+               <br>
+               <!-- Description -->
+               <span class="product-name"><b><%=booking.booking_lines[idx].item_description_customer_translation%></b></span>
+               <!-- Quantity -->
+               <% if (configuration.multipleProductsSelection) { %>
+               <span class="badge badge-info"><%=booking.booking_lines[idx].quantity%></span>
+               <% } %>
+               <!-- Price -->
+               <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%></span>
+               <!-- Offer/Promotion Code Appliance -->
+               <% if (booking.booking_lines[idx].item_unit_cost_base != booking.booking_lines[idx].item_unit_cost) { %>
+                 <br>
+                 <div class="pull-right">
+                   <!-- Offer -->
+                   <% if (typeof booking.booking_lines[idx].offer_name !== 'undefined' && 
+                          booking.booking_lines[idx].offer_name !== null && booking.booking_lines[idx].offer_name !== '') { %>
+                      <span class="badge badge-info"><%=booking.booking_lines[idx].offer_name%></span>
+                      <% if (booking.booking_lines[idx].offer_discount_type === 'percentage' && booking.booking_lines[idx].offer_value !== '') {%>
+                        <span class="text-danger"><%=parseInt(booking.booking_lines[idx].offer_value)%>&#37;</span>
+                      <% } %>
+                   <% } %>
+                   <!-- Promotion Code -->
+                   <% if (typeof booking.promotion_code !== 'undefined' && booking.promotion_code !== '' && 
+                          typeof booking.booking_lines[idx].promotion_code_value !== 'undefined' && booking.booking_lines.promotion_code_value !== '') { %>
+                      <span class="badge badge-success"><%=booking.promotion_code%></span>
+                      <% if (booking.booking_lines[idx].promotion_code_discount_type === 'percentage' && booking.booking_lines[idx].promotion_code !== '') {%>
+                        <span class="text-danger"><%=parseInt(booking.booking_lines[idx].promotion_code_value)%>&#37;</span>
+                      <% } %>
+                   <% } %>
+                   <span class="text-muted">
+                     <del><%=configuration.formatCurrency(booking.booking_lines[idx].item_unit_cost_base * booking.booking_lines[idx].quantity)%></del>
+                   </span>
+                 </div>   
+               <% } %> 
+            </li>
           <% } %>
         </ul>
       </div>

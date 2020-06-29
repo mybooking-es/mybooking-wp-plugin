@@ -7,16 +7,20 @@
       <div class="row">
         <div class="col-md-8">
           <div class="row">
+            <!-- Reservation summary -->
             <div class="col-md-6">
               <div class="card mb-3">
                 <div class="card-header">
                   <b><?php echo _x( 'Reservation summary', 'renting_my_reservation', 'mybooking-wp-plugin') ?></b>
                 </div>
                 <ul class="list-group list-group-flush">
+                  <!-- Reservation ID -->
                   <li class="list-group-item reservation-summary-card-detail h3"><%=booking.id%></li>
+                  <!-- Pickup place -->
                   <% if (configuration.pickupReturnPlace) {%>
                   <li class="list-group-item reservation-summary-card-detail"><%=booking.pickup_place_customer_translation%></li>
                   <% } %>
+                  <!-- Delivery dates -->
                   <li class="list-group-item reservation-summary-card-detail">
                     <i class="fa fa-calendar-o"></i>&nbsp;
                     <%=booking.date_from_full_format%>
@@ -24,9 +28,11 @@
                       <%=booking.time_from%>
                     <% } %>  
                   </li>
+                  <!-- Return place -->
                   <% if (configuration.pickupReturnPlace) {%>
                   <li class="list-group-item reservation-summary-card-detail"><%=booking.return_place_customer_translation%></li>
                   <% } %>
+                  <!-- Collection dates -->
                   <li class="list-group-item reservation-summary-card-detail">
                     <i class="fa fa-calendar-o"></i>&nbsp;
                     <%=booking.date_to_full_format%>
@@ -34,11 +40,12 @@
                       <%=booking.time_to%>
                     <% } %> 
                   </li>
+                  <!-- Duration -->
                   <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.days%> <?php echo _x( 'day(s)', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?></li>
                 </ul>
               </div>
             </div>
-            
+            <!-- Customer -->
             <div class="col-md-6">
               <div class="card mb-3">
                 <div class="card-header">
@@ -54,7 +61,6 @@
                   <% } %>
                 </ul>
               </div>
-
             </div>
           </div>
           <div class="row">
@@ -62,29 +68,59 @@
               <div id="reservation_form_container" style="display:none"></div>
             </div>
           </div>
-
         </div>
 
         <!-- Sidebar summary -->
         <div class="col-md-4">
           <div class="card mb-3">
+            <!-- Products -->
             <div class="card-header">
               <b><?php echo _x( 'Products', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?></b>
             </div>  
             <ul class="list-group list-group-flush">
               <% for (var idx=0;idx<booking.booking_lines.length;idx++) { %>
               <li class="list-group-item reservation-summary-card-detail">
+                 <!-- Photo -->
                  <img class="product-img" style="width: 120px" src="<%=booking.booking_lines[idx].photo_medium%>"/>
                  <br>
+                 <!-- Description -->
                  <span class="product-name"><b><%=booking.booking_lines[idx].item_description_customer_translation%></b></span>
+                 <!-- Quantity -->
                  <% if (configuration.multipleProductsSelection) { %>
                  <span class="badge badge-info"><%=booking.booking_lines[idx].quantity%></span>
                  <% } %>
+                 <!-- Price -->
                  <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%></span>
+                 <!-- Offer/Promotion Code Appliance -->
+                 <% if (booking.booking_lines[idx].item_unit_cost_base != booking.booking_lines[idx].item_unit_cost) { %>
+                   <br>
+                   <div class="pull-right">
+                     <!-- Offer -->
+                     <% if (typeof booking.booking_lines[idx].offer_name !== 'undefined' && 
+                            booking.booking_lines[idx].offer_name !== null && booking.booking_lines[idx].offer_name !== '') { %>
+                        <span class="badge badge-info"><%=booking.booking_lines[idx].offer_name%></span>
+                        <% if (booking.booking_lines[idx].offer_discount_type === 'percentage' && booking.booking_lines[idx].offer_value !== '') {%>
+                          <span class="text-danger"><%=parseInt(booking.booking_lines[idx].offer_value)%>&#37;</span>
+                        <% } %>
+                     <% } %>
+                     <!-- Promotion Code -->
+                     <% if (typeof booking.promotion_code !== 'undefined' && booking.promotion_code !== '' && 
+                            typeof booking.booking_lines[idx].promotion_code_value !== 'undefined' && booking.booking_lines.promotion_code_value !== '') { %>
+                        <span class="badge badge-success"><%=booking.promotion_code%></span>
+                        <% if (booking.booking_lines[idx].promotion_code_discount_type === 'percentage' && booking.booking_lines[idx].promotion_code !== '') {%>
+                          <span class="text-danger"><%=parseInt(booking.booking_lines[idx].promotion_code_value)%>&#37;</span>
+                        <% } %>
+                     <% } %>
+                     <span class="text-muted">
+                       <del><%=configuration.formatCurrency(booking.booking_lines[idx].item_unit_cost_base * booking.booking_lines[idx].quantity)%></del>
+                     </span>
+                   </div>   
+                 <% } %> 
               </li>
               <% } %>
             </ul>
           </div>
+          <!-- Extras -->
           <% if (booking.booking_extras.length > 0) { %>
           <div class="card mb-3">
             <div class="card-header">
@@ -101,6 +137,7 @@
             </ul>
           </div>
           <% } %>   
+          <!-- Supplements -->
           <% if (booking.time_from_cost > 0 ||
                 booking.pickup_place_cost > 0 ||
                 booking.time_to_cost > 0 ||
@@ -154,6 +191,7 @@
               </ul>
             </div>
           <% } %>
+          <!-- Deposit -->
           <% if (booking.total_deposit > 0) { %>
             <!-- Deposit -->
             <div class="card mb-3">
@@ -171,12 +209,11 @@
               </ul>
             </div>
           <% } %>
-
+          <!-- Total -->
           <div class="jumbotron mb-3">
             <h2 class="h5 text-center"><?php echo _x( 'Total', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?></h2>
             <h2 class="h3 text-center"><%=configuration.formatCurrency(booking.total_cost)%></h2>
           </div>  
-
           <table class="table">
             <tr class="table-success">
               <td><?php echo _x( 'Total', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?></td>
@@ -648,10 +685,10 @@
     <!-- Payment detail -->
     <script type="text/tmpl" id="script_payment_detail">
       <hr>
-      <h4 class="brand-primary my-3"><%= i18next.t('myReservation.pay.total_payment', {amount:configuration.formatCurrency(booking.booking_amount) }) %></h4>
+      <h4 class="brand-primary my-3"><%= i18next.t('myReservation.pay.total_payment', {amount:configuration.formatCurrency(amount) }) %></h4>
       <% if (booking.total_paid == 0) {%>
         <div id="payment_amount_container" class="alert alert-info">
-          <%= i18next.t('complete.reservationForm.booking_amount', {amount:configuration.formatCurrency(booking.booking_amount) }) %>
+          <%= i18next.t('complete.reservationForm.booking_amount', {amount:configuration.formatCurrency(amount) }) %>
         </div>
       <% } %>
       <form name="payment_form">
@@ -697,7 +734,7 @@
         <% } %>
         <div class="form-row">
           <div class="form-group col-md-12">
-            <button class="btn btn-success" id="btn_pay" type="submit"><%= i18next.t('myReservation.pay.payment_button', {amount:configuration.formatCurrency(booking.booking_amount) }) %></button>
+            <button class="btn btn-success" id="btn_pay" type="submit"><%= i18next.t('myReservation.pay.payment_button', {amount:configuration.formatCurrency(amount) }) %></button>
           </div>
         </div>
       </div>
