@@ -177,7 +177,7 @@
           </div>  
           <div class="card-body">
             <form name="complete_promotion_code" class="form-inline">
-              <input type="text" class="form-control mb-2 mr-sm-2" size="32" maxlength="30"
+              <input type="text" class="form-control mb-2 mr-sm-2" size="20" maxlength="30"
                      id="promotion_code" placeholder="<?php echo _x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?>"
                      <%if (shopping_cart.promotion_code){%>value="<%=shopping_cart.promotion_code%>" disabled<%}%>>
               <button type="button" class="btn btn-primary mb-2" id="apply_promotion_code_btn" <%if (shopping_cart.promotion_code){%>disabled<%}%>><?php echo _x( 'Apply', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>

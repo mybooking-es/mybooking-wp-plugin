@@ -103,8 +103,20 @@
     </script>
 
     <script type="text/tmpl" id="script_fixed_ticket">
-        <% for (item in tickets) { %>
-          <input type="hidden" name="quantity_rate_<%=item%>" class="quantity_rate" value="1"/>
+
+        <% if (Object.keys(tickets).length == 1) { %>
+          <% for (item in tickets) { %>
+            <input type="hidden" name="quantity_rate_<%=item%>" class="quantity_rate" value="1"/>
+          <% } %>
+        <% } else if (Object.keys(tickets).length > 1) { %>
+          <div class="form-group">
+            <select name="selected_tickets_full_mode" class="form-control">
+               <option value=""><?php echo _x( 'Please, select an option', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></option>
+            <% for (item in tickets) { %>
+               <option value="<%=item%>"><%=tickets[item][0]["description"]%></option>
+            <% } %>
+            </select>
+          </div>
         <% } %>
 
         <div class="form-group">
