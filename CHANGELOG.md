@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.24]
+
+### Fixed
+
+- Activities module
+  - Buy Tickets Fixed
+
 ## [0.5.23]
 
 ### Added
