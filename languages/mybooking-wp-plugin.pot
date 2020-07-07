@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-29 04:28+0000\n"
+"POT-Creation-Date: 2020-07-07 22:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -605,9 +605,14 @@ msgid "People"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:100
-#: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:111
+#: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:123
 msgctxt "activity_tickets_form_selector"
 msgid "Book now"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:114
+msgctxt "activity_tickets_form_selector"
+msgid "Please, select an option"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:38

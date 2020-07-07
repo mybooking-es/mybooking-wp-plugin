@@ -14,6 +14,9 @@
   - My Reservation
     - Show promotion code / offer discount
 
+- Activities module
+  - Buy full activity
+
 ## [0.5.22]
 
 ### Added

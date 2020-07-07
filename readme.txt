@@ -59,6 +59,13 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.5.23 =
+* Renting module:
+  * Promotion code on complete step
+  * Show offer/promotion code discount on renting process pages
+* Activities module:
+  * Full activity buy (not only tickets) -> Escape Room, Custom tours
+
 = 0.5.22 =
 * Renting module:
   * My reservation: Fill driver, additional driver and flight data
@@ -106,6 +113,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.5.23 =
+* Promotion code on renting and full activity buy
 
 = 0.5.22 =
 * Fill-in contract data and activities allow pay pending amount.
