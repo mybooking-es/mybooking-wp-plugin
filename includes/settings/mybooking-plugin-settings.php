@@ -411,6 +411,12 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
+		  add_settings_field('mybooking_plugin_settings_components_js_use_select2',
+		                     'Use select2 library on selects',
+		                     array($this, 'field_mybooking_plugin_settings_components_js_use_select2_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_css');
+
 		  add_settings_field('mybooking_plugin_settings_components_js_bs_modal_no_conflict',
 		                     'Boostrap Modal no conflict mode',
 		                     array($this, 'field_mybooking_plugin_settings_components_js_bs_modal_no_conflict_callback'),
@@ -892,6 +898,28 @@ EOF;
 
 		  echo "<p class=\"description\">Use <b>custom loader</b> to notify the user when connecting to the reservation engine.."; 
 		  echo "<p class=\"description\">Apply this option if you are using mybooking-wp-theme or a theme where you have defined your own loader.</p>";
+
+		}
+
+		/**
+		 * Render Mybooking Bootstrap Modal No conflict
+		 */
+		public function field_mybooking_plugin_settings_components_js_use_select2_callback() {
+		  
+		  $settings = (array) get_option("mybooking_plugin_settings_css");
+		  $field = "mybooking_plugin_settings_components_js_use_select2";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  } 
+		  
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Use <b>select2</b> library on form selects."; 
 
 		}
 

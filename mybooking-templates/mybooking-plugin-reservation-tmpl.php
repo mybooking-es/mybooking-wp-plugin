@@ -11,11 +11,11 @@
             <div class="col-md-6">
               <div class="card mb-3">
                 <div class="card-header">
-                  <b><?php echo _x( 'Reservation summary', 'renting_my_reservation', 'mybooking-wp-plugin') ?></b>
+                  <b><?php echo _x( 'My reservation', 'renting_my_reservation', 'mybooking-wp-plugin') ?></b>
                 </div>
                 <ul class="list-group list-group-flush">
                   <!-- Reservation ID -->
-                  <li class="list-group-item reservation-summary-card-detail h3"><%=booking.id%></li>
+                  <li class="list-group-item reservation-summary-card-detail"><small><?php echo _x( 'Reservation Id', 'renting_my_reservation', 'mybooking-wp-plugin') ?></small><br><span class="h3"><%=booking.id%></span></li>
                   <!-- Pickup place -->
                   <% if (configuration.pickupReturnPlace) {%>
                   <li class="list-group-item reservation-summary-card-detail"><%=booking.pickup_place_customer_translation%></li>
@@ -41,7 +41,15 @@
                     <% } %> 
                   </li>
                   <!-- Duration -->
-                  <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.days%> <?php echo _x( 'day(s)', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?></li>
+                  <% if (booking.days > 0) { %>                  
+                    <li class="list-group-item reservation-summary-card-detail">
+                       <?php echo _x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.days%> <?php echo _x( 'day(s)', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+                    </li>
+                  <% } else if (booking.hours > 0) { %>
+                    <li class="list-group-item reservation-summary-card-detail">
+                       <?php echo _x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.hours%> <?php echo _x( 'hour(s)', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?> 
+                    </li>                 
+                  <% } %>
                 </ul>
               </div>
             </div>
@@ -520,6 +528,24 @@
                   <label for="flight_time"><?php echo _x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="flight_time" name="flight_time" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php echo _x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_time%>" maxlength="5">
+                </div>
+              </div>
+              <h3 class="h4 card-title border p-3 bg-light"><?php echo _x('Return flight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="flight_company_departure"><?php echo _x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                  <input class="form-control" id="flight_company_departure" name="flight_company_departure" type="text"
+                    placeholder="<%=configuration.escapeHtml("<?php echo _x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_company_departure%>">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="flight_number_departure"><?php echo _x('Flight Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                  <input class="form-control" id="flight_number_departure" name="flight_number_departure" type="text"
+                    placeholder="<%=configuration.escapeHtml("<?php echo _x('Flight Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_number_departure%>">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="flight_time_departure"><?php echo _x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                  <input class="form-control" id="flight_time_departure" name="flight_time_departure" type="text"
+                    placeholder="<%=configuration.escapeHtml("<?php echo _x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_time_departure%>">
                 </div>
               </div>
             <% } %>

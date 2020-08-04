@@ -1,4 +1,5 @@
     <script type="text/tmpl" id="form_calendar_selector_tmpl">
+
             <% if (configuration.pickupReturnPlace) { %> 
               <!-- Delivery -->
               <div class="form-group">
@@ -50,10 +51,29 @@
             <h2 class="h4"><?php echo _x( 'Reservation summary', 'renting_product_calendar', 'mybooking-wp-plugin') ?></h2>
             <hr>
             <% if (shopping_cart.days) { %>
-            <p class="lead"><?php echo _x( 'Rental duration', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=shopping_cart.days%> <?php echo _x( 'day(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
+              <p class="lead"><?php echo _x( 'Rental duration', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=shopping_cart.days%> <?php echo _x( 'day(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
             <% } else if (shopping_cart.hours) { %>
-  					<p class="lead"><?php echo _x( 'Rental duration', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=shopping_cart.hours%> <?php echo _x( 'hours(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
+  					 <p class="lead"><?php echo _x( 'Rental duration', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=shopping_cart.hours%> <?php echo _x( 'hours(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
             <% } %>
+
+            <p class="lead"><?php echo _x( 'Product', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.item_cost)%></span></p>
+
+            <% if (shopping_cart.time_from_cost > 0) { %>
+              <p class="lead"><?php echo _x( 'Pick-up time supplement', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.time_from_cost)%></span></p>
+            <% } %>
+
+            <% if (shopping_cart.pickup_place_cost > 0) { %>
+              <p class="lead"><?php echo _x( 'Pick-up place supplement', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.pickup_place_cost)%></span></p>            
+            <% } %>
+
+            <% if (shopping_cart.time_to_cost > 0) { %>
+              <p class="lead"><?php echo _x( 'Return time supplement', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.time_to_cost)%></span></p>                
+            <% } %>
+
+            <% if (shopping_cart.return_place_cost > 0) { %>
+              <p class="lead"><?php echo _x( 'Return place supplement', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.return_place_cost)%></span></p>                
+            <% } %>
+
             <p class="lead"><?php echo _x( 'Total', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.total_cost)%></span></p>
           </div>
           <div class="form-group">

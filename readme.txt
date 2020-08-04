@@ -59,6 +59,15 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.5.25 =
+* Renting module:
+  * Countries selector in multiple languages
+  * Use of select2 or browser select on countries
+  * Product calendar -> Configure sales channel
+* Activities module:
+  * Fix: Payment with only one payment method
+* Translations review in order to match mybooking theme
+
 = 0.5.24 =
 * Activities module:
   * Fix: Buy tickets "Book Now"
@@ -117,6 +126,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.5.25 =
+* Fix: Activities payment with only one payment method and countries selector
 
 = 0.5.24 =
 * Fix: Buy tickets "Book Now"

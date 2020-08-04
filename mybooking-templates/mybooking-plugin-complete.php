@@ -84,8 +84,10 @@
         <div class="form-group">            
             <label for="customer_mobile_phone"><?php echo _x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
             <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo _x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
-        </div>                
+        </div>     
 
+        <h4 class="mb-2 p-4 complete-section-bg"><?php echo _x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+        
         <div class="form-group">
           <label for="comments"><?php echo _x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
           <textarea class="form-control" name="comments" id="comments" placeholder="<?php echo _x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>

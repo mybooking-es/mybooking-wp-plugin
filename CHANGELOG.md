@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.5.25]
+
+### Fixed
+
+- Activities module
+  - Payment setup with only one payment method
+- Neve Theme integration on product browser
+
+
 ## [0.5.24]
 
 ### Fixed

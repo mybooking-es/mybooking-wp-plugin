@@ -165,7 +165,7 @@
             </li>
             <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_choose_product', 'mybooking-wp-plugin' ) ?> <%=shopping_cart.days%> <?php echo _x( 'day(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></li>
             <li class="list-group-item">
-              <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo _x( 'Modify reservation', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></button>
+              <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo _x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></button>
             </li>
           </ul>
         </div>

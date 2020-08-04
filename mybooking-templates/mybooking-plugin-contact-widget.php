@@ -41,7 +41,7 @@
 
               <div class="form-row">
                 <div class="form-group col-md-12">
-                  <input id="send_message_button" type="submit" class="btn btn-primary" value="Enviar">
+                  <input id="send_message_button" type="submit" class="btn btn-primary" value="<?php echo _x( 'Send', 'contact_form', 'mybooking-wp-plugin') ?>">
                 </div>
               </div>  
 

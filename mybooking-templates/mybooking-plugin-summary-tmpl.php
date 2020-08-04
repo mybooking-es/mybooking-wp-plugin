@@ -19,10 +19,10 @@
     <div class="col-md-4">
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo _x( 'Reservation summary', 'renting_summary', 'mybooking-wp-plugin') ?></b>
+          <b><?php echo _x( 'My reservation', 'renting_summary', 'mybooking-wp-plugin') ?></b>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item reservation-summary-card-detail h3"><%=booking.id%></li>
+          <li class="list-group-item reservation-summary-card-detail"><small><?php echo _x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?></small><br><span class="h3"><%=booking.id%></span></li>
           <% if (configuration.pickupReturnPlace) {%>
             <li class="list-group-item reservation-summary-card-detail"><%=booking.pickup_place_customer_translation%></li>
           <% } %>
@@ -43,7 +43,15 @@
               <%=booking.time_to%>
             <% } %> 
           </li>
-          <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_summary', 'mybooking-wp-plugin' ) ?>: <%=booking.days%> <?php echo _x( 'day(s)', 'renting_summary', 'mybooking-wp-plugin' ) ?></li>
+          <% if (booking.days > 0) { %>                  
+            <li class="list-group-item reservation-summary-card-detail">
+               <?php echo _x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.days%> <?php echo _x( 'day(s)', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+            </li>
+          <% } else if (booking.hours > 0) { %>
+            <li class="list-group-item reservation-summary-card-detail">
+               <?php echo _x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.hours%> <?php echo _x( 'hour(s)', 'renting_summary', 'mybooking-wp-plugin' ) ?>  
+            </li>                   
+          <% } %>
         </ul>
       </div>
     </div>
@@ -202,8 +210,13 @@
       <% } %>
 
       <div class="jumbotron mb-3">
-        <h2 class="h5 text-center"><?php echo _x( 'Total', 'renting_summary', 'mybooking-wp-plugin' ) ?></h2>
-        <h2 class="h3 text-center"><%=configuration.formatCurrency(booking.total_cost)%></h2>
+        <p class="lead"><?php echo _x( 'Total', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><b><%=configuration.formatCurrency(booking.total_cost)%></b></span></p>
+        <% if (booking.total_paid > 0) { %>
+          <p class="lead"><?php echo _x( 'Total paid', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(booking.total_paid)%></span></p>
+        <% } %>
+        <% if (booking.total_pending < booking.total_cost) { %>
+          <p class="lead"><?php echo _x( 'Total pending', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="text-danger pull-right"><%=configuration.formatCurrency(booking.total_pending)%></span></p>        
+        <% } %>
       </div>            
     </div>
     

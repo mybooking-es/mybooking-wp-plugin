@@ -82,6 +82,8 @@
 
     </script>
 
+    <!-- Customer buy tickets -->
+
     <script type="text/tmpl" id="script_tickets">
 
         <h2 class="h5 mt-5 mb-3 text-muted"><b><?php echo _x( 'People', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
@@ -102,13 +104,17 @@
 
     </script>
 
+    <!-- Customer buys full activity -->
+
     <script type="text/tmpl" id="script_fixed_ticket">
 
         <% if (Object.keys(tickets).length == 1) { %>
+          <!-- There is only one option, so hide it -->
           <% for (item in tickets) { %>
             <input type="hidden" name="quantity_rate_<%=item%>" class="quantity_rate" value="1"/>
           <% } %>
         <% } else if (Object.keys(tickets).length > 1) { %>
+          <!-- There are more than 1 option, allow the customer to pick up one -->
           <div class="form-group">
             <select name="selected_tickets_full_mode" class="form-control">
                <option value=""><?php echo _x( 'Please, select an option', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></option>

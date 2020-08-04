@@ -124,7 +124,20 @@
         </div>
       <% } %>
 
-      <input type="hidden" name="payment" value="none">
+      <% if (canPay) { %>
+        <% if (shopping_cart.payment_methods.paypal_standard && shopping_cart.payment_methods.tpv_virtual) { %>
+          <!-- The payment method will be selected later -->
+          <input type="hidden" name="payment" value="none">
+        <% } else if (shopping_cart.payment_methods.paypal_standard) { %>   
+          <!-- Fixed paypal standard -->
+          <input type="hidden" name="payment" value="paypal_standard">
+        <% } else  if (shopping_cart.payment_methods.tpv_virtual) { %>
+          <!-- Fixed tpv -->
+          <input type="hidden" name="payment" value="<%=shopping_cart.payment_methods.tpv_virtual%>">  
+        <% } %>  
+      <% } else { %>
+        <input type="hidden" name="payment" value="none"> 
+      <% } %>  
 
       <% if (canRequestAndPay) { %>
         <hr>

@@ -22,6 +22,12 @@
         <?php } else { ?>
         var customLoader = false;
         <?php } ?>
+        // Select 2
+        <?php if ($args['mybooking_js_select2'] == '1') { ?>
+        var jsUseSelect2 = true;
+        <?php } else { ?>
+        var jsUseSelect2 = false;
+        <?php } ?> 
         // Modal JS compatibility
         <?php if ($args['mybooking_js_bs_modal_no_conflict'] == '1') { ?>
         var jsBsModalNoConflict = true;
@@ -99,6 +105,9 @@
         function getCustomLoader() {
           return customLoader;
         }
+        function getJsUseSelect2() {
+          return jsUseSelect2;
+        }
         function getJsBsModalNoConflict(){
           return jsBsModalNoConflict;
         }
@@ -136,6 +145,7 @@
           activitiesUrl: getActivitiesTermsUrl,
           // Common
           customLoader: getCustomLoader,  
+          jsUseSelect2: getJsUseSelect2,
           jsBsModalNoConflict: getJsBsModalNoConflict,
           jsBsModalBackdropCompatibility: getJsBsModalBackdropCompatibility         
         }
