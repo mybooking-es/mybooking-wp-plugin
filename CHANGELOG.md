@@ -1,5 +1,20 @@
 # Changelog
 
+### Added
+
+- Translations
+  - French translation added
+  - German translation added
+  - Italian translation added
+
+### Fixed
+
+- Styles:
+  - Changed .btn-success to .btn-primary for color coherence
+  - Buttons are bigger like theme ones
+  - Little tweaks on card elements
+  - Realigned lists inside cards
+
 ## [0.5.25]
 
 ### Fixed
@@ -21,11 +36,11 @@
 ### Added
 
 - Renting module
-  - Choose product: 
+  - Choose product:
     - Show promotion code discount
-  - Complete: 
+  - Complete:
     - Apply promotion code
-  - Summary : 
+  - Summary :
     - Show promotion code / offer discount
   - My Reservation
     - Show promotion code / offer discount
@@ -107,10 +122,10 @@
 - Translations
 	- Contact form translations
   - Selector wizard
- 
+
 ### Fixed
 
-- Better themes integration. 
+- Better themes integration.
   - Compatibility with themes that overrides bootstrap $.modal (fixed conflict with jquery-modal)
   - Common use of buttons instead of a mix of buttons/input.
   - Review of CSS
@@ -162,7 +177,7 @@ depending on the instance configuration.
 
 ### Fixed
 
-- Use get_queried_object() in order to get the current page in order 
+- Use get_queried_object() in order to get the current page in order
   to prepare it for mybooking-js-engine library. (check shortcodes)
 
 ## [0.5.10]
@@ -179,7 +194,7 @@ depending on the instance configuration.
 
 ## [0.5.8]
 
-### Added 
+### Added
 
 - Integration WMPL slugs
 

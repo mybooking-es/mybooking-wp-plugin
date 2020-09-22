@@ -1,3 +1,15 @@
+/* General Tweaks */
+.btn, .btn-primary,
+.button,
+.wp-block-button a,
+button,
+input[type="button"],
+input[type="submit"] {
+  font-size: 1em!important;
+  letter-spacing: 1px!important;
+  padding: 1rem 1.4rem!important;
+}
+
 /** ============================================= **/
 /** ======== Reservation Engine Renting ========= **/
 /** ============================================= **/
@@ -14,17 +26,17 @@
   font-size: 1.25em;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .resource-product-card .card-text {
   margin-bottom: 0.2em !important;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;    
+  overflow: hidden;
 }
 
-@media (max-width: 992px) { 
+@media (max-width: 992px) {
 
   .resource-product-card-info {
     padding-top: 0.2em !important;
@@ -92,9 +104,10 @@
 /** ------------ 3. Selector Form ------------------------ **/
 
 /* Search form */
-form[name=widget_search_form] input, form[name=widget_search_form] select {
+/* form[name=widget_search_form] input,
+form[name=widget_search_form] select {
   height: 38px;
-}
+} */
 
 form[name=widget_search_form] input[type=submit] {
   margin-bottom: 0;
@@ -215,16 +228,16 @@ form[name=widget_search_form] input[type=submit] {
   }
 }
 
-/** ------------ 3. Selector Wizard ---------------------- **/
+/** ------------ 4. Selector Wizard ---------------------- **/
 
 /* The container that holds everything */
-.selector_wizard_container { 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  z-index: 1040; 
-  width: 100%; 
-  height: 100%; 
+.selector_wizard_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -236,32 +249,32 @@ form[name=widget_search_form] input[type=submit] {
 
 .selector_wizard_step_title {
 
-  position: relative; 
-  top: 20px; 
+  position: relative;
+  top: 20px;
   border-bottom: 1px solid #eee;
 
 }
 
 .selector_wizard_close_btn {
-  position: fixed; 
-  top: 20px; 
-  right: 20px; 
+  position: fixed;
+  top: 20px;
+  right: 20px;
   margin-right: 10px;
 }
 
 .selector_wizard_close_btn i {
-  font-size:1.2em; 
+  font-size:1.2em;
   font-weight: 200;
 }
 
 .selector_wizard_step_container {
-  position: fixed; 
-  top: 50px; 
-  left: 0; 
-  z-index: 2000; 
-  width: 100%; 
-  height: 100%; 
-  overflow-y: auto; 
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -279,7 +292,7 @@ form[name=widget_search_form] input[type=submit] {
   margin-bottom: 0;
 }
 
-/** ------------ 4. Reservation Wizard : Choose product ------- **/
+/** ------------ 5. Reservation Wizard : Choose product ------- **/
 
 @media (min-width: 992px) {
   .reservation-summary-card {
@@ -289,17 +302,22 @@ form[name=widget_search_form] input[type=submit] {
 
 /**
  * Product card
- */ 
-@media (max-width: 576px) { 
+ */
+@media (max-width: 576px) {
   .product-card {
     /*height: 700px;*/
   }
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .product-card {
     /*height: 640px;*/
   }
+}
+
+.product-card .card-title {
+  margin-bottom: 0;
+  font-size: 1.4em;
 }
 
 .product-card-characteristics {
@@ -309,7 +327,7 @@ form[name=widget_search_form] input[type=submit] {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin-top: 30px;
+    padding-top: 30px;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
 }
@@ -348,10 +366,18 @@ form[name=widget_search_form] input[type=submit] {
   left: -50%;
 }
 
-/** ------------ 5. Reservation Wizard : Complete ------- **/
+/* Cards */
+.card .list-group {
+  padding: 0 !important;
+}
+
+/** ------------ 6. Reservation Wizard : Complete ------- **/
 
 .complete-section-bg {
-  background-color: #dddddd;
+  background-color: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 2rem!important;
 }
 
 /* Extras */
@@ -398,6 +424,10 @@ form[name=widget_search_form] input[type=submit] {
     color: #aaaaaa;
 }
 
+#extras_listing .complete-section-bg {
+  margin-bottom: 0!important;
+}
+
 /* Product */
 
 .product-img {
@@ -409,9 +439,23 @@ form[name=reservation_form] input[type=radio], form[name=reservation_form] input
   width: auto !important;
 }
 
-/** --------------- 6. Reservation Wizard : MyReservation ----------- **/
+#payment_now_container h4 {
+  font-size: 1.8em;
+}
 
-form[name=payment_form] input[type=radio], form[name=payment_form] input[type=checkbox] {
+#payment_now_container .alert p {
+  margin: 0;
+}
+
+#payment_now_container .form-group {
+  margin: 0;
+}
+
+
+/** --------------- 7. Reservation Wizard : MyReservation ----------- **/
+
+form[name=payment_form] input[type=radio],
+form[name=payment_form] input[type=checkbox] {
   width: auto !important;
 }
 
@@ -435,6 +479,7 @@ form[name=payment_form] input[type=radio], form[name=payment_form] input[type=ch
 .custom-date-form>div:nth-child(2n) {
     margin: 0 5px;
 }
+
 
 /** ============================================= **/
 /** ======= Reservation Engine Activities ======= **/
@@ -465,7 +510,7 @@ form[name=search_activities_form] .select2-selection {
   height: 40px;
 }
 
-@media (max-width: 992px) { 
+@media (max-width: 992px) {
 
   .activity-card {
     height: 400px;
@@ -529,6 +574,8 @@ div.order-no-product-photo {
   margin: 0 auto;
 }
 
+
+
 /** =========== COMPONENTS ==================== **/
 
 /** Font awesome 4.7 **/
@@ -588,7 +635,7 @@ input[type=text] {
 .ui-datepicker td.text-danger .ui-state-default {
   color: black !important;
   font-weight: 800 !important;
-  opacity: 1 !important;      
+  opacity: 1 !important;
 }
 
 /**
@@ -624,7 +671,7 @@ input[type=text] {
 }
 
 .ui-datepicker {
-/*    
+/*
   width: 100% !important;
   height: 100% !important;
 */    border: 0 !important;
@@ -690,12 +737,12 @@ input[type=text] {
 }
 .date-picker-wrapper .month-wrapper table .caption {
   height: 90px;
-}  
+}
 .date-picker-wrapper .month-wrapper table .week-name {
   height: 40px;
-}  
+}
 .week-name th {
-  font-size: 14px; 
+  font-size: 14px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -716,7 +763,7 @@ input[type=text] {
 .date-picker-wrapper{
   background-color: transparent;
 }
-.date-picker-wrapper .footer {  
+.date-picker-wrapper .footer {
   background-color: transparent;
   padding-bottom: 0px;
 }

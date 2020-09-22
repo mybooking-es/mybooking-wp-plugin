@@ -3,7 +3,7 @@
 *   Renting Selector Form Template
 *   ------------------------------
 *
-*   Versión: 0.0.1
+*   @version 0.0.1
 *   @package WordPress
 *   @subpackage Mybooking WordPress Plugin
 *   @since Mybooking WordPress Plugin 0.5.12
@@ -17,7 +17,7 @@
 	<% if (!configuration.pickupReturnPlace && !configuration.timeToFrom) { %>
 
 	<div class="flex-form-group-wrapper inline-form">
-	    
+
 	    <div class="flex-form-group">
 	      <label for="date_from"><?php echo _x( 'Pick-up date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
 	      <div class="flex-form-horizontal-item">
@@ -44,18 +44,18 @@
 
 	    <div class="flex-form-group flex-form-group-no-label">
 	      <div class="flex-form-horizontal-item">
-   		    <input class="btn btn-success" type="submit" value="<?php echo _x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+   		    <input class="btn btn-primary" type="submit" value="<?php echo _x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
 			  </div>
 	    </div>
   	</div>
 
-  <% } else { %>	
+  <% } else { %>
 
 		<div class="flex-form-group-wrapper">
 
 		  <!-- Delivery / Collection place -->
 
-		  <% if (configuration.pickupReturnPlace) { %>    
+		  <% if (configuration.pickupReturnPlace) { %>
 				<div class="flex-form-group">
 			    <!-- Delivery place -->
 			    <div class="flex-form-horizontal-box">
@@ -94,7 +94,7 @@
 			          <select class="form-control ml-1" name="time_to" id="widget_time_to"></select>
 			      <% } else { %>
 			      	  <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
-			      <% } %>    
+			      <% } %>
 			    </div>
 		    </div>
 		  </div>
@@ -111,9 +111,9 @@
 		<% } %>
 
 		<div class="flex-form-horizontal-box">
-		  <input class="btn btn-success" type="submit" value="<?php echo _x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+		  <input class="btn btn-primary" type="submit" value="<?php echo _x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
 		</div>
 
 	<% } %>
-   
+
 </script>

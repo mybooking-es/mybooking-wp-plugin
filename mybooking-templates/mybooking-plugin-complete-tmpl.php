@@ -2,7 +2,7 @@
 <script type="text/template" id="script_detailed_extra">
 
   <% if (coverages && coverages.length > 0) {%>
-    <h4 class="p-4 complete-section-bg mb-3"><?php echo _x( 'Coverage', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+    <h4 class="p-4 complete-section-bg"><?php echo _x( 'Coverage', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
     <% for (var idx=0;idx<coverages.length;idx++) { %>
       <% var coverage = coverages[idx]; %>
       <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-4">
             <% if (coverage.photo_path) { %>
-            <img class="extra-img p-2 js-extra-info-btn" src="<%=coverage.photo_path%>" 
+            <img class="extra-img p-2 js-extra-info-btn" src="<%=coverage.photo_path%>"
                  alt="<%=coverage.name%>" data-extra="<%=coverage.code%>">
             <% } %>
             <div class="extra-name text-left p-3"><b><%=coverage.name%></b></div>
@@ -19,29 +19,29 @@
           <div class="col-5">
             <% if (coverage.max_quantity > 1) { %>
               <div class="extra-plus-minus p-2">
-                <button class="btn btn-primary btn-minus-extra" 
+                <button class="btn btn-primary btn-minus-extra"
                         data-value="<%=coverage.code%>"
-                        data-max-quantity="<%=coverage.max_quantity%>">-</button>           
+                        data-max-quantity="<%=coverage.max_quantity%>">-</button>
                 <input type="text" id="extra-<%=coverage.code%>-quantity"
                        class="form-control disabled text-center extra-input" value="<%=value%>" data-extra-code="<%=coverage.code%>" readonly/>
-                <button class="btn btn-primary btn-plus-extra" 
+                <button class="btn btn-primary btn-plus-extra"
                         data-value="<%=coverage.code%>"
                         data-max-quantity="<%=coverage.max_quantity%>">+</button>
               </div>
             <% } else { %>
               <div class="extra-check p-3">
                 <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=coverage.code%>" data-value="<%=coverage.code%>" 
+                  <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=coverage.code%>" data-value="<%=coverage.code%>"
                   <% if (extrasInShoppingCart[coverage.code] &&  extrasInShoppingCart[coverage.code] > 0) { %> checked="checked" <% } %>>
                   <label class="custom-control-label" for="checkboxl<%=coverage.code%>"></label>
                 </div>
-              </div>       
-            <% } %>         
+              </div>
+            <% } %>
           </div>
           <div class="col-3">
            <p class="extra-price text-right p-3">
               <b><%= configuration.formatExtraAmount(i18next, coverage.one_unit_price, coverage.price_calculation,
-                                                     shopping_cart.days, shopping_cart.hours, 
+                                                     shopping_cart.days, shopping_cart.hours,
                                                      coverage.unit_price)%></b>
            </p>
           </div>
@@ -52,7 +52,7 @@
   <% } %>
 
   <% if (extras && extras.length > 0) {%>
-    <h4 class="p-4 complete-section-bg mb-3"><?php echo _x( 'Extras', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+    <h4 class="p-4 complete-section-bg"><?php echo _x( 'Extras', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
     <% for (var idx=0;idx<extras.length;idx++) { %>
       <% var extra = extras[idx]; %>
       <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
@@ -61,7 +61,7 @@
         <div class="row">
           <div class="col-4">
             <% if (extra.photo_path) { %>
-            <img class="extra-img p-2 js-extra-info-btn" src="<%=extra.photo_path%>" 
+            <img class="extra-img p-2 js-extra-info-btn" src="<%=extra.photo_path%>"
                   alt="<%=extra.name%>" data-extra="<%=extra.code%>">
             <% } %>
             <div class="extra-name text-left p-3"><b><%=extra.name%></b></div>
@@ -69,29 +69,29 @@
           <div class="col-5">
             <% if (extra.max_quantity > 1) { %>
               <div class="extra-plus-minus p-2">
-                <button class="btn btn-primary btn-minus-extra" 
+                <button class="btn btn-primary btn-minus-extra"
                         data-value="<%=extra.code%>"
-                        data-max-quantity="<%=extra.max_quantity%>">-</button>           
+                        data-max-quantity="<%=extra.max_quantity%>">-</button>
                 <input type="text" id="extra-<%=extra.code%>-quantity"
                        class="form-control disabled text-center extra-input" value="<%=value%>" data-extra-code="<%=extra.code%>" readonly/>
-                <button class="btn btn-primary btn-plus-extra" 
+                <button class="btn btn-primary btn-plus-extra"
                         data-value="<%=extra.code%>"
                         data-max-quantity="<%=extra.max_quantity%>">+</button>
               </div>
             <% } else { %>
               <div class="extra-check p-3">
                 <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=extra.code%>" data-value="<%=extra.code%>" 
+                  <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=extra.code%>" data-value="<%=extra.code%>"
                   <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>
                   <label class="custom-control-label" for="checkboxl<%=extra.code%>"></label>
                 </div>
-              </div>       
-            <% } %>         
+              </div>
+            <% } %>
           </div>
           <div class="col-3">
            <p class="extra-price text-right p-3">
               <b><%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation,
-                                                     shopping_cart.days, shopping_cart.hours, 
+                                                     shopping_cart.days, shopping_cart.hours,
                                                      extra.unit_price)%></b>
            </p>
           </div>
@@ -150,7 +150,7 @@
           <%=shopping_cart.date_from_full_format%>
           <% if (configuration.timeToFrom) { %>
             <%=shopping_cart.time_from%>
-          <% } %>  
+          <% } %>
         </li>
         <% if (configuration.pickupReturnPlace) {%>
         <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.return_place_customer_translation%></li>
@@ -160,13 +160,13 @@
           <%=shopping_cart.date_to_full_format%>
           <% if (configuration.timeToFrom) { %>
             <%=shopping_cart.time_to%>
-          <% } %> 
+          <% } %>
         </li>
         <% if (shopping_cart.days > 0) { %>
           <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_complete', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.days%> <?php echo _x( 'day(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
         <% } else if (shopping_cart.hours > 0) { %>
-          <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_complete', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.hours%> <?php echo _x( 'hour(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>        
-        <% } %> 
+          <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_complete', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.hours%> <?php echo _x( 'hour(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
+        <% } %>
         <li class="list-group-item">
           <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo _x( 'Edit', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
         </li>
@@ -178,7 +178,7 @@
       <div class="card mb-3">
           <div class="card-header">
             <b><?php echo _x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
-          </div>  
+          </div>
           <div class="card-body">
             <form name="complete_promotion_code" class="form-inline">
               <input type="text" class="form-control mb-2 mr-sm-2" size="20" maxlength="30"
@@ -186,8 +186,8 @@
                      <%if (shopping_cart.promotion_code){%>value="<%=shopping_cart.promotion_code%>" disabled<%}%>>
               <button type="button" class="btn btn-primary mb-2" id="apply_promotion_code_btn" <%if (shopping_cart.promotion_code){%>disabled<%}%>><?php echo _x( 'Apply', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
             </form>
-          </div>        
-      </div>  
+          </div>
+      </div>
     <% } %>
 
     <!-- Products -->
@@ -195,7 +195,7 @@
       <div class="card mb-3">
         <div class="card-header">
           <b><?php echo _x( 'Products', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
-        </div>  
+        </div>
         <ul class="list-group list-group-flush">
           <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>
           <li class="list-group-item reservation-summary-card-detail">
@@ -217,7 +217,7 @@
                <br>
                <div class="pull-right">
                  <!-- Offer -->
-                 <% if (typeof shopping_cart.items[idx].offer_name !== 'undefined' && 
+                 <% if (typeof shopping_cart.items[idx].offer_name !== 'undefined' &&
                         shopping_cart.items[idx].offer_name !== null && shopping_cart.items[idx].offer_name !== '') { %>
                     <span class="badge badge-info"><%=shopping_cart.items[idx].offer_name%></span>
                     <% if (shopping_cart.items[idx].offer_discount_type === 'percentage' && shopping_cart.items[idx].offer_value !== '') {%>
@@ -225,7 +225,7 @@
                     <% } %>
                  <% } %>
                  <!-- Promotion Code -->
-                 <% if (typeof shopping_cart.promotion_code !== 'undefined' && shopping_cart.promotion_code !== '' && 
+                 <% if (typeof shopping_cart.promotion_code !== 'undefined' && shopping_cart.promotion_code !== '' &&
                         typeof shopping_cart.items[idx].promotion_code_value !== 'undefined' && shopping_cart.items[idx].promotion_code_value !== '') { %>
                     <span class="badge badge-success"><%=shopping_cart.promotion_code%></span>
                     <% if (shopping_cart.items[idx].promotion_code_discount_type === 'percentage' && shopping_cart.items[idx].promotion_code !== '') {%>
@@ -235,19 +235,19 @@
                  <span class="text-muted">
                    <del><%=configuration.formatCurrency(shopping_cart.items[idx].item_unit_cost_base * shopping_cart.items[idx].quantity)%></del>
                  </span>
-               </div>   
-             <% } %>  
+               </div>
+             <% } %>
           </li>
           <% } %>
         </ul>
       </div>
-    <% } %> 
+    <% } %>
     <!-- Extras -->
     <% if (shopping_cart.extras.length > 0) { %>
       <div class="card mb-3">
         <div class="card-header">
           <b><?php echo _x( 'Extras', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
-        </div>  
+        </div>
         <ul class="list-group list-group-flush">
           <% for (var idx=0;idx<shopping_cart.extras.length;idx++) { %>
           <li class="list-group-item reservation-summary-card-detail">
@@ -255,7 +255,7 @@
               <span class="badge badge-info"><%=shopping_cart.extras[idx].quantity%></span>
               <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.extras[idx].extra_cost)%></span>
           </li>
-          <% } %>       
+          <% } %>
         </ul>
       </div>
     <% } %>
@@ -269,7 +269,7 @@
       <div class="card mb-3">
         <div class="card-header">
           <b><?php echo _x( 'Supplements', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
-        </div>     
+        </div>
         <ul class="list-group list-group-flush">
           <!-- Supplements -->
           <% if (shopping_cart.time_from_cost > 0) { %>
@@ -317,7 +317,7 @@
       <div class="card mb-3">
         <div class="card-header">
           <b><?php echo _x( "Deposit", 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
-        </div>     
+        </div>
         <ul class="list-group list-group-flush">
           <!-- Deposit -->
           <% if (shopping_cart.total_deposit > 0) { %>
@@ -368,16 +368,16 @@
       <% if (sales_process.payment_methods.paypal_standard && sales_process.payment_methods.tpv_virtual) { %>
         <!-- The payment method will be selected later -->
         <input type="hidden" name="payment" value="none">
-      <% } else if (sales_process.payment_methods.paypal_standard) { %>   
+      <% } else if (sales_process.payment_methods.paypal_standard) { %>
         <!-- Fixed paypal standard -->
         <input type="hidden" name="payment" value="paypal_standard">
       <% } else  if (sales_process.payment_methods.tpv_virtual) { %>
         <!-- Fixed tpv -->
-        <input type="hidden" name="payment" value="<%=sales_process.payment_methods.tpv_virtual%>">  
-      <% } %>  
+        <input type="hidden" name="payment" value="<%=sales_process.payment_methods.tpv_virtual%>">
+      <% } %>
     <% } else { %>
-      <input type="hidden" name="payment" value="none"> 
-    <% } %>  
+      <input type="hidden" name="payment" value="none">
+    <% } %>
 
     <% if (selectionOptions > 1) { %>
       <hr>
@@ -418,9 +418,9 @@
                 <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;
                 <?php if ( empty($args['terms_and_conditions']) ) { ?>
                   <?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                <?php } else { ?>  
+                <?php } else { ?>
                   <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?>
-                <?php } ?>  
+                <?php } ?>
               </label>
             </div>
           </div>
@@ -448,9 +448,9 @@
                       <input type="checkbox" id="conditions_read_payment_on_delivery" name="conditions_read_payment_on_delivery">&nbsp;
                       <?php if ( empty($args['terms_and_conditions']) ) { ?>
                         <?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                      <?php } else { ?>  
+                      <?php } else { ?>
                         <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?>
-                      <?php } ?>  
+                      <?php } ?>
                     </label>
                   </div>
                 </div>
@@ -512,9 +512,9 @@
                       <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">&nbsp;
                           <?php if ( empty($args['terms_and_conditions']) ) { ?>
                             <?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                          <?php } else { ?>  
+                          <?php } else { ?>
                             <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?>
-                          <?php } ?>  
+                          <?php } ?>
                     </label>
                   </div>
                 </div>

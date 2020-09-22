@@ -3,7 +3,7 @@
 *   Renting Selector Form
 *   ---------------------
 *
-*   Versión: 0.0.1
+*   @version 0.0.1
 *   @package WordPress
 *   @subpackage Mybooking WordPress Plugin
 *   @since Mybooking WordPress Plugin 0.0.1
@@ -15,7 +15,7 @@
     method="get"
     enctype="application/x-www-form-urlencoded"
     class="flex-form-horizontal">
-    
+
     <?php if ( array_key_exists('sales_channel_code', $args) && $args['sales_channel_code'] != '' ) : ?>
     <input type="hidden" name="sales_channel_code" value="<?php echo $args['sales_channel_code']?>"/>
     <?php endif; ?>
