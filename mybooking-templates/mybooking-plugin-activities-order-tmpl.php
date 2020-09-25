@@ -18,11 +18,11 @@
                       <% customers_data = true; %>
                     <% } %>
                     <div class="card mb-3">
-                      <% if (order.items[idx].photo_full != null) { %>                  
+                      <% if (order.items[idx].photo_full != null) { %>
                         <img class="card-img-top order-product-photo" src="<%=order.items[idx].photo_full%>" alt="">
                       <% } else { %>
                         <div class="text-center order-no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
-                      <% } %> 
+                      <% } %>
                       <div class="card-body">
                         <h5 class="card-title"><%=order.items[idx].item_description_customer_translation%></h5>
                         <p class="card-text text-muted"><%= configuration.formatDate(order.items[idx].date) %> <%= order.items[idx].time %></p>
@@ -43,18 +43,18 @@
                                               <%=configuration.formatCurrency(order.items[idx]['items'][x].item_cost) %>
                                           </td>
                                       </tr>
-                                    <% } %>    
+                                    <% } %>
                                   <% } else { %>
                                     <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
                                       <tr>
                                           <td><%=order.items[idx]['items'][x].quantity %>
-                                              <%=order.items[idx]['items'][x].item_price_description %> 
+                                              <%=order.items[idx]['items'][x].item_price_description %>
                                           </td>
                                       </tr>
-                                    <% } %>  
+                                    <% } %>
                                   <% } %>
-                                <% } %>   
-                                <% if (order.use_rates) { %> 
+                                <% } %>
+                                <% if (order.use_rates) { %>
                                   <!-- Show the total -->
                                   <tr>
                                     <td><strong><?php echo _x( 'Total', 'activity_my_reservation_item', 'mybooking-wp-plugin' ) ?></strong></td>
@@ -65,7 +65,7 @@
                             </table>
                           </div>
                         <% } %>
-                      </div>  
+                      </div>
                     </div>
                   <% } %>
               </div>
@@ -73,14 +73,14 @@
               <% if (customers_data || order.request_customer_address) { %>
                 <div id="customers_data">
                   <form id="order_information_form" name="order_information_form">
-                    <div class="card mb-3">  
+                    <div class="card mb-3">
                       <div class="card-header">
                          <?php echo _x( 'Complete reservation', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
                       </div>
                       <div class="card-body">
                         <div class="alert alert-info">
                           <p><?php echo _x( 'Please complete the information to speed up the delivery process on the scheduled date', 'activity_my_reservation', 'mybooking-wp-plugin') ?></p>
-                        </div> 
+                        </div>
                         <!-- Address -->
                         <% if (order.request_customer_address) { %>
                           <h3 class="h4 card-title border p-3 bg-light"><?php echo _x( 'Customer address', 'activity_my_reservation', 'mybooking-wp-plugin') ?></h3>
@@ -100,8 +100,8 @@
                               <input class="form-control" id="complement" name="customer_address[complement]" type="text"
                                 placeholder="<%=configuration.escapeHtml("<?php echo _x( 'Complement', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_complement%>"  max_length="20">
                             </div>
-                          </div> 
-                          <div class="form-row"> 
+                          </div>
+                          <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="city"><?php echo _x( 'City', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <input class="form-control" id="city" name="customer_address[city]" type="text"
@@ -117,14 +117,14 @@
                             <div class="form-group col-md-6">
                               <label for="country"><?php echo _x( 'Country', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <select name="customer_address[country]" id="country" class="form-control">
-                              </select>                  
-                            </div>  
+                              </select>
+                            </div>
                             <div class="form-group col-md-6">
                               <label for="zip"><?php echo _x( 'Postal Code', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <input class="form-control" id="zip" name="customer_address[zip]" type="text"
                                 placeholder="<%=configuration.escapeHtml("<?php echo _x( 'Postal Code', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_zip%>"  max_length="10">
                             </div>
-                          </div>              
+                          </div>
                         <% } %>
                         <!-- Customer information -->
                         <% if (customers_data) { %>
@@ -138,7 +138,7 @@
                                      <% order_item_customer= order.items[idx].customers[idxCustomers]; %>
                                      <% index += 1; %>
                                      <input type="hidden" name="order_item_customers[<%=index%>][id]" value="<%=order_item_customer.id%>"/>
-                                     <h6 class="h6 border p-2 text-right bg-light"><b><?php echo _x( 'Partipant', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?> #<%=index%></b></h6> 
+                                     <h6 class="h6 border p-2 text-right bg-light"><b><?php echo _x( 'Participant', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?> #<%=index%></b></h6> 
 
                                      <div class="form-row">
                                         <div class="form-group col-md-4">
@@ -223,7 +223,7 @@
                                             </div>
                                           <% } %>
                                        </div>
-                                     <% } %>  
+                                     <% } %>
 
                                      <% if (customer_questions.request_customer_allergies_intolerances) { %>
                                        <div class="form-row">
@@ -234,14 +234,14 @@
                                                      class="form-check-input" type="checkbox"
                                                      <% if (order_item_customer.customer_allergies){%>checked<%}%>>
                                               <label for="customer_allergies" class="form-check-label"><?php echo _x( 'Allergies', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
-                                            </div>       
+                                            </div>
                                           </div>
                                           <div class="form-group col-md-8">
                                               <label for="customer_allergies_detail"><?php echo _x( 'Allergies detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                               <textarea name="order_item_customers[<%=index%>][customer_allergies_detail]"
                                                         title="<?php echo _x( 'Allergies detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                         class="form-control alt" type="number"
-                                                        placeholder="<?php echo _x( 'Allergies detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_allergies_detail%></textarea>                                      
+                                                        placeholder="<?php echo _x( 'Allergies detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_allergies_detail%></textarea>
                                           </div>
                                        </div>
                                        <div class="form-row">
@@ -259,7 +259,7 @@
                                               <textarea name="order_item_customers[<%=index%>][customer_intolerances_detail]"
                                                         title="<?php echo _x( 'Intolerances detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                         class="form-control alt" type="number"
-                                                        placeholder="<?php echo _x( 'Intolerances detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_intolerances_detail%></textarea>                                      
+                                                        placeholder="<?php echo _x( 'Intolerances detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_intolerances_detail%></textarea>
                                           </div>
                                        </div>
                                      <% } %>
@@ -272,14 +272,14 @@
                                                      class="form-check-input" type="checkbox"
                                                      <% if (order_item_customer.customer_slight_injuries){%>checked<%}%>>
                                               <label for="customer_slight_injuries" class="form-check-label"><?php echo _x( 'Slight injuries', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
-                                            </div>       
+                                            </div>
                                           </div>
                                           <div class="form-group col-md-8">
                                               <label for="customer_slight_injuries_detail"><?php echo _x( 'Slight injuries detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                               <textarea name="order_item_customers[<%=index%>][customer_slight_injuries_detail]"
                                                         title="<?php echo _x( 'Slight injuries detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                         class="form-control alt" type="number"
-                                                        placeholder="<?php echo _x( 'Slight injuries detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_slight_injuries_detail%></textarea>                                      
+                                                        placeholder="<?php echo _x( 'Slight injuries detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_slight_injuries_detail%></textarea>
                                           </div>
                                        </div>
                                      <% } %>
@@ -292,14 +292,14 @@
                                                      class="form-check-input" type="checkbox"
                                                      <% if (order_item_customer.customer_diseases){%>checked<%}%>>
                                               <label for="customer_diseases" class="form-check-label"><?php echo _x( 'Diseases', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
-                                            </div>       
+                                            </div>
                                           </div>
                                           <div class="form-group col-md-8">
                                               <label for="customer_diseases_detail"><?php echo _x( 'Diseases detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                               <textarea name="order_item_customers[<%=index%>][customer_diseases_detail]"
                                                         title="<?php echo _x( 'Diseases detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                                         class="form-control alt" type="number"
-                                                        placeholder="<?php echo _x( 'Diseases detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_diseases_detail%></textarea>                                      
+                                                        placeholder="<?php echo _x( 'Diseases detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" rows="5"><%=order_item_customer.customer_diseases_detail%></textarea>
                                           </div>
                                        </div>
                                      <% } %>
@@ -315,11 +315,11 @@
                                               <label for="customer_experience_product_1" class="form-check-label"><%=customer_questions.request_customer_experience_product_1_text%></label>
                                               <select name="order_item_customers[<%=index%>][customer_experience_product_1]"
                                                      class="form-control">
-                                                <option value=""><?php echo _x( 'Select the option', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>     
+                                                <option value=""><?php echo _x( 'Select the option', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
                                                 <option value="0" <% if (order_item_customer.customer_experience_product_1 == '0'){%>selected<%}%>><?php echo _x( 'Never', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
                                                 <option value="1" <% if (order_item_customer.customer_experience_product_1 == '1'){%>selected<%}%>><?php echo _x( 'Once', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
                                                 <option value="2" <% if (order_item_customer.customer_experience_product_1 == '2'){%>selected<%}%>><?php echo _x( 'Twice', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
-                                                <option value="3" <% if (order_item_customer.customer_experience_product_1 == '3'){%>selected<%}%>><?php echo _x( 'Three or more times', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>                                         
+                                                <option value="3" <% if (order_item_customer.customer_experience_product_1 == '3'){%>selected<%}%>><?php echo _x( 'Three or more times', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
                                               </select>
                                             </div>
                                             <% } %>
@@ -328,11 +328,11 @@
                                               <label for="customer_experience_product_2" class="form-check-label"><%=customer_questions.request_customer_experience_product_2_text%></label>
                                               <select name="order_item_customers[<%=index%>][customer_experience_product_2]"
                                                      class="form-control">
-                                                <option value=""><?php echo _x( 'Select the option', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>     
+                                                <option value=""><?php echo _x( 'Select the option', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
                                                 <option value="0" <% if (order_item_customer.customer_experience_product_2 == '0'){%>selected<%}%>><?php echo _x( 'Never', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
                                                 <option value="1" <% if (order_item_customer.customer_experience_product_2 == '1'){%>selected<%}%>><?php echo _x( 'Once', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
                                                 <option value="2" <% if (order_item_customer.customer_experience_product_2 == '2'){%>selected<%}%>><?php echo _x( 'Twice', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
-                                                <option value="3" <% if (order_item_customer.customer_experience_product_2 == '3'){%>selected<%}%>><?php echo _x( 'Three or more times', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>                                         
+                                                <option value="3" <% if (order_item_customer.customer_experience_product_2 == '3'){%>selected<%}%>><?php echo _x( 'Three or more times', 'activity_my_reservation', 'mybooking-wp-plugin') ?></option>
                                               </select>
                                             </div>
                                             <% } %>
@@ -362,16 +362,16 @@
                                           </select>
                                         </div>
                                        <% } %>
-                                     </div> 
+                                     </div>
                                      <% } %>
-                                  <% } %>  
+                                  <% } %>
                               <% } %>
                           <% } %>
-                        <% } %>  
+                        <% } %>
                       </div>
                       <div class="card-footer">
                         <button class="btn btn-primary pull-right" id="btn_update_order" type="button"><?php echo _x( 'Update', 'activity_my_reservation', 'mybooking-wp-plugin') ?></button>
-                      </div> 
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -394,7 +394,7 @@
                 <% if (order.allow_reservation_cancel) { %>
                   <div class="card-footer">
                     <button id="btn_cancel_reservation" class="btn btn-danger btn-cancel-reservation pull-right"><?php echo _x( 'Cancel Reservation', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?></button>
-                  </div>  
+                  </div>
                 <% } %>
               </div>
 
@@ -426,7 +426,7 @@
 
               <% if (canPay && paymentAmount > 0) { %>
 
-                <form name="payment_form">  
+                <form name="payment_form">
                   <div id="payment_now_container">
 
                       <div class="border p-4">
@@ -441,7 +441,7 @@
                           <% } else if (payment === 'pending') { %>
                             <div class="alert alert-info">
                                <p><%=i18next.t('activities.payment.pending_amount',{amount: configuration.formatCurrency(paymentAmount)})%></p>
-                            </div>                            
+                            </div>
                           <% } %>
 
                           <!-- Payment method -->
@@ -489,7 +489,7 @@
 
                 </form>
 
-              <% } %>  
+              <% } %>
 
             </div>
           </div>
