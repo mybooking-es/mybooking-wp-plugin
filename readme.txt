@@ -63,6 +63,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * Review for WordPress 5.5.1
 * Renting module:
   * Choose product -> Select only one product
+* French, German, Italian engine translations
 
 = 0.5.25 =
 * Renting module:
@@ -133,7 +134,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 == Upgrade Notice ==
 
 = 0.6.0 =
-* Review for WordPress 5.5.1 + Renting module improvements
+* Review for WordPress 5.5.1 + Renting module improvements + IT|FR|DE engine translations
 
 = 0.5.25 =
 * Fix: Activities payment with only one payment method and countries selector
