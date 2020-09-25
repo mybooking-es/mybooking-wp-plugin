@@ -81,7 +81,7 @@
                 <% } %>  
               </div>
               <% if (!configuration.multipleProductsSelection) { %>
-              <div class="card-body">
+              <div class="card-body mt-3">
                   <% if (product.availability) { %>
                     <button class="btn btn-primary btn-choose-product w-100" data-product="<%=product.code%>"><?php echo _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
                   <% } else { %>

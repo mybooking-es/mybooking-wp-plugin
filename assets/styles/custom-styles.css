@@ -104,7 +104,7 @@ input[type="submit"] {
 /** ------------ 3. Selector Form ------------------------ **/
 
 /* Search form */
-form[name=widget_search_form] input,
+form[name=widget_search_form] input[type=text],
 form[name=widget_search_form] select {
   height: 38px;
 } 
