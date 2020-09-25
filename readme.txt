@@ -59,6 +59,10 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.6.1 =
+* Renting module
+  * FIXED Selector Form -> Family selector 
+
 = 0.6.0 =
 * Review for WordPress 5.5.1
 * Renting module:
@@ -132,6 +136,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.6.1 =
+* Fix: Renting Selector Form family selector
 
 = 0.6.0 =
 * Review for WordPress 5.5.1 + Renting module improvements + IT|FR|DE engine translations

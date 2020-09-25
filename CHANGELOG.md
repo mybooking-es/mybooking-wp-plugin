@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1]
+
+### Fixed
+
+- Renting module
+  - Select Form family selector
+
 ## [0.6.0]
 
 - Review for WordPress 5.5.1
