@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-04 16:30+0000\n"
-"PO-Revision-Date: 2020-08-04 16:31+0000\n"
+"POT-Creation-Date: 2020-09-25 12:31+0000\n"
+"PO-Revision-Date: 2020-09-25 12:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -12,37 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.4.0; wp-5.4.2"
+"X-Loco-Version: 2.4.3; wp-5.5.1"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:21
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:62
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:71
 msgctxt "renting_form_selector"
 msgid "Pick-up place"
 msgstr "Lugar de entrega"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:26
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:67
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:76
 msgctxt "renting_form_selector"
 msgid "Return place"
 msgstr "Lugar de devolución"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:36
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:22
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:78
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:31
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:87
 msgctxt "renting_form_selector"
 msgid "Pick-up date"
 msgstr "Fecha entrega"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:48
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:29
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:90
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:38
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:99
 msgctxt "renting_form_selector"
 msgid "Return date"
 msgstr "Fecha devolución"
 
-#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:63
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:47
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:114
+#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:64
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:23
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:115
+msgctxt "renting_form_selector"
+msgid "Family"
+msgstr "Familia"
+
+#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:72
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:56
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:132
 msgctxt "renting_form_selector"
 msgid "Search"
 msgstr "Buscar"
@@ -397,7 +404,7 @@ msgstr "Código Postal"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:141
 msgctxt "activity_my_reservation"
-msgid "Partipant"
+msgid "Participant"
 msgstr "Participante"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:145
@@ -629,8 +636,8 @@ msgctxt "activity_tickets_form_selector"
 msgid "Please, select an option"
 msgstr "Por favor, seleccione una opción"
 
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:38
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:106
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:47
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:124
 msgctxt "renting_form_selector"
 msgid "Promotion code"
 msgstr "Código de promoción"
