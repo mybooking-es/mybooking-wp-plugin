@@ -104,10 +104,10 @@ input[type="submit"] {
 /** ------------ 3. Selector Form ------------------------ **/
 
 /* Search form */
-/* form[name=widget_search_form] input,
+form[name=widget_search_form] input,
 form[name=widget_search_form] select {
   height: 38px;
-} */
+} 
 
 form[name=widget_search_form] input[type=submit] {
   margin-bottom: 0;
@@ -315,9 +315,29 @@ form[name=widget_search_form] input[type=submit] {
   }
 }
 
+.product-card .card-img {
+  height: 350px;
+  display: inline-flex;
+  align-items: center;    
+}
+
+
+.product-card .card-body {
+  padding-top: 0;
+}
+
 .product-card .card-title {
   margin-bottom: 0;
-  font-size: 1.4em;
+  font-size: 1.2em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;  
+}
+
+.product-card .card-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;  
 }
 
 .product-card-characteristics {
@@ -369,6 +389,14 @@ form[name=widget_search_form] input[type=submit] {
 /* Cards */
 .card .list-group {
   padding: 0 !important;
+}
+
+/** Badge no availability **/
+.product-card .card-info .badge {
+  white-space: normal !important;
+  height: 50px !important;
+  display: inline-flex;
+  align-items: center;  
 }
 
 /** ------------ 6. Reservation Wizard : Complete ------- **/
@@ -780,6 +808,7 @@ input[type=text] {
 .pac-container {
     z-index: 10000 !important;
 }
+
 /** Boostrap fade alternative **/
 .fade-scale {
   transform: scale(0);

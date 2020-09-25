@@ -9,8 +9,10 @@
           <% var product = products[idxP]; %>
           <div class="col-md-6">
             <div class="product-card card d-flex flex-column mb-2">
-              <img class="card-img-top js-product-info-btn" src="<%=product.full_photo%>" alt="<%=product.name%>"
+              <div class="card-img">
+                <img class="card-img-top js-product-info-btn" src="<%=product.full_photo%>" alt="<%=product.name%>"
                     data-product="<%=product.code%>">
+              </div>
               <div class="card-body">
                 <h5 class="card-title text-center"><%=product.short_description%></h5>
                 <p class="card-text text-center text-muted"><%=product.name%></p>
@@ -85,7 +87,7 @@
                   <% } else { %>
                     <div class="card-info-container">
                        <div class="card-info">
-                          <span class="badge badge-dark"><?php echo _x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
+                          <span class="badge badge-light"><?php echo _x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
                        </div>  
                     </div>
                   <% } %>
