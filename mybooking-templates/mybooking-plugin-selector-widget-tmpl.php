@@ -17,6 +17,15 @@
 	<% if (!configuration.pickupReturnPlace && !configuration.timeToFrom) { %>
 
 	<div class="flex-form-group-wrapper inline-form">
+
+		  <% if (not_hidden_family_id && configuration.selectFamily) { %>
+		    <div class="flex-form-group widget_family" style="display: none">
+		      <label for="family_id"><?php echo _x( 'Family', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+		      <div class="flex-form-horizontal-item">
+		      	<select name="family_id" id="widget_family_id" class="form-control"></select>
+	  	    </div>
+		    </div>
+	    <% } %>
 	    
 	    <div class="flex-form-group">
 	      <label for="date_from"><?php echo _x( 'Pick-up date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
@@ -100,6 +109,15 @@
 		  </div>
 
 		</div>
+
+	  <% if (not_hidden_family_id && configuration.selectFamily) { %>
+	    <div class="flex-form-horizontal-box widget_family" style="display: none">
+	      <label for="family_id"><?php echo _x( 'Family', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+	      <div class="flex-form-horizontal-item">
+	      	<select name="family_id" id="widget_family_id" class="form-control"></select>
+  	    </div>
+	    </div>
+    <% } %>
 
 		<% if (configuration.promotionCode) { %>
 			<div class="flex-form-horizontal-box">

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0]
+
+- Review for WordPress 5.5.1
+
+### Added
+- Renting module
+  - Select Product with only one product
+
 ## [0.5.25]
 
 ### Fixed

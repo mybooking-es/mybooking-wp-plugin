@@ -3,7 +3,7 @@ Contributors: juanmiqueo
 Donate link: https://mybooking.es/
 Tags: reservation engine
 Requires at least: 5.2
-Tested up to: 5.4
+Tested up to: 5.5.1
 Stable tag: trunk
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -58,6 +58,11 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 5. Renting checkout page
 
 == Changelog ==
+
+= 0.6.0 =
+* Review for WordPress 5.5.1
+* Renting module:
+  * Choose product -> Select only one product
 
 = 0.5.25 =
 * Renting module:
@@ -126,6 +131,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.6.0 =
+* Review for WordPress 5.5.1 + Renting module improvements
 
 = 0.5.25 =
 * Fix: Activities payment with only one payment method and countries selector

@@ -59,6 +59,15 @@
    
 </div>
 
+<% if (not_hidden_family_id && configuration.selectFamily) { %>
+    <div class="flex-form-horizontal-box family" style="display: none">
+      <label for="family_id"><?php echo _x( 'Family', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+      <div class="flex-form-horizontal-item">
+      	<select name="family_id" id="family_id" class="form-control"></select>
+	    </div>
+    </div>
+<% } %>
+
 <div class="flex-form-horizontal-box">
   <input class="btn btn-success" type="submit" value="<?php echo _x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
 </div>

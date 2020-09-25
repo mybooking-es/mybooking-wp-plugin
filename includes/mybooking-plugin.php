@@ -507,7 +507,7 @@
       // Renting Form
       if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
            ( has_shortcode ( $content, 'mybooking_rent_engine_selector') ) ) {
-        mybooking_engine_get_template( 'mybooking-plugin-selector-widget-tmpl.php', $data);
+        mybooking_engine_get_template( 'mybooking-plugin-selector-widget-tmpl.php');
       }
 
       // Renting Selector Wizard shortcode / widget
