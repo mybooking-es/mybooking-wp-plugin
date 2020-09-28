@@ -16,18 +16,22 @@
 
     }
 
-
 		// == Settings Page
 
 		/**
 		 * Settings page : Create new settings page
 		 */
-		public function wp_settings_page() {
-		  add_options_page('Mybooking Plugin', // Page title
-		                   'Mybooking', // Menu option title 
-		                   'manage_options', // Capability
-		                   'mybooking-plugin-configuration', // Slug 
-		                   array($this, 'mybooking_plugin_settings_page')); // Callable 
+		public function wp_settings_page()
+    {
+		  add_menu_page(
+        'Mybooking Plugin', // Page title
+        'Mybooking', // Menu option title
+        'manage_options', // Capability
+        'mybooking-plugin-configuration', // Slug
+        array($this, 'mybooking_plugin_settings_page'),
+        get_template_directory_uri()."/images/mybooking-logo-bn.png",
+        4.1
+      ); // Callable
 		}
 
 		/**
@@ -36,9 +40,9 @@
 		 * setting_fields: Settings section id
 		 * setting_sections :Plugin menu slug
 		 *
-		 * <?php settings_fields('mybooking_plugin_settings_group'); ?> 
-		 * <?php do_settings_sections('mybooking-plugin-configuration'); ?>  
-		 * 
+		 * <?php settings_fields('mybooking_plugin_settings_group'); ?>
+		 * <?php do_settings_sections('mybooking-plugin-configuration'); ?>
+		 *
 		 * https://developer.wordpress.org/reference/functions/do_settings_fields/
 		 */
 		public function mybooking_plugin_settings_page() {
@@ -60,25 +64,26 @@
 	           $renting = $settings && array_key_exists('mybooking_plugin_settings_renting_selector', $settings) ? (trim(esc_attr( $settings["mybooking_plugin_settings_renting_selector"] )) == '1') : false;
 	           $activities = $settings && array_key_exists('mybooking_plugin_settings_activities_selector', $settings) ? (trim(esc_attr( $settings["mybooking_plugin_settings_activities_selector"] )) == '1') : false;
 	           $google_api_places = $settings && array_key_exists('mybooking_plugin_settings_google_api_places_selector', $settings) ? (trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_selector"] )) == '1') : false;
-	         ?>  
+	         ?>
 
 					<h2 class="nav-tab-wrapper">
 					    <a href="?page=mybooking-plugin-configuration&tab=connection_options" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">Connection</a>
 					    <a href="?page=mybooking-plugin-configuration&tab=configuration_options" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">Configuration</a>
 					    <?php if ($renting) { ?>
-					    <a href="?page=mybooking-plugin-configuration&tab=renting_options" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">Renting</a>
+					      <a href="?page=mybooking-plugin-configuration&tab=renting_options" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">Renting</a>
               <?php } ?>
-					    <?php if ($activities) { ?>              
-					    <a href="?page=mybooking-plugin-configuration&tab=activities_options" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">Activities or Appointments</a>
+					    <?php if ($activities) { ?>
+					      <a href="?page=mybooking-plugin-configuration&tab=activities_options" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">Activities or Appointments</a>
 					    <?php } ?>
 					    <?php if ($google_api_places) { ?>
-					    <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">Google Api Places</a>
+					      <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">Google Api Places</a>
 					    <?php } ?>
-					    <a href="?page=mybooking-plugin-configuration&tab=css_options" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">CSS</a>
+              <a href="?page=mybooking-plugin-configuration&tab=complements_options" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">Complements</a>
+					    <a href="?page=mybooking-plugin-configuration&tab=css_options" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">Advanced</a>
 					</h2>
 
 		      <form action="options.php" method="POST">
-               
+
 	            <?php
 
                $renting_wizard_info = <<<EOF
@@ -102,49 +107,55 @@ EOF;
                  </ol>
 EOF;
 
-	             if ($active_tab == 'connection_options') { 
-			      	   settings_fields('mybooking_plugin_settings_group_connection'); 
+	             if ($active_tab == 'connection_options') {
+			      	   settings_fields('mybooking_plugin_settings_group_connection');
 			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_connection'); 
+			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_connection');
 			           echo '</table>';
-			         }	     
+			         }
 			         else if ($active_tab == 'configuration_options') {
-			      	   settings_fields('mybooking_plugin_settings_group_configuration'); 
+			      	   settings_fields('mybooking_plugin_settings_group_configuration');
 			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_configuration'); 
+			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_configuration');
 			           echo '</table>';
-			         }  
+			         }
 			         else if ($active_tab == 'renting_options') {
 			         	 echo $renting_wizard_info;
-			      	   settings_fields('mybooking_plugin_settings_group_renting'); 
+			      	   settings_fields('mybooking_plugin_settings_group_renting');
 			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_renting'); 
+			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_renting');
 			           echo '</table>';
-			         }   			         
+			         }
 			         else if ($active_tab == 'activities_options') {
 			         	 echo $activity_info;
-			      	   settings_fields('mybooking_plugin_settings_group_activities'); 
+			      	   settings_fields('mybooking_plugin_settings_group_activities');
 			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_activities'); 
+			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_activities');
 			           echo '</table>';
-			         }  
+			         }
 			         else if ($active_tab == 'google_api_places_options') {
-			      	   settings_fields('mybooking_plugin_settings_group_google_api_places'); 
+			      	   settings_fields('mybooking_plugin_settings_group_google_api_places');
 			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_google_api_places'); 
+			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_google_api_places');
 			           echo '</table>';
-			         }  
+			         }
+               else if ($active_tab == 'complements_options') {
+			      	   settings_fields('mybooking_plugin_settings_group_complements');
+			           echo '<table class="form-table">';
+			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_complements');
+			           echo '</table>';
+			         }
 			         else if ($active_tab == 'css_options') {
-			      	   settings_fields('mybooking_plugin_settings_group_css'); 
+			      	   settings_fields('mybooking_plugin_settings_group_css');
 			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_css'); 
+			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_css');
 			           echo '</table>';
-			         }  			         
-			        submit_button(); 
+			         }
+			        submit_button();
 		        ?>
 		      </form>
 		  </div>
-		<?php 
+		<?php
 		}
 
     // == Settings Init
@@ -160,7 +171,7 @@ EOF;
      *   - renting
      *   - activities
 		 *
-		 */ 
+		 */
 		public function wp_settings_init() {
 
 		  // Register mybooking settings setting
@@ -180,13 +191,16 @@ EOF;
 		                   'mybooking_plugin_settings_google_places'); //
 
 		  register_setting('mybooking_plugin_settings_group_activities',
-		                   'mybooking_plugin_settings_activities');		  
+		                   'mybooking_plugin_settings_activities');
 
 		  register_setting('mybooking_plugin_settings_group_google_api_places',
-		                   'mybooking_plugin_settings_google_api_places');	
+		                   'mybooking_plugin_settings_google_api_places');
+
+      register_setting('mybooking_plugin_settings_group_complements',
+                 		   'mybooking_plugin_settings_complements');
 
 		  register_setting('mybooking_plugin_settings_group_css',
-		                   'mybooking_plugin_settings_css');		  
+		                   'mybooking_plugin_settings_css');
 
       // == Creates setting sections
 
@@ -218,6 +232,12 @@ EOF;
       // Creates a connection settings section "mybooking_plugin_settings_section_google_api_places"
 		  add_settings_section('mybooking_plugin_settings_section_google_api_places',
 		                       'Connection',
+		                       '',
+		                       'mybooking-plugin-configuration');
+
+      // Creates a complements setting section "mybooking_plugin_settings_section_complements"
+      add_settings_section('mybooking_plugin_settings_section_complements',
+		                       'Complements',
 		                       '',
 		                       'mybooking-plugin-configuration');
 
@@ -260,7 +280,7 @@ EOF;
 		                     'mybooking_plugin_settings_section_configuration');
 
       // == Creates renting wizard fields
-  
+
 		  add_settings_field('mybooking_plugin_settings_choose_products_page',
 		                     'Choose products page',
 		                     array($this, 'field_mybooking_plugin_settings_choose_products_page_callback'),
@@ -296,10 +316,9 @@ EOF;
 		                     'Selector in process',
 		                     array($this, 'field_mybooking_plugin_settings_selector_in_process_callback'),
 		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');		  
+		                     'mybooking_plugin_settings_section_renting');
 
 		  // Product detail pages (calendar)
-
 		  add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
 		  									'<em>Use product detail pages</em>',
 		  									array($this, 'field_mybooking_plugin_settings_use_product_detail_pages_callback'),
@@ -313,7 +332,6 @@ EOF;
 		                     'mybooking_plugin_settings_section_renting');
 
       // == Creates activities section fields
-
 		  add_settings_field('mybooking_plugin_settings_activities_shopping_cart_page',
 		                     'Checkout page',
 		                     array($this, 'field_mybooking_plugin_settings_activities_shopping_cart_page_callback'),
@@ -333,7 +351,6 @@ EOF;
 		                     'mybooking_plugin_settings_section_activities');
 
 		  // Activity detail pages
-
 		  add_settings_field('mybooking_plugin_settings_use_activities_detail_pages',
 		  									'<em>Use detail pages</em>',
 		  									array($this, 'field_mybooking_plugin_settings_use_activities_detail_pages_callback'),
@@ -347,7 +364,6 @@ EOF;
 		                     'mybooking_plugin_settings_section_activities');
 
       // == Creates google api places fields
-
 		  add_settings_field('mybooking_plugin_settings_google_api_places_api_key',
 		                     'Api Key',
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_api_key_callback'),
@@ -390,8 +406,20 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_google_api_places');
 
-		  // == Create css section fields
+      // == Create Complements section Fields
+      add_settings_field('mybooking_plugin_promo_popup_active',
+		                     'Activate promotion pop-up',
+		                     array($this, 'field_mybooking_plugin_promo_popup_active_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_complements');
 
+      add_settings_field('mybooking_plugin_global_vehicle_active',
+		                     'Activate vehicles module',
+		                     array($this, 'field_mybooking_theme_global_vehicle_active_callback'),
+                         'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_complements');
+
+		  // == Create css section fields
 		  add_settings_field('mybooking_plugin_settings_components_custom_loader',
 		                     'Use custom loader',
 		                     array($this, 'field_mybooking_plugin_settings_components_custom_loader_callback'),
@@ -403,7 +431,6 @@ EOF;
 		                     array($this, 'field_mybooking_plugin_settings_components_css_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
-
 
 		  add_settings_field('mybooking_plugin_settings_custom_css',
 		                     'Include CSS/JS Framework',
@@ -438,7 +465,7 @@ EOF;
 		 * Render Mybooking Account Id
 		 */
 		public function field_mybooking_plugin_settings_account_id_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  $field = "mybooking_plugin_settings_account_id";
 		  if (array_key_exists($field, $settings)) {
@@ -447,18 +474,18 @@ EOF;
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">If you have a <b>mybooking subdomain</b> like <em>mycompany.mybookig.es</em>, input the subdomain name, <u>mycompany</u>."; 
+		  echo "<p class=\"description\">If you have a <b>mybooking subdomain</b> like <em>mycompany.mybookig.es</em>, input the subdomain name, <u>mycompany</u>.";
 		  echo "<p class=\"description\">If your account is in other platform, like karyasala.com, just write the full domain, <em>https://karyasala.com</em>.</p>";
 
 		}
 
 		/**
-		 * Render Mybooking API Key 
+		 * Render Mybooking API Key
 		 */
 		public function field_mybooking_plugin_settings_api_key_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_connection");
 		  $field = "mybooking_plugin_settings_api_key";
 		  if (array_key_exists($field, $settings)) {
@@ -467,7 +494,7 @@ EOF;
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
 		}
 
@@ -477,7 +504,7 @@ EOF;
 		 * Render Mybooking Renting module
 		 */
 		public function field_mybooking_plugin_settings_renting_selector_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
 		  $field = "mybooking_plugin_settings_renting_selector";
 		  if (array_key_exists($field, $settings)) {
@@ -485,8 +512,8 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
@@ -496,7 +523,7 @@ EOF;
 		 * Render Mybooking Activities module
 		 */
 		public function field_mybooking_plugin_settings_activities_selector_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
 		  $field = "mybooking_plugin_settings_activities_selector";
 		  if (array_key_exists($field, $settings)) {
@@ -504,8 +531,8 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
@@ -515,7 +542,7 @@ EOF;
 		 * Render Mybooking Google Places API module
 		 */
 		public function field_mybooking_plugin_settings_google_api_places_selector_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
 		  $field = "mybooking_plugin_settings_google_api_places_selector";
 		  if (array_key_exists($field, $settings)) {
@@ -523,14 +550,14 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
 		}
 
-    // == Renting 
+    // == Renting
 
 		/**
 		 * Render Mybooking Renting/Accommodation Choose products page
@@ -538,7 +565,7 @@ EOF;
 		public function field_mybooking_plugin_settings_choose_products_page_callback() {
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_choose_products_page");
-		  echo "<p class=\"description\">This page is shown after the <u>reservation selector submit</u>."; 
+		  echo "<p class=\"description\">This page is shown after the <u>reservation selector submit</u>.";
 		  echo "<p class=\"description\">It shows <b>all</b> the <em>company products</em> and <u>availability</u> for the selected dates and allows the customer to pickup the product.</p>";
 		  echo "<p class=\"description\">This page is recommeded when the company offers a reduced set of categories, and holds an inventary of each one. For example, a <u>car rental company</u> or a <u>hotel</u>.</p>";
 		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://avis.com\" target=\"_blank\">avis.com</a>, <a href=\"https://www.hotelpalacebarcelona.com/\" target=\"_blank\">hotelpalacebarcelona.com</a></p>";
@@ -549,7 +576,7 @@ EOF;
 		 * Render Mybooking Renting/Accommodation Choose extras page
 		 */
 		public function field_mybooking_plugin_settings_choose_extras_page_callback() {
-		  
+
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_choose_extras_page");
 		  echo "<p class=\"description\">An <em>optional</em> step page that shows and allows to select the reservation extras.</p>";
 
@@ -559,7 +586,7 @@ EOF;
 		 * Render Mybooking Renting/Accommodation Checkout page
 		 */
 		public function field_mybooking_plugin_settings_checkout_page_callback() {
-		  
+
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_checkout_page");
 		  echo "<p class=\"description\">The complete reservation or checkout page. It shows the fill data form to finish the reservation process.</p>";
 
@@ -569,7 +596,7 @@ EOF;
 		 * Render Mybooking Renting/Accommodation Summary page
 		 */
 		public function field_mybooking_plugin_settings_summary_page_callback() {
-		  
+
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_summary_page");
 		  echo "<p class=\"description\">The summary page. It shows the reservation information and allows the customer to fill the contract information and to pay.</p>";
 
@@ -579,7 +606,7 @@ EOF;
 		 * Render Mybooking Renting/Accommodation Terms and conditions page
 		 */
 		public function field_mybooking_plugin_settings_terms_page_callback() {
-		  
+
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_terms_page");
 		  echo "<p class=\"description\">The terms and conditions page.</p>";
 
@@ -589,7 +616,7 @@ EOF;
 		 * Render Mybooking Selector in process
 		 */
 		public function field_mybooking_plugin_settings_selector_in_process_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_renting");
 		  $field = "mybooking_plugin_settings_selector_in_process";
 		  if (array_key_exists($field, $settings)) {
@@ -597,7 +624,7 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
+		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
 		  $select .= "<option value=''>[Choose selector]</option>";
@@ -606,14 +633,14 @@ EOF;
 		    $select .= "<option value='wizard' selected>Wizard</option>";
 		  }
 		  else {
-		    $select .= "<option value='wizard'>Wizard</option>"; 
+		    $select .= "<option value='wizard'>Wizard</option>";
 		  }
 
 			if ($value == 'form') {
 		    $select .= "<option value='form' selected>Form</option>";
 		  }
 		  else {
-		    $select .= "<option value='form'>Form</option>"; 
+		    $select .= "<option value='form'>Form</option>";
 		  }
 
 		  $select .= "</select>";
@@ -630,7 +657,7 @@ EOF;
 		 * Render Mybooking Use Products Detail page
 		 */
 		public function field_mybooking_plugin_settings_use_product_detail_pages_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_renting");
 		  $field = "mybooking_plugin_settings_use_product_detail_pages";
 		  if (array_key_exists($field, $settings)) {
@@ -638,14 +665,14 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_renting[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_renting[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Use product detail pages."; 
-		  echo "<p class=\"description\">Activate if you are fetching the products from the back-office using the <u>[mybooking_rent_engine_products]</u> shortcode.</p>"; 
+		  echo "<p class=\"description\">Use product detail pages.";
+		  echo "<p class=\"description\">Activate if you are fetching the products from the back-office using the <u>[mybooking_rent_engine_products]</u> shortcode.</p>";
 		  echo "<p class=\"description\">Do not activate if you are using the wizard process. That is, the <u>[mybooking_rent_engine_product_listing]</u> shortcode on your choose products page.</p>";
 
 
@@ -653,10 +680,10 @@ EOF;
 
 
 		/**
-		 * Render Mybooking Products URL 
+		 * Render Mybooking Products URL
 		 */
 		public function field_mybooking_plugin_settings_products_url_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_renting");
 		  $field = "mybooking_plugin_settings_products_url";
 		  if (array_key_exists($field, $settings)) {
@@ -666,8 +693,8 @@ EOF;
 		  	$value = 'products';
 		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_renting[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">This page shows a company product detail page. This page includes a calendar with its availability."; 
-		  echo "<p class=\"description\">This should be used with a <b>products navigation page</b> created with the [mybooking_rent_engine_products] shortcode."; 
+		  echo "<p class=\"description\">This page shows a company product detail page. This page includes a calendar with its availability.";
+		  echo "<p class=\"description\">This should be used with a <b>products navigation page</b> created with the [mybooking_rent_engine_products] shortcode.";
       echo "<p class=\"description\">Create the navigation page with a slug of <em>products</em> and then select <u>products</u> as the <em>product page url prefix</em>.";
 		  echo "<p class=\"description\">It creates a new URL route and access <em>mybooking</em> <b>API</b> to retrieve the data.</p>";
 		  echo "<p class=\"description\">This page is recommeded when the company offers a big quantity of products instead a reduced set of categories.</p>";
@@ -681,7 +708,7 @@ EOF;
 		 * Render Mybooking Activities Shopping cart page
 		 */
 		public function field_mybooking_plugin_settings_activities_shopping_cart_page_callback() {
-		  
+
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_shopping_cart_page");
 
 		}
@@ -690,7 +717,7 @@ EOF;
 		 * Render Mybooking Activities order/reservation page
 		 */
 		public function field_mybooking_plugin_settings_activities_summary_page_callback() {
-		  
+
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_summary_page");
 
 		}
@@ -699,7 +726,7 @@ EOF;
 		 * Render Mybooking Activities terms and conditions page
 		 */
 		public function field_mybooking_plugin_settings_activities_terms_page_callback() {
-		  
+
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_terms_page");
 
 		}
@@ -708,7 +735,7 @@ EOF;
 		 * Render Mybooking Use Activities Detail page
 		 */
 		public function field_mybooking_plugin_settings_use_activities_detail_pages_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_activities");
 		  $field = "mybooking_plugin_settings_use_activities_detail_pages";
 		  if (array_key_exists($field, $settings)) {
@@ -716,24 +743,24 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_activities[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_activities[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Use detail pages."; 
-		  echo "<p class=\"description\">Activate if you are fetching data from the back-office using the <u>[mybooking_activities_engine_activities]</u> shortcode.</p>"; 
+		  echo "<p class=\"description\">Use detail pages.";
+		  echo "<p class=\"description\">Activate if you are fetching data from the back-office using the <u>[mybooking_activities_engine_activities]</u> shortcode.</p>";
 		  echo "<p class=\"description\">Do not activate if you are using the <u>[mybooking_activities_engine_activity]</u> shortcode on your custom pages.</p>";
 
 
 		}
 
 		/**
-		 * Render Mybooking Activities URL 
+		 * Render Mybooking Activities URL
 		 */
 		public function field_mybooking_plugin_settings_activities_url_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_activities");
 		  $field = "mybooking_plugin_settings_activities_url";
 		  if (array_key_exists($field, $settings)) {
@@ -743,15 +770,14 @@ EOF;
 		  	$value = 'activities';
 		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_activities[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">This page shows a company product detail page. This page includes a calendar with its availability."; 
-		  echo "<p class=\"description\">This should be used with a <b>product navigation page</b> created with the [mybooking_rent_engine_activities] shortcode."; 
+		  echo "<p class=\"description\">This page shows a company product detail page. This page includes a calendar with its availability.";
+		  echo "<p class=\"description\">This should be used with a <b>product navigation page</b> created with the [mybooking_rent_engine_activities] shortcode.";
       echo "<p class=\"description\">Create the navigation page with a slug of <b>activities</b> and then select <u>activities</u> as the <em>activity page url prefix</em>.";
 		  echo "<p class=\"description\">It creates a new URL route and access <em>mybooking</em> <b>API</b> to retrieve the data.</p>";
 		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://getyourguide.com\" target=\"_blank\">getyourguide.com</a></p>";
 
 		}
 
-		
 
     // == Google API Places
 
@@ -759,7 +785,7 @@ EOF;
 		 * Render Mybooking Google Api Places Api Key
 		 */
 		public function field_mybooking_plugin_settings_google_api_places_api_key_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
 		  $field = "mybooking_plugin_settings_google_api_places_api_key";
 		  if (array_key_exists($field, $settings)) {
@@ -768,7 +794,7 @@ EOF;
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
 		}
 
@@ -776,7 +802,7 @@ EOF;
 		 * Render Mybooking Google Api Places Restrict Country Code
 		 */
 		public function field_mybooking_plugin_settings_google_api_places_restrict_country_code_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
 		  $field = "mybooking_plugin_settings_google_api_places_restrict_country_code";
 		  if (array_key_exists($field, $settings)) {
@@ -785,15 +811,15 @@ EOF;
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
-		}		
+		}
 
 		/**
 		 * Render Mybooking Custom CSS
 		 */
 		public function field_mybooking_plugin_settings_google_api_places_restrict_bounds_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
 		  $field = "mybooking_plugin_settings_google_api_places_restrict_bounds";
 		  if (array_key_exists($field, $settings)) {
@@ -801,8 +827,8 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_google_api_places[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_google_api_places[$field]' value='1' $checked class='regular-text' />";
@@ -812,7 +838,7 @@ EOF;
 		 * Render Mybooking Google Api Places Bounds SW lat
 		 */
 		public function field_mybooking_plugin_settings_google_api_places_bounds_sw_lat_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
 		  $field = "mybooking_plugin_settings_google_api_places_bounds_sw_lat";
 		  if (array_key_exists($field, $settings)) {
@@ -821,15 +847,15 @@ EOF;
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
-		}	
+		}
 
 		/**
 		 * Render Mybooking Google Api Places Bounds SW lat
 		 */
 		public function field_mybooking_plugin_settings_google_api_places_bounds_sw_lng_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
 		  $field = "mybooking_plugin_settings_google_api_places_bounds_sw_lng";
 		  if (array_key_exists($field, $settings)) {
@@ -838,15 +864,15 @@ EOF;
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
-		}	
+		}
 
 		/**
 		 * Render Mybooking Google Api Places Bounds NE lat
 		 */
 		public function field_mybooking_plugin_settings_google_api_places_bounds_ne_lat_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
 		  $field = "mybooking_plugin_settings_google_api_places_bounds_ne_lat";
 		  if (array_key_exists($field, $settings)) {
@@ -855,15 +881,15 @@ EOF;
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
-		}	
+		}
 
 		/**
 		 * Render Mybooking Google Api Places Bounds NE lat
 		 */
 		public function field_mybooking_plugin_settings_google_api_places_bounds_ne_lng_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
 		  $field = "mybooking_plugin_settings_google_api_places_bounds_ne_lng";
 		  if (array_key_exists($field, $settings)) {
@@ -872,9 +898,59 @@ EOF;
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
-		}	
+		}
+
+    // == Complements
+
+    /**
+     * Render promo pop-up
+     */
+    public function field_mybooking_plugin_promo_popup_active_callback() {
+
+ 			// $this->checkbox_field(
+      //   "mybooking_theme_settings_promo",
+      //   "promo_popup_active",
+ 			// 	_x( 'Activate <b>Promotion Pop-ups</b> Custom Post Type in order to create promotions.', 'theme_settings', 'mybooking')	);
+      $settings = (array) get_option("mybooking_plugin_settings_complements");
+		  $field = "mybooking_plugin_promo_popup_active";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+      $checked = ($value == '1') ? 'checked' : '';
+
+      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Activate <b>Promotion Pop-ups</b> Custom Post Type in order to create promotions.</p>";
+ 		}
+
+    /**
+     * Render vehicles complements
+     */
+    public function field_mybooking_theme_global_vehicle_active_callback() {
+
+      $settings = (array) get_option("mybooking_plugin_settings_complements");
+		  $field = "mybooking_plugin_global_vehicle_active";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+      $checked = ($value == '1') ? 'checked' : '';
+
+      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Activate <b>Vehicles</b> Custom Post Type in order to create Fleet Page and Offers.</p>";
+ 		}
 
     // == CSS
 
@@ -882,7 +958,7 @@ EOF;
 		 * Render Mybooking Custom loader
 		 */
 		public function field_mybooking_plugin_settings_components_custom_loader_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_css");
 		  $field = "mybooking_plugin_settings_components_custom_loader";
 		  if (array_key_exists($field, $settings)) {
@@ -890,13 +966,13 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Use <b>custom loader</b> to notify the user when connecting to the reservation engine.."; 
+		  echo "<p class=\"description\">Use <b>custom loader</b> to notify the user when connecting to the reservation engine...";
 		  echo "<p class=\"description\">Apply this option if you are using mybooking-wp-theme or a theme where you have defined your own loader.</p>";
 
 		}
@@ -905,7 +981,7 @@ EOF;
 		 * Render Mybooking Bootstrap Modal No conflict
 		 */
 		public function field_mybooking_plugin_settings_components_js_use_select2_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_css");
 		  $field = "mybooking_plugin_settings_components_js_use_select2";
 		  if (array_key_exists($field, $settings)) {
@@ -913,13 +989,13 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Use <b>select2</b> library on form selects."; 
+		  echo "<p class=\"description\">Use <b>select2</b> library on form selects.";
 
 		}
 
@@ -928,7 +1004,7 @@ EOF;
 		 * Render Mybooking Bootstrap Modal No conflict
 		 */
 		public function field_mybooking_plugin_settings_components_js_bs_modal_no_conflict_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_css");
 		  $field = "mybooking_plugin_settings_components_js_bs_modal_no_conflict";
 		  if (array_key_exists($field, $settings)) {
@@ -936,13 +1012,13 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Use <b>Bootstrap modal no conflict</b> if there is a conflict with Bootstrap modal."; 
+		  echo "<p class=\"description\">Use <b>Bootstrap modal no conflict</b> if there is a conflict with Bootstrap modal.";
 		  echo "<p class=\"description\">It will use $('#my_modal').bootstrapModal('show') instead of $('#my_modal').modal('show').</p>";
 		  echo "<p class=\"description\">It only applies if you are using the plugin custom CSS/JS Framework.</p>";
 
@@ -952,7 +1028,7 @@ EOF;
 		 * Render Mybooking Bootstrap Modal Backdrop
 		 */
 		public function field_mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_css");
 		  $field = "mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility";
 		  if (array_key_exists($field, $settings)) {
@@ -960,13 +1036,13 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Setup <b>Bootstrap modal backdrop compatibility</b> when showing a modal."; 
+		  echo "<p class=\"description\">Setup <b>Bootstrap modal backdrop compatibility</b> when showing a modal.";
 		  echo "<p class=\"description\">It helps to improve plugin compatibility with some themes when the modal is not shown on top.</p>";
 		  echo "<p class=\"description\">Use only if reservation process modal is show behind the backdrop and components are not clickable.</p>";
 
@@ -976,7 +1052,7 @@ EOF;
 		 * Render Mybooking CSS components
 		 */
 		public function field_mybooking_plugin_settings_components_css_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_css");
 		  $field = "mybooking_plugin_settings_components_css";
 		  if (array_key_exists($field, $settings)) {
@@ -984,8 +1060,8 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
@@ -1001,7 +1077,7 @@ EOF;
 		 * Render Mybooking CSS Framework
 		 */
 		public function field_mybooking_plugin_settings_custom_css_callback() {
-		  
+
 		  $settings = (array) get_option("mybooking_plugin_settings_css");
 		  $field = "mybooking_plugin_settings_custom_css";
 		  if (array_key_exists($field, $settings)) {
@@ -1009,13 +1085,13 @@ EOF;
 		  }
 		  else {
         $value = '';
-		  } 
-		  
+		  }
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Include <b>CSS Framework</b> to build the <u>UI</u> (default Bootstrap 4.4.1)."; 
+		  echo "<p class=\"description\">Include <b>CSS Framework</b> to build the <u>UI</u> (default Bootstrap 4.4.1).";
 		  echo "<p class=\"description\">It's recommended to include it you are not planning to override the plugin templates.</p>";
 		}
 
@@ -1027,16 +1103,16 @@ EOF;
 		  $pages = get_pages();
 		  foreach( $pages as $page ) {
 		    $my_pages[$page->ID] = $page->post_title; // $page->post_name
-		  }   
+		  }
 
 		  $settings = (array) get_option("mybooking_plugin_settings_renting");
-		  if (array_key_exists($field, $settings)) {		  
+		  if (array_key_exists($field, $settings)) {
 		    $value = esc_attr( $settings[$field] );
 		  }
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
 		  $select .= "<option value=''>[Choose page]</option>";
 		  foreach ($my_pages as $page => $title) {
@@ -1044,7 +1120,7 @@ EOF;
 		        $select .= "<option value='$page' selected>$title</option>";
 		     }
 		     else {
-		        $select .= "<option value='$page'>$title</option>"; 
+		        $select .= "<option value='$page'>$title</option>";
 		     }
 		  }
 		  $select .= "</select>";
@@ -1059,16 +1135,16 @@ EOF;
 		  $pages = get_pages();
 		  foreach( $pages as $page ) {
 		    $my_pages[$page->ID] = $page->post_title; // $page->post_name
-		  }   
+		  }
 
 		  $settings = (array) get_option("mybooking_plugin_settings_activities");
-		  if (array_key_exists($field, $settings)) {		  
+		  if (array_key_exists($field, $settings)) {
 		    $value = esc_attr( $settings[$field] );
 		  }
 		  else {
 		  	$value = '';
 		  }
-		  
+
 		  $select = "<select name='mybooking_plugin_settings_activities[$field]'>";
 		  $select .= "<option value=''>[Choose page]</option>";
 		  foreach ($my_pages as $page => $title) {
@@ -1076,7 +1152,7 @@ EOF;
 		        $select .= "<option value='$page' selected>$title</option>";
 		     }
 		     else {
-		        $select .= "<option value='$page'>$title</option>"; 
+		        $select .= "<option value='$page'>$title</option>";
 		     }
 		  }
 		  $select .= "</select>";

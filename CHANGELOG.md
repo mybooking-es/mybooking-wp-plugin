@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2]
+
+### Updated
+
+- Settings
+  - Plugin settings now are in a top level menu
+
 ## [0.6.1]
 
 ### Fixed
