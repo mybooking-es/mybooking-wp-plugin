@@ -3,7 +3,7 @@
   // == Registry
   require_once('registry/mybooking-plugin-registry.php');
 
-  // == Utilities 
+  // == Utilities
   // Templates (https://jeroensormani.com/how-to-add-template-files-in-your-plugin/)
   require_once('mybooking-plugin-templates.php');
   // Routes (https://github.com/Upstatement/routes)
@@ -16,18 +16,18 @@
   }
   // Check is page WMPL integration
   require_once('mybooking-plugin-is-page.php');
-  // Mybooking Api Client + UI  
+  // Mybooking Api Client + UI
   require_once('ui/mybooking-plugin-ui-pages.php');
   require_once('ui/mybooking-plugin-ui-pagination.php');
   require_once('api/mybooking-plugin-api-client.php');
-  require_once('ui/mybooking-plugin-activities-ui-pages.php');  
-  require_once('api/mybooking-plugin-activities-api-client.php');  
+  require_once('ui/mybooking-plugin-activities-ui-pages.php');
+  require_once('api/mybooking-plugin-activities-api-client.php');
 
   // == WordPress components
 
   // Widgets
   require_once('widgets/mybooking-plugin-rent-selector-widget.php');
-  require_once('widgets/mybooking-plugin-rent-selector-wizard-widget.php'); 
+  require_once('widgets/mybooking-plugin-rent-selector-wizard-widget.php');
   require_once('widgets/mybooking-plugin-activity-widget.php');
   require_once('widgets/mybooking-plugin-contact-widget.php');
   // Settings
@@ -38,8 +38,8 @@
    * MyBooking WordPress Plugin
    * =======================================================================
    *
-   * Mybooking Engine for WordPress. 
-   * 
+   * Mybooking Engine for WordPress.
+   *
    * It extends WordPress to create a reservation website using mybooking.es
    *
    * What is does?
@@ -54,7 +54,7 @@
    *
    * How it works?
    * =======================================================================
-   * 
+   *
    * It adds some widgets and shortcodes to integrate the reservation engine
    *
    * 1. Widgets
@@ -124,7 +124,7 @@
 
     // Hold the class instance.
     private static $instance = null;
-    
+
     // The constructor is private
     // to prevent initiation with outer code.
     private function __construct()
@@ -136,7 +136,7 @@
         // Prepare the plugin settings page
         $settings = new MyBookingPluginSettings();
     }
-   
+
     // The object is created from within the class itself
     // only if the class has no instance.
     public static function getInstance()
@@ -145,9 +145,9 @@
       {
         self::$instance = new MyBookingPlugin();
       }
-   
+
       return self::$instance;
-    }   
+    }
 
     // ------------ WordPress plugin init -------------
 
@@ -163,8 +163,14 @@
      */
     private function wp_init() {
 
+      // Get the registry information
+      $registry = Mybooking_Registry::getInstance();
+
       // Initialize the custom routes for activities and products
-      add_action( 'init', array( $this, 'init_routes') );     
+      add_action( 'init', array( $this, 'init_routes') );
+
+      // Register custom post types
+      add_action( 'init', array($this, 'create_custom_post_types' ));
 
       // Load translations
       add_action( 'plugins_loaded', array($this, 'wp_load_plugin_textdomain') );
@@ -179,6 +185,9 @@
 
       // Add micro templates
       add_action( 'wp_footer', array($this, 'wp_include_micro_templates'));
+
+      // Add Pop up
+      add_action( 'wp_footer', array($this, 'wp_include_popup') );
 
       // Enqueue JS
       add_action( 'wp_enqueue_scripts', array($this, 'wp_enqueue_js'));
@@ -231,24 +240,31 @@
       add_shortcode('mybooking_activities_engine_search', array($this, 'wp_activities_search_shortcode') );
 
       // Shortcode Activities - Activities
-      add_shortcode('mybooking_activities_engine_activities', array($this, 'wp_activities_activities_shortcode' )); 
+      add_shortcode('mybooking_activities_engine_activities', array($this, 'wp_activities_activities_shortcode' ));
 
       // Shortcode Activities - Activity
-      add_shortcode('mybooking_activities_engine_activity', array($this, 'wp_activities_activity_shortcode' )); 
+      add_shortcode('mybooking_activities_engine_activity', array($this, 'wp_activities_activity_shortcode' ));
 
       // Shortcode Activities - Shopping Cart
-      add_shortcode('mybooking_activities_engine_shopping_cart', array($this, 'wp_activities_shopping_cart_shortcode' )); 
+      add_shortcode('mybooking_activities_engine_shopping_cart', array($this, 'wp_activities_shopping_cart_shortcode' ));
 
       // Shortcode Activities - Summary
       add_shortcode('mybooking_activities_engine_summary', array($this, 'wp_activities_summary_shortcode'));
 
       // Shortcode Activities - Order
-      add_shortcode('mybooking_activities_engine_order', array($this, 'wp_activities_order_shortcode' ));       
+      add_shortcode('mybooking_activities_engine_order', array($this, 'wp_activities_order_shortcode' ));
 
-      // -- Contact shortcode 
+      // -- Contact shortcode
 
       // Shortcode Contact Form
       add_shortcode('mybooking_contact', array($this, 'wp_contact_shortcode' ));
+
+      // -- Complements shortcodes
+
+      // Shortcode testimonials
+      if ( $registry->mybooking_plugin_settings_complements_testimonials == '1' ) {
+        add_shortcode('mybooking_testimonials', array($this, 'wp_testimonials_shortcode' ));
+      }
     }
 
     /**
@@ -256,12 +272,12 @@
      */
     function wp_load_plugin_textdomain() {
 
-       // This module is located in includes and the languages is in the 
+       // This module is located in includes and the languages is in the
        // root directory of the plugin : 'mybooking-wp-plugin/languages/'
 
        $languages_folder = dirname(plugin_basename(__DIR__)).'/languages';
        load_plugin_textdomain( 'mybooking-wp-plugin', FALSE, $languages_folder );
-  
+
     }
 
     /**
@@ -282,11 +298,11 @@
         // Load JQUERY Date Range
         wp_enqueue_style( 'mybooking_wp_css_components_jquery_date_range',
                           plugins_url('/assets/styles/daterangepicker-0.20.0.min.css', dirname( __FILE__ ) ) );
-        // Load select2 
+        // Load select2
         wp_enqueue_style( 'mybooking_wp_css_components_select2',
                           plugins_url('/assets/styles/select2-4.0.1.css', dirname( __FILE__ ) ) );
         wp_enqueue_style( 'mybooking_wp_css_components_select2_bootstrap',
-                          plugins_url('/assets/styles/select2-bootstrap.css', dirname( __FILE__ ) ) );        
+                          plugins_url('/assets/styles/select2-bootstrap.css', dirname( __FILE__ ) ) );
         // Custom style
         wp_enqueue_style('mybooking_wp_css_components_custom_style',
                          plugins_url('/assets/styles/custom-styles.css', dirname( __FILE__ ) ),
@@ -318,23 +334,37 @@
       $registry = Mybooking_Registry::getInstance();
 
       // Registers the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
-      wp_register_script('mybooking-rent-engine-script', 
-                         plugins_url( '/assets/js/mybooking-js-engine-bundle.js', dirname(__FILE__) ), 
+      wp_register_script('mybooking-rent-engine-script',
+                         plugins_url( '/assets/js/mybooking-js-engine-bundle.js', dirname(__FILE__) ),
                          array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker' ), $version, true);
       wp_enqueue_script( 'mybooking-rent-engine-script');
 
       if ($registry->mybooking_rent_plugin_custom_css) {
         // Load bootstrap JS
-        wp_register_script('mybooking_wp_js_framework_bootstrap', 
-                           plugins_url( '/assets/js/bootstrap.bundle-4.4.1.min.js', dirname(__FILE__) ),  
+        wp_register_script('mybooking_wp_js_framework_bootstrap',
+                           plugins_url( '/assets/js/bootstrap.bundle-4.4.1.min.js', dirname(__FILE__) ),
                            array( 'jquery' ), $version, true);
         wp_enqueue_script('mybooking_wp_js_framework_bootstrap');
-        // Bootstrap and Jquery modal compatibility 
+        // Bootstrap and Jquery modal compatibility
         if ($registry->mybooking_plugin_js_bs_modal_no_conflict) {
-          wp_register_script('mybooking_wp_js_app', 
-                             plugins_url( '/assets/js/noConflict.js', dirname(__FILE__) ),  
+          wp_register_script('mybooking_wp_js_app',
+                             plugins_url( '/assets/js/noConflict.js', dirname(__FILE__) ),
                              array( 'jquery', 'mybooking_wp_js_framework_bootstrap' ), $version, true);
           wp_enqueue_script('mybooking_wp_js_app');
+        }
+        // Testimonials
+        // TODO Load only if shortcode mybooking_testimonials is on page
+        if ($registry->mybooking_plugin_settings_complements_testimonials == '1') {
+          // Slick JS
+          wp_register_script('mybooking_wp_js_slick',
+                             plugins_url( '/assets/js/slick.min.js', dirname(__FILE__) ),
+                             array( 'jquery' ), $version, true);
+          wp_enqueue_script('mybooking_wp_js_slick');
+          // Testimonials JS
+          wp_register_script('mybooking_wp_js_testimonials',
+                             plugins_url( '/assets/js/testimonials.js', dirname(__FILE__) ),
+                             array( 'jquery', 'mybooking_wp_js_slick' ), $version, true);
+          wp_enqueue_script('mybooking_wp_js_testimonials');
         }
       }
 
@@ -355,33 +385,33 @@
           if ( empty($content) ) {
             $content = '';
           }
-          $content = $content.$this->get_current_page()->post_excerpt;  
-        }       
+          $content = $content.$this->get_current_page()->post_excerpt;
+        }
       }
 
       $registry = Mybooking_Registry::getInstance();
 
       // == Contact
 
-      if ( is_active_widget( false, false, 'mybooking_engine_contact_widget', false ) || 
+      if ( is_active_widget( false, false, 'mybooking_engine_contact_widget', false ) ||
            has_shortcode( $content, 'mybooking_contact' )) {
         $classes[] = 'mybooking-contact-widget';
       }
 
       // == Renting
 
-      // Selector widget or shortcode 
+      // Selector widget or shortcode
       if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
            has_shortcode( $content , 'mybooking_rent_engine_selector') ) {
         $classes[] = 'mybooking-selector-widget';
-      }   
+      }
 
       // Selector Wizard widget or shortcode
       if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
            ( has_shortcode( $content , 'mybooking_rent_engine_selector_wizard') ) ) {
         $classes[] = 'mybooking-selector-wizard';
-      }   
-      
+      }
+
       // Renting reservation steps pages
       if ( $registry->mybooking_rent_plugin_choose_products_page != '' && mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
         $classes[] = 'choose_product';
@@ -396,7 +426,7 @@
       // Renting shortcode : reservation
       if ( has_shortcode( $content, 'mybooking_rent_engine_reservation') ) {
         $classes[] = 'reservation';
-      } 
+      }
 
       // Renting shortcode : product (resource) [availability and selector]
       if ( has_shortcode( $content , 'mybooking_rent_engine_product') ) {
@@ -405,12 +435,12 @@
 
       // == Activities
 
-      // Activities reservation steps pages 
-      if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && 
+      // Activities reservation steps pages
+      if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' &&
            mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
         $classes[] = 'mybooking-activity-shopping-cart';
       }
-      else if ( $registry->mybooking_activities_plugin_summary_page != '' && 
+      else if ( $registry->mybooking_activities_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_activities_plugin_summary_page ) ) {
         $classes[] = 'mybooking-activity-summary';
       }
@@ -418,7 +448,7 @@
       // Activities shortcodes : Activity
       if ( has_shortcode( $content, 'mybooking_activities_engine_search') ) {
         $classes[] = 'mybooking-activity-search';
-      }     
+      }
 
       // Activities shortcodes : Activity
       if ( has_shortcode( $content, 'mybooking_activities_engine_activity') ) {
@@ -449,10 +479,10 @@
      * Include micro templates
      * -----------------------
      * Microtemplates are responsible of rendering parts of the reservation engine.
-     * This method includes the current page necessary micro-templates on the footer 
+     * This method includes the current page necessary micro-templates on the footer
      */
     public function wp_include_micro_templates() {
-      
+
       $registry = Mybooking_Registry::getInstance();
 
       // Include the initializer plugin
@@ -489,7 +519,7 @@
           'mybooking_js_bs_modal_backdrop_compatibility' => $registry->mybooking_plugin_js_bs_modal_backdrop_compatibility
       );
       mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
-    
+
       // The the current page content
       $current_page = $this->get_current_page();
       $content = '';
@@ -499,9 +529,9 @@
         if ( property_exists($current_page, 'post_excerpt')) {
           if ( empty($content) ) {
             $content = '';
-          }         
-          $content = $content.$this->get_current_page()->post_excerpt;  
-        }         
+          }
+          $content = $content.$this->get_current_page()->post_excerpt;
+        }
       }
 
       // Renting Form
@@ -514,10 +544,10 @@
       if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
            ( has_shortcode( $content , 'mybooking_rent_engine_selector_wizard') ) ) {
         mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
-      }   
+      }
 
       // Load scripts
-      if ( $registry->mybooking_rent_plugin_choose_products_page != '' && 
+      if ( $registry->mybooking_rent_plugin_choose_products_page != '' &&
            mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
         mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php');
         // If selector in process Wizard, load the micro-templates for the process
@@ -528,7 +558,7 @@
           mybooking_engine_get_template('mybooking-plugin-modify-reservation-tmpl.php');
         }
       }
-      else if ( $registry->mybooking_rent_plugin_checkout_page != '' && 
+      else if ( $registry->mybooking_rent_plugin_checkout_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
         // Terms and conditions
         $data = array();
@@ -539,20 +569,20 @@
           $data['terms_and_conditions'] = get_site_url().'/'.$registry->mybooking_rent_plugin_terms_page;
         }
         mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php', $data);
-        //mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php');      
+        //mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php');
         // If selector in process Wizard, load the micro-templates for the process
         if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
           mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
         }
         else {
           mybooking_engine_get_template('mybooking-plugin-modify-reservation-tmpl.php');
-        }       
+        }
       }
-      else if ( $registry->mybooking_rent_plugin_summary_page != '' && 
+      else if ( $registry->mybooking_rent_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
         mybooking_engine_get_template('mybooking-plugin-summary-tmpl.php');
-      } 
-      else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' && 
+      }
+      else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
         // Terms and conditions
         $data = array();
@@ -564,7 +594,7 @@
         }
         mybooking_engine_get_template('mybooking-plugin-activities-shopping-cart-tmpl.php', $data);
       }
-      else if ( $registry->mybooking_activities_plugin_summary_page != '' && 
+      else if ( $registry->mybooking_activities_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_activities_plugin_summary_page ) ) {
         mybooking_engine_get_template('mybooking-plugin-activities-summary-tmpl.php');
       }
@@ -572,23 +602,23 @@
       // Renting shortcode : My reservation - reservation
       if ( has_shortcode( $content, 'mybooking_rent_engine_reservation') ) {
         mybooking_engine_get_template('mybooking-plugin-reservation-tmpl.php');
-      } 
+      }
 
       // Activities search shortcode
       if ( has_shortcode( $content, 'mybooking_activities_engine_search') ) {
         $data = $this->wp_activities_extract_query_string();
         mybooking_engine_get_template('mybooking-plugin-activities-search-tmpl.php', $data);
-      }         
+      }
 
-      // Activities shortcode : My reservation - activities 
+      // Activities shortcode : My reservation - activities
       if ( has_shortcode( $content, 'mybooking_activities_engine_order') ) {
         mybooking_engine_get_template('mybooking-plugin-activities-order-tmpl.php');
-      }       
+      }
 
       // Renting shortcode : Product calendar
       if ( has_shortcode( $content, 'mybooking_rent_engine_product') ) {
         mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
-      } 
+      }
 
       // Product page : reservation widget
       $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
@@ -602,13 +632,27 @@
         mybooking_engine_get_template('mybooking-plugin-activity-widget-tmpl.php');
       }
 
+    }
+
+    /**
+     * Include popup
+     * -----------------------
+     * This method includes the current page necessary micro-templates on the footer
+     */
+    public function wp_include_popup() {
+
+      $registry = Mybooking_Registry::getInstance();
+      // Popup
+      if ( $registry->mybooking_rent_plugin_complements_popup == '1' && is_front_page() ) {
+        mybooking_engine_get_template('mybooking-plugin-promotions-popup.php');
+      }
 
     }
 
     // == Widgets
 
     /**
-     * Register selector Widget 
+     * Register selector Widget
      */
     public function wp_selector_widget() {
 
@@ -617,7 +661,7 @@
     }
 
     /**
-     * Register selector wizard Widget 
+     * Register selector wizard Widget
      */
     public function wp_selector_wizard_widget() {
 
@@ -646,15 +690,15 @@
     // == Shortcodes
     // @see https://konstantin.blog/2013/get_template_part-within-shortcodes/
 
-    // -- Renting 
+    // -- Renting
 
     /**
      * Wizard selector shortcode
      */
     public function wp_rent_selector_shortcode($atts = [], $content = null, $tag = '') {
-      
-      // Extract the shortcode attributes     
-      extract( shortcode_atts( array('sales_channel_code' => '', 
+
+      // Extract the shortcode attributes
+      extract( shortcode_atts( array('sales_channel_code' => '',
                                      'family_id' => '' ), $atts ) );
 
       $data = array();
@@ -670,16 +714,16 @@
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-selector-widget.php', $data);
       return ob_get_clean();
-  
+
     }
 
     /**
      * Wizard selector wizard shortcode
      */
     public function wp_rent_selector_wizard_shortcode($atts = [], $content = null, $tag = '') {
-      
-      // Extract the shortcode attributes     
-      extract( shortcode_atts( array('sales_channel_code' => '', 
+
+      // Extract the shortcode attributes
+      extract( shortcode_atts( array('sales_channel_code' => '',
                                      'family_id' => ''), $atts ) );
 
       $data = array();
@@ -695,14 +739,14 @@
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget.php', $data);
       return ob_get_clean();
-  
+
     }
 
     /**
      * Mybooking rent engine Product Listing shortcode
      */
     public function wp_product_listing_shortcode($atts = [], $content = null, $tag = '') {
-      
+
       // Get the selector to apply in choose product
       $registry = Mybooking_Registry::getInstance();
       $data = array();
@@ -711,14 +755,14 @@
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-choose-product.php', $data);
       return ob_get_clean();
-  
+
     }
 
     /**
      * Mybooking rent engine Complete shortcode
      */
     public function wp_complete_shortcode($atts = [], $content = null, $tag = '') {
-      
+
       // Get the selector to apply in complete
       $registry = Mybooking_Registry::getInstance();
       $data = array();
@@ -734,7 +778,7 @@
      * Mybooking rent engine Complete shortcode
      */
     public function wp_summary_shortcode($atts = [], $content = null, $tag = '') {
-      
+
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-summary.php');
       return ob_get_clean();
@@ -745,7 +789,7 @@
      * Mybooking rent engine Complete shortcode
      */
     public function wp_reservation_shortcode($atts = [], $content = null, $tag = '') {
-      
+
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-reservation.php');
       return ob_get_clean();
@@ -757,7 +801,7 @@
      */
     public function wp_rent_product_shortcode($atts = [], $content = null, $tag = '') {
 
-      // Extract the shortcode attributes     
+      // Extract the shortcode attributes
       extract( shortcode_atts( array('code' => '',
                                      'sales_channel_code' => ''), $atts ) );
 
@@ -812,8 +856,8 @@
 
       // Pagination
       $total_pages = ceil($data->total / $limit);
-      $current_page = floor($data->offset / $limit) + 1; 
-      $pagination = new MyBookingUIPagination();          
+      $current_page = floor($data->offset / $limit) + 1;
+      $pagination = new MyBookingUIPagination();
       $pages = $pagination->pages($total_pages, $current_page);
 
       $data = array('data' => $data,
@@ -879,8 +923,8 @@
       // Pagination
       $total = $data->total;
       $total_pages = ceil($data->total / $limit);
-      $current_page = floor($data->offset / $limit) + 1; 
-      $pagination = new MyBookingUIPagination();          
+      $current_page = floor($data->offset / $limit) + 1;
+      $pagination = new MyBookingUIPagination();
       $pages = $pagination->pages($total_pages, $current_page);
       $querystring = $this->wp_activities_build_query_string();
       if ( !empty($querystring) ) {
@@ -912,7 +956,7 @@
      */
     public function wp_activities_activity_shortcode($atts = [], $content = null, $tag = '') {
 
-      // Extract the shortcode attributes     
+      // Extract the shortcode attributes
       extract( shortcode_atts( array('activity_id' => '' ), $atts ) );
 
       // If the shortcode attributes include activity_id and it is not null load the data
@@ -925,8 +969,8 @@
         mybooking_engine_get_template('mybooking-plugin-activities-activity-widget.php', $data);
         return ob_get_clean();
       }
-  
-    }    
+
+    }
 
     /**
      * Mybooking activities engine Shopping Cart shortcode
@@ -948,7 +992,7 @@
       mybooking_engine_get_template('mybooking-plugin-activities-summary.php');
       return ob_get_clean();
 
-    }    
+    }
 
     /**
      * Mybooking activities engine Order shortcode
@@ -962,12 +1006,23 @@
     }
 
     /**
-     * Mybooking activities engine Order shortcode
+     * Mybooking Contact shortcode
      */
     public function wp_contact_shortcode($atts = [], $content = null, $tag = '') {
 
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-contact-widget.php');
+      return ob_get_clean();
+
+    }
+
+    /**
+     * Mybooking Testimonials shortcode
+     */
+    public function wp_testimonials_shortcode($atts = [], $content = null, $tag = '') {
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-testimonials.php');
       return ob_get_clean();
 
     }
@@ -1038,6 +1093,7 @@
      * - mybooking_plugin_settings_renting
      * - mybooking_plugin_settings_activities
      * - mybooking_plugin_settings_google_api_places
+     * - mybooking_plugin_settings_complements
      * - mybooking_plugin_settings_css
      *
      */
@@ -1049,7 +1105,7 @@
       $settings = (array) get_option("mybooking_plugin_settings_connection");
       if ($settings && array_key_exists('mybooking_plugin_settings_account_id', $settings)) {
         $registry->mybooking_rent_plugin_account_id = trim(esc_attr( $settings["mybooking_plugin_settings_account_id"] ));
-        if (filter_var($registry->mybooking_rent_plugin_account_id, FILTER_VALIDATE_URL)) { 
+        if (filter_var($registry->mybooking_rent_plugin_account_id, FILTER_VALIDATE_URL)) {
           $registry->mybooking_rent_plugin_api_url_prefix = $registry->mybooking_rent_plugin_account_id;
         }
         else {
@@ -1058,17 +1114,17 @@
       }
       else {
         $registry->mybooking_rent_plugin_account_id = '';
-        $registry->mybooking_rent_plugin_api_url_prefix = '';       
+        $registry->mybooking_rent_plugin_api_url_prefix = '';
       }
       if ($settings && array_key_exists('mybooking_plugin_settings_api_key', $settings)) {
         $registry->mybooking_rent_plugin_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_api_key"] ));
       }
       else {
-        $registry->mybooking_rent_plugin_api_key = '';        
+        $registry->mybooking_rent_plugin_api_key = '';
       }
 
       // Configuration
-      $settings = (array) get_option("mybooking_plugin_settings_configuration");    
+      $settings = (array) get_option("mybooking_plugin_settings_configuration");
       if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_selector', $settings)) {
         $registry->mybooking_plugin_google_api_places = (trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_selector"] )) == '1');
       }
@@ -1082,21 +1138,21 @@
         $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
       }
       else {
-        $registry->mybooking_rent_plugin_choose_products_page = ''; 
+        $registry->mybooking_rent_plugin_choose_products_page = '';
       }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_choose_products_page', $settings)) {
         $registry->mybooking_rent_plugin_choose_products_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_products_page"] )));
       }
       else {
-        $registry->mybooking_rent_plugin_choose_products_page = ''; 
+        $registry->mybooking_rent_plugin_choose_products_page = '';
       }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_choose_extras_page', $settings)) {
         $registry->mybooking_rent_plugin_choose_extras_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_extras_page"] )));
       }
       else {
-        $registry->mybooking_rent_plugin_choose_extras_page = ''; 
+        $registry->mybooking_rent_plugin_choose_extras_page = '';
       }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_checkout_page', $settings)) {
@@ -1110,17 +1166,17 @@
         $registry->mybooking_rent_plugin_summary_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_summary_page"] )));
       }
       else {
-        $registry->mybooking_rent_plugin_summary_page = '';       
+        $registry->mybooking_rent_plugin_summary_page = '';
       }
- 
+
       if ($settings && array_key_exists('mybooking_plugin_settings_terms_page', $settings)) {
         $registry->mybooking_rent_plugin_terms_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_terms_page"] )));
       }
       else {
-        $registry->mybooking_rent_plugin_terms_page = '';       
+        $registry->mybooking_rent_plugin_terms_page = '';
       }
 
-      if ($settings && array_key_exists('mybooking_plugin_settings_selector_in_process', $settings)) { 
+      if ($settings && array_key_exists('mybooking_plugin_settings_selector_in_process', $settings)) {
         $registry->mybooking_rent_plugin_selector_in_process = $settings["mybooking_plugin_settings_selector_in_process"] ? $settings["mybooking_plugin_settings_selector_in_process"] : 'form';
       }
       else {
@@ -1132,9 +1188,9 @@
       }
       else {
         $registry->mybooking_rent_plugin_detail_pages = false;
-      } 
+      }
 
-      if ($settings && array_key_exists('mybooking_plugin_settings_products_url', $settings)) { 
+      if ($settings && array_key_exists('mybooking_plugin_settings_products_url', $settings)) {
         $registry->mybooking_rent_plugin_navigation_products_url = $settings["mybooking_plugin_settings_products_url"] ? $settings["mybooking_plugin_settings_products_url"] : 'products';
       }
       else {
@@ -1142,42 +1198,42 @@
       }
 
       // Activities
-      $settings = (array) get_option("mybooking_plugin_settings_activities"); 
+      $settings = (array) get_option("mybooking_plugin_settings_activities");
       if ($settings && array_key_exists('mybooking_plugin_settings_activities_shopping_cart_page', $settings)) {
         $registry->mybooking_activities_plugin_shopping_cart_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_shopping_cart_page"] )));
       }
       else {
-        $registry->mybooking_activities_plugin_shopping_cart_page = ''; 
+        $registry->mybooking_activities_plugin_shopping_cart_page = '';
       }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_activities_summary_page', $settings)) {
         $registry->mybooking_activities_plugin_summary_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_summary_page"] )));
       }
       else {
-        $registry->mybooking_activities_plugin_summary_page = ''; 
+        $registry->mybooking_activities_plugin_summary_page = '';
       }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_activities_terms_page', $settings)) {
         $registry->mybooking_activities_plugin_terms_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_activities_terms_page"] )));
       }
       else {
-        $registry->mybooking_activities_plugin_terms_page = ''; 
-      }      
+        $registry->mybooking_activities_plugin_terms_page = '';
+      }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_use_activities_detail_pages', $settings)) {
         $registry->mybooking_activities_plugin_detail_pages = (trim(esc_attr( $settings["mybooking_plugin_settings_use_activities_detail_pages"] )) == '1');
       }
       else {
         $registry->mybooking_activities_plugin_detail_pages = false;
-      } 
+      }
 
-      if ($settings && array_key_exists('mybooking_plugin_settings_activities_url', $settings)) { 
+      if ($settings && array_key_exists('mybooking_plugin_settings_activities_url', $settings)) {
         $registry->mybooking_rent_plugin_navigation_activities_url = $settings["mybooking_plugin_settings_activities_url"] ? $settings["mybooking_plugin_settings_activities_url"] : 'activities';
       }
       else {
         $registry->mybooking_rent_plugin_navigation_activities_url = 'activities';
       }
-      
+
       // Google Places API
       $settings = (array) get_option("mybooking_plugin_settings_google_api_places");
       if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_api_key', $settings)) {
@@ -1209,7 +1265,7 @@
       }
       else {
         $registry->mybooking_plugin_google_api_places_bounds_sw_lng = null;
-      }      
+      }
       if ($settings && array_key_exists('mybooking_plugin_settings_google_api_places_bounds_ne_lat', $settings)) {
         $registry->mybooking_plugin_google_api_places_bounds_ne_lat = trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_bounds_ne_lat"] ));
       }
@@ -1221,23 +1277,40 @@
       }
       else {
         $registry->mybooking_plugin_google_api_places_bounds_ne_lng = null;
-      }       
+      }
+      // == Complements
+      $settings = (array) get_option("mybooking_plugin_settings_complements");
+      // Popups
+      if ($settings && array_key_exists('mybooking_plugin_settings_complements_popup', $settings)) {
+        $registry->mybooking_rent_plugin_complements_popup = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_popup"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_complements_popup = '';
+      }
+      // Testimonials
+      if ($settings && array_key_exists('mybooking_plugin_settings_complements_testimonials', $settings)) {
+        $registry->mybooking_rent_plugin_complements_testimonials = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_testimonials"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_complements_testimonials = '';
+      }
+
       // == CSS
-      $settings = (array) get_option("mybooking_plugin_settings_css");   
+      $settings = (array) get_option("mybooking_plugin_settings_css");
       // Custom Loader
       if ($settings && array_key_exists('mybooking_plugin_settings_components_custom_loader', $settings)) {
         $registry->mybooking_rent_plugin_custom_loader = (trim(esc_attr( $settings["mybooking_plugin_settings_components_custom_loader"] )) == '1');
       }
       else {
         $registry->mybooking_rent_plugin_custom_loader = '';
-      }     
+      }
       // JS Select 2
       if ($settings && array_key_exists('mybooking_plugin_settings_components_js_use_select2', $settings)) {
         $registry->mybooking_plugin_js_select2 = (trim(esc_attr( $settings["mybooking_plugin_settings_components_js_use_select2"] )) == '1');
       }
       else {
         $registry->mybooking_plugin_js_select2 = '';
-      }      
+      }
       // JS BS Modal No Conflict
       if ($settings && array_key_exists('mybooking_plugin_settings_components_js_bs_modal_no_conflict', $settings)) {
         $registry->mybooking_plugin_js_bs_modal_no_conflict = (trim(esc_attr( $settings["mybooking_plugin_settings_components_js_bs_modal_no_conflict"] )) == '1');
@@ -1251,7 +1324,7 @@
       }
       else {
         $registry->mybooking_plugin_js_bs_modal_backdrop_compatibility = '';
-      } 
+      }
       // Components CSS
       if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {
         $registry->mybooking_rent_plugin_components_css = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css"] )) == '1');
@@ -1299,15 +1372,82 @@
     }
 
     /**
+     * Create custom post types
+     */
+    public function create_custom_post_types() {
+
+      // Get the registry information
+      $registry = Mybooking_Registry::getInstance();
+      if ($registry->mybooking_rent_plugin_complements_popup == '1') {
+        add_action( 'init', 'create_popup' );
+          register_post_type( 'popup',
+          array(
+            'labels' => array(
+              'name' => _x('Popup ads', 'popup_content', 'mybooking'),
+              'singular_name' => _x('Popup ad', 'popup_content', 'mybooking'),
+              'add_new' => _x('Add popup ad', 'popup_content', 'mybooking'),
+              'add_new_item' => _x('New popup ad', 'popup_content', 'mybooking'),
+              'edit' => _x('Edit', 'popup_content', 'mybooking'),
+              'edit_item' => _x('Edit popup ad', 'popup_content', 'mybooking'),
+              'new_item' => _x('New popup ad', 'popup_content', 'mybooking'),
+              'view' => _x('See', 'popup_content', 'mybooking'),
+              'view_item' => _x('See popup ad', 'popup_content', 'mybooking'),
+              'search_items' => _x('Search popup ad', 'popup_content', 'mybooking'),
+              'not_found' => _x('No popup ad found', 'popup_content', 'mybooking'),
+              'not_found_in_trash' => _x('No popup ad on bin', 'popup_content',  'mybooking'),
+              'parent' => _x('Parent popup ad','popup_content',  'mybooking')
+            ),
+            'show_ui' => true,
+            'public' => true,
+            'show_in_menu' => 'mybooking-plugin-configuration',
+            'show_in_rest' => true, // Gutenberg activation!
+            'supports' => array( 'title', 'editor', 'thumbnail' ),
+            'menu_icon' => 'dashicons-awards',
+            'has_archive' => true
+          )
+        );
+      }
+      if ($registry->mybooking_rent_plugin_complements_testimonials == '1') {
+        register_post_type( 'testimonial',
+          array(
+            'labels' => array(
+              'name' => _x('Testimonials', 'testimonial_content', 'mybooking'),
+              'singular_name' => _x('Testimonial', 'testimonial_content', 'mybooking'),
+              'add_new' => _x('Add testimonial', 'testimonial_content', 'mybooking'),
+              'add_new_item' => _x('New testimonial', 'testimonial_content', 'mybooking'),
+              'edit' => _x('Edit', 'testimonial_content', 'mybooking'),
+              'edit_item' => _x('Edit testimonial', 'testimonial_content', 'mybooking'),
+              'new_item' => _x('New testimonial', 'testimonial_content', 'mybooking'),
+              'view' => _x('See', 'testimonial_content', 'mybooking'),
+              'view_item' => _x('See testimonial', 'testimonial_content', 'mybooking'),
+              'search_items' => _x('Search testimonial', 'testimonial_content', 'mybooking'),
+              'not_found' => _x('No testimonial found', 'testimonial_content', 'mybooking'),
+              'not_found_in_trash' => _x('No testimonial found on bin', 'testimonial_content', 'mybooking'),
+              'parent' => _x('Parent testimonial', 'testimonial_content', 'mybooking')
+            ),
+            'show_ui' => true,
+            'public' => true,
+            'show_in_menu' => 'mybooking-plugin-configuration',
+            'show_in_rest' => true, // Gutenberg activation!
+            'supports' => array( 'title', 'editor', 'thumbnail' ),
+            'menu_icon' => 'dashicons-format-quote',
+            'has_archive' => true
+          )
+        );
+      }
+
+    }
+
+    /**
      * Load the product page
      */
     function product_page($params) {
- 
+
           // Get the product code
           $code = $params['id'];
 
           $ui_products = new MyBookingUIPages();
-          $ui_products->product($code);         
+          $ui_products->product($code);
 
     }
 
@@ -1315,25 +1455,25 @@
      * Load the activity page
      */
     function activity_page($params) {
- 
+
           // Get the product code
           $code = $params['id'];
 
           $ui_products = new MyBookingUIActivitiesPages();
-          $ui_products->activity($code);         
+          $ui_products->activity($code);
 
-    }    
+    }
 
     // ----------------- Utilities --------------------------------------------
 
     /**
      * Get the current page
      *
-     * Accessing to the current page has been changed from global $post to 
-     * get_queried_object() because some plugins/themes components may be 
+     * Accessing to the current page has been changed from global $post to
+     * get_queried_object() because some plugins/themes components may be
      * running queries on custom post types alter the global $post
      *
-     * $wp_the_query seems tring to remain first WP_Query but 'custom loop' overrides 
+     * $wp_the_query seems tring to remain first WP_Query but 'custom loop' overrides
      * $wp_the_query->post and $wp_the_query->posts.
      *
      * Example of 'custom loop' :
@@ -1344,9 +1484,9 @@
      *
      * foreach($myposts as $post) { ... }
      *
-     * So $wp_the_query->get_queried_object() would not stable until it is firstly 
+     * So $wp_the_query->get_queried_object() would not stable until it is firstly
      * called before any plugin or theme because it returns pre-set value if available.
-     *  
+     *
      * https://wordpress.stackexchange.com/questions/291056/get-the-current-page-slug-name
      * https://wordpress.stackexchange.com/questions/220619/globalswp-the-query-vs-global-wp-query
      * Get the current page content (in order to check if it includes the shortcode)

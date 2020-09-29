@@ -6,6 +6,12 @@
 
 - Settings
   - Plugin settings now are in a top level menu
+  - CSS tab renamed to Advanced
+
+### Added
+
+- Settings
+  - New tab Complements for CPT and cookies warning control
 
 ## [0.6.1]
 

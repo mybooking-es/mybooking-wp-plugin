@@ -32,6 +32,16 @@
         get_template_directory_uri()."/images/mybooking-logo-bn.png",
         4.1
       ); // Callable
+
+      add_submenu_page(
+		      'mybooking-plugin-configuration',
+		    	_x('Settings', 'plugin_settings', 'mybooking-plugin'),
+		    	_x('Settings', 'plugin_settings', 'mybooking-plugin'),
+		    	'manage_options',
+		    	'mybooking-plugin-configuration', // The same slug as the main menu so it will be the default option
+		    	array($this, 'mybooking_plugin_settings_page'),
+  		    -1
+		    );
 		}
 
 		/**
@@ -53,7 +63,7 @@
 					<?php
 	            $active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_title( $_GET[ 'tab' ] ) : 'connection_options';
 	            $tabs = array('connection_options', 'configuration_options', 'renting_options',
-	            						  'activities_options', 'google_api_places_options', 'css_options');
+	            						  'activities_options', 'google_api_places_options', 'complements_options', 'css_options');
 	            if ( !in_array( $active_tab, $tabs) ) {
 	            	$active_tab = 'connection_options';
 	            }
@@ -407,15 +417,15 @@ EOF;
 		                     'mybooking_plugin_settings_section_google_api_places');
 
       // == Create Complements section Fields
-      add_settings_field('mybooking_plugin_promo_popup_active',
+      add_settings_field('mybooking_plugin_settings_complements_popup',
 		                     'Activate promotion pop-up',
-		                     array($this, 'field_mybooking_plugin_promo_popup_active_callback'),
+		                     array($this, 'field_mybooking_plugin_settings_complements_popup_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
-      add_settings_field('mybooking_plugin_global_vehicle_active',
-		                     'Activate vehicles module',
-		                     array($this, 'field_mybooking_theme_global_vehicle_active_callback'),
+      add_settings_field('mybooking_plugin_settings_complements_testimonials',
+		                     'Activate testimonial module',
+		                     array($this, 'field_mybooking_plugin_settings_complements_testimonials_callback'),
                          'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
@@ -905,16 +915,12 @@ EOF;
     // == Complements
 
     /**
-     * Render promo pop-up
+     * Render promo pop-up complements
      */
-    public function field_mybooking_plugin_promo_popup_active_callback() {
+    public function field_mybooking_plugin_settings_complements_popup_callback() {
 
- 			// $this->checkbox_field(
-      //   "mybooking_theme_settings_promo",
-      //   "promo_popup_active",
- 			// 	_x( 'Activate <b>Promotion Pop-ups</b> Custom Post Type in order to create promotions.', 'theme_settings', 'mybooking')	);
       $settings = (array) get_option("mybooking_plugin_settings_complements");
-		  $field = "mybooking_plugin_promo_popup_active";
+		  $field = "mybooking_plugin_settings_complements_popup";
 		  if (array_key_exists($field, $settings)) {
 		    $value = esc_attr( $settings[$field] );
 		  }
@@ -931,12 +937,12 @@ EOF;
  		}
 
     /**
-     * Render vehicles complements
+     * Render testimonials complements
      */
-    public function field_mybooking_theme_global_vehicle_active_callback() {
+    public function field_mybooking_plugin_settings_complements_testimonials_callback() {
 
       $settings = (array) get_option("mybooking_plugin_settings_complements");
-		  $field = "mybooking_plugin_global_vehicle_active";
+		  $field = "mybooking_plugin_settings_complements_testimonials";
 		  if (array_key_exists($field, $settings)) {
 		    $value = esc_attr( $settings[$field] );
 		  }
@@ -949,7 +955,7 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Activate <b>Vehicles</b> Custom Post Type in order to create Fleet Page and Offers.</p>";
+		  echo "<p class=\"description\">Activate <b>Testimonials</b> Custom Post Type in order to create a testimonials carousel.</p>";
  		}
 
     // == CSS
