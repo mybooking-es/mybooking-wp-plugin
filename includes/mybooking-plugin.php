@@ -262,7 +262,7 @@
       // -- Complements shortcodes
 
       // Shortcode testimonials
-      if ( $registry->mybooking_plugin_settings_complements_testimonials == '1' ) {
+      if ( $registry->mybooking_rent_plugin_complements_testimonials == '1' ) {
         add_shortcode('mybooking_testimonials', array($this, 'wp_testimonials_shortcode' ));
       }
     }
@@ -354,7 +354,7 @@
         }
         // Testimonials
         // TODO Load only if shortcode mybooking_testimonials is on page
-        if ($registry->mybooking_plugin_settings_complements_testimonials == '1') {
+        if ($registry->mybooking_rent_plugin_complements_testimonials == '1') {
           // Slick JS
           wp_register_script('mybooking_wp_js_slick',
                              plugins_url( '/assets/js/slick.min.js', dirname(__FILE__) ),
@@ -366,6 +366,14 @@
                              array( 'jquery', 'mybooking_wp_js_slick' ), $version, true);
           wp_enqueue_script('mybooking_wp_js_testimonials');
         }
+        // Popup
+        if ( $registry->mybooking_rent_plugin_complements_popup == '1' && is_front_page() ) {
+          wp_register_script('mybooking_wp_js_promotion_popup',
+                             plugins_url( '/assets/js/promotionPopup.js', dirname(__FILE__) ),
+                             array( 'jquery' ), $version, true);
+          wp_enqueue_script('mybooking_wp_js_promotion_popup');
+        }
+
       }
 
     }

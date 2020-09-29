@@ -1,6 +1,6 @@
-$(document).ready(function () {
+jQuery(document).ready(function () {
   // Testimonials
-  $(".-carrusel-testimonials").slick({
+  jQuery(".-carrusel-testimonials").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,

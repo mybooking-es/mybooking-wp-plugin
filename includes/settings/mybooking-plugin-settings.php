@@ -29,7 +29,7 @@
         'manage_options', // Capability
         'mybooking-plugin-configuration', // Slug
         array($this, 'mybooking_plugin_settings_page'),
-        get_template_directory_uri()."/images/mybooking-logo-bn.png",
+        plugin_dir_url(__DIR__)."../assets/images/mybooking-logo-bn.png",
         4.1
       ); // Callable
 
