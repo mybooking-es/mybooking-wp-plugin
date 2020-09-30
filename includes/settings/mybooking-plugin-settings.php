@@ -934,6 +934,7 @@ EOF;
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
 		  echo "<p class=\"description\">Activate <b>Promotion Pop-ups</b> Custom Post Type in order to create promotions.</p>";
+      echo "<p class=\"description\">Pop-up will be shown only in the front page.</p>";
  		}
 
     /**
@@ -956,6 +957,7 @@ EOF;
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
 		  echo "<p class=\"description\">Activate <b>Testimonials</b> Custom Post Type in order to create a testimonials carousel.</p>";
+      echo "<p class=\"description\">Create one or more Testimonials under Mybooking menu and use [mybooking_testimonials] to show it on a page or sidebar.</p>";
  		}
 
     // == CSS

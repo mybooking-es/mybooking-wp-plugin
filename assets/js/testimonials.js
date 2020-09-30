@@ -3,7 +3,8 @@ jQuery(document).ready(function () {
   jQuery(".-carrusel-testimonials").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 4000,
+    arrows: false,
   });
 });

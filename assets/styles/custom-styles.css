@@ -827,9 +827,14 @@ input[type=text] {
 */
 
 /* Testimonials */
-.mybooking-home_testimonials {
+.mybooking-testimonials {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+.mybooking-testimonials blockquote::after,
+.mybooking-testimonials blockquote::before {
+    display: none;
 }
 
 .testimonial-item {

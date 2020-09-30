@@ -1,4 +1,4 @@
-<div class="mybooking-home_testimonials">
+<div class="mybooking-testimonials">
   <div class="container -carrusel-testimonials">
 
     <?php

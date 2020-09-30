@@ -318,6 +318,12 @@
                           plugins_url('/assets/styles/font-awesome-4.7.0.min.css', dirname( __FILE__ ) ) );
       }
 
+      if ($registry->mybooking_rent_plugin_complements_testimonials == '1') {
+        // Load Slick
+        wp_enqueue_style( 'mybooking_wp_css_slick',
+                          plugins_url('/assets/styles/slick.css', dirname( __FILE__ ) ) );
+      }
+
     }
 
     /**
