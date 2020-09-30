@@ -823,7 +823,7 @@ input[type=text] {
 }
 
 /**
-*  CUSTOM POST TYPES
+*  COMPLEMENTS
 */
 
 /* Testimonials */
@@ -935,7 +935,6 @@ input[type=text] {
 
 
 /* Popup */
-
 .mybooking-popup_backdrop {
   position: fixed;
   top: 0;
@@ -985,4 +984,42 @@ button.mybooking-popup_close {
 	top: 15px;
 	right: 15px;
 	z-index: 45;
+}
+
+/* Cookies */
+.cookie-notice {
+  font-family: inherit;
+  background: #444;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0px;
+  visibility: hidden;
+  z-index: 1000000;
+  box-sizing: border-box
+}
+
+.cookie-notice_text {
+  color: #fff;
+  text-align: center;
+}
+
+.cookie-notice_button {
+  color: #fff!important;
+  background: #000;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+@media only screen and (min-width:992px) {
+  .cookie-notice {
+    max-width: 300px;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 3px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+  }
 }

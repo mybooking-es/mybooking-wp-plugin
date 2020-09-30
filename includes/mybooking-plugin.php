@@ -189,6 +189,9 @@
       // Add Pop up
       add_action( 'wp_footer', array($this, 'wp_include_popup') );
 
+      // Add Cookies notice
+      add_action( 'wp_footer', array($this, 'wp_include_cookies_notice') );
+
       // Enqueue JS
       add_action( 'wp_enqueue_scripts', array($this, 'wp_enqueue_js'));
 
@@ -322,6 +325,8 @@
         // Load Slick
         wp_enqueue_style( 'mybooking_wp_css_slick',
                           plugins_url('/assets/styles/slick.css', dirname( __FILE__ ) ) );
+        wp_enqueue_style( 'mybooking_wp_css_slick-theme',
+                          plugins_url('/assets/styles/slick-theme.css', dirname( __FILE__ ) ) );
       }
 
     }
@@ -379,9 +384,14 @@
                              array( 'jquery' ), $version, true);
           wp_enqueue_script('mybooking_wp_js_promotion_popup');
         }
-
+        // Cookies warning
+        if ($registry->mybooking_rent_plugin_complements_cookies_notice == '1') {
+          wp_register_script('mybooking_wp_js_cookies_notice',
+                             plugins_url( '/assets/js/cookiesNotice.js', dirname(__FILE__) ),
+                             array( 'jquery' ), $version, true);
+          wp_enqueue_script('mybooking_wp_js_cookies_notice');
+        }
       }
-
     }
 
     /**
@@ -653,14 +663,29 @@
      * -----------------------
      * This method includes the current page necessary micro-templates on the footer
      */
-    public function wp_include_popup() {
-
+    public function wp_include_popup()
+    {
       $registry = Mybooking_Registry::getInstance();
       // Popup
-      if ( $registry->mybooking_rent_plugin_complements_popup == '1' && is_front_page() ) {
+      if ( $registry->mybooking_rent_plugin_complements_popup == '1' && is_front_page() )
+      {
         mybooking_engine_get_template('mybooking-plugin-promotions-popup.php');
       }
+    }
 
+    /**
+     * Include cookies notice
+     * -----------------------
+     * This method includes the current page necessary micro-templates on the footer
+     */
+    public function wp_include_cookies_notice()
+    {
+      $registry = Mybooking_Registry::getInstance();
+      // Popup
+      if ( $registry->mybooking_rent_plugin_complements_cookies_notice == '1' )
+      {
+        mybooking_engine_get_template('mybooking-plugin-cookies-notice.php');
+      }
     }
 
     // == Widgets
@@ -668,28 +693,25 @@
     /**
      * Register selector Widget
      */
-    public function wp_selector_widget() {
-
+    public function wp_selector_widget()
+    {
       register_widget( 'MyBookingRentEngineSelectorWizardWidget' );
-
     }
 
     /**
      * Register selector wizard Widget
      */
-    public function wp_selector_wizard_widget() {
-
+    public function wp_selector_wizard_widget()
+    {
       register_widget( 'MyBookingRentEngineSelectorWidget' );
-
     }
 
     /**
      * Register the activity widget
      */
-    public function wp_activities_activity_widget() {
-
+    public function wp_activities_activity_widget()
+    {
       register_widget( 'MyBookingActivitiesEngineActivityWidget' );
-
     }
 
     /**
@@ -1307,6 +1329,13 @@
       }
       else {
         $registry->mybooking_rent_plugin_complements_testimonials = '';
+      }
+
+      if ($settings && array_key_exists('mybooking_plugin_settings_complements_cookies_notice', $settings)) {
+        $registry->mybooking_rent_plugin_complements_cookies_notice = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_cookies_notice"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_complements_cookies_notice = '';
       }
 
       // == CSS

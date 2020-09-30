@@ -429,6 +429,12 @@ EOF;
                          'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
+       add_settings_field('mybooking_plugin_settings_complements_cookies',
+ 		                     'Activate cookies notice',
+ 		                     array($this, 'field_mybooking_plugin_settings_complements_cookies_callback'),
+                          'mybooking-plugin-configuration',
+ 		                     'mybooking_plugin_settings_section_complements');
+
 		  // == Create css section fields
 		  add_settings_field('mybooking_plugin_settings_components_custom_loader',
 		                     'Use custom loader',
@@ -958,6 +964,29 @@ EOF;
 
 		  echo "<p class=\"description\">Activate <b>Testimonials</b> Custom Post Type in order to create a testimonials carousel.</p>";
       echo "<p class=\"description\">Create one or more Testimonials under Mybooking menu and use [mybooking_testimonials] to show it on a page or sidebar.</p>";
+ 		}
+
+    /**
+     * Render cookies complements
+     */
+    public function field_mybooking_plugin_settings_complements_cookies_callback() {
+
+      $settings = (array) get_option("mybooking_plugin_settings_complements");
+		  $field = "mybooking_plugin_settings_complements_cookies_notice";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+      $checked = ($value == '1') ? 'checked' : '';
+
+      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Activate <b>Cookies Notice</b> in order to create a cookies warning.</p>";
+      echo "<p class=\"description\">Set the privacy page at WordPress settings to link properly the info button.</p>";
  		}
 
     // == CSS
