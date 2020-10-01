@@ -294,6 +294,39 @@
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
 
+      // Enqueue select2 + select2 bootstrap CSS
+      if ($registry->mybooking_plugin_js_select2) {
+        // Load select2
+        wp_enqueue_style( 'mybooking_wp_css_components_select2',
+                          plugins_url('/assets/styles/select2-4.0.1.css', dirname( __FILE__ ) ) );
+        wp_enqueue_style( 'mybooking_wp_css_components_select2_bootstrap',
+                          plugins_url('/assets/styles/select2-bootstrap.css', dirname( __FILE__ ) ) );
+      }
+
+      // Font-Awesome CSS
+      if ($registry->mybooking_rent_plugin_css_fontawesome) {
+        // Load font awesome 4.7
+        wp_enqueue_style( 'mybooking_wp_css_framework_fontawesome',
+                          plugins_url('/assets/styles/font-awesome-4.7.0.min.css', dirname( __FILE__ ) ) );
+      }
+
+      // Slick JS CSS
+      if ($registry->mybooking_rent_plugin_js_slickjs) {
+        // Load Slick
+        wp_enqueue_style( 'mybooking_wp_css_slick',
+                          plugins_url('/assets/styles/slick.css', dirname( __FILE__ ) ) );
+        wp_enqueue_style( 'mybooking_wp_css_slick-theme',
+                          plugins_url('/assets/styles/slick-theme.css', dirname( __FILE__ ) ) );
+      }
+
+      // Enqueue Boostrap CSS
+      if ($registry->mybooking_rent_plugin_custom_css) {
+        // Load bootstrap CSS
+        wp_enqueue_style( 'mybooking_wp_css_framework_bootstrap',
+                          plugins_url('/assets/styles/bootstrap-4.4.1.min.css', dirname( __FILE__ ) ) );
+      }
+
+      // CSS Components
       if ($registry->mybooking_rent_plugin_components_css) {
         // Load JQUERY UI Boostrap like Style
         wp_enqueue_style( 'mybooking_wp_css_components_jqueryui',
@@ -301,30 +334,10 @@
         // Load JQUERY Date Range
         wp_enqueue_style( 'mybooking_wp_css_components_jquery_date_range',
                           plugins_url('/assets/styles/daterangepicker-0.20.0.min.css', dirname( __FILE__ ) ) );
-        // Load select2
-        wp_enqueue_style( 'mybooking_wp_css_components_select2',
-                          plugins_url('/assets/styles/select2-4.0.1.css', dirname( __FILE__ ) ) );
-        wp_enqueue_style( 'mybooking_wp_css_components_select2_bootstrap',
-                          plugins_url('/assets/styles/select2-bootstrap.css', dirname( __FILE__ ) ) );
         // Custom style
         wp_enqueue_style('mybooking_wp_css_components_custom_style',
                          plugins_url('/assets/styles/custom-styles.css', dirname( __FILE__ ) ),
-                         array(), $version );
-      }
-
-      // Enqueue custom CSS libraries (bootstrap, fontawesome, slick)
-      if ($registry->mybooking_rent_plugin_custom_css) {
-        // Load bootstrap CSS
-        wp_enqueue_style( 'mybooking_wp_css_framework_bootstrap',
-                          plugins_url('/assets/styles/bootstrap-4.4.1.min.css', dirname( __FILE__ ) ) );
-        // Load font awesome 4.7
-        wp_enqueue_style( 'mybooking_wp_css_framework_fontawesome',
-                          plugins_url('/assets/styles/font-awesome-4.7.0.min.css', dirname( __FILE__ ) ) );
-        // Load Slick
-        wp_enqueue_style( 'mybooking_wp_css_slick',
-                          plugins_url('/assets/styles/slick.css', dirname( __FILE__ ) ) );
-        wp_enqueue_style( 'mybooking_wp_css_slick-theme',
-                          plugins_url('/assets/styles/slick-theme.css', dirname( __FILE__ ) ) );
+                         array(), $version );        
       }
 
     }
@@ -362,21 +375,25 @@
                              array( 'jquery', 'mybooking_wp_js_framework_bootstrap' ), $version, true);
           wp_enqueue_script('mybooking_wp_js_app');
         }
+      }
+
+      // Slick JS
+      if ($registry->mybooking_rent_plugin_js_slickjs) {
         // Slick JS
         wp_register_script('mybooking_wp_js_slick',
                            plugins_url( '/assets/js/slick.min.js', dirname(__FILE__) ),
                            array( 'jquery' ), $version, true);
         wp_enqueue_script('mybooking_wp_js_slick');
       }
-      // Testimonials
-      // TODO Load only if shortcode mybooking_testimonials is on page
+
+      // Testimonials (TODO Load only if shortcode mybooking_testimonials is on page)
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1') {
-        // Testimonials JS
         wp_register_script('mybooking_wp_js_testimonials',
                            plugins_url( '/assets/js/testimonials.js', dirname(__FILE__) ),
                            array( 'jquery'), $version, true);
         wp_enqueue_script('mybooking_wp_js_testimonials');
       }
+
       // Popup
       if ( $registry->mybooking_rent_plugin_complements_popup == '1' && is_front_page() ) {
         wp_register_script('mybooking_wp_js_promotion_popup',
@@ -384,6 +401,7 @@
                            array( 'jquery' ), $version, true);
         wp_enqueue_script('mybooking_wp_js_promotion_popup');
       }
+      
       // Cookies warning
       if ($registry->mybooking_rent_plugin_complements_cookies_notice == '1') {
         wp_register_script('mybooking_wp_js_cookies_notice',
@@ -1341,6 +1359,39 @@
 
       // == CSS
       $settings = (array) get_option("mybooking_plugin_settings_css");
+
+      // Include CSS
+      if ($settings && array_key_exists('mybooking_plugin_settings_custom_css', $settings)) {
+        $registry->mybooking_rent_plugin_custom_css = (trim(esc_attr( $settings["mybooking_plugin_settings_custom_css"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_custom_css = '1';
+      }
+
+      // Include Bootstrap
+      if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {
+        $registry->mybooking_rent_plugin_components_css = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_components_css = '1';
+      }
+
+      // Include FontAwesome
+      if ($settings && array_key_exists('mybooking_plugin_settings_components_css_fontawesome', $settings)) {
+        $registry->mybooking_rent_plugin_css_fontawesome = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css_fontawesome"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_css_fontawesome = '1';
+      }
+
+      // Include SlickJS
+      if ($settings && array_key_exists('mybooking_plugin_settings_components_js_slickjs', $settings)) {
+        $registry->mybooking_rent_plugin_js_slickjs = (trim(esc_attr( $settings["mybooking_plugin_settings_components_js_slickjs"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_js_slickjs = '1';
+      }
+
       // Custom Loader
       if ($settings && array_key_exists('mybooking_plugin_settings_components_custom_loader', $settings)) {
         $registry->mybooking_rent_plugin_custom_loader = (trim(esc_attr( $settings["mybooking_plugin_settings_components_custom_loader"] )) == '1');
@@ -1368,20 +1419,6 @@
       }
       else {
         $registry->mybooking_plugin_js_bs_modal_backdrop_compatibility = '';
-      }
-      // Components CSS
-      if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {
-        $registry->mybooking_rent_plugin_components_css = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css"] )) == '1');
-      }
-      else {
-        $registry->mybooking_rent_plugin_components_css = '';
-      }
-      // Custom CSS
-      if ($settings && array_key_exists('mybooking_plugin_settings_custom_css', $settings)) {
-        $registry->mybooking_rent_plugin_custom_css = (trim(esc_attr( $settings["mybooking_plugin_settings_custom_css"] )) == '1');
-      }
-      else {
-        $registry->mybooking_rent_plugin_custom_css = '';
       }
 
     }

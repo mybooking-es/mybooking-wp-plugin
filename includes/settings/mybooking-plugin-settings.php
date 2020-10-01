@@ -436,27 +436,18 @@ EOF;
  		                     'mybooking_plugin_settings_section_complements');
 
 		  // == Create css section fields
-		  add_settings_field('mybooking_plugin_settings_components_custom_loader',
-		                     'Use custom loader',
-		                     array($this, 'field_mybooking_plugin_settings_components_custom_loader_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
 
 		  add_settings_field('mybooking_plugin_settings_components_css',
-		                     'Custom CSS',
+		                     'Include CSS',
 		                     array($this, 'field_mybooking_plugin_settings_components_css_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
-		  add_settings_field('mybooking_plugin_settings_custom_css',
-		                     'Include CSS/JS Framework',
-		                     array($this, 'field_mybooking_plugin_settings_custom_css_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
+		  // Bootstrap integration
 
-		  add_settings_field('mybooking_plugin_settings_components_js_use_select2',
-		                     'Use select2 library on selects',
-		                     array($this, 'field_mybooking_plugin_settings_components_js_use_select2_callback'),
+		  add_settings_field('mybooking_plugin_settings_custom_css',
+		                     'Include Bootstrap',
+		                     array($this, 'field_mybooking_plugin_settings_custom_css_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
@@ -469,6 +460,33 @@ EOF;
 		  add_settings_field('mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility',
 		                     'Boostrap Modal backdrop',
 		                     array($this, 'field_mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_css');
+		  // Font Awesome
+		  add_settings_field('mybooking_plugin_settings_components_css_fontawesome',
+		                     'Include Fontawesome',
+		                     array($this, 'field_mybooking_plugin_settings_components_css_fontawesome_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_css');
+
+		  // SlickJS
+		  add_settings_field('mybooking_plugin_settings_components_js_slickjs',
+		                     'Include SlickJS',
+		                     array($this, 'field_mybooking_plugin_settings_components_js_slickjs_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_css');
+
+		  // Select 2
+		  add_settings_field('mybooking_plugin_settings_components_js_use_select2',
+		                     'Use select2 library on selects',
+		                     array($this, 'field_mybooking_plugin_settings_components_js_use_select2_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_css');
+
+		  // Custom loader
+		  add_settings_field('mybooking_plugin_settings_components_custom_loader',
+		                     'Use custom loader',
+		                     array($this, 'field_mybooking_plugin_settings_components_custom_loader_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
@@ -992,6 +1010,52 @@ EOF;
     // == CSS
 
 		/**
+		 * Render Mybooking CSS
+		 */
+		public function field_mybooking_plugin_settings_components_css_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_css");
+		  $field = "mybooking_plugin_settings_components_css";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '1';
+		  }
+
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Include <b>CSS</b> for plugin <u>UX components</u> like <em>Jquery UI datepicker</em> and <em>Jquery DateRange</em>.";
+		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck only if you are using mybooking theme or a custom theme with your own reservation engine templates.";
+
+		}
+
+		/**
+		 * Render Mybooking Bootstrap Framework
+		 */
+		public function field_mybooking_plugin_settings_custom_css_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_css");
+		  $field = "mybooking_plugin_settings_custom_css";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '1';
+		  }
+
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Include <b>Boostrap Framework</b> CSS+JS to build the <u>UI</u>.";
+		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck only if you are using mybooking theme or a theme based on <u>Bootstrap</u>.";
+		}
+
+
+		/**
 		 * Render Mybooking Custom loader
 		 */
 		public function field_mybooking_plugin_settings_components_custom_loader_callback() {
@@ -1010,12 +1074,57 @@ EOF;
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
 		  echo "<p class=\"description\">Use <b>custom loader</b> to notify the user when connecting to the reservation engine...";
-		  echo "<p class=\"description\">Apply this option if you are using mybooking-wp-theme or a theme where you have defined your own loader.</p>";
+		  echo "<p class=\"description\"><b>¡Attention!</b> check only if you are using mybooking theme or custom theme with its own Ajax Loader.";
 
 		}
 
 		/**
-		 * Render Mybooking Bootstrap Modal No conflict
+		 * Render SlickJS
+		 */
+		public function field_mybooking_plugin_settings_components_js_slickjs_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_css");
+		  $field = "mybooking_plugin_settings_components_js_slickjs";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '1';
+		  }
+
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Include <b>slickJS</b> library. It is required if you are using the testimonials complement";
+		  echo "<p class=\"description\"><b>¡Attention!</b> uncheck if not testimonials are use or the theme you are using includes slickJS.";
+		}
+
+		/**
+		 * Render Fontawesome
+		 */
+		public function field_mybooking_plugin_settings_components_css_fontawesome_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_css");
+		  $field = "mybooking_plugin_settings_components_css_fontawesome";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '1';
+		  }
+
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Include <b>Fontawesome 4.7</b> library.";
+		  echo "<p class=\"description\"><b>¡Attention!</b> uncheck only if your theme is using it.";
+		}
+
+
+		/**
+		 * Render Use Select2
 		 */
 		public function field_mybooking_plugin_settings_components_js_use_select2_callback() {
 
@@ -1057,7 +1166,7 @@ EOF;
 
 		  echo "<p class=\"description\">Use <b>Bootstrap modal no conflict</b> if there is a conflict with Bootstrap modal.";
 		  echo "<p class=\"description\">It will use $('#my_modal').bootstrapModal('show') instead of $('#my_modal').modal('show').</p>";
-		  echo "<p class=\"description\">It only applies if you are using the plugin custom CSS/JS Framework.</p>";
+		  echo "<p class=\"description\"><b>¡Attention!</b> check only if modals, like product detail or edit reservation, are not shown.";
 
 		}
 
@@ -1081,55 +1190,8 @@ EOF;
 
 		  echo "<p class=\"description\">Setup <b>Bootstrap modal backdrop compatibility</b> when showing a modal.";
 		  echo "<p class=\"description\">It helps to improve plugin compatibility with some themes when the modal is not shown on top.</p>";
-		  echo "<p class=\"description\">Use only if reservation process modal is show behind the backdrop and components are not clickable.</p>";
+		  echo "<p class=\"description\"><b>¡Attention!</b> check only if modals are not shown on top of the page.";
 
-		}
-
-		/**
-		 * Render Mybooking CSS components
-		 */
-		public function field_mybooking_plugin_settings_components_css_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_components_css";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">Include <b>CSS</b> for <u>JS components</u> like <em>Jquery UI datepicker</em> and <em>Jquery DateRange</em>.";
-		  echo "<p class=\"description\">It also includes <b>CSS</b> to improve the plugin render process within an external theme.";
-		  echo "<p class=\"description\">It's recommended to include it if your are developing your own theme.</p>";
-
-
-		}
-
-		/**
-		 * Render Mybooking CSS Framework
-		 */
-		public function field_mybooking_plugin_settings_custom_css_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_custom_css";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">Include <b>CSS Framework</b> to build the <u>UI</u> (default Bootstrap 4.4.1).";
-		  echo "<p class=\"description\">It's recommended to include it you are not planning to override the plugin templates.</p>";
 		}
 
     // ------------------------
