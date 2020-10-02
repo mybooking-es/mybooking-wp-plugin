@@ -443,7 +443,7 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
-		  // Bootstrap integration
+		  // Bootstrap 
 
 		  add_settings_field('mybooking_plugin_settings_custom_css',
 		                     'Include Bootstrap',
@@ -451,17 +451,6 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
-		  add_settings_field('mybooking_plugin_settings_components_js_bs_modal_no_conflict',
-		                     'Boostrap Modal no conflict mode',
-		                     array($this, 'field_mybooking_plugin_settings_components_js_bs_modal_no_conflict_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
-
-		  add_settings_field('mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility',
-		                     'Boostrap Modal backdrop',
-		                     array($this, 'field_mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
 		  // Font Awesome
 		  add_settings_field('mybooking_plugin_settings_components_css_fontawesome',
 		                     'Include Fontawesome',
@@ -473,6 +462,20 @@ EOF;
 		  add_settings_field('mybooking_plugin_settings_components_js_slickjs',
 		                     'Include SlickJS',
 		                     array($this, 'field_mybooking_plugin_settings_components_js_slickjs_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_css');
+
+		  // Compatibility
+
+		  add_settings_field('mybooking_plugin_settings_components_js_bs_modal_no_conflict',
+		                     'Boostrap Modal no conflict mode',
+		                     array($this, 'field_mybooking_plugin_settings_components_js_bs_modal_no_conflict_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_css');
+
+		  add_settings_field('mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility',
+		                     'Boostrap Modal backdrop',
+		                     array($this, 'field_mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
@@ -1096,8 +1099,8 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Include <b>slickJS</b> library. It is required if you are using the testimonials complement";
-		  echo "<p class=\"description\"><b>¡Attention!</b> uncheck if not testimonials are use or the theme you are using includes slickJS.";
+		  echo "<p class=\"description\">Include <b>slickJS</b> library. It is <b>required</b> if you are using the testimonials complement";
+		  echo "<p class=\"description\"><b>¡Attention!</b> uncheck if not testimonials are used or if the theme that you are using includes slickJS.";
 		}
 
 		/**
