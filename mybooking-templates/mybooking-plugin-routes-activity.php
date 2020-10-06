@@ -1,4 +1,4 @@
-<?php 
+<?php
 get_header();?>
 <br>
 <div class="container">
@@ -35,33 +35,33 @@ get_header();?>
 	    <?php } ?>
       <?php echo $args->description ?>
 
- 
+
       <div class="row">
 
 	      <?php if (!empty($args->detailed_info_what_includes)) { ?>
 	        <div class="col-lg-6">
-			      <h2 class="h5 mt-3">¿Qué incluye?</h2>
+			      <h2 class="h5 mt-3"><?php _ex('What\'s included?', 'activity_detail', 'mybooking-wp-plugin'); ?></h2>
 			      <div><?php echo $args->detailed_info_what_includes ?></div>
 		    	</div>
 	      <?php } ?>
 
 	      <?php if (!empty($args->detailed_info_recommendations)) { ?>
 	      	<div class="col-lg-6">
-			      <h2 class="h5 mt-3">Recomendaciones</h2>
+			      <h2 class="h5 mt-3"><?php _ex('Recomendations', 'activity_detail', 'mybooking-wp-plugin'); ?></h2>
 			      <div><?php echo $args->detailed_info_recommendations ?></div>
 			    </div>
 	      <?php } ?>
 
 	      <?php if (!empty($args->detailed_info_what_to_bring)) { ?>
 	      	<div class="col-lg-6">
-			      <h2 class="h5 mt-3">¿Qué traer?</h2>
+			      <h2 class="h5 mt-3"><?php _ex('What to bring?', 'activity_detail', 'mybooking-wp-plugin'); ?></h2>
 			      <div><?php echo $args->detailed_info_what_to_bring ?></div>
 			    </div>
 	      <?php } ?>
-	    
+
 	      <?php if (!empty($args->detailed_info_timetable_duration)) { ?>
 	      	<div class="col-lg-6">
-			      <h2 class="h5 mt-3">Fechas y horarios</h2>
+			      <h2 class="h5 mt-3"><?php _ex('Dates and timetables', 'activity_detail', 'mybooking-wp-plugin'); ?></h2>
 			      <div class="alert alert-info">
 			      	<?php echo $args->detailed_info_timetable_duration ?>
 			    	</div>
@@ -69,29 +69,29 @@ get_header();?>
 		    <?php } ?>
 
 	      <?php if (!empty($args->detailed_info_ages)) { ?>
-					<div class="col-lg-6">	      
-			      <h2 class="h5 mt-3">Edades</h2>
+					<div class="col-lg-6">
+			      <h2 class="h5 mt-3"><?php _ex('Ages', 'activity_detail', 'mybooking-wp-plugin'); ?></h2>
 			      <div><?php echo $args->detailed_info_ages ?></div>
 		    	</div>
-	      <?php } ?>		    
+	      <?php } ?>
 
 	      <?php if (!empty($args->detailed_info_difficulty_level)) { ?>
 	      	<div class="col-lg-6">
-			      <h2 class="h5 mt-3">Dificultad</h2>
+			      <h2 class="h5 mt-3"><?php _ex('Difficulty', 'activity_detail', 'mybooking-wp-plugin'); ?></h2>
 			      <div><?php echo $args->detailed_info_difficulty_level ?></div>
 			    </div>
-	      <?php } ?>	 
+	      <?php } ?>
 
 	      <?php if (!empty($args->detailed_info_price)) { ?>
 	      	<div class="col-lg-6">
-			      <h2 class="h5 mt-3">Precios</h2>
+			      <h2 class="h5 mt-3"><?php _ex('Prices', 'activity_detail', 'mybooking-wp-plugin'); ?></h2>
 			      <div><?php echo $args->detailed_info_price ?></div>
 			    </div>
-	      <?php } ?>	      
+	      <?php } ?>
 
 	      <?php if (!empty($args->detailed_info_meeting_point)) { ?>
 	      	<div class="col-lg-6">
-			      <h2 class="h5 mt-3">Lugar de encuentro</h2>
+			      <h2 class="h5 mt-3"><?php _ex('Meeting point', 'activity_detail', 'mybooking-wp-plugin'); ?></h2>
 			      <div class="alert alert-secondary">
 			     	 <div><?php echo $args->detailed_info_meeting_point ?></div>
 			    	</div>
@@ -105,7 +105,7 @@ get_header();?>
 			<h2 class="h2"><?php echo $args->name ?></h2>
 			<p class="mt-1 text-muted"><? echo _x('Please choose your dates in the availability calendar', 'activity_detail', 'mybooking-wp-plugin' ) ?>
 			<hr>
-      <?php mybooking_engine_get_template('mybooking-plugin-activities-activity-widget.php', array('activity_id' => $args->id)) ?>			
+      <?php mybooking_engine_get_template('mybooking-plugin-activities-activity-widget.php', array('activity_id' => $args->id)) ?>
 		</div>
 	</div>
 </div>
