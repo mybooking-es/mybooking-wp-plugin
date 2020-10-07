@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 12:45+0000\n"
-"PO-Revision-Date: 2020-10-06 12:57+0000\n"
+"PO-Revision-Date: 2020-10-07 17:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -198,7 +198,7 @@ msgstr "Détail des maladies"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:359
 msgctxt "activity_my_reservation"
 msgid "Select the option"
-msgstr "Sélectionnez l'option"
+msgstr "Sélectionnez l&#39;option"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:319
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:332
@@ -460,7 +460,7 @@ msgstr "Supplément lieu de retour"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:301
 msgctxt "renting_complete"
 msgid "Driver's age supplement"
-msgstr "Supplément d'âge du conducteur"
+msgstr "Supplément d&#39;âge du conducteur"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:307
 msgctxt "renting_complete"
@@ -486,7 +486,7 @@ msgstr "Demander une réservation"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:395
 msgctxt "renting_complete"
 msgid "Pay on arrival"
-msgstr "Payer à l'arrivée"
+msgstr "Payer à l&#39;arrivée"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:402
 msgctxt "renting_complete"
@@ -498,7 +498,7 @@ msgstr "Payez maintenant"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:514
 msgctxt "renting_complete"
 msgid "I have read and hereby accept the conditions of rental"
-msgstr "J'ai lu et j'accepte les conditions de location"
+msgstr "J&#39;ai lu et j&#39;accepte les conditions de location"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:422
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:452
@@ -509,8 +509,8 @@ msgid ""
 "I have read and hereby accept the <a href=\"%s\" target=\"_blank\">"
 "conditions</a> of rental"
 msgstr ""
-"J'ai lu et j'accepte les <a href=\"%s\" target=\"_blank\">conditions</a> de "
-"location"
+"J&#39;ai lu et j&#39;accepte les <a href=\"%s\" target=\"_blank\">"
+"conditions</a> de location"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:460
 msgctxt "renting_complete"
@@ -598,7 +598,7 @@ msgstr "Supplément lieu de retour"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:180
 msgctxt "renting_summary"
 msgid "Driver's age supplement"
-msgstr "Supplément d'âge du conducteur"
+msgstr "Supplément d&#39;âge du conducteur"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:186
 msgctxt "renting_summary"
@@ -643,12 +643,10 @@ msgstr "De"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:41
 msgctxt "activities_list"
 msgid "More information"
-msgstr "Plus d'information"
+msgstr "Plus d&#39;information"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:49
 #, php-format
-#| msgid "<b>%d</b> result found"
-#| msgid_plural "<b>%d</b> results found"
 msgctxt "activity_shopping_cart"
 msgid "<b>%s</b> result found"
 msgid_plural "<b>%s</b> results found"
@@ -728,7 +726,7 @@ msgstr "Supplément lieu de retour"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:188
 msgctxt "renting_my_reservation"
 msgid "Driver's age supplement"
-msgstr "Supplément d'âge du conducteur"
+msgstr "Supplément d&#39;âge du conducteur"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:194
 msgctxt "renting_my_reservation"
@@ -857,12 +855,12 @@ msgstr "Nom de famille"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:326
 msgctxt "renting_my_reservation"
 msgid "ID card or passport"
-msgstr "Carte d'identité ou passeport"
+msgstr "Carte d&#39;identité ou passeport"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:331
 msgctxt "renting_my_reservation"
 msgid "Date of Issue"
-msgstr "Date d'emission"
+msgstr "Date d&#39;emission"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:352
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:354
@@ -886,7 +884,7 @@ msgstr "Date de délivrance du permis de conduire"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:506
 msgctxt "renting_my_reservation"
 msgid "Driving license expedition country"
-msgstr "Pays d'expédition du permis de conduire"
+msgstr "Pays d&#39;expédition du permis de conduire"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:386
 msgctxt "renting_my_reservation"
@@ -1100,7 +1098,7 @@ msgstr "Recommandations"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-routes-activity.php:57
 msgctxt "activity_detail"
 msgid "What to bring?"
-msgstr "Ce qu'il faut apporter?"
+msgstr "Ce qu&#39;il faut apporter?"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-routes-activity.php:64
 msgctxt "activity_detail"
@@ -1136,12 +1134,12 @@ msgstr "Sélectionner une date"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:65
 msgctxt "activity_tickets_form_selector"
 msgid "We are sorry. There are not schedules available"
-msgstr "Nous sommes désolés. Il n'y a pas d'horaires disponibles"
+msgstr "Nous sommes désolés. Il n&#39;y a pas d'horaires disponibles"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:69
 msgctxt "activity_tickets_form_selector"
 msgid "Select hour"
-msgstr "Sélectionnez l'heure"
+msgstr "Sélectionnez l&#39;heure"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:89
 msgctxt "activity_tickets_form_selector"
@@ -1157,7 +1155,7 @@ msgstr "Reserve maintenant"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:120
 msgctxt "activity_tickets_form_selector"
 msgid "Please, select an option"
-msgstr "Please, select an option"
+msgstr "Veuillez sélectionner une option"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:13
 #, php-format
@@ -1174,7 +1172,7 @@ msgstr "<b>%.2f</b> m."
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:41
 msgctxt "renting_products"
 msgid "More information"
-msgstr "Plus d'information"
+msgstr "Plus d&#39;information"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:55
 msgctxt "renting_products"
@@ -1256,7 +1254,7 @@ msgstr "Reserve maintenant!"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-product-widget-tmpl.php:88
 msgctxt "renting_product_calendar"
 msgid "Sorry, there is no availability during these hours"
-msgstr "Désolé, il n'y a pas de disponibilité pendant ces heures"
+msgstr "Désolé, il n&#39;y a pas de disponibilité pendant ces heures"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-product-widget-tmpl.php:92
 msgctxt "renting_product_calendar"
@@ -1265,9 +1263,9 @@ msgid ""
 "those days when there is availability, but it may not be available for "
 "certain consecutive dates."
 msgstr ""
-"Désolé, il n'y a pas de disponibilité pour toute la période. Le calendrier "
-"affiche les jours où il y a de la disponibilité, mais il peut ne pas être "
-"disponible pour certaines dates consécutives."
+"Désolé, il n&#39;y a pas de disponibilité pour toute la période. Le "
+"calendrier affiche les jours où il y a de la disponibilité, mais il peut ne "
+"pas être disponible pour certaines dates consécutives."
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-routes-product.php:42
 #, php-format
@@ -1370,7 +1368,7 @@ msgstr "Catégorie"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:5
 msgctxt "activity_shopping_cart"
 msgid "Shopping cart is empty"
-msgstr "Le panier d'achat est vide"
+msgstr "Le panier d&#39;achat est vide"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:54
 msgctxt "activity_shopping_cart_item"
@@ -1438,7 +1436,7 @@ msgstr "Payez maintenant"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:237
 msgctxt "activity_shopping_cart"
 msgid "I have read and hereby accept the terms and conditions"
-msgstr "J'ai lu et j'accepte les termes et conditions"
+msgstr "J&#39;ai lu et j&#39;accepte les termes et conditions"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:174
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:239
@@ -1448,7 +1446,7 @@ msgid ""
 "I have read and hereby accept the <a href=\"%s\" target=\"_blank\">terms and "
 "conditions</a>"
 msgstr ""
-"J'ai lu et j'accepte les <a href=\"%s\" target=\"_blank\">termes et "
+"J&#39;ai lu et j&#39;accepte les <a href=\"%s\" target=\"_blank\">termes et "
 "conditions</a>"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:208

@@ -113,7 +113,8 @@
                        <% } %>
                        <!-- Promotion Code -->
                        <% if (typeof booking.promotion_code !== 'undefined' && booking.promotion_code !== '' && 
-                              typeof booking.booking_lines[idx].promotion_code_value !== 'undefined' && booking.booking_lines.promotion_code_value !== '') { %>
+                              typeof booking.booking_lines[idx].promotion_code_value !== 'undefined' && booking.booking_lines.promotion_code_value !== '' &&
+                              booking.booking_lines[idx].promotion_code_value !== '0.0') { %>
                           <span class="badge badge-success"><%=booking.promotion_code%></span>
                           <% if (booking.booking_lines[idx].promotion_code_discount_type === 'percentage' && booking.booking_lines[idx].promotion_code !== '') {%>
                             <span class="text-danger"><%=parseInt(booking.booking_lines[idx].promotion_code_value)%>&#37;</span>
@@ -210,7 +211,7 @@
                 <!-- Deposit -->
                 <% if (booking.total_deposit > 0) { %>
                 <li class="list-group-item">
-                  <span class="extra-name"><?php echo _x('Deposit', 'renting_my_reservation', 'mybooking') ?></span>
+                  <span class="extra-name"><?php echo _x('Deposit', 'renting_my_reservation', 'mybooking-wp-plugin') ?></span>
                   <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.total_deposit)%></span>
                 </li>
                 <% } %>
