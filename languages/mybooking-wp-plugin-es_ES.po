@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-07 17:49+0000\n"
-"PO-Revision-Date: 2020-10-07 17:49+0000\n"
+"PO-Revision-Date: 2020-10-07 17:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -640,7 +640,7 @@ msgstr "Por favor, seleccione una opción"
 #: mybooking-templates/mybooking-plugin-cookies-notice.php:8
 msgctxt "cookie_notice"
 msgid "This website uses cookies to ensure you get the best experience"
-msgstr "Este sitio usa cookies para garantizar la mejor experiencia"
+msgstr "Este sitio usa cookies para garantizar una mejor experiencia"
 
 #: mybooking-templates/mybooking-plugin-cookies-notice.php:11
 msgctxt "cookie_notice"
