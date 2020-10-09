@@ -201,7 +201,7 @@
             <!-- Deposit -->
             <% if (booking.total_deposit > 0) { %>
             <li class="list-group-item">
-              <span class="extra-name"><?php echo _x('Deposit', 'renting_summary', 'mybooking') ?></span>
+              <span class="extra-name"><?php echo _x('Deposit', 'renting_summary', 'mybooking-wp-plugin') ?></span>
               <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.total_deposit)%></span>
             </li>
             <% } %>

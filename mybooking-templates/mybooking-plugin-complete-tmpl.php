@@ -322,7 +322,7 @@
           <!-- Deposit -->
           <% if (shopping_cart.total_deposit > 0) { %>
           <li class="list-group-item">
-            <span class="extra-name"><?php echo _x('Deposit', 'renting_complete', 'mybooking') ?></span>
+            <span class="extra-name"><?php echo _x('Deposit', 'renting_complete', 'mybooking-wp-plugin') ?></span>
             <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.total_deposit)%></span>
           </li>
           <% } %>

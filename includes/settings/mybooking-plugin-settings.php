@@ -35,8 +35,8 @@
 
       add_submenu_page(
 		      'mybooking-plugin-configuration',
-		    	_x('Settings', 'plugin_settings', 'mybooking-plugin'),
-		    	_x('Settings', 'plugin_settings', 'mybooking-plugin'),
+		    	_x('Settings', 'plugin_settings', 'mybooking-wp-plugin'),
+		    	_x('Settings', 'plugin_settings', 'mybooking-wp-plugin'),
 		    	'manage_options',
 		    	'mybooking-plugin-configuration', // The same slug as the main menu so it will be the default option
 		    	array($this, 'mybooking_plugin_settings_page'),
