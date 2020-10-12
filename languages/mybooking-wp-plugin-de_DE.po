@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Understrap Mybooking Child\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 12:45+0000\n"
-"PO-Revision-Date: 2020-10-06 12:59+0000\n"
+"PO-Revision-Date: 2020-10-09 12:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -644,12 +644,10 @@ msgstr "Von"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:41
 msgctxt "activities_list"
 msgid "More information"
-msgstr "More information"
+msgstr "Mehr Informationen"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:49
 #, php-format
-#| msgid "<b>%d</b> result found"
-#| msgid_plural "<b>%d</b> results found"
 msgctxt "activity_shopping_cart"
 msgid "<b>%s</b> result found"
 msgid_plural "<b>%s</b> results found"
@@ -774,7 +772,7 @@ msgstr ""
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:261
 msgctxt "renting_my_reservation"
 msgid "Customer address"
-msgstr "Kundendaten"
+msgstr "Kundenadresse"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:264
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:266
@@ -792,7 +790,7 @@ msgstr "Nummer"
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:276
 msgctxt "renting_my_reservation"
 msgid "Complement"
-msgstr "Complement"
+msgstr "Ergänzen"
 
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:281
 #: ../../../../../../../MYBOOKING/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:283
