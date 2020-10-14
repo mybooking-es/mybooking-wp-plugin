@@ -8,9 +8,9 @@
           <?php if (!empty( $args->photos ) && count( $args->photos ) > 1) { ?>
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-              <?php foreach( $args->photos as $key => $photo ) { ?>
-              <div class="carousel-item <?php if ($key == key($args->photos)) { ?>active<?php } ?>">
-                <img class="d-block w-100" src="<?php echo $photo->full_photo_path?>" alt="<?php echo $args->name?>">
+              <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>
+              <div class="carousel-item <?php if ($mybooking_key == key($args->photos)) { ?>active<?php } ?>">
+                <img class="d-block w-100" src="<?php echo $mybooking_photo->full_photo_path?>" alt="<?php echo $args->name?>">
               </div>
               <?php } ?>
             </div>
@@ -53,10 +53,10 @@
                       <span class="icon-list-text text-muted"><?php printf( _x('<b>%.2f</b> m.', 'renting_product_detail', 'mybooking-wp-plugin' ), $args->characteristic_length ) ?></span>
                   </li>
                 <?php } ?>  
-                <?php foreach ( $args->key_characteristics as $key => $value) { ?>
+                <?php foreach ( $args->key_characteristics as $mybooking_key => $value) { ?>
                 <li class="icon-list-item">
                     <span class="icon-list-icon">
-                      <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/key_characteristics/<?php echo $key ?>.svg"/>
+                      <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/key_characteristics/<?php echo $mybooking_key ?>.svg"/>
                     </span>
                     <span class="icon-list-text text-muted"><?php echo $value ?></span>
                 </li>
