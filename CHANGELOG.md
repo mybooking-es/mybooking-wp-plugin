@@ -11,7 +11,7 @@
 ### Added
 
 - Settings
-  - New tab Complements for CPT and cookies warning control
+  - New tab Complements for testimonials, popup ads and cookies warning control
 
 ## [0.6.1]
 

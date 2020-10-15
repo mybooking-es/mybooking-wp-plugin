@@ -143,6 +143,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
+= 0.7.0 =
+* Complements: Testimonials, popup Ads and cookies message
+
 = 0.6.1 =
 * Fix: Renting Selector Form family selector
 
