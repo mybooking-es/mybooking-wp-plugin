@@ -386,28 +386,14 @@
         wp_enqueue_script('mybooking_wp_js_slick');
       }
 
-      // Testimonials (TODO Load only if shortcode mybooking_testimonials is on page)
-      if ($registry->mybooking_rent_plugin_complements_testimonials == '1') {
-        wp_register_script('mybooking_wp_js_testimonials',
-                           plugins_url( '/assets/js/testimonials.js', dirname(__FILE__) ),
+      // Complements (testimonials, cookies, popup)
+      if ($registry->mybooking_rent_plugin_complements_testimonials == '1' || 
+          $registry->mybooking_rent_plugin_complements_popup == '1' || 
+          $registry->mybooking_rent_plugin_complements_cookies_notice == '1') {
+        wp_register_script('mybooking_wp_js_complements',
+                           plugins_url( '/assets/js/complements.js', dirname(__FILE__) ),
                            array( 'jquery'), $version, true);
-        wp_enqueue_script('mybooking_wp_js_testimonials');
-      }
-
-      // Popup
-      if ( $registry->mybooking_rent_plugin_complements_popup == '1' && is_front_page() ) {
-        wp_register_script('mybooking_wp_js_promotion_popup',
-                           plugins_url( '/assets/js/promotionPopup.js', dirname(__FILE__) ),
-                           array( 'jquery' ), $version, true);
-        wp_enqueue_script('mybooking_wp_js_promotion_popup');
-      }
-      
-      // Cookies warning
-      if ($registry->mybooking_rent_plugin_complements_cookies_notice == '1') {
-        wp_register_script('mybooking_wp_js_cookies_notice',
-                           plugins_url( '/assets/js/cookiesNotice.js', dirname(__FILE__) ),
-                           array( 'jquery' ), $version, true);
-        wp_enqueue_script('mybooking_wp_js_cookies_notice');
+        wp_enqueue_script('mybooking_wp_js_complements');
       }
 
 
@@ -612,7 +598,6 @@
           $data['terms_and_conditions'] = get_site_url().'/'.$registry->mybooking_rent_plugin_terms_page;
         }
         mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php', $data);
-        //mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php');
         // If selector in process Wizard, load the micro-templates for the process
         if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
           mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');

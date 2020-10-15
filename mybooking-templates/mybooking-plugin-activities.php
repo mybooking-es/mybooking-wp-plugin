@@ -21,9 +21,9 @@
 					  <div class="card-body d-flex flex-column justify-content-center">
 					    <h3 class="h6 card-title activity-card-title"><?php echo $mybooking_activity->name ?></h3>
 				      <hr>
-				      <?php if ($mybooking_activity->address) { ?>
+				      <?php if ( isset( $mybooking_activity->address) ) { ?>
 					      <div class="text-center"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<?php echo $mybooking_activity->address->street ?>, <?php echo $mybooking_activity->address->city ?> <?php echo $mybooking_activity->address->zip ?></div>
-					    <?php } ?>
+					  <?php } ?>
 					    <?php if ( $mybooking_activity->use_rates ) { ?>
 					    <p class="text-center">
 					    	<span class="text-muted"><?php echo _x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?></span>
