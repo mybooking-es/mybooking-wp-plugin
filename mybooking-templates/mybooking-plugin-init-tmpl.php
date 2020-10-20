@@ -1,21 +1,27 @@
+<?php
+  /** 
+   * The Template for configure mybookingEngine
+   *
+   */
+?>
     <!-- Initialize mybookingEngine -->
     <script type="text/javascript">
       window.mybookingEngine = function(){
-        var siteURL = '<?php echo get_site_url() ?>';     
-        var baseURL = '<?php echo $args['mybooking_api_url_prefix']?>';
-        var apiKey = '<?php echo $args['mybooking_api_key']?>';
+        var siteURL = '<?php echo esc_url( get_site_url() ) ?>';     
+        var baseURL = '<?php echo esc_url( $args['mybooking_api_url_prefix'] )?>';
+        var apiKey = '<?php echo esc_js( $args['mybooking_api_key'] )?>';
         // Renting
         var extrasStep = false;
-        var chooseProductUrl = '<?php echo $args['mybooking_choose_products_page']?>';
-        var chooseExtrasUrl = '<?php echo $args['mybooking_choose_extras_page']?>';
-        var completeUrl = '<?php echo $args['mybooking_checkout_page']?>';
-        var summaryUrl = '<?php echo $args['mybooking_summary_page']?>';
-        var termsUrl = '<?php echo $args['mybooking_terms_page']?>';
-        var selectorInProcess = '<?php echo $args['mybooking_selector_in_process']?>';
+        var chooseProductUrl = '<?php echo esc_url( $args['mybooking_choose_products_page'] )?>';
+        var chooseExtrasUrl = '<?php echo esc_url( $args['mybooking_choose_extras_page'] )?>';
+        var completeUrl = '<?php echo esc_url( $args['mybooking_checkout_page'] )?>';
+        var summaryUrl = '<?php echo esc_url( $args['mybooking_summary_page'] )?>';
+        var termsUrl = '<?php echo esc_url( $args['mybooking_terms_page'] )?>';
+        var selectorInProcess = '<?php echo esc_url( $args['mybooking_selector_in_process'] )?>';
         // Activities
-        var shoppingCartUrl = '<?php echo $args['mybooking_activities_shopping_cart_page']?>';
-        var orderUrl = '<?php echo $args['mybooking_activities_summary_page']?>';  
-        var activitiesTermsUrl = '<?php echo $args['mybooking_activities_terms_page']?>'; 
+        var shoppingCartUrl = '<?php echo esc_url( $args['mybooking_activities_shopping_cart_page'] )?>';
+        var orderUrl = '<?php echo esc_url( $args['mybooking_activities_summary_page'] )?>';  
+        var activitiesTermsUrl = '<?php echo esc_url( $args['mybooking_activities_terms_page'] )?>'; 
         // Common
         <?php if ($args['mybooking_custom_loader'] == '1') { ?>
         var customLoader = true;
@@ -43,15 +49,15 @@
         <?php if ($args['mybooking_google_api_places']) { ?>
         var useGoogleMaps = true;
         var googleMapsSettings = {
-          apiKey: '<?php echo $args['mybooking_google_api_places_api_key']?>',
+          apiKey: '<?php echo esc_js( $args['mybooking_google_api_places_api_key'] )?>',
           settings: {
-            googleMapsRestrictCountryCode: '<?php echo $args['mybooking_google_api_places_restrict_country_code']?>',
+            googleMapsRestrictCountryCode: '<?php echo esc_js( $args['mybooking_google_api_places_restrict_country_code'] )?>',
             <?php if ($args['mybooking_google_api_places_restrict_bounds']) { ?>
             googlePlacesRetrictBounds: true,
-            googleMapsBoundsSWLat: <?php echo $args['mybooking_google_api_places_bounds_sw_lat'] ? $args['mybooking_google_api_places_bounds_sw_lat'] : 0 ?>,
-            googleMapsBoundsSWLng: <?php echo $args['mybooking_google_api_places_bounds_sw_lng'] ? $args['mybooking_google_api_places_bounds_sw_lng'] : 0 ?>,
-            googleMapsBoundsNELat: <?php echo $args['mybooking_google_api_places_bounds_ne_lat'] ? $args['mybooking_google_api_places_bounds_ne_lat'] : 0 ?>,
-            googleMapsBoundsNELng: <?php echo $args['mybooking_google_api_places_bounds_ne_lng'] ? $args['mybooking_google_api_places_bounds_ne_lng'] : 0 ?>            
+            googleMapsBoundsSWLat: <?php echo ( $args['mybooking_google_api_places_bounds_sw_lat'] ? esc_js( $args['mybooking_google_api_places_bounds_sw_lat'] ) : 0 ) ?>,
+            googleMapsBoundsSWLng: <?php echo ( $args['mybooking_google_api_places_bounds_sw_lng'] ? esc_js( $args['mybooking_google_api_places_bounds_sw_lng'] ) : 0 ) ?>,
+            googleMapsBoundsNELat: <?php echo ( $args['mybooking_google_api_places_bounds_ne_lat'] ? esc_js( $args['mybooking_google_api_places_bounds_ne_lat'] ) : 0 ) ?>,
+            googleMapsBoundsNELng: <?php echo ( $args['mybooking_google_api_places_bounds_ne_lng'] ? esc_js( $args['mybooking_google_api_places_bounds_ne_lng'] ) : 0 ) ?>            
             <?php } else { ?>
             googlePlacesRetrictBounds: false
             <?php } ?>  

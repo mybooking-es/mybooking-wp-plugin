@@ -1,13 +1,9 @@
 <?php
-/**
-*   Renting Summary
-*   ------------------
-*
-* 	Versión: 0.0.1
-*   @package WordPress
-*   @subpackage Mybooking WordPress Plugin
-*   @since Mybooking WordPress Plugin 0.0.1
-*/
+  /** 
+   * The Template for showing the renting summary step
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-summary.php
+   */
 ?>
 <div class="row">
   <div class="col-md-12">

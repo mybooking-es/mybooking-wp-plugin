@@ -1,8 +1,19 @@
+<?php
+  /** 
+   * The Template for showing the renting complete step - JS microtemplates
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-complete-tmpl.php
+   *
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   */
+?>
 <!-- Extra representation -->
 <script type="text/template" id="script_detailed_extra">
 
   <% if (coverages && coverages.length > 0) {%>
-    <h4 class="p-4 complete-section-bg"><?php echo _x( 'Coverage', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+    <h4 class="p-4 complete-section-bg"><?php echo esc_html_x( 'Coverage', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
     <% for (var idx=0;idx<coverages.length;idx++) { %>
       <% var coverage = coverages[idx]; %>
       <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
@@ -52,7 +63,7 @@
   <% } %>
 
   <% if (extras && extras.length > 0) {%>
-    <h4 class="p-4 complete-section-bg"><?php echo _x( 'Extras', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+    <h4 class="p-4 complete-section-bg"><?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
     <% for (var idx=0;idx<extras.length;idx++) { %>
       <% var extra = extras[idx]; %>
       <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
@@ -139,7 +150,7 @@
   <div class="complete-reservation-summary-card ">
     <div class="card mb-3">
       <div class="card-header">
-        <b><?php echo _x( 'Reservation summary', 'renting_complete', 'mybooking-wp-plugin') ?></b>
+        <b><?php echo esc_html_x( 'Reservation summary', 'renting_complete', 'mybooking-wp-plugin') ?></b>
       </div>
       <ul class="list-group list-group-flush">
         <% if (configuration.pickupReturnPlace) {%>
@@ -163,12 +174,12 @@
           <% } %>
         </li>
         <% if (shopping_cart.days > 0) { %>
-          <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_complete', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.days%> <?php echo _x( 'day(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
+          <li class="list-group-item reservation-summary-card-detail"><?php echo esc_html_x( 'Rental duration', 'renting_complete', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.days%> <?php echo esc_html_x( 'day(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
         <% } else if (shopping_cart.hours > 0) { %>
-          <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_complete', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.hours%> <?php echo _x( 'hour(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
+          <li class="list-group-item reservation-summary-card-detail"><?php echo esc_html_x( 'Rental duration', 'renting_complete', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
         <% } %>
         <li class="list-group-item">
-          <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo _x( 'Edit', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+          <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo esc_html_x( 'Edit', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
         </li>
       </ul>
     </div>
@@ -177,14 +188,14 @@
       <!-- Promotion code -->
       <div class="card mb-3">
           <div class="card-header">
-            <b><?php echo _x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+            <b><?php echo esc_html_x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
           </div>
           <div class="card-body">
             <form name="complete_promotion_code" class="form-inline">
               <input type="text" class="form-control mb-2 mr-sm-2" size="20" maxlength="30"
-                     id="promotion_code" placeholder="<?php echo _x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?>"
+                     id="promotion_code" placeholder="<?php echo esc_attr_x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?>"
                      <%if (shopping_cart.promotion_code){%>value="<%=shopping_cart.promotion_code%>" disabled<%}%>>
-              <button type="button" class="btn btn-primary mb-2" id="apply_promotion_code_btn" <%if (shopping_cart.promotion_code){%>disabled<%}%>><?php echo _x( 'Apply', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+              <button type="button" class="btn btn-primary mb-2" id="apply_promotion_code_btn" <%if (shopping_cart.promotion_code){%>disabled<%}%>><?php echo esc_html_x( 'Apply', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
             </form>
           </div>
       </div>
@@ -194,7 +205,7 @@
     <% if (shopping_cart.items.length > 0) { %>
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo _x( 'Products', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+          <b><?php echo esc_html_x( 'Products', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
         </div>
         <ul class="list-group list-group-flush">
           <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>
@@ -246,7 +257,7 @@
     <% if (shopping_cart.extras.length > 0) { %>
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo _x( 'Extras', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+          <b><?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
         </div>
         <ul class="list-group list-group-flush">
           <% for (var idx=0;idx<shopping_cart.extras.length;idx++) { %>
@@ -268,43 +279,43 @@
           shopping_cart.category_supplement_1_cost > 0) { %>
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo _x( 'Supplements', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+          <b><?php echo esc_html_x( 'Supplements', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
         </div>
         <ul class="list-group list-group-flush">
           <!-- Supplements -->
           <% if (shopping_cart.time_from_cost > 0) { %>
           <li class="list-group-item">
-            <span class="extra-name"><?php echo _x( 'Pick-up time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
+            <span class="extra-name"><?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
             <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.time_from_cost)%></span>
           </li>
           <% } %>
           <% if (shopping_cart.pickup_place_cost > 0) { %>
           <li class="list-group-item">
-            <span class="extra-name"><?php echo _x( 'Pick-up place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
+            <span class="extra-name"><?php echo esc_html_x( 'Pick-up place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
             <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.pickup_place_cost)%></span>
           </li>
           <% } %>
           <% if (shopping_cart.time_to_cost > 0) { %>
           <li class="list-group-item">
-            <span class="extra-name"><?php echo _x( 'Return time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
+            <span class="extra-name"><?php echo esc_html_x( 'Return time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
             <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.time_to_cost)%></span>
           </li>
           <% } %>
           <% if (shopping_cart.return_place_cost > 0) { %>
           <li class="list-group-item">
-            <span class="extra-name"><?php echo _x( 'Return place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
+            <span class="extra-name"><?php echo esc_html_x( 'Return place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
             <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.return_place_cost)%></span>
           </li>
           <% } %>
           <% if (shopping_cart.driver_age_cost > 0) { %>
           <li class="list-group-item">
-            <span class="extra-name"><?php echo _x( "Driver's age supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
+            <span class="extra-name"><?php echo esc_html_x( "Driver's age supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
             <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.driver_age_cost)%></span>
           </li>
           <% } %>
           <% if (shopping_cart.category_supplement_1_cost > 0) { %>
           <li class="list-group-item">
-            <span class="product-amount pull-right"><?php echo _x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
+            <span class="product-amount pull-right"><?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></span>
             <span
               class="extra-price"><%=configuration.formatCurrency(shopping_cart.category_supplement_1_cost)%></span>
           </li>
@@ -316,13 +327,13 @@
     <% if (shopping_cart.total_deposit > 0) { %>
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo _x( "Deposit", 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+          <b><?php echo esc_html_x( "Deposit", 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
         </div>
         <ul class="list-group list-group-flush">
           <!-- Deposit -->
           <% if (shopping_cart.total_deposit > 0) { %>
           <li class="list-group-item">
-            <span class="extra-name"><?php echo _x('Deposit', 'renting_complete', 'mybooking-wp-plugin') ?></span>
+            <span class="extra-name"><?php echo esc_html_x('Deposit', 'renting_complete', 'mybooking-wp-plugin') ?></span>
             <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.total_deposit)%></span>
           </li>
           <% } %>
@@ -331,7 +342,7 @@
     <% } %>
     <!-- Total -->
     <div class="jumbotron mb-3">
-      <h2 class="h5 text-center"><?php echo _x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?></h2>
+      <h2 class="h5 text-center"><?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?></h2>
       <h2 class="h3 text-center"><%=configuration.formatCurrency(shopping_cart.total_cost)%></h2>
     </div>
   </div>
@@ -385,21 +396,21 @@
          <% if (sales_process.can_request) { %>
            <div class="form-group col-md-12">
              <label for="payments_paypal_standard">
-              <input type="radio" name="complete_action" value="request_reservation" class="complete_action">&nbsp;<?php echo _x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              <input type="radio" name="complete_action" value="request_reservation" class="complete_action">&nbsp;<?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
              </label>
            </div>
          <% } %>
          <% if (sales_process.can_pay_on_delivery) { %>
            <div class="form-group col-md-12">
              <label for="payments_paypal_standard">
-              <input type="radio" name="complete_action" value="pay_on_delivery" class="complete_action">&nbsp;<?php echo _x( 'Pay on arrival', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              <input type="radio" name="complete_action" value="pay_on_delivery" class="complete_action">&nbsp;<?php echo esc_html_x( 'Pay on arrival', 'renting_complete', 'mybooking-wp-plugin' ) ?>
              </label>
            </div>
          <% } %>
          <% if (sales_process.can_pay) { %>
          <div class="form-group col-md-12">
            <label for="payments_paypal_standard">
-            <input type="radio" name="complete_action" value="pay_now" class="complete_action">&nbsp;<?php echo _x( 'Pay now', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+            <input type="radio" name="complete_action" value="pay_now" class="complete_action">&nbsp;<?php echo esc_html_x( 'Pay now', 'renting_complete', 'mybooking-wp-plugin' ) ?>
            </label>
          </div>
          <% } %>
@@ -417,9 +428,11 @@
               <label for="payments_paypal_standard">
                 <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;
                 <?php if ( empty($args['terms_and_conditions']) ) { ?>
-                  <?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                  <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                 <?php } else { ?>
-                  <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?>
+                  <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 
+                                                         'renting_complete', 'mybooking-wp-plugin' ), 
+                                                     $args['terms_and_conditions'] ) )?>
                 <?php } ?>
               </label>
             </div>
@@ -427,7 +440,7 @@
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <button type="submit" class="btn btn-success"><?php echo _x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+              <button type="submit" class="btn btn-success"><?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
             </div>
           </div>
         </div>
@@ -447,9 +460,11 @@
                     <label for="payments_paypal_standard">
                       <input type="checkbox" id="conditions_read_payment_on_delivery" name="conditions_read_payment_on_delivery">&nbsp;
                       <?php if ( empty($args['terms_and_conditions']) ) { ?>
-                        <?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                        <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                       <?php } else { ?>
-                        <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?>
+                        <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental',
+                                                               'renting_complete', 'mybooking-wp-plugin' ), 
+                                                           $args['terms_and_conditions'] ) ) ?>
                       <?php } ?>
                     </label>
                   </div>
@@ -457,7 +472,7 @@
 
                 <div class="form-row">
                   <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-success"><?php echo _x( 'Confirm', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+                    <button type="submit" class="btn btn-success"><?php echo esc_html_x( 'Confirm', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
                   </div>
                 </div>
             </div>
@@ -484,25 +499,25 @@
                     <div class="form-row">
                        <div class="form-group col-md-12">
                          <label for="payments_paypal_standard">
-                          <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard">&nbsp;<?php echo _x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                          <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-paypal.jpg"/>
+                          <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard">&nbsp;<?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
                          </label>
                        </div>
                        <div class="form-group col-md-12">
                          <label for="payments_credit_card">
                           <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>">&nbsp;<?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                          <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-visa.jpg"/>
-                          <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-mastercard.jpg"/>
+                          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
                          </label>
                        </div>
                     </div>
                     <div id="payment_method_select_error" class="form-row">
                     </div>
                 <% } else if (sales_process.payment_methods.paypal_standard) { %>
-                    <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-paypal.jpg"/>
+                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
                 <% } else if (sales_process.payment_methods.tpv_virtual) { %>
-                    <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-mastercard.jpg"/>
-                    <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/pm-visa.jpg"/>
+                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
                 <% } %>
 
                 <hr>
@@ -511,9 +526,11 @@
                     <label for="payments_paypal_standard">
                       <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">&nbsp;
                           <?php if ( empty($args['terms_and_conditions']) ) { ?>
-                            <?php echo _x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                            <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                           <?php } else { ?>
-                            <?php printf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ?>
+                            <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 
+                                                                   'renting_complete', 'mybooking-wp-plugin' ), 
+                                                               $args['terms_and_conditions'] ) )?>
                           <?php } ?>
                     </label>
                   </div>

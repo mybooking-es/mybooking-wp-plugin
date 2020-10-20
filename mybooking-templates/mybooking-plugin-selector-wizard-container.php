@@ -1,3 +1,11 @@
+<?php
+  /** 
+   * The Template for showing the renting selector wizard container 
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-wizard-container.php
+   *
+   */
+?>
       <!-- Wizard container -->  
       <div id="wizard_container" class="bg-white selector_wizard_container" style="display: none">
            <!-- Title -->

@@ -1,34 +1,10 @@
 <?php
-/**
-*   PLUGIN RENTING MODULE CHOOSE PRODUCT PAGE
-*   -----------------------------------------
-*
-*   Versión: 0.5.5
-*   @package WordPress
-*   @subpackage Mybooking WordPress Plugin
-*   @since Mybooking WordPress Theme 0.0.1
-*
-*   Description:
-*   ------------
-*
-*   This template renders the choose product. It manages the following:
-*
-*      - Select the product
-*      - Select the products and quantities (multiple products reservation)
-*
-*   Elements & Scripts:
-*   -------------------
-*
-*   Container                        Script
-*   ----------------------------     ---------------------------------
-*   id=reservation_detail        ->  script_reservation_summary
-*   id=product_listing           ->  script_detailed_product
-*
-*   Notes:
-*   ------
-*
-*   The scripts are defined in mybooking-plugin-choose-product-tmpl.php
-*/
+  /** 
+   * The Template for showing the renting select product step
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-choose-product.php
+   *
+   */
 ?>
   
 <!-- Complement to modify reservation dates -->
@@ -40,21 +16,24 @@
 
 <section class="section">
   <div class="row">
+    <!-- Sidebar reservation detail -->
     <div class="col-lg-4">
       <div id="reservation_detail"></div>
     </div>
+    <!-- Product listing -->
     <div class="col-lg-8">
       <div id="product_listing"></div>
     </div>
   </div>
 </section>
 
+<!-- Modal that shows the product detail -->
 <div class="modal modal-mybooking" tabindex="-1" role="dialog" id="modalProductDetail">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title modal-product-detail-title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="<?php echo esc_attr_x( 'Close', 'renting_choose_product', 'mybooking-wp-plugin' ); ?>">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

@@ -1,3 +1,14 @@
+<?php
+  /** 
+   * The Template for showing the activity selector widget - JS MicroTemplates
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php
+   *
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+   */
+?>
     <!-- Micro templates -->
 
     <!-- Activity One Time Selector -->
@@ -32,7 +43,7 @@
 
     <script type="text/tmpl" id="script_multiple_dates_selector">
 
-        <h2 class="h5 mt-3 mb-3"><b><?php echo _x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
+        <h2 class="h5 mt-3 mb-3"><b><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
         <form name="select_date_form" id="select_date_form">
           <input type="hidden" name="activity_id" id="activity_id" value="<%=activity.id%>"/>
           <div class="form-group">
@@ -48,7 +59,7 @@
 
     <script type="text/tmpl" id="script_cyclic_calendar">
 
-        <h2 class="h5 mt-3 mb-3 text-muted"><b><?php echo _x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
+        <h2 class="h5 mt-3 mb-3 text-muted"><b><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
         <form name="select_date_form" id="select_date_form">
           <input type="hidden" name="activity_id" id="activity_id" value="<%=activity_id%>"/>
           <div id="datepicker"></div>
@@ -62,11 +73,11 @@
 
       <% if (isEmptyTurns) {%>
         <div class="alert alert-warning">
-             <p><?php echo _x( 'We are sorry. There are not schedules available', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></p>
+             <p><?php echo esc_html_x( 'We are sorry. There are not schedules available', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></p>
         </div>
       <% } else { %>
         <br>
-        <h2 class="h5 mt-3 mb-3 text-muted"><b><?php echo _x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
+        <h2 class="h5 mt-3 mb-3 text-muted"><b><?php echo esc_html_x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
         <div class="form-group">
           <% for (turn in turns) { %>
             <div class="form-check form-check-inline">
@@ -86,7 +97,7 @@
 
     <script type="text/tmpl" id="script_tickets">
 
-        <h2 class="h5 mt-5 mb-3 text-muted"><b><?php echo _x( 'People', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
+        <h2 class="h5 mt-5 mb-3 text-muted"><b><?php echo esc_html_x( 'People', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></b></h2>
 
         <% for (item in tickets) { %>
            <div class="form-group">
@@ -99,7 +110,7 @@
         <% } %>
 
         <div class="form-group">
-          <button type="button" id="btn_reservation" class="btn btn-primary w-100"><?php echo _x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></button>
+          <button type="button" id="btn_reservation" class="btn btn-primary w-100"><?php echo esc_html_x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></button>
         </div>  
 
     </script>
@@ -117,7 +128,7 @@
           <!-- There are more than 1 option, allow the customer to pick up one -->
           <div class="form-group">
             <select name="selected_tickets_full_mode" class="form-control">
-               <option value=""><?php echo _x( 'Please, select an option', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></option>
+               <option value=""><?php echo esc_html_x( 'Please, select an option', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></option>
             <% for (item in tickets) { %>
                <option value="<%=item%>"><%=tickets[item][0]["description"]%></option>
             <% } %>
@@ -126,7 +137,7 @@
         <% } %>
 
         <div class="form-group">
-          <button type="button" id="btn_reservation" class="btn btn-primary w-100"><?php echo _x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></button>
+          <button type="button" id="btn_reservation" class="btn btn-primary w-100"><?php echo esc_html_x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></button>
         </div>  
 
     </script>

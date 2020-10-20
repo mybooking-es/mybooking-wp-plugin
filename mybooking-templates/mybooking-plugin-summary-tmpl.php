@@ -1,13 +1,13 @@
 <?php
-/**
-*   Renting Summary Template
-*   ------------------------
-*
-*   Versión: 0.0.1
-*   @package WordPress
-*   @subpackage Mybooking WordPress Plugin
-*   @since Mybooking WordPress Plugin 0.0.1
-*/
+  /** 
+   * The Template for showing the renting summary step - JS Microtemplates
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-summary-tmpl.php
+   *
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   */
 ?>
 <!-- Reservation summary -->
 <script type="text/tmpl" id="script_reservation_summary">
@@ -19,10 +19,10 @@
     <div class="col-md-4">
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo _x( 'My reservation', 'renting_summary', 'mybooking-wp-plugin') ?></b>
+          <b><?php echo esc_html_x( 'My reservation', 'renting_summary', 'mybooking-wp-plugin') ?></b>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item reservation-summary-card-detail"><small><?php echo _x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?></small><br><span class="h3"><%=booking.id%></span></li>
+          <li class="list-group-item reservation-summary-card-detail"><small><?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?></small><br><span class="h3"><%=booking.id%></span></li>
           <% if (configuration.pickupReturnPlace) {%>
             <li class="list-group-item reservation-summary-card-detail"><%=booking.pickup_place_customer_translation%></li>
           <% } %>
@@ -45,11 +45,11 @@
           </li>
           <% if (booking.days > 0) { %>                  
             <li class="list-group-item reservation-summary-card-detail">
-               <?php echo _x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.days%> <?php echo _x( 'day(s)', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+               <?php echo esc_html_x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.days%> <?php echo esc_html_x( 'day(s)', 'renting_summary', 'mybooking-wp-plugin' ) ?>
             </li>
           <% } else if (booking.hours > 0) { %>
             <li class="list-group-item reservation-summary-card-detail">
-               <?php echo _x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.hours%> <?php echo _x( 'hour(s)', 'renting_summary', 'mybooking-wp-plugin' ) ?>  
+               <?php echo esc_html_x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_summary', 'mybooking-wp-plugin' ) ?>  
             </li>                   
           <% } %>
         </ul>
@@ -59,7 +59,7 @@
     <div class="col-md-4">
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo _x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?></b>
+          <b><?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?></b>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_name%> <%=booking.customer_surname%></li>
@@ -77,7 +77,7 @@
     <div class="col-md-4">
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo _x( 'Products', 'renting_summary', 'mybooking-wp-plugin' ) ?></b>
+          <b><?php echo esc_html_x( 'Products', 'renting_summary', 'mybooking-wp-plugin' ) ?></b>
         </div>  
         <ul class="list-group list-group-flush">
           <% for (var idx=0;idx<booking.booking_lines.length;idx++) { %>
@@ -125,7 +125,7 @@
       <% if (booking.booking_extras.length > 0) { %>
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo _x( 'Extras', 'renting_summary', 'mybooking-wp-plugin' ) ?></b>
+          <b><?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-wp-plugin' ) ?></b>
         </div>  
         <ul class="list-group list-group-flush">
           <% for (var idx=0;idx<booking.booking_extras.length;idx++) { %>
@@ -147,43 +147,43 @@
         <!-- Supplements -->
         <div class="card mb-3">
           <div class="card-header">
-            <b><?php echo _x( 'Supplements', 'renting_summary', 'mybooking-wp-plugin' ) ?></b>
+            <b><?php echo esc_html_x( 'Supplements', 'renting_summary', 'mybooking-wp-plugin' ) ?></b>
           </div>     
           <ul class="list-group list-group-flush">
             <!-- Supplements -->
             <% if (booking.time_from_cost > 0) { %>
             <li class="list-group-item">
-              <span class="extra-name"><?php echo _x( 'Pick-up time supplement', 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
+              <span class="extra-name"><?php echo esc_html_x( 'Pick-up time supplement', 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
               <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.time_from_cost)%></span>
             </li>
             <% } %>
             <% if (booking.pickup_place_cost > 0) { %>
             <li class="list-group-item">
-              <span class="extra-name"><?php echo _x( 'Pick-up place supplement', 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
+              <span class="extra-name"><?php echo esc_html_x( 'Pick-up place supplement', 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
               <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.pickup_place_cost)%></span>
             </li>
             <% } %>
             <% if (booking.time_to_cost > 0) { %>
             <li class="list-group-item">
-              <span class="extra-name"><?php echo _x( 'Return time supplement', 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
+              <span class="extra-name"><?php echo esc_html_x( 'Return time supplement', 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
               <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.time_to_cost)%></span>
             </li>
             <% } %>
             <% if (booking.return_place_cost > 0) { %>
             <li class="list-group-item">
-              <span class="extra-name"><?php echo _x( 'Return place supplement', 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
+              <span class="extra-name"><?php echo esc_html_x( 'Return place supplement', 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
               <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.return_place_cost)%></span>
             </li>
             <% } %>
             <% if (booking.driver_age_cost > 0) { %>
             <li class="list-group-item">
-              <span class="extra-name"><?php echo _x( "Driver's age supplement", 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
+              <span class="extra-name"><?php echo esc_html_x( "Driver's age supplement", 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
               <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.driver_age_cost)%></span>
             </li>
             <% } %>
             <% if (booking.category_supplement_1_cost > 0) { %>
             <li class="list-group-item">
-              <span class="product-amount pull-right"><?php echo _x( "Petrol supplement", 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
+              <span class="product-amount pull-right"><?php echo esc_html_x( "Petrol supplement", 'renting_summary', 'mybooking-wp-plugin' ) ?></span>
               <span
                 class="extra-price"><%=configuration.formatCurrency(booking.category_supplement_1_cost)%></span>
             </li>
@@ -195,13 +195,13 @@
         <!-- Deposit -->
         <div class="card mb-3">
           <div class="card-header">
-            <b><?php echo _x( "Deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?></b>
+            <b><?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?></b>
           </div>     
           <ul class="list-group list-group-flush">
             <!-- Deposit -->
             <% if (booking.total_deposit > 0) { %>
             <li class="list-group-item">
-              <span class="extra-name"><?php echo _x('Deposit', 'renting_summary', 'mybooking-wp-plugin') ?></span>
+              <span class="extra-name"><?php echo esc_html_x('Deposit', 'renting_summary', 'mybooking-wp-plugin') ?></span>
               <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.total_deposit)%></span>
             </li>
             <% } %>
@@ -210,12 +210,12 @@
       <% } %>
 
       <div class="jumbotron mb-3">
-        <p class="lead"><?php echo _x( 'Total', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><b><%=configuration.formatCurrency(booking.total_cost)%></b></span></p>
+        <p class="lead"><?php echo esc_html_x( 'Total', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><b><%=configuration.formatCurrency(booking.total_cost)%></b></span></p>
         <% if (booking.total_paid > 0) { %>
-          <p class="lead"><?php echo _x( 'Total paid', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(booking.total_paid)%></span></p>
+          <p class="lead"><?php echo esc_html_x( 'Total paid', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(booking.total_paid)%></span></p>
         <% } %>
         <% if (booking.total_pending < booking.total_cost) { %>
-          <p class="lead"><?php echo _x( 'Total pending', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="text-danger pull-right"><%=configuration.formatCurrency(booking.total_pending)%></span></p>        
+          <p class="lead"><?php echo esc_html_x( 'Total pending', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="text-danger pull-right"><%=configuration.formatCurrency(booking.total_pending)%></span></p>        
         <% } %>
       </div>            
     </div>

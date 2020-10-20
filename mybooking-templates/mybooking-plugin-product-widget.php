@@ -1,6 +1,14 @@
-    <div id="product_selector" data-code="<?php echo $args['code']?>" 
+<?php
+  /** 
+   * The Template for showing the product calendar widget
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-product-widget.php
+   *
+   */
+?>
+    <div id="product_selector" data-code="<?php echo esc_attr( $args['code'] )?>" 
                                <?php if ( array_key_exists('sales_channel_code', $args) && $args['sales_channel_code'] != '' ) : ?>
-                               data-sales-channel-code="<?php echo $args['sales_channel_code']?>" 
+                               data-sales-channel-code="<?php echo esc_attr( $args['sales_channel_code'] )?>" 
                                <?php endif; ?> 
                                class="container is-desktop">
       <div class="row">

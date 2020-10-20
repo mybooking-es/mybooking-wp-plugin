@@ -1,3 +1,14 @@
+<?php
+  /** 
+   * The Template for showing the renting selector wizard widget - JS Microtemplates
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-wizard-plugin-tmpl.php
+   *
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   */
+?>
     <!-- ===================================================== -->
     <!--         Selector Wizard Microtemplates                -->
     <!-- ===================================================== -->
@@ -51,7 +62,7 @@
         <!-- Destinations selector -->
         <div class="row mt-3">
           <div class="col-md-12">
-            <button class="btn btn-primary destination-selector" type="button" data-destination-id="all"><?php echo _x( 'All', 'renting_form_selector_wizard', 'mybooking-wp-plugin' ) ?></button>
+            <button class="btn btn-primary destination-selector" type="button" data-destination-id="all"><?php echo esc_html_x( 'All', 'renting_form_selector_wizard', 'mybooking-wp-plugin' ) ?></button>
             <% for (var idx=0; idx<places.destinations.length; idx++) { %>
               <button class="btn btn-primary destination-selector"  type="button" 
                  data-destination-id="<%=places.destinations[idx].id%>"><%=places.destinations[idx].name%></button>

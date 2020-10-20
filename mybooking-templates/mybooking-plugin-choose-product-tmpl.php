@@ -1,3 +1,14 @@
+<?php
+  /** 
+   * The Template for showing the renting select product step - JS Microtemplates
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-choose-product-tmpl.php
+   *
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   */
+?>
     <!-- Script to show product search -->
     <script type="text/tpml" id="script_detailed_product">
       <div class="row">
@@ -21,7 +32,8 @@
                   <% if (product.key_characteristics) { %> 
                     <% for (characteristic in product.key_characteristics) { %>
                       <div class="icon">
-                        <img src="<?php echo plugin_dir_url(__DIR__) ?>/assets/images/key_characteristics/<%=characteristic%>.svg"/>
+                        <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url(__DIR__).'/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
+                        <img src="<%=characteristic_image_path%>"/>
                         <span><%=product.key_characteristics[characteristic]%> </span>
                       </div>
                     <% } %>
@@ -43,7 +55,7 @@
                       </select>
                     </div>
                   <% } else { %>
-                    <p class="text-center text-muted"><?php echo _x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></p>
+                    <p class="text-center text-muted"><?php echo esc_html_x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></p>
                   <% } %>
                 <% } else { %>  
                   <!-- Offer name -->
@@ -74,7 +86,7 @@
                   <% if (product.availability && product.few_available_units) { %>
                     <div class="product-card-info-container">
                        <div class="product-card-info text-danger">
-                          <span class="text-danger"><small><?php echo _x( 'Few units left!', 'renting_choose_product', 'mybooking-wp-plugin') ?></small></span>
+                          <span class="text-danger"><small><?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-wp-plugin') ?></small></span>
                        </div>  
                     </div>
                   <% } %>
@@ -87,7 +99,7 @@
                   <% } else { %>
                     <div class="card-info-container">
                        <div class="card-info">
-                          <span class="badge badge-light"><?php echo _x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
+                          <span class="badge badge-light"><?php echo esc_html_x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
                        </div>  
                     </div>
                   <% } %>
@@ -101,7 +113,7 @@
       <% if (configuration.multipleProductsSelection) { %>
       <div class="row">
         <div class="col-md-12">
-          <button id="go_to_complete" class="btn btn-primary"><?php echo _x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
+          <button id="go_to_complete" class="btn btn-primary"><?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
         </div>
       </div>
       <% } %>
@@ -142,7 +154,7 @@
       <div class="reservation-summary-card">
         <div class="card mb-3">
           <div class="card-header">
-            <b><?php echo _x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></b>
+            <b><?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></b>
           </div>
           <ul class="list-group list-group-flush">
             <% if (configuration.pickupReturnPlace) {%>
@@ -165,9 +177,9 @@
                 <%=shopping_cart.time_to%>
               <% } %> 
             </li>
-            <li class="list-group-item reservation-summary-card-detail"><?php echo _x( 'Rental duration', 'renting_choose_product', 'mybooking-wp-plugin' ) ?> <%=shopping_cart.days%> <?php echo _x( 'day(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></li>
+            <li class="list-group-item reservation-summary-card-detail"><?php echo esc_html_x( 'Rental duration', 'renting_choose_product', 'mybooking-wp-plugin' ) ?> <%=shopping_cart.days%> <?php echo esc_html_x( 'day(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></li>
             <li class="list-group-item">
-              <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo _x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></button>
+              <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></button>
             </li>
           </ul>
         </div>

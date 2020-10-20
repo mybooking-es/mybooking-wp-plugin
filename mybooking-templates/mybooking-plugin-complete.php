@@ -1,38 +1,19 @@
 <?php
-/**
-*   PLUGIN RENTING MODULE COMPLETE PAGE
-*   -----------------------------------
-*
-*   Versión: 0.5.5
-*   @package WordPress
-*   @subpackage Mybooking WordPress Plugin
-*   @since Mybooking WordPress Theme 0.0.1
-*
-*   Description:
-*   ------------
-*
-*   This template renders the complete step page. It manages the following:
-*
-*      - Select the coverage
-*      - Select the extras
-*      - Fill in the reservation from
-*      - Request reservation or pay
-*
-*   Elements & Scripts:
-*   -------------------
-*
-*   Container                        Script
-*   ----------------------------     ---------------------------------
-*   id=reservation_detail_sticky ->  script_reservation_summary_sticky
-*   id=reservation_detail        ->  script_reservation_summary
-*   id=extras_listing            ->  script_detailed_extra
-*   id=payment_detail            ->  script_payment_detail
-*
-*   Notes:
-*   ------
-*
-*   The scripts are defined in mybooking-plugin-complete-tmpl.php
-*/
+  /** 
+   * The Template for showing the renting complete step
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-complete.php
+   *
+   *   Areas managed by the Reservation engine
+   *
+   *   Container                        Script
+   *   ----------------------------     ------------------------
+   *   id=reservation_detail_sticky ->  script_reservation_summary_sticky
+   *   id=reservation_detail        ->  script_reservation_summary
+   *   id=extras_listing            ->  script_detailed_extra
+   *   id=payment_detail            ->  script_payment_detail
+   *
+   */
 ?>
 
 <!-- Complement to modify reservation dates -->
@@ -53,44 +34,44 @@
     <div id="extras_listing">
     </div>
     <!-- Reservation complete -->
-    <h4 class="p-4 complete-section-bg"><?php echo _x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+    <h4 class="p-4 complete-section-bg"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
     <form id="form-reservation" name="reservation_form" autocomplete="off">
 
         <div class="form-group">
-          <label for="customer_name"><?php echo _x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="<?php echo _x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
+          <label for="customer_name"><?php echo esc_html_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="<?php echo esc_attr_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
         </div>
 
         <div class="form-group">
-          <label for="customer_surname"><?php echo _x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo _x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
+          <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo esc_attr_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
         </div>
 
         <div class="form-group">
-          <label for="customer_email"><?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="<?php echo _x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+          <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
         </div>
 
         <div class="form-group">
-          <label for="customer_email"><?php echo _x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="confirm_customer_email" id="confirm_customer_email" placeholder="<?php echo _x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+          <label for="customer_email"><?php echo esc_html_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="confirm_customer_email" id="confirm_customer_email" placeholder="<?php echo esc_attr_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
         </div>
 
         <div class="form-group">
-            <label for="customer_phone"><?php echo _x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-            <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo _x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="15">
+            <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+            <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="15">
         </div>
 
         <div class="form-group">
-            <label for="customer_mobile_phone"><?php echo _x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-            <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo _x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
+            <label for="customer_mobile_phone"><?php echo esc_html_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+            <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
         </div>
 
-        <h4 class="mb-2 p-4 complete-section-bg"><?php echo _x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+        <h4 class="mb-2 p-4 complete-section-bg"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
 
         <div class="form-group">
-          <label for="comments"><?php echo _x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-          <textarea class="form-control" name="comments" id="comments" placeholder="<?php echo _x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
+          <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+          <textarea class="form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
         </div>
 
         <!-- Reservation : payment (script_payment_detail) -->
@@ -106,7 +87,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title modal-extra-detail-title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="<?php echo esc_attr_x( 'Close', 'renting_complete', 'mybooking-wp-plugin' ); ?>">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

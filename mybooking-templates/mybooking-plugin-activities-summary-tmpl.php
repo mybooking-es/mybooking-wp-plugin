@@ -1,3 +1,14 @@
+<?php
+  /** 
+   * The Template for showing the activity summary step - JS microtemplates
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-activities-summary-tmpl.php
+   *
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   */
+?>
     <script type="text/tpml" id="script_order">
 
       <!-- Status -->
@@ -53,7 +64,7 @@
                               <% if (order.use_rates) { %> 
                                 <!-- Show the total -->
                                 <tr>
-                                  <td><strong><?php echo _x( 'Total', 'activity_order_item', 'mybooking-wp-plugin' ) ?></strong></td>
+                                  <td><strong><?php echo esc_html_x( 'Total', 'activity_order_item', 'mybooking-wp-plugin' ) ?></strong></td>
                                   <td class="text-right"><strong><%=configuration.formatCurrency(order.items[idx]['total'])%></strong></td>
                                 </tr>
                               <% } %>
@@ -75,7 +86,7 @@
 
               <div class="card mb-3">
                 <div class="card-header">
-                  <b><?php echo _x( 'Reservation ID', 'activity_summary', 'mybooking-wp-plugin') ?></b>
+                  <b><?php echo esc_html_x( 'Reservation ID', 'activity_summary', 'mybooking-wp-plugin') ?></b>
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item h3"><%=order.id%></li>
@@ -86,7 +97,7 @@
 
               <div class="card mb-3">
                 <div class="card-header">
-                  <b><?php echo _x( "Customer's details", 'activity_summary', 'mybooking-wp-plugin') ?></b>
+                  <b><?php echo esc_html_x( "Customer's details", 'activity_summary', 'mybooking-wp-plugin') ?></b>
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item"><%=order.customer_name%> <%=order.customer_surname%></li>
@@ -97,10 +108,10 @@
 
               <% if (order.use_rates) { %>
                 <div class="jumbotron mb-3">
-                  <h2 class="h5"><?php echo _x( 'Total', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
+                  <h2 class="h5"><?php echo esc_html_x( 'Total', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
                   <hr>
-                  <p class="lead"><?php echo _x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_paid)%></span></p>
-                  <p class="lead"><?php echo _x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_pending)%></span></p>
+                  <p class="lead"><?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_paid)%></span></p>
+                  <p class="lead"><?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_pending)%></span></p>
                 </div>
               <% } %>
             </div>

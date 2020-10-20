@@ -1,13 +1,10 @@
 <?php
-/**
-*   Renting Modify Reservation Form Template
-*   -----------------------------------------
-*
-*   Versión: 0.0.1
-*   @package WordPress
-*   @subpackage Mybooking WordPress Plugin
-*   @since Mybooking WordPress Plugin 0.0.1
-*/
+  /** 
+   * The Template for showing the renting modify reservation form
+   *
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-modify-reservation.php
+   *
+   */
 ?>
 <!-- Modify reservation modal -->
 <div class="modal fade modal-mybooking" 
@@ -16,8 +13,8 @@
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"><?php echo _x( 'Modify reservation', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title"><?php echo esc_html_x( 'Modify reservation', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="<?php echo esc_attr_x( 'Close', 'renting_form_modify_reservation', 'mybooking-wp-plugin' ); ?>">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
