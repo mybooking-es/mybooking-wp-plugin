@@ -661,7 +661,7 @@
       // Activity page : reservation widget
       $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
       if ( isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
-        mybooking_engine_get_template('mybooking-plugin-activity-widget-tmpl.php');
+        mybooking_engine_get_template('mybooking-plugin-activities-activity-widget-tmpl.php');
       }
 
       // Wizard container and modify reservation modal containers
