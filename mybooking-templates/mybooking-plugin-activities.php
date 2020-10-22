@@ -24,7 +24,7 @@
 						<?php if ( !empty( $mybooking_activity->photo_url_full ) ) { ?>
 								  <img class="activity-card-img card-img-top" src="<?php echo esc_url( $mybooking_activity->photo_url_full )?>" alt="<?php echo esc_attr( $mybooking_activity->name )?>">
 						<?php } else { ?>
-						      <div class="text-center no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
+							   <img class="activity-card-img card-img-top" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>" alt="<?php echo esc_attr( $mybooking_activity->name )?>">
 						<?php } ?>
 					  <div class="card-body d-flex flex-column justify-content-center">
 					    <h3 class="h6 card-title activity-card-title"><?php echo esc_html( $mybooking_activity->name ) ?></h3>

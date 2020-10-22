@@ -632,6 +632,14 @@ div.order-no-product-photo {
     max-width: 440px !important;
 }
 
+/** Bootstrap **/
+.pagination {
+  list-style: none !important;
+}
+
+a.btn, a.page-link {
+  text-decoration: none !important;
+}
 
 /** JQUERY Validate **/
 

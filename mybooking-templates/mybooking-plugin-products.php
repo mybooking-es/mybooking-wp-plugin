@@ -12,7 +12,11 @@
 			<?php foreach( $args['data']->data as $mybooking_product ) { ?>
 			  <div class="col-md-4">
 					<div class="resource-product-card card d-flex flex-column mb-2 shadow mb-5 bg-white rounded-0">
-					  <img class="resource-product-card-img card-img-top rounded-0" src="<?php echo esc_url( $mybooking_product->photo_path )?>" alt="?php echo esc_attr( $mybooking_product->name )?>">
+						<?php if ( !empty( $mybooking_product->photo_path ) ) { ?>
+					  	<img class="resource-product-card-img card-img-top rounded-0" src="<?php echo esc_url( $mybooking_product->photo_path )?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
+						<?php } else { ?>
+ 					    <img class="resource-product-card-img card-img-top rounded-0" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">							
+						<?php } ?>
 					  <div class="card-body d-flex flex-column justify-content-center">
 					    <h5 class="h6 card-title text-left resource-product-card-title"><b><?php echo esc_html( $mybooking_product->name ) ?></b></h5>
 					    <p class="card-text text-muted"><?php echo wp_kses_post( $mybooking_product->short_description ) ?></p>
@@ -31,19 +35,19 @@
                 <?php if ( isset( $mybooking_product->characteristic_length ) && !empty( $mybooking_product->characteristic_length ) ) { ?>
                   <li class="icon-list-item">
                       <span class="icon-list-icon">
-                      	<img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/images/characteristics/length.svg' ) ?>"/>
+                      	<img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/characteristics/length.svg' ) ?>"/>
                       </span>
                       <span class="icon-list-text text-muted"><?php echo wp_kses( sprintf( _x('<b>%.2f</b> m.', 'renting_products', 'mybooking-wp-plugin' ), 
                       	                                                                   $mybooking_product->characteristic_length ),
                       	                                                          array( 'b' => array() ) ) ?></span>
                   </li>
                 <?php } ?>  							
-								<?php foreach ( $mybooking_product->key_characteristics as $key => $value) { ?>
+								<?php foreach ( $mybooking_product->key_characteristics as $mybooking_key => $mybooking_value) { ?>
 									<li class="icon-list-item">
 											<span class="icon-list-icon">
-												<img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/images/key_characteristics/'.$mybooking_key.'.svg' ) ?>"/>
+												<img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/key_characteristics/'.$mybooking_key.'.svg' ) ?>"/>
 											</span>
-											<span class="icon-list-text text-muted"><?php echo esc_html( $value ) ?></span>
+											<span class="icon-list-text text-muted"><?php echo esc_html( $mybooking_value ) ?></span>
 									</li>
 								<?php } ?>
 							</ul>
