@@ -103,6 +103,11 @@ input[type="submit"] {
 
 /** ------------ 3. Selector Form ------------------------ **/
 
+input:enabled[name=date_from].form-control[readonly],
+input:enabled[name=date_to].form-control[readonly] {
+  background-color: #ffffff;
+}
+
 /* Search form */
 form[name=widget_search_form] input[type=text],
 form[name=widget_search_form] select {
