@@ -562,6 +562,8 @@
           $content = $content.$this->get_current_page()->post_excerpt;
         }
       }
+      // Hold if the current page needs the selector wizard
+      $current_page_modify_reservation = false;
 
       // Renting Form
       if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
@@ -586,6 +588,7 @@
         else {
           mybooking_engine_get_template('mybooking-plugin-modify-reservation-tmpl.php');
         }
+        $current_page_modify_reservation = true;
       }
       else if ( $registry->mybooking_rent_plugin_checkout_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
@@ -605,6 +608,7 @@
         else {
           mybooking_engine_get_template('mybooking-plugin-modify-reservation-tmpl.php');
         }
+        $current_page_modify_reservation = true;
       }
       else if ( $registry->mybooking_rent_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
@@ -658,6 +662,18 @@
       $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
       if ( isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
         mybooking_engine_get_template('mybooking-plugin-activity-widget-tmpl.php');
+      }
+
+      // Wizard container and modify reservation modal containers
+      $active_wizard = is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
+                       has_shortcode( $content , 'mybooking_rent_engine_selector_wizard');      
+      
+      if ( $active_wizard || ( $current_page_modify_reservation && $registry->mybooking_rent_plugin_selector_in_process == 'wizard' ) ) {
+         mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php');
+      }
+
+      if (  $current_page_modify_reservation && $registry->mybooking_rent_plugin_selector_in_process == 'form' ) {
+         mybooking_engine_get_template('mybooking-plugin-modify-reservation.php');
       }
 
     }

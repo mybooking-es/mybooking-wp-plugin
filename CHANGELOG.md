@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.1]
+
+### Updated
+
+- MyBooking Templates Review
+
+### Fixed
+
+- Wizard container and modify reservation select dates render is reponsability of the plugin.
+  It allows a better integration with themes
+
 ## [0.7.0]
 
 ### Updated

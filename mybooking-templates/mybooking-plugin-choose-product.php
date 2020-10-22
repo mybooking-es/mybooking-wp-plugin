@@ -7,13 +7,6 @@
    */
 ?>
   
-<!-- Complement to modify reservation dates -->
-<?php if ( $args['selector_in_process'] == 'wizard' ) { ?>
-  <?php mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php') ?>
-<?php } else { ?>
-  <?php mybooking_engine_get_template('mybooking-plugin-modify-reservation.php') ?>
-<?php } ?>
-
 <section class="section">
   <div class="row">
     <!-- Sidebar reservation detail -->

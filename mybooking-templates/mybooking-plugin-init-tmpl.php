@@ -12,16 +12,16 @@
         var apiKey = '<?php echo esc_js( $args['mybooking_api_key'] )?>';
         // Renting
         var extrasStep = false;
-        var chooseProductUrl = '<?php echo esc_url( $args['mybooking_choose_products_page'] )?>';
-        var chooseExtrasUrl = '<?php echo esc_url( $args['mybooking_choose_extras_page'] )?>';
-        var completeUrl = '<?php echo esc_url( $args['mybooking_checkout_page'] )?>';
-        var summaryUrl = '<?php echo esc_url( $args['mybooking_summary_page'] )?>';
-        var termsUrl = '<?php echo esc_url( $args['mybooking_terms_page'] )?>';
-        var selectorInProcess = '<?php echo esc_url( $args['mybooking_selector_in_process'] )?>';
+        var chooseProductUrl = '<?php echo esc_js( $args['mybooking_choose_products_page'] )?>';
+        var chooseExtrasUrl = '<?php echo esc_js( $args['mybooking_choose_extras_page'] )?>';
+        var completeUrl = '<?php echo esc_js( $args['mybooking_checkout_page'] )?>';
+        var summaryUrl = '<?php echo esc_js( $args['mybooking_summary_page'] )?>';
+        var termsUrl = '<?php echo esc_js( $args['mybooking_terms_page'] )?>';
+        var selectorInProcess = '<?php echo esc_js( $args['mybooking_selector_in_process'] )?>';
         // Activities
-        var shoppingCartUrl = '<?php echo esc_url( $args['mybooking_activities_shopping_cart_page'] )?>';
-        var orderUrl = '<?php echo esc_url( $args['mybooking_activities_summary_page'] )?>';  
-        var activitiesTermsUrl = '<?php echo esc_url( $args['mybooking_activities_terms_page'] )?>'; 
+        var shoppingCartUrl = '<?php echo esc_js( $args['mybooking_activities_shopping_cart_page'] )?>';
+        var orderUrl = '<?php echo esc_js( $args['mybooking_activities_summary_page'] )?>';  
+        var activitiesTermsUrl = '<?php echo esc_js( $args['mybooking_activities_terms_page'] )?>'; 
         // Common
         <?php if ($args['mybooking_custom_loader'] == '1') { ?>
         var customLoader = true;
