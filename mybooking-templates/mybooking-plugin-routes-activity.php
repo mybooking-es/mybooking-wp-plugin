@@ -37,7 +37,7 @@ get_header();?>
 			<?php } ?>
 			<h1 class="h2 mt-3"><?php echo esc_html( $args->name ) ?></h1>
       <hr>
-      <?php if ($args->address) { ?>
+      <?php if !empty( $args->address ) { ?>
 	      <div><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<?php echo esc_html( $args->address->street ) ?> <?php echo esc_html( $args->address->city ) ?> <?php echo esc_html( $args->address->zip ) ?></div>
 	    	<br>
 	    <?php } ?>
