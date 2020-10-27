@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.2]
+
+### Added
+
+- Custom form possibility in renting checkout
+
 ## [0.7.1]
 
 ### Updated
