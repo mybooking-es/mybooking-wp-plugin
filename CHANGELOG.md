@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.3]
+
+### Added
+
+- Renting select product: Show info icon
+
+### Fixed
+
+- Modify reservation modal : Removed fade for theme compatibility
+
 ## [0.7.2]
 
 ### Added
