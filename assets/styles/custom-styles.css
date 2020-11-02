@@ -326,6 +326,20 @@ form[name=widget_search_form] input[type=submit] {
   align-items: center;
 }
 
+.product-card .card-img i.js-product-info-btn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 2rem;
+    color: #e0e0e0;
+    transition: ease-in-out 0.2ms;
+}
+
+.product-card .card-img i.js-product-info-btn:hover {
+    cursor: pointer;
+    color: #bdbdbd;
+}
+
 
 .product-card .card-body {
   padding-top: 0;

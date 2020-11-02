@@ -23,6 +23,7 @@
               <div class="card-img">
                 <img class="card-img-top js-product-info-btn" src="<%=product.full_photo%>" alt="<%=product.name%>"
                     data-product="<%=product.code%>">
+                <i type="button" class="fa fa-info-circle js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>"></i>                    
               </div>
               <div class="card-body">
                 <h5 class="card-title text-center"><%=product.short_description%></h5>

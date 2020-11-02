@@ -7,7 +7,7 @@
    */
 ?>
 <!-- Modify reservation modal -->
-<div class="modal fade modal-mybooking" 
+<div class="modal modal-mybooking" 
      id="modify_reservation_modal" tabindex="-1" role="dialog" aria-labelledby="modifyReservationModal"
   aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
