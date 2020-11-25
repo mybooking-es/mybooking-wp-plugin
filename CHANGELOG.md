@@ -5,6 +5,7 @@
 ### Added
 
 - Renting select product: Show info icon
+- Caravaning key characteristic icons
 
 ### Fixed
 
