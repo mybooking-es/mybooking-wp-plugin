@@ -3,7 +3,7 @@ Contributors: juanmiqueo
 Donate link: https://mybooking.es/
 Tags: reservation engine
 Requires at least: 5.2
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Stable tag: trunk
 Requires PHP: 7.2
 License: GPLv2 or later
