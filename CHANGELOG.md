@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.4]
+
+### Fixed
+
+- Renting search specifically delivery/collection date/times
+- Renting wizard select form include sales channel code
+
 ## [0.7.3]
 
 ### Added

@@ -59,6 +59,11 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.7.4 =
+* Renting
+  * Fixed deliveries/collections dates/times search
+  * Added sales channel code to wizard selector form
+
 = 0.7.3 =
 * Renting
   * Fixed modify reservation modal form on some themes
@@ -154,6 +159,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.7.4 =
+* Fixed reservation engine search specifically delivery/collection dates
 
 = 0.7.3 =
 * Fixed themes compatibility on modify reservation form
