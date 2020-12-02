@@ -321,9 +321,9 @@ form[name=widget_search_form] input[type=submit] {
 }
 
 .product-card .card-img {
-  height: 350px;
+  height: 320px;
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .product-card .card-img i.js-product-info-btn {
