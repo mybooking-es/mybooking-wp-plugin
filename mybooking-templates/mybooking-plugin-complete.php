@@ -1,5 +1,5 @@
 <?php
-  /** 
+  /**
    * The Template for showing the renting complete step
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-complete.php
@@ -27,7 +27,7 @@
     <div id="extras_listing">
     </div>
     <!-- Reservation complete -->
-    <h4 class="p-4 complete-section-bg"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+    <h4 class="complete-section-title"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
     <form id="form-reservation" name="reservation_form" autocomplete="off">
 
         <div class="form-group">
@@ -59,13 +59,15 @@
             <label for="customer_mobile_phone"><?php echo esc_html_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
             <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
         </div>
+        <br>
 
-        <h4 class="mb-2 p-4 complete-section-bg"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+        <h5 class="mb-4 complete-section-title"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h5>
 
         <div class="form-group">
           <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
           <textarea class="form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
         </div>
+        <br>
 
         <!-- Reservation : payment (script_payment_detail) -->
         <div id="payment_detail">

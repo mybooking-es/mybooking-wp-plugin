@@ -1,46 +1,58 @@
 <?php
-  /** 
+  /**
    * The Template for showing the renting complete step - JS microtemplates
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-complete-tmpl.php
    *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
    * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
    */
 ?>
 <!-- Extra representation -->
 <script type="text/template" id="script_detailed_extra">
 
   <% if (coverages && coverages.length > 0) {%>
-    <h4 class="p-4 complete-section-bg"><?php echo esc_html_x( 'Coverage', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
-    <% for (var idx=0;idx<coverages.length;idx++) { %>
-      <% var coverage = coverages[idx]; %>
-      <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
-      <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
-      <div class="extra-wrapper extra-card <%=bg%> <% if (value > 0) {%>selected-coverage<%}%>" data-extra="<%=coverage.code%>">
-        <div class="row">
-          <div class="col-4">
-            <% if (coverage.photo_path) { %>
-            <img class="extra-img p-2 js-extra-info-btn" src="<%=coverage.photo_path%>"
-                 alt="<%=coverage.name%>" data-extra="<%=coverage.code%>">
-            <% } %>
-            <div class="extra-name text-left p-3"><b><%=coverage.name%></b></div>
+    <h4 class="complete-section-title"><?php echo esc_html_x( 'Coverage', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+    <div class="extra-wrapper">
+      <% for (var idx=0;idx<coverages.length;idx++) { %>
+        <% var coverage = coverages[idx]; %>
+        <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
+        <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
+        <div class="row extra-card <%=bg%> <% if (value > 0) {%>selected-coverage<%}%>" data-extra="<%=coverage.code%>">
+          <% if (coverage.photo_path) { %>
+          <div class="col-md-2">
+            <img
+              class="extra-img js-extra-info-btn"
+              src="<%=coverage.photo_path%>"
+              alt="<%=coverage.name%>"
+              data-extra="<%=coverage.code%>">
           </div>
-          <div class="col-5">
+          <div class="col-md-4">
+            <div class="extra-name"><b><%=coverage.name%></b></div>
+          </div>
+          <% } else { %>
+            <div class="col-md-6">
+              <div class="extra-name"><b><%=coverage.name%></b></div>
+            </div>
+          <% } %>
+          <div class="col-md-3">
             <% if (coverage.max_quantity > 1) { %>
-              <div class="extra-plus-minus p-2">
+              <div class="extra-plus-minus">
                 <button class="btn btn-primary btn-minus-extra"
                         data-value="<%=coverage.code%>"
                         data-max-quantity="<%=coverage.max_quantity%>">-</button>
                 <input type="text" id="extra-<%=coverage.code%>-quantity"
-                       class="form-control disabled text-center extra-input" value="<%=value%>" data-extra-code="<%=coverage.code%>" readonly/>
+                       class="form-control disabled text-center extra-input"
+                       value="<%=value%>"
+                       data-extra-code="<%=coverage.code%>"
+                       readonly/>
                 <button class="btn btn-primary btn-plus-extra"
                         data-value="<%=coverage.code%>"
                         data-max-quantity="<%=coverage.max_quantity%>">+</button>
               </div>
             <% } else { %>
-              <div class="extra-check p-3">
+              <div class="extra-check">
                 <div class="custom-control custom-switch">
                   <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=coverage.code%>" data-value="<%=coverage.code%>"
                   <% if (extrasInShoppingCart[coverage.code] &&  extrasInShoppingCart[coverage.code] > 0) { %> checked="checked" <% } %>>
@@ -49,37 +61,44 @@
               </div>
             <% } %>
           </div>
-          <div class="col-3">
-           <p class="extra-price text-right p-3">
+          <div class="col-md-3">
+           <p class="extra-price">
               <b><%= configuration.formatExtraAmount(i18next, coverage.one_unit_price, coverage.price_calculation,
                                                      shopping_cart.days, shopping_cart.hours,
                                                      coverage.unit_price)%></b>
            </p>
           </div>
         </div>
-      </div>
-    <% } %>
-    <hr class="mt-3 mb-4">
+      <% } %>
+    </div>
   <% } %>
 
   <% if (extras && extras.length > 0) {%>
-    <h4 class="p-4 complete-section-bg"><?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
-    <% for (var idx=0;idx<extras.length;idx++) { %>
-      <% var extra = extras[idx]; %>
-      <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
-      <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
-      <div class="extra-wrapper extra-card <%=bg%>" data-extra="<%=extra.code%>">
-        <div class="row">
-          <div class="col-4">
-            <% if (extra.photo_path) { %>
-            <img class="extra-img p-2 js-extra-info-btn" src="<%=extra.photo_path%>"
-                  alt="<%=extra.name%>" data-extra="<%=extra.code%>">
-            <% } %>
-            <div class="extra-name text-left p-3"><b><%=extra.name%></b></div>
-          </div>
-          <div class="col-5">
+    <h4 class="complete-section-title"><?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+    <div class="extra-wrapper">
+      <% for (var idx=0;idx<extras.length;idx++) { %>
+        <% var extra = extras[idx]; %>
+        <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
+        <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
+        <div class="row extra-card <%=bg%>" data-extra="<%=extra.code%>">
+          <% if (extra.photo_path) { %>
+            <div class="col-md-2">
+              <img class="extra-img js-extra-info-btn"
+                    src="<%=extra.photo_path%>"
+                    alt="<%=extra.name%>"
+                    data-extra="<%=extra.code%>">
+            </div>
+            <div class="col-md-4">
+              <div class="extra-name"><b><%=extra.name%></b></div>
+            </div>
+          <% } else { %>
+            <div class="col-md-6">
+              <div class="extra-name"><b><%=extra.name%></b></div>
+            </div>
+          <% } %>
+          <div class="col-md-3">
             <% if (extra.max_quantity > 1) { %>
-              <div class="extra-plus-minus p-2">
+              <div class="extra-plus-minus">
                 <button class="btn btn-primary btn-minus-extra"
                         data-value="<%=extra.code%>"
                         data-max-quantity="<%=extra.max_quantity%>">-</button>
@@ -90,7 +109,7 @@
                         data-max-quantity="<%=extra.max_quantity%>">+</button>
               </div>
             <% } else { %>
-              <div class="extra-check p-3">
+              <div class="extra-check">
                 <div class="custom-control custom-switch">
                   <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=extra.code%>" data-value="<%=extra.code%>"
                   <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>
@@ -99,17 +118,16 @@
               </div>
             <% } %>
           </div>
-          <div class="col-3">
-           <p class="extra-price text-right p-3">
+          <div class="col-md-3">
+           <p class="extra-price">
               <b><%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation,
                                                      shopping_cart.days, shopping_cart.hours,
                                                      extra.unit_price)%></b>
            </p>
           </div>
         </div>
-      </div>
-    <% } %>
-    <hr class="mt-3 mb-4">
+      <% } %>
+    </div>
   <% } %>
 
 </script>
@@ -430,8 +448,8 @@
                 <?php if ( empty($args['terms_and_conditions']) ) { ?>
                   <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                 <?php } else { ?>
-                  <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 
-                                                         'renting_complete', 'mybooking-wp-plugin' ), 
+                  <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental',
+                                                         'renting_complete', 'mybooking-wp-plugin' ),
                                                      $args['terms_and_conditions'] ) )?>
                 <?php } ?>
               </label>
@@ -440,7 +458,7 @@
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <button type="submit" class="btn btn-success"><?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+              <button type="submit" class="btn btn-primary"><?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
             </div>
           </div>
         </div>
@@ -463,7 +481,7 @@
                         <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                       <?php } else { ?>
                         <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental',
-                                                               'renting_complete', 'mybooking-wp-plugin' ), 
+                                                               'renting_complete', 'mybooking-wp-plugin' ),
                                                            $args['terms_and_conditions'] ) ) ?>
                       <?php } ?>
                     </label>
@@ -472,7 +490,7 @@
 
                 <div class="form-row">
                   <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-success"><?php echo esc_html_x( 'Confirm', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+                    <button type="submit" class="btn btn-primary"><?php echo esc_html_x( 'Confirm', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
                   </div>
                 </div>
             </div>
@@ -528,8 +546,8 @@
                           <?php if ( empty($args['terms_and_conditions']) ) { ?>
                             <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                           <?php } else { ?>
-                            <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 
-                                                                   'renting_complete', 'mybooking-wp-plugin' ), 
+                            <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental',
+                                                                   'renting_complete', 'mybooking-wp-plugin' ),
                                                                $args['terms_and_conditions'] ) )?>
                           <?php } ?>
                     </label>
@@ -538,7 +556,7 @@
 
                 <div class="form-row">
                   <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-success"><%=i18next.t('complete.reservationForm.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%></a>
+                    <button type="submit" class="btn btn-primary"><%=i18next.t('complete.reservationForm.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%></a>
                   </div>
                 </div>
             </div>

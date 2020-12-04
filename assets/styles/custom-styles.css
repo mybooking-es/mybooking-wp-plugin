@@ -410,6 +410,11 @@ form[name=widget_search_form] input[type=submit] {
   padding: 0 !important;
 }
 
+.card .list-group,
+.card .list-group li {
+  margin: 0;
+}
+
 /** Badge no availability **/
 .product-card .card-info .badge {
   white-space: normal !important;
@@ -420,14 +425,37 @@ form[name=widget_search_form] input[type=submit] {
 
 /** ------------ 6. Reservation Wizard : Complete ------- **/
 
-.complete-section-bg {
-  background-color: rgba(0,0,0,.03);
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: 4px 4px 0 0;
-  margin-bottom: 2rem!important;
+.complete-section-title {
+  margin: 0 0 4rem 0!important;
+}
+
+@media (max-width: 574.98px) {
+  .complete-section-title {
+    text-align: center;
+  }
 }
 
 /* Extras */
+
+.extra-wrapper {
+  margin-bottom: 5rem;
+}
+
+.row.extra-card {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+@media (max-width: 574.98px) {
+  .row.extra-card {
+    text-align: center;
+    padding: 2rem;
+  }
+}
 
 .extra-img {
   width: 100px;
@@ -443,7 +471,6 @@ form[name=widget_search_form] input[type=submit] {
 .extra-plus-minus {
   height: 40px;
   text-align: center !important;
-  margin-top: 30px;
 }
 .extra-plus-minus input[type=text] {
   width: 40px;
@@ -457,13 +484,40 @@ form[name=widget_search_form] input[type=submit] {
 }
 
 .extra-check {
-  height: 40px;
-  text-align: center !important;
-  margin-top: 25px;
+  text-align: center!important;
+}
+
+.extra-check .custom-control.custom-switch {
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.extra-check .custom-switch .custom-control-label::before {
+    left: -2.25rem;
+    width: 2em;
+    pointer-events: all;
+    border-radius: 2rem;
+    height: 2rem;
+}
+
+.extra-check .custom-switch .custom-control-label::after {
+  top: calc(.25rem + 2px);
+  left: calc(-2.3rem + 4px);
+  width: calc(2rem - 4px);
+  height: calc(2rem - 4px);
+  background-color: #adb5bd;
+  border-radius: 2rem;
 }
 
 .extra-price {
-  margin-top: 10px;
+  margin: 0;
+  text-align: right;
+}
+
+@media (max-width: 574.98px) {
+  .extra-price {
+    text-align: center;
+  }
 }
 
 .extra-total {
@@ -471,8 +525,8 @@ form[name=widget_search_form] input[type=submit] {
     color: #aaaaaa;
 }
 
-#extras_listing .complete-section-bg {
-  margin-bottom: 0!important;
+#form-reservation textarea {
+  min-height: 160px;
 }
 
 /* Product */
