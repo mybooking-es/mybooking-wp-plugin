@@ -241,6 +241,10 @@
              <span class="product-amount pull-right">
                <%=configuration.formatCurrency(shopping_cart.items[idx].item_cost)%>
              </span>
+             <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+             <br>
+             <small class="h6 pull-right"><?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?></small>
+             <?php endif; ?>     
              <!-- Offer/Promotion Code Appliance -->
              <% if (shopping_cart.items[idx].item_unit_cost_base != shopping_cart.items[idx].item_unit_cost) { %>
                <br>
@@ -362,6 +366,9 @@
     <div class="jumbotron mb-3">
       <h2 class="h5 text-center"><?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?></h2>
       <h2 class="h3 text-center"><%=configuration.formatCurrency(shopping_cart.total_cost)%></h2>
+      <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+      <p class="text-center"><small class="h6"><?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?></p>
+      <?php endif; ?>          
     </div>
   </div>
 </script>

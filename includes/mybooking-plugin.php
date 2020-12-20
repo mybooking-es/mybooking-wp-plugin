@@ -604,6 +604,7 @@
         else {
           $data['terms_and_conditions'] = get_site_url().'/'.$registry->mybooking_rent_plugin_terms_page;
         }
+        $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
         mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php', $data);
         // If selector in process Wizard, load the micro-templates for the process
         if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
