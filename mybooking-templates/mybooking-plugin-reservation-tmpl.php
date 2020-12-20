@@ -136,6 +136,9 @@
                        </span>
                      </div>   
                    <% } %> 
+                  <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+                  <p class="text-right"><small><?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?></small></p>
+                  <?php endif; ?>  
                 </li>
               <% } %>
             </ul>
@@ -233,6 +236,9 @@
           <div class="jumbotron mb-3">
             <h2 class="h5 text-center"><?php echo esc_html_x( 'Total', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?></h2>
             <h2 class="h3 text-center"><%=configuration.formatCurrency(booking.total_cost)%></h2>
+            <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+            <p class="text-center"><small><?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?></small></p>
+            <?php endif; ?>             
           </div>  
           <table class="table">
             <tr class="table-success">

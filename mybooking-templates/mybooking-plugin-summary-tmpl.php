@@ -117,7 +117,10 @@
                      <del><%=configuration.formatCurrency(booking.booking_lines[idx].item_unit_cost_base * booking.booking_lines[idx].quantity)%></del>
                    </span>
                  </div>   
-               <% } %> 
+               <% } %>   
+               <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+               <p class="text-right"><small><?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?></small></p>
+               <?php endif; ?>              
             </li>
           <% } %>
         </ul>
@@ -211,6 +214,9 @@
 
       <div class="jumbotron mb-3">
         <p class="lead"><?php echo esc_html_x( 'Total', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><b><%=configuration.formatCurrency(booking.total_cost)%></b></span></p>
+        <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+        <p class="text-right"><small><?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?></small></p>
+        <?php endif; ?>          
         <% if (booking.total_paid > 0) { %>
           <p class="lead"><?php echo esc_html_x( 'Total paid', 'renting_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(booking.total_paid)%></span></p>
         <% } %>

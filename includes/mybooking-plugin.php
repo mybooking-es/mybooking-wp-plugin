@@ -617,7 +617,9 @@
       }
       else if ( $registry->mybooking_rent_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
-        mybooking_engine_get_template('mybooking-plugin-summary-tmpl.php');
+        $data = array();
+        $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
+        mybooking_engine_get_template('mybooking-plugin-summary-tmpl.php', $data);
       }
       else if ( $registry->mybooking_activities_plugin_shopping_cart_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
@@ -638,7 +640,9 @@
 
       // Renting shortcode : My reservation - reservation
       if ( has_shortcode( $content, 'mybooking_rent_engine_reservation') ) {
-        mybooking_engine_get_template('mybooking-plugin-reservation-tmpl.php');
+        $data = array();
+        $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;        
+        mybooking_engine_get_template('mybooking-plugin-reservation-tmpl.php', $data);
       }
 
       // Activities search shortcode
