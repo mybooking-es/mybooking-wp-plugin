@@ -3,7 +3,7 @@ Contributors: juanmiqueo
 Donate link: https://mybooking.es/
 Tags: reservation engine
 Requires at least: 5.2
-Tested up to: 5.5.3
+Tested up to: 5.6
 Stable tag: trunk
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -58,6 +58,10 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 5. Renting checkout page
 
 == Changelog ==
+
+= 0.7.5 =
+* Renting
+  * Business context translations
 
 = 0.7.4 =
 * Renting
@@ -159,6 +163,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.7.5 =
+* Renting - Business context translations
 
 = 0.7.4 =
 * Fixed reservation engine search specifically delivery/collection dates
