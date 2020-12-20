@@ -20,7 +20,7 @@
 
   	    <% if (not_hidden_family_id && configuration.selectFamily) { %>
 		    <div class="flex-form-group widget_family" style="display: none">
-		      <label for="family_id"><?php echo esc_html_x( 'Family', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+		      <label for="family_id"><?php echo MyBookingEngineContext::getInstance()->getFamily() ?></label>
 		      <div class="flex-form-horizontal-item">
 		      	<select name="family_id" id="widget_family_id" class="form-control"></select>
 	  	    </div>
@@ -28,14 +28,14 @@
 	    <% } %>
 	    
 	    <div class="flex-form-group">
-	      <label for="date_from"><?php echo esc_html_x( 'Pick-up date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+	      <label for="date_from"><?php echo MyBookingEngineContext::getInstance()->getDeliveryDate() ?></label>
 	      <div class="flex-form-horizontal-item">
 		      <input type="text" class="form-control" name="date_from" id="widget_date_from" autocomplete="off" readonly="true">
 		      <input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
 			  </div>
 	    </div>
 	    <div class="flex-form-group">
-	      <label for="date_to"><?php echo esc_html_x( 'Return date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+	      <label for="date_to"><?php echo MyBookingEngineContext::getInstance()->getCollectionDate() ?></label>
 	      <div class="flex-form-horizontal-item">
 		      <input type="text" class="form-control" name="date_to" id="widget_date_to" autocomplete="off" readonly="true">
 		      <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
@@ -84,7 +84,7 @@
 		  <div class="flex-form-group">
 		    <!-- Delivery date -->
 		    <div class="flex-form-horizontal-box">
-		      <label for="date_from"><?php echo esc_html_x( 'Pick-up date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+		      <label for="date_from"><?php echo MyBookingEngineContext::getInstance()->getDeliveryDate() ?></label>
 		      <div class="flex-form-horizontal-item">
 			      <input type="text" class="form-control" name="date_from" id="widget_date_from" autocomplete="off" readonly="true">
 			    	<% if (configuration.timeToFrom) { %>
@@ -96,7 +96,7 @@
 		    </div>
 		    <!-- Delivery time -->
 		    <div class="flex-form-horizontal-box">
-		      <label for="date_to"><?php echo esc_html_x( 'Return date', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+		      <label for="date_to"><?php echo MyBookingEngineContext::getInstance()->getCollectionDate() ?></label>
 		      <div class="flex-form-horizontal-item">
 			      <input type="text" class="form-control" name="date_to" id="widget_date_to" autocomplete="off" readonly="true">
 				    <% if (configuration.timeToFrom) { %>
@@ -112,7 +112,7 @@
 
 	  <% if (not_hidden_family_id && configuration.selectFamily) { %>
 	    <div class="flex-form-horizontal-box widget_family" style="display: none">
-	      <label for="family_id"><?php echo esc_html_x( 'Family', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+	      <label for="family_id"><?php echo MyBookingEngineContext::getInstance()->getFamily() ?></label>
 	      <div class="flex-form-horizontal-item">
 	      	<select name="family_id" id="widget_family_id" class="form-control"></select>
   	    </div>

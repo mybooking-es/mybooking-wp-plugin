@@ -327,6 +327,43 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
+		  // Show taxes included
+		  add_settings_field('mybooking_plugin_settings_show_taxes_included',
+		                     'Show taxes included',
+		                     array($this, 'field_mybooking_plugin_settings_show_taxes_included_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');
+
+
+		  // Duration context
+		  add_settings_field('mybooking_plugin_settings_duration_context',
+		                     'Duration context',
+		                     array($this, 'field_mybooking_plugin_settings_duration_context_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');
+
+		  // Family context
+		  add_settings_field('mybooking_plugin_settings_family_context',
+		                     'Family context',
+		                     array($this, 'field_mybooking_plugin_settings_family_context_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');
+
+		  // Product context
+		  add_settings_field('mybooking_plugin_settings_product_context',
+		                     'Product context',
+		                     array($this, 'field_mybooking_plugin_settings_product_context_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');
+
+
+		  // Dates context
+		  add_settings_field('mybooking_plugin_settings_dates_context',
+		                     'Dates context',
+		                     array($this, 'field_mybooking_plugin_settings_dates_context_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');
+
 		  // Product detail pages (calendar)
 		  add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
 		  									'<em>Use product detail pages</em>',
@@ -688,6 +725,244 @@ EOF;
 		  echo "<hr>";
 
 		}
+
+		/**
+		 * Render Mybooking Taxes Included
+		 */
+		public function field_mybooking_plugin_settings_show_taxes_included_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_renting");
+		  $field = "mybooking_plugin_settings_show_taxes_included";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_renting[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_renting[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Show taxes included.";
+		  echo "<p class=\"description\">Activate if you want to show taxes included literal in reservation.</p>";
+		  echo "<p class=\"description\">Do not activate if you do not want to show taxes included literal in reservation.</p>";
+
+
+		}
+
+		/**
+		 * Render Mybooking Family context
+		 */
+		public function field_mybooking_plugin_settings_family_context_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_renting");
+		  $field = "mybooking_plugin_settings_family_context";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
+		  $select .= "<option value=''>[Choose family context]</option>";
+
+		  if ($value == 'product') {
+		    $select .= "<option value='product' selected>Type of product</option>";
+		  }
+		  else {
+		    $select .= "<option value='product'>Type of product</option>";
+		  }
+
+			if ($value == 'family') {
+		    $select .= "<option value='family' selected>Family</option>";
+		  }
+		  else {
+		    $select .= "<option value='family'>Family</option>";
+		  }
+
+			if ($value == 'vehicle') {
+		    $select .= "<option value='vehicle' selected>Type of vehicle</option>";
+		  }
+		  else {
+		    $select .= "<option value='vehicle'>Type of vehicle</option>";
+		  }		  
+
+			if ($value == 'property') {
+		    $select .= "<option value='property' selected>Type of property</option>";
+		  }
+		  else {
+		    $select .= "<option value='property'>Type of property</option>";
+		  }
+
+		  if ($value == 'room') {
+		    $select .= "<option value='room' selected>Type of room</option>";
+		  }
+		  else {
+		    $select .= "<option value='room'>Type of room</option>";
+		  }
+
+		  $select .= "</select>";
+
+		  echo $select;
+		  echo "<p class=\"description\">Choose the family that describes your business context.</p>"; 		  
+		  echo "<hr>";
+
+		}
+
+		/**
+		 * Render Mybooking Product context
+		 */
+		public function field_mybooking_plugin_settings_product_context_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_renting");
+		  $field = "mybooking_plugin_settings_product_context";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
+		  $select .= "<option value=''>[Choose product context]</option>";
+
+		  if ($value == 'vehicle') {
+		    $select .= "<option value='vehicle' selected>Vehicle</option>";
+		  }
+		  else {
+		    $select .= "<option value='vehicle'>Vehicle</option>";
+		  }
+
+			if ($value == 'product') {
+		    $select .= "<option value='product' selected>Product</option>";
+		  }
+		  else {
+		    $select .= "<option value='product'>Product</option>";
+		  }
+
+			if ($value == 'property') {
+		    $select .= "<option value='property' selected>Property</option>";
+		  }
+		  else {
+		    $select .= "<option value='property'>Property</option>";
+		  }
+
+		  if ($value == 'room') {
+		    $select .= "<option value='room' selected>Room</option>";
+		  }
+		  else {
+		    $select .= "<option value='room'>Room</option>";
+		  }
+
+		  $select .= "</select>";
+
+		  echo $select;
+		  echo "<p class=\"description\">Choose the product that describes your business context.</p>"; 		  
+		  echo "<hr>";
+
+		}
+
+
+		/**
+		 * Render Mybooking Duration context
+		 */
+		public function field_mybooking_plugin_settings_duration_context_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_renting");
+		  $field = "mybooking_plugin_settings_duration_context";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
+		  $select .= "<option value=''>[Choose duration context]</option>";
+
+		  if ($value == 'days') {
+		    $select .= "<option value='days' selected>Days</option>";
+		  }
+		  else {
+		    $select .= "<option value='days'>Days</option>";
+		  }
+
+			if ($value == 'nights') {
+		    $select .= "<option value='nights' selected>Nights</option>";
+		  }
+		  else {
+		    $select .= "<option value='nights'>Nights</option>";
+		  }
+
+		  $select .= "</select>";
+
+		  echo $select;
+		  echo "<p class=\"description\">Choose the duration that describes your business context.</p>";
+		  echo "<p class=\"description\">Select <b>days</b> to describe duration in days.</p>";
+		  echo "<p class=\"description\">Select <b>nights/b> to describe duration in nights.</p>";		  
+		  echo "<hr>";
+
+		}
+
+		/**
+		 * Render Mybooking Dates context
+		 */
+		public function field_mybooking_plugin_settings_dates_context_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_renting");
+		  $field = "mybooking_plugin_settings_dates_context";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
+		  $select .= "<option value=''>[Choose dates context]</option>";
+
+		  if ($value == 'pickup-return') {
+		    $select .= "<option value='pickup-return' selected>Pickup/Return</option>";
+		  }
+		  else {
+		    $select .= "<option value='pickup-return'>Pickup/Return</option>";
+		  }
+
+			if ($value == 'checkin-checkout') {
+		    $select .= "<option value='checkin-checkout' selected>Checkin/Checkout</option>";
+		  }
+		  else {
+		    $select .= "<option value='checkin-checkout'>Checkin/Checkout</option>";
+		  }
+
+		  if ($value == 'start-end') {
+		    $select .= "<option value='start-end' selected>Start/End</option>";
+		  }
+		  else {
+		    $select .= "<option value='start-end'>Start/End</option>";
+		  }
+
+			if ($value == 'arrive-departure') {
+		    $select .= "<option value='arrive-departure' selected>Arrive/Depature</option>";
+		  }
+		  else {
+		    $select .= "<option value='arrive-departure'>Arrive/Depature</option>";
+		  }
+
+		  $select .= "</select>";
+
+		  echo $select;
+		  echo "<p class=\"description\">Choose the start/end date that describes your business context.</p>";
+		  echo "<p class=\"description\">Select <b>pickup/return</b> to describe pickup and return dates.</p>";
+		  echo "<p class=\"description\">Select <b>checkin/checkout</b> for accommodation or properties.</p>";
+		  echo "<p class=\"description\">Select <b>start/end</b> to describe start and end period.</p>";
+		  echo "<p class=\"description\">Select <b>arrive/depature</b> to describe arrivals an departures</p>";		  		  
+		  echo "<hr>";
+
+		}
+
 
 		/**
 		 * Render Mybooking Use Products Detail page

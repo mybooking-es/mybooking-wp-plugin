@@ -426,7 +426,11 @@ form[name=widget_search_form] input[type=submit] {
 /** ------------ 6. Reservation Wizard : Complete ------- **/
 
 .complete-section-title {
-  margin: 0 0 4rem 0!important;
+  background-color: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 1rem!important;
+  padding: 1rem;
 }
 
 @media (max-width: 574.98px) {

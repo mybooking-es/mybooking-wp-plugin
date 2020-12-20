@@ -192,9 +192,9 @@
           <% } %>
         </li>
         <% if (shopping_cart.days > 0) { %>
-          <li class="list-group-item reservation-summary-card-detail"><?php echo esc_html_x( 'Rental duration', 'renting_complete', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.days%> <?php echo esc_html_x( 'day(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
+          <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></li>
         <% } else if (shopping_cart.hours > 0) { %>
-          <li class="list-group-item reservation-summary-card-detail"><?php echo esc_html_x( 'Rental duration', 'renting_complete', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
+          <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
         <% } %>
         <li class="list-group-item">
           <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo esc_html_x( 'Edit', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
@@ -223,7 +223,7 @@
     <% if (shopping_cart.items.length > 0) { %>
       <div class="card mb-3">
         <div class="card-header">
-          <b><?php echo esc_html_x( 'Products', 'renting_complete', 'mybooking-wp-plugin' ) ?></b>
+          <b><?php echo MyBookingEngineContext::getInstance()->getProduct() ?></b>
         </div>
         <ul class="list-group list-group-flush">
           <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>

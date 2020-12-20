@@ -22,6 +22,8 @@
   require_once('api/mybooking-plugin-api-client.php');
   require_once('ui/mybooking-plugin-activities-ui-pages.php');
   require_once('api/mybooking-plugin-activities-api-client.php');
+  // Engine context
+  require_once('translation/mybooking-plugin-engine-context.php');
 
   // == WordPress components
 
@@ -580,7 +582,9 @@
       // Load scripts
       if ( $registry->mybooking_rent_plugin_choose_products_page != '' &&
            mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
-        mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php');
+        $data = array();
+        $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
+        mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php', $data);
         // If selector in process Wizard, load the micro-templates for the process
         if ($registry->mybooking_rent_plugin_selector_in_process == 'wizard') {
           mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
@@ -1238,6 +1242,41 @@
       else {
         $registry->mybooking_rent_plugin_selector_in_process = 'form';
       }
+
+      if ($settings && array_key_exists('mybooking_plugin_settings_show_taxes_included', $settings)) {
+        $registry->mybooking_rent_plugin_show_taxes_included = (trim(esc_attr( $settings["mybooking_plugin_settings_show_taxes_included"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_show_taxes_included = false;
+      }
+
+      if ($settings && array_key_exists('mybooking_plugin_settings_family_context', $settings)) {
+        $registry->mybooking_rent_plugin_family_context = $settings["mybooking_plugin_settings_family_context"] ? $settings["mybooking_plugin_settings_family_context"] : 'family';
+      }
+      else {
+        $registry->mybooking_rent_plugin_family_context = 'family';
+      }  
+
+      if ($settings && array_key_exists('mybooking_plugin_settings_product_context', $settings)) {
+        $registry->mybooking_rent_plugin_product_context = $settings["mybooking_plugin_settings_product_context"] ? $settings["mybooking_plugin_settings_product_context"] : 'product';
+      }
+      else {
+        $registry->mybooking_rent_plugin_product_context = 'product';
+      }  
+
+      if ($settings && array_key_exists('mybooking_plugin_settings_dates_context', $settings)) {
+        $registry->mybooking_rent_plugin_dates_context = $settings["mybooking_plugin_settings_dates_context"] ? $settings["mybooking_plugin_settings_dates_context"] : 'pickup-return';
+      }
+      else {
+        $registry->mybooking_rent_plugin_dates_context = 'pickup-return';
+      }  
+
+      if ($settings && array_key_exists('mybooking_plugin_settings_duration_context', $settings)) {
+        $registry->mybooking_rent_plugin_duration_context = $settings["mybooking_plugin_settings_duration_context"] ? $settings["mybooking_plugin_settings_duration_context"] : 'days';
+      }
+      else {
+        $registry->mybooking_rent_plugin_duration_context = 'days';
+      }      
 
       if ($settings && array_key_exists('mybooking_plugin_settings_use_product_detail_pages', $settings)) {
         $registry->mybooking_rent_plugin_detail_pages = (trim(esc_attr( $settings["mybooking_plugin_settings_use_product_detail_pages"] )) == '1');

@@ -54,11 +54,11 @@
                   <!-- Duration -->
                   <% if (booking.days > 0) { %>                  
                     <li class="list-group-item reservation-summary-card-detail">
-                       <?php echo esc_html_x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.days%> <?php echo esc_html_x( 'day(s)', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+                       <%=booking.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
                     </li>
                   <% } else if (booking.hours > 0) { %>
                     <li class="list-group-item reservation-summary-card-detail">
-                       <?php echo esc_html_x( 'Rental duration', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>: <%=booking.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?> 
+                       <%=booking.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?> 
                     </li>                 
                   <% } %>
                 </ul>
@@ -94,7 +94,7 @@
           <div class="card mb-3">
             <!-- Products -->
             <div class="card-header">
-              <b><?php echo esc_html_x( 'Products', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?></b>
+              <b><?php echo MyBookingEngineContext::getInstance()->getProduct() ?></b>
             </div>  
             <ul class="list-group list-group-flush">
               <% for (var idx=0;idx<booking.booking_lines.length;idx++) { %>

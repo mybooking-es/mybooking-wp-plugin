@@ -82,6 +82,10 @@
                      <small class="h6" style="text-decoration: line-through"><%= configuration.formatCurrency(product.base_price)%></small>
                      <% } %>
                      <%= configuration.formatCurrency(product.price)%>
+                     <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+                     <br>
+                     <small class="h6"><?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?></small>
+                     <?php endif; ?>                     
                   </h3>
                   <!-- Few units -->
                   <% if (product.availability && product.few_available_units) { %>
@@ -178,7 +182,11 @@
                 <%=shopping_cart.time_to%>
               <% } %> 
             </li>
-            <li class="list-group-item reservation-summary-card-detail"><?php echo esc_html_x( 'Rental duration', 'renting_choose_product', 'mybooking-wp-plugin' ) ?> <%=shopping_cart.days%> <?php echo esc_html_x( 'day(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></li>
+            <% if (shopping_cart.days > 0) { %>
+              <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></li>
+            <% } else if (shopping_cart.hours > 0) { %>
+              <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></li>
+            <% } %>
             <li class="list-group-item">
               <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></button>
             </li>

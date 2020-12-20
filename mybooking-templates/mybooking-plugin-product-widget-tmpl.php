@@ -62,12 +62,12 @@
             <h2 class="h4"><?php echo esc_html_x( 'Reservation summary', 'renting_product_calendar', 'mybooking-wp-plugin') ?></h2>
             <hr>
             <% if (shopping_cart.days) { %>
-              <p class="lead"><?php echo esc_html_x( 'Rental duration', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=shopping_cart.days%> <?php echo esc_html_x( 'day(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
+              <p class="lead"><span class="pull-right"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span></p>
             <% } else if (shopping_cart.hours) { %>
-  					 <p class="lead"><?php echo esc_html_x( 'Rental duration', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hours(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
+  					 <p class="lead"><span class="pull-right"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hours(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
             <% } %>
 
-            <p class="lead"><?php echo esc_html_x( 'Product', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.item_cost)%></span></p>
+            <p class="lead"><?php echo MyBookingEngineContext::getInstance()->getProduct() ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.item_cost)%></span></p>
 
             <% if (shopping_cart.time_from_cost > 0) { %>
               <p class="lead"><?php echo esc_html_x( 'Pick-up time supplement', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.time_from_cost)%></span></p>
