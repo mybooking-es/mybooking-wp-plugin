@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.6]
+
+### Added
+
+- Renting: Avoid creating a reservation that exceeds the max/min duration both in reservation wizard
+  and in calendar widget
+
 ## [0.7.5]
 
 ### Updated

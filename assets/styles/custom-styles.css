@@ -421,6 +421,7 @@ form[name=widget_search_form] input[type=submit] {
   height: 50px !important;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
 
 /** ------------ 6. Reservation Wizard : Complete ------- **/

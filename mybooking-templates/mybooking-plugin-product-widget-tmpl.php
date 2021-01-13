@@ -57,18 +57,39 @@
 
     <script type="text/tmpl" id="script_reservation_summary">
         <hr>
-        <% if (product_available) { %>
+        <!-- Exceeds max duration -->
+        <% if (product && product.exceeds_max) { %>
+           <div class="alert alert-danger">
+              <p class="text-center"><%= i18next.t('chooseProduct.max_duration', {duration: i18next.t('common.'+product.price_units, {count: product.max_value, interpolation: {escapeValue: false}} ), interpolation: {escapeValue: false}}) %></p>
+           </div>  
+        <!-- Less than min duration -->  
+        <% } else if (product && product.be_less_than_min) { %>
+           <div class="alert alert-danger">
+              <p class="text-center"><%= i18next.t('chooseProduct.min_duration', {duration: i18next.t('common.'+product.price_units, {count: product.min_value, interpolation: {escapeValue: false}} ), interpolation: {escapeValue: false}}) %></p>
+           </div>  
+        <!-- Available --> 
+        <% } else if (product_available) { %>
           <div class="jumbotron mb-3">
             <h2 class="h4"><?php echo esc_html_x( 'Reservation summary', 'renting_product_calendar', 'mybooking-wp-plugin') ?></h2>
             <hr>
+            <!-- Duration -->
             <% if (shopping_cart.days) { %>
-              <p class="lead"><span class="pull-right"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span></p>
+              <p class="lead"><span><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span></p>
             <% } else if (shopping_cart.hours) { %>
-  					 <p class="lead"><span class="pull-right"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hours(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
+  					 <p class="lead"><span><%=shopping_cart.hours%> <?php echo esc_html_x( 'hours(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
+            <% } %>
+            
+            <!-- Product -->
+            <p class="lead"><?php echo MyBookingEngineContext::getInstance()->getProduct() ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.item_cost)%></span></p>
+            
+            <!-- Extras -->
+            <% if (shopping_cart.extras.length > 0) { %>
+              <% for (var idx=0;idx<shopping_cart.extras.length;idx++) { %>
+                <p class="lead"><%=shopping_cart.extras[idx].extra_description%> <% if (shopping_cart.extras[idx].quantity > 1) { %><span class="badge badge-info"><%=shopping_cart.extras[idx].quantity%></span> <% } %>: <span class="pull-right"> <%=configuration.formatCurrency(shopping_cart.extras[idx].extra_cost)%></span></p>
+              <% } %>
             <% } %>
 
-            <p class="lead"><?php echo MyBookingEngineContext::getInstance()->getProduct() ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.item_cost)%></span></p>
-
+            <!-- Supplements -->
             <% if (shopping_cart.time_from_cost > 0) { %>
               <p class="lead"><?php echo esc_html_x( 'Pick-up time supplement', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.time_from_cost)%></span></p>
             <% } %>
@@ -84,7 +105,8 @@
             <% if (shopping_cart.return_place_cost > 0) { %>
               <p class="lead"><?php echo esc_html_x( 'Return place supplement', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.return_place_cost)%></span></p>                
             <% } %>
-
+            
+            <!-- Total -->
             <p class="lead"><?php echo esc_html_x( 'Total', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.total_cost)%></span></p>
           </div>
           <div class="form-group">
