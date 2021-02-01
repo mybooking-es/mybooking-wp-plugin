@@ -59,6 +59,14 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.7.7 =
+* Catala translation
+* Renting
+  * Form selector date to disabled when changed return place
+* Renting Calendar
+  * Next and Previous arrows in a button
+* Date selector with Google Translation
+
 = 0.7.6 =
 * Renting
   * Avoid creating a reservation if exceeds the Max/Min duration. Show an alert
@@ -167,6 +175,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.7.7 =
+* Catala translation and Renting module fixes
 
 = 0.7.6 =
 * Renting - Avoid creating a reservation if exceeds the Max/Min duration.

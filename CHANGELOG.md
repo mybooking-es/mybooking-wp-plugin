@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.7.7]
+
+### Added
+
+- Catala translation
+
+### Fixed
+
+- Renting 
+  - Form selector date to disabled when changed return place
+- Renting Calendar
+  - Next and Previous arrows in a button
+- Date selector with Google Translation
+
 ## [0.7.6]
 
 ### Added
