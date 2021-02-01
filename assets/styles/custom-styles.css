@@ -101,6 +101,20 @@ input[type="submit"] {
   color: white !important;
 }
 
+.date-picker-wrapper table .caption>th:first-of-type, .date-picker-wrapper table .caption>th:last-of-type {
+
+  padding: 0 !important;
+}
+
+.date-picker-wrapper table .prev, .date-picker-wrapper table .next {
+  background-color: #eee;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px -1px rgba(0,0,0,0.54);
+  line-height: 40px;
+  display: inline-block;
+  width: 100%;
+}
+
 /** ------------ 3. Selector Form ------------------------ **/
 
 input:enabled[name=date_from].form-control[readonly],
