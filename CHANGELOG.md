@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.8]
+
+### Fixed
+
+- Renting calendar
+  - Fixed error on dates when Google Translate in active on page
+  - Range selector
+
 ## [0.7.7]
 
 ### Added

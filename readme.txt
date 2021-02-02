@@ -59,6 +59,11 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.7.8 =
+* Renting Range Calendar
+  * Date selector with Google Translation
+  * Date range selection
+
 = 0.7.7 =
 * Catala translation
 * Renting
@@ -175,6 +180,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.7.8 =
+* Renting date range calendar issues with Google Translate and date range selection
 
 = 0.7.7 =
 * Catala translation and Renting module fixes
