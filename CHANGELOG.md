@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.9]
+
+### Updated
+
+- JS optimization: Free weight of JS reservation engine using external moment and moment-timezone
+
 ## [0.7.8]
 
 ### Fixed

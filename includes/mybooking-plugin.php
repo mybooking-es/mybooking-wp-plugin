@@ -357,10 +357,23 @@
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
 
+      // Moment JS
+      wp_register_script('mybooking-moment-js',
+                         plugins_url( '/assets/js/moment.js', dirname(__FILE__) ),
+                         array( ), $version, true);
+      wp_enqueue_script( 'mybooking-moment-js');      
+
+      // Moment JS TIMEZONE
+      wp_register_script('mybooking-moment-timezone-js',
+                         plugins_url( '/assets/js/moment-timezone.js', dirname(__FILE__) ),
+                         array( 'mybooking-moment-js' ), $version, true);
+      wp_enqueue_script( 'mybooking-moment-timezone-js');    
+
+
       // Enqueue the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
       wp_register_script('mybooking-rent-engine-script',
                          plugins_url( '/assets/js/mybooking-js-engine-bundle.js', dirname(__FILE__) ),
-                         array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker' ), $version, true);
+                         array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'mybooking-moment-js', 'mybooking-moment-timezone-js' ), $version, true);
       wp_enqueue_script( 'mybooking-rent-engine-script');
 
       // Enqueue custom libraries (bootstrap, fontawesome)
