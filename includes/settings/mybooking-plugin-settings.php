@@ -62,7 +62,7 @@
 					<?php
 	            $active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_title( $_GET[ 'tab' ] ) : 'connection_options';
 	            $tabs = array('connection_options', 'configuration_options', 'renting_options',
-	            						  'activities_options', 'google_api_places_options', 'complements_options', 'css_options');
+	            						  'activities_options', 'google_api_places_options', 'contact_form', 'complements_options', 'css_options');
 	            if ( !in_array( $active_tab, $tabs) ) {
 	            	$active_tab = 'connection_options';
 	            }
@@ -87,8 +87,9 @@
 					    <?php if ($google_api_places) { ?>
 					      <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">Google Api Places</a>
 					    <?php } ?>
+              <a href="?page=mybooking-plugin-configuration&tab=contact_form" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">Contact Form</a>  
               <a href="?page=mybooking-plugin-configuration&tab=complements_options" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">Complements</a>
-					    <a href="?page=mybooking-plugin-configuration&tab=css_options" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">Advanced</a>
+  				    <a href="?page=mybooking-plugin-configuration&tab=css_options" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">Advanced</a>
 					</h2>
 
 		      <form action="options.php" method="POST">
@@ -148,6 +149,12 @@ EOF;
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_google_api_places');
 			           echo '</table>';
 			         }
+               else if ($active_tab == 'contact_form') {
+			      	   settings_fields('mybooking_plugin_settings_group_contact_form');
+			           echo '<table class="form-table">';
+			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_contact_form');
+			           echo '</table>';
+			         }
                else if ($active_tab == 'complements_options') {
 			      	   settings_fields('mybooking_plugin_settings_group_complements');
 			           echo '<table class="form-table">';
@@ -204,6 +211,9 @@ EOF;
 
 		  register_setting('mybooking_plugin_settings_group_google_api_places',
 		                   'mybooking_plugin_settings_google_api_places');
+
+      register_setting('mybooking_plugin_settings_group_contact_form',
+                 		   'mybooking_plugin_settings_contact_form');
 
       register_setting('mybooking_plugin_settings_group_complements',
                  		   'mybooking_plugin_settings_complements');
@@ -452,6 +462,25 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_google_api_places');
 
+      // == Create Contact form sectionn Fields
+      add_settings_field('mybooking_plugin_settings_contact_form_use_google_captcha',
+		                     'Use Google captcha',
+		                     array($this, 'field_mybooking_plugin_settings_contact_form_use_google_captcha_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_contact_form');
+
+      add_settings_field('mybooking_plugin_settings_contact_form_google_captcha_api_key',
+		                     'Google Captcha API Key',
+		                     array($this, 'field_mybooking_plugin_settings_contact_form_google_captcha_api_key_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_contact_form');
+
+      add_settings_field('mybooking_plugin_settings_contact_form_include_google_captcha_js',
+		                     'Include Google Captcha JS library',
+		                     array($this, 'field_mybooking_plugin_settings_contact_form_include_google_captcha_js_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_contact_form');
+
       // == Create Complements section Fields
       add_settings_field('mybooking_plugin_settings_complements_popup',
 		                     'Activate promotion pop-up',
@@ -465,7 +494,7 @@ EOF;
                          'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
-       add_settings_field('mybooking_plugin_settings_complements_cookies',
+      add_settings_field('mybooking_plugin_settings_complements_cookies',
  		                     'Activate cookies notice',
  		                     array($this, 'field_mybooking_plugin_settings_complements_cookies_callback'),
                           'mybooking-plugin-configuration',
@@ -1212,6 +1241,69 @@ EOF;
 
 		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
 		}
+
+		// == Contact Form
+
+    /**
+     * Use Google captcha on contact form
+     */
+    public function field_mybooking_plugin_settings_contact_form_use_google_captcha_callback() {
+
+      $settings = (array) get_option("mybooking_plugin_settings_contact_form");
+		  $field = "mybooking_plugin_settings_contact_form_use_google_captcha";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+      $checked = ($value == '1') ? 'checked' : '';
+
+      echo "<input type='hidden' name='mybooking_plugin_settings_contact_form[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_contact_form[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Use Google Captcha on <b>Contact Form</b>.</p>";
+ 		}
+
+		/**
+		 * Google captcha API KEY for contact form
+		 */
+		public function field_mybooking_plugin_settings_contact_form_google_captcha_api_key_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_contact_form");
+		  $field = "mybooking_plugin_settings_contact_form_google_captcha_api_key";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+		  echo "<input type='text' name='mybooking_plugin_settings_contact_form[$field]' value='$value' class='regular-text' />";
+		}
+
+    /**
+     * Include Google captcha JS script
+     */
+    public function field_mybooking_plugin_settings_contact_form_include_google_captcha_js_callback() {
+
+      $settings = (array) get_option("mybooking_plugin_settings_contact_form");
+		  $field = "mybooking_plugin_settings_contact_form_include_google_captcha_js";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+      $checked = ($value == '1') ? 'checked' : '';
+
+      echo "<input type='hidden' name='mybooking_plugin_settings_contact_form[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_contact_form[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Include Google Captcha JS library.</p>";
+ 		}
 
     // == Complements
 

@@ -2,9 +2,11 @@
 
 ## [0.7.9]
 
-### Updated
+### Added
 
-- JS optimization: Free weight of JS reservation engine using external moment and moment-timezone
+- Contact Form 
+  - recaptcha integration
+  - added subject, source, rental location and sales channel attributes
 
 ## [0.7.8]
 
