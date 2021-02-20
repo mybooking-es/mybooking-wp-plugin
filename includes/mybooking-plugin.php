@@ -408,6 +408,8 @@
 
       // Contact Form Google Captcha
 
+      $content = $this->getCurrentPageContent();
+
       if ( is_active_widget( false, false, 'mybooking_engine_contact_widget', false ) ||
            has_shortcode( $content, 'mybooking_contact' ) ) {
         if ( $registry->mybooking_rent_plugin_contact_form_use_google_captcha &&
@@ -430,18 +432,7 @@
     public function wp_body_class ( $classes ) {
 
       // Get the current page content
-      $current_page = $this->get_current_page();
-      $content = '';
-      if ( !is_null( $current_page ) && property_exists($current_page, 'post_content') ) {
-        $content = $this->get_current_page()->post_content;
-        // Check also post_excerpt for short
-        if ( property_exists($current_page, 'post_excerpt')) {
-          if ( empty($content) ) {
-            $content = '';
-          }
-          $content = $content.$this->get_current_page()->post_excerpt;
-        }
-      }
+      $content = $this->getCurrentPageContent();
 
       $registry = Mybooking_Registry::getInstance();
 
@@ -575,18 +566,8 @@
       mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
 
       // The the current page content
-      $current_page = $this->get_current_page();
-      $content = '';
-      if ( !is_null( $current_page ) && property_exists($current_page, 'post_content') ) {
-        $content = $this->get_current_page()->post_content;
-        // Check also post_excerpt for short
-        if ( property_exists($current_page, 'post_excerpt')) {
-          if ( empty($content) ) {
-            $content = '';
-          }
-          $content = $content.$this->get_current_page()->post_excerpt;
-        }
-      }
+      $content = $this->getCurrentPageContent();
+
       // Hold if the current page needs the selector wizard
       $current_page_modify_reservation = false;
 
@@ -1672,6 +1653,28 @@
     }
 
     // ----------------- Utilities --------------------------------------------
+
+    /**
+     * Get the current page content
+     */
+    private function getCurrentPageContent() {
+
+      $current_page = $this->get_current_page();
+      $content = '';
+      if ( !is_null( $current_page ) && property_exists($current_page, 'post_content') ) {
+        $content = $this->get_current_page()->post_content;
+        // Check also post_excerpt for short
+        if ( property_exists($current_page, 'post_excerpt')) {
+          if ( empty($content) ) {
+            $content = '';
+          }
+          $content = $content.$this->get_current_page()->post_excerpt;
+        }
+      }
+
+      return $content;
+
+    }
 
     /**
      * Get the current page
