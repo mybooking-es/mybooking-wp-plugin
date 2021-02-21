@@ -798,15 +798,9 @@ input[type=text] {
 }
 
 .ui-datepicker {
-/*
-  width: 100% !important;
-  height: 100% !important;
-*/    border: 0 !important;
+  border: 0 !important;
 }
-.ui-datepicker table {
-/*    width: 100% !important;
-  height: 100% !important;
-*/  }
+
 .ui-datepicker table th span {
   font-size: 1.4em !important;
   text-align: center !important;
@@ -820,22 +814,39 @@ input[type=text] {
   box-shadow: none !important; /* Avoid shadow on cells */
 }
 
+/* Navigation icons */
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    top: 2px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    display: block;
+    z-index: 10000; /* To allow clickabale area */
+}
+
+.ui-datepicker-prev span.ui-icon,
+.ui-datepicker-next span.ui-icon {
+  background-image: none !important;
+}
+
+.ui-datepicker-prev.ui-state-hover,
+.ui-datepicker-next.ui-state-hover {
+  border: 1px solid #dddddd;
+  background: #eeeeee;
+}
+
 .ui-datepicker-prev:before{
     content: '\f053';
     font-family: 'FontAwesome';
     font-size: 20px;
-    /*left: -6px !important;*/
 }
 
 .ui-datepicker-next:before {
     content: '\f054';
     font-family: 'FontAwesome';
     font-size: 20px;
-    /*right: -6px !important;*/
-}
-
-.ui-icon {
-      background-image: none !important;
 }
 
 /** Override Jquery daterange **/

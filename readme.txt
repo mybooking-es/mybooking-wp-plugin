@@ -63,6 +63,8 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * Contact Form
   * ReCaptcha integration
   * Added subject, source, rental location and sales channel attributes
+* Renting
+  * Fixed selector expand datepicker clickable area
 
 = 0.7.8 =
 * Renting Range Calendar

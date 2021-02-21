@@ -2,6 +2,11 @@
 
 ## [0.7.9]
 
+### Fixed
+
+- Selector
+  - Datepicker expand clickable area
+
 ### Added
 
 - Contact Form 

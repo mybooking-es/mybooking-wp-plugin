@@ -75,7 +75,7 @@
    *
    * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number]
    *
-   * [mybooking_rent_enting_selector_wizard sales_channel_code=String family_id=Number]
+   * [mybooking_rent_engine_selector_wizard sales_channel_code=String family_id=Number]
    *
    * - Renting search results:
    *
