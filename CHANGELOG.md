@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.10] 
+
+### Fixed
+
+- Renting
+  - Myreservation Form: Fixed maxlength issues
+
 ## [0.7.9]
 
 ### Fixed
