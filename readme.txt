@@ -59,6 +59,10 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.7.10 =
+* Renting
+  * Myreservation Form: Fixed maxlength issues
+
 = 0.7.9 =
 * Contact Form
   * ReCaptcha integration
@@ -187,6 +191,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.7.10 =
+* Fixed renting my reservation maxlength issues
 
 = 0.7.9 =
 * Contact Form: reCaptcha integration + added attributes

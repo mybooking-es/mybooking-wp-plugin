@@ -339,7 +339,7 @@
         // Custom style
         wp_enqueue_style('mybooking_wp_css_components_custom_style',
                          plugins_url('/assets/styles/custom-styles.css', dirname( __FILE__ ) ),
-                         array(), $version );        
+                         array(), $version );
       }
 
     }
@@ -362,7 +362,7 @@
       wp_register_script('mybooking-moment-timezone-js',
                          plugins_url( '/assets/js/moment-timezone-with-data.min.js', dirname(__FILE__) ),
                          array( 'moment' ), $version, true);
-      wp_enqueue_script( 'mybooking-moment-timezone-js');    
+      wp_enqueue_script( 'mybooking-moment-timezone-js');
 
 
       // Enqueue the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
@@ -397,8 +397,8 @@
       }
 
       // Complements (testimonials, cookies, popup)
-      if ($registry->mybooking_rent_plugin_complements_testimonials == '1' || 
-          $registry->mybooking_rent_plugin_complements_popup == '1' || 
+      if ($registry->mybooking_rent_plugin_complements_testimonials == '1' ||
+          $registry->mybooking_rent_plugin_complements_popup == '1' ||
           $registry->mybooking_rent_plugin_complements_cookies_notice == '1') {
         wp_register_script('mybooking_wp_js_complements',
                            plugins_url( '/assets/js/complements.js', dirname(__FILE__) ),
@@ -417,7 +417,7 @@
           // Google Captcha
           wp_register_script('mybooking_wp_google_captcha',
                              'https://www.google.com/recaptcha/api.js');
-          wp_enqueue_script('mybooking_wp_google_captcha');    
+          wp_enqueue_script('mybooking_wp_google_captcha');
         }
 
       }
@@ -645,7 +645,7 @@
       // Renting shortcode : My reservation - reservation
       if ( has_shortcode( $content, 'mybooking_rent_engine_reservation') ) {
         $data = array();
-        $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;        
+        $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
         mybooking_engine_get_template('mybooking-plugin-reservation-tmpl.php', $data);
       }
 
@@ -679,8 +679,8 @@
 
       // Wizard container and modify reservation modal containers
       $active_wizard = is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
-                       has_shortcode( $content , 'mybooking_rent_engine_selector_wizard');      
-      
+                       has_shortcode( $content , 'mybooking_rent_engine_selector_wizard');
+
       if ( $active_wizard || ( $current_page_modify_reservation && $registry->mybooking_rent_plugin_selector_in_process == 'wizard' ) ) {
          mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php');
       }
@@ -1106,9 +1106,9 @@
         $data['rental_location_code'] = $rental_location_code;
       }
 
-      // Get Google API Captcha 
+      // Get Google API Captcha
       $registry = Mybooking_Registry::getInstance();
-      if ( $registry->mybooking_rent_plugin_contact_form_use_google_captcha && 
+      if ( $registry->mybooking_rent_plugin_contact_form_use_google_captcha &&
            !empty( $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key ) ) {
         $data['google_captcha_api_key'] = $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key;
       }
@@ -1298,28 +1298,28 @@
       }
       else {
         $registry->mybooking_rent_plugin_family_context = 'family';
-      }  
+      }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_product_context', $settings)) {
         $registry->mybooking_rent_plugin_product_context = $settings["mybooking_plugin_settings_product_context"] ? $settings["mybooking_plugin_settings_product_context"] : 'product';
       }
       else {
         $registry->mybooking_rent_plugin_product_context = 'product';
-      }  
+      }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_dates_context', $settings)) {
         $registry->mybooking_rent_plugin_dates_context = $settings["mybooking_plugin_settings_dates_context"] ? $settings["mybooking_plugin_settings_dates_context"] : 'pickup-return';
       }
       else {
         $registry->mybooking_rent_plugin_dates_context = 'pickup-return';
-      }  
+      }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_duration_context', $settings)) {
         $registry->mybooking_rent_plugin_duration_context = $settings["mybooking_plugin_settings_duration_context"] ? $settings["mybooking_plugin_settings_duration_context"] : 'days';
       }
       else {
         $registry->mybooking_rent_plugin_duration_context = 'days';
-      }      
+      }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_use_product_detail_pages', $settings)) {
         $registry->mybooking_rent_plugin_detail_pages = (trim(esc_attr( $settings["mybooking_plugin_settings_use_product_detail_pages"] )) == '1');
@@ -1422,7 +1422,7 @@
       $registry->mybooking_rent_plugin_contact_form_include_google_captcha_js = false;
       $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key = null;
       $settings = (array) get_option("mybooking_plugin_settings_contact_form");
-      
+
       // Use Google Captcha on Contact Form
       if ( $settings && array_key_exists("mybooking_plugin_settings_contact_form_use_google_captcha", $settings) ) {
         $registry->mybooking_rent_plugin_contact_form_use_google_captcha = (trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_use_google_captcha"] )) == '1');
@@ -1434,7 +1434,7 @@
               // Include google captcha JS
               if ( $settings && array_key_exists("mybooking_plugin_settings_contact_form_include_google_captcha_js", $settings) ) {
                 $registry->mybooking_rent_plugin_contact_form_include_google_captcha_js = (trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_include_google_captcha_js"] )) == '1');
-              } 
+              }
             }
           }
         }
@@ -1456,7 +1456,21 @@
       else {
         $registry->mybooking_rent_plugin_complements_testimonials = '';
       }
-
+      // Catalog
+      if ($settings && array_key_exists('mybooking_plugin_settings_complements_renting_item', $settings)) {
+        $registry->mybooking_rent_plugin_complements_renting_item = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_renting_item"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_complements_renting_item = '';
+      }
+      // Service
+      if ($settings && array_key_exists('mybooking_plugin_settings_complements_activity_item', $settings)) {
+        $registry->mybooking_rent_plugin_complements_activity_item = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_activity_item"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_complements_activity_item = '';
+      }
+      // Cookies
       if ($settings && array_key_exists('mybooking_plugin_settings_complements_cookies_notice', $settings)) {
         $registry->mybooking_rent_plugin_complements_cookies_notice = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_cookies_notice"] )) == '1');
       }
@@ -1619,6 +1633,62 @@
             'show_in_rest' => true, // Gutenberg activation!
             'supports' => array( 'title', 'editor', 'thumbnail' ),
             'menu_icon' => 'dashicons-format-quote',
+            'has_archive' => true
+          )
+        );
+      }
+      if ($registry->mybooking_rent_plugin_complements_renting_item == '1') {
+        register_post_type( 'renting_item',
+          array(
+            'labels' => array(
+              'name' => _x('Renting Items', 'renting_item_content', 'mybooking-wp-plugin'),
+              'singular_name' => _x('Renting Item', 'renting_item_content', 'mybooking-wp-plugin'),
+              'add_new' => _x('Add renting item', 'renting_item_content', 'mybooking-wp-plugin'),
+              'add_new_item' => _x('New renting item', 'renting_item_content', 'mybooking-wp-plugin'),
+              'edit' => _x('Edit', 'renting_item_content', 'mybooking-wp-plugin'),
+              'edit_item' => _x('Edit renting item', 'renting_item_content', 'mybooking-wp-plugin'),
+              'new_item' => _x('New renting item', 'renting_item_content', 'mybooking-wp-plugin'),
+              'view' => _x('See', 'renting_item_content', 'mybooking-wp-plugin'),
+              'view_item' => _x('See renting item', 'renting_item_content', 'mybooking-wp-plugin'),
+              'search_items' => _x('Search renting item', 'renting_item_content', 'mybooking-wp-plugin'),
+              'not_found' => _x('No renting item found', 'renting_item_content', 'mybooking-wp-plugin'),
+              'not_found_in_trash' => _x('No renting item found on bin', 'renting_item_content', 'mybooking-wp-plugin'),
+              'parent' => _x('Parent renting item', 'renting_item_content', 'mybooking-wp-plugin')
+            ),
+            'show_ui' => true,
+            'public' => true,
+            'show_in_menu' => 'mybooking-plugin-configuration',
+            'show_in_rest' => true, // Gutenberg activation!
+            'supports' => array( 'title', 'editor', 'thumbnail' ),
+            'menu_icon' => 'dashicons-grid-view',
+            'has_archive' => true
+          )
+        );
+      }
+      if ($registry->mybooking_rent_plugin_complements_activity_item == '1') {
+        register_post_type( 'activity_item',
+          array(
+            'labels' => array(
+              'name' => _x('Activity Items', 'activity_item_content', 'mybooking-wp-plugin'),
+              'singular_name' => _x('Activity Item', 'activity_item_content', 'mybooking-wp-plugin'),
+              'add_new' => _x('Add activity item', 'activity_item_content', 'mybooking-wp-plugin'),
+              'add_new_item' => _x('New activity item', 'activity_item_content', 'mybooking-wp-plugin'),
+              'edit' => _x('Edit', 'activity_item_content', 'mybooking-wp-plugin'),
+              'edit_item' => _x('Edit activity item', 'activity_item_content', 'mybooking-wp-plugin'),
+              'new_item' => _x('New activity item', 'activity_item_content', 'mybooking-wp-plugin'),
+              'view' => _x('See', 'activity_item_content', 'mybooking-wp-plugin'),
+              'view_item' => _x('See activity item', 'activity_item_content', 'mybooking-wp-plugin'),
+              'search_items' => _x('Search activity item', 'activity_item_content', 'mybooking-wp-plugin'),
+              'not_found' => _x('No activity_item found', 'activity_item_content', 'mybooking-wp-plugin'),
+              'not_found_in_trash' => _x('No activity item found on bin', 'activity_item_content', 'mybooking-wp-plugin'),
+              'parent' => _x('Parent activity item', 'activity_item_content', 'mybooking-wp-plugin')
+            ),
+            'show_ui' => true,
+            'public' => true,
+            'show_in_menu' => 'mybooking-plugin-configuration',
+            'show_in_rest' => true, // Gutenberg activation!
+            'supports' => array( 'title', 'editor', 'thumbnail' ),
+            'menu_icon' => 'dashicons-grid-view',
             'has_archive' => true
           )
         );
