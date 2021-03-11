@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.7.11]
+
+- Fixed Terms and conditions translated page
+
+### Added
+
+- Renting
+  - Selector Form custom control to manage offers
+
 ## [0.7.10] 
 
 ### Fixed

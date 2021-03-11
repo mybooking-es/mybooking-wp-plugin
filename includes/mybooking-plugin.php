@@ -606,7 +606,7 @@
           $data['terms_and_conditions'] = '';
         }
         else {
-          $data['terms_and_conditions'] = get_site_url().'/'.$registry->mybooking_rent_plugin_terms_page;
+          $data['terms_and_conditions'] = mybooking_engine_translated_slug($registry->mybooking_rent_plugin_terms_page);
         }
         $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
         mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php', $data);
@@ -633,7 +633,7 @@
           $data['terms_and_conditions'] = '';
         }
         else {
-          $data['terms_and_conditions'] = get_site_url().'/'.$registry->mybooking_activities_plugin_terms_page;
+          $data['terms_and_conditions'] = mybooking_engine_translated_slug($registry->mybooking_rent_plugin_terms_page);
         }
         mybooking_engine_get_template('mybooking-plugin-activities-shopping-cart-tmpl.php', $data);
       }
