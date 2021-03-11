@@ -879,6 +879,18 @@ input[type=text] {
 .date-picker-wrapper .month-wrapper table .week-name {
   height: 40px;
 }
+.date-picker-wrapper .month-wrapper table .day.real-today {
+    background-color: #ffe684;
+}
+
+.date-picker-wrapper .month-wrapper table .day.real-today {
+    background-color: #aeecbc;
+}
+.date-picker-wrapper .month-wrapper table .day.not-selectable-day.real-today,
+.date-picker-wrapper .month-wrapper table .day.invalid.real-today {
+    background-color: #eeeeee;
+}
+
 .week-name th {
   font-size: 14px;
   margin-top: 20px;
