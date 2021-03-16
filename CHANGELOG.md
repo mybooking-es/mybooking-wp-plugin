@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.7.12]
+
+- Fixed Reservation Engine Library : Edit selector dates
+
 ## [0.7.11]
 
 - Fixed Terms and conditions translated page
