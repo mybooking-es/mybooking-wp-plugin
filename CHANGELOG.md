@@ -2,7 +2,10 @@
 
 ## [0.7.13]
 
+### Added
+
 - Reservation Engine Library : Allow engine extension
+- New custom post types to manage catalog of products and activities
 
 ## [0.7.12]
 
