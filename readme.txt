@@ -59,6 +59,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.7.13 =
+* Reservation Engine Library: Allow engine extension
+
 = 0.7.12 =
 * Fixed Reservation Engine Library : Edit selector dates
 
@@ -199,6 +202,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.7.13 =
+* Reservation Engine Library: Allow engine extension
 
 = 0.7.12 =
 * Fixed Reservation Engine Library : Edit selector dates

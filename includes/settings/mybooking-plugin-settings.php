@@ -87,7 +87,7 @@
 					    <?php if ($google_api_places) { ?>
 					      <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">Google Api Places</a>
 					    <?php } ?>
-              <a href="?page=mybooking-plugin-configuration&tab=contact_form" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">Contact Form</a>  
+              <a href="?page=mybooking-plugin-configuration&tab=contact_form" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">Contact Form</a>
               <a href="?page=mybooking-plugin-configuration&tab=complements_options" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">Complements</a>
   				    <a href="?page=mybooking-plugin-configuration&tab=css_options" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">Advanced</a>
 					</h2>
@@ -483,19 +483,31 @@ EOF;
 
       // == Create Complements section Fields
       add_settings_field('mybooking_plugin_settings_complements_popup',
-		                     'Activate promotion pop-up',
+		                     'Activate Promotion Pop-up',
 		                     array($this, 'field_mybooking_plugin_settings_complements_popup_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
       add_settings_field('mybooking_plugin_settings_complements_testimonials',
-		                     'Activate testimonial module',
+		                     'Activate Testimonial module',
 		                     array($this, 'field_mybooking_plugin_settings_complements_testimonials_callback'),
                          'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
+     add_settings_field('mybooking_plugin_settings_complements_renting_item',
+		                     'Activate Renting Item module',
+		                     array($this, 'field_mybooking_plugin_settings_complements_renting_item_callback'),
+                        'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_complements');
+
+     add_settings_field('mybooking_plugin_settings_complements_activity_item',
+		                     'Activate Activity Items module',
+		                     array($this, 'field_mybooking_plugin_settings_complements_activity_item_callback'),
+                        'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_complements');
+
       add_settings_field('mybooking_plugin_settings_complements_cookies',
- 		                     'Activate cookies notice',
+ 		                     'Activate Cookies Notice',
  		                     array($this, 'field_mybooking_plugin_settings_complements_cookies_callback'),
                           'mybooking-plugin-configuration',
  		                     'mybooking_plugin_settings_section_complements');
@@ -508,7 +520,7 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
-		  // Bootstrap 
+		  // Bootstrap
 
 		  add_settings_field('mybooking_plugin_settings_custom_css',
 		                     'Include Bootstrap',
@@ -816,7 +828,7 @@ EOF;
 		  }
 		  else {
 		    $select .= "<option value='vehicle'>Type of vehicle</option>";
-		  }		  
+		  }
 
 			if ($value == 'property') {
 		    $select .= "<option value='property' selected>Type of property</option>";
@@ -835,7 +847,7 @@ EOF;
 		  $select .= "</select>";
 
 		  echo $select;
-		  echo "<p class=\"description\">Choose the family that describes your business context.</p>"; 		  
+		  echo "<p class=\"description\">Choose the family that describes your business context.</p>";
 		  echo "<hr>";
 
 		}
@@ -888,7 +900,7 @@ EOF;
 		  $select .= "</select>";
 
 		  echo $select;
-		  echo "<p class=\"description\">Choose the product that describes your business context.</p>"; 		  
+		  echo "<p class=\"description\">Choose the product that describes your business context.</p>";
 		  echo "<hr>";
 
 		}
@@ -930,7 +942,7 @@ EOF;
 		  echo $select;
 		  echo "<p class=\"description\">Choose the duration that describes your business context.</p>";
 		  echo "<p class=\"description\">Select <b>days</b> to describe duration in days.</p>";
-		  echo "<p class=\"description\">Select <b>nights/b> to describe duration in nights.</p>";		  
+		  echo "<p class=\"description\">Select <b>nights/b> to describe duration in nights.</p>";
 		  echo "<hr>";
 
 		}
@@ -987,7 +999,7 @@ EOF;
 		  echo "<p class=\"description\">Select <b>pickup/return</b> to describe pickup and return dates.</p>";
 		  echo "<p class=\"description\">Select <b>checkin/checkout</b> for accommodation or properties.</p>";
 		  echo "<p class=\"description\">Select <b>start/end</b> to describe start and end period.</p>";
-		  echo "<p class=\"description\">Select <b>arrive/depature</b> to describe arrivals an departures</p>";		  		  
+		  echo "<p class=\"description\">Select <b>arrive/depature</b> to describe arrivals an departures</p>";
 		  echo "<hr>";
 
 		}
@@ -1308,7 +1320,7 @@ EOF;
     // == Complements
 
     /**
-     * Render promo pop-up complements
+     * Render Promo Pop-up complement
      */
     public function field_mybooking_plugin_settings_complements_popup_callback() {
 
@@ -1331,7 +1343,7 @@ EOF;
  		}
 
     /**
-     * Render testimonials complements
+     * Render Testimonials complement
      */
     public function field_mybooking_plugin_settings_complements_testimonials_callback() {
 
@@ -1351,6 +1363,52 @@ EOF;
 
 		  echo "<p class=\"description\">Activate <b>Testimonials</b> Custom Post Type in order to create a testimonials carousel.</p>";
       echo "<p class=\"description\">Create one or more Testimonials under Mybooking menu and use [mybooking_testimonials] to show it on a page or sidebar.</p>";
+ 		}
+
+    /**
+     * Render Renting Items complement
+     */
+    public function field_mybooking_plugin_settings_complements_renting_item_callback() {
+
+      $settings = (array) get_option("mybooking_plugin_settings_complements");
+		  $field = "mybooking_plugin_settings_complements_renting_item";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+      $checked = ($value == '1') ? 'checked' : '';
+
+      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Activate <b>Renting Items</b> Custom Post Type in order to create single items related to renting.</p>";
+      echo "<p class=\"description\">Create one or more Renting Items under Mybooking menu and show in a template or within any page builder query block.</p>";
+ 		}
+
+    /**
+     * Render Activity Items complement
+     */
+    public function field_mybooking_plugin_settings_complements_activity_item_callback() {
+
+      $settings = (array) get_option("mybooking_plugin_settings_complements");
+		  $field = "mybooking_plugin_settings_complements_activity_item";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+      $checked = ($value == '1') ? 'checked' : '';
+
+      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\">Activate <b>Activity Items</b> Custom Post Type in order to create single items related to activities.</p>";
+      echo "<p class=\"description\">Create one or more Activity Items under Mybooking menu and show in a template or within any page builder query block.</p>";
  		}
 
     /**
