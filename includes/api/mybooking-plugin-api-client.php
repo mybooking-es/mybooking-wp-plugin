@@ -26,9 +26,21 @@
     public function get_destinations() {
 
           $url = $this->url_prefix.MyBookingApiClient::GET_DESTINATIONS;
+          $url_args = [];
 
+          // API Key
           if ( isset($this->api_key) && !empty($this->api_key)) {
-            $url = $url.'&api_key='.$this->api_key;
+            $url_args[] = 'api_key='.$this->api_key;
+          }
+
+          // Language
+          $language = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
+          if ( isset( $language ) ) {
+            $url_args[] = 'lang='.$language;
+          }          
+
+          if ( count($url_args) > 0 ) {
+            $url = $url.'?'.implode( '&', $url_args );
           }
 
           // Query data
@@ -56,9 +68,21 @@
     public function get_categories() {
 
           $url = $this->url_prefix.MyBookingApiClient::GET_CATEGORIES;
+          $url_args = [];
 
+          // API Key
           if ( isset($this->api_key) && !empty($this->api_key)) {
-            $url = $url.'&api_key='.$this->api_key;
+            $url_args[] = 'api_key='.$this->api_key;
+          }
+
+          // Language
+          $language = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
+          if ( isset( $language ) ) {
+            $url_args[] = 'lang='.$language;
+          }          
+
+          if ( count($url_args) > 0 ) {
+            $url = $url.'?'.implode( '&', $url_args );
           }
 
           // Query data
@@ -90,9 +114,16 @@
 
           $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCTS.'?offset='.$offset.'&limit='.$limit;
 
+          // API Key
           if ( isset($this->api_key) && !empty($this->api_key)) {
             $url = $url.'&api_key='.$this->api_key;
           }
+
+          // Language
+          $language = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
+          if ( isset( $language ) ) {
+           $url = $url.'&lang='.$language;
+          }          
 
           // Query data
 					$request = wp_remote_get( $url );
@@ -121,9 +152,21 @@
     public function get_product($code) {
 
           $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCT.$code;
+          $url_args = [];
 
+          // API Key
           if ( isset($this->api_key) && !empty($this->api_key)) {
-            $url = $url.'?api_key='.$this->api_key;
+            $url_args[] = 'api_key='.$this->api_key;
+          }
+
+          // Language
+          $language = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
+          if ( isset( $language ) ) {
+            $url_args[] = 'lang='.$language;
+          }          
+
+          if ( count($url_args) > 0 ) {
+            $url = $url.'?'.implode( '&', $url_args );
           }
 
           // Query data

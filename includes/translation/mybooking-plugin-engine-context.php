@@ -25,6 +25,18 @@
         return self::$_instance;
     }
 
+
+    public function getCurrentLanguageCode() {
+
+      $language = get_locale();
+      if ( isset( $language ) ) {
+          $language = substr( $language, 0, 2);
+      }
+
+      return $language;
+
+    }
+
     /**
      * Get the family
      */
