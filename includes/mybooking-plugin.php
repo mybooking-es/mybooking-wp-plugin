@@ -414,9 +414,14 @@
            has_shortcode( $content, 'mybooking_contact' ) ) {
         if ( $registry->mybooking_rent_plugin_contact_form_use_google_captcha &&
              $registry->mybooking_rent_plugin_contact_form_include_google_captcha_js ) {
+          $language = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
+          $captcha_api_url = 'https://www.google.com/recaptcha/api.js';
+          if ( isset( $language ) ) {
+            $captcha_api_url = $captcha_api_url.'?hl='.$language;
+          }
           // Google Captcha
           wp_register_script('mybooking_wp_google_captcha',
-                             'https://www.google.com/recaptcha/api.js');
+                             $captcha_api_url);
           wp_enqueue_script('mybooking_wp_google_captcha');
         }
 

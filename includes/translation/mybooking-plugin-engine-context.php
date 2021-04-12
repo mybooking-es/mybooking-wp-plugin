@@ -25,7 +25,6 @@
         return self::$_instance;
     }
 
-
     public function getCurrentLanguageCode() {
 
       $language = get_locale();
@@ -172,6 +171,108 @@
         	  $returnValue = esc_html_x( 'Return date', 'engine_context', 'mybooking-wp-plugin' );   		
         }
         return $returnValue;
+    }
+
+    /**
+     * Get the characteristic description from the code
+     */
+    public function getCharacteristic( $code ) {
+
+      $returnValue = '';
+
+      switch ( $code ) {
+
+        case 'length':
+          $returnValue = esc_html_x('Length', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        default:
+          $returnValue = $code;
+
+      }
+
+      return $returnValue;
+
+    }
+
+    /**
+     * Get the key characteristic description from the code
+     */
+    public function getKeyCharacteristic( $code ) {
+
+      $returnValue = '';
+
+      switch ( $code ) {
+
+        case 'air_conditioner':
+          $returnValue = esc_html_x('Air conditioner', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'bathroom':
+          $returnValue = esc_html_x('Bathroom', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'baths':
+          $returnValue = esc_html_x('Baths', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'beds':
+          $returnValue = esc_html_x('Beds', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'berths':
+          $returnValue = esc_html_x('Berths', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'boat_license':
+          $returnValue = esc_html_x('Boat License', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'cabin':
+          $returnValue = esc_html_x('Cabin', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'doors':
+          $returnValue = esc_html_x('Doors', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'driving_license':
+          $returnValue = esc_html_x('Driving license', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'fuel':
+          $returnValue = esc_html_x('Fuel', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'pets':
+          $returnValue = esc_html_x('Pets', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'places':
+          $returnValue = esc_html_x('Places', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'rooms':
+          $returnValue = esc_html_x('Rooms', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'seats':
+          $returnValue = esc_html_x('Seats', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'shower':
+          $returnValue = esc_html_x('Shower', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'skipper':
+          $returnValue = esc_html_x('Skipper', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'suitcases':
+          $returnValue = esc_html_x('Suitcases', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'transmission':
+          $returnValue = esc_html_x('Transmission', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'type':
+          $returnValue = esc_html_x('Type', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'wc':
+          $returnValue = esc_html_x('WC', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        case 'wifi':
+          $returnValue = esc_html_x('Wifi', 'engine_context_key_characteristic', 'mybooking-wp-plugin' );
+          break;
+        default:
+          $returnValue = $code;
+
+      }
+
+      return $returnValue;
+
     }
 
   }

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.14]
+
+### Added
+
+- Renting
+  - Key characteristics and characteristics translations
+  - Product navigation by slug instead of code
+  
 ## [0.7.13]
 
 ### Added
