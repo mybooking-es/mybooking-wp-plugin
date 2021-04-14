@@ -1643,7 +1643,7 @@
         );
       }
       if ($registry->mybooking_rent_plugin_complements_renting_item == '1') {
-        register_post_type( 'renting_item',
+        register_post_type( 'mybooking_renting_item',
           array(
             'labels' => array(
               'name' => _x('Renting Items', 'renting_item_content', 'mybooking-wp-plugin'),
@@ -1671,7 +1671,7 @@
         );
       }
       if ($registry->mybooking_rent_plugin_complements_activity_item == '1') {
-        register_post_type( 'activity_item',
+        register_post_type( 'mybooking_activity_item',
           array(
             'labels' => array(
               'name' => _x('Activity Items', 'activity_item_content', 'mybooking-wp-plugin'),
