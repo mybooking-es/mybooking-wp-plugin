@@ -521,6 +521,9 @@
 
                 <% if (sales_process.payment_methods.paypal_standard &&
                        sales_process.payment_methods.tpv_virtual) { %>
+                    <div class="alert alert-secondary" role="alert">
+                      <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
+                    </div>
                     <div class="form-row">
                        <div class="form-group col-md-12">
                          <label for="payments_paypal_standard">
@@ -539,8 +542,17 @@
                     <div id="payment_method_select_error" class="form-row">
                     </div>
                 <% } else if (sales_process.payment_methods.paypal_standard) { %>
+                    <div class="alert alert-secondary" role="alert">
+                      <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
+                    </div>
                     <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>                    
                 <% } else if (sales_process.payment_methods.tpv_virtual) { %>
+                    <div class="alert alert-secondary" role="alert">
+                      <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.' ,
+                        'renting_complete', 'mybooking-wp-plugin' )  )?>
+                    </div>
                     <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
                     <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
                 <% } %>

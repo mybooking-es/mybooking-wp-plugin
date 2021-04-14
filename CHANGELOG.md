@@ -1,25 +1,24 @@
 # Changelog
 
-## [0.7.14]
+## [0.8.0]
 
 ### Added
 
 - Renting
   - Key characteristics and characteristics translations
   - Product navigation by slug instead of code
-  
-## [0.7.13]
-
-### Added
-
 - Reservation Engine Library : Allow engine extension
 - New custom post types to manage catalog of products and activities
 
 ## [0.7.12]
 
+### Fixed
+
 - Fixed Reservation Engine Library : Edit selector dates
 
 ## [0.7.11]
+
+### Fixed
 
 - Fixed Terms and conditions translated page
 

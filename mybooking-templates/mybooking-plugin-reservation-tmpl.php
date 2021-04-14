@@ -737,6 +737,9 @@
       <% } %>
       <form name="payment_form">
         <% if (sales_process.payment_methods.paypal_standard && sales_process.payment_methods.tpv_virtual) { %>
+        <div class="alert alert-secondary" role="alert">
+          <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.',                           'renting_my_reservation', 'mybooking-wp-plugin' ) )?>
+        </div>        
         <div class="form-row">
            <div class="form-group col-md-12">
              <label for="payments_paypal_standard">
@@ -753,13 +756,22 @@
            </div>
         </div>
         <% } else if (sales_process.payment_methods.paypal_standard) {%>
+          <div class="alert alert-secondary" role="alert">
+            <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_my_reservation', 'mybooking-wp-plugin' ) )?>
+          </div>     
           <div class="form-row">
             <div class="form-group col-md-12">
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>              
             </div>
           </div>
           <input type="hidden" name="payment_method_id" value="paypal_standard" data-payment-method="paypal_standard">
         <% } else if (sales_process.payment_methods.tpv_virtual) {%>
+          <div class="alert alert-secondary" role="alert">
+            <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.',
+                                         'renting_my_reservation', 'mybooking-wp-plugin' ) )?>
+          </div>
           <div class="form-row">
             <div class="form-group col-md-12">
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>

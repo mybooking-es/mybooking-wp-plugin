@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2021-04-12 21:15+0000\n"
+"PO-Revision-Date: 2021-04-14 20:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.5.0; wp-5.6"
+"X-Loco-Version: 2.5.2; wp-5.7"
 
 #: mybooking-templates/mybooking-plugin-activities.php:46
 msgctxt "activities_list"
@@ -1047,7 +1047,7 @@ msgctxt "renting_complete"
 msgid "Coverage"
 msgstr "Cobertura"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:533
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:536
 msgctxt "renting_complete"
 msgid "Credit or debit card"
 msgstr "Targeta de crèdit o dèbit"
@@ -1092,7 +1092,7 @@ msgstr "hora/es"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:458
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:490
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:556
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:568
 #, php-format
 msgctxt "renting_complete"
 msgid ""
@@ -1104,7 +1104,7 @@ msgstr ""
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:456
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:488
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:554
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:566
 msgctxt "renting_complete"
 msgid "I have read and hereby accept the conditions of rental"
 msgstr "He llegit i accepto les condicions de lloguer"
@@ -1125,7 +1125,7 @@ msgctxt "renting_complete"
 msgid "Pay on arrival"
 msgstr "Paga a l'arribada"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:527
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:530
 msgctxt "renting_complete"
 msgid "Paypal"
 msgstr "Paypal"
@@ -1193,6 +1193,37 @@ msgstr "Cognom"
 msgctxt "renting_complete"
 msgid "Total"
 msgstr "Total"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:546
+msgctxt "renting_complete"
+msgid ""
+"You will be redirected to <b>Paypal payment platform</b> to make the "
+"confirmation payment securely. You can use <u>Paypal</u> or <u>credit "
+"card</u> to make the payment."
+msgstr ""
+"La confirmació de la reserva es realitza de forma segura a la <b>plataforma "
+"Paypal</b>, un cop hagi completat el formulari de reserva. Podeu utilitzar "
+"<u>Paypal</u> o <u>targeta de crèdit</u> per fer el pagament."
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:553
+msgctxt "renting_complete"
+msgid ""
+"You will be redirected to the <b>credit card payment platform</b> to make "
+"the confirmation payment securely."
+msgstr ""
+"La confirmació de la reserva es realitza de forma segura a la <b>plataforma "
+"bancària</b>, un cop hagi completat el formulari de reserva. "
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:525
+msgctxt "renting_complete"
+msgid ""
+"You will be redirected to the <b>payment platform</b> to make the "
+"confirmation payment securely. You can use <u>Paypal</u> or <u>credit "
+"card</u> to make the payment."
+msgstr ""
+"La confirmació de la reserva es realitza de forma segura a la <b>plataforma "
+"de pagament</b>, un cop hagi completat el formulari de reserva. Podeu "
+"utilitzar <u>Paypal</u> o <u>targeta de crèdit</u> per fer el pagament."
 
 #: mybooking-templates/mybooking-plugin-modify-reservation.php:17
 msgctxt "renting_form_modify_reservation"
@@ -1360,7 +1391,7 @@ msgctxt "renting_my_reservation"
 msgid "Country"
 msgstr "País"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:749
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:752
 msgctxt "renting_my_reservation"
 msgid "Credit or debit card"
 msgstr "Targeta de crèdit o dèbit"
@@ -1545,7 +1576,7 @@ msgctxt "renting_my_reservation"
 msgid "Pax 2"
 msgstr "Pax 2"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:743
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:746
 msgctxt "renting_my_reservation"
 msgid "Paypal"
 msgstr "Paypal"
@@ -1661,6 +1692,37 @@ msgstr "Actualització"
 msgctxt "renting_my_reservation"
 msgid "Weight (kg)"
 msgstr "Pes (kg)"
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:760
+msgctxt "renting_my_reservation"
+msgid ""
+"You will be redirected to <b>Paypal payment platform</b> to make the "
+"confirmation payment securely. You can use <u>Paypal</u> or <u>credit "
+"card</u> to make the payment."
+msgstr ""
+"El pagament de la reserva es realitza de forma segura a la <b>plataforma "
+"Paypal</b>. Podeu utilitzar <u>Paypal</u> o <u>targeta de crèdit</u> per fer "
+"el pagament."
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:772
+msgctxt "renting_my_reservation"
+msgid ""
+"You will be redirected to the <b>credit card payment platform</b> to make "
+"the confirmation payment securely."
+msgstr ""
+"El pagament de la reserva es realitza de forma segura a la <b>plataforma "
+"bancària</b>. "
+
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:741
+msgctxt "renting_my_reservation"
+msgid ""
+"You will be redirected to the <b>payment platform</b> to make the "
+"confirmation payment securely. You can use <u>Paypal</u> or <u>credit "
+"card</u> to make the payment."
+msgstr ""
+"El pagament de la reserva es realitza de forma segura a la <b>plataforma de "
+"pagament</b>. Podeu utilitzar <u>Paypal</u> o <u>targeta de crèdit</u> per "
+"fer el pagament."
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:115
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:120
