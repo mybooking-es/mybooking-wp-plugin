@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2021-04-14 20:41+0000\n"
+"PO-Revision-Date: 2021-04-24 11:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -1023,6 +1023,16 @@ msgctxt "renting_complete"
 msgid "Apply"
 msgstr "Appliquer"
 
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:441
+msgctxt "renting_complete"
+msgid "Book now and pay now"
+msgstr "Réservez à présent et payez à présent"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:433
+msgctxt "renting_complete"
+msgid "Book now and pay on arrival"
+msgstr "Réservez à présent et payez à l&#39;arrivée"
+
 #: mybooking-templates/mybooking-plugin-complete.php:85
 msgctxt "renting_complete"
 msgid "Close"
@@ -1034,7 +1044,7 @@ msgctxt "renting_complete"
 msgid "Comments"
 msgstr "Commentaires"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:500
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:501
 msgctxt "renting_complete"
 msgid "Confirm"
 msgstr "Confirmer"
@@ -1050,7 +1060,7 @@ msgctxt "renting_complete"
 msgid "Coverage"
 msgstr "Couverture"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:536
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:539
 msgctxt "renting_complete"
 msgid "Credit or debit card"
 msgstr "Carte de crédit ou de débit"
@@ -1093,9 +1103,9 @@ msgctxt "renting_complete"
 msgid "hour(s)"
 msgstr "heure(s)"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:458
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:490
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:568
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:461
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:491
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:571
 #, php-format
 msgctxt "renting_complete"
 msgid ""
@@ -1105,9 +1115,9 @@ msgstr ""
 "J&#39;ai lu et j&#39;accepte les <a href=\"%s\" target=\"_blank\">"
 "conditions</a> de location"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:456
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:488
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:566
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:459
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:489
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:569
 msgctxt "renting_complete"
 msgid "I have read and hereby accept the conditions of rental"
 msgstr "J&#39;ai lu et j&#39;accepte les conditions de location"
@@ -1118,17 +1128,7 @@ msgctxt "renting_complete"
 msgid "Name"
 msgstr "Prénom"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:438
-msgctxt "renting_complete"
-msgid "Pay now"
-msgstr "Payez maintenant"
-
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:431
-msgctxt "renting_complete"
-msgid "Pay on arrival"
-msgstr "Payer à l&#39;arrivée"
-
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:530
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:533
 msgctxt "renting_complete"
 msgid "Paypal"
 msgstr "Paypal"
@@ -1160,8 +1160,8 @@ msgctxt "renting_complete"
 msgid "Promotion Code"
 msgstr "Code promotionnel"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:424
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:468
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:425
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:471
 msgctxt "renting_complete"
 msgid "Request reservation"
 msgstr "Demander une réservation"
@@ -1197,7 +1197,7 @@ msgctxt "renting_complete"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:546
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:549
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to <b>Paypal payment platform</b> to make the "
@@ -1208,7 +1208,7 @@ msgstr ""
 "effectuer le paiement de confirmation en toute sécurité. Vous pouvez "
 "utiliser <u>Paypal</u> ou <u>carte de crédit</u> pour effectuer le paiement."
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:553
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:556
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>credit card payment platform</b> to make "
@@ -1217,7 +1217,7 @@ msgstr ""
 "Vous serez redirigé vers la <b>plateforme de paiement par carte</b> afin que "
 "vous puissiez réaliser le paiement de confirmation de manière sécurisée. "
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:525
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:528
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>payment platform</b> to make the "

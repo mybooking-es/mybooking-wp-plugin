@@ -420,24 +420,27 @@
       <div class="form-row">
          <% if (sales_process.can_request) { %>
            <div class="form-group col-md-12">
-             <label for="payments_paypal_standard">
-              <input type="radio" name="complete_action" value="request_reservation" class="complete_action">&nbsp;<?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+             <label for="complete_action_request_reservation">
+               <input type="radio" id="complete_action_request_reservation" name="complete_action" value="request_reservation" class="complete_action">&nbsp;
+                 <?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
              </label>
            </div>
          <% } %>
          <% if (sales_process.can_pay_on_delivery) { %>
            <div class="form-group col-md-12">
              <label for="payments_paypal_standard">
-              <input type="radio" name="complete_action" value="pay_on_delivery" class="complete_action">&nbsp;<?php echo esc_html_x( 'Pay on arrival', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+               <input type="radio" id="complete_action_pay_on_delivery" name="complete_action" value="pay_on_delivery" class="complete_action">&nbsp;
+                 <?php echo esc_html_x( 'Book now and pay on arrival', 'renting_complete', 'mybooking-wp-plugin' ) ?>
              </label>
            </div>
          <% } %>
          <% if (sales_process.can_pay) { %>
-         <div class="form-group col-md-12">
-           <label for="payments_paypal_standard">
-            <input type="radio" name="complete_action" value="pay_now" class="complete_action">&nbsp;<?php echo esc_html_x( 'Pay now', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-           </label>
-         </div>
+           <div class="form-group col-md-12">
+             <label for="complete_action_pay_now">
+               <input type="radio" id="complete_action_pay_now" name="complete_action" value="pay_now" class="complete_action">&nbsp;
+                 <?php echo esc_html_x( 'Book now and pay now', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+             </label>
+           </div>
          <% } %>
       </div>
     <% } %>
@@ -445,141 +448,141 @@
     <!-- Request reservation -->
 
     <% if (sales_process.can_request) { %>
-    <div id="request_reservation_container" <% if (selectionOptions > 1 || !sales_process.can_request) { %>style="display:none"<%}%>>
+      <div id="request_reservation_container" <% if (selectionOptions > 1 || !sales_process.can_request) { %>style="display:none"<%}%>>
 
-        <div class="border p-4">
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="payments_paypal_standard">
-                <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;
-                <?php if ( empty($args['terms_and_conditions']) ) { ?>
-                  <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                <?php } else { ?>
-                  <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental',
-                                                         'renting_complete', 'mybooking-wp-plugin' ),
-                                                     $args['terms_and_conditions'] ) )?>
-                <?php } ?>
-              </label>
+          <div class="border p-4">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="payments_paypal_standard">
+                  <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;
+                  <?php if ( empty($args['terms_and_conditions']) ) { ?>
+                    <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                  <?php } else { ?>
+                    <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental',
+                                                           'renting_complete', 'mybooking-wp-plugin' ),
+                                                       $args['terms_and_conditions'] ) )?>
+                  <?php } ?>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-primary"><?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+              </div>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <button type="submit" class="btn btn-primary"><?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
-            </div>
-          </div>
-        </div>
+      </div>
+    <% } %>
 
-    </div>
+    <% if (sales_process.can_pay_on_delivery) { %>
+      <!-- Pay on delivery -->
+      <div id="payment_on_delivery_container" <% if (selectionOptions > 1 || !sales_process.can_pay_on_delivery) { %>style="display:none"<%}%>>
+
+          <div class="border p-4">
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="conditions_read_payment_on_delivery">
+                    <input type="checkbox" id="conditions_read_payment_on_delivery" name="conditions_read_payment_on_delivery">&nbsp;
+                    <?php if ( empty($args['terms_and_conditions']) ) { ?>
+                      <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                    <?php } else { ?>
+                      <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental',
+                                                             'renting_complete', 'mybooking-wp-plugin' ),
+                                                         $args['terms_and_conditions'] ) ) ?>
+                    <?php } ?>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <button type="submit" class="btn btn-primary"><?php echo esc_html_x( 'Confirm', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+                </div>
+              </div>
+          </div>
+
+      </div>
     <% } %>
 
     <% if (sales_process.can_pay) { %>
 
-        <% if (sales_process.can_pay_on_delivery) { %>
-        <!-- Pay on delivery -->
-        <div id="payment_on_delivery_container" <% if (selectionOptions > 1 || !sales_process.can_pay_on_delivery) { %>style="display:none"<%}%>>
+      <!-- Pay now -->
 
-            <div class="border p-4">
+      <div id="payment_now_container" <% if (selectionOptions > 1 || !sales_process.can_pay) { %>style="display:none"<%}%>>
+
+        <div class="border p-4">
+            <h4><%=i18next.t('complete.reservationForm.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%></h4>
+            <br>
+
+            <!-- Payment amount -->
+
+            <div class="alert alert-info">
+               <p><%=i18next.t('complete.reservationForm.booking_amount',{amount: configuration.formatCurrency(paymentAmount)})%></p>
+            </div>
+
+            <% if (sales_process.payment_methods.paypal_standard &&
+                   sales_process.payment_methods.tpv_virtual) { %>
+                <div class="alert alert-secondary" role="alert">
+                  <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
+                </div>
                 <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <label for="payments_paypal_standard">
-                      <input type="checkbox" id="conditions_read_payment_on_delivery" name="conditions_read_payment_on_delivery">&nbsp;
+                   <div class="form-group col-md-12">
+                     <label for="payments_paypal_standard">
+                      <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard">&nbsp;<?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+                     </label>
+                   </div>
+                   <div class="form-group col-md-12">
+                     <label for="payments_credit_card">
+                      <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>">&nbsp;<?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                      <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+                     </label>
+                   </div>
+                </div>
+                <div id="payment_method_select_error" class="form-row">
+                </div>
+            <% } else if (sales_process.payment_methods.paypal_standard) { %>
+                <div class="alert alert-secondary" role="alert">
+                  <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
+                </div>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>                    
+            <% } else if (sales_process.payment_methods.tpv_virtual) { %>
+                <div class="alert alert-secondary" role="alert">
+                  <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.' ,
+                    'renting_complete', 'mybooking-wp-plugin' )  )?>
+                </div>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+            <% } %>
+
+            <hr>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="payments_paypal_standard">
+                  <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">&nbsp;
                       <?php if ( empty($args['terms_and_conditions']) ) { ?>
                         <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                       <?php } else { ?>
                         <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental',
                                                                'renting_complete', 'mybooking-wp-plugin' ),
-                                                           $args['terms_and_conditions'] ) ) ?>
+                                                           $args['terms_and_conditions'] ) )?>
                       <?php } ?>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-primary"><?php echo esc_html_x( 'Confirm', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
-                  </div>
-                </div>
+                </label>
+              </div>
             </div>
 
-        </div>
-        <% } %>
-
-        <!-- Pay now -->
-
-        <div id="payment_now_container" <% if (selectionOptions > 1 || !sales_process.can_pay) { %>style="display:none"<%}%>>
-
-            <div class="border p-4">
-                <h4><%=i18next.t('complete.reservationForm.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%></h4>
-                <br>
-
-                <!-- Payment amount -->
-
-                <div class="alert alert-info">
-                   <p><%=i18next.t('complete.reservationForm.booking_amount',{amount: configuration.formatCurrency(paymentAmount)})%></p>
-                </div>
-
-                <% if (sales_process.payment_methods.paypal_standard &&
-                       sales_process.payment_methods.tpv_virtual) { %>
-                    <div class="alert alert-secondary" role="alert">
-                      <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
-                    </div>
-                    <div class="form-row">
-                       <div class="form-group col-md-12">
-                         <label for="payments_paypal_standard">
-                          <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard">&nbsp;<?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-                         </label>
-                       </div>
-                       <div class="form-group col-md-12">
-                         <label for="payments_credit_card">
-                          <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>">&nbsp;<?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-                          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-                         </label>
-                       </div>
-                    </div>
-                    <div id="payment_method_select_error" class="form-row">
-                    </div>
-                <% } else if (sales_process.payment_methods.paypal_standard) { %>
-                    <div class="alert alert-secondary" role="alert">
-                      <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
-                    </div>
-                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>                    
-                <% } else if (sales_process.payment_methods.tpv_virtual) { %>
-                    <div class="alert alert-secondary" role="alert">
-                      <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.' ,
-                        'renting_complete', 'mybooking-wp-plugin' )  )?>
-                    </div>
-                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-                    <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-                <% } %>
-
-                <hr>
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <label for="payments_paypal_standard">
-                      <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">&nbsp;
-                          <?php if ( empty($args['terms_and_conditions']) ) { ?>
-                            <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                          <?php } else { ?>
-                            <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental',
-                                                                   'renting_complete', 'mybooking-wp-plugin' ),
-                                                               $args['terms_and_conditions'] ) )?>
-                          <?php } ?>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-primary"><%=i18next.t('complete.reservationForm.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%></a>
-                  </div>
-                </div>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-primary"><%=i18next.t('complete.reservationForm.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%></a>
+              </div>
             </div>
-
         </div>
+
+      </div>
     <% } %>
 </script>
