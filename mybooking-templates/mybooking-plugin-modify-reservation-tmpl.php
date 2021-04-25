@@ -33,7 +33,7 @@
   <div class="flex-form-group">
     <!-- Delivery date -->
     <div class="flex-form-horizontal-box">
-      <label for="date_from"><?php echo MyBookingEngineContext::getInstance()->getDeliveryDate() ?></label>
+      <label for="date_from"><?php echo esc_html( MyBookingEngineContext::getInstance()->getDeliveryDate() ) ?></label>
       <div class="flex-form-horizontal-item">
 	      <input type="text" class="form-control" name="date_from" id="date_from" autocomplete="off" readonly="true">
 	    	<% if (configuration.timeToFrom) { %>
@@ -45,7 +45,7 @@
     </div>
     <!-- Delivery time -->
     <div class="flex-form-horizontal-box">
-      <label for="date_to"><?php echo MyBookingEngineContext::getInstance()->getCollectionDate() ?></label>
+      <label for="date_to"><?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?></label>
       <div class="flex-form-horizontal-item">
 	      <input type="text" class="form-control" name="date_to" id="date_to" autocomplete="off" readonly="true">
 		    <% if (configuration.timeToFrom) { %>
@@ -61,7 +61,7 @@
 
 <% if (not_hidden_family_id && configuration.selectFamily) { %>
     <div class="flex-form-horizontal-box family" style="display: none">
-      <label for="family_id"><?php echo MyBookingEngineContext::getInstance()->getFamily() ?></label>
+      <label for="family_id"><?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?></label>
       <div class="flex-form-horizontal-item">
       	<select name="family_id" id="family_id" class="form-control"></select>
 	    </div>
