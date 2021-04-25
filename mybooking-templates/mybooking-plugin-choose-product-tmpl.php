@@ -74,7 +74,7 @@
                   <% } else { %>
                     <div class="card-info-container">
                        <div class="card-info">
-                          <span class="badge badge-light w-100 text-center"><?php echo esc_html_x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
+                          <span class="badge badge-light w-100 text-center"><?php echo esc_html( MyBookingEngineContext::getInstance()->getNotAvailableMessage() ) ?></span>
                        </div>  
                     </div>
                   <% } %>
@@ -145,7 +145,7 @@
                     <% } else { %>
                       <div class="card-info-container">
                          <div class="card-info">
-                            <span class="badge badge-light w-100 text-center"><?php echo esc_html_x( 'Model not available in the office and selected dates', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
+                            <span class="badge badge-light w-100 text-center"><?php echo esc_html( MyBookingEngineContext::getInstance()->getNotAvailableMessage() ) ?></span>
                          </div>  
                       </div>
                     <% } %>

@@ -374,6 +374,13 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
+		  // Not available context
+		  add_settings_field('mybooking_plugin_settings_not_available_context',
+		                     'Not available context',
+		                     array($this, 'field_mybooking_plugin_settings_not_available_context_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');		  
+
 		  // Product detail pages (calendar)
 		  add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
 		  									'<em>Use product detail pages</em>',
@@ -1000,6 +1007,47 @@ EOF;
 		  echo "<p class=\"description\">Select <b>checkin/checkout</b> for accommodation or properties.</p>";
 		  echo "<p class=\"description\">Select <b>start/end</b> to describe start and end period.</p>";
 		  echo "<p class=\"description\">Select <b>arrive/depature</b> to describe arrivals an departures</p>";
+		  echo "<hr>";
+
+		}
+
+		/**
+		 * Render Mybooking Not available context
+		 */
+		public function field_mybooking_plugin_settings_not_available_context_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_renting");
+		  $field = "mybooking_plugin_settings_not_available_context";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
+		  $select .= "<option value=''>[Choose not available context]</option>";
+
+		  if ($value == 'not-available') {
+		    $select .= "<option value='not-available' selected>Not available</option>";
+		  }
+		  else {
+		    $select .= "<option value='not-available'>Not available</option>";
+		  }
+
+			if ($value == 'check-by-phone') {
+		    $select .= "<option value='check-by-phone' selected>Telephone consultation</option>";
+		  }
+		  else {
+		    $select .= "<option value='check-by-phone'>Telephone consultation</option>";
+		  }
+
+		  $select .= "</select>";
+
+		  echo $select;
+		  echo "<p class=\"description\">Choose the not available message that describes your business context.</p>";
+		  echo "<p class=\"description\">Select <b>Not available</b> to show not available message.</p>";
+		  echo "<p class=\"description\">Select <b>Telephone consultation</b> to show Telephone consultation message.</p>";
 		  echo "<hr>";
 
 		}

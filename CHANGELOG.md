@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.8.1]
+
+### Fixed
+
+- Renting
+  - French translation
+  - Pay on delivery / Pay now literals
+  - Avoid editing booking data when renting in progress
+  - Not available context: Not available vs Contact by phone
+
 ## [0.8.0]
 
 ### Added

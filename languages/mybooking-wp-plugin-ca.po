@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2021-04-24 11:55+0000\n"
+"PO-Revision-Date: 2021-04-25 16:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -114,62 +114,62 @@ msgctxt "activity_detail"
 msgid "What's included?"
 msgstr "Què inclou?"
 
-#: includes/mybooking-plugin.php:1678
+#: includes/mybooking-plugin.php:1685
 msgctxt "activity_item_content"
 msgid "Activity Item"
 msgstr "Element d'activitat"
 
-#: includes/mybooking-plugin.php:1677
+#: includes/mybooking-plugin.php:1684
 msgctxt "activity_item_content"
 msgid "Activity Items"
 msgstr "Elements d'activitat"
 
-#: includes/mybooking-plugin.php:1679
+#: includes/mybooking-plugin.php:1686
 msgctxt "activity_item_content"
 msgid "Add activity item"
 msgstr "Afegeix un element d'activitat"
 
-#: includes/mybooking-plugin.php:1681
+#: includes/mybooking-plugin.php:1688
 msgctxt "activity_item_content"
 msgid "Edit"
 msgstr "Editeu l’activitat"
 
-#: includes/mybooking-plugin.php:1682
+#: includes/mybooking-plugin.php:1689
 msgctxt "activity_item_content"
 msgid "Edit activity item"
 msgstr "Editeu l’activitat"
 
-#: includes/mybooking-plugin.php:1680 includes/mybooking-plugin.php:1683
+#: includes/mybooking-plugin.php:1687 includes/mybooking-plugin.php:1690
 msgctxt "activity_item_content"
 msgid "New activity item"
 msgstr "Nou element d'activitat"
 
-#: includes/mybooking-plugin.php:1688
+#: includes/mybooking-plugin.php:1695
 msgctxt "activity_item_content"
 msgid "No activity item found on bin"
 msgstr "No s'ha trobat cap element d'activitat al contenidor"
 
-#: includes/mybooking-plugin.php:1687
+#: includes/mybooking-plugin.php:1694
 msgctxt "activity_item_content"
 msgid "No activity_item found"
 msgstr "No s'ha trobat cap element d'activitat"
 
-#: includes/mybooking-plugin.php:1689
+#: includes/mybooking-plugin.php:1696
 msgctxt "activity_item_content"
 msgid "Parent activity item"
 msgstr "Element d'activitat principal"
 
-#: includes/mybooking-plugin.php:1686
+#: includes/mybooking-plugin.php:1693
 msgctxt "activity_item_content"
 msgid "Search activity item"
 msgstr "Element d'activitat de cerca"
 
-#: includes/mybooking-plugin.php:1684
+#: includes/mybooking-plugin.php:1691
 msgctxt "activity_item_content"
 msgid "See"
 msgstr "Veure"
 
-#: includes/mybooking-plugin.php:1685
+#: includes/mybooking-plugin.php:1692
 msgctxt "activity_item_content"
 msgid "See activity item"
 msgstr "Consulteu l’activitat"
@@ -697,11 +697,22 @@ msgctxt "engine_context"
 msgid "night(s)"
 msgstr "nit(s)"
 
+#: includes/translation/mybooking-plugin-engine-context.php:183
+#: includes/translation/mybooking-plugin-engine-context.php:189
+msgctxt "engine_context"
+msgid "Not available"
+msgstr "No disponible"
+
 #: includes/translation/mybooking-plugin-engine-context.php:130
 #: includes/translation/mybooking-plugin-engine-context.php:142
 msgctxt "engine_context"
 msgid "Pick-up date"
 msgstr "Data de recollida"
+
+#: includes/translation/mybooking-plugin-engine-context.php:186
+msgctxt "engine_context"
+msgid "Please, contact us by phone"
+msgstr "Si us plau, poseu-vos en contacte per telèfon"
 
 #: includes/translation/mybooking-plugin-engine-context.php:83
 msgctxt "engine_context"
@@ -755,112 +766,112 @@ msgctxt "engine_context"
 msgid "Vehicle"
 msgstr "Vehicle"
 
-#: includes/translation/mybooking-plugin-engine-context.php:207
+#: includes/translation/mybooking-plugin-engine-context.php:227
 msgctxt "engine_context_key_characteristic"
 msgid "Air conditioner"
 msgstr "Aire acondicionat"
 
-#: includes/translation/mybooking-plugin-engine-context.php:210
+#: includes/translation/mybooking-plugin-engine-context.php:230
 msgctxt "engine_context_key_characteristic"
 msgid "Bathroom"
 msgstr "Bany"
 
-#: includes/translation/mybooking-plugin-engine-context.php:213
+#: includes/translation/mybooking-plugin-engine-context.php:233
 msgctxt "engine_context_key_characteristic"
 msgid "Baths"
 msgstr "Banys"
 
-#: includes/translation/mybooking-plugin-engine-context.php:216
+#: includes/translation/mybooking-plugin-engine-context.php:236
 msgctxt "engine_context_key_characteristic"
 msgid "Beds"
 msgstr "Llits"
 
-#: includes/translation/mybooking-plugin-engine-context.php:219
+#: includes/translation/mybooking-plugin-engine-context.php:239
 msgctxt "engine_context_key_characteristic"
 msgid "Berths"
 msgstr "Amarratges"
 
-#: includes/translation/mybooking-plugin-engine-context.php:222
+#: includes/translation/mybooking-plugin-engine-context.php:242
 msgctxt "engine_context_key_characteristic"
 msgid "Boat License"
 msgstr "Llicència de navegació"
 
-#: includes/translation/mybooking-plugin-engine-context.php:225
+#: includes/translation/mybooking-plugin-engine-context.php:245
 msgctxt "engine_context_key_characteristic"
 msgid "Cabin"
 msgstr "Cabina"
 
-#: includes/translation/mybooking-plugin-engine-context.php:228
+#: includes/translation/mybooking-plugin-engine-context.php:248
 msgctxt "engine_context_key_characteristic"
 msgid "Doors"
 msgstr "Portes"
 
-#: includes/translation/mybooking-plugin-engine-context.php:231
+#: includes/translation/mybooking-plugin-engine-context.php:251
 msgctxt "engine_context_key_characteristic"
 msgid "Driving license"
 msgstr "Permís de conduir"
 
-#: includes/translation/mybooking-plugin-engine-context.php:234
+#: includes/translation/mybooking-plugin-engine-context.php:254
 msgctxt "engine_context_key_characteristic"
 msgid "Fuel"
 msgstr "Combustible"
 
-#: includes/translation/mybooking-plugin-engine-context.php:186
+#: includes/translation/mybooking-plugin-engine-context.php:206
 msgctxt "engine_context_key_characteristic"
 msgid "Length"
 msgstr "Llargada"
 
-#: includes/translation/mybooking-plugin-engine-context.php:237
+#: includes/translation/mybooking-plugin-engine-context.php:257
 msgctxt "engine_context_key_characteristic"
 msgid "Pets"
 msgstr "Animals de companyia"
 
-#: includes/translation/mybooking-plugin-engine-context.php:240
+#: includes/translation/mybooking-plugin-engine-context.php:260
 msgctxt "engine_context_key_characteristic"
 msgid "Places"
 msgstr "Places"
 
-#: includes/translation/mybooking-plugin-engine-context.php:243
+#: includes/translation/mybooking-plugin-engine-context.php:263
 msgctxt "engine_context_key_characteristic"
 msgid "Rooms"
 msgstr "Habitacions"
 
-#: includes/translation/mybooking-plugin-engine-context.php:246
+#: includes/translation/mybooking-plugin-engine-context.php:266
 msgctxt "engine_context_key_characteristic"
 msgid "Seats"
 msgstr "Seients"
 
-#: includes/translation/mybooking-plugin-engine-context.php:249
+#: includes/translation/mybooking-plugin-engine-context.php:269
 msgctxt "engine_context_key_characteristic"
 msgid "Shower"
 msgstr "Dutxa"
 
-#: includes/translation/mybooking-plugin-engine-context.php:252
+#: includes/translation/mybooking-plugin-engine-context.php:272
 msgctxt "engine_context_key_characteristic"
 msgid "Skipper"
 msgstr "Patró"
 
-#: includes/translation/mybooking-plugin-engine-context.php:255
+#: includes/translation/mybooking-plugin-engine-context.php:275
 msgctxt "engine_context_key_characteristic"
 msgid "Suitcases"
 msgstr "Maletes"
 
-#: includes/translation/mybooking-plugin-engine-context.php:258
+#: includes/translation/mybooking-plugin-engine-context.php:278
 msgctxt "engine_context_key_characteristic"
 msgid "Transmission"
 msgstr "Transmissió"
 
-#: includes/translation/mybooking-plugin-engine-context.php:261
+#: includes/translation/mybooking-plugin-engine-context.php:281
 msgctxt "engine_context_key_characteristic"
 msgid "Type"
 msgstr "Tipus"
 
-#: includes/translation/mybooking-plugin-engine-context.php:264
+#: includes/translation/mybooking-plugin-engine-context.php:284
 msgctxt "engine_context_key_characteristic"
 msgid "WC"
 msgstr "WC"
 
-#: includes/translation/mybooking-plugin-engine-context.php:267
+#: includes/translation/mybooking-plugin-engine-context.php:287
 msgctxt "engine_context_key_characteristic"
 msgid "Wifi"
 msgstr "Wifi"
@@ -887,62 +898,62 @@ msgctxt "plugin_settings"
 msgid "Settings"
 msgstr "Configuració"
 
-#: includes/mybooking-plugin.php:1595
+#: includes/mybooking-plugin.php:1602
 msgctxt "popup_content"
 msgid "Add popup ad"
 msgstr "Afegeix anunci popup"
 
-#: includes/mybooking-plugin.php:1597
+#: includes/mybooking-plugin.php:1604
 msgctxt "popup_content"
 msgid "Edit"
 msgstr "Editar"
 
-#: includes/mybooking-plugin.php:1598
+#: includes/mybooking-plugin.php:1605
 msgctxt "popup_content"
 msgid "Edit popup ad"
 msgstr "Editar anunci popup"
 
-#: includes/mybooking-plugin.php:1596 includes/mybooking-plugin.php:1599
+#: includes/mybooking-plugin.php:1603 includes/mybooking-plugin.php:1606
 msgctxt "popup_content"
 msgid "New popup ad"
 msgstr "Nou anunci popup"
 
-#: includes/mybooking-plugin.php:1603
+#: includes/mybooking-plugin.php:1610
 msgctxt "popup_content"
 msgid "No popup ad found"
 msgstr "No s'ha trobat cap anunci emergent"
 
-#: includes/mybooking-plugin.php:1604
+#: includes/mybooking-plugin.php:1611
 msgctxt "popup_content"
 msgid "No popup ad on bin"
 msgstr "No s'ha trobat cap anunci emergent a la paperera"
 
-#: includes/mybooking-plugin.php:1605
+#: includes/mybooking-plugin.php:1612
 msgctxt "popup_content"
 msgid "Parent popup ad"
 msgstr "Anunci emergent principal"
 
-#: includes/mybooking-plugin.php:1594
+#: includes/mybooking-plugin.php:1601
 msgctxt "popup_content"
 msgid "Popup ad"
 msgstr "Anunci emergent"
 
-#: includes/mybooking-plugin.php:1593
+#: includes/mybooking-plugin.php:1600
 msgctxt "popup_content"
 msgid "Popup ads"
 msgstr "Anuncis emergents"
 
-#: includes/mybooking-plugin.php:1602
+#: includes/mybooking-plugin.php:1609
 msgctxt "popup_content"
 msgid "Search popup ad"
 msgstr "Cercar anunci emergent"
 
-#: includes/mybooking-plugin.php:1600
+#: includes/mybooking-plugin.php:1607
 msgctxt "popup_content"
 msgid "See"
 msgstr "Veure"
 
-#: includes/mybooking-plugin.php:1601
+#: includes/mybooking-plugin.php:1608
 msgctxt "popup_content"
 msgid "See popup ad"
 msgstr "Veure anunci emergent"
@@ -976,12 +987,6 @@ msgstr "Queden poques unitats!"
 msgctxt "renting_choose_product"
 msgid "hour(s)"
 msgstr "hora/es"
-
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:77
-#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:148
-msgctxt "renting_choose_product"
-msgid "Model not available in the office and selected dates"
-msgstr "El model no està disponible a l'oficina i les dates seleccionades"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:162
 msgctxt "renting_choose_product"
@@ -1290,67 +1295,67 @@ msgctxt "renting_form_selector_wizard"
 msgid "Where?"
 msgstr "On?"
 
-#: includes/mybooking-plugin.php:1651
+#: includes/mybooking-plugin.php:1658
 msgctxt "renting_item_content"
 msgid "Add renting item"
 msgstr "Afegeix un article de lloguer"
 
-#: includes/mybooking-plugin.php:1653
+#: includes/mybooking-plugin.php:1660
 msgctxt "renting_item_content"
 msgid "Edit"
 msgstr "Edita"
 
-#: includes/mybooking-plugin.php:1654
+#: includes/mybooking-plugin.php:1661
 msgctxt "renting_item_content"
 msgid "Edit renting item"
 msgstr "Edita l'article de lloguer"
 
-#: includes/mybooking-plugin.php:1652 includes/mybooking-plugin.php:1655
+#: includes/mybooking-plugin.php:1659 includes/mybooking-plugin.php:1662
 msgctxt "renting_item_content"
 msgid "New renting item"
 msgstr "Nou article de lloguer"
 
-#: includes/mybooking-plugin.php:1659
+#: includes/mybooking-plugin.php:1666
 msgctxt "renting_item_content"
 msgid "No renting item found"
 msgstr "No s'ha trobat cap article de lloguer"
 
-#: includes/mybooking-plugin.php:1660
+#: includes/mybooking-plugin.php:1667
 msgctxt "renting_item_content"
 msgid "No renting item found on bin"
 msgstr "No s'ha trobat cap article de lloguer a la paperera"
 
-#: includes/mybooking-plugin.php:1661
+#: includes/mybooking-plugin.php:1668
 msgctxt "renting_item_content"
 msgid "Parent renting item"
 msgstr "Article de lloguer principal"
 
-#: includes/mybooking-plugin.php:1650
+#: includes/mybooking-plugin.php:1657
 msgctxt "renting_item_content"
 msgid "Renting Item"
 msgstr "Article de lloguer"
 
-#: includes/mybooking-plugin.php:1649
+#: includes/mybooking-plugin.php:1656
 msgctxt "renting_item_content"
 msgid "Renting Items"
 msgstr "Articles de lloger"
 
-#: includes/mybooking-plugin.php:1658
+#: includes/mybooking-plugin.php:1665
 msgctxt "renting_item_content"
 msgid "Search renting item"
 msgstr "Cercar article de lloguer"
 
-#: includes/mybooking-plugin.php:1656
+#: includes/mybooking-plugin.php:1663
 msgctxt "renting_item_content"
 msgid "See"
 msgstr "Veure"
 
-#: includes/mybooking-plugin.php:1657
+#: includes/mybooking-plugin.php:1664
 msgctxt "renting_item_content"
 msgid "See renting item"
 msgstr "Veure article de lloguer"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:424
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:425
 msgctxt "renting_my_reservation"
 msgid "Additional drivers"
 msgstr "Conductors adicionals"
@@ -1367,10 +1372,10 @@ msgctxt "renting_my_reservation"
 msgid "City"
 msgstr "Ciutat"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:536
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:538
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:554
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:556
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:537
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:539
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:555
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:557
 msgctxt "renting_my_reservation"
 msgid "Company"
 msgstr "Empresa"
@@ -1391,7 +1396,7 @@ msgctxt "renting_my_reservation"
 msgid "Country"
 msgstr "País"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:752
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:756
 msgctxt "renting_my_reservation"
 msgid "Credit or debit card"
 msgstr "Targeta de crèdit o dèbit"
@@ -1406,7 +1411,7 @@ msgctxt "renting_my_reservation"
 msgid "Customer's details"
 msgstr "Detalls del client"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:404
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:405
 msgctxt "renting_my_reservation"
 msgid "Date of birth"
 msgstr "Data de naixement"
@@ -1423,12 +1428,12 @@ msgctxt "renting_my_reservation"
 msgid "Deposit"
 msgstr "Deposit"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:602
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:604
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:606
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:668
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:670
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:672
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:603
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:605
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:607
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:669
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:671
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:673
 msgctxt "renting_my_reservation"
 msgid "Document ID"
 msgstr "Identificador del document"
@@ -1439,43 +1444,43 @@ msgid "Driver's age supplement"
 msgstr "Suplement d’edat del conductor"
 
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:378
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:452
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:505
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:453
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:506
 msgctxt "renting_my_reservation"
 msgid "Driving license date of issue"
 msgstr "Data d’expedició del permís de conduir"
 
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:398
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:471
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:524
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:472
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:525
 msgctxt "renting_my_reservation"
 msgid "Driving license expedition country"
 msgstr "País d’expedició del permís de conduir"
 
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:370
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:372
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:444
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:446
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:497
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:499
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:445
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:447
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:498
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:500
 msgctxt "renting_my_reservation"
 msgid "Driving license number"
 msgstr "Número del permís de conduir"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:620
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:622
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:624
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:686
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:688
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:690
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:621
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:623
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:625
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:687
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:689
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:691
 msgctxt "renting_my_reservation"
 msgid "E-mail"
 msgstr "E-mail"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:546
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:548
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:564
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:566
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:547
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:549
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:565
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:567
 msgctxt "renting_my_reservation"
 msgid "Estimated Time"
 msgstr "Hora aproximada"
@@ -1485,25 +1490,25 @@ msgctxt "renting_my_reservation"
 msgid "Extras"
 msgstr "Extras"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:533
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:534
 msgctxt "renting_my_reservation"
 msgid "Flight"
 msgstr "Vol"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:541
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:543
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:559
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:561
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:542
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:544
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:560
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:562
 msgctxt "renting_my_reservation"
 msgid "Flight Number"
 msgstr "Nombre de vol"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:629
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:631
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:633
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:695
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:697
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:699
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:630
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:632
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:634
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:696
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:698
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:700
 msgctxt "renting_my_reservation"
 msgid "Height (cm)"
 msgstr "Alçada (cm)"
@@ -1531,16 +1536,16 @@ msgstr "La meva reserva"
 
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:328
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:330
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:427
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:429
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:480
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:482
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:586
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:588
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:590
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:652
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:654
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:656
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:428
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:430
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:481
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:483
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:587
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:589
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:591
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:653
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:655
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:657
 msgctxt "renting_my_reservation"
 msgid "Name"
 msgstr "Nom"
@@ -1556,27 +1561,27 @@ msgctxt "renting_my_reservation"
 msgid "Paid"
 msgstr "Pagat"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:579
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:580
 msgctxt "renting_my_reservation"
 msgid "Participant"
 msgstr "Participant"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:581
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:582
 msgctxt "renting_my_reservation"
 msgid "Participants"
 msgstr "Participants"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:582
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:583
 msgctxt "renting_my_reservation"
 msgid "Pax 1"
 msgstr "Pax 1"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:649
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:650
 msgctxt "renting_my_reservation"
 msgid "Pax 2"
 msgstr "Pax 2"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:746
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:750
 msgctxt "renting_my_reservation"
 msgid "Paypal"
 msgstr "Paypal"
@@ -1591,12 +1596,12 @@ msgctxt "renting_my_reservation"
 msgid "Petrol supplement"
 msgstr "Suplement de combustible"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:612
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:614
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:616
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:678
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:680
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:682
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:613
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:615
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:617
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:679
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:681
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:683
 msgctxt "renting_my_reservation"
 msgid "Phone number"
 msgstr "Número de telèfon"
@@ -1630,7 +1635,7 @@ msgctxt "renting_my_reservation"
 msgid "Reservation Id"
 msgstr "Identificador de reserva"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:551
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:552
 msgctxt "renting_my_reservation"
 msgid "Return flight"
 msgstr "Vol de tornada"
@@ -1658,16 +1663,16 @@ msgstr "Suplements"
 
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:334
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:336
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:434
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:436
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:487
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:489
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:594
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:596
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:598
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:660
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:662
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:664
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:435
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:437
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:488
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:490
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:595
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:597
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:599
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:661
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:663
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:665
 msgctxt "renting_my_reservation"
 msgid "Surname"
 msgstr "Cognom"
@@ -1678,22 +1683,22 @@ msgctxt "renting_my_reservation"
 msgid "Total"
 msgstr "Total"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:721
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:724
 msgctxt "renting_my_reservation"
 msgid "Update"
 msgstr "Actualització"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:639
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:641
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:643
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:705
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:707
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:709
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:640
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:642
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:644
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:706
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:708
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:710
 msgctxt "renting_my_reservation"
 msgid "Weight (kg)"
 msgstr "Pes (kg)"
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:760
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:764
 msgctxt "renting_my_reservation"
 msgid ""
 "You will be redirected to <b>Paypal payment platform</b> to make the "
@@ -1704,7 +1709,7 @@ msgstr ""
 "Paypal</b>. Podeu utilitzar <u>Paypal</u> o <u>targeta de crèdit</u> per fer "
 "el pagament."
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:772
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:776
 msgctxt "renting_my_reservation"
 msgid ""
 "You will be redirected to the <b>credit card payment platform</b> to make "
@@ -1713,7 +1718,7 @@ msgstr ""
 "El pagament de la reserva es realitza de forma segura a la <b>plataforma "
 "bancària</b>. "
 
-#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:741
+#: mybooking-templates/mybooking-plugin-reservation-tmpl.php:745
 msgctxt "renting_my_reservation"
 msgid ""
 "You will be redirected to the <b>payment platform</b> to make the "
@@ -1939,62 +1944,62 @@ msgstr ""
 "Motor de reserva Frontend de WordPress per a Mybooking. Transforma wordpress "
 "en un motor de reserva de lloguer / allotjament / excursions."
 
-#: includes/mybooking-plugin.php:1623
+#: includes/mybooking-plugin.php:1630
 msgctxt "testimonial_content"
 msgid "Add testimonial"
 msgstr "Afegeix testimoni"
 
-#: includes/mybooking-plugin.php:1625
+#: includes/mybooking-plugin.php:1632
 msgctxt "testimonial_content"
 msgid "Edit"
 msgstr "Editar"
 
-#: includes/mybooking-plugin.php:1626
+#: includes/mybooking-plugin.php:1633
 msgctxt "testimonial_content"
 msgid "Edit testimonial"
 msgstr "Editar testimoni"
 
-#: includes/mybooking-plugin.php:1624 includes/mybooking-plugin.php:1627
+#: includes/mybooking-plugin.php:1631 includes/mybooking-plugin.php:1634
 msgctxt "testimonial_content"
 msgid "New testimonial"
 msgstr "Nou testimoni"
 
-#: includes/mybooking-plugin.php:1631
+#: includes/mybooking-plugin.php:1638
 msgctxt "testimonial_content"
 msgid "No testimonial found"
 msgstr "No s'ha trobat cap testimoni"
 
-#: includes/mybooking-plugin.php:1632
+#: includes/mybooking-plugin.php:1639
 msgctxt "testimonial_content"
 msgid "No testimonial found on bin"
 msgstr "Cap testimoni a la paperera"
 
-#: includes/mybooking-plugin.php:1633
+#: includes/mybooking-plugin.php:1640
 msgctxt "testimonial_content"
 msgid "Parent testimonial"
 msgstr "Testimoni dels pares"
 
-#: includes/mybooking-plugin.php:1630
+#: includes/mybooking-plugin.php:1637
 msgctxt "testimonial_content"
 msgid "Search testimonial"
 msgstr "Cercar testimoni"
 
-#: includes/mybooking-plugin.php:1628
+#: includes/mybooking-plugin.php:1635
 msgctxt "testimonial_content"
 msgid "See"
 msgstr "Veure"
 
-#: includes/mybooking-plugin.php:1629
+#: includes/mybooking-plugin.php:1636
 msgctxt "testimonial_content"
 msgid "See testimonial"
 msgstr "Veure testimoni"
 
-#: includes/mybooking-plugin.php:1622
+#: includes/mybooking-plugin.php:1629
 msgctxt "testimonial_content"
 msgid "Testimonial"
 msgstr "Testimoni"
 
-#: includes/mybooking-plugin.php:1621
+#: includes/mybooking-plugin.php:1628
 msgctxt "testimonial_content"
 msgid "Testimonials"
 msgstr "Testimonis"

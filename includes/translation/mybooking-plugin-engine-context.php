@@ -173,6 +173,26 @@
         return $returnValue;
     }
 
+    public function getNotAvailableMessage( ) {
+
+      $registry = Mybooking_Registry::getInstance();
+      $returnValue = '';
+
+      switch ($registry->mybooking_rent_plugin_not_available_context) {
+        case 'not-available':
+          $returnValue = esc_html_x( 'Not available', 'engine_context', 'mybooking-wp-plugin' );
+          break;
+        case 'check-by-phone':
+          $returnValue = esc_html_x( 'Please, contact us by phone', 'engine_context', 'mybooking-wp-plugin' );
+          break;
+        default:
+           $returnValue = esc_html_x( 'Not available', 'engine_context', 'mybooking-wp-plugin' );
+      }
+
+      return $returnValue;
+
+    }
+
     /**
      * Get the characteristic description from the code
      */

@@ -281,41 +281,41 @@
                 <div class="form-group col-md-6">
                   <label for="street"><?php echo esc_html_x( 'Address', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="street" name="customer_address[street]" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Address', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_street%>" maxlength="60">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Address', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_street%>" maxlength="60" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="number"><?php echo esc_html_x( 'Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="number" name="customer_address[number]" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_number%>" maxlength="10">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_number%>" maxlength="10" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="complement"><?php echo esc_html_x( 'Complement', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="complement" name="customer_address[complement]" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Complement', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_complement%>"  maxlength="20">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Complement', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_complement%>"  maxlength="20" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
               </div> 
               <div class="form-row"> 
                 <div class="form-group col-md-6">
                   <label for="city"><?php echo esc_html_x( 'City', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="city" name="customer_address[city]" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_city%>" maxlength="60">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_city%>" maxlength="60" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="state"><?php echo esc_html_x( 'State', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="state" name="customer_address[state]" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_state%>"  maxlength="60">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_state%>"  maxlength="60" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="country"><?php echo esc_html_x( 'Country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
-                  <select name="customer_address[country]" id="country" class="form-control">
+                  <select name="customer_address[country]" id="country" class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>>
                   </select>                  
                 </div>  
                 <div class="form-group col-md-6">
                   <label for="zip"><?php echo esc_html_x( 'Postal Code', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="zip" name="customer_address[zip]" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_zip%>"  maxlength="10">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_zip%>"  maxlength="10" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
               </div>
             <% } %>
@@ -328,13 +328,13 @@
                   <label for="driver_name"><?php echo esc_html_x("Name", 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="driver_name" name="driver_name" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("Name", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_name%>"
-                    maxlength="40">
+                    maxlength="40" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-6">
                   <label for=""><?php echo esc_html_x("Surname", 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="driver_surname" name="driver_surname" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php  echo esc_attr_x("Surname", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_surname%>"
-                    maxlength="40">
+                    maxlength="40" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
               </div>
               <div class="form-row">
@@ -342,7 +342,7 @@
                   <label for="driver_document_id"><?php echo esc_html_x("ID card or passport", 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="driver_document_id" name="driver_document_id" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("ID card or passport", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_document_id%>"
-                    maxlength="50">
+                    maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-6">
                   <label
@@ -350,15 +350,15 @@
                   <div class="custom-date-form">
                     <div class="custom-date-item">
                       <select name="driver_document_id_date_day" id="driver_document_id_date_day"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="driver_document_id_date_month" id="driver_document_id_date_month"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="driver_document_id_date_year" id="driver_document_id_date_year"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                   </div>
                   <input type="hidden" name="driver_document_id_date" id="driver_document_id_date"></input>
@@ -371,7 +371,7 @@
                   <input class="form-control" id="driver_driving_license_number" name="driver_driving_license_number"
                     type="text" placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Driving license number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
                     value="<%=booking.driver_driving_license_number%>"
-                    maxlength="50">
+                    maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-6">
                   <label
@@ -379,15 +379,15 @@
                   <div class="custom-date-form">
                     <div class="custom-date-item">
                       <select name="driver_driving_license_date_day" id="driver_driving_license_date_day"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="driver_driving_license_date_month" id="driver_driving_license_date_month"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="driver_driving_license_date_year" id="driver_driving_license_date_year"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                   </div>
                   <input type="hidden" name="driver_driving_license_date" id="driver_driving_license_date"></input>
@@ -396,7 +396,8 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="driver_driving_license_country"><?php echo esc_html_x('Driving license expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
-                  <select name="driver_driving_license_country" id="driver_driving_license_country" class="form-control">
+                  <select name="driver_driving_license_country" id="driver_driving_license_country" class="form-control" 
+                    <% if (!booking.can_edit_online){%>disabled<%}%>>
                   </select>
                 </div>
                 <div class="form-group col-md-6">
@@ -405,15 +406,15 @@
                   <div class="custom-date-form">
                     <div class="custom-date-item">
                       <select name="driver_date_of_birth_day" id="driver_date_of_birth_day"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="driver_date_of_birth_month" id="driver_date_of_birth_month"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="driver_date_of_birth_year" id="driver_date_of_birth_year"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                   </div>
                   <input type="hidden" name="driver_date_of_birth" id="driver_date_of_birth"></input>
@@ -428,14 +429,14 @@
                   <input class="form-control" id="additional_driver_1_name" name="additional_driver_1_name" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("Name", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
                     value="<%=booking.additional_driver_1_name%>"
-                    maxlength="40">
+                    maxlength="40" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-6">
                   <label for=""><?php echo esc_html_x("Surname", 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="additional_driver_1_surname" name="additional_driver_1_surname" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("Surname", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
                     value="<%=booking.additional_driver_1_surname%>"
-                    maxlength="40">
+                    maxlength="40" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
               </div>
               <div class="form-row">
@@ -445,7 +446,7 @@
                   <input class="form-control" id="additional_driver_1_driving_license_number" name="additional_driver_1_driving_license_number"
                     type="text" placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Driving license number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
                     value="<%=booking.additional_driver_1_driving_license_number%>"
-                    maxlength="50">
+                    maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-6">
                   <label
@@ -453,15 +454,15 @@
                   <div class="custom-date-form">
                     <div class="custom-date-item">
                       <select name="additional_driver_1_driving_license_date_day" id="additional_driver_1_driving_license_date_day"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="additional_driver_1_driving_license_date_month" id="additional_driver_1_driving_license_date_month"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="additional_driver_1_driving_license_date_year" id="additional_driver_1_driving_license_date_year"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                   </div>
                   <input type="hidden" name="additional_driver_1_driving_license_date" id="additional_driver_1_driving_license_date"></input>
@@ -470,7 +471,7 @@
                   <label
                     for="driver_driving_license_country"><?php echo esc_html_x('Driving license expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <select name="additional_driver_1_driving_license_country" id="additional_driver_1_driving_license_country"
-                      class="form-control">
+                      class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>>
                   </select>
                 </div>
               </div>
@@ -481,14 +482,14 @@
                   <input class="form-control" id="additional_driver_2_name" name="additional_driver_2_name" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("Name", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
                     value="<%=booking.additional_driver_2_name%>"
-                    maxlength="40">
+                    maxlength="40" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-6">
                   <label for=""><?php echo esc_html_x("Surname", 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="additional_driver_2_surname" name="additional_driver_2_surname" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("Surname", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
                     value="<%=booking.additional_driver_2_surname%>"
-                    maxlength="40">
+                    maxlength="40" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
               </div>
               <div class="form-row">
@@ -498,7 +499,7 @@
                   <input class="form-control" id="additional_driver_2_driving_license_number" name="additional_driver_2_driving_license_number"
                     type="text" placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Driving license number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
                     value="<%=booking.additional_driver_2_driving_license_number%>"
-                    maxlength="50">
+                    maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-6">
                   <label
@@ -506,15 +507,15 @@
                   <div class="custom-date-form">
                     <div class="custom-date-item">
                       <select name="additional_driver_2_driving_license_date_day" id="additional_driver_2_driving_license_date_day"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="additional_driver_2_driving_license_date_month" id="additional_driver_2_driving_license_date_month"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                     <div class="custom-date-item">
                       <select name="additional_driver_2_driving_license_date_year" id="additional_driver_2_driving_license_date_year"
-                        class="form-control"></select>
+                        class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
                     </div>
                   </div>
                   <input type="hidden" name="additional_driver_2_driving_license_date" id="additional_driver_2_driving_license_date"></input>
@@ -523,7 +524,7 @@
                   <label
                     for="driver_driving_license_country"><?php echo esc_html_x('Driving license expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <select name="additional_driver_2_driving_license_country" id="additional_driver_2_driving_license_country"
-                      class="form-control">
+                      class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>>
                   </select>
                 </div>
               </div>
@@ -535,17 +536,17 @@
                 <div class="form-group col-md-4">
                   <label for="flight_company"><?php echo esc_html_x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="flight_company" name="flight_company" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_company%>" maxlength="80">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_company%>" maxlength="80" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="flight_number"><?php echo esc_html_x('Flight Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="flight_number" name="flight_number" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Flight Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_number%>" maxlength="10">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Flight Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_number%>" maxlength="10" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="flight_time"><?php echo esc_html_x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="flight_time" name="flight_time" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_time%>" maxlength="5">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_time%>" maxlength="5" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
               </div>
               <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x('Return flight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
@@ -553,17 +554,17 @@
                 <div class="form-group col-md-4">
                   <label for="flight_company_departure"><?php echo esc_html_x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="flight_company_departure" name="flight_company_departure" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_company_departure%>">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_company_departure%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="flight_number_departure"><?php echo esc_html_x('Flight Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="flight_number_departure" name="flight_number_departure" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Flight Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_number_departure%>">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Flight Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_number_departure%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="flight_time_departure"><?php echo esc_html_x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                   <input class="form-control" id="flight_time_departure" name="flight_time_departure" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_time_departure%>">
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_time_departure%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                 </div>
               </div>
             <% } %>
@@ -588,7 +589,7 @@
                                title="<?php echo esc_attr_x( 'Name', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                class="form-control alt" type="text"
                                placeholder="<?php echo esc_attr_x( 'Name', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="80"
-                               value="<%=booking_line_resource.resource_user_name%>">
+                               value="<%=booking_line_resource.resource_user_name%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="customer_name"><?php echo esc_html_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -596,7 +597,7 @@
                                title="<?php echo esc_attr_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                class="form-control alt" type="text"
                                placeholder="<?php echo esc_attr_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="80"
-                               value="<%=booking_line_resource.resource_user_surname%>">
+                               value="<%=booking_line_resource.resource_user_surname%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="customer_name"><?php echo esc_html_x( 'Document ID', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -604,7 +605,7 @@
                                title="<?php echo esc_attr_x( 'Document ID', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                class="form-control alt" type="text"
                                placeholder="<?php echo esc_attr_x( 'Document ID', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="50"
-                               value="<%=booking_line_resource.resource_user_document_id%>">
+                               value="<%=booking_line_resource.resource_user_document_id%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                       </div>
                     </div>
                     <div class="form-row">
@@ -614,7 +615,7 @@
                                title="<?php echo esc_attr_x( 'Phone number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                class="form-control alt" type="text"
                                placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="15"
-                               value="<%=booking_line_resource.resource_user_phone%>">
+                               value="<%=booking_line_resource.resource_user_phone%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="customer_name"><?php echo esc_html_x( 'E-mail', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -622,7 +623,7 @@
                                title="<?php echo esc_attr_x( 'E-mail', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                class="form-control alt" type="text"
                                placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="40"
-                               value="<%=booking_line_resource.resource_user_email%>">
+                               value="<%=booking_line_resource.resource_user_email%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                       </div>             
                       <% if (configuration.rentingFormFillDataNamedResourcesHeight) { %>   
                         <div class="form-group col-md-2">
@@ -631,7 +632,7 @@
                                  title="<?php echo esc_attr_x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                  class="form-control alt" type="number"
                                  placeholder="<?php echo esc_attr_x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" min="0" max="250"
-                                 value="<%=booking_line_resource.customer_height%>">
+                                 value="<%=booking_line_resource.customer_height%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                         </div>
                       <% } %>
                       <% if (configuration.rentingFormFillDataNamedResourcesWeight) { %>                        
@@ -641,7 +642,7 @@
                                  title="<?php echo esc_attr_x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                  class="form-control alt" type="number"
                                  placeholder="<?php echo esc_attr_x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:"  min="0" max="200"
-                                 value="<%=booking_line_resource.customer_weight%>">
+                                 value="<%=booking_line_resource.customer_weight%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                         </div>
                       <% } %>
                     </div>    
@@ -654,7 +655,7 @@
                                  title="<?php echo esc_attr_x( 'Name', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                  class="form-control alt" type="text"
                                  placeholder="<?php echo esc_attr_x( 'Name', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="80"
-                                 value="<%=booking_line_resource.resource_user_2_name%>">
+                                 value="<%=booking_line_resource.resource_user_2_name%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                         </div>
                         <div class="form-group col-md-4">
                           <label for="customer_name"><?php echo esc_html_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -662,7 +663,7 @@
                                  title="<?php echo esc_attr_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                  class="form-control alt" type="text"
                                  placeholder="<?php echo esc_attr_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="80"
-                                 value="<%=booking_line_resource.resource_user_2_surname%>">
+                                 value="<%=booking_line_resource.resource_user_2_surname%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                         </div>
                         <div class="form-group col-md-4">
                           <label for="customer_name"><?php echo esc_html_x( 'Document ID', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -670,7 +671,7 @@
                                  title="<?php echo esc_attr_x( 'Document ID', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                  class="form-control alt" type="text"
                                  placeholder="<?php echo esc_attr_x( 'Document ID', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="50"
-                                 value="<%=booking_line_resource.resource_user_2_document_id%>">
+                                 value="<%=booking_line_resource.resource_user_2_document_id%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                         </div>
                       </div>
                       <div class="form-row">
@@ -680,7 +681,7 @@
                                  title="<?php echo esc_attr_x( 'Phone number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                  class="form-control alt" type="text"
                                  placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="15"
-                                 value="<%=booking_line_resource.resource_user_2_phone%>">
+                                 value="<%=booking_line_resource.resource_user_2_phone%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                         </div>
                         <div class="form-group col-md-4">
                           <label for="customer_name"><?php echo esc_html_x( 'E-mail', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -688,7 +689,7 @@
                                  title="<?php echo esc_attr_x( 'E-mail', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                  class="form-control alt" type="text"
                                  placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="40"
-                                 value="<%=booking_line_resource.resource_user_2_email%>">
+                                 value="<%=booking_line_resource.resource_user_2_email%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                         </div>        
                         <% if (configuration.rentingFormFillDataNamedResourcesHeight) { %>           
                           <div class="form-group col-md-2">
@@ -697,7 +698,7 @@
                                    title="<?php echo esc_attr_x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                    class="form-control alt" type="number"
                                    placeholder="<?php echo esc_attr_x( 'Height (cm)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" min="0" max="250"
-                                   value="<%=booking_line_resource.customer_2_height%>">
+                                   value="<%=booking_line_resource.customer_2_height%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                           </div>
                         <% } %>
                         <% if (configuration.rentingFormFillDataNamedResourcesWeight) { %>                             
@@ -707,7 +708,7 @@
                                    title="<?php echo esc_attr_x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
                                    class="form-control alt" type="number"
                                    placeholder="<?php echo esc_attr_x( 'Weight (kg)', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:" min="0" max="200"
-                                   value="<%=booking_line_resource.customer_2_weight%>">
+                                   value="<%=booking_line_resource.customer_2_weight%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
                           </div>
                         <% } %>
                       </div>  
@@ -717,9 +718,12 @@
               <% } %>
             <% } %>
           </div>
-          <div class="card-footer">
-            <button class="btn btn-primary pull-right" id="btn_update_reservation"><?php echo esc_html_x( 'Update', 'renting_my_reservation', 'mybooking-wp-plugin') ?></button>
-          </div>  
+          <% if (booking.can_edit_online) { %>           
+            <div class="card-footer">
+              <button class="btn btn-primary pull-right" id="btn_update_reservation">
+                 <?php echo esc_html_x( 'Update', 'renting_my_reservation', 'mybooking-wp-plugin') ?></button>
+            </div>  
+          <% } %>
         </div>  
 
         </form> 

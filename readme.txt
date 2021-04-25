@@ -59,6 +59,11 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.8.1 =
+* Renting : Avoid edit reservation data when reservation in progress/finished
+* Renting : Translations improvement
+* Renting : Not available context: Contact by phone vs Not available
+
 = 0.8.0 =
 * Renting : Key characteristics and characteristics alt text
 * Renting : Product navigation through slug instead of code
@@ -205,6 +210,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.8.1 =
+* Renting : Avoid edit reservation when in progress / finished + Translations / Not available message
 
 = 0.8.0 =
 * Renting Engine Library extension & Key characteristics and characteristics alt text

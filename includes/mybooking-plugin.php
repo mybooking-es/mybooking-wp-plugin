@@ -638,7 +638,7 @@
           $data['terms_and_conditions'] = '';
         }
         else {
-          $data['terms_and_conditions'] = mybooking_engine_translated_slug($registry->mybooking_rent_plugin_terms_page);
+          $data['terms_and_conditions'] = mybooking_engine_translated_slug($registry->mybooking_activities_plugin_terms_page);
         }
         mybooking_engine_get_template('mybooking-plugin-activities-shopping-cart-tmpl.php', $data);
       }
@@ -1317,6 +1317,13 @@
       }
       else {
         $registry->mybooking_rent_plugin_dates_context = 'pickup-return';
+      }
+
+      if ($settings && array_key_exists('mybooking_plugin_settings_not_available_context', $settings)) {
+        $registry->mybooking_rent_plugin_not_available_context = $settings["mybooking_plugin_settings_not_available_context"] ? $settings["mybooking_plugin_settings_not_available_context"] : 'not-available';
+      }
+      else {
+        $registry->mybooking_rent_plugin_not_available_context = 'not-available';
       }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_duration_context', $settings)) {
