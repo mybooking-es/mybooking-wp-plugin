@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.2]
+
+### Fixed
+
+- Renting
+  - Fixed payment method validation when multiple methods are available
+
 ## [0.8.1]
 
 ### Fixed
