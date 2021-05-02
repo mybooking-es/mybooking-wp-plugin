@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.8.3]
+
+- Renting
+  - Added Login/Signup user on complete reservation data
+
 ## [0.8.2]
 
 ### Fixed

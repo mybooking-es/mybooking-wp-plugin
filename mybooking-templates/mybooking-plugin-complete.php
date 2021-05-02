@@ -27,52 +27,54 @@
     <div id="extras_listing">
     </div>
     <!-- Reservation complete -->
-    <h4 class="complete-section-title"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
-    <form id="form-reservation" name="reservation_form" autocomplete="off">
+    <div class="reservation_form_container">
+      <h4 class="complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h4>
+      <form id="form-reservation" name="reservation_form" autocomplete="off">
 
-        <div class="form-group">
-          <label for="customer_name"><?php echo esc_html_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="<?php echo esc_attr_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
-        </div>
+          <div class="form-group customer_component">
+            <label for="customer_name"><?php echo esc_html_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+            <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="<?php echo esc_attr_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
+          </div>
 
-        <div class="form-group">
-          <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo esc_attr_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
-        </div>
+          <div class="form-group customer_component">
+            <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+            <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo esc_attr_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
+          </div>
 
-        <div class="form-group">
-          <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
-        </div>
+          <div class="form-group customer_component">
+            <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+            <input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+          </div>
 
-        <div class="form-group">
-          <label for="customer_email"><?php echo esc_html_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-          <input type="text" class="form-control" name="confirm_customer_email" id="confirm_customer_email" placeholder="<?php echo esc_attr_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
-        </div>
+          <div class="form-group customer_component">
+            <label for="customer_email"><?php echo esc_html_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+            <input type="text" class="form-control" name="confirm_customer_email" id="confirm_customer_email" placeholder="<?php echo esc_attr_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+          </div>
 
-        <div class="form-group">
-            <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-            <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="15">
-        </div>
+          <div class="form-group customer_component">
+              <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+              <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="15">
+          </div>
 
-        <div class="form-group">
-            <label for="customer_mobile_phone"><?php echo esc_html_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-            <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
-        </div>
-        <br>
+          <div class="form-group customer_component">
+              <label for="customer_mobile_phone"><?php echo esc_html_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+              <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
+          </div>
+          <br>
 
-        <h5 class="mb-4 complete-section-title"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h5>
+          <h5 class="mb-4 complete-section-title"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h5>
 
-        <div class="form-group">
-          <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-          <textarea class="form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
-        </div>
-        <br>
+          <div class="form-group">
+            <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+            <textarea class="form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
+          </div>
+          <br>
 
-        <!-- Reservation : payment (script_payment_detail) -->
-        <div id="payment_detail">
-        </div>
-    </form>
+          <!-- Reservation : payment (script_payment_detail) -->
+          <div id="payment_detail">
+          </div>
+      </form>
+    </div>
   </div>
 </div>
 

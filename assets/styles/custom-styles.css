@@ -440,6 +440,14 @@ form[name=widget_search_form] input[type=submit] {
 
 /** ------------ 6. Reservation Wizard : Complete ------- **/
 
+.complete-section-title.customer_component {
+  display: none;
+}
+
+#form-reservation {
+  display: none;
+}
+
 .complete-section-title {
   background-color: rgba(0,0,0,.03);
   border: 1px solid rgba(0,0,0,.125);

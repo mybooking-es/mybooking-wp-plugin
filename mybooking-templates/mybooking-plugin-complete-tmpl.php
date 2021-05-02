@@ -9,6 +9,72 @@
    * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
    */
 ?>
+
+<!-- Existing customer / New customer -->
+<script type="text/template" id="script_complete_complement">
+  <div id="reservation_complement_container">
+    <form name="mybooking_select_user_form">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="registered_customer" id="mybooking_engine_registered_customer" value="true" checked>
+        <label class="form-check-label" for="registered_customer">
+          <?php echo esc_html_x( "I'm a registered customer", 'login', 'mybooking-wp-plugin') ?>
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="registered_customer" id="mybooking_engine_unregistered_customer" value="false">
+        <label class="form-check-label" for="unregistered_customer">
+          <?php echo esc_html_x( "I'm a new customer", 'login', 'mybooking-wp-plugin') ?>
+        </label>
+      </div>
+    </form>
+    <hr>
+    <form name="mybooking_login_form" class="mybooking_login_form_element">
+      <div class="form-group">
+          <label for="mybooking_login_username"><?php echo esc_html_x( "Username or email", 'login', 'mybooking-wp-plugin') ?></label>
+          <input type="text" name="username" class="form-control" id="mybooking_login_username"  placeholder="<?php echo esc_html_x( "Enter username or email", 'login', 'mybooking-wp-plugin') ?>">
+      </div>
+      <div class="form-group">
+          <label for="mybooking_login_password"><?php echo esc_html_x( "Password", 'login', 'mybooking-wp-plugin') ?></label>
+          <input type="password" name="password" class="form-control" id="mybooking_login_password" placeholder="<?php echo esc_html_x( "Password", 'login', 'mybooking-wp-plugin') ?>">
+      </div>
+      <button type="submit" class="btn btn-primary"><?php echo esc_html_x( "Login", 'login', 'mybooking-wp-plugin') ?></button>      
+    </form>
+    <hr class="mybooking_login_form_element">
+  </div>
+</script>
+
+<script type="text/template" id="script_welcome_customer">
+  <div class="alert alert-info">
+    <p><%=i18next.t('common.welcomeConnectedUser', {name: user.full_name})%></p>
+  </div>
+</script>
+
+<script type="text/template" id="script_create_account">
+
+  <div class="form-group mybooking_rent_create_account_selector_container">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="create_customer_account" id="mybooking_engine_rent_create_customer_account" value="true" checked>
+        <label class="form-check-label" for="registered_customer">
+          <?php echo esc_html_x( "Create account and book a reservation", 'renting_complete_create_account', 'mybooking-wp-plugin') ?>
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="create_customer_account" id="mybooking_engine_rent_not_create_customer_account" value="false">
+        <label class="form-check-label" for="unregistered_customer">
+          <?php echo esc_html_x( "Only book a reservation", 'renting_complete_create_account', 'mybooking-wp-plugin') ?>
+        </label>
+      </div>    
+  </div>
+  <div class="form-group mybooking_rent_create_account_fields_container">
+      <div class="form-group">
+          <label for="account_password"><?php echo esc_html_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?></label>
+          <input type="password" class="form-control" name="account_password" id="account_password" placeholder="<?php echo esc_attr_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?>:" maxlength="20">
+          <small class="form-text text-muted"><?php echo esc_html_x( "Password must contain upper case letter, lower case letter, digit and symbol (@ ! * - _)", 'renting_complete_create_account', 'mybooking-wp-plugin') ?></small>
+      </div>
+  </div>  
+
+</script>
+
 <!-- Extra representation -->
 <script type="text/template" id="script_detailed_extra">
 
