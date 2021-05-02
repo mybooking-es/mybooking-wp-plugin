@@ -28,10 +28,10 @@
       </div>
     </form>
     <hr>
-    <form name="mybooking_login_form" class="mybooking_login_form_element">
+    <form name="mybooking_login_form" class="mybooking_login_form_element" autocomplete="off">
       <div class="form-group">
           <label for="mybooking_login_username"><?php echo esc_html_x( "Username or email", 'login', 'mybooking-wp-plugin') ?></label>
-          <input type="text" name="username" class="form-control" id="mybooking_login_username"  placeholder="<?php echo esc_html_x( "Enter username or email", 'login', 'mybooking-wp-plugin') ?>">
+          <input type="text" name="username" class="form-control" id="mybooking_login_username" placeholder="<?php echo esc_html_x( "Enter username or email", 'login', 'mybooking-wp-plugin') ?>">
       </div>
       <div class="form-group">
           <label for="mybooking_login_password"><?php echo esc_html_x( "Password", 'login', 'mybooking-wp-plugin') ?></label>
@@ -68,7 +68,7 @@
   <div class="form-group mybooking_rent_create_account_fields_container">
       <div class="form-group">
           <label for="account_password"><?php echo esc_html_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?></label>
-          <input type="password" class="form-control" name="account_password" id="account_password" placeholder="<?php echo esc_attr_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?>:" maxlength="20">
+          <input type="password" class="form-control" name="account_password" id="account_password"  autocomplete="off" placeholder="<?php echo esc_attr_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?>:" maxlength="20">
           <small class="form-text text-muted"><?php echo esc_html_x( "Password must contain upper case letter, lower case letter, digit and symbol (@ ! * - _)", 'renting_complete_create_account', 'mybooking-wp-plugin') ?></small>
       </div>
   </div>  
