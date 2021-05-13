@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.4]
+
+- Renting
+  - Products navigation URL with multi-language
+- Activities
+  - Activities navigation URL with multi-language
+
 ## [0.8.3]
 
 - Renting

@@ -24,7 +24,35 @@
 
         return self::$_instance;
     }
+    
+    /**
+     * Get default language code
+     * 
+     * Take into account if it is configured Polylang or WPML
+     *
+     */
+    public function getDefaultLanguageCode() {
 
+      $language = get_bloginfo("language");
+
+      // Polylang is active
+      if ( function_exists('pll_default_language') ) {
+        $language = pll_default_language();
+      }
+      // WPML is active
+      else if ( function_exists('icl_object_id') ) {
+        $language = apply_filters( 'wpml_default_language', NULL );
+      }
+
+      if ( isset( $language ) ) {
+        $language = substr( $language, 0, 2 );
+      }
+      return $language;
+
+    }
+    /**
+     * Get request language
+     */
     public function getCurrentLanguageCode() {
 
       $language = get_locale();

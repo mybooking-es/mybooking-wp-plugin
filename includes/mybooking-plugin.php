@@ -910,7 +910,8 @@
 
       // URL for pagination
       if ($this->get_current_page() != null) {
-        $url = $this->get_current_page()->post_name;
+        //$url = $this->get_current_page()->post_name;
+        $url = mybooking_engine_translated_slug( $this->get_current_page()->post_name );
       }
       else {
         $url = null;
@@ -918,7 +919,6 @@
 
       // Get the products from the API
       $registry = Mybooking_Registry::getInstance();
-      $url_detail = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
       $api_client = new MybookingApiClient($registry->mybooking_rent_plugin_api_url_prefix,
                                            $registry->mybooking_rent_plugin_api_key);
       $data =$api_client->get_products($offset, $limit);
@@ -928,6 +928,16 @@
                                'data' => []);
       }
 
+      // Prepare url_detail
+      $current_locale = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
+      $site_locale = MyBookingEngineContext::getInstance()->getDefaultLanguageCode();
+      $url_detail = get_site_url();
+      $url_detail = $url_detail.'/';
+      if ($current_locale != $site_locale) {
+        $url_detail = $url_detail.$current_locale.'/';
+      }      
+      $url_detail = $url_detail.($registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products');      
+      
       // Pagination
       $total_pages = ceil($data->total / $limit);
       $current_page = floor($data->offset / $limit) + 1;
@@ -939,6 +949,7 @@
                     'current_page' => $current_page,
                     'pages' => $pages,
                     'url' => $url,
+                    'use_detail_pages' => $registry->mybooking_rent_plugin_detail_pages,
                     'url_detail' => $url_detail);
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-products.php', $data);
@@ -981,11 +992,16 @@
       $offset = ($page - 1) * $limit;
 
       // URL for pagination
-      $url = $this->get_current_page()->post_name;
+      if ($this->get_current_page() != null) {
+        //$url = $this->get_current_page()->post_name;
+        $url = mybooking_engine_translated_slug( $this->get_current_page()->post_name );
+      }
+      else {
+        $url = null;
+      }
 
       // Get the products from the API
       $registry = Mybooking_Registry::getInstance();
-      $url_detail = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
       $api_client = new MyBookingActivitiesApiClient($registry->mybooking_rent_plugin_api_url_prefix,
                                                      $registry->mybooking_rent_plugin_api_key);
       $data =$api_client->get_activities($destination_id, $family_id, $q, $offset, $limit);
@@ -993,6 +1009,16 @@
         $data = (object) array('total' => 0,
                                'data' => []);
       }
+      
+      // Prepare url_detail
+      $current_locale = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
+      $site_locale = MyBookingEngineContext::getInstance()->getDefaultLanguageCode();
+      $url_detail = get_site_url();
+      $url_detail = $url_detail.'/';
+      if ($current_locale != $site_locale) {
+        $url_detail = $url_detail.$current_locale.'/';
+      }      
+      $url_detail = $url_detail.($registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities');   
 
       // Pagination
       $total = $data->total;
@@ -1011,6 +1037,7 @@
                     'current_page' => $current_page,
                     'pages' => $pages,
                     'url' => $url,
+                    'use_detail_pages' => $registry->mybooking_activities_plugin_detail_pages,
                     'url_detail' => $url_detail,
                     'querystring' => $querystring );
       ob_start();
@@ -1572,12 +1599,18 @@
         Routes::map($url.'/:id', function($params) {
           $this->product_page($params);
         });
+        Routes::map(':lang/'.$url.'/:id', function($params) {
+          $this->product_page($params);
+        });
       }
 
       // Activity detail route (depends on the settings)
       if ( $registry->mybooking_activities_plugin_detail_pages ) {
         $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
         Routes::map($url.'/:id', function($params) {
+          $this->activity_page($params);
+        });
+        Routes::map(':lang/'.$url.'/:id', function($params) {
           $this->activity_page($params);
         });
       }
@@ -1801,7 +1834,6 @@
       // Get plugin version
       if ( $this->version == null) {
         $plugin_file = dirname(__DIR__).'/mybooking-wp-plugin.php';
-        //$plugin_data = get_plugin_data( $plugin_file );
         $plugin_data = get_file_data( $plugin_file, ['Version' => 'Version'] );
         $this->version = $plugin_data['Version'];
       }

@@ -1070,11 +1070,15 @@ EOF;
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_renting[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_renting[$field]' value='1' $checked class='regular-text' />";
-
 		  echo "<p class=\"description\">Use product detail pages.";
-		  echo "<p class=\"description\">Activate if you are fetching the products from the back-office using the <u>[mybooking_rent_engine_products]</u> shortcode.</p>";
-		  echo "<p class=\"description\">Do not activate if you are using the wizard process. That is, the <u>[mybooking_rent_engine_product_listing]</u> shortcode on your choose products page.</p>";
-
+		  echo "<div class=\"description\">";
+      echo "<p>It activates a <b>detail page</b> for any product with details and the calendar for each product automatically</p>";
+      echo "<p>If you only have a few products and you want to show a calendar to rent an specific one, 
+        it is recommended to create a page for any product an use the <u>[mybooking_rent_engine_product]</u> shortcode 
+        to show a calendar because of the flexibility to create the page with Elementor, Gutenberg or Divi.</p>";
+      echo "<p>It is not necessary if you are using the wizard process. That is the <u>[mybooking_rent_engine_selector]</u> 
+      shortcode and the <u>[mybooking_rent_engine_product_listing]</u> to show the results.</p>";
+		  echo "</div>";
 
 		}
 
@@ -1093,12 +1097,10 @@ EOF;
 		  	$value = 'products';
 		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_renting[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">This page shows a company product detail page. This page includes a calendar with its availability.";
-		  echo "<p class=\"description\">This should be used with a <b>products navigation page</b> created with the [mybooking_rent_engine_products] shortcode.";
-      echo "<p class=\"description\">Create the navigation page with a slug of <em>products</em> and then select <u>products</u> as the <em>product page url prefix</em>.";
-		  echo "<p class=\"description\">It creates a new URL route and access <em>mybooking</em> <b>API</b> to retrieve the data.</p>";
-		  echo "<p class=\"description\">This page is recommeded when the company offers a big quantity of products instead a reduced set of categories.</p>";
-		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://yescapa.com\" target=\"_blank\">yescapa.com</a>, <a href=\"https://www.airbnb.com/\" target=\"_blank\">airbnb.com</a></p>";
+		  echo "<div class=\"description\">";
+		  echo "<p>This is the <b>prefix folder</b> that is added to the product detail page created virtually for any
+		  product if <u>Use product detail pages</u> is active.</p>";
+		  echo "</div>";
 
 		}
 
@@ -1150,8 +1152,13 @@ EOF;
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_activities[$field]' value='1' $checked class='regular-text' />";
 
 		  echo "<p class=\"description\">Use detail pages.";
-		  echo "<p class=\"description\">Activate if you are fetching data from the back-office using the <u>[mybooking_activities_engine_activities]</u> shortcode.</p>";
-		  echo "<p class=\"description\">Do not activate if you are using the <u>[mybooking_activities_engine_activity]</u> shortcode on your custom pages.</p>";
+
+		  echo "<div class=\"description\">";
+      echo "<p>It activates a <b>detail page</b> for any activity with details and the calendar for each activity automatically</p>";
+      echo "<p>If you only have a few activities and you want to show a calendar to rent an specific one, 
+        it is recommended to create a page for any activity an use the <u>[mybooking_activities_engine_activity]</u> shortcode 
+        to show a calendar because of the flexibility to create the page with Elementor, Guteberg or Divi.</p>";
+		  echo "</div>";
 
 
 		}
@@ -1170,11 +1177,10 @@ EOF;
 		  	$value = 'activities';
 		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_activities[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">This page shows a company product detail page. This page includes a calendar with its availability.";
-		  echo "<p class=\"description\">This should be used with a <b>product navigation page</b> created with the [mybooking_rent_engine_activities] shortcode.";
-      echo "<p class=\"description\">Create the navigation page with a slug of <b>activities</b> and then select <u>activities</u> as the <em>activity page url prefix</em>.";
-		  echo "<p class=\"description\">It creates a new URL route and access <em>mybooking</em> <b>API</b> to retrieve the data.</p>";
-		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://getyourguide.com\" target=\"_blank\">getyourguide.com</a></p>";
+		  echo "<div class=\"description\">";
+		  echo "<p>This is the <b>prefix folder</b> that is added to the activity detail page created virtually for any
+		  product if <u>Use detail pages</u> is active.</p>";
+		  echo "</div>";
 
 		}
 
