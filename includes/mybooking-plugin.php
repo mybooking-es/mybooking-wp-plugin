@@ -1007,6 +1007,7 @@
       $data =$api_client->get_activities($destination_id, $family_id, $q, $offset, $limit);
       if ( $data == null) {
         $data = (object) array('total' => 0,
+                               'offset' => 0,
                                'data' => []);
       }
       
