@@ -2,8 +2,15 @@
 
 ## [0.9.0]
 
+### Added
+
 - Renting
   - Added Login/Signup user on complete reservation data
+- Reservation Engine : Russian translation
+
+### Fixed
+
+- Renting
   - Products navigation URL with multi-language
 - Activities
   - Activities navigation URL with multi-language
