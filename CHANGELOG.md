@@ -1,16 +1,12 @@
 # Changelog
 
-## [0.8.4]
-
-- Renting
-  - Products navigation URL with multi-language
-- Activities
-  - Activities navigation URL with multi-language
-
-## [0.8.3]
+## [0.9.0]
 
 - Renting
   - Added Login/Signup user on complete reservation data
+  - Products navigation URL with multi-language
+- Activities
+  - Activities navigation URL with multi-language
 
 ## [0.8.2]
 
