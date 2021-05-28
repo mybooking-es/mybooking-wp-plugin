@@ -361,9 +361,7 @@
       wp_register_script( 'mybooking-init',
                           plugins_url( '/assets/js/mybooking-init.js', dirname(__FILE__) ),
                           array(), $version, true);
-
       wp_enqueue_script( 'mybooking-init' );
-
       wp_localize_script('mybooking-init', 'mybooking_init_vars', array(
           'mybooking_site_url' => get_site_url(),
           'mybooking_api_url_prefix' => $registry->mybooking_rent_plugin_api_url_prefix,
@@ -398,7 +396,6 @@
           'mybooking_js_bs_modal_backdrop_compatibility' => (  $registry->mybooking_plugin_js_bs_modal_backdrop_compatibility == '1' ? true : false)
           )
         );
-
 
       // Moment JS TIMEZONE (0.5.33)
       // Uses WP moment
