@@ -37,17 +37,40 @@
           <label for="mybooking_login_password"><?php echo esc_html_x( "Password", 'login', 'mybooking-wp-plugin') ?></label>
           <input type="password" name="password" class="form-control" id="mybooking_login_password" placeholder="<?php echo esc_html_x( "Password", 'login', 'mybooking-wp-plugin') ?>">
       </div>
-      <button type="submit" class="btn btn-primary"><?php echo esc_html_x( "Login", 'login', 'mybooking-wp-plugin') ?></button>      
+      <button type="submit" class="btn btn-primary"><?php echo esc_html_x( "Login", 'login', 'mybooking-wp-plugin') ?></button>   
+      <div class="form-group mt-3">
+        <p class="text-info mybooking_login_password_forgotten"><?php echo esc_html_x( "Forgot password?", 'login', 'mybooking-wp-plugin') ?></p>
+      </div>  
     </form>
     <hr class="mybooking_login_form_element">
   </div>
 </script>
+
+<!-- Password forgotten -->
+
+<script type="text/template" id="script_password_forgotten">
+<div class="row">
+  <div class="col-lg-12">
+    <form name="mybooking_password_forgotten_form" autocomplete="off">
+      <div class="form-group">
+          <label for="mybooking_password_forgotten_username"><?php echo esc_html_x( "Username or email", 'password_forgotten', 'mybooking-wp-plugin') ?></label>
+          <input type="text" name="username" class="form-control" id="mybooking_password_forgotten_username" placeholder="<?php echo esc_html_x( "Enter username or email", 'password_forgotten', 'mybooking-wp-plugin') ?>">
+      </div>
+      <button type="submit" class="btn btn-primary"><?php echo esc_html_x( "Send", 'password_forgotten', 'mybooking-wp-plugin') ?></button>      
+    </form>
+  </div>
+</div>
+</script> 
+
+<!-- Wellcome user message -->
 
 <script type="text/template" id="script_welcome_customer">
   <div class="alert alert-info">
     <p><%=i18next.t('common.welcomeConnectedUser', {name: user.full_name})%></p>
   </div>
 </script>
+
+<!-- Create account -->
 
 <script type="text/template" id="script_create_account">
 

@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.9.1]
+
+### Added
+
+- Profile / Customer
+  - Shortcodes for password forgotten and change password
+
+### Fixed
+
+- Mybooking Library Init with JS dependencies
+
 ## [0.9.0]
 
 ### Added

@@ -115,6 +115,15 @@
    * 2.3 Contact
    *
    * [mybooking_contact]
+   * 
+   * 2.4 Complements
+   * 
+   * [mybooking_testimonials]
+   * 
+   * 2.5 Profile
+   * 
+   * [mybooking_password_forgotten]
+   * [mybooking_change_password]
    *
    */
   class MyBookingPlugin
@@ -270,6 +279,15 @@
       if ( $registry->mybooking_rent_plugin_complements_testimonials == '1' ) {
         add_shortcode('mybooking_testimonials', array($this, 'wp_testimonials_shortcode' ));
       }
+
+      // -- Profile
+
+      // Shortcode Password Forgotten
+      add_shortcode('mybooking_password_forgotten', array($this, 'wp_password_forgotten_shortcode'));
+
+      // Shortcode Change Password
+      add_shortcode('mybooking_change_password', array($this, 'wp_change_password_shortcode'));
+
     }
 
     /**
@@ -381,19 +399,19 @@
           'mybooking_activities_terms_page' => mybooking_engine_translated_slug($registry->mybooking_activities_plugin_terms_page),
           'mybooking_activities_detail_pages' => $registry->mybooking_activities_plugin_detail_pages,
           // Google API integration
-          'mybooking_google_api_places' => $registry->mybooking_plugin_google_api_places,
+          'mybooking_google_api_places' => ( $registry->mybooking_plugin_google_api_places == '1' ? 'true' : 'false') ,
           'mybooking_google_api_places_api_key' => $registry->mybooking_plugin_google_api_places_api_key,
           'mybooking_google_api_places_restrict_country_code' => $registry->mybooking_plugin_google_api_places_restrict_country_code,
-          'mybooking_google_api_places_restrict_bounds' => $registry->mybooking_plugin_google_api_places_restrict_bounds,
+          'mybooking_google_api_places_restrict_bounds' => ( $registry->mybooking_plugin_google_api_places_restrict_bounds == '1' ? 'true' : 'false') ,
           'mybooking_google_api_places_bounds_sw_lat' => $registry->mybooking_plugin_google_api_places_bounds_sw_lat,
           'mybooking_google_api_places_bounds_sw_lng' => $registry->mybooking_plugin_google_api_places_bounds_sw_lng,
           'mybooking_google_api_places_bounds_ne_lat' => $registry->mybooking_plugin_google_api_places_bounds_ne_lat,
           'mybooking_google_api_places_bounds_ne_lng' => $registry->mybooking_plugin_google_api_places_bounds_ne_lng,
           // Custom Loader
-          'mybooking_custom_loader' => ( $registry->mybooking_rent_plugin_custom_loader == '1' ? true : false),
-          'mybooking_js_select2' => ( $registry->mybooking_plugin_js_select2 == '1' ? true : false),
-          'mybooking_js_bs_modal_no_conflict' => ( $registry->mybooking_plugin_js_bs_modal_no_conflict == '1' ? true : false),
-          'mybooking_js_bs_modal_backdrop_compatibility' => (  $registry->mybooking_plugin_js_bs_modal_backdrop_compatibility == '1' ? true : false)
+          'mybooking_custom_loader' => ( $registry->mybooking_rent_plugin_custom_loader == '1' ? 'true' : 'false'),
+          'mybooking_js_select2' => ( $registry->mybooking_plugin_js_select2 == '1' ? 'true' : 'false'),
+          'mybooking_js_bs_modal_no_conflict' => ( $registry->mybooking_plugin_js_bs_modal_no_conflict == '1' ? 'true' : 'false'),
+          'mybooking_js_bs_modal_backdrop_compatibility' => (  $registry->mybooking_plugin_js_bs_modal_backdrop_compatibility == '1' ? 'true' : 'false')
           )
         );
 
@@ -488,6 +506,18 @@
         $classes[] = 'mybooking-contact-widget';
       }
 
+      // == Profile
+      
+      // Password forgotten
+      if ( has_shortcode( $content, 'mybooking_password_forgotten') ) {
+        $classes[] = 'mybooking-password-forgotten';
+      }
+
+      // Change password
+      if ( has_shortcode( $content, 'mybooking_change_password') ) {
+        $classes[] = 'mybooking-change-password';
+      }
+
       // == Renting
 
       // Selector widget or shortcode
@@ -574,42 +604,7 @@
     public function wp_include_micro_templates() {
 
       $registry = Mybooking_Registry::getInstance();
-/*
-      // Include the initializer plugin
-      $data = array(
-          'mybooking_api_url_prefix' => $registry->mybooking_rent_plugin_api_url_prefix,
-          'mybooking_account_id' => $registry->mybooking_rent_plugin_account_id,
-          'mybooking_api_key' => $registry->mybooking_rent_plugin_api_key,
-          // Renting
-          'mybooking_choose_products_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_choose_products_page),
-          'mybooking_choose_extras_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_choose_extras_page),
-          'mybooking_checkout_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_checkout_page),
-          'mybooking_summary_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_summary_page),
-          'mybooking_terms_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_terms_page),
-          'mybooking_detail_pages' => $registry->mybooking_rent_plugin_detail_pages,
-          'mybooking_selector_in_process' => $registry->mybooking_rent_plugin_selector_in_process,
-          // Activities
-          'mybooking_activities_shopping_cart_page' => mybooking_engine_translated_slug($registry->mybooking_activities_plugin_shopping_cart_page),
-          'mybooking_activities_summary_page' => mybooking_engine_translated_slug($registry->mybooking_activities_plugin_summary_page),
-          'mybooking_activities_terms_page' => mybooking_engine_translated_slug($registry->mybooking_activities_plugin_terms_page),
-          'mybooking_activities_detail_pages' => $registry->mybooking_activities_plugin_detail_pages,
-          // Google API integration
-          'mybooking_google_api_places' => $registry->mybooking_plugin_google_api_places,
-          'mybooking_google_api_places_api_key' => $registry->mybooking_plugin_google_api_places_api_key,
-          'mybooking_google_api_places_restrict_country_code' => $registry->mybooking_plugin_google_api_places_restrict_country_code,
-          'mybooking_google_api_places_restrict_bounds' => $registry->mybooking_plugin_google_api_places_restrict_bounds,
-          'mybooking_google_api_places_bounds_sw_lat' => $registry->mybooking_plugin_google_api_places_bounds_sw_lat,
-          'mybooking_google_api_places_bounds_sw_lng' => $registry->mybooking_plugin_google_api_places_bounds_sw_lng,
-          'mybooking_google_api_places_bounds_ne_lat' => $registry->mybooking_plugin_google_api_places_bounds_ne_lat,
-          'mybooking_google_api_places_bounds_ne_lng' => $registry->mybooking_plugin_google_api_places_bounds_ne_lng,
-          // Custom Loader
-          'mybooking_custom_loader' => $registry->mybooking_rent_plugin_custom_loader,
-          'mybooking_js_select2' => $registry->mybooking_plugin_js_select2,
-          'mybooking_js_bs_modal_no_conflict' => $registry->mybooking_plugin_js_bs_modal_no_conflict,
-          'mybooking_js_bs_modal_backdrop_compatibility' => $registry->mybooking_plugin_js_bs_modal_backdrop_compatibility
-      );
-      mybooking_engine_get_template('mybooking-plugin-init-tmpl.php', $data);
-*/
+
       // The the current page content
       $content = $this->getCurrentPageContent();
 
@@ -1191,6 +1186,29 @@
       return ob_get_clean();
 
     }
+
+    /**
+     * MyBooking Password Forgotten shortcode
+     * 
+     */ 
+    public function wp_password_forgotten_shortcode($atts = [], $content = null, $tag = '') {
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-profile-password-forgotten.php');
+      return ob_get_clean();
+
+    }
+
+    /**
+     * MyBooking Change password shortcode
+     */
+    public function wp_change_password_shortcode($atts = [], $content = null, $tag = '') {
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-profile-change-password.php');
+      return ob_get_clean();
+
+    }    
 
     /**
      * Mybooking Testimonials shortcode

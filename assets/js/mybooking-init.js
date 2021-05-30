@@ -22,13 +22,28 @@
         var jsBsModalNoConflict = mybooking_init_vars.mybooking_js_bs_modal_no_conflict;
         var jsBsModalBackdropCompatibility = mybooking_init_vars.mybooking_js_bs_modal_backdrop_compatibility;
         // Google Integration
-        var useGoogleMaps = mybooking_init_vars.mybooking_google_api_places;
-        var googleMapsSettings = {
-          apiKey: mybooking_init_vars.mybooking_google_api_places_api_key,
-          settings: {
-            googleMapsRestrictCountryCode: mybooking_init_vars.mybooking_google_api_places_restrict_country_code,
+        if (mybooking_init_vars.mybooking_google_api_places == 'true') {
+          var useGoogleMaps = true;
+          var googleMapsSettings = {
+            apiKey: mybooking_init_vars.mybooking_google_api_places_api_key,
+            settings: {
+              googleMapsRestrictCountryCode: mybooking_init_vars.mybooking_google_api_places_restrict_country_code
+            }
+          };
+          if (mybooking_init_vars.mybooking_google_api_places_restrict_bounds == 'true') {
+            googleMapsSettings.settings.googlePlacesRetrictBounds = true;       
+            googleMapsSettings.settings.googleMapsBoundsSWLat = (parseFloat(mybooking_init_vars.mybooking_google_api_places_bounds_sw_lat) || 0);
+            googleMapsSettings.settings.googleMapsBoundsSWLng = (parseFloat(mybooking_init_vars.mybooking_google_api_places_bounds_sw_lng) || 0);
+            googleMapsSettings.settings.googleMapsBoundsNELat = (parseFloat(mybooking_init_vars.mybooking_google_api_places_bounds_ne_lat) || 0);
+            googleMapsSettings.settings.googleMapsBoundsNELng = (parseFloat(mybooking_init_vars.mybooking_google_api_places_bounds_ne_lng) || 0);
           }
-        };
+          else {
+            googleMapsSettings.settings.googlePlacesRetrictBounds = false;  
+          }
+        }
+        else {
+          var useGoogleMaps = false;
+        }
         function getSiteURL() {
           return siteURL;
         }
@@ -89,13 +104,13 @@
         function getGoogleMapsSettings() {
           return googleMapsSettings;
         }
+
         var result = {
           siteURL: getSiteURL,
           baseURL: getBaseURL,
           apiKey: getApiKey,
           // Google API Integration       
           useGoogleMaps: getUseGoogleMaps,
-          googleMapsSettings: getGoogleMapsSettings,  
           // Renting   
           extrasStep: getExtrasStep,
           chooseProductUrl: getChooseProductUrl,
@@ -114,5 +129,10 @@
           jsBsModalNoConflict: getJsBsModalNoConflict,
           jsBsModalBackdropCompatibility: getJsBsModalBackdropCompatibility         
         }
+
+        if (mybooking_init_vars.mybooking_google_api_places) {
+          result.googleMapsSettings = getGoogleMapsSettings;  
+        }
+
         return result;
       }();
