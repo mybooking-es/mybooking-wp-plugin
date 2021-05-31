@@ -51,6 +51,7 @@
 <script type="text/template" id="script_password_forgotten">
 <div class="row">
   <div class="col-lg-12">
+    <p class="text-muted"><?php echo esc_html_x( "Please, fill the form with the username or email and send to reset your password", 'password_forgotten', 'mybooking-wp-plugin') ?></p>
     <form name="mybooking_password_forgotten_form" autocomplete="off">
       <div class="form-group">
           <label for="mybooking_password_forgotten_username"><?php echo esc_html_x( "Username or email", 'password_forgotten', 'mybooking-wp-plugin') ?></label>

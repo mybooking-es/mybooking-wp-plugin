@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-25 16:57+0000\n"
-"PO-Revision-Date: 2021-05-30 23:22+0000\n"
+"PO-Revision-Date: 2021-05-31 00:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -932,19 +932,28 @@ msgstr "mybooking"
 msgid "MyBooking Reservation Engine"
 msgstr "MyBooking Reservation Engine"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:57
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:58
 #: mybooking-templates/mybooking-plugin-profile-password-forgotten.php:6
 msgctxt "password_forgotten"
 msgid "Enter username or email"
 msgstr "Введите имя пользователя или адрес электронной почты"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:59
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:54
+msgctxt "password_forgotten"
+msgid ""
+"Please, fill the form with the username or email and send to reset your "
+"password"
+msgstr ""
+"Пожалуйста, заполните форму с именем пользователя или адресом электронной "
+"почты и отправьте для сброса пароля"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:60
 #: mybooking-templates/mybooking-plugin-profile-password-forgotten.php:8
 msgctxt "password_forgotten"
 msgid "Send"
 msgstr "послать"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:56
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:57
 #: mybooking-templates/mybooking-plugin-profile-password-forgotten.php:5
 msgctxt "password_forgotten"
 msgid "Username or email"
@@ -1068,8 +1077,8 @@ msgid "Reservation summary"
 msgstr "Резюме бронирования"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:111
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:335
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:459
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:336
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:460
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:122
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:218
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:140
@@ -1089,17 +1098,17 @@ msgctxt "renting_complete"
 msgid "Alternative phone number"
 msgstr "Альтернативный номер телефона"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:305
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:306
 msgctxt "renting_complete"
 msgid "Apply"
 msgstr "Применять"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:530
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:531
 msgctxt "renting_complete"
 msgid "Book now and pay now"
 msgstr "Забронируйте сейчас и заплатите сейчас"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:522
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:523
 msgctxt "renting_complete"
 msgid "Book now and pay on arrival"
 msgstr "Забронируйте сейчас и оплатите по прибытии"
@@ -1115,7 +1124,7 @@ msgctxt "renting_complete"
 msgid "Comments"
 msgstr "Комментарии"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:590
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:591
 msgctxt "renting_complete"
 msgid "Confirm"
 msgstr "Подтвердить"
@@ -1126,12 +1135,12 @@ msgctxt "renting_complete"
 msgid "Confirm E-mail"
 msgstr "Подтвердить Email"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:105
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:106
 msgctxt "renting_complete"
 msgid "Coverage"
 msgstr "Покрытие"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:628
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:629
 msgctxt "renting_complete"
 msgid "Credit or debit card"
 msgstr "Кредитная или дебетовая карта"
@@ -1141,13 +1150,13 @@ msgctxt "renting_complete"
 msgid "Customer's details"
 msgstr "Реквизиты клиента"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:441
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:447
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:442
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:448
 msgctxt "renting_complete"
 msgid "Deposit"
 msgstr "Депозит"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:423
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:424
 msgctxt "renting_complete"
 msgid "Driver's age supplement"
 msgstr "Доплата за возраст водителя"
@@ -1158,25 +1167,25 @@ msgctxt "renting_complete"
 msgid "E-mail"
 msgstr "Электронная почта"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:289
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:290
 msgctxt "renting_complete"
 msgid "Edit"
 msgstr "Изменить "
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:166
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:371
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:167
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:372
 msgctxt "renting_complete"
 msgid "Extras"
 msgstr "Дополнения"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:286
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:287
 msgctxt "renting_complete"
 msgid "hour(s)"
 msgstr "час(ы)"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:550
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:580
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:660
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:551
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:581
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:661
 #, php-format
 msgctxt "renting_complete"
 msgid ""
@@ -1185,9 +1194,9 @@ msgid ""
 msgstr ""
 "<a href=\"%s\" target=\"_blank\">Я прочитал и принимаю условия аренды</a>"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:548
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:578
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:658
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:549
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:579
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:659
 msgctxt "renting_complete"
 msgid "I have read and hereby accept the conditions of rental"
 msgstr "Я прочитал и принимаю условия аренды"
@@ -1198,12 +1207,12 @@ msgctxt "renting_complete"
 msgid "Name"
 msgstr "Имя"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:622
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:623
 msgctxt "renting_complete"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:429
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:430
 msgctxt "renting_complete"
 msgid "Petrol supplement"
 msgstr "Бензиновая доплата"
@@ -1214,44 +1223,44 @@ msgctxt "renting_complete"
 msgid "Phone number"
 msgstr "Телефонный номер"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:405
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:406
 msgctxt "renting_complete"
 msgid "Pick-up place supplement"
 msgstr "Доплата за место получения"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:399
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:400
 msgctxt "renting_complete"
 msgid "Pick-up time supplement"
 msgstr "Доплата за время получения"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:298
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:303
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:299
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:304
 msgctxt "renting_complete"
 msgid "Promotion Code"
 msgstr "Промо-Код"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:514
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:560
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:515
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:561
 msgctxt "renting_complete"
 msgid "Request reservation"
 msgstr "Запросить бронирование"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:260
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:261
 msgctxt "renting_complete"
 msgid "Reservation summary"
 msgstr "Резюме бронирования"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:417
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:418
 msgctxt "renting_complete"
 msgid "Return place supplement"
 msgstr "Доплата за место возврата"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:411
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:412
 msgctxt "renting_complete"
 msgid "Return time supplement"
 msgstr "Доплата за время возврата"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:393
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:394
 msgctxt "renting_complete"
 msgid "Supplements"
 msgstr "Добавки"
@@ -1262,12 +1271,12 @@ msgctxt "renting_complete"
 msgid "Surname"
 msgstr "Фамилия"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:456
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:457
 msgctxt "renting_complete"
 msgid "Total"
 msgstr "Общая"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:638
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:639
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to <b>Paypal payment platform</b> to make the "
@@ -1279,7 +1288,7 @@ msgstr ""
 "учетную запись Paypal </u> или <u> кредитную карту </u> для совершения "
 "платежа."
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:645
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:646
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>credit card payment platform</b> to make "
@@ -1288,7 +1297,7 @@ msgstr ""
 "Вы будете перенаправлены на <b> платформу оплаты кредитной картой </b>, "
 "чтобы безопасно произвести подтверждающий платеж."
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:617
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:618
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>payment platform</b> to make the "
@@ -1299,23 +1308,23 @@ msgstr ""
 "произвести подтверждающий платеж. Вы можете использовать <u> учетную запись "
 "Paypal </u> или <u> кредитную карту </u> для совершения платежа."
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:81
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:82
 msgctxt "renting_complete_create_account"
 msgid "Create account and book a reservation"
 msgstr "Создайте аккаунт и забронируйте бронирование"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:87
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:88
 msgctxt "renting_complete_create_account"
 msgid "Only book a reservation"
 msgstr "Только бронируйте бронирование"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:93
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:94
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:95
 msgctxt "renting_complete_create_account"
 msgid "Password"
 msgstr "Пароль"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:95
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:96
 msgctxt "renting_complete_create_account"
 msgid ""
 "Password must contain upper case letter, lower case letter, digit and symbol "
