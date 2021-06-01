@@ -450,7 +450,7 @@ form[name=widget_search_form] input[type=submit] {
   display: none;
 }
 
-#form-reservation {
+body.complete #form-reservation {
   display: none;
 }
 
