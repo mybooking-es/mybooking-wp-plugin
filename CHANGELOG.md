@@ -1,15 +1,17 @@
 # Changelog
 
+## [0.9.2]
+
+### Fixed
+
+- Input custom delivery/collection address
+
 ## [0.9.1]
 
 ### Added
 
 - Profile / Customer
   - Shortcodes for password forgotten and change password
-
-### Fixed
-
-- Input custom delivery/collection address
 
 ### Fixed
 

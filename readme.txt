@@ -59,6 +59,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 0.9.2 =
+* Fixed: Renting selector custom address delivery/collection point 
+
 = 0.9.1 =
 * Profile/Customer: Password forgotten and change password
 
@@ -222,6 +225,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.9.2 =
+* Fixed: Renting selector custom address delivery/collection point 
 
 = 0.9.1 =
 * Profile/Customer: Password forgotten and change password
