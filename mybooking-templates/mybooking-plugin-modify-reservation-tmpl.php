@@ -19,12 +19,36 @@
 	    <!-- Delivery place -->
 	    <div class="flex-form-horizontal-box">
 	        <label for="pickup_place"><?php echo esc_html_x( 'Pick-up place', 'renting_form_selector', 'mybooking-wp-plugin') ?></label>
-	        <select class="form-control" name="pickup_place" id="pickup_place"></select>
+	        <div class="flex-form-item pickup_place_group">
+	        	<select class="form-control" name="pickup_place" id="pickup_place"></select>
+	      	</div>
+          <!-- Custom delivery place -->
+          <div id="another_pickup_place_group" style="display: none;">
+            <div class="flex-form-item justify-content-between position-relative">
+              <input class="form-control" type="text" id="pickup_place_other" name="pickup_place_other" />
+              <input type="hidden" name="custom_pickup_place" value="false" />
+              <button type="button" class="another_pickup_place_group_close">
+                <i class="fa fa-times flex-icon-absolute"></i>
+              </button>
+            </div>
+          </div>
 	    </div>
 	    <!-- Collection place -->
 	    <div class="flex-form-horizontal-box">
 	      <label for="return_place"><?php echo esc_html_x( 'Return place', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
-	      <select class="form-control" name="return_place" id="return_place"></select>
+	      <div class="flex-form-item return_place_group">
+	      	<select class="form-control" name="return_place" id="return_place"></select>
+	      </div>
+        <!-- Custom delivery place -->
+        <div id="another_return_place_group" style="display: none;">
+          <div class="flex-form-item justify-content-between position-relative">
+            <input class="form-control" type="text" id="return_place_other" name="return_place_other" />
+            <input type="hidden" name="custom_return_place" value="false" />
+            <button type="button" class="another_return_place_group_close">
+              <i class="fa fa-times flex-icon-absolute"></i>
+            </button>
+          </div>
+        </div>	      
 	    </div>
 	  </div>
   <% } %>

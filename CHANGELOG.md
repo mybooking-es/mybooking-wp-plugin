@@ -9,6 +9,10 @@
 
 ### Fixed
 
+- Input custom delivery/collection address
+
+### Fixed
+
 - Mybooking Library Init with JS dependencies
 
 ## [0.9.0]

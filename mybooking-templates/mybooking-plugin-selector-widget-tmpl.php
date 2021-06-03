@@ -69,12 +69,37 @@
 			    <!-- Delivery place -->
 			    <div class="flex-form-horizontal-box">
 			        <label for="pickup_place"><?php echo esc_html_x( 'Pick-up place', 'renting_form_selector', 'mybooking-wp-plugin') ?></label>
-			        <select class="form-control" name="pickup_place" id="widget_pickup_place"></select>
+			        <!-- List pickup place -->
+							<div class="flex-form-item widget_pickup_place_group">
+			        	<select class="form-control" name="pickup_place" id="widget_pickup_place"></select>
+          		</div>
+		          <!-- Custom delivery place -->
+		          <div id="widget_another_pickup_place_group" style="display: none;">
+		            <div class="flex-form-item justify-content-between position-relative">
+		              <input type="text" class="form-control" id="widget_pickup_place_other" name="pickup_place_other" />
+		              <input type="hidden" name="custom_pickup_place" value="false" />
+		              <button type="button" class="widget_another_pickup_place_group_close">
+		                <i class="fa fa-times flex-icon-absolute"></i>&nbsp;
+		              </button>
+		            </div>
+		          </div>
 			    </div>
 			    <!-- Collection place -->
 			    <div class="flex-form-horizontal-box">
 			      <label for="return_place"><?php echo esc_html_x( 'Return place', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
-			      <select class="form-control" name="return_place" id="widget_return_place"></select>
+			      <div class="flex-form-item widget_return_place_group">
+			      	<select class="form-control" name="return_place" id="widget_return_place"></select>
+			      </div>
+	          <!-- Custom delivery place -->
+	          <div id="widget_another_return_place_group" style="display: none;">
+	            <div class="flex-form-item justify-content-between position-relative">
+	              <input type="text" class="form-control" id="widget_return_place_other" name="return_place_other" />
+	              <input type="hidden" name="custom_return_place" value="false" />
+	              <button type="button" class="widget_another_return_place_group_close">
+	                <i class="fa fa-times flex-icon-absolute"></i>&nbsp;
+	              </button>
+	            </div>
+	          </div>			      
 			    </div>
 			  </div>
 		  <% } %>
