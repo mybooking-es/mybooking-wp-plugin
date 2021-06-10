@@ -107,12 +107,18 @@
     /**
      * Get the renting products
      *
+     * @param Array $data The filter
      * @param number $offset The offset on pagination
      * @param number $limit The number of records on pagination
      */
-    public function get_products($offset=0, $limit=20) {
+    public function get_products( $offset=0, $limit=20, $data=array() ) {
 
           $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCTS.'?offset='.$offset.'&limit='.$limit;
+
+          // Append the filter parameters
+          foreach($data as $filter_name => $filter_value) {
+            $url= $url.'&'.$filter_name.'='.$filter_value;
+          }
 
           // API Key
           if ( isset($this->api_key) && !empty($this->api_key)) {

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.3]
+
+### Added
+
+- Product Search (for product catalog navigation)
+
 ## [0.9.2]
 
 ### Fixed

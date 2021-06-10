@@ -97,6 +97,7 @@
    *
    * - Products
    *
+   * [mybooking_rent_engine_products_search]
    * [mybooking_rent_engine_products]
    *
    * - Product availability and calendar
@@ -241,6 +242,9 @@
 
       // Shortcode Renting Reservation
       add_shortcode('mybooking_rent_engine_reservation', array($this, 'wp_reservation_shortcode' ));
+
+      // Shortcode Activities Search
+      add_shortcode('mybooking_rent_engine_products_search', array($this, 'wp_rent_products_search_shortcode') );
 
       // Shortcode Renting products
       add_shortcode('mybooking_rent_engine_products', array($this, 'wp_rent_products_shortcode' ));
@@ -548,6 +552,11 @@
         $classes[] = 'reservation';
       }
 
+      // Renting shortcodes : product search
+      if ( has_shortcode( $content, 'mybooking_rent_engine_products_search') ) {
+        $classes[] = 'mybooking-product-search';
+      }
+
       // Renting shortcode : product (resource) [availability and selector]
       if ( has_shortcode( $content , 'mybooking_rent_engine_product') ) {
         $classes[] = 'mybooking-product';
@@ -698,6 +707,12 @@
       // Activities shortcode : My reservation - activities
       if ( has_shortcode( $content, 'mybooking_activities_engine_order') ) {
         mybooking_engine_get_template('mybooking-plugin-activities-order-tmpl.php');
+      }
+
+      // Renting shortcode : Products search
+      if ( has_shortcode( $content, 'mybooking_rent_engine_products_search') ) {
+        $data = $this->wp_products_extract_query_string();
+        mybooking_engine_get_template('mybooking-plugin-products-search-tmpl.php', $data);
       }
 
       // Renting shortcode : Product calendar
@@ -905,6 +920,8 @@
 
     }
 
+    // ----- Products
+
     /**
      * Mybooking product
      */
@@ -932,6 +949,7 @@
     public function wp_rent_products_shortcode($atts = [], $content = null, $tag = '') {
 
       // Get the page and the limit from the request parameters
+      $opts = $this->wp_products_extract_query_string(); 
       $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
       $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
       if ( is_null($page) || $page === false ) {
@@ -946,7 +964,9 @@
       // URL for pagination
       if ($this->get_current_page() != null) {
         //$url = $this->get_current_page()->post_name;
-        $url = mybooking_engine_translated_slug( $this->get_current_page()->post_name );
+        $url = get_site_url();
+        $url = $url.'/';
+        $url = $url.mybooking_engine_translated_slug( $this->get_current_page()->post_name );
       }
       else {
         $url = null;
@@ -956,7 +976,7 @@
       $registry = Mybooking_Registry::getInstance();
       $api_client = new MybookingApiClient($registry->mybooking_rent_plugin_api_url_prefix,
                                            $registry->mybooking_rent_plugin_api_key);
-      $data =$api_client->get_products($offset, $limit);
+      $data =$api_client->get_products( $offset, $limit, $opts );
       if ( $data == null) {
         $data = (object) array('total' => 0,
                                'offset' => 0,
@@ -978,6 +998,10 @@
       $current_page = floor($data->offset / $limit) + 1;
       $pagination = new MyBookingUIPagination();
       $pages = $pagination->pages($total_pages, $current_page);
+      $querystring = $this->wp_products_build_query_string();
+      if ( !empty($querystring) ) {
+        $querystring = '&'.$querystring;
+      }
 
       $data = array('data' => $data,
                     'total_pages' => $total_pages,
@@ -985,12 +1009,29 @@
                     'pages' => $pages,
                     'url' => $url,
                     'use_detail_pages' => $registry->mybooking_rent_plugin_detail_pages,
-                    'url_detail' => $url_detail);
+                    'url_detail' => $url_detail,
+                    'querystring' => $querystring );
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-products.php', $data);
       return ob_get_clean();
 
     }
+
+    /**
+     * Mybooking search shortcode
+     */
+    public function wp_rent_products_search_shortcode($atts = [], $content = null, $tag = '') {
+
+      // Get the query parameters
+      $data = $this->wp_activities_extract_query_string();
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-products-search.php', $data);
+      return ob_get_clean();
+
+    }
+
+    // ----- Activities
 
     /**
      * Mybooking search shortcode
@@ -1222,6 +1263,82 @@
     }
 
     // ------------ Support methods --------------------
+
+    /**
+     * Extract Query String parameters for products
+     *
+     * @returns [Array] with the following elements:
+     *
+     *  - family_id
+     *  - key_characteristic_1
+     *  - key_characteristic_2
+     *  - key_characteristic_3
+     *  - key_characteristic_4
+     *  - key_characteristic_5
+     *  - key_characteristic_6
+     *
+     */
+    private function wp_products_extract_query_string() {
+
+      // Get the query parameter
+      $family_id = array_key_exists('family_id', $_GET) ? filter_input(INPUT_GET, 'family_id', FILTER_VALIDATE_INT) : null;
+      $key_characteristic_1 = array_key_exists('key_characteristic_1', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_1', FILTER_VALIDATE_INT) : null;
+      $key_characteristic_2 = array_key_exists('key_characteristic_2', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_2', FILTER_VALIDATE_INT) : null;
+      $key_characteristic_3 = array_key_exists('key_characteristic_3', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_3', FILTER_VALIDATE_INT) : null;
+      $key_characteristic_4 = array_key_exists('key_characteristic_4', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_4', FILTER_VALIDATE_INT) : null;
+      $key_characteristic_5 = array_key_exists('key_characteristic_5', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_5', FILTER_VALIDATE_INT) : null;
+      $key_characteristic_6 = array_key_exists('key_characteristic_6', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_5', FILTER_VALIDATE_INT) : null;
+      // Build the result
+      $data = array( );
+      if ( !empty($family_id) ) {
+        $data['family_id'] = $family_id;
+      }
+      if ( !empty($key_characteristic_1) ) {
+        $data['key_characteristic_1'] = $key_characteristic_1;
+      }
+      if ( !empty($key_characteristic_2) ) {
+        $data['key_characteristic_2'] = $key_characteristic_2;
+      }
+      if ( !empty($key_characteristic_3) ) {
+        $data['key_characteristic_3'] = $key_characteristic_3;
+      }
+      if ( !empty($key_characteristic_4) ) {
+        $data['key_characteristic_4'] = $key_characteristic_4;
+      }
+      if ( !empty($key_characteristic_5) ) {
+        $data['key_characteristic_5'] = $key_characteristic_5;
+      }
+      if ( !empty($key_characteristic_6) ) {
+        $data['key_characteristic_6'] = $key_characteristic_6;
+      }
+
+      return $data;
+
+    }
+
+    /**
+     * Build query string from Query string
+     *
+     */
+    private function wp_products_build_query_string() {
+
+      $result = '';
+      $data = $this->wp_products_extract_query_string();
+      foreach($data as $key => $value) {
+        if ( !empty($result) ) {
+          $result.='&';
+        }
+        if ( !empty($value) && is_int( $value ) ) {
+          $result.=$key.'='.$value;
+        }
+        else if ( !empty($value) && is_string( $value ) ) {
+          $result.=$key.'='.urlencode($value);
+        }
+      }
+
+      return $result;
+
+    }
 
     /**
      * Extract Query String parameters for activities
