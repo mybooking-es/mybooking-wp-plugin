@@ -86,8 +86,8 @@
   <% } %>		
 
 	<% if (typeof keyCharacteristics['6'] !== 'undefined' ) { %>
-	  <label for="key_characteristic_6"><%= keyCharacteristics['6'].name%></label>
 		<div class="form-group col-md-12">
+      <label for="key_characteristic_6"><%= keyCharacteristics['6'].name%></label>
 			<select name="key_characteristic_6" id="mybooking_key_characteristic_6" class="form-control mybooking-key-characteristic"
 				<?php if ( array_key_exists('key_characteristic_6', $args) && $args['key_characteristic_6'] != '') { ?>data-value="<?php echo esc_attr( $args['key_characteristic_6'] )?>"<?php } ?>>
 			  <option value=""><%= keyCharacteristics['6'].name%></option> 

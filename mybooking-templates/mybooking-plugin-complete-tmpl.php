@@ -286,9 +286,11 @@
         <% } else if (shopping_cart.hours > 0) { %>
           <li class="list-group-item reservation-summary-card-detail"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_complete', 'mybooking-wp-plugin' ) ?></li>
         <% } %>
-        <li class="list-group-item">
-          <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo esc_html_x( 'Edit', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
-        </li>
+        <% if (shopping_cart.engine_modify_dates) { %>
+          <li class="list-group-item">
+            <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo esc_html_x( 'Edit', 'renting_complete', 'mybooking-wp-plugin' ) ?></button>
+          </li>
+        <% } %>
       </ul>
     </div>
 

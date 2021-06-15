@@ -73,9 +73,9 @@
    *
    * - Show renting selector: The starting point for a reservation
    *
-   * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number]
+   * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number rental_location_code=String]
    *
-   * [mybooking_rent_engine_selector_wizard sales_channel_code=String family_id=Number]
+   * [mybooking_rent_engine_selector_wizard sales_channel_code=String family_id=Number rental_location_code=String]
    *
    * - Renting search results:
    *
@@ -249,7 +249,7 @@
       // Shortcode Renting products
       add_shortcode('mybooking_rent_engine_products', array($this, 'wp_rent_products_shortcode' ));
 
-      // Shortcode Renting Product
+      // Shortcode Renting Product Calendar
       add_shortcode('mybooking_rent_engine_product', array($this, 'wp_rent_product_shortcode' ));
 
       // -- Activities shortcodes
@@ -823,7 +823,8 @@
 
       // Extract the shortcode attributes
       extract( shortcode_atts( array('sales_channel_code' => '',
-                                     'family_id' => '' ), $atts ) );
+                                     'family_id' => '',
+                                     'rental_location_code' => '' ), $atts ) );
 
       $data = array();
 
@@ -833,6 +834,10 @@
 
       if ( $family_id != '' ) {
         $data['family_id'] = $family_id;
+      }
+
+      if ( $rental_location_code != '' ) {
+        $data['rental_location_code'] = $rental_location_code;
       }
 
       ob_start();
@@ -848,7 +853,8 @@
 
       // Extract the shortcode attributes
       extract( shortcode_atts( array('sales_channel_code' => '',
-                                     'family_id' => ''), $atts ) );
+                                     'family_id' => '',
+                                     'rental_location_code' => ''), $atts ) );
 
       $data = array();
 
@@ -858,6 +864,10 @@
 
       if ( $family_id != '' ) {
         $data['family_id'] = $family_id;
+      }
+
+      if ( $rental_location_code != '' ) {
+        $data['rental_location_code'] = $rental_location_code;
       }
 
       ob_start();
@@ -929,12 +939,16 @@
 
       // Extract the shortcode attributes
       extract( shortcode_atts( array('code' => '',
-                                     'sales_channel_code' => ''), $atts ) );
+                                     'sales_channel_code' => '',
+                                     'rental_location_code' => ''), $atts ) );
 
       $data = array();
       $data['code'] = $code;
       if ( $sales_channel_code != '' ) {
         $data['sales_channel_code'] = $sales_channel_code;
+      }
+      if ( $rental_location_code != '' ) {
+        $data['rental_location_code'] = $rental_location_code;
       }
 
       ob_start();
@@ -963,14 +977,12 @@
 
       // URL for pagination
       if ($this->get_current_page() != null) {
-        //$url = $this->get_current_page()->post_name;
-        $url = get_site_url();
-        $url = $url.'/';
-        $url = $url.mybooking_engine_translated_slug( $this->get_current_page()->post_name );
+        $url = mybooking_engine_translated_slug( $this->get_current_page()->post_name );
       }
       else {
         $url = null;
       }
+
 
       // Get the products from the API
       $registry = Mybooking_Registry::getInstance();
@@ -1499,6 +1511,13 @@
       }
       else {
         $registry->mybooking_rent_plugin_show_taxes_included = false;
+      }
+
+      if ($settings && array_key_exists('mybooking_plugin_settings_rental_location_context', $settings)) {
+        $registry->mybooking_rent_plugin_rental_location_context = $settings["mybooking_plugin_settings_rental_location_context"] ? $settings["mybooking_plugin_settings_rental_location_context"] : 'branch_office';
+      }
+      else {
+        $registry->mybooking_rent_plugin_rental_location_context = 'family';
       }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_family_context', $settings)) {

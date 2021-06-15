@@ -65,6 +65,31 @@
     }
 
     /**
+     * Get the rental location
+     */
+    public function getRentalLocation() {
+
+        $registry = Mybooking_Registry::getInstance();
+        $returnValue = '';
+
+        switch ($registry->mybooking_rent_plugin_rental_location_context) {
+          case 'branch_office':
+            $returnValue = esc_html_x( 'Branch Office', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          case 'hotel':
+            $returnValue = esc_html_x( 'Hotel', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          case 'hostel':
+            $returnValue = esc_html_x( 'Hostel', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          default:
+            $returnValue = esc_html_x( 'Branch Office', 'engine_context', 'mybooking-wp-plugin' );
+        }
+        return $returnValue;      
+
+    }
+
+    /**
      * Get the family
      */
     public function getFamily() {
@@ -88,6 +113,9 @@
         	case 'room':
         	  $returnValue = esc_html_x( 'Type of room', 'engine_context', 'mybooking-wp-plugin' );
         	  break;
+          case 'boat':
+            $returnValue = esc_html_x( 'Type of Boat', 'engine_context', 'mybooking-wp-plugin');
+            break;  
         	default:
         	  $returnValue = esc_html_x( 'Family', 'engine_context', 'mybooking-wp-plugin' );
         }
@@ -116,6 +144,9 @@
         	case 'room':
         	  $returnValue = esc_html_x( 'Room', 'engine_context', 'mybooking-wp-plugin' );
         	  break;
+          case 'boat':
+            $returnValue = esc_html_x( 'Boat', 'engine_context', 'mybooking-wp-plugin' );
+            break;
         	default:
         	  $returnValue = esc_html_x( 'Vehicle', 'engine_context', 'mybooking-wp-plugin' );
         }

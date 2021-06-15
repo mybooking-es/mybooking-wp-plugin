@@ -18,9 +18,18 @@
 
 	<div class="flex-form-group-wrapper inline-form">
 
-  	    <% if (not_hidden_family_id && configuration.selectFamily) { %>
+  	  <% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
+		    <div class="flex-form-group widget_rental_location" style="display: none">
+		      <label for="widget_rental_location_code"><?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?></label>
+		      <div class="flex-form-horizontal-item">
+		      	<select name="rental_location_code" id="widget_rental_location_code" class="form-control"></select>
+	  	    </div>
+		    </div>
+	    <% } %>
+
+  	  <% if (not_hidden_family_id && configuration.selectFamily) { %>
 		    <div class="flex-form-group widget_family" style="display: none">
-		      <label for="family_id"><?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?></label>
+		      <label for="widget_family_id"><?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?></label>
 		      <div class="flex-form-horizontal-item">
 		      	<select name="family_id" id="widget_family_id" class="form-control"></select>
 	  	    </div>
@@ -102,6 +111,13 @@
 	          </div>			      
 			    </div>
 			  </div>
+			<% else if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
+		    <div class="flex-form-group widget_rental_location_code" style="display: none">
+		      <label for="family_id"><?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?></label>
+		      <div class="flex-form-horizontal-item">
+		      	<select name="family_id" id="widget_rental_location_code" class="form-control"></select>
+	  	    </div>
+		    </div>
 		  <% } %>
 
 		  <!-- Delivery / Collection dates and times -->

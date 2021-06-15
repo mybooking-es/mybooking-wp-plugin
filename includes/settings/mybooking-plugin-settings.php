@@ -352,6 +352,13 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
+		  // Rental Location context
+		  add_settings_field('mybooking_plugin_settings_rental_location_context',
+		                     'Rental Location context',
+		                     array($this, 'field_mybooking_plugin_settings_rental_location_context_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');
+
 		  // Family context
 		  add_settings_field('mybooking_plugin_settings_family_context',
 		                     'Family context',
@@ -800,6 +807,45 @@ EOF;
 		}
 
 		/**
+		 * Render Mybooking Rental Location context
+		 */
+		public function field_mybooking_plugin_settings_rental_location_context_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_renting");
+		  $field = "mybooking_plugin_settings_rental_location_context";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
+		  $select .= "<option value=''>[Choose rental location context]</option>";
+
+		  if ($value == 'branch_office') {
+		    $select .= "<option value='branch_office' selected>Branch office</option>";
+		  }
+		  else {
+		    $select .= "<option value='branch_office'>Branch office</option>";
+		  }
+
+			if ($value == 'hotel') {
+		    $select .= "<option value='hotel' selected>Hotel</option>";
+		  }
+		  else {
+		    $select .= "<option value='family'>Hotel</option>";
+		  }
+
+		  $select .= "</select>";
+
+		  echo $select;
+		  echo "<p class=\"description\">Choose the rental location that describes your business context.</p>";
+		  echo "<hr>";
+
+		}
+
+		/**
 		 * Render Mybooking Family context
 		 */
 		public function field_mybooking_plugin_settings_family_context_callback() {
@@ -835,6 +881,13 @@ EOF;
 		  }
 		  else {
 		    $select .= "<option value='vehicle'>Type of vehicle</option>";
+		  }
+
+			if ($value == 'boat') {
+		    $select .= "<option value='boat' selected>Type of boat</option>";
+		  }
+		  else {
+		    $select .= "<option value='boat'>Type of boat</option>";
 		  }
 
 			if ($value == 'property') {
@@ -881,6 +934,13 @@ EOF;
 		  }
 		  else {
 		    $select .= "<option value='vehicle'>Vehicle</option>";
+		  }
+
+			if ($value == 'boat') {
+		    $select .= "<option value='product' selected>Boat</option>";
+		  }
+		  else {
+		    $select .= "<option value='product'>Boat</option>";
 		  }
 
 			if ($value == 'product') {

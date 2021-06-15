@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-25 16:57+0000\n"
-"PO-Revision-Date: 2021-05-31 00:56+0000\n"
+"PO-Revision-Date: 2021-06-15 20:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -115,62 +115,62 @@ msgctxt "activity_detail"
 msgid "What's included?"
 msgstr "Что включено?"
 
-#: includes/mybooking-plugin.php:1777
+#: includes/mybooking-plugin.php:1913
 msgctxt "activity_item_content"
 msgid "Activity Item"
 msgstr "Элемент деятельности"
 
-#: includes/mybooking-plugin.php:1776
+#: includes/mybooking-plugin.php:1912
 msgctxt "activity_item_content"
 msgid "Activity Items"
 msgstr "Элементы деятельности"
 
-#: includes/mybooking-plugin.php:1778
+#: includes/mybooking-plugin.php:1914
 msgctxt "activity_item_content"
 msgid "Add activity item"
 msgstr "Добавить элемент деятельности"
 
-#: includes/mybooking-plugin.php:1780
+#: includes/mybooking-plugin.php:1916
 msgctxt "activity_item_content"
 msgid "Edit"
 msgstr "Изменить "
 
-#: includes/mybooking-plugin.php:1781
+#: includes/mybooking-plugin.php:1917
 msgctxt "activity_item_content"
 msgid "Edit activity item"
 msgstr "Изменить элемент занятия"
 
-#: includes/mybooking-plugin.php:1779 includes/mybooking-plugin.php:1782
+#: includes/mybooking-plugin.php:1915 includes/mybooking-plugin.php:1918
 msgctxt "activity_item_content"
 msgid "New activity item"
 msgstr "Новый элемент активности"
 
-#: includes/mybooking-plugin.php:1787
+#: includes/mybooking-plugin.php:1923
 msgctxt "activity_item_content"
 msgid "No activity item found on bin"
 msgstr "В корзине не найдено ни одного элемента деятельности"
 
-#: includes/mybooking-plugin.php:1786
+#: includes/mybooking-plugin.php:1922
 msgctxt "activity_item_content"
 msgid "No activity_item found"
 msgstr "Элемент активности не найден"
 
-#: includes/mybooking-plugin.php:1788
+#: includes/mybooking-plugin.php:1924
 msgctxt "activity_item_content"
 msgid "Parent activity item"
 msgstr "Элемент родительской активности"
 
-#: includes/mybooking-plugin.php:1785
+#: includes/mybooking-plugin.php:1921
 msgctxt "activity_item_content"
 msgid "Search activity item"
 msgstr "Элемент поисковой активности"
 
-#: includes/mybooking-plugin.php:1783
+#: includes/mybooking-plugin.php:1919
 msgctxt "activity_item_content"
 msgid "See"
 msgstr "Видеть"
 
-#: includes/mybooking-plugin.php:1784
+#: includes/mybooking-plugin.php:1920
 msgctxt "activity_item_content"
 msgid "See activity item"
 msgstr "См. Элемент активности"
@@ -658,224 +658,250 @@ msgid "This website uses cookies to ensure you get the best experience"
 msgstr ""
 "Этот веб-сайт использует файлы cookie, чтобы обеспечить вам лучший опыт."
 
-#: includes/translation/mybooking-plugin-engine-context.php:167
+#: includes/translation/mybooking-plugin-engine-context.php:198
 msgctxt "engine_context"
 msgid "Arrive"
 msgstr "Прибыть"
 
-#: includes/translation/mybooking-plugin-engine-context.php:161
+#: includes/translation/mybooking-plugin-engine-context.php:148
+msgctxt "engine_context"
+msgid "Boat"
+msgstr "Лодка"
+
+#: includes/translation/mybooking-plugin-engine-context.php:77
+#: includes/translation/mybooking-plugin-engine-context.php:86
+msgctxt "engine_context"
+msgid "Branch Office"
+msgstr "Филиал"
+
+#: includes/translation/mybooking-plugin-engine-context.php:192
 msgctxt "engine_context"
 msgid "Check-in"
 msgstr "Регистрироваться"
 
-#: includes/translation/mybooking-plugin-engine-context.php:190
+#: includes/translation/mybooking-plugin-engine-context.php:221
 msgctxt "engine_context"
 msgid "Check-out"
 msgstr "Проверить"
 
-#: includes/translation/mybooking-plugin-engine-context.php:136
-#: includes/translation/mybooking-plugin-engine-context.php:142
+#: includes/translation/mybooking-plugin-engine-context.php:167
+#: includes/translation/mybooking-plugin-engine-context.php:173
 msgctxt "engine_context"
 msgid "day(s)"
 msgstr ""
 "день/дней\n"
 
-#: includes/translation/mybooking-plugin-engine-context.php:196
+#: includes/translation/mybooking-plugin-engine-context.php:227
 msgctxt "engine_context"
 msgid "Departure"
 msgstr "Выезд"
 
-#: includes/translation/mybooking-plugin-engine-context.php:193
+#: includes/translation/mybooking-plugin-engine-context.php:224
 msgctxt "engine_context"
 msgid "End"
 msgstr "Конец"
 
-#: includes/translation/mybooking-plugin-engine-context.php:80
-#: includes/translation/mybooking-plugin-engine-context.php:92
+#: includes/translation/mybooking-plugin-engine-context.php:105
+#: includes/translation/mybooking-plugin-engine-context.php:120
 msgctxt "engine_context"
 msgid "Family"
 msgstr "Семья"
 
-#: includes/translation/mybooking-plugin-engine-context.php:139
+#: includes/translation/mybooking-plugin-engine-context.php:83
+msgctxt "engine_context"
+msgid "Hostel"
+msgstr "Хостел"
+
+#: includes/translation/mybooking-plugin-engine-context.php:80
+msgctxt "engine_context"
+msgid "Hotel"
+msgstr "Отель"
+
+#: includes/translation/mybooking-plugin-engine-context.php:170
 msgctxt "engine_context"
 msgid "night(s)"
 msgstr "ночь (ночи)"
 
-#: includes/translation/mybooking-plugin-engine-context.php:211
-#: includes/translation/mybooking-plugin-engine-context.php:217
+#: includes/translation/mybooking-plugin-engine-context.php:242
+#: includes/translation/mybooking-plugin-engine-context.php:248
 msgctxt "engine_context"
 msgid "Not available"
 msgstr "Недоступен"
 
-#: includes/translation/mybooking-plugin-engine-context.php:158
-#: includes/translation/mybooking-plugin-engine-context.php:170
+#: includes/translation/mybooking-plugin-engine-context.php:189
+#: includes/translation/mybooking-plugin-engine-context.php:201
 msgctxt "engine_context"
 msgid "Pick-up date"
 msgstr "Подобрать дату"
 
-#: includes/translation/mybooking-plugin-engine-context.php:214
+#: includes/translation/mybooking-plugin-engine-context.php:245
 msgctxt "engine_context"
 msgid "Please, contact us by phone"
 msgstr "Пожалуйста, свяжитесь с нами по телефону"
 
-#: includes/translation/mybooking-plugin-engine-context.php:111
+#: includes/translation/mybooking-plugin-engine-context.php:139
 msgctxt "engine_context"
 msgid "Product"
 msgstr "Продукт"
 
-#: includes/translation/mybooking-plugin-engine-context.php:114
+#: includes/translation/mybooking-plugin-engine-context.php:142
 msgctxt "engine_context"
 msgid "Property"
 msgstr "Имущество"
 
-#: includes/translation/mybooking-plugin-engine-context.php:187
-#: includes/translation/mybooking-plugin-engine-context.php:199
+#: includes/translation/mybooking-plugin-engine-context.php:218
+#: includes/translation/mybooking-plugin-engine-context.php:230
 msgctxt "engine_context"
 msgid "Return date"
 msgstr "Дата возвращения"
 
-#: includes/translation/mybooking-plugin-engine-context.php:117
+#: includes/translation/mybooking-plugin-engine-context.php:145
 msgctxt "engine_context"
 msgid "Room"
 msgstr "Номер"
 
-#: includes/translation/mybooking-plugin-engine-context.php:164
+#: includes/translation/mybooking-plugin-engine-context.php:195
 msgctxt "engine_context"
 msgid "Start"
 msgstr "Начинать"
 
-#: includes/translation/mybooking-plugin-engine-context.php:77
+#: includes/translation/mybooking-plugin-engine-context.php:117
+msgctxt "engine_context"
+msgid "Type of Boat"
+msgstr "Тип лодки"
+
+#: includes/translation/mybooking-plugin-engine-context.php:102
 msgctxt "engine_context"
 msgid "Type of product"
 msgstr "Тип продукта"
 
-#: includes/translation/mybooking-plugin-engine-context.php:86
+#: includes/translation/mybooking-plugin-engine-context.php:111
 msgctxt "engine_context"
 msgid "Type of property"
 msgstr "Тип недвижимости"
 
-#: includes/translation/mybooking-plugin-engine-context.php:89
+#: includes/translation/mybooking-plugin-engine-context.php:114
 msgctxt "engine_context"
 msgid "Type of room"
 msgstr "Тип комнаты"
 
-#: includes/translation/mybooking-plugin-engine-context.php:83
+#: includes/translation/mybooking-plugin-engine-context.php:108
 msgctxt "engine_context"
 msgid "Type of vehicle"
 msgstr "тип машины"
 
-#: includes/translation/mybooking-plugin-engine-context.php:108
-#: includes/translation/mybooking-plugin-engine-context.php:120
+#: includes/translation/mybooking-plugin-engine-context.php:136
+#: includes/translation/mybooking-plugin-engine-context.php:151
 msgctxt "engine_context"
 msgid "Vehicle"
 msgstr "транспортное средство"
 
-#: includes/translation/mybooking-plugin-engine-context.php:255
+#: includes/translation/mybooking-plugin-engine-context.php:286
 msgctxt "engine_context_key_characteristic"
 msgid "Air conditioner"
 msgstr "Кондиционер"
 
-#: includes/translation/mybooking-plugin-engine-context.php:258
+#: includes/translation/mybooking-plugin-engine-context.php:289
 msgctxt "engine_context_key_characteristic"
 msgid "Bathroom"
 msgstr "Ванная комната"
 
-#: includes/translation/mybooking-plugin-engine-context.php:261
+#: includes/translation/mybooking-plugin-engine-context.php:292
 msgctxt "engine_context_key_characteristic"
 msgid "Baths"
 msgstr "Ванны"
 
-#: includes/translation/mybooking-plugin-engine-context.php:264
+#: includes/translation/mybooking-plugin-engine-context.php:295
 msgctxt "engine_context_key_characteristic"
 msgid "Beds"
 msgstr "Кровати"
 
-#: includes/translation/mybooking-plugin-engine-context.php:267
+#: includes/translation/mybooking-plugin-engine-context.php:298
 msgctxt "engine_context_key_characteristic"
 msgid "Berths"
 msgstr "Кровати"
 
-#: includes/translation/mybooking-plugin-engine-context.php:270
+#: includes/translation/mybooking-plugin-engine-context.php:301
 msgctxt "engine_context_key_characteristic"
 msgid "Boat License"
 msgstr "Лицензия на лодку"
 
-#: includes/translation/mybooking-plugin-engine-context.php:273
+#: includes/translation/mybooking-plugin-engine-context.php:304
 msgctxt "engine_context_key_characteristic"
 msgid "Cabin"
 msgstr "Кабина"
 
-#: includes/translation/mybooking-plugin-engine-context.php:276
+#: includes/translation/mybooking-plugin-engine-context.php:307
 msgctxt "engine_context_key_characteristic"
 msgid "Doors"
 msgstr "Двери"
 
-#: includes/translation/mybooking-plugin-engine-context.php:279
+#: includes/translation/mybooking-plugin-engine-context.php:310
 msgctxt "engine_context_key_characteristic"
 msgid "Driving license"
 msgstr "Водительские права"
 
-#: includes/translation/mybooking-plugin-engine-context.php:282
+#: includes/translation/mybooking-plugin-engine-context.php:313
 msgctxt "engine_context_key_characteristic"
 msgid "Fuel"
 msgstr "Топливо"
 
-#: includes/translation/mybooking-plugin-engine-context.php:234
+#: includes/translation/mybooking-plugin-engine-context.php:265
 msgctxt "engine_context_key_characteristic"
 msgid "Length"
 msgstr "Длина"
 
-#: includes/translation/mybooking-plugin-engine-context.php:285
+#: includes/translation/mybooking-plugin-engine-context.php:316
 msgctxt "engine_context_key_characteristic"
 msgid "Pets"
 msgstr "Домашние питомцы"
 
-#: includes/translation/mybooking-plugin-engine-context.php:288
+#: includes/translation/mybooking-plugin-engine-context.php:319
 msgctxt "engine_context_key_characteristic"
 msgid "Places"
 msgstr "Места"
 
-#: includes/translation/mybooking-plugin-engine-context.php:291
+#: includes/translation/mybooking-plugin-engine-context.php:322
 msgctxt "engine_context_key_characteristic"
 msgid "Rooms"
 msgstr "Номера"
 
-#: includes/translation/mybooking-plugin-engine-context.php:294
+#: includes/translation/mybooking-plugin-engine-context.php:325
 msgctxt "engine_context_key_characteristic"
 msgid "Seats"
 msgstr "Сиденья"
 
-#: includes/translation/mybooking-plugin-engine-context.php:297
+#: includes/translation/mybooking-plugin-engine-context.php:328
 msgctxt "engine_context_key_characteristic"
 msgid "Shower"
 msgstr "Душ"
 
-#: includes/translation/mybooking-plugin-engine-context.php:300
+#: includes/translation/mybooking-plugin-engine-context.php:331
 msgctxt "engine_context_key_characteristic"
 msgid "Skipper"
 msgstr "Шкипер"
 
-#: includes/translation/mybooking-plugin-engine-context.php:303
+#: includes/translation/mybooking-plugin-engine-context.php:334
 msgctxt "engine_context_key_characteristic"
 msgid "Suitcases"
 msgstr "Состояние"
 
-#: includes/translation/mybooking-plugin-engine-context.php:306
+#: includes/translation/mybooking-plugin-engine-context.php:337
 msgctxt "engine_context_key_characteristic"
 msgid "Transmission"
 msgstr "коробка передач"
 
-#: includes/translation/mybooking-plugin-engine-context.php:309
+#: includes/translation/mybooking-plugin-engine-context.php:340
 msgctxt "engine_context_key_characteristic"
 msgid "Type"
 msgstr "Тип"
 
-#: includes/translation/mybooking-plugin-engine-context.php:312
+#: includes/translation/mybooking-plugin-engine-context.php:343
 msgctxt "engine_context_key_characteristic"
 msgid "WC"
 msgstr "WC"
 
-#: includes/translation/mybooking-plugin-engine-context.php:315
+#: includes/translation/mybooking-plugin-engine-context.php:346
 msgctxt "engine_context_key_characteristic"
 msgid "Wifi"
 msgstr "вай-фай"
@@ -965,62 +991,62 @@ msgctxt "plugin_settings"
 msgid "Settings"
 msgstr "Настройки"
 
-#: includes/mybooking-plugin.php:1694
+#: includes/mybooking-plugin.php:1830
 msgctxt "popup_content"
 msgid "Add popup ad"
 msgstr "Добавить всплывающее объявление"
 
-#: includes/mybooking-plugin.php:1696
+#: includes/mybooking-plugin.php:1832
 msgctxt "popup_content"
 msgid "Edit"
 msgstr "Изменить "
 
-#: includes/mybooking-plugin.php:1697
+#: includes/mybooking-plugin.php:1833
 msgctxt "popup_content"
 msgid "Edit popup ad"
 msgstr "Изменить всплывающее объявление"
 
-#: includes/mybooking-plugin.php:1695 includes/mybooking-plugin.php:1698
+#: includes/mybooking-plugin.php:1831 includes/mybooking-plugin.php:1834
 msgctxt "popup_content"
 msgid "New popup ad"
 msgstr "Новое всплывающее объявление"
 
-#: includes/mybooking-plugin.php:1702
+#: includes/mybooking-plugin.php:1838
 msgctxt "popup_content"
 msgid "No popup ad found"
 msgstr "Всплывающее объявление не найдено"
 
-#: includes/mybooking-plugin.php:1703
+#: includes/mybooking-plugin.php:1839
 msgctxt "popup_content"
 msgid "No popup ad on bin"
 msgstr "В корзине нет всплывающей рекламы"
 
-#: includes/mybooking-plugin.php:1704
+#: includes/mybooking-plugin.php:1840
 msgctxt "popup_content"
 msgid "Parent popup ad"
 msgstr "Родительское всплывающее объявление"
 
-#: includes/mybooking-plugin.php:1693
+#: includes/mybooking-plugin.php:1829
 msgctxt "popup_content"
 msgid "Popup ad"
 msgstr "Всплывающее объявление"
 
-#: includes/mybooking-plugin.php:1692
+#: includes/mybooking-plugin.php:1828
 msgctxt "popup_content"
 msgid "Popup ads"
 msgstr "Всплывающая реклама"
 
-#: includes/mybooking-plugin.php:1701
+#: includes/mybooking-plugin.php:1837
 msgctxt "popup_content"
 msgid "Search popup ad"
 msgstr "Всплывающее объявление в поиске"
 
-#: includes/mybooking-plugin.php:1699
+#: includes/mybooking-plugin.php:1835
 msgctxt "popup_content"
 msgid "See"
 msgstr "Видеть"
 
-#: includes/mybooking-plugin.php:1700
+#: includes/mybooking-plugin.php:1836
 msgctxt "popup_content"
 msgid "See popup ad"
 msgstr "Посмотреть всплывающее объявление"
@@ -1077,8 +1103,8 @@ msgid "Reservation summary"
 msgstr "Резюме бронирования"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:111
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:336
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:460
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:338
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:462
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:122
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:218
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:140
@@ -1098,17 +1124,17 @@ msgctxt "renting_complete"
 msgid "Alternative phone number"
 msgstr "Альтернативный номер телефона"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:306
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:308
 msgctxt "renting_complete"
 msgid "Apply"
 msgstr "Применять"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:531
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:533
 msgctxt "renting_complete"
 msgid "Book now and pay now"
 msgstr "Забронируйте сейчас и заплатите сейчас"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:523
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:525
 msgctxt "renting_complete"
 msgid "Book now and pay on arrival"
 msgstr "Забронируйте сейчас и оплатите по прибытии"
@@ -1124,7 +1150,7 @@ msgctxt "renting_complete"
 msgid "Comments"
 msgstr "Комментарии"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:591
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:593
 msgctxt "renting_complete"
 msgid "Confirm"
 msgstr "Подтвердить"
@@ -1140,7 +1166,7 @@ msgctxt "renting_complete"
 msgid "Coverage"
 msgstr "Покрытие"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:629
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:631
 msgctxt "renting_complete"
 msgid "Credit or debit card"
 msgstr "Кредитная или дебетовая карта"
@@ -1150,13 +1176,13 @@ msgctxt "renting_complete"
 msgid "Customer's details"
 msgstr "Реквизиты клиента"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:442
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:448
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:444
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:450
 msgctxt "renting_complete"
 msgid "Deposit"
 msgstr "Депозит"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:424
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:426
 msgctxt "renting_complete"
 msgid "Driver's age supplement"
 msgstr "Доплата за возраст водителя"
@@ -1167,13 +1193,13 @@ msgctxt "renting_complete"
 msgid "E-mail"
 msgstr "Электронная почта"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:290
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:291
 msgctxt "renting_complete"
 msgid "Edit"
 msgstr "Изменить "
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:167
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:372
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:374
 msgctxt "renting_complete"
 msgid "Extras"
 msgstr "Дополнения"
@@ -1183,9 +1209,9 @@ msgctxt "renting_complete"
 msgid "hour(s)"
 msgstr "час(ы)"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:551
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:581
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:661
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:553
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:583
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:663
 #, php-format
 msgctxt "renting_complete"
 msgid ""
@@ -1194,9 +1220,9 @@ msgid ""
 msgstr ""
 "<a href=\"%s\" target=\"_blank\">Я прочитал и принимаю условия аренды</a>"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:549
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:579
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:659
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:551
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:581
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:661
 msgctxt "renting_complete"
 msgid "I have read and hereby accept the conditions of rental"
 msgstr "Я прочитал и принимаю условия аренды"
@@ -1207,12 +1233,12 @@ msgctxt "renting_complete"
 msgid "Name"
 msgstr "Имя"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:623
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:625
 msgctxt "renting_complete"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:430
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:432
 msgctxt "renting_complete"
 msgid "Petrol supplement"
 msgstr "Бензиновая доплата"
@@ -1223,24 +1249,24 @@ msgctxt "renting_complete"
 msgid "Phone number"
 msgstr "Телефонный номер"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:406
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:408
 msgctxt "renting_complete"
 msgid "Pick-up place supplement"
 msgstr "Доплата за место получения"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:400
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:402
 msgctxt "renting_complete"
 msgid "Pick-up time supplement"
 msgstr "Доплата за время получения"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:299
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:304
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:301
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:306
 msgctxt "renting_complete"
 msgid "Promotion Code"
 msgstr "Промо-Код"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:515
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:561
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:517
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:563
 msgctxt "renting_complete"
 msgid "Request reservation"
 msgstr "Запросить бронирование"
@@ -1250,17 +1276,17 @@ msgctxt "renting_complete"
 msgid "Reservation summary"
 msgstr "Резюме бронирования"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:418
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:420
 msgctxt "renting_complete"
 msgid "Return place supplement"
 msgstr "Доплата за место возврата"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:412
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:414
 msgctxt "renting_complete"
 msgid "Return time supplement"
 msgstr "Доплата за время возврата"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:394
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:396
 msgctxt "renting_complete"
 msgid "Supplements"
 msgstr "Добавки"
@@ -1271,12 +1297,12 @@ msgctxt "renting_complete"
 msgid "Surname"
 msgstr "Фамилия"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:457
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:459
 msgctxt "renting_complete"
 msgid "Total"
 msgstr "Общая"
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:639
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:641
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to <b>Paypal payment platform</b> to make the "
@@ -1288,7 +1314,7 @@ msgstr ""
 "учетную запись Paypal </u> или <u> кредитную карту </u> для совершения "
 "платежа."
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:646
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:648
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>credit card payment platform</b> to make "
@@ -1297,7 +1323,7 @@ msgstr ""
 "Вы будете перенаправлены на <b> платформу оплаты кредитной картой </b>, "
 "чтобы безопасно произвести подтверждающий платеж."
 
-#: mybooking-templates/mybooking-plugin-complete-tmpl.php:618
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:620
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>payment platform</b> to make the "
@@ -1344,26 +1370,26 @@ msgid "Modify reservation"
 msgstr "Изменить бронирование"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:21
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:71
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:80
 msgctxt "renting_form_selector"
 msgid "Pick-up place"
 msgstr "Место получения"
 
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:47
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:124
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:56
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:165
 msgctxt "renting_form_selector"
 msgid "Promotion code"
 msgstr "Промо-Код"
 
-#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:26
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:76
+#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:38
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:98
 msgctxt "renting_form_selector"
 msgid "Return place"
 msgstr "Место возврата"
 
-#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:72
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:56
-#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:132
+#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:124
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:65
+#: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:173
 msgctxt "renting_form_selector"
 msgid "Search"
 msgstr "Поиск"
@@ -1373,87 +1399,87 @@ msgctxt "renting_form_selector_wizard"
 msgid "All"
 msgstr "Все"
 
-#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:36
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:39
 msgctxt "renting_form_selector_wizard"
 msgid "Book"
 msgstr "Книга"
 
-#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:27
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:30
 msgctxt "renting_form_selector_wizard"
 msgid "Select a location"
 msgstr "Выберите место"
 
-#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:32
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:35
 msgctxt "renting_form_selector_wizard"
 msgid "Select dates"
 msgstr "Выберите даты"
 
-#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:30
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:33
 msgctxt "renting_form_selector_wizard"
 msgid "When?"
 msgstr "Когда?"
 
-#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:25
+#: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:28
 msgctxt "renting_form_selector_wizard"
 msgid "Where?"
 msgstr "Где?"
 
-#: includes/mybooking-plugin.php:1750
+#: includes/mybooking-plugin.php:1886
 msgctxt "renting_item_content"
 msgid "Add renting item"
 msgstr "Добавить объект для аренды"
 
-#: includes/mybooking-plugin.php:1752
+#: includes/mybooking-plugin.php:1888
 msgctxt "renting_item_content"
 msgid "Edit"
 msgstr "Изменить "
 
-#: includes/mybooking-plugin.php:1753
+#: includes/mybooking-plugin.php:1889
 msgctxt "renting_item_content"
 msgid "Edit renting item"
 msgstr "Изменить объект аренды"
 
-#: includes/mybooking-plugin.php:1751 includes/mybooking-plugin.php:1754
+#: includes/mybooking-plugin.php:1887 includes/mybooking-plugin.php:1890
 msgctxt "renting_item_content"
 msgid "New renting item"
 msgstr "Новый объект для аренды"
 
-#: includes/mybooking-plugin.php:1758
+#: includes/mybooking-plugin.php:1894
 msgctxt "renting_item_content"
 msgid "No renting item found"
 msgstr "Ничего не найдено"
 
-#: includes/mybooking-plugin.php:1759
+#: includes/mybooking-plugin.php:1895
 msgctxt "renting_item_content"
 msgid "No renting item found on bin"
 msgstr "В корзине не найдено ни одного предмета для аренды"
 
-#: includes/mybooking-plugin.php:1760
+#: includes/mybooking-plugin.php:1896
 msgctxt "renting_item_content"
 msgid "Parent renting item"
 msgstr "Родительский объект аренды"
 
-#: includes/mybooking-plugin.php:1749
+#: includes/mybooking-plugin.php:1885
 msgctxt "renting_item_content"
 msgid "Renting Item"
 msgstr "Аренда предмета"
 
-#: includes/mybooking-plugin.php:1748
+#: includes/mybooking-plugin.php:1884
 msgctxt "renting_item_content"
 msgid "Renting Items"
 msgstr "Аренда предмета"
 
-#: includes/mybooking-plugin.php:1757
+#: includes/mybooking-plugin.php:1893
 msgctxt "renting_item_content"
 msgid "Search renting item"
 msgstr "Искать объект аренды"
 
-#: includes/mybooking-plugin.php:1755
+#: includes/mybooking-plugin.php:1891
 msgctxt "renting_item_content"
 msgid "See"
 msgstr "Видеть"
 
-#: includes/mybooking-plugin.php:1756
+#: includes/mybooking-plugin.php:1892
 msgctxt "renting_item_content"
 msgid "See renting item"
 msgstr "Посмотреть объект аренды"
@@ -2048,62 +2074,62 @@ msgstr ""
 "Reservation Engine WordPress frontend for Mybooking. Transforms wordpress "
 "into a rental / accommodation / tours reservation engine."
 
-#: includes/mybooking-plugin.php:1722
+#: includes/mybooking-plugin.php:1858
 msgctxt "testimonial_content"
 msgid "Add testimonial"
 msgstr "Добавить характеристику"
 
-#: includes/mybooking-plugin.php:1724
+#: includes/mybooking-plugin.php:1860
 msgctxt "testimonial_content"
 msgid "Edit"
 msgstr "Изменить "
 
-#: includes/mybooking-plugin.php:1725
+#: includes/mybooking-plugin.php:1861
 msgctxt "testimonial_content"
 msgid "Edit testimonial"
 msgstr "Изменить характеристику"
 
-#: includes/mybooking-plugin.php:1723 includes/mybooking-plugin.php:1726
+#: includes/mybooking-plugin.php:1859 includes/mybooking-plugin.php:1862
 msgctxt "testimonial_content"
 msgid "New testimonial"
 msgstr "Новый отзыв"
 
-#: includes/mybooking-plugin.php:1730
+#: includes/mybooking-plugin.php:1866
 msgctxt "testimonial_content"
 msgid "No testimonial found"
 msgstr "Характеристики не найдены"
 
-#: includes/mybooking-plugin.php:1731
+#: includes/mybooking-plugin.php:1867
 msgctxt "testimonial_content"
 msgid "No testimonial found on bin"
 msgstr "В корзине не найдено отзывов"
 
-#: includes/mybooking-plugin.php:1732
+#: includes/mybooking-plugin.php:1868
 msgctxt "testimonial_content"
 msgid "Parent testimonial"
 msgstr "Свидетельство родителей"
 
-#: includes/mybooking-plugin.php:1729
+#: includes/mybooking-plugin.php:1865
 msgctxt "testimonial_content"
 msgid "Search testimonial"
 msgstr "Искать объект аренды"
 
-#: includes/mybooking-plugin.php:1727
+#: includes/mybooking-plugin.php:1863
 msgctxt "testimonial_content"
 msgid "See"
 msgstr "Видеть"
 
-#: includes/mybooking-plugin.php:1728
+#: includes/mybooking-plugin.php:1864
 msgctxt "testimonial_content"
 msgid "See testimonial"
 msgstr "Посмотреть отзыв"
 
-#: includes/mybooking-plugin.php:1721
+#: includes/mybooking-plugin.php:1857
 msgctxt "testimonial_content"
 msgid "Testimonial"
 msgstr "Отзывы"
 
-#: includes/mybooking-plugin.php:1720
+#: includes/mybooking-plugin.php:1856
 msgctxt "testimonial_content"
 msgid "Testimonials"
 msgstr "Отзывы"

@@ -1,26 +1,17 @@
 # Changelog
 
-## [0.9.3]
+## [0.10.0]
 
 ### Added
 
 - Product Search (for product catalog navigation)
-
-## [0.9.2]
+- Profile / Customer
+  - Shortcodes for password forgotten and change password
+- Multiple branch offices  
 
 ### Fixed
 
 - Input custom delivery/collection address
-
-## [0.9.1]
-
-### Added
-
-- Profile / Customer
-  - Shortcodes for password forgotten and change password
-
-### Fixed
-
 - Mybooking Library Init with JS dependencies
 
 ## [0.9.0]
