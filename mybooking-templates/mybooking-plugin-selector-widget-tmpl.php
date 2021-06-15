@@ -111,7 +111,7 @@
 	          </div>			      
 			    </div>
 			  </div>
-			<% else if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
+			<% } else if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
 		    <div class="flex-form-group widget_rental_location_code" style="display: none">
 		      <label for="family_id"><?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?></label>
 		      <div class="flex-form-horizontal-item">

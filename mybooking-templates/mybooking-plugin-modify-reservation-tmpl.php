@@ -71,9 +71,6 @@
       <% } %>
   <% } %>
 
-
-  <% } %>
-
   <!-- Delivery / Collection dates and times -->
   <div class="flex-form-group">
     <!-- Delivery date -->
