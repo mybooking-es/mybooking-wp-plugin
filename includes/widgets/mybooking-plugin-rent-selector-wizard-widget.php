@@ -41,7 +41,7 @@ class MyBookingRentEngineSelectorWizardWidget extends WP_Widget {
             $data['rental_location_code'] = $instance['rental_location_code'];
         }
         else {
-            $data['rental_location_code'] = $instance['rental_location_code'];
+            $data['rental_location_code'] = '';
         }
 
     	mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget.php', $data);
