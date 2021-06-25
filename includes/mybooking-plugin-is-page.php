@@ -61,7 +61,6 @@ function mybooking_engine_translated_slug( $page_id ) {
 
 	// WMPL verification
   if ( function_exists('icl_object_id') ) {
-
 			$page = get_page_by_path( $page_id );
 		  $pageId = $page ? $page->ID : null;
 		  if ($pageId != null) {
@@ -73,7 +72,22 @@ function mybooking_engine_translated_slug( $page_id ) {
 			    }
 			  }
 		  }
-
+  }
+	else if ( class_exists('transposh_plugin') ) {
+		// Transposh
+  	$page = get_page_by_path( $page_id );
+    $pageId = $page ? $page->ID : null;
+	  if ($pageId != null) {
+	  	 $current_language = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
+	  	 $page_permalink = get_permalink( $page->ID );
+	  	 $url_parsing = parse_url( $page_permalink, PHP_URL_QUERY );
+	  	 if ( empty($url_parsing) ) {
+	  	 	 return $page_permalink.'?lang='.$current_language;	 
+	  	 }
+	  	 else {
+         return $page_permalink.'&lang='.$current_language;
+	  	 }
+	  }
   }
 
 	return $page_id;
