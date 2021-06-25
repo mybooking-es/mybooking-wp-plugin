@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.10.1]
+
+### Added
+
+- Product Search (Price range)
+
 ## [0.10.0]
 
 ### Added

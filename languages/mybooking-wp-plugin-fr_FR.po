@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2021-06-15 20:30+0000\n"
+"PO-Revision-Date: 2021-06-25 06:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -114,62 +114,62 @@ msgctxt "activity_detail"
 msgid "What's included?"
 msgstr "Ce qui est inclu?"
 
-#: includes/mybooking-plugin.php:1913
+#: includes/mybooking-plugin.php:1918
 msgctxt "activity_item_content"
 msgid "Activity Item"
 msgstr "Élément d'activité"
 
-#: includes/mybooking-plugin.php:1912
+#: includes/mybooking-plugin.php:1917
 msgctxt "activity_item_content"
 msgid "Activity Items"
 msgstr "Articles d'activité"
 
-#: includes/mybooking-plugin.php:1914
+#: includes/mybooking-plugin.php:1919
 msgctxt "activity_item_content"
 msgid "Add activity item"
 msgstr "Ajouter un élément d'activité"
 
-#: includes/mybooking-plugin.php:1916
+#: includes/mybooking-plugin.php:1921
 msgctxt "activity_item_content"
 msgid "Edit"
 msgstr "Éditer"
 
-#: includes/mybooking-plugin.php:1917
+#: includes/mybooking-plugin.php:1922
 msgctxt "activity_item_content"
 msgid "Edit activity item"
 msgstr "Modifier l'élément d'activité"
 
-#: includes/mybooking-plugin.php:1915 includes/mybooking-plugin.php:1918
+#: includes/mybooking-plugin.php:1920 includes/mybooking-plugin.php:1923
 msgctxt "activity_item_content"
 msgid "New activity item"
 msgstr "Nouvel élément d'activité"
 
-#: includes/mybooking-plugin.php:1923
+#: includes/mybooking-plugin.php:1928
 msgctxt "activity_item_content"
 msgid "No activity item found on bin"
 msgstr "Aucun élément d'activité trouvé sur la corbeille"
 
-#: includes/mybooking-plugin.php:1922
+#: includes/mybooking-plugin.php:1927
 msgctxt "activity_item_content"
 msgid "No activity_item found"
 msgstr "Aucun élément d'activité trouvé"
 
-#: includes/mybooking-plugin.php:1924
+#: includes/mybooking-plugin.php:1929
 msgctxt "activity_item_content"
 msgid "Parent activity item"
 msgstr "Élément d'activité des parents"
 
-#: includes/mybooking-plugin.php:1921
+#: includes/mybooking-plugin.php:1926
 msgctxt "activity_item_content"
 msgid "Search activity item"
 msgstr "Rechercher un élément d'activité"
 
-#: includes/mybooking-plugin.php:1919
+#: includes/mybooking-plugin.php:1924
 msgctxt "activity_item_content"
 msgid "See"
 msgstr "Voir"
 
-#: includes/mybooking-plugin.php:1920
+#: includes/mybooking-plugin.php:1925
 msgctxt "activity_item_content"
 msgid "See activity item"
 msgstr "Voir l'élément d'activité"
@@ -990,62 +990,62 @@ msgctxt "plugin_settings"
 msgid "Settings"
 msgstr "Réglages"
 
-#: includes/mybooking-plugin.php:1830
+#: includes/mybooking-plugin.php:1835
 msgctxt "popup_content"
 msgid "Add popup ad"
 msgstr "Ajouter"
 
-#: includes/mybooking-plugin.php:1832
+#: includes/mybooking-plugin.php:1837
 msgctxt "popup_content"
 msgid "Edit"
 msgstr "Modifier"
 
-#: includes/mybooking-plugin.php:1833
+#: includes/mybooking-plugin.php:1838
 msgctxt "popup_content"
 msgid "Edit popup ad"
 msgstr "Modifier le pop-up"
 
-#: includes/mybooking-plugin.php:1831 includes/mybooking-plugin.php:1834
+#: includes/mybooking-plugin.php:1836 includes/mybooking-plugin.php:1839
 msgctxt "popup_content"
 msgid "New popup ad"
 msgstr "Nouveau pop-up"
 
-#: includes/mybooking-plugin.php:1838
+#: includes/mybooking-plugin.php:1843
 msgctxt "popup_content"
 msgid "No popup ad found"
 msgstr "Aucune pop-up trouvée."
 
-#: includes/mybooking-plugin.php:1839
+#: includes/mybooking-plugin.php:1844
 msgctxt "popup_content"
 msgid "No popup ad on bin"
 msgstr "Aucune pop-up trouvée dans la corbeille."
 
-#: includes/mybooking-plugin.php:1840
+#: includes/mybooking-plugin.php:1845
 msgctxt "popup_content"
 msgid "Parent popup ad"
 msgstr "Pop-up parente"
 
-#: includes/mybooking-plugin.php:1829
+#: includes/mybooking-plugin.php:1834
 msgctxt "popup_content"
 msgid "Popup ad"
 msgstr "Pop-up"
 
-#: includes/mybooking-plugin.php:1828
+#: includes/mybooking-plugin.php:1833
 msgctxt "popup_content"
 msgid "Popup ads"
 msgstr "Pop-ups"
 
-#: includes/mybooking-plugin.php:1837
+#: includes/mybooking-plugin.php:1842
 msgctxt "popup_content"
 msgid "Search popup ad"
 msgstr "Rechercher des pop-ups"
 
-#: includes/mybooking-plugin.php:1835
+#: includes/mybooking-plugin.php:1840
 msgctxt "popup_content"
 msgid "See"
 msgstr "Voir"
 
-#: includes/mybooking-plugin.php:1836
+#: includes/mybooking-plugin.php:1841
 msgctxt "popup_content"
 msgid "See popup ad"
 msgstr "Voir le pop-up"
@@ -1387,7 +1387,7 @@ msgctxt "renting_form_selector"
 msgid "Return place"
 msgstr "Lieu de retour"
 
-#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:124
+#: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:126
 #: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:65
 #: mybooking-templates/mybooking-plugin-selector-widget-tmpl.php:173
 msgctxt "renting_form_selector"
@@ -1424,62 +1424,62 @@ msgctxt "renting_form_selector_wizard"
 msgid "Where?"
 msgstr "Où?"
 
-#: includes/mybooking-plugin.php:1886
+#: includes/mybooking-plugin.php:1891
 msgctxt "renting_item_content"
 msgid "Add renting item"
 msgstr "Ajouter un article de location"
 
-#: includes/mybooking-plugin.php:1888
+#: includes/mybooking-plugin.php:1893
 msgctxt "renting_item_content"
 msgid "Edit"
 msgstr "Éditer"
 
-#: includes/mybooking-plugin.php:1889
+#: includes/mybooking-plugin.php:1894
 msgctxt "renting_item_content"
 msgid "Edit renting item"
 msgstr "Modifier l'article de location"
 
-#: includes/mybooking-plugin.php:1887 includes/mybooking-plugin.php:1890
+#: includes/mybooking-plugin.php:1892 includes/mybooking-plugin.php:1895
 msgctxt "renting_item_content"
 msgid "New renting item"
 msgstr "Nouvel article de location"
 
-#: includes/mybooking-plugin.php:1894
+#: includes/mybooking-plugin.php:1899
 msgctxt "renting_item_content"
 msgid "No renting item found"
 msgstr "Aucun article de location trouvé"
 
-#: includes/mybooking-plugin.php:1895
+#: includes/mybooking-plugin.php:1900
 msgctxt "renting_item_content"
 msgid "No renting item found on bin"
 msgstr "Aucun article de location trouvé sur le bac"
 
-#: includes/mybooking-plugin.php:1896
+#: includes/mybooking-plugin.php:1901
 msgctxt "renting_item_content"
 msgid "Parent renting item"
 msgstr "Article de location parent"
 
-#: includes/mybooking-plugin.php:1885
+#: includes/mybooking-plugin.php:1890
 msgctxt "renting_item_content"
 msgid "Renting Item"
 msgstr "Article de location"
 
-#: includes/mybooking-plugin.php:1884
+#: includes/mybooking-plugin.php:1889
 msgctxt "renting_item_content"
 msgid "Renting Items"
 msgstr "Location d'articles"
 
-#: includes/mybooking-plugin.php:1893
+#: includes/mybooking-plugin.php:1898
 msgctxt "renting_item_content"
 msgid "Search renting item"
 msgstr "Rechercher un article de location"
 
-#: includes/mybooking-plugin.php:1891
+#: includes/mybooking-plugin.php:1896
 msgctxt "renting_item_content"
 msgid "See"
 msgstr "Voir"
 
-#: includes/mybooking-plugin.php:1892
+#: includes/mybooking-plugin.php:1897
 msgctxt "renting_item_content"
 msgid "See renting item"
 msgstr "Voir l'article de location"
@@ -1958,6 +1958,12 @@ msgctxt "renting_product_detail"
 msgid "Previous"
 msgstr "Précédent"
 
+#: mybooking-templates/mybooking-plugin-products-search-tmpl.php:26
+#: mybooking-templates/mybooking-plugin-products-search-tmpl.php:28
+msgctxt "renting_product_search"
+msgid "Daily price"
+msgstr "Prix du jour"
+
 #: mybooking-templates/mybooking-plugin-products.php:60
 #, php-format
 msgctxt "renting_products"
@@ -2074,62 +2080,62 @@ msgstr ""
 "Frontend WordPress du moteur de réservation pour Mybooking. Transforme "
 "wordpress en un moteur de réservation de location / hébergement / circuits."
 
-#: includes/mybooking-plugin.php:1858
+#: includes/mybooking-plugin.php:1863
 msgctxt "testimonial_content"
 msgid "Add testimonial"
 msgstr "Ajouter"
 
-#: includes/mybooking-plugin.php:1860
+#: includes/mybooking-plugin.php:1865
 msgctxt "testimonial_content"
 msgid "Edit"
 msgstr "Modifier"
 
-#: includes/mybooking-plugin.php:1861
+#: includes/mybooking-plugin.php:1866
 msgctxt "testimonial_content"
 msgid "Edit testimonial"
 msgstr "Modifier le témoignage"
 
-#: includes/mybooking-plugin.php:1859 includes/mybooking-plugin.php:1862
+#: includes/mybooking-plugin.php:1864 includes/mybooking-plugin.php:1867
 msgctxt "testimonial_content"
 msgid "New testimonial"
 msgstr "Nouveau témoignage"
 
-#: includes/mybooking-plugin.php:1866
+#: includes/mybooking-plugin.php:1871
 msgctxt "testimonial_content"
 msgid "No testimonial found"
 msgstr "Aucune témoignage trouvée."
 
-#: includes/mybooking-plugin.php:1867
+#: includes/mybooking-plugin.php:1872
 msgctxt "testimonial_content"
 msgid "No testimonial found on bin"
 msgstr "Aucune témoignage trouvée dans la corbeille."
 
-#: includes/mybooking-plugin.php:1868
+#: includes/mybooking-plugin.php:1873
 msgctxt "testimonial_content"
 msgid "Parent testimonial"
 msgstr "Témoignage parente"
 
-#: includes/mybooking-plugin.php:1865
+#: includes/mybooking-plugin.php:1870
 msgctxt "testimonial_content"
 msgid "Search testimonial"
 msgstr "Rechercher des témoignages"
 
-#: includes/mybooking-plugin.php:1863
+#: includes/mybooking-plugin.php:1868
 msgctxt "testimonial_content"
 msgid "See"
 msgstr "Voir"
 
-#: includes/mybooking-plugin.php:1864
+#: includes/mybooking-plugin.php:1869
 msgctxt "testimonial_content"
 msgid "See testimonial"
 msgstr "Voir le témoignage"
 
-#: includes/mybooking-plugin.php:1857
+#: includes/mybooking-plugin.php:1862
 msgctxt "testimonial_content"
 msgid "Testimonial"
 msgstr "Témoignage"
 
-#: includes/mybooking-plugin.php:1856
+#: includes/mybooking-plugin.php:1861
 msgctxt "testimonial_content"
 msgid "Testimonials"
 msgstr "Témoignages"

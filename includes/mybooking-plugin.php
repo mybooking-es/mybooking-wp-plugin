@@ -1035,7 +1035,7 @@
     public function wp_rent_products_search_shortcode($atts = [], $content = null, $tag = '') {
 
       // Get the query parameters
-      $data = $this->wp_activities_extract_query_string();
+      $data = $this->wp_products_extract_query_string();
 
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-products-search.php', $data);
@@ -1299,7 +1299,9 @@
       $key_characteristic_3 = array_key_exists('key_characteristic_3', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_3', FILTER_VALIDATE_INT) : null;
       $key_characteristic_4 = array_key_exists('key_characteristic_4', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_4', FILTER_VALIDATE_INT) : null;
       $key_characteristic_5 = array_key_exists('key_characteristic_5', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_5', FILTER_VALIDATE_INT) : null;
-      $key_characteristic_6 = array_key_exists('key_characteristic_6', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_5', FILTER_VALIDATE_INT) : null;
+      $key_characteristic_6 = array_key_exists('key_characteristic_6', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_6', FILTER_VALIDATE_INT) : null;
+      $price_range = array_key_exists('price_range', $_GET) ? filter_input(INPUT_GET, 'price_range', FILTER_VALIDATE_REGEXP,
+        array("options" => array("regexp" => "/^[0-9]+-?[0-9]+?$/" ))) : null;
       // Build the result
       $data = array( );
       if ( !empty($family_id) ) {
@@ -1322,6 +1324,9 @@
       }
       if ( !empty($key_characteristic_6) ) {
         $data['key_characteristic_6'] = $key_characteristic_6;
+      }
+      if ( !empty($price_range) ) {
+        $data['price_range'] = $price_range;
       }
 
       return $data;
