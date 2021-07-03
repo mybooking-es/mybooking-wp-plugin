@@ -6,6 +6,10 @@
 
 - Product Search (Price range)
 
+### Fixed
+
+- Activities: Shopping cart multiple payment methods redirect to payment gateway
+
 ## [0.10.0]
 
 ### Added
