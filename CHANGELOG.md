@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.10.2]
+
+### Fixed
+
+- Renting Complete Form: Extra country fields selector
+
 ## [0.10.1]
 
 ### Added
