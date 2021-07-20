@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.10.3]
+
+### Fixed
+
+- Complete reservation - redirect to summary with query string
+
 ## [0.10.2]
 
 ### Fixed
