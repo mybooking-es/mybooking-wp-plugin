@@ -1,18 +1,6 @@
 # Changelog
 
-## [0.10.3]
-
-### Fixed
-
-- Complete reservation - redirect to summary with query string
-
-## [0.10.2]
-
-### Fixed
-
-- Renting Complete Form: Extra country fields selector
-
-## [0.10.1]
+## [0.11.0]
 
 ### Added
 
@@ -20,6 +8,8 @@
 
 ### Fixed
 
+- Renting complete reservation: redirect to summary page with query string
+- Renting Complete Form: Extra country fields selector
 - Activities: Shopping cart multiple payment methods redirect to payment gateway
 
 ## [0.10.0]

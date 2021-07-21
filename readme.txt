@@ -3,7 +3,7 @@ Contributors: juanmiqueo
 Donate link: https://mybooking.es/
 Tags: reservation engine
 Requires at least: 5.2
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: trunk
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -59,14 +59,10 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
-= 0.10.3 =
-* Renting: Complete => Summary link with query string append id
-
-= 0.10.2 =
-* Renting: Complete => Extra country fields selector
-
-= 0.10.1 =
-* Renting: Product search => Price range
+= 0.11.0 =
+* Added Renting: Product search => Price range
+* Fixed Renting: Complete => Summary link with query string append id
+* Fixed Renting: Complete => Extra country fields selector
 * Fixed Activities: Multiple payment methods
 
 = 0.10.0 =
@@ -236,14 +232,8 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
-= 0.10.3 =
-* Renting: Complete => Summary link with query string append id
-
-= 0.10.2 =
-* Renting: Complete => Extra country fields selector
-
-= 0.10.1 =
-* Renting: Product search => Price range and Fixed activities multiple payment methods
+= 0.11.0 =
+* Fixes on renting complete step and activities with multiple payment methods
 
 = 0.10.0 =
 * Renting: Multiple branch offices + password forgotten/change password
