@@ -10,40 +10,6 @@
 @import "mybooking-engine-selectors.css";
 
 
-/** MYBOOKING GRID **/
-
-.mybooking-grid {
-  display: block;
-  flex-wrap: wrap;
-  margin: 1rem 0;
-  max-width: 1170px;
-}
-
-.mybooking-column {
-  flex: 1;
-  flex-basis: 100%;
-  flex-grow: 0;
-}
-
-@media (min-width: 576.98px) {
-  .mybooking-grid {
-    display: flex;
-  }
-  .mybooking-column {
-    flex-basis: 50%;
-  }
-}
-
-@media (min-width: 991.98px) {
-  .mybooking-grid {
-    display: flex;
-  }
-  .mybooking-column {
-    flex-basis: 33.33333333333333333333333333333333333333333333333333333333333%;
-  }
-}
-
-
 /** UI ELEMENTS **/
 .mb-badge {
   padding: 2px 4px;
@@ -69,31 +35,44 @@
 
 /** SUMMARY DETAILS **/
 
+/* Summary header */
+
 .mybooking-summary_header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  margin-bottom: .5rem;
 }
 
 .mybooking-summary_details-title {
   display: inline-block;
   font-size: 22px;
   font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.mybooking-summary_edit i {
+  margin-right: .5rem;
 }
 
 .mybooking-summary_edit {
-  line-height: 2.5;
+  font-size: .9em;
   font-weight: bold;
+  line-height: 2.5;
   cursor: pointer;
 }
 
+.mybooking-summary_edit:hover {
+  opacity: .5;
+}
+
+/* Summary data */
 .mybooking-summary_detail {
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
-  align-items: center;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   background-color: #EEE;
   border-radius: 5px;
 }
@@ -102,12 +81,16 @@
   .mybooking-summary_detail {
     flex-flow: row;
     justify-content: space-around;
+    align-items: center;
+    padding: 2rem 1rem;
   }
 }
 
 .mybooking-summary_item {
   display: flex;
   flex-flow: column;
+  font-size: 1.1em;
+  line-height: 1.2em;
 }
 
 @media ( min-width: 991.98px ) {
@@ -118,6 +101,22 @@
 
 .mybooking-summary_date {
   font-weight: bold;
+}
+
+.mybooking-summary_place {
+  margin: 0 0 1rem 0;
+}
+
+@media ( min-width: 576.98px ) {
+  .mybooking-summary_place {
+    margin: 0;
+  }
+}
+
+@media ( min-width: 991.98px ) {
+  .mybooking-summary_place {
+    margin: 0 0 0 1rem;
+  }
 }
 
 .mybooking-summary_duration {

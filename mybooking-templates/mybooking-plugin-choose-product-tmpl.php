@@ -21,7 +21,7 @@
     </div>
 
     <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
-      <?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+      <i class="fa fa-pencil"></i><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
     </div>
   </div>
 
@@ -35,7 +35,7 @@
         </span>
         <% if (configuration.pickupReturnPlace) { %>
           <span class="mybooking-summary_place">
-            →&nbsp;<%=shopping_cart.pickup_place_customer_translation%>
+            <%=shopping_cart.pickup_place_customer_translation%>
           </span>
         <% } %>
       </span>
@@ -49,7 +49,7 @@
         </span>
         <% if (configuration.pickupReturnPlace) { %>
           <span class="mybooking-summary_place">
-            →&nbsp;<%=shopping_cart.return_place_customer_translation%>
+            <%=shopping_cart.return_place_customer_translation%>
           </span>
         <% } %>
       </span>
@@ -73,10 +73,41 @@
 
 <script type="text/tpml" id="script_detailed_product">
 
-  <div class="mybooking-list">
+  <div class="mybooking-product_list">
+
+    <div class="mybooking-product_filter">
+      <div class="mybooking-product_filter-options">
+        <select class="mybooking-product_filter-select" name="mybooking-product-places" id="mybooking-product-places" >
+          <option>Filter by places</option>
+          <option value="5 places">5 places</option>
+          <option value="7 places">7 places</option>
+          <option value="9 places">9 places</option>
+        </select>
+
+        <select class="mybooking-product_filter-select" name="mybooking-product-fuel" id="mybooking-product-fuel" >
+          <option>Filter by fuel type</option>
+          <option value="diesel">Diesel</option>
+          <option value="gasoline">Gasoline</option>
+          <option value="electric">Electric</option>
+        </select>
+
+        <select class="mybooking-product_filter-select" name="mybooking-product-doors" id="mybooking-product-doors" >
+          <option>Filter by doors</option>
+          <option value="3 doors">3 doors</option>
+          <option value="5 doors">5 doors</option>
+        </select>
+      </div>
+
+      <div class="mybooking-product_filter-btn-group">
+        <span class="mybooking-product_filter-legend">Results view</span>
+        <button class="mybooking-product_filter-grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></button>
+        <button class="mybooking-product_filter-list js-mb-list" title="List view"><i class="fa fa-th-list"></i></button>
+      </div>
+    </div>
+
     <% for (var idx=0;idx<products.length; idx++) { %>
       <% var product = products[idx]; %>
-      <div class="mybooking-column">
+      <div class="mybooking-product_column">
         <div class="mybooking-product">
 
           <div class="mybooking-product_block">
@@ -123,15 +154,15 @@
                     <% if (product.price != product.base_price) { %>
                       <% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
                         <span class="mybooking-product_discount">
-                          <span class="mybooking-product_discount-badge mb-badge info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
                           <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
+                          <span class="mybooking-product_discount-badge mb-badge info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
                         </span>
                       <% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null
                                     && shoppingCart.promotion_code !== '' &&
                                     (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
                         <span class="mybooking-product_discount">
-                          <span class="mybooking-product_discount-badge mb-badge success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
                           <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
+                          <span class="mybooking-product_discount-badge mb-badge success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
                         </span>
                       <% } %>
                     <% } %>
