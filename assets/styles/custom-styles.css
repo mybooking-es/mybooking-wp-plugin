@@ -69,58 +69,58 @@
 
 /** SUMMARY DETAILS **/
 
-.mybooking-summary_details {
-  margin-bottom: 2rem;
-  padding: 0 1rem;
+.mybooking-summary_header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .mybooking-summary_details-title {
+  display: inline-block;
   font-size: 22px;
   font-weight: bolder;
-  margin-bottom: 1rem;
-}
-
-.mybooking-summary_item {
-  display: block;
-  text-align: center;
-}
-
-@media ( min-width: 576.98px ) {
-  .mybooking-summary_item {
-    text-align: left;
-    padding-right: 0;
-    border-right: none;
-    margin-right: none;
-  }
-  .mybooking-summary_item:last-of-type {
-    display: inline-block;
-  }
-}
-
-@media ( min-width: 991.98px ) {
-  .mybooking-summary_item {
-    display: inline-block;
-    text-align: left;
-    padding-right: 8px;
-    border-right: 1px solid #AAA;
-    margin-right: 8px;
-    line-height: 1.2;
-  }
-  .mybooking-summary_item:last-of-type {
-    border-right: none;
-  }
 }
 
 .mybooking-summary_edit {
-  display: block;
-  text-align: center;
-  text-decoration: none!important;
+  line-height: 2.5;
   font-weight: bold;
   cursor: pointer;
 }
 
+.mybooking-summary_detail {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #EEE;
+  border-radius: 5px;
+}
+
 @media ( min-width: 576.98px ) {
-  .mybooking-summary_edit {
-    float: right;
+  .mybooking-summary_detail {
+    flex-flow: row;
+    justify-content: space-around;
   }
+}
+
+.mybooking-summary_item {
+  display: flex;
+  flex-flow: column;
+}
+
+@media ( min-width: 991.98px ) {
+  .mybooking-summary_item {
+    flex-flow: row;
+  }
+}
+
+.mybooking-summary_date {
+  font-weight: bold;
+}
+
+.mybooking-summary_duration {
+  text-transform: uppercase;
+  font-weight: bold;
 }

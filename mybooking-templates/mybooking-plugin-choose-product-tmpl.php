@@ -15,44 +15,55 @@
 
 <script type="text/tmpl" id="script_reservation_summary">
 
-  <div class="mybooking-summary_details">
-    <div class="mybooking-summary_details-title"><?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></div>
+  <div class="mybooking-summary_header">
+    <div class="mybooking-summary_details-title">
+      <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+    </div>
+
+    <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
+      <?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+    </div>
+  </div>
+
+  <div class="mybooking-summary_detail">
 
     <% if (configuration.timeToFrom) { %>
       <span class="mybooking-summary_item">
-        <strong>
+        <span class="mybooking-summary_date">
           <%=shopping_cart.date_to_full_format%>
           <%=shopping_cart.time_from%>
-        </strong>
+        </span>
         <% if (configuration.pickupReturnPlace) { %>
-          →&nbsp;<%=shopping_cart.pickup_place_customer_translation%>
+          <span class="mybooking-summary_place">
+            →&nbsp;<%=shopping_cart.pickup_place_customer_translation%>
+          </span>
         <% } %>
       </span>
     <% } %>
 
     <% if (configuration.timeToFrom || configuration.pickupReturnPlace) { %>
       <span class="mybooking-summary_item">
-        <strong>
+        <span class="mybooking-summary_date">
           <%=shopping_cart.date_to_full_format%>
           <%=shopping_cart.time_to%>
-        </strong>
+        </span>
         <% if (configuration.pickupReturnPlace) { %>
-          →&nbsp;<%=shopping_cart.return_place_customer_translation%>
+          <span class="mybooking-summary_place">
+            →&nbsp;<%=shopping_cart.return_place_customer_translation%>
+          </span>
         <% } %>
       </span>
     <% } %>
 
     <% if (shopping_cart.days > 0) { %>
       <span class="mybooking-summary_item">
-        <strong><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></strong>
+        <span class="mybooking-summary_duration"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span>
       </span>
     <% } else if (shopping_cart.hours > 0) { %>
       <span class="mybooking-summary_item">
-        <strong><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></strong>
+        <span class="mybooking-summary_duration"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></span>
       </span>
     <% } %>
-
-    <a class="mybooking-summary_edit" id="modify_reservation_button"><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></a>
   </div>
 </script>
 
