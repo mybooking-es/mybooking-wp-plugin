@@ -78,14 +78,19 @@
             <% } else if (shopping_cart.hours) { %>
   					 <p class="lead"><span><%=shopping_cart.hours%> <?php echo esc_html_x( 'hours(s)', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?></span></p>
             <% } %>
-            
-            <!-- Product -->
-            <p class="lead"><?php echo MyBookingEngineContext::getInstance()->getProduct() ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.item_cost)%></span></p>
+
+            <% if (!(configuration.hidePriceIfZero && shopping_cart.item_cost == 0)) { %>
+              <!-- Product -->
+              <p class="lead"><?php echo MyBookingEngineContext::getInstance()->getProduct() ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.item_cost)%></span></p>
+            <% } %>
             
             <!-- Extras -->
             <% if (shopping_cart.extras.length > 0) { %>
               <% for (var idx=0;idx<shopping_cart.extras.length;idx++) { %>
-                <p class="lead"><%=shopping_cart.extras[idx].extra_description%> <% if (shopping_cart.extras[idx].quantity > 1) { %><span class="badge badge-info"><%=shopping_cart.extras[idx].quantity%></span> <% } %>: <span class="pull-right"> <%=configuration.formatCurrency(shopping_cart.extras[idx].extra_cost)%></span></p>
+                <p class="lead"><%=shopping_cart.extras[idx].extra_description%> <% if (shopping_cart.extras[idx].quantity > 1) { %><span class="badge badge-info"><%=shopping_cart.extras[idx].quantity%></span> <% } %>: 
+                <% if (!(configuration.hidePriceIfZero && shopping_cart.extras[idx].extra_cost == 0)) { %>  
+                  <span class="pull-right"> <%=configuration.formatCurrency(shopping_cart.extras[idx].extra_cost)%></span></p>
+                <% } %>  
               <% } %>
             <% } %>
 
@@ -106,8 +111,11 @@
               <p class="lead"><?php echo esc_html_x( 'Return place supplement', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.return_place_cost)%></span></p>                
             <% } %>
             
-            <!-- Total -->
-            <p class="lead"><?php echo esc_html_x( 'Total', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.total_cost)%></span></p>
+            <% if (!(configuration.hidePriceIfZero && shopping_cart.total_cost == 0)) { %>
+              <!-- Total -->
+              <p class="lead"><?php echo esc_html_x( 'Total', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>: <span class="pull-right"><%=configuration.formatCurrency(shopping_cart.total_cost)%></span></p>
+            <% } %>
+
           </div>
           <div class="form-group">
              <input id="add_to_shopping_cart_btn" 

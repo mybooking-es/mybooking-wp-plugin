@@ -16,7 +16,7 @@
 
 	<% if (!configuration.pickupReturnPlace && !configuration.timeToFrom) { %>
 
-	<div class="flex-form-group-wrapper inline-form">
+		<div class="flex-form-group-wrapper inline-form">
 
   	  <% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
 		    <div class="flex-form-group widget_rental_location" style="display: none">
@@ -51,14 +51,14 @@
  		    </div>
 	    </div>
 
-		<% if (configuration.promotionCode) { %>
-			<div class="flex-form-group">
-		      <label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
-		      <div class="flex-form-horizontal-item">
-			      <input type="text" class="form-control" name="promotion_code" id="widget_promotion_code" autocomplete="off">
-			    </div>
-			</div>
-		<% } %>
+			<% if (configuration.promotionCode) { %>
+				<div class="flex-form-group">
+			      <label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+			      <div class="flex-form-horizontal-item">
+				      <input type="text" class="form-control" name="promotion_code" id="widget_promotion_code" autocomplete="off">
+				    </div>
+				</div>
+			<% } %>
 
 	    <div class="flex-form-group flex-form-group-no-label">
 	      <div class="flex-form-horizontal-item">
@@ -112,10 +112,10 @@
 			    </div>
 			  </div>
 			<% } else if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
-		    <div class="flex-form-group widget_rental_location_code" style="display: none">
-		      <label for="family_id"><?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?></label>
+		    <div class="flex-form-group widget_rental_location" style="display: none">
+		      <label for="widget_rental_location_code"><?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?></label>
 		      <div class="flex-form-horizontal-item">
-		      	<select name="family_id" id="widget_rental_location_code" class="form-control"></select>
+		      	<select name="rental_location_code" id="widget_rental_location_code" class="form-control"></select>
 	  	    </div>
 		    </div>
 		  <% } %>

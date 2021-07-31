@@ -80,37 +80,39 @@
                   <% } %>
                 <% } else { %>  
                   <!-- One product -->
-                  <% if (product.exceeds_max || product.be_less_than_min) { %>
+                  <% if (product.exceeds_max || product.be_less_than_min) { %>
                      <h3 class="text-center mt-5 mb-2">&nbsp;</h3>
                   <% } else {%>
-                    <!-- Offer name -->
-                    <% if (product.price != product.base_price) { %>
-                      <% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
-                        <div class="product-card-info-container">
-                           <div class="product-card-info">
-                              <span class="badge badge-info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
-                           </div>
-                        </div>
-                      <% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' &&
-                                    (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
-                        <div class="product-card-info-container">
-                           <div class="product-card-info">
-                              <span class="badge badge-success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
-                           </div>
-                        </div>
+                    <% if (!(configuration.hidePriceIfZero && product.price == 0)) { %>
+                      <!-- Offer name -->
+                      <% if (product.price != product.base_price) { %>
+                        <% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
+                          <div class="product-card-info-container">
+                             <div class="product-card-info">
+                                <span class="badge badge-info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
+                             </div>
+                          </div>
+                        <% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' &&
+                                      (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
+                          <div class="product-card-info-container">
+                             <div class="product-card-info">
+                                <span class="badge badge-success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
+                             </div>
+                          </div>
+                        <% } %>
                       <% } %>
-                    <% } %>
-                    <!-- Price -->
-                    <h3 class="text-center mt-5 mb-2">
-                       <% if (product.price != product.base_price) { %>
-                         <small class="h6" style="text-decoration: line-through"><%= configuration.formatCurrency(product.base_price)%></small>
-                       <% } %>
-                       <%= configuration.formatCurrency(product.price)%>
-                       <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-                         <br>
-                         <small class="h6"><?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?></small>
-                       <?php endif; ?>                     
-                    </h3>
+                      <!-- Price -->
+                      <h3 class="text-center mt-5 mb-2">
+                         <% if (product.price != product.base_price) { %>
+                           <small class="h6" style="text-decoration: line-through"><%= configuration.formatCurrency(product.base_price)%></small>
+                         <% } %>
+                         <%= configuration.formatCurrency(product.price)%>
+                         <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+                           <br>
+                           <small class="h6"><?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?></small>
+                         <?php endif; ?>                     
+                      </h3>
+                    <% } %>  
                     <!-- Few units -->
                     <% if (product.availability && product.few_available_units) { %>
                       <div class="product-card-info-container">
