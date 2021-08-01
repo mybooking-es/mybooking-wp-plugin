@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.2]
+
+### Added
+
+- Renting: Manage renting setup without prices: For internal reservations
+- Renting: Customer classifier
+
 ## [0.11.1]
 
 ### Fixed

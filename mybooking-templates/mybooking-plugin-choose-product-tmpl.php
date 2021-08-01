@@ -83,6 +83,7 @@
                   <% if (product.exceeds_max || product.be_less_than_min) { %>
                      <h3 class="text-center mt-5 mb-2">&nbsp;</h3>
                   <% } else {%>
+                    <!-- Hide the price if it is zero and hide is price zero is configured -->
                     <% if (!(configuration.hidePriceIfZero && product.price == 0)) { %>
                       <!-- Offer name -->
                       <% if (product.price != product.base_price) { %>

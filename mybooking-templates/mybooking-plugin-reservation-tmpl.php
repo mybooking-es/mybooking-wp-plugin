@@ -108,6 +108,7 @@
                    <% if (configuration.multipleProductsSelection) { %>
                    <span class="badge badge-info"><%=booking.booking_lines[idx].quantity%></span>
                    <% } %>
+                   <!-- Hide the price if it is zero and hide is price zero is configured -->
                    <% if (!(configuration.hidePriceIfZero && booking.booking_lines[idx].item_cost == 0)) { %>
                      <!-- Price -->
                      <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%></span>
@@ -156,6 +157,7 @@
               <li class="list-group-item reservation-summary-card-detail">
                   <span class="extra-name"><b><%=booking.booking_extras[idx].extra_description%></b></span>
                   <span class="badge badge-info"><%=booking.booking_extras[idx].quantity%></span>
+                  <!-- Hide the price if it is zero and hide is price zero is configured -->
                   <% if (!(configuration.hidePriceIfZero && booking.booking_extras[idx].extra_cost == 0)) { %>
                     <span class="product-amount pull-right"><%=configuration.formatCurrency(booking.booking_extras[idx].extra_cost)%></span>
                   <% } %>  
@@ -236,6 +238,7 @@
               </ul>
             </div>
           <% } %>
+          <!-- Hide the price if it is zero and hide is price zero is configured -->
           <% if (!(configuration.hidePriceIfZero && booking.total_cost == 0)) { %>
             <!-- Total -->
             <div class="jumbotron mb-3">

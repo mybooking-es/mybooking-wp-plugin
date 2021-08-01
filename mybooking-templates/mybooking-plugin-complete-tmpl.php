@@ -329,8 +329,9 @@
              <% if (configuration.multipleProductsSelection) { %>
               <span class="badge badge-info"><%=shopping_cart.items[idx].quantity%></span>
              <% } %>
-             <!-- Price -->
-             <% if (!(configuration.hidePriceIfZero && shopping_cart.items[idx].item_cost == 0)) { %>             
+             <!-- Hide the price if it is zero and hide is price zero is configured -->
+             <% if (!(configuration.hidePriceIfZero && shopping_cart.items[idx].item_cost == 0)) { %>
+               <!-- Price -->             
                <span class="product-amount pull-right">
                  <%=configuration.formatCurrency(shopping_cart.items[idx].item_cost)%>
                </span>
@@ -381,6 +382,7 @@
           <li class="list-group-item reservation-summary-card-detail">
               <span class="extra-name"><b><%=shopping_cart.extras[idx].extra_description%></b></span>
               <span class="badge badge-info"><%=shopping_cart.extras[idx].quantity%></span>
+              <!-- Hide the price if it is zero and hide is price zero is configured -->
               <% if (!(configuration.hidePriceIfZero && shopping_cart.extras[idx].extra_cost == 0)) { %>
                 <span class="product-amount pull-right"><%=configuration.formatCurrency(shopping_cart.extras[idx].extra_cost)%></span>
               <% } %>
@@ -459,8 +461,9 @@
         </ul>
       </div>
     <% } %>
-    <!-- Total -->
+    <!-- Hide the price if it is zero and hide is price zero is configured -->
     <% if (!(configuration.hidePriceIfZero && shopping_cart.total_cost == 0)) { %>
+      <!-- Total -->
       <div class="jumbotron mb-3">
         <h2 class="h5 text-center"><?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?></h2>
         <h2 class="h3 text-center"><%=configuration.formatCurrency(shopping_cart.total_cost)%></h2>
