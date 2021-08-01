@@ -73,10 +73,27 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_name%> <%=booking.customer_surname%></li>
                   <% if (booking.customer_phone && booking.customer_phone != '') { %>
-                  <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_phone%> <%=booking.customer_mobile_phone%></li>
+                    <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_phone%> <%=booking.customer_mobile_phone%></li>
                   <% } %>
                   <% if (booking.customer_email && booking.customer_email != '') { %>
-                  <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_email%></li>
+                    <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_email%></li>
+                  <% } %>
+                  <% if (typeof booking.customer_stock_brand !== 'undefined' || typeof booking.customer_stock_model !== 'undefined' ||
+                         typeof booking.customer_stock_plate !== 'undefined' || typeof booking.customer_stock_color !== 'undefined') { %>
+                    <li class="list-group-item reservation-summary-card-detail">
+                      <% if (typeof booking.customer_stock_brand !== 'undefined') { %>
+                        <%=booking.customer_stock_brand%>
+                      <% } %>
+                      <% if (typeof booking.customer_stock_model !== 'undefined') { %>
+                        &nbsp;<%=booking.customer_stock_model%>
+                      <% } %>
+                      <% if (typeof booking.customer_stock_plate !== 'undefined') { %>
+                        &nbsp;<%=booking.customer_stock_plate%>
+                      <% } %>
+                      <% if (typeof booking.customer_stock_color !== 'undefined') { %>
+                        &nbsp;<%=booking.customer_stock_color%>      
+                      <% } %>
+                    </li>
                   <% } %>
                 </ul>
               </div>
