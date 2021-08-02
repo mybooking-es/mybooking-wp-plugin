@@ -6,11 +6,14 @@
  */
 
 /* Just-for-work imports */
+@import "mybooking-engine-components.css";
 @import "mybooking-engine-product.css";
-@import "mybooking-engine-selectors.css";
+@import "mybooking-engine-selector.css";
 
 
 /** UI ELEMENTS **/
+
+/* Badges */
 .mb-badge {
   padding: 2px 4px;
   color: #FFF;
@@ -32,94 +35,36 @@
   background-color: #E6546E;
 }
 
-
-/** SUMMARY DETAILS **/
-
-/* Summary header */
-
-.mybooking-summary_header {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  margin-bottom: .5rem;
+.mb-badge.warning {
+  background-color: #FFB74D;
 }
 
-.mybooking-summary_details-title {
-  display: inline-block;
-  font-size: 22px;
-  font-weight: bolder;
-  text-transform: uppercase;
+/* Alerts */
+.mb-alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #424242;
 }
 
-.mybooking-summary_edit i {
-  margin-right: .5rem;
+.mb-alert.secondary {
+  background-color: #9D9D9D;
 }
 
-.mybooking-summary_edit {
-  font-size: .9em;
-  font-weight: bold;
-  line-height: 2.5;
-  cursor: pointer;
+.mb-alert.info {
+  background-color: #6EC3FF;
 }
 
-.mybooking-summary_edit:hover {
-  opacity: .5;
+.mb-alert.success {
+  background-color: #3DD992;
 }
 
-/* Summary data */
-.mybooking-summary_detail {
-  display: flex;
-  flex-flow: column;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
-  padding: 2rem;
-  background-color: #EEE;
-  border-radius: 5px;
+.mb-alert.danger {
+  background-color: #EC8396;
 }
 
-@media ( min-width: 576.98px ) {
-  .mybooking-summary_detail {
-    flex-flow: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2rem 1rem;
-  }
-}
-
-.mybooking-summary_item {
-  display: flex;
-  flex-flow: column;
-  font-size: 1.1em;
-  line-height: 1.2em;
-}
-
-@media ( min-width: 991.98px ) {
-  .mybooking-summary_item {
-    flex-flow: row;
-  }
-}
-
-.mybooking-summary_date {
-  font-weight: bold;
-}
-
-.mybooking-summary_place {
-  margin: 0 0 1rem 0;
-}
-
-@media ( min-width: 576.98px ) {
-  .mybooking-summary_place {
-    margin: 0;
-  }
-}
-
-@media ( min-width: 991.98px ) {
-  .mybooking-summary_place {
-    margin: 0 0 0 1rem;
-  }
-}
-
-.mybooking-summary_duration {
-  text-transform: uppercase;
-  font-weight: bold;
+.mb-alert.warning {
+  background-color: #FFB74D;
 }

@@ -1,17 +1,21 @@
 <?php
-  /**
-   * The Template for showing the renting select product step
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-choose-product.php
-   *
-   */
+/**
+ *   MYBOOKING ENGINE - CHOOSE PRODUCT
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting select product step
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-choose-product.php
+ *
+ */
 ?>
 
 <section class="mybooking">
+
   <!-- Sidebar reservation detail -->
-    <div id="reservation_detail"></div>
+  <div id="reservation_detail"></div>
+
   <!-- Product listing -->
-    <div id="product_listing"></div>
+  <div id="product_listing"></div>
 </section>
 
 <!-- Modal that shows the product detail -->

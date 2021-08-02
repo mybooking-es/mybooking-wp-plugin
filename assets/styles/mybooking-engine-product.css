@@ -3,6 +3,7 @@
 *  -----------------------------------------------------------------------------
 */
 
+
 /** PRODUCT GRID **/
 
 .mybooking-product_grid {
@@ -10,7 +11,7 @@
   flex-wrap: wrap;
   margin: 1rem 0;
   max-width: 1170px;
-}
+}bu
 
 .mybooking-product_column {
   flex: 1;

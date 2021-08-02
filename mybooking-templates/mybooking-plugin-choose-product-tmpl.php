@@ -1,13 +1,15 @@
 <?php
-  /**
-   * The Template for showing the renting select product step - JS Microtemplates
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-choose-product-tmpl.php
-   *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
-   */
+/**
+ *   MYBOOKING ENGINE - CHOOSE PRODUCT TEMPLATE
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting select product step - JS Microtemplates
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-choose-product-tmpl.php
+ *
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
 ?>
 
 
