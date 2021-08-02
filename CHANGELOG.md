@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.1]
+
+### Fixed
+
+- Activities: Cyclic calendar dates - prior dates style
+
 ## [0.11.0]
 
 ### Added
