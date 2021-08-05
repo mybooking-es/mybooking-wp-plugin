@@ -9,7 +9,7 @@
  */
 ?>
 
-<section class="mybooking">
+<section class="mybooking mybooking-process_choose">
 
   <!-- Sidebar reservation detail -->
   <div id="reservation_detail"></div>

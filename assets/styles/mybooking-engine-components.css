@@ -11,7 +11,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mybooking-summary_details-title {
@@ -22,7 +22,7 @@
 }
 
 .mybooking-summary_edit i {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .mybooking-summary_edit {
@@ -33,7 +33,7 @@
 }
 
 .mybooking-summary_edit:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 /* Summary data */
@@ -44,10 +44,7 @@
   margin-bottom: 1rem;
   padding: 2rem;
   background-color: #EEE;
-  border-radius: 5px;
-}
-
-@media ( min-width: 576.98px ) {
+} @media ( min-width: 576.98px ) {
   .mybooking-summary_detail {
     flex-flow: row;
     justify-content: space-around;
@@ -56,17 +53,32 @@
   }
 }
 
+[class*="mb-col-"] .mybooking-summary_detail {
+  flex-flow: column;
+  align-items: flex-start;
+}
+
 .mybooking-summary_item {
   display: flex;
   flex-flow: column;
   font-size: 1.1em;
   line-height: 1.2em;
-}
-
-@media ( min-width: 991.98px ) {
+} @media ( min-width: 991.98px ) {
   .mybooking-summary_item {
     flex-flow: row;
   }
+}
+
+[class*="mb-col-"] .mybooking-summary_item {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+[class*="mb-col-"] .mybooking-summary_place {
+    margin: 0;
 }
 
 .mybooking-summary_date {
@@ -75,15 +87,11 @@
 
 .mybooking-summary_place {
   margin: 0 0 1rem 0;
-}
-
-@media ( min-width: 576.98px ) {
+} @media ( min-width: 576.98px ) {
   .mybooking-summary_place {
     margin: 0;
   }
-}
-
-@media ( min-width: 991.98px ) {
+} @media ( min-width: 991.98px ) {
   .mybooking-summary_place {
     margin: 0 0 0 1rem;
   }
@@ -92,4 +100,225 @@
 .mybooking-summary_duration {
   text-transform: uppercase;
   font-weight: bold;
+}
+
+/* Summary extras */
+.mybooking-summary_extras {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mybooking-summary_extras-item {
+  margin-bottom: 0.5rem;
+}
+
+.mybooking-summary_extra-quantity {
+  margin-right: 1rem;
+}
+
+.mybooking-summary_extra-amount {
+  font-weight: 700;
+}
+
+.mybooking-summary_deposit {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid #DDD;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* Summary total */
+.mybooking-summary_total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #EEE;
+}
+
+.mybooking-summary_total-label {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.mybooking-summary_total-amount {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #E6546E;
+}
+
+
+/** EXTRAS & COVERAGES **/
+
+.mybooking-extra_container {
+  border: 1px solid #DDD;
+}
+
+.mybooking-extra_item {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #DDD;
+  text-align: center;
+} @media ( min-width: 575.98px ) {
+  .mybooking-extra_item {
+    flex-flow: row;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+.mybooking-extra_item:last-of-type {
+  border-bottom: none;
+}
+
+.mybooking-extra_img {
+  max-width: 50px;
+  margin: 0 auto;
+}
+
+.mybooking-extra_name {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.mybooking-extra_price {
+  font-weight: 700;
+}
+
+.mybooking-extra_control .mb-label {
+  margin: 0;
+}
+
+.mybooking-extra_control .mb-button {
+  display: inline-block;
+  padding: 0.4rem;
+}
+
+.mybooking-extra_control .mb-input {
+  display: inline-block;
+  max-width: 25px;
+}
+
+
+/** PAYMENT BLOCK **/
+
+.btn-confirm-reservation {
+  display: block;
+  width: 100%;
+  margin: 2rem 0;
+  background-color: #424242;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.3em;
+} @media ( min-width: 575.98px ) {
+  .btn-confirm-reservation {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+  }
+}
+
+.btn-confirm-reservation:hover,
+.btn-confirm-reservation:focus,
+.btn-confirm-reservation:active {
+  background-color: #666;
+  color: #FFF;
+}
+
+.btn-confirm-reservation i {
+  margin-left: 0.5rem;
+}
+
+/* Payment options */
+.mybooking-payment_options {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #DDD;
+} @media ( min-width: 575.98px ) {
+  .mybooking-payment_options {
+    flex-flow: row;
+  }
+}
+
+.mybooking-payment_option-label {
+  width: 100%;
+  padding: 1rem;
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  color: #424242;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.mybooking-payment_option-label:hover,
+.mybooking-payment_option-label:active,
+.mybooking-payment_option-label:focus {
+  background-color: #DDD;
+}
+
+.mybooking-payment_option-input {
+  position:absolute;
+    clip: rect(0,0,0,0);
+    clip: rect(0 0 0 0);
+}
+
+/* Payment confirmation */
+.mybooking-payment_confirmation-box {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  border-top: 1px solid #DDD;
+} @media ( min-width: 575.98px ) {
+  .mybooking-payment_confirmation-box {
+    flex-flow: row;
+  }
+}
+
+.mybooking-payment_amount {
+  font-size: 2.5em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mybooking-payment_custom-label {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+} @media ( min-width: 575.98px ) {
+  .mybooking-payment_custom-label {
+    margin: 1rem 2rem 2rem;
+  }
+}
+
+.mybooking-payment_custom-label:hover {
+  opacity: 0.5;
+}
+
+.form-reservation-error {
+  color: #EC8396;
 }

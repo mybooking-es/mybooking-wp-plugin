@@ -13,9 +13,11 @@
 ?>
 
 
-<!-- RESERVATION SUMMARY -->
+<!-- RESERVATION SUMMARY ------------------------------------------------------>
 
 <script type="text/tmpl" id="script_reservation_summary">
+
+  <!-- Summary details -->
 
   <div class="mybooking-summary_header">
     <div class="mybooking-summary_details-title">
@@ -70,12 +72,11 @@
 </script>
 
 
-
-<!-- PRODUCT LOOP -->
+<!-- PRODUCT LOOP ------------------------------------------------------------->
 
 <script type="text/tpml" id="script_detailed_product">
 
-  <div class="mybooking-product_list">
+  <div class="mybooking-product_grid">
 
     <div class="mybooking-product_filter">
       <div class="mybooking-product_filter-options">
@@ -243,7 +244,7 @@
                 <% } else { %>
 
                   <!-- Button -->
-                  <button class="mybooking-button btn-choose-product" data-product="<%=product.code%>">
+                  <button class="mb-button btn-choose-product" data-product="<%=product.code%>">
                     <?php echo _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?>
                   </button>
                 <% } %>
@@ -264,16 +265,19 @@
   </div>
 
   <% if (configuration.multipleProductsSelection) { %>
-    <div class="mybooking-grid">
-      <div class="mybooking-column">
-        <button id="go_to_complete" class="mybooking-button"><?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking') ?></button>
+    <div class="mb-row">
+      <div class="mb-col-md-12">
+        <button id="go_to_complete" class="mb-button btn-confirm-selection">
+          <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking') ?>
+          <i class="fas fa-arrow-right"></i>
+        </button>
       </div>
     </div>
   <% } %>
 </script>
 
 
-<!-- PRODUCT DETAIL MODAL -->
+<!-- PRODUCT DETAIL MODAL ----------------------------------------------------->
 
 <script type="text/tmpl" id="script_product_modal">
 
