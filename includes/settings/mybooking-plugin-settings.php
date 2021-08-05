@@ -1122,6 +1122,8 @@ EOF;
 		  echo "<p class=\"description\">Choose the not available message that describes your business context.</p>";
 		  echo "<p class=\"description\">Select <b>Not available</b> to show not available message.</p>";
 		  echo "<p class=\"description\">Select <b>Telephone consultation</b> to show Telephone consultation message.</p>";
+		  echo "<p class=\"description\">Select <b>E-mail consultation</b> to show E-mail consultation message.</p>";
+		  echo "<p class=\"description\">Select <b>Enquiry</b> to show Enquiry message.</p>";
 		  echo "<hr>";
 
 		}
