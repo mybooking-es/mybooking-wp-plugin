@@ -244,6 +244,12 @@
         case 'check-by-phone':
           $returnValue = esc_html_x( 'Please, contact us by phone', 'engine_context', 'mybooking-wp-plugin' );
           break;
+        case 'check-by-email':
+          $returnValue = esc_html_x( 'Please, contact us by e-mail', 'engine_context', 'mybooking-wp-plugin' );
+          break;
+        case 'enquiry':
+          $returnValue = esc_html_x( 'Enquiry', 'engine_context', 'mybooking-wp-plugin' );
+          break;
         default:
            $returnValue = esc_html_x( 'Not available', 'engine_context', 'mybooking-wp-plugin' );
       }

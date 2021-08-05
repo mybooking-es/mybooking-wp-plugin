@@ -1102,6 +1102,20 @@ EOF;
 		    $select .= "<option value='check-by-phone'>Telephone consultation</option>";
 		  }
 
+			if ($value == 'check-by-email') {
+		    $select .= "<option value='check-by-email' selected>E-mail consultation</option>";
+		  }
+		  else {
+		    $select .= "<option value='check-by-email'>E-mail consultation</option>";
+		  }
+
+			if ($value == 'enquiry') {
+		    $select .= "<option value='enquiry' selected>Enquiry</option>";
+		  }
+		  else {
+		    $select .= "<option value='enquiry'>Enquiry</option>";
+		  }
+
 		  $select .= "</select>";
 
 		  echo $select;
