@@ -80,8 +80,9 @@
 
     <div class="mybooking-product_filter">
       <div class="mybooking-product_filter-options">
+        <span class="mybooking-product_filter-legend">Filter options</span>
         <select class="mybooking-product_filter-select" name="mybooking-product-places" id="mybooking-product-places" >
-          <option>Filter by places</option>
+          <option>Select an option</option>
           <option value="5 places">5 places</option>
           <option value="7 places">7 places</option>
           <option value="9 places">9 places</option>
@@ -102,9 +103,9 @@
       </div>
 
       <div class="mybooking-product_filter-btn-group">
-        <span class="mybooking-product_filter-legend">Results view</span>
-        <button class="mybooking-product_filter-grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></button>
-        <button class="mybooking-product_filter-list js-mb-list" title="List view"><i class="fa fa-th-list"></i></button>
+        <span class="mybooking-product_filter-legend">Order</span>
+        <button class="mb-button mybooking-product_filter-grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></button>
+        <button class="mb-button mybooking-product_filter-list js-mb-list" title="List view"><i class="fa fa-th-list"></i></button>
       </div>
     </div>
 
