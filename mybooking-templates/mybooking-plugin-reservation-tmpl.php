@@ -71,7 +71,7 @@
                   <b><?php echo esc_html_x( "Customer's details", 'renting_my_reservation', 'mybooking-wp-plugin') ?></b>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_name%> <%=booking.customer_surname%></li>
+                  <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_fullname%></li>
                   <% if (booking.customer_phone && booking.customer_phone != '') { %>
                     <li class="list-group-item reservation-summary-card-detail"><%=booking.customer_phone%> <%=booking.customer_mobile_phone%></li>
                   <% } %>

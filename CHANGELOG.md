@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.11.3]
+
+### Added
+
+- Renting: Complete step - Manage customer type individual/company
+
+### Fixed
+
+- Renting: Summary and MyReservation - Use customer full name
+
 ## [0.11.2]
 
 ### Added
