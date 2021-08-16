@@ -29,17 +29,18 @@
          <!-- Product name -->
          <div class="mybooking-product_product-name">
            <%=shopping_cart.items[idx].item_description_customer_translation%>
+           <!-- Quantity -->
+           <% if (configuration.multipleProductsSelection) { %>
+             <span class="mybooking-product_quantity">
+               x<%=shopping_cart.items[idx].quantity%>
+            </span>
+           <% } %>
         </div>
+
+        <!-- Product description -->
         <div class="mybooking-product_product-description">
           <%=shopping_cart.items[idx].item_full_description_customer_translation%>
         </div>
-
-         <!-- Quantity -->
-         <% if (configuration.multipleProductsSelection) { %>
-           <div class="mb-badge info">
-             <%=shopping_cart.items[idx].quantity%>
-          </div>
-         <% } %>
 
          <!-- Price -->
          <div class="mybooking-product_amount">
@@ -56,11 +57,12 @@
          <% if (shopping_cart.items[idx].item_unit_cost_base != shopping_cart.items[idx].item_unit_cost) { %>
            <div class="mybooking-product_price">
 
-             <!-- Offer -->
+             <!-- Original price -->
              <span class="mybooking-product_original-price">
                <%=configuration.formatCurrency(shopping_cart.items[idx].item_unit_cost_base * shopping_cart.items[idx].quantity)%>
              </span>
 
+             <!-- Promotion Code -->
              <% if (typeof shopping_cart.items[idx].offer_name !== 'undefined' && shopping_cart.items[idx].offer_name !== null && shopping_cart.items[idx].offer_name !== '') { %>
                 <span class="mybooking-product_discount-badge mb-badge info">
                   <% if (shopping_cart.items[idx].offer_discount_type === 'percentage' && shopping_cart.items[idx].offer_value !== '') {%>

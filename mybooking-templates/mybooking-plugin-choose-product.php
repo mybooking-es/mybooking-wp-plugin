@@ -4,7 +4,7 @@
  *   ---------------------------------------------------------------------------
  *   The Template for showing the renting select product step
  *   This template can be overridden by copying it to your
- *   theme/mybooking-templates/mybooking-plugin-choose-product.php
+ *   theme /mybooking-templates/mybooking-plugin-choose-product.php
  *
  */
 ?>

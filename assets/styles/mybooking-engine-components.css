@@ -16,8 +16,9 @@
 
 .mybooking-summary_details-title {
   display: inline-block;
-  font-size: 22px;
-  font-weight: bolder;
+  margin-bottom: 0.5rem;
+  font-size: 1.25em;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -27,13 +28,35 @@
 
 .mybooking-summary_edit {
   font-size: .9em;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 2.5;
   cursor: pointer;
 }
 
+.mybooking-summary_locator {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.mybooking-summary_locator-id {
+  margin-left: 0.3rem;
+  color: #2193F2;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
 .mybooking-summary_edit:hover {
   opacity: 0.5;
+}
+
+.mybooking-summary_status {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #DDD;
+  color: #666;
+  font-size: 1.4em;
+  text-align: center;
 }
 
 /* Summary data */
@@ -44,6 +67,7 @@
   margin-bottom: 1rem;
   padding: 2rem;
   background-color: #EEE;
+  border: 1px solid #DDD;
 } @media ( min-width: 576.98px ) {
   .mybooking-summary_detail {
     flex-flow: row;
@@ -75,6 +99,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 1rem;
+}
+
+[class*="mb-col-"] .mybooking-summary_item:last-of-type {
+  margin-bottom: 0;
 }
 
 [class*="mb-col-"] .mybooking-summary_place {
@@ -136,6 +164,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  border: 1px solid #DDD;
   background-color: #EEE;
 }
 
@@ -187,8 +216,28 @@
   font-weight: 700;
 }
 
+.mybooking-extra_description {
+  line-height: 1.2;
+}
+
+.mybooking-extra_description p {
+  margin-bottom: 0.5rem;
+}
+
+.mybooking-extra_description br {
+  display: none;
+}
+
 .mybooking-extra_price {
   font-weight: 700;
+}
+
+.mybooking-extra_price .extra-unitary {
+  font-size: 1.1em;
+}
+
+.mybooking-extra_price .extra-total {
+  font-weight: 400;
 }
 
 .mybooking-extra_control .mb-label {
@@ -254,9 +303,8 @@
 .mybooking-payment_option-label {
   width: 100%;
   padding: 1rem;
-  background-color: #EEE;
-  border: 1px solid #DDD;
-  color: #424242;
+  background-color: #424242;
+  color: #FFF;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -267,7 +315,8 @@
 .mybooking-payment_option-label:hover,
 .mybooking-payment_option-label:active,
 .mybooking-payment_option-label:focus {
-  background-color: #DDD;
+  background-color: #666;
+  color: #FFF;
 }
 
 .mybooking-payment_option-input {

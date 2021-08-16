@@ -11,7 +11,7 @@
 @import "mybooking-engine-selector.css";
 
 
-/** COLUMN SYSTEM **/
+/** FLOATED GRID **/
 
 .mb-row {
   margin: 0 auto;
@@ -24,16 +24,13 @@
   clear: both;
 }
 
+/* Columns */
+
 [class*='mb-col-sm-'],
 [class*='mb-col-md-'],
 [class*='mb-col-lg-'] {
   float: left;
   padding: 0.8rem;
-}
-
-[class*='mb-col-md-'],
-[class*='mb-col-lg-'] {
-  width: 100%;
 }
 
 .mb-col-sm-1        { width: 8.33%; }
@@ -49,13 +46,12 @@
 .mb-col-sm-11       { width: 91.66%; }
 .mb-col-sm-12       { width: 100%; }
 
-@media only screen and (min-width: 575.98px) {
-  [class*='mb-col-sm-'],
-  [class*='mb-col-md-'],
-  [class*='mb-col-lg-'] {
-    padding: 1rem;
-  }
+[class*='mb-col-md-'],
+[class*='mb-col-lg-'] {
+  width: 100%;
+} /* Stacked by default on mobile */
 
+@media only screen and ( min-width: 575.98px ) {
   .mb-col-md-1        { width: 8.33%; }
   .mb-col-md-2        { width: 16.66%; }
   .mb-col-md-3        { width: 25%; }
@@ -68,15 +64,13 @@
   .mb-col-md-10       { width: 83.33%; }
   .mb-col-md-11       { width: 91.66%; }
   .mb-col-md-12       { width: 100%; }
+
+  [class*='mb-col'] {
+    padding: 1rem;
+  }
 }
 
-@media only screen and (min-width: 991.98px) {
-  [class*='mb-col-sm-'],
-  [class*='mb-col-md-'],
-  [class*='mb-col-lg-'] {
-    padding: 1.25rem;
-  }
-
+@media only screen and ( min-width: 991.98px ) {
   .mb-col-lg-1        { width: 8.33%; }
   .mb-col-lg-2        { width: 16.66%; }
   .mb-col-lg-3        { width: 25%; }
@@ -89,16 +83,22 @@
   .mb-col-lg-10       { width: 83.33%; }
   .mb-col-lg-11       { width: 91.66%; }
   .mb-col-lg-12       { width: 100%; }
+
+  [class*='mb-col'] {
+    padding: 1.25rem;
+  }
 }
+
+/* Helpers */
 
 .mb-col-right {
   float: right;
-}
+} /* Flips column order if applied to start column */
 
 .mb-col-center {
   float: none;
   margin: 0 auto;
-}
+} /* Centers column if less than col-*-12 */
 
 
 /** STRUCTURE **/
@@ -161,6 +161,12 @@
 .mb-badge.danger       { background-color: #E6546E; }
 .mb-badge.warning      { background-color: #FFB74D; }
 
+.mb-badge.big {
+  padding: 4px 16px;
+  font-size: 1em;
+  line-height: 2;
+}
+
 /* Alerts */
 .mb-alert {
   position: relative;
@@ -186,6 +192,37 @@
   text-align: center;
 }
 
+/* Cards */
+.mb-card {
+  display: block;
+  border: 1px solid #DDD;
+}
+
+.mb-card::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* Lists */
+.mb-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mb-list-item {
+  padding: 0.5rem 0;
+}
+
+.mb-card .mb-list-item {
+  padding: 1rem;
+  border-bottom: 1px solid #DDD;
+}
+
+.mb-card .mb-list-item:last-of-type {
+  border-bottom: none;
+}
 
 /** PROCESS PAGES **/
 
@@ -213,4 +250,18 @@
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #DDD;
+}
+
+/* Summary page */
+.mybooking-process_summary .mybooking-product_header {
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  border-top: none;
+}
+
+/* Reservation page */
+.mybooking-process_reservation .mybooking-product_header {
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  border-top: none;
 }

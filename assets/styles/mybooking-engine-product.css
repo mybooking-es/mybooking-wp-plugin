@@ -41,7 +41,9 @@
 /** PRODUCT LIST **/
 
 /*  Because list view doesn't apply for mobile,
-    everything is wrapped in a media query */
+    everything is wrapped in a media query.
+    This way we have card view on mobile both
+    for grid and list views */
 
 @media ( min-width: 576.91px ) {
 
@@ -203,7 +205,6 @@
   flex-direction: column;
   width: 100%;
   padding: 10px 20px;
-  background: #EEE;
   height: 90px;
   border-bottom: 1px solid #DDD;
 }
@@ -224,7 +225,7 @@
 
 .mybooking-product_amount {
   display: inline-block;
-  font-size: 22px;
+  font-size: 1.7em;
   font-weight: 900;
   color: #2193F2;
   margin: 0;
@@ -249,6 +250,7 @@
   display: inline-block;
   width: auto;
   float: right;
+  margin-left: .5rem;
 }
 
 .mybooking-product_original-price {
@@ -270,8 +272,15 @@
 }
 
 .mybooking-product_product-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 800;
   font-size: 26px;
+}
+
+.mybooking-product_quantity {
+  color: #2193F2;
 }
 
 .mybooking-product_product-description {
