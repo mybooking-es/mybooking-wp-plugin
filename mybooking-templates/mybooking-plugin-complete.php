@@ -29,7 +29,7 @@
       <!-- Extras Selection (script_detailed_extra) -->
       <div id="extras_listing"></div>
 
-      <!-- Reservation complete -->
+      <!-- Reservation complete form -->
       <div class="mb-section">
         <div class="reservation_form_container">
           <h2 class="complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>

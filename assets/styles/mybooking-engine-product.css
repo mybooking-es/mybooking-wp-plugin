@@ -157,6 +157,11 @@
   border: 1px solid #DDD;
 }
 
+.mybooking-product_info-block {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #DDD;
+}
+
 /* Product image */
 
 .mybooking-product_image-container {
@@ -166,8 +171,7 @@
 
 .mybooking-product_image {
   width: 100%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 0;
 }
 
 .mybooking-product_info-button {
@@ -227,7 +231,7 @@
   display: inline-block;
   font-size: 1.7em;
   font-weight: 900;
-  color: #2193F2;
+  /* color: #2193F2; */
   margin: 0;
 }
 
@@ -267,11 +271,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 110px;
-  padding: 10px 20px 20px 20px;
+  height: 120px;
+  padding: 10px 20px 0 20px;
 }
 
-.mybooking-product_product-name {
+.mybooking-product_name {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -283,24 +287,33 @@
   color: #2193F2;
 }
 
-.mybooking-product_product-description {
+.mybooking-product_description {
   list-style-type: none;
   font-weight: 400;
   font-size: 14px;
 }
 
-.mybooking-product_product-description li {
+.mybooking-product_description li {
   padding: 0.3rem 0;
   border-bottom: 1px solid #DDD;
 }
 
-.mybooking-product_product-description li:last-of-type {
+.mybooking-product_description p {
+  margin: 0;
+}
+
+.mybooking-product_description li:last-of-type {
   border-bottom: none;
 }
 
-.mybooking-product_product-short-description {
+.mybooking-product_short-description {
   font-weight: 400;
   font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mybooking-product_low-availability {
@@ -347,7 +360,7 @@
   flex-direction: column;
   width: 100%;
   height: 80px;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }

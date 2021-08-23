@@ -51,12 +51,14 @@
 }
 
 .mybooking-summary_status {
+  background-color: #EEE;
   padding: 1.25rem;
   margin-bottom: 1rem;
   border: 1px solid #DDD;
   color: #666;
   font-size: 1.4em;
   text-align: center;
+  line-height: 1.1;
 }
 
 /* Summary data */
@@ -136,7 +138,7 @@
   justify-content: space-between;
 }
 
-.mybooking-summary_extras-item {
+.mybooking-summary_extra-item {
   margin-bottom: 0.5rem;
 }
 
@@ -165,7 +167,7 @@
   align-items: center;
   padding: 1rem 2rem;
   border: 1px solid #DDD;
-  background-color: #EEE;
+  /* background-color: #EEE; */
 }
 
 .mybooking-summary_total-label {
@@ -176,7 +178,7 @@
 .mybooking-summary_total-amount {
   font-size: 2.2em;
   font-weight: 700;
-  color: #E6546E;
+  color: #2193F2;
 }
 
 
@@ -370,4 +372,108 @@
 
 .form-reservation-error {
   color: #EC8396;
+}
+
+
+/** ACTIVITIES **/
+
+.mybooking-activity_header {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #DDD;
+} @media ( min-width: 575.98px ) {
+  .mybooking-activity_header {
+    flex-flow: row;
+  }
+}
+
+.mybooking-activity_title {
+  margin: 0;
+}
+
+.mybooking-product_amount {
+  line-height: 4rem;
+}
+
+.mybooking-activity_image {
+  margin-bottom: 1rem;
+  border-radius: 0;
+}
+
+.mybooking-activity_description {
+  margin-bottom: 2rem;
+}
+
+.mybooking-activity_detail {
+  padding: 1rem 0;
+  border-bottom: 1px solid #DDD;
+}
+
+.mybooking-activity_detail:last-of-type {
+  border-bottom: none;
+}
+
+.mybooking-activity_detail-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Calendar */
+.ui-datepicker {
+  width: 100%;
+}
+
+.mybooking-activity_calendar-title {
+  font-size: 1.6em;
+  margin: 1rem 0;
+}
+
+/* Reservation form */
+.mybooking-activity_turns .mb-form-group {
+  display: flex;
+  flex-flow: row;
+  gap: 20px;
+}
+
+/* Complete details */
+.mybooking-activity_date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-weight: 700;
+}
+
+.mybooking-summary_activities,
+.mybooking-summary_activities-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mybooking-summary_activity-item {
+  padding: 0.5rem;
+
+}
+
+.mybooking-summary_activity-quantity {
+  margin-right: 1rem;
+}
+
+.mybooking-summary_activity-amount {
+  font-weight: 700;
+}
+
+.mybooking-summary_activities-total {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+}
+
+.mybooking-summary_activity-total-label,
+.mybooking-summary_activity-total-amount {
+  font-size: 1.3rem;
+  font-weight: 700;
 }

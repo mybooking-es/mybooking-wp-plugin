@@ -161,9 +161,7 @@
                           <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
                           <span class="mybooking-product_discount-badge mb-badge info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
                         </span>
-                      <% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null
-                                    && shoppingCart.promotion_code !== '' &&
-                                    (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
+                      <% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' && (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
                         <span class="mybooking-product_discount">
                           <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
                           <span class="mybooking-product_discount-badge mb-badge success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
@@ -178,9 +176,11 @@
             <div class="mybooking-product_body">
 
               <!-- Product name and description -->
-              <div class="mybooking-product_product-name"><%=product.name%></div>
-              <div class="mybooking-product_product-short-description"><%=product.short_description%></div>
-              <!-- <div class="mybooking-product_product-description"><%=product.description%></div> -->
+              <div class="mybooking-product_name"><%=product.name%></div>
+              <div class="mybooking-product_short-description"><%=product.short_description%></div>
+              <!-- This is commented because we must refactorize API output first
+              <div class="mybooking-product_description"><%=product.description%></div>
+              -->
 
               <!-- Few units warning -->
               <% if (product.few_available_units) { %>
@@ -309,5 +309,4 @@
       </div>
     </div>
   </div>
-
 </script>

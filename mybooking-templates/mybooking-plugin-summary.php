@@ -7,6 +7,7 @@
  *   /mybooking-templates/mybooking-plugin-summary.php
  */
 ?>
+
 <section class="mybooking mybooking-process_summary">
   <div class="mb-row">
 

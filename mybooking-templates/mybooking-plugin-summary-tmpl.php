@@ -94,7 +94,7 @@
 
           <div class="mb-col-md-6">
           <!-- Product name -->
-            <span class="mybooking-product_product-name">
+            <span class="mybooking-product_name">
               <%=booking.booking_lines[idx].item_description_customer_translation%>
               <!-- Quantity -->
               <% if (configuration.multipleProductsSelection) { %>
@@ -105,7 +105,7 @@
             </span>
 
             <!-- Product description -->
-            <div class="mybooking-product_product-description">
+            <div class="mybooking-product_description">
               <%=booking.booking_lines[idx].item_full_description_customer_translation%>
             </div>
           </div>
@@ -331,7 +331,7 @@
       <div class="mybooking-summary_details-title">
         <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
       </div>
-      <ul class="mb-list mb-card">
+      <ul class="mb-list border">
         <li class="mb-list-item">
           <%=booking.customer_name%> <%=booking.customer_surname%>
         </li>

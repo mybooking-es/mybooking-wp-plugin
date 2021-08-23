@@ -98,7 +98,7 @@
 .mb-col-center {
   float: none;
   margin: 0 auto;
-} /* Centers column if less than col-*-12 */
+} /* Centers column if less than mb-col-*-12 */
 
 
 /** STRUCTURE **/
@@ -110,7 +110,7 @@
 
 /** FORMS **/
 
-.mb-form-group [class*='mb-col'] {
+.mb-form-row [class*='mb-col'] {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
@@ -134,6 +134,23 @@
     gap: 1rem;
     margin: 0;
   }
+  .mb-form-row.mb-custom-date-form {
+    gap: 0.5rem;
+  }
+}
+
+.mb-custom-date-form select {
+  min-width: 100%;
+  margin-bottom: 0.5rem;
+} @media ( min-width: 575.98px ) {
+  .mb-custom-date-form select {
+    margin: 0;
+  }
+}
+
+.mb-form-control {
+  min-width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 
@@ -192,6 +209,11 @@
   text-align: center;
 }
 
+/* Text */
+.mb-text-danger {
+  color: #EC8396;
+}
+
 /* Cards */
 .mb-card {
   display: block;
@@ -204,23 +226,77 @@
   clear: both;
 }
 
-/* Lists */
-.mb-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mb-list-item {
-  padding: 0.5rem 0;
-}
-
-.mb-card .mb-list-item {
+.mb-card-header {
+  background-color: #EEE;
+  margin: 0 0 1rem 0;
   padding: 1rem;
   border-bottom: 1px solid #DDD;
 }
 
-.mb-card .mb-list-item:last-of-type {
+.mb-card-body {
+  padding: 1rem;
+}
+
+.mb-card-footer {
+  margin: 1rem 0 0 0;
+  padding: 1rem;
+  border-top: 1px solid #DDD;
+}
+
+/* Lists */
+.mb-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mb-list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.mb-list-element.secondary {
+  font-weight: 700;
+}
+
+.mb-list-element.info {
+  font-weight: 700;
+  color: #2193F2;
+}
+
+.mb-list-element.success {
+  font-weight: 700;
+  color: #3DD992;
+}
+
+.mb-list-element.danger {
+  font-weight: 700;
+  color: #E6546E;
+}
+
+.mb-list-element.warning {
+  font-weight: 700;
+  color: #FFB74D;
+}
+
+.mb-list.border {
+  display: block;
+  border: 1px solid #DDD;
+}
+
+.mb-list.border::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.border .mb-list-item {
+  padding: 1rem;
+  border-bottom: 1px solid #DDD;
+}
+
+.border .mb-list-item:last-of-type {
   border-bottom: none;
 }
 
@@ -233,6 +309,12 @@
   color: #FFF;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.btn-choose-product a,
+.btn-confirm-selection a {
+  color: white;
+  text-decoration: none!important;
 }
 
 .btn-confirm-selection {
