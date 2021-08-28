@@ -1,19 +1,15 @@
 # Changelog
 
-## [0.11.3]
+## [0.12.0]
+
+### Fixed
+
+- Renting: Product Calendar - Multiple Rental locations occupation
+- Renting: Summary and MyReservation - Use customer full name
 
 ### Added
 
 - Renting: Complete step - Manage customer type individual/company
-
-### Fixed
-
-- Renting: Summary and MyReservation - Use customer full name
-
-## [0.11.2]
-
-### Added
-
 - Renting: Manage renting setup without prices: For internal reservations
 - Renting: Customer classifier
 
