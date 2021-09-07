@@ -76,34 +76,11 @@
 
 <script type="text/tpml" id="script_detailed_product">
 
-  <div class="mybooking-product_grid">
+  <div class="mybooking-product_container mybooking-product_grid">
 
     <div class="mybooking-product_filter">
-      <div class="mybooking-product_filter-options">
-        <span class="mybooking-product_filter-legend">Filter options</span>
-        <select class="mybooking-product_filter-select" name="mybooking-product-places" id="mybooking-product-places" >
-          <option>Select an option</option>
-          <option value="5 places">5 places</option>
-          <option value="7 places">7 places</option>
-          <option value="9 places">9 places</option>
-        </select>
-
-        <select class="mybooking-product_filter-select" name="mybooking-product-fuel" id="mybooking-product-fuel" >
-          <option>Filter by fuel type</option>
-          <option value="diesel">Diesel</option>
-          <option value="gasoline">Gasoline</option>
-          <option value="electric">Electric</option>
-        </select>
-
-        <select class="mybooking-product_filter-select" name="mybooking-product-doors" id="mybooking-product-doors" >
-          <option>Filter by doors</option>
-          <option value="3 doors">3 doors</option>
-          <option value="5 doors">5 doors</option>
-        </select>
-      </div>
-
       <div class="mybooking-product_filter-btn-group">
-        <span class="mybooking-product_filter-legend">Order</span>
+        <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
         <button class="mb-button mybooking-product_filter-grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></button>
         <button class="mb-button mybooking-product_filter-list js-mb-list" title="List view"><i class="fa fa-th-list"></i></button>
       </div>

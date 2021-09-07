@@ -421,7 +421,7 @@
 
 /* Calendar */
 .ui-datepicker {
-  width: 100%;
+  min-width: 300px;
 }
 
 .mybooking-activity_calendar-title {
