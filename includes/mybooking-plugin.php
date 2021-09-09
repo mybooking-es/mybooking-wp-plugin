@@ -359,6 +359,10 @@
         wp_enqueue_style( 'mybooking_wp_css_components_jquery_date_range',
                           plugins_url('/assets/styles/daterangepicker-0.20.0.min.css', dirname( __FILE__ ) ) );
         // Custom style
+        wp_enqueue_style('mybooking_wp_css_components_jquerymodal',
+                         plugins_url('/assets/styles/jquery-modal.css', dirname( __FILE__ ) ),
+                         array(), $version );
+        // Custom style
         wp_enqueue_style('mybooking_wp_css_components_custom_style',
                          plugins_url('/assets/styles/custom-styles.css', dirname( __FILE__ ) ),
                          array(), $version );

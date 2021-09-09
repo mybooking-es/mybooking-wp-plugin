@@ -376,3 +376,17 @@
 .mybooking-product_select {
   width: 100%;
 }
+
+/*** CAROUSEL ***/
+.mybooking-carousel-inner button.slick-prev, button.slick-next {
+    border:  none;
+    z-index:  1;
+    height:  32px;
+    background:  transparent !important;
+}
+.mybooking-carousel-inner button.slick-prev {
+    left:  -40px;
+}
+.mybooking-carousel-inner button.slick-next {
+    right: -42px;
+}
