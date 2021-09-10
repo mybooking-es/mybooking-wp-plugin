@@ -258,20 +258,16 @@
 <!-- PRODUCT DETAIL MODAL ----------------------------------------------------->
 
 <script type="text/tmpl" id="script_product_modal">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mybooking-carousel-inner">
-          <% for (var idx=0; idx<product.photos.length; idx++) { %>
-            <div class="mybooking-carousel-item">
-              <img class="d-block w-100" src="<%=product.photos[idx].full_photo_path%>" alt="<%=product.name%>">
-            </div>
-          <% } %>
+  <div>
+    <div class="mybooking-carousel-inner">
+      <% for (var idx=0; idx<product.photos.length; idx++) { %>
+        <div class="mybooking-carousel-item">
+          <img class="d-block w-100" src="<%=product.photos[idx].full_photo_path%>" alt="<%=product.name%>">
         </div>
-        <div class="mt-3 text-muted"><%=product.description%></div>
-      </div>
+      <% } %>
     </div>
-  </div>
+    <div class="mt-3 text-muted"><%=product.description%></div>
+  </div>  
 </script>
 
 

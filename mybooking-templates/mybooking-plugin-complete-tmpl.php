@@ -756,19 +756,13 @@
 <!-- Script that shows the extra detail -->
 <script type="text/tmpl" id="script_extra_modal">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mybooking-carousel-inner">
-          <% for (var idx=0; idx<extra.photos.length; idx++) { %>
-            <div class="carousel-item <% if (idx==0) {%>active<%}%>">
-              <img class="d-block w-100" src="<%=extra.photos[idx].full_photo_path%>" alt="<%=extra.name%>">
-            </div>
-          <% } %>
-        </div>
-        <div class="mt-3 text-muted"><%=extra.description%></div>
+  <div class="mybooking-carousel-inner">
+    <% for (var idx=0; idx<extra.photos.length; idx++) { %>
+      <div class="carousel-item <% if (idx==0) {%>active<%}%>">
+        <img class="d-block w-100" src="<%=extra.photos[idx].full_photo_path%>" alt="<%=extra.name%>">
       </div>
-    </div>
+    <% } %>
   </div>
+  <div class="mt-3 text-muted"><%=extra.description%></div>
 
 </script>

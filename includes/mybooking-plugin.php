@@ -437,20 +437,12 @@
                          array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'moment', 'mybooking-moment-timezone-js', 'mybooking-init' ), $version, true);
       wp_enqueue_script( 'mybooking-rent-engine-script');
 
-      // Enqueue custom libraries (bootstrap, fontawesome)
-      if ($registry->mybooking_rent_plugin_custom_css) {
-        // Load bootstrap JS
-        wp_register_script('mybooking_wp_js_framework_bootstrap',
-                           plugins_url( '/assets/js/bootstrap.bundle-4.4.1.min.js', dirname(__FILE__) ),
-                           array( 'jquery' ), $version, true);
-        wp_enqueue_script('mybooking_wp_js_framework_bootstrap');
-        // Bootstrap and Jquery modal compatibility
-        if ($registry->mybooking_plugin_js_bs_modal_no_conflict) {
-          wp_register_script('mybooking_wp_js_app',
-                             plugins_url( '/assets/js/noConflict.js', dirname(__FILE__) ),
-                             array( 'jquery', 'mybooking_wp_js_framework_bootstrap' ), $version, true);
-          wp_enqueue_script('mybooking_wp_js_app');
-        }
+      // Bootstrap and Jquery modal compatibility
+      if ($registry->mybooking_plugin_js_bs_modal_no_conflict) {
+        wp_register_script('mybooking_wp_js_app',
+                           plugins_url( '/assets/js/noConflict.js', dirname(__FILE__) ),
+                           array( 'jquery', 'mybooking_wp_js_framework_bootstrap' ), $version, true);
+        wp_enqueue_script('mybooking_wp_js_app');
       }
 
       // Slick JS
