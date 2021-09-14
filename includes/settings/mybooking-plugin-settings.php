@@ -61,8 +61,9 @@
 
 					<?php
 	            $active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_title( $_GET[ 'tab' ] ) : 'connection_options';
-	            $tabs = array('connection_options', 'configuration_options', 'renting_options',
-	            						  'activities_options', 'google_api_places_options', 'contact_form', 'complements_options', 'css_options');
+	            $tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
+	            						  'activities_options', 'google_api_places_options', 'contact_form', 'complements_options', 
+	            						  'css_options');
 	            if ( !in_array( $active_tab, $tabs) ) {
 	            	$active_tab = 'connection_options';
 	            }
@@ -72,18 +73,22 @@
 	           $settings = (array) get_option("mybooking_plugin_settings_configuration");
 	           $renting = $settings && array_key_exists('mybooking_plugin_settings_renting_selector', $settings) ? (trim(esc_attr( $settings["mybooking_plugin_settings_renting_selector"] )) == '1') : false;
 	           $activities = $settings && array_key_exists('mybooking_plugin_settings_activities_selector', $settings) ? (trim(esc_attr( $settings["mybooking_plugin_settings_activities_selector"] )) == '1') : false;
+						 $transfer = $settings && array_key_exists('mybooking_plugin_settings_transfer_selector', $settings) ? (trim(esc_attr( $settings["mybooking_plugin_settings_transfer_selector"] )) == '1') : false;	           
 	           $google_api_places = $settings && array_key_exists('mybooking_plugin_settings_google_api_places_selector', $settings) ? (trim(esc_attr( $settings["mybooking_plugin_settings_google_api_places_selector"] )) == '1') : false;
 	         ?>
 
 					<h2 class="nav-tab-wrapper">
 					    <a href="?page=mybooking-plugin-configuration&tab=connection_options" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">Connection</a>
-					    <a href="?page=mybooking-plugin-configuration&tab=configuration_options" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">Configuration</a>
+					    <a href="?page=mybooking-plugin-configuration&tab=configuration_options" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">Modules</a>
 					    <?php if ($renting) { ?>
 					      <a href="?page=mybooking-plugin-configuration&tab=renting_options" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">Renting</a>
               <?php } ?>
 					    <?php if ($activities) { ?>
 					      <a href="?page=mybooking-plugin-configuration&tab=activities_options" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">Activities or Appointments</a>
 					    <?php } ?>
+					    <?php if ($transfer) { ?>
+					      <a href="?page=mybooking-plugin-configuration&tab=transfer_options" class="nav-tab <?php echo $active_tab == 'transfer_options' ? 'nav-tab-active' : ''; ?>">Transfer</a>
+              <?php } ?>					    
 					    <?php if ($google_api_places) { ?>
 					      <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">Google Api Places</a>
 					    <?php } ?>
@@ -117,6 +122,16 @@ EOF;
                  </ol>
 EOF;
 
+               $transfer_wizard_info = <<<EOF
+                 <p>The following settings allows to build a <em>reservation engine</em> for a <u>transfer company</u> using the following steps:</p>
+                 <ol style="list-style:square; margin-left: 20px">
+                   <li><b>Choose vehicle</b> page</li>
+                   <li><b>Complete reservation</b> page</li>
+                   <li><b>Summary</b> page</li>
+                 </ol>
+                 <hr>
+EOF;
+
 	             if ($active_tab == 'connection_options') {
 			      	   settings_fields('mybooking_plugin_settings_group_connection');
 			           echo '<table class="form-table">';
@@ -141,6 +156,13 @@ EOF;
 			      	   settings_fields('mybooking_plugin_settings_group_activities');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_activities');
+			           echo '</table>';
+			         }
+			         else if ($active_tab == 'transfer_options') {
+			         	 echo $transfer_info;
+			      	   settings_fields('mybooking_plugin_settings_group_transfer');
+			           echo '<table class="form-table">';
+			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_transfer');
 			           echo '</table>';
 			         }
 			         else if ($active_tab == 'google_api_places_options') {
@@ -183,14 +205,20 @@ EOF;
 		 * setting:  mybooking_plugin_settings
      * sections:
      *   - connection
-     *   - renting wizard
+     *   - modules
      *   - renting
      *   - activities
+     *   - transfer
+     *   - google api places
+     *   - contact
+     *   - complements
+     *   - css
 		 *
 		 */
 		public function wp_settings_init() {
 
-		  // Register mybooking settings setting
+		  // == Register mybooking settings setting
+
 		  register_setting('mybooking_plugin_settings_group_connection',
 		                   'mybooking_plugin_settings_connection');
 
@@ -198,16 +226,19 @@ EOF;
 		                   'mybooking_plugin_settings_configuration');
 
 		  register_setting('mybooking_plugin_settings_group_options',
-		                   'mybooking_plugin_settings_options'); //
+		                   'mybooking_plugin_settings_options'); 
 
 		  register_setting('mybooking_plugin_settings_group_renting',
 		                   'mybooking_plugin_settings_renting');
 
-		  register_setting('mybooking_plugin_settings_group_google_places',
-		                   'mybooking_plugin_settings_google_places'); //
-
 		  register_setting('mybooking_plugin_settings_group_activities',
 		                   'mybooking_plugin_settings_activities');
+
+		  register_setting('mybooking_plugin_settings_group_transfer',
+		                   'mybooking_plugin_settings_transfer');
+
+		  register_setting('mybooking_plugin_settings_group_google_places',
+		                   'mybooking_plugin_settings_google_places'); 
 
 		  register_setting('mybooking_plugin_settings_group_google_api_places',
 		                   'mybooking_plugin_settings_google_api_places');
@@ -237,13 +268,19 @@ EOF;
 
 		  // Creates a renting wizard settings section "mybooking_plugin_settings_section_renting"
 		  add_settings_section('mybooking_plugin_settings_section_renting',
-		                       'Renting wizard',
+		                       'Renting',
 		                       '',
 		                       'mybooking-plugin-configuration');
 
 		  // Creates an activities settings section "mybooking_plugin_settings_section_activities"
 		  add_settings_section('mybooking_plugin_settings_section_activities',
 		                       'Activities or Appointments',
+		                       '',
+		                       'mybooking-plugin-configuration');
+
+		  // Creates an activities settings section "mybooking_plugin_settings_section_transfer"
+		  add_settings_section('mybooking_plugin_settings_section_transfer',
+		                       'Transfer',
 		                       '',
 		                       'mybooking-plugin-configuration');
 
@@ -268,6 +305,7 @@ EOF;
 
 
       // == Creates connection fields
+
 		  add_settings_field('mybooking_plugin_settings_account_id',
 		                     'Mybooking Id or URL',
 		                     array($this, 'field_mybooking_plugin_settings_account_id_callback'),
@@ -290,6 +328,11 @@ EOF;
 		  add_settings_field('mybooking_plugin_settings_activities_selector',
 		                     'Activities or Appointments',
 		                     array($this, 'field_mybooking_plugin_settings_activities_selector_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_configuration');
+		  add_settings_field('mybooking_plugin_settings_transfer_selector',
+		                     'Transfer',
+		                     array($this, 'field_mybooking_plugin_settings_transfer_selector_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_configuration');
 		  add_settings_field('mybooking_plugin_settings_google_api_places_selector',
@@ -402,6 +445,7 @@ EOF;
 		                     'mybooking_plugin_settings_section_renting');
 
       // == Creates activities section fields
+
 		  add_settings_field('mybooking_plugin_settings_activities_shopping_cart_page',
 		                     'Checkout page',
 		                     array($this, 'field_mybooking_plugin_settings_activities_shopping_cart_page_callback'),
@@ -433,7 +477,35 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
 
+      // == Creates transfer wizard fields
+
+		  add_settings_field('mybooking_plugin_settings_transfer_choose_vehicle_page',
+		                     'Choose vehicle page',
+		                     array($this, 'field_mybooking_plugin_settings_transfer_choose_vehicle_page_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_transfer');
+
+		  add_settings_field('mybooking_plugin_settings_transfer_checkout_page',
+		                     'Checkout page',
+		                     array($this, 'field_mybooking_plugin_settings_transfer_checkout_page_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_transfer');
+
+		  add_settings_field('mybooking_plugin_settings_transfer_summary_page',
+		                     'Summary page',
+		                     array($this, 'field_mybooking_plugin_settings_transfer_summary_page_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_transfer');
+
+		  add_settings_field('mybooking_plugin_settings_transfer_terms_page',
+		                     'Terms and conditions page',
+		                     array($this, 'field_mybooking_plugin_settings_transfer_terms_page_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_transfer');
+
+
       // == Creates google api places fields
+
 		  add_settings_field('mybooking_plugin_settings_google_api_places_api_key',
 		                     'Api Key',
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_api_key_callback'),
@@ -654,6 +726,25 @@ EOF;
 
 		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
 		  $field = "mybooking_plugin_settings_activities_selector";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
+		}
+
+		/**
+		 * Render Mybooking Transfer module
+		 */
+		public function field_mybooking_plugin_settings_transfer_selector_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
+		  $field = "mybooking_plugin_settings_transfer_selector";
 		  if (array_key_exists($field, $settings)) {
 		    $value = esc_attr( $settings[$field] );
 		  }
@@ -1260,6 +1351,44 @@ EOF;
 
 		}
 
+    // == Transfer
+
+		/**
+		 * Render Mybooking Transfer Choose vehicle
+		 */
+		public function field_mybooking_plugin_settings_transfer_choose_vehicle_page_callback() {
+
+		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_choose_vehicle_page");
+
+		}
+
+		/**
+		 * Render Mybooking Transfer Checkout page
+		 */
+		public function field_mybooking_plugin_settings_transfer_checkout_page_callback() {
+
+		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_checkout_page");
+
+		}
+
+		/**
+		 * Render Mybooking Transfer Summary page
+		 */
+		public function field_mybooking_plugin_settings_transfer_summary_page_callback() {
+
+		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_summary_page");
+
+		}
+
+		/**
+		 * Render Mybooking Transfer terms and conditions page
+		 */
+		public function field_mybooking_plugin_settings_transfer_terms_page_callback() {
+
+		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_terms_page");
+
+		}
+
 
     // == Google API Places
 
@@ -1753,6 +1882,9 @@ EOF;
 
     // ------------------------
 
+		/**
+		 *  Renting settings page
+		 */ 
 		private function field_mybooking_plugin_renting_settings_page($field) {
 
 		  $my_pages = array();
@@ -1785,6 +1917,9 @@ EOF;
 
 		}
 
+		/**
+		 * Activities settings page
+		 */ 
 		private function field_mybooking_plugin_activities_settings_page($field) {
 
 		  $my_pages = array();
@@ -1802,6 +1937,41 @@ EOF;
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_activities[$field]'>";
+		  $select .= "<option value=''>[Choose page]</option>";
+		  foreach ($my_pages as $page => $title) {
+		     if ($value == $page) {
+		        $select .= "<option value='$page' selected>$title</option>";
+		     }
+		     else {
+		        $select .= "<option value='$page'>$title</option>";
+		     }
+		  }
+		  $select .= "</select>";
+
+		  echo $select;
+
+		}
+
+		/**
+		 * Trnsfer settings page
+		 */ 
+		private function field_mybooking_plugin_transfer_settings_page($field) {
+
+		  $my_pages = array();
+		  $pages = get_pages();
+		  foreach( $pages as $page ) {
+		    $my_pages[$page->ID] = $page->post_title; // $page->post_name
+		  }
+
+		  $settings = (array) get_option("mybooking_plugin_settings_transfer");
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+		  $select = "<select name='mybooking_plugin_settings_transfer[$field]'>";
 		  $select .= "<option value=''>[Choose page]</option>";
 		  foreach ($my_pages as $page => $title) {
 		     if ($value == $page) {
