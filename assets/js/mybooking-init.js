@@ -14,6 +14,12 @@
         var shoppingCartUrl = mybooking_init_vars.mybooking_activities_shopping_cart_page;
         var orderUrl = mybooking_init_vars.mybooking_activities_summary_page;  
         var activitiesTermsUrl = mybooking_init_vars.mybooking_activities_terms_page; 
+        // Transfer
+        var transferExtrasStep = false;
+        var transferChooseProductUrl = mybooking_init_vars.mybooking_transfer_choose_vehicle_page;
+        var transferCompleteUrl = mybooking_init_vars.mybooking_transfer_checkout_page;
+        var transferSummaryUrl = mybooking_init_vars.mybooking_transfer_summary_page;   
+        var transferTermsUrl = mybooking_init_vars.mybooking_transfer_terms_page;     
         // Common
         var customLoader = mybooking_init_vars.mybooking_custom_loader;
         // Select 2
@@ -85,6 +91,22 @@
         function getActivitiesTermsUrl() {
           return activitiesTermsUrl;
         }        
+        // -- Transfer
+        function getTransferExtrasStep() {
+          return transferExtrasStep;
+        }
+        function getTransferChooseProductUrl() {
+          return transferChooseProductUrl;
+        }
+        function getTransferCompleteUrl() {
+          return transferCompleteUrl;
+        }
+        function getTransferSummaryUrl() {
+          return transferSummaryUrl;
+        }
+        function getTransferTermsUrl() {
+          return transferTermsUrl;
+        }
         // -- Utilities
         function getCustomLoader() {
           return customLoader;
@@ -123,6 +145,12 @@
           shoppingCartUrl: getShoppingCartUrl,
           orderUrl: getOrderUrl,
           activitiesUrl: getActivitiesTermsUrl,
+          // Transfer
+          transferExtrasStep: getTransferExtrasStep,
+          transferChooseProductUrl: getTransferChooseProductUrl,
+          transferCompleteUrl: getTransferCompleteUrl,
+          transferSummaryUrl: getTransferSummaryUrl,          
+          transferTermsUrl: getTransferTermsUrl,
           // Common
           customLoader: getCustomLoader,  
           jsUseSelect2: getJsUseSelect2,

@@ -34,16 +34,10 @@
   <!-- Date and time -->
   <div class="flex-form-group">
     <!-- Date -->
-    <div class="flex-form-horizontal-box">
-      <label for="date"><?php echo esc_html_x( 'Date', 'transfer_form_selector', 'mybooking-wp-plugin') ?></label>
+    <div class="flex-form-box">
+      <label for="date"><?php echo esc_html_x( 'Date and time', 'transfer_form_selector', 'mybooking-wp-plugin') ?></label>
       <div class="flex-form-horizontal-item">
         <input type="text" class="form-control" name="date" id="date" autocomplete="off" readonly="true">
-      </div>
-    </div>
-    <!-- Time -->
-    <div class="flex-form-horizontal-box">
-      <label for="date"><?php echo esc_html_x( 'Time', 'transfer_form_selector', 'mybooking-wp-plugin') ?></label>
-      <div class="flex-form-horizontal-item">
         <select class="form-control ml-1" name="time" id="time"></select>
       </div>
     </div>
@@ -51,8 +45,55 @@
    
 </div>
 
+<div class="flex-form-group-wrapper">
+  <!-- Places -->
+  <div class="row flex-form-group" style="flex-direction: row">
+    <!-- Adults -->
+    <div class="col-md-4 flex-form-horizontal-box">
+        <label for="origin_point"><?php echo esc_html_x( 'Adults', 'transfer_form_selector', 'mybooking-wp-plugin') ?></label>
+        <div class="flex-form-item">
+          <input type="number" class="form-control" name="number_of_adults" id="number_of_adults" value="1">
+        </div>
+    </div>
+    <!-- Children -->
+    <div class="col-md-4 flex-form-horizontal-box">
+      <label for="return_place"><?php echo esc_html_x( 'Children', 'transfer_form_selector', 'mybooking-wp-plugin' ) ?></label>
+        <div class="flex-form-item">
+          <input type="number" class="form-control" name="number_of_children" id="number_of_children" value="0">
+        </div>
+    </div>
+    <!-- Infants -->
+    <div class="col-md-4 flex-form-horizontal-box">
+      <label for="return_place"><?php echo esc_html_x( 'Infants', 'transfer_form_selector', 'mybooking-wp-plugin' ) ?></label>
+        <div class="flex-form-item">
+          <input type="number" class="form-control" name="number_of_infants" id="number_of_infants" value="0">
+        </div>
+    </div>   
+  </div>
+</div>
+
+<div class="flex-form-group-wrapper">
+
+  <!-- One Way / Round trip -->
+  <div class="flex-form-group mb-3" style="flex-direction: row">
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input round_trip" name="round_trip" value="false" checked>
+      <label  class="form-check-label">
+        <?php echo esc_html_x( 'One way', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input round_trip" name="round_trip" value="true">
+      <label  class="form-check-label">
+        <?php echo esc_html_x( 'Round trip', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+      </label>
+    </div>  
+  </div>
+
+</div> 
+
 <div class="flex-form-horizontal-box">
-  <input class="btn btn-success" type="submit" value="<?php echo esc_attr_x( 'Search', 'transfer_form_selector', 'mybooking-wp-plugin') ?>" />
+  <input class="btn btn-primary" type="submit" value="<?php echo esc_attr_x( 'Find a transfer', 'transfer_form_selector', 'mybooking-wp-plugin') ?>" />
 </div>
 
 </script>
