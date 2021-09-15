@@ -213,33 +213,23 @@
   border-bottom: 1px solid #DDD;
 }
 
-.mybooking-product_header.mybooking-product_header-catalog {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-} /* To be refactorized */
-
-.mybooking-product_header-catalog.mybooking-product_product-name {
-  max-width: 300px;
-} /* To be refactorized */
-
 .mybooking-product_price {
   width: 100%;
 }
 
 .mybooking-product_amount {
   display: inline-block;
+  margin: 0;
   font-size: 1.7em;
   font-weight: 900;
-  /* color: #2193F2; */
-  margin: 0;
+  line-height: inherit;
 }
 
 .mybooking-product_taxes {
   width: auto;
   float: right;
   text-align: right;
-  line-height: 2;
+  line-height: 3;
   font-size: 14px;
 }
 

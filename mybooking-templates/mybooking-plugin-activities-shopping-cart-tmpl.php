@@ -1,13 +1,15 @@
 <?php
-  /**
-   * The Template for showing the activity shopping cart - JS Microtemplates
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php
-   *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
-   */
+/**
+*   MYBOOKING ENGINE - ACTIVITIES SHOPPING CART TEMPLATE
+*   ---------------------------------------------------------------------------
+*   The Template for showing the activity shopping cart - JS Microtemplates
+*   This template can be overridden by copying it to your theme
+*   /mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php
+*
+*   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+*   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+*   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+*/
 ?>
 
 <!-- Microtemplates -->

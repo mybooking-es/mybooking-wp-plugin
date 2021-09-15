@@ -233,6 +233,13 @@
   border-bottom: 1px solid #DDD;
 }
 
+.mb-card-header h2,
+.mb-card-header h3,
+.mb-card-header h4,
+.mb-card-header h5 {
+  margin: 0;
+}
+
 .mb-card-body {
   padding: 1rem;
 }
