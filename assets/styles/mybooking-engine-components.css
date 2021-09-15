@@ -433,61 +433,7 @@ fieldset legend {
 }
 
 .ui-datepicker {
-  width: 100%;
-  max-width: 600px;
-}
-
-.ui-datepicker .ui-datepicker-header {
-  background-color: transparent;
-}
-
-.ui-datepicker .ui-datepicker-title {
-  font-size: 1.8em;
-}
-
-.ui-state-default,
-.ui-widget-content .ui-state-default {
-  box-shadow: none;
-}
-
-.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
-  position: absolute;
-  top: 2px;
-  width: 32px;
-  height: 32px;
-  text-align: center;
-  display: block;
-  z-index: 10000;
-}
-
-.ui-datepicker td {
-  padding: 0rem;
-}
-
-.ui-datepicker td .ui-state-default {
-  padding: 0.5rem;
-  font-size: 1.4em;
-  font-weight: 700;
-  text-decoration: none!important;
-}
-
-.ui-datepicker td a.ui-state-default {
-  color: #2193F2;
-}
-
-.ui-datepicker td a.ui-state-hover {
-  color: #FFF;
-  background-color: #2193F2;
-  background-image: none;
-  text-shadow: none;
-  border-color: #2193F2;
-  border-radius: 0;
-}
-
-.ui-datepicker td a.ui-state-active {
-  background: #2193F2;
-  border-radius: 0;
-  color: #FFF;
+  min-width: 300px;
 }
 
 .mybooking-activity_calendar-title {
