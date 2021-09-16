@@ -41,7 +41,7 @@
                 </h3>
               </div>
               <div class="card-body mt-3">                
-                <button class="btn btn-primary btn-choose-product w-100" data-product="<%=product.code%>"><?php echo _x( 'Book it!', 'transfer_choose_vehicle', 'mybooking-wp-plugin') ?></button>                
+                <button class="btn btn-primary btn-choose-product w-100" data-product="<%=product.id%>"><?php echo _x( 'Book it!', 'transfer_choose_vehicle', 'mybooking-wp-plugin') ?></button>                
               </div>
             </div>
           </div>
