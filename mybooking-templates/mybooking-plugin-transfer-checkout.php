@@ -23,7 +23,7 @@
       <!-- Reservation complete -->
       <div class="reservation_form_container mb-4">
         <h4 class="complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h4>
-        <form id="mybooking_transfer_form-reservation" name="reservation_form" autocomplete="off">
+        <form id="mybooking_transfer_form-reservation" name="mybooking_transfer_reservation_form" autocomplete="off">
 
             <div class="form-group customer_component">
               <label for="customer_name"><?php echo esc_html_x( 'Name', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
