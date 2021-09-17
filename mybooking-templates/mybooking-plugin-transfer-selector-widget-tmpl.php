@@ -1,17 +1,17 @@
 <?php
-  /** 
+  /**
    * The Template for showing the transfer selector widget - JS Microtemplates
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php
    *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
    * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
    */
 ?>
 <script type="text/tmpl" id="transfer_form_selector_tmpl">
 
-<div class="flex-form-group-wrapper">
+<div class="mybooking-selector_transfers flex-form-group-wrapper" style="flex-direction: column;">
 
   <!-- Origin and Return Points -->
 	<div class="flex-form-group">
@@ -22,6 +22,7 @@
         	<select class="form-control" id="origin_point" name="origin_point_id"></select>
       	</div>
     </div>
+
     <!-- Collection place -->
     <div class="flex-form-horizontal-box">
       <label for="return_place"><?php echo esc_html_x( 'Destination', 'transfer_form_selector', 'mybooking-wp-plugin' ) ?></label>
@@ -32,17 +33,18 @@
   </div>
 
   <!-- Date and time -->
-  <div class="flex-form-group">
+  <div class="flex-form-group" style="margin-left: 0;">
     <!-- Date -->
     <div class="flex-form-box">
       <label for="date"><?php echo esc_html_x( 'Date and time', 'transfer_form_selector', 'mybooking-wp-plugin') ?></label>
-      <div class="flex-form-horizontal-item">
-        <input type="text" class="form-control" name="date" id="date" autocomplete="off" readonly="true">
-        <select class="form-control ml-1" name="time" id="time"></select>
+      <div class="flex-form-horizontal-item" style="display: flex;flex-direction: row">
+        <input type="text" class="form-control" name="date" id="date" autocomplete="off" readonly="true" style="border-left: 1px solid var(--gray-500);border-top-left-radius: 3px;
+			  border-bottom-left-radius: 3px;">
+        <select class="form-control ml-1" name="time" id="time" style="max-width: 30%;"></select>
       </div>
     </div>
   </div>
-   
+
 </div>
 
 <div class="flex-form-group-wrapper">
@@ -68,14 +70,14 @@
         <div class="flex-form-item">
           <input type="number" class="form-control" name="number_of_infants" id="number_of_infants" value="0">
         </div>
-    </div>   
+    </div>
   </div>
 </div>
 
 <div class="flex-form-group-wrapper">
 
   <!-- One Way / Round trip -->
-  <div class="flex-form-group mb-3" style="flex-direction: row">
+  <div class="flex-form-group mb-3 mt-3" style="flex-direction: row">
     <div class="form-check form-check-inline">
       <input type="radio" class="form-check-input round_trip" name="round_trip" value="false" checked>
       <label  class="form-check-label">
@@ -87,13 +89,13 @@
       <label  class="form-check-label">
         <?php echo esc_html_x( 'Round trip', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
       </label>
-    </div>  
+    </div>
   </div>
 
-</div> 
+</div>
 
 <div class="flex-form-horizontal-box">
-  <input class="btn btn-primary" type="submit" value="<?php echo esc_attr_x( 'Find a transfer', 'transfer_form_selector', 'mybooking-wp-plugin') ?>" />
+  <input class="btn btn-primary btn-block" type="submit" value="<?php echo esc_attr_x( 'Find a transfer', 'transfer_form_selector', 'mybooking-wp-plugin') ?>" />
 </div>
 
 </script>
