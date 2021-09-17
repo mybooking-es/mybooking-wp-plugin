@@ -1,16 +1,20 @@
 <?php
-  /** 
-   * The Template for showing the renting product detail page
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-routes-product.php
-   *
-   */
+/**
+ *   MYBOOKING ENGINE - PRODUCT DETAIL
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting select product step
+ *   This template can be overridden by copying it to your
+ *   theme /mybooking-templates/mybooking-plugin-routes-product.php
+ *
+ */
 ?>
+
 <?php get_header();?>
-<br>
-<div class="container product-container">
+
+<div class="mybooking mybooking-product product-container">
+  <h2>Producto</h2>
   <div class="row">
-    <div class="col-md-8">
+    <div class="mb-col-md-8">
       <div class="shadow mb-5 bg-white rounded">
           <!-- The photo -->
           <?php if (!empty( $args->photos ) && count( $args->photos ) > 1) { ?>
@@ -18,7 +22,7 @@
               <div class="carousel-inner">
                 <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>
                   <div class="carousel-item <?php if ($mybooking_key == key($args->photos)) { ?>active<?php } ?>">
-                    <img class="d-block w-100" src="<?php echo esc_url ( $mybooking_photo->full_photo_path ) ?>" 
+                    <img class="d-block w-100" src="<?php echo esc_url ( $mybooking_photo->full_photo_path ) ?>"
                          alt="<?php echo esc_attr( $args->name )?>">
                   </div>
                 <?php } ?>
@@ -33,7 +37,7 @@
               </a>
             </div>
           <?php } else if (count($args->photos) == 1) { ?>
-            <img class="d-block product-photo" src="<?php echo esc_url ( $args->photos[0]->full_photo_path ) ?>" 
+            <img class="d-block product-photo" src="<?php echo esc_url ( $args->photos[0]->full_photo_path ) ?>"
                  alt="<?php echo esc_attr( $args->name )?>">
           <?php } else { ?>
               <div class="text-center no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
@@ -62,7 +66,7 @@
                       </span>
                       <span class="icon-list-text text-muted"><?php echo wp_kses_post( sprintf( _x('<b>%.2f</b> m.', 'renting_product_detail', 'mybooking-wp-plugin' ), $args->characteristic_length ) ) ?></span>
                   </li>
-                <?php } ?>  
+                <?php } ?>
                 <?php foreach ( $args->key_characteristics as $mybooking_key => $value) { ?>
                 <li class="icon-list-item">
                     <span class="icon-list-icon">
@@ -72,7 +76,7 @@
                 </li>
                 <?php } ?>
               </ul>
-            </div>  
+            </div>
             <?php } ?>
             <!-- Description -->
             <?php if ( !empty( $args->description ) ) { ?>
@@ -85,18 +89,18 @@
 
           </div>
       </div>
-    </div>  
-    <div class="col-md-4">
+    </div>
+    <div class="mb-col-md-4">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
+          <div class="mb-col-md-12">
             <h2 class="h2"><b><?php echo esc_html( $args->name ) ?></b></h2>
             <p class="mt-3 text-muted"><?php echo esc_html_x('Please choose your dates in the availability calendar', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
           </div>
         </div>
       </div>
       <hr>
-      <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>     
+      <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>
     </div>
   </div>
 </div>
