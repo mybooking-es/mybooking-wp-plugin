@@ -715,6 +715,15 @@ div.order-no-product-photo {
   padding-top: 30px;
 }
 
+/** ============================================= **/
+/** ======= Reservation Engine Transfer   ======= **/
+/** ============================================= **/
+
+input[name=date].form-control[readonly],
+input[name=return_date].form-control[readonly] {
+  background-color: #ffffff;
+}
+
 /** =========================================== **/
 
 .no-product-photo i {

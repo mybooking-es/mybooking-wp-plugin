@@ -121,7 +121,7 @@
         </li>        
         <% if (shopping_cart.engine_modify_dates) { %>
           <li class="list-group-item">
-            <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo esc_html_x( 'Edit', 'transfer_checkout', 'mybooking-wp-plugin' ) ?></button>
+            <button id="mybooking_transfer_modify_reservation_button" class="btn btn-primary w-100"><?php echo esc_html_x( 'Edit', 'transfer_checkout', 'mybooking-wp-plugin' ) ?></button>
           </li>
         <% } %>
       </ul>

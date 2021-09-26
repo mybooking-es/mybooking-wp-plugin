@@ -2,14 +2,14 @@
   /**
    * The Template for showing the transfer selector widget - JS Microtemplates
    *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php
+   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php
    *
    * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
    * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
    * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
    */
 ?>
-<script type="text/tmpl" id="widget_transfer_form_selector_tmpl">
+<script type="text/tmpl" id="transfer_form_selector_tmpl">
 
 <!-- Going -->
 <div class="mybooking-selector_transfers flex-form-group-wrapper" style="flex-direction: column;">

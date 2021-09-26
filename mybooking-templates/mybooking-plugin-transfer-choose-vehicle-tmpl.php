@@ -88,7 +88,7 @@
               </ul>              
             </div>
             <div class="col-md-4">
-              <button id="modify_reservation_button" class="btn btn-primary w-100 mt-3"><?php echo esc_html_x( 'Modify reservation', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></button>              
+              <button id="mybooking_transfer_modify_reservation_button" class="btn btn-primary w-100 mt-3"><?php echo esc_html_x( 'Modify reservation', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></button>              
             </div>
           </div>  
         </div>

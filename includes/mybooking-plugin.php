@@ -678,8 +678,11 @@
       // The the current page content
       $content = $this->getCurrentPageContent();
 
-      // Hold if the current page needs the selector wizard
+      // Hold if the current page needs to modify selection data (for renting)
       $current_page_modify_reservation = false;
+
+      // Hold if the current page needs to modify selection data (for transfer)
+      $current_page_modify_transfer_reservation = false;
 
       // Renting Selector
       if ( is_active_widget( false, false, 'mybooking_transfer_engine_selector_widget', false ) ||
@@ -760,6 +763,8 @@
       else if ( $registry->mybooking_transfer_plugin_choose_vehicle_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_transfer_plugin_choose_vehicle_page ) ) { // Transfer choose vehicle
         mybooking_engine_get_template('mybooking-plugin-transfer-choose-vehicle-tmpl.php');
+        mybooking_engine_get_template('mybooking-plugin-transfer-modify-reservation-tmpl.php');
+        $current_page_modify_transfer_reservation = true;
       }
       else if ( $registry->mybooking_transfer_plugin_checkout_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_transfer_plugin_checkout_page ) ) { // Transfer checkout
@@ -772,6 +777,8 @@
           $data['terms_and_conditions'] = mybooking_engine_translated_slug($registry->mybooking_transfer_plugin_terms_page);
         }
         mybooking_engine_get_template('mybooking-plugin-transfer-checkout-tmpl.php');
+        mybooking_engine_get_template('mybooking-plugin-transfer-modify-reservation-tmpl.php');
+        $current_page_modify_transfer_reservation = true;
       }
       else if ( $registry->mybooking_transfer_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_transfer_plugin_summary_page ) ) { // Transfer checkout
@@ -832,8 +839,12 @@
          mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php');
       }
 
-      if (  $current_page_modify_reservation && $registry->mybooking_rent_plugin_selector_in_process == 'form' ) {
+      if ( $current_page_modify_reservation && $registry->mybooking_rent_plugin_selector_in_process == 'form' ) {
          mybooking_engine_get_template('mybooking-plugin-modify-reservation.php');
+      }
+
+      if ( $current_page_modify_transfer_reservation ) {
+         mybooking_engine_get_template('mybooking-plugin-transfer-modify-reservation.php');
       }
 
     }
