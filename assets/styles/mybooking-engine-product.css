@@ -214,16 +214,41 @@
   border-bottom: 1px solid #DDD;
 }
 
+.mybooking-products_catalog .mybooking-product_header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: auto;
+  height: 40px;
+  border-bottom: none;
+  padding: 0;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: #0066BF;
+  color: white;
+}
+
 .mybooking-product_price {
   width: 100%;
+}
+
+.mybooking-products_catalog .mybooking-product_price {
+  padding: .5rem;
 }
 
 .mybooking-product_amount {
   display: inline-block;
   margin: 0;
   font-size: 1.7em;
-  font-weight: 900;
+  font-weight: 800;
   line-height: inherit;
+}
+
+.mybooking-products_catalog .mybooking-product_amount {
+  display: inline-block;
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .mybooking-product_taxes {
@@ -271,7 +296,8 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 800;
-  font-size: 26px;
+  font-size: 22px;
+  line-height: 1.2;
 }
 
 .mybooking-product_quantity {
@@ -322,6 +348,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
+  padding: 0 1rem;
+}
+
+.mybooking-product_detail .mybooking-product_characteristics {
+  border-bottom: 1px solid #DDD;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mybooking-product_characteristics-item {
@@ -333,13 +366,27 @@
   text-align: center;
 }
 
+.mybooking-product_detail .mybooking-product_characteristics-item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 .mybooking-product_characteristics-img {
   height: 30px;
   width: 30px;
 }
 
+.mybooking-product_detail .mybooking-product_characteristics-img {
+  height: 40px;
+  width: 40px;
+}
+
 .mybooking-product_characteristics-key {
   font-size: 13px;
+}
+
+.mybooking-product_detail .mybooking-product_characteristics-key {
+  font-size: 14px;
 }
 
 /* Product footer */
@@ -365,6 +412,35 @@
 
 .mybooking-product_select {
   width: 100%;
+}
+
+
+/** PRODUCT DETAIL **/
+
+.mybooking-product_detail-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.mybooking-product_detail-price {
+  font-size: 1.2em;
+  line-height: 2.5;
+}
+
+.mybooking-product_detail-amount {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: var(--brand-primary, #2193F2);
+
+}
+
+.mybooking-product_detail-short {
+  font-size: 1.3em;
+  border-bottom: 1px solid #DDD;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 /*** CAROUSEL ***/
