@@ -312,8 +312,8 @@
 /* Choose page */
 .btn-choose-product,
 .btn-confirm-selection {
-  background-color: #2193F2;
-  color: #FFF;
+  background-color: #2193F2!important;
+  color: #FFF!important;
   text-transform: uppercase;
   letter-spacing: 1px;
 }

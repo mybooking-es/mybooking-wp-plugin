@@ -420,22 +420,6 @@
 }
 
 /* Calendar */
-table:not(.has-background) tbody tr:nth-child(2n) td,
-fieldset,
-fieldset legend {
-  background-color: transparent!important;
-}
-
-.ui-widget-content {
-  background: none;
-  border: 1px solid #DDD;
-  border-radius: 0;
-}
-
-.ui-datepicker {
-  min-width: 300px;
-}
-
 .mybooking-activity_calendar-title {
   font-size: 1.6em;
   margin: 1rem 0;
@@ -500,4 +484,91 @@ fieldset legend {
 .mybooking-summary_activity-total-amount {
   font-size: 1.3rem;
   font-weight: 700;
+}
+
+
+/** JQUERY DATEPICKER **/
+
+table:not(.has-background) tbody tr:nth-child(2n) td,
+fieldset,
+fieldset legend {
+  background-color: transparent!important;
+}
+
+.ui-widget-content {
+  background: none;
+  border: 1px solid #DDD;
+  border-radius: 0;
+}
+
+.ui-datepicker {
+  min-width: 300px;
+}
+
+
+/** DATEPICKER RANGE **/
+
+.date-picker-wrapper {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  font-size: 1em;
+  line-height: 20px;
+  color: inherit;
+  font-family: inherit;
+  box-shadow: none;
+}
+
+.date-picker-wrapper .month-wrapper {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+.date-picker-wrapper table:not(.has-background) th {
+  background-color: transparent;
+}
+
+.date-picker-wrapper .month-element {
+  font-size: 22px;
+}
+
+.date-picker-wrapper .month-wrapper table .week-name {
+  height: 40px;
+}
+
+.date-picker-wrapper .month-wrapper table .day {
+  padding: 15px;
+  font-size: 16px;
+  margin-bottom: 0;
+  color: inherit;
+}
+
+.date-picker-wrapper .month-wrapper table .day.real-today {
+  background-color: #aeecbc;
+}
+
+.date-picker-wrapper .month-wrapper table .day.real-today:hover {
+  background-color: #49e !important;
+}
+
+.date-picker-wrapper .month-wrapper table .day.invalid.real-today,
+.date-picker-wrapper .month-wrapper table .day.not-selectable-day.real-today {
+  background-color: #eee;
+}
+
+.date-picker-wrapper .month-wrapper table .day.invalid.real-today:hover,
+.date-picker-wrapper .month-wrapper table .day.not-selectable-day.real-today:hover {
+  background-color: red!important;
+}
+
+.date-picker-wrapper .month-wrapper table .day.real-today.checked,
+.date-picker-wrapper .month-wrapper table .day.real-today.hovering {
+    background-color: #49e !important;
+    color: white;
+}
+
+.date-picker-wrapper .gap {
+  display: none;
 }

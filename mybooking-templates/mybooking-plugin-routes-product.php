@@ -13,8 +13,7 @@
 
 <div class="mybooking mybooking-product_detail product-container">
   <div class="mb-row">
-    <div class="mb-col-md-8">
-
+    <div class="mb-col-md-12">
       <div class="mybooking-product_detail-header">
         <div class="mybooking-product_detail-title">
           <h1><?php echo esc_html( $args->name ) ?></h1>
@@ -27,6 +26,9 @@
          </div>
         <?php } ?>
       </div>
+    </div>
+
+    <div class="mb-col-md-8">
 
       <!-- Product image -->
       <?php if (!empty( $args->photos ) && count( $args->photos ) > 1) { ?>
@@ -83,14 +85,9 @@
     </div>
 
     <div class="mb-col-md-4">
-      <div class="container">
-        <div class="mb-row">
-          <div class="mb-col-md-12">
-            <h2 class="h2"><b><?php echo esc_html( $args->name ) ?></b></h2>
-            <p class="mt-3 text-muted"><?php echo esc_html_x('Please choose your dates in the availability calendar', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-          </div>
-        </div>
-      </div>
+      <h2 class="mybooking-product_calendar-title">
+        <?php echo esc_html_x('Availability calendar', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+      </h2>
       <hr>
       <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>
     </div>

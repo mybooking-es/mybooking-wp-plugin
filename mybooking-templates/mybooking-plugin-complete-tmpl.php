@@ -132,13 +132,19 @@
         </span>
       <% } %>
 
+      <!-- Duration -->
       <% if (shopping_cart.days > 0) { %>
         <span class="mybooking-summary_item">
-          <span class="mybooking-summary_duration"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span>
+          <span class="mybooking-summary_duration">
+            <%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
+          </span>
         </span>
+
       <% } else if (shopping_cart.hours > 0) { %>
         <span class="mybooking-summary_item">
-          <span class="mybooking-summary_duration"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></span>
+          <span class="mybooking-summary_duration">
+            <%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+          </span>
         </span>
       <% } %>
     </div>
@@ -207,9 +213,9 @@
         <!-- Pick-up time -->
         <% if (shopping_cart.time_from_cost > 0) { %>
           <div class="mybooking-summary_extra-item">
-          <span class="mybooking-summary_extra-name">
-            <?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-          </span>
+            <span class="mybooking-summary_extra-name">
+              <?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+            </span>
           </div>
           <span class="mybooking-summary_extra-amount">
             <%=configuration.formatCurrency(shopping_cart.time_from_cost)%>
