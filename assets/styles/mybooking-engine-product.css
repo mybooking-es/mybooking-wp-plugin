@@ -418,15 +418,23 @@
 
 .mybooking-product_detail-header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 1px solid #DDD;
+} @media ( min-width: 575.98px ) {
+  .mybooking-product_detail-header {
+    flex-direction: row;
+    align-items: baseline;
+    border-bottom: 1px solid #DDD;
+  }
 }
 
 .mybooking-product_detail-price {
   font-size: 1.2em;
-  line-height: 2.5;
+  line-height: 1;
+} @media ( min-width: 575.98px ) {
+  .mybooking-product_detail-price {
+    line-height: 2.5;
+  }
 }
 
 .mybooking-product_detail-amount {

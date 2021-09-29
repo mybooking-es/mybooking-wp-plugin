@@ -492,17 +492,81 @@
 table:not(.has-background) tbody tr:nth-child(2n) td,
 fieldset,
 fieldset legend {
-  background-color: transparent!important;
-}
-
-.ui-widget-content {
-  background: none;
-  border: 1px solid #DDD;
-  border-radius: 0;
+  background-color: white!important;
 }
 
 .ui-datepicker {
-  min-width: 300px;
+  width: auto;
+  padding: 0;
+  box-shadow: 0 3px 20px #424242;
+  font-family: inherit!important;
+}
+
+.full-size-datepicker-container .ui-datepicker {
+  border: none;
+  box-shadow: none;
+}
+
+.ui-datepicker table {
+  margin: 0;
+}
+
+.ui-datepicker td {
+  padding: 0;
+  box-shadow: none;
+}
+
+.ui-datepicker th {
+  background-color: white!important;
+  text-transform: uppercase;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: .2em 0;
+  border: 0px;
+  font-weight: bold;
+  width: 100%;
+  padding: 4px 0;
+  background-color: white;
+  color: #424242;
+}
+
+.ui-datepicker-month,
+.ui-datepicker-year {
+  font-size: 1.3em!important;
+  text-transform: uppercase;
+}
+
+.ui-datepicker td .ui-state-default {
+  background: #eee;
+  padding: 10px;
+  color: #424242!important;
+  font-size: 16px;
+  text-decoration: none!important;
+  border-radius: 0;
+}
+
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+  opacity: 1;
+  filter: Alpha(Opacity=1);
+  box-shadow: none!important;
+}
+
+.ui-datepicker td.ui-state-disabled.ui-datepicker-unselectable .ui-state-default:hover {
+  background: red!important;
+}
+
+.ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default {
+  background: #aeecbc;
+}
+
+.ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default:hover {
+  background: #49e !important;
+  color: white!important;
+  border-radius: 0;
 }
 
 
@@ -511,6 +575,7 @@ fieldset legend {
 .date-picker-wrapper {
   border: none;
   background-color: transparent;
+  max-width: 360px;
   padding: 0;
   font-size: 1em;
   line-height: 20px;
@@ -539,7 +604,7 @@ fieldset legend {
 }
 
 .date-picker-wrapper .month-wrapper table .day {
-  padding: 15px;
+  padding: 10px;
   font-size: 16px;
   margin-bottom: 0;
   color: inherit;
