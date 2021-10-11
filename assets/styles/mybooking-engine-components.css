@@ -1,5 +1,5 @@
 /*
-*  NYBOOKING RESERVATION ENGINE - COMPONENTS
+*  MYBOOKING RESERVATION ENGINE - COMPONENTS
 *  -----------------------------------------------------------------------------
 */
 
@@ -497,6 +497,7 @@ fieldset legend {
 
 .ui-datepicker {
   width: auto;
+  max-width: 500px;
   padding: 0;
   box-shadow: 0 3px 20px #424242;
   font-family: inherit!important;

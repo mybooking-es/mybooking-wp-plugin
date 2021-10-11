@@ -1,158 +1,68 @@
 /*
-*  NYBOOKING RESERVATION ENGINE - FORMS
+*  MYBOOKING RESERVATION ENGINE - SELECTOR
 *  -----------------------------------------------------------------------------
 */
 
-
 /** SELECTOR CLASSIC **/
 
-input:enabled[name=date_from].form-control[readonly],
-input:enabled[name=date_to].form-control[readonly] {
-  background-color: #ffffff;
+.mybooking-selector {
+  border: 1px solid #DDD;
+  padding: 1rem;
 }
 
-/* Search form */
-form[name=widget_search_form] input[type=text],
-form[name=widget_search_form] select {
-  height: 38px;
+.mybooking-selector_form {
+  margin: 0;
 }
 
-form[name=widget_search_form] input[type=submit] {
-  margin-bottom: 0;
-}
-
-.flex-form-horizontal {
+.mybooking-selector_group {
   display: flex;
   flex-direction: column;
-  background-color: $transparent-white;
-  padding: 10px;
-  color: #333;
-}
-
-.flex-form-group-wrapper {
-  display: flex;
-  flex-direction: column;
+  gap: 0.5rem;
   justify-content: space-between;
-  flex-grow: 2;
-}
-
-.flex-form-group {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-}
-
-.flex-form-group input.hasDatepicker {
-  flex-grow: 1;
-}
-
-/* Form group without label (search button) */
-
-.flex-form-group-no-label {
-  flex-direction: row;
-  align-items: flex-end!important;
-}
-
-.flex-form-group-no-label input {
-  margin-left: 10px;
-}
-
-.inline-form .flex-form-group-no-label input {
-  margin-left: 0;
-}
-
-/* */
-
-.flex-form-horizontal-box {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-.flex-form-horizontal-item {
-  display: flex;
-}
-
-.flex-form-horizontal-item select {
-  display: flex;
-  flex-grow: 1;
-}
-
-button.another_pickup_place_group_close,
-button.another_return_place_group_close,
-button.widget_another_pickup_place_group_close,
-button.widget_another_return_place_group_close {
-    position: absolute;
-    right: 4px;
-    top: 2px;
-    background-color: transparent;
-    color:  #000000;
-    padding: 0 !important;
-}
-
-button.another_pickup_place_group_close:hover,
-button.another_return_place_group_close:hover,
-button.widget_another_pickup_place_group_close:hover,
-button.widget_another_return_place_group_close:hover {
-    background-color: transparent;
-    color:  #000000;
-}
-
-/* Media Queries */
-
-@media (max-width: 575.98px) {
-  .flex-form-horizontal {
-    min-width: 100vw;
-  }
-  input.hasDatepicker {
-    max-width: 130px;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .flex-form-group-no-label {
-    margin-top: 10px;
-    flex-direction: column;
-    align-items: inherit !important;
-  }
-
-  .flex-form-group-no-label input {
-    width: 100% !important;
-    margin-left: 0;
-  }
-
-}
-
-@media (min-width: 992px) {
-
-  .flex-form-group-wrapper {
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_group {
     flex-direction: row;
   }
-
-  .flex-form-group:nth-child(2n) {
-    margin-left: 10px;
-  }
-
-  .inline-form .flex-form-group:nth-child(n+2) {
-    margin-left: 10px;
-  }
-
 }
 
-@media (max-width: 992px) {
-  .flex-form-horizontal {
-    width: 100%;
-    padding: 20px;
+.mybooking-selector_place {
+  width: 100%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_place {
+    width: 40%;
   }
-
 }
 
-@media (max-width: 1199.98px) {
-  .flex-form-horizontal-item select {
-    width: 100%;
+.mybooking-selector_date {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 100%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_date {
+    width: 60%;
+  }
+}
+
+.mybooking-selector_cal {
+  width: 70%;
+}
+
+.mybooking-selector_hour {
+  width: 30%;
+}
+
+.mybooking-selector_footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-between;
+  border-top: 1px solid #DDD;
+  margin-top: 1rem;
+  padding-top: 1rem;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_footer {
+    flex-direction: row;
   }
 }
 

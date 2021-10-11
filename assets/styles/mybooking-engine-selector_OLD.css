@@ -1,0 +1,222 @@
+/*
+*  NYBOOKING RESERVATION ENGINE - FORMS
+*  -----------------------------------------------------------------------------
+*/
+
+
+/** SELECTOR CLASSIC **/
+
+input:enabled[name=date_from].form-control[readonly],
+input:enabled[name=date_to].form-control[readonly] {
+  background-color: #ffffff;
+}
+
+/* Search form */
+form[name=widget_search_form] input[type=text],
+form[name=widget_search_form] select {
+  height: 38px;
+}
+
+form[name=widget_search_form] input[type=submit] {
+  margin-bottom: 0;
+}
+
+.flex-form-horizontal {
+  display: flex;
+  flex-direction: column;
+  background-color: $transparent-white;
+  padding: 10px;
+  color: #333;
+}
+
+.flex-form-group-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+
+.flex-form-group {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.flex-form-group input.hasDatepicker {
+  flex-grow: 1;
+}
+
+/* Form group without label (search button) */
+
+.flex-form-group-no-label {
+  flex-direction: row;
+  align-items: flex-end!important;
+}
+
+.flex-form-group-no-label input {
+  margin-left: 10px;
+}
+
+.inline-form .flex-form-group-no-label input {
+  margin-left: 0;
+}
+
+/* */
+
+.flex-form-horizontal-box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.flex-form-horizontal-item {
+  display: flex;
+}
+
+.flex-form-horizontal-item select {
+  display: flex;
+  flex-grow: 1;
+}
+
+button.another_pickup_place_group_close,
+button.another_return_place_group_close,
+button.widget_another_pickup_place_group_close,
+button.widget_another_return_place_group_close {
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    background-color: transparent;
+    color:  #000000;
+    padding: 0 !important;
+}
+
+button.another_pickup_place_group_close:hover,
+button.another_return_place_group_close:hover,
+button.widget_another_pickup_place_group_close:hover,
+button.widget_another_return_place_group_close:hover {
+    background-color: transparent;
+    color:  #000000;
+}
+
+/* Media Queries */
+
+@media (max-width: 575.98px) {
+  .flex-form-horizontal {
+    min-width: 100vw;
+  }
+  input.hasDatepicker {
+    max-width: 130px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .flex-form-group-no-label {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: inherit !important;
+  }
+
+  .flex-form-group-no-label input {
+    width: 100% !important;
+    margin-left: 0;
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  .flex-form-group-wrapper {
+    flex-direction: row;
+  }
+
+  .flex-form-group:nth-child(2n) {
+    margin-left: 10px;
+  }
+
+  .inline-form .flex-form-group:nth-child(n+2) {
+    margin-left: 10px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .flex-form-horizontal {
+    width: 100%;
+    padding: 20px;
+  }
+
+}
+
+@media (max-width: 1199.98px) {
+  .flex-form-horizontal-item select {
+    width: 100%;
+  }
+}
+
+
+/** SELECTOR WIZARD **/
+
+/* The container that holds everything */
+.selector_wizard_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.selector_wizard_container a {
+  text-decoration: none !important;
+}
+
+/* The container step title */
+
+.selector_wizard_step_title {
+
+  position: relative;
+  top: 20px;
+  border-bottom: 1px solid #eee;
+
+}
+
+.selector_wizard_close_btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  margin-right: 10px;
+}
+
+.selector_wizard_close_btn i {
+  font-size:1.2em;
+  font-weight: 200;
+}
+
+.selector_wizard_step_container {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.selector_wizard_step_summary_container {
+  padding-top: 1em;
+  padding-bottom: 1em
+
+}
+
+.selector_wizard_step_container li a {
+  cursor: pointer;
+}
+
+#btn_reservation {
+  margin-bottom: 0;
+}

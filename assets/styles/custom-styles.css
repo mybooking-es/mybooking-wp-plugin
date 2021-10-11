@@ -1,11 +1,10 @@
 /*
-*  NYBOOKING RESERVATION ENGINE
+*  MYBOOKING RESERVATION ENGINE
 *  -----------------------------------------------------------------------------
-*  Version: 0.9
 *
- */
+*/
 
-/* Just-for-work imports */
+/* Just-for-work imports | We must to enqueue*/
 @import "mybooking-engine-components.css";
 @import "mybooking-engine-product.css";
 @import "mybooking-engine-selector.css";
@@ -110,12 +109,6 @@
 
 /** FORMS **/
 
-.mb-form-row [class*='mb-col'] {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-
 .mb-form-group label {
   display: inline-block;
 }
@@ -139,6 +132,17 @@
   }
 }
 
+.mb-form-row [class*='mb-col'] {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.mb-form-control {
+  min-width: 100%;
+  margin-bottom: 0.5rem;
+}
+
 .mb-custom-date-form select {
   min-width: 100%;
   margin-bottom: 0.5rem;
@@ -146,11 +150,6 @@
   .mb-custom-date-form select {
     margin: 0;
   }
-}
-
-.mb-form-control {
-  min-width: 100%;
-  margin-bottom: 0.5rem;
 }
 
 
@@ -353,4 +352,26 @@
   background-color: #EEE;
   border: 1px solid #DDD;
   border-top: none;
+}
+
+
+/* TESTER */
+.flex-form-group-wrapper {
+  border: 1px dotted black;
+  padding: 2px;
+}
+
+.flex-form-group {
+  border: 1px solid blue;
+  padding: 2px;
+}
+
+.flex-form-horizontal-box {
+  background-color: red;
+  padding: 2px;
+}
+
+.flex-form-horizontal-item {
+  border: 1px solid green;
+  padding: 2px;
 }

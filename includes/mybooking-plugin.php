@@ -116,13 +116,13 @@
    * 2.3 Contact
    *
    * [mybooking_contact]
-   * 
+   *
    * 2.4 Complements
-   * 
+   *
    * [mybooking_testimonials]
-   * 
+   *
    * 2.5 Profile
-   * 
+   *
    * [mybooking_password_forgotten]
    * [mybooking_change_password]
    *
@@ -382,7 +382,7 @@
 
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
-    
+
       // Mybooking init
       wp_register_script( 'mybooking-init',
                           plugins_url( '/assets/js/mybooking-init.js', dirname(__FILE__) ),
@@ -457,7 +457,9 @@
       // Complements (testimonials, cookies, popup)
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1' ||
           $registry->mybooking_rent_plugin_complements_popup == '1' ||
-          $registry->mybooking_rent_plugin_complements_cookies_notice == '1') {
+          $registry->mybooking_rent_plugin_complements_cookies_notice == '1' ||
+          $registry->mybooking_rent_plugin_complements_renting_item == '1' ||
+          $registry->mybooking_rent_plugin_complements_activity_item == '1' ) {
         wp_register_script('mybooking_wp_js_complements',
                            plugins_url( '/assets/js/complements.js', dirname(__FILE__) ),
                            array( 'jquery'), $version, true);
@@ -485,8 +487,6 @@
 
       }
 
-
-
     }
 
     /**
@@ -507,7 +507,7 @@
       }
 
       // == Profile
-      
+
       // Password forgotten
       if ( has_shortcode( $content, 'mybooking_password_forgotten') ) {
         $classes[] = 'mybooking-password-forgotten';
@@ -959,7 +959,7 @@
     public function wp_rent_products_shortcode($atts = [], $content = null, $tag = '') {
 
       // Get the page and the limit from the request parameters
-      $opts = $this->wp_products_extract_query_string(); 
+      $opts = $this->wp_products_extract_query_string();
       $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
       $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
       if ( is_null($page) || $page === false ) {
@@ -998,9 +998,9 @@
       $url_detail = $url_detail.'/';
       if ($current_locale != $site_locale) {
         $url_detail = $url_detail.$current_locale.'/';
-      }      
-      $url_detail = $url_detail.($registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products');      
-      
+      }
+      $url_detail = $url_detail.($registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products');
+
       // Pagination
       $total_pages = ceil($data->total / $limit);
       $current_page = floor($data->offset / $limit) + 1;
@@ -1094,7 +1094,7 @@
                                'offset' => 0,
                                'data' => []);
       }
-      
+
       // Prepare url_detail
       $current_locale = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
       $site_locale = MyBookingEngineContext::getInstance()->getDefaultLanguageCode();
@@ -1102,8 +1102,8 @@
       $url_detail = $url_detail.'/';
       if ($current_locale != $site_locale) {
         $url_detail = $url_detail.$current_locale.'/';
-      }      
-      $url_detail = $url_detail.($registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities');   
+      }
+      $url_detail = $url_detail.($registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities');
 
       // Pagination
       $total = $data->total;
@@ -1238,8 +1238,8 @@
 
     /**
      * MyBooking Password Forgotten shortcode
-     * 
-     */ 
+     *
+     */
     public function wp_password_forgotten_shortcode($atts = [], $content = null, $tag = '') {
 
       ob_start();
@@ -1257,7 +1257,7 @@
       mybooking_engine_get_template('mybooking-plugin-profile-change-password.php');
       return ob_get_clean();
 
-    }    
+    }
 
     /**
      * Mybooking Testimonials shortcode
