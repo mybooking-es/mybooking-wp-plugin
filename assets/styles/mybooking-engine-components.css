@@ -501,6 +501,7 @@ fieldset legend {
   padding: 0;
   box-shadow: 0 3px 20px #424242;
   font-family: inherit!important;
+  z-index: 99999;
 }
 
 .full-size-datepicker-container .ui-datepicker {
