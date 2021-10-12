@@ -38,39 +38,45 @@
 .mybooking-selector_group select,
 .mybooking-selector_group button {
   height: 40px;
-  margin: 0;
+  margin: 0!important;
 }
 
-.mybooking-selector_group input,
+.mybooking-selector_group input:not([type="submit"]) /* Not the buttons! */,
 .mybooking-selector_group select {
-  font-size: 0.9em;
+  font-size: 14px!important;
+  border: 1px solid #DDD!important;
+  padding: 0.2rem!important;
+  background-color: #EFEFEF!important;
+  box-shadow: none;
+  color: inherit!important;
+  font-family: inherit;
+}
+
+.mybooking-selector_group input:not([type="submit"]):focus /* Not the buttons! */,
+.mybooking-selector_group select:focus {
+  outline: none!important;
 }
 
 .mybooking-selector_group input.form-reservation-error,
 .mybooking-selector_group input.form-reservation-error:focus,
 .mybooking-selector_group select.form-reservation-error {
-  background-color: #EC8396;
-  color: white;
+  background-color: #EC8396!important;
+  color: white!important;
   border: 1px solid #EC8396;
   font-weight: 700;
-  outline: none;
 }
 
 .mybooking-selector_group select,
 .mybooking-selector_group select.form-reservation-error {
-  padding-left: 1.5rem!important;
+  padding-left: 1.7rem!important;
 }
 
-.mybooking-selector_group input:not([type="submit"]),
+.mybooking-selector_group input:not([type="submit"]) /* Not the buttons! */,
 .mybooking-selector_group input.form-reservation-error,
 .mybooking-selector_group input.form-reservation-error:focus {
-  padding-left: 2.5rem!important;
+  padding-left: 2.2rem!important;
   font-size: 0.9em;
   width: 55%;
-}
-
-.inline.mybooking-selector_group input:not([type="submit"]) {
-  width: auto;
 }
 
 .mybooking-selector label.form-reservation-error {
@@ -86,19 +92,19 @@
 /* Placeholders */
 
 .mybooking-selector ::placeholder {
-  color: #000;
+  color: inherit!important;
   opacity: 1;
 }
 
 .mybooking-selector input.form-reservation-error::placeholder,
 .mybooking-selector select.form-reservation-error::placeholder {
-  color: white;
+  color: white!important;
 }
 
 /* Sections */
 
 .mybooking-selector_place {
-  position: relative; /* We need it for positioning custom place close button */
+  position: relative;
   width: 100%;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_place {
@@ -122,12 +128,24 @@
   width: 60%;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_cal {
-    width: 80%;
+    width: 70%;
   }
 }
 
 .inline .mybooking-selector_cal {
-  width: 100%;
+  width: 100%!important;
+} @media ( min-width: 575.98px ) {
+  .inline .mybooking-selector_cal {
+    width: auto;
+  }
+}
+
+.inline .mybooking-selector_hour {
+  width: 100%!important;
+} @media ( min-width: 575.98px ) {
+  .inline .mybooking-selector_hour {
+    max-width: 100px;
+  }
 }
 
 .mybooking-selector_hour {
@@ -138,13 +156,38 @@
   align-self: flex-end;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_hour {
-    width: 20%;
+    width: 30%;
   }
 }
 
 .mybooking-selector_footer {
   padding-top: 0.5rem;
   border-top: 1px solid #DDD;
+}
+
+.inline .mybooking-selector_promo {
+  min-width: 20%;
+}
+
+/* Promo */
+
+.mybooking-selector_promo label {
+  display: block;
+  text-align: center!important;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_promo label {
+    display: inline;
+    text-align: left;
+  }
+}
+
+.mybooking-selector_promo input:not([type="submit"]) {
+  padding-left: 0.5rem!important;
+  text-align: center;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_promo input:not([type="submit"]) {
+    text-align: left;
+  }
 }
 
 /* Icons */
@@ -174,28 +217,29 @@
 .mybooking-selector_hour .mybooking-selector_field-icon {
   position: absolute;
   display: inline!important;
-  left: 10%;
+  left: 5%;
   top: 31%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector_hour .mybooking-selector_field-icon {
-    left: 5%;
-  }
 }
 
 /* Buttons */
 
 .mybooking-selector_button {
-  width: 100%;
+  width: 100%!important;
   flex-direction: column;
   align-self: flex-end;
+  padding: 0.5rem!important;
+  border: none!important;
+  outline: none!important;
+  box-shadow: none!important;
   background-color: #2193F2!important;
   color: #FFF!important;
-  line-height: 1;
+  font-size: 18px!important;
+  line-height: 1!important;
   text-transform: uppercase;
   letter-spacing: 1px;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_button {
-    width: 15%;
+    width: 20%!important;
   }
 }
 
@@ -206,6 +250,7 @@
 }
 
 .inline .mybooking-selector_button {
+  min-width: 15%;
   margin-top: 0.5rem;
   padding-top: 0.5rem;
 }

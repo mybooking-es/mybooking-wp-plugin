@@ -57,15 +57,15 @@
 				</div>
 
 				<!-- Pickup time -->
-				<div class="mybooking-selector_hour">
-					<% if (configuration.timeToFrom) { %>
-						<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
-						<i class="mybooking-selector_field-icon fa fa-clock"></i>
-					<% } else { %>
-						<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
-						<i class="mybooking-selector_field-icon fa fa-clock"></i>
-					<% } %>
-				</div>
+				<% if (configuration.timeToFrom) { %>
+					<div class="mybooking-selector_hour">
+					<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
+					<i class="mybooking-selector_field-icon fa fa-clock"></i>
+					</div>
+				<% } else { %>
+					<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
+					<i class="mybooking-selector_field-icon fa fa-clock"></i>
+				<% } %>
 			</div>
 		</div>
 
@@ -111,15 +111,14 @@
 				</div>
 
 				<!-- Return time -->
-				<div class="mybooking-selector_hour">
-					<% if (configuration.timeToFrom) { %>
-						<select class="mb-form-control" name="time_to" id="widget_time_to"></select>
-						<i class="mybooking-selector_field-icon fa fa-clock"></i>
-					<% } else { %>
-						<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
-						<i class="mybooking-selector_field-icon fa fa-clock"></i>
-					<% } %>
-				</div>
+				<% if (configuration.timeToFrom) { %>
+					<div class="mybooking-selector_hour">
+					<select class="mb-form-control" name="time_to" id="widget_time_to"></select>
+					<i class="mybooking-selector_field-icon fa fa-clock"></i>
+					</div>
+				<% } else { %>
+					<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
+				<% } %>
 			</div>
 		</div>
 
@@ -163,23 +162,45 @@
 
 	<div class="mybooking-selector_group inline">
 
+			<!-- Pickup place -->
 			<div class="mybooking-selector_cal">
 				<label for="date_from">
 					<?php echo esc_html( MyBookingEngineContext::getInstance()->getDeliveryDate() ) ?>
 				</label>
-				<input type="text" class="mb-form-control" name="date_from" id="widget_date_from" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
+				<input class="mb-form-control" name="date_from" id="widget_date_from" type="text" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
 				<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
 				<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
 			</div>
 
+			<!-- Pickup time -->
+			<% if (configuration.timeToFrom) { %>
+				<div class="mybooking-selector_hour">
+					<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
+					<i class="mybooking-selector_field-icon fa fa-clock"></i>
+				</div>
+			<% } else { %>
+				<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
+			<% } %>
+
+			<!-- Return place -->
 			<div class="mybooking-selector_cal">
 				<label for="date_to">
 					<?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?>
 				</label>
-				<input type="text" class="mb-form-control" name="date_to" id="widget_date_to" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
+				<input class="mb-form-control" name="date_to" id="widget_date_to" type="text" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
 				<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
 				<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
 			</div>
+
+			<!-- Return time -->
+			<% if (configuration.timeToFrom) { %>
+				<div class="mybooking-selector_hour">
+					<select class="mb-form-control" name="time_to" id="widget_time_to"></select>
+					<i class="mybooking-selector_field-icon fa fa-clock"></i>
+				</div>
+			<% } else { %>
+				<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
+			<% } %>
 
 			<!-- Location code selector -->
 			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
