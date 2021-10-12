@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.12.2]
+
+### Added
+
+- Transfer process
+
 ## [0.12.0]
 
 ### Fixed
