@@ -136,7 +136,7 @@
   width: 100%!important;
 } @media ( min-width: 575.98px ) {
   .inline .mybooking-selector_cal {
-    width: auto;
+    width: max;
   }
 }
 
@@ -165,11 +165,11 @@
   border-top: 1px solid #DDD;
 }
 
-.inline .mybooking-selector_promo {
-  min-width: 20%;
-}
-
 /* Promo */
+
+.inline .mybooking-selector_promo {
+  min-width: 15%;
+}
 
 .mybooking-selector_promo label {
   display: block;
@@ -251,9 +251,10 @@
 }
 
 .inline .mybooking-selector_button {
-  min-width: 20%;
+  min-width: 18%;
   margin-top: 0.5rem;
   padding-top: 0.5rem;
+  padding: 0;
 }
 
 .mybooking-selector_close-btn {

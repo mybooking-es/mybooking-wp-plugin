@@ -162,6 +162,17 @@
 
 	<div class="mybooking-selector_group inline">
 
+			<!-- Location code selector -->
+			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
+				<div class="widget_rental_location" style="display: none">
+					<label for="family_id">
+						<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
+					</label>
+					<select name="family_id" id="widget_rental_location_code" class="mb-form-control"></select>
+					<i class="mybooking-selector_field-icon fa fa-map-marker-alt"></i>
+				</div>
+			<% } %>
+
 			<!-- Pickup place -->
 			<div class="mybooking-selector_cal">
 				<label for="date_from">
@@ -200,17 +211,6 @@
 				</div>
 			<% } else { %>
 				<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
-			<% } %>
-
-			<!-- Location code selector -->
-			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
-				<div class="widget_rental_location_code" style="display: none">
-					<label for="family_id">
-						<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
-					</label>
-					<select name="family_id" id="widget_rental_location_code" class="mb-form-control"></select>
-					<i class="mybooking-selector_field-icon fa fa-map-marker-alt"></i>
-				</div>
 			<% } %>
 
 			<!-- Family selector -->
