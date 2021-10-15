@@ -1,17 +1,18 @@
 <?php
-  /**
-   * The Template for showing the renting selector widget - JS Microtemplates
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-selector-widget-tmpl.php
-   *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
-   */
+/**
+ *   MYBOOKING ENGINE - SELECTOR TEMPLATES
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting complete step
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-selector.php
+ *
+ * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
 ?>
-<!-- =========================================== -->
-<!--			 Renting Form selector template 			 -->
-<!-- =========================================== -->
+
+
 <script type="text/tmpl" id="widget_form_selector_tmpl">
 
 	<% if (configuration.pickupReturnPlace && configuration.timeToFrom) { %>
@@ -156,7 +157,7 @@
 			<% } %>
 
 			<!-- // Search button -->
-			<input style="text-align:center;" class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+			<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
 		</div>
 
 	<% } else { %>
@@ -257,7 +258,7 @@
 			<% } %>
 
 			<!-- // Search button -->
-			<input style="text-align:center;" class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+			<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
 		</div>
 
   <% } %>

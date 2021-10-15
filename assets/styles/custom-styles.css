@@ -9,6 +9,11 @@
 @import "mybooking-engine-product.css";
 @import "mybooking-engine-selector.css";
 
+:root {
+  --mb-border-color: #DDD;
+  --mb-background-color: #EEE;
+}
+
 
 /** FLOATED GRID **/
 
@@ -311,8 +316,7 @@
 /* Choose page */
 .btn-choose-product,
 .btn-confirm-selection {
-  background-color: #2193F2!important;
-  color: #FFF!important;
+  background-color: accentcolor!important;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -325,12 +329,6 @@
 
 .btn-confirm-selection {
   float: right;
-}
-
-.btn-choose-product:hover,
-.btn-confirm-selection:hover {
-  background-color: #666;
-  color: #FFF;
 }
 
 /* Complete page */
@@ -352,26 +350,4 @@
   background-color: #EEE;
   border: 1px solid #DDD;
   border-top: none;
-}
-
-
-/* TESTER */
-.flex-form-group-wrapper {
-  border: 1px dotted black;
-  padding: 2px;
-}
-
-.flex-form-group {
-  border: 1px solid blue;
-  padding: 2px;
-}
-
-.flex-form-horizontal-box {
-  background-color: red;
-  padding: 2px;
-}
-
-.flex-form-horizontal-item {
-  border: 1px solid green;
-  padding: 2px;
 }

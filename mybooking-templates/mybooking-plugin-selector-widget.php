@@ -1,11 +1,14 @@
 <?php
-  /**
-   * The Template for showing the renting selector widget
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-selector-widget.php
-   *
-   */
+/**
+ *   MYBOOKING ENGINE - COMPLETE
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting complete step
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-selector.php
+ *
+ */
 ?>
+
 <section class="mybooking-selector widget widget_mybooking_renting_engine_selector reservation-step">
   <form
     class="mybooking-selector_form"

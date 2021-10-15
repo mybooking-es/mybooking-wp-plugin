@@ -3,13 +3,10 @@
 *  -----------------------------------------------------------------------------
 */
 
-
-/** SELECTOR CLASSIC **/
-
 .mybooking-selector {
   padding: 1rem;
   background-color: white;
-  border: 1px solid #DDD;
+  border: 1px solid var(--mb-border-color);
 }
 
 .mybooking-selector_form {
@@ -45,7 +42,7 @@
 .mybooking-selector_group input:not([type="submit"]) /* Not the buttons! */,
 .mybooking-selector_group select {
   font-size: 14px!important;
-  border: 1px solid #DDD!important;
+  border: 1px solid var(--mb-border-color)!important;
   background-color: white!important;
   box-shadow: none;
   color: inherit!important;
@@ -188,7 +185,7 @@
 
 .mybooking-selector_footer {
   padding-top: 0.5rem;
-  border-top: 1px solid #DDD;
+  border-top: 1px solid var(--mb-border-color);
 }
 
 /* Promo */
@@ -219,7 +216,7 @@
 
 /* Icons */
 
- .form-reservation-error + .mybooking-selector_field-icon {
+.mybooking-selector .form-reservation-error + .mybooking-selector_field-icon {
   color: white;
 }
 
@@ -270,14 +267,15 @@
 
 .mybooking-selector_button {
   width: 100%!important;
+  padding: 0!important;
   border: none!important;
   outline: none!important;
   box-shadow: none!important;
-  background-color: #2193F2!important;
-  color: #FFF!important;
+  background-color: accentcolor!important;
   font-size: 18px!important;
   line-height: 1!important;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 1px;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_button {
@@ -287,12 +285,6 @@
   }
 }
 
-.mybooking-selector_button:hover,
-.mybooking-selector_button:focus,
-.mybooking-selector_button:active {
-  background-color: #666!important;
-}
-
 .mb-inline .mybooking-selector_button {
   min-width: 18%;
   margin-top: 0.5rem;
@@ -300,6 +292,7 @@
   padding: 0;
 }
 
+/* Custom location close */
 .mybooking-selector_close-btn {
   position: absolute;
   right: 3%;
@@ -313,68 +306,4 @@
   background-color: transparent;
   color:  #DDD;
   padding: 0 !important;
-}
-
-/** SELECTOR WIZARD **/
-
-/* The container that holds everything */
-.selector_wizard_container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1040;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.selector_wizard_container a {
-  text-decoration: none !important;
-}
-
-/* The container step title */
-
-.selector_wizard_step_title {
-
-  position: relative;
-  top: 20px;
-  border-bottom: 1px solid #eee;
-
-}
-
-.selector_wizard_close_btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  margin-right: 10px;
-}
-
-.selector_wizard_close_btn i {
-  font-size:1.2em;
-  font-weight: 200;
-}
-
-.selector_wizard_step_container {
-  position: fixed;
-  top: 50px;
-  left: 0;
-  z-index: 2000;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.selector_wizard_step_summary_container {
-  padding-top: 1em;
-  padding-bottom: 1em
-
-}
-
-.selector_wizard_step_container li a {
-  cursor: pointer;
-}
-
-#btn_reservation {
-  margin-bottom: 0;
 }
