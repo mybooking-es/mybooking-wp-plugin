@@ -16,24 +16,24 @@
 
 	<% if (configuration.pickupReturnPlace && configuration.timeToFrom) { %>
 
-		<!-- PICKUP SECTION -->
+		<!-- // PICKUP SECTION -->
 
 		<div class="mybooking-selector_group">
 			<div class="mybooking-selector_place">
 			  <% if (configuration.pickupReturnPlace) { %>
 
-			    <!-- Delivery place -->
+			    <!-- // Delivery place -->
 		      <label for="pickup_place">
 						<?php echo esc_html_x( 'Pick-up place', 'renting_form_selector', 'mybooking-wp-plugin') ?>
 					</label>
 
-					<!-- List pickup place -->
+					<!-- // List pickup place -->
 					<div class="widget_pickup_place_group">
 		      	<select class="mb-form-control" id="widget_pickup_place" name="pickup_place" ></select>
 						<i class="mybooking-selector_field-icon fa fa-map-marker-alt"></i>
 		  		</div>
 
-		      <!-- Custom delivery place -->
+		      <!-- // Custom delivery place -->
 		      <div id="widget_another_pickup_place_group" style="display: none;">
 						<button class="mybooking-selector_close-btn widget_another_pickup_place_group_close">
 							<i class="fa fa-times"></i>
@@ -47,7 +47,7 @@
 
 			<div class="mybooking-selector_date">
 
-				<!-- Pickup date -->
+				<!-- // Pickup date -->
 				<div class="mybooking-selector_cal">
 					<label for="date_from">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getDeliveryDate() ) ?>
@@ -56,7 +56,7 @@
 					<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
 				</div>
 
-				<!-- Pickup time -->
+				<!-- // Pickup time -->
 				<% if (configuration.timeToFrom) { %>
 					<div class="mybooking-selector_hour">
 					<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
@@ -70,24 +70,24 @@
 		</div>
 
 
-		<!-- RETURN SECTION -->
+		<!-- // RETURN SECTION -->
 
 		<div class="mybooking-selector_group">
 			<div class="mybooking-selector_place">
 				<% if (configuration.pickupReturnPlace) { %>
 
-			    <!-- Return place -->
+			    <!-- // Return place -->
 		      <label for="return_place">
 						<?php echo esc_html_x( 'Return place', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
 					</label>
 
-					<!-- List return place -->
+					<!-- // List return place -->
 		      <div class="widget_return_place_group">
 		      	<select class="mb-form-control" name="return_place" id="widget_return_place"></select>
 						<i class="mybooking-selector_field-icon fa fa-map-marker-alt"></i>
 		      </div>
 
-		      <!-- Custom delivery place -->
+		      <!-- // Custom delivery place -->
 		      <div id="widget_another_return_place_group" style="display: none;">
 						<button class="mybooking-selector_close-btn widget_another_return_place_group_close">
 							<i class="fa fa-times"></i>
@@ -101,7 +101,7 @@
 
 			<div class="mybooking-selector_date">
 
-				<!-- Return date -->
+				<!-- // Return date -->
 				<div class="mybooking-selector_cal">
 					<label for="date_to">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?>
@@ -110,7 +110,7 @@
 					<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
 				</div>
 
-				<!-- Return time -->
+				<!-- // Return time -->
 				<% if (configuration.timeToFrom) { %>
 					<div class="mybooking-selector_hour">
 					<select class="mb-form-control" name="time_to" id="widget_time_to"></select>
@@ -123,20 +123,21 @@
 		</div>
 
 
-		<!-- FOOTER -->
+		<!-- // FOOTER -->
 
 		<div class="mybooking-selector_group mybooking-selector_footer">
-			<!-- Location code selector -->
+
+			<!-- // Location code selector -->
 			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
-		    <div class="widget_rental_location_code" style="display: none">
-		      <label for="family_id">
+		    <div class="widget_rental_location" style="display: none">
+		      <label for="location_code">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
 					</label>
-		      <select name="family_id" id="widget_rental_location_code" class="mb-form-control"></select>
+		      <select name="location_code" id="widget_rental_location_code" class="mb-form-control"></select>
 		    </div>
 		  <% } %>
 
-			<!-- Family selector -->
+			<!-- // Family selector -->
 		  <% if (not_hidden_family_id && configuration.selectFamily) { %>
 		    <div class="widget_family" style="display: none">
 		      <label for="family_id">
@@ -146,7 +147,7 @@
 		    </div>
 	    <% } %>
 
-			<!-- Promotion code -->
+			<!-- // Promotion code -->
 			<% if (configuration.promotionCode) { %>
 				<div class="mybooking-selector_promo">
 			    <label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
@@ -154,66 +155,89 @@
 				</div>
 			<% } %>
 
-			<!-- Search button -->
+			<!-- // Search button -->
 			<input style="text-align:center;" class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
 		</div>
 
 	<% } else { %>
 
-	<div class="mybooking-selector_group inline">
+			<!--
+			// Location code selector:
+			// Opens .mybooking-selector_group
+			// only when Locator or Family fields are activated
+			-->
+			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation || not_hidden_family_id && configuration.selectFamily ) { %>
 
-			<!-- Location code selector -->
-			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
-				<div class="widget_rental_location" style="display: none">
-					<label for="family_id">
+			<div class="mybooking-selector_group mb-inline">
+
+				<div class="mybooking-selector_location widget_rental_location" style="display: none">
+					<label for="location_code">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
 					</label>
-					<select name="family_id" id="widget_rental_location_code" class="mb-form-control"></select>
+					<select name="location_code" id="widget_rental_location_code" class="mb-form-control"></select>
 					<i class="mybooking-selector_field-icon fa fa-map-marker-alt"></i>
 				</div>
-			<% } %>
-
-			<!-- Pickup place -->
-			<div class="mybooking-selector_cal">
-				<label for="date_from">
-					<?php echo esc_html( MyBookingEngineContext::getInstance()->getDeliveryDate() ) ?>
-				</label>
-				<input class="mb-form-control" name="date_from" id="widget_date_from" type="text" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
-				<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
-				<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
-			</div>
-
-			<!-- Pickup time -->
-			<% if (configuration.timeToFrom) { %>
-				<div class="mybooking-selector_hour">
-					<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
-					<i class="mybooking-selector_field-icon fa fa-clock"></i>
-				</div>
 			<% } else { %>
-				<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
+
+			<!--
+			// When the above is not active
+			// we need to encapsulate all fields
+			-->
+			<div class="mybooking-selector_group mb-inline">
 			<% } %>
 
-			<!-- Return place -->
-			<div class="mybooking-selector_cal">
-				<label for="date_to">
-					<?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?>
-				</label>
-				<input class="mb-form-control" name="date_to" id="widget_date_to" type="text" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
-				<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
-				<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
-			</div>
-
-			<!-- Return time -->
-			<% if (configuration.timeToFrom) { %>
-				<div class="mybooking-selector_hour">
-					<select class="mb-form-control" name="time_to" id="widget_time_to"></select>
-					<i class="mybooking-selector_field-icon fa fa-clock"></i>
+				<!-- // Pickup place -->
+				<div class="mybooking-selector_cal">
+					<label for="date_from">
+						<?php echo esc_html( MyBookingEngineContext::getInstance()->getDeliveryDate() ) ?>
+					</label>
+					<input class="mb-form-control" name="date_from" id="widget_date_from" type="text" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
+					<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
+					<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
 				</div>
-			<% } else { %>
-				<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
+
+				<!-- // Pickup time -->
+				<% if (configuration.timeToFrom) { %>
+					<div class="mybooking-selector_hour">
+						<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
+						<i class="mybooking-selector_field-icon fa fa-clock"></i>
+					</div>
+				<% } else { %>
+					<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
+				<% } %>
+
+				<!-- // Return place -->
+				<div class="mybooking-selector_cal">
+					<label for="date_to">
+						<?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?>
+					</label>
+					<input class="mb-form-control" name="date_to" id="widget_date_to" type="text" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
+					<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
+					<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
+				</div>
+
+				<!-- // Return time -->
+				<% if (configuration.timeToFrom) { %>
+					<div class="mybooking-selector_hour">
+						<select class="mb-form-control" name="time_to" id="widget_time_to"></select>
+						<i class="mybooking-selector_field-icon fa fa-clock"></i>
+					</div>
+				<% } else { %>
+					<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
+				<% } %>
+
+
+			<!--
+			// Closes div tag for .mybooking-selector_group
+			// and opens a group for the footer
+			// only when Locator or Family fields are activated
+			-->
+			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation || not_hidden_family_id && configuration.selectFamily ) { %>
+				</div>
+				<div class="mybooking-selector_group mybooking-selector_footer">
 			<% } %>
 
-			<!-- Family selector -->
+			<!-- // Family selector -->
 			<% if (not_hidden_family_id && configuration.selectFamily) { %>
 				<div class="widget_family" style="display: none">
 					<label for="family_id">
@@ -224,7 +248,7 @@
 				</div>
 			<% } %>
 
-			<!-- Promotion code -->
+			<!-- // Promotion code -->
 			<% if (configuration.promotionCode) { %>
 				<div class="mybooking-selector_promo">
 					<label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
@@ -232,8 +256,9 @@
 				</div>
 			<% } %>
 
-		<!-- Search button -->
-		<input style="text-align:center;" class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+			<!-- // Search button -->
+			<input style="text-align:center;" class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+		</div>
 
   <% } %>
 

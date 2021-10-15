@@ -39,17 +39,29 @@
 .mybooking-selector_group button {
   height: 40px;
   margin: 0!important;
+  opacity: 1;
 }
 
 .mybooking-selector_group input:not([type="submit"]) /* Not the buttons! */,
 .mybooking-selector_group select {
   font-size: 14px!important;
   border: 1px solid #DDD!important;
-  padding: 0.2rem!important;
-  background-color: #EFEFEF!important;
+  background-color: white!important;
   box-shadow: none;
   color: inherit!important;
   font-family: inherit;
+  font-weight: 700!important;
+}
+
+.mybooking-selector_group input[disabled]:not([type="submit"]) /* Not the buttons! */,
+.mybooking-selector_group select[disabled],
+.mybooking-selector_group input[disabled]:not([type="submit"]) + .mybooking-selector_field-icon,
+.mybooking-selector_group select[disabled] + .mybooking-selector_field-icon {
+  background-color: #EFEFEF!important;
+  border: 1px solid #EFEFEF!important;
+  color: #CCC!important;
+  cursor: not-allowed;
+  font-weight: 400!important;
 }
 
 .mybooking-selector_group input:not([type="submit"]):focus /* Not the buttons! */,
@@ -66,15 +78,8 @@
   font-weight: 700;
 }
 
-.mybooking-selector_group select,
-.mybooking-selector_group select.form-reservation-error {
-  padding-left: 1.7rem!important;
-}
-
-.mybooking-selector_group input:not([type="submit"]) /* Not the buttons! */,
 .mybooking-selector_group input.form-reservation-error,
 .mybooking-selector_group input.form-reservation-error:focus {
-  padding-left: 2.2rem!important;
   font-size: 0.9em;
   width: 55%;
 }
@@ -112,6 +117,18 @@
   }
 }
 
+.mybooking-selector_place select {
+  padding-left: 1.7rem!important;
+}
+
+.mybooking-selector_location {
+  position: relative;
+}
+
+.mybooking-selector_location select {
+  padding-left: 1.7rem!important;
+}
+
 .mybooking-selector_date {
   display: flex;
   flex-direction: row;
@@ -132,20 +149,12 @@
   }
 }
 
-.inline .mybooking-selector_cal {
-  width: 100%!important;
-} @media ( min-width: 575.98px ) {
-  .inline .mybooking-selector_cal {
-    width: max;
-  }
+.mybooking-selector_cal input {
+  padding-left: 2.4rem!important;
 }
 
-.inline .mybooking-selector_hour {
+.mb-inline .mybooking-selector_cal {
   width: 100%!important;
-} @media ( min-width: 575.98px ) {
-  .inline .mybooking-selector_hour {
-    max-width: 100px;
-  }
 }
 
 .mybooking-selector_hour {
@@ -160,6 +169,23 @@
   }
 }
 
+.mybooking-selector_hour select {
+  padding-left: 2rem!important;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_hour select {
+    padding-left: 1.7rem!important;
+  }
+}
+
+.mb-inline .mybooking-selector_hour {
+  width: 100%!important;
+  margin-top: -10px;
+} @media ( min-width: 575.98px ) {
+  .mb-inline .mybooking-selector_hour {
+    max-width: 100px;
+  }
+}
+
 .mybooking-selector_footer {
   padding-top: 0.5rem;
   border-top: 1px solid #DDD;
@@ -167,7 +193,7 @@
 
 /* Promo */
 
-.inline .mybooking-selector_promo {
+.mb-inline .mybooking-selector_promo {
   min-width: 15%;
 }
 
@@ -204,6 +230,13 @@
   top: 57%;
 }
 
+.mybooking-selector_location .mybooking-selector_field-icon {
+  position: absolute;
+  display: inline!important;
+  left: 5%;
+  top: 57%;
+}
+
 .mybooking-selector_cal .mybooking-selector_field-icon {
   position: absolute;
   display: inline!important;
@@ -212,6 +245,17 @@
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_cal .mybooking-selector_field-icon {
     left: 3%;
+  }
+}
+
+.mb-inline .mybooking-selector_cal .mybooking-selector_field-icon {
+  position: absolute;
+  display: inline!important;
+  left: 5%;
+  top: 57%;
+} @media ( min-width: 575.98px ) {
+  .mb-inline .mybooking-selector_cal .mybooking-selector_field-icon {
+    left: 5%;
   }
 }
 
@@ -226,9 +270,6 @@
 
 .mybooking-selector_button {
   width: 100%!important;
-  flex-direction: column;
-  align-self: flex-end;
-  padding: 0.7rem 4rem!important;
   border: none!important;
   outline: none!important;
   box-shadow: none!important;
@@ -240,6 +281,8 @@
   letter-spacing: 1px;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_button {
+    flex-direction: row;
+    align-self: flex-end;
     width: 20%!important;
   }
 }
@@ -250,7 +293,7 @@
   background-color: #666!important;
 }
 
-.inline .mybooking-selector_button {
+.mb-inline .mybooking-selector_button {
   min-width: 18%;
   margin-top: 0.5rem;
   padding-top: 0.5rem;
