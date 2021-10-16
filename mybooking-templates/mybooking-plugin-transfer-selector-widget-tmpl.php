@@ -99,7 +99,7 @@
 <div id="return_block" class="mybooking-selector_transfers flex-form-group-wrapper" style="flex-direction: column; display:none">
 
   <!-- Origin and Return Points -->
-  <div class="flex-form-group">
+  <div class="flex-form-group" id="return_origin_destination_block" style="display: none">
     <!-- Delivery place -->
     <div class="flex-form-horizontal-box">
         <label for="origin_point"><?php echo esc_html_x( 'Return Origin', 'transfer_form_selector', 'mybooking-wp-plugin') ?></label>

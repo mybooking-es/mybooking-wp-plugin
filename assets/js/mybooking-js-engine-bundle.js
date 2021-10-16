@@ -2718,6 +2718,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       selectActivityCategory: false,
       selectActivityDestination: false,
       selectActivityRentalLocation: false,
+      // Transfer
+      transfer_allow_select_return_origin_destination: false,
       formatExtraAmount: function(i18next, oneUnitPrice, priceCalculation, days, hours, amount, currencySymbol, decimals) {
 
         var unitAmountFormatted = this.formatCurrency(oneUnitPrice, currencySymbol, decimals);
@@ -2866,6 +2868,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
              mybookingSettings.data.selectActivityCategory = data.select_activity_category;
              mybookingSettings.data.selectActivityDestination = data.select_activity_destination;
              mybookingSettings.data.selectActivityRentalLocation = data.select_activity_rental_location;
+             // Transfer
+             mybookingSettings.data.transfer_allow_select_return_origin_destination = data.transfer_allow_select_return_origin_destination;
              // Customer access
              if (typeof data.engine_customer_access !== 'undefined') {
                mybookingSettings.data.engineCustomerAccess = true;
@@ -30045,6 +30049,7 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
                  model.shopping_cart = data.shopping_cart;
                  model.extras = data.extras;
                  model.sales_process = data.sales_process;
+                 view.prepareReservationForm();
                  view.updateShoppingCart();
                  // Hide the loader
                  commonLoader.hide();
@@ -30412,9 +30417,9 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
       if (model.configuration.engineCustomerAccess) {
         this.setupLoginForm();
       }
-      else {
-        this.prepareReservationForm();
-      }
+      //else {
+      //  this.prepareReservationForm();
+      //}
       // Load shopping cart
       model.loadShoppingCart();
   	},
@@ -30423,7 +30428,7 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
      * Setup the login form
      */
     setupLoginForm: function() {
-      this.prepareReservationForm();
+      //this.prepareReservationForm();
       var self = this;
       // Complete hide
       $('#mybooking_transfer_form-reservation').hide();
@@ -30561,60 +30566,16 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
 
       // The reservation form fields are defined in a micro-template
       var locale = model.requestLanguage;
-      var localeReservationFormScript = 'script_renting_complete_form_tmpl_'+locale;
+      var localeReservationFormScript = 'script_transfer_complete_form_tmpl_'+locale;
       if (locale != null && document.getElementById(localeReservationFormScript)) {
-        var reservationForm = tmpl(localeReservationFormScript)({configuration: model.configuration});
-        $('form[name=reservation_form]').html(reservationForm);           
+        var reservationForm = tmpl(localeReservationFormScript)({configuration: model.configuration,
+                                                                 shopping_cart: model.shopping_cart});
+        $('form[name=mybooking_transfer_reservation_form]').html(reservationForm);           
       }
-      else if (document.getElementById('script_renting_complete_form_tmpl')) {
-        var reservationForm = tmpl('script_renting_complete_form_tmpl')({configuration: model.configuration});
-        $('form[name=reservation_form]').html(reservationForm);                                                                    
-      }
-
-      // Configure address country
-
-      // Load countries
-      var countries = i18next.t('common.countries', {returnObjects: true });
-      if (countries instanceof Object) {
-        var countryCodes = Object.keys(countries);
-        var countriesArray = countryCodes.map(function(value){ 
-                                return {id: value, text: countries[value], description: countries[value]};
-                             });
-      } 
-      else {
-        var countriesArray = [];
-      }
-      var values = ['']; 
-
-      if (commonServices.jsUseSelect2) {
-        // Setup country selector
-        var selectors = ['select[name=country]'];
-        for (var idx=0; idx<selectors.length; idx++) { 
-          $countrySelector = $(selectors[idx]);    
-          if ($countrySelector.length > 0 && typeof values[idx] !== 'undefined') {
-            $countrySelector.select2({
-              width: '100%',
-              theme: 'bootstrap4',                  
-              data: countriesArray
-            });
-            // Assign value
-            var value = (values[idx] !== null && values[idx] !== '' ? values[idx] : '');
-            $countrySelector.val(values[idx]);
-            $countrySelector.trigger('change');
-          }
-        }
-      }
-      else {
-        // Setup country selector
-        var selectors = ['country'];
-        for (var idx=0; idx<selectors.length; idx++) { 
-          if (document.getElementById(selectors[idx])) {
-            var countriesDataSource = new MemoryDataSource(countriesArray);
-            var countryModel = (values[idx] == null ? '' : values[idx])
-            var selectorModel = new SelectSelector(selectors[idx],
-                countriesDataSource, countryModel, true, i18next.t('complete.reservationForm.select_country'));
-          }
-        }
+      else if (document.getElementById('script_transfer_complete_form_tmpl')) {
+        var reservationForm = tmpl('script_transfer_complete_form_tmpl')({configuration: model.configuration,
+                                                                          shopping_cart: model.shopping_cart});
+        $('form[name=mybooking_transfer_reservation_form]').html(reservationForm);                                                                    
       }
 
     },
@@ -30681,7 +30642,43 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
                         required: '#account_password:visible',
                         pwcheck: '#account_password:visible',
                         minlength: 8
-                    }
+                    },
+                    'detailed_origin_address': {
+                        required: '#detailed_origin_address:visible'
+                    },
+                    'detailed_origin_flight_number': {
+                        required: '#detailed_origin_flight_number:visible'
+                    },
+                    'detailed_origin_flight_estimated_time': {
+                        required: '#detailed_origin_flight_estimated_time:visible'
+                    },
+                    'detailed_destination_address': {
+                        required: '#detailed_destination_address:visible'
+                    },
+                    'detailed_destination_flight_number': {
+                        required: '#detailed_destination_flight_number:visible'
+                    },
+                    'detailed_destination_flight_estimated_time': {
+                        required: '#detailed_destination_flight_estimated_time:visible'
+                    },
+                    'detailed_return_origin_address': {
+                        required: '#detailed_return_origin_address:visible'
+                    },
+                    'detailed_return_origin_flight_number': {
+                        required: '#detailed_return_origin_flight_number:visible'
+                    },
+                    'detailed_return_origin_flight_estimated_time': {
+                        required: '#detailed_return_origin_flight_estimated_time:visible'
+                    },
+                    'detailed_return_destination_address': {
+                        required: '#detailed_return_destination_address:visible'
+                    },
+                    'detailed_return_destination_flight_number': {
+                        required: '#detailed_return_destination_flight_number:visible'
+                    },
+                    'detailed_return_destination_flight_estimated_time': {
+                        required: '#detailed_return_destination_flight_estimated_time:visible'
+                    },                                                                                                    
                 },
 
                 messages : {
@@ -30739,7 +30736,42 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
                         'pwcheck': i18next.t('complete.reservationForm.validations.passwordCheck'),
                         'minlength': i18next.t('complete.reservationForm.validations.minLength', {minlength: 8}),
                     },                     
-
+                    'detailed_origin_address': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_origin_flight_number': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_origin_flight_estimated_time': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_destination_address': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_destination_flight_number': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_destination_flight_estimated_time': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_return_origin_address': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_return_origin_flight_number': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_return_origin_flight_estimated_time': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_return_destination_address': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_return_destination_flight_number': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
+                    'detailed_return_destination_flight_estimated_time': {
+                        required: i18next.t('complete.reservationForm.validations.fieldRequired')
+                    },
                 },
 
                 errorPlacement: function (error, element) {
@@ -30779,7 +30811,7 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
       // Update the summary
       this.updateShoppingCartSummary();
       // Update the extras
-      // this.updateExtras(); // TODO
+      this.updateExtras();
       // Update the payment
       this.updatePayment();
 
@@ -30889,7 +30921,7 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
                                                       extrasInShoppingCart: model.getShoppingCartExtrasQuantities(),
                                                       i18next: i18next,
                                                       shopping_cart: model.shopping_cart});
-          $('#extras_listing').html(result);
+          $('#mybooking_transfer_extras_listing').html(result);
 
           // == Setup events
 
@@ -31493,6 +31525,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     this.round_trip_selector = 'input[name=round_trip]';
     this.return_block_id = 'return_block';
     this.return_block_selector = '#return_block';
+    this.return_origin_destination_block_selector = '#return_origin_destination_block';
 
     // Return Date
     this.return_date_id = 'return_date';
@@ -31524,10 +31557,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     this.returnDates = null;
     this.returnTimes = null;
 
-
-    this.dataSourceOriginPoints = null; // Origin points datasource
-    this.dataSourceDestinationPoints = null; // Destination points datasource
-    this.dataSourceReturnDestinationPoints = null; // Return Destination points datasource
     this.requestLanguage = null;
     this.configuration = null;
     this.shopping_cart = null;
@@ -31569,6 +31598,32 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     };
 
     /**
+     * Load Hours
+     */
+    this.loadHours = function(date) { 
+      var self=this;
+      // Build URL
+      var url = commonServices.URL_PREFIX + '/api/booking/frontend/times?date='+date;
+      url += '&transfer_destination_point_id='+$(this.return_origin_point_selector).val();      
+      if (commonServices.apiKey && commonServices.apiKey != '') {
+        url += '&api_key='+commonServices.apiKey;
+      }        
+      // Request
+      $.ajax({
+        type: 'GET',
+        url: url,
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR) {
+          self.times = data;
+          self.selectorView.update('hours', 'time', data);
+        },
+        error: function(data, textStatus, jqXHR) {
+          alert(i18next.t('selector.error_loading_data'));
+        }
+      });
+    };
+
+    /**
      * Load Return Days
      */
     this.loadReturnDays = function(year, month) { 
@@ -31592,32 +31647,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         success: function(data, textStatus, jqXHR) {
           self.returnDates = data;
           self.selectorView.update('days', 'return_date');
-        },
-        error: function(data, textStatus, jqXHR) {
-          alert(i18next.t('selector.error_loading_data'));
-        }
-      });
-    };
-
-    /**
-     * Load Hours
-     */
-    this.loadHours = function(date) { 
-      var self=this;
-      // Build URL
-      var url = commonServices.URL_PREFIX + '/api/booking/frontend/times?date='+date;
-      url += '&transfer_destination_point_id='+$(this.return_origin_point_selector).val();      
-      if (commonServices.apiKey && commonServices.apiKey != '') {
-        url += '&api_key='+commonServices.apiKey;
-      }        
-      // Request
-      $.ajax({
-        type: 'GET',
-        url: url,
-        dataType: 'json',
-        success: function(data, textStatus, jqXHR) {
-          self.times = data;
-          self.selectorView.update('hours', 'time', data);
         },
         error: function(data, textStatus, jqXHR) {
           alert(i18next.t('selector.error_loading_data'));
@@ -31680,14 +31709,14 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     /**
      * Date Changed
      */ 
-    this.dateChanged = function (element) {
+    this.dateChanged = function (value, element) {
       var self = this;
       if ( $(this.selectorModel.return_date_selector).length > 0 ) {
         $(this.selectorModel.return_date_selector).datepicker('option', 'minDate', 
               $(document.getElementById(element.id)).datepicker('getDate'));
       }
       // Load Hours
-      var date = moment(element.lastVal, this.selectorModel.configuration.dateFormat).format('YYYY-MM-DD');
+      var date = moment(value, this.selectorModel.configuration.dateFormat).format('YYYY-MM-DD');
       this.selectorModel.loadHours(date);
       //this.selectorView.loadTime();
     }
@@ -31695,12 +31724,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     /**
      * Return Date Changed
      */
-    this.returnDateChanged = function (element) {
+    this.returnDateChanged = function (value, element) {
       var self = this;
       // Load Hours
-      var date = moment(element.lastVal, this.selectorModel.configuration.dateFormat).format('YYYY-MM-DD');
+      var date = moment(value, this.selectorModel.configuration.dateFormat).format('YYYY-MM-DD');
       this.selectorModel.loadReturnHours(date);
-      //this.selectorView.loadReturnTime();
     }          
 
     /**
@@ -31709,14 +31737,27 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     this.rountTripChanged = function(event) {
         var value = event.currentTarget.value;
         if (value === 'true') {
-          $(this.selectorModel.return_block_selector).show();
           // Setup the return date min value as the date 
           if ($(this.selectorModel.date_selector).datepicker('getDate')) {
             $(this.selectorModel.return_date_selector).datepicker('option', 'minDate', 
                 $(this.selectorModel.date_selector).datepicker('getDate'));
           }
+          // Show the return block
+          $(this.selectorModel.return_block_selector).show();
+          if (this.selectorModel.configuration.transfer_allow_select_return_origin_destination) {
+            $(this.selectorModel.return_origin_destination_block_selector).show();
+            // Load return origin points (if not modifing selector and not return origin point value)
+            // That is a new selector and first time changed to round trip
+            if (!this.selectorModel.shopping_cart && 
+                ($(this.selectorModel.return_origin_point_selector).val() === null || $(this.selectorModel.return_origin_point_selector).val() === '') ){
+              this.selectorView.loadReturnOriginPoints();
+            }
+          }
         } else {
           $(this.selectorModel.return_block_selector).hide();
+          if (this.selectorModel.configuration.transfer_allow_select_return_origin_destination) {
+            $(this.selectorModel.return_origin_destination_block_selector).hide();
+          }
         }      
     }
 
@@ -31746,42 +31787,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         this.setupSelectorFormTmpl();
         
         // Setup origin and destination points
-        this.loadOriginPoints('origin_point');
-        if (this.selectorModel.shopping_cart) {
-          this.loadDestinationPoints('destination_point', false, this.selectorModel.shopping_cart.origin_point_id);
-        }
-        this.loadOriginPoints('return_origin_point');
-        if (this.selectorModel.shopping_cart) {
-          this.loadDestinationPoints('return_destination_point', false, this.selectorModel.shopping_cart.return_origin_point_id);
-        }
-
-        if (this.selectorModel.shopping_cart) {
-          // Setup date settings
-          this.loadDate();
-          this.loadReturnDate();
-
-          // Setup date settings
-          this.loadTime();
-          this.loadReturnTime();
-        }
-
-        // Setup number of people
-        if (this.selectorModel.shopping_cart) {
-          $(this.selectorModel.number_of_adults_selector).val(this.selectorModel.shopping_cart.number_of_adults);
-        }
-        if (this.selectorModel.shopping_cart) {
-          $(this.selectorModel.number_of_children_selector).val(this.selectorModel.shopping_cart.number_of_children);
-        }
-        if (this.selectorModel.shopping_cart) {
-          $(this.selectorModel.number_of_infants_selector).val(this.selectorModel.shopping_cart.number_of_infants);
-        }
-
-        // Setup round_trip
-        if (this.selectorModel.shopping_cart && this.selectorModel.shopping_cart.round_trip) {
-          $(this.selectorModel.round_trip_selector).filter('[value="true"]').attr('checked', 'true');
-          $(this.selectorModel.round_trip_selector).trigger('change');
-        }
-
+        this.loadOriginPoints();
 
     }
     
@@ -31799,6 +31805,84 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
             self.init();
           }
       });
+    }
+
+    /**
+    * Load origin points
+    */
+    this.loadOriginPoints = function() {
+
+      console.log('loadOriginPoints');
+
+      // Build URL
+      var url = commonServices.URL_PREFIX + '/api/booking-transfer/frontend/origin-points';
+      var urlParams = [];
+      if (this.selectorModel.requestLanguage != null) {
+      urlParams.push('lang='+this.selectorModel.requestLanguage);
+      }
+      if (commonServices.apiKey && commonServices.apiKey != '') {
+      urlParams.push('api_key='+commonServices.apiKey);
+      }    
+      if (urlParams.length > 0) {
+      url += '?';
+      url += urlParams.join('&');
+      }
+
+      // DataSource
+      var dataSource = new RemoteDataSource(url,
+                                            {
+                                            'id':'id',
+                                            'description': function(data) {
+                                                return data.name;
+                                            }});
+      var value = this.selectorModel.shopping_cart ? this.selectorModel.shopping_cart.origin_point_id : null;
+      var self = this;
+      new SelectSelector(this.selectorModel.origin_point_id, 
+              dataSource,
+              value, 
+              true, 
+              i18next.t('selector.select_pickup_place'));
+    }
+
+    /**
+    * Load destination points
+    */
+    this.loadDestinationPoints = function(originPointId) {
+      console.log('loadDestinationPoints');
+
+      var self = this;
+      // Get the origin point
+      var originPointId = originPointId || $(this.selectorModel.origin_point_selector).val();
+
+      // Build URL
+      var url = commonServices.URL_PREFIX + '/api/booking-transfer/frontend/destination-points';
+      var urlParams = [];
+      urlParams.push('origin_point_id='+encodeURIComponent(originPointId));
+      if (this.selectorModel.requestLanguage != null) {
+        urlParams.push('lang='+this.selectorModel.requestLanguage);
+      }
+      if (commonServices.apiKey && commonServices.apiKey != '') {
+        urlParams.push('api_key='+commonServices.apiKey);
+      }    
+      if (urlParams.length > 0) {
+        url += '?';
+        url += urlParams.join('&');
+      }
+
+      // DataSource and Selector
+      var dataSource = new RemoteDataSource(url,
+                                            {
+                                            'id':'id',
+                                            'description': function(data) {
+                                                return data.name;
+                                            }});
+      var value = this.selectorModel.shopping_cart ? this.selectorModel.shopping_cart.destination_point_id : null;
+      new SelectSelector(this.selectorModel.destination_point_id, 
+              dataSource,
+              value, 
+              true, 
+              i18next.t('selector.select_pickup_place'));
+
     }
 
     /**
@@ -31828,6 +31912,92 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       }
     };
     
+
+    // === Return : Roundtrip
+
+    /**
+    * Load origin points
+    */
+    this.loadReturnOriginPoints = function() {
+
+      console.log('loadReturnOriginPoints');
+
+      // Build URL
+      var url = commonServices.URL_PREFIX + '/api/booking-transfer/frontend/origin-points';
+      var urlParams = [];
+      if (this.selectorModel.requestLanguage != null) {
+      urlParams.push('lang='+this.selectorModel.requestLanguage);
+      }
+      if (commonServices.apiKey && commonServices.apiKey != '') {
+      urlParams.push('api_key='+commonServices.apiKey);
+      }    
+      if (urlParams.length > 0) {
+      url += '?';
+      url += urlParams.join('&');
+      }
+
+      // DataSource
+      var dataSource = new RemoteDataSource(url,
+                                            {
+                                            'id':'id',
+                                            'description': function(data) {
+                                                return data.name;
+                                            }});
+      var value = this.selectorModel.shopping_cart ? this.selectorModel.shopping_cart.return_origin_point_id : $(this.selectorModel.destination_point_selector).val();
+      var self = this;
+      new SelectSelector(this.selectorModel.return_origin_point_id, 
+              dataSource,
+              value, 
+              true, 
+              i18next.t('selector.select_pickup_place'), function(){
+                // Trigger as if the element was changed 
+                if (self.selectorModel.shopping_cart == null && value != null) {
+                  $(self.selectorModel.return_origin_point_selector).val(value);
+                  $(self.selectorModel.return_origin_point_selector).trigger('change');
+                }
+              });
+    }
+
+    /**
+    * Load destination points
+    */
+    this.loadReturnDestinationPoints = function(returnOriginPointId) {
+      console.log('loadReturnDestinationPoints');
+
+      var self = this;
+      // Get the origin point
+      var returnOriginPointId = returnOriginPointId || $(this.selectorModel.return_origin_point_selector).val();
+
+      // Build URL
+      var url = commonServices.URL_PREFIX + '/api/booking-transfer/frontend/destination-points';
+      var urlParams = [];
+      urlParams.push('origin_point_id='+encodeURIComponent(returnOriginPointId));
+      if (this.selectorModel.requestLanguage != null) {
+        urlParams.push('lang='+this.selectorModel.requestLanguage);
+      }
+      if (commonServices.apiKey && commonServices.apiKey != '') {
+        urlParams.push('api_key='+commonServices.apiKey);
+      }    
+      if (urlParams.length > 0) {
+        url += '?';
+        url += urlParams.join('&');
+      }
+
+      // DataSource and Selector
+      var dataSource = new RemoteDataSource(url,
+                                            {
+                                            'id':'id',
+                                            'description': function(data) {
+                                                return data.name;
+                                            }});
+      var value = this.selectorModel.shopping_cart ? this.selectorModel.shopping_cart.return_destination_point_id : $(this.selectorModel.origin_point_selector).val();
+      new SelectSelector(this.selectorModel.return_destination_point_id, 
+              dataSource,
+              value, 
+              true, 
+              i18next.t('selector.select_pickup_place'));
+
+    }
 
     /**
     * Load date
@@ -31869,111 +32039,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
     };
 
-    /**
-    * Load origin points
-    */
-    this.loadOriginPoints = function(idSelector) {
-      console.log('loadOriginPoints');
 
-      if (this.selectorModel.dataSourceOriginPoints) {
-        this.addSelector(idSelector, 'dataSourceOriginPoints');
-        return;
-      }
-
-      // Build URL
-      var url = commonServices.URL_PREFIX + '/api/booking-transfer/frontend/origin-points';
-      var urlParams = [];
-      if (this.selectorModel.requestLanguage != null) {
-      urlParams.push('lang='+this.selectorModel.requestLanguage);
-      }
-      if (commonServices.apiKey && commonServices.apiKey != '') {
-      urlParams.push('api_key='+commonServices.apiKey);
-      }    
-      if (urlParams.length > 0) {
-      url += '?';
-      url += urlParams.join('&');
-      }
-
-      // DataSource
-      this.selectorModel.dataSourceOriginPoints = new RemoteDataSource(url,
-        {
-        'id':'id',
-        'description': function(data) {
-            return data.name;
-        }});
-
-      this.addSelector(idSelector, 'dataSourceOriginPoints');
-    }
-
-    /**
-    * Load destination points
-    */
-    this.loadDestinationPoints = function(idSelector, clearInput, value) {
-      console.log('loadDestinationPoints');
-
-      var mySelector = $(this.selectorModel[idSelector + '_selector']);
-      var mySource = (idSelector === 'destination_point') ? 'dataSourceDestinationPoints' : 'dataSourceReturnDestinationPoints';
-
-      if (this.selectorModel[mySource]) {
-        if (!mySelector.attr('disabled')) {
-          mySelector.val('');
-        } 
-        else {
-          this.addSelector(idSelector, mySource, clearInput);
-          mySelector.attr('disabled', false);
-        }
-        //return; // It is not necessary because it avoids to reload destination points when origin point changes
-      }
-
-      var self = this;
-
-      var originPointId = value || $(this.selectorModel.origin_point_selector).val();
-      console.log(originPointId);
-
-      // Build URL
-      var url = commonServices.URL_PREFIX + '/api/booking-transfer/frontend/destination-points';
-      var urlParams = [];
-      urlParams.push('origin_point_id='+encodeURIComponent(originPointId));
-      if (this.selectorModel.requestLanguage != null) {
-        urlParams.push('lang='+this.selectorModel.requestLanguage);
-      }
-      if (commonServices.apiKey && commonServices.apiKey != '') {
-        urlParams.push('api_key='+commonServices.apiKey);
-      }    
-      if (urlParams.length > 0) {
-        url += '?';
-        url += urlParams.join('&');
-      }
-
-      // DataSource
-      this.selectorModel[mySource] = new RemoteDataSource(url,
-          {
-          'id':'id',
-          'description': function(data) {
-              return data.name;
-          }});
-
-      this.addSelector(idSelector, mySource, clearInput);
-      mySelector.attr('disabled', false);
-    }
-
-    /**
-    * Add data to inputs selects
-    */
-    this.addSelector = function (idSelector, idDataSource, clearInput) {
-      var self = this;
-
-      new SelectSelector(this.selectorModel[idSelector + '_id'], 
-          this.selectorModel[idDataSource],
-              null, 
-              true, 
-              i18next.t('selector.select_pickup_place'),
-            function(data) {
-              if (self.selectorModel.shopping_cart && !clearInput) {
-                $(self.selectorModel[idSelector + '_selector']).val(self.selectorModel.shopping_cart[idSelector + '_id']);
-              }
-            });
-    }
+    // ---------------------- Start from shopping cart => Selector modification
 
     /**
      * Start the component from shopping cart : Load the shopping cart information in the selector fields
@@ -31984,9 +32051,31 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       this.selectorModel.loadedShoppingCart = true;
       this.init();
 
+      // Load destination Points
+      this.loadDestinationPoints(shopping_cart.origin_point_id);
+      $(this.selectorModel.destination_point_selector).attr('disabled', false);
+      // Setup date settings
+      this.loadDate();
+      this.loadTime();
+      // Load Return information (round trip)
+      this.loadReturnOriginPoints();
+      this.loadReturnDestinationPoints(shopping_cart.return_origin_point_id);
+      this.loadReturnDate();
+      this.loadReturnTime();
+      // Places
+      $(this.selectorModel.number_of_adults_selector).val(shopping_cart.number_of_adults);
+      $(this.selectorModel.number_of_children_selector).val(shopping_cart.number_of_children);
+      $(this.selectorModel.number_of_infants_selector).val(shopping_cart.number_of_infants);
+      // Setup round_trip
+      if (shopping_cart && shopping_cart.round_trip) {
+        $(this.selectorModel.round_trip_selector).filter('[value="true"]').attr('checked', 'true');
+        $(this.selectorModel.round_trip_selector).trigger('change');
+      }          
+
     }
 
     // ------------------------ Extract Agent Id ------------------------------
+    
     this.extractAgentId = function() {
 
       var urlVars = commonSettings.getUrlVars();
@@ -32022,11 +32111,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
       // Origin point change
       $(this.selectorModel.origin_point_selector).on('change', function(value) {
-        self.loadDestinationPoints('destination_point', true);
+        self.loadDestinationPoints();
       });
       // Return origin point change
       $(this.selectorModel.return_origin_point_selector).on('change', function(value) {
-        self.loadDestinationPoints('return_destination_point', true);
+        self.loadReturnDestinationPoints();
       });
 
       // Setup date control
@@ -32048,6 +32137,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
     }
 
+    /**
+     * Setup Date Control
+     */ 
     this.setupDateControl = function () {
       var self = this;
 
@@ -32093,7 +32185,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
              }         
         },
         onSelect: function (value, element) {
-          self.selectorController.dateChanged(element);
+          self.selectorController.dateChanged(value, element);
         },
       }, locale);
 
@@ -32101,6 +32193,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       $('.ui-datepicker').addClass('notranslate');
     }
 
+    /**
+     *  Setup Return date control (round trip)
+     */ 
     this.setupReturnDateControl = function () {
       var self = this;
 
@@ -32146,7 +32241,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
              }         
         },
         onSelect: function (value, element) {
-          self.selectorController.returnDateChanged(element);
+          self.selectorController.returnDateChanged(value, element);
         },
       }, locale);
 

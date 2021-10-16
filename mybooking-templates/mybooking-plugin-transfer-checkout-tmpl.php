@@ -17,15 +17,15 @@
     <div class="extra-wrapper">
       <% for (var idx=0;idx<extras.length;idx++) { %>
         <% var extra = extras[idx]; %>
-        <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
+        <% var value = (extrasInShoppingCart[extra.id]) ? extrasInShoppingCart[extra.id] : 0; %>
         <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
-        <div class="row extra-card <%=bg%>" data-extra="<%=extra.code%>">
-          <% if (extra.photo_path) { %>
+        <div class="row extra-card <%=bg%>" data-extra="<%=extra.id%>">
+          <% if (extra.photo_url) { %>
             <div class="col-md-2">
               <img class="extra-img js-extra-info-btn"
-                    src="<%=extra.photo_path%>"
+                    src="<%=extra.photo_url%>"
                     alt="<%=extra.name%>"
-                    data-extra="<%=extra.code%>">
+                    data-extra="<%=extra.id%>">
             </div>
             <div class="col-md-4">
               <div class="extra-name"><b><%=extra.name%></b></div>
@@ -39,29 +39,27 @@
             <% if (extra.max_quantity > 1) { %>
               <div class="extra-plus-minus">
                 <button class="btn btn-primary btn-minus-extra"
-                        data-value="<%=extra.code%>"
+                        data-value="<%=extra.id%>"
                         data-max-quantity="<%=extra.max_quantity%>">-</button>
-                <input type="text" id="extra-<%=extra.code%>-quantity"
-                       class="form-control disabled text-center extra-input" value="<%=value%>" data-extra-code="<%=extra.code%>" readonly/>
+                <input type="text" id="extra-<%=extra.id%>-quantity"
+                       class="form-control disabled text-center extra-input" value="<%=value%>" data-extra-code="<%=extra.id%>" readonly/>
                 <button class="btn btn-primary btn-plus-extra"
-                        data-value="<%=extra.code%>"
+                        data-value="<%=extra.id%>"
                         data-max-quantity="<%=extra.max_quantity%>">+</button>
               </div>
             <% } else { %>
               <div class="extra-check">
                 <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=extra.code%>" data-value="<%=extra.code%>"
-                  <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>
-                  <label class="custom-control-label" for="checkboxl<%=extra.code%>"></label>
+                  <input type="checkbox" class="custom-control-input extra-checkbox" id="checkboxl<%=extra.id%>" data-value="<%=extra.id%>"
+                  <% if (extrasInShoppingCart[extra.id] &&  extrasInShoppingCart[extra.id] > 0) { %> checked="checked" <% } %>>
+                  <label class="custom-control-label" for="checkboxl<%=extra.id%>"></label>
                 </div>
               </div>
             <% } %>
           </div>
           <div class="col-md-3">
            <p class="extra-price">
-              <b><%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation,
-                                                     shopping_cart.days, shopping_cart.hours,
-                                                     extra.unit_price)%></b>
+              <b><%= configuration.formatCurrency(extra.price)%></b>
            </p>
           </div>
         </div>
