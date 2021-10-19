@@ -33,6 +33,10 @@
   cursor: pointer;
 }
 
+.mybooking-summary_edit:hover {
+  opacity: 0.5;
+}
+
 .mybooking-summary_locator {
   font-size: 0.9em;
   text-transform: uppercase;
@@ -41,13 +45,9 @@
 
 .mybooking-summary_locator-id {
   margin-left: 0.3rem;
-  color: #2193F2;
+  color: var(--mb-summary-locator-color);
   font-size: 1.8em;
   font-weight: 700;
-}
-
-.mybooking-summary_edit:hover {
-  opacity: 0.5;
 }
 
 .mybooking-summary_status {
@@ -297,8 +297,8 @@
 .mybooking-payment_option-label {
   width: 100%;
   padding: 1rem;
-  background-color: #424242;
-  color: #FFF;
+  background-color: var(--mb-payment-option-btn-bg);
+  color: var(--mb-payment-option-btn-color);
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -310,13 +310,17 @@
 .mybooking-payment_option-label:active,
 .mybooking-payment_option-label:focus {
   background-color: #666;
-  color: #FFF;
+  color: var(--mb-payment-option-btn-color);
 }
 
 .mybooking-payment_option-input {
-  position:absolute;
-    clip: rect(0,0,0,0);
-    clip: rect(0 0 0 0);
+  position: absolute!important;
+  clip: rect(0 0 0 0)!important;
+  clip-path: inset(50%)!important;
+  width: 1px!important;
+  height: 1px!important;
+  overflow: hidden!important;
+  white-space: nowrap!important;
 }
 
 /* Payment confirmation */
@@ -500,15 +504,15 @@
 }
 
 .mybooking-popup {
-	width: 90vw;
-	height: 90vh;
+	width: var(--mb-popup-width-mobile);
+	height: var(--mb-popup-height-mobile);
 	overflow: auto;
 	border-radius: 3px;
 	margin: 0 auto;
 } @media ( min-width: 992px ) {
 	.mybooking-popup {
-		width: 50vw;
-		height: auto;
+		width: var(--mb-popup-width-desk);
+		height: var(--mb-popup-height-desk);
 	}
 }
 
@@ -520,7 +524,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-color: #FFF;
+	background-color: var(--mb-popup-background);
 }
 
 .mybooking-popup_close {
@@ -528,7 +532,8 @@
 	position: absolute;
 	top: 0px;
 	right: 15px;
-  font-size: 2em;
+  color: var(--mb-popup-close-btn-color);
+  font-size: var(--mb-popup-close-btn-size);
 	z-index: 45;
   cursor: pointer;
 }
@@ -555,7 +560,7 @@
   left: 0;
   padding: 1rem;
   border: 1px solid var(--mb-border-color);
-  background-color: white;
+  background-color: var(--mb-cookies-background);
   box-shadow: 0 0 20px #666;
 }
 
@@ -567,9 +572,8 @@
   margin: 0;
   font-size: 16px;
   line-height: 1.2;
+  color: var(--mb-cookies-color);
 }
-
-
 
 
 /** JQUERY DATEPICKER **/
@@ -616,7 +620,7 @@ fieldset legend {
   width: 100%;
   padding: 4px 0;
   background-color: white;
-  color: #424242;
+  color: currentcolor;
 }
 
 .ui-datepicker-month,
@@ -626,9 +630,9 @@ fieldset legend {
 }
 
 .ui-datepicker td .ui-state-default {
-  background: #eee;
+  background: var(--mb-calendar-disabled);
   padding: 10px;
-  color: #424242!important;
+  color: currentcolor!important;
   font-size: 16px;
   text-decoration: none!important;
   border-radius: 0;
@@ -643,16 +647,16 @@ fieldset legend {
 }
 
 .ui-datepicker td.ui-state-disabled.ui-datepicker-unselectable .ui-state-default:hover {
-  background: red!important;
+  background: var(--mb-calendar-booked)!important;
 }
 
 .ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default {
-  background: #aeecbc;
+  background: var(--mb-calendar-available);
 }
 
 .ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default:hover {
-  background: #49e !important;
-  color: white!important;
+  background: var(--mb-calendar-available-hover)!important;
+  color: var(--mb-negative-text-color)!important;
   border-radius: 0;
 }
 
@@ -698,27 +702,27 @@ fieldset legend {
 }
 
 .date-picker-wrapper .month-wrapper table .day.real-today {
-  background-color: #aeecbc;
+  background-color: var(--mb-calendar-available);
 }
 
 .date-picker-wrapper .month-wrapper table .day.real-today:hover {
-  background-color: #49e !important;
+  background-color: var(--mb-calendar-available-hover)!important;
 }
 
 .date-picker-wrapper .month-wrapper table .day.invalid.real-today,
 .date-picker-wrapper .month-wrapper table .day.not-selectable-day.real-today {
-  background-color: #eee;
+  background-color: var(--mb-calendar-disabled);
 }
 
 .date-picker-wrapper .month-wrapper table .day.invalid.real-today:hover,
 .date-picker-wrapper .month-wrapper table .day.not-selectable-day.real-today:hover {
-  background-color: red!important;
+  background-color: var(--mb-calendar-booked)!important;
 }
 
 .date-picker-wrapper .month-wrapper table .day.real-today.checked,
 .date-picker-wrapper .month-wrapper table .day.real-today.hovering {
-    background-color: #49e !important;
-    color: white;
+    background-color: var(--mb-calendar-available-hover)!important;
+    color: var(--mb-negative-text-color);
 }
 
 .date-picker-wrapper .gap {

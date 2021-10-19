@@ -69,9 +69,9 @@
 .mybooking-selector_group input.form-reservation-error,
 .mybooking-selector_group input.form-reservation-error:focus,
 .mybooking-selector_group select.form-reservation-error {
-  background-color: #EC8396!important;
+  background-color: var(--mb-danger-color)!important;
   color: white!important;
-  border: 1px solid #EC8396;
+  border: 1px solid var(--mb-danger-color);
   font-weight: 700;
 }
 
@@ -82,13 +82,13 @@
 }
 
 .mybooking-selector label.form-reservation-error {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+  position: absolute!important;
+  clip: rect(0 0 0 0)!important;
+  clip-path: inset(50%)!important;
+  width: 1px!important;
+  height: 1px!important;
+  overflow: hidden!important;
+  white-space: nowrap!important;
 }
 
 /* Placeholders */
@@ -100,7 +100,7 @@
 
 .mybooking-selector input.form-reservation-error::placeholder,
 .mybooking-selector select.form-reservation-error::placeholder {
-  color: white!important;
+  color: var(--mb-negative-text-color)!important;
 }
 
 /* Sections */
@@ -217,7 +217,7 @@
 /* Icons */
 
 .mybooking-selector .form-reservation-error + .mybooking-selector_field-icon {
-  color: white;
+  color: var(--mb-negative-text-color);
 }
 
 .mybooking-selector_place .mybooking-selector_field-icon {
@@ -298,12 +298,12 @@
   right: 3%;
   top: 40%;
   background-color: transparent;
-  color:  #EC8396;
+  color:  var(--mb-danger-color);
   padding: 0 !important;
 }
 
 .mybooking-selector_close-btn:hover {
   background-color: transparent;
-  color:  #DDD;
+  color:  var(--mb-border-color);
   padding: 0 !important;
 }

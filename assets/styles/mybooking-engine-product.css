@@ -84,13 +84,16 @@
     background: #FFF;
   }
 
+  .mybooking-product_list .mybooking-product_name {
+    font-size: var(--mb-product-name-size-inline);
+  }
+
   .mybooking-product_list .mybooking-product_info-button {
     position: absolute;
     right: 30px;
     top: 82%;
     font-size: 28px;
     transition: ease-in-out 0.2ms;
-    z-index: 1;
   }
 
 } @media ( min-width: 991.98px ) {
@@ -156,7 +159,7 @@
 .mybooking-product {
   position: relative;
   margin: 10px;
-  border: 1px solid #DDD;
+  border: 1px solid var(--mb-border-color);
 }
 
 .mybooking-product_info-block {
@@ -167,13 +170,14 @@
 /* Product image */
 
 .mybooking-product_image-container {
+  display: flex;
+  align-items: center;
   width: 100%;
-  height: 260px;
+  height: var(--mb-product-image-height);
 }
 
 .mybooking-product_image {
-  width: 100%;
-  border-radius: 0;
+  min-width: 100%!important;
 }
 
 .mybooking-product_info-button {
@@ -194,9 +198,9 @@
   width: 100%;
   left: 0;
   top: 220px;
-  background-color: #999;
+  background-color: var(--mb-product-custom-message-bg);
   padding: 13px;
-  color: #FFF;
+  color: var(--mb-product-custom-message-color);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -211,8 +215,21 @@
   flex-direction: column;
   width: 100%;
   padding: 10px 20px;
-  height: 90px;
+  height: var(--mb-product-header-height);
   border-bottom: 1px solid var(--mb-border-color);
+}
+
+.mybooking-product_price {
+  width: 100%;
+}
+
+.mybooking-product_amount {
+  display: inline-block;
+  margin: 0;
+  color: var(--mb-product-price-color);
+  font-size: 1.7em;
+  font-weight: 800;
+  line-height: inherit;
 }
 
 .mybooking-products_catalog .mybooking-product_header {
@@ -220,27 +237,15 @@
   top: 10px;
   left: 10px;
   width: auto;
-  height: 40px;
+  height: var(--mb-catalog-price-height);
   border-bottom: none;
   padding: 0;
-  background-color: #0066BF;
-  color: white;
-}
-
-.mybooking-product_price {
-  width: 100%;
+  background-color: var(--mb-catalog-price-bg);
+  color: var(--mb-catalog-price-color);
 }
 
 .mybooking-products_catalog .mybooking-product_price {
   padding: .5rem;
-}
-
-.mybooking-product_amount {
-  display: inline-block;
-  margin: 0;
-  font-size: 1.7em;
-  font-weight: 800;
-  line-height: inherit;
 }
 
 .mybooking-products_catalog .mybooking-product_amount {
@@ -275,7 +280,7 @@
 
 .mybooking-product_original-price {
   font-size: 14px;
-  color: #999;
+  color: var(--mb-product-price-color);
   text-decoration: line-through;
 }
 
@@ -287,7 +292,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 120px;
+  height: var(--mb-product-body-height);
   padding: 10px 20px 0 20px;
 }
 
@@ -296,7 +301,7 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 800;
-  font-size: 22px;
+  font-size: 1.5em;
   line-height: 1.2;
 }
 
@@ -366,27 +371,12 @@
   text-align: center;
 }
 
-.mybooking-product_detail .mybooking-product_characteristics-item {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
 .mybooking-product_characteristics-img {
-  height: 30px;
-  width: 30px;
-}
-
-.mybooking-product_detail .mybooking-product_characteristics-img {
-  height: 40px;
-  width: 40px;
+  width: var(--mb-product-keys-icon-width);
 }
 
 .mybooking-product_characteristics-key {
   font-size: 13px;
-}
-
-.mybooking-product_detail .mybooking-product_characteristics-key {
-  font-size: 14px;
 }
 
 /* Product footer */
@@ -397,7 +387,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 80px;
+  height: var(--mb-product-footer-height);
   padding: 0 20px 20px 20px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -441,7 +431,7 @@
 .mybooking-product_detail-amount {
   font-size: 1.5em;
   font-weight: 800;
-  color: var(--brand-primary, #2193F2);
+  color: var(--mb-product-price-color);
 
 }
 
@@ -458,18 +448,17 @@
   margin: 0;
   padding: 0;
 }
+
 .mybooking-product_calendar-step-list .mybooking-product_calendar-step {
   margin: 1rem 0 1rem 2rem;
   font-size: 1.1em;
-  font-weight: 700;
+  font-weight: 800;
   counter-increment: steps-counter;
   position: relative;
 }
+
 .mybooking-product_calendar-step-list .mybooking-product_calendar-step::before {
   content: counter(steps-counter);
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
   position: absolute;
   --size: 32px;
   left: calc(-1 * var(--size) - 10px);
@@ -477,8 +466,11 @@
   width: var(--size);
   height: var(--size);
   top: 0;
-  background: #424242;
-  border-radius: 50%;
+  background: var(--mb-calendar-step-bg);
+  color: var(--mb-calendar-step-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: var(--mb-calendar-step-radius);
   text-align: center;
 }
 
@@ -487,17 +479,31 @@
   margin-bottom: 0.5rem;
 }
 
+.mybooking-product_detail .mybooking-product_characteristics-item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mybooking-product_detail .mybooking-product_characteristics-img {
+  width: var(--mb-product-keys-icon-width-page);
+}
+
+.mybooking-product_detail .mybooking-product_characteristics-key {
+  font-size: 14px;
+}
+
 
 /** CAROUSEL **/
-.mybooking-carousel-inner button.slick-prev, button.slick-next {
-    border:  none;
-    z-index:  1;
-    height:  32px;
-    background:  transparent !important;
+.mybooking-carousel-inner button.slick-prev,
+button.slick-next {
+  border:  none;
+  z-index:  1;
+  height:  32px;
+  background:  transparent !important;
 }
 .mybooking-carousel-inner button.slick-prev {
-    left:  -40px;
+  left:  -40px;
 }
 .mybooking-carousel-inner button.slick-next {
-    right: -42px;
+  right: -42px;
 }

@@ -3,7 +3,7 @@
 /**
  * Locate template.
  *
- * @see https://jeroensormani.com/how-to-add-template-files-in-your-plugin/ 
+ * @see https://jeroensormani.com/how-to-add-template-files-in-your-plugin/
  *
  * Search Order:
  * 1. /wp-content/mybooking-templates/$template_name
@@ -60,7 +60,7 @@ function mybooking_engine_locate_template( $template_name, $template_path = '', 
  *
  * Search for the template and include the file.
  *
- * @see https://jeroensormani.com/how-to-add-template-files-in-your-plugin/ 
+ * @see https://jeroensormani.com/how-to-add-template-files-in-your-plugin/
  *
  * @since 1.0.0
  *
@@ -93,7 +93,7 @@ function mybooking_engine_get_template( $template_name, $args = array(), $tempat
  *
  * Search for the template and include the file.
  *
- * @see https://jeroensormani.com/how-to-add-template-files-in-your-plugin/ 
+ * @see https://jeroensormani.com/how-to-add-template-files-in-your-plugin/
  *
  * @since 1.0.0
  *
@@ -117,7 +117,7 @@ function mybooking_engine_load_template( $template_name, $args = array(), $tempa
 		return;
 	endif;
 
-	$file = file_get_contents($template_file); 
+	$file = file_get_contents($template_file);
 
 	return $file;
 

@@ -4,14 +4,63 @@
 *
 */
 
-/* Just-for-work imports | We must to enqueue*/
+/* Just-for-work imports | We must to enqueue */
 @import "mybooking-engine-components.css";
 @import "mybooking-engine-product.css";
 @import "mybooking-engine-selector.css";
 
 :root {
+  --mb-info-color: #2193F2;
+  --mb-success-color: #3DD992;
+  --mb-danger-color: #E6546E;
+  --mb-warning-color: #FFB74D;
+
   --mb-border-color: #DDD;
   --mb-background-color: #EEE;
+  --mb-dark-background-color: #424242;
+  --mb-negative-text-color: #FFF;
+
+  --mb-product-image-height: 260px;
+  --mb-product-header-height: 90px;
+  --mb-product-body-height: 120px;
+  --mb-product-footer-height: 80px;
+
+  --mb-product-name-size: 22px;
+  --mb-product-name-size-inline: 1.8em;
+  --mb-product-custom-message-bg: #999;
+  --mb-product-custom-message-color: var(--mb-negative-text-color);
+  --mb-product-price-color: currentcolor;
+  --mb-product-quantity-color: #2193F2;
+  --mb-product-keys-icon-width: 30px;
+  --mb-product-keys-icon-width-page: 40px;
+
+  --mb-calendar-step-bg: var(--mb-dark-background-color);
+  --mb-calendar-step-color: var(--mb-negative-text-color);
+  --mb-calendar-step-radius: 50%;
+  --mb-calendar-available: var(--mb-success-color);
+  --mb-calendar-available-hover: var(--mb-info-color);
+  --mb-calendar-booked: var(--mb-danger-color);
+  --mb-calendar-disabled: var(--mb-background-color);
+
+  --mb-payment-option-btn-bg: var(--mb-dark-background-color);
+  --mb-payment-option-btn-color: var(--mb-negative-text-color);
+
+  --mb-summary-locator-color: var(--mb-info-color);
+
+  --mb-catalog-price-height: 40px;
+  --mb-catalog-price-bg: #0066BF;
+  --mb-catalog-price-color: var(--mb-negative-text-color);
+
+  --mb-popup-background: #FFF;
+  --mb-popup-width-desk: 50vw;
+  --mb-popup-height-desk: auto;
+  --mb-popup-width-mobile: 90vw;
+  --mb-popup-height-mobile: 90vh;
+  --mb-popup-close-btn-color: currentcolor;
+  --mb-popup-close-btn-size: 2em;
+
+  --mb-cookies-background: #FFF;
+  --mb-cookies-color: currentcolor;
 }
 
 
@@ -97,7 +146,7 @@
 
 .mb-col-right {
   float: right;
-} /* Flips column order if applied to start column */
+} /* Flips column order if applied to starting column */
 
 .mb-col-center {
   float: none;
@@ -171,16 +220,16 @@
 .mb-badge {
   padding: 4px 8px;
   border-radius: 25px;
-  background-color: #424242;
-  color: #FFF;
+  background-color: var(--mb-dark-background-color);
+  color: var(--mb-negative-text-color);
   font-size: .7rem;
   font-weight: bold;
 }
 
-.mb-badge.info         { background-color: #2193F2; }
-.mb-badge.success      { background-color: #3DD992; }
-.mb-badge.danger       { background-color: #E6546E; }
-.mb-badge.warning      { background-color: #FFB74D; }
+.mb-badge.info         { background-color: var(--mb-info-color) }
+.mb-badge.success      { background-color: var(--mb-success-color) }
+.mb-badge.danger       { background-color: var(--mb-danger-color) }
+.mb-badge.warning      { background-color: var(--mb-warning-color) }
 
 .mb-badge.big {
   padding: 4px 16px;
@@ -200,10 +249,10 @@
 }
 
 .mb-alert.secondary     { background-color: #DDD; }
-.mb-alert.info          { background-color: #6EC3FF; }
-.mb-alert.success       { background-color: #3DD992; }
-.mb-alert.danger        { background-color: #EC8396; }
-.mb-alert.warning       { background-color: #FFB74D; }
+.mb-alert.info          { background-color: var(--mb-info-color) }
+.mb-alert.success       { background-color: var(--mb-success-color) }
+.mb-alert.danger        { background-color: var(--mb-danger-color) }
+.mb-alert.warning       { background-color: var(--mb-warning-color) }
 
 .mb-alert.highlight {
   padding: 1.25rem;
@@ -215,13 +264,13 @@
 
 /* Text */
 .mb-text-danger {
-  color: #EC8396;
+  color: var(--mb-danger-color);
 }
 
 /* Cards */
 .mb-card {
   display: block;
-  border: 1px solid #DDD;
+  border: 1px solid var(--mb-border-color);
 }
 
 .mb-card::after {
@@ -231,10 +280,10 @@
 }
 
 .mb-card-header {
-  background-color: #EEE;
+  background-color: var(--mb-background-color);
   margin: 0 0 1rem 0;
   padding: 1rem;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid var(--mb-border-color);
 }
 
 .mb-card-header h2,
@@ -251,7 +300,7 @@
 .mb-card-footer {
   margin: 1rem 0 0 0;
   padding: 1rem;
-  border-top: 1px solid #DDD;
+  border-top: 1px solid var(--mb-border-color);
 }
 
 /* Lists */
@@ -268,32 +317,32 @@
 }
 
 .mb-list-element.secondary {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .mb-list-element.info {
-  font-weight: 700;
-  color: #2193F2;
+  font-weight: 800;
+  color: var(--mb-info-color);
 }
 
 .mb-list-element.success {
-  font-weight: 700;
-  color: #3DD992;
+  font-weight: 800;
+  color: var(--mb-success-color);
 }
 
 .mb-list-element.danger {
-  font-weight: 700;
-  color: #E6546E;
+  font-weight: 800;
+  color: var(--mb-danger-color);
 }
 
 .mb-list-element.warning {
-  font-weight: 700;
-  color: #FFB74D;
+  font-weight: 800;
+  color: var(--mb-warning-color);
 }
 
 .mb-list.border {
   display: block;
-  border: 1px solid #DDD;
+  border: 1px solid var(--mb-border-color);
 }
 
 .mb-list.border::after {
@@ -304,7 +353,7 @@
 
 .border .mb-list-item {
   padding: 1rem;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid var(--mb-border-color);
 }
 
 .border .mb-list-item:last-of-type {
@@ -334,13 +383,6 @@
 
 .btn-confirm-selection {
   float: right;
-}
-
-/* Complete page */
-.mybooking-process_complete .mybooking-product_price {
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #DDD;
 }
 
 /* Summary page */
