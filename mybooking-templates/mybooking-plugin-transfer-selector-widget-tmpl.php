@@ -39,7 +39,7 @@
     <div class="flex-form-box">
       <label for="date"><?php echo esc_html_x( 'Date and time', 'transfer_form_selector', 'mybooking-wp-plugin') ?></label>
       <div class="flex-form-horizontal-item" style="display: flex;flex-direction: row">
-        <input type="text" class="form-control" name="date" id="date" autocomplete="off" readonly="true" style="border-left: 1px solid var(--gray-500);border-top-left-radius: 3px;
+        <input type="text" class="form-control" name="date" id="date" autocomplete="off" readonly="true" style="border-top-left-radius: 3px;
 			  border-bottom-left-radius: 3px;">
         <select class="form-control ml-1" name="time" id="time" style="max-width: 30%;"></select>
       </div>

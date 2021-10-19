@@ -724,6 +724,12 @@ input[name=return_date].form-control[readonly] {
   background-color: #ffffff;
 }
 
+form[name=mybooking_widget_transfer_search_form] input[type=text],
+form[name=mybooking_widget_transfer_search_form] select {
+  height: 45px;
+}
+
+
 /** =========================================== **/
 
 .no-product-photo i {

@@ -114,7 +114,7 @@
 </script>
 
 <!-- Payment detail -->
-<script type="text/tmpl" id="script_payment_detail">
+<script type="text/tmpl" id="script_transfer_payment_detail">
   <hr>
   <h4 class="brand-primary my-3"><%= i18next.t('myReservation.pay.total_payment', {amount:configuration.formatCurrency(amount) }) %></h4>
   <% if (booking.total_paid == 0) {%>

@@ -100,6 +100,213 @@
 
 </script>
 
+<!-- Reservation form -->
+<script type="text/tmpl" id="script_transfer_complete_form_tmpl">
+  <div class="form-row customer-component">
+    <div class="form-group customer_component col-md-6">
+      <label for="customer_name"><?php echo esc_html_x( 'Name', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+      <input type="text" class="form-control" name="customer_name" id="customer_name" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Name', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="40">
+    </div>
+
+    <div class="form-group customer_component col-md-6">
+      <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+      <input type="text" class="form-control" name="customer_surname" id="customer_surname" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Surname', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="40">
+    </div>
+
+    <div class="form-group customer_component col-md-6">
+      <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+      <input type="text" class="form-control" name="customer_email" id="customer_email" autocomplete="off" placeholder="<?php echo esc_attr_x( 'E-mail', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+    </div>
+
+    <div class="form-group customer_component col-md-6">
+      <label for="customer_email"><?php echo esc_html_x( 'Confirm E-mail', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+      <input type="text" class="form-control" name="confirm_customer_email" autocomplete="off" id="confirm_customer_email" placeholder="<?php echo esc_attr_x( 'Confirm E-mail', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+    </div>
+
+    <div class="form-group customer_component col-md-6">
+        <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+        <input type="text" class="form-control" name="customer_phone" id="customer_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Phone number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="15">
+    </div>
+
+    <div class="form-group customer_component col-md-6">
+        <label for="customer_mobile_phone"><?php echo esc_html_x( 'Alternative phone number', 'transfer_checkout', 'mybooking-wp-plugin') ?></label>
+        <input type="text" class="form-control" name="customer_mobile_phone" id="customer_mobile_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:" maxlength="15">
+    </div>
+    <br>
+  </div>
+
+  <hr>
+
+  <% if (configuration.transfer_origin_destination_detailed_info_mode === 'only_address') { %>
+    <!-- Only Text detailed information -->
+    <div class="form-group">
+      <label for="detailed_origin_address"><?php echo esc_html_x( 'Pickup address (hotel, resource, address, terminal)', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+      <textarea class="form-control" name="detailed_origin_address" id="detailed_origin_address" rows="5" placeholder="<?php echo esc_attr_x( 'Pickup address (hotel, resource, address, terminal)', 'transfer_checkout', 'mybooking-wp-plugin') ?>"></textarea>
+    </div>
+
+    <% if (shopping_cart.round_trip) { %>
+      <div class="form-group">
+        <label for="detailed_origin_address"><?php echo esc_html_x( 'Dropoff address (hotel, resource, address, terminal)', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+        <textarea class="form-control" name="detailed_return_origin_address" id="detailed_return_origin_address" rows="5" placeholder="<?php echo esc_attr_x( 'Dropoff address (hotel, resource, address, terminal)', 'transfer_checkout', 'mybooking-wp-plugin') ?>"></textarea>
+      </div>
+    <% } %>  
+  <% } else if (configuration.transfer_origin_destination_detailed_info_mode === 'flight_address') { %>
+    <!-- Standard pickup/dropoff -->
+    <h5 class="mb-4 complete-section-title"><?php echo esc_html_x( "Transfer details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h5>
+    <h6><?php echo esc_html_x( "Outward Journey Details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h6>
+    <div class="form-row">
+      <div class="form-group customer_component col-md-6">
+        <label for="detailed_origin_flight_number"><?php echo esc_html_x( 'Flight or vessel number', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+        <input type="text" class="form-control" name="detailed_origin_flight_number" id="detailed_origin_flight_number" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Flight number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+      </div>
+      <div class="form-group customer_component col-md-6">
+          <label for="detailed_origin_flight_estimated_time"><?php echo esc_html_x( 'Flight or vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="detailed_origin_flight_estimated_time" autocomplete="off" id="detailed_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+      </div>
+    </div>   
+    <% if (shopping_cart.round_trip) { %>
+      <h6><?php echo esc_html_x( "Return Journey Details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h6>
+      <div class="form-row">
+        <div class="form-group customer_component col-md-6">
+          <label for="detailed_return_origin_flight_number"><?php echo esc_html_x( 'Flight or Vessel number', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="detailed_return_origin_flight_number" id="detailed_return_origin_flight_number" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Flight number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+        </div>
+        <div class="form-group customer_component col-md-6">
+          <label for="detailed_return_origin_flight_estimated_time"><?php echo esc_html_x( 'Flight or Vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+          <input type="text" class="form-control" name="detailed_return_origin_flight_estimated_time" autocomplete="off" id="detailed_return_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+        </div>
+      </div>    
+    <% } %>
+    <h6><?php echo esc_html_x( "Accommodation", 'transfer_checkout', 'mybooking-wp-plugin') ?></h6>
+    <div class="form-group">
+      <label for="detailed_origin_address"><?php echo esc_html_x( 'Name of Hotel / Complex / Villa and address', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+      <textarea class="form-control" name="detailed_origin_address" id="detailed_origin_address" rows="5" placeholder="<?php echo esc_attr_x( 'Name of Hotel / Complex / Villa and address', 'transfer_checkout', 'mybooking-wp-plugin') ?>"></textarea>
+    </div>      
+  <% } else { %>
+      <!-- Trip -->
+      <h5 class="complete-section-title"><?php echo esc_html_x( "Trip details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h5>
+
+      <!-- Going Origin -->
+      <div><u><b><i class="fa fa-car"></i>&nbsp;<?php echo esc_html_x( "Pickup", 'transfer_checkout', 'mybooking-wp-plugin') ?></b> <%= shopping_cart.origin_point_name_customer_translation%></u></div>
+
+      <% if (shopping_cart.origin_point_detailed_info) { %> 
+        <% if (shopping_cart.origin_point_type === 'location') { %>
+          <div class="form-group">
+            <label for="detailed_origin_address"><?php echo esc_html_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+            <textarea class="form-control" name="detailed_origin_address" id="detailed_origin_address" rows="5" placeholder="<?php echo esc_attr_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>"></textarea>
+          </div>
+        <% } else { %>
+          <div class="form-row">
+            <div class="form-group customer_component col-md-6">
+              <label for="detailed_origin_flight_number"><?php echo esc_html_x( 'Flight or vessel number', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+              <input type="text" class="form-control" name="detailed_origin_flight_number" id="detailed_origin_flight_number" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Flight number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+            </div>
+            <div class="form-group customer_component col-md-6">
+              <label for="detailed_origin_flight_estimated_time"><?php echo esc_html_x( 'Flight or vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+              <input type="text" class="form-control" name="detailed_origin_flight_estimated_time" autocomplete="off" id="detailed_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+            </div>
+          </div>
+        <% } %>
+      <% } %>  
+
+      <!-- Going Destination -->
+      
+      <div><u><b><i class="fa fa-map-marker"></i>&nbsp;<?php echo esc_html_x( "Drop off", 'transfer_checkout', 'mybooking-wp-plugin') ?></b> <%= shopping_cart.destination_point_name_customer_translation%></u></div>
+
+      <% if (shopping_cart.destination_point_detailed_info) { %> 
+        <% if (shopping_cart.destination_point_type === 'location') { %>
+          <div class="form-group">
+            <label for="detailed_destination_address"><?php echo esc_html_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+            <textarea class="form-control" name="detailed_destination_address" id="detailed_destination_address" rows="5" placeholder="<?php echo esc_attr_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>"></textarea>
+          </div>
+        <% } else { %>
+          <div class="form-row">
+            <div class="form-group customer_component col-md-6">
+              <label for="detailed_destination_flight_number"><?php echo esc_html_x( 'Flight or vessel number', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+              <input type="text" class="form-control" name="detailed_destination_flight_number" id="detailed_destination_flight_number" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Flight number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+            </div>
+            <div class="form-group customer_component col-md-6">
+              <label for="detailed_destination_flight_estimated_time"><?php echo esc_html_x( 'Flight or vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+              <input type="text" class="form-control" name="detailed_destination_flight_estimated_time" autocomplete="off" id="detailed_destination_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+            </div>
+          </div>
+        <% } %>
+      <% } %>  
+
+      <% if (shopping_cart.round_trip) { %>
+        <hr>
+        <h5 class="complete-section-title"><?php echo esc_html_x( "Round trip details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h5>
+
+        <!-- Return Origin -->
+
+        <div><u><b><i class="fa fa-car"></i>&nbsp;<?php echo esc_html_x( "Pickup", 'transfer_checkout', 'mybooking-wp-plugin') ?></b> <%= shopping_cart.return_origin_point_name_customer_translation%></u></div>
+        
+        <% if (shopping_cart.return_origin_point_detailed_info) { %> 
+          <% if (shopping_cart.return_origin_point_type === 'location') { %>
+            <div class="form-group">
+              <label for="detailed_return_origin_address"><?php echo esc_html_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+              <textarea class="form-control" name="detailed_return_origin_address" id="detailed_return_origin_address" rows="5" placeholder="<?php echo esc_attr_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>"></textarea>
+            </div>
+          <% } else { %>
+            <div class="form-row">
+              <div class="form-group customer_component col-md-6">
+                <label for="detailed_return_origin_flight_number"><?php echo esc_html_x( 'Flight or Vessel number', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+                <input type="text" class="form-control" name="detailed_return_origin_flight_number" id="detailed_return_origin_flight_number" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Flight number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+              </div>
+              <div class="form-group customer_component col-md-6">
+                <label for="detailed_return_origin_flight_estimated_time"><?php echo esc_html_x( 'Flight or Vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+                <input type="text" class="form-control" name="detailed_return_origin_flight_estimated_time" autocomplete="off" id="detailed_return_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+              </div>
+            </div>
+          <% } %>
+        <% } %>
+
+        <!-- Return Destination -->
+        
+        <div><u><b><i class="fa fa-map-marker"></i>&nbsp;<?php echo esc_html_x( "Drop off", 'transfer_checkout', 'mybooking-wp-plugin') ?></b> <%= shopping_cart.return_destination_point_name_customer_translation%></u></div>
+
+        <% if (shopping_cart.return_destination_point_detailed_info) { %> 
+          <% if (shopping_cart.return_destination_point_type === 'location') { %>
+            <div class="form-group">
+              <label for="detailed_return_destination_address"><?php echo esc_html_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+              <textarea class="form-control" name="detailed_return_destination_address" id="detailed_return_destination_address" rows="5" placeholder="<?php echo esc_attr_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>"></textarea>
+            </div>
+          <% } else { %>
+            <div class="form-row">
+              <div class="form-group customer_component col-md-6">
+                <label for="detailed_return_destination_flight_number"><?php echo esc_html_x( 'Flight or Vessel number', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+                <input type="text" class="form-control" name="detailed_return_destination_flight_number" id="detailed_return_destination_flight_number" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Flight number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+              </div>
+              <div class="form-group customer_component col-md-6">
+                <label for="detailed_return_destination_flight_estimated_time"><?php echo esc_html_x( 'Flight or Vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
+                <input type="text" class="form-control" name="detailed_return_destination_flight_estimated_time" autocomplete="off" id="detailed_return_destination_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+              </div>
+            </div>
+          <% } %>
+        <% } %>  
+
+      <% } %>
+
+  <% } %>    
+
+  <hr>
+
+  <h5 class="complete-section-title"><?php echo esc_html_x( "Additional information", 'transfer_checkout', 'mybooking-wp-plugin') ?></h5>
+
+  <div class="form-group">
+    <label for="comments"><?php echo esc_html_x( 'Comments', 'transfer_checkout', 'mybooking-wp-plugin') ?></label>
+    <textarea class="form-control" name="comments" id="comments" rows="5" placeholder="<?php echo esc_attr_x( 'Comments', 'transfer_checkout', 'mybooking-wp-plugin') ?>"></textarea>
+  </div>
+  <br>
+
+  <!-- Reservation : payment (script_payment_detail) -->
+  <div id="mybooking_transfer_payment_detail">
+  </div>
+
+</script>  
+
+
+
 <!-- Reservation summary -->
 <script type="text/tmpl" id="script_transfer_reservation_summary">
   <div class="complete-reservation-summary-card ">
