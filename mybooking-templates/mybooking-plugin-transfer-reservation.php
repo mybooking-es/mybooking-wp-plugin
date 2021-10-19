@@ -1,6 +1,6 @@
 <?php
   /** 
-   * The Template for showing the renting summary step
+   * The Template for showing the transfer my reservation
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-transfer-reservation.php
    */

@@ -1,6 +1,6 @@
 <?php
   /** 
-   * The Template for showing the renting modify reservation form
+   * The Template for showing the transfer modify reservation form
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-modify-reservation.php
    *

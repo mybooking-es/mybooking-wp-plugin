@@ -1,6 +1,6 @@
 <?php
   /** 
-   * The Template for showing the renting select product step
+   * The Template for showing the transfer select vehicle step
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-choose-vehicle.php
    *

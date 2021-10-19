@@ -1,6 +1,6 @@
 <?php
   /**
-   * The Template for showing the renting complete step
+   * The Template for showing the transfer complete step
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-checkout.php
    *
