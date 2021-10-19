@@ -62,9 +62,12 @@
   }
 
   .mybooking-product_list .mybooking-product_block:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 55%;
-    padding: 32px;
     border-right: 1px solid var(--mb-border-color);
+    overflow: hidden;
   }
 
   .mybooking-product_list .mybooking-product_block:last-of-type {
@@ -126,9 +129,8 @@
 .mybooking-product_filter {
   display: flex;
   flex-basis: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 0 10px 10px;
 }
 
 .mybooking-product_filter-legend {
@@ -181,10 +183,12 @@
   align-items: center;
   width: 100%;
   height: var(--mb-product-image-height);
+  overflow: hidden;
 }
 
 .mybooking-product_image {
   min-width: 100%!important;
+  border-radius: 0!important;
 }
 
 .mybooking-product_info-button {

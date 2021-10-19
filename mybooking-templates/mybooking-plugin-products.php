@@ -18,8 +18,8 @@
 			<div class="mybooking-product_filter">
 	      <div class="mybooking-product_filter-btn-group">
 	        <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
-	        <button class="mb-button mybooking-product_filter-grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></button>
-	        <button class="mb-button mybooking-product_filter-list js-mb-list" title="List view"><i class="fa fa-th-list"></i></button>
+	        <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></span>
+	        <span class="mybooking-product_filter-btn list js-mb-list" title="List view"><i class="fa fa-th-list"></i></span>
 	      </div>
 	    </div>
 
@@ -34,22 +34,9 @@
 						<div class="mybooking-product_block">
 	            <div class="mybooking-product_image-container">
 								<?php if ( !empty( $mybooking_product->photo_path ) ) { ?>
-									<?php if ( $args['use_detail_pages'] ) { ?>
-									  <a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_productIdAnchor ) ?>">
-									  	<img class="mybooking-product_image" src="<?php echo esc_url( $mybooking_product->photo_path )?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
-									  </a>
-									<?php } else { ?>
-									  <img class="mybooking-product_image" src="<?php echo esc_url( $mybooking_product->photo_path )?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
-									<?php } ?>
-
+									<img class="mybooking-product_image" src="<?php echo esc_url( $mybooking_product->photo_path )?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
 								<?php } else { ?>
-									<?php if ( $args['use_detail_pages'] ) { ?>
-										<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_productIdAnchor ) ?>">
-										  <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
-										</a>
-									<?php } else { ?>
-										<img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
-									<?php } ?>
+									<img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
 								<?php } ?>
 							</div>
 						</div>

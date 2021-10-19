@@ -23,9 +23,11 @@
   --mb-selector-background: transparent;
 
   --mb-product-image-height: 260px;
-  --mb-product-header-height: 90px;
+  --mb-product-header-height: 70px;
   --mb-product-body-height: 120px;
-  --mb-product-footer-height: 80px;
+  --mb-product-footer-height: 60px;
+
+  --mb-product-list-image-padding: 0;
 
   --mb-product-name-size: 22px;
   --mb-product-name-size-inline: 1.8em;

@@ -22,14 +22,15 @@
 
 	<?php } else { ?>
 
-		<!-- Products -->
+		<!-- PRODUCT LOOP ------------------------------------------------------------->
+
 		<div class="mybooking-product_list">
 
 			<div class="mybooking-product_filter">
 	      <div class="mybooking-product_filter-btn-group">
 	        <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
-	        <button class="mb-button mybooking-product_filter-grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></button>
-	        <button class="mb-button mybooking-product_filter-list js-mb-list" title="List view"><i class="fa fa-th-list"></i></button>
+	        <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></span>
+	        <span class="mybooking-product_filter-btn list js-mb-list" title="List view"><i class="fa fa-th-list"></i></span>
 	      </div>
 	    </div>
 
@@ -113,7 +114,8 @@
 			<?php  } ?>
 		</div>
 
-	  <!-- Pagination -->
+	  <!-- PRODUCT PAGINATION ------------------------------------------------------------->
+
 	  <?php if ($args['total_pages'] > 1) { ?>
 	  	<?php $mybooking_querystring = array_key_exists('querystring', $args) ? $args['querystring'] : '' ?>
 		<div class="mb-row">
