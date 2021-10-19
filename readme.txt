@@ -1,7 +1,7 @@
 === MyBooking Reservation Engine ===
 Contributors: juanmiqueo
 Donate link: https://mybooking.es/
-Tags: reservation engine
+Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation, properties booking system, tours booking system, transfer booking system 
 Requires at least: 5.2
 Tested up to: 5.8
 Stable tag: trunk

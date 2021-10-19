@@ -776,7 +776,7 @@
         else {
           $data['terms_and_conditions'] = mybooking_engine_translated_slug($registry->mybooking_transfer_plugin_terms_page);
         }
-        mybooking_engine_get_template('mybooking-plugin-transfer-checkout-tmpl.php');
+        mybooking_engine_get_template('mybooking-plugin-transfer-checkout-tmpl.php', $data);
         mybooking_engine_get_template('mybooking-plugin-transfer-modify-reservation-tmpl.php');
         $current_page_modify_transfer_reservation = true;
       }
