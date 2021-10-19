@@ -23,7 +23,15 @@
 	<?php } else { ?>
 
 		<!-- Products -->
-		<div class="mybooking-product_grid">
+		<div class="mybooking-product_list">
+
+			<div class="mybooking-product_filter">
+	      <div class="mybooking-product_filter-btn-group">
+	        <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
+	        <button class="mb-button mybooking-product_filter-grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></button>
+	        <button class="mb-button mybooking-product_filter-list js-mb-list" title="List view"><i class="fa fa-th-list"></i></button>
+	      </div>
+	    </div>
 
 			<?php foreach( $args['data']->data as $mybooking_activity ) { ?>
 			  <?php
@@ -89,17 +97,17 @@
 									</div>
 						  	<?php } ?>
 							</div>
-					  </div>
 
-					  <?php if ( $args['use_detail_pages'] ) { ?>
-						  <div class="mybooking-product_footer">
-								<button class="btn-choose-product">
-						    	<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_activityIdAnchor ) ?>">
-										<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
-									</a>
-								</button>
-						  </div>
-						<?php } ?>
+							<?php if ( $args['use_detail_pages'] ) { ?>
+							  <div class="mybooking-product_footer">
+									<button class="mb-button btn-choose-product">
+							    	<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_activityIdAnchor ) ?>">
+											<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
+										</a>
+									</button>
+							  </div>
+							<?php } ?>
+					  </div>
 					</div>
 			  </div>
 			<?php  } ?>

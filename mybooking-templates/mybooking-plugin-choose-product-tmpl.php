@@ -267,7 +267,5 @@
       <% } %>
     </div>
     <div class="mt-3 text-muted"><%=product.description%></div>
-  </div>  
+  </div>
 </script>
-
-

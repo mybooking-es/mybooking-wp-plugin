@@ -101,6 +101,9 @@
 
   .mybooking-product_list .mybooking-product_block:last-of-type {
     width: 60%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .mybooking-product_list .mybooking-product_amount {
@@ -112,7 +115,7 @@
   }
 
   .mybooking-product_list .mb-button.btn-choose-product {
-    width: 200px;
+    max-width: 300px;
   }
 }
 

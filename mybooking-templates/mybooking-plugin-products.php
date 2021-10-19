@@ -11,8 +11,17 @@
 
 <section class="mybooking mybooking-products_catalog">
 
-		<!-- Products -->
-		<div class="mybooking-product_grid">
+		<!-- PRODUCT LOOP ------------------------------------------------------------->
+
+		<div class="mybooking-product_list">
+
+			<div class="mybooking-product_filter">
+	      <div class="mybooking-product_filter-btn-group">
+	        <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
+	        <button class="mb-button mybooking-product_filter-grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></button>
+	        <button class="mb-button mybooking-product_filter-list js-mb-list" title="List view"><i class="fa fa-th-list"></i></button>
+	      </div>
+	    </div>
 
 			<?php foreach( $args['data']->data as $mybooking_product ) { ?>
 			  <?php
@@ -70,6 +79,12 @@
 								<div class="mybooking-product_short-description">
 									<?php echo esc_html( $mybooking_product->short_description ) ?>
 								</div>
+
+								<!-- This is commented because we must refactorize API output first
+	              <div class="mybooking-product_description">
+									<?php echo esc_html( $mybooking_product->description ) ?>
+								</div>
+	              -->
 							</div>
 
 							<?php if ( isset( $mybooking_product->key_characteristics) && is_array( (array) $mybooking_product->key_characteristics ) && !empty( (array) $mybooking_product->key_characteristics ) ) { ?>
@@ -82,23 +97,25 @@
 									<?php } ?>
 							  </div>
 				      <?php } ?>
-					  </div>
 
-					  <?php if ( $args['use_detail_pages'] ) { ?>
-						  <div class="mybooking-product_footer">
-								<button class="btn-choose-product">
-						    	<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_productIdAnchor ) ?>">
-										<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
-									</a>
-								</button>
-						  </div>
-						<?php } ?>
+							<?php if ( $args['use_detail_pages'] ) { ?>
+							  <div class="mybooking-product_footer">
+									<button class="mb-button btn-choose-product">
+							    	<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_productIdAnchor ) ?>">
+											<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
+										</a>
+									</button>
+							  </div>
+							<?php } ?>
+
+						</div>
 					</div>
 			  </div>
 			<?php  } ?>
 		</div>
 
-	  <!-- Pagination -->
+	  <!-- PRODUCT PAGINATION ------------------------------------------------------------->
+
 	  <?php if ($args['total_pages'] > 1) { ?>
 	  	<?php $mybooking_querystring = array_key_exists('querystring', $args) ? $args['querystring'] : '' ?>
 		<div class="mb-row">

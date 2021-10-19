@@ -480,12 +480,67 @@
 }
 
 
+/** POPUP **/
+
+.mybooking-popup_backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+	width: 100vw;
+  background-color: rgba( 0, 0, 0, 0.7 );
+	display: table;
+  z-index: 999999;
+}
+
+.mybooking-popup_box {
+	width: 100vw;
+	height: 100vh;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.mybooking-popup {
+	width: 90vw;
+	height: 90vh;
+	overflow: auto;
+	border-radius: 3px;
+	margin: 0 auto;
+} @media ( min-width: 992px ) {
+	.mybooking-popup {
+		width: 50vw;
+		height: auto;
+	}
+}
+
+.mybooking-popup_content {
+	position: relative;
+	padding: 2rem;
+	border: none;
+	border-radius: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #FFF;
+}
+
+.mybooking-popup_close {
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	right: 15px;
+  font-size: 2em;
+	z-index: 45;
+  cursor: pointer;
+}
+
+
 /** COOKIES NOTICE **/
 
 .mybooking-cookies {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  z-index: 2;
 }
 
 .mybooking-cookies_container {

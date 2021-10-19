@@ -323,8 +323,13 @@
 
 .btn-choose-product a,
 .btn-confirm-selection a {
-  color: white;
+  color: currentcolor;
   text-decoration: none!important;
+}
+
+.btn-choose-product a:hover,
+.btn-confirm-selection a:hover {
+  color: currentcolor;
 }
 
 .btn-confirm-selection {
