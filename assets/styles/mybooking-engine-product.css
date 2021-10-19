@@ -9,7 +9,7 @@
 .mybooking-product_grid {
   display: flex;
   flex-wrap: wrap;
-  margin: 1rem 0;
+  margin: 1rem auto;
   max-width: 1170px;
 } @media (min-width: 576.98px) {
   .mybooking-product_grid {
@@ -64,7 +64,7 @@
   .mybooking-product_list .mybooking-product_block:first-of-type {
     width: 55%;
     padding: 32px;
-    border-right: 1px solid #DDD;
+    border-right: 1px solid var(--mb-border-color);
   }
 
   .mybooking-product_list .mybooking-product_block:last-of-type {
@@ -74,14 +74,12 @@
   .mybooking-product_list .mybooking-product_custom-message {
     position: relative;
     top: 0;
-    background-color: #FFF;
     padding: 13px;
     color: #424242;
   }
 
   .mybooking-product_list .mybooking-product_header {
     padding: 10px 20px;
-    background: #FFF;
   }
 
   .mybooking-product_list .mybooking-product_name {
@@ -141,16 +139,25 @@
   margin-bottom: 0.5rem;
 }
 
-.mybooking-product_filter-btn-group .mb-button {
+.mybooking-product_filter-btn-group {
   margin-bottom: 0.5rem;
 }
 
-.mybooking-product_grid .mybooking-product_filter-grid {
-  color: #FFF;
+.mybooking-product_filter-btn {
+  margin-right: 1rem;
 }
 
-.mybooking-product_list .mybooking-product_filter-list {
-  color: #FFF;
+.mybooking-product_filter-btn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.mybooking-product_grid .mybooking-product_filter-btn.grid,
+.mybooking-product_grid .mybooking-product_filter-btn.grid:hover,
+.mybooking-product_list .mybooking-product_filter-btn.list,
+.mybooking-product_list .mybooking-product_filter-btn.list:hover {
+  color: #999;
+  opacity: 1;
 }
 
 
@@ -275,7 +282,8 @@
   display: inline-block;
   width: auto;
   float: right;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
 .mybooking-product_original-price {

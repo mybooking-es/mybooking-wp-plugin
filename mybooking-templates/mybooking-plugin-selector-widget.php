@@ -9,7 +9,17 @@
  */
 ?>
 
-<section class="mybooking-selector widget widget_mybooking_renting_engine_selector reservation-step">
+<?php $theme = wp_get_theme(); // gets the current theme
+if (
+  'Twenty Twenty' == $theme->name ||
+  'Twenty Twenty' == $theme->parent_theme ||
+  'Twenty Twenty-One' == $theme->name ||
+  'Twenty Twenty-One' == $theme->parent_theme )
+  {
+    $alignwide = 'alignwide';
+  } ?>
+
+<section class="mybooking-selector widget widget_mybooking_renting_engine_selector reservation-step <?php echo $alignwide ?>">
   <form
     class="mybooking-selector_form"
     name="widget_search_form"

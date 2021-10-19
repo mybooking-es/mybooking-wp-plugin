@@ -20,6 +20,8 @@
   --mb-dark-background-color: #424242;
   --mb-negative-text-color: #FFF;
 
+  --mb-selector-background: transparent;
+
   --mb-product-image-height: 260px;
   --mb-product-header-height: 90px;
   --mb-product-body-height: 120px;
@@ -27,8 +29,8 @@
 
   --mb-product-name-size: 22px;
   --mb-product-name-size-inline: 1.8em;
-  --mb-product-custom-message-bg: #999;
-  --mb-product-custom-message-color: var(--mb-negative-text-color);
+  --mb-product-custom-message-bg: transparent;
+  --mb-product-custom-message-color: currentcolor;
   --mb-product-price-color: currentcolor;
   --mb-product-quantity-color: #2193F2;
   --mb-product-keys-icon-width: 30px;
@@ -222,7 +224,7 @@
   border-radius: 25px;
   background-color: var(--mb-dark-background-color);
   color: var(--mb-negative-text-color);
-  font-size: .7rem;
+  font-size: .7em;
   font-weight: bold;
 }
 
