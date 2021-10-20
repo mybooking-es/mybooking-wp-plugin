@@ -228,10 +228,16 @@
   padding: 10px 20px;
   height: var(--mb-product-header-height);
   border-bottom: 1px solid var(--mb-border-color);
+  width: 100%;
 }
 
 .mybooking-product_price {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-basis: 100%;
+  line-height: 1;
 }
 
 .mybooking-product_amount {
@@ -239,7 +245,7 @@
   margin: 0;
   color: var(--mb-product-price-color);
   font-size: 1.7em;
-  font-weight: 800;
+  font-weight: 800!important;
   line-height: inherit;
 }
 
@@ -325,6 +331,7 @@
   list-style-type: none;
   font-weight: 400;
   font-size: 14px;
+  margin-bottom: 1rem;
 }
 
 .mybooking-product_description li {

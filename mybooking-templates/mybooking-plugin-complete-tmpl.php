@@ -72,16 +72,6 @@
                     <%=shopping_cart.items[idx].offer_name%>
                   </span>
                <% } %>
-
-               <!-- Promotion details -->
-               <% if (typeof shopping_cart.promotion_code !== 'undefined' && shopping_cart.promotion_code !== '' && typeof shopping_cart.items[idx].promotion_code_value !== 'undefined' && shopping_cart.items[idx].promotion_code_value !== '') { %>
-                 <span class="mybooking-product_original-price">
-                   <% if (shopping_cart.items[idx].promotion_code_discount_type === 'percentage' && shopping_cart.items[idx].promotion_code !== '') {%>
-                     <%=parseInt(shopping_cart.items[idx].promotion_code_value)%>&#37;
-                   <% } %>
-                   <%=shopping_cart.promotion_code%>
-                 </span>
-               <% } %>
              </div>
            <% } %>
          </div>
