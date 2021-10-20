@@ -362,9 +362,9 @@
         wp_enqueue_style('mybooking_wp_css_components_jquerymodal',
                          plugins_url('/assets/styles/jquery-modal.css', dirname( __FILE__ ) ),
                          array(), $version );
-        // Custom style
-        wp_enqueue_style('mybooking_wp_css_components_custom_style',
-                         plugins_url('/assets/styles/custom-styles.css', dirname( __FILE__ ) ),
+        // Mybooking styles
+        wp_enqueue_style('mybooking_wp_css_components_mybooking-engine',
+                         plugins_url('/assets/styles/mybooking-engine.css', dirname( __FILE__ ) ),
                          array(), $version );
       }
 

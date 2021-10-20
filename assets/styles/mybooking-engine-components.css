@@ -481,6 +481,67 @@
 }
 
 
+/** TESTIMONIALS **/
+
+.mybooking-testimonial_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-testimonial_container {
+    flex-direction: row;
+  }
+}
+
+.mybooking-testimonial_content {
+  width: 100%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-testimonial_content {
+    width: 93%;
+  }
+}
+
+.mybooking-testimonial_text {
+  font-size: 1.4em;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: center;
+} @media ( min-width: 575.98px ) {
+  .mybooking-testimonial_text {
+    text-align: left;
+    font-size: 1.8em;
+  }
+}
+
+.mybooking-testimonial_text p {
+  margin: 0;
+}
+
+.mybooking-testimonial_name {
+  margin-top: 1rem;
+  text-align: center;
+} @media ( min-width: 575.98px ) {
+  .mybooking-testimonial_name {
+    text-align: left;
+  }
+}
+
+.mybooking-testimonial_name:before {
+  content: "—";
+  margin-right: 1rem;
+}
+
+.mybooking-testimonial_avatar {
+  width: 30%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-testimonial_avatar {
+    width: 7%;
+  }
+
+
 /** POPUP **/
 
 .mybooking-popup_backdrop {

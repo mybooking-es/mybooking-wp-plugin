@@ -128,15 +128,13 @@
 
 .mybooking-product_filter {
   display: none;
-}
-
-@media ( min-width: 575.98px ) {
+} @media ( min-width: 575.98px ) {
   .mybooking-product_filter {
     display: flex;
     flex-basis: 100%;
     justify-content: flex-end;
     align-items: center;
-  }
+  } /* Filters only make sense on desk and tablet */
 }
 
 .mybooking-product_filter-legend {

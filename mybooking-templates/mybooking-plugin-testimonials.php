@@ -1,12 +1,16 @@
 <?php
-  /** 
-   * The Template for showing the testimonials
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-testimonials.php
-   */
+/**
+ *   MYBOOKING ENGINE - TESTIMONIALS
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting select product step
+ *   This template can be overridden by copying it to your
+ *   theme /mybooking-templates/mybooking-plugin-testimonials.php
+ *
+ */
 ?>
-<div class="mybooking-testimonials">
-  <div class="container -carrusel-testimonials">
+
+<div class="mybooking mybooking-testimonial">
+  <div class="-carrusel-testimonials">
 
     <?php
     $mybooking_engine_testimonial_args = array('post_type' => 'testimonial');
@@ -15,28 +19,28 @@
     foreach($mybooking_engine_testimonial_items as $mybooking_engine_testimonial_item) :
     ?>
 
-    <blockquote class="testimonial-item">
-      <div class="testimonial-item_message">
-        <div class="testimonial-item_content ">
-          <?php echo wp_kses_post( $mybooking_engine_testimonial_item->post_content ); ?>
+    <section class="mybooking-testimonial_item">
+      <div class="mybooking-testimonial_container">
+        <div class="mybooking-testimonial_avatar">
+
+          <?php if ( !has_post_thumbnail( $mybooking_engine_testimonial_item->ID ) ) { ?>
+            <img class="mybooking-testimonial_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-avatar.png' ) ?>"/>
+          <?php } else { ?>
+            <?php $mybooking_engine_featured_img_url = get_the_post_thumbnail_url( $testimonial_item, 'full' ); ?>
+            <img class="mybooking-testimonial_image" src="<?php echo esc_url( $mybooking_engine_featured_img_url ) ?>">
+          <?php } ?>
+
+        </div>
+        <div class="mybooking-testimonial_content">
+          <div class="mybooking-testimonial_text">
+            <?php echo wp_kses_post( $mybooking_engine_testimonial_item->post_content ); ?>
+          </div>
+          <footer class="mybooking-testimonial_name">
+            <?php echo esc_html( $mybooking_engine_testimonial_item->post_title ); ?>
+          </footer>
         </div>
       </div>
-
-      <div class="testimonial-item_avatar">
-
-        <?php if ( !has_post_thumbnail( $mybooking_engine_testimonial_item->ID ) ) { ?>
-          <img class="testimonial-item_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-avatar.png' ) ?>"/>
-        <?php } else { ?>
-          <?php $mybooking_engine_featured_img_url = get_the_post_thumbnail_url( $testimonial_item, 'full' ); ?>
-          <img class="testimonial-item_image" src="<?php echo esc_url( $mybooking_engine_featured_img_url ) ?>">
-        <?php } ?>
-
-        <footer class="blockquote-footer">
-          <?php echo esc_html( $mybooking_engine_testimonial_item->post_title ); ?>
-        </footer>
-
-      </div>
-    </blockquote>
+    </section>
 
     <?php endforeach; ?>
 
