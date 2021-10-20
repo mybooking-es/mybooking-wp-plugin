@@ -127,10 +127,16 @@
 /** PRODUCT FILTER **/
 
 .mybooking-product_filter {
-  display: flex;
-  flex-basis: 100%;
-  justify-content: flex-end;
-  align-items: center;
+  display: none;
+}
+
+@media ( min-width: 575.98px ) {
+  .mybooking-product_filter {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 .mybooking-product_filter-legend {
