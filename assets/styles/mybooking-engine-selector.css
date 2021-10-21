@@ -58,8 +58,8 @@
 .mybooking-selector_group select[disabled],
 .mybooking-selector_group input[disabled]:not([type="submit"]) + .mybooking-selector_field-icon,
 .mybooking-selector_group select[disabled] + .mybooking-selector_field-icon {
-  background-color: #EFEFEF!important;
-  border: 1px solid #EFEFEF!important;
+  background-color: #EEE!important;
+  border: 1px solid #EEE!important;
   color: #CCC!important;
   cursor: not-allowed;
   font-weight: 400!important;

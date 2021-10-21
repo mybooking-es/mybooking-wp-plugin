@@ -4,11 +4,6 @@
 *
 */
 
-@import "mybooking-engine-components.css";
-@import "mybooking-engine-product.css";
-@import "mybooking-engine-selector.css";
-@import "mybooking-engine-helpers.css";
-
 :root {
 
   --mb-info-color: #2193F2;
@@ -27,30 +22,51 @@
   --mb-selector-label-color: currentcolor;
   --mb-selector-field-height: 40px;
 
-  --mb-product-image-height: 260px;
-  --mb-product-header-height: 80px;
+  --mb-product-separation: 0.5rem;
+  --mb-product-background: white;
+  --mb-product-border-color: var(--mbborder-color);
+
+  --mb-product-image-height: 180px;
+  --mb-product-header-height: 60px;
   --mb-product-body-height: 120px;
-  --mb-product-footer-height: 70px;
+  --mb-product-footer-height: 76px;
+  --mb-product-btn-height: 50px;
 
-  --mb-product-list-image-padding: 0;
+  --mb-product-list-left-width: 65%;
+  --mb-product-list-right-width: 35%;
+  --mb-product-list-image-height: 360px;
+  --mb-product-list-header-height: 70px;
+  --mb-product-list-body-height: 90px;
+  --mb-product-list-footer-height: 76px;
 
-  --mb-product-detail-bg: transparent;
-  --mb-product-detail-border: currentcolor;
-  --mb-product-detail-color: currentcolor;
+  --mb-product-list-price-size: 1.5em;
+  --mb-product-list-name-size: 1.5em;
 
-  --mb-product-custom-message-bg: transparent;
-  --mb-product-custom-message-color: currentcolor;
-
-  --mb-product-name-size: 22px;
-  --mb-product-name-size-inline: 1.8em;
-  --mb-product-price-color: var(--mb-info-color);
-  --mb-product-quantity-color: #2193F2;
-  --mb-product-keys-icon-width: 30px;
+  --mb-product-list-keys-width: 80%;
+  --mb-product-list-keys-icon-width: 30px;
+  --mb-product-keys-icon-width: 25px;
   --mb-product-keys-icon-width-page: 40px;
 
+  --mb-product-custom-message-bg: rgba(255,255,255,0.7);
+  --mb-product-custom-message-color: currentcolor;
+
+  --mb-product-name-size: 1.2em;
+  --mb-product-price-color: var(--mb-info-color);
+  --mb-product-price-size: 1.3em;
+  --mb-product-quantity-color: #2193F2;
+
+  --mb-product-info-border: var(--mb-border-color);
+  --mb-product-info-background: transparent;
+
+  --mb-product-detail-bg: transparent;
+  --mb-product-detail-border: var(--mb-border-color);
+  --mb-product-detail-color: currentcolor;
+
+  --mb-product-total-border: currentcolor;
   --mb-product-total-bg: transparent;
-  --mb-product-total-border: #DDD;
   --mb-product-total-color: currentcolor;
+  --mb-product-total-amount-size: 2em;
+  --mb-product-total-amount-color: currentcolor;
 
   --mb-calendar-step-bg: var(--mb-dark-background-color);
   --mb-calendar-step-color: var(--mb-negative-text-color);
@@ -218,6 +234,7 @@
 .mb-custom-date-form select {
   min-width: 100%;
   margin-bottom: 0.5rem;
+  height: var(--mb-selector-field-height);
 } @media ( min-width: 575.98px ) {
   .mb-custom-date-form select {
     margin: 0;
@@ -242,6 +259,7 @@
   color: var(--mb-negative-text-color);
   font-size: .7em;
   font-weight: bold;
+  text-align: center;
 }
 
 .mb-badge.info         { background-color: var(--mb-info-color) }
@@ -380,39 +398,16 @@
 
 /** PROCESS PAGES **/
 
-/* Choose page */
-.btn-choose-product,
-.btn-confirm-selection {
-  background-color: accentcolor!important;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.btn-choose-product a,
-.btn-confirm-selection a {
-  color: currentcolor;
-  text-decoration: none!important;
-}
-
-.btn-choose-product a:hover,
-.btn-confirm-selection a:hover {
-  color: currentcolor;
-}
-
-.btn-confirm-selection {
-  float: right;
-}
-
 /* Summary page */
 .mybooking-process_summary .mybooking-product_header {
   background-color: #EEE;
-  border: 1px solid #DDD;
+  border: 1px solid var(--mb-border-color);
   border-top: none;
 }
 
 /* Reservation page */
 .mybooking-process_reservation .mybooking-product_header {
   background-color: #EEE;
-  border: 1px solid #DDD;
+  border: 1px solid var(--mb-border-color);
   border-top: none;
 }

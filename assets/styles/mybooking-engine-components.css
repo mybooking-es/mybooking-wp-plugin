@@ -7,6 +7,7 @@
 /** SUMMARY DETAILS **/
 
 /* Summary header */
+
 .mybooking-summary_header {
   display: flex;
   flex-flow: row nowrap;
@@ -62,6 +63,7 @@
 }
 
 /* Summary data */
+
 .mybooking-summary_detail {
   display: flex;
   flex-flow: column;
@@ -74,9 +76,8 @@
   color: var(--mb-product-detail-color);
 } @media ( min-width: 576.98px ) {
   .mybooking-summary_detail {
-    flex-flow: row;
     justify-content: space-between;
-    align-items: center;
+    flex-flow: row;
     padding: 2rem;
   }
 }
@@ -127,6 +128,7 @@
 }
 
 /* Summary extras */
+
 .mybooking-summary_extras {
   display: flex;
   justify-content: space-between;
@@ -158,12 +160,16 @@
 }
 
 /* Summary total */
+
 .mybooking-summary_total {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
   padding: 1rem 2rem;
-  border: 1px solid var(--mb-border-color);
+  border: 1px solid var(--mb-product-total-border);
+  background-color: var(--mb-product-total-bg);
+  color: var(--mb-product-total-color);
 }
 
 .mybooking-summary_total-label {
@@ -172,9 +178,9 @@
 }
 
 .mybooking-summary_total-amount {
-  font-size: 2em;
+  font-size: var(--mb-product-amount-size);
   font-weight: 900;
-  color: accentcolor;
+  color: var(--mb-product-total-amount-color);
 }
 
 
@@ -277,6 +283,7 @@
 }
 
 /* Payment options */
+
 .mybooking-payment_options {
   display: flex;
   flex-flow: column;
@@ -321,6 +328,7 @@
 }
 
 /* Payment confirmation */
+
 .mybooking-payment_confirmation-box {
   display: flex;
   flex-flow: column;
@@ -489,6 +497,7 @@
   align-items: center;
   gap: 2rem;
   width: 100%;
+  margin: 2rem 0;
 } @media ( min-width: 575.98px ) {
   .mybooking-testimonial_container {
     flex-direction: row;
@@ -648,7 +657,7 @@ fieldset legend {
   padding: 0;
   box-shadow: 0 3px 20px #424242;
   font-family: inherit!important;
-  z-index: 99999;
+  z-index: 999999999;
 }
 
 .full-size-datepicker-container .ui-datepicker {

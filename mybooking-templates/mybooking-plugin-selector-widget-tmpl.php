@@ -12,7 +12,6 @@
  */
 ?>
 
-
 <script type="text/tmpl" id="widget_form_selector_tmpl">
 
 	<% if (configuration.pickupReturnPlace && configuration.timeToFrom) { %>
