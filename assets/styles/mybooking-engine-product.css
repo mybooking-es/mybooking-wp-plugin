@@ -84,14 +84,6 @@
     font-size: var(--mb-product-list-name-size);
   }
 
-  .mybooking-product_list .mybooking-product_info-button {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    font-size: 1.3em;
-    transition: ease-in-out 0.2ms;
-  }
-
 } @media ( min-width: 991.98px ) {
 
   .mybooking-product_list .mybooking-product_block:first-of-type {
@@ -119,6 +111,7 @@
 
   .mybooking-product_list .mybooking-product_characteristics {
     width: var(--mb-product-list-keys-width);
+    justify-content: flex-start;
   }
 
   .mybooking-product_list .mybooking-product_characteristics-img {
@@ -127,6 +120,9 @@
 
   .mybooking-product_list .mybooking-product_footer {
     height: var(--mb-product-list-footer-height);
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .mybooking-product_list .mybooking-product_amount {
@@ -192,6 +188,7 @@
 }
 
 .mybooking-product_block:first-of-type {
+  position: relative;
   overflow: hidden;
 } /* It contains the image container */
 
@@ -204,26 +201,28 @@
 /* Product image */
 
 .mybooking-product_image-container {
-  display: flex;
-  align-items: center;
   width: 100%;
   height: var(--mb-product-image-height);
-  /* overflow: hidden; */
 }
 
 .mybooking-product_image {
-  min-width: 100%!important;
+  width: 100%;
+  height: 100%;
   border-radius: 0!important;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .mybooking-product_info-button {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 22px;
+  left: 1rem;
+  top: 1rem;
+  font-size: 1.3em;
   transition: ease-in-out 0.2ms;
-  color: var(--mb-info-color);
-  cursor: pointer!important;
+  color: var(--mb-info-color)!important;
+  background-color: white;
+  border-radius: 1.3rem;
+  border: 1px solid white;
 }
 
 .mybooking-product_info-button:hover {
@@ -313,10 +312,17 @@
 }
 
 .mybooking-product_discount {
-  display: inline-block;
-  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
   width: 100%;
   margin: 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--mb-border-color);
+  font-size: 14px;
 }
 
 .mybooking-product_discount-badge {
@@ -408,6 +414,7 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  gap: 1rem;
   width: 100%;
   padding: 0 1rem;
   margin-bottom: 0.5rem;

@@ -17,7 +17,7 @@
   --mb-negative-text-color: #FFF;
 
   --mb-selector-padding: 2rem;
-  --mb-selector-background: transparent;
+  --mb-selector-background: white;
   --mb-selector-border-color: var(--mb-border-color);
   --mb-selector-label-color: currentcolor;
   --mb-selector-field-height: 40px;
@@ -26,15 +26,15 @@
   --mb-product-background: white;
   --mb-product-border-color: var(--mbborder-color);
 
-  --mb-product-image-height: 180px;
-  --mb-product-header-height: 60px;
+  --mb-product-image-height: 260px;
+  --mb-product-header-height: 75px;
   --mb-product-body-height: 120px;
   --mb-product-footer-height: 76px;
   --mb-product-btn-height: 50px;
 
-  --mb-product-list-left-width: 65%;
-  --mb-product-list-right-width: 35%;
-  --mb-product-list-image-height: 360px;
+  --mb-product-list-left-width: 40%;
+  --mb-product-list-right-width: 60%;
+  --mb-product-list-image-height: 320px;
   --mb-product-list-header-height: 70px;
   --mb-product-list-body-height: 90px;
   --mb-product-list-footer-height: 76px;
@@ -42,8 +42,8 @@
   --mb-product-list-price-size: 1.5em;
   --mb-product-list-name-size: 1.5em;
 
-  --mb-product-list-keys-width: 80%;
-  --mb-product-list-keys-icon-width: 30px;
+  --mb-product-list-keys-width: auto;
+  --mb-product-list-keys-icon-width: 25px;
   --mb-product-keys-icon-width: 25px;
   --mb-product-keys-icon-width-page: 40px;
 
