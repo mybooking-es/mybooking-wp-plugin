@@ -121,30 +121,29 @@
                     <% } %>
                   <% } %>
 
-                  <!-- Taxes included -->
-                  <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-                    <span class="mybooking-product_taxes">
-                      <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-                    </span>
-                  <?php endif; ?>
+                  <% if (product.price != product.base_price) { %>
+                    <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
+                  <% } %>
                 </div>
 
                 <!-- Offer (single product selection) -->
                 <% if (!product.exceeds_max && !product.be_less_than_min) { %>
                   <% if (!configuration.multipleProductsSelection) { %>
-                    <% if (product.price != product.base_price) { %>
+                    <span class="mybooking-product_discount">
+
+                      <!-- Taxes included -->
+                      <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+                        <span class="mybooking-product_taxes">
+                          <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                        </span>
+                      <?php endif; ?>
+
                       <% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
-                        <span class="mybooking-product_discount">
-                          <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
-                          <span class="mybooking-product_discount-badge mb-badge info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
-                        </span>
+                        <span class="mybooking-product_discount-badge mb-badge info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
                       <% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' && (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
-                        <span class="mybooking-product_discount">
-                          <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
-                          <span class="mybooking-product_discount-badge mb-badge success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
-                        </span>
+                        <span class="mybooking-product_discount-badge mb-badge success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
                       <% } %>
-                    <% } %>
+                    </span>
                   <% } %>
                 <% } %>
               </div>

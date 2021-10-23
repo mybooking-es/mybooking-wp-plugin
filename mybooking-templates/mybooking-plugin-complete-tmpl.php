@@ -44,24 +44,31 @@
           </div>
 
            <!-- Price -->
-           <div class="mybooking-product_amount">
-             <%=configuration.formatCurrency(shopping_cart.items[idx].item_cost)%>
-           </div>
-
-           <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-             <div class="mybooking-product_taxes">
-               <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+           <div class="mybooking-product_price">
+             <div class="mybooking-product_amount">
+               <%=configuration.formatCurrency(shopping_cart.items[idx].item_cost)%>
              </div>
-           <?php endif; ?>
 
-           <!-- Discount info -->
-           <% if (shopping_cart.items[idx].item_unit_cost_base != shopping_cart.items[idx].item_unit_cost) { %>
-             <div class="mybooking-product_price">
-
+             <% if (shopping_cart.items[idx].item_unit_cost_base != shopping_cart.items[idx].item_unit_cost) { %>
                <!-- Original price -->
                <span class="mybooking-product_original-price">
                  <%=configuration.formatCurrency(shopping_cart.items[idx].item_unit_cost_base * shopping_cart.items[idx].quantity)%>
                </span>
+             <% } %>
+          </div>
+
+           <!-- Discount info -->
+
+             <div class="mybooking-product_discount">
+
+               <! Taxes message -->
+               <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+                 <div class="mybooking-product_taxes">
+                   <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                 </div>
+               <?php endif; ?>
+
+              <% if (shopping_cart.items[idx].item_unit_cost_base != shopping_cart.items[idx].item_unit_cost) { %>
 
                <!-- Promotion Code -->
                <% if (typeof shopping_cart.items[idx].offer_name !== 'undefined' && shopping_cart.items[idx].offer_name !== null && shopping_cart.items[idx].offer_name !== '') { %>
@@ -72,8 +79,8 @@
                     <%=shopping_cart.items[idx].offer_name%>
                   </span>
                <% } %>
-             </div>
-           <% } %>
+            <% } %>
+          </div>
          </div>
       <% } %>
     </div>
@@ -343,10 +350,10 @@
           <div class="mybooking-extra_item <%=bg%> <% if (value > 0) {%>selected-coverage<%}%>" data-extra="<%=coverage.code%>">
 
             <% if (coverage.photo_path) { %>
-              <div class="mb-col-md-2 mb-col-sm-12">
+              <div class="mb-col-md-2 mb-col-sm-12 mybooking-extra_box-img">
                 <img class="mybooking-extra_img js-extra-info-btn" src="<%=coverage.photo_path%>" alt="<%=coverage.name%>" data-extra="<%=coverage.code%>">
               </div>
-              <div class="mb-col-md-5 mb-col-sm-12">
+              <div class="mb-col-md-5 mb-col-sm-12 mybooking-extra_box-name">
                 <div class="mybooking-extra_name">
                   <%=coverage.name%>
                 </div>
@@ -357,7 +364,7 @@
                 <% } %>
               </div>
             <% } else { %>
-              <div class="mb-col-md-7 mb-col-sm-12">
+              <div class="mb-col-md-7 mb-col-sm-12 mybooking-extra_box-name">
                 <div class="mybooking-extra_name">
                   <%=coverage.name%>
                 </div>
@@ -369,13 +376,13 @@
               </div>
             <% } %>
 
-            <div class="mb-col-md-3 mb-col-sm-12">
-             <div class="mybooking-extra_price">
+            <div class="mb-col-md-3 mb-col-sm-12 mybooking-extra_box-price">
+              <div class="mybooking-extra_price">
                 <%= configuration.formatExtraAmount( i18next, coverage.one_unit_price, coverage.price_calculation, shopping_cart.days, shopping_cart.hours, coverage.unit_price )%>
-             </div>
+              </div>
             </div>
 
-            <div class="mb-col-md-2 mb-col-sm-12">
+            <div class="mb-col-md-2 mb-col-sm-12 mybooking-extra_box-control">
 
               <% if (coverage.max_quantity > 1) { %>
                 <div class="mybooking-extra_control">
@@ -411,10 +418,10 @@
           <div class="mybooking-extra_item <%=bg%>" data-extra="<%=extra.code%>">
 
             <% if (extra.photo_path) { %>
-              <div class="mb-col-md-2 mb-col-sm-12">
+              <div class="mb-col-md-2 mb-col-sm-12 mybooking-extra_box-img">
                 <img class="mybooking-extra_img js-extra-info-btn" src="<%=extra.photo_path%>" alt="<%=extra.name%>" data-extra="<%=extra.code%>">
               </div>
-              <div class="mb-col-md-5 mb-col-sm-12">
+              <div class="mb-col-md-5 mb-col-sm-12 mybooking-extra_box-name">
                 <div class="mybooking-extra_name">
                   <%=extra.name%>
                 </div>
@@ -425,7 +432,7 @@
                 <% } %>
               </div>
             <% } else { %>
-              <div class="mb-col-md-7 mb-col-sm-12">
+              <div class="mb-col-md-7 mb-col-sm-12 mybooking-extra_box-name">
                 <div class="mybooking-extra_name">
                   <%=extra.name%>
                 </div>
@@ -437,13 +444,13 @@
               </div>
             <% } %>
 
-            <div class="mb-col-md-3 mb-col-sm-12">
+            <div class="mb-col-md-3 mb-col-sm-12 mybooking-extra_box-price">
              <div class="mybooking-extra_price">
                <%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation, shopping_cart.days, shopping_cart.hours, extra.unit_price)%>
              </div>
             </div>
 
-            <div class="mb-col-md-2 mb-col-sm-12">
+            <div class="mb-col-md-2 mb-col-sm-12 mybooking-extra_box-control">
 
               <% if (extra.max_quantity > 1) { %>
                 <div class="mybooking-extra_control">

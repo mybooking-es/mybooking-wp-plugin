@@ -188,10 +188,18 @@
 } /* Centers column if less than mb-col-*-12 */
 
 
-/** STRUCTURE **/
+/** CONTAINERS **/
 
 .mb-section {
   margin-bottom: 2rem;
+}
+
+.mb-section_title {
+  text-align: center;
+} @media ( min-width: 575.98px ) {
+  .mb-section_title {
+    text-align: left;
+  }
 }
 
 

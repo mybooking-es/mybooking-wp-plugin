@@ -12,14 +12,15 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.5rem;
 }
 
 .mybooking-summary_details-title {
   display: inline-block;
-  margin-bottom: 0.5rem;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: 700;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
@@ -69,7 +70,7 @@
   flex-flow: column;
   justify-content: flex-start;
   margin-bottom: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   background-color: var(--mb-product-detail-bg);
   border-top: 1px solid var(--mb-product-detail-border);
   border-bottom: 1px solid var(--mb-product-detail-border);
@@ -78,7 +79,7 @@
   .mybooking-summary_detail {
     justify-content: space-between;
     flex-flow: row;
-    padding: 2rem;
+    padding: 1rem;
   }
 }
 
@@ -90,7 +91,7 @@
 .mybooking-summary_item {
   display: flex;
   flex-flow: column;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.2em;
 }
 
@@ -132,10 +133,10 @@
 .mybooking-summary_extras {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .mybooking-summary_extra-item {
-  margin-bottom: 0.5rem;
   font-size: 16px;
 }
 
@@ -145,6 +146,7 @@
 
 .mybooking-summary_extra-amount {
   font-weight: 700;
+  font-size: 0.9em;
 }
 
 .mybooking-summary_deposit {
@@ -164,9 +166,9 @@
 .mybooking-summary_total {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   margin-bottom: 0.5rem;
-  padding: 1rem 2rem;
+  padding: 1rem;
   border: 1px solid var(--mb-product-total-border);
   background-color: var(--mb-product-total-bg);
   color: var(--mb-product-total-color);
@@ -210,22 +212,39 @@
   border-bottom: none;
 }
 
+.mybooking-extra_item [class*="mb-col-"] {
+  padding: 0.3rem 1rem;
+} @media ( min-width: 575.98px ) {
+  .mybooking-extra_item [class*="mb-col-"] {
+    padding: 1rem;
+  }
+}
+
 .mybooking-extra_img {
-  max-width: 50px;
-  margin: 0 auto;
+  max-width: 150px!important;
+  margin-bottom: 0.5rem;
+} @media ( min-width: 575.98px ) {
+  .mybooking-extra_img {
+    max-width: 50px!important;
+    margin-bottom: 0;
+  }
 }
 
 .mybooking-extra_name {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
 }
 
 .mybooking-extra_description {
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .mybooking-extra_description p {
   margin-bottom: 0.5rem;
+  line-height: 1.2;
+  font-size: 0.8em;
 }
 
 .mybooking-extra_description br {
@@ -233,29 +252,60 @@
 }
 
 .mybooking-extra_price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-weight: 700;
+  text-align: center;
+} @media ( min-width: 575.98px ) {
+  .mybooking-extra_price {
+    text-align: left;
+  }
 }
 
 .mybooking-extra_price .extra-unitary {
-  font-size: 1.1em;
+  font-size: 0.7em;
+  line-height: 1
 }
 
 .mybooking-extra_price .extra-total {
+  font-size: 0.6em;
   font-weight: 400;
 }
 
-.mybooking-extra_control .mb-label {
-  margin: 0;
+.mybooking-extra_box-control {
+  display: flex;
+  justify-content: center;
+} @media ( min-width: 575.98px ) {
+  .mybooking-extra_box-control {
+    justify-content: flex-end;
+  }
+}
+
+.mybooking-extra_control {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0;
+}
+
+.mybooking-extra_control .mb-label,
+.mybooking-extra_price input[type="checkbox"] + label {
+  margin: 0!important;
+  padding: 0!important;
 }
 
 .mybooking-extra_control .mb-button {
   display: inline-block;
   padding: 0.3rem;
+  line-height: 1em;
+  margin: 0;
 }
 
 .mybooking-extra_control .mb-input {
   display: inline-block;
   max-width: 25px;
+  padding: 3px;
+  margin: 0;
 }
 
 
