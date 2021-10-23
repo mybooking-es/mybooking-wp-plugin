@@ -65,8 +65,8 @@
   --mb-product-total-border: currentcolor;
   --mb-product-total-bg: transparent;
   --mb-product-total-color: currentcolor;
-  --mb-product-total-amount-size: 2em;
-  --mb-product-total-amount-color: currentcolor;
+  --mb-product-total-amount-size: 1.6em;
+  --mb-product-total-amount-color: var(--mb-info-color);
 
   --mb-calendar-step-bg: var(--mb-dark-background-color);
   --mb-calendar-step-color: var(--mb-negative-text-color);
@@ -261,7 +261,7 @@
 
 /* Badges */
 .mb-badge {
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: 25px;
   background-color: var(--mb-dark-background-color);
   color: var(--mb-negative-text-color);

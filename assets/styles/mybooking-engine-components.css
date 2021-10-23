@@ -180,7 +180,7 @@
 }
 
 .mybooking-summary_total-amount {
-  font-size: var(--mb-product-amount-size);
+  font-size: var(--mb-product-total-amount-size);
   font-weight: 900;
   color: var(--mb-product-total-amount-color);
 }
