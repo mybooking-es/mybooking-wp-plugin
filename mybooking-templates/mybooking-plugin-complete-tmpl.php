@@ -388,7 +388,7 @@
                 <div class="mybooking-extra_control">
                   <button class="mb-button control btn-minus-extra" data-value="<%=coverage.code%>" data-max-quantity="<%=coverage.max_quantity%>">-</button>
                   <input class="mb-input extra-input" type="text" id="extra-<%=coverage.code%>-quantity" value="<%=value%>" data-extra-code="<%=coverage.code%>" readonly/>
-                  <button class="mb-button control btn-minus-plus" data-value="<%=coverage.code%>" data-max-quantity="<%=coverage.max_quantity%>">+</button>
+                  <button class="mb-button control btn-plus-extra" data-value="<%=coverage.code%>" data-max-quantity="<%=coverage.max_quantity%>">+</button>
                 </div>
               <% } else { %>
                 <div class="mybooking-extra_control">
@@ -456,7 +456,7 @@
                 <div class="mybooking-extra_control">
                   <button class="mb-button control btn-minus-extra" data-value="<%=extra.code%>" data-max-quantity="<%=extra.max_quantity%>">-</button>
                   <input class="mb-input extra-input" type="text" id="extra-<%=extra.code%>-quantity" value="<%=value%>" data-extra-code="<%=extra.code%>" readonly/>
-                  <button class="mb-button control btn-minus-plus" data-value="<%=extra.code%>" data-max-quantity="<%=extra.max_quantity%>">+</button>
+                  <button class="mb-button control btn-plus-extra" data-value="<%=extra.code%>" data-max-quantity="<%=extra.max_quantity%>">+</button>
                 </div>
               <% } else { %>
                 <div class="mybooking-extra_control">
