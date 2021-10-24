@@ -296,14 +296,17 @@
 
 .mybooking-extra_control .mb-button {
   display: inline-block;
-  padding: 0.3rem;
+  padding: 0.6rem;
   line-height: 1em;
   margin: 0;
+  width: 32px;
+  text-align: center;
 }
 
 .mybooking-extra_control .mb-input {
   display: inline-block;
-  max-width: 25px;
+  max-width: 40px;
+  text-align: center;
   padding: 3px;
   margin: 0;
 }
