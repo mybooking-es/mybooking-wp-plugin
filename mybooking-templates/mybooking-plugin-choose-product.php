@@ -9,17 +9,7 @@
  */
 ?>
 
-<?php $theme = wp_get_theme(); // gets the current theme
-if (
-  'Twenty Twenty' == $theme->name ||
-  'Twenty Twenty' == $theme->parent_theme ||
-  'Twenty Twenty-One' == $theme->name ||
-  'Twenty Twenty-One' == $theme->parent_theme )
-  {
-    $alignwide = 'alignwide';
-  } ?>
-
-<section class="mybooking mybooking-process_choose <?php echo $alignwide ?>">
+<section class="mybooking mybooking-process_choose <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
   <!-- Sidebar reservation detail -->
   <div id="reservation_detail"></div>

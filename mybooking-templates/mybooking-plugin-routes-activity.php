@@ -11,37 +11,33 @@
 
 <?php get_header();?>
 
-<section class="mybooking mybooking-activity">
-	<div class="mybooking-activity_header">
-			<h1 class="mybooking-activity_title">
-				<?php echo esc_html( $args->name ) ?>
-			</h1>
-			<span class="mybooking-product_amount">
-				<?php echo esc_html( $args->from_price_formatted ) ?>
-			</span>
-		</div>
+<section class="mybooking mybooking-activity activity-container">
 
+  <div class="mb-row">
+    <div class="mb-col-md-12">
+			<div class="mybooking-activity_header">
+				<h1 class="mybooking-activity_title">
+					<?php echo esc_html( $args->name ) ?>
+				</h1>
+				<span class="mybooking-product_amount">
+					<?php echo esc_html( $args->from_price_formatted ) ?>
+				</span>
+			</div>
+		</div>
+	</div>		
+	
+  <div class="mb-row">
 	  <div class="mb-col-md-8">
 
 			<?php if (sizeof($args->photos) > 1) { ?>
-				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-				  <div class="carousel-inner">
-				  	<?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>
-				    <div class="carousel-item <?php if ($mybooking_key == key($args->photos)) { ?>active<?php } ?>">
-				      <img class="d-block w-100" src="<?php echo esc_url( $mybooking_photo->full_photo_path )?>" alt="<?php echo esc_attr( $args->name )?>">
-				    </div>
-				    <?php } ?>
-				  </div>
 
-				  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="sr-only"><? echo esc_html_x('Previous', 'activity_detail', 'mybooking-wp-plugin' ) ?></span>
-				  </a>
-				  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="sr-only"><? echo esc_html_x('Next', 'activity_detail', 'mybooking-wp-plugin' ) ?></span>
-				  </a>
-				</div>
+        <div class="mybooking-activity-carousel-inner">
+          <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>  
+            <div class="mybooking-carousel-item">
+              <img class="d-block w-100" src="<?php echo esc_url ( $mybooking_photo->full_photo_path ) ?>" alt="<?php echo esc_attr( $args->name )?>">
+            </div>
+          <?php } ?>  
+        </div>
 
 			<?php } else if (sizeof($args->photos) == 1) { ?>
 				<img class="mybooking-activity_image" src="<?php echo esc_url( $args->photos[0]->full_photo_path )?>" alt="<?php echo esc_attr( $args->name )?>">

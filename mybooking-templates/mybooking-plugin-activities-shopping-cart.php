@@ -9,7 +9,7 @@
  */
 ?>
 
-<section class="mybooking mybooking-activity_complete">
+<section class="mybooking mybooking-activity_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <div class="mb-row">
 
     <!-- Selected products -->

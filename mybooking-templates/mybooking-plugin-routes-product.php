@@ -27,27 +27,19 @@
         <?php } ?>
       </div>
     </div>
-
+  </div>  
+  <div class="mb-row">
     <div class="mb-col-md-8">
 
       <!-- Product image -->
       <?php if (!empty( $args->photos ) && count( $args->photos ) > 1) { ?>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>
-              <div class="carousel-item <?php if ($mybooking_key == key($args->photos)) { ?>active<?php } ?>">
-                <img class="d-block w-100" src="<?php echo esc_url ( $mybooking_photo->full_photo_path ) ?>" alt="<?php echo esc_attr( $args->name )?>">
-              </div>
-            <?php } ?>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only"><?php echo esc_html_x('Previous', 'renting_product_detail', 'mybooking-wp-plugin' ) ?></span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only"><?php echo esc_html_x('Next', 'renting_product_detail', 'mybooking-wp-plugin' ) ?></span>
-          </a>
+
+        <div class="mybooking-product-carousel-inner">
+          <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>  
+            <div class="mybooking-carousel-item">
+              <img class="d-block w-100" src="<?php echo esc_url ( $mybooking_photo->full_photo_path ) ?>" alt="<?php echo esc_attr( $args->name )?>">
+            </div>
+          <?php } ?>  
         </div>
 
       <?php } else if (count($args->photos) == 1) { ?>

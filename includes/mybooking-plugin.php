@@ -16,6 +16,8 @@
   }
   // Check is page WMPL integration
   require_once('mybooking-plugin-is-page.php');
+  // Themes integration
+  require_once('mybooking-plugin-themes-integration.php');  
   // Mybooking Api Client + UI
   require_once('ui/mybooking-plugin-ui-pages.php');
   require_once('ui/mybooking-plugin-ui-pagination.php');
@@ -850,6 +852,7 @@
                                      'rental_location_code' => '' ), $atts ) );
 
       $data = array();
+      
 
       if ( $sales_channel_code != '' ) {
         $data['sales_channel_code'] = $sales_channel_code;
@@ -966,7 +969,7 @@
                                      'rental_location_code' => ''), $atts ) );
 
       $data = array();
-      $data['code'] = $code;
+      $data['code'] = $code;     
       if ( $sales_channel_code != '' ) {
         $data['sales_channel_code'] = $sales_channel_code;
       }
@@ -1059,7 +1062,6 @@
 
       // Get the query parameters
       $data = $this->wp_products_extract_query_string();
-
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-products-search.php', $data);
       return ob_get_clean();
@@ -1075,7 +1077,6 @@
 
       // Get the query parameters
       $data = $this->wp_activities_extract_query_string();
-
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-activities-search.php', $data);
       return ob_get_clean();
@@ -1177,7 +1178,6 @@
         $data = array(
             'activity_id' => $activity_id,
         );
-
         ob_start();
         mybooking_engine_get_template('mybooking-plugin-activities-activity-widget.php', $data);
         return ob_get_clean();

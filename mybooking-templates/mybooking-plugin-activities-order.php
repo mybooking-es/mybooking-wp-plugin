@@ -6,5 +6,5 @@
    *
    */
 ?>
-    <div id="reservation_detail" class="reservation-step">
+    <div id="reservation_detail" class="reservation-step <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
     </div>

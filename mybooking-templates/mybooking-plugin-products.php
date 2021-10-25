@@ -9,7 +9,7 @@
  */
 ?>
 
-<section class="mybooking mybooking-products_catalog">
+<section class="mybooking mybooking-products_catalog <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
 		<!-- PRODUCT LOOP ------------------------------------------------------------->
 
@@ -59,7 +59,7 @@
 							<?php } ?>
 
 							<div class="mybooking-product_body">
-						    <div class="mybooking-product_name">
+						    	<div class="mybooking-product_name">
 									<?php echo esc_html( $mybooking_product->name ) ?>
 								</div>
 
@@ -67,11 +67,10 @@
 									<?php echo esc_html( $mybooking_product->short_description ) ?>
 								</div>
 
-								<!-- This is commented because we must refactorize API output first
-	              <div class="mybooking-product_description">
-									<?php echo esc_html( $mybooking_product->description ) ?>
+	              				<div class="mybooking-product_description">
+									<?php echo wp_kses_post( $mybooking_product->description ) ?>
 								</div>
-	              -->
+	              
 							</div>
 
 							<?php if ( isset( $mybooking_product->key_characteristics) && is_array( (array) $mybooking_product->key_characteristics ) && !empty( (array) $mybooking_product->key_characteristics ) ) { ?>

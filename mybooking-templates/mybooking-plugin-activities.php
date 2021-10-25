@@ -9,7 +9,7 @@
  */
 ?>
 
-<section class="mybooking mybooking-activity_catalog">
+<section class="mybooking mybooking-activity_catalog <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
 	<?php if ( $args['total'] == 0 ) { ?>
 	  <div class="mb-row">
