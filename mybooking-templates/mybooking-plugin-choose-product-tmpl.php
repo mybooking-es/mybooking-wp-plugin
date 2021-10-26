@@ -152,8 +152,8 @@
             <div class="mybooking-product_body">
 
               <!-- Product name and description -->
-              <div class="mybooking-product_name"><%=product.name%></div>
-              <div class="mybooking-product_short-description"><%=product.short_description%></div>
+              <h2 class="mybooking-product_name"><%=product.name%></h2>
+              <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
               <div class="mybooking-product_description mybooking-truncate-overflow-3lines">
                 <%=product.description%>
               </div>
