@@ -154,9 +154,9 @@
               <!-- Product name and description -->
               <div class="mybooking-product_name"><%=product.name%></div>
               <div class="mybooking-product_short-description"><%=product.short_description%></div>
-              <!-- This is commented because we must refactorize API output first
-              <div class="mybooking-product_description"><%=product.description%></div>
-              -->
+              <div class="mybooking-product_description mybooking-truncate-overflow-3lines">
+                <%=product.description%>
+              </div>
 
               <!-- Few units warning -->
               <% if (product.few_available_units) { %>

@@ -19,18 +19,30 @@
   }
 }
 
+/**
+ * Route renting producto and Route activity compatibility with other themes
+ */ 
+@media only screen and (min-width: 768px) {
+  body.mybooking-activity .mybooking.activity-container:not(.alignwide),
+  body.mybooking-product .mybooking.product-container:not(.alignwide) {
+      max-width: var(--mb-product-activity-route-max-width);
+      margin: var(--mb-product-activity-route-margin);
+  }
+}
+
 /*
- * Renting product and activity custom pages compatibility with :
+ * Pages compatibility with the following themes: ;
+ *
  * Twenty Nineteen
  * Twenty Twenty
  * Twenty Twenty One
  */ 
 @media only screen and (min-width: 482px) {
 
-  body.mybooking-activity .activity-container {
+  body.mybooking-activity .activity-container.alignwide {
     max-width: var(--responsive--alignwide-width, 610px);
   }
-  body.mybooking-product .product-container {
+  body.mybooking-product .product-container.alignwide {
     max-width: var(--responsive--alignwide-width, 610px);
   }
 
@@ -55,10 +67,10 @@
 }
 @media only screen and (min-width: 822px) { 
 
-  body.mybooking-activity .activity-container {
+  body.mybooking-activity .activity-container.alignwide {
     max-width: var(--responsive--alignwide-width, 1240px);
   }
-  body.mybooking-product .product-container {
+  body.mybooking-product .product-container.alignwide {
     max-width: var(--responsive--alignwide-width, 1240px);
   }
 

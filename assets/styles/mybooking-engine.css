@@ -34,7 +34,7 @@
 
   --mb-product-list-left-width: 40%;
   --mb-product-list-right-width: 60%;
-  --mb-product-list-image-height: 320px;
+  --mb-product-list-image-height: 370px;
   --mb-product-list-header-height: 70px;
   --mb-product-list-body-height: 170px;
   --mb-product-list-footer-height: 76px;
@@ -95,6 +95,9 @@
 
   --mb-cookies-background: #FFF;
   --mb-cookies-color: currentcolor;
+
+  --mb-product-activity-route-max-width: none;
+  --mb-product-activity-route-margin: none;
 }
 
 

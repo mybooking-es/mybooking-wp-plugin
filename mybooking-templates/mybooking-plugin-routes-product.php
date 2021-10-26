@@ -11,77 +11,81 @@
 
 <?php get_header();?>
 
-<div class="mybooking mybooking-product_detail product-container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
-  <div class="mb-row">
-    <div class="mb-col-md-12">
-      <div class="mybooking-product_detail-header">
-        <div class="mybooking-product_detail-title">
-          <h1><?php echo esc_html( $args->name ) ?></h1>
-        </div>
-
-        <!-- From price -->
-        <?php if ($args->from_price > 0) { ?>
-         <div class="mybooking-product_detail-price">
-           <?php echo wp_kses_post( sprintf( _x('From <span class="mybooking-product_detail-amount">%s€</span>', 'renting_product_detail', 'mybooking-wp-plugin' ), number_format_i18n( $args->from_price ) ) )?>
-         </div>
-        <?php } ?>
-      </div>
-    </div>
-  </div>  
-  <div class="mb-row">
-    <div class="mb-col-md-8">
-
-      <!-- Product image -->
-      <?php if (!empty( $args->photos ) && count( $args->photos ) > 1) { ?>
-
-        <div class="mybooking-product-carousel-inner">
-          <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>  
-            <div class="mybooking-carousel-item">
-              <img class="d-block w-100" src="<?php echo esc_url ( $mybooking_photo->full_photo_path ) ?>" alt="<?php echo esc_attr( $args->name )?>">
+<div class="entry">
+  <div class="entry-content">
+    <div class="mybooking mybooking-product_detail product-container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+      <div class="mb-row">
+        <div class="mb-col-md-12">
+          <div class="mybooking-product_detail-header">
+            <div class="mybooking-product_detail-title">
+              <h1><?php echo esc_html( $args->name ) ?></h1>
             </div>
-          <?php } ?>  
+
+            <!-- From price -->
+            <?php if ($args->from_price > 0) { ?>
+             <div class="mybooking-product_detail-price">
+               <?php echo wp_kses_post( sprintf( _x('From <span class="mybooking-product_detail-amount">%s€</span>', 'renting_product_detail', 'mybooking-wp-plugin' ), number_format_i18n( $args->from_price ) ) )?>
+             </div>
+            <?php } ?>
+          </div>
         </div>
+      </div>  
+      <div class="mb-row">
+        <div class="mb-col-md-8">
 
-      <?php } else if (count($args->photos) == 1) { ?>
-        <img class="d-block product-photo" src="<?php echo esc_url ( $args->photos[0]->full_photo_path ) ?>" alt="<?php echo esc_attr( $args->name )?>">
+          <!-- Product image -->
+          <?php if (!empty( $args->photos ) && count( $args->photos ) > 1) { ?>
 
-      <?php } else { ?>
-        <div class="text-center no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
-      <?php } ?>
+            <div class="mybooking-product-carousel-inner">
+              <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>  
+                <div class="mybooking-carousel-item">
+                  <img class="d-block w-100" src="<?php echo esc_url ( $mybooking_photo->full_photo_path ) ?>" alt="<?php echo esc_attr( $args->name )?>">
+                </div>
+              <?php } ?>  
+            </div>
 
-      <?php if ( isset( $args->key_characteristics) && is_array( (array) $args->key_characteristics ) && !empty( (array) $args->key_characteristics ) ) { ?>
-        <div class="mybooking-product_characteristics">
-          <?php foreach ( $args->key_characteristics as $mybooking_key => $mybooking_value) { ?>
-            <div class="mybooking-product_characteristics-item">
-              <img class="mybooking-product_characteristics-img" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/key_characteristics/'.$mybooking_key.'.svg' ) ?>" alt="<?php echo esc_attr( MyBookingEngineContext::getInstance()->getKeyCharacteristic( $mybooking_key ) ) ?>"/>
-              <span class="mybooking-product_characteristics-key"><?php echo esc_html( $mybooking_value ) ?></span>
+          <?php } else if (count($args->photos) == 1) { ?>
+            <img class="d-block product-photo" src="<?php echo esc_url ( $args->photos[0]->full_photo_path ) ?>" alt="<?php echo esc_attr( $args->name )?>">
+
+          <?php } else { ?>
+            <div class="text-center no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
+          <?php } ?>
+
+          <?php if ( isset( $args->key_characteristics) && is_array( (array) $args->key_characteristics ) && !empty( (array) $args->key_characteristics ) ) { ?>
+            <div class="mybooking-product_characteristics">
+              <?php foreach ( $args->key_characteristics as $mybooking_key => $mybooking_value) { ?>
+                <div class="mybooking-product_characteristics-item">
+                  <img class="mybooking-product_characteristics-img" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/key_characteristics/'.$mybooking_key.'.svg' ) ?>" alt="<?php echo esc_attr( MyBookingEngineContext::getInstance()->getKeyCharacteristic( $mybooking_key ) ) ?>"/>
+                  <span class="mybooking-product_characteristics-key"><?php echo esc_html( $mybooking_value ) ?></span>
+                </div>
+              <?php } ?>
             </div>
           <?php } ?>
+
+          <!-- Short description -->
+          <?php if ( !empty( $args->short_description) ) { ?>
+            <div class="mybooking-product_detail-short">
+              <?php echo wp_kses_post( $args->short_description ) ?>
+            </div>
+          <?php } ?>
+
+          <!-- Description -->
+          <?php if ( !empty( $args->description ) ) { ?>
+            <div class="mybooking-product_detail-description">
+              <?php echo wp_kses_post( $args->description )?>
+            </div>
+          <?php } ?>
+
         </div>
-      <?php } ?>
 
-      <!-- Short description -->
-      <?php if ( !empty( $args->short_description) ) { ?>
-        <div class="mybooking-product_detail-short">
-          <?php echo wp_kses_post( $args->short_description ) ?>
+        <div class="mb-col-md-4">
+          <h2 class="mybooking-product_calendar-title">
+            <?php echo esc_html_x('Availability calendar', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+          </h2>
+          <hr>
+          <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>
         </div>
-      <?php } ?>
-
-      <!-- Description -->
-      <?php if ( !empty( $args->description ) ) { ?>
-        <div class="mybooking-product_detail-description">
-          <?php echo wp_kses_post( $args->description )?>
-        </div>
-      <?php } ?>
-
-    </div>
-
-    <div class="mb-col-md-4">
-      <h2 class="mybooking-product_calendar-title">
-        <?php echo esc_html_x('Availability calendar', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-      </h2>
-      <hr>
-      <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>
+      </div>
     </div>
   </div>
 </div>
