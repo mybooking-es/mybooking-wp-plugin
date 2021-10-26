@@ -377,11 +377,11 @@
       }
 
       // Enqueue Boostrap CSS
-      if ( $registry->mybooking_rent_plugin_custom_css ) {
-        // Load bootstrap CSS
-        wp_enqueue_style( 'mybooking_wp_css_framework_bootstrap',
-                        plugins_url('/assets/styles/bootstrap-4.4.1.min.css', dirname( __FILE__ ) ) );
-      }
+//      if ( $registry->mybooking_rent_plugin_custom_css ) {
+//        // Load bootstrap CSS
+//        wp_enqueue_style( 'mybooking_wp_css_framework_bootstrap',
+//                        plugins_url('/assets/styles/bootstrap-4.4.1.min.css', dirname( __FILE__ ) ) );
+//      }
 
       // CSS Components
       if ( $registry->mybooking_rent_plugin_components_css ) {
