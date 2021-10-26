@@ -81,9 +81,9 @@
 							</div>
 
 							<div class="mybooking-product_body">
-						    <div class="mybooking-product_name">
+						    <h2 class="mybooking-product_name">
 									<?php echo esc_html( $mybooking_activity->name ) ?>
-								</div>
+								</h2>
 
 								<div class="mybooking-product_short-description mybooking-truncate-overflow-3lines">
 									<?php echo esc_html( $mybooking_activity->short_description ) ?>
