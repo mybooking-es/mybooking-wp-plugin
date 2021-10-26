@@ -1,41 +1,33 @@
 <?php
-  /** 
-   * The Template for showing the activity shopping cart
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-activities-shopping-cart.php
-   *
-   */
+/**
+ *   MYBOOKING ENGINE - ACTIVITIES SHOPPING CART
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting select product step
+ *   This template can be overridden by copying it to your
+ *   theme /mybooking-templates/mybooking-plugin-activities-shopping-cart.php
+ *
+ */
 ?>
-    <!-- Activities : Shopping cart page -->
-    <section class="section reservation-step">
-      <div class="container">
-        <div class="row mt-5">
 
-          <!-- CONTENT -->
-          <div class="col-md-7">
-            <!-- Products -->
-            <div id="selected_products"></div>
-          </div>
-          <!-- /CONTENT -->
+<section class="mybooking mybooking-activity_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+  <div class="mb-row">
 
-          <!-- SIDEBAR -->
-          <div class="col-md-5">
+    <!-- Selected products -->
+    <div class="mb-col-md-4 mb-col-right">
+      <div id="selected_products"></div>
+    </div>
 
-            <!-- Reservation form -->
-            <form id="form-reservation" name="reservation_form" class="form-delivery" method="post" autocomplete="off">
-              <div id="reservation_container"></div>
-              <div id="reservation_detail">
-              </div>
-              <div id="payment_detail"></div>
-            </form>
-            <!-- Reservation error -->
-            <div id="reservation_error" class="alert alert-danger" style="display:none">
-            </div>
-            <br>
+    <!-- Reservation form -->
+    <div class="mb-col-md-8">
+      <form id="form-reservation" name="reservation_form" class="form-delivery" method="post" autocomplete="off">
+        <div id="reservation_container"></div>
+        <div id="reservation_detail"></div>
+        <div id="payment_detail"></div>
+      </form>
+    </div>
 
-          </div>
-          <!-- /SIDEBAR -->
-        </div>
-      </div>  
-    </section>
-    <!-- /Activities : Shopping cart page -->
+    <!-- Reservation error -->
+    <div class="mb-col-md-12">
+      <div id="reservation_error" class="mb-alert danger" style="display:none"></div>
+    </div>
+</section>

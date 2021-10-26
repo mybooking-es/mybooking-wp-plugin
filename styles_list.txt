@@ -1,0 +1,15 @@
+ajax-loader.gif
+bootstrap-4.4.1.min.css
+custom-styles.css
+daterangepicker-0.20.0.min.css
+font-awesome-4.7.0.min.css
+fonts
+images
+jquery-ui-1.10.0.custom.css
+mybooking-engine-components.css
+mybooking-engine-product.css
+mybooking-engine-selector.css
+select2-4.0.1.css
+select2-bootstrap.css
+slick.css
+slick-theme.css

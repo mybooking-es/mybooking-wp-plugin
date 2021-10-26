@@ -1,0 +1,421 @@
+/*
+*  MYBOOKING RESERVATION ENGINE
+*  -----------------------------------------------------------------------------
+*
+*/
+
+:root {
+
+  --mb-info-color: #2193F2;
+  --mb-success-color: #3DD992;
+  --mb-danger-color: #E6546E;
+  --mb-warning-color: #FFB74D;
+
+  --mb-border-color: #DDD;
+  --mb-background-color: #EEE;
+  --mb-dark-background-color: #424242;
+  --mb-negative-text-color: #FFF;
+
+  --mb-selector-padding: 2rem;
+  --mb-selector-background: transparent;
+  --mb-selector-border-color: var(--mb-border-color);
+  --mb-selector-label-color: currentcolor;
+  --mb-selector-field-height: 40px;
+
+  --mb-product-separation: 0.5rem;
+  --mb-product-background: transparent;
+  --mb-product-border-color: var(--mbborder-color);
+
+  --mb-product-image-height: 260px;
+  --mb-product-header-height: 75px;
+  --mb-product-body-height: 120px;
+  --mb-product-footer-height: 76px;
+  --mb-product-btn-height: 50px;
+
+  --mb-product-list-left-width: 40%;
+  --mb-product-list-right-width: 60%;
+  --mb-product-list-image-height: 320px;
+  --mb-product-list-header-height: 70px;
+  --mb-product-list-body-height: 90px;
+  --mb-product-list-footer-height: 76px;
+
+  --mb-product-list-price-size: 1.5em;
+  --mb-product-list-name-size: 1.5em;
+
+  --mb-product-list-keys-width: auto;
+  --mb-product-list-keys-icon-width: 25px;
+  --mb-product-keys-icon-width: 25px;
+  --mb-product-keys-icon-width-page: 40px;
+
+  --mb-product-custom-message-bg: rgba(255,255,255,0.7);
+  --mb-product-custom-message-color: currentcolor;
+
+  --mb-product-name-size: 1.2em;
+  --mb-product-price-color: var(--mb-info-color);
+  --mb-product-price-size: 1.3em;
+  --mb-product-quantity-color: #2193F2;
+
+  --mb-product-info-border: var(--mb-border-color);
+  --mb-product-info-background: transparent;
+
+  --mb-product-detail-bg: transparent;
+  --mb-product-detail-border: var(--mb-border-color);
+  --mb-product-detail-color: currentcolor;
+
+  --mb-product-total-border: currentcolor;
+  --mb-product-total-bg: transparent;
+  --mb-product-total-color: currentcolor;
+  --mb-product-total-amount-size: 1.6em;
+  --mb-product-total-amount-color: var(--mb-info-color);
+
+  --mb-calendar-step-bg: var(--mb-dark-background-color);
+  --mb-calendar-step-color: var(--mb-negative-text-color);
+  --mb-calendar-step-radius: 50%;
+  --mb-calendar-available: var(--mb-success-color);
+  --mb-calendar-available-hover: var(--mb-info-color);
+  --mb-calendar-booked: var(--mb-danger-color);
+  --mb-calendar-disabled: var(--mb-background-color);
+
+  --mb-payment-option-btn-bg: var(--mb-dark-background-color);
+  --mb-payment-option-btn-color: var(--mb-negative-text-color);
+
+  --mb-summary-locator-color: var(--mb-info-color);
+
+  --mb-catalog-price-height: 40px;
+  --mb-catalog-price-bg: #0066BF;
+  --mb-catalog-price-color: var(--mb-negative-text-color);
+
+  --mb-popup-background: #FFF;
+  --mb-popup-width-desk: 50vw;
+  --mb-popup-height-desk: auto;
+  --mb-popup-width-mobile: 90vw;
+  --mb-popup-height-mobile: 90vh;
+  --mb-popup-close-btn-color: currentcolor;
+  --mb-popup-close-btn-size: 2em;
+
+  --mb-cookies-background: #FFF;
+  --mb-cookies-color: currentcolor;
+}
+
+
+/** FLOATED GRID **/
+
+.mb-row {
+  margin: 0 auto;
+  clear: both;
+}
+
+.mb-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Columns */
+
+[class*='mb-col-sm-'],
+[class*='mb-col-md-'],
+[class*='mb-col-lg-'] {
+  float: left;
+  padding: 0.8rem;
+}
+
+.mb-col-sm-1        { width: 8.33%; }
+.mb-col-sm-2        { width: 16.66%; }
+.mb-col-sm-3        { width: 25%; }
+.mb-col-sm-4        { width: 33.33%; }
+.mb-col-sm-5        { width: 41.66%; }
+.mb-col-sm-6        { width: 50%; }
+.mb-col-sm-7        { width: 58.33%; }
+.mb-col-sm-8        { width: 66.66%; }
+.mb-col-sm-9        { width: 75%; }
+.mb-col-sm-10       { width: 83.33%; }
+.mb-col-sm-11       { width: 91.66%; }
+.mb-col-sm-12       { width: 100%; }
+
+[class*='mb-col-md-'],
+[class*='mb-col-lg-'] {
+  width: 100%;
+} /* Stacked by default on mobile */
+
+@media only screen and ( min-width: 575.98px ) {
+  .mb-col-md-1        { width: 8.33%; }
+  .mb-col-md-2        { width: 16.66%; }
+  .mb-col-md-3        { width: 25%; }
+  .mb-col-md-4        { width: 33.33%; }
+  .mb-col-md-5        { width: 41.66%; }
+  .mb-col-md-6        { width: 50%; }
+  .mb-col-md-7        { width: 58.33%; }
+  .mb-col-md-8        { width: 66.66%; }
+  .mb-col-md-9        { width: 75%; }
+  .mb-col-md-10       { width: 83.33%; }
+  .mb-col-md-11       { width: 91.66%; }
+  .mb-col-md-12       { width: 100%; }
+
+  [class*='mb-col'] {
+    padding: 1rem;
+  }
+}
+
+@media only screen and ( min-width: 991.98px ) {
+  .mb-col-lg-1        { width: 8.33%; }
+  .mb-col-lg-2        { width: 16.66%; }
+  .mb-col-lg-3        { width: 25%; }
+  .mb-col-lg-4        { width: 33.33%; }
+  .mb-col-lg-5        { width: 41.66%; }
+  .mb-col-lg-6        { width: 50%; }
+  .mb-col-lg-7        { width: 58.33%; }
+  .mb-col-lg-8        { width: 66.66%; }
+  .mb-col-lg-9        { width: 75%; }
+  .mb-col-lg-10       { width: 83.33%; }
+  .mb-col-lg-11       { width: 91.66%; }
+  .mb-col-lg-12       { width: 100%; }
+
+  [class*='mb-col'] {
+    padding: 1.25rem;
+  }
+}
+
+/* Helpers */
+
+.mb-col-right {
+  float: right;
+} /* Flips column order if applied to starting column */
+
+.mb-col-center {
+  float: none;
+  margin: 0 auto;
+} /* Centers column if less than mb-col-*-12 */
+
+
+/** CONTAINERS **/
+
+.mb-section {
+  margin-bottom: 2rem;
+}
+
+.mb-section_title {
+  text-align: center;
+} @media ( min-width: 575.98px ) {
+  .mb-section_title {
+    text-align: left;
+  }
+}
+
+
+/** FORMS **/
+
+.mb-form-group label {
+  display: inline-block;
+}
+
+.mb-form-group input {
+  display: inline-block;
+  width: 100%;
+}
+
+.mb-form-row {
+  margin: 0 0 1rem 0;
+} @media ( min-width: 575.98px ) {
+  .mb-form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+  }
+  .mb-form-row.mb-custom-date-form {
+    gap: 0.5rem;
+  }
+}
+
+.mb-form-row [class*='mb-col'] {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.mb-form-control {
+  min-width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.mb-custom-date-form select {
+  min-width: 100%;
+  margin-bottom: 0.5rem;
+  height: var(--mb-selector-field-height);
+} @media ( min-width: 575.98px ) {
+  .mb-custom-date-form select {
+    margin: 0;
+  }
+}
+
+
+/** UI ELEMENTS **/
+
+/* Buttons */
+.mb-button.block {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+/* Badges */
+.mb-badge {
+  padding: 2px 8px;
+  border-radius: 25px;
+  background-color: var(--mb-dark-background-color);
+  color: var(--mb-negative-text-color);
+  font-size: .7em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mb-badge.info         { background-color: var(--mb-info-color) }
+.mb-badge.success      { background-color: var(--mb-success-color) }
+.mb-badge.danger       { background-color: var(--mb-danger-color) }
+.mb-badge.warning      { background-color: var(--mb-warning-color) }
+
+.mb-badge.big {
+  padding: 4px 16px;
+  font-size: 1em;
+  line-height: 2;
+}
+
+/* Alerts */
+.mb-alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #424242;
+  line-height: 1.2;
+}
+
+.mb-alert.secondary     { background-color: #DDD; }
+.mb-alert.info          { background-color: var(--mb-info-color) }
+.mb-alert.success       { background-color: var(--mb-success-color) }
+.mb-alert.danger        { background-color: var(--mb-danger-color) }
+.mb-alert.warning       { background-color: var(--mb-warning-color) }
+
+.mb-alert.highlight {
+  padding: 1.25rem;
+  background-color: #2193F2;
+  color: #FFF;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+/* Text */
+.mb-text-danger {
+  color: var(--mb-danger-color);
+}
+
+/* Cards */
+.mb-card {
+  display: block;
+  border: 1px solid var(--mb-border-color);
+}
+
+.mb-card::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.mb-card-header {
+  background-color: var(--mb-background-color);
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  border-bottom: 1px solid var(--mb-border-color);
+}
+
+.mb-card-header h2,
+.mb-card-header h3,
+.mb-card-header h4,
+.mb-card-header h5 {
+  margin: 0;
+}
+
+.mb-card-body {
+  padding: 1rem;
+}
+
+.mb-card-footer {
+  margin: 1rem 0 0 0;
+  padding: 1rem;
+  border-top: 1px solid var(--mb-border-color);
+}
+
+/* Lists */
+.mb-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mb-list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.mb-list-element.secondary {
+  font-weight: 800;
+}
+
+.mb-list-element.info {
+  font-weight: 800;
+  color: var(--mb-info-color);
+}
+
+.mb-list-element.success {
+  font-weight: 800;
+  color: var(--mb-success-color);
+}
+
+.mb-list-element.danger {
+  font-weight: 800;
+  color: var(--mb-danger-color);
+}
+
+.mb-list-element.warning {
+  font-weight: 800;
+  color: var(--mb-warning-color);
+}
+
+.mb-list.border {
+  display: block;
+  border: 1px solid var(--mb-border-color);
+}
+
+.mb-list.border::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.border .mb-list-item {
+  padding: 1rem;
+  border-bottom: 1px solid var(--mb-border-color);
+}
+
+.border .mb-list-item:last-of-type {
+  border-bottom: none;
+}
+
+/** PROCESS PAGES **/
+
+/* Summary page */
+.mybooking-process_summary .mybooking-product_header {
+  background-color: #EEE;
+  border: 1px solid var(--mb-border-color);
+  border-top: none;
+}
+
+/* Reservation page */
+.mybooking-process_reservation .mybooking-product_header {
+  background-color: #EEE;
+  border: 1px solid var(--mb-border-color);
+  border-top: none;
+}
