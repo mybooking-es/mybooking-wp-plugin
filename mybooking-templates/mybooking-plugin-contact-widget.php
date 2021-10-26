@@ -9,7 +9,7 @@
  */
 ?>
 
-<section class="mybooking mybooking-contact widget widget_mybooking_engine_contact">
+<section class="mybooking mybooking-contact widget widget_mybooking_engine_contact <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <form id="widget_contact_form" name="widget_contact_form" autocomplete="off">
 
     <?php if ( array_key_exists('subject', $args) && $args['subject'] != '' ) : ?>

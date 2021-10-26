@@ -33,8 +33,8 @@
 
 						<div class="mybooking-product_block">
 	            <div class="mybooking-product_image-container">
-								<?php if ( !empty( $mybooking_product->photo_path ) ) { ?>
-									<img class="mybooking-product_image" src="<?php echo esc_url( $mybooking_product->photo_path )?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
+								<?php if ( !empty( $mybooking_product->full_photo_path ) ) { ?>
+									<img class="mybooking-product_image" src="<?php echo esc_url( $mybooking_product->full_photo_path )?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
 								<?php } else { ?>
 									<img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>" alt="<?php echo esc_attr( $mybooking_product->name )?>">
 								<?php } ?>
