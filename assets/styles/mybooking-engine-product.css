@@ -506,6 +506,10 @@
 
 /** PRODUCT DETAIL **/
 
+.mybooking-product_detail img.product-photo {
+  max-width: 100%;
+}
+
 .mybooking-product_detail-header {
   display: flex;
   flex-direction: column;

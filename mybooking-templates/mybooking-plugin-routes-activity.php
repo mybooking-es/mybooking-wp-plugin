@@ -27,7 +27,7 @@
 	</div>		
 	
   <div class="mb-row">
-	  <div class="mb-col-md-7">
+	  <div class="mb-col-md-8">
 
 			<?php if (sizeof($args->photos) > 1) { ?>
 
@@ -145,7 +145,7 @@
       <?php } ?>
 		</div>
 
-		<div class="mb-col-md-5">
+		<div class="mb-col-md-4">
 			<p><?php echo esc_html( $args->short_description ) ?></p>
 			<div class="mt-1 text-muted"><? echo esc_html_x('Please choose your dates in the availability calendar', 'activity_detail', 'mybooking-wp-plugin' ) ?></div>
 	    <?php mybooking_engine_get_template('mybooking-plugin-activities-activity-widget.php', array('activity_id' => $args->id)) ?>

@@ -467,6 +467,10 @@
 
 /** ACTIVITIES **/
 
+.mybooking-activity img.mybooking-activity_image {
+  max-width: 100%;
+}
+
 .mybooking-activity_header {
   display: flex;
   flex-flow: column;
