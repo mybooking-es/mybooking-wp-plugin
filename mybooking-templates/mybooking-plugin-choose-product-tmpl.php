@@ -31,33 +31,34 @@
 
   <div class="mybooking-summary_detail">
 
-    <% if (configuration.timeToFrom) { %>
-      <span class="mybooking-summary_item">
-        <span class="mybooking-summary_date">
-          <%=shopping_cart.date_to_full_format%>
+   
+    <span class="mybooking-summary_item">
+      <span class="mybooking-summary_date">
+        <%=shopping_cart.date_from_full_format%>
+        <% if (configuration.timeToFrom) { %>
           <%=shopping_cart.time_from%>
-        </span>
-        <% if (configuration.pickupReturnPlace) { %>
-          <span class="mybooking-summary_place">
-            <%=shopping_cart.pickup_place_customer_translation%>
-          </span>
         <% } %>
       </span>
-    <% } %>
+      <% if (configuration.pickupReturnPlace) { %>
+        <span class="mybooking-summary_place">
+          <%=shopping_cart.pickup_place_customer_translation%>
+        </span>
+      <% } %>
+    </span>
 
-    <% if (configuration.timeToFrom || configuration.pickupReturnPlace) { %>
-      <span class="mybooking-summary_item">
-        <span class="mybooking-summary_date">
-          <%=shopping_cart.date_to_full_format%>
+    <span class="mybooking-summary_item">
+      <span class="mybooking-summary_date">
+        <%=shopping_cart.date_to_full_format%>
+        <% if (configuration.timeToFrom) { %>
           <%=shopping_cart.time_to%>
-        </span>
-        <% if (configuration.pickupReturnPlace) { %>
-          <span class="mybooking-summary_place">
-            <%=shopping_cart.return_place_customer_translation%>
-          </span>
         <% } %>
       </span>
-    <% } %>
+      <% if (configuration.pickupReturnPlace) { %>
+        <span class="mybooking-summary_place">
+          <%=shopping_cart.return_place_customer_translation%>
+        </span>
+      <% } %>
+    </span>
 
     <% if (shopping_cart.days > 0) { %>
       <span class="mybooking-summary_item">
