@@ -398,6 +398,10 @@
         wp_enqueue_style( 'mybooking_wp_css_components_jquerymodal',
                         plugins_url('/assets/styles/mybooking-engine-modals.css', dirname( __FILE__ ) ),
                         array(), $version );
+        // Mybooking Product
+        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-compatibility',
+                        plugins_url('/assets/styles/mybooking-engine-compatibility.css', dirname( __FILE__ ) ),
+                        array(), $version );        
       }
 
     }

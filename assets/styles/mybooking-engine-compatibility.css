@@ -1,0 +1,75 @@
+/*
+*  MYBOOKING RESERVATION ENGINE - COMPATIBILITY
+*  -----------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 768px) {
+  body.mybooking-activity .activity-container,
+  body.mybooking-product .product-container {
+      margin: 0 10%;
+      padding: 0 34px;
+  }
+}
+
+/*
+ * Renting product and activity custom pages compatibility with :
+ * Twenty Nineteen
+ * Twenty Twenty
+ * Twenty Twenty One
+ */ 
+@media only screen and (min-width: 482px) {
+
+  body.mybooking-activity .activity-container {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+  body.mybooking-product .product-container {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+
+  /* Twenty Nineteen */
+  body.mybooking-product .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
+  body.mybooking-activity .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator)
+  {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+  /* Twenty Twenty */
+  body.mybooking-product .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
+  body.mybooking-activity .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)
+  {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+  /* Twenty Twenty One */
+  body.mybooking-product .entry .entry-content > *,
+  body.mybooking-activity .entry .entry-content > *
+  {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+}
+@media only screen and (min-width: 822px) { 
+
+  body.mybooking-activity .activity-container {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+  body.mybooking-product .product-container {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+
+  /* Twenty Nineteen */
+  body.mybooking-product .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
+  body.mybooking-activity .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator)
+  {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+  /* Twenty Twenty */
+  body.mybooking-product .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
+  body.mybooking-activity .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)
+  {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+  /* Twenty Twenty One */
+  body.mybooking-product .entry .entry-content > *,
+  body.mybooking-activity .entry .entry-content > *
+  {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+}

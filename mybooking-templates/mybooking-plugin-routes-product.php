@@ -29,7 +29,7 @@
     </div>
   </div>  
   <div class="mb-row">
-    <div class="mb-col-md-8">
+    <div class="mb-col-md-7">
 
       <!-- Product image -->
       <?php if (!empty( $args->photos ) && count( $args->photos ) > 1) { ?>
@@ -76,7 +76,7 @@
 
     </div>
 
-    <div class="mb-col-md-4">
+    <div class="mb-col-md-5">
       <h2 class="mybooking-product_calendar-title">
         <?php echo esc_html_x('Availability calendar', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
       </h2>

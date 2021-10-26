@@ -534,6 +534,11 @@
   text-align: center;
 }
 
+.mb-form-check-input {
+  box-shadow: none;
+  margin: 0 auto;
+}
+
 /* Complete details */
 .mybooking-activity_date {
   display: flex;
@@ -854,6 +859,7 @@ fieldset legend {
   font-size: 16px;
   margin-bottom: 0;
   color: inherit;
+  word-break:  normal;
 }
 
 .date-picker-wrapper .month-wrapper table .day.real-today {
