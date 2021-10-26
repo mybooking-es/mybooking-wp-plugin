@@ -105,7 +105,6 @@
                  <p>The following settings allows to build a <em>reservation engine</em> for a <u>car rental company</u> or <u>accommodation</u> using the following steps:</p>
                  <ol style="list-style:square; margin-left: 20px">
                    <li><b>Choose vehicle/room/product</b> page</li>
-                   <li><b>Choose extras</b> page (optional)</li>
                    <li><b>Complete reservation</b> page</li>
                    <li><b>Summary</b> page</li>
                  </ol>
@@ -346,12 +345,6 @@ EOF;
 		  add_settings_field('mybooking_plugin_settings_choose_products_page',
 		                     'Choose products page',
 		                     array($this, 'field_mybooking_plugin_settings_choose_products_page_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
-
-		  add_settings_field('mybooking_plugin_settings_choose_extras_page',
-		                     'Choose extras page',
-		                     array($this, 'field_mybooking_plugin_settings_choose_extras_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
@@ -600,17 +593,11 @@ EOF;
 
 		  // == Create css section fields
 
+      // Custom CSS
+
 		  add_settings_field('mybooking_plugin_settings_components_css',
 		                     'Include CSS',
 		                     array($this, 'field_mybooking_plugin_settings_components_css_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
-
-		  // Bootstrap
-
-		  add_settings_field('mybooking_plugin_settings_custom_css',
-		                     'Include Bootstrap',
-		                     array($this, 'field_mybooking_plugin_settings_custom_css_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
@@ -788,16 +775,6 @@ EOF;
 		  echo "<p class=\"description\">It shows <b>all</b> the <em>company products</em> and <u>availability</u> for the selected dates and allows the customer to pickup the product.</p>";
 		  echo "<p class=\"description\">This page is recommeded when the company offers a reduced set of categories, and holds an inventary of each one. For example, a <u>car rental company</u> or a <u>hotel</u>.</p>";
 		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://avis.com\" target=\"_blank\">avis.com</a>, <a href=\"https://www.hotelpalacebarcelona.com/\" target=\"_blank\">hotelpalacebarcelona.com</a></p>";
-
-		}
-
-		/**
-		 * Render Mybooking Renting/Accommodation Choose extras page
-		 */
-		public function field_mybooking_plugin_settings_choose_extras_page_callback() {
-
-		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_choose_extras_page");
-		  echo "<p class=\"description\">An <em>optional</em> step page that shows and allows to select the reservation extras.</p>";
 
 		}
 
@@ -1714,32 +1691,9 @@ EOF;
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
 		  echo "<p class=\"description\">Include <b>CSS</b> for plugin <u>UX components</u> like <em>Jquery UI datepicker</em> and <em>Jquery DateRange</em>.";
-		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck only if you are using mybooking theme or a custom theme with your own reservation engine templates.";
+		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck only if you are using <u>mybooking theme<u> or a <u>custom theme with your own reservation engine templates</u>.";
 
 		}
-
-		/**
-		 * Render Mybooking Bootstrap Framework
-		 */
-		public function field_mybooking_plugin_settings_custom_css_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_custom_css";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '1';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">Include <b>Boostrap Framework</b> CSS+JS to build the <u>UI</u>.";
-		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck only if you are using mybooking theme or a theme based on <u>Bootstrap</u>.";
-		}
-
 
 		/**
 		 * Render Mybooking Custom loader
@@ -1783,7 +1737,7 @@ EOF;
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
 		  echo "<p class=\"description\">Include <b>slickJS</b> library. It is <b>required</b> if you are using the testimonials complement";
-		  echo "<p class=\"description\"><b>¡Attention!</b> uncheck if not testimonials are used or if the theme that you are using includes slickJS.";
+		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck if not testimonials are used or if the theme that you are using includes slickJS.";
 		}
 
 		/**
@@ -1805,7 +1759,7 @@ EOF;
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
 		  echo "<p class=\"description\">Include <b>Fontawesome 4.7</b> library.";
-		  echo "<p class=\"description\"><b>¡Attention!</b> uncheck only if your theme is using it.";
+		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck only if your theme is using it.";
 		}
 
 

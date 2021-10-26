@@ -1,10 +1,14 @@
 # Changelog
 
-## [0.12.2]
+## [0.13.0]
 
 ### Added
 
 - Transfer process
+
+### Updated
+
+- Removed Bootstrap CSS
 
 ## [0.12.0]
 

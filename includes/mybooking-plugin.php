@@ -79,23 +79,13 @@
    * - Show renting selector: The starting point for a reservation
    *
    * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number rental_location_code=String]
-   *
    * [mybooking_rent_engine_selector_wizard sales_channel_code=String family_id=Number rental_location_code=String]
    *
-   * - Renting search results:
-   *
+   * - Process:
+   * 
    * [mybooking_rent_engine_product_listing]
-   *
-   * - Renting complete: Checkout process
-   *
    * [mybooking_rent_engine_complete]
-   *
-   * - Renting summary page: It shows the reservation information
-   *
    * [mybooking_rent_engine_summary]
-   *
-   * - My reservation
-   *
    * [mybooking_rent_engine_reservation]
    *
    * 2.1.2 Products explorer
@@ -376,13 +366,6 @@
                         plugins_url('/assets/styles/slick-theme.css', dirname( __FILE__ ) ) );
       }
 
-      // Enqueue Boostrap CSS
-//      if ( $registry->mybooking_rent_plugin_custom_css ) {
-//        // Load bootstrap CSS
-//        wp_enqueue_style( 'mybooking_wp_css_framework_bootstrap',
-//                        plugins_url('/assets/styles/bootstrap-4.4.1.min.css', dirname( __FILE__ ) ) );
-//      }
-
       // CSS Components
       if ( $registry->mybooking_rent_plugin_components_css ) {
         // Load JQUERY UI Boostrap like Style
@@ -444,7 +427,6 @@
           'mybooking_api_key' => $registry->mybooking_rent_plugin_api_key,
           // Renting
           'mybooking_choose_products_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_choose_products_page),
-          'mybooking_choose_extras_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_choose_extras_page),
           'mybooking_checkout_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_checkout_page),
           'mybooking_summary_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_summary_page),
           'mybooking_terms_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_terms_page),
@@ -1675,13 +1657,6 @@
         $registry->mybooking_rent_plugin_choose_products_page = '';
       }
 
-      if ($settings && array_key_exists('mybooking_plugin_settings_choose_extras_page', $settings)) {
-        $registry->mybooking_rent_plugin_choose_extras_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_choose_extras_page"] )));
-      }
-      else {
-        $registry->mybooking_rent_plugin_choose_extras_page = '';
-      }
-
       if ($settings && array_key_exists('mybooking_plugin_settings_checkout_page', $settings)) {
         $registry->mybooking_rent_plugin_checkout_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_checkout_page"] )));
       }
@@ -1957,15 +1932,7 @@
 
       $settings = (array) get_option("mybooking_plugin_settings_css");
 
-      // Include CSS
-      if ($settings && array_key_exists('mybooking_plugin_settings_custom_css', $settings)) {
-        $registry->mybooking_rent_plugin_custom_css = (trim(esc_attr( $settings["mybooking_plugin_settings_custom_css"] )) == '1');
-      }
-      else {
-        $registry->mybooking_rent_plugin_custom_css = '1';
-      }
-
-      // Include Bootstrap
+      // Include custom components CSS 
       if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {
         $registry->mybooking_rent_plugin_components_css = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css"] )) == '1');
       }

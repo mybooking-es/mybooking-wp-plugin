@@ -5,7 +5,7 @@
         // Renting
         var extrasStep = false;
         var chooseProductUrl = mybooking_init_vars.mybooking_choose_products_page;
-        var chooseExtrasUrl = mybooking_init_vars.mybooking_choose_extras_page;
+        var chooseExtrasUrl = null;
         var completeUrl = mybooking_init_vars.mybooking_checkout_page;
         var summaryUrl = mybooking_init_vars.mybooking_summary_page;
         var termsUrl = mybooking_init_vars.mybooking_terms_page;
