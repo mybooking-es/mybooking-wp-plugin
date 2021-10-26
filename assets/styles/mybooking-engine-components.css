@@ -642,6 +642,7 @@
   .mybooking-testimonial_avatar {
     width: 7%;
   }
+}
 
 
 /** POPUP **/
@@ -889,3 +890,19 @@ fieldset legend {
 .date-picker-wrapper .gap {
   display: none;
 }
+
+/*
+.mybooking-truncate-overflow-3lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+.mybooking-truncate-overflow-6lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+*/

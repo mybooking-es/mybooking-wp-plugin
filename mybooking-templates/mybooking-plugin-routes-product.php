@@ -11,7 +11,7 @@
 
 <?php get_header();?>
 
-<div class="mybooking mybooking-product_detail product-container">
+<div class="mybooking mybooking-product_detail product-container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <div class="mb-row">
     <div class="mb-col-md-12">
       <div class="mybooking-product_detail-header">

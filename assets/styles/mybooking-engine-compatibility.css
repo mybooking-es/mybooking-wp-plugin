@@ -3,9 +3,17 @@
 *  -----------------------------------------------------------------------------
 */
 
+/*
+ * Route renting product and Route activity compatibility with :
+ *
+ * - Twenty Nineteen
+ * - Twenty Twenty
+ * - Twenty Twenty One
+ *
+ */ 
 @media only screen and (min-width: 768px) {
-  body.mybooking-activity .activity-container,
-  body.mybooking-product .product-container {
+  body.mybooking-activity .activity-container.alignwide,
+  body.mybooking-product .product-container.alignwide {
       margin: 0 10%;
       padding: 0 34px;
   }

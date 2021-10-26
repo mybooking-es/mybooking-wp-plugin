@@ -67,7 +67,7 @@
 									<?php echo esc_html( $mybooking_product->short_description ) ?>
 								</div>
 
-	              				<div class="mybooking-product_description">
+	              <div class="mybooking-product_description mybooking-truncate-overflow-3lines">
 									<?php echo wp_kses_post( $mybooking_product->description ) ?>
 								</div>
 	              
