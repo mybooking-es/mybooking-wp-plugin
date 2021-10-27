@@ -13,17 +13,27 @@ Mybooking reservation engine WordPress plugin.
 
 == Description ==
 
-Mybooking Reservation Engine WordPress plugin. Build a reservation engine connected to your mybooking account.
+Mybooking Reservation Engine WordPress plugin. A reservation system connected to your mybooking account.
 
-Mybooking plugin can be used to create reservation engine for:
+It is very easy to set up:
+ 
+- Create your products and prices on your mybooking account.
+- Install and configure the plugin on your Wordpress website.
+- Start receiving and charging reservations.
 
-- Car rental
-- Kayak/Surf/Paddle surf rental
+A reservation engine for the following businesses:
+
+- Vehicles rental
 - Boats rental
+- Properties rental
+- Kayak/Surf/Paddle surf rental
 - Accommodation
+- Sport courts
+- Coworking
+- Escape Rooms
 - Activities or tours
 - Appointments
-- Sport courts
+- Transfers
 
 == Installation ==
 
@@ -32,13 +42,19 @@ Mybooking plugin can be used to create reservation engine for:
 3. Use the Settings->Mybooking screen to configure the plugin
 
 A mybooking account is required. The plugin connects to mybooking API to get product availability and prices
-and to perform the checkout process. Please visit <a href="http://mybooking.es">mybooking.es</a>
+and to perform the checkout process. Please visit <a href="http://mybooking.es/en">mybooking.es</a>
 
 == Frequently Asked Questions ==
 
-= Is mybooking free? =
+= How does it work? =
 
-Yes, it is free. But you need a mybooking account.
+You can think of Wordpress as the frontend and <a href="https://mybooking.es/en">Mybooking</a> as the backend.
+You manage your products, prices and availability from within Mybooking and use Wordpress to allow your customers
+to make reservations.
+
+= Is it SEO friendly? =
+
+We do not use iframes. All the reservation steps are built with regular pages with shortcodes
 
 = Can I use the plugin to sell an activity/tours ? =
 
@@ -61,7 +77,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 = 0.13.0 =
 * Added Transfer
-* Removed Bootstrap CSS
+* Improved themes compatibility
 
 = 0.12.0 =
 * Added Renting: Customer type (individual/company)
@@ -244,6 +260,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 0.13.0 =
+* Added Transfer module and improved themes compatibility
 
 = 0.12.0 =
 * Added Renting: Customer type (individual/company) + Fixes on Summary and My Reservation using customer full name + Manage setup with no prices + customer classifier
