@@ -58,7 +58,17 @@
 		?>
 		  <div class="wrap">
 		  	  <h1>Mybooking</h1>
-
+					<?php settings_errors(); ?>
+		  	  <p>Mybooking is a platform that allow you to manage your inventory, reservations, planning, invoicing and integrate a
+		  	  reservation engine in your web site.</p>
+			 	  <h2>Quick start</h2>
+			 	  <ol>
+				 	  <li>Use your mybooking account or <a href="https://mybooking.es/en/sign-up">create a new account</a></li>
+				 	  <li>Setup the connection in the connection tab</li>
+				 	  <li>Setup the <b>modules</b> you want to use: renting/accommodation, activities or transfer</li>
+				 	  <li><b>Create the pages</b> and insert shortcodes</li>
+				 	  <li>Start accepting reservations</li>
+				 	</ol>  
 					<?php
 	            $active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_title( $_GET[ 'tab' ] ) : 'connection_options';
 	            $tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
@@ -81,7 +91,7 @@
 					    <a href="?page=mybooking-plugin-configuration&tab=connection_options" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">Connection</a>
 					    <a href="?page=mybooking-plugin-configuration&tab=configuration_options" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">Modules</a>
 					    <?php if ($renting) { ?>
-					      <a href="?page=mybooking-plugin-configuration&tab=renting_options" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">Renting</a>
+					      <a href="?page=mybooking-plugin-configuration&tab=renting_options" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">Renting or Accommodation</a>
               <?php } ?>
 					    <?php if ($activities) { ?>
 					      <a href="?page=mybooking-plugin-configuration&tab=activities_options" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">Activities or Appointments</a>
@@ -102,40 +112,79 @@
 	            <?php
 
                $renting_wizard_info = <<<EOF
-                 <p>The following settings allows to build a <em>reservation engine</em> for a <u>car rental company</u> or <u>accommodation</u> using the following steps:</p>
-                 <ol style="list-style:square; margin-left: 20px">
-                   <li><b>Choose vehicle/room/product</b> page</li>
-                   <li><b>Complete reservation</b> page</li>
-                   <li><b>Summary</b> page</li>
-                 </ol>
+                 <br>
+                 <div class="postbox">
+                   <div class="inside">
+		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>vehicle rental</u>, <u>boat rental</u>, <u>properties</u> rental companies or <u>accommodation</u>.</p>
+		                 <p>You <i>must</i> create the following pages and insert a shortcode on each</p>
+		                 <ol style="list-style:square; margin-left: 20px">
+		                   <li>Create a <b>choose product</b> page and insert [mybooking_rent_engine_product_listing] shortcode</li>
+		                   <li>Create a <b>checkout page</b> and insert [mybooking_rent_engine_complete] shortcode</li>
+		                   <li>Create a <b>summary page</b> and insert [mybooking_rent_engine_summary] shortcode</li>
+		                 </ol>
+		                 <p>If you want to include a <b>search form in the front page</b>, use the widgets or the shortcodes.</p>
+		                 <ul style="list-style:square; margin-left: 20px">
+		                   <li>Mybooking Rent Engine Selector Widget or [mybooking_rent_engine_selector] shortcode</li>
+		                   <li>Mybooking Rent Engine Wizard Widget or [mybooking_rent_engine_selector_wizard] shortcode</li>
+		                 </ul> 
+		                 <p>If you want to include the calendar in an <u>vehicle</u> or <u>property</u> page use:</p>
+		                 <ul style="list-style:square; margin-left: 20px">
+		                   <li>The [mybooking_rent_engine_product] shortcode. You can get this shortcode with the product id from your mybooking account</li>
+		                 </ul> 
+		                </div>
+                 </div>                 
                  <hr>
 EOF;
 
                $activity_info = <<<EOF
-                 <p>Build appointments or activities reservation site.</p>
-                 <ol style="list-style:square; margin-left: 20px">
-                   <li><b>Selector widget</b> in any of the activities page</li>
-                   <li><b>Checkout</b> page</li>
-                   <li>Payment</li>
-                   <li><b>Summary</b> page</li>
-                 </ol>
+                 <br>
+                 <div class="postbox">
+                   <div class="inside">
+		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>activities</u> or <u>tours</u> company.</p>
+		                 <p>You <i>must</i> create the following pages and insert a shortcode on each</p>
+		                 <ol style="list-style:square; margin-left: 20px">
+		                   <li>Create a <b>checkout page</b> and insert [mybooking_activities_engine_shopping_cart] shortcode</li>
+		                   <li>Create a <b>summary page</b> and insert [mybooking_activities_engine_summary] shortcode</li>
+		                 </ol>
+		                 <p>If you want to include the calendar in an <u>activity page</u> use:</p>
+		                 <ul style="list-style:square; margin-left: 20px">
+		                   <li>The [mybooking_activities_engine_activity] shortcode. You can get this shortcode with the activity id from your mybooking account</li>
+		                 </ul> 
+		                </div>
+                 </div>   
+                 <hr>
 EOF;
 
-               $transfer_wizard_info = <<<EOF
-                 <p>The following settings allows to build a <em>reservation engine</em> for a <u>transfer company</u> using the following steps:</p>
-                 <ol style="list-style:square; margin-left: 20px">
-                   <li><b>Choose vehicle</b> page</li>
-                   <li><b>Complete reservation</b> page</li>
-                   <li><b>Summary</b> page</li>
-                 </ol>
+               $transfer_info = <<<EOF
+                 <br>
+                 <div class="postbox">
+                   <div class="inside">
+		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>transfer company</u>.</p>
+		                 <p>You <i>must</i> create the following pages and insert a shortcode on each</p>
+		                 <ol style="list-style:square; margin-left: 20px">
+		                   <li>Create a <b>choose vehicle</b> page and insert [mybooking_transfer_choose_vehicle] shortcode</li>
+		                   <li>Create a <b>checkout page</b> and insert [mybooking_transfer_checkout] shortcode</li>
+		                   <li>Create a <b>summary page</b> and insert [mybooking_transfer_summary] shortcode</li>
+		                 </ol>
+		                 <p>If you want to include a search form in the front page, use the widget or the shortcode.</p>
+		                 <ul style="list-style:square; margin-left: 20px">
+		                   <li>Mybooking Transfer Engine Selector Widget or [mybooking_transfer_selector] shortcode</li>
+		                 </ul>                
+		                </div>
+                 </div>   
                  <hr>
+EOF;
+
+							 $create_account_message = <<<EOF
+									<p>Don't you have a mybooking account? <a href="https://mybooking.es/en/sign-up" target="_blank">Start your free trial</a></p>
 EOF;
 
 	             if ($active_tab == 'connection_options') {
 			      	   settings_fields('mybooking_plugin_settings_group_connection');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_connection');
-			           echo '</table>';
+			           echo '</table>';          			           
+			           echo $create_account_message;
 			         }
 			         else if ($active_tab == 'configuration_options') {
 			      	   settings_fields('mybooking_plugin_settings_group_configuration');
@@ -267,7 +316,7 @@ EOF;
 
 		  // Creates a renting wizard settings section "mybooking_plugin_settings_section_renting"
 		  add_settings_section('mybooking_plugin_settings_section_renting',
-		                       'Renting',
+		                       'Renting or Accommodation',
 		                       '',
 		                       'mybooking-plugin-configuration');
 
@@ -320,7 +369,7 @@ EOF;
       // == Creates configuration fields
 
 		  add_settings_field('mybooking_plugin_settings_renting_selector',
-		                     'Renting',
+		                     'Renting or Accommodation',
 		                     array($this, 'field_mybooking_plugin_settings_renting_selector_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_configuration');
@@ -363,6 +412,19 @@ EOF;
 		  add_settings_field('mybooking_plugin_settings_terms_page',
 		                     'Terms and conditions page',
 		                     array($this, 'field_mybooking_plugin_settings_terms_page_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_renting');
+
+		  // Product detail pages (calendar)
+		  add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
+		  									'<em>Use product detail pages</em>',
+		  									array($this, 'field_mybooking_plugin_settings_use_product_detail_pages_callback'),
+		  									'mybooking-plugin-configuration',
+		  									'mybooking_plugin_settings_section_renting');
+
+		  add_settings_field('mybooking_plugin_settings_products_url',
+		                     '<em>Product details pages URL prefix</em>',
+		                     array($this, 'field_mybooking_plugin_settings_products_url_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
@@ -423,19 +485,6 @@ EOF;
 		                     array($this, 'field_mybooking_plugin_settings_not_available_context_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');		  
-
-		  // Product detail pages (calendar)
-		  add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
-		  									'<em>Use product detail pages</em>',
-		  									array($this, 'field_mybooking_plugin_settings_use_product_detail_pages_callback'),
-		  									'mybooking-plugin-configuration',
-		  									'mybooking_plugin_settings_section_renting');
-
-		  add_settings_field('mybooking_plugin_settings_products_url',
-		                     '<em>Product details pages URL prefix</em>',
-		                     array($this, 'field_mybooking_plugin_settings_products_url_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
 
       // == Creates activities section fields
 
@@ -663,8 +712,7 @@ EOF;
 		  }
 
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">If you have a <b>mybooking subdomain</b> like <em>mycompany.mybookig.es</em>, input the subdomain name, <u>mycompany</u>.";
-		  echo "<p class=\"description\">If your account is in other platform, like karyasala.com, just write the full domain, <em>https://karyasala.com</em>.</p>";
+		  echo "<p class=\"description\">If you have a <b>mybooking account</b> like <em>mycompany.mybooking.es</em>, input the just the subdomain name, that is <u>mycompany</u>.";
 
 		}
 
@@ -683,6 +731,7 @@ EOF;
 		  }
 
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
+		  echo "<p class=\"description\">Get the API key from your mybooking account settings</p>.";		  
 		}
 
     // == Configuration
@@ -704,6 +753,7 @@ EOF;
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
+		  echo "<p class=\"description\">Activate if you want to create a <b>vehicles</b>, <b>boats</b>, <b>properties rental</b> or <b>accomodation</b> web site.</p>";
 		}
 
 		/**
@@ -723,6 +773,7 @@ EOF;
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
+		  echo "<p class=\"description\">Activate if you want to create a <b>tours</b>, <b>activities</b> or <b>appointments</b> web site.</p>";		  
 		}
 
 		/**
@@ -742,6 +793,7 @@ EOF;
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
+		  echo "<p class=\"description\">Activate if you want to create a <b>transfers</b> web site.</p>";
 		}
 
 		/**
@@ -761,6 +813,8 @@ EOF;
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
+			echo "<p class=\"description\">Activate if you want to use Google Location API to input a custom delivery or collection address in a rental website.</p>";
+
 		}
 
     // == Renting
@@ -771,10 +825,7 @@ EOF;
 		public function field_mybooking_plugin_settings_choose_products_page_callback() {
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_choose_products_page");
-		  echo "<p class=\"description\">This page is shown after the <u>reservation selector submit</u>.";
-		  echo "<p class=\"description\">It shows <b>all</b> the <em>company products</em> and <u>availability</u> for the selected dates and allows the customer to pickup the product.</p>";
-		  echo "<p class=\"description\">This page is recommeded when the company offers a reduced set of categories, and holds an inventary of each one. For example, a <u>car rental company</u> or a <u>hotel</u>.</p>";
-		  echo "<p class=\"description\">It can be used to build websites like: <a href=\"https://avis.com\" target=\"_blank\">avis.com</a>, <a href=\"https://www.hotelpalacebarcelona.com/\" target=\"_blank\">hotelpalacebarcelona.com</a></p>";
+		  echo "<p class=\"description\">The page with [mybooking_rent_engine_product_listing] shortcode</p>.";
 
 		}
 
@@ -784,7 +835,7 @@ EOF;
 		public function field_mybooking_plugin_settings_checkout_page_callback() {
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_checkout_page");
-		  echo "<p class=\"description\">The complete reservation or checkout page. It shows the fill data form to finish the reservation process.</p>";
+		  echo "<p class=\"description\">The page with [mybooking_rent_engine_complete] shortcode</p>.";
 
 		}
 
@@ -794,7 +845,7 @@ EOF;
 		public function field_mybooking_plugin_settings_summary_page_callback() {
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_summary_page");
-		  echo "<p class=\"description\">The summary page. It shows the reservation information and allows the customer to fill the contract information and to pay.</p>";
+		  echo "<p class=\"description\">The page with [mybooking_rent_engine_summary] shortcode</p>.";
 
 		}
 
@@ -805,7 +856,7 @@ EOF;
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_terms_page");
 		  echo "<p class=\"description\">The terms and conditions page.</p>";
-
+		  echo "<hr>";
 		}
 
 		/**
@@ -909,7 +960,6 @@ EOF;
 
 		  echo $select;
 		  echo "<p class=\"description\">Choose the rental location that describes your business context.</p>";
-		  echo "<hr>";
 
 		}
 
@@ -976,7 +1026,6 @@ EOF;
 
 		  echo $select;
 		  echo "<p class=\"description\">Choose the family that describes your business context.</p>";
-		  echo "<hr>";
 
 		}
 
@@ -1036,7 +1085,6 @@ EOF;
 
 		  echo $select;
 		  echo "<p class=\"description\">Choose the product that describes your business context.</p>";
-		  echo "<hr>";
 
 		}
 
@@ -1078,7 +1126,6 @@ EOF;
 		  echo "<p class=\"description\">Choose the duration that describes your business context.</p>";
 		  echo "<p class=\"description\">Select <b>days</b> to describe duration in days.</p>";
 		  echo "<p class=\"description\">Select <b>nights/b> to describe duration in nights.</p>";
-		  echo "<hr>";
 
 		}
 
@@ -1135,7 +1182,6 @@ EOF;
 		  echo "<p class=\"description\">Select <b>checkin/checkout</b> for accommodation or properties.</p>";
 		  echo "<p class=\"description\">Select <b>start/end</b> to describe start and end period.</p>";
 		  echo "<p class=\"description\">Select <b>arrive/depature</b> to describe arrivals an departures</p>";
-		  echo "<hr>";
 
 		}
 
@@ -1192,7 +1238,6 @@ EOF;
 		  echo "<p class=\"description\">Select <b>Telephone consultation</b> to show Telephone consultation message.</p>";
 		  echo "<p class=\"description\">Select <b>E-mail consultation</b> to show E-mail consultation message.</p>";
 		  echo "<p class=\"description\">Select <b>Enquiry</b> to show Enquiry message.</p>";
-		  echo "<hr>";
 
 		}
 
@@ -1216,14 +1261,11 @@ EOF;
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_renting[$field]' value='1' $checked class='regular-text' />";
 		  echo "<p class=\"description\">Use product detail pages.";
 		  echo "<div class=\"description\">";
-      echo "<p>It activates a <b>detail page</b> for any product with details and the calendar for each product automatically</p>";
-      echo "<p>If you only have a few products and you want to show a calendar to rent an specific one, 
-        it is recommended to create a page for any product an use the <u>[mybooking_rent_engine_product]</u> shortcode 
-        to show a calendar because of the flexibility to create the page with Elementor, Gutenberg or Divi.</p>";
-      echo "<p>It is not necessary if you are using the wizard process. That is the <u>[mybooking_rent_engine_selector]</u> 
-      shortcode and the <u>[mybooking_rent_engine_product_listing]</u> to show the results.</p>";
-		  echo "</div>";
 
+		  echo "<div class=\"description\">";
+      echo "<p><b>Do not activate</b> if you have create a custom page for each one of your products with the [mybooking_rent_engine_product] or if you are using the [mybooking_rent_engine_selector] or the Selector widget in your home page.</p>";
+		  echo "<p><b>Activate</b> it if you are using the [mybooking_rent_engine_products] shortcode to <b>browse the catalog</b> and you want the plugin to automatically create a page for each product.</p>";
+		  echo "</div>";
 		}
 
 
@@ -1245,6 +1287,7 @@ EOF;
 		  echo "<p>This is the <b>prefix folder</b> that is added to the product detail page created virtually for any
 		  product if <u>Use product detail pages</u> is active.</p>";
 		  echo "</div>";
+		  echo "<hr>";
 
 		}
 
@@ -1256,6 +1299,7 @@ EOF;
 		public function field_mybooking_plugin_settings_activities_shopping_cart_page_callback() {
 
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_shopping_cart_page");
+			echo "<p class=\"description\">The page with [mybooking_activities_engine_shopping_cart] shortcode</p>.";
 
 		}
 
@@ -1265,6 +1309,7 @@ EOF;
 		public function field_mybooking_plugin_settings_activities_summary_page_callback() {
 
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_summary_page");
+		  echo "<p class=\"description\">The page with [mybooking_activities_engine_summary] shortcode</p>.";
 
 		}
 
@@ -1274,6 +1319,8 @@ EOF;
 		public function field_mybooking_plugin_settings_activities_terms_page_callback() {
 
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_terms_page");
+		  echo "<p class=\"description\">The page with the terms and conditions</p>.";
+		  echo "<hr>";
 
 		}
 
@@ -1298,10 +1345,9 @@ EOF;
 		  echo "<p class=\"description\">Use detail pages.";
 
 		  echo "<div class=\"description\">";
-      echo "<p>It activates a <b>detail page</b> for any activity with details and the calendar for each activity automatically</p>";
-      echo "<p>If you only have a few activities and you want to show a calendar to rent an specific one, 
-        it is recommended to create a page for any activity an use the <u>[mybooking_activities_engine_activity]</u> shortcode 
-        to show a calendar because of the flexibility to create the page with Elementor, Guteberg or Divi.</p>";
+      echo "<p>Do not activate if you have create a custom page for each one of your activities with the [mybooking_activities_engine_activity]</p>";
+		  echo "<p>Activate it if you are using the [mybooking_activities_engine_activities] shortcode to <b>browse the activities catalog</b>";
+      echo "and you want the plugin to automatically create a page for each activity.</p>";
 		  echo "</div>";
 
 
@@ -1336,7 +1382,7 @@ EOF;
 		public function field_mybooking_plugin_settings_transfer_choose_vehicle_page_callback() {
 
 		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_choose_vehicle_page");
-
+		  echo "<p class=\"description\">The page with [mybooking_transfer_choose_vehicle] shortcode</p>.";
 		}
 
 		/**
@@ -1345,6 +1391,7 @@ EOF;
 		public function field_mybooking_plugin_settings_transfer_checkout_page_callback() {
 
 		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_checkout_page");
+			echo "<p class=\"description\">The page with [mybooking_transfer_checkout] shortcode</p>.";
 
 		}
 
@@ -1354,6 +1401,7 @@ EOF;
 		public function field_mybooking_plugin_settings_transfer_summary_page_callback() {
 
 		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_summary_page");
+		  echo "<p class=\"description\">The page with [mybooking_transfer_summary] shortcode</p>.";
 
 		}
 
@@ -1363,6 +1411,7 @@ EOF;
 		public function field_mybooking_plugin_settings_transfer_terms_page_callback() {
 
 		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_terms_page");
+		  echo "<p class=\"description\">The terms and conditions page</p>.";
 
 		}
 

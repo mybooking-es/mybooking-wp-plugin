@@ -17,7 +17,9 @@ function mybooking_engine_theme_align_width() {
         'Twenty Twenty-One' == $theme->name ||
         'Twenty Twenty-One' == $theme->parent_theme ||
         'Twenty Nineteen' == $theme->name ||
-        'Twenty Nineteen' == $theme->parent_theme) {
+        'Twenty Nineteen' == $theme->parent_theme ||
+        'Varia' == $theme->name || 
+        'Varia' == $theme->parent_theme) {
          $alignwide = 'alignwide';
       } 
 
