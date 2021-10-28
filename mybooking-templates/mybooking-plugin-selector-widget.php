@@ -1,6 +1,6 @@
 <?php
 /**
- *   MYBOOKING ENGINE - COMPLETE
+ *   MYBOOKING ENGINE - RENTING SELECTOR
  *   ---------------------------------------------------------------------------
  *   The Template for showing the renting complete step
  *   This template can be overridden by copying it to your

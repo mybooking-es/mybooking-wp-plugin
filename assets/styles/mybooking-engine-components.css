@@ -390,7 +390,7 @@
   width: 100%;
   padding: 1rem;
   background-color: var(--mb-payment-option-btn-bg);
-  color: var(--mb-payment-option-btn-color);
+  color: var(--mb-payment-option-btn-color)!important;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;

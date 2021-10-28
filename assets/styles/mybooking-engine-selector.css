@@ -192,6 +192,19 @@
   border-top: 1px solid var(--mb-border-color);
 }
 
+.mybooking-selector_seats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.mybooking-selector_seats-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px!important;
+}
+
 /* Promo */
 
 .mb-inline .mybooking-selector_promo {
