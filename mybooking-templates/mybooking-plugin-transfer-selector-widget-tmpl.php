@@ -77,7 +77,6 @@
   </div>
 </div>
 
-<!-- // <%= if(configuration.transfer_allow_select_return_origin_destination) {} %> -->
 <div class="mybooking-selector_group">
 
 	<!-- Return -->
