@@ -436,6 +436,12 @@
 
 /** PROCESS PAGES **/
 
+/* Complete page */
+.mybooking-process_complete .mybooking-product_description {
+  max-height: 10rem!important;
+  overflow-y: auto;
+}
+
 /* Summary page */
 .mybooking-process_summary .mybooking-product_header {
   background-color: #EEE;
