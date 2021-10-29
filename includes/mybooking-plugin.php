@@ -341,6 +341,9 @@
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
 
+      // Add Dashicons in WordPress frontend
+      wp_enqueue_style( 'dashicons' );
+
       // Enqueue select2 + select2 bootstrap CSS
       if ( $registry->mybooking_plugin_js_select2 ) {
         // Load select2
@@ -538,8 +541,6 @@
 
       }
 
-      // Add Dashicons in WordPress frontend
-      wp_enqueue_style( 'dashicons' );
     }
 
 

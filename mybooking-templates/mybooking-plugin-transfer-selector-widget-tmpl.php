@@ -75,16 +75,17 @@
 			<i class="mybooking-selector_field-icon fa fa-clock"></i>
 		</div>
   </div>
-</div>
 
-<!-- // <%= if(configuration.transfer_allow_select_return_origin_destination) {} %> -->
+
+<% if (configuration.transfer_allow_select_return_origin_destination) { %>
+</div>
 <div class="mybooking-selector_group">
 
 	<!-- Return -->
 	<div id="return_block" class="mybooking-selector_transfers-return" style="display:none">
 
 	  <!-- Origin and Return Points -->
-	  <div class="flex-form-group" id="return_origin_destination_block" style="display: none">
+	  <div id="return_origin_destination_block" style="display: none">
 
 	    <div class="mybooking-selector_place">
         <label for="origin_point">
@@ -100,6 +101,7 @@
 				<select class="mb-form-control" id="return_destination_point" name="return_destination_point_id"></select>
 	    </div>
 	  </div>
+<% } %>
 
 		<!-- // Date and time -->
 	  <div class="mybooking-selector_date">
