@@ -31,7 +31,7 @@
 
   <div class="mybooking-summary_detail">
 
-   
+
     <span class="mybooking-summary_item">
       <span class="mybooking-summary_date">
         <%=shopping_cart.date_from_full_format%>
@@ -155,7 +155,7 @@
               <!-- Product name and description -->
               <h2 class="mybooking-product_name"><%=product.name%></h2>
               <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
-              <div class="mybooking-product_description mybooking-truncate-overflow-3lines">
+              <div class="mybooking-product_description">
                 <%=product.description%>
               </div>
 

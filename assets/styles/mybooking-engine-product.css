@@ -356,10 +356,11 @@
   width: 100%;
   height: var(--mb-product-body-height);
   padding: 10px 1rem 0 1rem;
+  overflow-y: auto;
 }
 
 .mybooking-product_info-block .mybooking-product_name {
-  margin-top: 0.3rem;
+  margin-top: 1rem;
 }
 
 .entry-content h2.mybooking-product_name {
@@ -407,24 +408,9 @@
   margin-top: 0.5rem;
 }
 
-.mybooking-product_description.mybooking-truncate-overflow-3lines {
-  line-height: 24px;
-  height: 72px; /* exactly three lines */
-  overflow: hidden;
-}
-
-.mybooking-product_description.mybooking-truncate-overflow-3lines * {
-  line-height: 24px;
-}
-
-.mybooking-product_description.mybooking-truncate-overflow-6lines {
-  line-height: 24px;
-  height: 144px; /* exactly six lines */
-  overflow: hidden;
-}
-
-.mybooking-product_description.mybooking-truncate-overflow-6lines * {
-  line-height: 24px;
+.mybooking-process_complete .mybooking-product_description {
+  max-height: 10rem!important;
+  overflow-y: auto;
 }
 
 .mybooking-product_description li {
@@ -434,6 +420,7 @@
 
 .mybooking-product_description p {
   margin: 0;
+  line-height: 1.4;
 }
 
 .mybooking-product_description li:last-of-type {
@@ -457,8 +444,8 @@
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
-  padding: 0 1rem;
-  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-top: 1px solid var(--mb-border-color);
 }
 
 .mybooking-product_detail .mybooking-product_characteristics {

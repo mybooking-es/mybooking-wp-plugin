@@ -1,14 +1,17 @@
 <?php
-  /**
-   * The Template for showing the product calendar widget - JS Microtemplates
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-widget-tmpl.php
-   *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
-   */
+/**
+ *   MYBOOKING ENGINE - PRODUCT CALENDAR TEMPLATE
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting complete step
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-widget-tmpl.php
+ *
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
 ?>
+
 <script type="text/tmpl" id="form_calendar_selector_tmpl">
 
   <ol class="mybooking-product_calendar-step-list mb-section">
@@ -19,12 +22,12 @@
         <?php echo esc_html_x('Choose delivery and return places', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
       </li>
 
-      <!-- Delivery -->
+      <!-- // Delivery -->
       <div class="mb-form-group">
         <select id="pickup_place" name="pickup_place" placeholder="<?php echo esc_attr_x( 'Select pick-up place', 'renting_product_calendar', 'mybooking-wp-plugin') ?>" class="form-control w-100"> </select>
       </div>
 
-      <!-- Collection -->
+      <!-- // Collection -->
       <div class="mb-form-group">
         <select id="return_place" name="return_place" placeholder="<?php echo esc_attr_x( 'Select return place', 'renting_product_calendar', 'mybooking-wp-plugin' )?>" class="form-control w-100" disabled> </select>
       </div>
@@ -34,7 +37,7 @@
       <?php echo esc_html_x('Select delivery and return dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
     </li>
 
-    <!-- Date Selector -->
+    <!-- // Date Selector -->
     <div class="mb-form-group">
       <input id="date" type="hidden" name="date"/>
       <div id="date-container" class="disabled-picker"></div>
@@ -46,7 +49,7 @@
         <?php echo esc_html_x('Select delivery and return time', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
       </li>
 
-      <!-- Delivery time -->
+      <!-- // Delivery time -->
       <div class="mb-form-group">
         <label class="">
           <?php echo esc_html_x('Delivery', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
@@ -54,7 +57,7 @@
         <select id="time_from" name="time_from" placeholder="hh:mm" class="form-control" disabled> </select>
       </div>
 
-      <!-- Collection time -->
+      <!-- // Collection time -->
       <div class="mb-form-group">
         <label class="">
           <?php echo esc_html_x('Return', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
@@ -73,19 +76,19 @@
 
 <script type="text/tmpl" id="script_reservation_summary">
 
-    <!-- Exceeds max duration -->
+    <!-- // Exceeds max duration -->
     <% if (product && product.exceeds_max) { %>
        <div class="mb-alert danger">
           <span><%= i18next.t('chooseProduct.max_duration', {duration: i18next.t('common.'+product.price_units, {count: product.max_value, interpolation: {escapeValue: false}} ), interpolation: {escapeValue: false}}) %></span>
        </div>
 
-    <!-- Less than min duration -->
+    <!-- // Less than min duration -->
     <% } else if (product && product.be_less_than_min) { %>
        <div class="mb-alert danger">
           <span><%= i18next.t('chooseProduct.min_duration', {duration: i18next.t('common.'+product.price_units, {count: product.min_value, interpolation: {escapeValue: false}} ), interpolation: {escapeValue: false}}) %></span>
        </div>
 
-    <!-- Available -->
+    <!-- // Available -->
     <% } else if (product_available) { %>
       <h2 class="mybooking-summary_details-title">
         <?php echo esc_html_x( 'Reservation summary', 'renting_product_calendar', 'mybooking-wp-plugin') ?>
@@ -93,7 +96,7 @@
 
       <div class="mybooking-summary_detail">
 
-        <!-- Duration -->
+        <!-- // Duration -->
         <% if (shopping_cart.days > 0) { %>
           <div class="mybooking-summary_extras">
             <span class="mybooking-summary_item">
@@ -114,7 +117,7 @@
         <% } %>
       </div>
 
-      <!-- Product -->
+      <!-- // Product -->
       <div class="mybooking-summary_extras">
         <span class="mybooking-summary_item">
           <?php echo MyBookingEngineContext::getInstance()->getProduct() ?>:
@@ -124,7 +127,7 @@
         </span>
       </div>
 
-      <!-- Extras -->
+      <!-- // Extras -->
 
       <% if (shopping_cart.extras.length > 0) { %>
         <div class="mb-section">
@@ -150,7 +153,7 @@
         </div>
       <% } %>
 
-      <!-- Supplements -->
+      <!-- // Supplements -->
       <div class="mybooking-summary_extras">
 
         <!-- Pick-up time -->
@@ -168,7 +171,7 @@
 
       <div class="mybooking-summary_extras">
 
-        <!-- Pick-up place -->
+        <!-- // Pick-up place -->
         <% if (shopping_cart.pickup_place_cost > 0) { %>
           <div class="mybooking-summary_extra-item">
             <span class="mybooking-summary_extra-name">
@@ -183,7 +186,7 @@
 
       <div class="mybooking-summary_extras">
 
-        <!-- Return time -->
+        <!-- // Return time -->
         <% if (shopping_cart.time_to_cost > 0) { %>
           <div class="mybooking-summary_extra-item">
           <span class="mybooking-summary_extra-name">
@@ -198,7 +201,7 @@
 
       <div class="mybooking-summary_extras">
 
-        <!-- Return place -->
+        <!-- // Return place -->
         <% if (shopping_cart.return_place_cost > 0) { %>
           <div class="mybooking-summary_extra-item">
             <span class="mybooking-summary_extra-name">
@@ -211,7 +214,7 @@
         <% } %>
       </div>
 
-      <!-- Total -->
+      <!-- // Total -->
 
       <div class="mb-section">
         <div class="mybooking-summary_total">
@@ -230,7 +233,7 @@
         <?php endif; ?>
       </div>
 
-      <!-- Button -->
+      <!-- // Reservation button -->
 
       <div class="mb-form-group">
          <input id="add_to_shopping_cart_btn" class="mb-button block btn-choose-product" type="submit" value="<?php echo esc_attr_x( 'Book Now!', 'renting_product_calendar', 'mybooking-wp-plugin') ?>"/>

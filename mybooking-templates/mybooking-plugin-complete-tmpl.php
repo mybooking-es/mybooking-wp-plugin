@@ -39,7 +39,7 @@
           </div>
 
           <!-- Product description -->
-          <div class="mybooking-product_description mybooking-truncate-overflow-6lines">
+          <div class="mybooking-product_description">
             <%=shopping_cart.items[idx].item_full_description_customer_translation%>
           </div>
 
@@ -101,7 +101,7 @@
 
     <div class="mybooking-summary_detail">
 
-      
+
       <span class="mybooking-summary_item">
         <span class="mybooking-summary_date">
           <%=shopping_cart.date_from_full_format%>

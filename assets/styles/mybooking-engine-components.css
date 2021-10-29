@@ -262,10 +262,6 @@
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 0.5rem;
-} @media ( min-width: 575.98px ) {
-  .mybooking-extra_name {
-    text-align: right;
-  }
 }
 
 .mybooking-extra_description {

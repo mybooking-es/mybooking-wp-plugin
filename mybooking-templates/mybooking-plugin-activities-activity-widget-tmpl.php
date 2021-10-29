@@ -1,6 +1,6 @@
 <?php
 /**
- *   MYBOOKING ENGINE - ACTIVITY CALENDAR MICROTEMPLATES
+ *   MYBOOKING ENGINE - ACTIVITY CALENDAR TEMPLATES
  *   ---------------------------------------------------------------------------
  *   The Template for showing the renting complete step - JS microtemplates
  *   This template can be overridden by copying it to your
@@ -137,14 +137,14 @@
 
   <% if (Object.keys(tickets).length == 1) { %>
 
-    <!-- There is only one option, so hide it -->
+    <!-- // There is only one option, so hide it -->
     <% for (item in tickets) { %>
       <input type="hidden" name="quantity_rate_<%=item%>" class="quantity_rate" value="1"/>
     <% } %>
 
   <% } else if (Object.keys(tickets).length > 1) { %>
 
-    <!-- There are more than 1 option, allow the customer to pick up one -->
+    <!-- // There are more than 1 option, allow the customer to pick up one -->
     <div class="form-group">
       <select name="selected_tickets_full_mode" class="mb-form-control">
         <option value=""><?php echo esc_html_x( 'Please, select an option', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></option>
