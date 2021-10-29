@@ -11,7 +11,7 @@
 
 <?php get_header();?>
 
-<section class="mybooking mybooking-activity activity-container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<section class="mybooking mybooking-activity mybooking-activity_container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
   <div class="mb-row">
     <div class="mb-col-md-12">

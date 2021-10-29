@@ -16,9 +16,9 @@
 <!-- Activity Cyclic Calendar -->
 
 <script type="text/tmpl" id="script_cyclic_calendar">
-
+ <ol>
   <div class="mybooking-activity_calendar-title">
-    <?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?>
+    <li><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
   </div>
 
   <form name="select_date_form" id="select_date_form">
@@ -27,6 +27,7 @@
     <div id="turns" class="mybooking-activity_turns"></div>
     <div id="tickets" class="mybooking-activity_tickets"></div>
   </form>
+</ol>
 </script>
 
 <script type="text/tmpl" id="script_cyclic_turns">
@@ -38,7 +39,7 @@
 
   <% } else { %>
     <div class="mybooking-activity_calendar-title">
-      <?php echo esc_html_x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?>
+      <li><?php echo esc_html_x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
     </div>
 
     <div class="mb-form-group">
@@ -58,9 +59,9 @@
 <!-- Activity Multiple Dates Selector -->
 
 <script type="text/tmpl" id="script_multiple_dates_selector">
-
+<ol>
   <div class="mybooking-activity_calendar-title">
-    <?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?>
+    <li><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
   </div>
 
   <form name="select_date_form" id="select_date_form">
@@ -71,13 +72,14 @@
     </div>
     <div id="tickets" class="mybooking-activity_tickets"></div>
   </form>
+</ol>
 </script>
 
 
 <!-- Activity One Time Selector -->
 
 <script type="text/tmpl" id="script_one_time_selector">
-
+<ol>
   <form name="select_date_form" id="select_date_form">
     <input type="hidden" name="activity_id" id="activity_id" value="<%=activity.id%>"/>
 
@@ -99,6 +101,7 @@
 
     <div id="tickets" class="mybooking-activity_tickets"></div>
   </form>
+</ol>
 </script>
 
 
@@ -107,7 +110,7 @@
 <script type="text/tmpl" id="script_tickets">
 
   <div class="mybooking-activity_calendar-title">
-    <?php echo esc_html_x( 'People', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?>
+    <li><?php echo esc_html_x( 'People', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
   </div>
 
   <% for (item in tickets) { %>

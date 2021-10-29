@@ -24,7 +24,7 @@
 
   --mb-product-separation: 0.5rem;
   --mb-product-background: transparent;
-  --mb-product-border-color: var(--mbborder-color);
+  --mb-product-border-color: var(--mb-border-color);
 
   --mb-product-image-height: 260px;
   --mb-product-image-height-img: 100%; /* auto - transparent / 100% photo */
@@ -69,6 +69,9 @@
   --mb-product-total-amount-size: 1.6em;
   --mb-product-total-amount-color: var(--mb-info-color);
 
+  --mb-product-activity-route-max-width: none;
+  --mb-product-activity-route-margin: none;
+
   --mb-calendar-step-bg: var(--mb-dark-background-color);
   --mb-calendar-step-color: var(--mb-negative-text-color);
   --mb-calendar-step-radius: 50%;
@@ -96,9 +99,6 @@
 
   --mb-cookies-background: #FFF;
   --mb-cookies-color: currentcolor;
-
-  --mb-product-activity-route-max-width: none;
-  --mb-product-activity-route-margin: none;
 }
 
 
@@ -209,13 +209,45 @@
 
 /** FORMS **/
 
-.mb-form-group label {
+.mb-form-group label,
+.mb-label {
   display: inline-block;
+  margin-right: 1rem;
 }
 
-.mb-form-group input {
+/* .mb-label_button {
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  color: var(--mb-payment-option-btn-bg)!important;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.mb-label_button:hover,
+.mb-label_button:focus,
+.mb-label_button:active {
+  background-color: var(--mb-payment-option-btn-bg);
+  color: var(--mb-payment-option-btn-color)!important;
+} */
+
+.mb-form-group input,
+.mb-input {
   display: inline-block;
   width: 100%;
+}
+
+.mb-input_hidden {
+  position: absolute!important;
+  clip: rect(0 0 0 0)!important;
+  clip-path: inset(50%)!important;
+  width: 1px!important;
+  height: 1px!important;
+  overflow: hidden!important;
+  white-space: nowrap!important;
 }
 
 .mb-form-row {
@@ -399,12 +431,12 @@
   clear: both;
 }
 
-.border .mb-list-item {
+.mb-list.border.border .mb-list-item {
   padding: 1rem;
   border-bottom: 1px solid var(--mb-border-color);
 }
 
-.border .mb-list-item:last-of-type {
+.mb-list.border.border .mb-list-item:last-of-type {
   border-bottom: none;
 }
 

@@ -15,14 +15,14 @@
 	<div class="mybooking-selector_type">
 
 	  <!-- // One Way -->
-		<label class="mybooking-payment_option-label">
-			<input type="radio" class="mybooking-payment_option-input" name="round_trip" value="false" checked>
+		<label class="mb-label">
+			<input type="radio" class="mb-input_hidden" name="round_trip" value="false">
 			<?php echo esc_html_x( 'One way', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
 		</label>
 
 		<!-- // Round trip -->
-		<label class="mybooking-payment_option-label">
-			<input type="radio" class="mybooking-payment_option-input" name="round_trip" value="true">
+		<label class="mb-label">
+			<input type="radio" class="mb-input_hidden" name="round_trip" value="true">
 			<?php echo esc_html_x( 'Round trip', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
 		</label>
 	</div>
@@ -34,7 +34,9 @@
 	<div class="mybooking-selector_place">
 
 	  <!-- // Pickup place -->
-		<label for="origin_point">1<?php echo esc_html_x( 'Origin', 'transfer_form_selector', 'mybooking-wp-plugin') ?></label>
+		<label for="origin_point">
+		 1<?php echo esc_html_x( 'Origin', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+		</label>
 		<select class="mb-form-control" id="origin_point" name="origin_point_id"></select>
 		<i class="mybooking-selector_field-icon fa fa-map-marker-alt"></i>
 	</div>
@@ -42,10 +44,15 @@
 	<div class="mybooking-selector_place">
 
     <!-- // Return place -->
-		<label for="return_place">2<?php echo esc_html_x( 'Destination', 'transfer_form_selector', 'mybooking-wp-plugin' ) ?></label>
+		<label for="return_place">
+			2<?php echo esc_html_x( 'Destination', 'transfer_form_selector', 'mybooking-wp-plugin' ) ?>
+		</label>
 		<select class="mb-form-control" id="destination_point" name="destination_point_id"></select>
 		<i class="mybooking-selector_field-icon fa fa-map-marker-alt"></i>
 	</div>
+<!-- </div>
+
+<div class="mybooking-selector_group"> -->
 
   <!-- // Date and time -->
   <div class="mybooking-selector_date">
@@ -53,7 +60,7 @@
 		<!-- // Pickup date -->
     <div class="mybooking-selector_cal">
       <label for="date">
-				3<?php echo esc_html_x( 'Date and time', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+				3<?php echo esc_html_x( 'Date', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
 			</label>
 			<input type="text" class="mb-form-control" name="date" id="date" autocomplete="off" readonly="true">
 			<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
@@ -61,34 +68,38 @@
 
 		<!-- // Pickup time -->
 		<div class="mybooking-selector_hour">
+			<label for="time">
+				3<?php echo esc_html_x( 'Time', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+			</label>
 			<select class="mb-form-control" name="time" id="time"></select>
 			<i class="mybooking-selector_field-icon fa fa-clock"></i>
 		</div>
   </div>
+</div>
 
-
+// <%= if(configuration.transfer_allow_select_return_origin_destination) {} %>
+<div class="mybooking-selector_group">
 
 	<!-- Return -->
-	<div id="return_block" class="mybooking-selector_transfers flex-form-group-wrapper" style="flex-direction: column; display:none">
+	<div id="return_block" class="mybooking-selector_transfers-return" style="display:none">
 
-	  <!-- Origin and Return Points
+	  <!-- Origin and Return Points -->
 	  <div class="flex-form-group" id="return_origin_destination_block" style="display: none">
 
-	    <div class="flex-form-horizontal-box">
-	        <label for="origin_point">4<?php echo esc_html_x( 'Return Origin', 'transfer_form_selector', 'mybooking-wp-plugin') ?></label>
-	        <div class="flex-form-item">
-	          <select class="mb-form-control" id="return_origin_point" name="return_origin_point_id"></select>
-	        </div>
+	    <div class="mybooking-selector_place">
+        <label for="origin_point">
+					4<?php echo esc_html_x( 'Return Origin', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+				</label>
+				<select class="mb-form-control" id="return_origin_point" name="return_origin_point_id"></select>
 	    </div>
 
-
-	    <div class="flex-form-horizontal-box">
-	      <label for="return_place">5<?php echo esc_html_x( 'Return Destination', 'transfer_form_selector', 'mybooking-wp-plugin' ) ?></label>
-	      <div class="flex-form-item">
-	        <select class="mb-form-control" id="return_destination_point" name="return_destination_point_id"></select>
-	      </div>
+	    <div class="mybooking-selector_place">
+	      <label for="return_place">
+					5<?php echo esc_html_x( 'Return Destination', 'transfer_form_selector', 'mybooking-wp-plugin' ) ?>
+				</label>
+				<select class="mb-form-control" id="return_destination_point" name="return_destination_point_id"></select>
 	    </div>
-	  </div>-->
+	  </div>
 
 		<!-- // Date and time -->
 	  <div class="mybooking-selector_date">
@@ -96,14 +107,17 @@
 			<!-- // Return date -->
 	    <div class="mybooking-selector_cal">
 	      <label for="date">
-					4<?php echo esc_html_x( 'Return Date and time', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+					4<?php echo esc_html_x( 'Return Date', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
 				</label>
 				<input type="text" class="mb-form-control" name="return_date" id="return_date" autocomplete="off" readonly="true">
 				<i class="mybooking-selector_field-icon fa fa-calendar-alt"></i>
 	    </div>
 
 			<!-- // Return time -->
-			<div class="mybooking-selector_hour" style="display: flex;flex-direction: row">
+			<div class="mybooking-selector_hour">
+				<label for="time">
+					4<?php echo esc_html_x( 'Time', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+				</label>
 				<select class="mb-form-control" name="return_time" id="return_time"></select>
 				<i class="mybooking-selector_field-icon fa fa-clock"></i>
 			</div>

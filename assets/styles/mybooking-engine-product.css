@@ -192,8 +192,6 @@
 } /* It contains the image container */
 
 .mybooking-product_info-block {
-  /* padding: 1rem;
-  border: 1px solid var(--mb-product-info-border); */
   background-color: var(--mb-product-info-background);
 }
 
@@ -206,7 +204,7 @@
 
 .mybooking-product_info-block .mybooking-product_image {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   border-radius: 0!important;
   object-fit: cover;
   object-position: center center;
@@ -214,14 +212,14 @@
 
 .mybooking-product_block .mybooking-product_image {
   width: 100%;
-  height: var(--mb-product-image-height-img); 
+  height: var(--mb-product-image-height-img);
   border-radius: 0!important;
   object-fit: cover;
   object-position: center center;
   /* Center vertical */
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);    
+  transform: translateY(-50%);
 }
 
 .mybooking-product_info-button {

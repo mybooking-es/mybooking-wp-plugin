@@ -10,10 +10,10 @@
  * - Twenty Twenty
  * - Twenty Twenty One
  *
- */ 
+ */
 @media only screen and (min-width: 768px) {
-  body.mybooking-activity .activity-container.alignwide,
-  body.mybooking-product .product-container.alignwide {
+  body.mybooking-activity .mybooking-activity_container.alignwide,
+  body.mybooking-product .mybooking-product_container.alignwide {
       margin: 0 10%;
       padding: 0 34px;
   }
@@ -21,10 +21,10 @@
 
 /**
  * Route renting producto and Route activity compatibility with other themes
- */ 
+ */
 @media only screen and (min-width: 768px) {
-  body.mybooking-activity .mybooking.activity-container:not(.alignwide),
-  body.mybooking-product .mybooking.product-container:not(.alignwide) {
+  body.mybooking-activity .mybooking.mybooking-activity_container:not(.alignwide),
+  body.mybooking-product .mybooking.mybooking-product_container:not(.alignwide) {
       max-width: var(--mb-product-activity-route-max-width);
       margin: var(--mb-product-activity-route-margin);
   }
@@ -36,13 +36,13 @@
  * Twenty Nineteen
  * Twenty Twenty
  * Twenty Twenty One
- */ 
+ */
 @media only screen and (min-width: 482px) {
 
-  body.mybooking-activity .activity-container.alignwide {
+  body.mybooking-activity .mybooking-activity_container.alignwide {
     max-width: var(--responsive--alignwide-width, 610px);
   }
-  body.mybooking-product .product-container.alignwide {
+  body.mybooking-product .mybooking-product_container.alignwide {
     max-width: var(--responsive--alignwide-width, 610px);
   }
 
@@ -65,12 +65,12 @@
     max-width: var(--responsive--alignwide-width, 610px);
   }
 }
-@media only screen and (min-width: 822px) { 
+@media only screen and (min-width: 822px) {
 
-  body.mybooking-activity .activity-container.alignwide {
+  body.mybooking-activity .mybooking-activity_container.alignwide {
     max-width: var(--responsive--alignwide-width, 1240px);
   }
-  body.mybooking-product .product-container.alignwide {
+  body.mybooking-product .mybooking-product_container.alignwide {
     max-width: var(--responsive--alignwide-width, 1240px);
   }
 

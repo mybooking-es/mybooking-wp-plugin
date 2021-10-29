@@ -35,16 +35,16 @@
   color: var(--mb-selector-label-color);
 }
 
-.mybooking-selector_group input,
-.mybooking-selector_group select,
-.mybooking-selector_group button {
+.mybooking-selector input,
+.mybooking-selector select,
+.mybooking-selector button {
   height: var(--mb-selector-field-height);
   margin: 0!important;
   opacity: 1;
 }
 
-.mybooking-selector_group input:not([type="submit"]) /* Not the buttons! */,
-.mybooking-selector_group select {
+.mybooking-selector input:not([type="submit"]) /* Not the buttons! */,
+.mybooking-selector select {
   font-size: 14px!important;
   border: 1px solid var(--mb-border-color)!important;
   background-color: white!important;
@@ -54,10 +54,10 @@
   font-weight: 700!important;
 }
 
-.mybooking-selector_group input[disabled]:not([type="submit"]) /* Not the buttons! */,
-.mybooking-selector_group select[disabled],
-.mybooking-selector_group input[disabled]:not([type="submit"]) + .mybooking-selector_field-icon,
-.mybooking-selector_group select[disabled] + .mybooking-selector_field-icon {
+.mybooking-selector input[disabled]:not([type="submit"]) /* Not the buttons! */,
+.mybooking-selector select[disabled],
+.mybooking-selector input[disabled]:not([type="submit"]) + .mybooking-selector_field-icon,
+.mybooking-selector select[disabled] + .mybooking-selector_field-icon {
   background-color: #EEE!important;
   border: 1px solid #EEE!important;
   color: #CCC!important;
@@ -65,22 +65,22 @@
   font-weight: 400!important;
 }
 
-.mybooking-selector_group input:not([type="submit"]):focus /* Not the buttons! */,
-.mybooking-selector_group select:focus {
+.mybooking-selector input:not([type="submit"]):focus /* Not the buttons! */,
+.mybooking-selector select:focus {
   outline: none!important;
 }
 
-.mybooking-selector_group input.form-reservation-error,
-.mybooking-selector_group input.form-reservation-error:focus,
-.mybooking-selector_group select.form-reservation-error {
+.mybooking-selector input.form-reservation-error,
+.mybooking-selector input.form-reservation-error:focus,
+.mybooking-selector select.form-reservation-error {
   background-color: var(--mb-danger-color)!important;
   color: white!important;
   border: 1px solid var(--mb-danger-color);
   font-weight: 700;
 }
 
-.mybooking-selector_group input.form-reservation-error,
-.mybooking-selector_group input.form-reservation-error:focus {
+.mybooking-selector input.form-reservation-error,
+.mybooking-selector input.form-reservation-error:focus {
   font-size: 0.9em;
   width: 55%;
 }
@@ -108,6 +108,20 @@
 }
 
 /* Sections */
+
+.mybooking-selector_type {
+  width: 100%;
+  border-bottom: 1px solid var(--mb-border-color);
+}
+
+.mybooking-selector_type .mb-label {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.mybooking-selector_type .mb-label:hover {
+  color: var(--mb-info-color);
+}
 
 .mybooking-selector_place {
   position: relative;
@@ -298,7 +312,7 @@
   .mybooking-selector_button {
     flex-direction: row;
     align-self: flex-end;
-    width: 20%!important;
+    width: auto;
   }
 }
 
