@@ -25,7 +25,7 @@
     </div>
 
     <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
-      <i class="fa fa-pencil"></i><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+      <i class="mb-button icon"><span class="dashicons dashicons-edit"></span></i><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
     </div>
   </div>
 
@@ -82,8 +82,8 @@
     <div class="mybooking-product_filter">
       <div class="mybooking-product_filter-btn-group">
         <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
-        <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view"><i class="fa fa-th"></i></span>
-        <span class="mybooking-product_filter-btn list js-mb-list" title="List view"><i class="fa fa-th-list"></i></span>
+        <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view"><i class="mb-button icon"><span class="dashicons dashicons-grid-view"></span></i></span>
+        <span class="mybooking-product_filter-btn list js-mb-list" title="List view"><i class="mb-button icon"><span class="dashicons dashicons-list-view"></span></i></span>
       </div>
     </div>
 
@@ -95,7 +95,9 @@
           <div class="mybooking-product_block">
             <div class="mybooking-product_image-container">
               <img class="mybooking-product_image" src="<%=product.full_photo%>">
-              <i class="mybooking-product_info-button fa fa-info-circle js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>"></i>
+              <i class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
+                <span class="dashicons dashicons-info"></span>
+              </i>
             </div>
 
             <% if (product.highlight_message && product.highlight_message != '') { %>
@@ -247,7 +249,7 @@
       <div class="mb-col-md-12">
         <button id="go_to_complete" class="mb-button btn-confirm-selection">
           <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking') ?>
-          <i class="fas fa-arrow-right"></i>
+          <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
         </button>
       </div>
     </div>

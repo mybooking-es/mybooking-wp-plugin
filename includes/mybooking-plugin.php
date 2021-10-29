@@ -17,7 +17,7 @@
   // Check is page WMPL integration
   require_once('mybooking-plugin-is-page.php');
   // Themes integration
-  require_once('mybooking-plugin-themes-integration.php');  
+  require_once('mybooking-plugin-themes-integration.php');
   // Mybooking Api Client + UI
   require_once('ui/mybooking-plugin-ui-pages.php');
   require_once('ui/mybooking-plugin-ui-pagination.php');
@@ -82,7 +82,7 @@
    * [mybooking_rent_engine_selector_wizard sales_channel_code=String family_id=Number rental_location_code=String]
    *
    * - Process:
-   * 
+   *
    * [mybooking_rent_engine_product_listing]
    * [mybooking_rent_engine_complete]
    * [mybooking_rent_engine_summary]
@@ -109,23 +109,23 @@
    * [mybooking_activities_engine_order]
    *
    * 2.3 Transfer
-   * 
+   *
    * [mybooking_transfer_selector]
    * [mybooking_transfer_choose_vehicle]
    * [mybooking_transfer_checkout]
    * [mybooking_transfer_summary]
    * [mybooking_transfer_reservation]
-   * 
+   *
    * 2.4 Contact
    *
    * [mybooking_contact]
-   * 
+   *
    * 2.5 Complements
-   * 
+   *
    * [mybooking_testimonials]
-   * 
+   *
    * 2.6 Profile
-   * 
+   *
    * [mybooking_password_forgotten]
    * [mybooking_change_password]
    *
@@ -401,7 +401,7 @@
         // Mybooking Product
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-compatibility',
                         plugins_url('/assets/styles/mybooking-engine-compatibility.css', dirname( __FILE__ ) ),
-                        array(), $version );        
+                        array(), $version );
       }
 
     }
@@ -483,7 +483,7 @@
                              'mybooking-moment-timezone-js',
                              'mybooking-init'
                            ),
-                           $version, 
+                           $version,
                            true
                          );
       wp_enqueue_script( 'mybooking-rent-engine-script');
@@ -538,7 +538,10 @@
 
       }
 
+      // Add Dashicons in WordPress frontend
+      wp_enqueue_style( 'dashicons' );
     }
+
 
     /**
      * Add body classes to the pages
@@ -680,7 +683,7 @@
     /**
      * Include micro templates
      * -----------------------
-     * 
+     *
      * Microtemplates are responsible of rendering parts of the reservation engine.
      * This method includes the current page necessary micro-templates on the footer
      */
@@ -709,7 +712,7 @@
         mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
       }
 
-      // Transfer Selector 
+      // Transfer Selector
       if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
            ( has_shortcode ( $content, 'mybooking_rent_engine_selector') ) ) {
         mybooking_engine_get_template( 'mybooking-plugin-selector-widget-tmpl.php');
@@ -951,7 +954,7 @@
                                      'rental_location_code' => '' ), $atts ) );
 
       $data = array();
-      
+
 
       if ( $sales_channel_code != '' ) {
         $data['sales_channel_code'] = $sales_channel_code;
@@ -1068,7 +1071,7 @@
                                      'rental_location_code' => ''), $atts ) );
 
       $data = array();
-      $data['code'] = $code;     
+      $data['code'] = $code;
       if ( $sales_channel_code != '' ) {
         $data['sales_channel_code'] = $sales_channel_code;
       }
@@ -1374,7 +1377,7 @@
 
     }
 
-  
+
     // -- Contact
 
     /**
@@ -1936,7 +1939,7 @@
 
       $settings = (array) get_option("mybooking_plugin_settings_css");
 
-      // Include custom components CSS 
+      // Include custom components CSS
       if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {
         $registry->mybooking_rent_plugin_components_css = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css"] )) == '1');
       }

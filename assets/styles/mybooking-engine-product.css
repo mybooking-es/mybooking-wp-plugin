@@ -156,11 +156,12 @@
 }
 
 .mybooking-product_filter-btn-group {
+  display: flex;
   margin-bottom: 0.5rem;
 }
 
 .mybooking-product_filter-btn {
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .mybooking-product_filter-btn:hover {

@@ -269,18 +269,14 @@
   position: absolute;
   display: inline!important;
   left: 5%;
-  top: 57%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector_cal .mybooking-selector_field-icon {
-    left: 3%;
-  }
+  top: 53%;
 }
 
 .mb-inline .mybooking-selector_cal .mybooking-selector_field-icon {
   position: absolute;
   display: inline!important;
   left: 5%;
-  top: 57%;
+  top: 53%;
 } @media ( min-width: 575.98px ) {
   .mb-inline .mybooking-selector_cal .mybooking-selector_field-icon {
     left: 5%;
@@ -291,7 +287,7 @@
   position: absolute;
   display: inline!important;
   left: 5%;
-  top: 31%;
+  top: 25%;
 }
 
 /* Buttons */

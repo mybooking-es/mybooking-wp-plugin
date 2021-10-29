@@ -29,6 +29,7 @@
 }
 
 .mybooking-summary_edit {
+  display: flex;
   font-size: .9em;
   font-weight: 700;
   line-height: 2.5;
@@ -272,10 +273,6 @@
   margin-bottom: 0.5rem;
   line-height: 1.2;
   font-size: 0.8em;
-} @media ( min-width: 575.98px ) {
-  .mybooking-extra_description p {
-    text-align: right;
-  }
 }
 
 .mybooking-extra_description br {
@@ -346,7 +343,6 @@
 /** PAYMENT BLOCK **/
 
 .btn-confirm-reservation {
-  display: block;
   width: 100%;
   margin: 2rem 0;
   background-color: accentcolor;
@@ -355,7 +351,6 @@
   font-size: 1.3em;
 } @media ( min-width: 575.98px ) {
   .btn-confirm-reservation {
-    display: inline-block;
     width: auto;
     margin: 0;
     font-size: 1em;

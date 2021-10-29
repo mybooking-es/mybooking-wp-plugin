@@ -238,7 +238,7 @@
       </label>
       <button type="submit" class="mb-button btn-confirm-reservation">
         <?php echo esc_html_x( 'Request reservation', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-        <i class="fas fa-arrow-right"></i>
+        <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
       </button>
     </div>
   <% } %>
@@ -309,7 +309,7 @@
         </label>
         <button type="submit" class="mb-button btn-confirm-reservation">
           <%=i18next.t('activities.payment.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
-          <i class="fas fa-arrow-right"></i>
+          <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
         </button>
       </div>
     </div>

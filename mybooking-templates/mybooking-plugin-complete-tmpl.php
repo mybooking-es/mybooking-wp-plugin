@@ -95,7 +95,7 @@
       </div>
 
       <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
-        <i class="fa fa-pencil"></i><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+        <i class="mb-button icon"><span class="dashicons dashicons-edit"></span></i><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
       </div>
     </div>
 
@@ -568,7 +568,7 @@
       </label>
       <button type="submit" class="mb-button btn-confirm-reservation">
         <?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-        <i class="fas fa-arrow-right"></i>
+        <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
       </button>
     </div>
   <% } %>
@@ -589,7 +589,7 @@
       </label>
       <button type="submit" class="mb-button btn-confirm-reservation">
         <?php echo esc_html_x( 'Confirm', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-        <i class="fas fa-arrow-right"></i>
+        <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
       </button>
     </div>
   <% } %>
@@ -662,7 +662,7 @@
         </label>
         <button type="submit" class="mb-button btn-confirm-reservation">
           <%=i18next.t('complete.reservationForm.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
-          <i class="fas fa-arrow-right"></i>
+          <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
         </button>
       </div>
     </div>

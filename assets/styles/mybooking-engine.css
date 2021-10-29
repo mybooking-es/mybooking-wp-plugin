@@ -215,25 +215,6 @@
   margin-right: 1rem;
 }
 
-/* .mb-label_button {
-  width: 100%;
-  padding: 1rem;
-  background-color: transparent;
-  color: var(--mb-payment-option-btn-bg)!important;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-.mb-label_button:hover,
-.mb-label_button:focus,
-.mb-label_button:active {
-  background-color: var(--mb-payment-option-btn-bg);
-  color: var(--mb-payment-option-btn-color)!important;
-} */
-
 .mb-form-group input,
 .mb-input {
   display: inline-block;
@@ -289,10 +270,23 @@
 /** UI ELEMENTS **/
 
 /* Buttons */
+.mb-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .mb-button.block {
   display: block;
   width: 100%;
   margin: 0.5rem 0;
+}
+
+.mb-button.icon {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 /* Badges */
