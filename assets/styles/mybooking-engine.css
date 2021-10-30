@@ -11,7 +11,7 @@
   --mb-danger-color: #E6546E;
   --mb-warning-color: #FFB74D;
 
-  --mb-border-color: #DDD;
+  --mb-border-color: #BBB;
   --mb-background-color: #EEE;
   --mb-dark-background-color: #424242;
   --mb-negative-text-color: #FFF;
@@ -273,8 +273,10 @@
 .mb-button {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-align: left;
+  line-height: 1.1;
 }
 
 .mb-button.block {

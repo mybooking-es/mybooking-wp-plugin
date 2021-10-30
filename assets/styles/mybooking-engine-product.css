@@ -354,7 +354,7 @@
   flex-direction: column;
   width: 100%;
   height: var(--mb-product-body-height);
-  padding: 10px 1rem 0 1rem;
+  padding: 1rem;
   overflow-y: auto;
 }
 
@@ -463,7 +463,7 @@
   width: 100%;
   padding: 0.5rem;
   border-top: 1px solid var(--mb-border-color);
-  box-shadow: 0px -10px 20px -5px var(--mb-border-color);
+  box-shadow: 0px -20px 20px -5px var(--mb-background-color);
 }
 
 .mybooking-product_detail .mybooking-product_characteristics {
