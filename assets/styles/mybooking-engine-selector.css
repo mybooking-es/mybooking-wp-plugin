@@ -229,14 +229,6 @@
   }
 }
 
-/* .mybooking-selector_transfers-return .mybooking-selector_transfers-destination + .mybooking-selector_date {
-  width: 100%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector_transfers-return .mybooking-selector_transfers-destination + .mybooking-selector_date {
-    width: 50%;
-  }
-} */
-
 .mybooking-selector_seats {
   display: flex;
   flex-direction: row;
@@ -265,14 +257,20 @@
 
 /* Promo */
 
+.mybooking-selector_promo {
+  min-width: 20% !important;
+}
+
 .mybooking-selector_promo input:not([type="submit"]) {
-  border: 1px solid var(--mb-background-color)!important;
-  background-color: var(--mb-background-color)!important;
+  border: 1px solid var(--mb-selector-promo-border)!important;
+  background-color: var(--mb-selector-promo-bg)!important;
+  opacity: var(--mb-selector-promo-opacity);
 }
 
 .mybooking-selector_promo label {
   display: block;
   text-align: center!important;
+  width: 100%
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_promo label {
     display: inline;
