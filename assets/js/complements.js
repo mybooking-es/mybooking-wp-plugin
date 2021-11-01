@@ -1,8 +1,8 @@
 jQuery(document).ready(function () {
   
   // Promotion Popup
-  if (jQuery('.mybooking-popup_close.close').length > 0) {
-	  jQuery('.mybooking-popup_close.close').bind('click', function() {
+  if (jQuery('.mybooking-popup_close').length > 0) {
+	  jQuery('.mybooking-popup_close').bind('click', function() {
 	  	document.getElementById( "MybookingPromotionsPopup" ).style.visibility="hidden"
 	  });
   }
