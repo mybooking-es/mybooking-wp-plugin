@@ -8,7 +8,7 @@
 ?>
 <!-- Modify reservation modal -->
 <div class="modal modal-mybooking"
-     id="mybooking_transfer_modify_reservation_modal" tabindex="-1" role="dialog" aria-labelledby="modifyTransferReservationModal"
+     id="mybooking_transfer_modify_reservation_modal_MBM" tabindex="-1" role="dialog" aria-labelledby="modifyTransferReservationModal"
   aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">

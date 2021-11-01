@@ -26,7 +26,7 @@
       <% } %>
     </div>
 
-    <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
+    <div class="mybooking-summary_edit" id="mybooking_transfer_modify_reservation_button" role="link">
       <i class="mb-button icon">
         <span class="dashicons dashicons-edit"></span>
       </i>
