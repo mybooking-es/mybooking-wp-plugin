@@ -17,9 +17,11 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
+
       <!-- Extras Selection (script_detailed_extra) -->
       <div id="mybooking_transfer_extras_listing">
       </div>
+
       <!-- Reservation complete -->
       <div class="reservation_form_container mb-4">
         <h4 class="complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h4>
@@ -27,6 +29,7 @@
         </form>
       </div>
     </div>
+
     <aside class="col-lg-4">
       <!-- Reservation detail/summary (script_reservation_summary) -->
       <div id="mybooking_transfer_reservation_detail">
@@ -72,10 +75,11 @@
 
         <!-- Reservation : payment (script_payment_detail) -->
         <div id="mybooking_transfer_payment_detail"></div>
-        
+
       </div>
     </aside>
   </div>
+  
   <!-- Show extra detail modal -->
   <div class="modal fade modal-mybooking" tabindex="-1" role="dialog" id="mybooking_transfer_modalExtraDetail">
     <div class="modal-dialog" role="document">

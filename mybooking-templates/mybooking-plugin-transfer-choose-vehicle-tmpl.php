@@ -1,13 +1,15 @@
 <?php
-  /**
-   * The Template for showing the transfer select vehicle step - JS Microtemplates
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-choose-vehicle-tmpl.php
-   *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
-   */
+/**
+ *   MYBOOKING ENGINE - CHOOSE TRANSFER TEMPLATE
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting select product step - JS Microtemplates
+ *   This template can be overridden by copying it to your
+ *   theme /mybooking-templates/mybooking-plugin-transfer-choose-vehicle-tmpl.php
+ *
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
 ?>
 
 <!-- RESERVATION SUMMARY ------------------------------------------------------>
@@ -107,7 +109,7 @@
     </div>
 
     <!-- // Product list -->
-    
+
     <% for ( var idxP=0;idxP<products.length;idxP++ ) { %>
       <% var product = products[idxP]; %>
       <div class="mybooking-product_column">
