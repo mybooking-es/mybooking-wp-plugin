@@ -123,11 +123,6 @@
               <% if ( product.photo_url ) { %>
                 <img class="mybooking-product_image" src="<%=product.photo_url%>" alt="<%=product.name%>" data-product="<%=product.id%>">
               <% } %>
-
-              <!-- // Info icon -->
-              <i class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
-                <span class="dashicons dashicons-info"></span>
-              </i>
             </div>
           </div>
 
