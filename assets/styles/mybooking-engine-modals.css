@@ -20,6 +20,7 @@
 } @media ( min-width: 575.98px ) {
   .mybooking-modal {
     max-width: 1200px;
+    min-width: 800px;
   }
 }
 

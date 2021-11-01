@@ -22,6 +22,10 @@
   --mb-selector-label-color: currentcolor;
   --mb-selector-field-height: 40px;
 
+  --mb-selector-promo-border: var(--mb-border-color);
+  --mb-selector-promo-bg: white;
+  --mb-selector-promo-opacity: 1;
+
   --mb-product-separation: 0.5rem;
   --mb-product-background: transparent;
   --mb-product-border-color: var(--mb-border-color);
