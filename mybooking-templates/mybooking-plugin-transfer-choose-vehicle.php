@@ -36,7 +36,7 @@
   </div>
 </div> -->
 
-<div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modalTransferProductDetail">
+<div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modalTransferProductDetail_MBM">
   <h3 class="mybooking-modal_title modal-product-detail-title"></h3>
   <div class="mybooking-modal_body modal-product-detail-content"></div>
 </div>

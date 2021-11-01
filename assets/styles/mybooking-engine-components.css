@@ -97,6 +97,11 @@
   flex-flow: column;
   font-size: 1em;
   line-height: 1.2em;
+  margin-bottom: 1rem;
+} @media ( min-width: 576.98px ) {
+  .mybooking-summary_item {
+    margin-bottom: 0;
+  }
 }
 
 [class*="mb-col-"] .mybooking-summary_item {
@@ -104,7 +109,6 @@
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 1rem;
 }
 
 [class*="mb-col-"] .mybooking-summary_item:last-of-type {
@@ -117,14 +121,6 @@
 
 .mybooking-summary_date {
   font-weight: bold;
-}
-
-.mybooking-summary_place {
-  margin: 0 0 1rem 0;
-} @media ( min-width: 576.98px ) {
-  .mybooking-summary_place {
-    margin: 0;
-  }
 }
 
 .mybooking-summary_duration {
