@@ -19,7 +19,7 @@
 
     <!-- Reservation form -->
     <div class="mb-col-md-8">
-      <form id="form-reservation" name="reservation_form" class="form-delivery" method="post" autocomplete="off">
+      <form id="form-reservation" name="reservation_form" class="form-delivery mybooking-data-form" method="post" autocomplete="off">
         <div id="reservation_container"></div>
         <div id="reservation_detail"></div>
         <div id="payment_detail"></div>

@@ -349,7 +349,7 @@
         // Load select2
         wp_enqueue_style( 'mybooking_wp_css_components_select2',
                         plugins_url('/assets/styles/select2-4.0.1.css', dirname( __FILE__ ) ) );
-        wp_enqueue_style( 'mybooking_wp_css_components_select2_bootstrap',
+        wp_enqueue_style( 'mybooking_wp_css_components_select2_theme',
                         plugins_url('/assets/styles/select2-bootstrap.css', dirname( __FILE__ ) ) );
       }
 

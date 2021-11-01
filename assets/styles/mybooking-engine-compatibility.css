@@ -3,6 +3,40 @@
 *  -----------------------------------------------------------------------------
 */
 
+/** Complete and my reservation forms **/
+
+form.mybooking-data-form select,
+form.mybooking-data-form input[type=text], 
+form.mybooking-data-form input[type=email], 
+form.mybooking-data-form input[type=url], 
+form.mybooking-data-form input[type=password], 
+form.mybooking-data-form input[type=search], 
+form.mybooking-data-form input[type=number], 
+form.mybooking-data-form input[type=tel], 
+form.mybooking-data-form input[type=date], 
+form.mybooking-data-form input[type=month], 
+form.mybooking-data-form input[type=week], 
+form.mybooking-data-form input[type=time], 
+form.mybooking-data-form input[type=datetime], 
+form.mybooking-data-form input[type=datetime-local], 
+form.mybooking-data-form input[type=color] {
+  height:  var(--mb-field-height);
+  width:  100%;
+  min-width:  100%;
+  border-color: var(--mb-field-border-color);
+}
+
+form.mybooking-data-form textarea {
+  border-color: var(--mb-field-border-color); 
+  min-width: 100%;
+  width:  100%;
+}
+
+form.mybooking-data-form select {
+  font-size: small;
+  text-align: center;
+}
+
 /*
  * Route renting product and Route activity compatibility with :
  *

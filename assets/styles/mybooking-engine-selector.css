@@ -31,6 +31,10 @@
 
 /* Form elements */
 
+.mybooking-selector .mb-form-control { 
+  padding:  10px;
+}
+
 .mybooking-selector label {
   display: inline;
   color: var(--mb-selector-label-color);

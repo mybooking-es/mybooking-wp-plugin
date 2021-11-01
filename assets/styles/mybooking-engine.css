@@ -16,11 +16,14 @@
   --mb-dark-background-color: #424242;
   --mb-negative-text-color: #FFF;
 
+  --mb-field-height:  4rem;
+  --mb-field-border-color:  #424242;
+
   --mb-selector-padding: 2rem;
   --mb-selector-background: transparent;
   --mb-selector-border-color: var(--mb-border-color);
   --mb-selector-label-color: currentcolor;
-  --mb-selector-field-height: 40px;
+  --mb-selector-field-height: 40px; 
 
   --mb-selector-promo-border: var(--mb-border-color);
   --mb-selector-promo-bg: white;
@@ -103,6 +106,7 @@
 
   --mb-cookies-background: #FFF;
   --mb-cookies-color: currentcolor;
+
 }
 
 
@@ -215,7 +219,8 @@
 
 .mb-form-group label,
 .mb-label {
-  display: inline-block;
+/*  display: inline-block; */
+  display:  block;
   margin-right: 1rem;
 }
 
@@ -258,6 +263,10 @@
 .mb-form-control {
   min-width: 100%;
   margin-bottom: 0.5rem;
+}
+
+.mb-custom-date-form .mb-custom-date-item {
+  width:  33.33333%;
 }
 
 .mb-custom-date-form select {
