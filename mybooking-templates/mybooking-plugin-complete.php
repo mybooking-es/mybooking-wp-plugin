@@ -19,6 +19,7 @@
 
 <section class="mybooking mybooking-process_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <div class="mb-row">
+
     <div class="mb-col-md-4 mb-col-right">
 
       <!-- Reservation detail/summary (script_reservation_summary) -->
@@ -67,7 +68,9 @@
               </div>
             </div>
 
-            <h3 class="mb-4 complete-section-title"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h3>
+            <h3 class="complete-section-title">
+              <?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?>
+            </h3>
 
             <div class="mb-form-group">
               <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
@@ -85,9 +88,8 @@
 </section>
 
 <!-- Show extra detail modal -->
-<div class="mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modalExtraDetail_MBM">
-  <h5 class="mb-modal-title modal-extra-detail-title"></h5>
-  <hr>
-  <div class="mb-modal-body modal-extra-detail-content">
+<div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modalExtraDetail_MBM">
+  <h5 class="mb-modal_title modal-extra-detail-title"></h5>
+  <div class="mb-modal_body modal-extra-detail-content">
   </div>
 </div>

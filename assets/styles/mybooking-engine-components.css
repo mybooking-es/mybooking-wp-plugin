@@ -97,11 +97,6 @@
   flex-flow: column;
   font-size: 1em;
   line-height: 1.2em;
-  margin-bottom: 1rem;
-} @media ( min-width: 576.98px ) {
-  .mybooking-summary_item {
-    margin-bottom: 0;
-  }
 }
 
 [class*="mb-col-"] .mybooking-summary_item {
