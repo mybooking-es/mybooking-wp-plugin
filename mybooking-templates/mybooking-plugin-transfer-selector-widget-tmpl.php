@@ -1,14 +1,17 @@
 <?php
-  /**
-   * The Template for showing the transfer selector widget - JS Microtemplates
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php
-   *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
-   */
+/**
+ *   MYBOOKING ENGINE - TRANSFER SELECTOR TEMPLATES
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting complete step
+ *   This template can be overridden by copying it to your
+ *   theme /mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php
+ *
+ * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
 ?>
+
 <script type="text/tmpl" id="widget_transfer_form_selector_tmpl">
 
 <div class="mybooking-selector_group">
