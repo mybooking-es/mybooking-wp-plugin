@@ -137,14 +137,15 @@
 /** PRODUCT FILTER **/
 
 .mybooking-product_filter {
-  display: none;
+  display: none; /* Filters only make sense on desk and tablet */
 } @media ( min-width: 575.98px ) {
   .mybooking-product_filter {
     display: flex;
     flex-basis: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-  } /* Filters only make sense on desk and tablet */
+    margin-bottom: 0.5rem;
+  }
 }
 
 .mybooking-product_filter-legend {
@@ -157,7 +158,8 @@
 
 .mybooking-product_filter-btn-group {
   display: flex;
-  margin-bottom: 0.5rem;
+  align-items: center;
+  float: right;
 }
 
 .mybooking-product_filter-btn {
@@ -177,6 +179,10 @@
   opacity: 1;
 }
 
+.mybooking-product_results-found {
+  display: flex;
+  align-items: center;
+}
 
 /** PRODUCT ITEM **/
 

@@ -1,97 +1,173 @@
 <?php
-  /** 
+  /**
    * The Template for showing the transfer select vehicle step - JS Microtemplates
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-choose-vehicle-tmpl.php
    *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
    * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
    */
 ?>
-    <!-- Script detailed product for choose_product -->   
-    <script type="text/tmpl" id="script_transfer_detailed_product">
-      <% if (available > 0) { %>
-        <h2 class="h5"><%=i18next.t('transfer.chooseVehicle.vehicleFound', {available: available})%></h2>
+
+<!-- RESERVATION SUMMARY ------------------------------------------------------>
+
+<script type="text/tmpl" id="script_transfer_reservation_summary">
+
+  <div class="mybooking-summary_header">
+    <div class="mybooking-summary_details-title">
+      <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?> ⟶
+
+      <!-- // Type of reservation -->
+      <% if (shopping_cart.round_trip) { %>
+        <?php echo esc_html_x( 'Round trip', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>
       <% } else { %>
-        <h2 class="h5"><%=i18next.t('transfer.chooseVehicle.vehicleNotFound')%></h2>  
-      <% } %>    
+        <?php echo esc_html_x( 'One Way', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>
+      <% } %>
+    </div>
 
-      <div class="row">
-        <% for (var idxP=0;idxP<products.length;idxP++) { %>
-          <% if (idxP % 3 == 0 && idxP > 0) { %>
-            </div>
-            <div class="row">
-          <% } %>
-          <% var product = products[idxP]; %>
-          <div class="col-md-4">
-            <div class="product-card card d-flex flex-column mb-2">
-              <div class="card-img">
-                <% if (product.photo_url) { %>
-                  <img class="card-img-top js-product-info-btn" src="<%=product.photo_url%>" alt="<%=product.name%>"
-                      data-product="<%=product.id%>">
-                <% } %>    
-                <!--i type="button" class="fa fa-info-circle js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.id%>"></i-->                    
-              </div>
-              <div class="card-body">
-                <p class="card-text text-center text-muted"><%=product.name%></p>
-                <!-- Price -->
-                <h3 class="text-center mt-5 mb-2">
-                   <%= configuration.formatCurrency(product.price)%>
-                </h3>
-              </div>
-              <div class="card-body mt-3">                
-                <button class="btn btn-primary btn-choose-product w-100" data-product="<%=product.id%>"><?php echo _x( 'Book it!', 'transfer_choose_vehicle', 'mybooking-wp-plugin') ?></button>                
-              </div>
-            </div>
-          </div>
-        <% } %>
+    <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
+      <i class="mb-button icon">
+        <span class="dashicons dashicons-edit"></span>
+      </i>
+      <?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+    </div>
+  </div>
+
+  <div class="mybooking-summary_detail">
+    <span class="mybooking-summary_item">
+      <span class="mybooking-summary_date">
+        <%=shopping_cart.date%> <%=shopping_cart.time%>
+      </span>
+      <span class="mybooking-summary_place">
+        <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+        <%=shopping_cart.origin_point_name%>
+      </span>
+      <span class="mybooking-summary_place">
+        <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+        <%=shopping_cart.destination_point_name%>
+      </span>
+    </span>
+
+    <% if (shopping_cart.round_trip) { %>
+      <span class="mybooking-summary_item">
+        <span class="mybooking-summary_date">
+          <%=shopping_cart.date%> <%=shopping_cart.time%>
+        </span>
+        <span class="mybooking-summary_place">
+          <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+          <%=shopping_cart.origin_point_name%>
+        </span>
+        <span class="mybooking-summary_place">
+          <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+          <%=shopping_cart.destination_point_name%>
+        </span>
+      </span>
+    <% } %>
+
+    <span class="mybooking-summary_item">
+      <?php echo esc_html_x( 'Adults', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.number_of_adults%></br>
+      <?php echo esc_html_x( 'Children', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.number_of_children%></br>
+      <?php echo esc_html_x( 'Infants', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.number_of_infants%>
+    </span>
+  </div>
+</script>
+
+
+<!-- PRODUCT LOOP ------------------------------------------------------------->
+
+<script type="text/tmpl" id="script_transfer_detailed_product">
+
+  <div class="mybooking-product_container mybooking-product_grid">
+
+    <!-- // Product view switch -->
+    <div class="mybooking-product_filter">
+
+      <% if (available > 0) { %>
+        <div class="mybooking-product_results-found">
+          <%=i18next.t('transfer.chooseVehicle.vehicleFound', {available: available})%>
+        </div>
+      <% } else { %>
+        <div class="mybooking-product_results-found">
+          <%=i18next.t('transfer.chooseVehicle.vehicleNotFound')%>
+        </div>
+      <% } %>
+
+      <div class="mybooking-product_filter-btn-group">
+        <span class="mybooking-product_filter-legend">
+          <?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+        </span>
+        <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view">
+          <i class="mb-button icon"><span class="dashicons dashicons-grid-view"></span></i>
+        </span>
+        <span class="mybooking-product_filter-btn list js-mb-list" title="List view">
+          <i class="mb-button icon"><span class="dashicons dashicons-list-view"></span></i>
+        </span>
       </div>
+    </div>
 
-    </script>
+    <!-- // Product list -->
     
-    <!-- Script detailed for reservation summary -->
-    <script type="text/tmpl" id="script_transfer_reservation_summary">
+    <% for ( var idxP=0;idxP<products.length;idxP++ ) { %>
+      <% var product = products[idxP]; %>
+      <div class="mybooking-product_column">
+        <div class="mybooking-product">
 
-      <div class="reservation-summary-card">
-        <div class="card mb-3">
-          <div class="card-header">
-            <b><?php echo esc_html_x( 'Reservation summary', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>
+          <!-- // Product image block -->
+          <div class="mybooking-product_block">
+            <div class="mybooking-product_image-container">
+
+              <!-- // Image -->
+              <% if ( product.photo_url ) { %>
+                <img class="mybooking-product_image" src="<%=product.photo_url%>" alt="<%=product.name%>" data-product="<%=product.id%>">
+              <% } %>
+
+              <!-- // Info icon -->
+              <i class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
+                <span class="dashicons dashicons-info"></span>
+              </i>
+            </div>
           </div>
-          <div class="row" style="padding: 1rem">
-            <div class="col-md-4">
-              <% if (shopping_cart.round_trip) { %>
-                <p class="text-muted"><?php echo esc_html_x( 'Round trip', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></p>
-              <% } else { %>
-                <p class="text-muted"><?php echo esc_html_x( 'One Way', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></p>
-              <% } %>
-              <ul>
-                <li><b><?php echo esc_html_x( 'Date', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>: <%=shopping_cart.date%> <%=shopping_cart.time%></li>
-                <li><b><?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>: <%=shopping_cart.origin_point_name%></li>
-                <li><b><?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>: <%=shopping_cart.destination_point_name%></li>
-              </ul>
-              <% if (shopping_cart.round_trip) { %>
-                <h2 class="h5"><?php echo esc_html_x( 'Return', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></h2>
-                <ul>
-                  <li><b><?php echo esc_html_x( 'Date', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>: <%=shopping_cart.date%> <%=shopping_cart.time%></li>
-                  <li><b><?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>: <%=shopping_cart.date%> <%=shopping_cart.time%>: <%=shopping_cart.origin_point_name%></li>
-                  <li><b><?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>: <%=shopping_cart.destination_point_name%></li>
-                </ul>              
-              <% } %>
+
+          <!-- // Product content block -->
+          <div class="mybooking-product_block">
+
+            <!-- // Header -->
+            <div class="mybooking-product_header">
+              <div class="mybooking-product_price">
+                <div class="mybooking-product_amount">
+                  <%= configuration.formatCurrency( product.price )%>
+                </div>
+              </div>
             </div>
-            <div class="col-md-4">
-              <p class="text-muted"><?php echo esc_html_x( 'Places', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></p>
-              <ul>
-                <li><b><?php echo esc_html_x( 'Adults', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>: <%=shopping_cart.number_of_adults%></li>
-                <li><b><?php echo esc_html_x( 'Children', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>: <%=shopping_cart.number_of_children%></li>
-                <li><b><?php echo esc_html_x( 'Infants', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></b>: <%=shopping_cart.number_of_infants%></li>
-              </ul>              
+
+            <!-- // Product description -->
+            <div class="mybooking-product_body">
+
+              <!-- // Product name and description -->
+              <h2 class="mybooking-product_name">
+                <%=product.name%>
+              </h2>
+              <h3 class="mybooking-product_short-description">
+                <%=product.short_description%>
+              </h3>
+              <div class="mybooking-product_description">
+                <%=product.description%>
+              </div>
             </div>
-            <div class="col-md-4">
-              <button id="mybooking_transfer_modify_reservation_button" class="btn btn-primary w-100 mt-3"><?php echo esc_html_x( 'Modify reservation', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?></button>              
+
+            <!-- // Product footer -->
+            <div class="mybooking-product_footer">
+
+              <!-- // Button -->
+              <button class="mb-button btn-choose-product" data-product="<%=product.id%>">
+                <?php echo _x( 'Book it!', 'transfer_choose_product', 'mybooking-wp-plugin' ) ?>
+              </button>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
+    <% } %>
+  </div>
 
-    </script> 
+</script>

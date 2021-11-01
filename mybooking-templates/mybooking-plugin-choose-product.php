@@ -11,17 +11,17 @@
 
 <section class="mybooking mybooking-process_choose <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
-  <!-- Sidebar reservation detail -->
+  <!-- Reservation detail -->
   <div id="reservation_detail"></div>
 
   <!-- Product listing -->
   <div id="product_listing"></div>
 </section>
 
-<!-- Modal that shows the product detail -->
-<div class="mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modalProductDetail_MBM">
-  <h5 class="mb-modal-title modal-product-detail-title"></h5>
-  <hr>
-  <div class="mb-modal-body modal-product-detail-content">
-  </div>
+
+<!-- DETAILS MODAL ------------------------------------------------------------>
+
+<div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modalProductDetail_MBM">
+  <h3 class="mybooking-modal_title modal-product-detail-title"></h3>
+  <div class="mybooking-modal_body modal-product-detail-content"></div>
 </div>

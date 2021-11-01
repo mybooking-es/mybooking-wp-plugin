@@ -93,7 +93,8 @@
 
           <% if (configuration.activityReservationMultipleItems) { %>
             <div class="mybooking-summary_edit btn-delete-shopping-cart-item" data-item-id="<%=shopping_cart.items[idx].item_id%>" data-date="<%=shopping_cart.items[idx].date%>" data-time="<%=shopping_cart.items[idx].time%>">
-              <i class="fa fa-trash"></i><?php echo esc_html_x( 'Remove', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
+              <span class="dashicons dashicons-trash"></span>
+              <?php echo esc_html_x( 'Remove', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
             </div>
           <% } %>
         </div>

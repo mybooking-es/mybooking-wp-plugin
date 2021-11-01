@@ -1,8 +1,14 @@
-/*
+ /*
 *  MYBOOKING HELPERS
-*  -----------------------------------------------------------------------------
+*  --------------------------------------------------------------------------- *
+*  1- BORDERS
+*  2- MARGINS
+*  3- PADDINGS
 */
-/* BORDERS */
+
+
+/* BORDERS ********************************************************************/
+
 [class*=".mb--b-"] {
   border: none
 }
@@ -23,42 +29,42 @@
   border: 4px solid var(--mb-border-color)
 }
 
-.mb--b-col-1 {
+.mb--col-b-1 {
   border-top: 1px solid var(--mb-border-color);
   border-bottom: 1px solid var(--mb-border-color);
 }
 
-.mb--b-col-2 {
+.mb--col-b-2 {
   border-top: 2px solid var(--mb-border-color);
   border-bottom: 2px solid var(--mb-border-color);
 }
 
-.mb--b-col-3 {
+.mb--col-b-3 {
   border-top: 3px solid var(--mb-border-color);
   border-bottom: 3px solid var(--mb-border-color);
 }
 
-.mb--b-col-4 {
+.mb--col-b-4 {
   border-top: 4px solid var(--mb-border-color);
   border-bottom: 4px solid var(--mb-border-color);
 }
 
-.mb--b-row-1 {
+.mb--row-b-1 {
   border-left: 1px solid var(--mb-border-color);
   border-right: 1px solid var(--mb-border-color);
 }
 
-.mb--b-row-2 {
+.mb--row-b-2 {
   border-left: 2px solid var(--mb-border-color);
   border-right: 2px solid var(--mb-border-color);
 }
 
-.mb--b-row-3 {
+.mb--row-b-3 {
   border-left: 3px solid var(--mb-border-color);
   border-right: 3px solid var(--mb-border-color);
 }
 
-.mb--b-row-4 {
+.mb--row-b-4 {
   border-left: 4px solid var(--mb-border-color);
   border-right: 4px solid var(--mb-border-color);
 }
@@ -147,7 +153,9 @@
   border-right: none
 }
 
-/* MARGINS */
+
+/* MARGINS ********************************************************************/
+
 [class*=".mb--m-"] {
   margin: 0
 }
@@ -168,35 +176,35 @@
   margin: 4rem
 }
 
-.mb--m-col-1 {
+.mb--col-m-1 {
   margin: 1rem 0
 }
 
-.mb--m-col-2 {
+.mb--col-m-2 {
   margin: 2rem 0
 }
 
-.mb--m-col-3 {
+.mb--col-m-3 {
   margin: 3rem 0
 }
 
-.mb--m-col-4 {
+.mb--col-m-4 {
   margin: 4rem 0
 }
 
-.mb--m-row-1 {
+.mb--row-m-1 {
   margin: 0 1rem
 }
 
-.mb--m-row-2 {
+.mb--row-m-2 {
   margin: 0 2rem
 }
 
-.mb--m-row-3 {
+.mb--row-m-3 {
   margin: 0 3rem
 }
 
-.mb--m-row-4 {
+.mb--row-m-4 {
   margin: 0 4rem
 }
 
@@ -284,7 +292,9 @@
   margin-right: 0
 }
 
-/* PADDINGS */
+
+/* PADDINGS *******************************************************************/
+
 [class*=".mb--p-"] {
   padding: 0
 }
@@ -305,35 +315,35 @@
   padding: 4rem
 }
 
-.mb--p-col-1 {
+.mb--col-p-1 {
   padding: 1rem 0
 }
 
-.mb--p-col-2 {
+.mb--col-p-2 {
   padding: 2rem 0
 }
 
-.mb--p-col-3 {
+.mb--col-p-3 {
   padding: 3rem 0
 }
 
-.mb--p-col-4 {
+.mb--col-p-4 {
   padding: 4rem 0
 }
 
-.mb--p-row-1 {
+.mb--row-p-1 {
   padding: 0 1rem
 }
 
-.mb--p-row-2 {
+.mb--row-p-2 {
   padding: 0 2rem
 }
 
-.mb--p-row-3 {
+.mb--row-p-3 {
   padding: 0 3rem
 }
 
-.mb--p-row-4 {
+.mb--row-p-4 {
   padding: 0 4rem
 }
 

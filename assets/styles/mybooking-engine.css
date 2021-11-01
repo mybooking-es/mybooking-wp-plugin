@@ -6,7 +6,10 @@
 
 :root {
 
-  --mb-info-color: #2193F2;
+  /* Color palette */
+  --mb-accent-color: #2193F2;
+
+  --mb-info-color: var(--mb-accent-color);
   --mb-success-color: #3DD992;
   --mb-danger-color: #E6546E;
   --mb-warning-color: #FFB74D;
@@ -19,6 +22,7 @@
   --mb-field-height:  4rem;
   --mb-field-border-color:  #424242;
 
+  /* Selector form */
   --mb-selector-padding: 2rem;
   --mb-selector-background: transparent;
   --mb-selector-border-color: var(--mb-border-color);
@@ -29,10 +33,12 @@
   --mb-selector-promo-bg: white;
   --mb-selector-promo-opacity: 1;
 
-  --mb-product-separation: 0.5rem;
+  /* Product box */
+  --mb-product-separation: 0.7rem;
   --mb-product-background: transparent;
   --mb-product-border-color: var(--mb-border-color);
 
+  /* Product grid */
   --mb-product-image-height: 260px;
   --mb-product-image-height-img: 100%; /* auto - transparent / 100% photo */
   --mb-product-header-height: 75px;
@@ -40,6 +46,7 @@
   --mb-product-footer-height: 76px;
   --mb-product-btn-height: 50px;
 
+  /* Product list */
   --mb-product-list-left-width: 40%;
   --mb-product-list-right-width: 60%;
   --mb-product-list-image-height: 375px;
@@ -47,22 +54,27 @@
   --mb-product-list-body-height: 190px;
   --mb-product-list-footer-height: 76px;
 
-  --mb-product-list-price-size: 1.5em;
-  --mb-product-list-name-size: 1.5em;
-
-  --mb-product-list-keys-width: auto;
-  --mb-product-list-keys-icon-width: 25px;
-  --mb-product-keys-icon-width: 25px;
-  --mb-product-keys-icon-width-page: 40px;
-
+  /* Product custom message */
   --mb-product-custom-message-bg: rgba(255,255,255,0.7);
   --mb-product-custom-message-color: currentcolor;
 
+  /* Product text */
   --mb-product-name-size: 1.2em;
   --mb-product-price-color: var(--mb-info-color);
   --mb-product-price-size: 1.3em;
   --mb-product-quantity-color: #2193F2;
 
+  --mb-product-list-price-size: 1.5em;
+  --mb-product-list-name-size: 1.5em;
+
+  /* Product icons */
+  --mb-product-list-keys-width: auto;
+  --mb-product-list-keys-icon-width: 25px;
+
+  --mb-product-keys-icon-width: 25px;
+  --mb-product-keys-icon-width-page: 40px;
+
+  /* Product detail */
   --mb-product-info-border: var(--mb-border-color);
   --mb-product-info-background: transparent;
 
@@ -70,7 +82,7 @@
   --mb-product-detail-border: var(--mb-border-color);
   --mb-product-detail-color: currentcolor;
 
-  --mb-product-total-border: currentcolor;
+  --mb-product-total-border: var(--mb-border-color);
   --mb-product-total-bg: transparent;
   --mb-product-total-color: currentcolor;
   --mb-product-total-amount-size: 1.6em;
@@ -79,6 +91,12 @@
   --mb-product-activity-route-max-width: none;
   --mb-product-activity-route-margin: none;
 
+  /* Product catalog view */
+  --mb-catalog-price-height: 40px;
+  --mb-catalog-price-bg: #0066BF;
+  --mb-catalog-price-color: var(--mb-negative-text-color);
+
+  /* Single product calendar */
   --mb-calendar-step-bg: var(--mb-dark-background-color);
   --mb-calendar-step-color: var(--mb-negative-text-color);
   --mb-calendar-step-radius: 50%;
@@ -87,15 +105,14 @@
   --mb-calendar-booked: var(--mb-danger-color);
   --mb-calendar-disabled: var(--mb-background-color);
 
+  /* Complete payment buttons */
   --mb-payment-option-btn-bg: var(--mb-dark-background-color);
   --mb-payment-option-btn-color: var(--mb-negative-text-color);
 
+  /* Resume locator code */
   --mb-summary-locator-color: var(--mb-info-color);
 
-  --mb-catalog-price-height: 40px;
-  --mb-catalog-price-bg: #0066BF;
-  --mb-catalog-price-color: var(--mb-negative-text-color);
-
+  /* Popup modules */
   --mb-popup-background: #FFF;
   --mb-popup-width-desk: 50vw;
   --mb-popup-height-desk: auto;
@@ -104,6 +121,7 @@
   --mb-popup-close-btn-color: currentcolor;
   --mb-popup-close-btn-size: 2em;
 
+  /* Cookies warning panel */
   --mb-cookies-background: #FFF;
   --mb-cookies-color: currentcolor;
 
@@ -307,7 +325,7 @@
 /* Badges */
 .mb-badge {
   padding: 2px 8px;
-  border-radius: 25px;
+  border-radius: 0;
   background-color: var(--mb-dark-background-color);
   color: var(--mb-negative-text-color);
   font-size: .7em;
