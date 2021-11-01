@@ -214,31 +214,28 @@
 
               <!-- // Supplements
               <% if ( + product.category_supplement_1_cost > 0 ) { %>
-              <div class="mybooking-product_price_supplement p-b-1">
-                <div class="mybooking-product_price_supplement_price">
-                  <small>
-                    <b><%=configuration.formatCurrency(product.price)%></b>&nbsp;
-                    <?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() )?>
-                  </small>
+                <div class="mybooking-product_price_supplement p-b-1">
+                  <div class="mybooking-product_price_supplement_price">
+                    <small><b><%=configuration.formatCurrency(product.price)%></b>&nbsp;<?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() )?></small>
+                  </div>
+                  <div class="mybooking-product_price_supplement_supplement_1">
+                    <small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking' ) ?></small>
+                  </div>
                 </div>
-                <div class="mybooking-product_price_supplement_supplement_1">
-                  <small>
-                    <b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;
-                    <?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking' ) ?>
-                  </small>
-                </div>
-              </div>
               <% } %>
             </div>
 
             <!-- // Key characteristics -->
-            <% if (product.key_characteristics) { %>
+            <% if ( product.key_characteristics ) { %>
               <div class="mybooking-product_characteristics">
+
                 <% for (characteristic in product.key_characteristics) { %>
                   <div class="mybooking-product_characteristics-item">
                     <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>' + characteristic +'.svg'; %>
                     <img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
-                    <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
+                    <span class="mybooking-product_characteristics-key">
+                      <%=product.key_characteristics[characteristic]%>
+                    </span>
                   </div>
                 <% } %>
               </div>
@@ -268,6 +265,7 @@
                     <option value="0">
                       <%=i18next.t( 'chooseProduct.selectUnits' )%>
                     </option>
+
                     <% for ( var idx2=1;idx2<=( product.available );idx2++ ) { %>
                       <option value="<%=idx2%>"
                         <% if ( shoppingCartProductQuantities[product.code] && idx2 == shoppingCartProductQuantities[product.code] ) { %> selected="selected" <% } %>

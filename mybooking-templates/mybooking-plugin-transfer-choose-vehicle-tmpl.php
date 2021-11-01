@@ -78,7 +78,7 @@
 
 <script type="text/tmpl" id="script_transfer_detailed_product">
 
-  <div class="mybooking-product_container mybooking-product_list">
+  <div class="mybooking-product_container mybooking-product_grid">
 
     <!-- // Product view switch -->
     <div class="mybooking-product_filter">
@@ -107,10 +107,8 @@
     </div>
 
     <!-- // Product list -->
+    
     <% for ( var idxP=0;idxP<products.length;idxP++ ) { %>
-      <% if (idxP % 3 == 0 && idxP > 0) { %>
-
-      <% } %>
       <% var product = products[idxP]; %>
       <div class="mybooking-product_column">
         <div class="mybooking-product">
@@ -134,6 +132,7 @@
           <!-- // Product content block -->
           <div class="mybooking-product_block">
 
+            <!-- // Header -->
             <div class="mybooking-product_header">
               <div class="mybooking-product_price">
                 <div class="mybooking-product_amount">
