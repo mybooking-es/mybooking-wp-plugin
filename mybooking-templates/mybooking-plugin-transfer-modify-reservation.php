@@ -1,5 +1,5 @@
 <?php
-  /** 
+  /**
    * The Template for showing the transfer modify reservation form
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-modify-reservation.php
@@ -7,7 +7,7 @@
    */
 ?>
 <!-- Modify reservation modal -->
-<div class="modal modal-mybooking" 
+<div class="modal modal-mybooking"
      id="mybooking_transfer_modify_reservation_modal" tabindex="-1" role="dialog" aria-labelledby="modifyTransferReservationModal"
   aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">

@@ -11,9 +11,9 @@
 
 <!-- MODIFY MODAL ------------------------------------------------------------->
 
-<div class="mybooking mybooking-selector mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modify_reservation_modal_MBM">
-  <h3 class="mybooking_modal_title"><?php echo esc_html_x( 'Modify reservation', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></h3>
-  <div class="mybooking_modal_body">
+<div class="mybooking mybooking-selector mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modify_reservation_modal_MBM">
+  <h3 class="mybooking-modal_title"><?php echo esc_html_x( 'Modify reservation', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></h3>
+  <div class="mybooking-modal_body">
     <form
       name="search_form"
       method="get"
