@@ -4,7 +4,7 @@
  *   ---------------------------------------------------------------------------
  *   The Template for showing the renting complete step
  *   This template can be overridden by copying it to your
- *   theme/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php
+ *   theme /mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php
  *
  */
 ?>

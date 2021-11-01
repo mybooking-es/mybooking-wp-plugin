@@ -24,7 +24,7 @@
   text-transform: uppercase;
 }
 
-.mybooking-summary_edit i {
+.mybooking-summary_edit .dashicons {
   margin-right: 0.5rem;
 }
 
@@ -32,8 +32,11 @@
   display: flex;
   font-size: .9em;
   font-weight: 700;
-  line-height: 2.5;
   cursor: pointer;
+}
+
+.mybooking-summary_edit .dashicons-trash {
+  color: var(--mb-danger-color);
 }
 
 .mybooking-summary_edit:hover {
@@ -559,9 +562,9 @@
   margin-right: 1rem;
 }
 
-.mybooking-summary_activity-amount {
+/* .mybooking-summary_activity-amount {
   font-weight: 700;
-}
+} */
 
 .mybooking-summary_activities-total {
   margin: 1rem 0;
