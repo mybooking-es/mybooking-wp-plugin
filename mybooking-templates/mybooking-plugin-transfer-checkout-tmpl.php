@@ -75,7 +75,6 @@
           </span>
         </span>
 
-        <hr>
         <% if (shopping_cart.round_trip) { %>
           <!-- // Date -->
           <span class="mybooking-summary_item">
@@ -101,7 +100,7 @@
         <% } %>
 
         <!-- // Seats -->
-        <hr>
+        
         <span class="mybooking-summary_seats">
           <span class="mybooking-summary_seat-item">
             <?php echo esc_html_x( 'Adults: ', 'transfer_checkout', 'mybooking-wp-plugin') ?>
@@ -171,7 +170,7 @@
 
   <% if (extras && extras.length > 0) {%>
     <div class="mb-section">
-      <h2 class="mb-section_title">
+      <h2 class="mb-section_title complete-section-title">
         <?php echo esc_html_x( 'Extras', 'transfer_checkout', 'mybooking-wp-plugin') ?>
       </h2>
       <div class="mybooking-extra_container">
@@ -290,7 +289,6 @@
       <input type="text" class="mb-form-control" name="customer_mobile_phone" id="customer_mobile_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
     </div>
   </div>
-  <hr>
 
   <% if (configuration.transfer_origin_destination_detailed_info_mode === 'only_address') { %>
 
@@ -371,9 +369,9 @@
 
       <!-- // Trip -->
 
-      <h3 class="mb-section_title complete-section-title">
+      <h2 class="mb-section_title complete-section-title">
         <?php echo esc_html_x( "Trip details", 'transfer_checkout', 'mybooking-wp-plugin') ?>
-      </h3>
+      </h2>
 
       <!-- // Going Origin -->
       <legend class="mb-form_legend">
@@ -499,13 +497,12 @@
         <% } %>
       <% } %>
   <% } %>
-  <hr>
 
   <!-- // Additional info -->
 
-  <h3 class="mb-section_title complete-section-title">
+  <h2 class="mb-section_title complete-section-title">
     <?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?>
-  </h3>
+  </h2>
 
   <div class="mb-form-group">
     <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>

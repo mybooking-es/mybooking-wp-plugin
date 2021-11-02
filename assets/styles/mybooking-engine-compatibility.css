@@ -27,6 +27,12 @@ form.mybooking-form input[type=color] {
   border: 1px solid var(--mb-form-field-border-color)!important;
   border-radius: var(--mb-border-radius);
   background-color: var(--mb-form-field-background);
+  font-size:  1em;
+  min-height: 2.5em;
+}
+
+form.mybooking-form label {
+  font-size:  1em;
 }
 
 form.mybooking-form textarea {
@@ -35,6 +41,7 @@ form.mybooking-form textarea {
   width:  100%;
   height: 10rem;
   padding-top: 0.5rem!important;
+  font-size:  1em;
 }
 
 form.mybooking-form select {
