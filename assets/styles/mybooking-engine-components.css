@@ -327,10 +327,12 @@
 
 .mybooking-extra_control .mb-input {
   display: inline-block;
-  max-width: 40px;
+  max-width: 3em;
   text-align: center;
   padding: 3px;
   margin: 0;
+  min-width: 1.5em;
+  font-size: 1em;  
 }
 
 

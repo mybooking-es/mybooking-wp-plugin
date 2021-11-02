@@ -475,6 +475,16 @@
   overflow-y: auto;
 }
 
+.mybooking-process_complete .complete-section-title {
+  margin-bottom: 0.5rem;
+}
+
+.mybooking-process_complete .complete-section-subtitle {
+  font-size:  1.1em;
+  margin-bottom: 0.5rem;
+}
+
+
 /* Summary page */
 .mybooking-process_summary .mybooking-product_header {
   background-color: #EEE;
