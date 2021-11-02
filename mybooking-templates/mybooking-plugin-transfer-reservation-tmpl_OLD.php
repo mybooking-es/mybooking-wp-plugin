@@ -1,12 +1,12 @@
 <?php
-  /**
+  /** 
    * The Template for showing the transfer summary step - JS Microtemplates
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php
    *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound 
    * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
    */
 ?>
 <!-- Reservation summary -->
@@ -53,7 +53,7 @@
         <li class="list-group-item reservation-summary-card-detail">
           <i class="fa fa-user"></i>&nbsp;<%=booking.number_of_adults%>
           <i class="fa fa-child"></i>&nbsp;<%=booking.number_of_children%>
-        </li>
+        </li>        
         <% if (booking.engine_modify_dates) { %>
           <li class="list-group-item">
             <button id="modify_reservation_button" class="btn btn-primary w-100"><?php echo esc_html_x( 'Edit', 'transfer_my_reservation', 'mybooking-wp-plugin' ) ?></button>
@@ -74,7 +74,7 @@
            <br>
            <!-- Description -->
            <span class="h6"><b><%=booking.item_name_customer_translation%></b></span>
-           <!-- Price -->
+           <!-- Price -->             
            <span class="product-amount pull-right">
              <%=configuration.formatCurrency(booking.item_cost)%>
            </span>
@@ -126,7 +126,7 @@
     <% if (sales_process.payment_methods.paypal_standard && sales_process.payment_methods.tpv_virtual) { %>
     <div class="alert alert-secondary" role="alert">
       <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.',                           'transfer_my_reservation', 'mybooking-wp-plugin' ) )?>
-    </div>
+    </div>        
     <div class="form-row">
        <div class="form-group col-md-12">
          <label for="payments_paypal_standard">
@@ -145,12 +145,12 @@
     <% } else if (sales_process.payment_methods.paypal_standard) {%>
       <div class="alert alert-secondary" role="alert">
         <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'transfer_my_reservation', 'mybooking-wp-plugin' ) )?>
-      </div>
+      </div>     
       <div class="form-row">
         <div class="form-group col-md-12">
           <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
           <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>              
         </div>
       </div>
       <input type="hidden" name="payment_method_id" value="paypal_standard" data-payment-method="paypal_standard">

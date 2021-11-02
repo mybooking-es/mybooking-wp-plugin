@@ -78,7 +78,6 @@
   <div class="mb-col-md-8 mb-col-center">
 
     <!-- // Reservation status message -->
-
     <div class="mybooking-summary_status">
       <%= booking.summary_status %>
     </div>
@@ -88,10 +87,10 @@
       <div class="mb-section">
         <div class="mb-card">
           <div class="mb-col-md-6">
-            <!-- Product photo -->
+
+            <!-- // Product photo -->
             <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
           </div>
-
           <div class="mb-col-md-6">
 
             <!-- // Product name -->

@@ -116,11 +116,26 @@
 
 .mybooking-summary_date {
   font-weight: bold;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
 .mybooking-summary_duration {
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.mybooking-summary_seats {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: 1px solid var(--mb-border-color);
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.mybooking-summary_seat-item {
+  font-weight: 800;
 }
 
 /* Summary extras */

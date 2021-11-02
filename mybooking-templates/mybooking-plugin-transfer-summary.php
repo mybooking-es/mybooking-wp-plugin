@@ -1,14 +1,17 @@
 <?php
-  /** 
-   * The Template for showing the transfer summary step
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-transfer-summary.php
-   */
+/**
+ *   MYBOOKING ENGINE - TRANSFER RESERVATION SUMMARY
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting summary step
+ *   This template can be overridden by copying it to your theme
+ *   /mybooking-templates/mybooking-plugin-transfer-summary.php
+ */
 ?>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <div id="mybooking_transfer_reservation_detail"></div>
-    </div>
+
+<section class="mybooking mybooking-process_summary <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+  <div class="mb-row">
+
+    <!-- Reservation summary -->
+    <div id="mybooking_transfer_reservation_detail"></div>
   </div>
-</div>
+</section>

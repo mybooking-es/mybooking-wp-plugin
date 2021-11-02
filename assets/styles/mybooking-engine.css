@@ -15,21 +15,24 @@
   --mb-warning-color: #FFB74D;
 
   --mb-border-color: #BBB;
+  --mb-border-radius: 0;
   --mb-background-color: #EEE;
   --mb-dark-background-color: #424242;
   --mb-negative-text-color: #FFF;
 
-  --mb-field-height:  4rem;
-  --mb-field-border-color:  #424242;
+  /* Forms */
+  --mb-form-field-height:  3rem;
+  --mb-form-field-border-color:  var(--mb-border-color);
+  --mb-form-field-background: white;
 
   /* Selector form */
+  --mb-selector-label-color: currentcolor;
   --mb-selector-padding: 2rem;
   --mb-selector-background: transparent;
-  --mb-selector-border-color: var(--mb-border-color);
-  --mb-selector-label-color: currentcolor;
-  --mb-selector-field-height: 40px; 
+  --mb-selector-border-color: var(--mb-form-field-border-color);
+  --mb-selector-field-height: var(--mb-form-field-height);
 
-  --mb-selector-promo-border: var(--mb-border-color);
+  --mb-selector-promo-border: var(--mb-form-field-border-color);
   --mb-selector-promo-bg: white;
   --mb-selector-promo-opacity: 1;
 
@@ -206,7 +209,7 @@
   }
 }
 
-/* Helpers */
+/* Grid Helpers */
 
 .mb-col-right {
   float: right;
@@ -228,6 +231,15 @@
   text-align: center;
 } @media ( min-width: 575.98px ) {
   .mb-section_title {
+    text-align: left;
+  }
+}
+
+.mb-section_subtitle {
+  text-align: center;
+  font-weight: 800;
+} @media ( min-width: 575.98px ) {
+  .mb-section_subtitle {
     text-align: left;
   }
 }

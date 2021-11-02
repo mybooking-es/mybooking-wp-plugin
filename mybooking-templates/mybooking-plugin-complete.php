@@ -34,7 +34,7 @@
       <div class="mb-section">
         <div class="reservation_form_container">
           <h2 class="complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>
-          <form id="form-reservation" name="reservation_form" class="mybooking-data-form" autocomplete="off">
+          <form id="form-reservation" name="reservation_form" class="mybooking-form" autocomplete="off">
             <div class="mb-form-group mb-form-row customer_component">
               <div class="mb-col-md-6 mb-col-sm-12">
                 <label for="customer_name"><?php echo esc_html_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>

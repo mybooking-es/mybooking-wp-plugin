@@ -7,11 +7,11 @@
   display: none;
   vertical-align: middle;
   position: relative;
-  max-width: 320px;
-  max-height: 90vh;
+  width: 90vw;
   box-sizing: border-box;
   background: #fff;
   padding: 1rem 2rem;
+  margin-top: 4rem;
   -webkit-box-shadow: 0 0 20px var(--mb-dark-background-color);
   -moz-box-shadow: 0 0 20px var(--mb-dark-background-color);
   -o-box-shadow: 0 0 20px var(--mb-dark-background-color);
@@ -22,6 +22,7 @@
   .mybooking-modal {
     max-width: 1200px;
     min-width: 800px;
+    margin: 0;
   }
 }
 

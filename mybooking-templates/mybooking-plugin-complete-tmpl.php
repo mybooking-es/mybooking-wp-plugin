@@ -154,7 +154,7 @@
       <div class="mybooking-summary_details-title">
         <?php echo esc_html_x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?>
       </div>
-      <form class="form-inline" name="complete_promotion_code">
+      <form class="form-inline mybooking-form" name="complete_promotion_code">
         <div class="mb-form-group">
         <input type="text" class="form-control" size="20" maxlength="30" id="promotion_code" placeholder="<?php echo esc_attr_x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?>" <%if (shopping_cart.promotion_code){%>value="<%=shopping_cart.promotion_code%>" disabled<%}%>>
         <button class="mb-button block" id="apply_promotion_code_btn" <%if (shopping_cart.promotion_code){%>disabled<%}%>>

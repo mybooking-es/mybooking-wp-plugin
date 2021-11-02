@@ -32,7 +32,7 @@
       <div class="mb-section">
         <div class="reservation_form_container">
           <h3 class="complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h3>
-          <form id="mybooking_transfer_form-reservation" name="mybooking_transfer_reservation_form" autocomplete="off">
+          <form class="mybooking-form" id="mybooking_transfer_form-reservation" name="mybooking_transfer_reservation_form" autocomplete="off">
 
           </form>
         </div>

@@ -395,7 +395,7 @@
 <script type="text/tmpl" id="script_reservation_form">
 
   <% if (configuration.rentingFormFillDataAddress || configuration.rentingFormFillDataDriverDetail || configuration.rentingFormFillDataNamedResources) { %>
-    <form id="form-reservation" name="booking_information_form" class="mybooking-data-form" autocomplete="off">
+    <form id="form-reservation" name="booking_information_form" class="mybooking-form" autocomplete="off">
     <div class="mb-card">
       <div class="mb-card-header">
          <h2><?php echo esc_html_x( 'Complete reservation', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h2>

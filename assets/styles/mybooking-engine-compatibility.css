@@ -5,34 +5,39 @@
 
 /** Complete and my reservation forms **/
 
-form.mybooking-data-form select,
-form.mybooking-data-form input[type=text], 
-form.mybooking-data-form input[type=email], 
-form.mybooking-data-form input[type=url], 
-form.mybooking-data-form input[type=password], 
-form.mybooking-data-form input[type=search], 
-form.mybooking-data-form input[type=number], 
-form.mybooking-data-form input[type=tel], 
-form.mybooking-data-form input[type=date], 
-form.mybooking-data-form input[type=month], 
-form.mybooking-data-form input[type=week], 
-form.mybooking-data-form input[type=time], 
-form.mybooking-data-form input[type=datetime], 
-form.mybooking-data-form input[type=datetime-local], 
-form.mybooking-data-form input[type=color] {
-  height:  var(--mb-field-height);
+form.mybooking-form select,
+form.mybooking-form textarea,
+form.mybooking-form input[type=text],
+form.mybooking-form input[type=email],
+form.mybooking-form input[type=url],
+form.mybooking-form input[type=password],
+form.mybooking-form input[type=search],
+form.mybooking-form input[type=number],
+form.mybooking-form input[type=tel],
+form.mybooking-form input[type=date],
+form.mybooking-form input[type=month],
+form.mybooking-form input[type=week],
+form.mybooking-form input[type=time],
+form.mybooking-form input[type=datetime],
+form.mybooking-form input[type=datetime-local],
+form.mybooking-form input[type=color] {
+  height:  var(--mb-form-field-height);
   width:  100%;
   min-width:  100%;
-  border-color: var(--mb-field-border-color);
+  border: 1px solid var(--mb-form-field-border-color)!important;
+  border-radius: var(--mb-border-radius);
+  background-color: var(--mb-form-field-background);
 }
 
-form.mybooking-data-form textarea {
-  border-color: var(--mb-field-border-color); 
+form.mybooking-form textarea {
+  border-color: var(--mb-form-field-border-color);
   min-width: 100%;
   width:  100%;
+  height: 10rem;
+  padding-top: 0.5rem!important;
 }
 
-form.mybooking-data-form select {
+form.mybooking-form select {
   font-size: small;
   text-align: center;
 }
@@ -45,6 +50,7 @@ form.mybooking-data-form select {
  * - Twenty Twenty One
  *
  */
+
 @media only screen and (min-width: 768px) {
   body.mybooking-activity .mybooking-activity_container.alignwide,
   body.mybooking-product .mybooking-product_container.alignwide {
@@ -71,6 +77,7 @@ form.mybooking-data-form select {
  * Twenty Twenty
  * Twenty Twenty One
  */
+
 @media only screen and (min-width: 482px) {
 
   body.mybooking-activity .mybooking-activity_container.alignwide {
@@ -99,6 +106,7 @@ form.mybooking-data-form select {
     max-width: var(--responsive--alignwide-width, 610px);
   }
 }
+
 @media only screen and (min-width: 822px) {
 
   body.mybooking-activity .mybooking-activity_container.alignwide {
