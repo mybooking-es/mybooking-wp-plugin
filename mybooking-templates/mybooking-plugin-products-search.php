@@ -13,7 +13,7 @@
           <?php } ?>>
       <div class="row">
         <div class="col-md-12">
-          <div class="form-row search_fields_container">
+          <div class="mb-form-row search_fields_container">
             <div class="form-group col-md-1">
               <button type="submit" class="btn btn-primary mb-2 w-100"><i class="fa fa-search"></i>&nbsp;</button>
             </div>

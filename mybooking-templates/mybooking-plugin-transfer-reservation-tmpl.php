@@ -127,7 +127,7 @@
     <div class="alert alert-secondary" role="alert">
       <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.',                           'transfer_my_reservation', 'mybooking-wp-plugin' ) )?>
     </div>
-    <div class="form-row">
+    <div class="mb-form-row">
        <div class="form-group col-md-12">
          <label for="payments_paypal_standard">
           <input type="radio" name="payment_method_id" value="paypal_standard">&nbsp<?php echo esc_html_x( 'Paypal', 'transfer_my_reservation', 'mybooking-wp-plugin' ) ?>
@@ -146,7 +146,7 @@
       <div class="alert alert-secondary" role="alert">
         <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'transfer_my_reservation', 'mybooking-wp-plugin' ) )?>
       </div>
-      <div class="form-row">
+      <div class="mb-form-row">
         <div class="form-group col-md-12">
           <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
           <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
@@ -159,7 +159,7 @@
         <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.',
                                      'transfer_my_reservation', 'mybooking-wp-plugin' ) )?>
       </div>
-      <div class="form-row">
+      <div class="mb-form-row">
         <div class="form-group col-md-12">
           <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
           <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
@@ -175,7 +175,7 @@
     <% } else { %>
       <input type="hidden" name="payment" value="pending"/>
     <% } %>
-    <div class="form-row">
+    <div class="mb-form-row">
       <div class="form-group col-md-12">
         <button class="btn btn-success" id="btn_pay" type="submit"><%= i18next.t('myReservation.pay.payment_button', {amount:configuration.formatCurrency(amount) }) %></button>
       </div>

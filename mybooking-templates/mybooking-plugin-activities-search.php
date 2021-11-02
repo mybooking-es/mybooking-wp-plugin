@@ -13,7 +13,7 @@
           <?php } ?>>
       <div class="row">
         <div class="col-md-12">
-          <div class="form-row search_fields_container">
+          <div class="mb-form-row search_fields_container">
             <div class="form-group col-md-5">
               <input type="text" size="50" class="form-control"  
                      <?php if ( array_key_exists('q', $args) && $args['q'] != '') { ?>value="<?php echo esc_attr( $args['q'] )?>"<?php } ?>
