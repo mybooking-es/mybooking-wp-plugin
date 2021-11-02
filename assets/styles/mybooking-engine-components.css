@@ -325,7 +325,7 @@
   gap: 0;
 }
 
-.mybooking-extra_control .mb-label,
+.mybooking-extra_control .mb-custom-label,
 .mybooking-extra_price input[type="checkbox"] + label {
   margin: 0!important;
   padding: 0!important;
@@ -347,7 +347,7 @@
   padding: 3px;
   margin: 0;
   min-width: 1.5em;
-  font-size: 1em;  
+  font-size: 1em;
 }
 
 
@@ -415,6 +415,11 @@
   height: 1px!important;
   overflow: hidden!important;
   white-space: nowrap!important;
+}
+
+.mybooking-payment_button-pay {
+  background-color: var(--mb-payment-option-btn-bg);
+  color: var(--mb-payment-option-btn-color)!important;
 }
 
 /* Payment confirmation */
@@ -569,10 +574,6 @@
 .mybooking-summary_activity-quantity {
   margin-right: 1rem;
 }
-
-/* .mybooking-summary_activity-amount {
-  font-weight: 700;
-} */
 
 .mybooking-summary_activities-total {
   margin: 1rem 0;
@@ -731,14 +732,19 @@
   box-shadow: 0 0 20px #666;
 }
 
-.mybooking-cookies_button {
+.mybooking-cookies_button,
+button.mybooking-cookies_button {
   word-break: normal;
+  padding: 0.5rem 1rem;
+  color: var(--mb-cookies-btn-color);
+  background-color: var(--mb-cookies-btn-background);
 }
 
 .mybooking-cookies_text {
   margin: 0;
   font-size: 16px;
   line-height: 1.2;
+  text-align: left;
   color: var(--mb-cookies-color);
 }
 

@@ -18,8 +18,9 @@ $mybooking_engine_privacy_page = get_privacy_policy_url();
   <div id="cookie-notice" class="mybooking-cookies_container">
     <p class="mybooking-cookies_text">
       <?php echo esc_html_x( 'This website uses cookies to ensure you get the best experience', 'cookie_notice', 'mybooking-wp-plugin' ); ?>
+
       <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
-    	  <a href="<?php echo esc_url( $mybooking_engine_privacy_page ) ?>" class="mybooking-cookies_button mb-button">
+    	  <a href="<?php echo esc_url( $mybooking_engine_privacy_page ) ?>" class="mybooking-cookies_link">
     	    <?php echo esc_html_x( 'More', 'cookie_notice', 'mybooking-wp-plugin' ); ?>
     	  </a>
       <?php } ?>

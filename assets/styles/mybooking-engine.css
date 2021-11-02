@@ -127,6 +127,8 @@
   /* Cookies warning panel */
   --mb-cookies-background: #FFF;
   --mb-cookies-color: currentcolor;
+  --mb-cookies-btn-background: var(--mb-dark-background-color);
+  --mb-cookies-btn-color: var(--mb-negative-text-color);
 }
 
 
@@ -234,17 +236,18 @@
   }
 }
 
-.mb-section_subtitle {
-  font-weight: 800;
-} 
-
 
 /** FORMS **/
 
+.mb-form_legend {
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
 .mb-form-group label,
-.mb-label {
+.mb-custom-label {
   display:  block;
-  margin-right: 1rem;
+  margin: 0 1rem 0.5rem 0!important;
 }
 
 .mb-form-group input,
@@ -311,7 +314,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  text-align: left;
   line-height: 1.1;
 }
 
@@ -410,6 +412,8 @@
 }
 
 .mb-card-footer {
+  display: flex;
+  justify-content: flex-end;
   margin: 1rem 0 0 0;
   padding: 1rem;
   border-top: 1px solid var(--mb-border-color);
@@ -481,11 +485,6 @@
 }
 
 .mybooking-process_complete .complete-section-title {
-  margin-bottom: 0.5rem;
-}
-
-.mybooking-process_complete .complete-section-subtitle {
-  font-size:  1.1em;
   margin-bottom: 0.5rem;
 }
 

@@ -39,7 +39,7 @@
   <div class="mybooking-summary_detail">
     <span class="mybooking-summary_item">
       <span class="mybooking-summary_date">
-        <%=shopping_cart.date%> <%=shopping_cart.time%>
+        <%=configuration.formatDate(shopping_cart.date)%> <%=shopping_cart.time%>
       </span>
       <span class="mybooking-summary_place">
         <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
@@ -54,15 +54,15 @@
     <% if (shopping_cart.round_trip) { %>
       <span class="mybooking-summary_item">
         <span class="mybooking-summary_date">
-          <%=shopping_cart.date%> <%=shopping_cart.time%>
+          <%=configuration.formatDate(shopping_cart.return_date)%> <%=shopping_cart.return_time%>
         </span>
         <span class="mybooking-summary_place">
           <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
-          <%=shopping_cart.origin_point_name%>
+          <%=shopping_cart.return_origin_point_name%>
         </span>
         <span class="mybooking-summary_place">
           <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
-          <%=shopping_cart.destination_point_name%>
+          <%=shopping_cart.return_destination_point_name%>
         </span>
       </span>
     <% } %>

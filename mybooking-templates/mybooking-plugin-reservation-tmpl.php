@@ -83,7 +83,7 @@
             <div id="reservation_form_container" style="display:none"></div>
           </div>
 
-        </div>  
+        </div>
 
         <div class="mb-col-md-4">
 
@@ -601,8 +601,8 @@
               </div>
               <input type="hidden" name="additional_driver_1_driving_license_date" id="additional_driver_1_driving_license_date"></input>
             </div>
-          </div>  
-          <div class="mb-form-row">            
+          </div>
+          <div class="mb-form-row">
             <div class="mb-form-group mb-col-md-12">
               <label
                 for="driver_driving_license_country"><?php echo esc_html_x('Driving license expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -656,8 +656,8 @@
               </div>
               <input type="hidden" name="additional_driver_2_driving_license_date" id="additional_driver_2_driving_license_date"></input>
             </div>
-          </div>  
-          <div class="mb-form-row">  
+          </div>
+          <div class="mb-form-row">
             <div class="mb-form-group mb-col-md-12">
               <label
                 for="driver_driving_license_country"><?php echo esc_html_x('Driving license expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -854,77 +854,78 @@
                   </div>
                 <% } %>
              <% } %>
-             <hr>
           <% } %>
         <% } %>
       </div>
+
       <% if (booking.can_edit_online) { %>
-        <div class="card-footer">
-          <button class="btn btn-primary pull-right" id="btn_update_reservation">
-             <?php echo esc_html_x( 'Update', 'renting_my_reservation', 'mybooking-wp-plugin') ?></button>
+        <div class="mb-card-footer">
+          <button class="mb-button" id="btn_update_reservation">
+             <?php echo esc_html_x( 'Update', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+          </button>
         </div>
       <% } %>
     </div>
-
     </form>
   <% } %>
 </script>
 
-<!-- Payment detail -->
+
+<!-- PAYMENT BLOCK ------------------------------------------------------------>
+
 <script type="text/tmpl" id="script_payment_detail">
-  <hr>
-  <h4 class="brand-primary my-3"><%= i18next.t('myReservation.pay.total_payment', {amount:configuration.formatCurrency(amount) }) %></h4>
+
+  <div class="mybooking-payment_amount">
+    <%= i18next.t('myReservation.pay.total_payment', {amount:configuration.formatCurrency(amount) }) %>
+  </div>
+
   <% if (booking.total_paid == 0) {%>
-    <div id="payment_amount_container" class="alert alert-info">
+    <div id="payment_amount_container" class="mb-alert info highlight">
       <%= i18next.t('complete.reservationForm.booking_amount', {amount:configuration.formatCurrency(amount) }) %>
     </div>
   <% } %>
+
   <form name="payment_form">
     <% if (sales_process.payment_methods.paypal_standard && sales_process.payment_methods.tpv_virtual) { %>
-    <div class="alert alert-secondary" role="alert">
-      <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.',                           'renting_my_reservation', 'mybooking-wp-plugin' ) )?>
-    </div>
-    <div class="mb-form-row">
-       <div class="mb-form-group mb-col-md-12">
-         <label for="payments_paypal_standard">
-          <input type="radio" name="payment_method_id" value="paypal_standard">&nbsp<?php echo esc_html_x( 'Paypal', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
-          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-         </label>
-       </div>
-       <div class="mb-form-group mb-col-md-12">
-         <label for="payments_paypal_standard">
-          <input type="radio" name="payment_method_id" value="<%=sales_process.payment_methods.tpv_virtual%>">&nbsp;<?php echo esc_html_x( 'Credit or debit card', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
-          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-         </label>
-       </div>
-    </div>
-    <% } else if (sales_process.payment_methods.paypal_standard) {%>
-      <div class="alert alert-secondary" role="alert">
-        <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_my_reservation', 'mybooking-wp-plugin' ) )?>
+      <div class="mb-alert secondary" role="alert">
+        <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
       </div>
-      <div class="mb-form-row">
-        <div class="mb-form-group mb-col-md-12">
-          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-        </div>
+      <div class="mybooking-payment_confirmation-box">
+       <label class="mybooking-payment_custom-label" for="payments_paypal_standard">
+        <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+        <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard"><?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+       </label>
+
+       <label class="mybooking-payment_custom-label" for="payments_credit_card">
+        <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+        <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+        <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>"><?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+       </label>
       </div>
-      <input type="hidden" name="payment_method_id" value="paypal_standard" data-payment-method="paypal_standard">
-    <% } else if (sales_process.payment_methods.tpv_virtual) {%>
-      <div class="alert alert-secondary" role="alert">
-        <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.',
-                                     'renting_my_reservation', 'mybooking-wp-plugin' ) )?>
+      <div id="payment_method_select_error"></div>
+
+    <% } else if (sales_process.payment_methods.paypal_standard) { %>
+      <div class="mb-alert secondary" role="alert">
+        <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
       </div>
-      <div class="mb-form-row">
-        <div class="mb-form-group mb-col-md-12">
-          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-          <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-        </div>
+      <div class="mybooking-payment_confirmation-box">
+        <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+        <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+        <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+      </div>
+
+    <% } else if (sales_process.payment_methods.tpv_virtual) { %>
+      <div class="mb-alert secondary" role="alert">
+        <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.', 'renting_complete', 'mybooking-wp-plugin' )  )?>
+      </div>
+      <div class="mybooking-payment_confirmation-box">
+        <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+        <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
       </div>
 
       <input type="hidden" name="payment_method_id" value="<%=sales_process.payment_methods.tpv_virtual%>"/>
     <% } %>
+
     <% if (sales_process.can_pay_deposit) { %>
       <input type="hidden" name="payment" value="deposit"/>
     <% } else if (booking.total_paid == 0) {%>
@@ -932,9 +933,12 @@
     <% } else { %>
       <input type="hidden" name="payment" value="pending"/>
     <% } %>
+
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
-        <button class="btn btn-success" id="btn_pay" type="submit"><%= i18next.t('myReservation.pay.payment_button', {amount:configuration.formatCurrency(amount) }) %></button>
+        <button class="mb-button block" id="btn_pay" type="submit">
+          <%= i18next.t('myReservation.pay.payment_button', {amount:configuration.formatCurrency(amount) }) %>
+        </button>
       </div>
     </div>
   </div>

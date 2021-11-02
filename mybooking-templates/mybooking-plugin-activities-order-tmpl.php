@@ -1,12 +1,12 @@
 <?php
-  /** 
+  /**
    * The Template for showing the activity order - JS Microtemplates
    *
    * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-activities-order-tmpl.php
    *
    * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound 
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
    */
 ?>
     <script type="text/tpml" id="script_order">
@@ -19,8 +19,8 @@
 
       <section class="section">
         <div class="container">
-          <div class="row mt-5">
-            <div class="col-md-8">
+          <div class="mb-row mt-5">
+            <div class="mb-col-md-8">
               <!-- Products -->
               <% var customers_data = false; %>
               <div id="selected_products">
@@ -96,41 +96,41 @@
                         <% if (order.request_customer_address) { %>
                           <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x( 'Customer address', 'activity_my_reservation', 'mybooking-wp-plugin') ?></h3>
                           <div class="mb-form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group mb-col-md-6">
                               <label for="street"><?php echo esc_html_x( 'Address', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <input class="form-control" id="street" name="customer_address[street]" type="text"
                                 placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Address', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_street%>" maxlength="60">
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group mb-col-md-3">
                               <label for="number"><?php echo esc_html_x( 'Number', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <input class="form-control" id="number" name="customer_address[number]" type="text"
                                 placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Number', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_number%>" maxlength="10">
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group mb-col-md-3">
                               <label for="complement"><?php echo esc_html_x( 'Complement', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <input class="form-control" id="complement" name="customer_address[complement]" type="text"
                                 placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Complement', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_complement%>"  max_length="20">
                             </div>
                           </div>
                           <div class="mb-form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group mb-col-md-6">
                               <label for="city"><?php echo esc_html_x( 'City', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <input class="form-control" id="city" name="customer_address[city]" type="text"
                                 placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_city%>" max_length="60">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group mb-col-md-6">
                               <label for="state"><?php echo esc_html_x( 'State', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <input class="form-control" id="state" name="customer_address[state]" type="text"
                                 placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_state%>"  max_length="60">
                             </div>
                           </div>
                           <div class="mb-form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group mb-col-md-6">
                               <label for="country"><?php echo esc_html_x( 'Country', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <select name="customer_address[country]" id="country" class="form-control">
                               </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group mb-col-md-6">
                               <label for="zip"><?php echo esc_html_x( 'Postal Code', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                               <input class="form-control" id="zip" name="customer_address[zip]" type="text"
                                 placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_zip%>"  max_length="10">
@@ -149,10 +149,10 @@
                                      <% order_item_customer= order.items[idx].customers[idxCustomers]; %>
                                      <% index += 1; %>
                                      <input type="hidden" name="order_item_customers[<%=index%>][id]" value="<%=order_item_customer.id%>"/>
-                                     <h6 class="h6 border p-2 text-right bg-light"><b><?php echo esc_html_x( 'Participant', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?> #<%=index%></b></h6> 
+                                     <h6 class="h6 border p-2 text-right bg-light"><b><?php echo esc_html_x( 'Participant', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?> #<%=index%></b></h6>
 
                                      <div class="mb-form-row">
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group mb-col-md-4">
                                           <label for="customer_name"><?php echo esc_html_x( 'Name', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           <input name="order_item_customers[<%=index%>][customer_name]"
                                                  title="<?php echo esc_attr_x( 'Name', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -160,7 +160,7 @@
                                                  placeholder="<?php echo esc_attr_x( 'Name', 'activity_my_reservation', 'mybooking-wp-plugin') ?>:" maxlength="80"
                                                  value="<%=order_item_customer.customer_name%>">
                                         </div>
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group mb-col-md-4">
                                           <label for="customer_name"><?php echo esc_html_x( 'Surname', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                           <input name="order_item_customers[<%=index%>][customer_surname]"
                                                  title="<?php echo esc_attr_x( 'Surname', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -169,7 +169,7 @@
                                                  value="<%=order_item_customer.customer_surname%>">
                                         </div>
                                         <% if (customer_questions.request_customer_document_id) { %>
-                                          <div class="form-group col-md-4">
+                                          <div class="form-group mb-col-md-4">
                                             <label for="customer_document_id"><?php echo esc_html_x( 'Document ID', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <input name="order_item_customers[<%=index%>][customer_document_id]"
                                                    title="<?php echo esc_attr_x( 'Document ID', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -179,7 +179,7 @@
                                           </div>
                                         <% } %>
                                         <% if (customer_questions.request_customer_date_of_birth) { %>
-                                          <div class="form-group col-md-4">
+                                          <div class="form-group mb-col-md-4">
                                             <label for="customer_date_of_birth"><?php echo esc_html_x( 'Date of birth', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <input name="order_item_customers[<%=index%>][customer_date_of_birth]"
                                                    title="<?php echo esc_attr_x( 'Date of birth', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -190,7 +190,7 @@
                                         <% } %>
 
                                         <% if (customer_questions.request_customer_phone) { %>
-                                          <div class="form-group col-md-4">
+                                          <div class="form-group mb-col-md-4">
                                             <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <input name="order_item_customers[<%=index%>][customer_phone]"
                                                    title="<?php echo esc_attr_x( 'Phone number', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -200,7 +200,7 @@
                                           </div>
                                         <% } %>
                                         <% if (customer_questions.request_customer_email) { %>
-                                          <div class="form-group col-md-4">
+                                          <div class="form-group mb-col-md-4">
                                             <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             <input name="order_item_customers[<%=index%>][customer_email]"
                                                    title="<?php echo esc_attr_x( 'E-mail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -214,7 +214,7 @@
                                      <% if (customer_questions.request_customer_height || customer_questions.request_customer_weight) { %>
                                        <div class="mb-form-row">
                                           <% if (customer_questions.request_customer_height) { %>
-                                            <div class="form-group col-md-4">
+                                            <div class="form-group mb-col-md-4">
                                               <label for="customer_height"><?php echo esc_html_x( 'Height (cm)', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                               <input name="order_item_customers[<%=index%>][customer_height]"
                                                      title="<?php echo esc_attr_x( 'Height (cm)', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -224,7 +224,7 @@
                                             </div>
                                           <% } %>
                                           <% if (customer_questions.request_customer_weight) { %>
-                                            <div class="form-group col-md-4">
+                                            <div class="form-group mb-col-md-4">
                                               <label for="customer_weight"><?php echo esc_html_x( 'Weight (kg)', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                               <input name="order_item_customers[<%=index%>][customer_weight]"
                                                      title="<?php echo esc_attr_x( 'Weight (kg)', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -238,7 +238,7 @@
 
                                      <% if (customer_questions.request_customer_allergies_intolerances) { %>
                                        <div class="mb-form-row">
-                                          <div class="form-group col-md-4">
+                                          <div class="form-group mb-col-md-4">
                                             <div class="form-check">
                                               <input name="order_item_customers[<%=index%>][customer_allergies]"
                                                      title="<?php echo esc_html_x( 'Allergies', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -247,7 +247,7 @@
                                               <label for="customer_allergies" class="form-check-label"><?php echo esc_html_x( 'Allergies', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             </div>
                                           </div>
-                                          <div class="form-group col-md-8">
+                                          <div class="form-group mb-col-md-8">
                                               <label for="customer_allergies_detail"><?php echo esc_html_x( 'Allergies detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                               <textarea name="order_item_customers[<%=index%>][customer_allergies_detail]"
                                                         title="<?php echo esc_attr_x( 'Allergies detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -256,7 +256,7 @@
                                           </div>
                                        </div>
                                        <div class="mb-form-row">
-                                          <div class="form-group col-md-4">
+                                          <div class="form-group mb-col-md-4">
                                             <div class="form-check">
                                               <input name="order_item_customers[<%=index%>][customer_intolerances]"
                                                      title="<?php echo esc_attr_x( 'Intolerances', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -265,7 +265,7 @@
                                               <label for="customer_intolerances" class="form-check-label"><?php echo esc_html_x( 'Intolerances', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             </div>
                                           </div>
-                                          <div class="form-group col-md-8">
+                                          <div class="form-group mb-col-md-8">
                                               <label for="customer_intolerances_detail"><?php echo esc_html_x( 'Intolerances detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                               <textarea name="order_item_customers[<%=index%>][customer_intolerances_detail]"
                                                         title="<?php echo esc_attr_x( 'Intolerances detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -276,7 +276,7 @@
                                      <% } %>
                                      <% if (customer_questions.request_customer_slight_injuries) { %>
                                        <div class="mb-form-row">
-                                          <div class="form-group col-md-4">
+                                          <div class="form-group mb-col-md-4">
                                             <div class="form-check">
                                               <input name="order_item_customers[<%=index%>][customer_slight_injuries]"
                                                      title="<?php echo esc_attr_x( 'Slight injuries', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -285,7 +285,7 @@
                                               <label for="customer_slight_injuries" class="form-check-label"><?php echo esc_html_x( 'Slight injuries', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             </div>
                                           </div>
-                                          <div class="form-group col-md-8">
+                                          <div class="form-group mb-col-md-8">
                                               <label for="customer_slight_injuries_detail"><?php echo esc_html_x( 'Slight injuries detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                               <textarea name="order_item_customers[<%=index%>][customer_slight_injuries_detail]"
                                                         title="<?php echo esc_attr_x( 'Slight injuries detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -296,7 +296,7 @@
                                      <% } %>
                                      <% if (customer_questions.request_customer_diseases) { %>
                                        <div class="mb-form-row">
-                                          <div class="form-group col-md-4">
+                                          <div class="form-group mb-col-md-4">
                                             <div class="form-check">
                                               <input name="order_item_customers[<%=index%>][customer_diseases]"
                                                      title="<?php echo esc_attr_x( 'Diseases', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -305,7 +305,7 @@
                                               <label for="customer_diseases" class="form-check-label"><?php echo esc_html_x( 'Diseases', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                             </div>
                                           </div>
-                                          <div class="form-group col-md-8">
+                                          <div class="form-group mb-col-md-8">
                                               <label for="customer_diseases_detail"><?php echo esc_html_x( 'Diseases detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?></label>
                                               <textarea name="order_item_customers[<%=index%>][customer_diseases_detail]"
                                                         title="<?php echo esc_attr_x( 'Diseases detail', 'activity_my_reservation', 'mybooking-wp-plugin') ?>" data-toggle="tooltip"
@@ -318,11 +318,11 @@
                                      <% if (customer_questions.request_customer_experience) { %>
                                        <hr>
                                        <div class="mb-form-row">
-                                            <div class="col-md-12">
+                                            <div class="mb-col-md-12">
                                               <h6 class="h6"><%=customer_questions.request_customer_experience_products_text%></h6>
                                             </div>
                                             <% if (customer_questions.request_customer_experience_product_1) { %>
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group mb-col-md-6">
                                               <label for="customer_experience_product_1" class="form-check-label"><%=customer_questions.request_customer_experience_product_1_text%></label>
                                               <select name="order_item_customers[<%=index%>][customer_experience_product_1]"
                                                      class="form-control">
@@ -335,7 +335,7 @@
                                             </div>
                                             <% } %>
                                             <% if (customer_questions.request_customer_experience_product_2) { %>
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group mb-col-md-6">
                                               <label for="customer_experience_product_2" class="form-check-label"><%=customer_questions.request_customer_experience_product_2_text%></label>
                                               <select name="order_item_customers[<%=index%>][customer_experience_product_2]"
                                                      class="form-control">
@@ -352,7 +352,7 @@
                                      <% if (customer_questions.request_customer_experience_course || customer_questions.request_customer_experience_activity) { %>
                                      <div class="mb-form-row mb-2">
                                        <% if (customer_questions.request_customer_experience_course) { %>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group mb-col-md-6">
                                           <label for="customer_experience_tecnical_course" class="form-check-label"><%=customer_questions.request_customer_experience_course_text%></label>
                                           <select name="order_item_customers[<%=index%>][customer_experience_tecnical_course]"
                                                  class="form-control">
@@ -363,7 +363,7 @@
                                         </div>
                                        <% } %>
                                        <% if (customer_questions.request_customer_experience_activity) { %>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group mb-col-md-6">
                                           <label for="customer_experience_activities" class="form-check-label"><%=customer_questions.request_customer_experience_activity_text%></label>
                                           <select name="order_item_customers[<%=index%>][customer_experience_activities]"
                                                  class="form-control">
@@ -391,7 +391,7 @@
             <!-- /CONTENT -->
 
             <!-- SIDEBAR -->
-            <div class="col-md-4">
+            <div class="mb-col-md-4">
 
               <!-- Reservation -->
 
@@ -459,13 +459,13 @@
                           <% if (order.payment_methods.paypal_standard &&
                                  order.payment_methods.tpv_virtual) { %>
                               <div class="mb-form-row">
-                                 <div class="form-group col-md-12">
+                                 <div class="form-group mb-col-md-12">
                                    <label for="payments_paypal_standard">
                                     <input type="radio" id="payments_paypal_standard" name="payment_method_value" class="payment_method_select" value="paypal_standard">&nbsp;<?php echo esc_html_x( 'Paypal', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?>
                                     <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
                                    </label>
                                  </div>
-                                 <div class="form-group col-md-12">
+                                 <div class="form-group mb-col-md-12">
                                    <label for="payments_credit_card">
                                     <input type="radio" id="payments_credit_card" name="payment_method_value" class="payment_method_select" value="<%=order.payment_methods.tpv_virtual%>">&nbsp;<?php echo esc_html_x( 'Credit or debit card', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?>
                                     <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
@@ -487,7 +487,7 @@
                           <hr>
 
                           <div class="mb-form-row">
-                            <div class="form-group col-md-12">
+                            <div class="form-group mb-col-md-12">
                               <button type="submit" class="btn btn-success w-100"><%=i18next.t('activities.payment.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%></a>
                             </div>
                           </div>

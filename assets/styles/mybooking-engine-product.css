@@ -520,8 +520,8 @@
 
 /* Product button */
 
-.btn-choose-product,
-.btn-confirm-selection {
+[class*=".mybooking-process_"] .btn-choose-product,
+[class*=".mybooking-process_"] .btn-confirm-selection {
   min-height: var(--mb-product-btn-height)!important;
   margin: 0;
   padding: 0.3rem 1rem;
@@ -530,18 +530,18 @@
   letter-spacing: 1px;
 }
 
-.btn-choose-product a,
-.btn-confirm-selection a {
+[class*=".mybooking-process_"] .btn-choose-product a,
+[class*=".mybooking-process_"] .btn-confirm-selection a {
   color: currentcolor;
   text-decoration: none!important;
 }
 
-.btn-choose-product a:hover,
-.btn-confirm-selection a:hover {
+[class*=".mybooking-process_"] .btn-choose-product a:hover,
+[class*=".mybooking-process_"] .btn-confirm-selection a:hover {
   color: currentcolor;
 }
 
-.btn-confirm-selection {
+[class*=".mybooking-process_"] .btn-confirm-selection {
   float: right;
 }
 

@@ -31,7 +31,7 @@
       <!-- Reservation complete -->
       <div class="mb-section">
         <div class="reservation_form_container">
-          <h2 class="complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h2>
+          <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h2>
           <form class="mybooking-form" id="mybooking_transfer_form-reservation" name="mybooking_transfer_reservation_form" autocomplete="off">
 
           </form>

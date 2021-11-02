@@ -622,6 +622,7 @@
           <div class="mb-alert secondary" role="alert">
             <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
           </div>
+          
           <div class="mybooking-payment_confirmation-box">
            <label class="mybooking-payment_custom-label" for="payments_paypal_standard">
             <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
@@ -738,35 +739,34 @@
 <!-- Wellcome user message -->
 
 <script type="text/template" id="script_welcome_customer">
-  <div class="mb-alert info">
-    <p><%=i18next.t('common.welcomeConnectedUser', {name: user.full_name})%></p>
+  <div class="mb-alert highlight">
+    <%=i18next.t('common.welcomeConnectedUser', {name: user.full_name})%>
   </div>
 </script>
 
 <!-- Create account -->
 
 <script type="text/template" id="script_create_account">
-
   <div class="form-group mybooking_rent_create_account_selector_container">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="create_customer_account" id="mybooking_engine_rent_create_customer_account" value="true" checked>
-        <label class="form-check-label" for="registered_customer">
-          <?php echo esc_html_x( "Create account and book a reservation", 'renting_complete_create_account', 'mybooking-wp-plugin') ?>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="create_customer_account" id="mybooking_engine_rent_not_create_customer_account" value="false">
-        <label class="form-check-label" for="unregistered_customer">
-          <?php echo esc_html_x( "Only book a reservation", 'renting_complete_create_account', 'mybooking-wp-plugin') ?>
-        </label>
-      </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="create_customer_account" id="mybooking_engine_rent_create_customer_account" value="true" checked>
+      <label class="form-check-label" for="registered_customer">
+        <?php echo esc_html_x( "Create account and book a reservation", 'renting_complete_create_account', 'mybooking-wp-plugin') ?>
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="create_customer_account" id="mybooking_engine_rent_not_create_customer_account" value="false">
+      <label class="form-check-label" for="unregistered_customer">
+        <?php echo esc_html_x( "Only book a reservation", 'renting_complete_create_account', 'mybooking-wp-plugin') ?>
+      </label>
+    </div>
   </div>
   <div class="form-group mybooking_rent_create_account_fields_container">
-      <div class="form-group">
-          <label for="account_password"><?php echo esc_html_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?></label>
-          <input type="password" class="form-control" name="account_password" id="account_password"  autocomplete="off" placeholder="<?php echo esc_attr_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?>:" maxlength="20">
-          <small class="form-text text-muted"><?php echo esc_html_x( "Password must contain upper case letter, lower case letter, digit and symbol (@ ! * - _)", 'renting_complete_create_account', 'mybooking-wp-plugin') ?></small>
-      </div>
+    <div class="form-group">
+      <label for="account_password"><?php echo esc_html_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?></label>
+      <input type="password" class="form-control" name="account_password" id="account_password"  autocomplete="off" placeholder="<?php echo esc_attr_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?>:" maxlength="20">
+      <small class="form-text text-muted"><?php echo esc_html_x( "Password must contain upper case letter, lower case letter, digit and symbol (@ ! * - _)", 'renting_complete_create_account', 'mybooking-wp-plugin') ?></small>
+    </div>
   </div>
 </script>
 

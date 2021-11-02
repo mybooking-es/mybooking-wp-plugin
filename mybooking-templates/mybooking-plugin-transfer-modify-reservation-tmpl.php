@@ -15,13 +15,13 @@
 	<div class="mybooking-selector_type">
 
 	  <!-- // One Way -->
-		<label class="mb-label">
+		<label class="mb-custom-label">
 			<input type="radio" class="mb-input_hidden" name="round_trip" value="false" checked>
 			<?php echo esc_html_x( 'One way', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
 		</label>
 
 		<!-- // Round trip -->
-		<label class="mb-label">
+		<label class="mb-custom-label">
 			<input type="radio" class="mb-input_hidden" name="round_trip" value="true">
 			<?php echo esc_html_x( 'Round trip', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
 		</label>

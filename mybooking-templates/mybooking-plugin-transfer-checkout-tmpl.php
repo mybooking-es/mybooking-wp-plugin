@@ -57,7 +57,7 @@
         <span class="mybooking-summary_item">
           <span class="mybooking-summary_date">
             <span class="dashicons dashicons-calendar-alt"></span>
-            <%=shopping_cart.date%>&nbsp;<%=shopping_cart.time%>
+            <%=configuration.formatDate(shopping_cart.date)%>&nbsp;<%=shopping_cart.time%>
           </span>
         </span>
         <!-- // Origin -->
@@ -81,21 +81,21 @@
           <span class="mybooking-summary_item">
             <span class="mybooking-summary_date">
               <span class="dashicons dashicons-calendar-alt"></span>
-              <%=shopping_cart.date%>&nbsp;<%=shopping_cart.time%>
+              <%=configuration.formatDate(shopping_cart.return_date)%>&nbsp;<%=shopping_cart.return_time%>
             </span>
           </span>
           <!-- // Origin -->
           <span class="mybooking-summary_item">
             <span class="mybooking-summary_place">
               <span class="dashicons dashicons-location"></span>
-              <%=shopping_cart.origin_point_name_customer_translation%>
+              <%=shopping_cart.return_origin_point_name_customer_translation%>
             </span>
           </span>
           <!-- // Destination -->
           <span class="mybooking-summary_item">
             <span class="mybooking-summary_place">
               <span class="dashicons dashicons-arrow-right-alt"></span>
-              <%=shopping_cart.destination_point_name_customer_translation%>
+              <%=shopping_cart.return_destination_point_name_customer_translation%>
             </span>
           </span>
         <% } %>
@@ -230,7 +230,7 @@
                 <% } else { %>
                   <div class="mybooking-extra_control">
                     <input class="mb-checkbox extra-checkbox" type="checkbox" id="checkboxl<%=extra.id%>" data-value="<%=extra.id%>" <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>
-                    <label class="mb-label" for="checkboxl<%=extra.id%>"></label>
+                    <label class="mb-custom-label" for="checkboxl<%=extra.id%>"></label>
                   </div>
                 <% } %>
               </div>
@@ -316,10 +316,10 @@
 
     <!-- // Standard pickup/dropoff -->
 
-    <h3 class="complete-section-title">
+    <h3 class="mb-section_title complete-section-title">
       <?php echo esc_html_x( "Transfer details", 'transfer_checkout', 'mybooking-wp-plugin') ?>
     </h3>
-    <h4>
+    <legendclass="mb-form_legend">
       <?php echo esc_html_x( "Outward Journey Details", 'transfer_checkout', 'mybooking-wp-plugin') ?>
     </h4>
     <div class="mb-form-row mb-form-group customer_component">
@@ -333,12 +333,12 @@
           <label for="detailed_origin_flight_estimated_time">
             <?php echo esc_html_x( 'Flight or vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*
           </label>
-          <input type="text" class="mb-form-control" name="detailed_origin_flight_estimated_time" autocomplete="off" id="detailed_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+          <input type="time" class="mb-form-control" name="detailed_origin_flight_estimated_time" autocomplete="off" id="detailed_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
       </div>
     </div>
 
     <% if (shopping_cart.round_trip) { %>
-      <h3>
+      <h3 class="mb-section_title complete-section-title">
         <?php echo esc_html_x( "Return Journey Details", 'transfer_checkout', 'mybooking-wp-plugin') ?>
       </h3>
       <div class="mb-form-row mb-form-group customer_component">
@@ -352,12 +352,12 @@
           <label for="detailed_return_origin_flight_estimated_time">
             <?php echo esc_html_x( 'Flight or Vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*
           </label>
-          <input type="text" class="mb-form-control" name="detailed_return_origin_flight_estimated_time" autocomplete="off" id="detailed_return_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+          <input type="time" class="mb-form-control" name="detailed_return_origin_flight_estimated_time" autocomplete="off" id="detailed_return_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
         </div>
       </div>
     <% } %>
 
-    <h3 class="complete-section-title">
+    <h3 class="mb-section_title complete-section-title">
       <?php echo esc_html_x( "Accommodation", 'transfer_checkout', 'mybooking-wp-plugin') ?>
     </h3>
     <div class="mb-form-group">
@@ -371,16 +371,16 @@
 
       <!-- // Trip -->
 
-      <h3 class="complete-section-title">
+      <h3 class="mb-section_title complete-section-title">
         <?php echo esc_html_x( "Trip details", 'transfer_checkout', 'mybooking-wp-plugin') ?>
       </h3>
 
       <!-- // Going Origin -->
-      <div class="mb-section_subtitle">
+      <legend class="mb-form_legend">
         <span class="dashicons dashicons-location"></span>
         <?php echo esc_html_x( "Pickup", 'transfer_checkout', 'mybooking-wp-plugin') ?> ⟶
         <%= shopping_cart.origin_point_name_customer_translation%>
-      </div>
+      </legend>
 
       <% if (shopping_cart.origin_point_detailed_info) { %>
         <% if (shopping_cart.origin_point_type === 'location') { %>
@@ -403,18 +403,18 @@
               <label for="detailed_origin_flight_estimated_time">
                 <?php echo esc_html_x( 'Flight or vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*
               </label>
-              <input type="text" class="mb-form-control" name="detailed_origin_flight_estimated_time" autocomplete="off" id="detailed_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+              <input type="time" class="mb-form-control" name="detailed_origin_flight_estimated_time" autocomplete="off" id="detailed_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
             </div>
           </div>
         <% } %>
       <% } %>
 
       <!-- // Going Destination -->
-      <div class="mb-section_subtitle">
+      <legend class="mb-form_legend">
         <span class="dashicons dashicons-location"></span>
         <?php echo esc_html_x( "Drop off", 'transfer_checkout', 'mybooking-wp-plugin') ?> ⟶
         <%= shopping_cart.destination_point_name_customer_translation%>
-      </div>
+      </legend>
 
       <% if (shopping_cart.destination_point_detailed_info) { %>
         <% if (shopping_cart.destination_point_type === 'location') { %>
@@ -431,24 +431,23 @@
             </div>
             <div class="mb-col-md-6 mb-col-sm-12">
               <label for="detailed_destination_flight_estimated_time"><?php echo esc_html_x( 'Flight or vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
-              <input type="text" class="mb-form-control" name="detailed_destination_flight_estimated_time" autocomplete="off" id="detailed_destination_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+              <input type="time" class="mb-form-control" name="detailed_destination_flight_estimated_time" autocomplete="off" id="detailed_destination_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
             </div>
           </div>
         <% } %>
       <% } %>
 
       <% if (shopping_cart.round_trip) { %>
-        <hr>
-        <h3 class="complete-section-title">
+        <h4 class="mb-section_title complete-section-title">
           <?php echo esc_html_x( "Round trip details", 'transfer_checkout', 'mybooking-wp-plugin') ?>
-        </h3>
+        </h4>
 
         <!-- // Return Origin -->
-        <div class="mb-section_subtitle">
+        <legend class="mb-form_legend">
           <span class="dashicons dashicons-location"></span>
           <?php echo esc_html_x( "Pickup", 'transfer_checkout', 'mybooking-wp-plugin') ?>
           <%= shopping_cart.return_origin_point_name_customer_translation%>
-        </div>
+        </legend>
 
         <% if (shopping_cart.return_origin_point_detailed_info) { %>
           <% if (shopping_cart.return_origin_point_type === 'location') { %>
@@ -465,18 +464,18 @@
               </div>
               <div class="mb-col-md-6 mb-col-sm-12">
                 <label for="detailed_return_origin_flight_estimated_time"><?php echo esc_html_x( 'Flight or Vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
-                <input type="text" class="mb-form-control" name="detailed_return_origin_flight_estimated_time" autocomplete="off" id="detailed_return_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+                <input type="time" class="mb-form-control" name="detailed_return_origin_flight_estimated_time" autocomplete="off" id="detailed_return_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
               </div>
             </div>
           <% } %>
         <% } %>
 
         <!-- // Return Destination -->
-        <div class="mb-section_subtitle">
+        <legend class="mb-form_legend">
           <span class="dashicons dashicons-location"></span>
           <?php echo esc_html_x( "Drop off", 'transfer_checkout', 'mybooking-wp-plugin') ?>
           <%= shopping_cart.return_destination_point_name_customer_translation%>
-        </div>
+        </legend>
 
         <% if (shopping_cart.return_destination_point_detailed_info) { %>
           <% if (shopping_cart.return_destination_point_type === 'location') { %>
@@ -493,7 +492,7 @@
               </div>
               <div class="mb-col-md-6 mb-col-sm-12">
                 <label for="detailed_return_destination_flight_estimated_time"><?php echo esc_html_x( 'Flight or Vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
-                <input type="text" class="mb-form-control" name="detailed_return_destination_flight_estimated_time" autocomplete="off" id="detailed_return_destination_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+                <input type="time" class="mb-form-control" name="detailed_return_destination_flight_estimated_time" autocomplete="off" id="detailed_return_destination_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
               </div>
             </div>
           <% } %>
@@ -504,7 +503,7 @@
 
   <!-- // Additional info -->
 
-  <h3 class="complete-section-title">
+  <h3 class="mb-section_title complete-section-title">
     <?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?>
   </h3>
 

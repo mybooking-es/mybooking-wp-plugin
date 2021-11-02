@@ -111,7 +111,7 @@
   <!-- Reservation complete -->
   <div class="mb-section">
     <div class="reservation_form_container">
-      <h2 class="complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>
+      <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>
       <form id="form-reservation" name="reservation_form" autocomplete="off">
         <div class="mb-form-group mb-form-row customer_component">
           <div class="mb-col-md-6 mb-col-sm-12">
@@ -146,7 +146,7 @@
           </div>
         </div>
 
-        <h3 class="mb-4 complete-section-title"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h3>
+        <h3 class="mb-4 mb-section_title complete-section-title"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h3>
 
         <div class="mb-form-group">
           <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>

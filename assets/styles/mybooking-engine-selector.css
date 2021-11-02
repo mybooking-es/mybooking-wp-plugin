@@ -31,7 +31,7 @@
 
 /* Form elements */
 
-.mybooking-selector .mb-form-control { 
+.mybooking-selector .mb-form-control {
   padding:  10px;
 }
 
@@ -122,12 +122,12 @@
   border-bottom: 1px solid var(--mb-border-color);
 }
 
-.mybooking-selector_type .mb-label {
+.mybooking-selector_type .mb-custom-label {
   text-transform: uppercase;
   cursor: pointer;
 }
 
-.mybooking-selector_type .mb-label:hover {
+.mybooking-selector_type .mb-custom-label:hover {
   color: var(--mb-info-color);
 }
 
