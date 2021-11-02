@@ -732,8 +732,7 @@
   box-shadow: 0 0 20px #666;
 }
 
-.mybooking-cookies_button,
-button.mybooking-cookies_button {
+.mybooking-cookies_button {
   word-break: normal;
   padding: 0.5rem 1rem;
   color: var(--mb-cookies-btn-color);
