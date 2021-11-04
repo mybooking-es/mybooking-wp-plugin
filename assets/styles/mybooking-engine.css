@@ -358,7 +358,7 @@
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 5px;
-  color: #424242;
+  color: var(--mb-negative-text-color);
   line-height: 1.2;
 }
 
@@ -370,8 +370,7 @@
 
 .mb-alert.highlight {
   padding: 1.25rem;
-  background-color: #2193F2;
-  color: #FFF;
+  background-color: var(--mb-info-color);
   font-size: 1.4em;
   text-align: center;
 }
