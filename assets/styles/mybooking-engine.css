@@ -358,15 +358,19 @@
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 5px;
-  color: var(--mb-negative-text-color);
+  color: var(--mb-dark-background-color);
   line-height: 1.2;
 }
 
-.mb-alert.secondary     { background-color: #DDD; }
+.mb-alert.secondary     { background-color: var(--mb-background-color) }
 .mb-alert.info          { background-color: var(--mb-info-color) }
 .mb-alert.success       { background-color: var(--mb-success-color) }
 .mb-alert.danger        { background-color: var(--mb-danger-color) }
 .mb-alert.warning       { background-color: var(--mb-warning-color) }
+
+.mb-alert.info {
+  color: var(--mb-negative-text-color)
+}
 
 .mb-alert.highlight {
   padding: 1.25rem;
