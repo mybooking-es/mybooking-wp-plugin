@@ -17,7 +17,7 @@
 
 <script type="text/tmpl" id="script_reservation_summary">
 
-      <!-- Summary details -->
+      <!-- // Summary details -->
 
       <div class="mb-section">
         <div class="mybooking-summary_header">
@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <!-- Product details -->
+      <!-- // Product details -->
 
       <div class="mb-row">
         <div class="mb-col-md-8">
@@ -87,7 +87,7 @@
 
         <div class="mb-col-md-4">
 
-          <!-- Reservation status message -->
+          <!-- // Reservation status message -->
 
           <div class="mybooking-summary_status">
             <%= booking.summary_status %>
@@ -98,15 +98,18 @@
             <div class="mb-section">
               <div class="mb-card">
                 <div class="mb-col-md-6">
-                  <!-- Product photo -->
+
+                  <!-- // Product photo -->
                   <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
                 </div>
 
                 <div class="mb-col-md-6">
-                <!-- Product name -->
+
+                  <!-- // Product name -->
                   <span class="mybooking-product_name">
                     <%=booking.booking_lines[idx].item_description_customer_translation%>
-                    <!-- Quantity -->
+
+                    <!-- // Quantity -->
                     <% if (configuration.multipleProductsSelection) { %>
                       <span class="mybooking-product_quantity">
                         <%=booking.booking_lines[idx].quantity%>
@@ -114,7 +117,7 @@
                     <% } %>
                   </span>
 
-                  <!-- Product description -->
+                  <!-- //Product description -->
                   <div class="mybooking-product_description">
                     <%=booking.booking_lines[idx].item_full_description_customer_translation%>
                   </div>
@@ -128,7 +131,7 @@
                    <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
                 </div>
 
-                 <!-- Taxes -->
+                 <!-- // Taxes -->
                 <?php if ( array_key_exists('show_taxes_included', $args ) && ( $args['show_taxes_included'] ) ): ?>
                   <div class="mybooking-product_taxes">
                     <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
@@ -137,7 +140,8 @@
                </div>
 
                <div class="mybooking-product_discount">
-                 <!-- Offer/Promotion Code Appliance -->
+
+                 <!-- // Offer/Promotion Code Appliance -->
                  <% if (booking.booking_lines[idx].item_unit_cost_base != booking.booking_lines[idx].item_unit_cost) { %>
                    <div class="mybooking-product_price">
 
@@ -145,7 +149,7 @@
                        <%=configuration.formatCurrency(booking.booking_lines[idx].item_unit_cost_base * booking.booking_lines[idx].quantity)%>
                      </span>
 
-                     <!-- Offer -->
+                     <!-- // Offer -->
                      <% if (typeof booking.booking_lines[idx].offer_name !== 'undefined' && booking.booking_lines[idx].offer_name !== null && booking.booking_lines[idx].offer_name !== '') { %>
                        <% if (booking.booking_lines[idx].offer_discount_type === 'percentage' && booking.booking_lines[idx].offer_value !== '') {%>
                          <span class="mybooking-product_discount-badge mb-badge success">
@@ -157,7 +161,7 @@
                         </span>
                      <% } %>
 
-                     <!-- Promotion Code -->
+                     <!-- // Promotion Code -->
                      <% if (typeof booking.promotion_code !== 'undefined' && booking.promotion_code !== '' && typeof booking.booking_lines[idx].promotion_code !== 'undefined' && booking.booking_lines.promotion_code !== '') { %>
                        <% if (booking.booking_lines[idx].promotion_code_discount_type === 'percentage' && booking.booking_lines[idx].promotion_code_value !== '') {%>
                          <span class="mybooking-product_discount-badge mb-badge success">
@@ -175,7 +179,7 @@
             </div>
           <% } %>
 
-          <!-- Extras -->
+          <!-- // Extras -->
 
           <% if (booking.booking_extras.length > 0) { %>
             <div class="mb-section">
@@ -198,7 +202,7 @@
             </div>
           <% } %>
 
-          <!-- Supplements -->
+          <!-- // Supplements -->
 
           <% if (booking.time_from_cost > 0 ||
                 booking.pickup_place_cost > 0 ||
@@ -214,7 +218,7 @@
 
               <div class="mybooking-summary_extras">
 
-                <!-- Pick-up time -->
+                <!-- // Pick-up time -->
                 <% if (booking.time_from_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                   <span class="mybooking-summary_extra-name">
@@ -229,7 +233,7 @@
 
               <div class="mybooking-summary_extras">
 
-                <!-- Pick-up place -->
+                <!-- // Pick-up place -->
                 <% if (booking.pickup_place_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
@@ -244,7 +248,7 @@
 
               <div class="mybooking-summary_extras">
 
-                <!-- Return time -->
+                <!-- // Return time -->
                 <% if (booking.time_to_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                   <span class="mybooking-summary_extra-name">
@@ -259,7 +263,7 @@
 
               <div class="mybooking-summary_extras">
 
-                <!-- Return place -->
+                <!-- // Return place -->
                 <% if (booking.return_place_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
@@ -274,7 +278,7 @@
 
               <div class="mybooking-summary_extras">
 
-                <!-- Driver age -->
+                <!-- // Driver age -->
                 <% if (booking.driver_age_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
@@ -289,7 +293,7 @@
 
               <div class="mybooking-summary_extras">
 
-                <!-- Petrol -->
+                <!-- // Petrol -->
                 <% if (booking.category_supplement_1_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
@@ -305,7 +309,8 @@
           <% } %>
 
           <% if (booking.total_deposit > 0) { %>
-            <!-- Deposit -->
+
+            <!-- // Deposit -->
             <div class="mybooking-summary_deposit">
               <span class="mybooking-summary_extra-name">
                 <?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
@@ -316,7 +321,7 @@
             </div>
           <% } %>
 
-          <!-- Total -->
+          <!-- // Total -->
 
           <div class="mb-section">
             <div class="mybooking-summary_total">
@@ -354,7 +359,7 @@
             <?php endif; ?>
           </div>
 
-          <!-- Customer details -->
+          <!-- // Customer details -->
 
           <div class="mb-section">
             <div class="mybooking-summary_details-title">
@@ -379,7 +384,7 @@
             </ul>
           </div>
 
-          <!-- Payment block -->
+          <!-- // Payment block -->
 
           <div id="payment_detail"></div>
 
@@ -397,16 +402,17 @@
   <% if (configuration.rentingFormFillDataAddress || configuration.rentingFormFillDataDriverDetail || configuration.rentingFormFillDataNamedResources) { %>
     <form id="form-reservation" name="booking_information_form" class="mybooking-form" autocomplete="off">
     <div class="mb-card">
-      <div class="mb-card-header">
+      <div class="mb-card_header">
          <h2><?php echo esc_html_x( 'Complete reservation', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h2>
       </div>
 
-      <div class="mb-card-body">
+      <div class="mb-card_body">
         <div class="mb-alert info highlight">
           <?php echo esc_html_x( 'Please complete the information to speed up the delivery process on the scheduled date', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
         </div>
 
-        <!-- Address -->
+        <!-- // Address -->
+
         <% if (configuration.rentingFormFillDataAddress) { %>
           <h3><?php echo esc_html_x( 'Customer address', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
 
@@ -453,7 +459,8 @@
           </div>
         <% } %>
 
-        <!-- Drivers -->
+        <!-- // Drivers -->
+
         <% if (configuration.rentingFormFillDataDriverDetail) { %>
           <!-- Driver information -->
           <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x('Main driver', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
@@ -555,7 +562,8 @@
             </div>
           </div>
 
-          <!-- Additional drivers information -->
+          <!-- // Additional drivers information -->
+
           <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x('Additional drivers', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
           <div class="mb-form-row">
             <div class="mb-form-group mb-col-md-6">
@@ -668,7 +676,8 @@
           </div>
         <% } %>
 
-        <!-- Flight -->
+        <!-- // Flight -->
+
         <% if (configuration.rentingFromFillDataFlight) { %>
           <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x('Flight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
           <div class="mb-form-row">
@@ -708,7 +717,8 @@
           </div>
         <% } %>
 
-        <!-- Named resources -->
+        <!-- // Named resources -->
+
         <% if (configuration.rentingFormFillDataNamedResources) { %>
           <% for (var idx=0; idx<booking.booking_lines.length; idx++) { %>
              <% var booking_line = booking.booking_lines[idx]; %>
@@ -859,7 +869,7 @@
       </div>
 
       <% if (booking.can_edit_online) { %>
-        <div class="mb-card-footer">
+        <div class="mb-card_footer">
           <button class="mb-button" id="btn_update_reservation">
              <?php echo esc_html_x( 'Update', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
           </button>

@@ -30,7 +30,7 @@
       <% } %>
 
       <div class="mb-card">
-        <div class="mb-card-body">
+        <div class="mb-card_body">
           <div class="mybooking-product_name">
             <%=shopping_cart.items[idx].item_description_customer_translation%>
           </div>
@@ -79,7 +79,7 @@
 
             <% if (shopping_cart.use_rates) { %>
 
-              <!-- Show the total -->
+              <!-- // Show the total -->
               <div class="mybooking-summary_activities-total">
                 <span class="mybooking-summary_activity-total-label">
                   <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
@@ -97,7 +97,7 @@
               <?php echo esc_html_x( 'Remove', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
             </div>
           <% } %>
-        </div>
+       </div>
      </div>
    <% } %>
 
@@ -108,7 +108,7 @@
 <script type="text/tmpl" id="script_reservation_form">
   <input type="hidden" name="customer_language" value="<%=language%>"/>
 
-  <!-- Reservation complete -->
+  <!-- // Reservation complete -->
   <div class="mb-section">
     <div class="reservation_form_container">
       <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>
@@ -146,7 +146,7 @@
           </div>
         </div>
 
-        <h3 class="mb-4 mb-section_title complete-section-title"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h3>
+        <h3 class="mb-section_title complete-section-title"><?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?></h3>
 
         <div class="mb-form-group">
           <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
@@ -154,7 +154,7 @@
         </div>
         <br>
 
-        <!-- Reservation : payment (script_payment_detail) -->
+        <!-- // Reservation : payment (script_payment_detail) -->
         <div id="payment_detail"></div>
       </form>
     </div>
@@ -165,7 +165,7 @@
 
 <script type="text/tmpl" id="script_payment_detail">
 
-  <!-- Total -->
+  <!-- // Total -->
 
   <div class="mb-section">
     <div class="mybooking-summary_total">
@@ -185,25 +185,25 @@
     <?php endif; ?>
   </div>
 
-  <!-- Payment hidden inputs -->
+  <!-- // Payment hidden inputs -->
 
   <% if (canPay) { %>
 
     <% if (shopping_cart.payment_methods.paypal_standard && shopping_cart.payment_methods.tpv_virtual) { %>
-      <!-- The payment method will be selected later -->
+      <!-- // The payment method will be selected later -->
       <input type="hidden" name="payment" value="none">
     <% } else if (shopping_cart.payment_methods.paypal_standard) { %>
-      <!-- Fixed paypal standard -->
+      <!-- // Fixed paypal standard -->
       <input type="hidden" name="payment" value="paypal_standard">
     <% } else  if (shopping_cart.payment_methods.tpv_virtual) { %>
-      <!-- Fixed tpv -->
+      <!-- // Fixed tpv -->
       <input type="hidden" name="payment" value="<%=shopping_cart.payment_methods.tpv_virtual%>">
     <% } %>
   <% } else { %>
     <input type="hidden" name="payment" value="none">
   <% } %>
 
-  <!-- Payment options -->
+  <!-- // Payment options -->
 
   <% if (canRequestAndPay) { %>
     <div class="mb-section mybooking-payment_options">
@@ -224,7 +224,7 @@
     </div>
   <% } %>
 
-  <!-- Request reservation -->
+  <!-- // Request reservation -->
 
   <% if (shopping_cart.can_make_request) { %>
     <div class="mybooking-payment_confirmation-box" id="request_reservation_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>>
@@ -249,12 +249,12 @@
     <div id="payment_now_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>>
       <div class="mybooking-payment_confirmation-info">
 
-        <!-- Payment amount -->
+        <!-- // Payment amount -->
         <div class="mybooking-payment_amount">
           <%=i18next.t('activities.payment.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%>
         </div>
 
-        <!-- Payment info -->
+        <!-- // Payment info -->
         <div class="mb-alert info highlight">
           <%=i18next.t('activities.payment.deposit_amount',{amount: configuration.formatCurrency(paymentAmount)})%>
         </div>

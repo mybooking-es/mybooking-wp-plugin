@@ -11,7 +11,7 @@
 ?>
     <script type="text/tpml" id="script_order">
 
-      <!-- Status -->
+      <!-- // Status -->
 
       <div class="jumbotron">
         <h1 class="display-6 text-center"><%= order.summary_status %></h1>
@@ -21,7 +21,8 @@
         <div class="container">
           <div class="mb-row mt-5">
             <div class="mb-col-md-8">
-              <!-- Products -->
+
+              <!-- // Products -->
               <% var customers_data = false; %>
               <div id="selected_products">
                   <% for (idx in order.items) { %>
@@ -66,7 +67,8 @@
                                   <% } %>
                                 <% } %>
                                 <% if (order.use_rates) { %>
-                                  <!-- Show the total -->
+
+                                  <!-- // Show the total -->
                                   <tr>
                                     <td><strong><?php echo esc_html_x( 'Total', 'activity_my_reservation_item', 'mybooking-wp-plugin' ) ?></strong></td>
                                     <td class="text-right"><strong><%=configuration.formatCurrency(order.items[idx]['total'])%></strong></td>
@@ -80,7 +82,8 @@
                     </div>
                   <% } %>
               </div>
-              <!-- Customers data -->
+
+              <!-- // Customers data -->
               <% if (customers_data || order.request_customer_address) { %>
                 <div id="customers_data">
                   <form id="order_information_form" name="order_information_form">
@@ -92,7 +95,8 @@
                         <div class="alert alert-info">
                           <p><?php echo esc_html_x( 'Please complete the information to speed up the delivery process on the scheduled date', 'activity_my_reservation', 'mybooking-wp-plugin') ?></p>
                         </div>
-                        <!-- Address -->
+
+                        <!-- // Address -->
                         <% if (order.request_customer_address) { %>
                           <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x( 'Customer address', 'activity_my_reservation', 'mybooking-wp-plugin') ?></h3>
                           <div class="mb-form-row">
@@ -137,7 +141,8 @@
                             </div>
                           </div>
                         <% } %>
-                        <!-- Customer information -->
+
+                        <!-- // Customer information -->
                         <% if (customers_data) { %>
                           <% var index = 0; %>
                           <% for (idx in order.items) { %>
@@ -388,12 +393,10 @@
                 </div>
               <% } %>
             </div>
-            <!-- /CONTENT -->
 
-            <!-- SIDEBAR -->
             <div class="mb-col-md-4">
 
-              <!-- Reservation -->
+              <!-- // Reservation -->
 
               <div class="card mb-3">
                 <div class="card-header">
@@ -409,7 +412,7 @@
                 <% } %>
               </div>
 
-              <!-- Customers detail -->
+              <!-- // Customers detail -->
 
               <div class="card mb-3">
                 <div class="card-header">
@@ -422,7 +425,7 @@
                 </ul>
               </div>
 
-              <!-- Total -->
+              <!-- // Total -->
 
               <% if (order.use_rates) { %>
                 <div class="jumbotron mb-3">
@@ -433,7 +436,7 @@
                 </div>
               <% } %>
 
-              <!-- Payment -->
+              <!-- // Payment -->
 
               <% if (canPay && paymentAmount > 0) { %>
 
@@ -444,7 +447,7 @@
                           <h4><%=i18next.t('activities.payment.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%></h4>
                           <br>
 
-                          <!-- Payment amount -->
+                          <!-- // Payment amount -->
                           <% if (payment === 'deposit' || payment === 'total') { %>
                             <div class="alert alert-info">
                                <p><%=i18next.t('activities.payment.deposit_amount',{amount: configuration.formatCurrency(paymentAmount)})%></p>
@@ -455,7 +458,7 @@
                             </div>
                           <% } %>
 
-                          <!-- Payment method -->
+                          <!-- // Payment method -->
                           <% if (order.payment_methods.paypal_standard &&
                                  order.payment_methods.tpv_virtual) { %>
                               <div class="mb-form-row">
@@ -492,16 +495,12 @@
                             </div>
                           </div>
                       </div>
-
                   </div>
 
                   <div id="payment_error" class="alert alert-danger mt-1" style="display:none">
                   </div>
-
                 </form>
-
               <% } %>
-
             </div>
           </div>
         </div>

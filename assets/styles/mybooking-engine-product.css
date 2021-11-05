@@ -209,10 +209,13 @@
   height: var(--mb-product-image-height);
 }
 
+.mybooking-product_image {
+  border-radius: 0!important;
+}
+
 .mybooking-product_info-block .mybooking-product_image {
   width: 100%;
   height: 100%;
-  border-radius: 0!important;
   object-fit: cover;
   object-position: center center;
 }
@@ -220,7 +223,6 @@
 .mybooking-product_block .mybooking-product_image {
   width: 100%;
   height: var(--mb-product-image-height-img);
-  border-radius: 0!important;
   object-fit: cover;
   object-position: center center;
   position: absolute;

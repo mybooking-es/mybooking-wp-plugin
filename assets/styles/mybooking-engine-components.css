@@ -577,9 +577,8 @@
 
 .mybooking-summary_activities-total {
   margin: 1rem 0;
-  padding: 1rem 0;
+  padding-top: 1rem;
   border-top: 1px solid var(--mb-border-color);
-  border-bottom: 1px solid var(--mb-border-color);
 }
 
 .mybooking-summary_activity-total-label,
@@ -713,7 +712,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  z-index: 2;
+  z-index: 99999999;
 }
 
 .mybooking-cookies_container {
