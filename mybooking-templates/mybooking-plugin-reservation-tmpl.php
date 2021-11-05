@@ -402,11 +402,11 @@
   <% if (configuration.rentingFormFillDataAddress || configuration.rentingFormFillDataDriverDetail || configuration.rentingFormFillDataNamedResources) { %>
     <form id="form-reservation" name="booking_information_form" class="mybooking-form" autocomplete="off">
     <div class="mb-card">
-      <div class="mb-card-header">
+      <div class="mb-card_header">
          <h2><?php echo esc_html_x( 'Complete reservation', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h2>
       </div>
 
-      <div class="mb-card-body">
+      <div class="mb-card_body">
         <div class="mb-alert info highlight">
           <?php echo esc_html_x( 'Please complete the information to speed up the delivery process on the scheduled date', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
         </div>
@@ -869,7 +869,7 @@
       </div>
 
       <% if (booking.can_edit_online) { %>
-        <div class="mb-card-footer">
+        <div class="mb-card_footer">
           <button class="mb-button" id="btn_update_reservation">
              <?php echo esc_html_x( 'Update', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
           </button>

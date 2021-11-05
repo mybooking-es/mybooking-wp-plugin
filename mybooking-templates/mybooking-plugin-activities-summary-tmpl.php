@@ -1,119 +1,171 @@
 <?php
-  /**
-   * The Template for showing the activity summary step - JS microtemplates
-   *
-   * This template can be overridden by copying it to yourtheme/mybooking-templates/mybooking-plugin-activities-summary-tmpl.php
-   *
-   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
-   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
-   */
+/**
+ *   MYBOOKING ENGINE - MY ACTIVITY SUMMARY TEMPLATES
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the renting summary step
+ *   This template can be overridden by copying it to your theme
+ *   /mybooking-templates/mybooking-plugin-activities-summary-tmpl.php
+ *
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
 ?>
+
 <script type="text/tpml" id="script_order">
 
-  <!-- Status -->
+  <div class="mb-col-md-8 mb-col-center">
 
-  <div class="jumbotron">
-    <h1 class="display-6 text-center"><%= order.summary_status %></h1>
-  </div>
-
-  <section class="section">
-    <div class="container">
-      <div class="mb-row mt-5">
-        <div class="mb-col-md-8">
-          <!-- Products -->
-          <div id="selected_products">
-          <% for (idx in order.items) { %>
-              <div class="mb-card mb-3">
-                <% if (order.items[idx].photo_full != null) { %>
-                  <img class="mb-card-img-top order-product-photo" src="<%=order.items[idx].photo_full%>" alt="">
-                <% } else { %>
-                  <div class="text-center order-no-product-photo pt-3"><i class="fa fa-camera" aria-hidden="true"></i></div>
-                <% } %>
-                <div class="mb-card-body">
-                  <h5 class="mb-card-title"><%=order.items[idx].item_description_customer_translation%></h5>
-                  <p class="mb-card-text text-muted"><%= configuration.formatDate(order.items[idx].date) %> <%= order.items[idx].time %></p>
-                  <% if (order.allow_select_places_for_reservation || order.use_rates) { %>
-                    <br>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <% if (order.allow_select_places_for_reservation) { %>
-                            <% if (order.use_rates) { %>
-                              <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
-                                <tr>
-                                    <td><%=order.items[idx]['items'][x].quantity %>
-                                        <%=order.items[idx]['items'][x].item_price_description %> x
-                                        <%=configuration.formatCurrency(order.items[idx]['items'][x].item_unit_cost) %>
-                                    </td>
-                                    <td class="text-right">
-                                        <%=configuration.formatCurrency(order.items[idx]['items'][x].item_cost) %>
-                                    </td>
-                                </tr>
-                              <% } %>
-                            <% } else { %>
-                              <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
-                                <tr>
-                                    <td><%=order.items[idx]['items'][x].quantity %>
-                                        <%=order.items[idx]['items'][x].item_price_description %>
-                                    </td>
-                                </tr>
-                              <% } %>
-                            <% } %>
-                          <% } %>
-                          <% if (order.use_rates) { %>
-                            <!-- Show the total -->
-                            <tr>
-                              <td><strong><?php echo esc_html_x( 'Total', 'activity_order_item', 'mybooking-wp-plugin' ) ?></strong></td>
-                              <td class="text-right"><strong><%=configuration.formatCurrency(order.items[idx]['total'])%></strong></td>
-                            </tr>
-                          <% } %>
-                        </tbody>
-                      </table>
-                    </div>
-                  <% } %>
-                </div>
-              </div>
-           <% } %>
-          </div>
+    <!-- // Summary details -->
+    <div class="mb-section">
+      <div class="mybooking-summary_header">
+        <div class="mybooking-summary_details-title">
+          <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
         </div>
 
-        <div class="mb-col-md-4">
-
-          <!-- Reservation -->
-
-          <div class="mb-card mb-3">
-            <div class="mb-card-header">
-              <b><?php echo esc_html_x( 'Reservation ID', 'activity_summary', 'mybooking-wp-plugin') ?></b>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item h3"><%=order.id%></li>
-            </ul>
-          </div>
-
-          <!-- Customers detail -->
-
-          <div class="mb-card mb-3">
-            <div class="mb-card-header">
-              <b><?php echo esc_html_x( "Customer's details", 'activity_summary', 'mybooking-wp-plugin') ?></b>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><%=order.customer_name%> <%=order.customer_surname%></li>
-              <li class="list-group-item"><%=order.customer_email%></li>
-              <li class="list-group-item"><%=order.customer_phone%></li>
-            </ul>
-          </div>
-
-          <% if (order.use_rates) { %>
-            <div class="jumbotron mb-3">
-              <h2 class="h5"><?php echo esc_html_x( 'Total', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_cost)%></span></h2>
-              <hr>
-              <p class="lead"><?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_paid)%></span></p>
-              <p class="lead"><?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?> <span class="pull-right"><%=configuration.formatCurrency(order.total_pending)%></span></p>
-            </div>
-          <% } %>
+        <div class="mybooking-summary_locator">
+          <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?>:
+          <span class="mybooking-summary_locator-id"><%=order.id%></span>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- // Reservation status message -->
+    <div class="mybooking-summary_status">
+      <%= order.summary_status %>
+    </div>
+
+    <!-- // Products -->
+
+    <div id="selected_products">
+
+      <% for (idx in order.items) { %>
+        <div class="mb-section">
+          <div class="mb-card">
+
+            <!-- // Product photo -->
+            <% if (order.items[idx].photo_full != null) { %>
+              <img class="mybooking-product_image" src="<%=order.items[idx].photo_full%>" alt="">
+
+            <% } else { %>
+              <div class="mybooking-product_image-fallback">
+                <i class="fa fa-camera" aria-hidden="true"></i>
+              </div>
+            <% } %>
+
+            <div class="mb-card_body">
+
+              <!-- // Product name -->
+              <span class="mybooking-product_name">
+                <%=order.items[idx].item_description_customer_translation%>
+              </span>
+
+              <div class="mybooking-activity_date">
+                <span class="mybooking-activity_date-item">
+                  <%= configuration.formatDate(order.items[idx].date) %>
+                </span>
+                <span class="mybooking-activity_date-item">
+                  <%= order.items[idx].time %>
+                </span>
+              </div>
+
+              <% if (order.allow_select_places_for_reservation || order.use_rates) { %>
+                <% if (order.allow_select_places_for_reservation) { %>
+                  <% if (order.use_rates) { %>
+                    <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
+                      <div class="mybooking-summary_activities">
+                        <div class="mybooking-summary_activity-item">
+                          <span class="mb-badge info mybooking-summary_activity-quantity">
+                            <%=order.items[idx]['items'][x].quantity %>
+                          </span>
+                          <span class="mybooking-summary_activity-name">
+                            <%=order.items[idx]['items'][x].item_price_description %> x
+                          </span>
+                          <span class="mybooking-summary_activity-amount">
+                            <%=configuration.formatCurrency(order.items[idx]['items'][x].item_unit_cost) %>
+                          </span>
+                        </div>
+                        <span class="mybooking-summary_activity-amount">
+                          <%=configuration.formatCurrency(order.items[idx]['items'][x].item_cost) %>
+                        </span>
+                      </div>
+                    <% } %>
+
+                  <% } else { %>
+                    <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
+                      <div class="mybooking-summary_activities">
+                        <span class="mybooking-summary_activity-quantity">
+                          <%=order.items[idx]['items'][x].quantity %>
+                        </span>
+                        <span class="mybooking-summary_activity-name">
+                          <%=order.items[idx]['items'][x].item_price_description %>
+                        </span>
+                      </div>
+                    <% } %>
+                  <% } %>
+                <% } %>
+
+                <% if (order.use_rates) { %>
+
+                  <!-- // Show the total -->
+                  <div class="mybooking-summary_activities-total">
+                    <span class="mybooking-summary_activity-total-label">
+                      <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
+                    </span>
+                    <span class="mybooking-summary_activity-total-amount">
+                      <%=configuration.formatCurrency(order.items[idx]['total'])%>
+                    </span>
+                  </div>
+                <% } %>
+
+                <% if (order.use_rates) { %>
+                  <div class="mybooking-summary_activities-total">
+                    <span class="mybooking-summary_activity-total-label">
+                      <?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+                    </span>
+                    <span class="mybooking-summary_activity-total-amount">
+                      <%=configuration.formatCurrency(order.total_paid)%>
+                    </span>
+                  </div>
+                  <div class="mybooking-summary_activities-total">
+                    <span class="mybooking-summary_activity-total-label">
+                      <?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+                    </span>
+                    <span class="mybooking-summary_activity-total-amount mb-text-danger">
+                      <%=configuration.formatCurrency(order.total_pending)%>
+                    </span>
+                  </div>
+                <% } %>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+
+    <!-- // Customers detail -->
+
+    <div class="mb-section">
+      <div class="mybooking-summary_details-title">
+        <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
+      </div>
+      <ul class="mb-list border">
+        <li class="mb-list-item">
+          <%=order.customer_name%> <%=order.customer_surname%>
+        </li>
+
+        <% if (order.customer_phone && order.customer_phone != '') { %>
+          <li class="mb-list-item">
+            <%=order.customer_phone%> <%=order.customer_mobile_phone%>
+          </li>
+        <% } %>
+
+        <% if (order.customer_email && order.customer_email != '') { %>
+          <li class="mb-list-item">
+            <%=order.customer_email%>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
 </script>
