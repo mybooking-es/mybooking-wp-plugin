@@ -777,6 +777,7 @@ fieldset legend {
 .ui-datepicker td {
   padding: 0;
   box-shadow: none;
+  word-break: normal;
 }
 
 .ui-datepicker th {

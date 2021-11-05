@@ -16,12 +16,10 @@
 <!-- Activity Cyclic Calendar -->
 
 <script type="text/tmpl" id="script_cyclic_calendar">
- <ol>
-  <div class="mybooking-activity_calendar-title">
-    <li><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
-  </div>
+ <ol class="mybooking-product_calendar-step-list">
+  <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
 
-  <form name="select_date_form" id="select_date_form">
+  <form name="select_date_form" id="select_date_form" class="mybooking-form">
     <input type="hidden" name="activity_id" id="activity_id" value="<%=activity_id%>"/>
     <div id="datepicker"></div>
     <div id="turns" class="mybooking-activity_turns"></div>
@@ -38,9 +36,7 @@
     </div>
 
   <% } else { %>
-    <div class="mybooking-activity_calendar-title">
-      <li><?php echo esc_html_x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
-    </div>
+    <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
 
     <div class="mb-form-group">
       <% for (turn in turns) { %>
@@ -59,12 +55,10 @@
 <!-- Activity Multiple Dates Selector -->
 
 <script type="text/tmpl" id="script_multiple_dates_selector">
-<ol>
-  <div class="mybooking-activity_calendar-title">
-    <li><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
-  </div>
+<ol class="mybooking-product_calendar-step-list">
+  <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
 
-  <form name="select_date_form" id="select_date_form">
+  <form name="select_date_form" id="select_date_form" class="mybooking-form">
     <input type="hidden" name="activity_id" id="activity_id" value="<%=activity.id%>"/>
     <div class="form-group">
       <select name="activity_date_id" id="activity_date_id" class="mb-form-control">
@@ -79,8 +73,8 @@
 <!-- Activity One Time Selector -->
 
 <script type="text/tmpl" id="script_one_time_selector">
-<ol>
-  <form name="select_date_form" id="select_date_form">
+<ol class="mybooking-product_calendar-step-list">
+  <form name="select_date_form" id="select_date_form" class="mybooking-form">
     <input type="hidden" name="activity_id" id="activity_id" value="<%=activity.id%>"/>
 
       <% if (typeof activity.available !== 'undefined') { %>
@@ -109,9 +103,7 @@
 
 <script type="text/tmpl" id="script_tickets">
 
-  <div class="mybooking-activity_calendar-title">
-    <li><?php echo esc_html_x( 'People', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
-  </div>
+  <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'People', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
 
   <% for (item in tickets) { %>
    <div class="form-group">

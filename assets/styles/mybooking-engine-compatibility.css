@@ -31,6 +31,7 @@ form.mybooking-form input[type=color] {
   min-height: 2.5em;
 }
 
+
 form.mybooking-form label {
   font-size:  1em;
 }
@@ -44,9 +45,10 @@ form.mybooking-form textarea {
   font-size:  1em;
 }
 
-form.mybooking-form select {
-  font-size: small;
+form.mybooking-form .form-group select {
+/*  font-size: small; */
   text-align: center;
+  font-size:  1em;
 }
 
 /*
