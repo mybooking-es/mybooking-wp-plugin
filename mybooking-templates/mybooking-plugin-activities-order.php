@@ -1,6 +1,6 @@
 <?php
 /**
- *   MYBOOKING ENGINE - MY ACTIVITY RESERVATION
+ *   MYBOOKING ENGINE - MY RESERVATION ACTIVITY
  *   ---------------------------------------------------------------------------
  *   The Template for showing the renting summary step
  *   This template can be overridden by copying it to your theme

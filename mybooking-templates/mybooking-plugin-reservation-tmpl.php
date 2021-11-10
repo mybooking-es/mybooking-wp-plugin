@@ -83,7 +83,6 @@
           <div class="col-md-12">
             <div id="reservation_form_container" style="display:none"></div>
           </div>
-
         </div>
 
         <div class="mb-col-md-4">
@@ -125,7 +124,8 @@
 
               <div class="mybooking-product_header">
                <div class="mybooking-product_price">
-                 <!-- Price -->
+
+                 <!-- //Price -->
                  <div class="mybooking-product_amount">
                    <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
                 </div>
@@ -399,10 +399,10 @@
 <script type="text/tmpl" id="script_reservation_form">
 
   <% if (configuration.rentingFormFillDataAddress || configuration.rentingFormFillDataDriverDetail || configuration.rentingFormFillDataNamedResources) { %>
-    <form id="form-reservation" name="booking_information_form" class="mybooking-form" autocomplete="off">
+    <form class="mybooking-form" id="form-reservation" name="booking_information_form" autocomplete="off">
     <div class="mb-card">
       <div class="mb-card_header">
-         <h2><?php echo esc_html_x( 'Complete reservation', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h2>
+         <h2><?php echo esc_html_x( 'Complete data', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h2>
       </div>
 
       <div class="mb-card_body">

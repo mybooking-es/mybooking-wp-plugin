@@ -1,6 +1,6 @@
 <?php
 /**
- *   MYBOOKING ENGINE - MY ACTIVITY SUMMARY TEMPLATES
+ *   MYBOOKING ENGINE - SUMMARY ACTIVITY TEMPLATES
  *   ---------------------------------------------------------------------------
  *   The Template for showing the renting summary step
  *   This template can be overridden by copying it to your theme
@@ -105,9 +105,9 @@
                   <% } %>
                 <% } %>
 
-                <% if (order.use_rates) { %>
+                <!-- // Show the total -->
 
-                  <!-- // Show the total -->
+                <% if (order.use_rates) { %>
                   <div class="mybooking-summary_activities-total">
                     <span class="mybooking-summary_activity-total-label">
                       <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>

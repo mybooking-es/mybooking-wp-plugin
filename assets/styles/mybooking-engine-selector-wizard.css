@@ -22,7 +22,6 @@
 }
 
 .mybooking-wizard-selector_btn {
-/*  height: var(--form-control-height); */
   width: 100%;
   padding: 0.5rem 1.6rem;
   margin-bottom: 10px;
@@ -190,7 +189,7 @@ a.mybooking-wizard-selector_place:hover {
 
 /* To allow 100% width */
 .mybooking-wizard-date_calendar .ui-datepicker-inline {
-  max-width:  inherit; 
+  max-width:  inherit;
   box-shadow: none;
   border:  none;
 }
@@ -200,7 +199,7 @@ a.mybooking-wizard-selector_place:hover {
     border: none;
 }
 
-.mybooking-wizard-date_calendar .ui-state-default, .mybooking-wizard-date_calendar .ui-widget-content 
+.mybooking-wizard-date_calendar .ui-state-default, .mybooking-wizard-date_calendar .ui-widget-content
 .mybooking-wizard-date_calendar .ui-state-default, .mybooking-wizard-date_calendar .ui-widget-header .mybooking-wizard-date_calendar .ui-state-default {
   box-shadow: none;
   -webkit-box-shadow:  none;
