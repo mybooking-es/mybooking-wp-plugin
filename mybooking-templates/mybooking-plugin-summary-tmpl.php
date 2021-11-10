@@ -85,7 +85,7 @@
     <% for (var idx=0;idx<booking.booking_lines.length;idx++) { %>
 
       <div class="mb-section">
-        <div class="mb-card">
+        <div class="mb-card inline">
           <div class="mb-col-md-6">
 
             <!-- // Product photo -->
