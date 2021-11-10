@@ -394,6 +394,11 @@
   border: 1px solid var(--mb-border-color);
 }
 
+.mb-card.inline {
+  display: flex;
+  align-items: center;
+}
+
 .mb-card::after {
   display: block;
   content: "";

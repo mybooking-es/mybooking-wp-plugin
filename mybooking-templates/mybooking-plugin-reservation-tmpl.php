@@ -77,7 +77,8 @@
 
       <div class="mb-row">
         <div class="mb-col-md-8">
-          <!-- Customer extra data form -->
+
+          <!-- //Customer extra data form -->
 
           <div class="col-md-12">
             <div id="reservation_form_container" style="display:none"></div>
@@ -97,13 +98,11 @@
 
             <div class="mb-section">
               <div class="mb-card">
-                <div class="mb-col-md-6">
+                <div class="mb-col-md-12">
 
                   <!-- // Product photo -->
                   <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
-                </div>
 
-                <div class="mb-col-md-6">
 
                   <!-- // Product name -->
                   <span class="mybooking-product_name">
