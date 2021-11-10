@@ -34,7 +34,7 @@
           </label>
           <input type="text" class="mb-form-control" id="from_holder" aria-describedby="FromHolder" placeholder="<?php echo esc_attr_x( 'Select dates', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?>" readonly="true">
         </div>
-        <input  class="mb-button mybooking-selector_button" id="btn_reservation" type="submit" value="<?php echo esc_attr_x( 'Book', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?>">
+        <button class="mb-button mybooking-selector_button" id="btn_reservation" type="button"><?php echo esc_html_x( 'Book', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?></button>
       </div>
 
       <input type="hidden" name="pickup_place">

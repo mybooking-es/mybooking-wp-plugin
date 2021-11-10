@@ -389,6 +389,10 @@
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-selector',
                         plugins_url('/assets/styles/mybooking-engine-selector.css', dirname( __FILE__ ) ),
                         array(), $version );
+        // Mybooking Selector
+        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-selector-wizard',
+                        plugins_url('/assets/styles/mybooking-engine-selector-wizard.css', dirname( __FILE__ ) ),
+                        array(), $version );        
         // Mybooking Components
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-components',
                         plugins_url('/assets/styles/mybooking-engine-components.css', dirname( __FILE__ ) ),

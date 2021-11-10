@@ -694,15 +694,25 @@
 	background-color: var(--mb-popup-background);
 }
 
-.mybooking-popup_close {
+button.mybooking-popup_close {
 	display: inline-block;
 	position: absolute;
 	top: 0px;
-	right: 15px;
+	right: 0.5em;
   color: var(--mb-popup-close-btn-color);
   font-size: var(--mb-popup-close-btn-size);
 	z-index: 45;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  width: 2em;
+  height: 2em;
+  margin:  0;
+  padding:  1em;
+}
+button.mybooking-popup_close:hover {
+  background-color: transparent;
+  border: none;
 }
 
 
@@ -797,7 +807,7 @@ fieldset legend {
 
 .ui-datepicker-month,
 .ui-datepicker-year {
-  font-size: 1.3em!important;
+  font-size: 1.3em;
   text-transform: uppercase;
 }
 

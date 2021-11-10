@@ -18,15 +18,18 @@ jQuery(document).ready(function () {
 	  });
   }
 
-  // Cookies (compability with theme)
+  // Cookies 
   if (jQuery("#cookie-notice").length > 0) {
   	if (jQuery("#cookie-notice_button, #mybooking-cookies_button").length > 0) {
-  		jQuery("#cookie-notice_button, #mybooking-cookies_button").bind('click', function() {
+  		jQuery("#cookie-notice_button, #mybooking-cookies_button").bind('click', function(){
 		  	document.cookie="mb_cookieaccepted=1; expires=Thu, 18 Dec 2030 12:00:00 UTC; path=/";
 		  	document.getElementById( "cookie-notice" ).style.visibility="hidden";
   		});
   	}
-	document.cookie.indexOf( "mb_cookieaccepted" ) < 0 && ( document.getElementById( "cookie-notice" ).style.visibility="visible" );
+	  var cookiesAlert = document.cookie.indexOf( "mb_cookieaccepted" ) < 0; 
+	  if (cookiesAlert) {
+      document.getElementById( "cookie-notice" ).style.visibility = "visible";
+	  }
   }
 
 });

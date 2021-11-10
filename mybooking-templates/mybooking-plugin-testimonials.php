@@ -19,19 +19,19 @@
     foreach($mybooking_engine_testimonial_items as $mybooking_engine_testimonial_item) :
     ?>
 
-    <section class="mybooking-testimonial_item">
-      <div class="mybooking-testimonial_container">
-        <div class="mybooking-testimonial_avatar">
+    <section class="mybooking-testimonial_item testimonial-item">
+      <div class="mybooking-testimonial_container testimonial-item_message">
+        <div class="mybooking-testimonial_avatar testimonial-item_avatar">
 
           <?php if ( !has_post_thumbnail( $mybooking_engine_testimonial_item->ID ) ) { ?>
-            <img class="mybooking-testimonial_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-avatar.png' ) ?>"/>
+            <img class="mybooking-testimonial_image testimonial-item_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-avatar.png' ) ?>"/>
           <?php } else { ?>
             <?php $mybooking_engine_featured_img_url = get_the_post_thumbnail_url( $testimonial_item, 'full' ); ?>
-            <img class="mybooking-testimonial_image" src="<?php echo esc_url( $mybooking_engine_featured_img_url ) ?>">
+            <img class="mybooking-testimonial_image testimonial-item_image" src="<?php echo esc_url( $mybooking_engine_featured_img_url ) ?>">
           <?php } ?>
 
         </div>
-        <div class="mybooking-testimonial_content">
+        <div class="mybooking-testimonial_content testimonial-item_content">
           <div class="mybooking-testimonial_text">
             <?php echo wp_kses_post( $mybooking_engine_testimonial_item->post_content ); ?>
           </div>

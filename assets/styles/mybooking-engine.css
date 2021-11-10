@@ -21,7 +21,7 @@
   --mb-negative-text-color: #FFF;
 
   /* Forms */
-  --mb-form-field-height:  3rem;
+  --mb-form-field-height:  3em;
   --mb-form-field-border-color:  var(--mb-border-color);
   --mb-form-field-background: white;
 
@@ -129,6 +129,10 @@
   --mb-cookies-color: currentcolor;
   --mb-cookies-btn-background: var(--mb-dark-background-color);
   --mb-cookies-btn-color: var(--mb-negative-text-color);
+
+  /** Wizard **/
+  --mb-wizard-bg-color: var(--mb-negative-text-color);
+  --mb-wizard-input-border-color: currentcolor;
 }
 
 
