@@ -156,7 +156,7 @@
       <!-- // Supplements -->
       <div class="mybooking-summary_extras">
 
-        <!-- Pick-up time -->
+        <!-- // Pick-up time -->
         <% if (shopping_cart.time_from_cost > 0) { %>
           <div class="mybooking-summary_extra-item">
             <span class="mybooking-summary_extra-name">
