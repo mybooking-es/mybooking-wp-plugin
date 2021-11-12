@@ -10,18 +10,22 @@
 
 .mb--bg-info {
   background-color: var(--mb-info-color)!important;
+  color: var(--mb-negative-text-color)!important;
 }
 
 .mb--bg-success {
   background-color: var(--mb-success-color)!important;
+  color: var(--mb-negative-text-color)!important;
 }
 
 .mb--bg-danger {
   background-color: var(--mb-danger-color)!important;
+  color: var(--mb-negative-text-color)!important;
 }
 
 .mb--bg-warning {
   background-color: var(--mb-warning-color)!important;
+  color: var(--mb-negative-text-color)!important;
 }
 
 /* BORDERS ********************************************************************/
@@ -307,6 +311,16 @@
 
 .mb--no-mr {
   margin-right: 0!important;
+}
+
+.mb--no-m-row {
+  margin-right: 0!important;
+  margin-left: 0!important;
+}
+
+.mb-no-m-col {
+  margin-top: 0!important;
+  margin-bottom: 0!important;
 }
 
 

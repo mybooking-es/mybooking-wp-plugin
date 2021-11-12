@@ -37,10 +37,13 @@
 
     <!-- // Products -->
 
-    <% var customers_data = true; %>
+    <% var customers_data = false; %>
     <div id="selected_products">
 
       <% for (idx in order.items) { %>
+        <% if (typeof order.items[idx].customers !== 'undefined' && typeof order.items[idx].customer_questions !== 'undefined') { %>
+            <% customers_data = true; %>
+        <% } %>        
         <div class="mb-section">
           <div class="mb-card">
 
@@ -207,7 +210,8 @@
               <% if (customers_data) { %>
                 <% var index = 0; %>
                 <% for (idx in order.items) { %>
-                    <!-- Customer questions and details -->
+
+                    <!-- // Customer questions and details -->
                     <% if (typeof order.items[idx].customers !== 'undefined' && typeof order.items[idx].customer_questions !== 'undefined') { %>
                       <% var customer_questions = order.items[idx].customer_questions; %>
                       <h5 class="h5 card-title"><%=order.items[idx].item_description_customer_translation%> <%= configuration.formatDate(order.items[idx].date) %> <%= order.items[idx].time %></h5>

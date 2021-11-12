@@ -6,7 +6,7 @@
  *
  */
 function mybooking_engine_theme_align_width() {
-	
+
       $theme = wp_get_theme(); // gets the current theme
 
       $alignwide = '';
@@ -16,12 +16,14 @@ function mybooking_engine_theme_align_width() {
         'Twenty Twenty' == $theme->parent_theme ||
         'Twenty Twenty-One' == $theme->name ||
         'Twenty Twenty-One' == $theme->parent_theme ||
+				'Twenty Twenty-Two' == $theme->name ||
+        'Twenty Twenty-Two' == $theme->parent_theme ||				
         'Twenty Nineteen' == $theme->name ||
         'Twenty Nineteen' == $theme->parent_theme ||
-        'Varia' == $theme->name || 
+        'Varia' == $theme->name ||
         'Varia' == $theme->parent_theme) {
          $alignwide = 'alignwide';
-      } 
+      }
 
       return $alignwide;
 

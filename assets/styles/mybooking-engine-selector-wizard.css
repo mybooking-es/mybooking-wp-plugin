@@ -1,39 +1,16 @@
-/* ======================= WIZARD ========================= */
+/*
+*  MYBOOKING RESERVATION ENGINE - WIZARD
+*  -----------------------------------------------------------------------------
+*/
 
-/* WIZARD FORM */
+/* Selector */
 
-.mybooking-wizard-selector {
-  padding: 1rem;
-}
-
-@media (min-width: 991.98px) {
-  .mybooking-wizard-selector {
-  	border-radius: 4px;
-  }
-
-	.mybooking-wizard-selector label {
-		color: var(--font-heading-color);
-	}
-}
-
-.mybooking-wizard-selector_field input {
-  border: 1px solid var(--mb-wizard-input-border-color);
-  margin-bottom: 10px;
-}
-
-.mybooking-wizard-selector_btn {
+.mybooking-selector_wizard-group {
   width: 100%;
-  padding: 0.5rem 1.6rem;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-/* WIZARD WINDOW */
-
-.mybooking-wizard-container {
+/* Wizard modal */
+.mybooking-wizard_container {
   display: none;
   position: fixed;
   top: 0;
@@ -41,34 +18,38 @@
   z-index: 1060;
   width: 100%;
   height: 100%;
-  padding-top: 2rem;
-  overflow: hidden;
+  padding: 2rem;
+  overflow: auto;
   background-color: var(--mb-wizard-bg-color);
 }
 
-.mybooking-wizard-close {
+.mybooking-wizard_close {
   position: fixed;
-  right: 40px;
-  top: 40px;
-  margin-right: 10px;
+  right: 2rem;
+  top: 4rem;
+  width: auto;
   cursor: pointer;
-}
-
-.mybooking-wizard-close:hover {
-  opacity: .5;
-}
-
-@media ( min-width: 991.98px ) {
-  .mybooking-wizard-close {
-    right: 32px;
+} @media ( min-width: 575.98px ) {
+  .mybooking-wizard_close {
+    right: 2rem;
+    top: 3rem;
   }
 }
 
-.mybooking-wizard-step_header {
-	border-bottom: 1px solid #ccc;
+.mybooking-wizard_close .dashicons {
+  font-size: 2rem;
 }
 
-.mybooking-wizard-step_title {
+.mybooking-wizard_close .dashicons:hover {
+  color: var(--mb-danger-color);
+}
+
+.mybooking-wizard_step-header {
+	margin: 0 auto;
+  max-width: var(--mb-wizard-content-width);
+}
+
+.mybooking-wizard_step-title {
   margin-top:  1em;
   padding-bottom: 1rem;
   font-size: 28px;
@@ -77,220 +58,66 @@
   overflow-y: hidden;
   cursor: pointer;
   text-align: center;
-	color: var(--font-heading-color);
 }
 
-.mybooking-wizard-step_container {
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-bottom: 6em !important;
+.mybooking-wizard_step-body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: var(--mb-wizard-content-width);
 }
 
-/* WIZARD SUMMARY BAR */
+/* Place step */
+.mybooking-wizard_place {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto 1rem auto;
+  padding: 0;
+  list-style: none;
+}
 
-.mybooking-wizard-summary {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+/* Multiplace */
+.mybooking-wizard_place-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
   padding-bottom: 1rem;
+  border-bottom: 1px solid var(--mb-border-color);
+} @media ( min-width: 575.98px ) {
+  .mybooking-wizard_place-filter {
+    flex-direction: row;
+  }
 }
 
-.mybooking-wizard-summary_pickup {
-  text-align: right;
-}
-
-.mybooking-wizard-summary_pickup,
-.mybooking-wizard-summary_return {
-  font-size: 1em;
-}
-
-.mybooking-wizard-summary_collection,
-.mybooking-wizard-summary_delivery {
-}
-
-.mybooking-wizard-summary_delivery {
-  text-align: right;
-}
-
-.mybooking-wizard-summary_collection {
-  text-align: left;
-}
-
-img.mybooking-wizard-summary_separator {
-  width: 20px !important;
-  height: 20px !important;
-}
-
-/* WIZARD PLACE SELECTOR */
-
-.mybooking-wizard-multi-place {
-  padding: 0 1rem 1rem 1rem;
-}
-
-.mybooking-wizard-multi-place_selectors {
-  margin-bottom: 2rem;
-}
-
-.mybooking-wizard-multi-place_btn {
-  border: 1px solid #333;
-  background-color: #fff;
-  color: #333;
-  padding: 0.2rem 0.7rem;
-  margin: 3px 0;
-  font-size: 0.8em;
-}
-
-.mybooking-wizard-multi-place_info {
-  padding: 0 1rem;
-}
-
-.mybooking-wizard-place_title {
-  font-size: 1em;
+.mybooking-wizard_place_title {
+  font-size: 1.3em;
   font-weight: 700;
-  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-.mybooking-wizard-place_title a {
-  cursor:  default;
+/* Date step */
+.mybooking-wizard_date {
+  display: flex;
+  justify-content: center;
 }
 
-.mybooking-wizard-place_list {
-  padding-left: 0;
-  list-style-type: none;
-	margin-bottom: 1rem;
+/* Time step */
+.mybooking-wizard_time {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.mybooking-wizard-place_item {
-  padding: 0.1rem 0;
-}
-
-.mybooking-wizard-place_item a {
-  font-size:  1em;
-}
-
-.mybooking-wizard-selector_place {
-  cursor: pointer;
-	line-height: 3rem;
-  padding: 0.5rem 1.6rem;
-  letter-spacing: 1px;
-  font-size: 1em;
-  font-weight: 700!important;
-  text-transform: uppercase;
-	border-radius: 4px;
-  text-decoration: none;
-}
-
-a.mybooking-wizard-selector_place:hover {
-  border:  1px solid currentColor;
-}
-
-/* WIZARD CALENDAR */
-
-/* To allow 100% width */
-.mybooking-wizard-date_calendar .ui-datepicker-inline {
-  max-width:  inherit;
-  box-shadow: none;
-  border:  none;
-}
-
-/** Remove border and shadow */
-.mybooking-wizard-date_calendar table.ui-datepicker-calendar {
-    border: none;
-}
-
-.mybooking-wizard-date_calendar .ui-state-default, .mybooking-wizard-date_calendar .ui-widget-content
-.mybooking-wizard-date_calendar .ui-state-default, .mybooking-wizard-date_calendar .ui-widget-header .mybooking-wizard-date_calendar .ui-state-default {
-  box-shadow: none;
-  -webkit-box-shadow:  none;
-}
-
-.mybooking-wizard-date_calendar .ui-widget-content {
-  background: transparent;
-}
-
-.mybooking-wizard-date_calendar .ui-datepicker-title {
-  margin-bottom:  2em;
-}
-
-/* Year and month */
-.mybooking-wizard-date_calendar .ui-datepicker-month, .mybooking-wizard-date_calendar .ui-datepicker-year {
-  font-size:  2.4em;
-}
-
-/* Days of week */
-.mybooking-wizard-date_calendar table.ui-datepicker-calendar thead th span {
-  font-size: 2.2em;
-}
-
-/* Days of month*/
-.mybooking-wizard-date_calendar table.ui-datepicker-calendar tbody td span,
-.mybooking-wizard-date_calendar table.ui-datepicker-calendar tbody td a.ui-state-default {
-  font-size:  1.8em;
-}
-
-@media ( min-width: 991.98px ) {
-.mybooking-wizard-date_calendar .ui-datepicker td .ui-state-default {
-    border: 0;
-    background: 0 0;
-    margin-bottom: 0;
-    padding: 1rem;
-    color: gray;
-    text-align: center;
-    -webkit-filter: none;
-    filter: none;
-  }
-}
-
-@media ( min-width: 1600px ) {
-.mybooking-wizard-date_calendar .ui-datepicker td .ui-state-default {
-    border: 0;
-    background: 0 0;
-    margin-bottom: 0;
-    padding: 2rem;
-    color: gray;
-    text-align: center;
-    -webkit-filter: none;
-    filter: none;
-  }
-}
-
-.mybooking-wizard-date_calendar .ui-datepicker td .ui-state-default:hover {
-  background-color: var(--brand-primary);
-  color: #FFF;
-  border-radius: 4px;
-}
-
-.mybooking-wizard-date_calendar .ui-datepicker td.ui-state-disabled  .ui-state-default:hover {
-  background-color: var(--brand-secondary-light);
-  color: #FFF;
-}
-
-.mybooking-wizard-date_calendar .ui-datepicker .ui-datepicker-prev:not(.ui-state-disabled),
-.mybooking-wizard-date_calendar .ui-datepicker .ui-datepicker-next:not(.ui-state-disabled) {
-    cursor: pointer;
-}
-
-/* WIZARD TIME SELECTOR */
-
-.mybooking-wizard-time {
-}
-
-.mybooking-wizard-time_btn {
-  width: 100%;
-}
-
-.mybooking-wizard-time_btn:hover {
-    text-decoration: none;
-}
-
-/* Hides scrollbars on wizard's choose time step */
-.mybooking-wizard-step_container::-webkit-scrollbar {
-	width: 0px;
-  background: transparent;
-}
-
-.mybooking-wizard-step_container {
-	scrollbar-width: none;
-  -ms-overflow-style: none;
+.mybooking-wizard_time-item {
+  flex-basis: 20%;
 }

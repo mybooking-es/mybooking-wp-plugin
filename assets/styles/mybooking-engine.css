@@ -131,8 +131,8 @@
   --mb-cookies-btn-color: var(--mb-negative-text-color);
 
   /** Wizard **/
-  --mb-wizard-bg-color: var(--mb-negative-text-color);
-  --mb-wizard-input-border-color: currentcolor;
+  --mb-wizard-bg-color: white;
+  --mb-wizard-content-width: 900px;
 }
 
 
