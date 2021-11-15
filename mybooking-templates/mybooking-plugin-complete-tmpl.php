@@ -622,7 +622,7 @@
           <div class="mb-alert secondary" role="alert">
             <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
           </div>
-          
+
           <div class="mybooking-payment_confirmation-box">
            <label class="mybooking-payment_custom-label" for="payments_paypal_standard">
             <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
@@ -684,37 +684,40 @@
 <!-- Existing customer / New customer -->
 <script type="text/template" id="script_complete_complement">
 
-  <div id="reservation_complement_container">
-    <form name="mybooking_select_user_form">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="registered_customer" id="mybooking_engine_registered_customer" value="true" checked>
-        <label class="form-check-label" for="registered_customer">
-          <?php echo esc_html_x( "I'm a registered customer", 'login', 'mybooking-wp-plugin') ?>
+  <div class="mybooking-account_login" id="reservation_complement_container">
+    <form class="mybooking-account_login-type mybooking-form" name="mybooking_select_user_form">
+      <div class="mb-tabs">
+
+        <!-- Have account -->
+        <label class="mb-tabs_item">
+          <input class="mb-input_hidden" type="radio" name="registered_customer" id="mybooking_engine_registered_customer" value="true" checked>
+          <span class="mb-tabs_item-text"><?php echo esc_html_x( "Have account", 'login', 'mybooking-wp-plugin') ?></span>
         </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="registered_customer" id="mybooking_engine_unregistered_customer" value="false">
-        <label class="form-check-label" for="unregistered_customer">
-          <?php echo esc_html_x( "I'm a new customer", 'login', 'mybooking-wp-plugin') ?>
+
+        <!-- New customer -->
+        <label class="mb-tabs_item">
+          <input class="mb-input_hidden" type="radio" name="registered_customer" id="mybooking_engine_unregistered_customer" value="false">
+          <span class="mb-tabs_item-text"><?php echo esc_html_x( "New customer", 'login', 'mybooking-wp-plugin') ?></span>
         </label>
       </div>
     </form>
-    <hr>
-    <form name="mybooking_login_form" class="mybooking_login_form_element" autocomplete="off">
-      <div class="form-group">
-          <label for="mybooking_login_username"><?php echo esc_html_x( "Username or email", 'login', 'mybooking-wp-plugin') ?></label>
-          <input type="text" name="username" class="form-control" id="mybooking_login_username" placeholder="<?php echo esc_html_x( "Enter username or email", 'login', 'mybooking-wp-plugin') ?>">
+
+    <form class="mybooking-account_login-form mybooking-form mybooking_login_form_element" name="mybooking_login_form" autocomplete="off">
+      <div class="mb-form-group">
+        <label for="mybooking_login_username"><?php echo esc_html_x( "Username or email", 'login', 'mybooking-wp-plugin') ?></label>
+        <input type="text" name="username" class="form-control" id="mybooking_login_username" placeholder="<?php echo esc_html_x( "Enter username or email", 'login', 'mybooking-wp-plugin') ?>">
       </div>
-      <div class="form-group">
-          <label for="mybooking_login_password"><?php echo esc_html_x( "Password", 'login', 'mybooking-wp-plugin') ?></label>
-          <input type="password" name="password" class="form-control" id="mybooking_login_password" placeholder="<?php echo esc_html_x( "Password", 'login', 'mybooking-wp-plugin') ?>">
+      <div class="mb-form-group">
+        <label for="mybooking_login_password"><?php echo esc_html_x( "Password", 'login', 'mybooking-wp-plugin') ?></label>
+        <input type="password" name="password" class="form-control" id="mybooking_login_password" placeholder="<?php echo esc_html_x( "Password", 'login', 'mybooking-wp-plugin') ?>">
       </div>
-      <button type="submit" class="btn btn-primary"><?php echo esc_html_x( "Login", 'login', 'mybooking-wp-plugin') ?></button>
-      <div class="form-group mt-3">
-        <p class="text-info mybooking_login_password_forgotten"><?php echo esc_html_x( "Forgot password?", 'login', 'mybooking-wp-plugin') ?></p>
+      <div class="mybooking-selector_footer">
+        <button type="submit" class="mb-button"><?php echo esc_html_x( "Login", 'login', 'mybooking-wp-plugin') ?></button>
+        <span class="mb-button link mybooking_login_password_forgotten">
+          <?php echo esc_html_x( "Forgot password?", 'login', 'mybooking-wp-plugin') ?>
+        </span>
       </div>
     </form>
-    <hr class="mybooking_login_form_element">
   </div>
 </script>
 
@@ -723,20 +726,20 @@
 <script type="text/template" id="script_password_forgotten">
 
   <div class="mb-row">
-    <div class="col-lg-12">
-      <p class="text-muted"><?php echo esc_html_x( "Please, fill the form with the username or email and send to reset your password", 'password_forgotten', 'mybooking-wp-plugin') ?></p>
+    <div class="mb-col-md-12">
+      <p><?php echo esc_html_x( "Please, fill the form with the username or email and send to reset your password", 'password_forgotten', 'mybooking-wp-plugin') ?></p>
       <form name="mybooking_password_forgotten_form" autocomplete="off">
-        <div class="form-group">
-            <label for="mybooking_password_forgotten_username"><?php echo esc_html_x( "Username or email", 'password_forgotten', 'mybooking-wp-plugin') ?></label>
-            <input type="text" name="username" class="form-control" id="mybooking_password_forgotten_username" placeholder="<?php echo esc_html_x( "Enter username or email", 'password_forgotten', 'mybooking-wp-plugin') ?>">
+        <div class="mb-form-group">
+          <label for="mybooking_password_forgotten_username"><?php echo esc_html_x( "Username or email", 'password_forgotten', 'mybooking-wp-plugin') ?></label>
+          <input type="text" name="username" class="mb-form-control" id="mybooking_password_forgotten_username" placeholder="<?php echo esc_html_x( "Enter username or email", 'password_forgotten', 'mybooking-wp-plugin') ?>">
         </div>
-        <button type="submit" class="btn btn-primary"><?php echo esc_html_x( "Send", 'password_forgotten', 'mybooking-wp-plugin') ?></button>
+        <button type="submit" class="mb-button"><?php echo esc_html_x( "Send", 'password_forgotten', 'mybooking-wp-plugin') ?></button>
       </form>
     </div>
   </div>
 </script>
 
-<!-- Wellcome user message -->
+<!-- Welcome user message -->
 
 <script type="text/template" id="script_welcome_customer">
   <div class="mb-alert highlight">
@@ -762,16 +765,14 @@
     </div>
   </div>
   <div class="form-group mybooking_rent_create_account_fields_container">
-    <div class="form-group">
-      <label for="account_password"><?php echo esc_html_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?></label>
-      <input type="password" class="form-control" name="account_password" id="account_password"  autocomplete="off" placeholder="<?php echo esc_attr_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?>:" maxlength="20">
-      <small class="form-text text-muted"><?php echo esc_html_x( "Password must contain upper case letter, lower case letter, digit and symbol (@ ! * - _)", 'renting_complete_create_account', 'mybooking-wp-plugin') ?></small>
-    </div>
+    <label for="account_password"><?php echo esc_html_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?></label>
+    <input type="password" class="mb-form-control" name="account_password" id="account_password"  autocomplete="off" placeholder="<?php echo esc_attr_x( 'Password', 'renting_complete_create_account', 'mybooking-wp-plugin') ?>:" maxlength="20">
+    <small class="form-text text-muted"><?php echo esc_html_x( "Password must contain upper case letter, lower case letter, digit and symbol (@ ! * - _)", 'renting_complete_create_account', 'mybooking-wp-plugin') ?></small>
   </div>
 </script>
 
 
-<!-- MODAL? ------------------------------------------------------------------->
+<!-- MODAL ------------------------------------------------------------------->
 
 <!-- Script that shows the extra detail -->
 <script type="text/tmpl" id="script_extra_modal">

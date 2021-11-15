@@ -248,8 +248,7 @@
   margin-bottom: 0.5rem;
 }
 
-.mb-form-group label,
-.mb-custom-label {
+.mb-form-group label {
   display:  block;
   margin: 0 1rem 0.5rem 0!important;
 }
@@ -268,6 +267,7 @@
   height: 1px!important;
   overflow: hidden!important;
   white-space: nowrap!important;
+  z-index: 999999
 }
 
 .mb-form-row {
@@ -331,6 +331,14 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+}
+
+.mb-button.link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--mb-info-color);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* Badges */
@@ -486,6 +494,25 @@
 
 .mb-list.border.border .mb-list-item:last-of-type {
   border-bottom: none;
+}
+
+/* Tabs */
+.mb-tabs {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--mb-border-color);
+}
+
+.mb-tabs_item-text {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+
+.mb-input_hidden:checked + .mb-tabs_item-text {
+  border: 1px solid var(--mb-border-color);
+  border-bottom-color: white;
+  margin-bottom: -1px;
 }
 
 /** PROCESS PAGES **/
