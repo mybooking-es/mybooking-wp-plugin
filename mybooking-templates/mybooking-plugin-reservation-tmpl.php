@@ -462,7 +462,7 @@
 
         <% if (configuration.rentingFormFillDataDriverDetail) { %>
           <!-- Driver information -->
-          <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x('Main driver', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
+          <h3 class="mb-form_title"><?php echo esc_html_x('Main driver', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
           <div class="mb-form-row">
             <div class="mb-form-group mb-col-md-6">
               <label for="driver_name"><?php echo esc_html_x("Name", 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>

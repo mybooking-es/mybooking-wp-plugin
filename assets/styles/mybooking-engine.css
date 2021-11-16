@@ -241,14 +241,15 @@
 }
 
 
-/** FORMS **/
+/** FORMS & FIELDS **/
 
 .mb-form_legend {
   font-weight: 800;
   margin-bottom: 0.5rem;
 }
 
-.mb-form-group label {
+.mb-form-group label,
+.mb-label {
   display:  block;
   margin: 0 1rem 0.5rem 0!important;
 }
@@ -257,6 +258,13 @@
 .mb-input {
   display: inline-block;
   width: 100%;
+}
+
+.mb-form_checkbox label,
+.mb-form_checkbox input {
+  display: inline;
+  width: auto;
+  margin-left: 0.5rem!important;
 }
 
 .mb-input_hidden {
@@ -319,6 +327,11 @@
   justify-content: center;
   align-items: center;
   line-height: 1.1;
+  text-decoration: none!important;
+}
+
+.mb-button a {
+  text-decoration: none!important;
 }
 
 .mb-button.block {

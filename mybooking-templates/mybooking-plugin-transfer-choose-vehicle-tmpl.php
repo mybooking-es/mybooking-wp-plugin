@@ -82,7 +82,8 @@
 
   <div class="mybooking-product_container mybooking-product_grid">
 
-    <!-- // Product view switch -->
+    <!-- // Product filter -->
+
     <div class="mybooking-product_filter">
 
       <% if (available > 0) { %>
@@ -95,17 +96,7 @@
         </div>
       <% } %>
 
-      <div class="mybooking-product_filter-btn-group">
-        <span class="mybooking-product_filter-legend">
-          <?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-        </span>
-        <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view">
-          <i class="mb-button icon"><span class="dashicons dashicons-grid-view"></span></i>
-        </span>
-        <span class="mybooking-product_filter-btn list js-mb-list" title="List view">
-          <i class="mb-button icon"><span class="dashicons dashicons-list-view"></span></i>
-        </span>
-      </div>
+      <!-- // Here will be the product switch view component -->
     </div>
 
     <!-- // Product list -->
