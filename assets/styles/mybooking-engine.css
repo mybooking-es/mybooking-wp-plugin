@@ -45,7 +45,7 @@
 
   /* Product grid */
   --mb-product-image-height: 260px;
-  --mb-product-image-height-img: 100%; /* auto - transparent / 100% photo */
+  --mb-product-image-height-img: auto; /* auto - transparent / 100% photo */
   --mb-product-header-height: 75px;
   --mb-product-body-height: 120px;
   --mb-product-footer-height: 76px;

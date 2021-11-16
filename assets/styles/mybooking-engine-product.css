@@ -656,3 +656,8 @@ button.slick-next {
 .mybooking-carousel-inner button.slick-next {
   right: -42px;
 }
+.mybooking-carousel-item img{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+}

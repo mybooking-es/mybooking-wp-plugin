@@ -28,7 +28,8 @@
   require_once('translation/mybooking-plugin-engine-context.php');
 
   // == WordPress components
-
+  // Customizer
+  require_once('customizer/mybooking-plugin-customizer.php');
   // Widgets
   require_once('widgets/mybooking-plugin-rent-selector-widget.php');
   require_once('widgets/mybooking-plugin-rent-selector-wizard-widget.php');
@@ -178,6 +179,9 @@
      */
     private function wp_init() {
 
+      // Initialize customizer
+      MyBookingPluginCustomizer::getInstance();  
+
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
 
@@ -198,6 +202,9 @@
       // Enqueue CSS
       add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_css' ) );
 
+      // Enqueue BLOCK EDITOR styles
+      add_action( 'enqueue_block_editor_assets', array( $this, 'wp_enqueue_block_editor_styles' ), 1, 1 );
+      
       // Add micro templates
       add_action( 'wp_footer', array( $this, 'wp_include_micro_templates' ) );
 
@@ -331,6 +338,21 @@
     }
 
     /**
+     * Enqueue block editor styles
+     */ 
+    public function wp_enqueue_block_editor_styles() {
+
+      // == Load Customizer front-end
+      $customizer_css = MyBookingPluginCustomizer::getInstance()->customize_enqueue( 'block-editor' );
+      if ( !empty($customizer_css) ) { 
+            wp_register_style( 'mybooking_wp_engine_customizer-block-editor-styles', false );
+            wp_enqueue_style( 'mybooking_wp_engine_customizer-block-editor-styles' );
+            wp_add_inline_style( 'mybooking_wp_engine_customizer-block-editor-styles', $customizer_css );
+      }
+
+    }
+
+    /**
      * Enqueue plugin CSS
      */
     public function wp_enqueue_css() {
@@ -413,6 +435,14 @@
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-compatibility',
                         plugins_url('/assets/styles/mybooking-engine-compatibility.css', dirname( __FILE__ ) ),
                         array(), $version );
+      }
+
+      // == Load Customizer front-end
+      $customizer_css = MyBookingPluginCustomizer::getInstance()->customize_enqueue( 'front-end' );
+      if ( !empty($customizer_css) ) { 
+            wp_register_style( 'mybooking_wp_engine_customizer', false );
+            wp_enqueue_style( 'mybooking_wp_engine_customizer' );
+            wp_add_inline_style( 'mybooking_wp_engine_customizer', $customizer_css );
       }
 
     }
