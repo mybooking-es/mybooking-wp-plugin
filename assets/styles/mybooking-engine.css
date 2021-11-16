@@ -332,8 +332,10 @@
   text-decoration: none!important;
 }
 
-.mb-button a {
+.mb-button a, .mb-button a:visited, .mb-button a:hover,
+button.mb-button a, button.mb-button a:visited, button.mb-button a:hover  {
   text-decoration: none!important;
+  color:  currentColor;
 }
 
 .mb-button.block {

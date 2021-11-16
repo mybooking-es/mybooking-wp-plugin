@@ -563,6 +563,12 @@
   font-weight: 700;
 }
 
+/** Compatibility with zakra theme **/
+.mybooking-activity-carousel-inner,
+.mybooking-product-carousel-inner {
+  max-width:  800px;
+}
+
 .mybooking-summary_activities,
 .mybooking-summary_activities-total {
   display: flex;

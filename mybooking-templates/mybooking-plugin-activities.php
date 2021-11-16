@@ -101,7 +101,7 @@
 
 							<?php if ( $args['use_detail_pages'] ) { ?>
 							  <div class="mybooking-product_footer">
-									<button class="mb-button btn-choose-product">
+									<button class="mb-button">
 							    	<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_activityIdAnchor ) ?>">
 											<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
 										</a>
