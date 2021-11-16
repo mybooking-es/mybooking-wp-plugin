@@ -8,7 +8,7 @@
 
 ### Updated
 
-- Removed Bootstrap CSS
+- Theme compatibility : Removed Bootstrap Library
 
 ## [0.12.0]
 
