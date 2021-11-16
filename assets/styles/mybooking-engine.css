@@ -398,12 +398,13 @@
 .mb-alert.warning       { background-color: var(--mb-warning-color) }
 
 .mb-alert.info {
-  color: var(--mb-negative-text-color)
+  color: var(--mb-negative-text-color);
 }
 
 .mb-alert.highlight {
   padding: 1.25rem;
   background-color: var(--mb-info-color);
+  color: var(--mb-negative-text-color);
   font-size: 1.4em;
   text-align: center;
 }
@@ -518,6 +519,7 @@
   display: flex;
   justify-content: flex-start;
   border-bottom: 1px solid var(--mb-border-color);
+  margin-bottom: 1em;
 }
 
 .mb-tabs_item-text {
