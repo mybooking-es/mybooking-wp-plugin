@@ -727,7 +727,9 @@
 
   <div class="mb-row">
     <div class="mb-col-md-12">
-      <p><?php echo esc_html_x( "Please, fill the form with the username or email and send to reset your password", 'password_forgotten', 'mybooking-wp-plugin') ?></p>
+      <div class="mb-alert light">
+        <p><?php echo esc_html_x( "Please, fill the form with the username or email and send to reset your password", 'password_forgotten', 'mybooking-wp-plugin') ?></p>
+      </div>
       <form name="mybooking_password_forgotten_form" autocomplete="off" class="mybooking-form">
         <div class="mb-form-group">
           <label for="mybooking_password_forgotten_username"><?php echo esc_html_x( "Username or email", 'password_forgotten', 'mybooking-wp-plugin') ?></label>
