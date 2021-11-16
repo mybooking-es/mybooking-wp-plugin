@@ -109,16 +109,28 @@
         }
         // -- Utilities
         function getCustomLoader() {
-          return customLoader;
+          if (customLoader === 'true') {
+            return true;
+          }
+          return false;
         }
         function getJsUseSelect2() {
-          return jsUseSelect2;
+          if (jsUseSelect2 === 'true') {
+            return true;
+          }
+          return false;
         }
         function getJsBsModalNoConflict(){
-          return jsBsModalNoConflict;
+          if (jsBsModalNoConflict === 'true') {
+            return true;
+          }
+          return false;
         }
         function getJsBsModalBackdropCompatibility(){
-          return jsBsModalBackdropCompatibility;
+          if (jsBsModalBackdropCompatibility === 'true') {
+            return true;
+          }
+          return false;
         }
         function getUseGoogleMaps() {
           return useGoogleMaps;

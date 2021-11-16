@@ -13,6 +13,8 @@
   --mb-success-color: #3DD992;
   --mb-danger-color: #E6546E;
   --mb-warning-color: #FFB74D;
+  --mb-lighter-color: #EEEEEE;
+  --mb-light-color:  #DDDDDD;
 
   --mb-border-color: #BBB;
   --mb-border-radius: 0;
@@ -262,7 +264,7 @@
 
 .mb-form_checkbox label,
 .mb-form_checkbox input {
-  display: inline;
+  display: inline-block;
   width: auto;
   margin-left: 0.5rem!important;
 }
@@ -387,6 +389,8 @@
   line-height: 1.2;
 }
 
+.mb-alert.light         { background-color: var(--mb-light-color) }
+.mb-alert.lighter       { background-color: var(--mb-lighter-color) }
 .mb-alert.secondary     { background-color: var(--mb-background-color) }
 .mb-alert.info          { background-color: var(--mb-info-color) }
 .mb-alert.success       { background-color: var(--mb-success-color) }

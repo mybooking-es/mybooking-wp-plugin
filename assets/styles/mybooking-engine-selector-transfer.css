@@ -1,0 +1,67 @@
+/* Transfers selector */
+
+.mybooking-selector_transfers-return {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  width: 100%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_transfers-return {
+    flex-direction: row;
+  }
+}
+
+.mybooking-selector_transfers-destination {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_transfers-destination {
+    flex-direction: row;
+    width: 66%;
+  }
+}
+
+.mybooking-selector_transfers-destination .mybooking-selector_place {
+  width: 100%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_transfers-destination .mybooking-selector_place {
+    width: 50%;
+  }
+}
+
+.mybooking-selector_transfers-return .mybooking-selector_date {
+  width: 100%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_transfers-return .mybooking-selector_date {
+    width: 33%;
+  }
+}
+
+.mybooking-selector_seats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 1rem;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_seats {
+    width: 30%;
+    margin-bottom: 0;
+  }
+}
+
+.mybooking-selector_seats-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px!important;
+  min-width: 0;
+}
+
+.mybooking-selector_seats-item input[type="number"] {
+  max-width: 100%;
+}

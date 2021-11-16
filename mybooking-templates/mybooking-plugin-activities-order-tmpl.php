@@ -214,7 +214,7 @@
                   <!-- // Customer questions and details -->
                   <% if (typeof order.items[idx].customers !== 'undefined' && typeof order.items[idx].customer_questions !== 'undefined') { %>
                     <% var customer_questions = order.items[idx].customer_questions; %>
-                    <h3 class="mb-form_tile">
+                    <h3 class="mb-form_tile mybooking-summary_activity-group-title mb-alert light">
                       <%=order.items[idx].item_description_customer_translation%>
                       <%= configuration.formatDate(order.items[idx].date) %>
                       <%= order.items[idx].time %>
@@ -225,9 +225,9 @@
                        <% index += 1; %>
                        <input type="hidden" name="order_item_customers[<%=index%>][id]" value="<%=order_item_customer.id%>"/>
 
-                       <h3 class="mb-form_tile">
+                       <h4 class="mb-form_tile mb-alert lighter">
                          <?php echo esc_html_x( 'Participant', 'activity_my_reservation', 'mybooking-wp-plugin' ) ?> #<%=index%>
-                       </h3>
+                       </h4>
 
                        <div class="mb-form-row">
                           <div class="mb-form-group mb-col-md-6">
