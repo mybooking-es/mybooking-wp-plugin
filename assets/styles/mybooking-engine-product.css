@@ -186,7 +186,8 @@
 
 /** PRODUCT ITEM **/
 
-.mybooking-product {
+/** To avoid conflict with product widget */
+div.mybooking-product {
   position: relative;
   margin: var(--mb-product-separation);
   border: 1px solid var(--mb-border-color);
