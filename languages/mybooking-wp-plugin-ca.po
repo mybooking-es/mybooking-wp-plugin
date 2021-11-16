@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2021-11-16 16:30+0000\n"
+"PO-Revision-Date: 2021-11-16 21:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -2175,7 +2175,7 @@ msgstr "Origen"
 #: ../../../../../../../MYBOOKING/STACK/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:127
 msgctxt "transfer_form_selector"
 msgid "Return Date"
-msgstr "Data de retorn"
+msgstr "Retorn"
 
 #: ../../../../../../../MYBOOKING/STACK/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:115
 #: ../../../../../../../MYBOOKING/STACK/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:112

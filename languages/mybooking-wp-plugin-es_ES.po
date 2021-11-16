@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2021-11-16 13:22+0000\n"
+"PO-Revision-Date: 2021-11-16 21:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.5.2; wp-5.7"
+"X-Loco-Version: 2.5.5; wp-5.8.2"
 
 #: ../../../../../../../MYBOOKING/STACK/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:74
 #: ../../../../../../../MYBOOKING/STACK/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:51
@@ -2175,7 +2175,7 @@ msgstr "Origen"
 #: ../../../../../../../MYBOOKING/STACK/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:127
 msgctxt "transfer_form_selector"
 msgid "Return Date"
-msgstr "Fecha de vuelta"
+msgstr "Vuelta"
 
 #: ../../../../../../../MYBOOKING/STACK/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:115
 #: ../../../../../../../MYBOOKING/STACK/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:112

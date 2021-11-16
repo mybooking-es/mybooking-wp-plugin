@@ -14,7 +14,7 @@
 
 <script type="text/tmpl" id="widget_transfer_form_selector_tmpl">
 
-<div class="mybooking-selector_group">
+<div class="mybooking-selector_transfers-group">
 	<div class="mybooking-selector_type">
 
 	  <!-- // One Way -->
@@ -31,7 +31,7 @@
 	</div>
 </div>
 
-<div class="mybooking-selector_group">
+<div class="mybooking-selector_transfers-group">
 
 	<!-- // GOING -->
 
@@ -86,13 +86,42 @@
 			<select class="mb-form-control" name="time" id="time"></select>
 		</div>
   </div>
+
+  <% if (!configuration.transfer_allow_select_return_origin_destination) { %>
+		<!-- // Date and time -->
+	  <div id="return_block" class="mybooking-selector_date">
+
+			<!-- // Return date -->
+	    <div class="mybooking-selector_cal">
+				<i class="mybooking-selector_field-icon">
+					<span class="dashicons dashicons-calendar-alt"></span>
+				</i>
+	      <label for="date">
+					<?php echo esc_html_x( 'Return Date', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+				</label>
+				<input type="text" class="mb-form-control" name="return_date" id="return_date" autocomplete="off" readonly="true">
+	    </div>
+
+			<!-- // Return time -->
+			<div class="mybooking-selector_hour">
+				<i class="mybooking-selector_field-icon">
+					<span class="dashicons dashicons-clock"></span>
+				</i>
+				<label for="time">
+					<?php echo esc_html_x( 'Time', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+				</label>
+				<select class="mb-form-control" name="return_time" id="return_time"></select>
+			</div>
+	  </div>
+  <% } %>
+
+
 </div>
 
-<div class="mybooking-selector_group">
+<% if (configuration.transfer_allow_select_return_origin_destination) { %>
+	<div id="return_block" class="mybooking-selector_transfers-group" style="display:none">
 
-	<!-- // RETURN -->
-
-	<div id="return_block" class="mybooking-selector_transfers-return" style="display:none">
+		<!-- // RETURN -->
 	  <div class="mybooking-selector_transfers-destination" id="return_origin_destination_block" style="display: none">
 
 			<!-- // Origin point -->
@@ -144,7 +173,8 @@
 			</div>
 	  </div>
 	</div>
-</div>
+
+<% } %>
 
 <!-- // FOOTER -->
 

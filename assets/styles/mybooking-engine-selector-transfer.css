@@ -1,13 +1,13 @@
 /* Transfers selector */
 
-.mybooking-selector_transfers-return {
+.mybooking-selector_transfers-group {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  width: 100%;
+  gap: 0.5rem!important;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
 } @media ( min-width: 575.98px ) {
-  .mybooking-selector_transfers-return {
+  .mybooking-selector_transfers-group {
     flex-direction: row;
   }
 }
@@ -16,28 +16,29 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 100%;
+  flex-grow: 1;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_transfers-destination {
     flex-direction: row;
-    width: 66%;
   }
 }
 
-.mybooking-selector_transfers-destination .mybooking-selector_place {
-  width: 100%;
+.mybooking-selector_transfers-return {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-grow:  1;
 } @media ( min-width: 575.98px ) {
-  .mybooking-selector_transfers-destination .mybooking-selector_place {
-    width: 50%;
+  .mybooking-selector_transfers-return {
+    flex-direction: row;
   }
 }
 
-.mybooking-selector_transfers-return .mybooking-selector_date {
-  width: 100%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector_transfers-return .mybooking-selector_date {
-    width: 33%;
-  }
+/** Return => Date **/
+#return_block.mybooking-selector_date,
+.mybooking-selector_transfers-destination + .mybooking-selector_date {
+  width:  auto;
 }
 
 .mybooking-selector_seats {
