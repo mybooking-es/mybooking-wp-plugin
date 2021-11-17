@@ -103,8 +103,8 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $custom_css .= ":root {";
 
       // Product Image Height
-      if (!empty($product_image_height_img) && $product_image_height_img == 'photo') {
-        $custom_css .= "--mb-product-image-height-img: 100%;";
+      if (!empty($product_image_height_img) && $product_image_height_img == 'auto') {
+        $custom_css .= "--mb-product-image-height-img: auto;";
       }
 
       $custom_css .= "}";
