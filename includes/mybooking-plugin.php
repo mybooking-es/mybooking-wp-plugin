@@ -382,13 +382,6 @@
                         plugins_url('/assets/styles/select2-bootstrap.css', dirname( __FILE__ ) ) );
       }
 
-      // Font-Awesome CSS
-      if ( $registry->mybooking_rent_plugin_css_fontawesome ) {
-        // Load font awesome 4.7
-        wp_enqueue_style( 'mybooking_wp_css_framework_fontawesome',
-                        plugins_url('/assets/styles/font-awesome-4.7.0.min.css', dirname( __FILE__ ) ) );
-      }
-
       // Slick JS CSS
       if ( $registry->mybooking_rent_plugin_js_slickjs ) {
         // Load Slick
@@ -1992,14 +1985,6 @@
       }
       else {
         $registry->mybooking_rent_plugin_components_css = '1';
-      }
-
-      // Include FontAwesome
-      if ($settings && array_key_exists('mybooking_plugin_settings_components_css_fontawesome', $settings)) {
-        $registry->mybooking_rent_plugin_css_fontawesome = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css_fontawesome"] )) == '1');
-      }
-      else {
-        $registry->mybooking_rent_plugin_css_fontawesome = '1';
       }
 
       // Include SlickJS

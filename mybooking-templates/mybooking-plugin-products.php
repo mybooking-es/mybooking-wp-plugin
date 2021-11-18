@@ -49,7 +49,7 @@
 
 										<span class="mybooking-product_price-from">
 											<?php echo esc_html_x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?>
-										</span>
+										</span>&nbsp;
 										<span class="mybooking-product_amount">
 											<?php echo esc_html( $mybooking_product->from_price ) ?>€
 										</span>

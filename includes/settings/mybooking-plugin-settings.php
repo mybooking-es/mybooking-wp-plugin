@@ -650,13 +650,6 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
-		  // Font Awesome
-		  add_settings_field('mybooking_plugin_settings_components_css_fontawesome',
-		                     'Include Fontawesome',
-		                     array($this, 'field_mybooking_plugin_settings_components_css_fontawesome_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
-
 		  // SlickJS
 		  add_settings_field('mybooking_plugin_settings_components_js_slickjs',
 		                     'Include SlickJS',
@@ -1787,28 +1780,6 @@ EOF;
 
 		  echo "<p class=\"description\">Include <b>slickJS</b> library. It is <b>required</b> if you are using the testimonials complement";
 		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck if not testimonials are used or if the theme that you are using includes slickJS.";
-		}
-
-		/**
-		 * Render Fontawesome
-		 */
-		public function field_mybooking_plugin_settings_components_css_fontawesome_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_components_css_fontawesome";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '1';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">Include <b>Fontawesome 4.7</b> library.";
-		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck only if your theme is using it.";
 		}
 
 
