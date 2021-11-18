@@ -9,11 +9,18 @@ Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Mybooking reservation engine WordPress plugin. 
+Mybooking Reservation Engine WordPress plugin. 
 
 == Description ==
 
-Mybooking Reservation Engine WordPress plugin. A reservation system connected to your mybooking account.
+Mybooking Reservation Engine WordPress plugin is designed for your vehicle, boats, properties or material rental. 
+It also can be used for accommodation, transfers or tour and activities business. 
+
+It's easy to use and very powerful. You can manage offers, promotion codes and connect a payment gateway to charge
+for your reservations. You can insert a search widget on your home page to start the reservation process. You can
+also include a calendar in each of your products pages.
+
+This plugin provides a booking engine frontend in your Wordpress site connecting to your mybooking account.
 
 It is very easy to set up:
  
@@ -21,19 +28,45 @@ It is very easy to set up:
 - Install and configure the plugin on your Wordpress website.
 - Start receiving and charging reservations.
 
-A reservation engine for the following businesses:
+It has three modules for different reservation needs:
 
-- Vehicles rental
+- Renting/Accommation
+- Activities/Appointments
+- Transfer
+
+The reservation engine includes:
+
+- Search widgets to start the reservation process
+- Calendar shortcodes to add a calendar to your product page
+- Language context adapted to the different business
+- Prices by hours and days (defined on your mybooking account)
+- Prices by seasons (defined on your mybooking account)
+- Offers (defined on your mybooking account)
+- Promotion Code (defined on your mybooking accoount)
+- Stop sales (defined on your mybooking account)
+- Min and max reservation duration (defined on your mybooking account)
+- Calendar to define delivery and collection times (defined on your mybooking account)
+- Payment gateway connection. Paypal, Redsys and Addon Payments
+
+The reservation engine can be used for the following businesses:
+
+- Vehicles rental (car rental, autocaravanning, motorcycle, scooters, bike)
 - Boats rental
 - Properties rental
-- Kayak/Surf/Paddle surf rental
-- Accommodation
+- Sports material rental (Kayak, surf, paddle surf)
+- Accommodation (hostels and hotels)
 - Sport courts
 - Coworking
 - Escape Rooms
-- Activities or tours
+- Activities
+- Tours
 - Appointments
 - Transfers
+
+Notes:
+
+- The plugin does not use iframes to build the reservation process. It works directly on your Wordpress installation.
+- It is ready to use in any theme. But you can customize the components to match your website look and feel
 
 == Installation ==
 
@@ -67,15 +100,24 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Screenshots ==
 
-1. Activity/Tour checkout page
-2. Activity/Tour calendar widget
-3. Renting choose product page
-4. Renting choose product page (multiple products)
-5. Renting checkout page
+1. Renting/accommodation search widget
+2. Renting/accommodation select page
+3. Renting/accommodation checkout page
+4. Renting/accommodation checkout page / payment
+5. Renting/accommodation summary page
+6. Renting/accommodation product calendar component
+7. Tours/appointments calendar component
+8. Tours/appointments checkout page
+9. Tours/appointments checkout page / payment
+10. Tours/appointments summary page
+11. Transfer search widget
+12. Transfer choose vehicle page
+13. Transfer checkout page
+14. Transfer summary page
 
 == Changelog ==
 
-= 0.13.0 =
+= 1.0.0 =
 * Added Transfer
 * Improved themes compatibility
 
@@ -261,7 +303,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
-= 0.13.0 =
+= 1.0.0 =
 * Added Transfer module and improved themes compatibility
 
 = 0.12.0 =

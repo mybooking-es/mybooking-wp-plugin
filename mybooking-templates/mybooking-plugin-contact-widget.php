@@ -31,11 +31,11 @@
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-6">
         <label for="customer_name"><?php echo esc_html_x( 'Name', 'contact_form', 'mybooking-wp-plugin') ?>*</label>
-        <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="<?php echo esc_attr_x( 'Name', 'contact_form', 'mybooking-wp-plugin') ?>:*">
+        <input type="text" class="mb-form-control" name="customer_name" id="customer_name" placeholder="<?php echo esc_attr_x( 'Name', 'contact_form', 'mybooking-wp-plugin') ?>:*">
       </div>
       <div class="mb-form-group mb-col-md-6">
         <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'contact_form', 'mybooking-wp-plugin') ?>*</label>
-        <input type="text" class="form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo esc_attr_x( 'Surname', 'contact_form', 'mybooking-wp-plugin') ?>:*">
+        <input type="text" class="mb-form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo esc_attr_x( 'Surname', 'contact_form', 'mybooking-wp-plugin') ?>:*">
       </div>
     </div>
 

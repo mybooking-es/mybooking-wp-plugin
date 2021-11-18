@@ -137,9 +137,9 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $wp_customize->add_section(
         'mybooking_reservation_engine_renting_options',
         array(
-          'title'       => _x('Catalog of Products', 'customizer_colors', 'mybooking-wp-plugin'),
+          'title'       => _x('Catalog of Products', 'customizer_product_catalog', 'mybooking-wp-plugin'),
           'capability'  => 'edit_theme_options',
-          'description' => _x('Characteristics of products', 'customizer_colors', 'mybooking-wp-plugin'),
+          'description' => _x('Characteristics of products', 'customizer_product_catalog', 'mybooking-wp-plugin'),
           'priority'    => 50,
           'panel'        => 'mybooking_reservation_engine_settings_panel',
         )
@@ -164,18 +164,18 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_product_image_height_img',
           array(
-            'label'       => _x('Image', 'customizer_layout', 'mybooking-wp-plugin'),
+            'label'       => _x('Image', 'customizer_product_catalog', 'mybooking-wp-plugin'),
             'description' => _x(
               'Choose depending on the images that you are using for your products',
-              'customizer_layout',
+              'customizer_product_catalog',
               'mybooking-wp-plugin'
             ),
             'section'     => 'mybooking_reservation_engine_renting_options',
             'settings'    => 'mybooking_reservation_engine_product_image_height_img',
             'type'        => 'select',
             'choices'     => array(
-              'auto' => _x('Transparent background', 'customizer_layout', 'mybooking-wp-plugin'),
-              'photo'      => _x('Photo', 'customizer_layout', 'mybooking-wp-plugin'),
+              'auto' => _x('Transparent background', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+              'photo'      => _x('Photo', 'customizer_product_catalog', 'mybooking-wp-plugin'),
             ),
             'priority'    => '10',
           )
