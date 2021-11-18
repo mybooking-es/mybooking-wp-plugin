@@ -24,15 +24,11 @@
 
 		<!-- PRODUCT LOOP ------------------------------------------------------------->
 
-		<div class="mybooking-product_list">
+		<div class="mybooking-product_grid">
 
-			<div class="mybooking-product_filter">
-	      <div class="mybooking-product_filter-btn-group">
-	        <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
-	        <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view"><i class="mb-button icon"><span class="dashicons dashicons-grid-view"></span></i></span>
-	        <span class="mybooking-product_filter-btn list js-mb-list" title="List view"><i class="mb-button icon"><span class="dashicons dashicons-list-view"></span></i></span>
-	      </div>
-	    </div>
+			<!--
+				TODO: Grid/list switch must go here 
+			-->
 
 			<?php foreach( $args['data']->data as $mybooking_activity ) { ?>
 			  <?php
@@ -72,7 +68,7 @@
 									<?php if ( $mybooking_activity->use_rates ) { ?>
 										<span class="mybooking-product_price-from">
 											<?php echo esc_html_x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?>
-										</span>&nbsp;
+										</span>
 										<span class="mybooking-product_amount">
 											<?php echo esc_html( $mybooking_activity->from_price_formatted ) ?>
 										</span>

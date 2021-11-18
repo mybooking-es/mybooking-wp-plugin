@@ -302,19 +302,24 @@ div.mybooking-product {
   left: 10px;
   width: auto;
   height: var(--mb-catalog-price-height);
-  border-bottom: none;
+  border: none;
   padding: 0;
   background-color: var(--mb-catalog-price-bg);
   color: var(--mb-catalog-price-color);
 }
 
 .mybooking-products_catalog .mybooking-product_price {
-  padding: .5rem;
+  padding: 0.5rem;
+}
+
+.mybooking-products_catalog .mybooking-product_price-from {
+  margin-right: 0.5rem;
 }
 
 .mybooking-products_catalog .mybooking-product_amount {
   display: inline-block;
   margin: 0;
+  color: white;
   font-size: 1.3em;
   font-weight: 800;
   line-height: 1;

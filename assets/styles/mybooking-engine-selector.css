@@ -125,6 +125,7 @@
 .mybooking-selector_type .mb-custom-label {
   text-transform: uppercase;
   cursor: pointer;
+  padding: 0.5rem;
 }
 
 .mybooking-selector_type .mb-custom-label:hover {

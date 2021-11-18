@@ -23,7 +23,7 @@
   --mb-negative-text-color: #FFF;
 
   /* Forms */
-  --mb-form-field-height:  3em;
+  --mb-form-field-height:  3rem;
   --mb-form-field-border-color:  var(--mb-border-color);
   --mb-form-field-background: white;
 
@@ -245,9 +245,45 @@
 
 /** FORMS & FIELDS **/
 
+.mybooking select,
+.mybooking textarea,
+.mybooking input[type=text],
+.mybooking input[type=email],
+.mybooking input[type=url],
+.mybooking input[type=password],
+.mybooking input[type=search],
+.mybooking input[type=number],
+.mybooking input[type=tel],
+.mybooking input[type=date],
+.mybooking input[type=month],
+.mybooking input[type=week],
+.mybooking input[type=time],
+.mybooking input[type=datetime],
+.mybooking input[type=datetime-local],
+.mybooking input[type=color] {
+  width: 100%;
+  height: var(--mb-form-field-height);
+  border: 1px solid var(--mb-form-field-border-color)!important;
+  border-radius: var(--mb-border-radius);
+  background-color: var(--mb-form-field-background);
+}
+
+.mybooking textarea {
+  height: 10rem;
+}
+
+/* Form classes */
+
+.mybooking-form {
+  width: 100%;
+}
+
 .mb-form_legend {
   font-weight: 800;
   margin-bottom: 0.5rem;
+}
+.mb-form-group {
+  width: 100%; 
 }
 
 .mb-form-group label,
@@ -286,6 +322,7 @@
   .mb-form-row {
     display: flex;
     justify-content: space-between;
+    align-content: center;
     gap: 1rem;
     margin: 0;
   }
@@ -301,7 +338,7 @@
 }
 
 .mb-form-control {
-  min-width: 100%;
+  width: 100%;
   margin-bottom: 0.5rem;
 }
 
@@ -332,10 +369,14 @@
   text-decoration: none!important;
 }
 
-.mb-button a, .mb-button a:visited, .mb-button a:hover,
-button.mb-button a, button.mb-button a:visited, button.mb-button a:hover  {
+.mb-button a,
+.mb-button a:visited,
+.mb-button a:hover,
+button.mb-button a,
+button.mb-button a:visited,
+button.mb-button a:hover  {
   text-decoration: none!important;
-  color:  currentColor;
+  color:  currentcolor;
 }
 
 .mb-button.block {
@@ -356,6 +397,10 @@ button.mb-button a, button.mb-button a:visited, button.mb-button a:hover  {
   color: var(--mb-info-color);
   text-decoration: underline;
   cursor: pointer;
+}
+
+.mb-button.search {
+  height: var(--mb-form-field-height);
 }
 
 /* Badges */
@@ -562,3 +607,78 @@ button.mb-button a, button.mb-button a:visited, button.mb-button a:hover  {
   border: 1px solid var(--mb-border-color);
   border-top: none;
 }
+
+
+/** COMPATIBILITY **/
+
+/* Route renting producto and Route activity compatibility with other themes */
+@media only screen and (min-width: 768px) {
+  body.mybooking-activity .mybooking.mybooking-activity_container:not(.alignwide),
+  body.mybooking-product .mybooking.mybooking-product_container:not(.alignwide) {
+      max-width: var(--mb-product-activity-route-max-width);
+      margin: var(--mb-product-activity-route-margin);
+  }
+}
+
+/* WordPress themes: Twenty Nineteen * Twenty Twenty * Twenty Twenty One */
+
+@media only screen and (min-width: 482px) {
+
+  body.mybooking-activity .mybooking-activity_container.alignwide {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+  body.mybooking-product .mybooking-product_container.alignwide {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+
+  /* Twenty Nineteen */
+  body.mybooking-product .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
+  body.mybooking-activity .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator)
+  {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+  /* Twenty Twenty */
+  body.mybooking-product .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
+  body.mybooking-activity .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)
+  {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+  /* Twenty Twenty One */
+  body.mybooking-product .entry .entry-content > *,
+  body.mybooking-activity .entry .entry-content > *
+  {
+    max-width: var(--responsive--alignwide-width, 610px);
+  }
+}
+
+@media only screen and (min-width: 822px) {
+
+  body.mybooking-activity .mybooking-activity_container.alignwide {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+  body.mybooking-product .mybooking-product_container.alignwide {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+
+  /* Twenty Nineteen */
+  body.mybooking-product .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
+  body.mybooking-activity .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator)
+  {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+  /* Twenty Twenty */
+  body.mybooking-product .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
+  body.mybooking-activity .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)
+  {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+  /* Twenty Twenty One */
+  body.mybooking-product .entry .entry-content > *,
+  body.mybooking-activity .entry .entry-content > *
+  {
+    max-width: var(--responsive--alignwide-width, 1240px);
+  }
+}
+
+
+/* ////////////////////////////////////////////////////////////////// */
