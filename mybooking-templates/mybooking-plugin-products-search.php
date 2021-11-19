@@ -13,9 +13,10 @@
     <?php if ( array_key_exists('search_path', $args) && $args['search_path'] != '') { ?>
       action="<?php esc_url( $args['search_path'] )?>"
     <?php } ?>>
-    <div class="mb-form-row search_fields_container">
+    <div class="mybooking-search_fields-container mb-form-row search_fields_container">
 
-      <button class="mb-button search" type="submit">
+      <button class="mybooking-search_button" type="submit">
+        <!-- <?php echo esc_attr_x( 'Search', 'activities_search', 'mybooking-wp-plugin' ) ?> -->
         <span class="dashicons dashicons-search"></span>
       </button>
     </div>

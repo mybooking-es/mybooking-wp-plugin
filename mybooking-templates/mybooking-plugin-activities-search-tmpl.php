@@ -10,6 +10,7 @@
    */
 ?>
 <script type="text/tmpl" id="form_activities_selector_tmpl">
+
 	<% if (configuration.selectActivityDestination) { %>
 		<select name="destination_id" id="activity_selector_destination_id" class="mb-form-control form-control"
 			<?php if ( array_key_exists('destination_id', $args) && $args['destination_id'] != '') { ?>data-value="<?php echo esc_attr( $args['destination_id'] )?>"<?php } ?>>
@@ -23,4 +24,5 @@
 			<option value=""><?php echo esc_html_x( 'Category', 'activities_search', 'mybooking-wp-plugin' ) ?></option>
 		</select>
 	<% } %>
+
 </script>

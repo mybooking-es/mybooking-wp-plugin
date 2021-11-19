@@ -103,27 +103,27 @@
 		<div class="mb-row">
 			<div class="mb-col-md-12">
 
-				<nav aria-label="<?php echo esc_attr_x( 'Page navigation', 'activities_list', 'mybooking-wp-plugin' ); ?>" class="pull-right">
-				  <ul class="pagination">
+				<nav aria-label="<?php echo esc_attr_x( 'Page navigation', 'activities_list', 'mybooking-wp-plugin' ); ?>" class="mb-pagination_container">
+				  <ul class="mb-pagination">
 
 				  	<?php $mybooking_disabled_previous = ($args['current_page'] == 1 ? 'disabled' : '') ?>
-				    <li class="page-item <?php echo esc_attr( $mybooking_disabled_previous ) ?>">
-			    	  <a class="page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']-1).$mybooking_querystring ) ?>">
+				    <li class="mb-pagination_page-item <?php echo esc_attr( $mybooking_disabled_previous ) ?>">
+			    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']-1).$mybooking_querystring ) ?>">
 			    	     <?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
 			    	  </a>
 				    </li>
 
 	          <?php foreach ($args['pages'] as $mybooking_page) { ?>
 		          <?php if ($mybooking_page == $args['current_page']) { ?>
-						    <li class="page-item active" aria-current="page">
-						      <span class="page-link">
+						    <li class="mb-pagination_page-item active" aria-current="page">
+						      <span class="mb-pagination_page-link">
 						        <?php echo esc_html( $mybooking_page ) ?>
 						      </span>
 						    </li>
 
 		          <?php } else { ?>
-		            <li class="page-item">
-		      	      <a class="page-link"
+		            <li class="mb-pagination_page-item">
+		      	      <a class="mb-pagination_page-link"
 		      	         href="<?php echo esc_url( $args['url'].'?offsetpage='.($mybooking_page).$mybooking_querystring )?>">
 		      	      	<?php echo esc_html( $mybooking_page ) ?>
 		      	      </a>
@@ -132,8 +132,8 @@
 				    <?php } ?>
 
 				    <?php $mybooking_disabled_next = ($args['current_page'] == $args['total_pages'] ? 'disabled' : '') ?>
-				    <li class="page-item <?php echo esc_attr( $mybooking_disabled_next ) ?>">
-			    	  <a class="page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']+1).$mybooking_querystring )?>">
+				    <li class="mb-pagination_page-item <?php echo esc_attr( $mybooking_disabled_next ) ?>">
+			    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']+1).$mybooking_querystring )?>">
 			    	     <?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
 			    	  </a>
 				    </li>

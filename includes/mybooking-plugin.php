@@ -183,8 +183,8 @@
       $registry = Mybooking_Registry::getInstance();
 
       // Initialize customizer
-      if ( $registry->mybooking_rent_plugin_components_css ) { 
-        MyBookingPluginCustomizer::getInstance();  
+      if ( $registry->mybooking_rent_plugin_components_css ) {
+        MyBookingPluginCustomizer::getInstance();
       }
 
       // Initialize the custom routes for activities and products
@@ -206,7 +206,7 @@
 
       // Enqueue BLOCK EDITOR styles
       add_action( 'enqueue_block_editor_assets', array( $this, 'wp_enqueue_block_editor_styles' ), 1, 1 );
-      
+
       // Add micro templates
       add_action( 'wp_footer', array( $this, 'wp_include_micro_templates' ) );
 
@@ -341,16 +341,16 @@
 
     /**
      * Enqueue block editor styles
-     */ 
+     */
     public function wp_enqueue_block_editor_styles() {
 
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
 
-      if ( $registry->mybooking_rent_plugin_components_css ) {  
+      if ( $registry->mybooking_rent_plugin_components_css ) {
           // == Load Customizer front-end
           $customizer_css = MyBookingPluginCustomizer::getInstance()->customize_enqueue( 'block-editor' );
-          if ( !empty($customizer_css) ) { 
+          if ( !empty($customizer_css) ) {
                 wp_register_style( 'mybooking_wp_engine_customizer-block-editor-styles', false );
                 wp_enqueue_style( 'mybooking_wp_engine_customizer-block-editor-styles' );
                 wp_add_inline_style( 'mybooking_wp_engine_customizer-block-editor-styles', $customizer_css );
@@ -378,8 +378,6 @@
         // Load select2
         wp_enqueue_style( 'mybooking_wp_css_components_select2',
                         plugins_url('/assets/styles/select2-4.0.1.css', dirname( __FILE__ ) ) );
-        wp_enqueue_style( 'mybooking_wp_css_components_select2_theme',
-                        plugins_url('/assets/styles/select2-bootstrap.css', dirname( __FILE__ ) ) );
       }
 
       // Slick JS CSS
@@ -414,11 +412,11 @@
         // Mybooking Wizard Selector
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-selector-wizard',
                         plugins_url('/assets/styles/mybooking-engine-selector-wizard.css', dirname( __FILE__ ) ),
-                        array(), $version );        
+                        array(), $version );
         // Mybooking Transfer Selector
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-selector-trasfer',
                         plugins_url('/assets/styles/mybooking-engine-selector-transfer.css', dirname( __FILE__ ) ),
-                        array(), $version );    
+                        array(), $version );
         // Mybooking Components
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-components',
                         plugins_url('/assets/styles/mybooking-engine-components.css', dirname( __FILE__ ) ),
@@ -431,14 +429,10 @@
         wp_enqueue_style( 'mybooking_wp_css_components_jquerymodal',
                         plugins_url('/assets/styles/mybooking-engine-modals.css', dirname( __FILE__ ) ),
                         array(), $version );
-        // Mybooking Compatibility
-        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-compatibility',
-                        plugins_url('/assets/styles/mybooking-engine-compatibility.css', dirname( __FILE__ ) ),
-                        array(), $version );
-      
+
         // == Load Customizer front-end
         $customizer_css = MyBookingPluginCustomizer::getInstance()->customize_enqueue( 'front-end' );
-        if ( !empty($customizer_css) ) { 
+        if ( !empty($customizer_css) ) {
             wp_register_style( 'mybooking_wp_engine_customizer', false );
             wp_enqueue_style( 'mybooking_wp_engine_customizer' );
             wp_add_inline_style( 'mybooking_wp_engine_customizer', $customizer_css );

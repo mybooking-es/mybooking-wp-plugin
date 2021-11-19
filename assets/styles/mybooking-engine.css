@@ -283,7 +283,7 @@
   margin-bottom: 0.5rem;
 }
 .mb-form-group {
-  width: 100%; 
+  width: 100%;
 }
 
 .mb-form-group label,
@@ -322,7 +322,7 @@
   .mb-form-row {
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: flex-end;
     gap: 1rem;
     margin: 0;
   }
@@ -340,6 +340,10 @@
 .mb-form-control {
   width: 100%;
   margin-bottom: 0.5rem;
+} @media ( min-width: 575.98px ) {
+  .mb-form-control {
+    margin-bottom: 0;
+  }
 }
 
 .mb-custom-date-form .mb-custom-date-item {
@@ -356,6 +360,47 @@
   }
 }
 
+/* Select2 */
+.select2-container--bootstrap4 .select2-selection {
+    border: 1px solid var(--mb-form-field-border-color);
+    border-radius: var(--mb-border-radius);
+    margin-bottom: 0.5rem;
+} @media ( min-width: 575.98px ) {
+  .select2-container--bootstrap4 .select2-selection {
+      margin-bottom: 0;
+  }
+}
+
+.select2-container--bootstrap4 .select2-selection--single {
+    height: var(--mb-form-field-height)!important;
+}
+
+.select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
+    line-height: var(--mb-form-field-height);
+}
+
+.select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow {
+    margin-top: -3px;
+}
+
+.select2-dropdown {
+    min-width: 320px;
+    border: 1px solid var(--mb-form-field-border-color);
+}
+
+.select2-container--bootstrap4 .select2-dropdown.select2-dropdown--below {
+  border-radius: var(--mb-border-radius);
+} @media ( min-width: 575.98px ) {
+  .select2-container--bootstrap4 .select2-dropdown.select2-dropdown--below {
+    margin-top: -1.2rem;
+  }
+}
+
+.select2-container--bootstrap4 .select2-results__option--highlighted,
+.select2-container--bootstrap4 .select2-results__option--highlighted.select2-results__option[aria-selected="true"] {
+    background-color: var(--mb-info-color);
+    color: var(--mb-negative-text-color);
+}
 
 /** UI ELEMENTS **/
 
@@ -397,10 +442,6 @@ button.mb-button a:hover  {
   color: var(--mb-info-color);
   text-decoration: underline;
   cursor: pointer;
-}
-
-.mb-button.search {
-  height: var(--mb-form-field-height);
 }
 
 /* Badges */
@@ -559,6 +600,17 @@ button.mb-button a:hover  {
 
 .mb-list.border.border .mb-list-item:last-of-type {
   border-bottom: none;
+}
+
+/* Pagination */
+.mb-pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Tabs */
