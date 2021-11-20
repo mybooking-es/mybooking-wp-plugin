@@ -868,7 +868,7 @@ fieldset legend {
 }
 
 .ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default {
-  background: var(--mb-calendar-available);
+  background: var(--mb-calendar-available)!important;
 }
 
 .ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default:hover {

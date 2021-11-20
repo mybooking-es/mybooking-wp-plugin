@@ -657,20 +657,6 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
-		  // Compatibility
-
-		  add_settings_field('mybooking_plugin_settings_components_js_bs_modal_no_conflict',
-		                     'Boostrap Modal no conflict mode',
-		                     array($this, 'field_mybooking_plugin_settings_components_js_bs_modal_no_conflict_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
-
-		  add_settings_field('mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility',
-		                     'Boostrap Modal backdrop',
-		                     array($this, 'field_mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
-
 		  // Select 2
 		  add_settings_field('mybooking_plugin_settings_components_js_use_select2',
 		                     'Use select2 library on selects',
@@ -1802,55 +1788,6 @@ EOF;
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
 		  echo "<p class=\"description\">Use <b>select2</b> library on form selects.";
-
-		}
-
-
-		/**
-		 * Render Mybooking Bootstrap Modal No conflict
-		 */
-		public function field_mybooking_plugin_settings_components_js_bs_modal_no_conflict_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_components_js_bs_modal_no_conflict";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">Use <b>Bootstrap modal no conflict</b> if there is a conflict with Bootstrap modal.";
-		  echo "<p class=\"description\">It will use $('#my_modal').bootstrapModal('show') instead of $('#my_modal').modal('show').</p>";
-		  echo "<p class=\"description\"><b>¡Attention!</b> check only if modals, like product detail or edit reservation, are not shown.";
-
-		}
-
-		/**
-		 * Render Mybooking Bootstrap Modal Backdrop
-		 */
-		public function field_mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_components_js_bs_modal_backdrop_compatibility";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">Setup <b>Bootstrap modal backdrop compatibility</b> when showing a modal.";
-		  echo "<p class=\"description\">It helps to improve plugin compatibility with some themes when the modal is not shown on top.</p>";
-		  echo "<p class=\"description\"><b>¡Attention!</b> check only if modals are not shown on top of the page.";
 
 		}
 
