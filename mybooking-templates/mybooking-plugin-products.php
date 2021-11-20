@@ -21,7 +21,7 @@
 
 			<?php foreach( $args['data']->data as $mybooking_product ) { ?>
 			  <?php
-					$mybooking_productIdAnchor = $mybooking_product->id;
+					$mybooking_productIdAnchor = $mybooking_product->code;
 	  	    if ( !empty( $mybooking_product->slug) ) { $mybooking_productIdAnchor = $mybooking_product->slug; }
 			  ?>
 			  <div class="mybooking-product_column">
