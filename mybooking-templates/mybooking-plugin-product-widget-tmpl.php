@@ -126,14 +126,16 @@
       </div>
 
       <!-- // Product -->
-      <div class="mybooking-summary_extras">
-        <span class="mybooking-summary_item">
-          <?php echo MyBookingEngineContext::getInstance()->getProduct() ?>:
-        </span>
-        <span class="mybooking-summary_extra-amount">
-          <%=configuration.formatCurrency(shopping_cart.item_cost)%>
-        </span>
-      </div>
+      <% if (!configuration.hidePriceIfZero || shopping_cart.item_cost > 0) { %>
+        <div class="mybooking-summary_extras">
+          <span class="mybooking-summary_item">
+            <?php echo MyBookingEngineContext::getInstance()->getProduct() ?>:
+          </span><%= configuration.hidePriceIfZero %>*
+            <span class="mybooking-summary_extra-amount">
+              <%=configuration.formatCurrency(shopping_cart.item_cost)%>
+            </span>
+        </div>
+      <% } %>
 
       <!-- // Extras -->
 
@@ -222,24 +224,25 @@
         <% } %>
       </div>
 
-      <!-- // Total -->
+      <% if (!configuration.hidePriceIfZero || shopping_cart.item_cost > 0) { %>
+        <!-- // Total -->
+        <div class="mb-section">
+          <div class="mybooking-summary_total">
+            <div class="mybooking-summary_total-label">
+              <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+            </div>
+            <div class="mybooking-summary_total-amount">
+              <%=configuration.formatCurrency(shopping_cart.total_cost)%>
+            </div>
+          </div>
 
-      <div class="mb-section">
-        <div class="mybooking-summary_total">
-          <div class="mybooking-summary_total-label">
-            <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
-          </div>
-          <div class="mybooking-summary_total-amount">
-            <%=configuration.formatCurrency(shopping_cart.total_cost)%>
-          </div>
+          <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+            <div class="mybooking-product_taxes">
+              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+            </div>
+          <?php endif; ?>
         </div>
-
-        <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-          <div class="mybooking-product_taxes">
-            <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-          </div>
-        <?php endif; ?>
-      </div>
+      <% } %>
 
       <!-- // Reservation button -->
 

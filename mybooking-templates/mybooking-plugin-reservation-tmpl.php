@@ -100,8 +100,11 @@
                 <div class="mb-col-md-12">
 
                   <!-- // Product photo -->
-                  <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
-
+                  <% if (booking.booking_lines[idx].photo_full && booking.booking_lines[idx].photo_full !== '') { %>
+                    <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
+                  <% } else { %>
+                    <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
+                  <% } %>  
 
                   <!-- // Product name -->
                   <span class="mybooking-product_name">
@@ -122,21 +125,23 @@
                 </div>
               </div>
 
-              <div class="mybooking-product_header">
-               <div class="mybooking-product_price">
+              <% if (!configuration.hidePriceIfZero || booking.item_cost > 0) { %>
+                <div class="mybooking-product_header">
+                 <div class="mybooking-product_price">
 
-                 <!-- //Price -->
-                 <div class="mybooking-product_amount">
-                   <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
-                </div>
-
-                 <!-- // Taxes -->
-                <?php if ( array_key_exists('show_taxes_included', $args ) && ( $args['show_taxes_included'] ) ): ?>
-                  <div class="mybooking-product_taxes">
-                    <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                   <!-- //Price -->
+                   <div class="mybooking-product_amount">
+                     <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
                   </div>
-                <?php endif; ?>
-               </div>
+
+                   <!-- // Taxes -->
+                  <?php if ( array_key_exists('show_taxes_included', $args ) && ( $args['show_taxes_included'] ) ): ?>
+                    <div class="mybooking-product_taxes">
+                      <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                    </div>
+                  <?php endif; ?>
+                 </div>
+              <% } %>   
 
                <div class="mybooking-product_discount">
 
@@ -321,42 +326,43 @@
           <% } %>
 
           <!-- // Total -->
+          <% if (!configuration.hidePriceIfZero || booking.total_cost > 0) { %>
+            <div class="mb-section">
+              <div class="mybooking-summary_total">
+                <div class="mybooking-summary_total-label">
+                  <?php echo esc_html_x( 'Total', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                </div>
+                <div class="mybooking-summary_total-amount">
+                  <%=configuration.formatCurrency(booking.total_cost)%>
+                </div>
+              </div>
 
-          <div class="mb-section">
-            <div class="mybooking-summary_total">
-              <div class="mybooking-summary_total-label">
-                <?php echo esc_html_x( 'Total', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-              </div>
-              <div class="mybooking-summary_total-amount">
-                <%=configuration.formatCurrency(booking.total_cost)%>
-              </div>
+              <ul class="mb-list border">
+                <li class="mb-list-item">
+                  <span class="mb-list-element">
+                    <?php echo esc_html_x( 'Paid', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                  <span class="mb-list-element secondary">
+                    <%=configuration.formatCurrency(booking.total_paid)%>
+                  </span>
+                </li>
+                <li class="mb-list-item">
+                  <span class="mb-list-element">
+                    <?php echo esc_html_x( 'Pending', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                  <span class="mb-list-element <% if (booking.total_pending > 0) {%>danger<% } %> secondary">
+                    <%=configuration.formatCurrency(booking.total_pending)%>
+                  </span>
+                </li>
+              </ul>
+
+              <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+                <div class="mybooking-product_taxes">
+                  <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                </div>
+              <?php endif; ?>
             </div>
-
-            <ul class="mb-list border">
-              <li class="mb-list-item">
-                <span class="mb-list-element">
-                  <?php echo esc_html_x( 'Paid', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
-                </span>
-                <span class="mb-list-element secondary">
-                  <%=configuration.formatCurrency(booking.total_paid)%>
-                </span>
-              </li>
-              <li class="mb-list-item">
-                <span class="mb-list-element">
-                  <?php echo esc_html_x( 'Pending', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
-                </span>
-                <span class="mb-list-element <% if (booking.total_pending > 0) {%>danger<% } %> secondary">
-                  <%=configuration.formatCurrency(booking.total_pending)%>
-                </span>
-              </li>
-            </ul>
-
-            <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-              <div class="mybooking-product_taxes">
-                <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-              </div>
-            <?php endif; ?>
-          </div>
+          <% } %>  
 
           <!-- // Customer details -->
 
