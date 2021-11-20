@@ -8,7 +8,7 @@
 
 ### Updated
 
-- Theme compatibility : Removed Bootstrap Library
+- Theme compatibility : Removed Bootstrap and fontawesome libraries
 
 ## [0.12.0]
 
