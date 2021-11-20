@@ -23,13 +23,17 @@
       </li>
 
       <!-- // Delivery -->
-      <div class="mb-form-group">
-        <select id="pickup_place" name="pickup_place" placeholder="<?php echo esc_attr_x( 'Select pick-up place', 'renting_product_calendar', 'mybooking-wp-plugin') ?>" class="form-control w-100"> </select>
+      <div class="mb-form-row">
+        <div class="mb-form-group mb-col-md-12">
+          <select id="pickup_place" name="pickup_place" placeholder="<?php echo esc_attr_x( 'Select pick-up place', 'renting_product_calendar', 'mybooking-wp-plugin') ?>" class="mb-form-control"> </select>
+        </div>
       </div>
 
       <!-- // Collection -->
-      <div class="mb-form-group">
-        <select id="return_place" name="return_place" placeholder="<?php echo esc_attr_x( 'Select return place', 'renting_product_calendar', 'mybooking-wp-plugin' )?>" class="form-control w-100" disabled> </select>
+      <div class="mb-form-row">
+        <div class="mb-form-group mb-col-md-12">
+          <select id="return_place" name="return_place" placeholder="<?php echo esc_attr_x( 'Select return place', 'renting_product_calendar', 'mybooking-wp-plugin' )?>" class="mb-form-control" disabled> </select>
+        </div>
       </div>
     <% } %>
 
@@ -50,22 +54,26 @@
       </li>
 
       <!-- // Delivery time -->
-      <div class="mb-form-group">
-        <label class="">
-          <?php echo esc_html_x('Delivery', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-        </label>
-        <select id="time_from" name="time_from" placeholder="hh:mm" class="form-control" disabled> </select>
+      <div class="mb-form-row">
+        <div class="mb-form-group mb-col-md-12">
+          <label class="">
+            <?php echo esc_html_x('Delivery', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+          </label>
+          <select id="time_from" name="time_from" placeholder="hh:mm" class="mb-form-control" disabled> </select>
+        </div>
       </div>
 
       <!-- // Collection time -->
-      <div class="mb-form-group">
-        <label class="">
-          <?php echo esc_html_x('Return', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-        </label>
-        <select id="time_to" name="time_to" placeholder="hh:mm" class="form-control" disabled> </select>
-      </div>
+      <div class="mb-form-row">
+        <div class="mb-form-group mb-col-md-12">
+          <label class="">
+            <?php echo esc_html_x('Return', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+          </label>
+          <select id="time_to" name="time_to" placeholder="hh:mm" class="mb-form-control" disabled> </select>
+        </div>
+      </div>  
 
-    <% } else { %>
+    <% } else { %>
       <input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
       <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
     <% } %>
