@@ -881,7 +881,6 @@ fieldset legend {
   border-radius: 0;
 }
 
-
 /** DATEPICKER RANGE **/
 
 .date-picker-wrapper {
@@ -949,4 +948,13 @@ fieldset legend {
 
 .date-picker-wrapper .gap {
   display: none;
+}
+
+
+/** SLICK JS **/
+
+button:not(:hover):not(:active):not(.has-background).slick-prev.slick-arrow,
+button:not(:hover):not(:active):not(.has-background).slick-next.slick-arrow,
+.slick-dots button:not(:hover):not(:active):not(.has-background){
+    background-color: transparent;
 }

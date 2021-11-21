@@ -79,10 +79,6 @@
         </div>
 
         <div class="mb-col-md-4">
-          <h2 class="mybooking-product_calendar-title">
-            <?php echo esc_html_x('Availability calendar', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-          </h2>
-          <hr>
           <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>
         </div>
       </div>

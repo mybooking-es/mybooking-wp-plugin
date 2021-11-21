@@ -24,14 +24,14 @@
 
       <!-- // Delivery -->
       <div class="mb-form-row">
-        <div class="mb-form-group mb-col-md-12">
+        <div class="mb-form-group">
           <select id="pickup_place" name="pickup_place" placeholder="<?php echo esc_attr_x( 'Select pick-up place', 'renting_product_calendar', 'mybooking-wp-plugin') ?>" class="mb-form-control"> </select>
         </div>
       </div>
 
       <!-- // Collection -->
-      <div class="mb-form-row">
-        <div class="mb-form-group mb-col-md-12">
+      <div class="mb-form-row mb--mt-1">
+        <div class="mb-form-group">
           <select id="return_place" name="return_place" placeholder="<?php echo esc_attr_x( 'Select return place', 'renting_product_calendar', 'mybooking-wp-plugin' )?>" class="mb-form-control" disabled> </select>
         </div>
       </div>
@@ -130,7 +130,7 @@
         <div class="mybooking-summary_extras">
           <span class="mybooking-summary_item">
             <?php echo MyBookingEngineContext::getInstance()->getProduct() ?>:
-          </span><%= configuration.hidePriceIfZero %>*
+          </span>
             <span class="mybooking-summary_extra-amount">
               <%=configuration.formatCurrency(shopping_cart.item_cost)%>
             </span>
