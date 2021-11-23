@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1]
+
+### Fixed
+
+- Renting my reservation when no reservation form
+
 ## [1.0.0]
 
 ### Added

@@ -63,7 +63,7 @@
 		  	  reservation engine in your web site.</p>
 			 	  <h2>Quick start</h2>
 			 	  <ol>
-				 	  <li>Use your mybooking account or <a href="https://mybooking.es/en/sign-up">create a new account</a></li>
+				 	  <li>Use your mybooking account or <a href="https://mybooking.es/en/sign-up" target="_blank">create a new account</a></li>
 				 	  <li>Setup the connection in the connection tab</li>
 				 	  <li>Setup the <b>modules</b> you want to use: renting/accommodation, activities or transfer</li>
 				 	  <li><b>Create the pages</b> and insert shortcodes</li>

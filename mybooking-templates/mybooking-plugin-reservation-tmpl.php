@@ -76,16 +76,15 @@
       <!-- // Product details -->
 
       <div class="mb-row">
-        <div class="mb-col-md-8">
 
-          <!-- //Customer extra data form -->
-
-          <div class="col-md-12">
+        <% if (showReservationForm) { %>
+          <div class="mb-col-md-8">
+            <!-- //Customer extra data form -->
             <div id="reservation_form_container" style="display:none"></div>
           </div>
-        </div>
+        <% } %>
 
-        <div class="mb-col-md-4">
+        <div class="<% if (showReservationForm) { %>mb-col-md-4<%} else { %>mb-col-md-offset-2 mb-col-md-8<% } %>">
 
           <!-- // Reservation status message -->
 

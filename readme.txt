@@ -117,6 +117,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixed Renting: My reservation when no reservation form
+
 = 1.0.0 =
 * Added Transfer
 * Improved themes compatibility
@@ -302,6 +305,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Fixed Renting: My reservation when no reservation form
 
 = 1.0.0 =
 * Added Transfer module and improved themes compatibility
