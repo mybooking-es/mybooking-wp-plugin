@@ -110,7 +110,7 @@
 
   .mybooking-product_list .mybooking-product_characteristics {
     width: var(--mb-product-list-keys-width);
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 
   .mybooking-product_list .mybooking-product_characteristics-img {
@@ -473,12 +473,11 @@ div.mybooking-product {
 .mybooking-product_characteristics {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   width: 100%;
   padding: 0.5rem;
   border-top: 1px solid var(--mb-border-color);
-  box-shadow: 0px -20px 20px -5px var(--mb-background-color);
 }
 
 .mybooking-product_detail .mybooking-product_characteristics {
