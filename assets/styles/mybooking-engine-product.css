@@ -395,14 +395,14 @@ div.mybooking-product {
 
 .mybooking-product_short-description {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1em;
   line-height: 1.3;
   margin-top: 0.2rem;
 }
 
 .entry-content h3.mybooking-product_short-description {
   margin: 0.3rem 0 0 0;
-  font-size: 18px;
+  font-size: 1em;
 }
 
 .entry-content h3.mybooking-product_short-description::before {

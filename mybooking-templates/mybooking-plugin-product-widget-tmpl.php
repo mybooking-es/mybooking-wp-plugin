@@ -23,13 +23,17 @@
       </li>
 
       <!-- // Delivery -->
-      <div class="mb-form-group">
-        <select id="pickup_place" name="pickup_place" placeholder="<?php echo esc_attr_x( 'Select pick-up place', 'renting_product_calendar', 'mybooking-wp-plugin') ?>" class="form-control w-100"> </select>
+      <div class="mb-form-row">
+        <div class="mb-form-group">
+          <select id="pickup_place" name="pickup_place" placeholder="<?php echo esc_attr_x( 'Select pick-up place', 'renting_product_calendar', 'mybooking-wp-plugin') ?>" class="mb-form-control"> </select>
+        </div>
       </div>
 
       <!-- // Collection -->
-      <div class="mb-form-group">
-        <select id="return_place" name="return_place" placeholder="<?php echo esc_attr_x( 'Select return place', 'renting_product_calendar', 'mybooking-wp-plugin' )?>" class="form-control w-100" disabled> </select>
+      <div class="mb-form-row mb--mt-1">
+        <div class="mb-form-group">
+          <select id="return_place" name="return_place" placeholder="<?php echo esc_attr_x( 'Select return place', 'renting_product_calendar', 'mybooking-wp-plugin' )?>" class="mb-form-control" disabled> </select>
+        </div>
       </div>
     <% } %>
 
@@ -50,22 +54,26 @@
       </li>
 
       <!-- // Delivery time -->
-      <div class="mb-form-group">
-        <label class="">
-          <?php echo esc_html_x('Delivery', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-        </label>
-        <select id="time_from" name="time_from" placeholder="hh:mm" class="form-control" disabled> </select>
+      <div class="mb-form-row">
+        <div class="mb-form-group mb-col-md-12">
+          <label class="">
+            <?php echo esc_html_x('Delivery', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+          </label>
+          <select id="time_from" name="time_from" placeholder="hh:mm" class="mb-form-control" disabled> </select>
+        </div>
       </div>
 
       <!-- // Collection time -->
-      <div class="mb-form-group">
-        <label class="">
-          <?php echo esc_html_x('Return', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-        </label>
-        <select id="time_to" name="time_to" placeholder="hh:mm" class="form-control" disabled> </select>
-      </div>
+      <div class="mb-form-row">
+        <div class="mb-form-group mb-col-md-12">
+          <label class="">
+            <?php echo esc_html_x('Return', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+          </label>
+          <select id="time_to" name="time_to" placeholder="hh:mm" class="mb-form-control" disabled> </select>
+        </div>
+      </div>  
 
-    <% } else { %>
+    <% } else { %>
       <input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
       <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
     <% } %>
@@ -118,14 +126,16 @@
       </div>
 
       <!-- // Product -->
-      <div class="mybooking-summary_extras">
-        <span class="mybooking-summary_item">
-          <?php echo MyBookingEngineContext::getInstance()->getProduct() ?>:
-        </span>
-        <span class="mybooking-summary_extra-amount">
-          <%=configuration.formatCurrency(shopping_cart.item_cost)%>
-        </span>
-      </div>
+      <% if (!configuration.hidePriceIfZero || shopping_cart.item_cost > 0) { %>
+        <div class="mybooking-summary_extras">
+          <span class="mybooking-summary_item">
+            <?php echo MyBookingEngineContext::getInstance()->getProduct() ?>:
+          </span>
+            <span class="mybooking-summary_extra-amount">
+              <%=configuration.formatCurrency(shopping_cart.item_cost)%>
+            </span>
+        </div>
+      <% } %>
 
       <!-- // Extras -->
 
@@ -214,24 +224,25 @@
         <% } %>
       </div>
 
-      <!-- // Total -->
+      <% if (!configuration.hidePriceIfZero || shopping_cart.item_cost > 0) { %>
+        <!-- // Total -->
+        <div class="mb-section">
+          <div class="mybooking-summary_total">
+            <div class="mybooking-summary_total-label">
+              <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+            </div>
+            <div class="mybooking-summary_total-amount">
+              <%=configuration.formatCurrency(shopping_cart.total_cost)%>
+            </div>
+          </div>
 
-      <div class="mb-section">
-        <div class="mybooking-summary_total">
-          <div class="mybooking-summary_total-label">
-            <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
-          </div>
-          <div class="mybooking-summary_total-amount">
-            <%=configuration.formatCurrency(shopping_cart.total_cost)%>
-          </div>
+          <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+            <div class="mybooking-product_taxes">
+              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+            </div>
+          <?php endif; ?>
         </div>
-
-        <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-          <div class="mybooking-product_taxes">
-            <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-          </div>
-        <?php endif; ?>
-      </div>
+      <% } %>
 
       <!-- // Reservation button -->
 

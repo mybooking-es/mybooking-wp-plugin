@@ -89,7 +89,11 @@
           <div class="mb-col-md-6">
 
             <!-- // Product photo -->
-            <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
+            <% if (booking.booking_lines[idx].photo_full && booking.booking_lines[idx].photo_full !== '') { %>
+              <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
+            <% } else { %>
+              <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
+            <% } %>  
           </div>
           <div class="mb-col-md-6">
 
@@ -112,59 +116,61 @@
           </div>
         </div>
 
-        <div class="mybooking-product_header">
-         <div class="mybooking-product_price">
+        <% if (!configuration.hidePriceIfZero || booking.item_cost > 0) { %>
+          <div class="mybooking-product_header">
 
-           <!-- // Price -->
-           <div class="mybooking-product_amount">
-             <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
-          </div>
-
-           <!-- // Taxes -->
-          <?php if ( array_key_exists('show_taxes_included', $args ) && ( $args['show_taxes_included'] ) ): ?>
-            <div class="mybooking-product_taxes">
-              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+           <div class="mybooking-product_price">
+             <!-- // Price -->
+             <div class="mybooking-product_amount">
+               <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
             </div>
-          <?php endif; ?>
-         </div>
 
-         <div class="mybooking-product_discount">
+             <!-- // Taxes -->
+            <?php if ( array_key_exists('show_taxes_included', $args ) && ( $args['show_taxes_included'] ) ): ?>
+              <div class="mybooking-product_taxes">
+                <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+              </div>
+            <?php endif; ?>
+           </div>
 
-           <!-- // Offer/Promotion Code Appliance -->
-           <% if (booking.booking_lines[idx].item_unit_cost_base != booking.booking_lines[idx].item_unit_cost) { %>
-             <div class="mybooking-product_price">
+           <div class="mybooking-product_discount">
 
-               <span class="mybooking-product_original-price">
-                 <%=configuration.formatCurrency(booking.booking_lines[idx].item_unit_cost_base * booking.booking_lines[idx].quantity)%>
-               </span>
+             <!-- // Offer/Promotion Code Appliance -->
+             <% if (booking.booking_lines[idx].item_unit_cost_base != booking.booking_lines[idx].item_unit_cost) { %>
+               <div class="mybooking-product_price">
 
-               <!-- // Offer -->
-               <% if (typeof booking.booking_lines[idx].offer_name !== 'undefined' && booking.booking_lines[idx].offer_name !== null && booking.booking_lines[idx].offer_name !== '') { %>
-                 <% if (booking.booking_lines[idx].offer_discount_type === 'percentage' && booking.booking_lines[idx].offer_value !== '') {%>
-                   <span class="mybooking-product_discount-badge mb-badge success">
-                     - <%=parseInt(booking.booking_lines[idx].offer_value)%>&#37;
-                   </span>
+                 <span class="mybooking-product_original-price">
+                   <%=configuration.formatCurrency(booking.booking_lines[idx].item_unit_cost_base * booking.booking_lines[idx].quantity)%>
+                 </span>
+
+                 <!-- // Offer -->
+                 <% if (typeof booking.booking_lines[idx].offer_name !== 'undefined' && booking.booking_lines[idx].offer_name !== null && booking.booking_lines[idx].offer_name !== '') { %>
+                   <% if (booking.booking_lines[idx].offer_discount_type === 'percentage' && booking.booking_lines[idx].offer_value !== '') {%>
+                     <span class="mybooking-product_discount-badge mb-badge success">
+                       - <%=parseInt(booking.booking_lines[idx].offer_value)%>&#37;
+                     </span>
+                   <% } %>
+                    <span class="mybooking-product_discount-badge mb-badge info">
+                      <%=booking.booking_lines[idx].offer_name%>
+                    </span>
                  <% } %>
-                  <span class="mybooking-product_discount-badge mb-badge info">
-                    <%=booking.booking_lines[idx].offer_name%>
-                  </span>
-               <% } %>
 
-               <!-- // Promotion Code -->
-               <% if (typeof booking.promotion_code !== 'undefined' && booking.promotion_code !== '' && typeof booking.booking_lines[idx].promotion_code !== 'undefined' && booking.booking_lines.promotion_code !== '') { %>
-                 <% if (booking.booking_lines[idx].promotion_code_discount_type === 'percentage' && booking.booking_lines[idx].promotion_code_value !== '') {%>
-                   <span class="mybooking-product_discount-badge mb-badge success">
-                     <%=parseInt(booking.booking_lines[idx].promotion_code_value)%>&#37;
-                   </span>
-                   <span class="mybooking-product_discount-badge mb-badge success">
-                     <%=booking.promotion_code%>
-                   </span>
+                 <!-- // Promotion Code -->
+                 <% if (typeof booking.promotion_code !== 'undefined' && booking.promotion_code !== '' && typeof booking.booking_lines[idx].promotion_code !== 'undefined' && booking.booking_lines.promotion_code !== '') { %>
+                   <% if (booking.booking_lines[idx].promotion_code_discount_type === 'percentage' && booking.booking_lines[idx].promotion_code_value !== '') {%>
+                     <span class="mybooking-product_discount-badge mb-badge success">
+                       <%=parseInt(booking.booking_lines[idx].promotion_code_value)%>&#37;
+                     </span>
+                     <span class="mybooking-product_discount-badge mb-badge success">
+                       <%=booking.promotion_code%>
+                     </span>
+                   <% } %>
                  <% } %>
-               <% } %>
-             </div>
-           <% } %>
-         </div>
-       </div>
+               </div>
+             <% } %>
+           </div>
+          </div>
+        <% } %>
       </div>
     <% } %>
 
@@ -312,22 +318,26 @@
 
     <!-- // Total -->
 
-    <div class="mb-section">
-      <div class="mybooking-summary_total">
-        <div class="mybooking-summary_total-label">
-          <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+    <% if (!configuration.hidePriceIfZero || booking.total_cost > 0) { %>
+
+      <div class="mb-section">
+        <div class="mybooking-summary_total">
+          <div class="mybooking-summary_total-label">
+            <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+          </div>
+          <div class="mybooking-summary_total-amount">
+            <%=configuration.formatCurrency(booking.total_cost)%>
+          </div>
         </div>
-        <div class="mybooking-summary_total-amount">
-          <%=configuration.formatCurrency(booking.total_cost)%>
-        </div>
+
+        <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+          <div class="mybooking-product_taxes">
+            <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+          </div>
+        <?php endif; ?>
       </div>
 
-      <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-        <div class="mybooking-product_taxes">
-          <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-        </div>
-      <?php endif; ?>
-    </div>
+    <% } %>
 
     <!-- // Customer details -->
 

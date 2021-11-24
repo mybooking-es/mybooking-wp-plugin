@@ -24,8 +24,12 @@
       <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>
 
         <div class="mybooking-product_info-block">
-          <!-- // Product photo -->
-          <img class="mybooking-product_image" src="<%=shopping_cart.items[idx].photo_full%>"/>
+          <% if (shopping_cart.items[idx].photo_full && shopping_cart.items[idx].photo_full !== '') { %>
+            <!-- // Product photo -->
+            <img class="mybooking-product_image" src="<%=shopping_cart.items[idx].photo_full%>"/>
+          <% } else { %>
+            <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
+          <% } %>  
 
            <!-- // Product name -->
            <div class="mybooking-product_name">
@@ -44,23 +48,24 @@
             <%=shopping_cart.items[idx].item_full_description_customer_translation%>
           </div>
 
-           <!-- // Price -->
-           <div class="mybooking-product_price">
-             <div class="mybooking-product_amount">
-               <%=configuration.formatCurrency(shopping_cart.items[idx].item_cost)%>
-             </div>
+          <% if (!configuration.hidePriceIfZero || shopping_cart.item_cost > 0) { %>
+            <!-- // Price -->
+            <div class="mybooking-product_price">
+               <div class="mybooking-product_amount">
+                 <%=configuration.formatCurrency(shopping_cart.items[idx].item_cost)%>
+               </div>
 
-             <% if (shopping_cart.items[idx].item_unit_cost_base != shopping_cart.items[idx].item_unit_cost) { %>
-               <!-- // Original price -->
-               <span class="mybooking-product_original-price">
-                 <%=configuration.formatCurrency(shopping_cart.items[idx].item_unit_cost_base * shopping_cart.items[idx].quantity)%>
-               </span>
-             <% } %>
-          </div>
+               <% if (shopping_cart.items[idx].item_unit_cost_base != shopping_cart.items[idx].item_unit_cost) { %>
+                 <!-- // Original price -->
+                 <span class="mybooking-product_original-price">
+                   <%=configuration.formatCurrency(shopping_cart.items[idx].item_unit_cost_base * shopping_cart.items[idx].quantity)%>
+                 </span>
+               <% } %>
+            </div>
 
-           <!-- // Discount info -->
+            <!-- // Discount info -->
 
-             <div class="mybooking-product_discount">
+            <div class="mybooking-product_discount">
 
                <!-- // Taxes message -->
                <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
@@ -70,18 +75,19 @@
                <?php endif; ?>
 
               <% if (shopping_cart.items[idx].item_unit_cost_base != shopping_cart.items[idx].item_unit_cost) { %>
-
-               <!-- // Promotion Code -->
-               <% if (typeof shopping_cart.items[idx].offer_name !== 'undefined' && shopping_cart.items[idx].offer_name !== null && shopping_cart.items[idx].offer_name !== '') { %>
-                  <span class="mybooking-product_discount-badge mb-badge info">
-                    <% if (shopping_cart.items[idx].offer_discount_type === 'percentage' && shopping_cart.items[idx].offer_value !== '') {%>
-                      <%=parseInt(shopping_cart.items[idx].offer_value)%>&#37;
-                    <% } %>
-                    <%=shopping_cart.items[idx].offer_name%>
-                  </span>
-               <% } %>
-            <% } %>
-          </div>
+                <!-- // Promotion Code -->
+                <% if (typeof shopping_cart.items[idx].offer_name !== 'undefined' && shopping_cart.items[idx].offer_name !== null && shopping_cart.items[idx].offer_name !== '') { %>
+                    <span class="mybooking-product_discount-badge mb-badge info">
+                      <% if (shopping_cart.items[idx].offer_discount_type === 'percentage' && shopping_cart.items[idx].offer_value !== '') {%>
+                        <%=parseInt(shopping_cart.items[idx].offer_value)%>&#37;
+                      <% } %>
+                      <%=shopping_cart.items[idx].offer_name%>
+                    </span>
+                <% } %>
+              <% } %>
+            </div>
+          <% } %>
+            
          </div>
       <% } %>
     </div>
@@ -312,22 +318,25 @@
 
   <!-- // Total -->
 
-  <div class="mb-section">
-    <div class="mybooking-summary_total">
-      <div class="mybooking-summary_total-label">
-        <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+  <% if (!configuration.hidePriceIfZero || shopping_cart.total_cost > 0) { %>
+    <div class="mb-section">
+      <div class="mybooking-summary_total">
+        <div class="mybooking-summary_total-label">
+          <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+        </div>
+        <div class="mybooking-summary_total-amount">
+          <%=configuration.formatCurrency(shopping_cart.total_cost)%>
+        </div>
       </div>
-      <div class="mybooking-summary_total-amount">
-        <%=configuration.formatCurrency(shopping_cart.total_cost)%>
-      </div>
-    </div>
 
-    <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-      <div class="mybooking-product_taxes">
-        <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-      </div>
-    <?php endif; ?>
-  </div>
+      <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+        <div class="mybooking-product_taxes">
+          <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+        </div>
+      <?php endif; ?>
+    </div>
+  <% } %>
+
 </script>
 
 

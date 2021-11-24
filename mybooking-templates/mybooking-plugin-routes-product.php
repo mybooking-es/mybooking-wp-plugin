@@ -13,7 +13,7 @@
 
 <div class="entry">
   <div class="entry-content">
-    <div class="mybooking mybooking-product_detail mybooking-product_container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+    <div class="mybooking mybooking-product_detail mybooking-product_container">
       <div class="mb-row">
         <div class="mb-col-md-12">
           <div class="mybooking-product_detail-header">
@@ -79,10 +79,6 @@
         </div>
 
         <div class="mb-col-md-4">
-          <h2 class="mybooking-product_calendar-title">
-            <?php echo esc_html_x('Availability calendar', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-          </h2>
-          <hr>
           <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>
         </div>
       </div>

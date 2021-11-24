@@ -3,6 +3,10 @@
 *  -----------------------------------------------------------------------------
 */
 
+.disabled-picker {
+    opacity: 0.7;
+    pointer-events: none;
+}
 
 /** SUMMARY DETAILS **/
 
@@ -868,7 +872,7 @@ fieldset legend {
 }
 
 .ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default {
-  background: var(--mb-calendar-available);
+  background: var(--mb-calendar-available)!important;
 }
 
 .ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default:hover {
@@ -876,7 +880,6 @@ fieldset legend {
   color: var(--mb-negative-text-color)!important;
   border-radius: 0;
 }
-
 
 /** DATEPICKER RANGE **/
 
@@ -945,4 +948,13 @@ fieldset legend {
 
 .date-picker-wrapper .gap {
   display: none;
+}
+
+
+/** SLICK JS **/
+
+button:not(:hover):not(:active):not(.has-background).slick-prev.slick-arrow,
+button:not(:hover):not(:active):not(.has-background).slick-next.slick-arrow,
+.slick-dots button:not(:hover):not(:active):not(.has-background){
+    background-color: transparent;
 }

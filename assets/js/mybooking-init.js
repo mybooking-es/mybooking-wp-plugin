@@ -24,9 +24,6 @@
         var customLoader = mybooking_init_vars.mybooking_custom_loader;
         // Select 2
         var jsUseSelect2 = mybooking_init_vars.mybooking_js_select2;
-        // Modal JS compatibility
-        var jsBsModalNoConflict = mybooking_init_vars.mybooking_js_bs_modal_no_conflict;
-        var jsBsModalBackdropCompatibility = mybooking_init_vars.mybooking_js_bs_modal_backdrop_compatibility;
         // Google Integration
         if (mybooking_init_vars.mybooking_google_api_places == 'true') {
           var useGoogleMaps = true;
@@ -120,18 +117,6 @@
           }
           return false;
         }
-        function getJsBsModalNoConflict(){
-          if (jsBsModalNoConflict === 'true') {
-            return true;
-          }
-          return false;
-        }
-        function getJsBsModalBackdropCompatibility(){
-          if (jsBsModalBackdropCompatibility === 'true') {
-            return true;
-          }
-          return false;
-        }
         function getUseGoogleMaps() {
           return useGoogleMaps;
         }
@@ -165,9 +150,7 @@
           transferTermsUrl: getTransferTermsUrl,
           // Common
           customLoader: getCustomLoader,  
-          jsUseSelect2: getJsUseSelect2,
-          jsBsModalNoConflict: getJsBsModalNoConflict,
-          jsBsModalBackdropCompatibility: getJsBsModalBackdropCompatibility         
+          jsUseSelect2: getJsUseSelect2       
         }
 
         if (mybooking_init_vars.mybooking_google_api_places) {

@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1]
+
+### Fixed
+
+- Renting my reservation when no reservation form
+
 ## [1.0.0]
 
 ### Added
@@ -8,7 +14,7 @@
 
 ### Updated
 
-- Theme compatibility : Removed Bootstrap Library
+- Theme compatibility : Removed Bootstrap and fontawesome libraries
 
 ## [0.12.0]
 

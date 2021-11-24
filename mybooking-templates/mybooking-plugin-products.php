@@ -21,7 +21,7 @@
 
 			<?php foreach( $args['data']->data as $mybooking_product ) { ?>
 			  <?php
-					$mybooking_productIdAnchor = $mybooking_product->id;
+					$mybooking_productIdAnchor = $mybooking_product->code;
 	  	    if ( !empty( $mybooking_product->slug) ) { $mybooking_productIdAnchor = $mybooking_product->slug; }
 			  ?>
 			  <div class="mybooking-product_column">
@@ -108,9 +108,13 @@
 
 				  	<?php $mybooking_disabled_previous = ($args['current_page'] == 1 ? 'disabled' : '') ?>
 				    <li class="mb-pagination_page-item <?php echo esc_attr( $mybooking_disabled_previous ) ?>">
-			    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']-1).$mybooking_querystring ) ?>">
-			    	     <?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
-			    	  </a>
+				    	<?php if ( $mybooking_disabled_previous ): ?>
+				    		<?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
+				      <?php else: ?>		
+				    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']-1).$mybooking_querystring ) ?>">
+				    	     <?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
+				    	  </a>
+			    		<?php endif ?>
 				    </li>
 
 	          <?php foreach ($args['pages'] as $mybooking_page) { ?>
@@ -133,9 +137,13 @@
 
 				    <?php $mybooking_disabled_next = ($args['current_page'] == $args['total_pages'] ? 'disabled' : '') ?>
 				    <li class="mb-pagination_page-item <?php echo esc_attr( $mybooking_disabled_next ) ?>">
-			    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']+1).$mybooking_querystring )?>">
-			    	     <?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
-			    	  </a>
+				    	<?php if ( $mybooking_disabled_next ): ?>
+				    		<?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
+				      <?php else: ?>		
+				    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']+1).$mybooking_querystring )?>">
+				    	     <?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
+				    	  </a>
+			    	  <?php endif ?>
 				    </li>
 				  </ul>
 				</nav>
