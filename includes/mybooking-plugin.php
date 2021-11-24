@@ -79,7 +79,7 @@
    *
    * - Show renting selector: The starting point for a reservation
    *
-   * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number rental_location_code=String]
+   * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number rental_location_code=String layout=vertical]
    * [mybooking_rent_engine_selector_wizard sales_channel_code=String family_id=Number rental_location_code=String]
    *
    * - Process:
@@ -111,7 +111,7 @@
    *
    * 2.3 Transfer
    *
-   * [mybooking_transfer_selector]
+   * [mybooking_transfer_selector layout=vertical]
    * [mybooking_transfer_choose_vehicle]
    * [mybooking_transfer_checkout]
    * [mybooking_transfer_summary]
@@ -1039,7 +1039,8 @@
       // Extract the shortcode attributes
       extract( shortcode_atts( array('sales_channel_code' => '',
                                      'family_id' => '',
-                                     'rental_location_code' => '' ), $atts ) );
+                                     'rental_location_code' => '',
+                                     'layout' => '' ), $atts ) );
 
       $data = array();
 
@@ -1054,6 +1055,10 @@
 
       if ( $rental_location_code != '' ) {
         $data['rental_location_code'] = $rental_location_code;
+      }
+
+      if ( $layout != '' ) {
+        $data['layout'] = $layout;
       }
 
       ob_start();
@@ -1409,8 +1414,17 @@
      */
     public function wp_transfer_selector_shortcode($atts = [], $content = null, $tag = '') {
 
+      // Extract the shortcode attributes
+      extract( shortcode_atts( array('layout' => '' ), $atts ) );
+
+      $data = array();
+
+      if ( $layout != '' ) {
+        $data['layout'] = $layout;
+      }
+
       ob_start();
-      mybooking_engine_get_template('mybooking-plugin-transfer-selector-widget.php');
+      mybooking_engine_get_template('mybooking-plugin-transfer-selector-widget.php', $data);
       return ob_get_clean();
 
     }

@@ -9,7 +9,7 @@
  */
 ?>
 
-<section class="mybooking mybooking-selector widget widget_mybooking_renting_engine_selector reservation-step <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<section class="mybooking mybooking-selector widget widget_mybooking_renting_engine_selector reservation-step <?php if ( array_key_exists('layout', $args) && $args['layout'] == 'vertical' ) : ?>mybooking-selector_vertical<?php endif;?> <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <form
     class="mybooking-selector_form"
     name="widget_search_form"

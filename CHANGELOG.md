@@ -2,6 +2,10 @@
 
 ## [1.0.1]
 
+### Added
+
+- Vertical layout to Selector widgets and shortcodes
+
 ### Fixed
 
 - Renting my reservation when no reservation form

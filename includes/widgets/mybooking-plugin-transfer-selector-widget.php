@@ -20,8 +20,44 @@ class MyBookingTransferEngineSelectorWidget extends WP_Widget {
      */
     public function widget( $args, $instance ) {
 
-        mybooking_engine_get_template('mybooking-plugin-transfer-selector-widget.php'); 
+        $data = array();
+
+        if ( array_key_exists('layout', $instance) ) {
+            $data['layout'] = $instance['layout'];
+        }
+        else {
+            $data['layout'] = '';
+        }
+
+        mybooking_engine_get_template('mybooking-plugin-transfer-selector-widget.php', $data); 
 
     }
+
+    public function form( $instance ) {
+        // outputs the options form in the admin
+        $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( '', 'text_domain' );
+            ?>
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>">
+                <?php esc_attr_e( 'layout:', 'text_domain' ); ?>
+                </label> 
+                
+                <select class="widefat"
+                        id="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>"
+                        name="<?php echo esc_attr( $this->get_field_name( 'layout' ) ); ?>">
+                    <option value="horizontal" <?php if ( $layout != 'vertical' ) :?>selected<?php endif; ?>><?php esc_attr_e( 'horizontal', 'text_domain' ); ?></option>   
+                    <option value="vertical" <?php if ( $layout == 'vertical' ) :?>selected<?php endif; ?>><?php esc_attr_e( 'vertical', 'text_domain' ); ?></option>
+                </select>        
+            </p>            
+            <?php        
+    }
+ 
+    public function update( $new_instance, $old_instance ) {
+        // processes widget options to be saved
+        $instance = array();
+        $instance['layout'] = ( ! empty( $new_instance['layout'] ) ) ? strip_tags( $new_instance['layout'] ) : '';
+        return $instance;        
+    }
+
  
 }

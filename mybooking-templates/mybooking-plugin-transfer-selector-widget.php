@@ -9,7 +9,7 @@
  */
 ?>
 
-<section class="mybooking mybooking-selector mybooking-selector_transfer widget widget_mybooking_engine_transfer_selector widget_mybooking_rent_engine_selector has-background-grey-lighter  <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<section class="mybooking mybooking-selector mybooking-selector_transfer widget widget_mybooking_engine_transfer_selector widget_mybooking_rent_engine_selector has-background-grey-lighter <?php if ( array_key_exists('layout', $args) && $args['layout'] == 'vertical' ) : ?>mybooking-selector_vertical<?php endif;?>   <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <form
     class="mybooking-selector_form"
     name="mybooking_widget_transfer_search_form"

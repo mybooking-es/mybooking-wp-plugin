@@ -7,7 +7,7 @@
    */
 ?>
 
-<section class="mybooking mybooking-search">
+<section class="mybooking mybooking-search <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <form class="mybooking-form" name="search_activities_form" method="get"
     <?php if ( array_key_exists('search_path', $args) && $args['search_path'] != '') { ?>
       action="<?php esc_url( $args['search_path'] )?>"
