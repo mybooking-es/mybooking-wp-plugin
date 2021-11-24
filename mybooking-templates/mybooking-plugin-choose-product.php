@@ -15,7 +15,7 @@
   <div id="reservation_detail"></div>
 
   <!-- Product listing -->
-  <div id="product_listing"></div>
+  <div class="mybooking-product_listing" id="product_listing"></div>
 </section>
 
 

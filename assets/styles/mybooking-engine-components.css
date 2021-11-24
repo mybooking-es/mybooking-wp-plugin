@@ -10,6 +10,10 @@
 
 /** SUMMARY DETAILS **/
 
+.mybooking-details_container {
+  padding: 0 0.5rem;
+}
+
 /* Summary header */
 
 .mybooking-summary_header {

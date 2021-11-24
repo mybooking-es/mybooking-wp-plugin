@@ -16,7 +16,7 @@
 
 <script type="text/tmpl" id="script_transfer_reservation_summary">
 
-  <div class="mb-section">
+  <div class="mb-section mybooking-details_container">
 
     <!-- // Summary details -->
 

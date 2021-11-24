@@ -19,7 +19,7 @@
 
       <!-- // Summary details -->
 
-      <div class="mb-section">
+      <div class="mb-section mybooking-details_container">
         <div class="mybooking-summary_header">
           <div class="mybooking-summary_details-title">
             <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
@@ -103,7 +103,7 @@
                     <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
                   <% } else { %>
                     <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
-                  <% } %>  
+                  <% } %>
 
                   <!-- // Product name -->
                   <span class="mybooking-product_name">
@@ -140,7 +140,7 @@
                     </div>
                   <?php endif; ?>
                  </div>
-              <% } %>   
+              <% } %>
 
                <div class="mybooking-product_discount">
 
@@ -361,7 +361,7 @@
                 </div>
               <?php endif; ?>
             </div>
-          <% } %>  
+          <% } %>
 
           <!-- // Customer details -->
 

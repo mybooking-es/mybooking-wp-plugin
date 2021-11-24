@@ -15,7 +15,7 @@
 <script type="text/tpml" id="script_order">
 
   <!-- // Summary details -->
-  <div class="mb-section">
+  <div class="mb-section mybooking-details_container">
     <div class="mybooking-summary_header">
       <div class="mybooking-summary_details-title">
         <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
