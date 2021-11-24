@@ -9,7 +9,7 @@
 ?>
 
 
-<section class="mybooking-selector_vertical mybooking mybooking-selector <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<section class="mybooking mybooking-selector <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
   <!-- Search form -->
 
