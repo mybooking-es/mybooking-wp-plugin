@@ -13,6 +13,7 @@
   margin: 0;
 }
 
+.mybooking-selector_vertical .mybooking-selector_group,
 .mybooking-selector_group {
   display: flex;
   flex-direction: column;
@@ -132,6 +133,7 @@
   color: var(--mb-info-color);
 }
 
+.mybooking-selector_vertical .mybooking-selector_place,
 .mybooking-selector_place {
   position: relative;
   width: 100%;
@@ -146,6 +148,7 @@
   position: relative;
 }
 
+.mybooking-selector_vertical .mybooking-selector_date,
 .mybooking-selector_date {
   display: flex;
   flex-direction: row;
@@ -158,6 +161,7 @@
   }
 }
 
+.mybooking-selector_vertical .mybooking-selector_cal,
 .mybooking-selector_cal {
   width: 60%;
 } @media ( min-width: 575.98px ) {
@@ -166,6 +170,7 @@
   }
 }
 
+.mybooking-selector_vertical .mb-inline .mybooking-selector_cal,
 .mb-inline .mybooking-selector_cal {
   width: 100%!important;
 } @media ( min-width: 575.98px ) {
@@ -178,6 +183,7 @@
   width: 50%;
 }
 
+.mybooking-selector_vertical .mb-inline .mybooking-selector_hour,
 .mb-inline .mybooking-selector_hour {
   width: 100%;
   min-width: 0;
@@ -203,6 +209,7 @@
   opacity: var(--mb-selector-promo-opacity);
 }
 
+.mybooking-selector_vertical .mybooking-selector_promo label,
 .mybooking-selector_promo label {
   display: block;
   text-align: center!important;
@@ -214,6 +221,7 @@
   }
 }
 
+.mybooking-selector_vertical .mybooking-selector_promo input:not([type="submit"]),
 .mybooking-selector_promo input:not([type="submit"]) {
   padding-left: 0!important;
   text-align: center;
@@ -237,6 +245,7 @@
 
 /* Buttons */
 
+.mybooking-selector_vertical .mybooking-selector_button,
 .mybooking-selector_button {
   width: 100%;
   padding: 0.3rem 2rem!important;

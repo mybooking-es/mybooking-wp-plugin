@@ -1,5 +1,10 @@
 /* Transfers selector */
 
+.mybooking-selector_vertical.mybooking-selector {
+  max-width: 460px;
+}
+
+.mybooking-selector_vertical .mybooking-selector_transfers-group,
 .mybooking-selector_transfers-group {
   display: flex;
   flex-direction: column;
@@ -12,6 +17,7 @@
   }
 }
 
+.mybooking-selector_vertical .mybooking-selector_transfers-destination,
 .mybooking-selector_transfers-destination {
   display: flex;
   flex-direction: column;
@@ -23,6 +29,7 @@
   }
 }
 
+.mybooking-selector_vertical .mybooking-selector_transfers-return,
 .mybooking-selector_transfers-return {
   display: flex;
   flex-direction: column;
@@ -41,6 +48,7 @@
   width:  auto;
 }
 
+.mybooking-selector_vertical .mybooking-selector_seats,
 .mybooking-selector_seats {
   display: flex;
   flex-direction: row;
