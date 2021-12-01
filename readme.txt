@@ -117,6 +117,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.0.2 =
+* Fixed Renting: Calendar colors
+
 = 1.0.1 =
 * Fixed Renting: My reservation when no reservation form
 * Added: Vertical layout to selector widgets and shortcodes
@@ -306,6 +309,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+* Fixed Renting: Calendar colors
 
 = 1.0.1 =
 * Fixed Renting: My reservation when no reservation form + Added vertical layout to selector widgets and shortcodes

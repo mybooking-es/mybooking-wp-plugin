@@ -926,26 +926,39 @@ fieldset legend {
   word-break:  normal;
 }
 
-.date-picker-wrapper .month-wrapper table .day.real-today {
+/* Available date */
+.date-picker-wrapper .month-wrapper table .day.date-available {
   background-color: var(--mb-calendar-available);
 }
 
-.date-picker-wrapper .month-wrapper table .day.real-today:hover {
+.date-picker-wrapper .month-wrapper table .day.date-available:hover {
   background-color: var(--mb-calendar-available-hover)!important;
 }
 
-.date-picker-wrapper .month-wrapper table .day.invalid.real-today,
-.date-picker-wrapper .month-wrapper table .day.not-selectable-day.real-today {
+/* Not selectable date */
+.date-picker-wrapper .month-wrapper table .day.invalid,
+.date-picker-wrapper .month-wrapper table .day.not-selectable-day,
+.date-picker-wrapper .month-wrapper table .day.invalid:hover,
+.date-picker-wrapper .month-wrapper table .day.not-selectable-day:hover {
   background-color: var(--mb-calendar-disabled);
 }
 
-.date-picker-wrapper .month-wrapper table .day.invalid.real-today:hover,
-.date-picker-wrapper .month-wrapper table .day.not-selectable-day.real-today:hover {
+/* Booked date */
+.date-picker-wrapper .month-wrapper table .day.busy-data,
+.date-picker-wrapper .month-wrapper table .day.busy-data:hover {
   background-color: var(--mb-calendar-booked)!important;
 }
 
-.date-picker-wrapper .month-wrapper table .day.real-today.checked,
-.date-picker-wrapper .month-wrapper table .day.real-today.hovering {
+.date-picker-wrapper .month-wrapper table .day.date-available.checked{
+  background-color: var(--mb-calendar-checked-date)!important;
+}
+
+.date-picker-wrapper .month-wrapper table .day.date-available.first-date-selected.checked,
+.date-picker-wrapper .month-wrapper table .day.date-available.last-date-selected.checked {
+  background-color: var(--mb-calendar-first-last-date)!important;
+}
+
+.date-picker-wrapper .month-wrapper table .day.date-available.hovering {
     background-color: var(--mb-calendar-available-hover)!important;
     color: var(--mb-negative-text-color);
 }
