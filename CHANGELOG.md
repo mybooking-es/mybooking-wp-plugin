@@ -4,8 +4,9 @@
 
 ### Fixed
 
-- Font awesome
+- Removed Font awesome
 - Calendar styles
+- Customize product cards
 
 ## [1.0.1]
 
