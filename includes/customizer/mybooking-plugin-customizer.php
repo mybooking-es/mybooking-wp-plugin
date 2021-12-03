@@ -97,16 +97,19 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $custom_css = '';
 
       // Renting product image width
-      $product_image_width_img = get_theme_mod('mybooking_reservation_engine_product_image_width_img', '100%');
+      $product_image_width_img = get_theme_mod('mybooking_reservation_engine_product_image_width_img', '100');
       $product_body_height = get_theme_mod('mybooking_reservation_engine_product_body_height', '120');
       $product_list_body_height = get_theme_mod('mybooking_reservation_engine_list_product_body_height', '190');
 
       // == Build the css-properties
       $custom_css .= ":root {";
 
-      // Product Image Height
+      // Product Image Width
       if (!empty($product_image_width_img)) {
-        $custom_css .= "--mb-product-image-width-img: ".$product_image_width_img.';';
+        if ( $header_brightness > 100 ) {
+          $product_image_width_img = 100;
+        }
+        $custom_css .= "--mb-product-image-width-img: ".$product_image_width_img.'%;';
       }
 
       if (!empty($product_image_width_img)) {
@@ -161,9 +164,9 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $wp_customize->add_setting(
         'mybooking_reservation_engine_product_image_width_img',
         array(
-          'default'           => '100%',
+          'default'           => '100',
           'type'              => 'theme_mod',
-          'sanitize_callback' => 'wp_filter_nohtml_kses',
+          'sanitize_callback' => 'absint',
           'capability'        => 'edit_theme_options',
         )
       );
@@ -174,9 +177,9 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_product_image_width_img',
           array(
-            'label'       => _x('Image', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'label'       => _x('Product card Image Width', 'customizer_product_catalog', 'mybooking-wp-plugin'),
             'description' => _x(
-              'Choose depending on the images that you are using for your products',
+              'Choose depending on the images that you are using for your products (in %)',
               'customizer_product_catalog',
               'mybooking-wp-plugin'
             ),
