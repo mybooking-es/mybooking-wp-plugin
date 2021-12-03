@@ -36,7 +36,7 @@
       <% if (configuration.timeToFrom) { %>
         <span class="mybooking-summary_item">
           <span class="mybooking-summary_date">
-            <%=booking.date_to_full_format%>
+            <%=booking.date_from_full_format%>
             <%=booking.time_from%>
           </span>
           <% if (configuration.pickupReturnPlace) { %>
