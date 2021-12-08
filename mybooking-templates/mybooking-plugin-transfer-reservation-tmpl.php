@@ -127,6 +127,32 @@
         </div>
       <% } %>
 
+      <!-- // Supplements -->
+      <% if (booking.supplements.length > 0) { %>
+        <div class="mb-section">
+          <div class="mybooking-summary_details-title">
+            <?php echo esc_html_x( 'Supplements', 'transfer_reservation', 'mybooking-wp-plugin' ) ?>
+          </div>
+
+          <% for (var idx=0;idx<booking.supplements.length;idx++) { %>
+            <div class="mybooking-summary_extras">
+              <div class="mybooking-summary_extra-item">
+                <span class="mb-badge info mybooking-summary_extra-quantity">
+                  1
+                </span>
+                <span class="mybooking-summary_extra-name">
+                  <%=booking.supplements[idx].supplement_name_customer_translation%>
+                </span>
+              </div>
+              <span class="mybooking-summary_extra-amount">
+                <%=configuration.formatCurrency(booking.supplements[idx].supplement_cost)%>
+              </span>
+            </div>
+          <% } %>
+        </div>
+      <% } %>
+
+
       <!-- // Total -->
 
       <div class="mb-section">
