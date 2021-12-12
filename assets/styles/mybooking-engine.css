@@ -47,7 +47,7 @@
 
   /* Product grid */
   --mb-product-image-height: 260px;
-  --mb-product-image-width-img: 100%; 
+  --mb-product-image-width-img: 100%;
   --mb-product-header-height: 75px;
   --mb-product-body-height: 120px;
   --mb-product-footer-height: 76px;
@@ -707,13 +707,20 @@ button.mb-button a:hover  {
 
 /* WordPress themes: Twenty Nineteen * Twenty Twenty * Twenty Twenty One */
 
+body.mybooking-product .entry,
+body.mybooking-activity .entry {
+  width: 100%;
+}
+
 @media only screen and (min-width: 482px) {
 
   body.mybooking-activity .mybooking-activity_container.alignwide {
     max-width: var(--responsive--alignwide-width, 610px);
+    margin: 0 auto;
   }
   body.mybooking-product .mybooking-product_container.alignwide {
     max-width: var(--responsive--alignwide-width, 610px);
+    margin: 0 auto;
   }
 
   /* Twenty Nineteen */
@@ -721,18 +728,21 @@ button.mb-button a:hover  {
   body.mybooking-activity .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator)
   {
     max-width: var(--responsive--alignwide-width, 610px);
+    margin: 0 auto;
   }
   /* Twenty Twenty */
   body.mybooking-product .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
   body.mybooking-activity .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)
   {
     max-width: var(--responsive--alignwide-width, 610px);
+    margin: 0 auto;
   }
   /* Twenty Twenty One */
   body.mybooking-product .entry .entry-content > *,
   body.mybooking-activity .entry .entry-content > *
   {
     max-width: var(--responsive--alignwide-width, 610px);
+    margin: 0 auto;
   }
 }
 
@@ -740,9 +750,11 @@ button.mb-button a:hover  {
 
   body.mybooking-activity .mybooking-activity_container.alignwide {
     max-width: var(--responsive--alignwide-width, 1240px);
+    margin: 0 auto;
   }
   body.mybooking-product .mybooking-product_container.alignwide {
     max-width: var(--responsive--alignwide-width, 1240px);
+    margin: 0 auto;
   }
 
   /* Twenty Nineteen */
@@ -750,18 +762,21 @@ button.mb-button a:hover  {
   body.mybooking-activity .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator)
   {
     max-width: var(--responsive--alignwide-width, 1240px);
+    margin: 0 auto;
   }
   /* Twenty Twenty */
   body.mybooking-product .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
   body.mybooking-activity .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)
   {
     max-width: var(--responsive--alignwide-width, 1240px);
+    margin: 0 auto;
   }
   /* Twenty Twenty One */
   body.mybooking-product .entry .entry-content > *,
   body.mybooking-activity .entry .entry-content > *
   {
     max-width: var(--responsive--alignwide-width, 1240px);
+    margin: 0 auto;
   }
 }
 
