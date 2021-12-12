@@ -38,6 +38,8 @@
   require_once('widgets/mybooking-plugin-transfer-selector-widget.php');
   // Settings
   require_once('settings/mybooking-plugin-settings.php');
+  // Patterns
+  require_once('mybooking-patterns.php');
 
   /**
    * =======================================================================
@@ -599,54 +601,54 @@
       // == Renting
 
       // Selector widget or shortcode
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
-             has_shortcode( $content , 'mybooking_rent_engine_selector') 
-           ) 
+             has_shortcode( $content , 'mybooking_rent_engine_selector')
+           )
          ) {
         $classes[] = 'mybooking-selector-widget';
       }
 
       // Selector Wizard widget or shortcode
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
-             has_shortcode( $content , 'mybooking_rent_engine_selector_wizard') 
-           ) 
+             has_shortcode( $content , 'mybooking_rent_engine_selector_wizard')
+           )
          ) {
         $classes[] = 'mybooking-selector-wizard';
       }
 
       // Renting reservation steps pages
-      if ( $registry->mybooking_plugin_renting_module && 
-           $registry->mybooking_rent_plugin_choose_products_page != '' && 
+      if ( $registry->mybooking_plugin_renting_module &&
+           $registry->mybooking_rent_plugin_choose_products_page != '' &&
            mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) {
         $classes[] = 'choose_product';
       }
-      else if ( $registry->mybooking_plugin_renting_module && 
-                $registry->mybooking_rent_plugin_checkout_page != '' && 
+      else if ( $registry->mybooking_plugin_renting_module &&
+                $registry->mybooking_rent_plugin_checkout_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) {
         $classes[] = 'complete';
       }
-      else if ( $registry->mybooking_plugin_renting_module && 
-                $registry->mybooking_rent_plugin_summary_page != '' && 
+      else if ( $registry->mybooking_plugin_renting_module &&
+                $registry->mybooking_rent_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) {
         $classes[] = 'summary';
       }
 
       // Renting shortcode : reservation
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content, 'mybooking_rent_engine_reservation') ) {
         $classes[] = 'reservation';
       }
 
       // Renting shortcodes : product search
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content, 'mybooking_rent_engine_products_search') ) {
         $classes[] = 'mybooking-product-search';
       }
 
       // Renting shortcode : product (resource) [availability and selector]
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content , 'mybooking_rent_engine_product') ) {
         $classes[] = 'mybooking-product';
       }
@@ -654,7 +656,7 @@
       // == Activities
 
       // Activities reservation steps pages
-      if ( $registry->mybooking_plugin_activities_module && 
+      if ( $registry->mybooking_plugin_activities_module &&
            $registry->mybooking_activities_plugin_shopping_cart_page != '' &&
            mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) {
         $classes[] = 'mybooking-activity-shopping-cart';
@@ -672,12 +674,12 @@
       }
 
       // Activities shortcodes : Activity
-      if ( $registry->mybooking_plugin_activities_module && 
+      if ( $registry->mybooking_plugin_activities_module &&
            has_shortcode( $content, 'mybooking_activities_engine_activity') ) {
         $classes[] = 'mybooking-activity';
       }
       // Activities shortcodes : Order
-      if ( $registry->mybooking_plugin_activities_module && 
+      if ( $registry->mybooking_plugin_activities_module &&
            has_shortcode( $content, 'mybooking_activities_engine_order') ) {
         $classes[] = 'mybooking-activity-order';
       }
@@ -685,33 +687,33 @@
       // == Transfer
 
       // Selector widget or shortcode
-      if ( $registry->mybooking_plugin_transfer_module && 
+      if ( $registry->mybooking_plugin_transfer_module &&
            ( is_active_widget( false, false, 'mybooking_transfer_engine_selector_widget', false ) ||
-             has_shortcode( $content , 'mybooking_transfer_selector') 
-           ) 
+             has_shortcode( $content , 'mybooking_transfer_selector')
+           )
          ) {
         $classes[] = 'mybooking-transfer-selector';
       }
 
       // Transfer reservation steps pages
-      if ( $registry->mybooking_plugin_transfer_module && 
-           $registry->mybooking_transfer_plugin_choose_vehicle_page != '' && 
+      if ( $registry->mybooking_plugin_transfer_module &&
+           $registry->mybooking_transfer_plugin_choose_vehicle_page != '' &&
            mybooking_engine_is_page( $registry->mybooking_transfer_plugin_choose_vehicle_page ) ) {
         $classes[] = 'mybooking-transfer-choose-product';
       }
-      else if ( $registry->mybooking_plugin_transfer_module && 
-                $registry->mybooking_transfer_plugin_checkout_page != '' && 
+      else if ( $registry->mybooking_plugin_transfer_module &&
+                $registry->mybooking_transfer_plugin_checkout_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_transfer_plugin_checkout_page ) ) {
         $classes[] = 'mybooking-transfer-complete';
       }
-      else if ( $registry->mybooking_plugin_transfer_module && 
-                $registry->mybooking_transfer_plugin_summary_page != '' && 
+      else if ( $registry->mybooking_plugin_transfer_module &&
+                $registry->mybooking_transfer_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_transfer_plugin_summary_page ) ) {
         $classes[] = 'mybooking-transfer-summary';
       }
 
       // Transfer shortcode : reservation
-      if ( $registry->mybooking_plugin_transfer_module && 
+      if ( $registry->mybooking_plugin_transfer_module &&
            has_shortcode( $content, 'mybooking_transfer_reservation') ) {
         $classes[] = 'mybooking-transfer-reservation';
       }
@@ -759,28 +761,28 @@
       $current_page_modify_transfer_reservation = false;
 
       // Renting Selector
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
-             has_shortcode ( $content, 'mybooking_rent_engine_selector') 
-           ) 
+             has_shortcode ( $content, 'mybooking_rent_engine_selector')
+           )
          ) {
         mybooking_engine_get_template( 'mybooking-plugin-selector-widget-tmpl.php');
       }
 
       // Renting Selector Wizard shortcode / widget
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            ( is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
-             has_shortcode( $content , 'mybooking_rent_engine_selector_wizard') 
-           ) 
+             has_shortcode( $content , 'mybooking_rent_engine_selector_wizard')
+           )
          ) {
         mybooking_engine_get_template('mybooking-plugin-selector-wizard-widget-tmpl.php');
       }
 
       // Transfer Selector
-      if ( $registry->mybooking_plugin_transfer_module && 
+      if ( $registry->mybooking_plugin_transfer_module &&
            ( is_active_widget( false, false, 'mybooking_transfer_engine_selector_widget', false ) ||
-             has_shortcode ( $content, 'mybooking_transfer_selector') 
-           ) 
+             has_shortcode ( $content, 'mybooking_transfer_selector')
+           )
          ) {
         mybooking_engine_get_template( 'mybooking-plugin-transfer-selector-widget-tmpl.php');
       }
@@ -801,7 +803,7 @@
         }
         $current_page_modify_reservation = true;
       }
-      else if ( $registry->mybooking_plugin_renting_module && 
+      else if ( $registry->mybooking_plugin_renting_module &&
                 $registry->mybooking_rent_plugin_checkout_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_rent_plugin_checkout_page ) ) { // Renting checkout
         // Terms and conditions
@@ -823,14 +825,14 @@
         }
         $current_page_modify_reservation = true;
       }
-      else if ( $registry->mybooking_plugin_renting_module && 
+      else if ( $registry->mybooking_plugin_renting_module &&
                 $registry->mybooking_rent_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_rent_plugin_summary_page ) ) { // Renting summary
         $data = array();
         $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
         mybooking_engine_get_template('mybooking-plugin-summary-tmpl.php', $data);
       }
-      else if ( $registry->mybooking_plugin_activities_module && 
+      else if ( $registry->mybooking_plugin_activities_module &&
                 $registry->mybooking_activities_plugin_shopping_cart_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_activities_plugin_shopping_cart_page ) ) { // Activities shopping cart
         // Terms and conditions
@@ -843,19 +845,19 @@
         }
         mybooking_engine_get_template('mybooking-plugin-activities-shopping-cart-tmpl.php', $data);
       }
-      else if ( $registry->mybooking_plugin_activities_module && 
+      else if ( $registry->mybooking_plugin_activities_module &&
                 $registry->mybooking_activities_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_activities_plugin_summary_page ) ) { // Activities summary
         mybooking_engine_get_template('mybooking-plugin-activities-summary-tmpl.php');
       }
-      else if ( $registry->mybooking_plugin_transfer_module && 
+      else if ( $registry->mybooking_plugin_transfer_module &&
                 $registry->mybooking_transfer_plugin_choose_vehicle_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_transfer_plugin_choose_vehicle_page ) ) { // Transfer choose vehicle
         mybooking_engine_get_template('mybooking-plugin-transfer-choose-vehicle-tmpl.php');
         mybooking_engine_get_template('mybooking-plugin-transfer-modify-reservation-tmpl.php');
         $current_page_modify_transfer_reservation = true;
       }
-      else if ( $registry->mybooking_plugin_transfer_module && 
+      else if ( $registry->mybooking_plugin_transfer_module &&
                 $registry->mybooking_transfer_plugin_checkout_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_transfer_plugin_checkout_page ) ) { // Transfer checkout
         // Terms and conditions
@@ -870,14 +872,14 @@
         mybooking_engine_get_template('mybooking-plugin-transfer-modify-reservation-tmpl.php');
         $current_page_modify_transfer_reservation = true;
       }
-      else if ( $registry->mybooking_plugin_transfer_module && 
+      else if ( $registry->mybooking_plugin_transfer_module &&
                 $registry->mybooking_transfer_plugin_summary_page != '' &&
                 mybooking_engine_is_page( $registry->mybooking_transfer_plugin_summary_page ) ) { // Transfer checkout
         mybooking_engine_get_template('mybooking-plugin-transfer-summary-tmpl.php');
       }
 
       // Renting shortcode : My reservation - reservation
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content, 'mybooking_rent_engine_reservation') ) {
         $data = array();
         $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
@@ -885,47 +887,47 @@
       }
 
       // Activities shortcode : My reservation - activities
-      if ( $registry->mybooking_plugin_activities_module && 
+      if ( $registry->mybooking_plugin_activities_module &&
            has_shortcode( $content, 'mybooking_activities_engine_order') ) {
         mybooking_engine_get_template('mybooking-plugin-activities-order-tmpl.php');
       }
 
       // Transfer shortcode : My reservation - transfer
-      if ( $registry->mybooking_plugin_transfer_module && 
+      if ( $registry->mybooking_plugin_transfer_module &&
            has_shortcode( $content, 'mybooking_transfer_reservation') ) {
         mybooking_engine_get_template('mybooking-plugin-transfer-reservation-tmpl.php');
       }
 
       // Activities search shortcode
-      if ( $registry->mybooking_plugin_activities_module && 
+      if ( $registry->mybooking_plugin_activities_module &&
            has_shortcode( $content, 'mybooking_activities_engine_search') ) {
         $data = $this->wp_activities_extract_query_string();
         mybooking_engine_get_template('mybooking-plugin-activities-search-tmpl.php', $data);
       }
 
       // Renting shortcode : Products search
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content, 'mybooking_rent_engine_products_search') ) {
         $data = $this->wp_products_extract_query_string();
         mybooking_engine_get_template('mybooking-plugin-products-search-tmpl.php', $data);
       }
 
       // Renting shortcode : Product calendar
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content, 'mybooking_rent_engine_product') ) {
         mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
       }
 
       // Product page : reservation widget
       $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
         mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
       }
 
       // Activity page : calendar widget
       $url = $registry->mybooking_rent_plugin_navigation_activities_url ? $registry->mybooking_rent_plugin_navigation_activities_url : 'activities';
-      if ( $registry->mybooking_plugin_activities_module && 
+      if ( $registry->mybooking_plugin_activities_module &&
            isset($_SERVER['REQUEST_URI']) && preg_match_all('`/'.$url.'/(\w)+`', $_SERVER['REQUEST_URI']) ) {
         mybooking_engine_get_template('mybooking-plugin-activities-activity-widget-tmpl.php');
       }
@@ -934,19 +936,19 @@
       $active_wizard = is_active_widget( false, false, 'mybooking_rent_engine_selector_wizard_widget', false ) ||
                        has_shortcode( $content , 'mybooking_rent_engine_selector_wizard');
 
-      if ( $registry->mybooking_plugin_renting_module && 
+      if ( $registry->mybooking_plugin_renting_module &&
            ( $active_wizard || ( $current_page_modify_reservation && $registry->mybooking_rent_plugin_selector_in_process == 'wizard' ) ) ) {
          mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php');
       }
 
-      if ( $registry->mybooking_plugin_renting_module && 
-           $current_page_modify_reservation && 
+      if ( $registry->mybooking_plugin_renting_module &&
+           $current_page_modify_reservation &&
            $registry->mybooking_rent_plugin_selector_in_process == 'form' ) {
          mybooking_engine_get_template('mybooking-plugin-modify-reservation.php');
       }
 
       // Modify transfer reservation
-      if ( $registry->mybooking_plugin_transfer_module && 
+      if ( $registry->mybooking_plugin_transfer_module &&
            $current_page_modify_transfer_reservation ) {
          mybooking_engine_get_template('mybooking-plugin-transfer-modify-reservation.php');
       }
@@ -1747,19 +1749,19 @@
         $registry->mybooking_plugin_renting_module = true;
       }
       else {
-        $registry->mybooking_plugin_renting_module = false; 
+        $registry->mybooking_plugin_renting_module = false;
       }
       if ($settings && array_key_exists('mybooking_plugin_settings_activities_selector', $settings)) {
         $registry->mybooking_plugin_activities_module = true;
       }
       else {
-        $registry->mybooking_plugin_activities_module = false; 
+        $registry->mybooking_plugin_activities_module = false;
       }
       if ($settings && array_key_exists('mybooking_plugin_settings_transfer_selector', $settings)) {
         $registry->mybooking_plugin_transfer_module = true;
       }
       else {
-        $registry->mybooking_plugin_transfer_module = false; 
+        $registry->mybooking_plugin_transfer_module = false;
       }
 
       // == Renting
