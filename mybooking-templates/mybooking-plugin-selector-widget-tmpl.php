@@ -38,7 +38,7 @@
 		      <!-- // Custom delivery place -->
 		      <div id="widget_another_pickup_place_group" style="display: none;">
 						<button class="mybooking-selector_close-btn widget_another_pickup_place_group_close">
-							<i class="fa fa-times">
+							<i>
 								<span class="dashicons dashicons-dismiss"></span>
 							</i>
 						</button>
@@ -102,7 +102,7 @@
 		      <!-- // Custom delivery place -->
 		      <div id="widget_another_return_place_group" style="display: none;">
 						<button class="mybooking-selector_close-btn widget_another_return_place_group_close">
-							<i class="fa fa-times">
+							<i>
 								<span class="dashicons dashicons-dismiss"></span>
 							</i>
 						</button>
@@ -158,7 +158,7 @@
 			<!-- // Family selector -->
 		  <% if (not_hidden_family_id && configuration.selectFamily) { %>
 		    <div class="widget_family" style="display: none">
-					<i class="mybooking-selector_field-icon fa fa-list-alt">
+					<i class="mybooking-selector_field-icon">
 						<span class="dashicons dashicons-list-view"></span>
 					</i>
 		      <label for="family_id">
@@ -271,7 +271,7 @@
 			<!-- // Family selector -->
 			<% if (not_hidden_family_id && configuration.selectFamily) { %>
 				<div class="widget_family" style="display: none">
-					<i class="mybooking-selector_field-icon fa fa-list-alt">
+					<i class="mybooking-selector_field-icon">
 						<span class="dashicons dashicons-list-view"></span>
 					</i>
 					<label for="family_id">

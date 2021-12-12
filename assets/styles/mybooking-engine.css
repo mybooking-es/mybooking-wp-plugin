@@ -10,6 +10,8 @@
   --mb-accent-color: #2193F2;
 
   --mb-info-color: var(--mb-accent-color);
+  --mb-primary-selected-date: #2193f2;
+  --mb-secondary-selected-date: #9cdbf7;
   --mb-success-color: #3DD992;
   --mb-danger-color: #E6546E;
   --mb-warning-color: #FFB74D;
@@ -45,7 +47,7 @@
 
   /* Product grid */
   --mb-product-image-height: 260px;
-  --mb-product-image-height-img: 100%; /* auto - transparent / 100% photo */
+  --mb-product-image-width-img: 100%; 
   --mb-product-header-height: 75px;
   --mb-product-body-height: 120px;
   --mb-product-footer-height: 76px;
@@ -109,6 +111,9 @@
   --mb-calendar-available-hover: var(--mb-info-color);
   --mb-calendar-booked: var(--mb-danger-color);
   --mb-calendar-disabled: var(--mb-background-color);
+  --mb-calendar-first-last-date:  var(--mb-primary-selected-date);
+  --mb-calendar-checked-date:  var(--mb-secondary-selected-date);
+
 
   /* Complete payment buttons */
   --mb-payment-option-btn-bg: var(--mb-dark-background-color);

@@ -68,9 +68,9 @@
               </div>
             </div>
 
-            <h3 class="mb-section_title complete-section-title">
+            <h2 class="mb-section_title complete-section-title">
               <?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?>
-            </h3>
+            </h2>
 
             <div class="mb-form-group">
               <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>

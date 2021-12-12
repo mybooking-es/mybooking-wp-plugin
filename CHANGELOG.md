@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.2]
+
+### Fixed
+
+- Removed Font awesome
+- Calendar styles
+- Customize product cards
+
 ## [1.0.1]
 
 ### Added

@@ -77,15 +77,17 @@
 
 <script type="text/tpml" id="script_detailed_product">
 
-  <div class="mybooking-product_container mybooking-product_grid">
+  <div class="mybooking-product_container <?php if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['grid', 'grid_only'] ) ) ): ?>mybooking-product_grid<?php else: ?>mybooking-product_list<?php endif;?>">
 
-    <div class="mybooking-product_filter">
-      <div class="mybooking-product_filter-btn-group">
-        <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
-        <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view"><i class="mb-button icon"><span class="dashicons dashicons-grid-view"></span></i></span>
-        <span class="mybooking-product_filter-btn list js-mb-list" title="List view"><i class="mb-button icon"><span class="dashicons dashicons-list-view"></span></i></span>
+    <?php if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['grid', 'list'] ) ) ): ?>
+      <div class="mybooking-product_filter">
+        <div class="mybooking-product_filter-btn-group">
+          <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
+          <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view"><i class="mb-button icon"><span class="dashicons dashicons-grid-view"></span></i></span>
+          <span class="mybooking-product_filter-btn list js-mb-list" title="List view"><i class="mb-button icon"><span class="dashicons dashicons-list-view"></span></i></span>
+        </div>
       </div>
-    </div>
+    <?php endif; ?>
 
     <% for (var idx=0;idx<products.length; idx++) { %>
       <% var product = products[idx]; %>
@@ -162,7 +164,9 @@
 
               <!-- // Product name and description -->
               <h2 class="mybooking-product_name"><%=product.name%></h2>
-              <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
+              <% if (product.name != product.short_description) { %>
+                <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
+              <% } %>
               <div class="mybooking-product_description">
                 <%=product.description%>
               </div>
@@ -266,14 +270,16 @@
 <!-- PRODUCT DETAIL MODAL ----------------------------------------------------->
 
 <script type="text/tmpl" id="script_product_modal">
-  <div>
-    <div class="mybooking-carousel-inner">
+  <div class="mybooking-modal_product-detail">
+    <div class="mybooking-carousel-inner mybooking-modal_product-container">
       <% for (var idx=0; idx<product.photos.length; idx++) { %>
         <div class="mybooking-carousel-item">
-          <img class="d-block w-100" src="<%=product.photos[idx].full_photo_path%>" alt="<%=product.name%>">
+          <img class="mybooking-carousel_item-image" src="<%=product.photos[idx].full_photo_path%>" alt="<%=product.name%>">
         </div>
       <% } %>
     </div>
-    <div class="mt-3 text-muted"><%=product.description%></div>
+    <div class="mybooking-modal_product-description">
+      <%=product.description%>
+    </div>
   </div>
 </script>
