@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2021-12-19 17:51+0000\n"
+"PO-Revision-Date: 2021-12-19 17:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -2086,7 +2086,7 @@ msgstr "Extras"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:559
 msgctxt "transfer_checkout"
 msgid "Flight estimated time"
-msgstr "Hora prevista del vuelo"
+msgstr "Hora prevista de llegada/salida del vuelo"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:394
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:413
@@ -2103,14 +2103,14 @@ msgstr "Número de vuelo"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:558
 msgctxt "transfer_checkout"
 msgid "Flight or Vessel estimated time"
-msgstr "Hora prevista de llegada/embarque"
+msgstr "Hora prevista de llegada/salida"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:398
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:468
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:497
 msgctxt "transfer_checkout"
 msgid "Flight or vessel estimated time"
-msgstr "Hora prevista de llegada/embarque"
+msgstr "Hora prevista de llegada/salida"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:411
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:526
