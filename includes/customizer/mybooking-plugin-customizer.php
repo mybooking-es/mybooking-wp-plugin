@@ -106,7 +106,7 @@ if (!class_exists('MyBookingPluginCustomizer')) {
 
       // Product Image Width
       if (!empty($product_image_width_img)) {
-        if ( $header_brightness > 100 ) {
+        if ( $product_image_width_img > 100 ) {
           $product_image_width_img = 100;
         }
         $custom_css .= "--mb-product-image-width-img: ".$product_image_width_img.'%;';
