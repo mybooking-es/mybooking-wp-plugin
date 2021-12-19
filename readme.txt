@@ -117,7 +117,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
-= 1.0.3 =
+= 1.1.0 =
 * Added Transfer: Supplements
 
 = 1.0.2 =
@@ -314,7 +314,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
-= 1.0.3 =
+= 1.1.0 =
 * Added Transfer: Supplements
 
 = 1.0.2 =
