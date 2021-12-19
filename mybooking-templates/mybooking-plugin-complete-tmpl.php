@@ -790,13 +790,23 @@
 <!-- Script that shows the extra detail -->
 <script type="text/tmpl" id="script_extra_modal">
 
-  <div class="mybooking-carousel-inner">
-    <% for (var idx=0; idx<extra.photos.length; idx++) { %>
-      <div class="carousel-item <% if (idx==0) {%>active<%}%>">
-        <img class="d-block w-100" src="<%=extra.photos[idx].full_photo_path%>" alt="<%=extra.name%>">
+  <div class="mybooking-modal_product-detail">
+    <div class="mybooking-modal_product-container">
+      <div class="mybooking-carousel-inner">
+        <% for (var idx=0; idx<extra.photos.length; idx++) { %>
+          <div class="mybooking-carousel-item">
+            <img class="mybooking-carousel_item-image" src="<%=extra.photos[idx].full_photo_path%>" alt="<%=extra.name%>">
+          </div>
+        <% } %>
       </div>
-    <% } %>
-  </div>
-  <div class="mt-3 text-muted"><%=extra.description%></div>
-
+    </div>
+    <div class="mybooking-modal_product-description" style="display: none">      
+      <%=extra.description%>
+    </div>
+  </div>    
+  <div class="mybooking-modal_product-actions">
+    <button id="modal_product_photos"><?php echo esc_html_x( "Photos", 'renting_complete', 'mybooking-wp-plugin') ?></button>
+    <button id="modal_product_info"><?php echo esc_html_x( "Info", 'renting_complete', 'mybooking-wp-plugin') ?></button>
+  </div> 
+  
 </script>

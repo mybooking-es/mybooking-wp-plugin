@@ -47,24 +47,6 @@
   border-bottom: 1px solid var(--mb-border-color);
 }
 
-@media (min-width:  575.98px) {
-  .mybooking-modal_product-detail {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-  }  
-}
-
-.mybooking-modal_product-container .mybooking-carousel_item-image {
-  width: 100%;
-} @media (min-width:  575.98px) {
-  .mybooking-modal_product-container .mybooking-carousel_item-image {
-    width: 80%;
-  }
-}
-
-
 /* Backdrop */
 
 .mybooking-blocker {

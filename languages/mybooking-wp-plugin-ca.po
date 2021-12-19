@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2021-12-08 11:03+0000\n"
+"PO-Revision-Date: 2021-12-19 13:16+0000\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -1060,11 +1060,21 @@ msgctxt "renting_choose_product"
 msgid "hour(s)"
 msgstr "hora/es"
 
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:290
+msgctxt "renting_choose_product"
+msgid "Info"
+msgstr "Info"
+
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:85
 #| msgid "Close"
 msgctxt "renting_choose_product"
 msgid "Order"
 msgstr "Ordre"
+
+#: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:289
+msgctxt "renting_choose_product"
+msgid "Photos"
+msgstr "Fotografies"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:25
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:101
@@ -1096,7 +1106,7 @@ msgid "Taxes included"
 msgstr "Impostos inclosos"
 
 #: mybooking-templates/mybooking-plugin-complete.php:72
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:530
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:570
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:149
 msgctxt "renting_complete"
 msgid "Additional information"
@@ -1118,21 +1128,21 @@ msgid "Apply"
 msgstr "Enviar"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:566
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:609
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:649
 msgctxt "renting_complete"
 msgid "Book now and pay now"
 msgstr "Reserva ahora y paga ahora"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:559
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:602
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:642
 msgctxt "renting_complete"
 msgid "Book now and pay on arrival"
 msgstr "Reserveu ara i pagueu a l&#39;arribada"
 
 #: mybooking-templates/mybooking-plugin-complete.php:76
 #: mybooking-templates/mybooking-plugin-complete.php:77
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:534
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:535
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:574
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:575
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:152
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:153
 msgctxt "renting_complete"
@@ -1140,7 +1150,7 @@ msgid "Comments"
 msgstr "Comentaris"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:607
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:650
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:690
 msgctxt "renting_complete"
 msgid "Confirm"
 msgstr "Confirmar"
@@ -1163,7 +1173,7 @@ msgstr "Cobertura"
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:644
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:549
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:916
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:686
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:726
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:241
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:275
 msgctxt "renting_complete"
@@ -1209,9 +1219,9 @@ msgstr "Extras"
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:582
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:603
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:677
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:625
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:646
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:719
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:665
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:686
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:759
 #, php-format
 msgctxt "renting_complete"
 msgid ""
@@ -1224,12 +1234,17 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:580
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:601
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:675
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:623
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:644
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:717
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:663
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:684
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:757
 msgctxt "renting_complete"
 msgid "I have read and hereby accept the conditions of rental"
 msgstr "He llegit i accepto les condicions de lloguer"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:809
+msgctxt "renting_complete"
+msgid "Info"
+msgstr "Info"
 
 #: mybooking-templates/mybooking-plugin-complete.php:40
 #: mybooking-templates/mybooking-plugin-complete.php:41
@@ -1244,7 +1259,7 @@ msgstr "Nom"
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:638
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:543
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:910
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:680
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:720
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:235
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:269
 msgctxt "renting_complete"
@@ -1267,6 +1282,11 @@ msgstr "Suplement de combustible"
 msgctxt "renting_complete"
 msgid "Phone number"
 msgstr "Número de telèfon"
+
+#: mybooking-templates/mybooking-plugin-complete-tmpl.php:808
+msgctxt "renting_complete"
+msgid "Photos"
+msgstr "Fotografies"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:235
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:235
@@ -1292,8 +1312,8 @@ msgstr "Codi de promoció"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:552
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:586
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:595
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:629
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:635
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:669
 msgctxt "renting_complete"
 msgid "Request reservation"
 msgstr "Sol·licita reserva"
@@ -1343,7 +1363,7 @@ msgstr "Total"
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:651
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:556
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:923
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:693
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:733
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:248
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:282
 msgctxt "renting_complete"
@@ -1359,7 +1379,7 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:661
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:565
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:933
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:703
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:743
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:258
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:292
 msgctxt "renting_complete"
@@ -1373,7 +1393,7 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:632
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:538
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:905
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:675
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:715
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:230
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:264
 msgctxt "renting_complete"
@@ -1981,19 +2001,25 @@ msgctxt "testimonial_content"
 msgid "Testimonials"
 msgstr "Testimonis"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:385
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:425
 msgctxt "transfer_checkout"
 msgid "Accommodation"
 msgstr "Allotjament"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:413
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:415
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:446
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:447
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:479
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:480
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:507
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:508
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:327
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:329
+msgctxt "transfer_checkout"
+msgid "Address"
+msgstr "Adreça"
+
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:453
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:455
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:486
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:487
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:519
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:520
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:547
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:548
 msgctxt "transfer_checkout"
 msgid "Address or hotel name"
 msgstr "Adreça o nom de l'hotel"
@@ -2003,29 +2029,45 @@ msgctxt "transfer_checkout"
 msgid "Adults: "
 msgstr "Adults:"
 
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:323
+msgctxt "transfer_checkout"
+msgid "Billing address"
+msgstr "Adreça de facturació"
+
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:110
 msgctxt "transfer_checkout"
 msgid "Children: "
 msgstr "Nens:"
+
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:334
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:336
+msgctxt "transfer_checkout"
+msgid "City"
+msgstr "Ciutat"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout.php:50
 msgctxt "transfer_checkout"
 msgid "Close"
 msgstr "Tanca"
 
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:346
+msgctxt "transfer_checkout"
+msgid "Country"
+msgstr "País"
+
 #: mybooking-templates/mybooking-plugin-transfer-checkout.php:34
 msgctxt "transfer_checkout"
 msgid "Customer's details"
 msgstr "Dades del client"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:439
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:500
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:479
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:540
 msgctxt "transfer_checkout"
 msgid "Drop off"
 msgstr "Tornada"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:333
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:335
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:373
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:375
 msgctxt "transfer_checkout"
 msgid "Dropoff address (hotel, resource, address, terminal)"
 msgstr "Adreça de lliurament (hotel, recurs, adreça, terminal)"
@@ -2035,50 +2077,50 @@ msgctxt "transfer_checkout"
 msgid "Extras"
 msgstr "Extres"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:360
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:379
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:430
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:458
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:491
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:519
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:400
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:419
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:470
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:498
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:531
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:559
 msgctxt "transfer_checkout"
 msgid "Flight estimated time"
 msgstr "Hora de vol"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:354
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:373
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:424
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:454
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:487
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:515
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:394
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:413
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:464
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:494
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:527
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:555
 msgctxt "transfer_checkout"
 msgid "Flight number"
 msgstr "Número de vol"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:377
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:490
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:518
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:417
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:530
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:558
 msgctxt "transfer_checkout"
 msgid "Flight or Vessel estimated time"
 msgstr "Hora estimada de vol o vaixell"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:358
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:428
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:457
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:398
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:468
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:497
 msgctxt "transfer_checkout"
 msgid "Flight or vessel estimated time"
 msgstr "Hora estimada de vol o vaixell"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:371
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:486
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:514
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:411
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:526
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:554
 msgctxt "transfer_checkout"
 msgid "Flight or Vessel number"
 msgstr "Número de vol o vaixell"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:352
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:422
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:453
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:392
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:462
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:493
 msgctxt "transfer_checkout"
 msgid "Flight or vessel number"
 msgstr "Número de vol o vaixell"
@@ -2088,50 +2130,62 @@ msgctxt "transfer_checkout"
 msgid "Infants: "
 msgstr "Nadons:"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:389
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:391
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:429
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:431
 msgctxt "transfer_checkout"
 msgid "Name of Hotel / Complex / Villa and address"
 msgstr "Nom de l'hotel / complex / vila i adreça"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:347
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:387
 msgctxt "transfer_checkout"
 msgid "Outward Journey Details"
 msgstr "Detalls del viatge d'anada"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:405
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:472
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:445
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:512
 msgctxt "transfer_checkout"
 msgid "Pickup"
 msgstr "Recollida"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:325
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:327
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:365
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:367
 msgctxt "transfer_checkout"
 msgid "Pickup address (hotel, resource, address, terminal)"
 msgstr "Adreça de recollida (hotel, recurs, adreça, terminal)"
+
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:351
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:353
+msgctxt "transfer_checkout"
+msgid "Postal Code"
+msgstr "Codi postal"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:43
 msgctxt "transfer_checkout"
 msgid "Reservation summary"
 msgstr "Resum de la reserva"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:366
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:406
 msgctxt "transfer_checkout"
 msgid "Return Journey Details"
 msgstr "Detalls del viatge de tornada"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:466
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:506
 msgctxt "transfer_checkout"
 msgid "Round trip details"
 msgstr "Detalls d'anada i tornada"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:344
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:339
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:341
+msgctxt "transfer_checkout"
+msgid "State"
+msgstr "Província"
+
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:384
 msgctxt "transfer_checkout"
 msgid "Transfer details"
 msgstr "Detalls de la transferència"
 
-#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:399
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:439
 msgctxt "transfer_checkout"
 msgid "Trip details"
 msgstr "Detalls del viatge"

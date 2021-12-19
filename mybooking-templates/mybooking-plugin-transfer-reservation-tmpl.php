@@ -117,7 +117,7 @@
             <div class="mybooking-summary_extras">
               <div class="mybooking-summary_extra-item">
                 <span class="mb-badge info mybooking-summary_extra-quantity"><%=booking.extras[idx].quantity%></span>
-                <span class="mybooking-summary_extra-name"><%=booking.extras[idx].extra_description%></span>
+                <span class="mybooking-summary_extra-name"><%=booking.extras[idx].extra_name_customer_translation%></span>
               </div>
               <span class="mybooking-summary_extra-amount">
                 <%=configuration.formatCurrency(booking.extras[idx].extra_cost)%>
@@ -232,13 +232,13 @@
       <div class="mybooking-payment_confirmation-box">
        <label class="mybooking-payment_custom-label" for="payments_paypal_standard">
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-        <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard"><?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+        <input type="radio" id="payments_paypal_standard" name="payment_method_id" class="payment_method_select" value="paypal_standard"><?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
        </label>
 
        <label class="mybooking-payment_custom-label" for="payments_credit_card">
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-        <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>"><?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+        <input type="radio" id="payments_credit_card" name="payment_method_id" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>"><?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
        </label>
       </div>
       <div id="payment_method_select_error"></div>
@@ -252,7 +252,7 @@
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
       </div>
-
+      <input type="hidden" name="payment_method_id" value="paypal_standard" data-payment-method="paypal_standard">
     <% } else if (sales_process.payment_methods.tpv_virtual) { %>
       <div class="mb-alert secondary" role="alert">
         <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.', 'renting_complete', 'mybooking-wp-plugin' )  )?>
@@ -279,6 +279,6 @@
         </button>
       </div>
     </div>
-  </div>
+  </form>
 
 </script>

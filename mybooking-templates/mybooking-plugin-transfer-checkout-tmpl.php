@@ -316,6 +316,46 @@
     </div>
   </div>
 
+  <% if (configuration.transferFormFillBillingAddress) { %>
+
+    <!-- // Billing address -->
+    <h2 class="mb-section_title complete-section-title">
+      <?php echo esc_html_x( "Billing address", 'transfer_checkout', 'mybooking-wp-plugin') ?>
+    </h2>
+    <div class="mb-form-row">
+      <div class="mb-form-group mb-col-md-12">
+        <label for="street"><?php echo esc_html_x( 'Address', 'transfer_checkout', 'mybooking-wp-plugin') ?></label>
+        <input class="mb-form-control" id="customer_address_street" name="customer_address_street" type="text"
+          placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Address', 'transfer_checkout', 'mybooking-wp-plugin') ?>")%>"  maxlength="100" required>
+      </div>
+    </div>
+    <div class="mb-form-row">
+      <div class="mb-form-group mb-col-md-6">
+        <label for="city"><?php echo esc_html_x( 'City', 'transfer_checkout', 'mybooking-wp-plugin') ?></label>
+        <input class="mb-form-control" id="customer_address_city" name="customer_address_city" type="text"
+          placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'transfer_checkout', 'mybooking-wp-plugin') ?>")%>" maxlength="60"  required>
+      </div>
+      <div class="mb-form-group mb-col-md-6">
+        <label for="state"><?php echo esc_html_x( 'State', 'transfer_checkout', 'mybooking-wp-plugin') ?></label>
+        <input class="mb-form-control" id="customer_address_state" name="customer_address_state" type="text"
+          placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'transfer_checkout', 'mybooking-wp-plugin') ?>")%>"  maxlength="60"  required>
+      </div>
+    </div>
+    <div class="mb-form-row">
+      <div class="mb-form-group mb-col-md-6">
+        <label for="country"><?php echo esc_html_x( 'Country', 'transfer_checkout', 'mybooking-wp-plugin') ?></label>
+        <select name="customer_address_country" id="customer_address_country" class="mb-form-control"  required>
+        </select>
+      </div>
+      <div class="mb-form-group mb-col-md-6">
+        <label for="zip"><?php echo esc_html_x( 'Postal Code', 'transfer_checkout', 'mybooking-wp-plugin') ?></label>
+        <input class="mb-form-control" id="customer_address_zip" name="customer_address_zip" type="text"
+          placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'transfer_checkout', 'mybooking-wp-plugin') ?>")%>"  maxlength="10" required>
+      </div>
+    </div>
+  <% } %> 
+
+
   <% if (configuration.transfer_origin_destination_detailed_info_mode === 'only_address') { %>
 
     <!-- // Only Text detailed information -->

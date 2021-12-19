@@ -89,6 +89,6 @@
 
 <!-- Show extra detail modal -->
 <div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modalExtraDetail_MBM">
-  <h2 class="mb-modal_title modal-extra-detail-title"></h2>
-  <div class="mb-modal_body modal-extra-detail-content"></div>
+  <h2 class="mybooking-modal_title modal-extra-detail-title"></h2>
+  <div class="mybooking-modal_body modal-extra-detail-content"></div>
 </div>

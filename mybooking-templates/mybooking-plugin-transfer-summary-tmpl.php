@@ -110,7 +110,7 @@
           <div class="mybooking-summary_extras">
             <div class="mybooking-summary_extra-item">
               <span class="mb-badge info mybooking-summary_extra-quantity"><%=booking.extras[idx].quantity%></span>
-              <span class="mybooking-summary_extra-name"><%=booking.extras[idx].extra_description%></span>
+              <span class="mybooking-summary_extra-name"><%=booking.extras[idx].extra_name_customer_translation%></span>
             </div>
             <span class="mybooking-summary_extra-amount">
               <%=configuration.formatCurrency(booking.extras[idx].extra_cost)%>

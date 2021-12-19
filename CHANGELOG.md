@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.3]
+
+### Added
+
+- Transfer supplements
+- Transfer billing address => Payment integration
+
+### Fixed
+
+- Product detail: Show gallery + info
+- Extra detail: Show gallery + info
+
 ## [1.0.2]
 
 ### Fixed
