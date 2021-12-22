@@ -24,6 +24,8 @@
         var customLoader = mybooking_init_vars.mybooking_custom_loader;
         // Select 2
         var jsUseSelect2 = mybooking_init_vars.mybooking_js_select2;
+        // Phone utils
+        var phoneUtilsPath = mybooking_init_vars.mybooking_phone_utils_path;
         // Google Integration
         if (mybooking_init_vars.mybooking_google_api_places == 'true') {
           var useGoogleMaps = true;
@@ -105,6 +107,9 @@
           return transferTermsUrl;
         }
         // -- Utilities
+        function getPhoneUtilsPath() {
+          return phoneUtilsPath;
+        }
         function getCustomLoader() {
           if (customLoader === 'true') {
             return true;
@@ -149,6 +154,7 @@
           transferSummaryUrl: getTransferSummaryUrl,          
           transferTermsUrl: getTransferTermsUrl,
           // Common
+          phoneUtilsPath: getPhoneUtilsPath,
           customLoader: getCustomLoader,  
           jsUseSelect2: getJsUseSelect2       
         }

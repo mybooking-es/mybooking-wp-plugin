@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1]
+
+### Added
+
+- Renting Checkout Form : Phone dial code
+- Activities Checkout Form : Phone dial code
+- Transfer Checkout Form : Phone dial code
+
 ## [1.1.0]
 
 ### Added

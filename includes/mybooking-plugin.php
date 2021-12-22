@@ -373,6 +373,10 @@
       // Add Dashicons in WordPress frontend
       wp_enqueue_style( 'dashicons' );
 
+      // Enqueue Phone resources
+      wp_enqueue_style( 'mybooking_wp_css_phone',
+                        plugins_url('/assets/styles/intlTelInput.min.css', dirname( __FILE__ ) ) );
+
       // Enqueue select2 + select2 bootstrap CSS
       if ( $registry->mybooking_plugin_js_select2 ) {
         // Load select2
@@ -491,6 +495,8 @@
           'mybooking_google_api_places_bounds_sw_lng' => $registry->mybooking_plugin_google_api_places_bounds_sw_lng,
           'mybooking_google_api_places_bounds_ne_lat' => $registry->mybooking_plugin_google_api_places_bounds_ne_lat,
           'mybooking_google_api_places_bounds_ne_lng' => $registry->mybooking_plugin_google_api_places_bounds_ne_lng,
+          // Telephone validation
+          'mybooking_phone_utils_path' => plugins_url( '/assets/js/intlTelInput-utils.js', dirname(__FILE__) ),
           // Custom Loader
           'mybooking_custom_loader' => ( $registry->mybooking_rent_plugin_custom_loader == '1' ? 'true' : 'false'),
           'mybooking_js_select2' => ( $registry->mybooking_plugin_js_select2 == '1' ? 'true' : 'false')
@@ -503,7 +509,6 @@
                          plugins_url( '/assets/js/moment-timezone-with-data.min.js', dirname(__FILE__) ),
                          array( 'moment' ), $version, true);
       wp_enqueue_script( 'mybooking-moment-timezone-js');
-
 
       // Enqueue the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
       wp_register_script( 'mybooking-rent-engine-script',

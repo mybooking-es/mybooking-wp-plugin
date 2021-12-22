@@ -117,6 +117,11 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.1.1 =
+* Added Renting Checkout Form : Phone dial code
+* Added Activities Checkout Form : Phone dial code
+* Added Transfer Checkout Form : Phone dial code
+
 = 1.1.0 =
 * Added Transfer: Supplements
 * Added Transfer: Billing Address
@@ -316,6 +321,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+* Added Renting, Activities, Transfer : Phone dial code
 
 = 1.1.0 =
 * Added Transfer: Supplements + Billing address / Renting: Product/Extra detailed info

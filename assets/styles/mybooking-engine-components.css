@@ -967,6 +967,10 @@ fieldset legend {
   display: none;
 }
 
+/** Phone prefix **/
+form .iti {
+    width: 100%;
+}
 
 /** SLICK JS **/
 
