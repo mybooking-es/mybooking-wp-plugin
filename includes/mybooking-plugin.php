@@ -378,11 +378,11 @@
                         plugins_url('/assets/styles/intlTelInput.min.css', dirname( __FILE__ ) ) );
 
       // Enqueue select2 + select2 bootstrap CSS
-      if ( $registry->mybooking_plugin_js_select2 ) {
+//      if ( $registry->mybooking_plugin_js_select2 ) {
         // Load select2
         wp_enqueue_style( 'mybooking_wp_css_components_select2',
                         plugins_url('/assets/styles/select2-4.0.1.css', dirname( __FILE__ ) ) );
-      }
+//      }
 
       // Slick JS CSS
       if ( $registry->mybooking_rent_plugin_js_slickjs ) {
@@ -1205,7 +1205,13 @@
       // URL for pagination
       $url = get_site_url();
       if ($this->get_current_page() != null) {
-        $url = $url.'/'.mybooking_engine_translated_slug( $this->get_current_page()->post_name );
+        $translated_slug = mybooking_engine_translated_slug( $this->get_current_page()->post_name );
+        if ( filter_var( $translated_slug, FILTER_VALIDATE_URL ) ) {
+          $url = $translated_slug;
+        }
+        else {
+          $url = $url.'/'.$translated_slug;
+        }
       }
 
       // Get the products from the API
@@ -1304,7 +1310,13 @@
       // URL for pagination
       $url = get_site_url();
       if ($this->get_current_page() != null) {
-        $url = $url.'/'.mybooking_engine_translated_slug( $this->get_current_page()->post_name );
+        $translated_slug = mybooking_engine_translated_slug( $this->get_current_page()->post_name );
+        if ( filter_var( $translated_slug, FILTER_VALIDATE_URL ) ) {
+          $url = $translated_slug;
+        }
+        else {
+          $url = $url.'/'.$translated_slug;
+        }
       }
 
       // Get the products from the API

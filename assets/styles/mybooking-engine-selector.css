@@ -91,7 +91,9 @@
 .mybooking-selector form input.form-reservation-error,
 .mybooking-selector form input.form-reservation-error:focus {
   font-size: 0.9em;
-  width: 55%;
+  /*width: 55%;*/
+  display: block;
+  width: 100%;
 }
 
 .mybooking-selector form label.form-reservation-error {

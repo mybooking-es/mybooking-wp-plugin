@@ -7,6 +7,7 @@
 - Renting Checkout Form : Phone dial code
 - Activities Checkout Form : Phone dial code
 - Transfer Checkout Form : Phone dial code
+- Transfer Selector : Autocomplete destionation points
 
 ## [1.1.0]
 
