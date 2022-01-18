@@ -132,6 +132,10 @@
    * [mybooking_password_forgotten]
    * [mybooking_change_password]
    *
+   * 2.7 Slider
+   *
+   * [mybooking_slider]
+   *
    */
   class MyBookingPlugin
   {
@@ -316,6 +320,13 @@
       // Shortcode testimonials
       if ( $registry->mybooking_rent_plugin_complements_testimonials == '1' ) {
         add_shortcode( 'mybooking_testimonials', array( $this, 'wp_testimonials_shortcode' ) );
+      }
+
+      // -- Slider shortcodes
+
+      // Shortcode slider
+      if ( $registry->mybooking_rent_plugin_complements_slider == '1' ) {
+        add_shortcode( 'mybooking_slider', array( $this, 'wp_slider_shortcode' ) );
       }
 
       // -- Profile
@@ -535,6 +546,7 @@
 
       // Complements (testimonials, cookies, popup)
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1' ||
+          $registry->mybooking_rent_plugin_complements_slider == '1' ||
           $registry->mybooking_rent_plugin_complements_popup == '1' ||
           $registry->mybooking_rent_plugin_complements_cookies_notice == '1' ||
           $registry->mybooking_rent_plugin_complements_renting_item == '1' ||
@@ -1557,6 +1569,17 @@
 
     }
 
+    /**
+     * Mybooking Slider shortcode
+     */
+    public function wp_slider_shortcode($atts = [], $content = null, $tag = '') {
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-slider.php');
+      return ob_get_clean();
+
+    }
+
     // ------------ Support methods --------------------
 
     /**
@@ -2030,6 +2053,13 @@
       else {
         $registry->mybooking_rent_plugin_complements_testimonials = '';
       }
+      // Slider
+      if ($settings && array_key_exists('mybooking_plugin_settings_complements_slider', $settings)) {
+        $registry->mybooking_rent_plugin_complements_slider = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_slider"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_complements_slider = '';
+      }
       // Catalog
       if ($settings && array_key_exists('mybooking_plugin_settings_complements_renting_item', $settings)) {
         $registry->mybooking_rent_plugin_complements_renting_item = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_renting_item"] )) == '1');
@@ -2184,6 +2214,34 @@
             'show_in_rest' => true, // Gutenberg activation!
             'supports' => array( 'title', 'editor', 'thumbnail' ),
             'menu_icon' => 'dashicons-format-quote',
+            'has_archive' => true
+          )
+        );
+      }
+      if ($registry->mybooking_rent_plugin_complements_slider == '1') {
+        register_post_type( 'slider',
+          array(
+            'labels' => array(
+              'name' => _x('Content Slider', 'slider_content', 'mybooking-wp-plugin'),
+              'singular_name' => _x('Testimonial', 'slider_content', 'mybooking-wp-plugin'),
+              'add_new' => _x('Add slider', 'slider_content', 'mybooking-wp-plugin'),
+              'add_new_item' => _x('New slider', 'slider_content', 'mybooking-wp-plugin'),
+              'edit' => _x('Edit', 'slider_content', 'mybooking-wp-plugin'),
+              'edit_item' => _x('Edit slider', 'slider_content', 'mybooking-wp-plugin'),
+              'new_item' => _x('New slider', 'slider_content', 'mybooking-wp-plugin'),
+              'view' => _x('See', 'slider_content', 'mybooking-wp-plugin'),
+              'view_item' => _x('See slider', 'slider_content', 'mybooking-wp-plugin'),
+              'search_items' => _x('Search slider', 'slider_content', 'mybooking-wp-plugin'),
+              'not_found' => _x('No slider found', 'slider_content', 'mybooking-wp-plugin'),
+              'not_found_in_trash' => _x('No slider found on bin', 'slider_content', 'mybooking-wp-plugin'),
+              'parent' => _x('Parent slider', 'slider_content', 'mybooking-wp-plugin')
+            ),
+            'show_ui' => true,
+            'public' => true,
+            'show_in_menu' => 'mybooking-plugin-configuration',
+            'show_in_rest' => true, // Gutenberg activation!
+            'supports' => array( 'title', 'editor', 'thumbnail' ),
+            'menu_icon' => 'dashicons-slides',
             'has_archive' => true
           )
         );
