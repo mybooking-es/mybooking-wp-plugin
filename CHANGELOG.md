@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.2]
+
+### Fixed
+
+- Phone dial code when no phone field in form on Ms Edge
+
 ## [1.1.1]
 
 ### Added

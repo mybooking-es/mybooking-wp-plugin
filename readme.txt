@@ -3,7 +3,7 @@ Contributors: juanmiqueo
 Donate link: https://mybooking.es/
 Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation, properties booking system, tours booking system, transfer booking system 
 Requires at least: 5.2
-Tested up to: 5.8
+Tested up to: 5.9
 Stable tag: trunk
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -116,6 +116,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 14. Transfer summary page
 
 == Changelog ==
+
+= 1.1.2 =
+* Fixed: Phone dial code when no phone field in form on Ms Edge
 
 = 1.1.1 =
 * Added Renting Checkout Form : Phone dial code
@@ -322,6 +325,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.1.2 =
+* Fixed: Phone dial code when no phone field in form on Ms Edge
 
 = 1.1.1 =
 * Added Renting, Activities, Transfer : Phone dial code. Autocomplete transfer selector
