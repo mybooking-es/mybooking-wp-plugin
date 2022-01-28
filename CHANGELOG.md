@@ -1,6 +1,10 @@
 # Changelog
 
-## [1.1.2]
+## [1.2.0]
+
+### Added
+
+- Test on 5.9
 
 ### Fixed
 

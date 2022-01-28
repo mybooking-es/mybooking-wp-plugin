@@ -117,7 +117,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
-= 1.1.2 =
+= 1.2.0 =
 * Fixed: Phone dial code when no phone field in form on Ms Edge
 
 = 1.1.1 =
@@ -326,7 +326,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
-= 1.1.2 =
+= 1.2.0 =
 * Fixed: Phone dial code when no phone field in form on Ms Edge
 
 = 1.1.1 =
