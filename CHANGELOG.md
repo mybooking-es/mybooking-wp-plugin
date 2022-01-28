@@ -8,7 +8,7 @@
 
 ### Fixed
 
-- Phone dial code when no phone field in form on Ms Edge
+- Ms Edge get current page language
 
 ## [1.1.1]
 
