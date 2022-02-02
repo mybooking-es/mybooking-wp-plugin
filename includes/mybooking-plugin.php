@@ -132,9 +132,13 @@
    * [mybooking_password_forgotten]
    * [mybooking_change_password]
    *
-   * 2.7 Slider
+   * 2.7 Content Slider
    *
-   * [mybooking_slider]
+   * [mybooking_content_slider]
+   *
+   * 2.8 Product Slider
+   *
+   * [mybooking_product_slider]
    *
    */
   class MyBookingPlugin
@@ -322,11 +326,18 @@
         add_shortcode( 'mybooking_testimonials', array( $this, 'wp_testimonials_shortcode' ) );
       }
 
-      // -- Slider shortcodes
+      // -- Content Slider shortcodes
 
-      // Shortcode slider
-      if ( $registry->mybooking_rent_plugin_complements_slider == '1' ) {
-        add_shortcode( 'mybooking_slider', array( $this, 'wp_slider_shortcode' ) );
+      // Shortcode Content slider
+      if ( $registry->mybooking_rent_plugin_complements_content_slider == '1' ) {
+        add_shortcode( 'mybooking_content_slider', array( $this, 'wp_content_slider_shortcode' ) );
+      }
+
+      // -- Product carousel shortcodes
+
+      // Shortcode Product Slider
+      if ( $registry->mybooking_rent_plugin_complements_product_slider == '1' ) {
+        add_shortcode( 'mybooking_product_slider', array( $this, 'wp_product_slider_shortcode' ) );
       }
 
       // -- Profile
@@ -546,7 +557,8 @@
 
       // Complements (testimonials, cookies, popup)
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1' ||
-          $registry->mybooking_rent_plugin_complements_slider == '1' ||
+          $registry->mybooking_rent_plugin_complements_content_slider == '1' ||
+          $registry->mybooking_rent_plugin_complements_product_slider == '1' ||
           $registry->mybooking_rent_plugin_complements_popup == '1' ||
           $registry->mybooking_rent_plugin_complements_cookies_notice == '1' ||
           $registry->mybooking_rent_plugin_complements_renting_item == '1' ||
@@ -1570,12 +1582,23 @@
     }
 
     /**
-     * Mybooking Slider shortcode
+     * Mybooking Content Slider shortcode
      */
-    public function wp_slider_shortcode($atts = [], $content = null, $tag = '') {
+    public function wp_content_slider_shortcode($atts = [], $content = null, $tag = '') {
 
       ob_start();
-      mybooking_engine_get_template('mybooking-plugin-slider.php');
+      mybooking_engine_get_template('mybooking-plugin-content-slider.php');
+      return ob_get_clean();
+
+    }
+
+    /**
+     * Mybooking Product Slider shortcode
+     */
+    public function wp_product_slider_shortcode($atts = [], $content = null, $tag = '') {
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-product-slider.php');
       return ob_get_clean();
 
     }
@@ -2054,11 +2077,18 @@
         $registry->mybooking_rent_plugin_complements_testimonials = '';
       }
       // Slider
-      if ($settings && array_key_exists('mybooking_plugin_settings_complements_slider', $settings)) {
-        $registry->mybooking_rent_plugin_complements_slider = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_slider"] )) == '1');
+      if ($settings && array_key_exists('mybooking_plugin_settings_complements_content_slider', $settings)) {
+        $registry->mybooking_rent_plugin_complements_content_slider = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_content_slider"] )) == '1');
       }
       else {
-        $registry->mybooking_rent_plugin_complements_slider = '';
+        $registry->mybooking_rent_plugin_complements_content_slider = '';
+      }
+      // Slider
+      if ($settings && array_key_exists('mybooking_plugin_settings_complements_product_slider', $settings)) {
+        $registry->mybooking_rent_plugin_complements_product_slider = (trim(esc_attr( $settings["mybooking_plugin_settings_complements_product_slider"] )) == '1');
+      }
+      else {
+        $registry->mybooking_rent_plugin_complements_product_slider = '';
       }
       // Catalog
       if ($settings && array_key_exists('mybooking_plugin_settings_complements_renting_item', $settings)) {
@@ -2161,6 +2191,8 @@
 
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
+
+      // Popup Post Type
       if ($registry->mybooking_rent_plugin_complements_popup == '1') {
         add_action( 'init', 'create_popup' );
           register_post_type( 'popup',
@@ -2190,6 +2222,8 @@
           )
         );
       }
+
+      // Testimonials Post Type
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1') {
         register_post_type( 'testimonial',
           array(
@@ -2218,8 +2252,10 @@
           )
         );
       }
-      if ($registry->mybooking_rent_plugin_complements_slider == '1') {
-        register_post_type( 'slider',
+
+      // Content Slider Post Type
+      if ($registry->mybooking_rent_plugin_complements_content_slider == '1') {
+        register_post_type( 'content-slider',
           array(
             'labels' => array(
               'name' => _x('Content Slider', 'slider_content', 'mybooking-wp-plugin'),
@@ -2246,6 +2282,174 @@
           )
         );
       }
+
+      // Product Slider Post Type
+      if ($registry->mybooking_rent_plugin_complements_product_slider == '1') {
+        register_post_type( 'product-slider',
+          array(
+            'labels' => array(
+              'name' => _x('Product Slider', 'slider_product', 'mybooking-wp-plugin'),
+              'singular_name' => _x('Testimonial', 'slider_product', 'mybooking-wp-plugin'),
+              'add_new' => _x('Add slider', 'slider_product', 'mybooking-wp-plugin'),
+              'add_new_item' => _x('New slider', 'slider_product', 'mybooking-wp-plugin'),
+              'edit' => _x('Edit', 'slider_product', 'mybooking-wp-plugin'),
+              'edit_item' => _x('Edit slider', 'slider_product', 'mybooking-wp-plugin'),
+              'new_item' => _x('New slider', 'slider_product', 'mybooking-wp-plugin'),
+              'view' => _x('See', 'slider_product', 'mybooking-wp-plugin'),
+              'view_item' => _x('See slider', 'slider_product', 'mybooking-wp-plugin'),
+              'search_items' => _x('Search slider', 'slider_product', 'mybooking-wp-plugin'),
+              'not_found' => _x('No slider found', 'slider_product', 'mybooking-wp-plugin'),
+              'not_found_in_trash' => _x('No slider found on bin', 'slider_product', 'mybooking-wp-plugin'),
+              'parent' => _x('Parent slider', 'slider_product', 'mybooking-wp-plugin')
+            ),
+            'show_ui' => true,
+            'public' => true,
+            'show_in_menu' => 'mybooking-plugin-configuration',
+            'show_in_rest' => true, // Gutenberg activation!
+            'supports' => array( 'title', 'thumbnail' ),
+            'menu_icon' => 'dashicons-slides',
+            'has_archive' => true
+          )
+        );
+      }
+      // Metaboxes
+      function mybooking_product_slider_add_metabox() {
+          $screens = [ 'product-slider', 'mybooking_product_slider_cpt' ];
+          foreach ( $screens as $screen ) {
+              add_meta_box(
+                  'mybooking-product-slider-metabox',                 // Unique ID
+                  'Product Slider Data',                              // Box title
+                  'mybooking_product_slider_custom_box_html',         // Content callback, must be of type callable
+                  $screen                                             // Post type
+              );
+          }
+      }
+      add_action( 'add_meta_boxes', 'mybooking_product_slider_add_metabox' );
+      function mybooking_product_slider_custom_box_html( $product_slider_data ) {
+          $product_slider_title = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-title', true ) );
+          $product_slider_description = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-description', true ) );
+          $product_slider_offer_price = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-offer-price', true ) );
+          $product_slider_original_price = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-original-price', true ) );
+          $product_slider_link = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-link', true ) );
+          ?>
+          <table style="width:100%;">
+          <tbody>
+            <tr valign="top">
+              <td>
+                <h3>Create a new product offer slider</h3>
+                <p>Enter info in the form to set this product slider.<br> Empty fileds will not be shown.</p>
+                <p>Add an URL if you want to link to a page, post or custom post type<br>Aside to product offers, you also can use this post to show:</p>
+                <ul>
+                  <li>Catalog</li>
+                  <li>New products</li>
+                  <li>Featured products</li>
+                </ul>
+                <p>If you need more control over design, activate Content Slider<br> component at Mybooking plugin settings.
+              </td>
+              <td>
+                <label for="mybooking-product-slider-title"><h3>Product Title</h3></label>
+                <span class="description">Explain in few words what the product is</span>
+                <br>
+                <input
+                  type="text"
+                  size="50"
+                  name="mybooking-product-slider-title"
+                  value="<?php echo $product_slider_title; ?>"
+                  id="mybooking-product-slider-title"
+                  class="components-text-control__input">
+                  <br>
+
+                <label for="mybooking-product-slider-description"><h3>Product Description</h3></label>
+                <span class="description">Describe the product offer</span>
+                <br>
+                <textarea
+                  name="mybooking-product-slider-description"
+                  value="<?php echo $product_slider_description; ?>"
+                  id="mybooking-product-slider-description"
+                  rows="10" cols="50"
+                  class="components-text-control__input">
+                  <?php echo $product_slider_description; ?>
+                </textarea>
+                <br>
+
+                <label for="mybooking-product-slider-offer-price"><h3>Offer Price</h3></label>
+                <input
+                  type="text"
+                  size="10"
+                  name="mybooking-product-slider-offer-price"
+                  value="<?php echo $product_slider_offer_price; ?>"
+                  id="mybooking-product-slider-offer-price"
+                  class="components-text-control__input">
+                  <span><b>€</b></span>
+                  <br>
+
+                <label for="mybooking-product-slider-original-price"><h3>Original Price</h3></label>
+                <input
+                  type="text"
+                  size="10"
+                  name="mybooking-product-slider-original-price"
+                  value="<?php echo $product_slider_original_price; ?>"
+                  id="mybooking-product-slider-original-price"
+                  class="components-text-control__input">
+                  <span><b>€</b></span>
+                  <br>
+
+                <label for="mybooking-product-slider-link"><h3>Button Link</h3></label>
+                <span class="description">The full URL to your custom page or post.</span>
+                <br>
+                <input
+                  type="text"
+                  size="50"
+                  name="mybooking-product-slider-link"
+                  value="<?php echo $product_slider_link; ?>"
+                  id="mybooking-product-slider-link"
+                  class="components-text-control__input"><br>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+          <?php
+      }
+      function mybooking_product_slider_add_metabox_data( $product_slider_data_id ) {
+        if (  array_key_exists( 'mybooking-product-slider-title', $_POST )  ) {
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-title',
+            $_POST['mybooking-product-slider-title']
+            );
+        }
+        if (  array_key_exists( 'mybooking-product-slider-description', $_POST )  ) {
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-description',
+            $_POST['mybooking-product-slider-description']
+            );
+        }
+        if (  array_key_exists( 'mybooking-product-slider-offer-price', $_POST )  ) {
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-offer-price',
+            $_POST['mybooking-product-slider-offer-price']
+            );
+        }
+        if (  array_key_exists( 'mybooking-product-slider-original-price', $_POST )  ) {
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-original-price',
+            $_POST['mybooking-product-slider-original-price']
+            );
+        }
+        if (  array_key_exists( 'mybooking-product-slider-link', $_POST )  ) {
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-link',
+            $_POST['mybooking-product-slider-link']
+            );
+        }
+      }
+      add_action( 'save_post', 'mybooking_product_slider_add_metabox_data' );
+
+      // Renting Item Post Type
       if ($registry->mybooking_rent_plugin_complements_renting_item == '1') {
         register_post_type( 'mybooking_renting_item',
           array(
@@ -2274,6 +2478,8 @@
           )
         );
       }
+
+      // Activity Item Post Type
       if ($registry->mybooking_rent_plugin_complements_activity_item == '1') {
         register_post_type( 'mybooking_activity_item',
           array(

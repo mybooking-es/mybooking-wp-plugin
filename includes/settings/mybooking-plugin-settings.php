@@ -373,17 +373,20 @@ EOF;
 		                     array($this, 'field_mybooking_plugin_settings_renting_selector_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_configuration');
-		  add_settings_field('mybooking_plugin_settings_activities_selector',
+
+      add_settings_field('mybooking_plugin_settings_activities_selector',
 		                     'Activities or Appointments',
 		                     array($this, 'field_mybooking_plugin_settings_activities_selector_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_configuration');
-		  add_settings_field('mybooking_plugin_settings_transfer_selector',
+
+      add_settings_field('mybooking_plugin_settings_transfer_selector',
 		                     'Transfer',
 		                     array($this, 'field_mybooking_plugin_settings_transfer_selector_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_configuration');
-		  add_settings_field('mybooking_plugin_settings_google_api_places_selector',
+
+      add_settings_field('mybooking_plugin_settings_google_api_places_selector',
 		                     'Google Api Places',
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_selector_callback'),
 		                     'mybooking-plugin-configuration',
@@ -611,37 +614,43 @@ EOF;
 
       // == Create Complements section Fields
       add_settings_field('mybooking_plugin_settings_complements_popup',
-		                     'Activate Promotion Pop-up',
+		                     'Promotion Pop-up',
 		                     array($this, 'field_mybooking_plugin_settings_complements_popup_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
       add_settings_field('mybooking_plugin_settings_complements_testimonials',
-		                     'Activate Testimonial module',
+		                     'Testimonial module',
 		                     array($this, 'field_mybooking_plugin_settings_complements_testimonials_callback'),
                          'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
-     add_settings_field('mybooking_plugin_settings_complements_slider',
-                        'Activate Content Slider module',
-                        array($this, 'field_mybooking_plugin_settings_complements_slider_callback'),
+     add_settings_field('mybooking_plugin_settings_complements_product_slider',
+                        'Product Slider module',
+                        array($this, 'field_mybooking_plugin_settings_complements_product_slider_callback'),
+                        'mybooking-plugin-configuration',
+                        'mybooking_plugin_settings_section_complements');
+
+     add_settings_field('mybooking_plugin_settings_complements_content_slider',
+                        'Content Slider module',
+                        array($this, 'field_mybooking_plugin_settings_complements_content_slider_callback'),
                         'mybooking-plugin-configuration',
                         'mybooking_plugin_settings_section_complements');
 
      add_settings_field('mybooking_plugin_settings_complements_renting_item',
-		                     'Activate Renting Item module',
+		                     'Renting Item module',
 		                     array($this, 'field_mybooking_plugin_settings_complements_renting_item_callback'),
                         'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
      add_settings_field('mybooking_plugin_settings_complements_activity_item',
-		                     'Activate Activity Items module',
+		                     'Activity Items module',
 		                     array($this, 'field_mybooking_plugin_settings_complements_activity_item_callback'),
                         'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
       add_settings_field('mybooking_plugin_settings_complements_cookies',
- 		                     'Activate Cookies Notice',
+ 		                     'Cookies Notice',
  		                     array($this, 'field_mybooking_plugin_settings_complements_cookies_callback'),
                           'mybooking-plugin-configuration',
  		                     'mybooking_plugin_settings_section_complements');
@@ -738,7 +747,7 @@ EOF;
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
-		  echo "<p class=\"description\">Activate if you want to create a <b>vehicles</b>, <b>boats</b>, <b>properties rental</b> or <b>accomodation</b> web site.</p>";
+		  echo "<p class=\"description\">Activate if you want to create a vehicles</b>, <b>boats</b>, <b>properties rental</b> or <b>accomodation</b> web site.</p>";
 		}
 
 		/**
@@ -1608,8 +1617,8 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Activate <b>Promotion Pop-ups</b> Custom Post Type in order to create promotions.</p>";
-      echo "<p class=\"description\">Pop-up will be shown only in the front page.</p>";
+		  echo "<p class=\"description\"><b>Activate Promotion Pop-ups</b> Custom Post Type in order to create promotions.</p>";
+      echo "<p class=\"description\"><small>Pop-up will be shown only in the front page.</small></p>";
  		}
 
     /**
@@ -1631,17 +1640,17 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Activate <b>Testimonials</b> Custom Post Type in order to create a testimonials carousel.</p>";
-      echo "<p class=\"description\">Create one or more Testimonials under Mybooking menu and use [mybooking_testimonials] to show it on a page or sidebar.</p>";
+		  echo "<p class=\"description\"><b>Activate Testimonials</b> Custom Post Type in order to create a testimonials carousel.</p>";
+      echo "<p class=\"description\"><small>Create one or more Testimonials under Mybooking menu and use [mybooking_testimonials] to show it on a page or sidebar.</small></p>";
  		}
 
     /**
-     * Render Slider complement
+     * Render Content Slider complement
      */
-    public function field_mybooking_plugin_settings_complements_slider_callback() {
+    public function field_mybooking_plugin_settings_complements_content_slider_callback() {
 
       $settings = (array) get_option("mybooking_plugin_settings_complements");
-		  $field = "mybooking_plugin_settings_complements_slider";
+		  $field = "mybooking_plugin_settings_complements_content_slider";
 		  if (array_key_exists($field, $settings)) {
 		    $value = esc_attr( $settings[$field] );
 		  }
@@ -1654,8 +1663,31 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Activate <b>Content Slider</b> Custom Post Type in order to create a content slider to show offers, products or anything.</p>";
-      echo "<p class=\"description\">Create one or more Sliders under Mybooking menu and use [mybooking_slider] to show it on a page or post.</p>";
+		  echo "<p class=\"description\"><b>Activate Content Slider</b> Custom Post Type in order to create a content slider with Gutenberg native editor.</p>";
+      echo "<p class=\"description\"><small>Create one or more Sliders under Mybooking menu and use [mybooking_content_slider] to show it on a page or post.</small></p>";
+ 		}
+
+    /**
+     * Render Product Slider complement
+     */
+    public function field_mybooking_plugin_settings_complements_product_slider_callback() {
+
+      $settings = (array) get_option("mybooking_plugin_settings_complements");
+		  $field = "mybooking_plugin_settings_complements_product_slider";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+      $checked = ($value == '1') ? 'checked' : '';
+
+      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+
+		  echo "<p class=\"description\"><b>Activate Product Slider</b> Custom Post Type in order to create a content slider to show offers whith limited custom fields.</p>";
+      echo "<p class=\"description\"><small>Create one or more Product Sliders under Mybooking menu and use [mybooking_product_slider] to show it on a page or post.</small></p>";
  		}
 
     /**
@@ -1677,8 +1709,8 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Activate <b>Renting Items</b> Custom Post Type in order to create single items related to renting.</p>";
-      echo "<p class=\"description\">Create one or more Renting Items under Mybooking menu and show in a template or within any page builder query block.</p>";
+		  echo "<p class=\"description\"><b>Activate Renting Items</b> Custom Post Type in order to create single items related to renting.</p>";
+      echo "<p class=\"description\"><small>Create one or more Renting Items under Mybooking menu and show in a template or within any page builder query block.</small></p>";
  		}
 
     /**
@@ -1700,8 +1732,8 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Activate <b>Activity Items</b> Custom Post Type in order to create single items related to activities.</p>";
-      echo "<p class=\"description\">Create one or more Activity Items under Mybooking menu and show in a template or within any page builder query block.</p>";
+		  echo "<p class=\"description\"><b>Activate Activity Items</b> Custom Post Type in order to create single items related to activities.</p>";
+      echo "<p class=\"description\"><small>Create one or more Activity Items under Mybooking menu and show in a template or within any page builder query block.</small></p>";
  		}
 
     /**
@@ -1723,8 +1755,8 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Activate <b>Cookies Notice</b> in order to create a cookies warning.</p>";
-      echo "<p class=\"description\">Set the privacy page at WordPress settings to link properly the info button.</p>";
+		  echo "<p class=\"description\"><b>Activate Cookies Notice</b> in order to create a cookies warning.</p>";
+      echo "<p class=\"description\"><small>Set the privacy page at WordPress settings to link properly the info button.</small></p>";
  		}
 
     // == CSS
@@ -1893,7 +1925,7 @@ EOF;
 		}
 
 		/**
-		 * Trnsfer settings page
+		 * Transfer settings page
 		 */
 		private function field_mybooking_plugin_transfer_settings_page($field) {
 

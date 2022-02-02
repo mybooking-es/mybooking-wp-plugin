@@ -13,7 +13,7 @@
   <div class="-carrusel-testimonials">
 
     <?php
-    $mybooking_engine_slider_args = array('post_type' => 'slider');
+    $mybooking_engine_slider_args = array('post_type' => 'product-slider');
     $mybooking_engine_slider_query = new WP_Query($mybooking_engine_slider_args);
     $mybooking_engine_slider_items = $mybooking_engine_slider_query->get_posts();
     foreach($mybooking_engine_slider_items as $mybooking_engine_slider_item) :
