@@ -2332,19 +2332,26 @@
           $product_slider_original_price = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-original-price', true ) );
           $product_slider_link = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-link', true ) );
           ?>
+          <div class="notice notice-warning is-dismissible">
+            <p><b>Remenber to add <i>[mybooking_product_slider]</i> in the page you want the slider be shown</b></p>
+          </div>
           <table style="width:100%;">
           <tbody>
             <tr valign="top">
               <td>
                 <h3>Create a new product offer slider</h3>
-                <p>Enter info in the form to set this product slider.<br> Empty fileds will not be shown.</p>
-                <p>Add an URL if you want to link to a page, post or custom post type<br>Aside to product offers, you also can use this post to show:</p>
-                <ul>
-                  <li>Catalog</li>
-                  <li>New products</li>
-                  <li>Featured products</li>
-                </ul>
-                <p>If you need more control over design, activate Content Slider<br> component at Mybooking plugin settings.
+                <p>Configure the product slider.</p>
+                <ol>
+                  <li>Add an image for the product in the sidebar's Featured image box. <br>
+                      Image height determines how tall slider will be.</li>
+                  <li>Add title or slogan and offer details in the proper fields.</li>
+                  <li>Set the offer price and old price.</li>
+                  <li>Add an URL if you want to link to a page, post or custom post type.<br> 
+                      It must to exist previously.</li>
+                  <li>Hit the Publish button to save the data.</li>
+                </ol>
+                <p>Empty fileds will not be shown</p>
+                <p><b>If you need more control over design, <a href="/wp-admin/admin.php?page=mybooking-plugin-configuration&tab=complements_options" target="_blank">activate Content Slider</a> component.</b></p>
               </td>
               <td>
                 <label for="mybooking-product-slider-title"><h3>Product Title</h3></label>

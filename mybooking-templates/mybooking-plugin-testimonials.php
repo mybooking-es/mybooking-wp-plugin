@@ -16,7 +16,7 @@
     $mybooking_engine_testimonial_args = array('post_type' => 'testimonial');
     $mybooking_engine_testimonial_query = new WP_Query($mybooking_engine_testimonial_args);
     $mybooking_engine_testimonial_items = $mybooking_engine_testimonial_query->get_posts();
-    foreach($mybooking_engine_testimonial_items as $mybooking_engine_testimonial_item) :
+    foreach( $mybooking_engine_testimonial_items as $mybooking_engine_testimonial_item ) :
     ?>
 
     <section class="mybooking-testimonial_item testimonial-item">
