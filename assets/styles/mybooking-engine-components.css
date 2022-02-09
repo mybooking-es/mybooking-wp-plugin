@@ -800,6 +800,60 @@ button.mybooking-popup_close:hover {
 }
 
 
+/** PRODUCT SLIDER **/
+
+.mybooking-slider_item {
+  border: 1px solid #CCC;
+  padding: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+.mybooking-slider_product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.mybooking-slider_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.mybooking-slider_product-title {
+  font-size: 2.5em;
+  font-weight: 800;
+}
+
+.mybooking-slider_product-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mybooking-slider_product-price--offer {
+  font-size: 2em;
+  font-weight: 800;
+  color: var(--brand-primary);
+  color: var(--mb-info-color);
+}
+
+.mybooking-slider_product-price--original {
+  color: #999;
+  font-size: 1.4em;
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.mybooking-slider_product-description {
+  font-size: 1.2em;
+}
+
+
 /** JQUERY DATEPICKER **/
 
 table:not(.has-background) tbody tr:nth-child(2n) td,
