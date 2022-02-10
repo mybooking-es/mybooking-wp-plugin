@@ -36,6 +36,13 @@
   require_once('widgets/mybooking-plugin-activity-widget.php');
   require_once('widgets/mybooking-plugin-contact-widget.php');
   require_once('widgets/mybooking-plugin-transfer-selector-widget.php');
+  // Custom post types
+  require_once('cpt/mybooking-plugin-cpt-testimonial.php');  
+  require_once('cpt/mybooking-plugin-cpt-popup.php');
+  require_once('cpt/mybooking-plugin-cpt-content-slider.php');
+  require_once('cpt/mybooking-plugin-cpt-product-slider.php');
+  require_once('cpt/mybooking-plugin-cpt-renting-item.php');
+  require_once('cpt/mybooking-plugin-cpt-activity-item.php');
   // Settings
   require_once('settings/mybooking-plugin-settings.php');
   // Patterns
@@ -81,8 +88,8 @@
    *
    * - Show renting selector: The starting point for a reservation
    *
-   * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number rental_location_code=String layout=vertical]
-   * [mybooking_rent_engine_selector_wizard sales_channel_code=String family_id=Number rental_location_code=String]
+   * [mybooking_rent_engine_selector sales_channel_code=String family_id=Number rental_location_code=String category_code="code" layout=vertical]
+   * [mybooking_rent_engine_selector_wizard sales_channel_code=String family_id=Number category_code="code" rental_location_code=String]
    *
    * - Process:
    *
@@ -402,11 +409,8 @@
                         plugins_url('/assets/styles/intlTelInput.min.css', dirname( __FILE__ ) ) );
 
       // Enqueue select2 + select2 bootstrap CSS
-//      if ( $registry->mybooking_plugin_js_select2 ) {
-        // Load select2
-        wp_enqueue_style( 'mybooking_wp_css_components_select2',
-                        plugins_url('/assets/styles/select2-4.0.1.css', dirname( __FILE__ ) ) );
-//      }
+      wp_enqueue_style( 'mybooking_wp_css_components_select2',
+                      plugins_url('/assets/styles/select2-4.0.1.css', dirname( __FILE__ ) ) );
 
       // Slick JS CSS
       if ( $registry->mybooking_rent_plugin_js_slickjs ) {
@@ -1071,6 +1075,7 @@
       // Extract the shortcode attributes
       extract( shortcode_atts( array('sales_channel_code' => '',
                                      'family_id' => '',
+                                     'category_code' => '',
                                      'rental_location_code' => '',
                                      'layout' => '' ), $atts ) );
 
@@ -1083,6 +1088,10 @@
 
       if ( $family_id != '' ) {
         $data['family_id'] = $family_id;
+      }
+
+      if ( $category_code != '' ) {
+        $data['category_code'] = $category_code;
       }
 
       if ( $rental_location_code != '' ) {
@@ -1107,6 +1116,7 @@
       // Extract the shortcode attributes
       extract( shortcode_atts( array('sales_channel_code' => '',
                                      'family_id' => '',
+                                     'category_code' => '',
                                      'rental_location_code' => ''), $atts ) );
 
       $data = array();
@@ -1118,6 +1128,10 @@
       if ( $family_id != '' ) {
         $data['family_id'] = $family_id;
       }
+
+      if ( $category_code != '' ) {
+        $data['category_code'] = $category_code;
+      }      
 
       if ( $rental_location_code != '' ) {
         $data['rental_location_code'] = $rental_location_code;
@@ -2212,328 +2226,35 @@
 
       // Popup Post Type
       if ($registry->mybooking_rent_plugin_complements_popup == '1') {
-        add_action( 'init', 'create_popup' );
-          register_post_type( 'popup',
-          array(
-            'labels' => array(
-              'name' => _x('Popup ads', 'popup_content', 'mybooking-wp-plugin'),
-              'singular_name' => _x('Popup ad', 'popup_content', 'mybooking-wp-plugin'),
-              'add_new' => _x('Add popup ad', 'popup_content', 'mybooking-wp-plugin'),
-              'add_new_item' => _x('New popup ad', 'popup_content', 'mybooking-wp-plugin'),
-              'edit' => _x('Edit', 'popup_content', 'mybooking-wp-plugin'),
-              'edit_item' => _x('Edit popup ad', 'popup_content', 'mybooking-wp-plugin'),
-              'new_item' => _x('New popup ad', 'popup_content', 'mybooking-wp-plugin'),
-              'view' => _x('See', 'popup_content', 'mybooking-wp-plugin'),
-              'view_item' => _x('See popup ad', 'popup_content', 'mybooking-wp-plugin'),
-              'search_items' => _x('Search popup ad', 'popup_content', 'mybooking-wp-plugin'),
-              'not_found' => _x('No popup ad found', 'popup_content', 'mybooking-wp-plugin'),
-              'not_found_in_trash' => _x('No popup ad on bin', 'popup_content',  'mybooking-wp-plugin'),
-              'parent' => _x('Parent popup ad','popup_content',  'mybooking-wp-plugin')
-            ),
-            'show_ui' => true,
-            'public' => true,
-            'show_in_menu' => 'mybooking-plugin-configuration',
-            'show_in_rest' => true, // Gutenberg activation!
-            'supports' => array( 'title', 'editor', 'thumbnail' ),
-            'menu_icon' => 'dashicons-awards',
-            'has_archive' => true
-          )
-        );
+        //add_action( 'init', 'create_popup' );
+        $popup = new MyBookingPluginCPTPopup();      
       }
 
       // Testimonials Post Type
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1') {
-        register_post_type( 'testimonial',
-          array(
-            'labels' => array(
-              'name' => _x('Testimonials', 'testimonial_content', 'mybooking-wp-plugin'),
-              'singular_name' => _x('Testimonial', 'testimonial_content', 'mybooking-wp-plugin'),
-              'add_new' => _x('Add testimonial', 'testimonial_content', 'mybooking-wp-plugin'),
-              'add_new_item' => _x('New testimonial', 'testimonial_content', 'mybooking-wp-plugin'),
-              'edit' => _x('Edit', 'testimonial_content', 'mybooking-wp-plugin'),
-              'edit_item' => _x('Edit testimonial', 'testimonial_content', 'mybooking-wp-plugin'),
-              'new_item' => _x('New testimonial', 'testimonial_content', 'mybooking-wp-plugin'),
-              'view' => _x('See', 'testimonial_content', 'mybooking-wp-plugin'),
-              'view_item' => _x('See testimonial', 'testimonial_content', 'mybooking-wp-plugin'),
-              'search_items' => _x('Search testimonial', 'testimonial_content', 'mybooking-wp-plugin'),
-              'not_found' => _x('No testimonial found', 'testimonial_content', 'mybooking-wp-plugin'),
-              'not_found_in_trash' => _x('No testimonial found on bin', 'testimonial_content', 'mybooking-wp-plugin'),
-              'parent' => _x('Parent testimonial', 'testimonial_content', 'mybooking-wp-plugin')
-            ),
-            'show_ui' => true,
-            'public' => true,
-            'show_in_menu' => 'mybooking-plugin-configuration',
-            'show_in_rest' => true, // Gutenberg activation!
-            'supports' => array( 'title', 'editor', 'thumbnail' ),
-            'menu_icon' => 'dashicons-format-quote',
-            'has_archive' => true
-          )
-        );
+        $testimonial = new MyBookingPluginCPTTestimonial();
       }
 
       // Content Slider Post Type
       if ($registry->mybooking_rent_plugin_complements_content_slider == '1') {
-        register_post_type( 'content-slider',
-          array(
-            'labels' => array(
-              'name' => _x('Content Slider', 'slider_content', 'mybooking-wp-plugin'),
-              'singular_name' => _x('Testimonial', 'slider_content', 'mybooking-wp-plugin'),
-              'add_new' => _x('Add slider', 'slider_content', 'mybooking-wp-plugin'),
-              'add_new_item' => _x('New slider', 'slider_content', 'mybooking-wp-plugin'),
-              'edit' => _x('Edit', 'slider_content', 'mybooking-wp-plugin'),
-              'edit_item' => _x('Edit slider', 'slider_content', 'mybooking-wp-plugin'),
-              'new_item' => _x('New slider', 'slider_content', 'mybooking-wp-plugin'),
-              'view' => _x('See', 'slider_content', 'mybooking-wp-plugin'),
-              'view_item' => _x('See slider', 'slider_content', 'mybooking-wp-plugin'),
-              'search_items' => _x('Search slider', 'slider_content', 'mybooking-wp-plugin'),
-              'not_found' => _x('No slider found', 'slider_content', 'mybooking-wp-plugin'),
-              'not_found_in_trash' => _x('No slider found on bin', 'slider_content', 'mybooking-wp-plugin'),
-              'parent' => _x('Parent slider', 'slider_content', 'mybooking-wp-plugin')
-            ),
-            'show_ui' => true,
-            'public' => true,
-            'show_in_menu' => 'mybooking-plugin-configuration',
-            'show_in_rest' => true, // Gutenberg activation!
-            'supports' => array( 'title', 'editor', 'thumbnail' ),
-            'menu_icon' => 'dashicons-slides',
-            'has_archive' => true
-          )
-        );
+        $contentSlider = new MyBookingPluginCPTContentSlider();
       }
 
       // Product Slider Post Type
       if ($registry->mybooking_rent_plugin_complements_product_slider == '1') {
-        register_post_type( 'product-slider',
-          array(
-            'labels' => array(
-              'name' => _x('Product Slider', 'slider_product', 'mybooking-wp-plugin'),
-              'singular_name' => _x('Testimonial', 'slider_product', 'mybooking-wp-plugin'),
-              'add_new' => _x('Add slider', 'slider_product', 'mybooking-wp-plugin'),
-              'add_new_item' => _x('New slider', 'slider_product', 'mybooking-wp-plugin'),
-              'edit' => _x('Edit', 'slider_product', 'mybooking-wp-plugin'),
-              'edit_item' => _x('Edit slider', 'slider_product', 'mybooking-wp-plugin'),
-              'new_item' => _x('New slider', 'slider_product', 'mybooking-wp-plugin'),
-              'view' => _x('See', 'slider_product', 'mybooking-wp-plugin'),
-              'view_item' => _x('See slider', 'slider_product', 'mybooking-wp-plugin'),
-              'search_items' => _x('Search slider', 'slider_product', 'mybooking-wp-plugin'),
-              'not_found' => _x('No slider found', 'slider_product', 'mybooking-wp-plugin'),
-              'not_found_in_trash' => _x('No slider found on bin', 'slider_product', 'mybooking-wp-plugin'),
-              'parent' => _x('Parent slider', 'slider_product', 'mybooking-wp-plugin')
-            ),
-            'show_ui' => true,
-            'public' => true,
-            'show_in_menu' => 'mybooking-plugin-configuration',
-            'show_in_rest' => true, // Gutenberg activation!
-            'supports' => array( 'title', 'thumbnail' ),
-            'menu_icon' => 'dashicons-slides',
-            'has_archive' => true
-          )
-        );
+        $productSlider = new MyBookingPluginCPTProductSlider();
       }
-      // Metaboxes
-      function mybooking_product_slider_add_metabox() {
-          $screens = [ 'product-slider', 'mybooking_product_slider_cpt' ];
-          foreach ( $screens as $screen ) {
-              add_meta_box(
-                  'mybooking-product-slider-metabox',                 // Unique ID
-                  'Product Slider Data',                              // Box title
-                  'mybooking_product_slider_custom_box_html',         // Content callback, must be of type callable
-                  $screen                                             // Post type
-              );
-          }
-      }
-      add_action( 'add_meta_boxes', 'mybooking_product_slider_add_metabox' );
-      function mybooking_product_slider_custom_box_html( $product_slider_data ) {
-          $product_slider_title = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-title', true ) );
-          $product_slider_description = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-description', true ) );
-          $product_slider_offer_price = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-offer-price', true ) );
-          $product_slider_original_price = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-original-price', true ) );
-          $product_slider_link = esc_html( get_post_meta( $product_slider_data->ID, 'mybooking-product-slider-link', true ) );
-          ?>
-          <div class="notice notice-warning is-dismissible">
-            <p><b>Remenber to add <i>[mybooking_product_slider]</i> in the page you want the slider be shown</b></p>
-          </div>
-          <table style="width:100%;">
-          <tbody>
-            <tr valign="top">
-              <td>
-                <h3>Create a new product offer slider</h3>
-                <p>Configure the product slider.</p>
-                <ol>
-                  <li>Add an image for the product in the sidebar's Featured image box. <br>
-                      Image height determines how tall slider will be.</li>
-                  <li>Add title or slogan and offer details in the proper fields.</li>
-                  <li>Set the offer price and old price.</li>
-                  <li>Add an URL if you want to link to a page, post or custom post type.<br> 
-                      It must to exist previously.</li>
-                  <li>Hit the Publish button to save the data.</li>
-                </ol>
-                <p>Empty fileds will not be shown</p>
-                <p><b>If you need more control over design, <a href="/wp-admin/admin.php?page=mybooking-plugin-configuration&tab=complements_options" target="_blank">activate Content Slider</a> component.</b></p>
-              </td>
-              <td>
-                <label for="mybooking-product-slider-title"><h3>Product Title</h3></label>
-                <span class="description">Explain in few words what the product is</span>
-                <br>
-                <input
-                  type="text"
-                  size="50"
-                  name="mybooking-product-slider-title"
-                  value="<?php echo $product_slider_title; ?>"
-                  id="mybooking-product-slider-title"
-                  class="components-text-control__input">
-                  <br>
-
-                <label for="mybooking-product-slider-description"><h3>Product Description</h3></label>
-                <span class="description">Describe the product offer</span>
-                <br>
-                <textarea
-                  name="mybooking-product-slider-description"
-                  value="<?php echo $product_slider_description; ?>"
-                  id="mybooking-product-slider-description"
-                  rows="10" cols="50"
-                  class="components-text-control__input">
-                  <?php echo $product_slider_description; ?>
-                </textarea>
-                <br>
-
-                <label for="mybooking-product-slider-offer-price"><h3>Offer Price</h3></label>
-                <input
-                  type="text"
-                  size="10"
-                  name="mybooking-product-slider-offer-price"
-                  value="<?php echo $product_slider_offer_price; ?>"
-                  id="mybooking-product-slider-offer-price"
-                  class="components-text-control__input">
-                  <span><b>€</b></span>
-                  <br>
-
-                <label for="mybooking-product-slider-original-price"><h3>Original Price</h3></label>
-                <input
-                  type="text"
-                  size="10"
-                  name="mybooking-product-slider-original-price"
-                  value="<?php echo $product_slider_original_price; ?>"
-                  id="mybooking-product-slider-original-price"
-                  class="components-text-control__input">
-                  <span><b>€</b></span>
-                  <br>
-
-                <label for="mybooking-product-slider-link"><h3>Button Link</h3></label>
-                <span class="description">The full URL to your custom page or post.</span>
-                <br>
-                <input
-                  type="text"
-                  size="50"
-                  name="mybooking-product-slider-link"
-                  value="<?php echo $product_slider_link; ?>"
-                  id="mybooking-product-slider-link"
-                  class="components-text-control__input"><br>
-              </td>
-            </tr>
-          </tbody>
-          </table>
-          <?php
-      }
-      function mybooking_product_slider_add_metabox_data( $product_slider_data_id ) {
-        if (  array_key_exists( 'mybooking-product-slider-title', $_POST )  ) {
-          update_post_meta(
-            $product_slider_data_id,
-            'mybooking-product-slider-title',
-            $_POST['mybooking-product-slider-title']
-            );
-        }
-        if (  array_key_exists( 'mybooking-product-slider-description', $_POST )  ) {
-          update_post_meta(
-            $product_slider_data_id,
-            'mybooking-product-slider-description',
-            $_POST['mybooking-product-slider-description']
-            );
-        }
-        if (  array_key_exists( 'mybooking-product-slider-offer-price', $_POST )  ) {
-          update_post_meta(
-            $product_slider_data_id,
-            'mybooking-product-slider-offer-price',
-            $_POST['mybooking-product-slider-offer-price']
-            );
-        }
-        if (  array_key_exists( 'mybooking-product-slider-original-price', $_POST )  ) {
-          update_post_meta(
-            $product_slider_data_id,
-            'mybooking-product-slider-original-price',
-            $_POST['mybooking-product-slider-original-price']
-            );
-        }
-        if (  array_key_exists( 'mybooking-product-slider-link', $_POST )  ) {
-          update_post_meta(
-            $product_slider_data_id,
-            'mybooking-product-slider-link',
-            $_POST['mybooking-product-slider-link']
-            );
-        }
-      }
-      add_action( 'save_post', 'mybooking_product_slider_add_metabox_data' );
 
       // Renting Item Post Type
       if ($registry->mybooking_rent_plugin_complements_renting_item == '1') {
-        register_post_type( 'mybooking_renting_item',
-          array(
-            'labels' => array(
-              'name' => _x('Renting Items', 'renting_item_content', 'mybooking-wp-plugin'),
-              'singular_name' => _x('Renting Item', 'renting_item_content', 'mybooking-wp-plugin'),
-              'add_new' => _x('Add renting item', 'renting_item_content', 'mybooking-wp-plugin'),
-              'add_new_item' => _x('New renting item', 'renting_item_content', 'mybooking-wp-plugin'),
-              'edit' => _x('Edit', 'renting_item_content', 'mybooking-wp-plugin'),
-              'edit_item' => _x('Edit renting item', 'renting_item_content', 'mybooking-wp-plugin'),
-              'new_item' => _x('New renting item', 'renting_item_content', 'mybooking-wp-plugin'),
-              'view' => _x('See', 'renting_item_content', 'mybooking-wp-plugin'),
-              'view_item' => _x('See renting item', 'renting_item_content', 'mybooking-wp-plugin'),
-              'search_items' => _x('Search renting item', 'renting_item_content', 'mybooking-wp-plugin'),
-              'not_found' => _x('No renting item found', 'renting_item_content', 'mybooking-wp-plugin'),
-              'not_found_in_trash' => _x('No renting item found on bin', 'renting_item_content', 'mybooking-wp-plugin'),
-              'parent' => _x('Parent renting item', 'renting_item_content', 'mybooking-wp-plugin')
-            ),
-            'show_ui' => true,
-            'public' => true,
-            'show_in_menu' => 'mybooking-plugin-configuration',
-            'show_in_rest' => true, // Gutenberg activation!
-            'supports' => array( 'title', 'editor', 'thumbnail' ),
-            'menu_icon' => 'dashicons-grid-view',
-            'has_archive' => true
-          )
-        );
+        $rentingItem = new MyBookingPluginCPTRentingItem();
       }
 
       // Activity Item Post Type
       if ($registry->mybooking_rent_plugin_complements_activity_item == '1') {
-        register_post_type( 'mybooking_activity_item',
-          array(
-            'labels' => array(
-              'name' => _x('Activity Items', 'activity_item_content', 'mybooking-wp-plugin'),
-              'singular_name' => _x('Activity Item', 'activity_item_content', 'mybooking-wp-plugin'),
-              'add_new' => _x('Add activity item', 'activity_item_content', 'mybooking-wp-plugin'),
-              'add_new_item' => _x('New activity item', 'activity_item_content', 'mybooking-wp-plugin'),
-              'edit' => _x('Edit', 'activity_item_content', 'mybooking-wp-plugin'),
-              'edit_item' => _x('Edit activity item', 'activity_item_content', 'mybooking-wp-plugin'),
-              'new_item' => _x('New activity item', 'activity_item_content', 'mybooking-wp-plugin'),
-              'view' => _x('See', 'activity_item_content', 'mybooking-wp-plugin'),
-              'view_item' => _x('See activity item', 'activity_item_content', 'mybooking-wp-plugin'),
-              'search_items' => _x('Search activity item', 'activity_item_content', 'mybooking-wp-plugin'),
-              'not_found' => _x('No activity_item found', 'activity_item_content', 'mybooking-wp-plugin'),
-              'not_found_in_trash' => _x('No activity item found on bin', 'activity_item_content', 'mybooking-wp-plugin'),
-              'parent' => _x('Parent activity item', 'activity_item_content', 'mybooking-wp-plugin')
-            ),
-            'show_ui' => true,
-            'public' => true,
-            'show_in_menu' => 'mybooking-plugin-configuration',
-            'show_in_rest' => true, // Gutenberg activation!
-            'supports' => array( 'title', 'editor', 'thumbnail' ),
-            'menu_icon' => 'dashicons-grid-view',
-            'has_archive' => true
-          )
-        );
+        $activityItem = new MyBookingPluginCPTActivityItem();
       }
-
+        
     }
 
     /**

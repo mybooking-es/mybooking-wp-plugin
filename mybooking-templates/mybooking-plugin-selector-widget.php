@@ -25,6 +25,11 @@
       <input type="hidden" name="engine_fixed_family" value="true"/>
     <?php endif; ?>
 
+    <?php if ( array_key_exists('category_code', $args) && $args['category_code'] != '' ) : ?>
+      <input type="hidden" name="category_code" value="<?php echo esc_attr( $args['category_code'] )?>"/>
+      <input type="hidden" name="engine_fixed_product" value="true"/>
+    <?php endif; ?>
+
     <?php if ( array_key_exists('rental_location_code', $args) && $args['rental_location_code'] != '' ) : ?>
       <input type="hidden" name="rental_location_code" value="<?php echo esc_attr( $args['rental_location_code'] )?>"/>
       <input type="hidden" name="engine_fixed_rental_location" value="true"/>

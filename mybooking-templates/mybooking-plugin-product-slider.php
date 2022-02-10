@@ -18,7 +18,6 @@
       $mybooking_engine_slider_items = $mybooking_engine_slider_query->get_posts();
 
       foreach( $mybooking_engine_slider_items as $mybooking_engine_slider_item ) :
-
         // Gets custom fields data
         $product_slider_title = get_post_meta( $mybooking_engine_slider_item->ID, 'mybooking-product-slider-title', true );
         $product_slider_description = get_post_meta( $mybooking_engine_slider_item->ID, 'mybooking-product-slider-description', true );
@@ -33,7 +32,6 @@
           <div class="mb-row row">
             <div class="mb-col-md-6 col-md-6">
               <div class="mybooking-slider_image">
-
                 <?php if ( has_post_thumbnail( $mybooking_engine_slider_item->ID ) ) { ?>
                   <?php $product_slider_img_url = get_the_post_thumbnail_url( $mybooking_engine_slider_item->ID, 'full' ); ?>
                   <img class="mybooking-slider_product-image" src="<?php echo esc_url( $product_slider_img_url ) ?>">
@@ -44,26 +42,26 @@
               <div class="mybooking-slider_info">
 
                 <?php if ( $product_slider_title !='' ) {  ?>
-		  	        	<h2 class="mybooking-slider_product-title"><?php echo $product_slider_title ?></h2>
+		  	        	<h2 class="mybooking-slider_product-title"><?php echo esc_html( $product_slider_title ) ?></h2>
 		  	        <?php } ?>
 
                 <div class="mybooking-slider_product-price">
                   <?php if ( $product_slider_original_price !='' ) {  ?>
-  		  	        	<span class="mybooking-slider_product-price--original"><?php echo $product_slider_original_price ?> €</span>
+  		  	        	<span class="mybooking-slider_product-price--original"><?php echo esc_html( $product_slider_original_price ) ?></span>
   		  	        <?php } ?>
 
                   <?php if ( $product_slider_offer_price !='' ) {  ?>
-  		  	        	<span class="mybooking-slider_product-price--offer"><?php echo $product_slider_offer_price ?> €</span>
+  		  	        	<span class="mybooking-slider_product-price--offer"><?php echo esc_html( $product_slider_offer_price ) ?></span>
   		  	        <?php } ?>
                 </div>
 
                 <?php if ( $product_slider_description !='' ) {  ?>
-		  	        	<p class="mybooking-slider_product-description"><?php echo $product_slider_description ?></p>
+		  	        	<p class="mybooking-slider_product-description"><?php echo esc_html( $product_slider_description ) ?></p>
 		  	        <?php } ?>
 
                 <?php if ( $product_slider_link !='' ) {  ?>
                   <div class="mybooking-slider_product-action">
-                    <a class="btn btn-secondary mybooking-read-more-link" href="<?php echo $product_slider_link ?>">
+                    <a class="btn btn-secondary mybooking-read-more-link" href="<?php echo esc_attr( $product_slider_link ) ?>">
                       <?php echo _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?>
                     </a>
                   </div>

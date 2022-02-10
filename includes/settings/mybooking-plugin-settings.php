@@ -1686,7 +1686,7 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\"><b>Activate Product Slider</b> Custom Post Type in order to create a content slider to show offers whith limited custom fields.</p>";
+		  echo "<p class=\"description\"><b>Activate Product Slider</b> Custom Post Type in order to create a content slider to show offers with limited custom fields.</p>";
       echo "<p class=\"description\"><small>Create one or more Product Sliders under Mybooking menu and use [mybooking_product_slider] to show it on a page or post.</small></p>";
  		}
 

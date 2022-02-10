@@ -117,6 +117,11 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.2.1 =
+* Renting Selector : Include fixed category code
+* Fixed phone prefix default country get from document and navigator
+* Added CPT : Product Slider and Content Slider
+
 = 1.2.0 =
 * Fixed: Ms Edge get current page language
 
@@ -325,6 +330,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+* Renting Selector : Include fixed category code + Fixed phone prefix default country + Added CPT Sliders
 
 = 1.2.0 =
 * Fixed: Ms Edge get current page language

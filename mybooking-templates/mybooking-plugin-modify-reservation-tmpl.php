@@ -162,6 +162,8 @@
       </div>
     <% } %>
 
+    <!-- // Category code -->
+
     <!-- // Promotion code -->
     <% if (configuration.promotionCode) { %>
       <div class="mybooking-selector_promo">

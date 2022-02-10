@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.1]
+
+### Fixed
+
+- Phone Prefix default Country was not working in some scenarios
+
+### Added
+
+- Renting Selector : Fixed Category Code
+- New CPT : Product Slider + Content Slider
+
 ## [1.2.0]
 
 ### Added
