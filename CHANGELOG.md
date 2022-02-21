@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.1]
+## [1.3.0]
 
 ### Fixed
 
@@ -10,6 +10,8 @@
 
 - Renting Selector : Fixed Category Code
 - New CPT : Product Slider + Content Slider
+- Product Calendar: Show prices and min days + Start calendar on first date
+- Activity performances: Start calendar on first date
 
 ## [1.2.0]
 

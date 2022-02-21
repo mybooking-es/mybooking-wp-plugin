@@ -633,10 +633,59 @@ div.mybooking-product {
   text-align: center;
 }
 
+.mybooking-product_calendar .date-picker-wrapper .month-wrapper table {
+  border:  1px solid;
+}
+.mybooking-product_calendar .date-picker-wrapper .month-wrapper table td, 
+.mybooking-product_calendar .date-picker-wrapper .month-wrapper table th {
+  line-height: 10px;
+  border: 1px solid;
+}
+
 .mybooking-product_calendar select {
   min-width: 100%;
   margin-bottom: 0.5rem;
   height: var(--mb-selector-field-height);
+}
+
+.date-picker-wrapper .month-wrapper table .day {
+  padding: 4px;
+}
+
+.mybooking-product_calendar-date {
+  padding: 0;
+  font-size: 1.1em;
+  min-width: 42px;
+}
+
+.mybooking-product_calendar-date span {
+  font-weight:bold;
+}
+
+.mybooking-product_calendar-price {
+  opacity:0.9;
+  font-size: 0.5em;
+  margin-top: 0.7em;  
+}
+
+.mybooking-product_calendar-mindays {
+  opacity:  0.6;
+  font-size:  0.55em;
+  margin-top:  0.5em;
+  padding-top: 0.1em;
+}
+.mybooking-product_calendar-mindays-data {
+  background: #555555;
+  color: #ffffff; 
+}
+
+@media (min-width: 575.98px) {
+  .mybooking-product_calendar-date {
+    font-size: 1em;
+  }  
+  .mybooking-product_calendar-price {
+    font-size: 0.7em;
+  }
 }
 
 .mybooking-product_detail .mybooking-product_characteristics-item {

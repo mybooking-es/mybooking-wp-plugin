@@ -14,14 +14,14 @@
            <?php if ( array_key_exists('rental_location_code', $args) && $args['rental_location_code'] != '' ) : ?>
              data-rental-location-code="<?php echo esc_attr( $args['rental_location_code'] )?>"
            <?php endif; ?>
-           class="container is-desktop">
+           class="container is-desktop <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
       <div class="mb-row">
         <div class="mb-col-md-12">
           <form
             name="search_form"
             method="get"
             enctype="application/x-www-form-urlencoded"
-            class="mybooking-form">                           
+            class="mybooking-form mybooking-product_calendar">                           
           </form>
         </div>
       </div>
