@@ -1812,6 +1812,14 @@
       else {
         $registry->mybooking_rent_plugin_api_key = '';
       }
+      if ($settings && array_key_exists('mybooking_plugin_settings_sales_channel_code', $settings)) {
+        $registry->mybooking_rent_plugin_sales_channel_code = trim(esc_attr( $settings["mybooking_plugin_settings_sales_channel_code"] ));
+      }
+      else {
+        $registry->mybooking_rent_plugin_sales_channel_code = '';
+      }
+
+
 
       // == Configuration
 

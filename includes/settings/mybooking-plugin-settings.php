@@ -366,6 +366,12 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_connection');
 
+		  add_settings_field('mybooking_plugin_settings_sales_channel',
+		                     'Sales Channel Code',
+		                     array($this, 'field_mybooking_plugin_settings_sales_channel_code_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_connection');
+
       // == Creates configuration fields
 
 		  add_settings_field('mybooking_plugin_settings_renting_selector',
@@ -726,6 +732,26 @@ EOF;
 
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
 		  echo "<p class=\"description\">Get the API key from your mybooking account settings</p>.";
+		}
+
+
+		/**
+		 * Render Sales channel code
+		 */
+		public function field_mybooking_plugin_settings_sales_channel_code_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_connection");
+		  $field = "mybooking_plugin_settings_sales_channel_code";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+		  	$value = '';
+		  }
+
+		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
+		  echo "<p class=\"description\">If you have <b>multiple sales channels</b>, input the sales channel code that you want to use in this website";
+
 		}
 
     // == Configuration

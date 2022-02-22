@@ -21,6 +21,9 @@
           if ( $data == null) {
           	$this->routes_not_found();
           }
+          if ( !empty( $registry->mybooking_rent_plugin_sales_channel_code ) ) {
+            $data->sales_channel_code = $registry->mybooking_rent_plugin_sales_channel_code;
+          }
           // Create a "simulated" post with the data to best integration with themes
           $this->product_content( $data );
           // Build the page

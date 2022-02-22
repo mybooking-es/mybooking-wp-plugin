@@ -79,7 +79,8 @@
         </div>
 
         <div class="mb-col-md-4">
-          <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code)) ?>
+          <?php mybooking_engine_get_template('mybooking-plugin-product-widget.php', array('code' => $args->code,
+                                                                                           'sales_channel_code' => $args->sales_channel_code )) ?>
         </div>
       </div>
     </div>
