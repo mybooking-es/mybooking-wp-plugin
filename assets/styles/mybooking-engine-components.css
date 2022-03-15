@@ -929,6 +929,10 @@ fieldset legend {
   background: var(--mb-calendar-booked)!important;
 }
 
+.ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default.ui-state-active {
+    background: var(--mb-calendar-checked-date)!important;
+}
+
 .ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default {
   background: var(--mb-calendar-available)!important;
 }

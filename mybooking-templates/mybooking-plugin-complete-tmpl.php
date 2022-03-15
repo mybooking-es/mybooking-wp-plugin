@@ -203,7 +203,7 @@
         shopping_cart.pickup_place_cost > 0 ||
         shopping_cart.time_to_cost > 0 ||
         shopping_cart.return_place_cost > 0 ||
-        shopping_cart.driver_age_cost > 0 ||
+        shopping_cart.driver_age_cost > 0 ||
         shopping_cart.category_supplement_1_cost > 0) { %>
 
     <div class="mb-section">
@@ -301,19 +301,22 @@
         <% } %>
       </div>
 
-      <!-- // Deposit -->
-
-      <% if (shopping_cart.total_deposit > 0) { %>
-        <div class="mybooking-summary_deposit">
-          <span class="mybooking-summary_extra-name">
-            <?php echo esc_html_x('Deposit', 'renting_complete', 'mybooking-wp-plugin') ?>
-          </span>
-          <span class="mybooking-summary_extra-amount">
-            <%=configuration.formatCurrency(shopping_cart.total_deposit)%>
-          </span>
-        </div>
-      <% } %>
     </div>
+  <% } %>
+
+  <!-- // Deposit -->
+
+  <% if (shopping_cart.total_deposit > 0) { %>
+    <div class="mb-section">
+      <div class="mybooking-summary_deposit">
+        <span class="mybooking-summary_extra-name">
+          <?php echo esc_html_x('Deposit', 'renting_complete', 'mybooking-wp-plugin') ?>
+        </span>
+        <span class="mybooking-summary_extra-amount">
+          <%=configuration.formatCurrency(shopping_cart.total_deposit)%>
+        </span>
+      </div>
+    </div>  
   <% } %>
 
   <!-- // Total -->

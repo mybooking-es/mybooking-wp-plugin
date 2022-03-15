@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1]
+
+### Fixed
+
+- Renting Complete: Show deposit when no supplements
+- Renting Calendar Widget: Container style
+
 ## [1.3.0]
 
 ### Fixed
