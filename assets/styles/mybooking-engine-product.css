@@ -614,6 +614,7 @@ div.mybooking-product {
   font-weight: 800;
   counter-increment: steps-counter;
   position: relative;
+  list-style:  none;
 }
 
 .mybooking-product_calendar-step-list .mybooking-product_calendar-step::before {
