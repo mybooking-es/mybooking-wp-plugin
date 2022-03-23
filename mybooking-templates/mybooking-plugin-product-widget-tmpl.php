@@ -264,3 +264,14 @@
       <% } %>
     <% } %>
 </script>
+
+<script type="text/tmpl" id="script_daily_occupation">
+  <div class="mybooking-product_calendar-daily_container">
+    <% for (var idx=0; idx < data.length; idx++) { %>
+      <div class="mybooking-product_calendar-daily_item">
+        <div><%= moment(data[idx].date_from).tz(timezone).format(format) %> <%= data[idx].time_from %></div>
+        <div><%= moment(data[idx].date_to).tz(timezone).format(format) %> <%= data[idx].time_to %></div>
+      </div>  
+    <% } %>
+  </div>
+</script>

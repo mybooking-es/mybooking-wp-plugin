@@ -1207,7 +1207,8 @@
       // Extract the shortcode attributes
       extract( shortcode_atts( array('code' => '',
                                      'sales_channel_code' => '',
-                                     'rental_location_code' => ''), $atts ) );
+                                     'rental_location_code' => '',
+                                     'check_hourly_occupation' => ''), $atts ) );
 
       $data = array();
       $data['code'] = $code;
@@ -1216,6 +1217,9 @@
       }
       if ( $rental_location_code != '' ) {
         $data['rental_location_code'] = $rental_location_code;
+      }
+      if ( $check_hourly_occupation != '' ) {
+        $data['check_hourly_occupation'] = $check_hourly_occupation;
       }
 
       ob_start();

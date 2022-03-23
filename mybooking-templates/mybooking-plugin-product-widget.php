@@ -14,6 +14,9 @@
            <?php if ( array_key_exists('rental_location_code', $args) && $args['rental_location_code'] != '' ) : ?>
              data-rental-location-code="<?php echo esc_attr( $args['rental_location_code'] )?>"
            <?php endif; ?>
+           <?php if ( array_key_exists('check_hourly_occupation', $args) && $args['check_hourly_occupation'] == 'yes' ) : ?>
+             data-check-hourly-occupation="true"
+           <?php endif; ?>  
            class="mybooking-product_calendar_container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
       <div class="mb-row">
         <div class="mb-col-md-12">
@@ -25,4 +28,11 @@
           </form>
         </div>
       </div>
+    </div>
+
+    <!-- DETAILS MODAL ------------------------------------------------------------>
+
+    <div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modalDailyOccupation_MBM">
+      <h3 class="mybooking-modal_title modal-product-detail-title"></h3>
+      <div class="mybooking-modal_body modal-product-detail-content"></div>
     </div>

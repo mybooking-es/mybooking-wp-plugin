@@ -680,6 +680,28 @@ div.mybooking-product {
   color: #ffffff; 
 }
 
+.mybooking-product_calendar-check-hourly-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.mybooking-product_calendar-check-hourly {
+  padding: 0.1em;
+}
+
+.mybooking-product_calendar-daily_container {
+  display: flex;
+}
+
+.mybooking-product_calendar-daily_item {
+  border:  1px solid #ddd;
+  padding: 1em;
+  margin: 0.5em;
+}
+
+
 @media (min-width: 575.98px) {
   .mybooking-product_calendar-date {
     font-size: 1em;
