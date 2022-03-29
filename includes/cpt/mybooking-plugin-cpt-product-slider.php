@@ -98,7 +98,7 @@
         update_post_meta(
           $product_slider_data_id,
           'mybooking-product-slider-link',
-          
+          $link     
           );
       }
     }
