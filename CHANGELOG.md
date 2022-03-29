@@ -6,6 +6,10 @@
 
 - Product calendar check hourly occupation
 
+### Fixed
+
+- Product Slider CPT metaboxes on PHP < 7.3
+
 ## [1.3.1]
 
 ### Fixed

@@ -119,6 +119,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 = 1.3.2 =
 * Renting Calendar Widget : Check daily occupation
+* Fixed CPT Product Slider on PHP < 7.3
 
 = 1.3.1 =
 * Renting Complete : Show deposit when no supplements
