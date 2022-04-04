@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2022-04-03 21:59+0000\n"
+"PO-Revision-Date: 2022-04-04 22:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -2007,6 +2007,15 @@ msgstr "Seleccione fechas de entrega y devolución"
 msgctxt "renting_product_detail"
 msgid "Select delivery and return time"
 msgstr "Seleccione horarios de entrega y devolución"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-product-widget-tmpl.php:301
+msgctxt "renting_product_detail"
+msgid ""
+"We are sorry. There are not defined times. Please, configure them at the "
+"calendar"
+msgstr ""
+"Lo sentimos. No se han definidos horarios. Por favor, configúralos en el "
+"calendario."
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products-search-tmpl.php:27
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products-search-tmpl.php:29

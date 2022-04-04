@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3]
+
+### Added
+
+- Product calendar turns
+- Product calendar duration scope : In One Day vs Days
+
 ## [1.3.2]
 
 ### Added
