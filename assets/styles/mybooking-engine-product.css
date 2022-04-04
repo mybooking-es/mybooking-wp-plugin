@@ -655,8 +655,8 @@ div.mybooking-product {
 
 .mybooking-product_calendar-date {
   padding: 0;
-  font-size: 1.1em;
-  min-width: 42px;
+  font-size: 1em;
+  /*min-width: 42px;*/
 }
 
 .mybooking-product_calendar-date span {

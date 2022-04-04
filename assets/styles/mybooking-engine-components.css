@@ -969,16 +969,17 @@ fieldset legend {
 }
 
 .date-picker-wrapper .month-element {
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .date-picker-wrapper .month-wrapper table .week-name {
   height: 40px;
+  font-size: 14px;
 }
 
 .date-picker-wrapper .month-wrapper table .day {
-  padding: 10px;
-  font-size: 16px;
+  padding: 1px;
+  font-size: 14px;
   margin-bottom: 0;
   color: inherit;
   word-break:  normal;

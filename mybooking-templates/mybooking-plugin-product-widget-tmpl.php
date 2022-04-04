@@ -41,37 +41,56 @@
       <?php echo esc_html_x('Select delivery and return dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
     </li>
 
+    <% if (configuration.rentingProductOneJournal && 
+           configuration.rentingProductMultipleJournals) { %>
+      <div class="mb-form-row">
+        <div class="mb-form-group">        
+          <input type="radio" name="duration_scope" value="in_one_day" checked/>&nbsp;<?php echo esc_html_x('Hours or one full day', 'renting_product_detail', 'mybooking-wp-plugin' ) ?><br>
+          <input type="radio" name="duration_scope" value="days"/>&nbsp;<?php echo esc_html_x('Period of dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+        </div>
+      </div>  
+    <% } else if (configuration.rentingProductOneJournal) { %>
+      <input type="hidden" name="duration_scope" value="in_one_day">
+    <% } else { %>
+      <input type="hidden" name="duration_scope" value="days">
+    <% } %>
+
     <!-- // Date Selector -->
     <div class="mb-form-group">
       <input id="date" type="hidden" name="date"/>
       <div id="date-container" class="disabled-picker"></div>
     </div>
 
-    <% if (configuration.timeToFrom) { %>
+    <% if (configuration.timeToFrom || configuration.timeToFromInOneDay) { %>
 
-      <li class="mybooking-product_calendar-step">
-        <?php echo esc_html_x('Select delivery and return time', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-      </li>
+        <li class="mybooking-product_calendar-step js-mybooking-product_calendar-time-hours js-mybooking-product_calendar-time-ranges" style="display:none">
+          <?php echo esc_html_x('Select delivery and return time', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+        </li>
 
-      <!-- // Delivery time -->
-      <div class="mb-form-row">
-        <div class="mb-form-group mb-col-md-12">
-          <label class="">
-            <?php echo esc_html_x('Delivery', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-          </label>
-          <select id="time_from" name="time_from" placeholder="hh:mm" class="mb-form-control" disabled> </select>
+        <!-- // Delivery time -->
+        <div class="mb-form-row js-mybooking-product_calendar-time-hours" style="display: none">
+          <div class="mb-form-group mb-col-md-12">
+            <label class="">
+              <?php echo esc_html_x('Delivery', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+            </label>
+            <select id="time_from" name="time_from" placeholder="hh:mm" class="mb-form-control" disabled> </select>
+          </div>
         </div>
-      </div>
 
-      <!-- // Collection time -->
-      <div class="mb-form-row">
-        <div class="mb-form-group mb-col-md-12">
-          <label class="">
-            <?php echo esc_html_x('Return', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
-          </label>
-          <select id="time_to" name="time_to" placeholder="hh:mm" class="mb-form-control" disabled> </select>
-        </div>
-      </div>  
+        <!-- // Collection time -->
+        <div class="mb-form-row js-mybooking-product_calendar-time-hours" style="display: none">
+          <div class="mb-form-group mb-col-md-12">
+            <label class="">
+              <?php echo esc_html_x('Return', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+            </label>
+            <select id="time_to" name="time_to" placeholder="hh:mm" class="mb-form-control" disabled> </select>
+          </div>
+        </div>  
+
+        <div class="mb-form-row js-mybooking-product_calendar-time-ranges" style="display: none">
+          <div id="mb_product_calendar_time_ranges_container" class="mb-form-group mb-col-md-12">
+          </div>
+        </div>  
 
     <% } else { %>
       <input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
@@ -274,4 +293,19 @@
       </div>  
     <% } %>
   </div>
+</script>
+
+<script type="text/tmpl" id="form_calendar_selector_turns_tmpl">
+  <% if (turns.length == 0) { %>
+    <div class="mb-alert danger">
+      <?php echo esc_html_x('We are sorry. There are not defined times. Please, configure them at the calendar', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+    </div>
+  <% } else { %>
+    <% for (var idx=0; idx<turns.length; idx++) { %>
+      <input type="radio" name="turn" value="<%=turns[idx].time_from%>-<%=turns[idx].time_to%>" <% if (!turns[idx].availability){%>disabled<% } %>
+             class="<% if (turns[idx].availability){%>mybooking-product_calendar-available_turn<% } else {%>mybooking-product_calendar-not_available_turn<% } %>">
+        <span class="<% if (turns[idx].availability){%>mybooking-product_calendar-available_turn<% } else {%>mybooking-product_calendar-not_available_turn<% } %>"><%=turns[idx].time_from%>-<%=turns[idx].time_to%>&nbsp;
+    <% } %>
+  <% } %>
+
 </script>

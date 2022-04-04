@@ -325,7 +325,7 @@
   margin: 0 1rem 0.5rem 0!important;
 }
 
-.mb-form-group input,
+.mb-form-group input:not([type=checkbox]):not([type=radio]),
 .mb-input {
   display: inline-block;
   width: 100%;
@@ -519,6 +519,10 @@ button.mb-button a:hover  {
 .mb-alert.warning       { background-color: var(--mb-warning-color) }
 
 .mb-alert.info {
+  color: var(--mb-negative-text-color);
+}
+
+.mb-alert.danger {
   color: var(--mb-negative-text-color);
 }
 
