@@ -123,10 +123,21 @@
 
       <span class="mybooking-summary_item">
         <span class="mybooking-summary_date">
-          <%=shopping_cart.date_to_full_format%>
-          <% if (configuration.timeToFrom) { %>
-            <%=shopping_cart.time_to%>
-          <% } %>
+
+          <% if (configuration.rentDateSelector === 'date_from_duration') { %>
+            <!-- Duration -->
+            <%= shopping_cart.renting_duration_literal %>
+            <% if (typeof shopping_cart.half_day !== 'undefined' && shopping_cart.half_day) { %>
+              ( <%= shopping_cart.time_from %> - <%= shopping_cart.time_to %> ) 
+            <% } %>
+          <% } else { %>
+            <!-- Date To -->
+            <%=shopping_cart.date_to_full_format%>
+            <% if (configuration.timeToFrom) { %>
+              <%=shopping_cart.time_to%>
+            <% } %>
+          <% } %>  
+        
         </span>
         <% if (configuration.pickupReturnPlace) { %>
           <span class="mybooking-summary_place">
@@ -136,20 +147,23 @@
       </span>
 
       <!-- // Duration -->
-      <% if (shopping_cart.days > 0) { %>
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_duration">
-            <%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
+      <% if (configuration.rentDateSelector === 'date_from_date_to') { %>
+        <% if (shopping_cart.days > 0) { %>
+          <span class="mybooking-summary_item">
+            <span class="mybooking-summary_duration">
+              <%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
+            </span>
           </span>
-        </span>
 
-      <% } else if (shopping_cart.hours > 0) { %>
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_duration">
-            <%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+        <% } else if (shopping_cart.hours > 0) { %>
+          <span class="mybooking-summary_item">
+            <span class="mybooking-summary_duration">
+              <%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+            </span>
           </span>
-        </span>
+        <% } %>
       <% } %>
+
     </div>
   </div>
 

@@ -33,26 +33,34 @@
 
     <div class="mybooking-summary_detail">
 
-      <% if (configuration.timeToFrom) { %>
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_date">
-            <%=booking.date_from_full_format%>
+      <!-- Delivery -->
+      <span class="mybooking-summary_item">
+        <span class="mybooking-summary_date">
+          <%=booking.date_from_full_format%>
+          <% if (configuration.rentDateSelector === 'date_from_duration' && booking.days == 0) { %>
+            (<%=booking.time_from%> - <%=booking.time_to%>)
+          <% } else if (configuration.timeToFrom) { %>
             <%=booking.time_from%>
-          </span>
-          <% if (configuration.pickupReturnPlace) { %>
-            <span class="mybooking-summary_place">
-              <%=booking.pickup_place_customer_translation%>
-            </span>
-          <% } %>
+          <% } %>  
         </span>
-      <% } %>
-
-      <% if (configuration.timeToFrom || configuration.pickupReturnPlace) { %>
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_date">
-            <%=booking.date_to_full_format%>
-            <%=booking.time_to%>
+        <% if (configuration.pickupReturnPlace) { %>
+          <span class="mybooking-summary_place">
+            <%=booking.pickup_place_customer_translation%>
           </span>
+        <% } %>
+      </span>
+
+      <!-- Collection -->
+      <% if (configuration.rentDateSelector === 'date_from_date_to' || configuration.pickupReturnPlace) { %>
+        <span class="mybooking-summary_item">
+          <% if (configuration.rentDateSelector === 'date_from_date_to') { %>
+            <span class="mybooking-summary_date">
+              <%=booking.date_to_full_format%>
+              <% if (configuration.timeToFrom) { %>
+                <%=booking.time_to%>
+              <% } %>  
+            </span>
+          <% } %>  
           <% if (configuration.pickupReturnPlace) { %>
             <span class="mybooking-summary_place">
               <%=booking.return_place_customer_translation%>
@@ -60,6 +68,8 @@
           <% } %>
         </span>
       <% } %>
+
+      <!-- Duration -->
 
       <% if (booking.days > 0) { %>
         <span class="mybooking-summary_item">
@@ -70,6 +80,7 @@
           <span class="mybooking-summary_duration"><%=booking.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></span>
         </span>
       <% } %>
+
     </div>
   </div>
 
@@ -81,6 +92,13 @@
     <div class="mybooking-summary_status">
       <%= booking.summary_status %>
     </div>
+
+    <% if (booking.summary_message_ok && booking.summary_message_ok !== '') { %>
+      <!-- Summary message OK (defined in back-office) -->
+      <div class="mb-alert warning">
+        <p><%=booking.summary_message_ok%></p>
+      </div>
+    <% } %>
 
     <% for (var idx=0;idx<booking.booking_lines.length;idx++) { %>
 

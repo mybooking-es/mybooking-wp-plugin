@@ -8,6 +8,13 @@
     pointer-events: none;
 }
 
+/** CHOOSE PRODUCT **/
+
+/* Turn form */
+.mybooking-choose-product_duration-form {
+  display: inline-block;
+}
+
 /** SUMMARY DETAILS **/
 
 .mybooking-details_container {

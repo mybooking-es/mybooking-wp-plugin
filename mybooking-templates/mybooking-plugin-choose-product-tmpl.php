@@ -30,45 +30,83 @@
       </div>
     </div>
 
-    <div class="mybooking-summary_detail">
-      <span class="mybooking-summary_item">
-        <span class="mybooking-summary_date">
-          <%=shopping_cart.date_from_full_format%>
-          <% if (configuration.timeToFrom) { %>
-            <%=shopping_cart.time_from%>
+    <% if (configuration.rentDateSelector === 'date_from_duration') { %>     
+      <div class="mybooking-summary_detail">
+        <span class="mybooking-summary_item">
+          <span class="mybooking-summary_date">
+            <%=shopping_cart.date_from_full_format%>            
+            <!-- Half Day : show the turns -->
+            <% if (typeof shopping_cart.half_day !== 'undefined' && 
+                   shopping_cart.half_day && halfDayTurns && halfDayTurns.length > 0) { %>
+                <form name="mybooking-choose-product_duration-form" class="mybooking-choose-product_duration-form">
+                  <% for (var idx=0; idx<halfDayTurns.length; idx++) { %>
+                    <input type="radio" class="mybooking-summary-duration-turn" 
+                           name="turn" value="<%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>" 
+                      <% if (shopping_cart.time_from === halfDayTurns[idx].time_from && 
+                             shopping_cart.time_to === halfDayTurns[idx].time_to) {%>checked<%}%>>
+                      <%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>
+                    </input>
+                  <% } %>
+                </form>  
+            <% } %>
+          </span>
+          <% if (configuration.pickupReturnPlace) { %>
+            <span class="mybooking-summary_place">
+              <%=shopping_cart.pickup_place_customer_translation%>
+            </span>
           <% } %>
         </span>
-        <% if (configuration.pickupReturnPlace) { %>
-          <span class="mybooking-summary_place">
-            <%=shopping_cart.pickup_place_customer_translation%>
+        <span class="mybooking-summary_item">
+          <span class="mybooking-summary_duration">
+            <%=shopping_cart.renting_duration_literal%>
           </span>
-        <% } %>
-      </span>
+        </span>  
+      </div>  
 
-      <span class="mybooking-summary_item">
-        <span class="mybooking-summary_date">
-          <%=shopping_cart.date_to_full_format%>
-          <% if (configuration.timeToFrom) { %>
-            <%=shopping_cart.time_to%>
+    <% } else { %>
+
+      <div class="mybooking-summary_detail">
+        <span class="mybooking-summary_item">
+          <span class="mybooking-summary_date">
+            <%=shopping_cart.date_from_full_format%>
+            <% if (configuration.timeToFrom) { %>
+              <%=shopping_cart.time_from%>
+            <% } %>
+          </span>
+          <% if (configuration.pickupReturnPlace) { %>
+            <span class="mybooking-summary_place">
+              <%=shopping_cart.pickup_place_customer_translation%>
+            </span>
           <% } %>
         </span>
-        <% if (configuration.pickupReturnPlace) { %>
-          <span class="mybooking-summary_place">
-            <%=shopping_cart.return_place_customer_translation%>
+
+        <span class="mybooking-summary_item">
+          <span class="mybooking-summary_date">
+            <%=shopping_cart.date_to_full_format%>
+            <% if (configuration.timeToFrom) { %>
+              <%=shopping_cart.time_to%>
+            <% } %>
+          </span>
+          <% if (configuration.pickupReturnPlace) { %>
+            <span class="mybooking-summary_place">
+              <%=shopping_cart.return_place_customer_translation%>
+            </span>
+          <% } %>
+        </span>
+
+        <% if (shopping_cart.days > 0) { %>
+          <span class="mybooking-summary_item">
+            <span class="mybooking-summary_duration"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span>
+          </span>
+        <% } else if (shopping_cart.hours > 0) { %>
+          <span class="mybooking-summary_item">
+            <span class="mybooking-summary_duration"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></span>
           </span>
         <% } %>
-      </span>
+      </div>
 
-      <% if (shopping_cart.days > 0) { %>
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_duration"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span>
-        </span>
-      <% } else if (shopping_cart.hours > 0) { %>
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_duration"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></span>
-        </span>
-      <% } %>
-    </div>
+    <% } %>
+
   </div>
 </script>
 

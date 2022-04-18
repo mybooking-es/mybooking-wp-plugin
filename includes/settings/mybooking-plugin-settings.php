@@ -1188,10 +1188,17 @@ EOF;
 		  }
 
 			if ($value == 'arrive-departure') {
-		    $select .= "<option value='arrive-departure' selected>Arrive/Depature</option>";
+		    $select .= "<option value='arrive-departure' selected>Arrival/Depature</option>";
 		  }
 		  else {
-		    $select .= "<option value='arrive-departure'>Arrive/Depature</option>";
+		    $select .= "<option value='arrive-departure'>Arrival/Depature</option>";
+		  }
+
+			if ($value == 'departure-entry') {
+		    $select .= "<option value='departure-entry' selected>Departure/Entry</option>";
+		  }
+		  else {
+		    $select .= "<option value='departure-entry'>Departure/Entry</option>";
 		  }
 
 		  $select .= "</select>";
@@ -1201,7 +1208,8 @@ EOF;
 		  echo "<p class=\"description\">Select <b>pickup/return</b> to describe pickup and return dates.</p>";
 		  echo "<p class=\"description\">Select <b>checkin/checkout</b> for accommodation or properties.</p>";
 		  echo "<p class=\"description\">Select <b>start/end</b> to describe start and end period.</p>";
-		  echo "<p class=\"description\">Select <b>arrive/depature</b> to describe arrivals an departures</p>";
+		  echo "<p class=\"description\">Select <b>arrival/departure</b> to describe arrivals an departures</p>";
+		  echo "<p class=\"description\">Select <b>departure/entry</b> to describe departures and entries</p>";
 
 		}
 

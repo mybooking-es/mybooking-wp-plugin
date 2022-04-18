@@ -369,10 +369,10 @@
 
     <% if (shopping_cart.round_trip) { %>
       <div class="mb-form-group">
-        <label for="detailed_origin_address">
+        <label for="detailed_return_destination_address">
           <?php echo esc_html_x( 'Dropoff address (hotel, resource, address, terminal)', 'transfer_checkout', 'mybooking-wp-plugin') ?>*
         </label>
-        <input type="text" class="mb-form-control" name="detailed_return_origin_address" id="detailed_return_origin_address" rows="5" placeholder="<?php echo esc_attr_x( 'Dropoff address (hotel, resource, address, terminal)', 'transfer_checkout', 'mybooking-wp-plugin') ?>">
+        <input type="text" class="mb-form-control" name="detailed_return_destination_address" id="detailed_return_destination_address" rows="5" placeholder="<?php echo esc_attr_x( 'Dropoff address (hotel, resource, address, terminal)', 'transfer_checkout', 'mybooking-wp-plugin') ?>">
       </div>
     <% } %>
 
@@ -407,16 +407,16 @@
       </h3>
       <div class="mb-form-row mb-form-group customer_component">
         <div class="mb-col-md-6 mb-col-sm-12">
-          <label for="detailed_return_origin_flight_number">
+          <label for="detailed_return_destination_flight_number">
             <?php echo esc_html_x( 'Flight or Vessel number', 'transfer_checkout', 'mybooking-wp-plugin') ?>*
           </label>
-          <input type="text" class="mb-form-control" name="detailed_return_origin_flight_number" id="detailed_return_origin_flight_number" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Flight number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+          <input type="text" class="mb-form-control" name="detailed_return_destination_flight_number" id="detailed_return_destination_flight_number" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Flight number', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
         </div>
         <div class="mb-col-md-6 mb-col-sm-12">
-          <label for="detailed_return_origin_flight_estimated_time">
+          <label for="detailed_return_destination_flight_estimated_time">
             <?php echo esc_html_x( 'Flight or Vessel estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>*
           </label>
-          <input type="time" class="mb-form-control" name="detailed_return_origin_flight_estimated_time" autocomplete="off" id="detailed_return_origin_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+          <input type="time" class="mb-form-control" name="detailed_return_destination_flight_estimated_time" autocomplete="off" id="detailed_return_destination_flight_estimated_time" placeholder="<?php echo esc_attr_x( 'Flight estimated time', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*" maxlength="50">
         </div>
       </div>
     <% } %>
@@ -431,7 +431,7 @@
       <input type="text" class="mb-form-control" name="detailed_origin_address" id="detailed_origin_address" rows="5" placeholder="<?php echo esc_attr_x( 'Name of Hotel / Complex / Villa and address', 'transfer_checkout', 'mybooking-wp-plugin') ?>">
     </div>
 
-  <% } else { %>
+  <% } else if (configuration.transfer_origin_destination_detailed_info_mode === 'trip') { %>
 
       <!-- // Trip -->
 
