@@ -1074,10 +1074,10 @@ EOF;
 		  }
 
 			if ($value == 'boat') {
-		    $select .= "<option value='product' selected>Boat</option>";
+		    $select .= "<option value='boat' selected>Boat</option>";
 		  }
 		  else {
-		    $select .= "<option value='product'>Boat</option>";
+		    $select .= "<option value='boat'>Boat</option>";
 		  }
 
 			if ($value == 'product') {

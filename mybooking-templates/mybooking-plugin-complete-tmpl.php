@@ -127,7 +127,7 @@
           <% if (configuration.rentDateSelector === 'date_from_duration') { %>
             <!-- Duration -->
             <%= shopping_cart.renting_duration_literal %>
-            <% if (typeof shopping_cart.half_day !== 'undefined' && shopping_cart.half_day) { %>
+            <% if ( (typeof shopping_cart.half_day !== 'undefined' && shopping_cart.half_day) || (shopping_cart.days == 0) ){ %>
               ( <%= shopping_cart.time_from %> - <%= shopping_cart.time_to %> ) 
             <% } %>
           <% } else { %>
