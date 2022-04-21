@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.1]
+
+### Fixed
+
+- Product calendar : Multiple dates
+
 ## [1.4.0]
 
 ### Added
