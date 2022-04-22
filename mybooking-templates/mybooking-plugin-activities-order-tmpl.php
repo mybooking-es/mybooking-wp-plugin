@@ -546,7 +546,7 @@
              <label class="mybooking-payment_custom-label" for="payments_credit_card">
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-              <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>"><?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=order.payment_methods.tpv_virtual%>"><?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
              </label>
             </div>
             <div id="payment_method_select_error"></div>
