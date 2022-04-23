@@ -67,6 +67,10 @@
           <?php echo esc_html_x('Select delivery and return time', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
         </li>
 
+        <div id="mybooking_product_widget_occupation_container" class="mb-form-row" style="display: none">
+          <div id="mybooking_product_widget_occupation_detail_container" class="mb-form-group mb-col-md-12"></div>
+        </div>  
+
         <!-- // Delivery time -->
         <div class="mb-form-row js-mybooking-product_calendar-time-hours" style="display: none">
           <div class="mb-form-group mb-col-md-12">
@@ -287,7 +291,7 @@
 <script type="text/tmpl" id="script_daily_occupation">
   <div class="mybooking-product_calendar-daily_container">
     <% for (var idx=0; idx < data.length; idx++) { %>
-      <div class="mybooking-product_calendar-daily_item">
+      <div class="mybooking-product_calendar-daily_item mb-alert danger">
         <div><%= moment(data[idx].date_from).tz(timezone).format(format) %> <%= data[idx].time_from %></div>
         <div><%= moment(data[idx].date_to).tz(timezone).format(format) %> <%= data[idx].time_to %></div>
       </div>  

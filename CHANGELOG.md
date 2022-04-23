@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.4]
+
+### Fixed
+
+- Fixed renting calendar widget : Holiday days + delivery/collection applicable hours
+
 ## [1.4.3]
 
 ### Fixed
