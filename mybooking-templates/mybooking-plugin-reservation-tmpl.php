@@ -927,7 +927,11 @@
         <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>"><?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
        </label>
       </div>
-      <div id="payment_method_select_error"></div>
+      <div class="mb-row">
+        <div class="mb-form-group mb-col-md-12">      
+          <div id="payment_method_select_error"></div>
+        </div>
+      </div>  
 
     <% } else if (sales_process.payment_methods.paypal_standard) { %>
       <div class="mb-alert secondary" role="alert">
@@ -938,6 +942,7 @@
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
       </div>
+      <input type="hidden" name="payment_method_id" value="paypal_standard"/>
 
     <% } else if (sales_process.payment_methods.tpv_virtual) { %>
       <div class="mb-alert secondary" role="alert">
@@ -966,6 +971,14 @@
         </button>
       </div>
     </div>
+
+    <div class="mb-row">
+      <div class="mb-form-group mb-col-md-12">
+        <div id="payment_error" class="mb-alert danger" style="display:none">
+        </div>
+      </div>
+    </div>  
+
   </form>
 
 </script>

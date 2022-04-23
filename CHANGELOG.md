@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.3]
+
+### Fixed
+
+- Fixed renting/activities my reservation : Select between two payment methods 
+
 ## [1.4.2]
 
 ### Fixed 

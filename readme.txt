@@ -117,6 +117,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.4.3 =
+* Fixed renting/activities my reservation : Select between two payment methods
+
 = 1.4.2 =
 * Fixed Activities templates (shopping cart and my reservation) : Payment method
 
@@ -350,6 +353,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.4.3 =
+* Fixed renting/activities my reservation : Select between two payment methods
 
 = 1.4.2 =
 * Fixed Activities templates (shopping cart and my reservation) : Payment method

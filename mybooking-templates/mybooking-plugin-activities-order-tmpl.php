@@ -522,7 +522,7 @@
           </div>
 
           <!-- // Payment amount -->
-          <% if (payment === 'deposit' || payment === 'total') { %>
+          <% if (payment === 'deposit' || payment === 'total') { %>
             <div id="payment_amount_container" class="mb-alert info highlight">
                <%=i18next.t('activities.payment.deposit_amount',{amount: configuration.formatCurrency(paymentAmount)})%>
             </div>
@@ -549,7 +549,11 @@
               <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=order.payment_methods.tpv_virtual%>"><?php echo _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ?>
              </label>
             </div>
-            <div id="payment_method_select_error"></div>
+            <div class="mb-row">
+              <div class="mb-form-group mb-col-md-12">
+                <div id="payment_method_select_error"></div>
+              </div>
+            </div>  
 
           <% } else if (order.payment_methods.paypal_standard) { %>
             <div class="mb-alert secondary" role="alert">
@@ -557,6 +561,8 @@
             </div>
             <div class="mybooking-payment_confirmation-box">
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>              
               <input type="hidden" name="payment_method_value" value="paypal_standard">
             </div>
 
@@ -568,7 +574,7 @@
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
             </div>
-            <input type="hidden" name="payment_method_id" value="<%=order.payment_methods.tpv_virtual%>"/>
+            <input type="hidden" name="payment_method_value" value="<%=order.payment_methods.tpv_virtual%>"/>
           <% } %>
 
           <div class="mb-row">
@@ -578,10 +584,16 @@
               </button>
             </div>
           </div>
+          
+          <div class="mb-row">
+            <div class="mb-form-group mb-col-md-12">
+              <div id="payment_error" class="mb-alert danger" style="display:none">
+              </div>
+            </div>
+          </div>  
+
         </div>
 
-        <div id="payment_error" class="alert alert-danger mt-1" style="display:none">
-        </div>
       </form>
     <% } %>
   </div>
