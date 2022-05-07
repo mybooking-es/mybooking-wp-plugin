@@ -117,6 +117,10 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.4.5 =
+* Fixed renting calendar widget: Use rental location when loading turns
+* Fixed renting calendar widget: Show not available turns in red
+
 = 1.4.4 =
 * Fixed renting calendar widget : Holiday days + delivery/collection applicable hours
 
@@ -356,6 +360,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.4.5 =
+* Fixed renting calendar widget: Use rental location when loading turns and show not available turns in red
 
 = 1.4.4 =
 * Fixed renting calendar widget : Holiday days + delivery/collection applicable hours

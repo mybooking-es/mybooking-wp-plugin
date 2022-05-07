@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.5]
+
+### Fixed
+
+- Fixed renting calendar widget: Use rental location when loading turns
+- Fixed renting calendar widget: Show not available turns in red
+
 ## [1.4.4]
 
 ### Fixed
