@@ -26,7 +26,7 @@
           <?php if ( !has_post_thumbnail( $mybooking_engine_testimonial_item->ID ) ) { ?>
             <img class="mybooking-testimonial_image testimonial-item_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-avatar.png' ) ?>"/>
           <?php } else { ?>
-            <?php $mybooking_engine_featured_img_url = get_the_post_thumbnail_url( $testimonial_item, 'full' ); ?>
+            <?php $mybooking_engine_featured_img_url = get_the_post_thumbnail_url( $mybooking_engine_testimonial_item, 'full' ); ?>
             <img class="mybooking-testimonial_image testimonial-item_image" src="<?php echo esc_url( $mybooking_engine_featured_img_url ) ?>">
           <?php } ?>
 
