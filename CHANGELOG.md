@@ -1,28 +1,13 @@
 # Changelog
 
-## [1.4.5]
+## [1.5.0] - 2022.05.07
 
 ### Fixed
 
 - Fixed renting calendar widget: Use rental location when loading turns
 - Fixed renting calendar widget: Show not available turns in red
-
-## [1.4.4]
-
-### Fixed
-
 - Fixed renting calendar widget : Holiday days + delivery/collection applicable hours
-
-## [1.4.3]
-
-### Fixed
-
 - Fixed renting/activities my reservation : Select between two payment methods 
-
-## [1.4.2]
-
-### Fixed 
-
 - Activities templates (shopping cart and my reservation) : Payment method
 
 ## [1.4.1]
