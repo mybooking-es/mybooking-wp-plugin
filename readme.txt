@@ -117,6 +117,13 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.5.1 =
+* Added AgentId extraction outside renting selector
+* Fixed Manage duplicate Tabs during the renting reservation process
+* Fixed Renting: Manage stock not available when creating renting reservation
+* Fixed Avoid double click on create reservation form
+* Fixed Apply promotion code in renting complete step
+
 = 1.5.0 =
 * Fixed renting calendar widget: Use rental location when loading turns
 * Fixed renting calendar widget: Show not available turns in red
@@ -354,6 +361,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.5.1 =
+* Fixed renting process : duplicateTab and not available stock response on create new reservation
 
 = 1.5.0 =
 * Fixed renting calendar widget + renting/activities my reservation (payment methods)
