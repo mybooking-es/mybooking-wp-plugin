@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.2] - 2022.05.16
+
+### Fixed
+
+- Duplicate Tab on iOs (iphone and ipad) => pagehide
+
 ## [1.5.1] - 2022.05.15
 
 ### Added

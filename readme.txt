@@ -117,6 +117,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.5.2 =
+* Fixed Manage duplicate Tabs on iPhone and iPad
+
 = 1.5.1 =
 * Added AgentId extraction outside renting selector
 * Fixed Manage duplicate Tabs during the renting reservation process
@@ -361,6 +364,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.5.2 =
+* Fixed Manage duplicate Tabs on iPhone and iPad
 
 = 1.5.1 =
 * Fixed renting process : duplicateTab and not available stock response on create new reservation
