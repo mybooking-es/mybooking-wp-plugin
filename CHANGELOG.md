@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.5.2] - 2022.05.16
+
+### Fixed
+
+- Duplicate Tab on iOs (iphone and ipad) => pagehide
+
+## [1.5.1] - 2022.05.15
+
+### Added
+
+- AgentId extraction outside renting selector
+
+### Fixed
+
+- Manage duplicate Tabs during the renting reservation process
+- Renting: Manage stock not available when creating renting reservation
+- Avoid double click on create reservation form
+- Apply promotion code in renting complete step
+
 ## [1.5.0] - 2022.05.07
 
 ### Fixed
