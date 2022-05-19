@@ -644,7 +644,7 @@
 }
 
 .mybooking-testimonial_avatar img {
-  --mb-testimonial-avatar-dimensions: 70px;
+  --mb-testimonial-avatar-dimensions: 40px;
   width: var(--mb-testimonial-avatar-dimensions);
   height: var(--mb-testimonial-avatar-dimensions);
 }

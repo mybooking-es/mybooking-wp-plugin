@@ -65,6 +65,7 @@
     flex-direction: column;
     align-items: center;
     border-right: 1px solid var(--mb-border-color);
+    border-radius: var(--mb-border-radius);
     overflow: hidden;
   }
 
@@ -201,6 +202,7 @@ div.mybooking-product {
   position: relative;
   margin: var(--mb-product-separation);
   border: 1px solid var(--mb-border-color);
+  border-radius: var(--mb-border-radius);
   background-color: var(--mb-product-background);
 }
 
@@ -269,7 +271,7 @@ div.mybooking-product {
   color: var(--mb-product-custom-message-color);
   font-size: 9px;
   font-weight: 800;
-  letter-spacing: 1px;
+  line-height: 25px;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -280,12 +282,10 @@ div.mybooking-product {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
   padding: 10px 1rem;
   height: var(--mb-product-header-height);
   border-top: 1px solid var(--mb-border-color);
   border-bottom: 1px solid var(--mb-border-color);
-  width: 100%;
 }
 
 .mybooking-product_price {
@@ -377,7 +377,6 @@ div.mybooking-product {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: var(--mb-product-body-height);
   padding: 1rem;
   overflow-y: hidden;
@@ -481,7 +480,6 @@ div.mybooking-product {
   flex-wrap: nowrap;
   justify-content: center;
   gap: 1rem;
-  width: 100%;
   padding: 0.5rem;
   border-top: 1px solid var(--mb-border-color);
 }
@@ -515,7 +513,6 @@ div.mybooking-product {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: var(--mb-product-footer-height);
   padding: 1rem;
   border-top: 1px solid var(--mb-border-color);
@@ -539,6 +536,7 @@ div.mybooking-product {
   min-height: var(--mb-product-btn-height)!important;
   margin: 0;
   padding: 0.3rem 1rem;
+
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -637,7 +635,7 @@ div.mybooking-product {
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table {
   border:  1px solid;
 }
-.mybooking-product_calendar .date-picker-wrapper .month-wrapper table td, 
+.mybooking-product_calendar .date-picker-wrapper .month-wrapper table td,
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table th {
   line-height: 10px;
   border: 1px solid;
@@ -666,7 +664,7 @@ div.mybooking-product {
 .mybooking-product_calendar-price {
   opacity:0.9;
   font-size: 0.5em;
-  margin-top: 0.7em;  
+  margin-top: 0.7em;
 }
 
 .mybooking-product_calendar-mindays {
@@ -677,7 +675,7 @@ div.mybooking-product {
 }
 .mybooking-product_calendar-mindays-data {
   background: #555555;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 .mybooking-product_calendar-check-hourly-container {
@@ -708,7 +706,7 @@ input.mybooking-product_calendar-not_available_turn + span.mybooking-product_cal
 @media (min-width: 575.98px) {
   .mybooking-product_calendar-date {
     font-size: 1em;
-  }  
+  }
   .mybooking-product_calendar-price {
     font-size: 0.7em;
   }
@@ -745,7 +743,7 @@ button.slick-next {
 .mybooking-carousel-item img{
     margin-left: auto;
     margin-right: auto;
-    max-width: 600px;  
+    max-width: 600px;
 }
 
 .mybooking-modal_product-actions {
@@ -753,7 +751,7 @@ button.slick-next {
   padding-top: 10px;
 }
 
-.mybooking-modal_product-container, 
+.mybooking-modal_product-container,
 .mybooking-modal_product-description {
   min-height:  500px;
 }

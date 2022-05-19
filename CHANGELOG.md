@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.3] - 2022.05.17
+
+### Added
+- Control on border radius for selector container, buttons and cards
+
+### Fixed
+- Selector fileds height on Twenty Twenty Two
+- Choose Vehicle cards contents overflow on Twenty Twenty Two
+
 ## [1.5.2] - 2022.05.16
 
 ### Fixed
@@ -26,7 +35,7 @@
 - Fixed renting calendar widget: Use rental location when loading turns
 - Fixed renting calendar widget: Show not available turns in red
 - Fixed renting calendar widget : Holiday days + delivery/collection applicable hours
-- Fixed renting/activities my reservation : Select between two payment methods 
+- Fixed renting/activities my reservation : Select between two payment methods
 - Activities templates (shopping cart and my reservation) : Payment method
 
 ## [1.4.1]
@@ -236,7 +245,7 @@
 - Renting
   - Selector Form custom control to manage offers
 
-## [0.7.10] 
+## [0.7.10]
 
 ### Fixed
 
@@ -252,7 +261,7 @@
 
 ### Added
 
-- Contact Form 
+- Contact Form
   - recaptcha integration
   - added subject, source, rental location and sales channel attributes
 
@@ -272,7 +281,7 @@
 
 ### Fixed
 
-- Renting 
+- Renting
   - Form selector date to disabled when changed return place
 - Renting Calendar
   - Next and Previous arrows in a button
