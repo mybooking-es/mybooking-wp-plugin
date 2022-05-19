@@ -6,8 +6,9 @@
 - Control on border radius for selector container, buttons and cards
 
 ### Fixed
-- Selector fileds height on Twenty Twenty Two
+- Selector fieds height on Twenty Twenty Two
 - Choose Vehicle cards contents overflow on Twenty Twenty Two
+- Renting calendar widget : Availability
 
 ## [1.5.2] - 2022.05.16
 

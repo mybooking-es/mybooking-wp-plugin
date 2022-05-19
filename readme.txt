@@ -117,6 +117,10 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.5.3 =
+* Fixed styles for Twenty Twenty Two theme
+* Fixed Renting: Calendar availability and min days
+
 = 1.5.2 =
 * Fixed Manage duplicate Tabs on iPhone and iPad
 
@@ -364,6 +368,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.5.3 =
+* Fixed styles for Twenty Twenty Two theme + Renting Calendar availability and min days
 
 = 1.5.2 =
 * Fixed Manage duplicate Tabs on iPhone and iPad
