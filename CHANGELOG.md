@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.4] - 2022.05.25
+
+### Fixed
+
+- Activity summary and order : Do not reload the page based on the customer language
+
 ## [1.5.3] - 2022.05.17
 
 ### Added

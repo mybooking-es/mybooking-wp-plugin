@@ -661,7 +661,7 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
                        contentType : 'application/json; charset=utf-8',
                        crossDomain: true,
                        success: function(data, textStatus, jqXHR) {
-
+                         /*
                          if (model.requestLanguage != data.customer_language &&
                              data.customer_language != null &&
                              data.customer_language != '') {
@@ -669,9 +669,10 @@ Promise.resolve(/* AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_A
                                                   commonServices.orderUrl + '?id=' + data.free_access_id;
                          }
                          else {
+                         */ 
                            model.order = data;
                            view.updateOrder();
-                         }
+                         //}
 
                        },
                        error: function(data, textStatus, jqXHR) {
