@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.6.1] 
+
+### Fixed
+
+- Renting Product Calendar: Configured rental location do not use selector
+
 ## [1.6.0] - 2022.05.26
 
 ### Added
