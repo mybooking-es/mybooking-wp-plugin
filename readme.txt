@@ -3,7 +3,7 @@ Contributors: juanmiqueo
 Donate link: https://mybooking.es/
 Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation, properties booking system, tours booking system, transfer booking system 
 Requires at least: 5.2
-Tested up to: 5.9
+Tested up to: 6.0
 Stable tag: trunk
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -117,10 +117,11 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
-= 1.5.4 =
+= 1.6.0 =
+* Product Calendar: Show only one month
+* Product Calendar: Show selected period
+* Product Calendar: Show rental location selector
 * Fixed Activity summary and order : Do not reload the page based on the customer language
-
-= 1.5.3 =
 * Fixed styles for Twenty Twenty Two theme
 * Fixed Renting: Calendar availability and min days
 
@@ -372,11 +373,8 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
-= 1.5.4 =
-* Fixed Activity summary and order : Do not reload the page based on the customer language
-
-= 1.5.3 =
-* Fixed styles for Twenty Twenty Two theme + Renting Calendar availability and min days
+= 1.6.0 =
+* Fixed styles, activity summary and renting product calendar improvement
 
 = 1.5.2 =
 * Fixed Manage duplicate Tabs on iPhone and iPad

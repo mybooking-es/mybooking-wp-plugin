@@ -651,6 +651,13 @@ div.mybooking-product {
   padding: 4px;
 }
 
+h2.mybooking-product_calendar-date-range {
+  font-size:  1em; 
+  border: 1px solid var(--global-gray-400);
+  padding: 5px;
+  margin-top: 0.2em;
+}
+
 .mybooking-product_calendar-date {
   padding: 0;
   font-size: 1em;

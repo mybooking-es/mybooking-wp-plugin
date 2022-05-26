@@ -37,6 +37,20 @@
       </div>
     <% } %>
 
+    <!-- // Rental location selector -->
+    <% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
+      <li class="mybooking-product_calendar-step">
+        <?php echo wp_kses_post ( sprintf( _x( 'Select %s', 'renting_product_calendar', 'mybooking-wp-plugin' ), MyBookingEngineContext::getInstance()->getRentalLocation() ) )?>
+      </li>
+      <div class="mb-form-row">
+        <div class="mb-form-group">
+          <select name="rental_location" id="rental_location" class="mb-form-control" 
+                placeholder="<?php echo esc_attr( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>"></select>
+        </div>        
+      </div>
+    <% } %>
+
+
     <li class="mybooking-product_calendar-step">
       <?php echo esc_html_x('Select delivery and return dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
     </li>
@@ -58,6 +72,7 @@
     <!-- // Date Selector -->
     <div class="mb-form-group">
       <input id="date" type="hidden" name="date"/>
+      <div id="mb-date-container-header" style="display:none"></div>
       <div id="date-container" class="disabled-picker"></div>
     </div>
 

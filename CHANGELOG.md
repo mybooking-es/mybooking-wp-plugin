@@ -1,20 +1,20 @@
 # Changelog
 
-## [1.5.4] - 2022.05.25
-
-### Fixed
-
-- Activity summary and order : Do not reload the page based on the customer language
-
-## [1.5.3] - 2022.05.17
+## [1.6.0] - 2022.05.26
 
 ### Added
+
 - Control on border radius for selector container, buttons and cards
+- Renting Product Calendar: Rental Location selector
+- Renting Product Calendar: Show selected period
+- Renting Product Calendar: Show only 1 month
 
 ### Fixed
+
 - Selector fieds height on Twenty Twenty Two
 - Choose Vehicle cards contents overflow on Twenty Twenty Two
 - Renting calendar widget : Availability
+- Activity summary and order : Do not reload the page based on the customer language
 
 ## [1.5.2] - 2022.05.16
 
