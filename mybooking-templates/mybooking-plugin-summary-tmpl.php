@@ -41,7 +41,7 @@
             (<%=booking.time_from%> - <%=booking.time_to%>)
           <% } else if (configuration.timeToFrom) { %>
             <%=booking.time_from%>
-          <% } %>  
+          <% } %>
         </span>
         <% if (configuration.pickupReturnPlace) { %>
           <span class="mybooking-summary_place">
@@ -58,9 +58,9 @@
               <%=booking.date_to_full_format%>
               <% if (configuration.timeToFrom) { %>
                 <%=booking.time_to%>
-              <% } %>  
+              <% } %>
             </span>
-          <% } %>  
+          <% } %>
           <% if (configuration.pickupReturnPlace) { %>
             <span class="mybooking-summary_place">
               <%=booking.return_place_customer_translation%>
@@ -347,6 +347,26 @@
             <%=configuration.formatCurrency(booking.total_cost)%>
           </div>
         </div>
+
+        <% if (booking.total_pending > 0) { %>
+          <div class="mybooking-summary_total">
+            <div class="mybooking-summary_total-label">
+              <?php echo esc_html_x( 'Total paid', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+            </div>
+            <div class="mybooking-summary_total-amount">
+              <%=configuration.formatCurrency(booking.total_paid)%>
+            </div>
+          </div>
+
+          <div class="mybooking-summary_total mb--bg-danger">
+            <div class="mybooking-summary_total-label">
+              <?php echo esc_html_x( 'Total pending', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+            </div>
+            <div class="mybooking-summary_total-amount mb-text-negative">
+              <%=configuration.formatCurrency(booking.total_pending)%>
+            </div>
+          </div>
+        <% } %>
 
         <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
           <div class="mybooking-product_taxes">
