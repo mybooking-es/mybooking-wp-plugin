@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.6.1] 
+## [1.6.1]
+
+### Fixed
+
+- Added missing paid and pending amount in Summary page
+
+## [1.6.1]
 
 ### Added
 - Renting my reservation : Sign contract

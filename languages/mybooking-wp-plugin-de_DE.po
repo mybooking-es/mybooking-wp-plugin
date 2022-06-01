@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Understrap Mybooking Child\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2022-06-01 14:59+0000\n"
+"PO-Revision-Date: 2022-06-01 15:16+0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -1215,7 +1215,7 @@ msgstr "Reservierungszusammenfassung"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:351
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:163
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:149
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:353
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:373
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:150
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:371
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:185
@@ -1293,7 +1293,7 @@ msgstr "Abdeckung"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:661
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:549
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:943
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:949
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:726
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:241
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:275
@@ -1379,7 +1379,7 @@ msgstr "Vorname"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:655
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:543
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:937
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:943
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:720
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:235
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:269
@@ -1483,7 +1483,7 @@ msgstr "Gesamt"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:668
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:560
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:954
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:960
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:733
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:248
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:282
@@ -1499,7 +1499,7 @@ msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:678
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:571
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:965
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:971
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:743
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:258
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:292
@@ -1513,7 +1513,7 @@ msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:649
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:538
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:932
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:938
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:715
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:230
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:264
@@ -1683,7 +1683,7 @@ msgctxt "renting_item_content"
 msgid "See renting item"
 msgstr "Siehe Mietgegenstand"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:598
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:600
 msgctxt "renting_my_reservation"
 msgid "Additional drivers"
 msgstr "Zusätzliche Fahrer"
@@ -1700,10 +1700,10 @@ msgctxt "renting_my_reservation"
 msgid "City"
 msgstr "Stadt"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:716
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:718
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:734
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:736
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:722
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:724
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:740
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:742
 msgctxt "renting_my_reservation"
 msgid "Company"
 msgstr "Unternehmen"
@@ -1740,77 +1740,77 @@ msgctxt "renting_my_reservation"
 msgid "Date of Issue"
 msgstr "Ausgabedatum"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:784
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:786
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:788
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:850
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:852
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:854
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:790
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:792
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:794
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:856
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:858
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:860
 msgctxt "renting_my_reservation"
 msgid "Document ID"
 msgstr "Dokument Identifikation"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:550
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:626
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:681
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:628
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:684
 msgctxt "renting_my_reservation"
 msgid "Driving license date of issue"
 msgstr "Ausstellungsdatum des Führerscheins"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:570
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:647
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:702
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:649
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:705
 msgctxt "renting_my_reservation"
 msgid "Driving license expedition country"
 msgstr "Führerschein Expedition Land"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:542
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:544
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:618
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:620
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:673
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:675
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:622
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:676
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:678
 msgctxt "renting_my_reservation"
 msgid "Driving license number"
 msgstr "Führerscheinnummer"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:802
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:804
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:806
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:868
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:870
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:872
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:808
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:810
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:812
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:874
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:876
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:878
 msgctxt "renting_my_reservation"
 msgid "E-mail"
 msgstr "E-Mail-Adresse"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:726
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:728
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:744
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:746
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:732
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:734
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:750
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:752
 msgctxt "renting_my_reservation"
 msgid "Estimated Time"
 msgstr "Geschätzte Zeit"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:713
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:719
 msgctxt "renting_my_reservation"
 msgid "Flight"
 msgstr "Flug"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:721
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:723
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:739
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:741
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:727
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:729
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:745
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:747
 msgctxt "renting_my_reservation"
 msgid "Flight Number"
 msgstr "Flugnummer"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:811
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:813
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:815
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:877
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:879
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:881
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:817
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:819
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:821
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:883
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:885
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:887
 msgctxt "renting_my_reservation"
 msgid "Height (cm)"
 msgstr "Höhe (cm)"
@@ -1828,16 +1828,16 @@ msgstr "Haupttreiber"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:500
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:502
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:601
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:603
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:656
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:658
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:768
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:770
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:772
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:834
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:836
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:838
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:605
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:659
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:661
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:774
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:776
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:778
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:840
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:842
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:844
 msgctxt "renting_my_reservation"
 msgid "Name"
 msgstr "Vorname"
@@ -1853,22 +1853,22 @@ msgctxt "renting_my_reservation"
 msgid "Paid"
 msgstr "Bezahlt"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:761
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:767
 msgctxt "renting_my_reservation"
 msgid "Participant"
 msgstr "Teilnehmer"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:763
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:769
 msgctxt "renting_my_reservation"
 msgid "Participants"
 msgstr "Teilnehmer"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:764
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:770
 msgctxt "renting_my_reservation"
 msgid "Pax 1"
 msgstr "Pax 1"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:831
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:837
 msgctxt "renting_my_reservation"
 msgid "Pax 2"
 msgstr "Pax 2"
@@ -1878,12 +1878,12 @@ msgctxt "renting_my_reservation"
 msgid "Pending"
 msgstr "steht aus"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:794
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:796
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:798
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:860
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:862
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:864
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:800
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:802
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:804
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:866
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:868
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:870
 msgctxt "renting_my_reservation"
 msgid "Phone number"
 msgstr "Telefonnummer"
@@ -1903,7 +1903,7 @@ msgctxt "renting_my_reservation"
 msgid "Postal Code"
 msgstr "Postleitzahl"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:731
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:737
 msgctxt "renting_my_reservation"
 msgid "Return flight"
 msgstr "Rückflug"
@@ -1921,31 +1921,31 @@ msgstr "Zustand"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:506
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:508
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:608
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:610
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:663
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:665
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:776
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:778
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:780
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:842
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:844
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:846
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:612
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:666
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:668
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:782
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:784
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:786
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:848
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:850
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:852
 msgctxt "renting_my_reservation"
 msgid "Surname"
 msgstr "Nachname"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:905
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:911
 msgctxt "renting_my_reservation"
 msgid "Update"
 msgstr "Aktualisieren"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:821
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:823
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:825
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:887
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:889
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:891
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:827
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:829
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:831
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:893
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:895
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:897
 msgctxt "renting_my_reservation"
 msgid "Weight (kg)"
 msgstr "Gewicht (kg)"
@@ -2053,7 +2053,7 @@ msgstr "Tagespreis"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:492
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:172
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:364
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:384
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:381
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:179
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:150
@@ -2090,6 +2090,16 @@ msgstr "Reservierungs-ID"
 msgctxt "renting_summary"
 msgid "Supplements"
 msgstr "Ergänzungen"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:354
+msgctxt "renting_summary"
+msgid "Total paid"
+msgstr "Ganz bezahlt"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:363
+msgctxt "renting_summary"
+msgid "Total pending"
+msgstr "Insgesamt ausstehend"
 
 #. Description of the plugin
 msgid ""

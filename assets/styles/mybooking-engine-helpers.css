@@ -11,21 +11,25 @@
 .mb--bg-info {
   background-color: var(--mb-info-color)!important;
   color: var(--mb-negative-text-color)!important;
+  border-color: var(--mb-info-color)!important;
 }
 
 .mb--bg-success {
   background-color: var(--mb-success-color)!important;
   color: var(--mb-negative-text-color)!important;
+  border-color: var(--mb-success-color)!important;
 }
 
 .mb--bg-danger {
   background-color: var(--mb-danger-color)!important;
   color: var(--mb-negative-text-color)!important;
+  border-color: var(--mb-danger-color)!important;
 }
 
 .mb--bg-warning {
   background-color: var(--mb-warning-color)!important;
   color: var(--mb-negative-text-color)!important;
+  border-color: var(--mb-warning-color)!important;
 }
 
 /* BORDERS ********************************************************************/

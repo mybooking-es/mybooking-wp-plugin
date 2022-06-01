@@ -503,7 +503,7 @@ button.mb-button a:hover  {
 /* Alerts */
 .mb-alert {
   position: relative;
-  padding: .75rem 1.25rem;
+  padding: .75rem 1.25rem!important; /* Forces any element inside to get alert's padding */
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -520,24 +520,32 @@ button.mb-button a:hover  {
 .mb-alert.warning       { background-color: var(--mb-warning-color) }
 
 .mb-alert.info {
-  color: var(--mb-negative-text-color);
+  color: var(--mb-negative-text-color)!important; /* Forces any element inside to get contrast color */
 }
 
 .mb-alert.danger {
-  color: var(--mb-negative-text-color);
+  color: var(--mb-negative-text-color)!important; /* Forces any element inside to get contrast color */
 }
 
 .mb-alert.highlight {
   padding: 1.25rem;
   background-color: var(--mb-info-color);
-  color: var(--mb-negative-text-color);
+  color: var(--mb-negative-text-color)!important; /* Forces any element inside to get contrast color */
   font-size: 1.4em;
   text-align: center;
 }
 
 /* Text */
 .mb-text-danger {
-  color: var(--mb-danger-color);
+  color: var(--mb-danger-color)!important; /* Forces any element to get danger color */
+}
+
+.mb-text-success {
+  color: var(--mb-success-color)!important; /* Forces any element to get success color */
+}
+
+.mb-text-negative {
+  color: var(--mb-negative-text-color)!important; /* Forces any element to get negative color */
 }
 
 /* Cards */
