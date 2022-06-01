@@ -118,7 +118,8 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 == Changelog ==
 
 = 1.6.1 =
-* Fixed : Product Calendar: Rental location rental_location_code attribute do not show selector
+* Fixed: Product Calendar: Rental location rental_location_code attribute do not show selector
+* Fixed: Added missing paid and pending amount in Summary page
 * Added: Renting my reservation - Sign contract
 * Added: Renting my reservation - Additional drivers
 
