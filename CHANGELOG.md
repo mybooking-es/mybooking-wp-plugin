@@ -2,6 +2,10 @@
 
 ## [1.6.1] 
 
+### Added
+- Renting my reservation : Sign contract
+- Renting my reservation : Additional drivers
+
 ### Fixed
 
 - Renting Product Calendar: Configured rental location do not use selector

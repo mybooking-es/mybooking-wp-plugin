@@ -119,6 +119,8 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 = 1.6.1 =
 * Fixed : Product Calendar: Rental location rental_location_code attribute do not show selector
+* Added: Renting my reservation - Sign contract
+* Added: Renting my reservation - Additional drivers
 
 = 1.6.0 =
 * Product Calendar: Show only one month
@@ -377,7 +379,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 == Upgrade Notice ==
 
 = 1.6.1 =
-* Fixed : Product Calendar: Rental location rental_location_code attribute do not show selector
+* Fixed : Product Calendar: Rental location rental_location_code attribute do not show selector + Renting my reservation : Sign contract
 
 = 1.6.0 =
 * Fixed styles, activity summary and renting product calendar improvement
