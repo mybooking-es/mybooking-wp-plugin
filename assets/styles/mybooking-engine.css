@@ -25,7 +25,7 @@
   --mb-negative-text-color: #FFF;
 
   /* Forms */
-  --mb-form-field-height:  inherit;
+  --mb-form-field-height:  38px;
   --mb-form-field-border-color:  var(--mb-border-color);
   --mb-form-field-background: white;
 

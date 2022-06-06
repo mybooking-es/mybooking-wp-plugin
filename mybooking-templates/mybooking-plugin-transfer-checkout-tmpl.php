@@ -100,7 +100,7 @@
         <% } %>
 
         <!-- // Seats -->
-        
+
         <span class="mybooking-summary_seats">
           <span class="mybooking-summary_seat-item">
             <?php echo esc_html_x( 'Adults: ', 'transfer_checkout', 'mybooking-wp-plugin') ?>
@@ -315,6 +315,7 @@
       <input type="text" class="mb-form-control" name="customer_mobile_phone" id="customer_mobile_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
     </div>
   </div>
+  <br>
 
   <% if (configuration.transferFormFillBillingAddress) { %>
 
@@ -353,7 +354,7 @@
           placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*")%>"  maxlength="10" required>
       </div>
     </div>
-  <% } %> 
+  <% } %>
 
 
   <% if (configuration.transfer_origin_destination_detailed_info_mode === 'only_address') { %>
@@ -566,6 +567,7 @@
 
   <!-- // Additional info -->
 
+  <br>
   <h2 class="mb-section_title complete-section-title">
     <?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?>
   </h2>

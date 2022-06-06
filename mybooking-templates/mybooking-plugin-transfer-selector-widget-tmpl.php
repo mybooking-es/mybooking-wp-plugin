@@ -89,7 +89,7 @@
 
   <% if (!configuration.transfer_allow_select_return_origin_destination) { %>
 		<!-- // Date and time -->
-	  <div id="return_block" class="mybooking-selector_date" style="display:none">
+	  <div id="return_block" class="mybooking-selector_date mybooking-selector_transfers-group" style="display:none">
 
 			<!-- // Return date -->
 	    <div class="mybooking-selector_cal">
@@ -113,8 +113,8 @@
 				<select class="mb-form-control" name="return_time" id="return_time"></select>
 			</div>
 	  </div>
-  <% } %>
 
+  <% } %>
 
 </div>
 
