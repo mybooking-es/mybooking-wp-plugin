@@ -219,7 +219,6 @@ div.mybooking-product {
 
 .mybooking-product_image-container {
   width: 100%;
-  /* height: var(--mb-product-image-height); */
   display: flex;
   justify-content: center;
 }
@@ -239,9 +238,6 @@ div.mybooking-product {
   width: var(--mb-product-image-width-img);
   object-fit: cover;
   object-position: center center;
-  /* position: absolute;
-  top: 50%;
-  transform: translateY(-50%); */
 }
 
 .mybooking-product_info-button {

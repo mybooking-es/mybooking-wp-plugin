@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2]
+
+### Fixed
+
+- Minor fixes on select2 selector transfer fields
+- Desgin adjustements on list view cards
+
 ## [1.6.1]
 
 ### Added
