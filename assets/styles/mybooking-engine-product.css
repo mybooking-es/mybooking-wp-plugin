@@ -401,10 +401,25 @@ div.mybooking-product {
 }
 
 .mybooking-product_short-description {
+  position: relative;
   font-weight: 400;
   font-size: 1em;
   line-height: 1.3;
   margin-top: 0.2rem;
+  height: calc(var(--mb-product-body-height) - 20px);
+  overflow: hidden;
+}
+
+.mybooking-product_short-description:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: calc(var(--mb-product-body-height) - 40px);
+  clear: both;
+  box-shadow: inset 0 -1.5rem 3rem rgba(255,255,255,0.9)
 }
 
 .entry-content h3.mybooking-product_short-description {
