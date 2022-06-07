@@ -29,7 +29,7 @@
             <?php } ?>
           </div>
         </div>
-      </div>  
+      </div>
       <div class="mb-row">
         <div class="mb-col-md-8">
 
@@ -37,11 +37,11 @@
           <?php if (!empty( $args->photos ) && count( $args->photos ) > 1) { ?>
 
             <div class="mybooking-product-carousel-inner">
-              <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>  
+              <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>
                 <div class="mybooking-carousel-item">
                   <img class="d-block w-100" src="<?php echo esc_url ( $mybooking_photo->full_photo_path ) ?>" alt="<?php echo esc_attr( $args->name )?>">
                 </div>
-              <?php } ?>  
+              <?php } ?>
             </div>
 
           <?php } else if (count($args->photos) == 1) { ?>
@@ -79,7 +79,8 @@
         </div>
 
         <div class="mb-col-md-4">
-          <?php 
+          <h2><?php echo _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></h2>
+          <?php
              $widget_data = array( 'code' => $args->code );
              if ( isset( $args->sales_channel_code ) ) {
                $widget_data['sales_channel_code'] = $args->sales_channel_code;

@@ -25,7 +25,7 @@
   --mb-negative-text-color: #FFF;
 
   /* Forms */
-  --mb-form-field-height:  38px;
+  --mb-form-field-height:  42px;
   --mb-form-field-border-color:  var(--mb-border-color);
   --mb-form-field-background: white;
 
@@ -358,6 +358,9 @@
     align-items: flex-end;
     gap: 1rem;
     margin: 0;
+  }
+  .mb-form-row.js-mybooking-product_calendar-time-hours {
+    flex-direction: column;
   }
   .mb-form-row.mb-custom-date-form {
     gap: 0.5rem;

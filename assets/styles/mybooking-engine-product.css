@@ -616,10 +616,11 @@ div.mybooking-product {
   list-style: none;
   margin: 0;
   padding: 0;
+  border-top: 1px solid var(--mb-border-color);
 }
 
 .mybooking-product_calendar-step-list .mybooking-product_calendar-step {
-  margin: 1rem 0 1rem 2rem;
+  margin: 3rem 0 1rem 2.5rem;
   font-size: 1.1em;
   font-weight: 800;
   counter-increment: steps-counter;
@@ -645,7 +646,8 @@ div.mybooking-product {
 }
 
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table {
-  border:  1px solid;
+  border:  1px solid var(--mb-border-color);
+  border-collapse: collapse!important;
 }
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table td,
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table th {
@@ -673,7 +675,6 @@ h2.mybooking-product_calendar-date-range {
 .mybooking-product_calendar-date {
   padding: 0;
   font-size: 1em;
-  /*min-width: 42px;*/
 }
 
 .mybooking-product_calendar-date span {
@@ -682,19 +683,14 @@ h2.mybooking-product_calendar-date-range {
 
 .mybooking-product_calendar-price {
   opacity:0.9;
-  font-size: 0.5em;
-  margin-top: 0.7em;
+  font-size: 0.7em;
+  font-weight: bolder!important;
+  margin-top: 0.5em;
 }
 
 .mybooking-product_calendar-mindays {
-  opacity:  0.6;
-  font-size:  0.55em;
-  margin-top:  0.5em;
-  padding-top: 0.1em;
-}
-.mybooking-product_calendar-mindays-data {
-  background: #555555;
-  color: #ffffff;
+  font-size:  0.7em;
+  margin-top:  0.2em;
 }
 
 .mybooking-product_calendar-check-hourly-container {
@@ -746,23 +742,29 @@ input.mybooking-product_calendar-not_available_turn + span.mybooking-product_cal
 
 
 /** CAROUSEL **/
-.mybooking-carousel-inner button.slick-prev,
-button.slick-next {
+.slick-prev,
+.slick-next {
   border:  none;
   z-index:  1;
   height:  32px;
   background:  transparent !important;
 }
-.mybooking-carousel-inner button.slick-prev {
-  left:  -40px;
+
+.slick-prev:before,
+.slick-next:before {
+  color: var(--mb-negative-text-color, white)!important;
 }
-.mybooking-carousel-inner button.slick-next {
-  right: -42px;
+
+.slick-prev {
+  left: 20px!important;
 }
-.mybooking-carousel-item img{
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 600px;
+
+.slick-next {
+  right: 20px!important;
+}
+
+.mybooking-carousel-item img {
+  border-radius: var(--mb-border-radius);
 }
 
 .mybooking-modal_product-actions {

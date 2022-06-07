@@ -493,6 +493,14 @@
 
 .form-reservation-error {
   color: #EC8396;
+  font-weight: bolder;
+  margin-top: -2.9rem;
+}
+
+.mybooking select.form-reservation-error,
+.mybooking input[type=*].form-reservation-error {
+  background-color: #EC8396!important;
+  color: white!important;
 }
 
 
