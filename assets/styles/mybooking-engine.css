@@ -150,6 +150,10 @@
   clear: both;
 }
 
+.mb-row-flex {
+  display: flex;
+} /* Fixes row overflow in certain themes */
+
 .mb-row:after {
   content: "";
   display: table;

@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.6.4] - 2022.06.08
+
+### Fixed
+
+- Fixes row overflow in certain themes like Bridges
+
 ## [1.6.3] - 2022.06.07
 
 ### Fixed
