@@ -146,8 +146,14 @@
 /** FLOATED GRID **/
 
 .mb-row {
+  display: flex;
   margin: 0 auto;
   clear: both;
+}
+
+.mb-row.invert {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .mb-row-flex {
@@ -156,7 +162,7 @@
 
 .mb-row:after {
   content: "";
-  display: table;
+  display: block;
   clear: both;
 }
 
@@ -450,6 +456,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 1rem 2rem;
   line-height: 1.1;
   text-decoration: none!important;
   border-radius: var(--mb-border-radius);
@@ -475,6 +482,7 @@ button.mb-button a:hover  {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  padding: 0;
 }
 
 .mb-button.link {

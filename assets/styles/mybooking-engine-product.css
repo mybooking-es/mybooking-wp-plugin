@@ -226,6 +226,7 @@ div.mybooking-product {
 
 .mybooking-product_image {
   border-radius: 0!important;
+  width: 100%;
 }
 
 .mybooking-product_info-block .mybooking-product_image {
