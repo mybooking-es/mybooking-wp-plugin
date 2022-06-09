@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.6] - 2022.06.09
+
+### Fixed
+
+- Update renting reservation form on update
+
+
 ## [1.6.5] - 2022.06.09
 
 ### Fixed
