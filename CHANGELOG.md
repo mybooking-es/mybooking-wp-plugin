@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.6.5] - 2022.06.09
+
+### Fixed
+
+- Telephone prefix : Use company country code
+
 ## [1.6.4] - 2022.06.09
 
 ### Fixed

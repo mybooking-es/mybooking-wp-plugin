@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2022-06-09 03:40+0000\n"
+"PO-Revision-Date: 2022-06-09 05:46+0000\n"
 "Last-Translator: \n"
-"Language-Team: Catalan\n"
+"Language-Team: Català\n"
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.5.5; wp-5.8.2"
+"X-Loco-Version: 2.6.2; wp-6.0"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:70
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:47
@@ -2001,7 +2001,7 @@ msgstr "Trieu llocs de lliurament i devolució"
 #| msgid "Previous"
 msgctxt "renting_product_detail"
 msgid "Delivery"
-msgstr "AnteriorLliurament"
+msgstr "Lliurament"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-routes-product.php:27
 #, php-format

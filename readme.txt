@@ -117,6 +117,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.6.5 =
+* Fixed: Customer telephone prefix : Use company custom code
+
 = 1.6.4 =
 * Fixed: Sign contract integration
 
@@ -387,6 +390,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.6.5 =
+* Fixed: Customer telephone prefix : Use company custom code
 
 = 1.6.4 =
 * Fixed: Sign contract integration
