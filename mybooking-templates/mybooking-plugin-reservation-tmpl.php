@@ -405,11 +405,9 @@
             <div class="mb-form-row">
               <div class="mb-form-group mb-col-md-12">
                 <!-- // Electronic signature --> 
-                <a href="<%=booking.electronic_signature_url%>" target="blank">
-                <button class="mb-button block">
-                     <?php echo esc_html_x( 'Sign contract', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-                  </button>
-                </a>
+                <button id="js_mb_electronic_signature_link" class="mb-button block">
+                  <?php echo esc_html_x( 'Sign contract', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+                </button>
               </div>
             </div>
 
@@ -1004,3 +1002,19 @@
   </form>
 
 </script>
+
+<!-- CONTRACT BLOCK ----------------------------------------------------------->
+
+<script type="text/tmpl" id="script_contract_required_data">
+
+  <div class="mb-alert danger" role="alert">
+    <?php echo esc_html_x( 'The contract can not be signed. Please, check the errors.', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+  </div>
+
+  <ul>
+  <% for (property in contract_errors) { %>
+    <li><%= contract_errors[property] %></li>
+  <% } %>
+  </ul>
+
+</script>  
