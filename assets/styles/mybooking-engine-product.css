@@ -120,7 +120,7 @@
 
   .mybooking-product_list .mybooking-product_characteristics {
     width: var(--mb-product-list-keys-width);
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .mybooking-product_list .mybooking-product_characteristics-img {
@@ -130,7 +130,7 @@
   .mybooking-product_list .mybooking-product_footer {
     height: var(--mb-product-list-footer-height);
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
   }
 
@@ -204,6 +204,7 @@ div.mybooking-product {
   border: 1px solid var(--mb-border-color);
   border-radius: var(--mb-border-radius);
   background-color: var(--mb-product-background);
+  overflow: hidden;
 }
 
 .mybooking-product_block:first-of-type {
@@ -219,13 +220,13 @@ div.mybooking-product {
 
 .mybooking-product_image-container {
   width: 100%;
-  height: var(--mb-product-image-height);
   display: flex;
   justify-content: center;
 }
 
 .mybooking-product_image {
   border-radius: 0!important;
+  width: 100%;
 }
 
 .mybooking-product_info-block .mybooking-product_image {
@@ -239,9 +240,6 @@ div.mybooking-product {
   width: var(--mb-product-image-width-img);
   object-fit: cover;
   object-position: center center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .mybooking-product_info-button {
@@ -388,6 +386,7 @@ div.mybooking-product {
 
 .entry-content h2.mybooking-product_name {
   margin: 0;
+  font-size: 1.3em;
 }
 
 .entry-content h2.mybooking-product_name::before {
@@ -404,10 +403,25 @@ div.mybooking-product {
 }
 
 .mybooking-product_short-description {
+  position: relative;
   font-weight: 400;
   font-size: 1em;
   line-height: 1.3;
   margin-top: 0.2rem;
+  height: calc(var(--mb-product-body-height) - 20px);
+  overflow: hidden;
+}
+
+.mybooking-product_short-description:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: calc(var(--mb-product-body-height) - 40px);
+  clear: both;
+  box-shadow: inset -1.5rem -1.5rem 3rem rgba(255,255,255,0.9)
 }
 
 .entry-content h3.mybooking-product_short-description {
@@ -604,10 +618,11 @@ div.mybooking-product {
   list-style: none;
   margin: 0;
   padding: 0;
+  border-top: 1px solid var(--mb-border-color);
 }
 
 .mybooking-product_calendar-step-list .mybooking-product_calendar-step {
-  margin: 1rem 0 1rem 2rem;
+  margin: 3rem 0 1rem 2.5rem;
   font-size: 1.1em;
   font-weight: 800;
   counter-increment: steps-counter;
@@ -633,7 +648,8 @@ div.mybooking-product {
 }
 
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table {
-  border:  1px solid;
+  border:  1px solid var(--mb-border-color);
+  border-collapse: collapse!important;
 }
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table td,
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table th {
@@ -652,7 +668,7 @@ div.mybooking-product {
 }
 
 h2.mybooking-product_calendar-date-range {
-  font-size:  1em; 
+  font-size:  1em;
   border: 1px solid var(--global-gray-400);
   padding: 5px;
   margin-top: 0.2em;
@@ -661,7 +677,6 @@ h2.mybooking-product_calendar-date-range {
 .mybooking-product_calendar-date {
   padding: 0;
   font-size: 1em;
-  /*min-width: 42px;*/
 }
 
 .mybooking-product_calendar-date span {
@@ -670,19 +685,14 @@ h2.mybooking-product_calendar-date-range {
 
 .mybooking-product_calendar-price {
   opacity:0.9;
-  font-size: 0.5em;
-  margin-top: 0.7em;
+  font-size: 0.7em;
+  font-weight: bolder!important;
+  margin-top: 0.5em;
 }
 
 .mybooking-product_calendar-mindays {
-  opacity:  0.6;
-  font-size:  0.55em;
-  margin-top:  0.5em;
-  padding-top: 0.1em;
-}
-.mybooking-product_calendar-mindays-data {
-  background: #555555;
-  color: #ffffff;
+  font-size:  0.7em;
+  margin-top:  0.2em;
 }
 
 .mybooking-product_calendar-check-hourly-container {
@@ -734,23 +744,29 @@ input.mybooking-product_calendar-not_available_turn + span.mybooking-product_cal
 
 
 /** CAROUSEL **/
-.mybooking-carousel-inner button.slick-prev,
-button.slick-next {
+.slick-prev,
+.slick-next {
   border:  none;
   z-index:  1;
   height:  32px;
   background:  transparent !important;
 }
-.mybooking-carousel-inner button.slick-prev {
-  left:  -40px;
+
+.slick-prev:before,
+.slick-next:before {
+  color: var(--mb-negative-text-color, white)!important;
 }
-.mybooking-carousel-inner button.slick-next {
-  right: -42px;
+
+.slick-prev {
+  left: 20px!important;
 }
-.mybooking-carousel-item img{
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 600px;
+
+.slick-next {
+  right: 20px!important;
+}
+
+.mybooking-carousel-item img {
+  border-radius: var(--mb-border-radius);
 }
 
 .mybooking-modal_product-actions {

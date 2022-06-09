@@ -19,13 +19,13 @@
   --mb-light-color:  #DDDDDD;
 
   --mb-border-color: #BBB;
-  --mb-border-radius: 0;
+  --mb-border-radius: 5px;
   --mb-background-color: #EEE;
   --mb-dark-background-color: #424242;
   --mb-negative-text-color: #FFF;
 
   /* Forms */
-  --mb-form-field-height:  inherit;
+  --mb-form-field-height:  42px;
   --mb-form-field-border-color:  var(--mb-border-color);
   --mb-form-field-background: white;
 
@@ -54,9 +54,9 @@
   --mb-product-btn-height: 50px;
 
   /* Product list */
-  --mb-product-list-left-width: 40%;
-  --mb-product-list-right-width: 60%;
-  --mb-product-list-image-height: 375px;
+  --mb-product-list-left-width: 60%;
+  --mb-product-list-right-width: 40%;
+  --mb-product-list-image-height: 100%;
   --mb-product-list-header-height: 70px;
   --mb-product-list-body-height: 190px;
   --mb-product-list-footer-height: 76px;
@@ -146,13 +146,23 @@
 /** FLOATED GRID **/
 
 .mb-row {
+  display: flex;
   margin: 0 auto;
   clear: both;
 }
 
+.mb-row.invert {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.mb-row-flex {
+  display: flex;
+} /* Fixes row overflow in certain themes */
+
 .mb-row:after {
   content: "";
-  display: table;
+  display: block;
   clear: both;
 }
 
@@ -359,6 +369,9 @@
     gap: 1rem;
     margin: 0;
   }
+  .mb-form-row.js-mybooking-product_calendar-time-hours {
+    flex-direction: column;
+  }
   .mb-form-row.mb-custom-date-form {
     gap: 0.5rem;
   }
@@ -443,6 +456,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 1rem 2rem;
   line-height: 1.1;
   text-decoration: none!important;
   border-radius: var(--mb-border-radius);
@@ -468,6 +482,7 @@ button.mb-button a:hover  {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  padding: 0;
 }
 
 .mb-button.link {

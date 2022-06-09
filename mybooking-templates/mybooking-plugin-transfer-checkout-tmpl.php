@@ -100,7 +100,7 @@
         <% } %>
 
         <!-- // Seats -->
-        
+
         <span class="mybooking-summary_seats">
           <span class="mybooking-summary_seat-item">
             <?php echo esc_html_x( 'Adults: ', 'transfer_checkout', 'mybooking-wp-plugin') ?>
@@ -315,6 +315,7 @@
       <input type="text" class="mb-form-control" name="customer_mobile_phone" id="customer_mobile_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
     </div>
   </div>
+  <br>
 
   <% if (configuration.transferFormFillBillingAddress) { %>
 
@@ -353,7 +354,7 @@
           placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'transfer_checkout', 'mybooking-wp-plugin') ?>:*")%>"  maxlength="10" required>
       </div>
     </div>
-  <% } %> 
+  <% } %>
 
 
   <% if (configuration.transfer_origin_destination_detailed_info_mode === 'only_address') { %>
@@ -429,6 +430,7 @@
         <?php echo esc_html_x( 'Name of Hotel / Complex / Villa and address', 'transfer_checkout', 'mybooking-wp-plugin') ?>*
       </label>
       <input type="text" class="mb-form-control" name="detailed_origin_address" id="detailed_origin_address" rows="5" placeholder="<?php echo esc_attr_x( 'Name of Hotel / Complex / Villa and address', 'transfer_checkout', 'mybooking-wp-plugin') ?>">
+      <br>
     </div>
 
   <% } else if (configuration.transfer_origin_destination_detailed_info_mode === 'trip') { %>
@@ -453,6 +455,7 @@
               <?php echo esc_html_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>*
             </label>
             <input type="text" class="mb-form-control" name="detailed_origin_address" id="detailed_origin_address" rows="5" placeholder="<?php echo esc_attr_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>">
+            <br><br>
           </div>
 
         <% } else { %>
@@ -546,6 +549,7 @@
             <div class="mb-form-group">
               <label for="detailed_return_destination_address"><?php echo esc_html_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>*</label>
               <input type="text" class="mb-form-control" name="detailed_return_destination_address" id="detailed_return_destination_address" rows="5" placeholder="<?php echo esc_attr_x( 'Address or hotel name', 'transfer_checkout', 'mybooking-wp-plugin') ?>">
+              <br><br>
             </div>
 
           <% } else { %>
@@ -566,6 +570,7 @@
 
   <!-- // Additional info -->
 
+  <br>
   <h2 class="mb-section_title complete-section-title">
     <?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?>
   </h2>

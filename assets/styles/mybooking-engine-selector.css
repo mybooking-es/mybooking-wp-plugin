@@ -162,7 +162,9 @@
   padding: 0.5rem;
 }
 
-.mybooking-selector_type .mb-custom-label:hover {
+.mybooking-selector_type .mb-custom-label:hover,
+.mybooking-selector_type .mb-custom-label:focus,
+.mybooking-selector_type .mb-custom-label:active {
   color: var(--mb-info-color);
 }
 

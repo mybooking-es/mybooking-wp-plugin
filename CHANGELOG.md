@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.6.4] - 2022.06.08
+
+### Fixed
+
+- Fixes row overflow in certain themes like Bridges
+
+## [1.6.3] - 2022.06.07
+
+### Fixed
+
+- Error messages on product calendars
+- Double line in calendar tables
+- Text overflow on activity catalog cards
+- Title size on activity catalog cards
+- Image displacement on activity catalog cards
+- Carousel images size on activity pages
+
+## Enhanced
+- Title for product calendars
+- More space on calendar steps
+- Carousel arrows position and color
+- Default border radius on 3px
+
+## [1.6.2] - 2022.06.06
+
+### Fixed
+
+- Minor fixes on select2 selector transfer fields
+- Desgin adjustements on list view cards
+
 ## [1.6.1]
 
 ### Added

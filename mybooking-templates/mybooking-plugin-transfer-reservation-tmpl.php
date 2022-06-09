@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  <div class="mb-row">
+  <div class="mb-row-flex">
     <div class="mb-col-md-8">
 
       <!-- // Reservation status message -->
