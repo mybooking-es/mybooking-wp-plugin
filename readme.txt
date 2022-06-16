@@ -117,6 +117,21 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.6.6 =
+* Fixed: Renting update reservation form on update
+
+= 1.6.5 =
+* Fixed: Customer telephone prefix : Use company custom code
+
+= 1.6.4 =
+* Fixed: Sign contract integration
+
+= 1.6.3 =
+* Fixed+Enhanced: Styles and themes integration
+
+= 1.6.2 =
+* Fixes: Select2 selector
+
 = 1.6.1 =
 * Fixed: Product Calendar: Rental location rental_location_code attribute do not show selector
 * Fixed: Added missing paid and pending amount in Summary page
@@ -378,6 +393,21 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.6.6 =
+* Fixed: Renting update reservation form on update
+
+= 1.6.5 =
+* Fixed: Customer telephone prefix : Use company custom code
+
+= 1.6.4 =
+* Fixed: Sign contract integration
+
+= 1.6.3 =
+* Fixed+Enhanced: Styles and themes integration
+
+= 1.6.2 =
+* Fixes: Select2 selector
 
 = 1.6.1 =
 * Fixed : Product Calendar: Rental location rental_location_code attribute do not show selector + Renting my reservation : Sign contract

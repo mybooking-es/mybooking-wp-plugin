@@ -1104,3 +1104,15 @@ button:not(:hover):not(:active):not(.has-background).slick-next.slick-arrow,
   display: flex;
   align-items: center;
 }
+
+/** Date **/
+.custom-date-form .custom-date-item {
+  display: inline-block;
+  max-width:  32.5%;
+}
+
+/** Select fields in complete / my reservation **/
+label.full-width select.mb-form-control {
+  position: relative;
+  top: 0.5rem;
+}

@@ -105,6 +105,11 @@
   white-space: nowrap!important;
 }
 
+/** Compatibility with Twenty Twenty-Two **/
+.mybooking-selector form input.mb-form-control {
+  padding:  0 0 0 5px;
+}
+
 /* Buttons */
 
 .mybooking-selector_vertical .mybooking-selector_button,

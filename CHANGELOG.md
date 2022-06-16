@@ -1,10 +1,24 @@
 # Changelog
 
-## [1.6.4] - 2022.06.08
+## [1.6.6] - 2022.06.09
+
+### Fixed
+
+- Update renting reservation form on update
+
+
+## [1.6.5] - 2022.06.09
+
+### Fixed
+
+- Telephone prefix : Use company country code
+
+## [1.6.4] - 2022.06.09
 
 ### Fixed
 
 - Fixes row overflow in certain themes like Bridges
+- Sign contract
 
 ## [1.6.3] - 2022.06.07
 
