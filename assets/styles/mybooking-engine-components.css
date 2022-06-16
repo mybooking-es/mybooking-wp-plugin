@@ -848,11 +848,7 @@ button.mybooking-popup_close:hover {
 
 /** PRODUCT SLIDER **/
 
-.mybooking-slider_item {
-  border: 1px solid #CCC;
-  padding: 2rem;
-  margin: 0 0 1rem 0;
-}
+.mybooking-slider_item {}
 
 .mybooking-slider_product-image {
   display: flex;

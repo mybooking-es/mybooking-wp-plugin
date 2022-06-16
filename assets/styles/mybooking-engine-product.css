@@ -518,6 +518,9 @@ div.mybooking-product {
 .mybooking-product_characteristics-key {
   font-size: 13px;
   font-weight: 700;
+  max-width: 40px;
+  overflow: hidden;
+  height: 1rem;
 }
 
 /* Product footer */
