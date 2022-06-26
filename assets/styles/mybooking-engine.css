@@ -320,7 +320,8 @@ form.mybooking select,
     background-color: transparent !important;
     background-image: url(images/arrow.svg);
     background-repeat: no-repeat;
-    background-position-x: right 4px;
+    background-position-x: right;
+    background-position-y: 16px;
     background-size: 16px;
 }
 
