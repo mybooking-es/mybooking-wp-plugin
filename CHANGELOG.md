@@ -1,65 +1,33 @@
 # Changelog
 
-## [1.6.7] - 2022.06.26
+## [1.7.0] - 2022.06.26
 
-### Fixed
+### Added
 
-- CSS Fixes
-- Complete reservation payment on delivery
-
-## [1.6.6] - 2022.06.09
-
-### Fixed
-
-- Update renting reservation form on update
-
-
-## [1.6.5] - 2022.06.09
-
-### Fixed
-
-- Telephone prefix : Use company country code
-
-## [1.6.4] - 2022.06.09
-
-### Fixed
-
-- Fixes row overflow in certain themes like Bridges
-- Sign contract
-
-## [1.6.3] - 2022.06.07
-
-### Fixed
-
-- Error messages on product calendars
-- Double line in calendar tables
-- Text overflow on activity catalog cards
-- Title size on activity catalog cards
-- Image displacement on activity catalog cards
-- Carousel images size on activity pages
-
-## Enhanced
 - Title for product calendars
 - More space on calendar steps
 - Carousel arrows position and color
 - Default border radius on 3px
-
-## [1.6.2] - 2022.06.06
-
-### Fixed
-
-- Minor fixes on select2 selector transfer fields
-- Desgin adjustements on list view cards
-
-## [1.6.1]
-
-### Added
 - Renting my reservation : Sign contract
 - Renting my reservation : Additional drivers
 - Added missing paid and pending amount in Summary page
 
 ### Fixed
 
+- CSS Fixes
+- Complete reservation payment on delivery
+- Update renting reservation form on update
+- Telephone prefix : Use company country code
+- Fixes row overflow in certain themes like Bridges
+- Sign contract
+- Error messages on product calendars
+- Double line in calendar tables
+- Text overflow on activity catalog cards
+- Title size on activity catalog cards
+- Image displacement on activity catalog cards
+- Carousel images size on activity pages
+- Minor fixes on select2 selector transfer fields
+- Desgin adjustements on list view cards
 - Renting Product Calendar: Configured rental location do not use selector
 
 ## [1.6.0] - 2022.05.26
