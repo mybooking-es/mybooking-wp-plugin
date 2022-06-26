@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.7] - 2022.06.26
+
+### Fixed
+
+- CSS Fixes
+- Complete reservation payment on delivery
+
 ## [1.6.6] - 2022.06.09
 
 ### Fixed

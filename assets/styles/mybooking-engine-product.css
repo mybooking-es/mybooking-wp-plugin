@@ -263,7 +263,8 @@ div.mybooking-product {
   width: 100%;
   left: 0;
   height: 40px;
-  top: calc( var(--mb-product-image-height) - 40px );
+  bottom: 0;
+/*  top: calc( var(--mb-product-image-height) - 40px ); */
   background-color: var(--mb-product-custom-message-bg);
   padding: 0.5rem;
   color: var(--mb-product-custom-message-color);
