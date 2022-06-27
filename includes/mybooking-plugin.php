@@ -503,6 +503,7 @@
           'mybooking_summary_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_summary_page),
           'mybooking_terms_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_terms_page),
           'mybooking_detail_pages' => $registry->mybooking_rent_plugin_detail_pages,
+          'mybooking_detail_pages_url_prefix' => $registry->mybooking_rent_plugin_navigation_products_url,
           'mybooking_selector_in_process' => $registry->mybooking_rent_plugin_selector_in_process,
           // Activities
           'mybooking_activities_shopping_cart_page' => mybooking_engine_translated_slug($registry->mybooking_activities_plugin_shopping_cart_page),
@@ -1148,10 +1149,17 @@
      */
     public function wp_product_listing_shortcode($atts = [], $content = null, $tag = '') {
 
+      extract( shortcode_atts( array('use_renting_detail_page' => ''), $atts ) );
+
       // Get the selector to apply in choose product
       $registry = Mybooking_Registry::getInstance();
       $data = array();
       $data['selector_in_process'] = $registry->mybooking_rent_plugin_selector_in_process;
+
+      // Get the shortcode attributes
+      if ( $use_renting_detail_page != '' ) {
+        $data['use_renting_detail_page'] = $use_renting_detail_page;
+      }
 
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-choose-product.php', $data);
