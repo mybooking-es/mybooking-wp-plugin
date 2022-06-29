@@ -571,7 +571,7 @@
        <% } %>
 
        <% if (sales_process.can_pay_on_delivery) { %>
-         <label class="mybooking-payment_option-label" for="payments_paypal_standard">
+         <label class="mybooking-payment_option-label" for="complete_action_pay_on_delivery">
            <input class="mybooking-payment_option-input" type="radio" id="complete_action_pay_on_delivery" name="complete_action" value="pay_on_delivery" class="complete_action">
            <?php echo esc_html_x( 'Book now and pay on arrival', 'renting_complete', 'mybooking-wp-plugin' ) ?>
          </label>

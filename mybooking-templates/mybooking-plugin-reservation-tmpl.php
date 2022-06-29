@@ -591,8 +591,8 @@
             </div>
           </div>
 
-          <% if (configuration.renting_form_fill_data_additional_driver_1 || 
-               configuration.renting_form_fill_data_additional_driver_2) { %>
+          <% if (configuration.rentingFormFillDataAdditionalDriver1 || 
+                 configuration.rentingFormFillDataAdditionalDriver2) { %>
             <!-- // Additional drivers information -->
 
             <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x('Additional drivers', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
@@ -650,7 +650,7 @@
                 </select>
               </div>
             </div>
-            <% if (configuration.renting_form_fill_data_additional_driver_2) { %>
+            <% if (configuration.rentingFormFillDataAdditionalDriver2) { %>
               <hr>
               <div class="mb-form-row">
                 <div class="mb-form-group mb-col-md-6">

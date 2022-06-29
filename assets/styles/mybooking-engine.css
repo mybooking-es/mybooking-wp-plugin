@@ -311,6 +311,20 @@
   background-color: var(--mb-form-field-background);
 }
 
+/* IOS appearance standar */
+form.mybooking select, 
+.mybooking-selector form.mybooking-selector_form select.mb-form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent !important;
+    background-image: url(images/arrow.svg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 16px;
+    background-size: 16px;
+}
+
 .mybooking textarea {
   height: 10rem;
 }

@@ -10,6 +10,8 @@
         var summaryUrl = mybooking_init_vars.mybooking_summary_page;
         var termsUrl = mybooking_init_vars.mybooking_terms_page;
         var selectorInProcess = mybooking_init_vars.mybooking_selector_in_process;
+        var rentingDetailPages = mybooking_init_vars.mybooking_detail_pages;
+        var rentingDetailPageUrlPrefix = mybooking_init_vars.mybooking_detail_pages_url_prefix;
         // Activities
         var shoppingCartUrl = mybooking_init_vars.mybooking_activities_shopping_cart_page;
         var orderUrl = mybooking_init_vars.mybooking_activities_summary_page;  
@@ -80,6 +82,17 @@
         function getSelectorInProcess() {
           return selectorInProcess;
         }
+        function getRentingDetailPages() {
+          if (rentingDetailPages === '1') {
+            return true;
+          }
+          else {
+            return false;
+          }
+        } 
+        function getRentingDetailPageUrlPrefix() {
+          return rentingDetailPageUrlPrefix;
+        }
         // -- Activities
         function getShoppingCartUrl() {
           return shoppingCartUrl;
@@ -143,6 +156,8 @@
           summaryUrl: getSummaryUrl,
           termsUrl: getTermsUrl,
           selectorInProcess: getSelectorInProcess,
+          rentingDetailPages: getRentingDetailPages,
+          rentingDetailPageUrlPrefix: getRentingDetailPageUrlPrefix,
           // Activities
           shoppingCartUrl: getShoppingCartUrl,
           orderUrl: getOrderUrl,
