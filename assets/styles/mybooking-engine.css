@@ -48,6 +48,7 @@
   /* Product grid */
   --mb-product-image-height: 260px;
   --mb-product-image-width-img: 100%;
+  --mb-product-image-fit: contain; 
   --mb-product-header-height: 75px;
   --mb-product-body-height: 120px;
   --mb-product-footer-height: 76px;
@@ -312,7 +313,7 @@
 }
 
 /* IOS appearance standar */
-form.mybooking select, 
+form.mybooking select,
 .mybooking-selector form.mybooking-selector_form select.mb-form-control {
     appearance: none;
     -webkit-appearance: none;
