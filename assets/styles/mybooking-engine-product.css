@@ -65,7 +65,7 @@
     flex-direction: column;
     align-items: center;
     border-right: 1px solid var(--mb-border-color);
-    border-radius: var(--mb-border-radius);
+    border-radius: var(--mb-border-radius) 0 0 var(--mb-border-radius);
     overflow: hidden;
   }
 

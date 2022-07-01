@@ -48,15 +48,15 @@
   /* Product grid */
   --mb-product-image-height: 260px;
   --mb-product-image-width-img: 100%;
-  --mb-product-image-fit: contain; 
+  --mb-product-image-fit: contain;
   --mb-product-header-height: 75px;
   --mb-product-body-height: 120px;
   --mb-product-footer-height: 76px;
   --mb-product-btn-height: 50px;
 
   /* Product list */
-  --mb-product-list-left-width: 60%;
-  --mb-product-list-right-width: 40%;
+  --mb-product-list-left-width: 50%;
+  --mb-product-list-right-width: 50%;
   --mb-product-list-image-height: 100%;
   --mb-product-list-header-height: 70px;
   --mb-product-list-body-height: 190px;
