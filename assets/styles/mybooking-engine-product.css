@@ -309,11 +309,12 @@ div.mybooking-product {
 
 .mybooking-products_catalog .mybooking-product_header {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 20px;
+  left: 0;
   width: auto;
   height: var(--mb-catalog-price-height);
   border: none;
+  border-radius: 0 var(--mb-border-radius) var(--mb-border-radius) 0;
   padding: 0;
   background-color: var(--mb-catalog-price-bg);
   color: var(--mb-catalog-price-color);
@@ -321,6 +322,7 @@ div.mybooking-product {
 
 .mybooking-products_catalog .mybooking-product_price {
   padding: 0.5rem;
+  font-size: 0.8em;
 }
 
 .mybooking-products_catalog .mybooking-product_price-from {
