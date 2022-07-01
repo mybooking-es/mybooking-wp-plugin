@@ -824,10 +824,11 @@ button.mybooking-popup_close:hover {
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 1rem 3rem;
   border: 1px solid var(--mb-border-color);
   background-color: var(--mb-cookies-background);
-  box-shadow: 0 0 20px #666;
+  box-shadow: 0 0 20px var(--mb-border-color);
+  z-index: 9999999999;
 }
 
 .mybooking-cookies_button {
