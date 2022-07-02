@@ -148,10 +148,10 @@
 			<!-- // Location code selector -->
 			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
 		    <div class="widget_rental_location" style="display: none">
-		      <label for="location_code">
+		      <label for="rental_location_code">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
 					</label>
-		      <select name="location_code" id="widget_rental_location_code" class="mb-form-control"></select>
+		      <select name="rental_location_code" id="widget_rental_location_code" class="mb-form-control"></select>
 		    </div>
 		  <% } %>
 
@@ -194,10 +194,10 @@
 							<i class="mybooking-selector_field-icon">
 								<span class="dashicons dashicons-location"></span>
 							</i>
-							<label for="location_code">
+							<label for="rental_location_code">
 								<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
 							</label>
-							<select name="location_code" id="widget_rental_location_code" class="mb-form-control"></select>
+							<select name="rental_location_code" id="widget_rental_location_code" class="mb-form-control"></select>
 						</div>
 				<% } %>
 

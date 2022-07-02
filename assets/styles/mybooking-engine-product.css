@@ -521,7 +521,7 @@ div.mybooking-product {
   font-size: 13px;
   font-weight: 700;
   max-width: 40px;
-  overflow: hidden;
+  /*overflow: hidden;*/
   height: 1rem;
 }
 
@@ -627,7 +627,7 @@ div.mybooking-product {
 }
 
 .mybooking-product_calendar-step-list .mybooking-product_calendar-step {
-  margin: 3rem 0 1rem 2.5rem;
+  margin: 1.5rem 0 1rem 2.5rem;
   font-size: 1.1em;
   font-weight: 800;
   counter-increment: steps-counter;
@@ -674,7 +674,7 @@ div.mybooking-product {
 
 h2.mybooking-product_calendar-date-range {
   font-size:  1em;
-  border: 1px solid var(--global-gray-400);
+  border: 1px solid var(--mb-border-color);
   padding: 5px;
   margin-top: 0.2em;
 }
