@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.7.0] - 2022.07.03
+## [1.7.0] - 2022.07.04
 
 ### Added
 
@@ -8,6 +8,8 @@
 - More space on calendar steps
 - Carousel arrows position and color
 - Default border radius on 3px
+- Renting select product : Go to detail page instead of complete directly
+- Renting complete : Select slot and skipper if apply
 - Renting my reservation : Sign contract
 - Renting my reservation : Additional drivers
 - Added missing paid and pending amount in Summary page

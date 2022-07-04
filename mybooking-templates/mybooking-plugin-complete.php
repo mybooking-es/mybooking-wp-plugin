@@ -72,6 +72,23 @@
               <?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?>
             </h2>
 
+            <div class="mb-form-group mb-form-row js-mb-delivery-slot-skipper-container" style="display: none">
+              <div class="mb-col-md-6 mb-col-sm-12 js-mb-delivery-slot" style="display: none">
+                <label
+                  for="slot_time_from"><?php echo esc_html_x( 'Select the schedule that suits your needs', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+                <select class="mb-form-control" id="slot_time_from" name="slot_time_from"></select>
+              </div>
+              <div class="mb-col-md-6 mb-col-sm-12 js-mb-optional-external-driver" style="display: none">
+                <label
+                  for="slot_time_from"><?php echo esc_html_x( 'Will you need a skipper?', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+                <select class="mb-form-control" id="with_optional_external_driver" name="with_optional_external_driver">
+                  <option value=""></option>
+                  <option value="false"><?php echo esc_html_x( 'No', 'renting_complete', 'mybooking-wp-plugin') ?></option>
+                  <option value="true"><?php echo esc_html_x( 'Yes', 'renting_complete', 'mybooking-wp-plugin') ?></option>
+                </select>
+              </div>
+            </div>
+
             <div class="mb-form-group">
               <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
               <textarea class="mb-form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
