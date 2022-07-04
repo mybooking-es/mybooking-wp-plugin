@@ -677,6 +677,7 @@ h2.mybooking-product_calendar-date-range {
   border: 1px solid var(--mb-border-color);
   padding: 5px;
   margin-top: 0.2em;
+  text-align: center;
 }
 
 .mybooking-product_calendar-date {
