@@ -31,6 +31,7 @@
 - Minor fixes on select2 selector transfer fields
 - Desgin adjustements on list view cards
 - Renting Product Calendar: Configured rental location do not use selector
+- Renting Product Calendar: Filter pickup places and rental locations based on product
 
 ## [1.6.0] - 2022.05.26
 
