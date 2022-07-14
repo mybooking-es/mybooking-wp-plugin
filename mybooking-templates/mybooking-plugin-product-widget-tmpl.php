@@ -44,9 +44,9 @@
       </li>
       <div class="mb-form-row">
         <div class="mb-form-group">
-          <select name="rental_location" id="rental_location" class="mb-form-control" 
+          <select name="rental_location" id="rental_location" class="mb-form-control"
                 placeholder="<?php echo esc_attr( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>"></select>
-        </div>        
+        </div>
       </div>
     <% } %>
 
@@ -55,14 +55,14 @@
       <?php echo esc_html_x('Select delivery and return dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
     </li>
 
-    <% if (configuration.rentingProductOneJournal && 
+    <% if (configuration.rentingProductOneJournal &&
            configuration.rentingProductMultipleJournals) { %>
       <div class="mb-form-row">
-        <div class="mb-form-group">        
+        <div class="mb-form-group">
           <input type="radio" name="duration_scope" value="in_one_day" checked/>&nbsp;<?php echo esc_html_x('Hours or one full day', 'renting_product_detail', 'mybooking-wp-plugin' ) ?><br>
           <input type="radio" name="duration_scope" value="days"/>&nbsp;<?php echo esc_html_x('Period of dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
         </div>
-      </div>  
+      </div>
     <% } else if (configuration.rentingProductOneJournal) { %>
       <input type="hidden" name="duration_scope" value="in_one_day">
     <% } else { %>
@@ -84,7 +84,7 @@
 
         <div id="mybooking_product_widget_occupation_container" class="mb-form-row" style="display: none">
           <div id="mybooking_product_widget_occupation_detail_container" class="mb-form-group mb-col-md-12"></div>
-        </div>  
+        </div>
 
         <!-- // Delivery time -->
         <div class="mb-form-row js-mybooking-product_calendar-time-hours" style="display: none">
@@ -104,12 +104,12 @@
             </label>
             <select id="time_to" name="time_to" placeholder="hh:mm" class="mb-form-control" disabled> </select>
           </div>
-        </div>  
+        </div>
 
         <div class="mb-form-row js-mybooking-product_calendar-time-ranges" style="display: none">
           <div id="mb_product_calendar_time_ranges_container" class="mb-form-group mb-col-md-12">
           </div>
-        </div>  
+        </div>
 
     <% } else { %>
       <input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
@@ -309,7 +309,7 @@
       <div class="mybooking-product_calendar-daily_item mb-alert danger">
         <div><%= moment(data[idx].date_from).tz(timezone).format(format) %> <%= data[idx].time_from %></div>
         <div><%= moment(data[idx].date_to).tz(timezone).format(format) %> <%= data[idx].time_to %></div>
-      </div>  
+      </div>
     <% } %>
   </div>
 </script>

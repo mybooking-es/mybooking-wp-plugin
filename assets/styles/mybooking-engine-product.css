@@ -620,6 +620,11 @@ div.mybooking-product {
   margin-bottom: 1rem;
 }
 
+.mybooking-product_detail-description li {
+  padding-left: 1rem;
+  list-style: none;
+}
+
 .mybooking-product_calendar-step-list {
   counter-reset: steps-counter;
   list-style: none;

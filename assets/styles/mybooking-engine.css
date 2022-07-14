@@ -148,13 +148,22 @@
 
 .mb-row {
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   clear: both;
+} @media ( min-width: 575.98px ) {
+  .mb-row {
+    flex-direction: row;
+  }
 }
 
 .mb-row.invert {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+} @media ( min-width: 575.98px ) {
+  .mb-row.invert {
+    flex-direction: row-reverse;
+  }
 }
 
 .mb-row-flex {
