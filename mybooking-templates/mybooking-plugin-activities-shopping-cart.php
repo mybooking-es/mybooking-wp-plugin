@@ -24,11 +24,11 @@
         <div id="reservation_detail"></div>
         <div id="payment_detail"></div>
       </form>
-    </div>
 
-    <!-- Reservation error -->
-    <div class="mb-col-md-12">
-      <div id="reservation_error" class="mb-alert danger" style="display:none"></div>
-      <div id="shopping_cart_empty"></div>
+      <!-- Reservation error -->
+      <div class="mb-col-md-12">
+        <div id="reservation_error" class="mb-alert danger" style="display:none"></div>
+        <div id="shopping_cart_empty"></div>
+      </div>
     </div>
 </section>

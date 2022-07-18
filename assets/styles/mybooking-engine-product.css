@@ -222,7 +222,7 @@ div.mybooking-product {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 265px;
+  height: var(--mb-product-image-height);
 }
 
 .mybooking-product_image {

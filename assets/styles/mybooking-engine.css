@@ -633,14 +633,44 @@ button.mb-button a:hover  {
 /* Lists */
 .mb-list {
   padding: 0;
-  margin: 0;
+  margin: 0 0 1rem 0!important;
   list-style: none;
+}
+
+.mb-list_title {
+  font-size: 1.6em;
 }
 
 .mb-list-item {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
+}
+
+.mb-list.border {
+  display: block;
+  border: 1px solid var(--mb-border-color);
+  border-radius: var(--mb-border-radius);
+}
+
+.mb-list.border::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.mb-list.border .mb-list-item {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--mb-border-color);
+}
+
+.mb-list.border .mb-list-item:last-of-type {
+  border-bottom: none;
+}
+
+.mb-list.shadow {
+  box-shadow: 0 0 20px 5px var(--mb-light-color);
+  padding: 0.5rem 1rem;
 }
 
 .mb-list-element.secondary {
@@ -665,26 +695,6 @@ button.mb-button a:hover  {
 .mb-list-element.warning {
   font-weight: 800;
   color: var(--mb-warning-color);
-}
-
-.mb-list.border {
-  display: block;
-  border: 1px solid var(--mb-border-color);
-}
-
-.mb-list.border::after {
-  display: block;
-  content: "";
-  clear: both;
-}
-
-.mb-list.border.border .mb-list-item {
-  padding: 1rem;
-  border-bottom: 1px solid var(--mb-border-color);
-}
-
-.mb-list.border.border .mb-list-item:last-of-type {
-  border-bottom: none;
 }
 
 /* Pagination */
