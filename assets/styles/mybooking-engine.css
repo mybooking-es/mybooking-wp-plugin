@@ -32,7 +32,7 @@
   /* Selector form */
   --mb-selector-label-color: currentcolor;
   --mb-selector-padding: 2rem;
-  --mb-selector-background: transparent;
+  --mb-selector-background: white;
   --mb-selector-border-color: var(--mb-form-field-border-color);
   --mb-selector-field-height: var(--mb-form-field-height);
 
@@ -327,7 +327,7 @@ form.mybooking select,
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-color: transparent !important;
+    background-color: white;
     background-image: url(images/arrow.svg);
     background-repeat: no-repeat;
     background-position-x: right;
