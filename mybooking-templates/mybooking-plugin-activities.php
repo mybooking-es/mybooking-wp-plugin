@@ -90,9 +90,9 @@
 									</div>
 						  	<?php } ?>
 
-								<div class="mybooking-product_short-description mybooking-truncate-overflow-3lines">
+								<h3 class="mybooking-product_short-description mybooking-truncate-overflow-3lines">
 									<?php echo esc_html( $mybooking_activity->short_description ) ?>
-								</div>
+								</h3>
 
 							</div>
 
@@ -125,11 +125,11 @@
 				    <li class="mb-pagination_page-item <?php echo esc_attr( $mybooking_disabled_previous ) ?>">
 				    	<?php if ( $mybooking_disabled_previous ): ?>
 				    		<?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
-				    	<?php else: ?>			
+				    	<?php else: ?>
 				    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']-1).$mybooking_querystring ) ?>">
 				    	     <?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				    	  </a>
-				    	<?php endif ?>  
+				    	<?php endif ?>
 				    </li>
 
 	          <?php foreach ($args['pages'] as $mybooking_page) { ?>
@@ -154,7 +154,7 @@
 				    <li class="mb-pagination_page-item <?php echo esc_attr( $mybooking_disabled_next ) ?>">
 				    	<?php if ( $mybooking_disabled_next ): ?>
 				    		<?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
-				    	<?php else: ?>		
+				    	<?php else: ?>
 				    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']+1).$mybooking_querystring )?>">
 				    	     <?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				    	  </a>

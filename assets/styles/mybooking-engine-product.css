@@ -228,12 +228,13 @@ div.mybooking-product {
 .mybooking-product_image {
   width: 100%;
   border-radius: 0!important;
+  border-bottom: 1px solid var(--mb-border-color);
 }
 
 .mybooking-product_info-block .mybooking-product_image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: var(--mb-product-image-fit);
   object-position: center center;
 }
 
@@ -244,12 +245,6 @@ div.mybooking-product {
 }
 
 .mybooking-product_info-button {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  background-color: white;
-  border-radius: 1rem;
-  font-size: 1em;
   line-height: 1;
   color: var(--mb-info-color)!important;
 }
@@ -261,13 +256,12 @@ div.mybooking-product {
 .mybooking-product_custom-message {
   display: block;
   position: absolute;
-  width: 100%;
   left: 0;
+  bottom: 1px;
+  width: 100%;
   height: 40px;
-  bottom: 0;
-/*  top: calc( var(--mb-product-image-height) - 40px ); */
-  background-color: var(--mb-product-custom-message-bg);
   padding: 0.5rem;
+  background-color: var(--mb-product-custom-message-bg);
   color: var(--mb-product-custom-message-color);
   font-size: 9px;
   font-weight: 800;
@@ -282,9 +276,8 @@ div.mybooking-product {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 10px 1rem;
   height: var(--mb-product-header-height);
-  border-top: 1px solid var(--mb-border-color);
+  padding: 10px 1rem;
   border-bottom: 1px solid var(--mb-border-color);
 }
 
@@ -388,57 +381,30 @@ div.mybooking-product {
   margin-top: 1rem;
 }
 
-.entry-content h2.mybooking-product_name {
-  margin: 0;
-  font-size: 1.3em;
-}
-
-.entry-content h2.mybooking-product_name::before {
-  display:  none;
-}
-
 .mybooking-product_name {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 300px;
+  height: 1.6rem;
+  margin: 0 0 10px 0;
   font-weight: 800;
   font-size: var(--mb-product-name-size);
-  line-height: 1.1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis!important;
 }
 
 .mybooking-product_short-description {
-  position: relative;
+  width: 300px;
+  height: 1.3rem;
+  margin: 0 0 10px 0;
   font-weight: 400;
   font-size: 1em;
-  line-height: 1.3;
-  margin-top: 0.2rem;
-  height: calc(var(--mb-product-body-height) - 20px);
   overflow: hidden;
-}
-
-.mybooking-product_short-description:after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  display: block;
-  width: 100%;
-  height: calc(var(--mb-product-body-height) - 40px);
-  clear: both;
-  box-shadow: inset -1.5rem -1.5rem 3rem rgba(255,255,255,0.9)
-}
-
-.entry-content h3.mybooking-product_short-description {
-  margin: 0.3rem 0 0 0;
-  font-size: 1em;
-}
-
-.entry-content h3.mybooking-product_short-description::before {
-  display:  none;
+  white-space: nowrap;
+  text-overflow: ellipsis!important;
 }
 
 .mybooking-product_quantity {
-  color: #2193F2;
+  color: var(--mb-info-color);
 }
 
 .mybooking-product_description {
@@ -468,29 +434,6 @@ div.mybooking-product {
   margin-top: -5px;
 }
 
-/* Scrollbars */
-
-.mybooking-product_description,
-.mybooking-product_body {
-  scrollbar-width: thin;
-  scrollbar-color: #999 transparent;
-} /* Firefox only */
-
-.mybooking-product_description::-webkit-scrollbar,
-.mybooking-product_body::-webkit-scrollbar {
-  width: 6px;
-}
-
-.mybooking-product_description::-webkit-scrollbar-track,
-.mybooking-product_body::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.mybooking-product_description::-webkit-scrollbar-thumb,
-.mybooking-product_body::-webkit-scrollbar-thumb {
-  background-color: #999;
-}
-
 /* Key characteristics */
 
 .mybooking-product_characteristics {
@@ -498,8 +441,8 @@ div.mybooking-product {
   flex-wrap: nowrap;
   justify-content: center;
   gap: 1rem;
+  height: 60px;
   padding: 0.5rem;
-  border-top: 1px solid var(--mb-border-color);
 }
 
 .mybooking-product_detail .mybooking-product_characteristics {
@@ -536,7 +479,6 @@ div.mybooking-product {
   flex-direction: column;
   height: var(--mb-product-footer-height);
   padding: 1rem;
-  border-top: 1px solid var(--mb-border-color);
 }
 
 .mybooking-product_not-available {

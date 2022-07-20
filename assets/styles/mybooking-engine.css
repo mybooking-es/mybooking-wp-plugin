@@ -18,7 +18,7 @@
   --mb-lighter-color: #EEEEEE;
   --mb-light-color:  #DDDDDD;
 
-  --mb-border-color: #BBB;
+  --mb-border-color: #DDD;
   --mb-border-radius: 5px;
   --mb-background-color: #EEE;
   --mb-dark-background-color: #424242;
@@ -67,7 +67,7 @@
   --mb-product-custom-message-color: currentcolor;
 
   /* Product text */
-  --mb-product-name-size: 1.2em;
+  --mb-product-name-size: 1.35em;
   --mb-product-price-color: var(--mb-info-color);
   --mb-product-price-size: 1.3em;
   --mb-product-quantity-color: #2193F2;

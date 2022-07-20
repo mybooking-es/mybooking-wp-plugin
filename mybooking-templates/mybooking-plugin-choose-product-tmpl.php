@@ -30,24 +30,24 @@
       </div>
     </div>
 
-    <% if (configuration.rentDateSelector === 'date_from_duration') { %>     
+    <% if (configuration.rentDateSelector === 'date_from_duration') { %>
       <div class="mybooking-summary_detail">
         <span class="mybooking-summary_item">
           <span class="mybooking-summary_date">
-            <%=shopping_cart.date_from_full_format%>            
+            <%=shopping_cart.date_from_full_format%>
             <!-- Half Day : show the turns -->
-            <% if (typeof shopping_cart.half_day !== 'undefined' && 
+            <% if (typeof shopping_cart.half_day !== 'undefined' &&
                    shopping_cart.half_day && halfDayTurns && halfDayTurns.length > 0) { %>
                 <form name="mybooking-choose-product_duration-form" class="mybooking-choose-product_duration-form">
                   <% for (var idx=0; idx<halfDayTurns.length; idx++) { %>
-                    <input type="radio" class="mybooking-summary-duration-turn" 
-                           name="turn" value="<%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>" 
-                      <% if (shopping_cart.time_from === halfDayTurns[idx].time_from && 
+                    <input type="radio" class="mybooking-summary-duration-turn"
+                           name="turn" value="<%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>"
+                      <% if (shopping_cart.time_from === halfDayTurns[idx].time_from &&
                              shopping_cart.time_to === halfDayTurns[idx].time_to) {%>checked<%}%>>
                       <%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>
                     </input>
                   <% } %>
-                </form>  
+                </form>
             <% } %>
           </span>
           <% if (configuration.pickupReturnPlace) { %>
@@ -60,8 +60,8 @@
           <span class="mybooking-summary_duration">
             <%=shopping_cart.renting_duration_literal%>
           </span>
-        </span>  
-      </div>  
+        </span>
+      </div>
 
     <% } else { %>
 
@@ -139,9 +139,6 @@
               <% } else { %>
                 <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
               <% } %>
-              <i class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
-                <span class="dashicons dashicons-info"></span>
-              </i>
             </div>
 
             <% if (product.highlight_message && product.highlight_message != '') { %>
@@ -205,9 +202,10 @@
               <% if (product.name != product.short_description) { %>
                 <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
               <% } %>
-              <div class="mybooking-product_description">
-                <%=product.description%>
-              </div>
+
+              <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
+                <span class="dashicons dashicons-plus-alt"></span> INFO
+              </span>
 
               <!-- // Few units warning -->
               <% if (product.few_available_units) { %>
@@ -229,8 +227,9 @@
             </div>
 
             <!-- // Key characteristics -->
-            <% if (product.key_characteristics) { %>
-              <div class="mybooking-product_characteristics">
+
+            <div class="mybooking-product_characteristics">
+              <% if (product.key_characteristics) { %>
                 <% for (characteristic in product.key_characteristics) { %>
                   <div class="mybooking-product_characteristics-item">
                     <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
@@ -238,8 +237,9 @@
                     <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
                   </div>
                 <% } %>
-              </div>
-            <% } %>
+              <% } %>
+            </div>
+
 
             <div class="mybooking-product_footer">
 
@@ -308,7 +308,7 @@
 <!-- PRODUCT DETAIL MODAL ----------------------------------------------------->
 
 <script type="text/tmpl" id="script_product_modal">
-  
+
   <div class="mybooking-modal_product-detail">
     <div class="mybooking-modal_product-container">
       <div class="mybooking-carousel-inner">
@@ -326,6 +326,6 @@
   <div class="mybooking-modal_product-actions">
     <button id="modal_product_photos"><?php echo esc_html_x( "Photos", 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
     <button id="modal_product_info"><?php echo esc_html_x( "Info", 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
-  </div> 
+  </div>
 
 </script>

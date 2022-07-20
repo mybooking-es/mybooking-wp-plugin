@@ -55,29 +55,26 @@
 							<?php } ?>
 
 							<div class="mybooking-product_body">
-						    	<div class="mybooking-product_name">
+						    <h2 class="mybooking-product_name">
 									<?php echo esc_html( $mybooking_product->name ) ?>
-								</div>
+								</h2>
 
-								<div class="mybooking-product_short-description">
+								<h3 class="mybooking-product_short-description">
 									<?php echo esc_html( $mybooking_product->short_description ) ?>
-								</div>
-
-	              <div class="mybooking-product_description mybooking-truncate-overflow-3lines">
-									<?php echo wp_kses_post( $mybooking_product->description ) ?>
-								</div>
+								</h3>
 							</div>
 
-							<?php if ( isset( $mybooking_product->key_characteristics) && is_array( (array) $mybooking_product->key_characteristics ) && !empty( (array) $mybooking_product->key_characteristics ) ) { ?>
-							  <div class="mybooking-product_characteristics">
+						  <div class="mybooking-product_characteristics">
+								<?php if ( isset( $mybooking_product->key_characteristics) && is_array( (array) $mybooking_product->key_characteristics ) && !empty( (array) $mybooking_product->key_characteristics ) ) { ?>
 									<?php foreach ( $mybooking_product->key_characteristics as $mybooking_key => $mybooking_value) { ?>
 										<div class="mybooking-product_characteristics-item">
 											<img class="mybooking-product_characteristics-img" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/key_characteristics/'.$mybooking_key.'.svg' ) ?>" alt="<?php echo esc_attr( MyBookingEngineContext::getInstance()->getKeyCharacteristic( $mybooking_key ) ) ?>"/>
 											<span class="mybooking-product_characteristics-key"><?php echo esc_html( $mybooking_value ) ?></span>
 										</div>
 									<?php } ?>
-							  </div>
-				      <?php } ?>
+								<?php } ?>
+						  </div>
+
 
 							<?php if ( $args['use_detail_pages'] ) { ?>
 							  <div class="mybooking-product_footer">
