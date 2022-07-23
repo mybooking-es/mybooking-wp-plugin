@@ -46,11 +46,12 @@
   --mb-product-border-color: var(--mb-border-color);
 
   /* Product grid */
-  --mb-product-image-height: 260px;
+  --mb-product-image-height: 250px;
   --mb-product-image-width-img: 100%;
   --mb-product-image-fit: contain;
+  --mb-product-image-padding:  20px;
   --mb-product-header-height: 75px;
-  --mb-product-body-height: 120px;
+  --mb-product-body-height: 140px;
   --mb-product-footer-height: 76px;
   --mb-product-btn-height: 50px;
 
@@ -67,17 +68,22 @@
   --mb-product-custom-message-color: currentcolor;
 
   /* Product text */
-  --mb-product-name-size: 1.35em;
+  --mb-product-name-size: 1.2em;
+  --mb-product-name-width: 300px;
+  --mb-product-description-width: 300px;
   --mb-product-price-color: var(--mb-info-color);
   --mb-product-price-size: 1.3em;
   --mb-product-quantity-color: #2193F2;
 
-  --mb-product-list-price-size: 1.5em;
-  --mb-product-list-name-size: 1.5em;
+  --mb-product-list-price-size: 1.3em;
+  --mb-product-list-name-size: 1.15em;
+  --mb-product-list-name-width: 350px;
+  --mb-product-list-description-width: 350px;
 
   /* Product icons */
   --mb-product-list-keys-width: auto;
   --mb-product-list-keys-icon-width: 25px;
+  --mb-product-list-key-show: inherit;
 
   --mb-product-keys-icon-width: 25px;
   --mb-product-keys-icon-width-page: 40px;

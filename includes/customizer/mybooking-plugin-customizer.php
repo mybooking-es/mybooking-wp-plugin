@@ -97,12 +97,44 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $custom_css = '';
 
       // Renting product image width
+      
+      // Image background (transparent or not)
+      $product_image_bg = get_theme_mod('mybooking_reservation_engine_product_image_bg', 'transparent');
+      // Image max height 
+      $product_image_width_img = get_theme_mod('mybooking_reservation_engine_product_image_height', '250');
+      // Image width percentage
       $product_image_width_img = get_theme_mod('mybooking_reservation_engine_product_image_width_img', '100');
-      $product_body_height = get_theme_mod('mybooking_reservation_engine_product_body_height', '120');
-      $product_list_body_height = get_theme_mod('mybooking_reservation_engine_list_product_body_height', '190');
+      // Product text height (grid)
+      $product_body_height = get_theme_mod('mybooking_reservation_engine_product_body_height', '140');
+      // Product text height (list)
+      $product_list_body_height = get_theme_mod('mybooking_reservation_engine_list_product_body_height', '140');
+      // Show key characteristics
+      $product_show_key_characteristics = get_theme_mod('mybooking_reservation_engine_product_show_key_characteristics', 'show'); 
 
       // == Build the css-properties
       $custom_css .= ":root {";
+
+      // Product Image Background
+      if (!empty($product_image_bg)) {
+        if ( $product_image_bg == 'transparent' ) {
+          $custom_css .= "--mb-product-image-fit: contain;";
+          $custom_css .= "--mb-product-image-padding: 20px;";
+        }
+        else {
+          $custom_css .= "--mb-product-image-fit: cover;";
+          $custom_css .= "--mb-product-image-padding: 0px;";
+        }
+      }
+
+      // Product key characteristics
+      if (!empty($product_show_key_characteristics)) {
+        if ( $product_show_key_characteristics == 'show' ) {
+          $custom_css .= "--mb-product-list-key-show: inherit;";
+        }
+        else {
+          $custom_css .= "--mb-product-list-key-show: none;";
+        }
+      }      
 
       // Product Image Width
       if (!empty($product_image_width_img)) {
@@ -112,11 +144,13 @@ if (!class_exists('MyBookingPluginCustomizer')) {
         $custom_css .= "--mb-product-image-width-img: ".$product_image_width_img.'%;';
       }
 
+      // Product text height (grid)
       if (!empty($product_image_width_img)) {
         $custom_css .= "--mb-product-body-height: ".$product_body_height.'px;';
       }
       
-      if (!empty($product_image_width_img)) {
+      // Product text height (list)
+      if (!empty($product_list_body_height)) {
         $custom_css .= "--mb-product-list-body-height: ".$product_list_body_height.'px;';
       }
 
@@ -143,7 +177,6 @@ if (!class_exists('MyBookingPluginCustomizer')) {
      * 	Customize Colors
      *
      */
-
     private function customize_catalog_section($wp_customize)
     {
       // Section
@@ -158,7 +191,74 @@ if (!class_exists('MyBookingPluginCustomizer')) {
         )
       );
 
-      // == Product image
+      // == Product image background
+
+      // Setting
+      $wp_customize->add_setting(
+        'mybooking_reservation_engine_product_image_bg',
+        array(
+          'default'           => 'transparent',
+          'type'              => 'theme_mod',
+          'sanitize_callback' => array($this, 'slug_sanitize_select'),
+          'capability'        => 'edit_theme_options',
+        )
+      );
+
+      // Control
+      $wp_customize->add_control(
+        new WP_Customize_Control(
+          $wp_customize,
+          'mybooking_reservation_engine_product_image_bg',
+          array(
+            'label'       => _x('Product background', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'description' => _x('Choose depending on the images that you are using for your products', 
+                                'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'section'     => 'mybooking_reservation_engine_renting_options',
+            'settings'    => 'mybooking_reservation_engine_product_image_bg',
+            'type'        => 'select',
+            'choices'     => array(
+              'transparent' => _x('Transparent background', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+              'background'  => _x('Photo', 'customizer_product_catalog', 'mybooking-wp-plugin')
+            ),
+          )
+        )
+      );
+
+      // == Product show key characteristics
+
+      // Setting
+      $wp_customize->add_setting(
+        'mybooking_reservation_engine_product_show_key_characteristics',
+        array(
+          'default'           => 'show',
+          'type'              => 'theme_mod',
+          'sanitize_callback' => array($this, 'slug_sanitize_select'),
+          'capability'        => 'edit_theme_options',
+        )
+      );
+
+      // Control
+      $wp_customize->add_control(
+        new WP_Customize_Control(
+          $wp_customize,
+          'mybooking_reservation_engine_product_show_key_characteristics',
+          array(
+            'label'       => _x('Product show characteristics', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'description' => _x('Show caracteritics icons', 
+                                'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'section'     => 'mybooking_reservation_engine_renting_options',
+            'settings'    => 'mybooking_reservation_engine_product_show_key_characteristics',
+            'type'        => 'select',
+            'choices'     => array(
+              'show' => _x('Yes', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+              'hide' => _x('No', 'customizer_product_catalog', 'mybooking-wp-plugin')
+            ),
+          )
+        )
+      );
+
+
+      // == Product image width
 
       // Setting
       $wp_customize->add_setting(
@@ -191,13 +291,13 @@ if (!class_exists('MyBookingPluginCustomizer')) {
         )
       );
 
-      // == Product description
+      // == Product body (text on grid) height
 
       // Setting
       $wp_customize->add_setting(
         'mybooking_reservation_engine_product_body_height',
         array(
-          'default'           => '120',
+          'default'           => '140',
           'type'              => 'theme_mod',
           'sanitize_callback' => 'absint',
           'capability'        => 'edit_theme_options',
@@ -210,7 +310,7 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_product_body_height',
           array(
-            'label'       => _x('Product card Body Height', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'label'       => _x('Product card Body Height (Grid)', 'customizer_product_catalog', 'mybooking-wp-plugin'),
             'description' => _x(
               'Choose product card body height (in px)',
               'customizer_product_catalog',
@@ -224,11 +324,13 @@ if (!class_exists('MyBookingPluginCustomizer')) {
         )
       );
 
-      // Setting
+      // == Product body height
+
+      // Settings
       $wp_customize->add_setting(
         'mybooking_reservation_engine_list_product_body_height',
         array(
-          'default'           => '190',
+          'default'           => '140',
           'type'              => 'theme_mod',
           'sanitize_callback' => 'absint',
           'capability'        => 'edit_theme_options',
@@ -241,7 +343,7 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_list_product_body_height',
           array(
-            'label'       => _x('Product card Body Height', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'label'       => _x('Product card Body Height (List)', 'customizer_product_catalog', 'mybooking-wp-plugin'),
             'description' => _x(
               'Choose product card body height (in px)',
               'customizer_product_catalog',
@@ -254,7 +356,6 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           )
         )
       );
-
 
       // == Selector
 

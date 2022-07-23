@@ -82,6 +82,11 @@
 
   .mybooking-product_list .mybooking-product_name {
     font-size: var(--mb-product-list-name-size);
+    width: var(--mb-product-list-name-width);
+  }
+
+  .mybooking-product_list .mybooking-product_short-description {
+    width:  var(--mb-product-list-description-width);
   }
 
 } @media ( min-width: 991.98px ) {
@@ -239,9 +244,11 @@ div.mybooking-product {
 }
 
 .mybooking-product_block .mybooking-product_image {
+  max-height: var(--mb-product-image-height);
   width: var(--mb-product-image-width-img);
   object-fit: var(--mb-product-image-fit);
   object-position: center center;
+  padding: var(--mb-product-image-padding);
 }
 
 .mybooking-product_info-button {
@@ -382,9 +389,8 @@ div.mybooking-product {
 }
 
 .mybooking-product_name {
-  width: 300px;
-  height: 1.6rem;
-  margin: 0 0 10px 0;
+  width: var(--mb-product-name-width);
+  margin: 0 0 2px 0 !important;
   font-weight: 800;
   font-size: var(--mb-product-name-size);
   overflow: hidden;
@@ -393,8 +399,7 @@ div.mybooking-product {
 }
 
 .mybooking-product_short-description {
-  width: 300px;
-  height: 1.3rem;
+  width: var(--mb-product-description-width);
   margin: 0 0 10px 0;
   font-weight: 400;
   font-size: 1em;
@@ -428,6 +433,7 @@ div.mybooking-product {
 .mybooking-product_low-availability {
   font-size: 12px;
   color: red;
+  margin-top: 2px;
 }
 
 .mybooking-product_price_supplement_supplement_1 {
@@ -443,6 +449,7 @@ div.mybooking-product {
   gap: 1rem;
   height: 60px;
   padding: 0.5rem;
+  display: var(--mb-product-list-key-show);
 }
 
 .mybooking-product_detail .mybooking-product_characteristics {
@@ -703,8 +710,10 @@ input.mybooking-product_calendar-not_available_turn + span.mybooking-product_cal
 .slick-next {
   border:  none;
   z-index:  1;
-  height:  32px;
-  background:  transparent !important;
+  height:  42px;
+  width:  42px;
+  background:  var(--mb-info-color) !important;
+  padding: 4px 0px 1px 0px;
 }
 
 .slick-prev:before,
@@ -722,6 +731,10 @@ input.mybooking-product_calendar-not_available_turn + span.mybooking-product_cal
 
 .mybooking-carousel-item img {
   border-radius: var(--mb-border-radius);
+  /* Limit the height and center the image */
+  max-height: 550px;
+  display: block;
+  margin: auto;
 }
 
 .mybooking-modal_product-actions {
