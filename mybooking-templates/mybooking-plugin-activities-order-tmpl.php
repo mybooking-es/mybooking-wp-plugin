@@ -507,6 +507,26 @@
             <%=order.customer_email%>
           </li>
         <% } %>
+
+        <% if (configuration.activityCustomerVehicle) { %>
+
+            <li class="mb-list-item">
+              <% if (order.customer_stock_brand && order.customer_stock_brand != '') { %>
+                <%=order.customer_stock_brand%>
+              <% } %>  
+              <% if (order.customer_stock_model && order.customer_stock_model != '') { %>
+                <%=order.customer_stock_model%>
+              <% } %>  
+              <% if (order.customer_stock_plate && order.customer_stock_plate != '') { %>  
+                <%=order.customer_stock_plate%>
+              <% } %>  
+              <% if (order.customer_stock_color && order.customer_stock_color != '') { %>
+                <%=order.customer_stock_color%>
+              <% } %>
+            </li>
+
+        <% } %>
+        
       </ul>
     </div>
 

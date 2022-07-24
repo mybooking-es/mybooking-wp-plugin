@@ -399,6 +399,7 @@
             <%=booking.customer_email%>
           </li>
         <% } %>
+
       </ul>
     </div>
   </div>

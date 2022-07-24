@@ -220,7 +220,7 @@
                   <small><b><%=configuration.formatCurrency(product.price)%></b>&nbsp;<?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() )?></small>
                 </div>
                 <div class="mybooking-product_price_supplement_supplement_1">
-                  <small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking' ) ?></small>
+                  <small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></small>
                 </div>
               </div>
               <% } %>
@@ -296,7 +296,7 @@
     <div class="mb-row">
       <div class="mb-col-md-12">
         <button id="go_to_complete" class="mb-button btn-confirm-selection">
-          <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking') ?>
+          <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?>
           <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
         </button>
       </div>

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2022-07-04 12:02+0000\n"
+"PO-Revision-Date: 2022-07-24 16:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -21,15 +21,15 @@ msgid "From"
 msgstr "Da"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:103
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:86
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:83
 msgctxt "activities_list"
 msgid "More information"
 msgstr "More information"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:156
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:159
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:137
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:140
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:143
 msgctxt "activities_list"
 msgid "Next"
 msgstr "Prossimo"
@@ -40,15 +40,15 @@ msgid "No results found"
 msgstr "Nessun risultato trovato"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:121
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:105
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:102
 msgctxt "activities_list"
 msgid "Page navigation"
 msgstr "Navigazione della pagina"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:127
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:130
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:108
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:111
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:114
 msgctxt "activities_list"
 msgid "Previous"
 msgstr "Precedente"
@@ -394,8 +394,20 @@ msgctxt "activity_my_reservation"
 msgid "Yes"
 msgstr "Sì"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:237
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:308
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:155
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:157
+msgctxt "activity_shopping_cart"
+msgid "Brand"
+msgstr "Marca"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:179
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:181
+msgctxt "activity_shopping_cart"
+msgid "Color"
+msgstr "Colore"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:278
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:349
 #, php-format
 msgctxt "activity_shopping_cart"
 msgid ""
@@ -405,19 +417,25 @@ msgstr ""
 "Ho letto ed accetto il <a href=\"%s\" target=\"_blank\">termini e le "
 "condizioni</a>"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:235
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:306
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:276
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:347
 msgctxt "activity_shopping_cart"
 msgid "I have read and hereby accept the terms and conditions"
 msgstr "Ho letto ed accetto il termini e le condizioni"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:221
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:162
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:164
+msgctxt "activity_shopping_cart"
+msgid "Model"
+msgstr "Modello"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:262
 msgctxt "activity_shopping_cart"
 msgid "Pay now"
 msgstr "Paga ora"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:214
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:241
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:255
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:282
 msgctxt "activity_shopping_cart"
 msgid "Request reservation"
 msgstr "Richiedi prenotazione"
@@ -427,10 +445,21 @@ msgctxt "activity_shopping_cart"
 msgid "Shopping cart is empty"
 msgstr "Il carrello è vuoto"
 
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:172
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:174
+msgctxt "activity_shopping_cart"
+msgid "Stock plate"
+msgstr "Targa dell&#39;auto"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:214
 msgctxt "activity_shopping_cart"
 msgid "Total"
 msgstr "Totale"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:150
+msgctxt "activity_shopping_cart"
+msgid "Vehicle"
+msgstr "Veicolo"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:97
 msgctxt "activity_shopping_cart_item"
@@ -487,6 +516,11 @@ msgstr "Seleziona l'ora"
 msgctxt "activity_tickets_form_selector"
 msgid "We are sorry. There are not schedules available"
 msgstr "Ci dispiace. Non ci sono orari disponibili"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:24
+msgctxt "Block pattern category"
+msgid "Mybooking"
+msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:174
 msgctxt "Block pattern description"
@@ -578,16 +612,94 @@ msgctxt "Block pattern description"
 msgid "Wizard dates selector form"
 msgstr ""
 
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:207
+msgctxt "Block pattern title"
+msgid "Activities Catalog"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:173
+msgctxt "Block pattern title"
+msgid "Activities Reservation"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:139
+msgctxt "Block pattern title"
+msgid "Activities Summary"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:230
+msgctxt "Block pattern title"
+msgid "Calendar Activities"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:219
+msgctxt "Block pattern title"
+msgid "Calendar Camper"
+msgstr ""
+
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:69
+msgctxt "Block pattern title"
 msgid "Choose Product"
 msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:80
+msgctxt "Block pattern title"
 msgid "Choose Transfer"
 msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:35
+msgctxt "Block pattern title"
 msgid "Classic Selector"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:104
+msgctxt "Block pattern title"
+msgid "Complete Activities"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:93
+msgctxt "Block pattern title"
+msgid "Complete Reservation"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:115
+msgctxt "Block pattern title"
+msgid "Complete Transfers"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:162
+msgctxt "Block pattern title"
+msgid "Reservation"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:128
+msgctxt "Block pattern title"
+msgid "Reservation Summary"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:57
+msgctxt "Block pattern title"
+msgid "Transfer Selector"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:184
+msgctxt "Block pattern title"
+msgid "Transfers Reservation"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:150
+msgctxt "Block pattern title"
+msgid "Transfers Summary"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:196
+msgctxt "Block pattern title"
+msgid "Vehicle Catalog"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:46
+msgctxt "Block pattern title"
+msgid "Wizard Selector"
 msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-contact-widget.php:44
@@ -641,24 +753,29 @@ msgid "This website uses cookies to ensure you get the best experience"
 msgstr ""
 "Questo sito Web utilizza i cookie per assicurarti la migliore esperienza"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:136
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:170
 msgctxt "customizer_panel"
 msgid "Customise your installation of Mybooking Reservation Engine"
 msgstr "Personalizza la tua installazione di Mybooking Reservation Engine"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:135
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:169
 msgctxt "customizer_panel"
 msgid "Mybooking Reservation Engine"
 msgstr "Mybooking Reservation Engine"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:181
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:214
+msgctxt "customizer_product_catalog"
+msgid "Choose depending on the images that you are using for your products"
+msgstr "Scegli in base alle immagini che stai utilizzando per i tuoi prodotti"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:281
 #| msgid "Choose depending on the images that you are using for your products"
 msgctxt "customizer_product_catalog"
 msgid ""
 "Choose depending on the images that you are using for your products (in %)"
 msgstr "Scegli in base alle immagini che stai utilizzando per i tuoi prodotti"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:279
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:380
 msgctxt "customizer_product_catalog"
 msgid ""
 "Choose depending on the layout to show the products in the choose product "
@@ -667,57 +784,98 @@ msgstr ""
 "Scegli in base al layout per mostrare i prodotti nella pagina di scelta del "
 "prodotto"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:214
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:245
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:314
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:347
 msgctxt "customizer_product_catalog"
 msgid "Choose product card body height (in px)"
 msgstr "Scegli l'altezza del corpo della scheda prodotto (in px)"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:155
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:188
 msgctxt "customizer_product_catalog"
 msgid "Customize the product card"
 msgstr "Personalizza la scheda prodotto"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:289
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:390
 msgctxt "customizer_product_catalog"
 msgid "Grid 3 products per row"
 msgstr "Griglia 3 prodotti per riga"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:291
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:392
 msgctxt "customizer_product_catalog"
 msgid "Grid 3 products per row - allow change"
 msgstr "Griglia 3 prodotti per riga - consenti modifica"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:288
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:389
 msgctxt "customizer_product_catalog"
 msgid "List 1 product per row"
 msgstr "Elenca 1 prodotto per riga"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:290
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:391
 msgctxt "customizer_product_catalog"
 msgid "List 1 product per row - allow change"
 msgstr "Elenca 1 prodotto per riga - consenti modifica"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:153
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:254
+msgctxt "customizer_product_catalog"
+msgid "No"
+msgstr "No"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:221
+msgctxt "customizer_product_catalog"
+msgid "Photo"
+msgstr "Foto"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:213
+msgctxt "customizer_product_catalog"
+msgid "Product background"
+msgstr "Immagine di sfondo del prodotto"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:186
 msgctxt "customizer_product_catalog"
 msgid "Product card"
 msgstr "Scheda prodotto"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:213
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:244
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:313
+#, fuzzy
+#| msgid "Product card Body Height"
 msgctxt "customizer_product_catalog"
-msgid "Product card Body Height"
+msgid "Product card Body Height (Grid)"
 msgstr "Scheda prodotto Altezza corpo"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:180
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:346
+msgctxt "customizer_product_catalog"
+msgid "Product card Body Height (List)"
+msgstr "Scheda prodotto Altezza corporea (Elenco)"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:280
 msgctxt "customizer_product_catalog"
 msgid "Product card Image Width"
 msgstr "Larghezza immagine scheda prodotto"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:278
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:246
+msgctxt "customizer_product_catalog"
+msgid "Product show characteristics"
+msgstr "Mostra le caratteristiche del prodotto"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:379
 msgctxt "customizer_product_catalog"
 msgid "Renting choose product layout"
 msgstr "Noleggiare scegli il layout del prodotto"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:247
+msgctxt "customizer_product_catalog"
+msgid "Show caracteritics icons"
+msgstr "Mostra le icone delle caratteristiche"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:220
+msgctxt "customizer_product_catalog"
+msgid "Transparent background"
+msgstr "Sfondo trasparente dell'immagine"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/customizer/mybooking-plugin-customizer.php:253
+msgctxt "customizer_product_catalog"
+msgid "Yes"
+msgstr "Sì"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:198
 msgctxt "engine_context"
@@ -1026,10 +1184,6 @@ msgctxt "login"
 msgid "Username or email"
 msgstr "Nome utente o email"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:24
-msgid "Mybooking"
-msgstr ""
-
 #. Author of the plugin
 msgid "mybooking"
 msgstr "mybooking"
@@ -1163,7 +1317,7 @@ msgctxt "renting_choose_product"
 msgid "Edit"
 msgstr "Modificare"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-choose-product-tmpl.php:215
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-choose-product-tmpl.php:213
 msgctxt "renting_choose_product"
 msgid "Few units left!"
 msgstr "Poche unità rimaste!"
@@ -1181,6 +1335,11 @@ msgstr "ora/e"
 msgctxt "renting_choose_product"
 msgid "Info"
 msgstr "Informazione"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-choose-product-tmpl.php:299
+msgctxt "renting_choose_product"
+msgid "Next"
+msgstr "Prossimo"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-choose-product-tmpl.php:123
 #| msgid "Close"
@@ -1206,7 +1365,7 @@ msgctxt "renting_choose_product"
 msgid "Reservation summary"
 msgstr "Riepilogo della prenotazione"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-choose-product-tmpl.php:185
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-choose-product-tmpl.php:182
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:73
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:351
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:163
@@ -1216,7 +1375,7 @@ msgstr "Riepilogo della prenotazione"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:371
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:185
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:170
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:183
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:223
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-product-widget-tmpl.php:279
 msgctxt "renting_choose_product"
 msgid "Taxes included"
@@ -1224,7 +1383,7 @@ msgstr "Tasse incluse"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete.php:72
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:575
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:149
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:188
 msgctxt "renting_complete"
 msgid "Additional information"
 msgstr "Informazioni aggiuntive"
@@ -1260,8 +1419,8 @@ msgstr "Prenota ora e paga all&#39;arrivo"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete.php:94
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:579
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:580
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:152
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:153
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:191
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:192
 msgctxt "renting_complete"
 msgid "Comments"
 msgstr "Osservazioni"
@@ -1288,11 +1447,11 @@ msgid "Coverage"
 msgstr "Copertura"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:661
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:549
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:569
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:947
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:731
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:241
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:275
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:316
 msgctxt "renting_complete"
 msgid "Credit or debit card"
 msgstr "Carta di credito o di debito"
@@ -1379,15 +1538,16 @@ msgid "No"
 msgstr "No"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:655
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:543
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:563
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:941
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:725
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:235
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:269
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:310
 msgctxt "renting_complete"
 msgid "Paypal"
 msgstr "Paypal"
 
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-choose-product-tmpl.php:223
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:309
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-summary-tmpl.php:313
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:314
@@ -1498,11 +1658,11 @@ msgid "Yes"
 msgstr "Sì"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:668
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:560
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:580
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:958
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:738
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:248
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:282
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:323
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to <b>Paypal payment platform</b> to make the "
@@ -1514,11 +1674,11 @@ msgstr ""
 "Paypal</u> o <u>carta di credito</u> per effettuare il pagamento."
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:678
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:571
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:591
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:969
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:748
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:258
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:292
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:333
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>credit card payment platform</b> to make "
@@ -1528,11 +1688,11 @@ msgstr ""
 "credito</b> per effettuare il pagamento di conferma in modo sicuro. "
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:649
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:538
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:558
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:936
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:720
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:230
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:264
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:305
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>payment platform</b> to make the "
@@ -2315,10 +2475,6 @@ msgctxt "testimonial_content"
 msgid "Testimonials"
 msgstr "Testimonianze"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:57
-msgid "Transfer Selector"
-msgstr ""
-
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:426
 msgctxt "transfer_checkout"
 msgid "Accommodation"
@@ -2660,7 +2816,3 @@ msgstr "Supplementi"
 msgctxt "transfer_summary"
 msgid "Supplements"
 msgstr "Supplementi"
-
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/mybooking-patterns.php:46
-msgid "Wizard Selector"
-msgstr ""

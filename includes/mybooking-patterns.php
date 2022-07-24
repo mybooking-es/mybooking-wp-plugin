@@ -21,7 +21,7 @@ function mybooking_register_block_patterns() {
          * Register block categories
          */
         register_block_pattern_category('mybooking', [
-            'label' => __('Mybooking', 'mybooking-wp-plugin')
+            'label' => _x('Mybooking', 'Block pattern category', 'mybooking-wp-plugin')
         ]);
 
     }
@@ -32,7 +32,7 @@ function mybooking_register_block_patterns() {
          * Register Classic Selector
          */
         register_block_pattern('mybooking-block-patterns/selector-classic', [
-            'title' => __('Classic Selector', 'mybooking-wp-plugin'),
+            'title' => _x('Classic Selector', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Classic dates selector form', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['selector', 'mybooking'],
@@ -43,7 +43,7 @@ function mybooking_register_block_patterns() {
          * Register Wizard Selector
          */
         register_block_pattern('mybooking-block-patterns/selector-wizard', [
-            'title' => __('Wizard Selector', 'mybooking-wp-plugin'),
+            'title' => _x('Wizard Selector', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Wizard dates selector form', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['wizard', 'mybooking'],
@@ -54,7 +54,7 @@ function mybooking_register_block_patterns() {
          * Register Transfer Selector
          */
         register_block_pattern('mybooking-block-patterns/selector-transfer', [
-            'title' => __('Transfer Selector', 'mybooking-wp-plugin'),
+            'title' => _x('Transfer Selector', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Transfer dates selector form', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['transfer', 'mybooking'],
@@ -66,7 +66,7 @@ function mybooking_register_block_patterns() {
          * Register Choose Product
          */
         register_block_pattern('mybooking-block-patterns/choose', [
-            'title' => __('Choose Product', 'mybooking-wp-plugin'),
+            'title' => _x('Choose Product', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('List of your product groups or categories from Mybooking backend', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['choose', 'mybooking'],
@@ -77,7 +77,7 @@ function mybooking_register_block_patterns() {
          * Register Choose Transfer
          */
         register_block_pattern('mybooking-block-patterns/choose-transfer', [
-            'title' => __('Choose Transfer', 'mybooking-wp-plugin'),
+            'title' => _x('Choose Transfer', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('List of your transfers from Mybooking backend', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['choose', 'transfer', 'mybooking'],
@@ -90,7 +90,7 @@ function mybooking_register_block_patterns() {
          * Register Complete Reservation
          */
         register_block_pattern('mybooking-block-patterns/complete', [
-            'title' => __('Complete Reservation', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Complete Reservation', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Complete reservation page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['complete', 'mybooking'],
@@ -101,7 +101,7 @@ function mybooking_register_block_patterns() {
          * Register Complete Activities
          */
         register_block_pattern('mybooking-block-patterns/complete-activities', [
-            'title' => __('Complete Activities', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Complete Activities', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Complete reservation activities page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['complete-activities', 'mybooking'],
@@ -112,7 +112,7 @@ function mybooking_register_block_patterns() {
          * Register Complete Transfers
          */
         register_block_pattern('mybooking-block-patterns/complete-transfers', [
-            'title' => __('Complete Transfers', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Complete Transfers', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Complete reservation transfers page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['complete-transfers', 'mybooking'],
@@ -125,7 +125,7 @@ function mybooking_register_block_patterns() {
          * Register Reservation Summary
          */
         register_block_pattern('mybooking-block-patterns/summary', [
-            'title' => __('Reservation Summary', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Reservation Summary', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Reservation summary page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['summary', 'mybooking'],
@@ -136,7 +136,7 @@ function mybooking_register_block_patterns() {
          * Register Activities Summary
          */
         register_block_pattern('mybooking-block-patterns/summary-activities', [
-            'title' => __('Activities Summary', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Activities Summary', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Activities summary page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['activities', 'summary', 'mybooking'],
@@ -147,7 +147,7 @@ function mybooking_register_block_patterns() {
          * Register Transfers Summary
          */
         register_block_pattern('mybooking-block-patterns/summary-transfer', [
-            'title' => __('Transfers Summary', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Transfers Summary', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Transfers summary page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['transfer', 'summary', 'mybooking'],
@@ -159,7 +159,7 @@ function mybooking_register_block_patterns() {
          * Register Reservation
          */
         register_block_pattern('mybooking-block-patterns/reservation', [
-            'title' => __('Reservation', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Reservation', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Reservation page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['reservation', 'mybooking'],
@@ -170,7 +170,7 @@ function mybooking_register_block_patterns() {
          * Register Activities Reservation
          */
         register_block_pattern('mybooking-block-patterns/reservation-activities', [
-            'title' => __('Activities Reservation', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Activities Reservation', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Activities reservation page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['activities', 'reservation', 'mybooking'],
@@ -181,7 +181,7 @@ function mybooking_register_block_patterns() {
          * Register Transfers Reservation
          */
         register_block_pattern('mybooking-block-patterns/reservation-transfers', [
-            'title' => __('Transfers Reservation', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Transfers Reservation', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Transfers reservation page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['transfers', 'reservation', 'mybooking'],
@@ -193,7 +193,7 @@ function mybooking_register_block_patterns() {
          * Register Vehicle Catalog
          */
         register_block_pattern('mybooking-block-patterns/catalog', [
-            'title' => __('Vehicle Catalog', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Vehicle Catalog', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Insert a list of vehicles with links to details pages', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['catalog', 'mybooking'],
@@ -204,7 +204,7 @@ function mybooking_register_block_patterns() {
          * Register Activities Catalog
          */
         register_block_pattern('mybooking-block-patterns/catalog-activities', [
-            'title' => __('Activities Catalog', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Activities Catalog', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Insert a list of activities with links to details pages', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['activities', 'catalog', 'mybooking'],
@@ -216,7 +216,7 @@ function mybooking_register_block_patterns() {
          * Register Calendar Camper/Charter
          */
         register_block_pattern('mybooking-block-patterns/calendar-camper', [
-            'title' => __('Calendar Camper', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Calendar Camper', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Insert a calendar for a camper or charter detail page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['calendar', 'mybooking'],
@@ -227,7 +227,7 @@ function mybooking_register_block_patterns() {
          * Register Calendar Activities
          */
         register_block_pattern('mybooking-block-patterns/calendar-activities', [
-            'title' => __('Calendar Activities', 'Block pattern title', 'mybooking-wp-plugin'),
+            'title' => _x('Calendar Activities', 'Block pattern title', 'mybooking-wp-plugin'),
             'description' => _x('Insert a calendar for an activity detail page', 'Block pattern description', 'mybooking-wp-plugin'),
             'categories' => ['mybooking'],
             'keywords' => ['calendar', 'mybooking'],
