@@ -129,7 +129,7 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       // Product key characteristics
       if (!empty($product_show_key_characteristics)) {
         if ( $product_show_key_characteristics == 'show' ) {
-          $custom_css .= "--mb-product-list-key-show: inherit;";
+          $custom_css .= "--mb-product-list-key-show: flex;";
         }
         else {
           $custom_css .= "--mb-product-list-key-show: none;";
