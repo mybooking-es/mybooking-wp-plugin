@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.7.0] - 2022.07.04
+## [1.7.0] - 2022.07.30
 
 ### Added
 
@@ -13,6 +13,7 @@
 - Renting my reservation : Sign contract
 - Renting my reservation : Additional drivers
 - Added missing paid and pending amount in Summary page
+- Renting calendar : Turns and turn names
 
 ### Fixed
 
