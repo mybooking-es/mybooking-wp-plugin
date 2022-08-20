@@ -159,7 +159,7 @@
 
                     <!-- // Price (single product selection) -->
                     <% if (!product.exceeds_max && !product.be_less_than_min) { %>
-                      <% if (!configuration.multipleProductsSelection) { %>
+                      <% if (!configuration.multipleProductsSelection && (product.availability || !configuration.hidePriceIfNotAvailable)) { %>
                         <div class="mybooking-product_amount">
                           <%=configuration.formatCurrency(+product.price +
                             (+product.category_supplement_1_cost || 0) +
@@ -177,7 +177,7 @@
 
                   <!-- // Offer (single product selection) -->
                   <% if (!product.exceeds_max && !product.be_less_than_min) { %>
-                    <% if (!configuration.multipleProductsSelection) { %>
+                    <% if (!configuration.multipleProductsSelection && (product.availability || !configuration.hidePriceIfNotAvailable) ) { %>
                       <span class="mybooking-product_discount">
 
                         <!-- // Taxes included -->
