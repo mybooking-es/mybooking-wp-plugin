@@ -221,6 +221,9 @@
 .mybooking-selector_hour {
   width: 50%;
 }
+.mybooking-selector_duration {
+  width:  100%;
+}
 
 .mybooking-selector_vertical .mb-inline .mybooking-selector_hour,
 .mb-inline .mybooking-selector_hour {

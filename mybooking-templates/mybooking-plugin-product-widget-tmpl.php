@@ -90,7 +90,7 @@
         <div class="mb-form-row js-mybooking-product_calendar-time-hours" style="display: none">
           <div class="mb-form-group mb-col-md-12">
             <label class="">
-              <?php echo esc_html_x('Delivery', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html( MyBookingEngineContext::getInstance()->getDeliveryDate() ) ?>
             </label>
             <select id="time_from" name="time_from" placeholder="hh:mm" class="mb-form-control" disabled> </select>
           </div>
@@ -100,7 +100,7 @@
         <div class="mb-form-row js-mybooking-product_calendar-time-hours" style="display: none">
           <div class="mb-form-group mb-col-md-12">
             <label class="">
-              <?php echo esc_html_x('Return', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?>
             </label>
             <select id="time_to" name="time_to" placeholder="hh:mm" class="mb-form-control" disabled> </select>
           </div>
@@ -262,7 +262,7 @@
         <% } %>
       </div>
 
-      <% if (!configuration.hidePriceIfZero || shopping_cart.item_cost > 0) { %>
+      <% if (!configuration.hidePriceIfZero || shopping_cart.total_cost > 0) { %>
         <!-- // Total -->
         <div class="mb-section">
           <div class="mybooking-summary_total">

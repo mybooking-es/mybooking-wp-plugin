@@ -52,6 +52,11 @@
                     </input>
                   <% } %>
                 </form>
+            <% } else {%>
+              <% if (configuration.timeToFrom) { %>
+                ,&nbsp;<%= shopping_cart.time_from %>
+              <% } %>
+              &nbsp;(<%=shopping_cart.renting_duration_literal%>)
             <% } %>
           </span>
           <% if (configuration.pickupReturnPlace) { %>
@@ -167,12 +172,12 @@
                             (+product.category_supplement_3_cost || 0))
                           %>
                         </div>
+                        <% if (product.price != product.base_price) { %>
+                          <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
+                        <% } %>
                       <% } %>
                     <% } %>
 
-                    <% if (product.price != product.base_price) { %>
-                      <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
-                    <% } %>
                   </div>
 
                   <!-- // Offer (single product selection) -->
