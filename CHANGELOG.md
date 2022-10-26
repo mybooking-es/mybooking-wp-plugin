@@ -6,6 +6,9 @@
 
 - Renting choose product - Hide price if not available control
 
+### Fixed
+- Renting duration hours and minutes management on selector
+
 ## [1.7.0] - 2022.07.30
 
 ### Added
