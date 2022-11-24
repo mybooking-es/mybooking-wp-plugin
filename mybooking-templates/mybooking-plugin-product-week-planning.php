@@ -16,6 +16,14 @@
 			</form>
 			<div class="mybooking-product-planning-week-table"></div>
       <div class="mybooking-product-planning-week-btns">
+
+          <form
+            name="mybooking_product_week_planning_reservation"
+            method="get"
+            enctype="application/x-www-form-urlencoded"
+            class="mybooking-form">                           
+          </form>
+
         <button class="button mybooking-send-btn">
           <?php echo esc_html_x( 'Send', 'product_week_planning', 'mybooking-wp-plugin' ) ?>
         </button>

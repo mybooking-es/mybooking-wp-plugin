@@ -968,6 +968,12 @@
         mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
       }
 
+      // Renting shortcode : Product week planning
+      if ( $registry->mybooking_plugin_renting_module &&
+           has_shortcode( $content, 'mybooking_rent_engine_product_week_planning') ) {
+        mybooking_engine_get_template('mybooking-plugin-product-week-planning-tmpl.php');
+      }
+
       // Product page : reservation widget
       $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
       if ( $registry->mybooking_plugin_renting_module &&
