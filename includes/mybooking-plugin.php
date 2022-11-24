@@ -108,6 +108,10 @@
    * - Product availability and calendar
    *
    * [mybooking_rent_engine_product code=String]
+   * 
+   * 2.1.3 Planning
+   * 
+   * [mybooking_rent_engine_product_week_planning code=String planning_id=String]
    *
    * 2.2 Activities
    *
@@ -283,6 +287,9 @@
 
       // Shortcode Renting Product Calendar
       add_shortcode( 'mybooking_rent_engine_product', array( $this, 'wp_rent_product_shortcode' ) );
+
+      // Shorcode Renting Product Week planning
+      add_shortcode( 'mybooking_rent_engine_product_week_planning', array( $this, 'wp_rent_product_week_planning_shortcode' ) );
 
       // -- Activities shortcodes
 
@@ -461,7 +468,10 @@
         wp_enqueue_style( 'mybooking_wp_css_components_jquerymodal',
                         plugins_url('/assets/styles/mybooking-engine-modals.css', dirname( __FILE__ ) ),
                         array(), $version );
-
+        // Mybooking Product Week Planning
+        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product-week-planning',
+                        plugins_url('/assets/styles/mybooking-engine-product-week-planning.css', dirname( __FILE__ ) ),
+                        array(), $version );
         // == Load Customizer front-end
         $customizer_css = MyBookingPluginCustomizer::getInstance()->customize_enqueue( 'front-end' );
         if ( !empty($customizer_css) ) {
@@ -687,6 +697,11 @@
         $classes[] = 'mybooking-product';
       }
 
+      if ( $registry->mybooking_plugin_renting_module &&
+           has_shortcode( $content , 'mybooking_rent_engine_product_week_planning') ) {
+        $classes[] = 'mybooking-rent-product-planning-week';
+      }
+      
       // == Activities
 
       // Activities reservation steps pages
@@ -1232,6 +1247,27 @@
 
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-product-widget.php', $data);
+      return ob_get_clean();
+
+    }
+
+    /**
+     * Mybooking product week planning
+     */
+    public function wp_rent_product_week_planning_shortcode($atts = [], $content = null, $tag = '') {
+
+      // Extract the shortcode attributes
+      extract( shortcode_atts( array('code' => '',
+                                     'planning_id' => ''), $atts ) );
+
+      $data = array();
+      $data['code'] = $code;
+      if ( $planning_id != '' ) {
+        $data['planning_id'] = $planning_id;
+      }
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-product-week-planning.php', $data);
       return ob_get_clean();
 
     }
