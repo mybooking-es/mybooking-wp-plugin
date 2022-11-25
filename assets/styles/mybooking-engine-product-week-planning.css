@@ -6,7 +6,6 @@
 .mybooking-product-planning-week-content .text-center {
 	text-align: center;
 	display: block;
-	padding: 1em;
 }
 
 .mybooking-product-planning-week-content .mybooking-product-planning-week-head {
@@ -17,7 +16,7 @@
 	border-bottom: 1px solid lightgray;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-head .h1 {
+.mybooking-product-planning-week-content .mybooking-product-planning-week-head .mybooking-title {
 	font-size: 1.3em;
 	font-weight: bold;
 }
@@ -37,13 +36,13 @@
 	color: gray;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table {
+.mybooking-product-planning-week-table {
 	margin: 0;
 	display: block;
 	position: relative;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table {
+.mybooking-product-planning-week-table table {
 	border-collapse: separate;
 	border-spacing: 0;
 	table-layout: fixed;
@@ -51,15 +50,16 @@
 	margin-left: 0;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table thead th {
+.mybooking-product-planning-week-table table thead th {
 	padding: 1em;
 	word-break: break-word;
 	vertical-align: middle;
 	text-align: center;
+	background: none;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table tbody th, 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table tbody td {
+.mybooking-product-planning-week-table table tbody th, 
+.mybooking-product-planning-week-table table tbody td {
 	height: 40px;
 	padding: 0 1em;
 	text-align: center;
@@ -67,17 +67,17 @@
 	z-index: 0;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table  th, 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table  td {
+.mybooking-product-planning-week-table table  th, 
+.mybooking-product-planning-week-table table  td {
 	font-size: 0.8em;
 	font-weight: 200;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table td {
+.mybooking-product-planning-week-table table td {
 	position: relative;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table td .mybooking-product-planning-week-td-content {
+.mybooking-product-planning-week-table table td .mybooking-product-planning-week-td-content {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -92,7 +92,7 @@
 	justify-content: center;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table td .mybooking-product-planning-week-range-text {
+.mybooking-product-planning-week-table table td .mybooking-product-planning-week-range-text {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -106,25 +106,25 @@
   font-weight: bold;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table td .mybooking-product-planning-week-td-content.full {
+.mybooking-product-planning-week-table table td .mybooking-product-planning-week-td-content.full {
 	background-color: red;
 	margin: 2px;
 	cursor: default;
 	color: white;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table td .mybooking-product-planning-week-td-content.closed {
+.mybooking-product-planning-week-table table td .mybooking-product-planning-week-td-content.closed {
 	opacity: 0.4;
 	background-color: lightgray;
 	cursor: default;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table table td .mybooking-product-planning-week-td-content.selected {
+.mybooking-product-planning-week-table table td .mybooking-product-planning-week-td-content.selected {
 	background-color: green;
 	color: white;
 }
 
-.mybooking-product-planning-week-content .mybooking-product-planning-week-table .noselect {
+.mybooking-product-planning-week-table .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -137,4 +137,85 @@
 .mybooking-product-planning-week-content .mybooking-product-planning-week-btns {
 	text-align: right;
 	padding: 1em 0;
+}
+
+/*
+* Theme in engine
+*/
+
+.mybooking-product-planning-week-content .field:not(:last-child) {
+	margin-bottom: 0.75rem;
+}
+
+.mybooking-product-planning-week-content .label {
+	color: #363636;
+	display: block;
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.mybooking-product-planning-week-content  .control {
+	box-sizing: border-box;
+	clear: both;
+	font-size: 1rem;
+	position: relative;
+	text-align: left;
+}
+
+.mybooking-product-planning-week-content  input[type="text"], 
+.mybooking-product-planning-week-content  select {
+	display: inline-block;
+	padding-bottom: calc(0.375em - 1px);
+	padding-left: calc(0.625em - 1px);
+	padding-right: calc(0.625em - 1px);
+	padding-top: calc(0.375em - 1px);
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.mybooking-product-planning-week-content  .select:not(.is-multiple) {
+	height: 2.25em;
+}
+.mybooking-product-planning-week-content  .select select:not([multiple]) {
+	padding-right: 2.5em;
+}
+
+.mybooking-product-planning-week-content  .select {
+	display: inline-block;
+	max-width: 100%;
+	position: relative;
+	vertical-align: top;
+}
+.mybooking-product-planning-week-content  .select select {
+	cursor: pointer;
+	display: block;
+	font-size: 1em;
+	max-width: 100%;
+	outline: 0;
+}
+
+.mybooking-product-planning-week-content .button,
+.mybooking-product-planning-week-content input[type="text"], 
+.mybooking-product-planning-week-content .select select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	align-items: center;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	box-shadow: none;
+	display: inline-flex;
+	font-size: 1rem;
+	height: 2.25em;
+	justify-content: flex-start;
+	line-height: 1.5;
+	padding-bottom: calc(0.375em - 1px);
+	padding-left: calc(0.625em - 1px);
+	padding-right: calc(0.625em - 1px);
+	padding-top: calc(0.375em - 1px);
+	position: relative;
+	vertical-align: top;
+	background-color: #fff;
+	border-color: #dbdbdb;
+	border-radius: 4px;
+	color: #363636;
 }

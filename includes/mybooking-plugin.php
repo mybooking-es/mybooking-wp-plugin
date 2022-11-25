@@ -111,6 +111,7 @@
    * 
    * 2.1.3 Planning
    * 
+   * [mybooking_rent_engine_planning code=String rental_location=String direction=String type=String days=String planning_id=String]
    * [mybooking_rent_engine_product_week_planning code=String planning_id=String]
    *
    * 2.2 Activities
@@ -288,6 +289,10 @@
       // Shortcode Renting Product Calendar
       add_shortcode( 'mybooking_rent_engine_product', array( $this, 'wp_rent_product_shortcode' ) );
 
+      
+      // Shorcode Renting planning (diary or with a calendary)
+      add_shortcode( 'mybooking_rent_engine_planning', array( $this, 'wp_rent_planning_shortcode' ) );
+     
       // Shorcode Renting Product Week planning
       add_shortcode( 'mybooking_rent_engine_product_week_planning', array( $this, 'wp_rent_product_week_planning_shortcode' ) );
 
@@ -468,6 +473,10 @@
         wp_enqueue_style( 'mybooking_wp_css_components_jquerymodal',
                         plugins_url('/assets/styles/mybooking-engine-modals.css', dirname( __FILE__ ) ),
                         array(), $version );
+        // Mybooking Planning
+        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-planning',
+        plugins_url('/assets/styles/mybooking-engine-planning.css', dirname( __FILE__ ) ),
+        array(), $version );
         // Mybooking Product Week Planning
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product-week-planning',
                         plugins_url('/assets/styles/mybooking-engine-product-week-planning.css', dirname( __FILE__ ) ),
@@ -695,6 +704,12 @@
       if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content , 'mybooking_rent_engine_product') ) {
         $classes[] = 'mybooking-product';
+      }
+
+      
+      if ( $registry->mybooking_plugin_renting_module &&
+           has_shortcode( $content , 'mybooking_rent_engine_planning') ) {
+        $classes[] = 'mybooking-rent-planning';
       }
 
       if ( $registry->mybooking_plugin_renting_module &&
@@ -967,6 +982,12 @@
            has_shortcode( $content, 'mybooking_rent_engine_product') ) {
         mybooking_engine_get_template('mybooking-plugin-product-widget-tmpl.php');
       }
+
+      // Renting shortcode :  Planning (diary or with a calendary)
+      // if ( $registry->mybooking_plugin_renting_module &&
+      //      has_shortcode( $content, 'mybooking_rent_engine_planning') ) {
+      //   mybooking_engine_get_template('mybooking-plugin-planning-tmpl.php');
+      // }
 
       // Renting shortcode : Product week planning
       if ( $registry->mybooking_plugin_renting_module &&
@@ -1253,6 +1274,37 @@
 
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-product-widget.php', $data);
+      return ob_get_clean();
+
+    }
+
+    /**
+     * Mybooking planning
+     */
+    public function wp_rent_planning_shortcode($atts = [], $content = null, $tag = '') {
+
+      // Extract the shortcode attributes
+      extract( shortcode_atts( array('code' => '',
+                                     'planning_id' => '',
+                                     'rental_location'=>'',
+                                     'direction'=>'',
+                                    'type'=>'',
+                                  'days'=> '7'), $atts ) );
+
+      $data = array();
+      $data['code'] = $code;
+      if ( $planning_id != '' ) {
+        $data['planning_id'] = $planning_id;
+      }
+      $data['rental_location'] = $rental_location;
+      $data['direction'] = $direction;
+      $data['type'] = $type;
+      if ( $days != '' ) {
+        $data['days'] = $days;
+      }
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-planning.php', $data);
       return ob_get_clean();
 
     }
