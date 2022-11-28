@@ -116,6 +116,7 @@
 .mybooking-product-planning-week-table table td .mybooking-product-planning-week-td-content.closed {
 	opacity: 0.4;
 	background-color: lightgray;
+	color: initial;
 	cursor: default;
 }
 

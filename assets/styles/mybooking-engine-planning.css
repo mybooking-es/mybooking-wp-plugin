@@ -124,6 +124,9 @@
 
 .mybooking-planning-table table td .mybooking-planning-td-content.closed {
 	opacity: 0.4;
+	background-color: lightgray;
+	color: initial;
+	cursor: default;
 }
 
 .mybooking-planning-table table td .mybooking-planning-td-content.full {
