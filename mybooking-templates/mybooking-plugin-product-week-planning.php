@@ -16,7 +16,8 @@
             name="mybooking_product_week_planning_reservation"
             method="get"
             enctype="application/x-www-form-urlencoded"
-            class="mybooking-form">                           
+            class="mybooking-form">
+            <div id="mybooking_product_week_planning_reservation_summary"></div>                           
           </form>
       </div>
 		</div>
