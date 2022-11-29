@@ -111,7 +111,7 @@
    * 
    * 2.1.3 Planning
    * 
-   * [mybooking_rent_engine_planning code=String rental_location=String direction=String type=String days=String planning_id=String]
+   * [mybooking_rent_engine_planning family=String category=String rental_location=String direction=String type=String days=String planning_id=String]
    * [mybooking_rent_engine_product_week_planning code=String planning_id=String]
    *
    * 2.2 Activities
@@ -1284,19 +1284,26 @@
     public function wp_rent_planning_shortcode($atts = [], $content = null, $tag = '') {
 
       // Extract the shortcode attributes
-      extract( shortcode_atts( array('code' => '',
-                                     'planning_id' => '',
-                                     'rental_location'=>'',
-                                     'direction'=>'',
-                                    'type'=>'',
-                                  'days'=> '7'), $atts ) );
+      extract( shortcode_atts( array(
+                                  'planning_id' => '',
+                                  'family' => '',
+                                  'category' => '',
+                                  'rental_location'=>'',
+                                  'direction'=>'rows',
+                                  'type'=>'diary',
+                                  'days'=>'7'), $atts ) );
 
       $data = array();
-      $data['code'] = $code;
-      if ( $planning_id != '' ) {
-        $data['planning_id'] = $planning_id;
+      $data['planning_id'] = $planning_id;
+      if ( $family != '' ) {
+        $data['family'] = $family;
       }
-      $data['rental_location'] = $rental_location;
+      if ( $category != '' ) {
+        $data['category'] = $category;
+      }
+      if ( $rental_location != '' ) {
+        $data['rental_location'] = $rental_location;
+      }
       $data['direction'] = $direction;
       $data['type'] = $type;
       if ( $days != '' ) {
