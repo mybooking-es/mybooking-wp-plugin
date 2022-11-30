@@ -1,7 +1,8 @@
 		<!-- Planning init -->
 		<div class="mybooking-product-planning-week-content" 
-         data-category-code="<?php echo esc_attr( $args['code'] )?>" 
-         id="planning-<?php echo esc_attr( $args['planning_id'] )?>">
+        data-interval="<?php echo esc_attr( $args['interval'] )?>" 
+        data-category-code="<?php echo esc_attr( $args['code'] )?>" 
+        id="planning-<?php echo esc_attr( $args['planning_id'] )?>">
 			<form class="mybooking-product-planning-week-head">
         <div class="mybooking-title mybooking-product-planning-week-title"></div>
         <div class="button-box">

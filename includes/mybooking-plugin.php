@@ -111,8 +111,8 @@
    * 
    * 2.1.3 Planning
    * 
-   * [mybooking_rent_engine_planning family=String category=String rental_location=String direction=String type=String days=String planning_id=String]
-   * [mybooking_rent_engine_product_week_planning code=String planning_id=String]
+   * [mybooking_rent_engine_planning family=String category=String rental_location=String direction=String type=String days=String interval=String planning_id=String]
+   * [mybooking_rent_engine_product_week_planning code=String interval=String planning_id=String]
    *
    * 2.2 Activities
    *
@@ -1285,12 +1285,13 @@
 
       // Extract the shortcode attributes
       extract( shortcode_atts( array(
-                                  'planning_id' => '',
-                                  'family' => '',
-                                  'category' => '',
-                                  'rental_location'=>'',
+                                  'planning_id' => null,
+                                  'family' => null,
+                                  'category' => null,
+                                  'rental_location'=>null,
                                   'direction'=>'rows',
                                   'type'=>'diary',
+                                  'interval'=>'30',
                                   'days'=>'7'), $atts ) );
 
       $data = array();
@@ -1306,6 +1307,7 @@
       }
       $data['direction'] = $direction;
       $data['type'] = $type;
+      $data['interval'] = $interval;
       if ( $days != '' ) {
         $data['days'] = $days;
       }
@@ -1322,11 +1324,14 @@
     public function wp_rent_product_week_planning_shortcode($atts = [], $content = null, $tag = '') {
 
       // Extract the shortcode attributes
-      extract( shortcode_atts( array('code' => '',
-                                     'planning_id' => ''), $atts ) );
+      extract( shortcode_atts( array(
+                                      'code' => '',
+                                      'interval'=>30,
+                                      'planning_id' => ''), $atts ) );
 
       $data = array();
       $data['code'] = $code;
+      $data['interval'] = $interval;
       if ( $planning_id != '' ) {
         $data['planning_id'] = $planning_id;
       }

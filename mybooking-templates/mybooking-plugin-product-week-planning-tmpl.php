@@ -14,12 +14,24 @@
 
     <!-- // Available -->
     <% } else if (product_available) { %>
-      <h2 class="mybooking-summary_details-title">
+      <h2 class="mybooking-summary_details-title text-center">
         <?php echo esc_html_x( 'Reservation summary', 'renting_product_calendar', 'mybooking-wp-plugin') ?>
       </h2>
 
-      <div class="mybooking-summary_detail">
+      <hr>
 
+      <div class="text-center">
+        <b>
+          <% if (shopping_cart.items) { %>
+            <%=shopping_cart.items[0]['item_description_customer_translation']%>
+            <br>
+          <% } %>
+          <%=shopping_cart.date_from_default_format%> - <%=shopping_cart.time_from%> - 
+          <%=shopping_cart.time_to%>
+        </b>
+      </div>
+
+      <div class="mybooking-summary_detail">
         <!-- // Duration -->
         <% if (shopping_cart.days > 0) { %>
           <div class="mybooking-summary_extras">

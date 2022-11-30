@@ -4,6 +4,7 @@
 			data-rental-location-code="<?php echo esc_attr( $args['rental_location'] )?>" 
 			data-direction="<?php echo esc_attr( $args['direction'] )?>" 
 			data-type="<?php echo esc_attr( $args['type'] )?>"
+      data-interval="<?php echo esc_attr( $args['interval'] )?>" 
 			data-items="<?php echo esc_attr( $args['days'] )?>" 
 			id="planning-<?php echo esc_attr( $args['planning_id'] )?>">
 			<form class="mybooking-planning-head">
