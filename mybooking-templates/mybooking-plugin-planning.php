@@ -22,21 +22,18 @@
         </div>
         <div class="field" style="display: none;">
           <label  class="label">
-						<?php echo esc_html_x( 'Family', 'planning', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
 					</label>
           <div class="control">
             <div class="select">
               <select name="family" style="min-width: 300px;">
-                <option value="all">
-									<?php echo esc_html_x( 'All', 'planning', 'mybooking-wp-plugin' ) ?>
-                </option>
               </select>
             </div>
           </div>
         </div>
         <div class="field" style="display: none;">
           <label  class="label">
-						<?php echo esc_html_x( 'Category', 'planning', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() ) ?>
 					</label>
           <div class="control">
             <div class="select">
