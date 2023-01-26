@@ -225,18 +225,7 @@
 					<input class="mb-form-control" name="date_from" id="widget_date_from" type="text" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
 				</div>
 
-				<% if (configuration.rentDateSelector === 'date_from_duration') { %>
-				  <!-- // Duration -->
-					<div class="mybooking-selector_hour">
-						<i class="mybooking-selector_field-icon">
-							<span class="dashicons dashicons-clock"></span>
-						</i>
-						<label for="widget_renting_duration">
-							<?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
-						</label>
-						<select class="mb-form-control" id="widget_renting_duration" name="renting_duration"></select>
-					</div>
-				<% } else if (configuration.timeToFrom) { %>
+				<% if (configuration.timeToFrom) { %>
 				  <!-- // Pickup time -->
 					<div class="mybooking-selector_hour">
 						<i class="mybooking-selector_field-icon">
@@ -270,6 +259,17 @@
 						<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
 					<% } %>
 
+			  <% } else if (configuration.rentDateSelector === 'date_from_duration') { %>
+				  	<!-- // Duration -->
+				    <div class="mybooking-selector_hour">
+						<i class="mybooking-selector_field-icon">
+							<span class="dashicons dashicons-clock"></span>
+						</i>
+						<label for="widget_renting_duration">
+							<?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+						</label>
+						<select class="mb-form-control" id="widget_renting_duration" name="renting_duration"></select>
+					</div>
 			  <% } %>		
 
 			<!--
