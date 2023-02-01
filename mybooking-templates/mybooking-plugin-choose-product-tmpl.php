@@ -143,6 +143,10 @@
 
           <div class="mybooking-product_block">
             <div class="mybooking-product_image-container">
+              <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
+                <span class="dashicons dashicons-plus-alt"></span> INFO
+              </span>
+
               <% if (product.full_photo && product.full_photo !== '') { %>
                 <img class="mybooking-product_image" src="<%=product.full_photo%>">
               <% } else { %>
@@ -212,10 +216,6 @@
                 <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
               <% } %>
 
-              <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
-                <span class="dashicons dashicons-plus-alt"></span> INFO
-              </span>
-
               <!-- // Few units warning -->
               <% if (product.few_available_units) { %>
                 <span class="mybooking-product_low-availability">
@@ -263,27 +263,35 @@
 
               <!-- // Available -->
               <% } else if (product.availability) { %>
-                <% if (configuration.multipleProductsSelection) { %>
-
-                  <!-- // Selector -->
-                  <select class="mybooking-product_select select-choose-product" data-value="<%=product.code%>">
-                    <option value="0">
-                      <%=i18next.t('chooseProduct.selectUnits')%>
-                    </option>
-                    <% for (var idx2=1;idx2<=(product.available);idx2++) { %>
-                      <option value="<%=idx2%>"
-                        <% if (shoppingCartProductQuantities[product.code] && idx2 == shoppingCartProductQuantities[product.code]) { %> selected="selected" <% } %>
-                        ><%=i18next.t('chooseProduct.units', {count: idx2})%>
-                        ( <%= configuration.formatCurrency(product.price * idx2) %> )
-                      </option>
-                    <% } %>
-                  </select>
-                <% } else { %>
-
+                <% if (product.variants_enabled) { %>
+                  <div class="product-variant-resume" data-product-code="<%=product.code%>"></div>
+                  
                   <!-- // Button -->
-                  <button class="mb-button btn-choose-product" data-product="<%=product.code%>">
-                    <?php echo _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-                  </button>
+                  <div class="card-static_btn" style="margin-left: 1rem;">
+                    <button class="button btn btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_variant', 'mybooking') ?><% } else { %><?php echo esc_html_x('Select variants', 'renting_choose_variant', 'mybooking') ?><% } %></button>
+                  </div>
+                <% } else { %>
+                  <% if (configuration.multipleProductsSelection) { %>
+                    <!-- // Selector -->
+                    <div class="car-listing-selector">
+                      <select class="form-control select-choose-product" data-value="<%=product.code%>">
+                        <option value="0"><%=i18next.t('chooseProduct.selectUnits')%></option>
+                        <% for (var idx2=1;idx2<=(product.available);idx2++) { %>
+                        <option value="<%=idx2%>"
+                          <% if (shoppingCartProductQuantities[product.code] && idx2 == shoppingCartProductQuantities[product.code]) { %>
+                          selected="selected" <%}%>
+                          ><%=i18next.t('chooseProduct.units', {count: idx2})%>
+                          (<%= configuration.formatCurrency(product.price * idx2) %>) </option>
+                        <% } %>
+                      </select>
+                    </div>
+                  <% } else { %>
+                    <!-- // Button -->
+                    <div class="card-static_btn">
+                      <a class="button btn btn-choose-product"
+                        data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking') ?></a>
+                    </div>
+                  <% } %>
                 <% } %>
 
               <!-- // Not available -->
@@ -302,14 +310,10 @@
   </div>
 
   <% if (configuration.multipleProductsSelection) { %>
-    <div class="mb-row">
-      <div class="mb-col-md-12">
-        <button id="go_to_complete" class="mb-button btn-confirm-selection">
-          <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-          <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
-        </button>
-      </div>
-    </div>
+    <button id="go_to_complete" class="mb-button btn-confirm-selection">
+      <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+      <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
+    </button>
   <% } %>
 </script>
 
@@ -337,4 +341,57 @@
     <button id="modal_product_info"><?php echo esc_html_x( "Info", 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
   </div>
 
+</script>
+<!-- Script that shows the product variant selection -->   
+<script type="text/tpml" id="script_variant_product_resume">
+  <div class="card-static_variant_resume__container">
+    <div class="card-static_variant_resume__container_inside">
+      <% for (var idxV=0;idxV<variantsSelected.length;idxV++) { %>
+        <div class="card-static_variant_resume__box"><span class="card-static_variant_resume__box_inside"><%= variantsSelected[idxV]['quantity'] %></span> <span class="card-static_variant_resume__box_inside"><%= variantsSelected[idxV]['name'] %></span></div>
+      <% } %>
+    </div>
+    <strong><span class="float-right"><%=configuration.formatCurrency(total)%></span></strong>
+  </div>
+</script>
+<script type="text/tpml" id="script_variant_product">
+  <form name="variant_product_form">
+    <div id="variant_product_selectors" class="mb-row">
+      <% if (!configuration.multipleProductsSelection) { %>
+        <div class="mb-form-group mb-col-sm-12">
+          <select name="<%= product.code %>" id="<%= product.code %>" class="form-control variant_product_selector">
+            <option value="0">Seleccionar variante</option>
+            <% for (var idxV=0;idxV<variants.length;idxV++) { %>
+              <% var variant = variants[idxV]; %>
+              <option value="<%= variant.code %>" <% if  (variantsSelected[variant.code]) { %>selected<% } %>><%= variant.variant_name %> - <%=configuration.formatCurrency(variant.unit_price)%></option>
+            <% } %>
+          </select>
+        </div>
+      <% } else { %>
+        <% for (var idxV=0;idxV<variants.length;idxV++) { %>
+          <% var variant = variants[idxV]; %>
+          <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
+            <label for="<%= variant.code %>">
+              <%= variant.variant_name %>
+            </label>
+            <select name="<%= variant.code %>" id="<%= variant.code %>" <% if  (variant.available < 1) { %>disabled<% } %> class="form-control variant_product_selector">
+              <option value="0">Seleccionar unidades</option>
+              <% for (var idxVO=1;idxVO<=variant.available;idxVO++) { %>
+                <option value="<%= idxVO %>"  <% if  (variantsSelected[variant.code] && variantsSelected[variant.code] === idxVO) { %>selected<% } %>><%= idxVO %> <% if  (idxVO > 1) { %>unidades<% } else { %>unidad<% } %> - <%=configuration.formatCurrency(variant.unit_price * idxVO)%></option>
+              <% } %>
+              </select>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+    <div class="mb-row">
+      <div class="mb-col-sm-10">
+        <h4>Total</h4>
+      </div>
+      <div class="mb-col-sm-2">
+        <h4 id="variant_product_total">
+          <span id="variant_product_total_quantity"> <%=configuration.formatCurrency(total)%></span>
+        </h4>
+      </div>
+    </div>
+  </form>
 </script>

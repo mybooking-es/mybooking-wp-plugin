@@ -254,6 +254,9 @@ div.mybooking-product {
 .mybooking-product_info-button {
   line-height: 1;
   color: var(--mb-info-color)!important;
+  position: absolute;
+  top: 1rem; 
+  right: 1rem;
 }
 
 .mybooking-product_info-button:hover {

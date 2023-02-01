@@ -28,3 +28,10 @@
   <h3 class="mybooking-modal_title modal-product-detail-title"></h3>
   <div class="mybooking-modal_body modal-product-detail-content"></div>
 </div>
+
+<!-- VARIANTS MODAL ------------------------------------------------------------>
+
+<div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="modalVariantSelector">
+  <h3 id="variant-product-title"  class="mybooking-modal_title modal-product-detail-title"></h3>
+  <div id="variant-product-content"  class="mybooking-modal_body modal-product-detail-content"></div>
+</div>
