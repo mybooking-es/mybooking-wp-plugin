@@ -250,7 +250,7 @@
             </div>
 
 
-            <div class="mybooking-product_footer">
+            <div class="mybooking-product_footer <% if (product.variants_enabled) { %>mybooking-product_variant_footer<% } %>">
 
               <!-- // Exceeds max duration -->
               <% if (product.exceeds_max) { %>
@@ -267,7 +267,7 @@
                   <div class="product-variant-resume" data-product-code="<%=product.code%>"></div>
                   
                   <!-- // Button -->
-                  <div class="card-static_btn" style="margin-left: 1rem;">
+                  <div class="card-static_btn">
                     <button class="button btn btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_variant', 'mybooking') ?><% } else { %><?php echo esc_html_x('Select variants', 'renting_choose_variant', 'mybooking') ?><% } %></button>
                   </div>
                 <% } else { %>
