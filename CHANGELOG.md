@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.8.0] - 2023.02.03
+
+### Added
+- Renting - Product variants
+- Planning
+
+### Fixed
+- Modify reservation dates - When duration time_from was not showing
+
 ## [1.7.1] - 2022.10.26
 
 ### Added

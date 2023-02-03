@@ -473,14 +473,6 @@
         wp_enqueue_style( 'mybooking_wp_css_components_jquerymodal',
                         plugins_url('/assets/styles/mybooking-engine-modals.css', dirname( __FILE__ ) ),
                         array(), $version );
-        // Mybooking Planning
-        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-planning',
-        plugins_url('/assets/styles/mybooking-engine-planning.css', dirname( __FILE__ ) ),
-        array(), $version );
-        // Mybooking Product Week Planning
-        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product-week-planning',
-                        plugins_url('/assets/styles/mybooking-engine-product-week-planning.css', dirname( __FILE__ ) ),
-                        array(), $version );
         // == Load Customizer front-end
         $customizer_css = MyBookingPluginCustomizer::getInstance()->customize_enqueue( 'front-end' );
         if ( !empty($customizer_css) ) {
@@ -489,6 +481,21 @@
             wp_add_inline_style( 'mybooking_wp_engine_customizer', $customizer_css );
         }
 
+      }
+
+      $content = $this->getCurrentPageContent();
+      
+      if ( has_shortcode( $content, 'mybooking_rent_engine_planning') ||
+           has_shortcode( $content, 'mybooking_rent_engine_product_week_planning') ) {
+        // Mybooking Planning
+        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-planning',
+                          plugins_url('/assets/styles/mybooking-engine-planning.css', dirname( __FILE__ ) ),
+                          array(), $version );
+        
+        // Mybooking Product Week Planning
+        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product-week-planning',
+                          plugins_url('/assets/styles/mybooking-engine-product-week-planning.css', dirname( __FILE__ ) ),
+                          array(), $version );        
       }
 
     }
