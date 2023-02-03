@@ -146,6 +146,10 @@
   .mybooking-product_list .mb-button.btn-choose-product {
     width: auto;
   }
+
+  .mybooking-product_grid .mb-button.btn-choose-product {
+    width: 100%;
+  }
 }
 
 /** VARIANTS **/

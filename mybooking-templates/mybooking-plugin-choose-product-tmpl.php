@@ -268,7 +268,7 @@
                   
                   <!-- // Button -->
                   <div class="card-static_btn">
-                    <button class="button btn btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x('Select options', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %></button>
+                    <button class="mb-button btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x('Select options', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %></button>
                   </div>
                 <% } else { %>
                   <% if (configuration.multipleProductsSelection) { %>
@@ -288,7 +288,7 @@
                   <% } else { %>
                     <!-- // Button -->
                     <div class="card-static_btn">
-                      <a class="button btn btn-choose-product"
+                      <button class="mb-button btn-choose-product"
                         data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking') ?></a>
                     </div>
                   <% } %>
