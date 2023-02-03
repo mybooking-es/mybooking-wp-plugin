@@ -105,11 +105,11 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       // Image width percentage
       $product_image_width_img = get_theme_mod('mybooking_reservation_engine_product_image_width_img', '100');
       // Product text height (grid)
-      $product_body_height = get_theme_mod('mybooking_reservation_engine_product_body_height', '140');
+      $product_body_height = get_theme_mod('mybooking_reservation_engine_product_body_height', '60');
       // Product text height (list)
       $product_list_body_height = get_theme_mod('mybooking_reservation_engine_list_product_body_height', '140');
       // Show key characteristics
-      $product_show_key_characteristics = get_theme_mod('mybooking_reservation_engine_product_show_key_characteristics', 'show'); 
+      $product_show_key_characteristics = get_theme_mod('mybooking_reservation_engine_product_show_key_characteristics', 'hide'); 
 
       // == Build the css-properties
       $custom_css .= ":root {";
@@ -230,7 +230,7 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $wp_customize->add_setting(
         'mybooking_reservation_engine_product_show_key_characteristics',
         array(
-          'default'           => 'show',
+          'default'           => 'hide',
           'type'              => 'theme_mod',
           'sanitize_callback' => array($this, 'slug_sanitize_select'),
           'capability'        => 'edit_theme_options',
@@ -297,7 +297,7 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $wp_customize->add_setting(
         'mybooking_reservation_engine_product_body_height',
         array(
-          'default'           => '140',
+          'default'           => '60',
           'type'              => 'theme_mod',
           'sanitize_callback' => 'absint',
           'capability'        => 'edit_theme_options',
@@ -363,7 +363,7 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $wp_customize->add_setting(
         'mybooking_reservation_engine_rent_choose_product_layout',
         array(
-          'default'           => 'list_only',
+          'default'           => 'grid_only',
           'type'              => 'theme_mod',
           'sanitize_callback' => array($this, 'slug_sanitize_select'),
           'capability'        => 'edit_theme_options',

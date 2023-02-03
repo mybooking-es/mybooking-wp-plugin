@@ -151,7 +151,7 @@
 /** VARIANTS **/
 
 .mybooking-product_grid .mybooking-product_column {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .mybooking-product_grid .mybooking-product {
@@ -451,7 +451,7 @@ div.mybooking-product {
   width: var(--mb-product-name-width);
   margin: 0 0 2px 0 !important;
   font-weight: 800;
-  font-size: var(--mb-product-name-size);
+  font-size: var(--mb-product-name-size) !important;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis!important;
