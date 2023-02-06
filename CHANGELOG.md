@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.8.1] - 2023.02.06
+
+### Fixed
+- Renting - Product calendar not working after Babel
+
 ## [1.8.0] - 2023.02.03
 
 ### Added
