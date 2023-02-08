@@ -465,7 +465,7 @@ div.mybooking-product {
 }
 
 .mybooking-product_name {
-  width: var(--mb-product-name-width);
+/*  width: var(--mb-product-name-width); */
   margin: 0 0 2px 0 !important;
   font-weight: 800;
   font-size: var(--mb-product-name-size) !important;
