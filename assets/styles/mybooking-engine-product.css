@@ -6,19 +6,23 @@
 /** PRODUCT GRID **/
 
 .mybooking-product_grid {
-  display: flex;
-  flex-wrap: wrap;
+  /*display: flex;
+  flex-wrap: wrap;*/
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 0.2em;
+
   margin: 1rem auto;
   max-width: 1170px;
 } @media (min-width: 576.98px) {
   .mybooking-product_grid {
-    display: flex;
-    flex-wrap: wrap;
+/*    display: flex;
+    flex-wrap: wrap;*/
   }
 } @media (min-width: 991.98px) {
   .mybooking-product_grid {
-    display: flex;
-    flex-wrap: wrap;
+/*    display: flex;
+    flex-wrap: wrap;*/
   }
 }
 
@@ -155,7 +159,7 @@
 /** VARIANTS **/
 
 .mybooking-product_grid .mybooking-product_column {
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .mybooking-product_grid .mybooking-product {
@@ -312,11 +316,20 @@ div.mybooking-product {
 }
 
 .mybooking-product_info-button {
+/*
   line-height: 1;
   color: var(--mb-info-color)!important;
   position: absolute;
   top: 1rem; 
   right: 1rem;
+*/
+  line-height: 1;
+  color: var(--mb-product-info-color)!important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  background: #999;
 }
 
 .mybooking-product_info-button:hover {
@@ -443,7 +456,7 @@ div.mybooking-product {
   display: flex;
   flex-direction: column;
   height: var(--mb-product-body-height);
-  padding: 1rem;
+  padding: 0.5em;
   overflow-y: hidden;
 }
 

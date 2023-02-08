@@ -713,7 +713,6 @@
         $classes[] = 'mybooking-product';
       }
 
-      
       if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content , 'mybooking_rent_engine_planning') ) {
         $classes[] = 'mybooking-rent-planning';

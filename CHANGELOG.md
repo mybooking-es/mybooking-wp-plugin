@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.2] - 2023.02.08
+
+### Fixed
+
+- Renting - Planning and Weekly planning 
+
 ## [1.8.1] - 2023.02.06
 
 ### Fixed
