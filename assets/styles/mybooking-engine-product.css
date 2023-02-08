@@ -43,6 +43,10 @@
 
 /** PRODUCT LIST **/
 
+.mybooking-product_grid .mb-button.btn-choose-product {
+  width: 100%;
+}
+
 /*  Because list view doesn't apply for mobile,
     everything is wrapped in a media query.
     This way we have card view on mobile both
@@ -92,6 +96,7 @@
   .mybooking-product_list .mybooking-product_short-description {
     width:  var(--mb-product-list-description-width);
   }
+
 
 } @media ( min-width: 991.98px ) {
 
