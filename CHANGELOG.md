@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.3] - 2023.02.10
+
+### Fixed
+
+- Activities - Components were not working after JS update
+
 ## [1.8.2] - 2023.02.08
 
 ### Fixed
