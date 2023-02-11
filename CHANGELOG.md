@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.4] - 2023.02.11
+
+### Fixed
+
+- Renting - Duration selector without pickup time
+
 ## [1.8.3] - 2023.02.10
 
 ### Fixed
