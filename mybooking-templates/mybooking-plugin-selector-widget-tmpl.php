@@ -14,7 +14,7 @@
 
 <script type="text/tmpl" id="widget_form_selector_tmpl">
 
-	<% if (configuration.pickupReturnPlace && configuration.timeToFrom) { %>
+	<% if (configuration.pickupReturnPlace) { %>
 
 		<!-- // PICKUP SECTION -->
 
@@ -71,9 +71,6 @@
 					<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
 					</div>
 				<% } else { %>
-					<i class="mybooking-selector_field-icon">
-						<span class="dashicons dashicons-clock"></span>
-					</i>
 					<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
 				<% } %>
 			</div>

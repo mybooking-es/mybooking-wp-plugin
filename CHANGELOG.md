@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.5] - 2023.02.13
+
+### Fixed
+
+- Renting - Selector with pickup places and not pickup time
+
 ## [1.8.4] - 2023.02.11
 
 ### Fixed
