@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.6] - 2023.03.01
+
+### Fixed
+
+- Renting - Planning fixed time_range multiple dates
+- Renting - Selector rent
+
 ## [1.8.5] - 2023.02.13
 
 ### Fixed
