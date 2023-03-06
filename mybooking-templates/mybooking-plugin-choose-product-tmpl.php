@@ -289,7 +289,7 @@
                     <!-- // Button -->
                     <div class="card-static_btn">
                       <button class="mb-button btn-choose-product"
-                        data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking') ?></a>
+                        data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></a>
                     </div>
                   <% } %>
                 <% } %>

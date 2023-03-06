@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.8.6] - 2023.03.01
+
+### Fixed
+
+- Renting - Planning fixed time_range multiple dates
+- Renting - Selector rent
+
+## [1.8.5] - 2023.02.13
+
+### Fixed
+
+- Renting - Selector with pickup places and not pickup time
+
+## [1.8.4] - 2023.02.11
+
+### Fixed
+
+- Renting - Duration selector without pickup time
+
+## [1.8.3] - 2023.02.10
+
+### Fixed
+
+- Activities - Components were not working after JS update
+
+## [1.8.2] - 2023.02.08
+
+### Fixed
+
+- Renting - Planning and Weekly planning 
+
 ## [1.8.1] - 2023.02.06
 
 ### Fixed
