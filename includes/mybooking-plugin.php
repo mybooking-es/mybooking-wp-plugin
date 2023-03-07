@@ -565,22 +565,12 @@
                          array( 'moment' ), $version, true);
       wp_enqueue_script( 'mybooking-moment-timezone-js');
 
-      // Enqueue the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
-      wp_register_script( 'mybooking-rent-engine-script',
-                           plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
-                           dirname(__FILE__) ),
-                           array(
-                             'jquery',
+      $mybooking_dependencies = array('jquery',
                              'jquery-ui-core',
                              'jquery-ui-datepicker',
                              'moment',
                              'mybooking-moment-timezone-js',
-                             'mybooking-init'
-                           ),
-                           $version,
-                           true
-                         );
-      wp_enqueue_script( 'mybooking-rent-engine-script');
+                             'mybooking-init');
 
       // Slick JS
       if ($registry->mybooking_rent_plugin_js_slickjs) {
@@ -589,7 +579,19 @@
                            plugins_url( '/assets/js/slick.min.js', dirname(__FILE__) ),
                            array( 'jquery' ), $version, true);
         wp_enqueue_script('mybooking_wp_js_slick');
+        array_push($mybooking_dependencies, 'mybooking_wp_js_slick');
       }
+
+
+      // Enqueue the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
+      wp_register_script( 'mybooking-rent-engine-script',
+                           plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
+                           dirname(__FILE__) ),
+                           $mybooking_dependencies,
+                           $version,
+                           true
+                         );
+      wp_enqueue_script( 'mybooking-rent-engine-script');
 
       // Complements (testimonials, cookies, popup)
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1' ||
