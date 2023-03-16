@@ -7,6 +7,10 @@
 - Renting - Planning fixed time_range multiple dates
 - Renting - Selector rent
 
+### Added
+
+- Renting - Products shortcode added family_id and key_characteristics filters
+
 ## [1.8.5] - 2023.02.13
 
 ### Fixed

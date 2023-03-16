@@ -1355,8 +1355,49 @@
      */
     public function wp_rent_products_shortcode($atts = [], $content = null, $tag = '') {
 
+      // Extract the shortcode attributes
+      extract( shortcode_atts( array(
+                                      'family_id' => '',
+                                      'key_characteristic_1' => '',
+                                      'key_characteristic_2' => '',
+                                      'key_characteristic_3' => '',
+                                      'key_characteristic_4' => '',
+                                      'key_characteristic_5' => '',
+                                      'key_characteristic_6' => '',
+                                      'price_range' => ''                                      
+                                      ), $atts ) );
+
+      $search_filter = array();
+      if ( $family_id != '' ) {
+        $search_filter['family_id'] = $family_id;
+      }
+      if ( $key_characteristic_1 != '' ) {
+        $search_filter['key_characteristic_1'] = $key_characteristic_1;
+      }
+      if ( $key_characteristic_2 != '' ) {
+        $search_filter['key_characteristic_2'] = $key_characteristic_2;
+      }
+      if ( $key_characteristic_3 != '' ) {
+        $search_filter['key_characteristic_3'] = $key_characteristic_3;
+      }
+      if ( $key_characteristic_4 != '' ) {
+        $search_filter['key_characteristic_4'] = $key_characteristic_4;
+      }
+      if ( $key_characteristic_5 != '' ) {
+        $search_filter['key_characteristic_5'] = $key_characteristic_5;
+      }
+      if ( $key_characteristic_6 != '' ) {
+        $search_filter['key_characteristic_6'] = $key_characteristic_6;
+      }                        
+      if ( $price_range != '' ) {
+        $search_filter['price_range'] = $price_range;
+      }  
+
       // Get the page and the limit from the request parameters
       $opts = $this->wp_products_extract_query_string();
+      // Merge the parameters with shortcode attributes
+      $opts = array_merge($search_filter, $opts);
+      // Prepare the pagination
       $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
       $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
       if ( is_null($page) || $page === false ) {
