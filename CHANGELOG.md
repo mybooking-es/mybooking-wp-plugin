@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.8.6] - 2023.03.01
+## [1.8.7] - 2023.03.18
+
+### Added
+
+- Renting - Choose product category filter parameters
+
+## [1.8.6] - 2023.03.11
 
 ### Fixed
 

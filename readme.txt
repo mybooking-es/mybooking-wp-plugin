@@ -117,6 +117,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.8.7 =
+* Added: Renting - Choose product category filter arguments
+
 = 1.8.6 =
 * Fixed: Renting - Planning
 * Fixed: Renting - Selector when clear starting date
@@ -417,6 +420,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.8.7 =
+* Added: Renting - Choose product category filter arguments
 
 = 1.8.6 =
 * Fixed: Renting - Planning and Selector when clear starting date + Renting product shortcode filters
