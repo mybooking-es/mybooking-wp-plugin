@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.9] - 2023.03.20
+
+### Fixed
+
+- Login : Encode URI component for special characters
+
 ## [1.8.8] - 2023.03.20
 
 ### Fixed
