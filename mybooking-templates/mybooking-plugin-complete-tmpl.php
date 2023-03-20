@@ -776,6 +776,7 @@
 <!-- Welcome user message -->
 
 <script type="text/template" id="script_welcome_customer">
+  <br>
   <div class="mb-alert highlight">
     <%=i18next.t('common.welcomeConnectedUser', {name: user.full_name})%>
   </div>
