@@ -1,32 +1,17 @@
 # Changelog
 
-## [1.8.9] - 2023.03.20
+## [1.9.0] - 2023.03.20
 
 ### Fixed
 
 - Login : Encode URI component for special characters
-
-## [1.8.8] - 2023.03.20
-
-### Fixed
-
 - Password forgotten modal load was not working
-
-## [1.8.7] - 2023.03.18
-
-### Added
-
-- Renting - Choose product category filter parameters
-
-## [1.8.6] - 2023.03.11
-
-### Fixed
-
 - Renting - Planning fixed time_range multiple dates
 - Renting - Selector rent
 
 ### Added
 
+- Renting - Choose product category filter parameters
 - Renting - Products shortcode added family_id and key_characteristics filters
 
 ## [1.8.5] - 2023.02.13
