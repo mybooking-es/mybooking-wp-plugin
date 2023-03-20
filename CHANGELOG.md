@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.8] - 2023.03.20
+
+### Fixed
+
+- Password forgotten modal load was not working
+
 ## [1.8.7] - 2023.03.18
 
 ### Added
