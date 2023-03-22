@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - PRODUCT WEEK PLANNING
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the week planning to create a reservation
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-product-week-planning.php
+ *
+ */
+?>
 		<!-- Planning init -->
 		<div class="mybooking-product-planning-week-content" 
         data-interval="<?php echo isset($args['interval']) ? esc_attr( $args['interval'] ) : '' ?>"  

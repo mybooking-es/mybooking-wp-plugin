@@ -1201,6 +1201,13 @@ EOF;
 		    $select .= "<option value='departure-entry'>Departure/Entry</option>";
 		  }
 
+		  if ($value == 'eta-etd') {
+		  	$select .= "<option value='eta-etd' selected>Estimated Time of Arrival / Departure</option>";
+		  }
+		  else {
+		    $select .= "<option value='eta-etd'>Estimated Time of Arrival / Departure</option>";
+		  }
+
 		  $select .= "</select>";
 
 		  echo $select;
@@ -1210,6 +1217,7 @@ EOF;
 		  echo "<p class=\"description\">Select <b>start/end</b> to describe start and end period.</p>";
 		  echo "<p class=\"description\">Select <b>arrival/departure</b> to describe arrivals an departures</p>";
 		  echo "<p class=\"description\">Select <b>departure/entry</b> to describe departures and entries</p>";
+		  echo "<p class=\"description\">Select <b>eta/etd</b> to describe estimated arrival and departure times</p>";
 
 		}
 

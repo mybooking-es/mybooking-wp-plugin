@@ -1,3 +1,17 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - PRODUCT WEEK PLANNING TEMPLATE
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the week planning to create a reservation
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php
+ *
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
+?>
 <script type="text/tmpl" id="script_mybooking_product_week_planning_reservation_summary">
 
     <!-- // Exceeds max duration -->

@@ -992,10 +992,10 @@
       }
 
       // Renting shortcode :  Planning (diary or with a calendary)
-      // if ( $registry->mybooking_plugin_renting_module &&
-      //      has_shortcode( $content, 'mybooking_rent_engine_planning') ) {
-      //   mybooking_engine_get_template('mybooking-plugin-planning-tmpl.php');
-      // }
+      if ( $registry->mybooking_plugin_renting_module &&
+           has_shortcode( $content, 'mybooking_rent_engine_planning') ) {
+         mybooking_engine_get_template('mybooking-plugin-planning-tmpl.php');
+      }
 
       // Renting shortcode : Product week planning
       if ( $registry->mybooking_plugin_renting_module &&
