@@ -385,7 +385,7 @@
       </div>
       <ul class="mb-list border">
         <li class="mb-list-item">
-          <%=booking.customer_name%> <%=booking.customer_surname%>
+          <%=booking.customer_fullname%> 
         </li>
 
         <% if (booking.customer_phone && booking.customer_phone != '') { %>
