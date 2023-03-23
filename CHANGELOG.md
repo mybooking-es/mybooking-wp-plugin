@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.9.1] - 2023.03.23
+
+### Fixed
+
+- Activities multiple dates and one time selector
+
 ## [1.9.0] - 2023.03.20
 
 ### Fixed
