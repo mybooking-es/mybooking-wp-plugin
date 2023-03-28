@@ -58,6 +58,12 @@
 	background: none;
 }
 
+@media (max-width: 768px) {
+	.mybooking-product-planning-week-table table thead th {
+		padding: 10px 2px;
+	}
+}
+
 .mybooking-product-planning-week-table table tbody th, 
 .mybooking-product-planning-week-table table tbody td {
 	height: 40px;
@@ -71,6 +77,13 @@
 .mybooking-product-planning-week-table table  td {
 	font-size: 0.8em;
 	font-weight: 200;
+}
+
+@media (max-width: 768px) {
+	.mybooking-product-planning-week-table table  th, 
+	.mybooking-product-planning-week-table table  td {
+		font-size: 12px;
+	}
 }
 
 .mybooking-product-planning-week-table table td {
