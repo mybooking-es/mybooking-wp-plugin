@@ -1,12 +1,6 @@
 # Changelog
 
-## [1.9.1] - 2023.03.23
-
-### Fixed
-
-- Activities multiple dates and one time selector
-
-## [1.9.0] - 2023.03.20
+## [1.9.0] - 2023.04.02
 
 ### Fixed
 
@@ -14,6 +8,7 @@
 - Password forgotten modal load was not working
 - Renting - Planning fixed time_range multiple dates
 - Renting - Selector rent
+- Activities multiple dates and one time selector
 
 ### Added
 
