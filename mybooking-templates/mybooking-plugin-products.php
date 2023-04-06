@@ -47,7 +47,7 @@
 											<?php echo esc_html_x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?>
 										</span>
 										<span class="mybooking-product_amount">
-											<?php echo esc_html( $mybooking_product->from_price ) ?>€
+											<?php echo esc_html( number_format_i18n($mybooking_product->from_price) ) ?>€
 										</span>
 
 								</div>
@@ -62,7 +62,8 @@
 								<h3 class="mybooking-product_short-description">
 									<?php echo esc_html( $mybooking_product->short_description ) ?>
 								</h3>
-							</div>
+
+							</div> 
 
 						  <div class="mybooking-product_characteristics">
 								<?php if ( isset( $mybooking_product->key_characteristics) && is_array( (array) $mybooking_product->key_characteristics ) && !empty( (array) $mybooking_product->key_characteristics ) ) { ?>

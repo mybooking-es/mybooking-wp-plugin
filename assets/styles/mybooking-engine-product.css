@@ -47,6 +47,17 @@
   width: 100%;
 }
 
+.characteristics-img {
+  width: 18px;
+  display: inline;
+  position: relative;
+  top: 4px;
+}
+
+.mybooking-product_detailed_characteristics {
+  padding: 0 0.5em;
+}
+
 /*  Because list view doesn't apply for mobile,
     everything is wrapped in a media query.
     This way we have card view on mobile both
