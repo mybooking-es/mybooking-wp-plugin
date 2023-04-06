@@ -1,6 +1,10 @@
 # Changelog
 
-## [1.9.0] - 2023.04.02
+## [1.9.0] - 2023.04.06
+
+### Added
+
+- Renting - My reservation passengers
 
 ### Fixed
 
@@ -8,6 +12,7 @@
 - Password forgotten modal load was not working
 - Renting - Planning fixed time_range multiple dates
 - Renting - Selector rent
+- Renting - Variants translation
 - Activities multiple dates and one time selector
 
 ### Added
