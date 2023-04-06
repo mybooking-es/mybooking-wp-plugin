@@ -93,20 +93,22 @@
             <!-- //Customer extra data form -->
             <div id="reservation_form_container" style="display:none"></div>
 
-            <!-- Passengers -->
-            <br/>
-            <div id="passengers_container" class="mb-card" style="display:none">
-              <div class="mb-card_header">
-                <h3 class="mb-form_title">
-                  <?php echo esc_html_x('Passengers', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-                </h3>
+            <% if (configuration.guests) { %>
+              <!-- Passengers -->
+              <br/>
+              <div id="passengers_container" class="mb-card" style="display:none">
+                <div class="mb-card_header">
+                  <h3 class="mb-form_title">
+                    <?php echo esc_html_x('Passengers', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+                  </h3>
+                </div>
+                <div class="mb-card_body">
+                  <div id="passengers_table_container"></div>
+                  <div id="passengers_form_container"></div>
+                </div>
               </div>
-              <div class="mb-card_body">
-                <div id="passengers_table_container"></div>
-                <div id="passengers_form_container"></div>
-              </div>
-            </div>
-            <!-- End passengers -->
+              <!-- End passengers -->
+            <% } %>
           </div>
         <% } %>
 
