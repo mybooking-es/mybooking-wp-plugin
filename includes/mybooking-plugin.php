@@ -1333,12 +1333,12 @@
 
       // Extract the shortcode attributes
       extract( shortcode_atts( array(
-                                      'code' => '',
+                                      'category' => '',
                                       'interval'=>30,
                                       'planning_id' => ''), $atts ) );
 
       $data = array();
-      $data['code'] = $code;
+      $data['category'] = $category;
       $data['interval'] = $interval;
       if ( $planning_id != '' ) {
         $data['planning_id'] = $planning_id;
