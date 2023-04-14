@@ -9,6 +9,10 @@
 	margin-bottom: 1rem;
 }
 
+.mybooking-product-planning-week-content .mybooking-product-planning-week-head > .field {
+	margin-bottom: 0;
+}
+
 .mybooking-planning-content .mybooking-planning-head .button-box {
 	float: right;
 }

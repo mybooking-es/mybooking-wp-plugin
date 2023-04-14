@@ -14,9 +14,20 @@
 		<div class="mybooking-product-planning-week-content" 
         data-interval="<?php echo isset($args['interval']) ? esc_attr( $args['interval'] ) : '' ?>"  
         data-category-code="<?php echo isset($args['category']) ? esc_attr( $args['category'] ) : '' ?>" 
-        id="planning-<?php echo isset($args['planning_id']) ? esc_attr( $args['planning_id'] ) : '' ?>" 
+        id="planning-<?php echo isset($args['planning_id']) ? esc_attr( $args['planning_id'] ) : '' ?>" >
 			<form class="mybooking-product-planning-week-head">
         <div class="mybooking-title mybooking-product-planning-week-title"></div>
+        <div class="field" style="display: none;">
+          <label  class="label">
+            <?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() ) ?>
+          </label>
+          <div class="control">
+            <div class="select">
+              <select name="category" style="min-width: 300px;">
+              </select>
+            </div>
+          </div>
+        </div>
         <div class="button-box">
           <button data-action="date" data-direction="back" class="button"><i class="dashicons dashicons-arrow-left-alt"></i></button>
           <input type="text" name="date"  />
