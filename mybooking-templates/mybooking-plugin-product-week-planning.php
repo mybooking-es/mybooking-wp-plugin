@@ -17,14 +17,17 @@
         id="planning-<?php echo isset($args['planning_id']) ? esc_attr( $args['planning_id'] ) : '' ?>" >
 			<form class="mybooking-product-planning-week-head">
         <div class="mybooking-title mybooking-product-planning-week-title"></div>
-        <div class="field" style="display: none;">
-          <label  class="label">
-            <?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() ) ?>
-          </label>
-          <div class="control">
-            <div class="select">
-              <select name="category" style="min-width: 300px;">
-              </select>
+        <div class="field" style="display: none; margin-bottom: 0;">
+          <div style="display: flex; align-items: center;">
+            <label  class="label">
+              <?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() ) ?>
+              &nbsp;
+            </label>
+            <div class="control">
+              <div class="select">
+                <select name="category" style="min-width: 300px;">
+                </select>
+              </div>
             </div>
           </div>
         </div>

@@ -278,3 +278,13 @@
 	border-radius: 4px;
 	color: #363636;
 }
+
+.mybooking-planning-content .button[disabled] {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.mybooking-planning-content .button[disabled]:hover {
+	background: initial;
+   color: initial;
+}
