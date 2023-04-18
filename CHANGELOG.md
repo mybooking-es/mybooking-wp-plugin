@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.10.0] - 2023.04.18
+
+### Fixed
+
+- Renting - My reservation update with resources
+
 ## [1.9.0] - 2023.04.06
 
 ### Added
