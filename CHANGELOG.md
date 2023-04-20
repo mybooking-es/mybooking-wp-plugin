@@ -1,11 +1,12 @@
 # Changelog
 
-## [1.10.0] - 2023.04.18
+## [1.10.0] - 2023.04.20
 
 ### Fixed
 
 - Renting - My reservation update with resources
 - Activities - My reservation update with resources
+- Variants - Selection of variants shows unit price instead of price
 
 ## [1.9.0] - 2023.04.06
 
