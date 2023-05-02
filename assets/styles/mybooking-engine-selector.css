@@ -200,6 +200,25 @@
   }
 }
 
+.mybooking-selector_vertical .mybooking-selector_simple_location,
+.mybooking-selector_simple_location {
+  width: 60%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector_simple_location {
+    width: 70%;
+  }
+}
+
+.mybooking-selector_vertical .mb-inline .mybooking-selector_simple_location,
+.mb-inline .mybooking-selector_simple_location {
+  width: 100%!important;
+} @media ( min-width: 575.98px ) {
+  .mb-inline .mybooking-selector_simple_location {
+    width: 70%!important;
+  }
+}
+
+
 .mybooking-selector_vertical .mybooking-selector_cal,
 .mybooking-selector_cal {
   width: 60%;

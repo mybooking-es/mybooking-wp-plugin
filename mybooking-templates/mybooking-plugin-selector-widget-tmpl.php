@@ -194,6 +194,18 @@
 
 			<div class="mybooking-selector_group mb-inline">
 
+				<% if (configuration.simpleLocation) { %>
+  				<div class="mybooking-selector_simple_location">
+						<i class="mybooking-selector_field-icon">
+							<span class="dashicons dashicons-location"></span>
+						</i>
+						<label for="widget_simple_location_id">
+							<?php echo esc_html_x( 'Where', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+						</label>
+						<select name="simple_location_id" id="widget_simple_location_id" class="mb-form-control"></select>
+					</div>
+				<% } %>
+
 				<!--
 				// Location code selector:
 				// Opens .mybooking-selector_group
