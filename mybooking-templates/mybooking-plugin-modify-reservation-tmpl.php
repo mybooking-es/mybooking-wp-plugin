@@ -185,6 +185,17 @@
         // Opens .mybooking-selector_group
         // only when Locator or Family fields are activated
         -->
+        <!-- Simple location -->
+				<% if (configuration.simpleLocation) { %>
+          <div class="mybooking-selector_cal">
+            <label for="simple_location_id">
+              <?php echo esc_html_x( 'Where', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+            </label>
+            <select class="mb-form-control" id="simple_location_id" name="simple_location_id" ></select>
+          </div>
+				<% } %>
+				<!-- END Simple location -->
+
         <% if ( (not_hidden_rental_location_code && configuration.selectRentalLocation) || 
                 (not_hidden_family_id && configuration.selectFamily) ) { %>
 

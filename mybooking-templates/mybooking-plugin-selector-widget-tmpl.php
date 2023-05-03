@@ -16,6 +16,17 @@
 
 	<% if (configuration.pickupReturnPlace) { %>
 
+		<!-- Simple location -->
+		<% if (configuration.simpleLocation) { %>
+			<label for="widget_simple_location_id">
+				<?php echo esc_html_x( 'Where', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+			</label>
+			<div class="widget_pickup_place_group">
+				<select class="mb-form-control" id="widget_simple_location_id" name="simple_location_id" ></select>
+			</div>
+		<% } %>
+		<!-- END Simple location -->
+
 		<!-- // PICKUP SECTION -->
 
 		<div class="mybooking-selector_group">

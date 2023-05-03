@@ -1114,7 +1114,8 @@ button:not(:hover):not(:active):not(.has-background).slick-next.slick-arrow,
 
 .select2-container--default .select2-selection--single {
   height: var(--mb-selector-field-height);
-  border-radius:  1px;
+  border-radius: var(--mb-border-radius) !important;
+  border: 1px solid var(--mb-border-color) !important;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
