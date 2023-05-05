@@ -92,7 +92,6 @@
           <div class="mb-col-md-8">
             <!-- //Customer extra data form -->
             <div id="reservation_form_container" style="display:none"></div>
-
             <% if (configuration.guests) { %>
               <!-- Passengers -->
               <br/>
@@ -1049,11 +1048,13 @@
 
 <script type="text/tmpl" id="script_passengers_form">
   <br />
+  <div id="passengers_error" class="alert alert-danger" style="display: none;"></div>
   <form id="booking_passengers_form" name="booking_passengers_form"> 
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-6">
         <label for="passenger_name">
           <?php echo esc_html_x("Name", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          *
         </label>
         <input class="form-control" id="passenger_name" name="passenger_name" type="text"
           placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("Name", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>"
@@ -1063,6 +1064,7 @@
       <div class="mb-form-group mb-col-md-6">
         <label for="">
           <?php echo esc_html_x("Surname", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          *
         </label>
         <input class="form-control" id="passenger_surname" name="passenger_surname" type="text"
           placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("Surname", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>" value=""
@@ -1073,6 +1075,7 @@
       <div class="mb-form-group mb-col-md-12">
         <label for="passenger_document_id">
           <?php echo esc_html_x("ID card or passport", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          *
         </label>
         <input class="form-control" id="passenger_document_id" name="passenger_document_id" type="text"
           placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("ID card or passport", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>" value=""

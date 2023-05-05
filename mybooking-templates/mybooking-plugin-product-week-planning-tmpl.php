@@ -43,12 +43,12 @@
           <%=shopping_cart.time_to%>
         </b>
 
-        <div class="mybooking-summary_detail">
+        <div class="mybooking-summary_detail text-center">
           <!-- // Duration -->
           <% if (shopping_cart.days > 0) { %>
             <div class="mybooking-summary_extras text-center">
               <span class="mybooking-summary_item">
-                <span class="mybooking-summary_duration">
+                <span class="mybooking-summary_duration text-center">
                   <%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
                 </span>
               </span>
