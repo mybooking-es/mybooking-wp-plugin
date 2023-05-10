@@ -216,22 +216,61 @@
                 <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
               <% } %>
 
+              <% if (product.category_supplement_1_cost > 0) { %>
+              <div class="mybooking-product_price_supplement p-b-1">
+                <span class="mybooking-product_price_supplement_price">
+                  <small><b><%=configuration.formatCurrency(product.price)%></b>&nbsp;<?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() )?></small>
+                </span>
+                <span class="mybooking-product_price_supplement_supplement_1">
+                  <small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></small>
+                </span>
+              </div>
+              <% } %>
+
+              <% if ((product.characteristic_length && product.characteristic_length != 0) ||
+                (product.characteristic_width && product.characteristic_width != 0) ||
+                (product.characteristic_height && product.characteristic_height != 0) || 
+                (product.optional_external_driver && product.optional_external_driver != '')) { %>
+                  <div class="mybooking-product_characteristics-text">
+                    <!-- Length Eslora -->
+                    <% if (product.characteristic_length && product.characteristic_length != 0) { %>
+                      <span class="mybooking-product_characteristics-text-item">
+                        <small><?php echo esc_html_x('Length','renting_choose_product','mybooking-wp-plugin') ?> <%=product.characteristic_length%> m.</small>
+                      </span>
+                    <% } %>
+                    <!-- Width Manga -->
+                    <% if (product.characteristic_width && product.characteristic_width != 0) { %>
+                      <span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html_x('Sleeve','renting_choose_product','mybooking-wp-plugin') ?> <%=product.characteristic_width%> m.</small></span>
+                    <% } %>
+                    <!-- Height Calado -->
+                    <% if (product.characteristic_height && product.characteristic_height != 0) { %>
+                      <span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html_x('Draft','renting_choose_product','mybooking-wp-plugin') ?> <%=product.characteristic_height%> m.</small></span>
+                    <% } %>
+                    </div>
+                    <div class="mybooking-product_characteristics-text">
+                    <!-- Optional external driver (skipper) -->
+                    <% if (product.optional_external_driver && product.optional_external_driver != '') { %>
+                      <span class="mybooking-product_characteristics-text-item mb-badge secondary">
+                        <%=product.optional_external_driver_name%>
+                     </span>
+                     &nbsp;
+                    <% } %>
+                    <!-- Driving license -->
+                    <% if (product.optional_external_driver && product.optional_external_driver != '' || product.driving_license_type_name != null && product.driving_license_type_name != '') { %>
+                      <span class="mybooking-product_characteristics-text-item mb-badge secondary">
+                        <?php echo esc_html_x('Nav. license','renting_choose_product','mybooking-wp-plugin') ?>
+                        &nbsp;
+                        <%=product.driving_license_type_name%>
+                      </span>
+                    <% } %>
+                    </div>
+              <% } %>
+
               <!-- // Few units warning -->
               <% if (product.few_available_units) { %>
                 <span class="mybooking-product_low-availability">
                   <?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-wp-plugin') ?>
                 </span>
-              <% } %>
-
-              <% if (+product.category_supplement_1_cost > 0) { %>
-              <div class="mybooking-product_price_supplement p-b-1">
-                <div class="mybooking-product_price_supplement_price">
-                  <small><b><%=configuration.formatCurrency(product.price)%></b>&nbsp;<?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() )?></small>
-                </div>
-                <div class="mybooking-product_price_supplement_supplement_1">
-                  <small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></small>
-                </div>
-              </div>
               <% } %>
             </div>
 
@@ -248,7 +287,6 @@
                 <% } %>
               <% } %>
             </div>
-
 
             <div class="mybooking-product_footer <% if (product.variants_enabled) { %>mybooking-product_variant_footer<% } %>">
 

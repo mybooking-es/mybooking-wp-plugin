@@ -471,7 +471,7 @@ div.mybooking-product {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: var(--mb-product-body-height);
+  /* height: var(--mb-product-body-height);*/
   padding: 0.5em;
   overflow-y: hidden;
 }

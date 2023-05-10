@@ -64,39 +64,38 @@
 								</h3>
 
 								<!-- Characteristics -->
-								<?php if ($mybooking_product->characteristic_length != 0 ||
-								          $mybooking_product->characteristic_width != 0 ||
-								          $mybooking_product->characteristic_height != 0 || 
-								          $mybooking_product->optional_external_driver != '') { ?>
-									<div class="mybooking-product_detailed_characteristics">
-										<!-- Length -->
-			              <?php if ($mybooking_product->characteristic_length != 0) { ?>
-		                  <span class="characteristics-text"><small>Eslora <?php echo number_format_i18n($mybooking_product->characteristic_length, 2)?> m.</small></span>
-			              <?php } ?>
-			              <!-- Width -->
-			              <?php if ($mybooking_product->characteristic_width != 0) { ?>
-		                  <span class="characteristics-text"><small>Manga <?php echo number_format_i18n($mybooking_product->characteristic_width, 2)?> m.</small></span>
-			              <?php } ?>
-			              <!-- Height -->
-			              <?php if ($mybooking_product->characteristic_height != 0) { ?>
-		                  <span class="characteristics-text"><small>Calado <?php echo number_format_i18n($mybooking_product->characteristic_height,2) ?> m.</small></span>
-			              <?php } ?>
-			              <?php if ($mybooking_product->optional_external_driver != '' || $mybooking_product->driving_license_type_name != '') { ?>
-			              	<br>
-			              <?php } ?>
-			              <!-- Optional external driver (skipper) -->
-			              <?php if ($mybooking_product->optional_external_driver != '') { ?>
-		                  <img class="characteristics-img" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/key_characteristics/skipper.svg' ) ?>">
-		                  <span class="characteristics-text"><small><?php echo $mybooking_product->optional_external_driver_name ?></small></span>
-			              <?php } ?>
-			              <!-- Driving license -->
-			              <?php if ($mybooking_product->optional_external_driver != 'required' && $mybooking_product->driving_license_type_name != '') { ?>
-			              	<img class="characteristics-img" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/key_characteristics/boat_license.svg' ) ?>">
-			              	<span class="characteristics-text"><small><?php echo $mybooking_product->driving_license_type_name ?></small></span>
-			              <?php } ?>
-			            </div>
-			          <?php } ?> 
-
+								<?php if (($mybooking_product->characteristic_length &&$mybooking_product->characteristic_length != 0) ||
+                    ($mybooking_product->characteristic_width && $mybooking_product->characteristic_width != 0) ||
+                    ($mybooking_product->characteristic_height && $mybooking_product->characteristic_height != 0) || 
+                    ($mybooking_product->optional_external_driver && $mybooking_product->optional_external_driver != '')) { ?>
+								<div class="mybooking-product_characteristics-text">
+									<!-- Length Eslora-->
+									<?php if ($mybooking_product->characteristic_length &&$mybooking_product->characteristic_length != 0) { ?>
+										<span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html_x('Length','renting_choose_product','mybooking-wp-plugin') ?> <?php echo number_format_i18n($mybooking_product->characteristic_length, 2)?> m.</small></span>
+									<?php } ?>
+									<!-- Width Manga -->
+									<?php if ($mybooking_product->characteristic_width && $mybooking_product->characteristic_width != 0) { ?>
+										<span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html_x('Sleeve','renting_choose_product','mybooking-wp-plugin') ?> <?php echo number_format_i18n($mybooking_product->characteristic_width, 2)?> m.</small></span>
+									<?php } ?>
+									<!-- Height Calado -->
+									<?php if ($mybooking_product->characteristic_height && $mybooking_product->characteristic_height != 0) { ?>
+										<span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html_x('Draft','renting_choose_product','mybooking-wp-plugin') ?> <?php echo number_format_i18n($mybooking_product->characteristic_height,2) ?> m.</small></span>
+									<?php } ?>
+								</div>
+								<div class="mybooking-product_characteristics-text">
+									<!-- Optional external driver (skipper) -->
+									<?php if ($mybooking_product->optional_external_driver && $mybooking_product->optional_external_driver != '') { ?>
+										<span class="mybooking-product_characteristics-text-item mb-badge secondary"><?php echo $mybooking_product->optional_external_driver_name ?></span>
+										&nbsp;
+									<?php } ?>
+									<!-- Driving license -->
+									<?php if ($mybooking_product->optional_external_driver && $mybooking_product->optional_external_driver != '' || $mybooking_product->driving_license_type_name != null && $mybooking_product->driving_license_type_name != '') { ?>
+										<span class="mybooking-product_characteristics-text-item mb-badge secondary"><?php echo esc_html_x('Nav. license','renting_choose_product','mybooking-wp-plugin') ?>
+										&nbsp;
+										<?php echo $mybooking_product->driving_license_type_name ?></span>
+									<?php } ?>
+								</div>
+								<?php } ?>
 							</div> 
 
 						  <div class="mybooking-product_characteristics">
