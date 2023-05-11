@@ -1392,6 +1392,10 @@
       if ( $price_range != '' ) {
         $search_filter['price_range'] = $price_range;
       }  
+      $settingsConnection = (array) get_option('mybooking_plugin_settings_connection');
+      if ($settingsConnection && array_key_exists('mybooking_plugin_settings_sales_channel_code', $settingsConnection)) {
+        $search_filter['sales_channel_code'] = $settingsConnection['mybooking_plugin_settings_sales_channel_code'];
+      }
 
       // Get the page and the limit from the request parameters
       $opts = $this->wp_products_extract_query_string();
@@ -1425,7 +1429,9 @@
       $registry = Mybooking_Registry::getInstance();
       $api_client = new MybookingApiClient($registry->mybooking_rent_plugin_api_url_prefix,
                                            $registry->mybooking_rent_plugin_api_key);
-      $data =$api_client->get_products( $offset, $limit, $opts );
+      
+      $data = $api_client->get_products( $offset, $limit, $opts );
+
       if ( $data == null) {
         $data = (object) array('total' => 0,
                                'offset' => 0,
