@@ -154,6 +154,48 @@
 
     }
 
+    public function getLength() {
+        $registry = Mybooking_Registry::getInstance();
+        $returnValue = '';
+
+        switch ($registry->mybooking_rent_plugin_product_context) {
+          case 'boat':
+            $returnValue = esc_html_x( 'Length', 'engine_context_boat', 'mybooking-wp-plugin' );
+            break;
+          default:
+            $returnValue = esc_html_x( 'Length', 'engine_context', 'mybooking-wp-plugin' );
+        }
+        return $returnValue;
+    }
+
+    public function getWidth() {
+        $registry = Mybooking_Registry::getInstance();
+        $returnValue = '';
+
+        switch ($registry->mybooking_rent_plugin_product_context) {
+          case 'boat':
+            $returnValue = esc_html_x( 'Sleeve', 'engine_context_boat', 'mybooking-wp-plugin' );
+            break;
+          default:
+            $returnValue = esc_html_x( 'Width', 'engine_context', 'mybooking-wp-plugin' );
+        }
+        return $returnValue;
+    }
+
+    public function getHeight() {
+        $registry = Mybooking_Registry::getInstance();
+        $returnValue = '';
+
+        switch ($registry->mybooking_rent_plugin_product_context) {
+          case 'boat':
+            $returnValue = esc_html_x( 'Draft', 'engine_context_boat', 'mybooking-wp-plugin' );
+            break;
+          default:
+            $returnValue = esc_html_x( 'Height', 'engine_context', 'mybooking-wp-plugin' );
+        }
+        return $returnValue;      
+    }
+
     /**
      * Get Duration
      */
