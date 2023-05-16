@@ -799,13 +799,7 @@ body.mybooking-activity .entry {
     max-width: var(--responsive--alignwide-width, 610px);
     margin: 0 auto;
   }
-  /* Twenty Twenty */
-  body.mybooking-product .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
-  body.mybooking-activity .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)
-  {
-    max-width: var(--responsive--alignwide-width, 610px);
-    margin: 0 auto;
-  }
+ 
   /* Twenty Twenty One */
   body.mybooking-product .entry .entry-content > *,
   body.mybooking-activity .entry .entry-content > *
@@ -833,13 +827,7 @@ body.mybooking-activity .entry {
     max-width: var(--responsive--alignwide-width, 1240px);
     margin: 0 auto;
   }
-  /* Twenty Twenty */
-  body.mybooking-product .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
-  body.mybooking-activity .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)
-  {
-    max-width: var(--responsive--alignwide-width, 1240px);
-    margin: 0 auto;
-  }
+
   /* Twenty Twenty One */
   body.mybooking-product .entry .entry-content > *,
   body.mybooking-activity .entry .entry-content > *
