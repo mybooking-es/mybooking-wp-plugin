@@ -113,6 +113,10 @@
    * 
    * [mybooking_rent_engine_planning family=String category=String rental_location=String direction=String type=String days=String interval=String planning_id=String]
    * [mybooking_rent_engine_product_week_planning code=String interval=String planning_id=String]
+   * 
+   * 2.1.4 Shift picker
+   * 
+   * [mybooking_rent_engine_shift_picker rental_location_code=String category_code=String shift_picker_id=String]
    *
    * 2.2 Activities
    *
@@ -288,13 +292,15 @@
 
       // Shortcode Renting Product Calendar
       add_shortcode( 'mybooking_rent_engine_product', array( $this, 'wp_rent_product_shortcode' ) );
-
       
       // Shorcode Renting planning (diary or with a calendary)
       add_shortcode( 'mybooking_rent_engine_planning', array( $this, 'wp_rent_planning_shortcode' ) );
      
       // Shorcode Renting Product Week planning
       add_shortcode( 'mybooking_rent_engine_product_week_planning', array( $this, 'wp_rent_product_week_planning_shortcode' ) );
+
+       // Shorcode Renting Shift Picker
+       add_shortcode( 'mybooking_rent_engine_shift_picker', array( $this, 'wp_rent_shift_picker_shortcode' ) );
 
       // -- Activities shortcodes
 
@@ -495,8 +501,15 @@
         // Mybooking Product Week Planning
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product-week-planning',
                           plugins_url('/assets/styles/mybooking-engine-product-week-planning.css', dirname( __FILE__ ) ),
-                          array(), $version );        
-      }
+                          array(), $version );
+        }
+
+      if ( has_shortcode( $content, 'mybooking_rent_engine_shift_picker') ) {
+        // Mybooking Product Shift Picker
+        wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-shift-picker',
+                          plugins_url('/assets/styles/mybooking-engine-shift-picker.css', dirname( __FILE__ ) ),
+                          array(), $version );     
+        }
 
     }
 
@@ -723,6 +736,11 @@
       if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content , 'mybooking_rent_engine_product_week_planning') ) {
         $classes[] = 'mybooking-rent-product-planning-week';
+      }
+
+      if ( $registry->mybooking_plugin_renting_module &&
+           has_shortcode( $content , 'mybooking_rent_engine_shift_picker') ) {
+        $classes[] = 'mybooking-rent-shift-picker';
       }
       
       // == Activities
@@ -1001,6 +1019,12 @@
       if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content, 'mybooking_rent_engine_product_week_planning') ) {
         mybooking_engine_get_template('mybooking-plugin-product-week-planning-tmpl.php');
+      }
+
+      // Renting shortcode : Product shift picker
+      if ( $registry->mybooking_plugin_renting_module &&
+           has_shortcode( $content, 'mybooking_rent_engine_shift_picker') ) {
+        mybooking_engine_get_template('mybooking-plugin-shift-picker-tmpl.php');
       }
 
       // Product page : reservation widget
@@ -1346,6 +1370,35 @@
 
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-product-week-planning.php', $data);
+      return ob_get_clean();
+
+    }
+
+    /**
+     * Mybooking product shift picker
+     */
+    public function wp_rent_shift_picker_shortcode($atts = [], $content = null, $tag = '') {
+
+      // Extract the shortcode attributes
+      extract( shortcode_atts( array(
+                                      'rental_location_code' => '',
+                                      'category_code' => '',
+                                      'shift_picker_id' => ''), $atts ) );
+
+      $data = array();
+      
+      $data['category_code'] = $category_code;
+
+      if ( $rental_location_code != '' ) {
+        $data['rental_location_code'] = $rental_location_code;
+      }
+
+      if ( $shift_picker_id != '' ) {
+        $data['shift_picker_id'] = $shift_picker_id;
+      }
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-shift-picker.php', $data);
       return ob_get_clean();
 
     }

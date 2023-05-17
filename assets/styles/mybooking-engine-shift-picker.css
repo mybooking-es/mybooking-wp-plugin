@@ -1,0 +1,83 @@
+
+/* 
+* Commons 
+*/
+.mybooking-rent-shift-picker-content .h1 {
+	font-size: 2rem;
+}
+.mybooking-rent-shift-picker-content .h2 {
+	font-size: 1.5rem;
+}
+.mybooking-rent-shift-picker-content .h1, 
+.mybooking-rent-shift-picker-content .h2 {
+	padding: 1rem 0;
+	font-weight: bold;
+}
+
+
+/* 
+* Form head
+*/
+.mybooking-rent-shift-picker-head	.field {
+	margin-top: 1rem;
+}
+.mybooking-rent-shift-picker-head	.field .control,
+.mybooking-rent-shift-picker-head	.field input:not([type="radio"]),
+.mybooking-rent-shift-picker-head	.field .select,
+.mybooking-rent-shift-picker-head	.field select {
+	width: 100%;
+}
+
+/* 
+* Container head
+*/
+.mybooking-rent-shift-picker-container-head {
+	font-size: 2rem;
+	margin: 1rem 0;
+	text-transform: capitalize;
+}
+.mybooking-rent-shift-picker-container-arrows {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 1rem 0;
+}
+
+/*
+* Container list
+*/
+.mybooking-rent-shift-picker-container-list li {
+	margin: 0.5rem 0;
+	padding: 0.5rem;
+	background-color: rgb(241, 241, 241);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+}
+.mybooking-rent-shift-picker-container-list li[data-status=disabled] {
+	cursor: default;
+	opacity: 0.8;
+}
+
+/*
+* Container info panel
+*/
+.mybooking-rent-shift-picker-container-info_content {
+	border: 1px solid rgb(241, 241, 241);
+	margin: 0;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}
+.mybooking-rent-shift-picker-container-info_content > span,
+.mybooking-rent-shift-picker-container-info_content > strong {
+	display: block;
+	padding: 0 1rem;
+}
+
+/*
+* Container buttons
+*/
+.mybooking-rent-shift-picker-container-buttons .button {
+	width:  100%;
+}
