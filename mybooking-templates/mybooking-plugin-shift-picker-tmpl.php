@@ -35,11 +35,13 @@
 					</i>
 				</small>
 			<% } %>
-			<small>
-				<i>
-					<%=!model.availability ? <?php echo esc_html_x( 'Unavailable', 'renting_shift_picker', 'mybooking-wp-plugin') ?> : ''%>
-				</i>
-			</small>
+			<% if (!model.availability) { %>
+				<small>
+					<i>
+						<?php echo esc_html_x( 'Unavailable', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
+					</i>
+				</small>
+			<% } %>
 		</div>
 		<input type="radio" name="time" value="<%=model.time_from%> - <%=model.time_to%>" <%=!model.availability ? 'disabled="disabled"' : ''%> class="mybooking-rent-shift-picker-container-list-item_value">
 	</li>
