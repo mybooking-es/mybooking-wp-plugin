@@ -160,7 +160,17 @@
               </span>
             </span>
           </div>
+
+        <% } else if (shopping_cart.minutes > 0) { %>
+          <div class="mybooking-summary_extras">
+            <span class="mybooking-summary_item">
+              <span class="mybooking-summary_duration">
+                <%=shopping_cart.minutes%> <?php echo esc_html_x( 'minutes(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+              </span>
+            </span>
+          </div>
         <% } %>
+
       </div>
 
       <!-- // Product -->
