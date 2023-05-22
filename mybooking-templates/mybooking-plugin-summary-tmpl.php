@@ -157,9 +157,12 @@
              <% if (booking.booking_lines[idx].item_unit_cost_base != booking.booking_lines[idx].item_unit_cost) { %>
                <div class="mybooking-product_price">
 
-                 <span class="mybooking-product_original-price">
-                   <%=configuration.formatCurrency(booking.booking_lines[idx].item_unit_cost_base * booking.booking_lines[idx].quantity)%>
-                 </span>
+                 <!-- Only show the price if it is higher -->
+                 <% if (booking.booking_lines[idx].item_unit_cost < booking.booking_lines[idx].item_unit_cost_base) { %>
+                   <span class="mybooking-product_original-price">
+                     <%=configuration.formatCurrency(booking.booking_lines[idx].item_unit_cost_base * booking.booking_lines[idx].quantity)%>
+                   </span>
+                 <% } %>
 
                  <!-- // Offer -->
                  <% if (typeof booking.booking_lines[idx].offer_name !== 'undefined' && booking.booking_lines[idx].offer_name !== null && booking.booking_lines[idx].offer_name !== '') { %>
