@@ -302,6 +302,10 @@
   }
 }
 
+.mb-sidebar_title {
+  
+}
+
 
 /** FORMS & FIELDS **/
 
@@ -516,6 +520,14 @@ button.mb-button a:hover  {
   padding: 0;
 }
 
+.mb-button.navigation {
+  padding: .5rem;
+  font-size: 80%;
+  color: inherit;
+  background-color: #FFF;
+  border: 1px solid var(--mb-border-color);
+}
+
 .mb-button.link {
   display: inline-block;
   margin-top: 1rem;
@@ -527,7 +539,7 @@ button.mb-button a:hover  {
 /* Badges */
 .mb-badge {
   padding: 2px 8px;
-  border-radius: 0;
+  border-radius: 3px;
   background-color: var(--mb-dark-background-color);
   color: var(--mb-negative-text-color);
   font-size: .7em;

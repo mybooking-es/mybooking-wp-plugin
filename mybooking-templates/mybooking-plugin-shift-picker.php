@@ -14,9 +14,9 @@
 <div id="shift-picker-<?php echo isset($args['shift_picker_id']) ? esc_attr( $args['shift_picker_id'] ) : '' ?>" data-category-code="<?php echo isset($args['category_code']) ? esc_attr( $args['category_code'] ) : '' ?>" data-rental-location-code="<?php echo isset($args['rental_location_code']) ? esc_attr( $args['rental_location_code'] ) : '' ?>" class="mybooking-rent-shift-picker-content">
 		<form name="mybooking-rent-shift-picker-form" method="POST">
 			<div class="mybooking-rent-shift-picker-head">
-				<h1 class="h1">
-					<?php echo esc_html_x( 'Booking a turn', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
-				</h1>
+				<h2 class="mb-sidebar_title">
+					<?php echo esc_html_x( 'Select a shift', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
+				</h2>
 				<p>
 					<?php echo esc_html_x( 'Select the number of vehicles and the day you want to reserve to see the available shifts.', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
 				</p>
@@ -26,8 +26,7 @@
 					</label>
 					<div class="control">
 						<div class="select">
-							<select name="shiftpicker-units">
-							</select>
+							<select class="form-control mb-form-control" name="shiftpicker-units"></select>
 						</div>
 					</div>
 				</div>
@@ -36,35 +35,30 @@
 						<?php echo esc_html_x( 'Pick a day', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
 					</label>
 					<div class="control">
-						<input type="text" name="shiftpicker-date" />
+						<input type="text" class="form-control mb-form-control" name="shiftpicker-date" />
 					</div>
 				</div>
 			</div>
 			<div class="mybooking-rent-shift-picker-container">
-				<div class="mybooking-rent-shift-picker-container-head">
-					<span class="shiftpicker-text-date"></span>
-				</div>
-				<div class="mybooking-rent-shift-picker-container-arrows">
-					<button data-direction="back" class="button shiftpicker-arrow" disabled>
-						<i class="fa fa-arrow-left"></i>
-						&nbsp;
-						<?php echo esc_html_x( 'Back', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
+				<div class="mybooking-shiftpicker_navigation">
+					<button data-direction="back" class="mb-button navigation icon shiftpicker-arrow btn btn-outline" disabled>
+						<?php echo esc_html_x( '« Back', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
 					</button>
-					<button data-direction="next" class="button shiftpicker-arrow">
-						<?php echo esc_html_x( 'Next', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
-						&nbsp;
-						<i class="fa fa-arrow-right"></i>
+					<span class="mybooking-shiftpicker_date-selected shiftpicker-text-date"></span>
+					<button data-direction="next" class="mb-button navigation icon shiftpicker-arrow btn btn-outline">
+						<?php echo esc_html_x( 'Next »', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
 					</button>
 				</div>
-				<ul class="mybooking-rent-shift-picker-container-list shiftpicker-turns">
+				<ul class="mybooking-rent-shift-picker-container-list shiftpicker-turns list-group">
 				</ul>
-				<div class="mybooking-rent-shift-picker-container-info shiftpicker-info">
+				<br>
+				<div class="mybooking-shiftpicker_info shiftpicker-info">
 				</div>
 				<div class="mybooking-rent-shift-picker-container-buttons">
 					<!-- // Reservation button -->
 					<div class="mb-form-group">
-						<input type="submit" class="button" disabled="disabled" value="<?php echo esc_html_x( 'Book it!', 'renting_shift_picker', 'mybooking-wp-plugin') ?>"  />
-				 </div>
+						<input type="submit" class="mb-button block mybooking-shiftpicker_button btn btn-primary btn-block" disabled="disabled" value="<?php echo esc_html_x( 'Book it!', 'renting_shift_picker', 'mybooking-wp-plugin') ?>"  />
+				 	</div>
 				</div>
 			</div>
 		</form>

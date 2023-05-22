@@ -21,9 +21,9 @@
 </script>
 
 <script type="text/tmpl" id="script_shiftpicker_turns_item">
-	<li class="mybooking-rent-shift-picker-container-list-item shiftpicker-turn-item" data-status="<%=model.availability ? 'enabled' : 'disabled'%>" data-time-from="<%=model.time_from%>" data-time-to="<%=model.time_to%>">
+	<li class="mybooking-rent-shift-picker-container-list-item shiftpicker-turn-item list-group-item" data-status="<%=model.availability ? 'enabled' : 'disabled'%>" data-time-from="<%=model.time_from%>" data-time-to="<%=model.time_to%>">
 		<span class="mybooking-rent-shift-picker-container-list-item_text">
-			<%=model.time_from%> <i class="fa fa-arrow-right"></i> <%=model.time_to%>
+			<%=model.time_from%> - <%=model.time_to%>
 		</span>
 		<div>
 			<% if (model.available_units) { %>
@@ -43,14 +43,14 @@
 				</small>
 			<% } %>
 		</div>
-		<input type="radio" name="time" value="<%=model.time_from%> - <%=model.time_to%>" <%=!model.availability ? 'disabled="disabled"' : ''%> class="mybooking-rent-shift-picker-container-list-item_value">
+		<input class="form-control" style="width:auto;" type="radio" name="time" value="<%=model.time_from%> - <%=model.time_to%>" <%=!model.availability ? 'disabled="disabled"' : ''%> class="mybooking-rent-shift-picker-container-list-item_value">
 	</li>
 </script>
 
 <script type="text/tmpl" id="script_shiftpicker_info">
-	<div class="card-static_resume__container mybooking-rent-shift-picker-container-info_content">
+	<div class="card-static_resume__container mybooking-rent-shift-picker-container-info_content card">
 		<div class="card-static_resume__container_inside">
-			<h2 class="mybooking-summary_details-title text-center">
+			<h2 class="mybooking-summary_details-title">
         <?php echo esc_html_x( 'Reservation summary', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
       </h2>
 
@@ -108,12 +108,12 @@
 			<!-- // Extras -->
 			<% if (model.shopping_cart.extras.length > 0) { %>
 				<div class="mb-section">
-					<div class="mybooking-summary_details-title text-center">
+					<div class="mybooking-summary_details-title">
 						<?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 					</div>
 
 					<% for (var idx=0;idx<model.shopping_cart.extras.length;idx++) { %>
-						<div class="mybooking-summary_extras text-center">
+						<div class="mybooking-summary_extras">
 							<div class="mybooking-summary_extra-item">
 								<span class="mb-badge info mybooking-summary_extra-quantity">
 									<%=model.shopping_cart.extras[idx].quantity%>
@@ -132,7 +132,7 @@
 			<!-- // End Extras -->
 
 			<!-- // Supplements -->
-			<div class="mybooking-summary_extras text-center">
+			<div class="mybooking-summary_extras">
 				<!-- // Pick-up time -->
 				<% if (model.shopping_cart.time_from_cost > 0) { %>
 					<div class="mybooking-summary_extra-item">
@@ -149,23 +149,23 @@
 
 			<!-- // Total -->
 			<% if (!model.configuration.hidePriceIfZero || model.shopping_cart.total_cost > 0) { %>
-				<div class="mb-section">
-					<div class="mybooking-summary_total text-center">
-						<span class="mybooking-summary_total-label">
-							<b><?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>:</b>
-						</span>
-						<span class="mybooking-summary_total-amount">
-							<b>
-								<%=model.configuration.formatCurrency(model.shopping_cart.total_cost)%>
-							</b>
-						</span>
-					</div>
-					<?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-            <div class="mybooking-product_taxes">
-              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-            </div>
-          <?php endif; ?>
+				<hr class="my-4">
+				<div class="mybooking-summary_total lead">
+					<span class="mybooking-summary_total-label">
+						<b><?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>:</b>
+					</span>
+					<span class="mybooking-summary_total-amount">
+						<b>
+							<%=model.configuration.formatCurrency(model.shopping_cart.total_cost)%>
+						</b>
+					</span>
 				</div>
+				<?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+					<div class="mybooking-product_taxes">
+						<?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+					</div>
+				<?php endif; ?>
+				
 			<% } %>
 			<!-- // End Total -->
 		</div>
