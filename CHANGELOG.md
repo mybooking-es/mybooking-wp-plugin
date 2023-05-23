@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.10.0] - 2023.05.08
+## [1.10.0] - 2023.05.22
 
 ### Added
 
@@ -12,6 +12,7 @@
 - Renting - My reservation update with resources
 - Activities - My reservation update with resources
 - Variants - Selection of variants shows unit price instead of price
+- Renting - Summary and My reservation : Do not show offer is price is higher
 
 ## [1.9.0] - 2023.04.06
 
