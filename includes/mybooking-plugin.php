@@ -116,7 +116,7 @@
    * 
    * 2.1.4 Shift picker
    * 
-   * [mybooking_rent_engine_shift_picker rental_location_code=String category_code=String shift_picker_id=String]
+   * [mybooking_rent_engine_shift_picker rental_location_code=String sales_channel_code= String category_code=String shift_picker_id=String]
    *
    * 2.2 Activities
    *
@@ -1382,6 +1382,7 @@
       // Extract the shortcode attributes
       extract( shortcode_atts( array(
                                       'rental_location_code' => '',
+                                      'sales_channel_code' => '',
                                       'category_code' => '',
                                       'shift_picker_id' => ''), $atts ) );
 
@@ -1391,6 +1392,10 @@
 
       if ( $rental_location_code != '' ) {
         $data['rental_location_code'] = $rental_location_code;
+      }
+
+      if ( $sales_channel_code != '' ) {
+        $data['sales_channel_code'] = $sales_channel_code;
       }
 
       if ( $shift_picker_id != '' ) {
