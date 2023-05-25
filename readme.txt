@@ -117,6 +117,10 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.10.1 =
+* Added: Renting - Boat skipper and license management
+* Added: Renting - Shift picker component
+
 = 1.10.0 =
 * Added: Renting - Simple Location
 * Fixed: Renting - Select product - Variants : Price in modal
@@ -431,6 +435,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.10.1 =
+* Renting : Added Boat skipper and license management + shift picker component
 
 = 1.10.0 =
 * Renting/Activities : Variants, simple location, passengers, customer data

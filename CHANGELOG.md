@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1] - 2023.05.25
+
+### Added
+
+- Renting - Boat skipper and license management
+- Renting - Shift picker component
+
 ## [1.10.0] - 2023.05.22
 
 ### Added
