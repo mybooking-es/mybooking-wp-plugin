@@ -125,6 +125,29 @@
                   <%=booking.booking_lines[idx].quantity%>
                 </span>
               <% } %>
+
+              <!-- Optional external driver + driving license -->
+              <% if ((typeof booking.optional_external_driver !== '' &&
+                     booking.optional_external_driver) ||
+                    (typeof booking.item_driving_license_type_name !== '' &&
+                     booking.item_driving_license_type_name) ) { %>
+                <br>      
+                <% if (typeof booking.optional_external_driver !== '' &&
+                      booking.optional_external_driver) { %>
+                  <span class="mb-badge secondary"><%=booking.optional_external_driver%></span>    
+                <% } %>
+                <% if (typeof booking.item_driving_license_type_name !== '' &&
+                      booking.item_driving_license_type_name) { %>
+                  <span class="mb-badge secondary"><%=booking.item_driving_license_type_name%></span>    
+                <% } %>
+              <% } %>
+
+              <% if (typeof booking.item_hired_info !== '' &&
+                      booking.item_hired_info) { %>
+                <p class="mb-text-muted"><%=booking.item_hired_info%></p>
+              <% } %>
+
+
             </span>
 
             <!-- // Product description -->

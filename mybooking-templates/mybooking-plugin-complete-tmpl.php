@@ -41,6 +41,23 @@
                  x<%=shopping_cart.items[idx].quantity%>
               </span>
              <% } %>
+
+             <!-- Optional external driver + driving license -->
+             <% if ((typeof shopping_cart.optional_external_driver !== '' &&
+                     shopping_cart.optional_external_driver) ||
+                    (typeof shopping_cart.item_driving_license_type_name !== '' &&
+                     shopping_cart.item_driving_license_type_name) ) { %>
+               <br>      
+               <% if (typeof shopping_cart.optional_external_driver !== '' &&
+                      shopping_cart.optional_external_driver) { %>
+                  <span class="mb-badge secondary"><%=shopping_cart.optional_external_driver%></span>    
+               <% } %>
+               <% if (typeof shopping_cart.item_driving_license_type_name !== '' &&
+                      shopping_cart.item_driving_license_type_name) { %>
+                  <span class="mb-badge secondary"><%=shopping_cart.item_driving_license_type_name%></span>    
+               <% } %>
+            <% } %>
+
           </div>
 
           <!-- // Product description -->

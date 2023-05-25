@@ -154,6 +154,26 @@
 
     }
 
+    /**
+     * Get Driver
+     */ 
+    public function getDriver() {
+        $registry = Mybooking_Registry::getInstance();
+        $returnValue = '';
+
+        switch ($registry->mybooking_rent_plugin_product_context) {
+          case 'boat':
+            $returnValue = esc_html_x( 'Skipper', 'engine_context_boat', 'mybooking-wp-plugin' );
+            break;
+          default:
+            $returnValue = esc_html_x( 'Driver', 'engine_context', 'mybooking-wp-plugin' );
+        }
+        return $returnValue;
+    }
+
+    /**
+     * Get Length
+     */ 
     public function getLength() {
         $registry = Mybooking_Registry::getInstance();
         $returnValue = '';
@@ -168,6 +188,9 @@
         return $returnValue;
     }
 
+    /**
+     * Get width
+     */ 
     public function getWidth() {
         $registry = Mybooking_Registry::getInstance();
         $returnValue = '';
@@ -182,6 +205,9 @@
         return $returnValue;
     }
 
+    /**
+     * Get height
+     */ 
     public function getHeight() {
         $registry = Mybooking_Registry::getInstance();
         $returnValue = '';

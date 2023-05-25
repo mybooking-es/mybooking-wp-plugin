@@ -17,6 +17,7 @@
   --mb-warning-color: #FFB74D;
   --mb-lighter-color: #EEEEEE;
   --mb-light-color:  #DDDDDD;
+  --mb-muted-color:  #666;
 
   --mb-border-color: #DDD;
   --mb-border-radius: 5px;
@@ -604,6 +605,14 @@ button.mb-button a:hover  {
 
 .mb-text-negative {
   color: var(--mb-negative-text-color)!important; /* Forces any element to get negative color */
+}
+
+.mb-text-light {
+  color: var(--mb-light-color)!important; /* Forces any element to get light color */
+}
+
+.mb-text-light {
+  color: var(--mb-muted-color)!important; /* Forces any element to get light color */
 }
 
 /* Cards */
