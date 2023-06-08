@@ -2,6 +2,12 @@
 
 ## [1.10.1] - 2023.05.25
 
+### Fixed
+
+- Renting - Calendar - Preselection when collection different month
+
+## [1.10.1] - 2023.05.25
+
 ### Added
 
 - Renting - Boat skipper and license management

@@ -117,6 +117,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 1.10.2 =
+* Fixed: Renting - Calendar - Preselection when collection different month
+
 = 1.10.1 =
 * Added: Renting - Boat skipper and license management
 * Added: Renting - Shift picker component
@@ -435,6 +438,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 1.10.2 =
+* Fixed: Renting - Calendar - Preselection when collection different month
 
 = 1.10.1 =
 * Renting : Added Boat skipper and license management + shift picker component
