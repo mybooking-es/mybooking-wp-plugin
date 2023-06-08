@@ -164,6 +164,14 @@
 
       <!-- // Category code -->
 
+      <!-- Age code selector -->
+			<div class="driver_age_rule" style="display: none">
+				<label for="driver_age_rule_id">
+				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+				</label>
+				<select name="driver_age_rule_id" id="driver_age_rule_id"></select>
+			</div>
+
       <!-- // Promotion code -->
       <% if (configuration.promotionCode) { %>
         <div class="mybooking-selector_promo">
@@ -296,6 +304,14 @@
           <select name="family_id" id="family_id" class="mb-form-control"></select>
         </div>
       <% } %>
+
+      <!-- Age code selector -->
+			<div class="driver_age_rule" style="display: none">
+				<label for="driver_age_rule_id">
+				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+				</label>
+				<select name="driver_age_rule_id" id="driver_age_rule_id"></select>
+			</div>
 
       <!-- // Promotion code -->
       <% if (configuration.promotionCode) { %>
