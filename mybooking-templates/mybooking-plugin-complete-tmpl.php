@@ -188,6 +188,18 @@
     </div>
   </div>
 
+  <!-- Age rule applicate  -->
+  <% if (shopping_cart.driver_age_rule_description && shopping_cart.driver_age_rule_description !== '') { %>
+    <div class="mb-section">
+      <div class="mybooking-summary_details-title">
+        <?php echo esc_html_x( 'Age description', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+      </div>
+      <div>
+        <%= shopping_cart.driver_age_rule_description %>
+      </div>
+    </div>
+  <% } %>
+
   <!-- // Promotion code -->
 
   <% if (configuration.promotionCode) { %>
