@@ -167,7 +167,7 @@
 		<div class="mybooking-selector_group mybooking-selector_footer">
 
 			<!-- // Location code selector -->
-			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
+			<% if (not_hidden_rental_location_code && configuration.selectorRentalLocation) { %>
 		    <div class="widget_rental_location" style="display: none">
 		      <label for="rental_location_code">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
@@ -230,7 +230,7 @@
 				// Opens .mybooking-selector_group
 				// only when Locator or Family fields are activated
 				-->
-				<% if (not_hidden_rental_location_code && configuration.selectRentalLocation || not_hidden_family_id && configuration.selectFamily ) { %>
+				<% if (not_hidden_rental_location_code && configuration.selectorRentalLocation || not_hidden_family_id && configuration.selectFamily ) { %>
 	  				<div class="mybooking-selector_location widget_rental_location" style="display: none">
 							<i class="mybooking-selector_field-icon">
 								<span class="dashicons dashicons-location"></span>
@@ -305,7 +305,7 @@
 			// and opens a group for the footer
 			// only when Locator or Family fields are activated
 			-->
-			<% if (not_hidden_rental_location_code && configuration.selectRentalLocation || not_hidden_family_id && configuration.selectFamily ) { %>
+			<% if (not_hidden_rental_location_code && configuration.selectorRentalLocation || not_hidden_family_id && configuration.selectFamily ) { %>
 				</div>
 				<div class="mybooking-selector_group mybooking-selector_footer">
 			<% } %>
