@@ -423,12 +423,6 @@ EOF;
 		                     array($this, 'field_mybooking_plugin_settings_terms_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
-			
-			add_settings_field('mybooking_plugin_settings_privacy_page',
-		                     'Privacy page',
-		                     array($this, 'field_mybooking_plugin_settings_privacy_page_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
 
 		  // Product detail pages (calendar)
 		  add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
@@ -882,16 +876,6 @@ EOF;
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_terms_page");
 		  echo "<p class=\"description\">The terms and conditions page.</p>";
-		  echo "<hr>";
-		}
-
-		/**
-		 * Render Mybooking Renting/Accommodation Privacy page
-		 */
-		public function field_mybooking_plugin_settings_privacy_page_callback() {
-
-		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_privacy_page");
-		  echo "<p class=\"description\">The privacy page.</p>";
 		  echo "<hr>";
 		}
 

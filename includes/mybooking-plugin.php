@@ -541,7 +541,6 @@
           'mybooking_checkout_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_checkout_page),
           'mybooking_summary_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_summary_page),
           'mybooking_terms_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_terms_page),
-          'mybooking_privacy_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_privacy_page),
           'mybooking_detail_pages' => $registry->mybooking_rent_plugin_detail_pages,
           'mybooking_detail_pages_url_prefix' => $registry->mybooking_rent_plugin_navigation_products_url,
           'mybooking_selector_in_process' => $registry->mybooking_rent_plugin_selector_in_process,
@@ -906,15 +905,6 @@
         else {
           $data['terms_and_conditions'] = mybooking_engine_translated_slug($registry->mybooking_rent_plugin_terms_page);
         }
-        // Privacy
-        $data = array();
-        if ( empty($registry->mybooking_rent_plugin_privacy_page) ) {
-          $data['terms_and_conditions'] = '';
-        }
-        else {
-          $data['terms_and_conditions'] = mybooking_engine_translated_slug($registry->mybooking_rent_plugin_privacy_page);
-        }
-        
         $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
         mybooking_engine_get_template('mybooking-plugin-complete-tmpl.php', $data);
         // If selector in process Wizard, load the micro-templates for the process
@@ -2127,12 +2117,6 @@
       }
       else {
         $registry->mybooking_rent_plugin_terms_page = '';
-      }
-      if ($settings && array_key_exists('mybooking_plugin_settings_privacy_page', $settings)) {
-        $registry->mybooking_rent_plugin_privacy_page = $this->page_slug(trim(esc_attr( $settings["mybooking_plugin_settings_privacy_page"] )));
-      }
-      else {
-        $registry->mybooking_rent_plugin_privacy_page = '';
       }
 
       if ($settings && array_key_exists('mybooking_plugin_settings_selector_in_process', $settings)) {
