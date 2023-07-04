@@ -1074,6 +1074,21 @@
              <% } %>
           <% } %>
         <% } %>
+        
+        <div class="mb-form-row">
+          <div class="mb-form-group mb-col-xs-12">
+            <!-- Privacy -->
+            <label for="privacy_read">
+              <input type="checkbox" id="privacy_read" name="privacy_read">
+              &nbsp;
+              <?php if ( empty($args['privacy_policy_url']) ) { ?>
+                <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+              <?php } else { ?>
+                <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_my_reservation', 'mybooking-wp-plugin' ), $args['privacy_policy_url'] ) )?>
+              <?php } ?>
+            </label>
+          </div>
+        </div>
       </div>
 
       <% if (booking.can_edit_online) { %>

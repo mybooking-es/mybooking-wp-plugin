@@ -61,6 +61,23 @@
     </div>
 
     <div class="mb-form-row">
+      <!-- Privacy -->
+      <label for="privacy_read">
+        <div class="mb-form-group mb-col-md-12">
+          <input type="checkbox" id="privacy_read" name="privacy_read">
+          &nbsp;
+          <?php if ( empty($args['privacy_policy_url']) ) { ?>
+            <?php echo esc_html_x( 'I have read and accept the privacy policy', 'contact_form', 'mybooking-wp-plugin' ) ?>
+          <?php } else { ?>
+            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'contact_form', 'mybooking-wp-plugin' ), $args['privacy_policy_url'] ) )?>
+          <?php } ?>
+        </div>
+      </label>
+    </div>
+
+    <br/>
+
+    <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
         <div class="mb-alert danger" id="contact_form_errors" style="display: none"></div>
       </div>

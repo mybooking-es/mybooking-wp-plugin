@@ -622,8 +622,9 @@
   <!-- // Request reservation -->
 
   <% if (sales_process.can_request) { %>
-    <div class="mybooking-payment_confirmation-box" id="request_reservation_container" <% if (selectionOptions > 1 || !sales_process.can_request) { %>style="display:none"<%}%>>
-      <label for="payments_paypal_standard">
+    <div class="mybooking-payment_confirmation-box" id="request_reservation_container" <% if (selectionOptions > 1 || !sales_process.can_request) { %>style="display:none; display: block"<%}%>>
+      <!-- Conditions -->
+      <label for="conditions_read_request_reservation">
         <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;
 
         <?php if ( empty($args['terms_and_conditions']) ) { ?>
@@ -632,7 +633,24 @@
           <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) )?>
         <?php } ?>
       </label>
-      <button type="submit" class="mb-button btn-confirm-reservation">
+
+      <br/>
+
+      <!-- Privacy -->
+      <label for="privacy_read_request_reservation">
+        <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
+        &nbsp;
+
+        <?php if ( empty($args['privacy_policy_url']) ) { ?>
+          <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+        <?php } else { ?>
+          <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $args['privacy_policy_url'] ) )?>
+        <?php } ?>
+      </label>
+    </div>
+
+    <div>
+      <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
         <?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
         <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
       </button>
@@ -644,6 +662,7 @@
   <% if (sales_process.can_pay_on_delivery) { %>
 
     <div class="mybooking-payment_confirmation-box" id="payment_on_delivery_container" <% if (selectionOptions > 1 || !sales_process.can_pay_on_delivery) { %>style="display:none"<%}%>>
+      <!-- Conditions -->
       <label for="conditions_read_payment_on_delivery">
         <input type="checkbox" id="conditions_read_payment_on_delivery" name="conditions_read_payment_on_delivery">&nbsp;
 
@@ -653,6 +672,23 @@
           <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ) ?>
         <?php } ?>
       </label>
+
+      <br/>
+
+      <!-- Privacy -->
+      <label for="privacy_read_payment_on_delivery">
+        <input type="checkbox" id="privacy_read_payment_on_delivery" name="privacy_read_payment_on_delivery">
+        &nbsp;
+
+        <?php if ( empty($args['privacy_policy_url']) ) { ?>
+          <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+        <?php } else { ?>
+          <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $args['privacy_policy_url'] ) )?>
+        <?php } ?>
+      </label>
+    </div>
+    
+    <div>
       <button type="submit" class="mb-button btn-confirm-reservation">
         <?php echo esc_html_x( 'Confirm', 'renting_complete', 'mybooking-wp-plugin' ) ?>
         <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
@@ -717,8 +753,9 @@
         <% } %>
       </div>
 
-      <div class="mybooking-payment_confirmation-box">
-        <label for="payments_paypal_standard">
+      <div class="mybooking-payment_confirmation-box" style="display: block">
+        <!-- Conditions -->
+        <label for="conditions_read_pay_now">
           <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">
 
             <?php if ( empty($args['terms_and_conditions']) ) { ?>
@@ -727,7 +764,24 @@
               <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) )?>
             <?php } ?>
         </label>
-        <button type="submit" class="mb-button btn-confirm-reservation">
+
+        <br/>
+
+        <!-- Privacy -->
+        <label for="privacy_read_pay_now">
+          <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
+          &nbsp;
+
+          <?php if ( empty($args['privacy_policy_url']) ) { ?>
+            <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+          <?php } else { ?>
+            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $args['privacy_policy_url'] ) )?>
+          <?php } ?>
+        </label>
+      </div>
+          
+      <div>
+        <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
           <%=i18next.t('complete.reservationForm.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
           <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
         </button>
