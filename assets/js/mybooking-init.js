@@ -9,7 +9,6 @@
         var completeUrl = mybooking_init_vars.mybooking_checkout_page;
         var summaryUrl = mybooking_init_vars.mybooking_summary_page;
         var termsUrl = mybooking_init_vars.mybooking_terms_page;
-        var privacyUrl = mybooking_init_vars.mybooking_privacy_page;
         var selectorInProcess = mybooking_init_vars.mybooking_selector_in_process;
         var rentingDetailPages = mybooking_init_vars.mybooking_detail_pages;
         var rentingDetailPageUrlPrefix = mybooking_init_vars.mybooking_detail_pages_url_prefix;
@@ -79,9 +78,6 @@
         }
         function getTermsUrl() {
           return termsUrl;
-        }
-        function getPrivacyUrl() {
-          return privacyUrl;
         }
         function getSelectorInProcess() {
           return selectorInProcess;
@@ -159,7 +155,6 @@
           completeUrl: getCompleteUrl,
           summaryUrl: getSummaryUrl,
           termsUrl: getTermsUrl,
-          privacyUrl: getPrivacyUrl,
           selectorInProcess: getSelectorInProcess,
           rentingDetailPages: getRentingDetailPages,
           rentingDetailPageUrlPrefix: getRentingDetailPageUrlPrefix,
