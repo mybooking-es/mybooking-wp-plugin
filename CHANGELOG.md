@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.3] - 2023.07.05
+
+### Added
+
+- Renting: Selector - Country
+- Renting: My reservation - Use template
+
 ## [1.10.2] - 2023.06.15
 
 ### Added
