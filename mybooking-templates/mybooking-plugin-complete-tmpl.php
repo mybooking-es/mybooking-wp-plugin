@@ -633,23 +633,25 @@
           <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) )?>
         <?php } ?>
       </label>
+
+      <br/>
+
+      <?php
+        $mybooking_engine_privacy_page = get_privacy_policy_url();
+      ?>
+
+      <!-- Privacy -->
+      <label for="privacy_read_request_reservation">
+        <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
+        &nbsp;
+
+        <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
+          <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+        <?php } else { ?>
+          <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+        <?php } ?>
+      </label>
     </div>
-
-    <?php
-      $mybooking_engine_privacy_page = get_privacy_policy_url();
-    ?>
-
-    <!-- Privacy -->
-    <label for="privacy_read_request_reservation">
-      <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
-      &nbsp;
-
-      <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
-        <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-      <?php } else { ?>
-        <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-      <?php } ?>
-    </label>
 
     <div>
       <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
