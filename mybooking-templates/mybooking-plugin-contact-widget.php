@@ -69,7 +69,7 @@
       <label for="privacy_read">
         <div class="mb-form-group mb-col-md-12">
           <input type="checkbox" id="privacy_read" name="privacy_read">
-          &nbsp;
+
           <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
             <?php echo esc_html_x( 'I have read and accept the privacy policy', 'contact_form', 'mybooking-wp-plugin' ) ?>
           <?php } else { ?>

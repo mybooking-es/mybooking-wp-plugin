@@ -643,7 +643,6 @@
       <!-- Privacy -->
       <label for="privacy_read_request_reservation">
         <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
-        &nbsp;
 
         <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
           <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
@@ -682,7 +681,6 @@
       <!-- Privacy -->
       <label for="privacy_read_payment_on_delivery">
         <input type="checkbox" id="privacy_read_payment_on_delivery" name="privacy_read_payment_on_delivery">
-        &nbsp;
 
         <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
           <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
@@ -772,16 +770,15 @@
         <br/>
 
         <!-- Privacy -->
-      <label for="privacy_read_pay_now">
-        <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
-        &nbsp;
+        <label for="privacy_read_pay_now">
+          <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
 
-        <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
-          <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-        <?php } else { ?>
-          <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-        <?php } ?>
-      </label>
+          <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
+            <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+          <?php } else { ?>
+            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+          <?php } ?>
+        </label>
       </div>
           
       <div>
