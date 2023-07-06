@@ -625,7 +625,7 @@
     <div id="request_reservation_container" <% if (selectionOptions > 1 || !sales_process.can_request) { %>style="display:none"<%}%>>
       <!-- Conditions -->
       <label for="conditions_read_request_reservation">
-        <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;
+        <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">
 
         <?php if ( empty($args['terms_and_conditions']) ) { ?>
           <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
@@ -664,10 +664,10 @@
 
   <% if (sales_process.can_pay_on_delivery) { %>
 
-    <div class="mybooking-payment_confirmation-box" id="payment_on_delivery_container" <% if (selectionOptions > 1 || !sales_process.can_pay_on_delivery) { %>style="display:none"<%}%>>
+    <div id="payment_on_delivery_container" <% if (selectionOptions > 1 || !sales_process.can_pay_on_delivery) { %>style="display:none"<%}%>>
       <!-- Conditions -->
       <label for="conditions_read_payment_on_delivery">
-        <input type="checkbox" id="conditions_read_payment_on_delivery" name="conditions_read_payment_on_delivery">&nbsp;
+        <input type="checkbox" id="conditions_read_payment_on_delivery" name="conditions_read_payment_on_delivery">
 
         <?php if ( empty($args['terms_and_conditions']) ) { ?>
           <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
@@ -760,11 +760,11 @@
         <label for="conditions_read_pay_now">
           <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">
 
-            <?php if ( empty($args['terms_and_conditions']) ) { ?>
-              <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-            <?php } else { ?>
-              <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) )?>
-            <?php } ?>
+          <?php if ( empty($args['terms_and_conditions']) ) { ?>
+            <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+          <?php } else { ?>
+            <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) )?>
+          <?php } ?>
         </label>
 
         <br/>

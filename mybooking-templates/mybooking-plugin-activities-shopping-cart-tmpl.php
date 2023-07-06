@@ -271,7 +271,7 @@
     <div id="request_reservation_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>>
       <!-- Conditions -->
       <label for="conditions_read_request_reservation">
-        <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">&nbsp;
+        <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">
 
         <?php if ( empty($args['terms_and_conditions']) ) { ?>
           <?php echo esc_html_x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
@@ -297,7 +297,9 @@
         <?php } ?>
       </label>
 
-      <button type="submit" class="mb-button btn-confirm-reservation">
+      <br/>
+
+      <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
         <?php echo esc_html_x( 'Request reservation', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
         <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
       </button>
@@ -360,35 +362,35 @@
       <div>
         <!-- Conditions -->
         <label for="conditions_read_pay_now">
-            <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">
+          <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">
 
-            <?php if ( empty($args['terms_and_conditions']) ) { ?>
-              <?php echo esc_html_x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-            <?php } else { ?>
-              <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">terms and conditions</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ) ?>
-            <?php } ?>
-          </label>
+          <?php if ( empty($args['terms_and_conditions']) ) { ?>
+            <?php echo esc_html_x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+          <?php } else { ?>
+            <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">terms and conditions</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ) ?>
+          <?php } ?>
+        </label>
 
-          <br/>
+        <br/>
 
-          <!-- Privacy -->
-          <label for="privacy_read_pay_now">
-            <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
+        <!-- Privacy -->
+        <label for="privacy_read_pay_now">
+          <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
 
-            <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
-              <?php echo esc_html_x( 'I have read and accept the privacy policy', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-            <?php } else { ?>
-              <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-            <?php } ?>
-          </label>
+          <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
+            <?php echo esc_html_x( 'I have read and accept the privacy policy', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+          <?php } else { ?>
+            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+          <?php } ?>
+        </label>
 
-          <br/>
+        <br/>
 
-          <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
-            <%=i18next.t('activities.payment.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
-            <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
-          </button>
-        </div>
+        <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
+          <%=i18next.t('activities.payment.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
+          <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
+        </button>
+      </div>
     </div>
   <% } %>
 </script>
