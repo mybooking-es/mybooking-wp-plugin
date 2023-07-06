@@ -755,7 +755,7 @@
         <% } %>
       </div>
 
-      <div class="mybooking-payment_confirmation-box" style="display: block">
+      <div>
         <!-- Conditions -->
         <label for="conditions_read_pay_now">
           <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">
