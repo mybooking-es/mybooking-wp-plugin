@@ -650,9 +650,9 @@
           <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
         <?php } ?>
       </label>
-    </div>
 
-    <div>
+      <br/>
+
       <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
         <?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
         <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
@@ -688,10 +688,10 @@
           <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
         <?php } ?>
       </label>
-    </div>
-    
-    <div>
-      <button type="submit" class="mb-button btn-confirm-reservation">
+
+      <br/>
+
+      <button type="submit" class="mb-button btn-confirm-reservation" style="float: right;">
         <?php echo esc_html_x( 'Confirm', 'renting_complete', 'mybooking-wp-plugin' ) ?>
         <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
       </button>
@@ -779,9 +779,9 @@
             <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
           <?php } ?>
         </label>
-      </div>
-          
-      <div>
+
+        <br/>
+        
         <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
           <%=i18next.t('complete.reservationForm.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
           <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
