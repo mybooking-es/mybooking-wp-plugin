@@ -1143,3 +1143,8 @@ label.full-width select.mb-form-control {
   position: relative;
   top: 0.5rem;
 }
+
+/** Jquery validation **/
+label.error {
+    color: var(--mb-danger-color);
+}
