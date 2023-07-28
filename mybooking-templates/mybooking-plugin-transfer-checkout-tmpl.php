@@ -689,7 +689,9 @@
         <?php } ?>
       </label>
 
-      <button type="submit" class="mb-button btn-confirm-reservation">
+      <br/><br/>
+
+      <button type="submit" class="mb-button btn-confirm-reservation"  style="float: right">
         <?php echo esc_html_x( 'Request reservation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
         <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
       </button>
