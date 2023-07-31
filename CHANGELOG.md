@@ -1,11 +1,13 @@
 # Changelog
 
-## [1.10.3] - 2023.07.05
+## [1.10.3] - 2023.07.31
 
 ### Added
 
 - Renting: Selector - Country
 - Renting: My reservation - Use template
+- Checkout and contact: Privacy policy acceptance
+- Renting: Selector wizard - Driver age
 
 ## [1.10.2] - 2023.06.15
 
