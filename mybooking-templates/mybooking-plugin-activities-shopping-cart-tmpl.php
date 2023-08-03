@@ -204,6 +204,10 @@
 
 <script type="text/tmpl" id="script_payment_detail">
 
+  <?php
+    $mybooking_engine_privacy_page = get_privacy_policy_url();
+  ?>
+
   <% if (shopping_cart.use_rates) { %>
     <!-- // Total -->
 
@@ -281,23 +285,15 @@
         <?php } ?>
       </label>
 
-      <br/>
-
-      <?php
-        $mybooking_engine_privacy_page = get_privacy_policy_url();
-      ?>
-
       <!-- Privacy -->
-      <label for="privacy_read_request_reservation">
-        <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
-
-        <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
-          <?php echo esc_html_x( 'I have read and accept the privacy policy', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-        <?php } else { ?>
-          <?php /* translators: %s: privacy policy URL */ ?>
-          <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-        <?php } ?>
-      </label>
+      <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
+        <br/>
+        <label for="privacy_read_request_reservation">
+          <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
+            <?php /* translators: %s: privacy policy URL */ ?>
+            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+        </label>
+      <?php } ?>
 
       <br/>
 
@@ -373,18 +369,15 @@
           <?php } ?>
         </label>
 
-        <br/>
-
-        <!-- Privacy -->
-        <label for="privacy_read_pay_now">
-          <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
-
-          <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
-            <?php echo esc_html_x( 'I have read and accept the privacy policy', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-          <?php } else { ?>
+        <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
+          <br/>
+          <!-- Privacy -->
+          <label for="privacy_read_pay_now">
+            <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
+            <?php /* translators: %s: privacy policy URL */ ?>
             <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-          <?php } ?>
-        </label>
+          </label>
+        <?php } ?>
 
         <br/>
 

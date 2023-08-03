@@ -60,24 +60,21 @@
       </div>
     </div>
 
-    <div class="mb-form-row">
-      <?php
-        $mybooking_engine_privacy_page = get_privacy_policy_url();
-      ?>
+    <?php
+      $mybooking_engine_privacy_page = get_privacy_policy_url();
+    ?>
 
-      <!-- Privacy -->
-      <label for="privacy_read">
-        <div class="mb-form-group mb-col-md-12">
-          <input type="checkbox" id="privacy_read" name="privacy_read">
-
-          <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
-            <?php echo esc_html_x( 'I have read and accept the privacy policy', 'contact_form', 'mybooking-wp-plugin' ) ?>
-          <?php } else { ?>
-            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'contact_form', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-          <?php } ?>
-        </div>
-      </label>
-    </div>
+    <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
+      <div class="mb-form-row">
+        <!-- Privacy -->
+        <label for="privacy_read">
+          <div class="mb-form-group mb-col-md-12">
+            <input type="checkbox" id="privacy_read" name="privacy_read">
+              <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'contact_form', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+          </div>
+        </label>
+      </div>
+    <?php } ?>
 
     <br/>
 

@@ -553,6 +553,10 @@
 
 <script type="text/tmpl" id="script_payment_detail">
 
+  <?php
+    $mybooking_engine_privacy_page = get_privacy_policy_url();
+  ?>
+
   <% var paymentAmount = 0;
      var selectionOptions = 0;
      if (sales_process.can_request) {
@@ -634,22 +638,14 @@
         <?php } ?>
       </label>
 
-      <br/>
-
-      <?php
-        $mybooking_engine_privacy_page = get_privacy_policy_url();
-      ?>
-
-      <!-- Privacy -->
-      <label for="privacy_read_request_reservation">
-        <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
-
-        <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
-          <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-        <?php } else { ?>
-          <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-        <?php } ?>
-      </label>
+      <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
+        <br/>
+        <!-- Privacy -->
+        <label for="privacy_read_request_reservation">
+          <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
+            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+        </label>
+      <?php } ?>
 
       <br/>
 
@@ -676,18 +672,14 @@
         <?php } ?>
       </label>
 
-      <br/>
-
-      <!-- Privacy -->
-      <label for="privacy_read_payment_on_delivery">
-        <input type="checkbox" id="privacy_read_payment_on_delivery" name="privacy_read_payment_on_delivery">
-
-        <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
-          <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-        <?php } else { ?>
-          <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-        <?php } ?>
-      </label>
+      <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
+        <br/>
+        <!-- Privacy -->
+        <label for="privacy_read_payment_on_delivery">
+            <input type="checkbox" id="privacy_read_payment_on_delivery" name="privacy_read_payment_on_delivery">
+            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+        </label>
+      <?php } ?>
 
       <br/>
 
@@ -767,18 +759,14 @@
           <?php } ?>
         </label>
 
-        <br/>
-
-        <!-- Privacy -->
-        <label for="privacy_read_pay_now">
-          <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
-
-          <?php if ( empty($mybooking_engine_privacy_page) ) { ?>
-            <?php echo esc_html_x( 'I have read and accept the privacy policy', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-          <?php } else { ?>
-            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-          <?php } ?>
-        </label>
+        <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
+          <br/>
+          <!-- Privacy -->
+          <label for="privacy_read_pay_now">
+            <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
+              <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+          </label>
+        <?php } ?>
 
         <br/>
         
