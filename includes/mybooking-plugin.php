@@ -45,9 +45,6 @@
   require_once('cpt/mybooking-plugin-cpt-activity-item.php');
   // Settings
   require_once('settings/mybooking-plugin-settings.php');
-  // On boarding
-  require_once('settings/mybooking-plugin-onboarding.php');
-  require_once('settings/api/mybooking-plugin-onboarding-api.php');
   // Patterns
   require_once('mybooking-patterns.php');
 
@@ -180,8 +177,6 @@
         $this->wp_init();
         // Prepare the plugin settings page
         $settings = new MyBookingPluginSettings();
-        // Prepare the plugin onboarding page
-        $onboarding = new MybookingPluginOnBoarding();
     }
 
     // The object is created from within the class itself
@@ -2431,11 +2426,9 @@
      * Initialize custom routes to show all renting products and activities
      */
     public function init_routes() {
+
       $registry = Mybooking_Registry::getInstance();
 
-      Routes::map($url.'/mybooking-onboarding', function($params) {
-        Routes::load('mybooking-plugin-onboarding-welcome.php');
-      });
 
       // Renting product detail route (depends on the settings)
       if ( $registry->mybooking_rent_plugin_detail_pages ) {
@@ -2458,6 +2451,7 @@
           $this->activity_page($params);
         });
       }
+
 
     }
 
