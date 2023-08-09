@@ -2,7 +2,10 @@
 	defined('ABSPATH') or die('Forbidden');
 ?>
 
-<div id="mb-onboarding-video-content" class="mb-onboarding-video-content"></div>
+<div class="mb-onboarding-video mb-onboarding-commons">
+	<div id="mb-onboarding-close-btn" class="mb-onboarding-close-btn"></div>
+	<div id="mb-onboarding-video-content" class="mb-onboarding-video-content"></div>
+</div>
 
 <!-- Scripts -->
 <script src="https://player.vimeo.com/api/player.js"></script>

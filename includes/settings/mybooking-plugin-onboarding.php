@@ -22,7 +22,16 @@
         'Welcome', // Menu option title
         'manage_options', // Capability
         'mybooking-onboarding', // Slug
-        array($this, 'mybooking_plugin_onboarding_page')
+        array($this, 'mybooking_plugin_onboarding_welcome_page')
+      ); // Callable
+
+			add_submenu_page(
+				'mybooking-plugin-configuration', // Parent slug
+        'Mybooking Selector', // Page title
+        'Selector', // Menu option title
+        'manage_options', // Capability
+        'mybooking-onboarding-selector', // Slug
+        array($this, 'mybooking_plugin_onboarding_selector_page')
       ); // Callable
 
 			function add_scripts() {
@@ -37,7 +46,10 @@
 		 * Render Mybooking onboarding page
 		 *
 		 */
-		public function mybooking_plugin_onboarding_page() {
+		public function mybooking_plugin_onboarding_welcome_page() {
 		  require_once('views/mybooking-plugin-onboarding-welcome.php');
+		}
+		public function mybooking_plugin_onboarding_selector_page() {
+		  require_once('views/mybooking-plugin-onboarding-selector.php');
 		}
   }

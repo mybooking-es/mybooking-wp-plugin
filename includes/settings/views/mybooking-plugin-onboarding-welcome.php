@@ -6,10 +6,9 @@
 /**
 * Render Mybooking onboarding page
 *
-* setting_fields: On boarding section id
 * https://developer.wordpress.org/reference/functions/do_settings_fields/
 */
-function mybooking_plugin_onboarding_page() {
+function mybooking_plugin_onboarding_welcome_page() {
 	?>
 	<!-- Styles -->
 	<?php
@@ -17,7 +16,8 @@ function mybooking_plugin_onboarding_page() {
 	?>
 	<link rel="stylesheet" href="<?php echo $plugin_dir ?>styles/mybooking-plugin-onboarding.css">
 	
-	<div class="wrap mb-onboarding-login">
+	<div class="mb-onboarding-login mb-onboarding-commons">
+		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">Loading...</div>
 		<h1>
 			Bienvenido al plugin de reservas de <strong>Mybooking</strong>
 		</h1>
@@ -47,7 +47,6 @@ function mybooking_plugin_onboarding_page() {
 			</div>
 		</form>
 		<div  id="mb-onboarding-video-container" class="mb-onboarding-video-container" style="display: none">
-			<div id="mb-onboarding-close-btn" class="mb-onboarding-close-btn">x</div>
 			<?php $video='login'; require_once ('mybooking-plugin-onboarding-video.php') ?>
 		</div>
 	</div>
@@ -65,7 +64,45 @@ function mybooking_plugin_onboarding_page() {
 
 				$('#mb-onboarding-login-form').validate({
 						submitHandler: function(form) {
+							var url = '/wp-json/api/v1/login';
 							var params = $(form).formParams();
+							var data = JSON.stringify(params);
+
+							// Request  
+							$.ajax({
+								type: 'POST',
+								url,
+								data,
+								dataType : 'json',
+								contentType : 'application/json; charset=utf-8',
+								crossDomain: false,
+								success: (data) => {
+									var redirect = '?page=mybooking-onboarding-selector';
+									redirect += '&trade_name=' + data.trade_name;
+									redirect += '&booking_item_family=' + data.booking_item_family;
+									redirect += '&booking_item_family_name=' + data.booking_item_family_name;
+									
+									var module =  'module_rental';
+									if (data.module_activities) {
+										module =  'module_activities';
+									}
+									if (data.module_transfer) {
+										module =  'module_transfer';
+									}
+									redirect += '&module=' + module;
+
+									window.location.search = redirect;
+								},
+								error: function() {
+									alert('Por favor, revisa los datos proporcionados se ha producido un error.'); // TODO
+								},
+								beforeSend: function() {
+									$('#mb-onboarding-loading').show();
+								},        
+								complete: function() {
+									$('#mb-onboarding-loading').hide();
+								}
+							});
 							
 							return false;
 						},
@@ -86,5 +123,5 @@ function mybooking_plugin_onboarding_page() {
 <?php
 }
 
-mybooking_plugin_onboarding_page();
+mybooking_plugin_onboarding_welcome_page();
 ?>
