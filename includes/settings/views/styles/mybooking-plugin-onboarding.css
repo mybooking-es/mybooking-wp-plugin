@@ -1,0 +1,169 @@
+/*
+*
+* Welcome
+*
+*/
+.mb-onboarding-login {
+	text-align: center;
+}
+.mb-onboarding-login h1 {
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	font-size: 2.5rem;
+	font-weight: normal;
+	color: #326E44;
+	line-height: 1;
+}
+.mb-onboarding-login h2 {
+	margin-top: 4rem;
+	margin-bottom: 2rem;
+	font-size: 1.5rem;
+	font-weight: lighter;
+	line-height: 1;
+}
+.mb-onboarding-login .mb-onboarding-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+	padding: 0 20%;
+}
+.mb-onboarding-login .mb-onboarding-row.mb-onboarding-space-between {
+	justify-content: space-between;
+}
+.mb-onboarding-login .mb-onboarding-row .mb-onboarding-column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 0 1rem;
+	width: 50%;
+}
+.mb-onboarding-login .mb-onboarding-row .mb-onboarding-column label {
+	font-weight: bold;
+	padding:  0.5rem 0;
+}
+.mb-onboarding-login .mb-onboarding-row .mb-onboarding-column input {
+	width: 100%;
+	padding: 0.5rem;
+}
+.mb-onboarding-login  a.mb-onboarding-block {
+	display: inline-block;
+	padding: 1rem 0;
+	font-weight: bold;
+	color: #326E44;
+	cursor: pointer;
+}
+.mb-onboarding-login .mb-onboarding-buttons {
+	margin-top: 4rem;
+}
+.mb-onboarding-login .mb-onboarding-buttons input {
+	padding: 1rem;
+	margin: 0.5rem;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 1px solid #5f5f5f;
+}
+.mb-onboarding-login .mb-onboarding-buttons input[type="submit"] {
+	background-color: #326E44;
+	color: white;
+	border-color: #326E44;
+}
+
+@media (max-width: 1024px) {
+	.mb-onboarding-login .mb-onboarding-row {
+		padding: 0 10%;
+	}
+}
+@media (max-width: 600px) {
+	.mb-onboarding-login .mb-onboarding-row {
+		padding: 0 5%;
+		flex-direction: column;
+	}
+	.mb-onboarding-login .mb-onboarding-row .mb-onboarding-column {
+		width: 100%;
+	}
+	.mb-onboarding-login .mb-onboarding-row .mb-onboarding-column input {
+		margin: 0;
+	}
+	.mb-onboarding-login .mb-onboarding-buttons {
+		display: flex;
+		flex-direction: column;
+	}
+	.mb-onboarding-login .mb-onboarding-buttons input {
+		width: 100%;
+	}
+}
+
+/*
+*
+* Modal
+*
+*/
+.mb-onboarding-loading {
+	color: white;
+	font-size: 1.5rem;
+	font-weight: lighter;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mb-onboarding-close-btn {
+	cursor: pointer;
+	font-size: 1.5rem;
+	background: black;
+	color: white;
+	font-weight: bold;
+	padding: 1rem 1.2rem;
+	border-radius: 50%;
+	float: right;
+	position: relative;
+	z-index: 20000;
+}
+
+/*
+* Video
+*/
+.mb-onboarding-video-container {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000;
+	padding: 5%;
+	background-color: rgba(0,0,0,0.5);
+}
+.mb-onboarding-video-container .mb-onboarding-video-content {
+	padding: 50% 0 0 0; 
+	position: relative;
+}
+
+/*
+* Gallery
+*/
+.mb-onboarding-gallery-container {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000;
+	background-color: rgba(0,0,0,0.5);
+}
+.mb-onboarding-gallery .mb-onboarding-gallery-carrousel {
+	margin: 3rem 0.5rem;
+	text-align: center;
+	overflow: hidden;
+}
+.mb-onboarding-gallery .mb-onboarding-gallery-carrousel img {
+	max-width: 100%;
+}
