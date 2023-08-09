@@ -36,7 +36,7 @@ function mybooking_plugin_onboarding_page() {
 					<label for="api_key">
 						APIKey
 					</label>
-					<input type="text" name="api_key" id="api_key" placeholder="APIKey" value="Rv9y8Tf5iw0ZHer_Ugadk1qzNVnsJBYDuG2Qhp3ICMo4bAWl" />
+					<input type="text" name="api_key" id="api_key" placeholder="APIKey" value="" />
 				</div>
 			</div>
 			<br/>

@@ -224,6 +224,9 @@
       // Register custom post types
       add_action( 'init', array( $this, 'create_custom_post_types' ) );
 
+      // Initialize rest api
+      add_action( 'rest_api_init', array( $this, 'wp_init_rest_api') );
+
       // Load translations
       add_action( 'plugins_loaded', array( $this, 'wp_load_plugin_textdomain' ) );
 
@@ -377,6 +380,18 @@
 
       // Shortcode Change Password
       add_shortcode( 'mybooking_change_password', array( $this, 'wp_change_password_shortcode') );
+
+    }
+
+    /**
+     * Initialize internal rest API
+     */ 
+    public function wp_init_rest_api() {
+
+      // Instance
+      $onboarding_api = new MyBookingOnboardingApi();
+      // Routes
+      $onboarding_api->register_routes();
 
     }
 
@@ -2432,10 +2447,6 @@
      */
     public function init_routes() {
       $registry = Mybooking_Registry::getInstance();
-
-      Routes::map($url.'/mybooking-onboarding', function($params) {
-        Routes::load('mybooking-plugin-onboarding-welcome.php');
-      });
 
       // Renting product detail route (depends on the settings)
       if ( $registry->mybooking_rent_plugin_detail_pages ) {
