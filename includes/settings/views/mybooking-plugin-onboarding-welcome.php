@@ -79,14 +79,9 @@ function mybooking_plugin_onboarding_welcome_page() {
 								dataType : 'json',
 								contentType : 'application/json; charset=utf-8',
 								crossDomain: false,
-								success: (data) => {
-									console.log(data);
-									var query = '?page=mybooking-onboarding-selector';
-									query += '&trade_name=' + encodeURIComponent(data.trade_name);
-									query += '&booking_item_family=' + encodeURIComponent(data.booking_item_family);
-									query += '&booking_item_family_name=' + encodeURIComponent(data.booking_item_family_name);
-
-									window.location.search = query;
+								success: (response) => {
+									debugger;
+									window.location.search = '?page=mybooking-onboarding-selector'; // TODO safe
 								},
 								error: function() {
 									alert('Por favor, revisa los datos proporcionados se ha producido un error.'); // TODO

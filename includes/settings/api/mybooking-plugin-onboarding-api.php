@@ -82,10 +82,13 @@
             // Store information in settings (add_option) - mybooking_plugin_onboarding_finished
             update_option("mybooking_plugin_onboarding_business_info", $onboarding_data);
 
-            // Override settings 
+            // Override settings
             // $settings = (array) get_option("mybooking_plugin_settings_connection");
 
-
+            // return new WP_REST_Response(array(
+            //   'message' => 'Data saved successfully',
+            //   'code' => 200
+            // ), 200);
             return new WP_REST_Response(json_decode($res['body'], true), 200);
           } else {
             return new WP_REST_Response($res['response'], 401);

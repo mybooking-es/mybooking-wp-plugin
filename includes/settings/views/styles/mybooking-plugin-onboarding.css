@@ -81,6 +81,11 @@
 	margin: 1rem;
 	padding: 0.5rem 1rem;
 }
+.mb-onboarding-commons .mb-onboarding-list .mb-onboarding-row > a {
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 1rem;
+}
 .mb-onboarding-commons .mb-onboarding-list +  .mb-onboarding-row {
 	padding: 0.5rem 1rem;
 }

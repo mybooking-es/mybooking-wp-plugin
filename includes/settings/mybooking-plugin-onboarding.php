@@ -34,6 +34,15 @@
         array($this, 'mybooking_plugin_onboarding_selector_page')
       ); // Callable
 
+			add_submenu_page(
+				'mybooking-plugin-configuration', // Parent slug
+        'Mybooking Resultado', // Page title
+        'Resultado', // Menu option title
+        'manage_options', // Capability
+        'mybooking-onboarding-resume', // Slug
+        array($this, 'mybooking_plugin_onboarding_resume_page')
+      ); // Callable
+
 			function add_scripts() {
 				wp_enqueue_script( 'jquery' );
 			}
@@ -51,5 +60,8 @@
 		}
 		public function mybooking_plugin_onboarding_selector_page() {
 		  require_once('views/mybooking-plugin-onboarding-selector.php');
+		}
+		public function mybooking_plugin_onboarding_resume_page() {
+		  require_once('views/mybooking-plugin-onboarding-resume.php');
 		}
   }
