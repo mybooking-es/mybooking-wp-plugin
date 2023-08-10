@@ -48,6 +48,9 @@
 .mb-onboarding-commons .mb-onboarding-row.mb-onboarding-space-between {
 	justify-content: space-between;
 }
+.mb-onboarding-commons .mb-onboarding-row.mb-onborading-pull-right {
+	justify-content: flex-end;
+}
 .mb-onboarding-commons .mb-onboarding-row .mb-onboarding-column {
 	display: flex;
 	flex-direction: column;
@@ -67,15 +70,23 @@
 .mb-onboarding-commons .mb-onboarding-list {
 	margin: 0;
 	padding: 0;
+	list-style: none;
+}
+.mb-onboarding-commons .mb-onboarding-list .mb-onboarding-higthlight {
+	border: 2px solid black;
 }
 .mb-onboarding-commons .mb-onboarding-list .mb-onboarding-row {
 	background-color: rgba(0,0,0,0.1);
 	border-radius: 5px;
 	margin: 1rem;
-	padding: 1rem;
+	padding: 0.5rem 1rem;
 }
-.mb-onboarding-commons .mb-onboarding-list .mb-onboarding-row > span:first-child {
+.mb-onboarding-commons .mb-onboarding-list +  .mb-onboarding-row {
+	padding: 0.5rem 1rem;
+}
+.mb-onboarding-commons .mb-onboarding-list .mb-onboarding-row > p {
 	width: 80%;
+	text-align: left;
 }
 .mb-onboarding-commons  a.mb-onboarding-block {
 	display: inline-block;

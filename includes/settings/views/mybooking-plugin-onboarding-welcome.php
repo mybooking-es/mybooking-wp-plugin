@@ -56,12 +56,15 @@ function mybooking_plugin_onboarding_welcome_page() {
 		(function($) {
 			$(document).ready(function() {
 				/*
-				* Events
+				* Button events
 				*/
 				$('#mybooking-onboarding-account').on('click', function() {
 					window.open('https://mybooking.es/');
 				});
 
+				/*
+				* Form validation
+				*/
 				$('#mb-onboarding-login-form').validate({
 						submitHandler: function(form) {
 							var url = '/wp-json/api/v1/login';
@@ -77,21 +80,13 @@ function mybooking_plugin_onboarding_welcome_page() {
 								contentType : 'application/json; charset=utf-8',
 								crossDomain: false,
 								success: (data) => {
-									var redirect = '?page=mybooking-onboarding-selector';
-									redirect += '&trade_name=' + data.trade_name;
-									redirect += '&booking_item_family=' + data.booking_item_family;
-									redirect += '&booking_item_family_name=' + data.booking_item_family_name;
-									
-									var module =  'module_rental';
-									if (data.module_activities) {
-										module =  'module_activities';
-									}
-									if (data.module_transfer) {
-										module =  'module_transfer';
-									}
-									redirect += '&module=' + module;
+									console.log(data);
+									var query = '?page=mybooking-onboarding-selector';
+									query += '&trade_name=' + encodeURIComponent(data.trade_name);
+									query += '&booking_item_family=' + encodeURIComponent(data.booking_item_family);
+									query += '&booking_item_family_name=' + encodeURIComponent(data.booking_item_family_name);
 
-									window.location.search = redirect;
+									window.location.search = query;
 								},
 								error: function() {
 									alert('Por favor, revisa los datos proporcionados se ha producido un error.'); // TODO

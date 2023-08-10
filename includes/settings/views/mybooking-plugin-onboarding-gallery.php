@@ -15,40 +15,40 @@
 <!-- Scripts -->
 <script>
 	var galleryURLS = {
-		searcher: [
-			'vertical-searcher.png',
-			'horizontal-searcher.png',
+		selector: [
+			'vertical-selector.png',
 			'choose-product.png',
 			'complete.png',
 			'summary.png'
 		],
-		pages: [
+		page: [
 			'calendar.png',
-			'planning-calendary.png',
-			'planning-diary.png',
-			'shift-picker.png',
-			'choose-product.png',
 			'complete.png',
 			'summary.png'
-		]
+		],
 	};
 </script>
 <script>
 	(function($) {
 		$(document).ready(function() {
+			/**
+			 * Gallery
+			 */
+			// Get gallery data
 			var folder = '<?php echo $folder ?>';
+
+			// Append loading
 			var form = $('#mb-onboarding-gallery-form');
-			var container = $('#mb-onboarding-gallery-container');
 			form.html('<div class="mb-onboarding-loading">Loading...</div>');
 
 			/**
-			 * Events
+			 * Buttons events
 			 */
-			$('.mb-onboarding-gallery-btn').on('click', function() {
+			var container = $('#mb-onboarding-gallery-container');
+			$('.mb-onboarding-list').on('click', '.mb-onboarding-gallery-btn', function() {
 				var element = $(this);
-				var section = element.attr('data-section');
-				var URLS = galleryURLS[section];
-				debugger;
+				var type = element.attr('data-type');
+				var URLS = galleryURLS[type];
 
 				var HTML = '';
 				URLS.forEach(url => {
@@ -56,15 +56,17 @@
 				});
 				URLS.forEach(url => {
 					HTML += '<label for="' + url + '">';
-					HTML += '<img src="' + folder  + section + '/' + url + '" alt="image" />';
+					HTML += '<img src="' + folder  + type + '/' + url + '" alt="image" />';
 					HTML +=   '</label>';
 				});
+				// Append video
 				form.html(HTML);
 
 				container.show();
 			});
 			$('#mb-onboarding-close-btn').on('click', function() {
 				container.hide();
+				// Append loading
 				form.html('<div class="mb-onboarding-loading">Loading...</div>');
 			});
 		});
