@@ -75,6 +75,17 @@
         // Validate error
         if(!is_wp_error($res)) {
           if ($res['response']['code'] == 200 || $res['response']['code'] == 201 ) {
+
+            // Decode response into an associate array
+            $onboarding_data = json_decode($res['body'], true);
+
+            // Store information in settings (add_option) - mybooking_plugin_onboarding_finished
+            update_option("mybooking_plugin_onboarding_business_info", $onboarding_data);
+
+            // Override settings 
+            // $settings = (array) get_option("mybooking_plugin_settings_connection");
+
+
             return new WP_REST_Response(json_decode($res['body'], true), 200);
           } else {
             return new WP_REST_Response($res['response'], 401);
