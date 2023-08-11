@@ -1,4 +1,8 @@
 <?php
+
+  require_once( 'class-mybooking-create-pages.php' );
+  require_once( 'class-mybooking-create-renting-pages.php' );
+
   class MyBookingOnboardingApi extends WP_REST_Controller {
     const GET_SETTINGS = '/api/booking/frontend/wizard-info';
     
@@ -91,8 +95,11 @@
             // Store information in settings (add_option) - mybooking_plugin_onboarding_finished
             update_option("mybooking_plugin_onboarding_business_info", $onboarding_data);
 
-            // Override settings
-            // $settings = (array) get_option("mybooking_plugin_settings_connection");
+            // Update connection settings (TODO if does not exist)
+            $connection_settings = (array) get_option("mybooking_plugin_settings_connection");
+            $connection_settings['mybooking_plugin_settings_account_id'] = $clientId; 
+            $connection_settings['mybooking_plugin_settings_api_key'] = $apiKey;
+            update_option("mybooking_plugin_settings_connection", $connection_settings);
 
             return new WP_REST_Response(array(
               'message' => 'Data saved successfully',
@@ -116,6 +123,7 @@
      * @return WP_Error|WP_REST_Response
      */
     public function setupOnboarding($request) {
+      
       // Pase Body as JSON
       $data = json_decode($request->get_body(), true);
 
@@ -124,14 +132,30 @@
         return new WP_REST_Response(array("message" => "Invalid JSON parameters"), 400); 
       }
 
-      // Extract parameters
+      // Extract parameters (values : 'selector' or 'page')
       $navigation = $data['navigation'];
 
       // Check parameters
       if ( empty($navigation) ) {
         return new WP_REST_Response(array("message" => "Required parameters not found or empty"), 400); 
       } else {
-        $pages = $this->createPages($navigation);
+
+        $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+
+        $pages = array();
+
+        if ( $onboarding_settings ) {
+          
+          // Renting
+          if ( array_key_exists('module_rental', $onboarding_settings) ) {
+            $create_renting_pages = new MybookingCreateRentingPages();
+            $pages['renting'] = $create_renting_pages->createRentingPages($navigation);
+          }
+
+          // Activities
+
+          // Transfer
+        }
 
         if ($pages !== null) {
           return new WP_REST_Response($pages, 200);
@@ -142,58 +166,6 @@
             'code' => 401
           ), 401);
         }
-      }
-    }
-
-    /**
-    * Create pages
-    */
-    function createPages($navigation) {
-      // Create pages
-      $pages = array();
-
-      $title = 'Title';
-      $content = wpautop(do_shortcode('[mybooking_rent_engine_selector]'));
-      $post_id = $this->createPage($title, $content);
-      if ($post_id) {
-        array_push($pages, $post_id);
-      }
-
-      if (count($pages) > 0) {
-        $pages_info = array(
-          "navigation" => $navigation,
-          "pages" => $pages
-        );
-
-        // Store pages data in options
-        // update_option("mybooking_plugin_onboarding_pages_info", $pages_info);
-
-        return $pages_info;
-      } else {
-        return null;
-      }
-    }
-
-    /*
-    * Create page
-    */
-    function createPage($title, $content, $template = '') {
-      $check = get_page_by_title($title);
-
-      $page = array(
-        'post_type' => 'page',
-        'post_title' => $title,
-        'post_content' => $content,
-      );
-
-      if(!isset($check->ID)){
-        $page_id = wp_insert_post($page);
-
-        if(!empty($template)){
-          update_post_meta($page_id, '_wp_page_template', $template);
-        }
-
-        return $page_id;
       }
     }
 

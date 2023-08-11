@@ -200,10 +200,8 @@ function mybooking_plugin_onboarding_selector_page() {
 								dataType : 'json',
 								contentType : 'application/json; charset=utf-8',
 								crossDomain: false,
-								success: (response) => {
-									if (response.code === 200) {
-										window.location.search = '?page=mybooking-onboarding-resume'; // TODO safe
-									}
+								success: (data, textStatus, jqXHR) => {
+									window.location.search = '?page=mybooking-onboarding-resume'; // TODO safe
 								},
 								error: function(err) {
 									alert('Por favor, revisa los datos proporcionados se ha producido un error.'); // TODO
