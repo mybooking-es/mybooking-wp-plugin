@@ -188,7 +188,33 @@ function mybooking_plugin_onboarding_selector_page() {
 				*/
 				$('#mb-onboarding-selector-form').validate({
 						submitHandler: function(form) {
-							// TODO
+							var url = '/wp-json/api/v1/setupOnboarding';
+							var params = $(form).formParams();
+							var data = JSON.stringify(params);
+
+							// Request  
+							$.ajax({
+								type: 'POST',
+								url,
+								data,
+								dataType : 'json',
+								contentType : 'application/json; charset=utf-8',
+								crossDomain: false,
+								success: (response) => {
+									if (response.code === 200) {
+										window.location.search = '?page=mybooking-onboarding-resume'; // TODO safe
+									}
+								},
+								error: function(err) {
+									alert('Por favor, revisa los datos proporcionados se ha producido un error.'); // TODO
+								},
+								beforeSend: function() {
+									$('#mb-onboarding-loading').show();
+								},        
+								complete: function() {
+									$('#mb-onboarding-loading').hide();
+								}
+							});
 							
 							return false;
 						},

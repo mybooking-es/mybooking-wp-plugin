@@ -80,8 +80,9 @@ function mybooking_plugin_onboarding_welcome_page() {
 								contentType : 'application/json; charset=utf-8',
 								crossDomain: false,
 								success: (response) => {
-									debugger;
-									window.location.search = '?page=mybooking-onboarding-selector'; // TODO safe
+									if (response.code === 200) {
+										window.location.search = '?page=mybooking-onboarding-selector'; // TODO safe
+									}
 								},
 								error: function() {
 									alert('Por favor, revisa los datos proporcionados se ha producido un error.'); // TODO
