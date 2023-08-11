@@ -43,6 +43,15 @@
         array($this, 'mybooking_plugin_onboarding_resume_page')
       ); // Callable
 
+			add_submenu_page(
+				'mybooking-plugin-configuration', // Parent slug
+        'Mybooking Error', // Page title
+        'Error', // Menu option title
+        'manage_options', // Capability
+        'mybooking-onboarding-error', // Slug
+        array($this, 'mybooking_plugin_onboarding_error_page')
+      ); // Callable
+
 			function add_scripts() {
 				wp_enqueue_script( 'jquery' );
 			}
@@ -63,5 +72,8 @@
 		}
 		public function mybooking_plugin_onboarding_resume_page() {
 		  require_once('views/mybooking-plugin-onboarding-resume.php');
+		}
+		public function mybooking_plugin_onboarding_error_page() {
+		  require_once('views/mybooking-plugin-onboarding-error.php');
 		}
   }

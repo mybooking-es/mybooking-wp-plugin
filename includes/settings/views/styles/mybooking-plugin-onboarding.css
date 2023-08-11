@@ -21,11 +21,17 @@
 	font-weight: lighter;
 	line-height: 1;
 }
+h1.mb-onboarding-error {
+	color: red;
+}
 .mb-onboarding-commons .mb-onboarding-icon {
 	font-size: 3rem;
 	color: rgba(0,0,0,0.5);
 	transform: translateY(-0.8rem);
 	cursor: pointer;
+}
+.mb-onboarding-icon.mb-onboarding-error {
+	color: red;
 }
 .mb-onboarding-commons input[type="radio"] {
 	appearance: none;

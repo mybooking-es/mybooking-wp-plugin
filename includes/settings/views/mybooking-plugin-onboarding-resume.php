@@ -27,6 +27,23 @@ function mybooking_plugin_onboarding_resume_page() {
 				$module_transfer = $onboarding_settings["module_transfer"];
 	    }
 		}
+
+		$settings_renting = (array) get_option("mybooking_plugin_settings_renting");
+		$renting_pages_ids = array();
+		$home_page_id = 0;
+		if($settings_renting) {
+			foreach ($settings_renting as $key => $value) {
+				if (str_ends_with($key, '_page')) {
+					if (get_post_field('menu_order', $value)) {
+						$renting_pages_ids[get_post_field('menu_order', $value) - 1] = $value;
+					}
+				}
+				if (str_contains($key, 'home')) {
+					$home_page_id = $value;
+				}
+				ksort($renting_pages_ids);
+			}
+		}
 	?>
 	<link rel="stylesheet" href="<?php echo $plugin_dir ?>styles/mybooking-plugin-onboarding.css">
 	
@@ -46,20 +63,28 @@ function mybooking_plugin_onboarding_resume_page() {
 				Modulo: Alquiler
 			</h5>
 			<ul class="mb-onboarding-list">
-				<li>
-					<div class="mb-onboarding-row mb-onboarding-space-between">
-						<p>
-							Página de <strong>inicio de prueba</strong> (recuerda que el proceso de reserva se inicia desde aquí)
-						</p>
-
-						<a href="" title="Show page">
-							<span class="mb-onboarding-icon dashicons dashicons-visibility"></span>
-						</a>
-						<a href="" title="Edit page">
-							<span class="mb-onboarding-icon dashicons dashicons-external"></span>
-						</a>
-					</div>
-				</li>
+				<?php foreach ($renting_pages_ids as $key => $id) { ?>
+					<li>
+						<div class="mb-onboarding-row mb-onboarding-space-between">
+							<p>
+								Página:
+								&nbsp;
+								<strong><?php echo get_the_title( $id ) ?></strong>
+								<?php if ($home_page_id === $id) { ?>
+									(recuerda que el proceso de reserva se inicia desde aquí)
+								<?php } ?>
+							</p>
+							<?php if ($home_page_id === $id) { ?>
+								<a href="<?php echo get_permalink( $id ) ?>" title="Show page" target="_blank">
+									<span class="mb-onboarding-icon dashicons dashicons-visibility"></span>
+								</a>
+							<?php } ?>
+							<a href="<?php echo get_edit_post_link( $id ) ?>" title="Edit page" target="_blank">
+								<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+							</a>
+						</div>
+					</li>
+				<?php } ?>
 			</ul>
 			<p>
 				<strong>Recuerda seleccionar la página de inicio en Wordpress</strong> y configurar el menú para que apunte a las páginas que no forman parte del proceso de reserva.
@@ -70,23 +95,16 @@ function mybooking_plugin_onboarding_resume_page() {
 			<h5>
 				Modulo: Actividades
 			</h5>
+			<!-- TODO -->
 		<?php endif; ?>
 		<?php if ( $module_transfer ): ?>
 			<br />
 			<h5>
 				Modulo: Transfer
 			</h5>
+			<!-- TODO -->
 		<?php endif; ?>
 	</div>
-
-	<!-- Scripts -->
-	<script>
-		(function($) {
-			$(document).ready(function() {
-				// TODO
-			});
-		})(jQuery)
-	</script>
 <?php
 }
 

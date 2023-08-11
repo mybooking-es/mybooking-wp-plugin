@@ -10,7 +10,7 @@
     * @param string $slug The page slug
     *
     */
-    function createPage($title, $content, $slug, $template = '') {
+    function createPage($title, $content, $slug, $order, $template = '') {
       
       // Get the page by its title
       $check = get_page_by_title( $title );
@@ -26,6 +26,7 @@
           'post_status' => 'publish',
           'post_title' => $title,
           'post_content' => $content,
+          'menu_order' => $order
         );
         $page_id = wp_insert_post($page);
 

@@ -101,10 +101,7 @@
             $connection_settings['mybooking_plugin_settings_api_key'] = $apiKey;
             update_option("mybooking_plugin_settings_connection", $connection_settings);
 
-            return new WP_REST_Response(array(
-              'message' => 'Data saved successfully',
-              'code' => 200
-            ), 200);
+            return new WP_REST_Response($connection_settings, 200);
           } else {
             return new WP_REST_Response($res['response'], 401);
           }
