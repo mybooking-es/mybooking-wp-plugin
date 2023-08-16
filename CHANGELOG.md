@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.5] - 2023.08.16
+
+### Fixed
+
+- Renting : Promotion code 100% allow request reservation
+
+
 ## [1.10.4] - 2023.08.08
 
 ### Fixed
