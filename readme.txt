@@ -3,7 +3,7 @@ Contributors: juanmiqueo
 Donate link: https://mybooking.es/
 Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation, properties booking system, tours booking system, transfer booking system 
 Requires at least: 5.2
-Tested up to: 6.2
+Tested up to: 6.3
 Stable tag: trunk
 Requires PHP: 7.2
 License: GPLv2 or later
