@@ -30,7 +30,7 @@ function mybooking_plugin_onboarding_welcome_page() {
 					<label for="client_id">
 						ID cliente
 					</label>
-					<input type="text" name="client_id" id="client_id" placeholder="ID cliente" value="dev-rentacar" />
+					<input type="text" name="client_id" id="client_id" placeholder="ID cliente" value="" />
 				</div>
 				<div class="mb-onboarding-column">
 					<label for="api_key">

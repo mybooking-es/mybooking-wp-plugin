@@ -1,13 +1,9 @@
 <?php
- 
   class MybookingCreateRentingPages extends MybookingCreatePages {
-  	
-
     /**
     * Create renting pages
     */
     function createRentingPages($navigation) {
-      
       // Created pages (posts) ids
       $pages = array();
 
@@ -37,7 +33,6 @@
       );        
 
       if ( $navigation == 'selector' ) {
-
         // Home with selector
         $pages_to_create['home_test'] = array( 
                                                'option' => 'mybooking_plugin_settings_home_test_page',
@@ -61,13 +56,11 @@
 
       // Create pages
       foreach( $pages_to_create as $key => $page_to_create ) {
-
         $post_id = $this->createPage($page_to_create['title'],
                                      $page_to_create['content'],
                                      $page_to_create['slug'],
                                      $page_to_create['order']);
       
-
         if ($post_id) {
           // Update settings page
           $settings_renting[$page_to_create['option']] = $post_id;
@@ -77,27 +70,21 @@
                    'title' => $page_to_create['title'],
                    'permalink' => get_permalink( $post_id ),
                    'edit_post_link' => get_edit_post_link ( $post_id )));
-
         }
-
       }
 
       // Update renting settings (renting process pages)
       update_option( "mybooking_plugin_settings_renting", $settings_renting );
 
       if (count($pages) > 0) {
-        
         $pages_info = array(
           "navigation" => $navigation,
           "pages" => $pages
         );
 
         return $pages_info;
-
       } else {
         return null;
       }
-    
     }
-
   }

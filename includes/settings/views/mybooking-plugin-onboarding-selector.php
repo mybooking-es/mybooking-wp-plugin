@@ -105,7 +105,7 @@ function mybooking_plugin_onboarding_selector_page() {
 								<strong>Quiero un buscador en la página de inicio</strong> donde se puedan seleccionar las fechas de entrega y devolución y me devuelva un listado de productos con precio y disponibilidad.
 							</p>
 							<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-							<input type="radio" name="navigation" value="selector" class="mb-onboarding-check" title="Select" />
+							<input type="radio" name="navigation" value="selector" class="mb-onboarding-check" title="Select" checked />
 						</div>
 						<?php if ( $wc_rent_selector ): ?><small style="position: relative; top: -1rem;"><i>Es la opción que aconsejamos para tu tipo de producto.</i></small><?php endif; ?>
 					</li>
@@ -141,7 +141,7 @@ function mybooking_plugin_onboarding_selector_page() {
 								<strong>Quiero añadir un calendario o similar</strong> para mostrar disponibilidad y hacer la reserva desde la página del producto.
 							</p>
 							<span data-type="page" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-							<input type="radio" name="navigation" value="page" class="mb-onboarding-check" title="Select" />
+							<input type="radio" name="navigation" value="page" class="mb-onboarding-check" title="Select" checked />
 						</div>
 						<?php if ( $wc_activity_calendar || $wc_activity_shift_picker || $wc_activity_weekly_planning ): ?><small style="position: relative; top: -1rem;"><i>Es la opción que aconsejamos para tu tipo de producto.</i></small><?php endif; ?>	
 					</li>
@@ -163,7 +163,7 @@ function mybooking_plugin_onboarding_selector_page() {
 								<strong>Quiero un buscador en la página de inicio</strong> donde se puedan seleccionar las fechas de recogida y devolución.
 							</p>
 							<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-							<input type="radio" name="navigation" value="selector" class="mb-onboarding-check" title="Select" />
+							<input type="radio" name="navigation" value="selector" class="mb-onboarding-check" title="Select" checked />
 						</div>
 						<?php if ( $wc_transfer_selector ): ?><small style="position: relative; top: -1rem;"><i>Es la opción que aconsejamos para tu tipo de producto.</i></small><?php endif; ?>
 					</li>

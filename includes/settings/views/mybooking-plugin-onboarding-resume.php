@@ -84,6 +84,9 @@ function mybooking_plugin_onboarding_resume_page() {
 			<h5>
 				Modulo: <?php if ( $module_rental ) { ?>Alquiler<?php } elseif ( $module_transfer ) { ?>Transfer<?php } ?>
 			</h5>
+			<h6>
+				Tus paginas
+			</h6>
 			<ul class="mb-onboarding-list">
 				<?php foreach ($pages_ids as $key => $id) { ?>
 					<li>
@@ -99,7 +102,7 @@ function mybooking_plugin_onboarding_resume_page() {
 							<div class="mb-onboarding-row">
 								<?php if ($home_page_id === $id) { ?>
 									<a href="<?php echo get_permalink( $id ) ?>" title="Show page" target="_blank" class="mb-onboarding-row-link">
-										<span class="mb-onboarding-icon dashicons dashicons-visibility"></span>
+										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
 									</a>
 								<?php } ?>
 								<div data-href="<?php echo get_permalink( $id ) ?>" title="Copy page link for mybooking web configuration" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
@@ -122,6 +125,53 @@ function mybooking_plugin_onboarding_resume_page() {
 			<h5>
 				Modulo: Actividades
 			</h5>
+			<h6>
+				Tus componentes
+			</h6>
+			<p>
+				<strong>
+					Para iniciar el proceso de reserva necesitas un punto de inicio, en este caso puede ser un catalogo de productos, un calendario, un planning etc. <br/> Estos componentes que se añaden en páginas existentes se deben añadir manualmente. Puedes copiar el shortcode aquí o en el inventario (cuando precises el ID de producto).
+				</strong>
+			</p>
+			<ul class="mb-onboarding-list">
+				<li>
+					<div class="mb-onboarding-row mb-onboarding-space-between">
+						<p>
+							Componente:
+							&nbsp;
+							<strong>
+								Catalogo de productos
+							</strong>
+						</p>
+						<div class="mb-onboarding-row">
+							<div data-href="[mybooking_activities_engine_activities]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
+								<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+							</div>
+						</div>
+					</div>
+				</li>
+				<?php if ( array_key_exists('wc_activity_calendar', $onboarding_settings) &&  $onboarding_settings['wc_activity_calendar'] ) { ?>
+					<li>
+						<div class="mb-onboarding-row mb-onboarding-space-between">
+							<p>
+								Componente:
+								&nbsp;
+								<strong>
+									Calendario
+								</strong>
+							</p>
+							<div class="mb-onboarding-row">
+								<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+									<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+								</a>
+							</div>
+						</div>
+					</li>
+				<?php } ?>
+			</ul>
+			<h6>
+				Tus paginas
+			</h6>
 			<ul class="mb-onboarding-list">
 				<?php foreach ($pages_ids as $key => $id) { ?>
 					<li>
@@ -165,6 +215,16 @@ function mybooking_plugin_onboarding_resume_page() {
 				/*
 				* Button events
 				*/
+				$('.mybooking-onboarding-get-shortcode').on('click', function(event){
+					event.preventDefault();
+					var shortcode = $(this).attr('data-href');
+
+					// Add string to clipboard
+					navigator.clipboard.writeText(shortcode);
+					
+					showToast('El shortcode: "' + shortcode + '" se ha copiado en el portapapeles');
+				});
+
 				$('.mybooking-onboarding-get-permalink').on('click', function(event) {
 					event.preventDefault();
 					var url = $(this).attr('data-href');

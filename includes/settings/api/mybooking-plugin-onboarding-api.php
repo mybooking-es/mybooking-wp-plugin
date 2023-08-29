@@ -1,7 +1,8 @@
 <?php
-
   require_once( 'class-mybooking-create-pages.php' );
   require_once( 'class-mybooking-create-renting-pages.php' );
+  require_once( 'class-mybooking-create-activities-pages.php' );
+  require_once( 'class-mybooking-create-transfer-pages.php' );
 
   class MyBookingOnboardingApi extends WP_REST_Controller {
     const GET_SETTINGS = '/api/booking/frontend/wizard-info';
@@ -142,16 +143,23 @@
         $pages = array();
 
         if ( $onboarding_settings ) {
-          
           // Renting
-          if ( array_key_exists('module_rental', $onboarding_settings) ) {
+          if ( array_key_exists('module_rental', $onboarding_settings) && $onboarding_settings['module_rental'] ) {
             $create_renting_pages = new MybookingCreateRentingPages();
             $pages['renting'] = $create_renting_pages->createRentingPages($navigation);
           }
 
           // Activities
+          if ( array_key_exists('module_activities', $onboarding_settings) && $onboarding_settings['module_activities'] ) {
+            $create_activities_pages = new MybookingCreateActivitiesPages();
+            $pages['activities'] = $create_activities_pages->createActivitiesPages($navigation);
+          }
 
           // Transfer
+          if ( array_key_exists('module_transfer', $onboarding_settings) && $onboarding_settings['module_transfer'] ) {
+            $create_transfer_pages = new MybookingCreateTransferPages();
+            $pages['transfer'] = $create_transfer_pages->createTransferPages($navigation);
+          }
         }
 
         if ($pages !== null) {
