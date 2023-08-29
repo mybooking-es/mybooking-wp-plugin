@@ -82,12 +82,12 @@ h1.mb-onboarding-error {
 	border: 2px solid black;
 }
 .mb-onboarding-commons .mb-onboarding-list .mb-onboarding-row {
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(223,223,223,1);
 	border-radius: 5px;
 	margin: 1rem;
 	padding: 0.5rem 1rem;
 }
-.mb-onboarding-commons .mb-onboarding-list .mb-onboarding-row > a {
+.mb-onboarding-commons .mb-onboarding-list .mb-onboarding-row > .mb-onboarding-row-link {
 	text-decoration: none;
 	display: inline-block;
 	margin: 0 1rem;
@@ -145,6 +145,11 @@ h1.mb-onboarding-error {
 	.mb-onboarding-commons .mb-onboarding-buttons input {
 		width: 100%;
 	}
+}
+.mb-onboarding-commons a:focus {
+	border: none;
+	box-shadow: none;
+	outline: none;
 }
 
 /*
@@ -306,4 +311,51 @@ h1.mb-onboarding-error {
 	max-width: 90vw;
 	max-height: 80vh;
 	margin: 10vh auto;
+}
+
+/*
+*
+*	 snackbar
+*
+*/
+.mb-onboarding-snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+.mb-onboarding-snackbar.mb-onboarding-show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }

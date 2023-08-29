@@ -107,7 +107,7 @@ function mybooking_plugin_onboarding_welcome_page() {
 					}
         );
 			});
-		})(jQuery)
+		})(jQuery);
 	</script>
 <?php
 }
