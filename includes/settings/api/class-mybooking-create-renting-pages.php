@@ -74,7 +74,7 @@
       }
 
       // Update renting settings (renting process pages)
-      update_option( "mybooking_plugin_settings_renting", $settings_renting );
+      update_option( "mybooking_plugin_settings_renting", $settings_renting, false );
 
       if (count($pages) > 0) {
         $pages_info = array(

@@ -64,7 +64,7 @@
       }
 
       // Update transfer settings (transfer process pages)
-      update_option( "mybooking_plugin_settings_transfer", $settings_transfer );
+      update_option( "mybooking_plugin_settings_transfer", $settings_transfer, false );
 
       if (count($pages) > 0) {
         

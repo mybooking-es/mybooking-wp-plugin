@@ -57,7 +57,7 @@
       }
 
       // Update activities settings (activities process pages)
-      update_option( "mybooking_plugin_settings_activities", $settings_activities );
+      update_option( "mybooking_plugin_settings_activities", $settings_activities, false );
 
       if (count($pages) > 0) {
         $pages_info = array(

@@ -76,14 +76,126 @@ function mybooking_plugin_onboarding_resume_page() {
 			&nbsp;&nbsp;
 			Configuración finalizada con exito
 		</h1>
-		<h2>
-			A continuación puedes ver las páginas de prueba que se han creado con los contenidos que has seleccionado y configurado.
-		</h2>
 		<?php if ( $module_rental || $module_transfer ): ?>
 			<br />
 			<h5>
 				Modulo: <?php if ( $module_rental ) { ?>Alquiler<?php } elseif ( $module_transfer ) { ?>Transfer<?php } ?>
 			</h5>
+			<?php if ( $module_rental && $home_page_id !== 0 ) { ?>
+				<h6>
+					Tus componentes
+				</h6>
+				<ul class="mb-onboarding-list">
+					<?php if ( array_key_exists('wc_rent_selector', $onboarding_settings) &&  $onboarding_settings['wc_rent_selector'] ) { ?>
+						<li>
+							<div class="mb-onboarding-row mb-onboarding-space-between">
+								<p>
+									Componente:
+									&nbsp;
+									<strong>
+										Selector
+									</strong>
+								</p>
+								<div class="mb-onboarding-row">
+									<div data-href="[mybooking_rent_engine_selector]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
+										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+									</div>
+								</div>
+							</div>
+						</li>
+					<?php } ?>
+					<?php if ( array_key_exists('wc_rent_calendar', $onboarding_settings) &&  $onboarding_settings['wc_rent_calendar'] ) { ?>
+						<li>
+							<div class="mb-onboarding-row mb-onboarding-space-between">
+								<p>
+									Componente:
+									&nbsp;
+									<strong>
+										Calendario
+									</strong>
+								</p>
+								<div class="mb-onboarding-row">
+									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+									</a>
+								</div>
+							</div>
+						</li>
+					<?php } ?>
+					<?php if ( array_key_exists('wc_rent_daily_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_daily_planning'] ) { ?>
+						<li>
+							<div class="mb-onboarding-row mb-onboarding-space-between">
+								<p>
+									Componente:
+									&nbsp;
+									<strong>
+										Planning por horas
+									</strong>
+								</p>
+								<div class="mb-onboarding-row">
+									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+									</a>
+								</div>
+							</div>
+						</li>
+					<?php } ?>
+					<?php if ( array_key_exists('wc_rent_monthly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_monthly_planning'] ) { ?>
+						<li>
+							<div class="mb-onboarding-row mb-onboarding-space-between">
+								<p>
+									Componente:
+									&nbsp;
+									<strong>
+										Planning por dias
+									</strong>
+								</p>
+								<div class="mb-onboarding-row">
+									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+									</a>
+								</div>
+							</div>
+						</li>
+					<?php } ?>
+					<?php if ( array_key_exists('wc_rent_weekly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_weekly_planning'] ) { ?>
+						<li>
+							<div class="mb-onboarding-row mb-onboarding-space-between">
+								<p>
+									Componente:
+									&nbsp;
+									<strong>
+										Planning semanal
+									</strong>
+								</p>
+								<div class="mb-onboarding-row">
+									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+									</a>
+								</div>
+							</div>
+						</li>
+					<?php } ?>
+					<?php if ( array_key_exists('wc_rent_shift_picker', $onboarding_settings) &&  $onboarding_settings['wc_rent_shift_picker'] ) { ?>
+						<li>
+							<div class="mb-onboarding-row mb-onboarding-space-between">
+								<p>
+									Componente:
+									&nbsp;
+									<strong>
+										Selector de turnos
+									</strong>
+								</p>
+								<div class="mb-onboarding-row">
+									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+									</a>
+								</div>
+							</div>
+						</li>
+					<?php } ?>
+				</ul>
+			<?php } ?>
 			<h6>
 				Tus paginas
 			</h6>
