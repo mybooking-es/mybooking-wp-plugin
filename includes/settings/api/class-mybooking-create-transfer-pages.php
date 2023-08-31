@@ -10,28 +10,21 @@
       // Define pages
       $pages_to_create = array(
         'checkout'           => array(
-           'option' => 'mybooking_plugin_settings_checkout_page',
+           'option' => 'mybooking_plugin_settings_transfer_checkout_page',
            'title' => _x( 'Check-out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_transfer_checkout]<!-- /wp:shortcode -->',
            'slug' => 'checkout',
            'order' => 3,
         ),
         'summary'           => array(
-           'option' => 'mybooking_plugin_settings_summary_page',
+           'option' => 'mybooking_plugin_settings_transfer_summary_page',
            'title' => _x( 'Summary', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_transfer_summary]<!-- /wp:shortcode -->',
            'slug' => 'summary',
            'order' => 4,
         ),
-        'my_reservation'           => array(
-           'option' => 'mybooking_plugin_settings_my_reservation_page',
-           'title' => _x( 'My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
-           'content' => '<!-- wp:shortcode -->[mybooking_transfer_reservation]<!-- /wp:shortcode -->',
-           'slug' => 'my-reservation',
-           'order' => 5,
-				),
 				'home_test'           				=> array(
-					'option' => 'mybooking_plugin_settings_home_test_page',
+					'option' => 'mybooking_plugin_settings_transfer_choose_vehicle_page',
 					'title' => _x( 'Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
 					'content' => '<!-- wp:shortcode -->[mybooking_transfer_choose_vehicle]<!-- /wp:shortcode -->',
 					'slug' => 'home-test',
@@ -64,7 +57,12 @@
       }
 
       // Update transfer settings (transfer process pages)
-      update_option( "mybooking_plugin_settings_transfer", $settings_transfer, false );
+      update_option( "mybooking_plugin_settings_transfer", $settings_transfer );
+
+      // Set module in settings
+      $settings = (array) get_option("mybooking_plugin_settings_configuration");
+      $settings['mybooking_plugin_settings_transfer_selector'] = "1";
+      update_option("mybooking_plugin_settings_configuration", $settings); 
 
       if (count($pages) > 0) {
         

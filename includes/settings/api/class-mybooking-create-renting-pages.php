@@ -73,9 +73,19 @@
         }
       }
 
-      // Update renting settings (renting process pages)
-      update_option( "mybooking_plugin_settings_renting", $settings_renting, false );
+      if ( $navigation != 'selector' ) {
+        unset($settings_renting['mybooking_plugin_settings_home_test_page']);
+        unset($settings_renting['mybooking_plugin_settings_choose_products_page']);
+      }
 
+      // Update renting settings (renting process pages)
+      update_option( "mybooking_plugin_settings_renting", $settings_renting );
+
+      // Set module in settings
+      $settings = (array) get_option("mybooking_plugin_settings_configuration");
+      $settings['mybooking_plugin_settings_renting_selector'] = "1";
+      update_option("mybooking_plugin_settings_configuration", $settings);
+      
       if (count($pages) > 0) {
         $pages_info = array(
           "navigation" => $navigation,

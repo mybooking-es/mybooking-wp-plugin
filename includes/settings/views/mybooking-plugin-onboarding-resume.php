@@ -76,35 +76,194 @@ function mybooking_plugin_onboarding_resume_page() {
 			&nbsp;&nbsp;
 			Configuración finalizada con exito
 		</h1>
-		<?php if ( $module_rental || $module_transfer ): ?>
-			<br />
-			<h5>
-				Modulo: <?php if ( $module_rental ) { ?>Alquiler<?php } elseif ( $module_transfer ) { ?>Transfer<?php } ?>
-			</h5>
-			<?php if ( $module_rental && $home_page_id !== 0 ) { ?>
+		<?php if ( isset($pages_ids) ) { ?>
+			<?php if ( $module_rental || $module_transfer ): ?>
+				<br />
+				<h5>
+					Modulo: <?php if ( $module_rental ) { ?>Alquiler<?php } elseif ( $module_transfer ) { ?>Transfer<?php } ?>
+				</h5>
+				<?php if ( $module_rental && $home_page_id === 0 ) { ?>
+					<h6>
+						Tus componentes
+					</h6>
+					<ul class="mb-onboarding-list">
+						<?php if ( array_key_exists('wc_rent_selector', $onboarding_settings) &&  $onboarding_settings['wc_rent_selector'] ) { ?>
+							<li>
+								<div class="mb-onboarding-row mb-onboarding-space-between">
+									<p>
+										Componente:
+										&nbsp;
+										<strong>
+											Selector
+										</strong>
+									</p>
+									<div class="mb-onboarding-row">
+										<div data-href="[mybooking_rent_engine_selector]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
+											<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+										</div>
+									</div>
+								</div>
+							</li>
+						<?php } ?>
+						<?php if ( array_key_exists('wc_rent_calendar', $onboarding_settings) &&  $onboarding_settings['wc_rent_calendar'] ) { ?>
+							<li>
+								<div class="mb-onboarding-row mb-onboarding-space-between">
+									<p>
+										Componente:
+										&nbsp;
+										<strong>
+											Calendario
+										</strong>
+									</p>
+									<div class="mb-onboarding-row">
+										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										</a>
+									</div>
+								</div>
+							</li>
+						<?php } ?>
+						<?php if ( array_key_exists('wc_rent_daily_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_daily_planning'] ) { ?>
+							<li>
+								<div class="mb-onboarding-row mb-onboarding-space-between">
+									<p>
+										Componente:
+										&nbsp;
+										<strong>
+											Planning por horas
+										</strong>
+									</p>
+									<div class="mb-onboarding-row">
+										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										</a>
+									</div>
+								</div>
+							</li>
+						<?php } ?>
+						<?php if ( array_key_exists('wc_rent_monthly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_monthly_planning'] ) { ?>
+							<li>
+								<div class="mb-onboarding-row mb-onboarding-space-between">
+									<p>
+										Componente:
+										&nbsp;
+										<strong>
+											Planning por dias
+										</strong>
+									</p>
+									<div class="mb-onboarding-row">
+										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										</a>
+									</div>
+								</div>
+							</li>
+						<?php } ?>
+						<?php if ( array_key_exists('wc_rent_weekly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_weekly_planning'] ) { ?>
+							<li>
+								<div class="mb-onboarding-row mb-onboarding-space-between">
+									<p>
+										Componente:
+										&nbsp;
+										<strong>
+											Planning semanal
+										</strong>
+									</p>
+									<div class="mb-onboarding-row">
+										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										</a>
+									</div>
+								</div>
+							</li>
+						<?php } ?>
+						<?php if ( array_key_exists('wc_rent_shift_picker', $onboarding_settings) &&  $onboarding_settings['wc_rent_shift_picker'] ) { ?>
+							<li>
+								<div class="mb-onboarding-row mb-onboarding-space-between">
+									<p>
+										Componente:
+										&nbsp;
+										<strong>
+											Selector de turnos
+										</strong>
+									</p>
+									<div class="mb-onboarding-row">
+										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										</a>
+									</div>
+								</div>
+							</li>
+						<?php } ?>
+					</ul>
+				<?php } ?>
 				<h6>
-					Tus componentes
+					Tus paginas
 				</h6>
 				<ul class="mb-onboarding-list">
-					<?php if ( array_key_exists('wc_rent_selector', $onboarding_settings) &&  $onboarding_settings['wc_rent_selector'] ) { ?>
+					<?php foreach ($pages_ids as $key => $id) { ?>
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
-									Componente:
+									Página:
 									&nbsp;
-									<strong>
-										Selector
-									</strong>
+									<strong><?php echo get_the_title( $id ) ?></strong>
+									<?php if ($home_page_id === $id) { ?>
+										(recuerda que el proceso de reserva se inicia desde aquí)
+									<?php } ?>
 								</p>
 								<div class="mb-onboarding-row">
-									<div data-href="[mybooking_rent_engine_selector]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
+									<?php if ($home_page_id === $id) { ?>
+										<a href="<?php echo get_permalink( $id ) ?>" title="Show page" target="_blank" class="mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										</a>
+									<?php } ?>
+									<div data-href="<?php echo get_permalink( $id ) ?>" title="Copy page link for mybooking web configuration" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
 										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 									</div>
+									<a href="<?php echo get_edit_post_link( $id ) ?>" title="Edit page" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
+									</a>
 								</div>
 							</div>
 						</li>
 					<?php } ?>
-					<?php if ( array_key_exists('wc_rent_calendar', $onboarding_settings) &&  $onboarding_settings['wc_rent_calendar'] ) { ?>
+				</ul>
+				<p>
+					<strong>Recuerda seleccionar la homepage de prueba como página de inicio en Wordpress y añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>.
+				</p>
+			<?php endif; ?>
+			<?php if ( $module_activities ): ?>
+				<br />
+				<h5>
+					Modulo: Actividades
+				</h5>
+				<h6>
+					Tus componentes
+				</h6>
+				<p>
+					<strong>
+						Para iniciar el proceso de reserva necesitas un punto de inicio, en este caso puede ser un catalogo de productos, un calendario, un planning etc. <br/> Estos componentes que se añaden en páginas existentes se deben añadir manualmente. Puedes copiar el shortcode aquí o en el inventario (cuando precises el ID de producto).
+					</strong>
+				</p>
+				<ul class="mb-onboarding-list">
+					<li>
+						<div class="mb-onboarding-row mb-onboarding-space-between">
+							<p>
+								Componente:
+								&nbsp;
+								<strong>
+									Catalogo de productos
+								</strong>
+							</p>
+							<div class="mb-onboarding-row">
+								<div data-href="[mybooking_activities_engine_activities]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
+									<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<?php if ( array_key_exists('wc_activity_calendar', $onboarding_settings) &&  $onboarding_settings['wc_activity_calendar'] ) { ?>
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
@@ -122,194 +281,39 @@ function mybooking_plugin_onboarding_resume_page() {
 							</div>
 						</li>
 					<?php } ?>
-					<?php if ( array_key_exists('wc_rent_daily_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_daily_planning'] ) { ?>
+				</ul>
+				<h6>
+					Tus paginas
+				</h6>
+				<ul class="mb-onboarding-list">
+					<?php foreach ($pages_ids as $key => $id) { ?>
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
-									Componente:
+									Página:
 									&nbsp;
-									<strong>
-										Planning por horas
-									</strong>
+									<strong><?php echo get_the_title( $id ) ?></strong>
 								</p>
 								<div class="mb-onboarding-row">
-									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
-									</a>
-								</div>
-							</div>
-						</li>
-					<?php } ?>
-					<?php if ( array_key_exists('wc_rent_monthly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_monthly_planning'] ) { ?>
-						<li>
-							<div class="mb-onboarding-row mb-onboarding-space-between">
-								<p>
-									Componente:
-									&nbsp;
-									<strong>
-										Planning por dias
-									</strong>
-								</p>
-								<div class="mb-onboarding-row">
-									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
-									</a>
-								</div>
-							</div>
-						</li>
-					<?php } ?>
-					<?php if ( array_key_exists('wc_rent_weekly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_weekly_planning'] ) { ?>
-						<li>
-							<div class="mb-onboarding-row mb-onboarding-space-between">
-								<p>
-									Componente:
-									&nbsp;
-									<strong>
-										Planning semanal
-									</strong>
-								</p>
-								<div class="mb-onboarding-row">
-									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
-									</a>
-								</div>
-							</div>
-						</li>
-					<?php } ?>
-					<?php if ( array_key_exists('wc_rent_shift_picker', $onboarding_settings) &&  $onboarding_settings['wc_rent_shift_picker'] ) { ?>
-						<li>
-							<div class="mb-onboarding-row mb-onboarding-space-between">
-								<p>
-									Componente:
-									&nbsp;
-									<strong>
-										Selector de turnos
-									</strong>
-								</p>
-								<div class="mb-onboarding-row">
-									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+
+									<div data-href="<?php echo get_permalink( $id ) ?>" title="Copy page link for mybooking web configuration" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+									</div>
+									<a href="<?php echo get_edit_post_link( $id ) ?>" title="Edit page" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
 								</div>
 							</div>
 						</li>
 					<?php } ?>
 				</ul>
-			<?php } ?>
-			<h6>
-				Tus paginas
-			</h6>
-			<ul class="mb-onboarding-list">
-				<?php foreach ($pages_ids as $key => $id) { ?>
-					<li>
-						<div class="mb-onboarding-row mb-onboarding-space-between">
-							<p>
-								Página:
-								&nbsp;
-								<strong><?php echo get_the_title( $id ) ?></strong>
-								<?php if ($home_page_id === $id) { ?>
-									(recuerda que el proceso de reserva se inicia desde aquí)
-								<?php } ?>
-							</p>
-							<div class="mb-onboarding-row">
-								<?php if ($home_page_id === $id) { ?>
-									<a href="<?php echo get_permalink( $id ) ?>" title="Show page" target="_blank" class="mb-onboarding-row-link">
-										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
-									</a>
-								<?php } ?>
-								<div data-href="<?php echo get_permalink( $id ) ?>" title="Copy page link for mybooking web configuration" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
-									<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
-								</div>
-								<a href="<?php echo get_edit_post_link( $id ) ?>" title="Edit page" target="_blank" class="mb-onboarding-row-link">
-									<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
-								</a>
-							</div>
-						</div>
-					</li>
-				<?php } ?>
-			</ul>
-			<p>
-				<strong>Recuerda seleccionar la homepage de prueba como página de inicio en Wordpress y añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>.
-			</p>
-		<?php endif; ?>
-		<?php if ( $module_activities ): ?>
-			<br />
-			<h5>
-				Modulo: Actividades
-			</h5>
-			<h6>
-				Tus componentes
-			</h6>
-			<p>
-				<strong>
-					Para iniciar el proceso de reserva necesitas un punto de inicio, en este caso puede ser un catalogo de productos, un calendario, un planning etc. <br/> Estos componentes que se añaden en páginas existentes se deben añadir manualmente. Puedes copiar el shortcode aquí o en el inventario (cuando precises el ID de producto).
-				</strong>
-			</p>
-			<ul class="mb-onboarding-list">
-				<li>
-					<div class="mb-onboarding-row mb-onboarding-space-between">
-						<p>
-							Componente:
-							&nbsp;
-							<strong>
-								Catalogo de productos
-							</strong>
-						</p>
-						<div class="mb-onboarding-row">
-							<div data-href="[mybooking_activities_engine_activities]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
-								<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
-							</div>
-						</div>
-					</div>
-				</li>
-				<?php if ( array_key_exists('wc_activity_calendar', $onboarding_settings) &&  $onboarding_settings['wc_activity_calendar'] ) { ?>
-					<li>
-						<div class="mb-onboarding-row mb-onboarding-space-between">
-							<p>
-								Componente:
-								&nbsp;
-								<strong>
-									Calendario
-								</strong>
-							</p>
-							<div class="mb-onboarding-row">
-								<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-									<span class="mb-onboarding-icon dashicons dashicons-external"></span>
-								</a>
-							</div>
-						</div>
-					</li>
-				<?php } ?>
-			</ul>
-			<h6>
-				Tus paginas
-			</h6>
-			<ul class="mb-onboarding-list">
-				<?php foreach ($pages_ids as $key => $id) { ?>
-					<li>
-						<div class="mb-onboarding-row mb-onboarding-space-between">
-							<p>
-								Página:
-								&nbsp;
-								<strong><?php echo get_the_title( $id ) ?></strong>
-							</p>
-							<div class="mb-onboarding-row">
-
-								<div data-href="<?php echo get_permalink( $id ) ?>" title="Copy page link for mybooking web configuration" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
-									<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
-								</div>
-								<a href="<?php echo get_edit_post_link( $id ) ?>" title="Edit page" target="_blank" class="mb-onboarding-row-link">
-									<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
-								</a>
-							</div>
-						</div>
-					</li>
-				<?php } ?>
-			</ul>
-			<p>
-				<strong>Recuerda añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>.
-			</p>
-		<?php endif; ?>
+				<p>
+					<strong>Recuerda añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>.
+				</p>
+			<?php endif; ?>
+		<?php } else { ?>
+			No se han podido generar páginas con la configuración seleccionada.
+		<?php } ?>
 	</div>
 	<!-- Scripts -->
 	<script>
