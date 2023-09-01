@@ -51,20 +51,17 @@
                                               );
       }
 
-      // Set the options settings (TODO Does not exist)
-      $settings_renting = (array) get_option("mybooking_plugin_settings_renting");
-
       // Create pages
       foreach( $pages_to_create as $key => $page_to_create ) {
+        // Create the page
         $post_id = $this->createPage($page_to_create['title'],
                                      $page_to_create['content'],
                                      $page_to_create['slug'],
-                                     $page_to_create['order']);
-      
-        if ($post_id) {
-          // Update settings page
-          $settings_renting[$page_to_create['option']] = $post_id;
+                                     $page_to_create['order'],
+                                     'mybooking_plugin_settings_renting',
+                                     $page_to_create['option']);
 
+        if ($post_id) {
           array_push($pages, 
             array( 'id' => $post_id,
                    'title' => $page_to_create['title'],
@@ -73,18 +70,13 @@
         }
       }
 
+      // If there is not a selector clear home test and choose product pages
       if ( $navigation != 'selector' ) {
+        $settings_renting = (array) get_option("mybooking_plugin_settings_renting");
         unset($settings_renting['mybooking_plugin_settings_home_test_page']);
         unset($settings_renting['mybooking_plugin_settings_choose_products_page']);
+        update_option( "mybooking_plugin_settings_renting", $settings_renting );
       }
-
-      // Update renting settings (renting process pages)
-      update_option( "mybooking_plugin_settings_renting", $settings_renting );
-
-      // Set module in settings
-      $settings = (array) get_option("mybooking_plugin_settings_configuration");
-      $settings['mybooking_plugin_settings_renting_selector'] = "1";
-      update_option("mybooking_plugin_settings_configuration", $settings);
       
       if (count($pages) > 0) {
         $pages_info = array(

@@ -39,6 +39,9 @@
 
     /**
      * Login
+     * 
+     * It connects to mybooking instance to retrieve the basic settings and store them 
+     * on Wordpress option "mybooking_plugin_onboarding_business_info"
      *
      * @param WP_REST_Request $request Full data about the request.
      * @return WP_Error|WP_REST_Response
@@ -116,12 +119,29 @@
 
     /**
      * Set onboarding setup
-     *
+     * 
+     * Details:
+     * --------
+     * 
+     * The login endpoint must be called before calling this endpoint in order to create/update
+     * the wordpress option "mybooking_plugin_onboarding_business_info" so the process
+     * 
+     * 
      * @param WP_REST_Request $request Full data about the request.
+     * 
+     * Associative Array with the following attributes
+     * 
+     * 'navigation' => 'selector' (renting or transfer) - Create test page with selector
+     *              => 'page' (renting or activies)
+     * 
      * @return WP_Error|WP_REST_Response
      */
     public function setupOnboarding($request) {
       
+      // Retrieve the business info stored in login
+      //$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+      // return 400 if no $onboarding_settings
+
       // Pase Body as JSON
       $data = json_decode($request->get_body(), true);
 
@@ -138,6 +158,7 @@
         return new WP_REST_Response(array("message" => "Required parameters not found or empty"), 400); 
       } else {
 
+        // Retrieve the business info stored in login
         $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
 
         $pages = array();
@@ -145,8 +166,26 @@
         if ( $onboarding_settings ) {
           // Renting
           if ( array_key_exists('module_rental', $onboarding_settings) && $onboarding_settings['module_rental'] ) {
+            // Create the pages
             $create_renting_pages = new MybookingCreateRentingPages();
             $pages['renting'] = $create_renting_pages->createRentingPages($navigation);
+            // Configure renting module in settings
+            $settings = (array) get_option("mybooking_plugin_settings_configuration");
+            $settings['mybooking_plugin_settings_renting_selector'] = "1";
+            update_option("mybooking_plugin_settings_configuration", $settings);            
+          } else {
+            // Remove the renting module
+            $settings = (array) get_option("mybooking_plugin_settings_configuration");
+            $settings['mybooking_plugin_settings_renting_selector'] = "0";
+            update_option("mybooking_plugin_settings_configuration", $settings);            
+            // Clear the link to the renting pages
+            $settings_renting = (array) get_option("mybooking_plugin_settings_renting");
+            unset($settings_renting['mybooking_plugin_settings_home_test_page']);
+            unset($settings_renting['mybooking_plugin_settings_choose_products_page']);
+            unset($settings_renting['mybooking_plugin_settings_checkout_page']);
+            unset($settings_renting['mybooking_plugin_settings_summary_page']);
+            unset($settings_renting['mybooking_plugin_settings_my_reservation_page']);
+            update_option( "mybooking_plugin_settings_renting", $settings_renting );            
           }
 
           // Activities
