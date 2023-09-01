@@ -1,8 +1,8 @@
 <?php
   require_once( 'class-mybooking-create-pages.php' );
   require_once( 'class-mybooking-renting-module.php' );
-  require_once( 'class-mybooking-create-activities-pages.php' );
-  require_once( 'class-mybooking-create-transfer-pages.php' );
+  require_once( 'class-mybooking-activities-module.php' );
+  require_once( 'class-mybooking-transfer-module.php' );
 
   class MyBookingOnboardingApi extends WP_REST_Controller {
     const GET_SETTINGS = '/api/booking/frontend/wizard-info';
@@ -171,22 +171,33 @@
             $pages['renting'] = $renting_module->createRentingPages($onboarding_settings['wc_rent_selector']);
             // Configure renting module in settings
             $renting_module->setupRentingModule();
-           
           } else {
             // Clear the renting module
             $renting_module->clearRentingModule();            
           }
 
           // Activities
+          $activities_module = new MybookingActivitiesModule();
           if ( array_key_exists('module_activities', $onboarding_settings) && $onboarding_settings['module_activities'] ) {
-            $create_activities_pages = new MybookingCreateActivitiesPages();
-            $pages['activities'] = $create_activities_pages->createActivitiesPages($navigation);
+            // Create the pages
+            $pages['activities'] = $activities_module->createActivitiesPages();
+            // Configure activities module in settings
+            $activities_module->setupActivitiesModule();
+          } else {
+            // Clear the activities module
+            $activities_module->clearActivitiesModule();            
           }
 
           // Transfer
-          if ( array_key_exists('module_transfer', $onboarding_settings) && $onboarding_settings['module_transfer'] ) {
-            $create_transfer_pages = new MybookingCreateTransferPages();
-            $pages['transfer'] = $create_transfer_pages->createTransferPages($navigation);
+          $transfer_module = new MybookingTransferModule();
+          if ( array_key_exists('module_transfer', $onboarding_settings) && $onboarding_settings['module_transfer'] )  {
+            // Create the pages
+            $pages['transfer'] = $transfer_module->createTransferPages();
+            // Configure transfer module in settings
+            $transfer_module->setupTransferModule();
+          } else {
+            // Clear the transfer module
+            $transfer_module->clearTransferModule();            
           }
         }
 

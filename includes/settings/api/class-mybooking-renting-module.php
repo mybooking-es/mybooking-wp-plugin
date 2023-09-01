@@ -80,7 +80,6 @@
       
       if (count($pages) > 0) {
         $pages_info = array(
-          "navigation" => $navigation,
           "pages" => $pages
         );
 

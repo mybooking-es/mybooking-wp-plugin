@@ -1,9 +1,9 @@
 <?php
-  class MybookingCreateTransferPages extends MybookingCreatePages {
+  class MybookingTransferModule extends MybookingCreatePages {
     /**
     * Create transfer pages
     */
-    function createTransferPages($navigation) {
+    function createTransferPages() {
       // Created pages (posts) ids
       $pages = array();
 
@@ -23,6 +23,13 @@
            'slug' => 'summary',
            'order' => 4,
         ),
+        'my_reservation'           => array(
+          'option' => 'mybooking_plugin_settings_my_reservation_page',
+          'title' => _x( 'My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+          'content' => '<!-- wp:shortcode -->[mybooking_transfer_reservation]<!-- /wp:shortcode -->',
+          'slug' => 'my-reservation',
+          'order' => 5,
+       ),
 				'home_test'           				=> array(
 					'option' => 'mybooking_plugin_settings_transfer_choose_vehicle_page',
 					'title' => _x( 'Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
@@ -32,22 +39,16 @@
 			 )
       );
 
-      // Set the options settings (TODO Does not exist)
-      $settings_transfer = (array) get_option("mybooking_plugin_settings_transfer");
-
       // Create pages
       foreach( $pages_to_create as $key => $page_to_create ) {
-
         $post_id = $this->createPage($page_to_create['title'],
                                      $page_to_create['content'],
                                      $page_to_create['slug'],
-                                     $page_to_create['order']);
-      
+                                     $page_to_create['order'],
+                                     'mybooking_plugin_settings_transfer',
+                                     $page_to_create['option']);
 
         if ($post_id) {
-          // Update settings page
-          $settings_transfer[$page_to_create['option']] = $post_id;
-
           array_push($pages, 
             array( 'id' => $post_id,
                    'title' => $page_to_create['title'],
@@ -56,18 +57,8 @@
         }
       }
 
-      // Update transfer settings (transfer process pages)
-      update_option( "mybooking_plugin_settings_transfer", $settings_transfer );
-
-      // Set module in settings
-      $settings = (array) get_option("mybooking_plugin_settings_configuration");
-      $settings['mybooking_plugin_settings_transfer_selector'] = "1";
-      update_option("mybooking_plugin_settings_configuration", $settings); 
-
       if (count($pages) > 0) {
-        
         $pages_info = array(
-          "navigation" => $navigation,
           "pages" => $pages
         );
 
@@ -75,5 +66,33 @@
       } else {
         return null;
       }
+    }
+
+    /**
+     * Setup the transfer module
+     */
+    function setupTransferModule() {
+      $settings = (array) get_option("mybooking_plugin_settings_configuration");
+      $settings['mybooking_plugin_settings_transfer_selector'] = "1";
+      update_option("mybooking_plugin_settings_configuration", $settings); 
+    }
+
+    /**
+     * Clear transfer module
+     */
+    function clearTransferModule() {
+        // Remove the transfer module
+        $settings = (array) get_option("mybooking_plugin_settings_configuration");
+        $settings['mybooking_plugin_settings_transfer_selector'] = "0";
+        update_option("mybooking_plugin_settings_configuration", $settings);            
+        // Clear the link to the transfer pages
+        $settings_transfer = (array) get_option("mybooking_plugin_settings_transfer");
+        
+        unset($settings_transfer['mybooking_plugin_settings_transfer_checkout_page']);
+        unset($settings_transfer['mybooking_plugin_settings_transfer_summary_page']);
+        unset($settings_transfer['mybooking_plugin_settings_my_reservation_page']);
+        unset($settings_transfer['mybooking_plugin_settings_transfer_choose_vehicle_page']);
+
+        update_option( "mybooking_plugin_settings_transfer", $settings_transfer );
     }
   }
