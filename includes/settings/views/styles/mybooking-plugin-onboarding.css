@@ -27,7 +27,7 @@ h1.mb-onboarding-error {
 .mb-onboarding-commons .mb-onboarding-icon {
 	font-size: 3rem;
 	color: rgba(0,0,0,0.5);
-	transform: translateY(-0.8rem);
+	transform: translate(-2rem, -0.8rem);
 	cursor: pointer;
 }
 .mb-onboarding-icon.mb-onboarding-error {

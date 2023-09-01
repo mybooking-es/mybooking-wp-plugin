@@ -85,87 +85,79 @@ function mybooking_plugin_onboarding_selector_page() {
 		<h2>
 			Bienvenido <strong><?php esc_html_e($trade_name) ?></strong>.
 		</h2>
-		<h6>
-			Por favor, selecciona la opción que se ajusta mejor a tus necesidades.
-		</h6>
+		<p>
+			Para configurar el plugin <strong>vamos a comenzar utilizando la configuración actual de Mybooking de manera que con unos pocos pasos puedas empezar a utilizar tu motor de reserva.</strong>. 
+		</p>
 		<form  id="mb-onboarding-selector-form" method="POST">
 			<?php if ( $module_rental ): ?>
 				<br />
 				<h5>
-					Modulo: Alquiler
+					Modulo activo: Alquiler
 				</h5>
 				<ul class="mb-onboarding-list">
 					<li>
-						<?php if ( $wc_rent_selector ) { ?>
-							<div class="mb-onboarding-row mb-onboarding-space-between mb-onboarding-higthlight">
-						<?php } else { ?>
-							<div class="mb-onboarding-row mb-onboarding-space-between">
-						<?php } ?>
+						<div class="mb-onboarding-row mb-onboarding-space-between">
 							<p>
-								<strong>Quiero un buscador en la página de inicio</strong> donde se puedan seleccionar las fechas de entrega y devolución y me devuelva un listado de productos con precio y disponibilidad.
+								Vamos a crear las páginas necesarias para el proceso de reserva y vamos a crear una página de inicio con un buscador desde donde podrás seleccionar las fechas de recogida y devolución.
+								<br/>
+								<small>
+									Puedes visualizar un ejemplo de la estructura de la navegación clicando sobre el icono
+								</small>
 							</p>
 							<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-							<input type="radio" name="navigation" value="selector" class="mb-onboarding-check" title="Select" checked />
 						</div>
-						<?php if ( $wc_rent_selector ): ?><small style="position: relative; top: -1rem;"><i>Es la opción que aconsejamos para tu tipo de producto.</i></small><?php endif; ?>
 					</li>
 					<li>
-						<?php if ($wc_rent_calendar || $wc_rent_shift_picker || $wc_rent_weekly_planning ) { ?>
-							<div class="mb-onboarding-row mb-onboarding-space-between mb-onboarding-higthlight">
-						<?php } else { ?>
-							<div class="mb-onboarding-row mb-onboarding-space-between">
-						<?php } ?>
+						<div class="mb-onboarding-row mb-onboarding-space-between">
 							<p>
-								<strong>Tengo las páginas de los productos y quiero añadir un calendario o similar</strong> para mostrar disponibilidad y hacer la reserva desde cada una de ellas.
+								Alternativamente tienes la posibilidad de utilizar otros componentes para iniciar la reserva que tambien te mostraremos al finalizar el proceso.
+								<br/>
+								<small>
+									Puedes visualizar un ejemplo de estos componentes  clicando sobre el icono
+								</small>
 							</p>
 							<span data-type="page" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-							<input type="radio" name="navigation" value="page" class="mb-onboarding-check" title="Select" />
 						</div>
-						<?php if ( $wc_rent_calendar || $wc_rent_shift_picker || $wc_rent_weekly_planning ): ?><small style="position: relative; top: -1rem;"><i>Es la opción que aconsejamos para tu tipo de producto.</i></small><?php endif; ?>	
 					</li>
 				</ul>
 			<?php endif; ?>
 			<?php if ( $module_activities ): ?>
 				<br />
 				<h5>
-					Modulo: Actividades
+					Modulo activo: Actividades
 				</h5>
 				<ul class="mb-onboarding-list">
 					<li>
-						<?php if ($wc_activity_calendar || $wc_activity_shift_picker || $wc_activity_weekly_planning ) { ?>
-							<div class="mb-onboarding-row mb-onboarding-space-between mb-onboarding-higthlight">
-						<?php } else { ?>
-							<div class="mb-onboarding-row mb-onboarding-space-between">
-						<?php } ?>
+						<div class="mb-onboarding-row mb-onboarding-space-between">
 							<p>
-								<strong>Quiero añadir un calendario o similar</strong> para mostrar disponibilidad y hacer la reserva desde la página del producto.
+								Vamos a crear las páginas necesarias para el proceso de reserva sin embargo por la configuración de este modulo te vamos a aconsejar iniciar el proceso desde un catalogo de productos u otros componentes que te mostraremos a continuación.
+								<br/>
+								<small>
+									Puedes visualizar un ejemplo de la estructura de la navegación clicando sobre el icono
+								</small>
 							</p>
 							<span data-type="page" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-							<input type="radio" name="navigation" value="page" class="mb-onboarding-check" title="Select" checked />
 						</div>
-						<?php if ( $wc_activity_calendar || $wc_activity_shift_picker || $wc_activity_weekly_planning ): ?><small style="position: relative; top: -1rem;"><i>Es la opción que aconsejamos para tu tipo de producto.</i></small><?php endif; ?>	
 					</li>
 				</ul>
 			<?php endif; ?>
 			<?php if ( $module_transfer ): ?>
 				<br />
 				<h5>
-					Modulo: Transfer
+					Modulo activo: Transfer
 				</h5>
 				<ul class="mb-onboarding-list">
 					<li>
-						<?php if ( $wc_transfer_selector ) { ?>
-							<div class="mb-onboarding-row mb-onboarding-space-between mb-onboarding-higthlight">
-						<?php } else { ?>
-							<div class="mb-onboarding-row mb-onboarding-space-between">
-						<?php } ?>
+						<div class="mb-onboarding-row mb-onboarding-space-between">
 							<p>
-								<strong>Quiero un buscador en la página de inicio</strong> donde se puedan seleccionar las fechas de recogida y devolución.
+								Vamos a crear las páginas necesarias para el proceso de reserva y vamos a crear una página de inicio con un buscador desde donde podrás seleccionar las fechas de recogida y devolución.
+								<br/>
+								<small>
+									Puedes visualizar un ejemplo de la estructura de la navegación clicando sobre el icono
+								</small>
 							</p>
 							<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-							<input type="radio" name="navigation" value="selector" class="mb-onboarding-check" title="Select" checked />
 						</div>
-						<?php if ( $wc_transfer_selector ): ?><small style="position: relative; top: -1rem;"><i>Es la opción que aconsejamos para tu tipo de producto.</i></small><?php endif; ?>
 					</li>
 				</ul>
 			<?php endif; ?>

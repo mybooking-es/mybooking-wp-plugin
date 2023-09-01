@@ -131,7 +131,6 @@
      * 
      * Associative Array with the following attributes
      * 
-     * 'navigation' => 'selector' (renting or transfer) - Create test page with selector
      *              => 'page' (renting or activies)
      * 
      * @return WP_Error|WP_REST_Response
@@ -150,66 +149,57 @@
         return new WP_REST_Response(array("message" => "Invalid JSON parameters"), 400); 
       }
 
-      // Extract parameters (values : 'selector' or 'page')
-      $navigation = $data['navigation'];
+      // Retrieve the business info stored in login
+      $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
 
-      // Check parameters
-      if ( empty($navigation) ) {
-        return new WP_REST_Response(array("message" => "Required parameters not found or empty"), 400); 
-      } else {
+      $pages = array();
 
-        // Retrieve the business info stored in login
-        $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
-
-        $pages = array();
-
-        if ( $onboarding_settings ) {
-          // Renting
-          $renting_module = new MybookingRentingModule();
-          if ( array_key_exists('module_rental', $onboarding_settings) && $onboarding_settings['module_rental'] ) {
-            // Create the pages
-            $pages['renting'] = $renting_module->createRentingPages($onboarding_settings['wc_rent_selector']);
-            // Configure renting module in settings
-            $renting_module->setupRentingModule();
-          } else {
-            // Clear the renting module
-            $renting_module->clearRentingModule();            
-          }
-
-          // Activities
-          $activities_module = new MybookingActivitiesModule();
-          if ( array_key_exists('module_activities', $onboarding_settings) && $onboarding_settings['module_activities'] ) {
-            // Create the pages
-            $pages['activities'] = $activities_module->createActivitiesPages();
-            // Configure activities module in settings
-            $activities_module->setupActivitiesModule();
-          } else {
-            // Clear the activities module
-            $activities_module->clearActivitiesModule();            
-          }
-
-          // Transfer
-          $transfer_module = new MybookingTransferModule();
-          if ( array_key_exists('module_transfer', $onboarding_settings) && $onboarding_settings['module_transfer'] )  {
-            // Create the pages
-            $pages['transfer'] = $transfer_module->createTransferPages();
-            // Configure transfer module in settings
-            $transfer_module->setupTransferModule();
-          } else {
-            // Clear the transfer module
-            $transfer_module->clearTransferModule();            
-          }
+      if ( $onboarding_settings ) {
+        // Renting
+        $renting_module = new MybookingRentingModule();
+        if ( array_key_exists('module_rental', $onboarding_settings) && $onboarding_settings['module_rental'] ) {
+          // Create the pages
+          $pages['renting'] = $renting_module->createRentingPages($onboarding_settings['wc_rent_selector']);
+          // Configure renting module in settings
+          $renting_module->setupRentingModule();
+        } else {
+          // Clear the renting module
+          $renting_module->clearRentingModule();            
         }
 
-        if ($pages !== null) {
-          return new WP_REST_Response($pages, 200);
+        // Activities
+        $activities_module = new MybookingActivitiesModule();
+        if ( array_key_exists('module_activities', $onboarding_settings) && $onboarding_settings['module_activities'] ) {
+          // Create the pages
+          $pages['activities'] = $activities_module->createActivitiesPages();
+          // Configure activities module in settings
+          $activities_module->setupActivitiesModule();
+        } else {
+          // Clear the activities module
+          $activities_module->clearActivitiesModule();            
         }
-        else {
-          return new WP_REST_Response(array(
-            'message' => 'Error in pages creation',
-            'code' => 401
-          ), 401);
+
+        // Transfer
+        $transfer_module = new MybookingTransferModule();
+        if ( array_key_exists('module_transfer', $onboarding_settings) && $onboarding_settings['module_transfer'] )  {
+          // Create the pages
+          $pages['transfer'] = $transfer_module->createTransferPages();
+          // Configure transfer module in settings
+          $transfer_module->setupTransferModule();
+        } else {
+          // Clear the transfer module
+          $transfer_module->clearTransferModule();            
         }
+      }
+
+      if ($pages !== null) {
+        return new WP_REST_Response($pages, 200);
+      }
+      else {
+        return new WP_REST_Response(array(
+          'message' => 'Error in pages creation',
+          'code' => 401
+        ), 401);
       }
     }
 
