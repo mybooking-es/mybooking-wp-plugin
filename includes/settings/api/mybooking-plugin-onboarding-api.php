@@ -1,6 +1,6 @@
 <?php
   require_once( 'class-mybooking-create-pages.php' );
-  require_once( 'class-mybooking-create-renting-pages.php' );
+  require_once( 'class-mybooking-renting-module.php' );
   require_once( 'class-mybooking-create-activities-pages.php' );
   require_once( 'class-mybooking-create-transfer-pages.php' );
 
@@ -165,27 +165,16 @@
 
         if ( $onboarding_settings ) {
           // Renting
+          $renting_module = new MybookingRentingModule();
           if ( array_key_exists('module_rental', $onboarding_settings) && $onboarding_settings['module_rental'] ) {
             // Create the pages
-            $create_renting_pages = new MybookingCreateRentingPages();
-            $pages['renting'] = $create_renting_pages->createRentingPages($navigation);
+            $pages['renting'] = $renting_module->createRentingPages($onboarding_settings['wc_rent_selector']);
             // Configure renting module in settings
-            $settings = (array) get_option("mybooking_plugin_settings_configuration");
-            $settings['mybooking_plugin_settings_renting_selector'] = "1";
-            update_option("mybooking_plugin_settings_configuration", $settings);            
+            $renting_module->setupRentingModule();
+           
           } else {
-            // Remove the renting module
-            $settings = (array) get_option("mybooking_plugin_settings_configuration");
-            $settings['mybooking_plugin_settings_renting_selector'] = "0";
-            update_option("mybooking_plugin_settings_configuration", $settings);            
-            // Clear the link to the renting pages
-            $settings_renting = (array) get_option("mybooking_plugin_settings_renting");
-            unset($settings_renting['mybooking_plugin_settings_home_test_page']);
-            unset($settings_renting['mybooking_plugin_settings_choose_products_page']);
-            unset($settings_renting['mybooking_plugin_settings_checkout_page']);
-            unset($settings_renting['mybooking_plugin_settings_summary_page']);
-            unset($settings_renting['mybooking_plugin_settings_my_reservation_page']);
-            update_option( "mybooking_plugin_settings_renting", $settings_renting );            
+            // Clear the renting module
+            $renting_module->clearRentingModule();            
           }
 
           // Activities

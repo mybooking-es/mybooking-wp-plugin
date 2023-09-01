@@ -82,7 +82,7 @@ function mybooking_plugin_onboarding_resume_page() {
 				<h5>
 					Modulo: <?php if ( $module_rental ) { ?>Alquiler<?php } elseif ( $module_transfer ) { ?>Transfer<?php } ?>
 				</h5>
-				<?php if ( $module_rental && $home_page_id === 0 ) { ?>
+				<?php if ( $module_rental ) { ?>
 					<h6>
 						Tus componentes
 					</h6>

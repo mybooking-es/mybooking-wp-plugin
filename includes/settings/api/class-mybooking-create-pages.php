@@ -35,14 +35,15 @@
       global $wpdb;
 
       // Each vertical settings are stored in an option
-      $option_value = (array) get_option( $option );
+      $option_value = get_option( $option );
 
       // 1. Get existing page 
 
-      if ( isset( $option_value ) ) {
+      if ( $option_value  ) {
+        $option_value = (array) $option_value;
         // Get the page
         $option_value_page_attribute = $option_value[$option_page_attribute];
-        if ( isset( $option_value_page_attribute ) ) {
+        if ( isset( $option_value_page_attribute ) && !empty ( $option_value_page_attribute ) ) {
           // Load the page
           $page_object = get_post( $option_value_page_attribute );
           if ( $page_object && 'page' === $page_object->post_type && ! in_array( $page_object->post_status, array( 'pending', 'trash', 'future', 'auto-draft' ), true ) ) {
@@ -64,7 +65,7 @@
 
       if ( $valid_page_found ) {
         if ( $option_value ) {
-          $option_value[$option_page_attribute] = $page_id;  
+          $option_value[$option_page_attribute] = $valid_page_found;  
           update_option( $option, $option_value );
         }
         return $valid_page_found;
