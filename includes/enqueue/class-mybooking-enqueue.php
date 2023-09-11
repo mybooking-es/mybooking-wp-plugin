@@ -48,6 +48,12 @@
                    array( 'jquery' ), $version, true);
       wp_enqueue_script('mybooking_wp_admin_jquery_validate');
 
+      // JQuery formparams
+      wp_register_script('mybooking_wp_admin_jquery_formparams',
+      plugins_url( '/assets/js/jquery.formparams.js', dirname(__DIR__) ),
+                   array( 'jquery' ), $version, true);
+      wp_enqueue_script('mybooking_wp_admin_jquery_formparams');
+
 
     }
 
