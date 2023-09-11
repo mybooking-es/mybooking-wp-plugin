@@ -10,11 +10,6 @@
 */
 function mybooking_plugin_onboarding_error_page() {
 	?>
-	<!-- Styles -->
-	<?php
-		$plugin_dir = plugin_dir_url(__FILE__);
-	?>
-	<link rel="stylesheet" href="<?php echo $plugin_dir ?>styles/mybooking-plugin-onboarding.css">
 	
 	<div class="mb-onboarding-error mb-onboarding-commons">
 		<h1 class="mb-onboarding-row mb-onboarding-error">

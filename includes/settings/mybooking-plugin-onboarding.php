@@ -8,6 +8,7 @@
 
 			// Create menu in settings
 			add_action( 'admin_menu', array($this,'wp_onboarding_page'));
+
     }
 
 		// == Settings Page
@@ -16,6 +17,7 @@
 		 * Settings page : Create new onboarding page
 		 */
 		public function wp_onboarding_page() {
+
 		  add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
         'Mybooking Welcome', // Page title
@@ -52,12 +54,6 @@
         array($this, 'mybooking_plugin_onboarding_error_page')
       ); // Callable
 
-			function add_scripts() {
-				wp_enqueue_script( 'jquery' );
-			}
-
-			add_action('wp_enqueue_scripts', 'add_scripts');
-			do_action('wp_enqueue_scripts');
 		}
 
 		/**

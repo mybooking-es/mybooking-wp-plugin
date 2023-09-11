@@ -10,11 +10,6 @@
 */
 function mybooking_plugin_onboarding_welcome_page() {
 	?>
-	<!-- Styles -->
-	<?php
-		$plugin_dir = plugin_dir_url(__FILE__);
-	?>
-	<link rel="stylesheet" href="<?php echo $plugin_dir ?>styles/mybooking-plugin-onboarding.css">
 	
 	<div class="mb-onboarding-login mb-onboarding-commons">
 		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">Loading...</div>

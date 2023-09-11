@@ -12,7 +12,6 @@ function mybooking_plugin_onboarding_resume_page() {
 	?>
 	<!-- Styles -->
 	<?php
-		$plugin_dir = plugin_dir_url(__FILE__);
 
 		// Get onboarding settings
 		$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
@@ -67,7 +66,6 @@ function mybooking_plugin_onboarding_resume_page() {
 			}
 		}
 	?>
-	<link rel="stylesheet" href="<?php echo $plugin_dir ?>styles/mybooking-plugin-onboarding.css">
 	
 	<div class="mb-onboarding-resume mb-onboarding-commons">
 		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">Loading...</div>
