@@ -115,12 +115,18 @@ function mybooking_plugin_onboarding_resume_page() {
 					<?php } ?>
 				</ul>
 				<p>
-					<strong>Recuerda seleccionar la homepage de prueba como página de inicio en Wordpress y añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>.
+					<strong>Recuerda seleccionar la homepage de prueba (si existe) como página de inicio en Wordpress y añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>.
 				</p>
 				<?php if ( $module_rental ) { ?>
 					<h6>
 						Tus componentes
 					</h6>
+					<p>
+					<p>
+					<strong>
+							Para iniciar el proceso de reserva necesitas un punto de inicio, en este caso puede ser un catalogo de productos, un calendario, un planning etc. <br/> Estos componentes que se añaden en páginas existentes se deben añadir manualmente. Puedes copiar el shortcode aquí o en el inventario (cuando precises el ID de producto).
+						</strong>
+					</p>
 					<ul class="mb-onboarding-list">
 						<?php if ( array_key_exists('wc_rent_selector', $onboarding_settings) &&  $onboarding_settings['wc_rent_selector'] ) { ?>
 							<li>
@@ -131,6 +137,9 @@ function mybooking_plugin_onboarding_resume_page() {
 										<strong>
 											Selector
 										</strong>
+									</p>
+									<p>	
+										Puedes añadir un buscador para iniciar el proceso de reserva. Normalmente se añade en la página de inicio.
 									</p>
 									<div class="mb-onboarding-row">
 										<div data-href="[mybooking_rent_engine_selector]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
@@ -150,9 +159,12 @@ function mybooking_plugin_onboarding_resume_page() {
 											Calendario
 										</strong>
 									</p>
+									<p>
+										Puedes añadir un calendario en la página de tu producto  para iniciar el proceso de reserva. El componente se mostrará según la configuración de tu negocio en Mybooking.
+									</p>
 									<div class="mb-onboarding-row">
-										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										<a  href="" title="See video" class="mb-onboarding-video-link mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-video-alt3"></span>
 										</a>
 									</div>
 								</div>
@@ -168,9 +180,12 @@ function mybooking_plugin_onboarding_resume_page() {
 											Planning por horas
 										</strong>
 									</p>
+									<p>
+										Puedes añadir un planning para ver la disponibilidad horaria en un día seleccionado. Se trata de un componente puramente informativo y se puede configurar por sucursal, familia y/o categoría de producto.
+									</p>
 									<div class="mb-onboarding-row">
-										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										<a  href="" title="See video" class="mb-onboarding-video-link mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-video-alt3"></span>
 										</a>
 									</div>
 								</div>
@@ -186,9 +201,12 @@ function mybooking_plugin_onboarding_resume_page() {
 											Planning por dias
 										</strong>
 									</p>
+									<p>
+										Puedes añadir un planning que muestre la disponibilidad en un número de días preestablecido. Se trata de un componente puramente informativo y se puede configurar por sucursal, familia y/o categoría de productos.
+									</p>
 									<div class="mb-onboarding-row">
-										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										<a  href="" title="See video" class="mb-onboarding-video-link mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-video-alt3"></span>
 										</a>
 									</div>
 								</div>
@@ -201,12 +219,15 @@ function mybooking_plugin_onboarding_resume_page() {
 										Componente:
 										&nbsp;
 										<strong>
-											Planning semanal
+											Planning semanal.
 										</strong>
 									</p>
+									<p>
+										Puedes añadir un planning semanal con la disponibilidad a tu página de producto para iniciar el proceso de reserva. 
+									</p>
 									<div class="mb-onboarding-row">
-										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										<a  href="" title="See video" class="mb-onboarding-video-link mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-video-alt3"></span>
 										</a>
 									</div>
 								</div>
@@ -222,9 +243,12 @@ function mybooking_plugin_onboarding_resume_page() {
 											Selector de turnos
 										</strong>
 									</p>
+									<p>
+										Puedes añadir un selector de turnos para iniciar el proceso de reserva. Especialmente recomendado en productos o categorías con selección de más de una unidad y con horario por turnos.
+									</p>
 									<div class="mb-onboarding-row">
-										<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										<a  href="" title="See video" class="mb-onboarding-video-link mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-video-alt3"></span>
 										</a>
 									</div>
 								</div>
@@ -284,6 +308,9 @@ function mybooking_plugin_onboarding_resume_page() {
 									Catalogo de productos
 								</strong>
 							</p>
+							<p>
+								Puedes añadir un catalogo de tus productos para iniciar el  proceso de reserva. Normalmente se añade en la página de inicio.
+							</p>
 							<div class="mb-onboarding-row">
 								<div data-href="[mybooking_activities_engine_activities]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
 									<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
@@ -301,11 +328,14 @@ function mybooking_plugin_onboarding_resume_page() {
 										Calendario
 									</strong>
 								</p>
+								<p>
+									Puedes añadir un calendario en la página de tu producto  para iniciar el proceso de reserva. El componente se mostrará según la configuración de tu negocio en Mybooking.
+								</p>
 								<div class="mb-onboarding-row">
-									<a href="" title="Go to Mybooking" target="_blank" class="mb-onboarding-row-link">
-										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
-									</a>
-								</div>
+										<a  href="" title="See video" class="mb-onboarding-video-link mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-video-alt3"></span>
+										</a>
+									</div>
 							</div>
 						</li>
 					<?php } ?>
@@ -362,7 +392,11 @@ function mybooking_plugin_onboarding_resume_page() {
 			});
 		})(jQuery);
 	</script>
+	<!-- Snackbar -->
 	<div id="mb-onboarding-snackbar" class="mb-onboarding-snackbar"></div>
+
+	<!-- Video -->
+	<?php $video='component'; require_once ('mybooking-plugin-onboarding-video.php') ?>
 <?php
 }
 

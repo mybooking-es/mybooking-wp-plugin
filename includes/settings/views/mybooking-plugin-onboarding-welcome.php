@@ -40,15 +40,15 @@ function mybooking_plugin_onboarding_welcome_page() {
 				</div>
 			</div>
 			<br/>
-			<a  id="mb-onboarding-video-link" class="mb-onboarding-block mb-onboarding-video-link">¿Cómo obtengo mi ID de cliente?</a>
+			<a  href="" class="mb-onboarding-block mb-onboarding-video-link">¿Cómo obtengo mi ID de cliente?</a>
 			<div class="mb-onboarding-buttons mb-onboarding-row">
 				<input type="button" value="No tengo cuenta en Mybooking"  id="mybooking-onboarding-account" class="mybooking-onboarding-account" />
 				<input type="submit" value="Entrar" />
 			</div>
 		</form>
-		<div  id="mb-onboarding-video-container" class="mb-onboarding-video-container" style="display: none">
-			<?php $video='login'; require_once ('mybooking-plugin-onboarding-video.php') ?>
-		</div>
+		
+		<!-- Video -->
+		<?php $video='login'; require_once ('mybooking-plugin-onboarding-video.php') ?>
 	</div>
 
 	<!-- Scripts -->
