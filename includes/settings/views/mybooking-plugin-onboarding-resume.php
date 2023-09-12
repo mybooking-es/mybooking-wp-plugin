@@ -71,18 +71,14 @@ function mybooking_plugin_onboarding_resume_page() {
 		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">Loading...</div>
 		<h1 class="mb-onboarding-row">
 			<span class="mb-onboarding-icon dashicons dashicons-saved"></span>
-			&nbsp;&nbsp;
+			&nbsp;
 			Configuración finalizada con exito
 		</h1>
 		<?php if ( isset($pages_ids) ) { ?>
 			<?php if ( $module_rental || $module_transfer ): ?>
-				<br />
-				<h5>
-					Modulo: <?php if ( $module_rental ) { ?>Alquiler<?php } elseif ( $module_transfer ) { ?>Transfer<?php } ?>
-				</h5>
-				<h6>
-					Tus paginas
-				</h6>
+				<h2>
+					Páginas del proceso de reserva en el modulo de <?php if ( $module_rental ) { ?>Alquiler<?php } elseif ( $module_transfer ) { ?>Transfer<?php } ?>
+				</h2>
 				<ul class="mb-onboarding-list">
 					<?php foreach ($pages_ids as $key => $id) { ?>
 						<li>
@@ -112,41 +108,39 @@ function mybooking_plugin_onboarding_resume_page() {
 						</li>
 					<?php } ?>
 				</ul>
-				<p>
-					<strong>Recuerda seleccionar la homepage de prueba (si existe) como página de inicio en Wordpress y añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>.
-				</p>
+				<?php if ( !$home_page_id && array_key_exists('wc_rent_selector', $onboarding_settings) &&  $onboarding_settings['wc_rent_selector'] ) { ?>
+					<p>
+						Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva. 
+						<br />
+						Te proponemos un buscador, sin embargo alternativamente puedes usar otros componentes que podrás visualizar en la pestaña de componentes.
+					</p>
+					<ul class="mb-onboarding-list">
+						<li>
+							<div class="mb-onboarding-row mb-onboarding-space-between">
+								<p>
+									Componente:
+									&nbsp;
+									<strong>
+										Buscador
+									</strong>
+								</p>
+								<div class="mb-onboarding-row">
+									<div data-href="[mybooking_rent_engine_selector]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
+										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+									</div>
+									<div class="mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show example"></div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				<?php } ?>
+				
+				<!-- Init components -->
 				<?php if ( $module_rental ) { ?>
 					<h6>
 						Tus componentes
 					</h6>
-					<p>
-					<p>
-					<strong>
-							Para iniciar el proceso de reserva necesitas un punto de inicio, en este caso puede ser un catalogo de productos, un calendario, un planning etc. <br/> Estos componentes que se añaden en páginas existentes se deben añadir manualmente. Puedes copiar el shortcode aquí o en el inventario (cuando precises el ID de producto).
-						</strong>
-					</p>
 					<ul class="mb-onboarding-list">
-						<?php if ( array_key_exists('wc_rent_selector', $onboarding_settings) &&  $onboarding_settings['wc_rent_selector'] ) { ?>
-							<li>
-								<div class="mb-onboarding-row mb-onboarding-space-between">
-									<p>
-										Componente:
-										&nbsp;
-										<strong>
-											Selector
-										</strong>
-									</p>
-									<p>	
-										Puedes añadir un buscador para iniciar el proceso de reserva. Normalmente se añade en la página de inicio.
-									</p>
-									<div class="mb-onboarding-row">
-										<div data-href="[mybooking_rent_engine_selector]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
-											<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
-										</div>
-									</div>
-								</div>
-							</li>
-						<?php } ?>
 						<?php if ( array_key_exists('wc_rent_calendar', $onboarding_settings) &&  $onboarding_settings['wc_rent_calendar'] ) { ?>
 							<li>
 								<div class="mb-onboarding-row mb-onboarding-space-between">
@@ -254,15 +248,13 @@ function mybooking_plugin_onboarding_resume_page() {
 						<?php } ?>
 					</ul>
 				<?php } ?>
+				<!-- End components -->
+
 			<?php endif; ?>
 			<?php if ( $module_activities ): ?>
-				<br />
-				<h5>
-					Modulo: Actividades
-				</h5>
-				<h6>
-					Tus paginas
-				</h6>
+				<h2>
+					Páginas del proceso de reserva en el modulo de Actividades
+				</h2>
 				<ul class="mb-onboarding-list">
 					<?php foreach ($pages_ids as $key => $id) { ?>
 						<li>
@@ -273,7 +265,6 @@ function mybooking_plugin_onboarding_resume_page() {
 									<strong><?php echo get_the_title( $id ) ?></strong>
 								</p>
 								<div class="mb-onboarding-row">
-
 									<div data-href="<?php echo get_permalink( $id ) ?>" title="Copy page link for mybooking web configuration" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
 										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 									</div>
@@ -285,16 +276,11 @@ function mybooking_plugin_onboarding_resume_page() {
 						</li>
 					<?php } ?>
 				</ul>
+
 				<p>
-					<strong>Recuerda añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>.
-				</p>
-				<h6>
-					Tus componentes
-				</h6>
-				<p>
-					<strong>
-						Para iniciar el proceso de reserva necesitas un punto de inicio, en este caso puede ser un catalogo de productos, un calendario, un planning etc. <br/> Estos componentes que se añaden en páginas existentes se deben añadir manualmente. Puedes copiar el shortcode aquí o en el inventario (cuando precises el ID de producto).
-					</strong>
+					Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva. 
+					<br />
+					Te proponemos un catálogo de productos, sin embargo alternativamente puedes usar otros componentes que podrás visualizar en la pestaña de componentes.
 				</p>
 				<ul class="mb-onboarding-list">
 					<li>
@@ -303,19 +289,24 @@ function mybooking_plugin_onboarding_resume_page() {
 								Componente:
 								&nbsp;
 								<strong>
-									Catalogo de productos
+									Catálogo de productos
 								</strong>
-							</p>
-							<p>
-								Puedes añadir un catalogo de tus productos para iniciar el  proceso de reserva. Normalmente se añade en la página de inicio.
 							</p>
 							<div class="mb-onboarding-row">
 								<div data-href="[mybooking_activities_engine_activities]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
 									<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 								</div>
+								<div class="mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show example"></div>
 							</div>
 						</div>
 					</li>
+				</ul>
+
+				<!-- Init components -->
+				<h6>
+					Tus componentes
+				</h6>
+				<ul class="mb-onboarding-list">
 					<?php if ( array_key_exists('wc_activity_calendar', $onboarding_settings) &&  $onboarding_settings['wc_activity_calendar'] ) { ?>
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
@@ -338,7 +329,12 @@ function mybooking_plugin_onboarding_resume_page() {
 						</li>
 					<?php } ?>
 				</ul>
+				<!-- End components -->
+
 			<?php endif; ?>
+			<p>
+				<strong>Recuerda seleccionar la homepage de prueba o inserir un componente de inicio para el proceso de reserva en Wordpress y añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>.
+			</p>
 		<?php } else { ?>
 			Lo lamentamos no se ha podido crear ninguna página. Por favor, vuelve a intentarlo y si se vuelve a producir un error contacta con <a href="mail:soporte@mybooking.es">soporte@mybooking.es</a>.
 		<?php } ?>

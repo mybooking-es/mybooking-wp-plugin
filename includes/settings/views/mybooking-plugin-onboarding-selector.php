@@ -78,88 +78,29 @@ function mybooking_plugin_onboarding_selector_page() {
 	<div class="mb-onboarding-selector mb-onboarding-commons">
 		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">Loading...</div>
 		<h1>
-			Tipo de negocio: <strong><?php esc_html_e($family_name) ?></strong>
+			Motor de reservas de Mybooking
 		</h1>
 		<h2>
-			Bienvenido <strong><?php esc_html_e($trade_name) ?></strong>.
+				Tipo de negocio: <strong><?php esc_html_e($family_name) ?></strong>
+				&nbsp;
+				Modulo/s: <strong><?php if ( $module_rental ): ?> Alquiler <?php endif; ?><?php if ( $module_activities ): ?> Actividades <?php endif; ?><?php if ( $module_transfer ): ?> Transfer <?php endif; ?></strong>
 		</h2>
+		<h3>
+			Te agradecemos la confianza en nuestro producto y te damos la bienvenida <strong><?php esc_html_e($trade_name) ?></strong>. :D
+		</h3>
+		<h4>
+			Configuración:
+		</h4>
 		<p>
-			Para configurar el plugin <strong>vamos a comenzar utilizando la configuración actual de Mybooking de manera que con unos pocos pasos puedas empezar a utilizar tu motor de reserva.</strong>. 
+			Para configurar el plugin <strong>vamos a utilizar la configuración actual de tu negocio de manera que con unos pocos pasos puedas empezar a utilizar tu motor de reserva.</strong>
 		</p>
+		<p>
+			Comenzaremos generando las páginas que precisa el proceso de reserva y te proporcionaremos un listado de las páginas para que las puedas localizar e información complementaria para ayudarte a finalizar la configuración en el motor de reservas de Wordpress y en Mybooking.
+			</p>
 		<form  id="mb-onboarding-selector-form" method="POST">
-			<?php if ( $module_rental ): ?>
-				<br />
-				<h5>
-					Modulo activo: Alquiler
-				</h5>
-				<ul class="mb-onboarding-list">
-					<li>
-						<div class="mb-onboarding-row mb-onboarding-space-between">
-							<p>
-								Vamos a crear las páginas necesarias para el proceso de reserva y vamos a crear una página de inicio con un buscador desde donde podrás seleccionar las fechas de recogida y devolución.
-								<br/>
-								<small>
-									Puedes visualizar un ejemplo de la estructura de la navegación clicando sobre el icono
-								</small>
-							</p>
-							<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-						</div>
-					</li>
-					<li>
-						<div class="mb-onboarding-row mb-onboarding-space-between">
-							<p>
-								Alternativamente tienes la posibilidad de utilizar otros componentes para iniciar la reserva que tambien te mostraremos al finalizar el proceso.
-								<br/>
-								<small>
-									Puedes visualizar un ejemplo de estos componentes  clicando sobre el icono
-								</small>
-							</p>
-							<span data-type="page" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-						</div>
-					</li>
-				</ul>
-			<?php endif; ?>
-			<?php if ( $module_activities ): ?>
-				<br />
-				<h5>
-					Modulo activo: Actividades
-				</h5>
-				<ul class="mb-onboarding-list">
-					<li>
-						<div class="mb-onboarding-row mb-onboarding-space-between">
-							<p>
-								Vamos a crear las páginas necesarias para el proceso de reserva sin embargo por la configuración de este modulo te vamos a aconsejar iniciar el proceso desde un catalogo de productos u otros componentes que te mostraremos a continuación.
-								<br/>
-								<small>
-									Puedes visualizar un ejemplo de la estructura de la navegación clicando sobre el icono
-								</small>
-							</p>
-							<span data-type="page" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-						</div>
-					</li>
-				</ul>
-			<?php endif; ?>
-			<?php if ( $module_transfer ): ?>
-				<br />
-				<h5>
-					Modulo activo: Transfer
-				</h5>
-				<ul class="mb-onboarding-list">
-					<li>
-						<div class="mb-onboarding-row mb-onboarding-space-between">
-							<p>
-								Vamos a crear las páginas necesarias para el proceso de reserva y vamos a crear una página de inicio con un buscador desde donde podrás seleccionar las fechas de recogida y devolución.
-								<br/>
-								<small>
-									Puedes visualizar un ejemplo de la estructura de la navegación clicando sobre el icono
-								</small>
-							</p>
-							<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
-						</div>
-					</li>
-				</ul>
-			<?php endif; ?>
-			<div class="mb-onboarding-row mb-onborading-pull-right">
+			<br />
+			<!-- Buttons -->
+			<div class="mb-onboarding-row">
 				<input type="submit" value="Generar" />
 			</div>
 		</form>
