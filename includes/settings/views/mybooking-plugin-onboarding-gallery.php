@@ -7,24 +7,52 @@
 	$folder = $plugin_dir.'images/';
 ?>
 
-<div class="mb-onboarding-gallery mb-onboarding-commons">
-	<div id="mb-onboarding-close-btn" class="mb-onboarding-close-btn"></div>
-	<form id="mb-onboarding-gallery-form" class="mb-onboarding-gallery-form"></form>
+<div  id="mb-onboarding-gallery-container" class="mb-onboarding-gallery-container" style="display: none">
+	<div class="mb-onboarding-gallery mb-onboarding-commons">
+		<div id="mb-onboarding-close-btn" class="mb-onboarding-close-btn"></div>
+		<form id="mb-onboarding-gallery-form" class="mb-onboarding-gallery-form"></form>
+	</div>
 </div>
 
 <!-- Scripts -->
 <script>
 	var galleryURLS = {
-		selector: [
+		'home-test': [
 			'vertical-selector.png',
-			'choose-product.png',
-			'complete.png',
+		],
+		'search-result': [
+			'search-result.png',
+		],
+		'checkout': [
+			'checkout.png',
+		],
+		'summary': [
 			'summary.png'
 		],
-		page: [
+		'my-reservation': [
+			'my-reservation.png'
+		],
+		'selector': [
+			'vertical-selector.png',
+			'horizontal-selector.png'
+		],
+		'catalog': [
+			'catalog.png'
+		],
+		'calendar': [
 			'calendar.png',
-			'complete.png',
-			'summary.png'
+		],
+		'planning-diary': [
+			'planning-diary.png'
+		],
+		'planning-calendar': [
+			'planning-calendar.png'
+		],
+		'planning-weekly': [
+			'planning-weekly.png'
+		],
+		'shift-picker': [
+			'shift-picker.png'
 		],
 	};
 </script>

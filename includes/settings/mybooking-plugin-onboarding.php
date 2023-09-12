@@ -54,6 +54,15 @@
         array($this, 'mybooking_plugin_onboarding_error_page')
       ); // Callable
 
+			add_submenu_page(
+				'mybooking-plugin-configuration', // Parent slug
+        'Mybooking Componentes', // Page title
+        'Componentes', // Menu option title
+        'manage_options', // Capability
+        'mybooking-onboarding-components', // Slug
+        array($this, 'mybooking_plugin_onboarding_components_page')
+      ); // Callable
+
 		}
 
 		/**
@@ -71,5 +80,8 @@
 		}
 		public function mybooking_plugin_onboarding_error_page() {
 		  require_once('views/mybooking-plugin-onboarding-error.php');
+		}
+		public function mybooking_plugin_onboarding_components_page() {
+		  require_once('views/mybooking-plugin-onboarding-components.php');
 		}
   }

@@ -104,10 +104,6 @@ function mybooking_plugin_onboarding_selector_page() {
 				<input type="submit" value="Generar" />
 			</div>
 		</form>
-
-		<div  id="mb-onboarding-gallery-container" class="mb-onboarding-gallery-container" style="display: none">
-			<?php require_once ('mybooking-plugin-onboarding-gallery.php') ?>
-		</div>
 	</div>
 
 	<!-- Scripts -->
