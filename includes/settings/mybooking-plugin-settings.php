@@ -69,9 +69,9 @@
 						Paginas y componentes generados
 					</h2>
 					<p>
-						Puedes ver el listado de las <strong>páginas generadas</strong> desde <a href="/wp-admin/admin.php?page=mybooking-onboarding-pages">aquí</a> o desde el menú, 'Páginas'.
+						Puedes ver el listado de las <strong>páginas generadas</strong> desde <a href="<?php esc_attr(menu_page_url('mybooking-onboarding-pages'))?>">aquí</a> o desde el menú, 'Páginas'.
 					<br />
-						Puedes ver el listado de los <strong>componentes</strong> que puedes usar para tu negocio desde <a href="/wp-admin/admin.php?page=mybooking-onboarding-components">aquí</a> o desde el menú, 'Componentes'.
+						Puedes ver el listado de los <strong>componentes</strong> que puedes usar para tu negocio desde <a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">aquí</a> o desde el menú, 'Componentes'.
 					</p>
 					<hr />
 
