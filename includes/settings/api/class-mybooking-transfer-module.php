@@ -9,6 +9,13 @@
 
       // Define pages
       $pages_to_create = array(
+        'choose_vehicle'           				=> array(
+					'option' => 'mybooking_plugin_settings_transfer_choose_vehicle_page',
+					'title' => _x( 'Transfer Choose Vehicle', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+					'content' => '<!-- wp:shortcode -->[mybooking_transfer_choose_vehicle]<!-- /wp:shortcode -->',
+					'slug' => 'transfer_choose-vehicle',
+					'order' => 1,
+        ),
         'checkout'           => array(
            'option' => 'mybooking_plugin_settings_transfer_checkout_page',
            'title' => _x( 'Transfer Check-out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
@@ -31,12 +38,13 @@
           'order' => 5,
        ),
 				'home_test'           				=> array(
-					'option' => 'mybooking_plugin_settings_transfer_choose_vehicle_page',
+					'option' => 'mybooking_plugin_settings_home_test_page',
 					'title' => _x( 'Transfer Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
-					'content' => '<!-- wp:shortcode -->[mybooking_transfer_choose_vehicle]<!-- /wp:shortcode -->',
+					'content' => '<!-- wp:shortcode -->[mybooking_transfer_selector]<!-- /wp:shortcode -->',
 					'slug' => 'transfer_home-test',
 					'order' => 1,
-			 )
+        ),
+        
       );
 
       // Create pages
