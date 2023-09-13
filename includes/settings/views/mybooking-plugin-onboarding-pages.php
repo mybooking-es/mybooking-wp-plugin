@@ -56,7 +56,7 @@ function mybooking_plugin_onboarding_pages_page() {
 				}
 
 				// Set home page id
-				if (str_contains($key, 'home')) {
+				if (str_contains($key, 'home_test') || str_contains($key, 'transfer_choose_vehicle')) {
 					$home_page_id = $value;
 				}
 

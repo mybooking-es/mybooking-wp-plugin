@@ -11,23 +11,23 @@
       $pages_to_create = array(
         'checkout'           => array(
            'option' => 'mybooking_plugin_settings_activities_shopping_cart_page',
-           'title' => _x( 'Check-out', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
+           'title' => _x( 'Activities Check-out', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_activities_engine_shopping_cart]<!-- /wp:shortcode -->',
-           'slug' => 'checkout',
+           'slug' => 'activities_checkout',
            'order' => 3,
         ),
         'summary'           => array(
            'option' => 'mybooking_plugin_settings_activities_summary_page',
-           'title' => _x( 'Summary', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
+           'title' => _x( 'Activities Summary', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_activities_engine_summary]<!-- /wp:shortcode -->',
-           'slug' => 'summary',
+           'slug' => 'activities_summary',
            'order' => 4,
         ),
         'my_reservation'           => array(
           'option' => 'mybooking_plugin_settings_my_reservation_page',
-          'title' => _x( 'My reservation', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
+          'title' => _x( 'Activities My reservation', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
           'content' => '<!-- wp:shortcode -->[mybooking_activities_engine_order]<!-- /wp:shortcode -->',
-          'slug' => 'my-reservation',
+          'slug' => 'activities_my-reservation',
           'order' => 5,
         )
       );

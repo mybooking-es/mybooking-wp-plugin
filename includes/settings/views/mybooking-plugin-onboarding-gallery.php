@@ -17,19 +17,40 @@
 <!-- Scripts -->
 <script>
 	var galleryURLS = {
-		'home-test': [
+		'renting_home-test': [
 			'vertical-selector.png',
 		],
-		'search-result': [
+		'renting_search-result': [
 			'search-result.png',
 		],
-		'checkout': [
+		'renting_checkout': [
 			'checkout.png',
 		],
-		'summary': [
+		'renting_summary': [
 			'summary.png'
 		],
-		'my-reservation': [
+		'renting_my-reservation': [
+			'my-reservation.png'
+		],
+		'activities_checkout': [
+			'checkout.png',
+		],
+		'activities_summary': [
+			'summary.png'
+		],
+		'activities_my-reservation': [
+			'my-reservation.png'
+		],
+		'transfer_home-test': [
+			'vertical-selector.png',
+		],
+		'transfer_checkout': [
+			'checkout.png',
+		],
+		'transfer_summary': [
+			'summary.png'
+		],
+		'transfer_my-reservation': [
 			'my-reservation.png'
 		],
 		'selector': [

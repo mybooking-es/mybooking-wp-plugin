@@ -172,9 +172,13 @@ function mybooking_plugin_onboarding_components_page() {
 						</ul>
 					<?php } else { ?>
 						<p>
-							No se ha podido recuperar ningun componente. 
+							<strong>No se ha podido recuperar ningun componente.</strong>
 						</p>
 					<?php } ?>
+				<?php } else { ?>
+					<p>
+					<strong>No se ha podido recuperar ningun componente. </strong>
+					</p>
 				<?php } ?>
 				<!-- End components -->
 			<?php endif; ?>
@@ -206,13 +210,13 @@ function mybooking_plugin_onboarding_components_page() {
 					</ul>
 				<?php } else { ?>
 					<p>
-						No se ha podido recuperar ningun componente. 
+						<strong>No se ha podido recuperar ningun componente. </strong>
 					</p>
 				<?php } ?>
 				<!-- End components -->
 			<?php endif; ?>
 		<?php } else { ?>
-			Lo lamentamos no se ha podido recuperar ningun componente. Por favor, vuelve a intentarlo y si se vuelve a producir un error contacta con <a href="mail:soporte@mybooking.es">soporte@mybooking.es</a>.
+			Lo lamentamos <strong>no se ha podido recuperar ningun componente</strong>. Por favor, vuelve a intentarlo y si se vuelve a producir un error contacta con <a href="mail:soporte@mybooking.es">soporte@mybooking.es</a>.
 		<?php } ?>
 	</div>
 

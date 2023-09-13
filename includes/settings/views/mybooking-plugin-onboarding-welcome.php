@@ -53,8 +53,10 @@ function mybooking_plugin_onboarding_welcome_page() {
 				/*
 				* Button events
 				*/
-				$('#mybooking-onboarding-account').on('click', function() {
-					window.open('https://mybooking.es/');
+				$('#mybooking-onboarding-account').on('click', function(event) {
+					event.preventDefault();
+					
+					window.open('https://mybooking.es/en/sign-up/');
 				});
 
 				/*

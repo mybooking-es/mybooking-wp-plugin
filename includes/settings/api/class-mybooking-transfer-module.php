@@ -11,30 +11,30 @@
       $pages_to_create = array(
         'checkout'           => array(
            'option' => 'mybooking_plugin_settings_transfer_checkout_page',
-           'title' => _x( 'Check-out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+           'title' => _x( 'Transfer Check-out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_transfer_checkout]<!-- /wp:shortcode -->',
-           'slug' => 'checkout',
+           'slug' => 'transfer_checkout',
            'order' => 3,
         ),
         'summary'           => array(
            'option' => 'mybooking_plugin_settings_transfer_summary_page',
-           'title' => _x( 'Summary', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+           'title' => _x( 'Transfer Summary', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_transfer_summary]<!-- /wp:shortcode -->',
-           'slug' => 'summary',
+           'slug' => 'transfer_summary',
            'order' => 4,
         ),
         'my_reservation'           => array(
           'option' => 'mybooking_plugin_settings_my_reservation_page',
-          'title' => _x( 'My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+          'title' => _x( 'Transfer My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
           'content' => '<!-- wp:shortcode -->[mybooking_transfer_reservation]<!-- /wp:shortcode -->',
-          'slug' => 'my-reservation',
+          'slug' => 'transfer_my-reservation',
           'order' => 5,
        ),
 				'home_test'           				=> array(
 					'option' => 'mybooking_plugin_settings_transfer_choose_vehicle_page',
-					'title' => _x( 'Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+					'title' => _x( 'Transfer Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
 					'content' => '<!-- wp:shortcode -->[mybooking_transfer_choose_vehicle]<!-- /wp:shortcode -->',
-					'slug' => 'home-test',
+					'slug' => 'transfer_home-test',
 					'order' => 1,
 			 )
       );
