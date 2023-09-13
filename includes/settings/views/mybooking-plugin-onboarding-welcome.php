@@ -16,6 +16,9 @@ function mybooking_plugin_onboarding_welcome_page() {
 		<h1>
 			Bienvenido al plugin de reservas de <strong>Mybooking</strong>
 		</h1>
+		<p class="mb-onboarding-login-description">
+			Mybooking is a platform that allow you to manage your inventory, reservations, planning, invoicing and integrate a reservation engine in your web site.
+		</p>
 		<h2>
 			Por favor, introduce un ID de cliente y un APIkey
 		</h2>

@@ -57,18 +57,25 @@
 		public function mybooking_plugin_settings_page() {
 		?>
 		  <div class="wrap">
-		  	  <h1>Mybooking</h1>
+		  	  <h1>Mybooking Settings</h1>
+					<p>
+						<strong>Bienvenido a la página de configuración</strong>. Tras la configuración inicial esta página te permitirá actualizar algunas configuraciones que pueden cambiar en el tiempo o añadir modulos y complementos avanzados.
+					</p>
+
 					<?php settings_errors(); ?>
-		  	  <p>Mybooking is a platform that allow you to manage your inventory, reservations, planning, invoicing and integrate a
-		  	  reservation engine in your web site.</p>
-			 	  <h2>Quick start</h2>
-			 	  <ol>
-				 	  <li>Use your mybooking account or <a href="https://mybooking.es/en/sign-up" target="_blank">create a new account</a></li>
-				 	  <li>Setup the connection in the connection tab</li>
-				 	  <li>Setup the <b>modules</b> you want to use: renting/accommodation, activities or transfer</li>
-				 	  <li><b>Create the pages</b> and insert shortcodes</li>
-				 	  <li>Start accepting reservations</li>
-				 	</ol>
+
+					<!-- Buttons -->
+					<h2>
+						Paginas y componentes generados
+					</h2>
+					<p>
+						Puedes ver el listado de las <strong>páginas generadas</strong> desde <a href="/wp-admin/admin.php?page=mybooking-onboarding-pages">aquí</a> o desde el menú, 'Páginas'.
+					<br />
+						Puedes ver el listado de los <strong>componentes</strong> que puedes usar para tu negocio desde <a href="/wp-admin/admin.php?page=mybooking-onboarding-components">aquí</a> o desde el menú, 'Componentes'.
+					</p>
+					<hr />
+
+					<!-- Tabs -->
 					<?php
 	            $active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_title( $_GET[ 'tab' ] ) : 'connection_options';
 	            $tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
@@ -711,8 +718,8 @@ EOF;
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">If you have a <b>mybooking account</b> like <em>mycompany.mybooking.es</em>, input the just the subdomain name, that is <u>mycompany</u>.";
+		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly />";
+		  echo "<p class=\"description\"><b>Mybooking account</b> like <em>mycompany.mybooking.es</em>, just the subdomain name, that is <u>mycompany</u>.";
 
 		}
 
@@ -730,8 +737,8 @@ EOF;
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">Get the API key from your mybooking account settings</p>.";
+		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly /><button type='button' title='Active' id='mybooking_plugin_settings_api_key_active_btn'><span class='dashicons dashicons-edit'></span></button>";
+		  echo "<p class=\"description\">For the API key from your mybooking account settings</p>.";
 		}
 
 
@@ -771,9 +778,9 @@ EOF;
 		  }
 
 		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
-		  echo "<p class=\"description\">Activate if you want to create a vehicles</b>, <b>boats</b>, <b>properties rental</b> or <b>accomodation</b> web site.</p>";
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value' readonly />";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' disabled />";
+		  echo "<p class=\"description\">For vehicles</b>, <b>boats</b>, <b>properties rental</b> or <b>accomodation</b> web site.</p>";
 		}
 
 		/**
@@ -791,9 +798,9 @@ EOF;
 		  }
 
 		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
-		  echo "<p class=\"description\">Activate if you want to create a <b>tours</b>, <b>activities</b> or <b>appointments</b> web site.</p>";
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value' readonly />";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' disabled />";
+		  echo "<p class=\"description\">For <b>tours</b>, <b>activities</b> or <b>appointments</b> web site.</p>";
 		}
 
 		/**
@@ -811,9 +818,9 @@ EOF;
 		  }
 
 		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
-		  echo "<p class=\"description\">Activate if you want to create a <b>transfers</b> web site.</p>";
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value' readonly />";
+		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' disabled />";
+		  echo "<p class=\"description\">For <b>transfers</b> web site.</p>";
 		}
 
 		/**

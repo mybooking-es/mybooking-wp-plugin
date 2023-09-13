@@ -21,6 +21,9 @@
 	font-weight: lighter;
 	line-height: 1;
 }
+.mb-onboarding-login-description {
+	margin-top: -2rem;
+}
 h1.mb-onboarding-error {
 	color: red;
 }
