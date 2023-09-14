@@ -99,7 +99,9 @@ function mybooking_plugin_onboarding_pages_page() {
 									<a href="<?php echo get_edit_post_link( $id ) ?>" title="Edit page" target="_blank" class="mb-onboarding-row-link">
 										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
-									<span data-type="<?php echo $post->post_name ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
+									<?php $type = array_search($id, $settings) ?>
+									<?php $module = ($module_rental) ? 'mybooking_plugin_settings_renting' : 'mybooking_plugin_settings_transfer' ?>
+									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
 								</div>
 							</div>
 						</li>
@@ -154,7 +156,9 @@ function mybooking_plugin_onboarding_pages_page() {
 									<a href="<?php echo get_edit_post_link( $id ) ?>" title="Edit page" target="_blank" class="mb-onboarding-row-link">
 										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
-									<span data-type="<?php echo $post->post_name ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
+									<?php $type = array_search($id, $settings) ?>
+									<?php $module = ($module_activities) ? 'mybooking_plugin_settings_activities' : '' ?>
+									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>"class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
 								</div>
 							</div>
 						</li>

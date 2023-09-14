@@ -17,40 +17,43 @@
 <!-- Scripts -->
 <script>
 	var galleryURLS = {
-		'renting_home-test': [
+		'mybooking_plugin_settings_home_test_page': [
 			'vertical-selector.png',
 		],
-		'renting_search-result': [
+		'mybooking_plugin_settings_choose_products_page': [
 			'search-result.png',
 		],
-		'renting_checkout': [
+		'mybooking_plugin_settings_checkout_page': [
 			'checkout.png',
 		],
-		'renting_summary': [
+		'mybooking_plugin_settings_summary_page': [
 			'summary.png'
 		],
-		'renting_my-reservation': [
+		'rmybooking_plugin_settings_my_reservation_page': [
 			'my-reservation.png'
 		],
-		'activities_checkout': [
+		'mybooking_plugin_settings_activities_shopping_cart_page': [
 			'checkout.png',
 		],
-		'activities_summary': [
+		'mybooking_plugin_settings_activities_summary_page': [
 			'summary.png'
 		],
-		'activities_my-reservation': [
+		'mybooking_plugin_settings_my_reservation_page': [
 			'my-reservation.png'
 		],
-		'transfer_home-test': [
+		'mybooking_plugin_settings_home_test_page': [
 			'vertical-selector.png',
 		],
-		'transfer_checkout': [
+		'mybooking_plugin_settings_transfer_choose_vehicle_page': [
+			'choose-vehicle.png',
+		],
+		'mybooking_plugin_settings_transfer_checkout_page': [
 			'checkout.png',
 		],
-		'transfer_summary': [
+		'mybooking_plugin_settings_transfer_summary_page': [
 			'summary.png'
 		],
-		'transfer_my-reservation': [
+		'mybooking_plugin_settings_my_reservation_page': [
 			'my-reservation.png'
 		],
 		'selector': [
@@ -97,6 +100,7 @@
 			$('.mb-onboarding-list').on('click', '.mb-onboarding-gallery-btn', function() {
 				var element = $(this);
 				var type = element.attr('data-type');
+				var module = element.attr('data-module');
 				var URLS = galleryURLS[type];
 
 				var HTML = '';
@@ -105,9 +109,15 @@
 				});
 				URLS.forEach(url => {
 					HTML += '<label for="' + url + '">';
-					HTML += '<img src="' + folder  + type + '/' + url + '" alt="image" />';
+					if (module) {
+						HTML += '<img src="' + folder  + module + '/' + type + '/' + url + '" alt="image" />';
+					} else {
+						HTML += '<img src="' + folder  + type + '/' + url + '" alt="image" />';
+					}
+					
 					HTML +=   '</label>';
 				});
+
 				// Append video
 				form.html(HTML);
 

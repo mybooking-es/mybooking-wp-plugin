@@ -13,21 +13,21 @@
            'option' => 'mybooking_plugin_settings_checkout_page',
            'title' => _x( 'Renting Check out', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_rent_engine_complete]<!-- /wp:shortcode -->',
-           'slug' => 'renting_checkout',
+           'slug' => 'checkout',
            'order' => 3,
         ),
         'summary'           => array(
            'option' => 'mybooking_plugin_settings_summary_page',
            'title' => _x( 'Renting Summary', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_rent_engine_summary]<!-- /wp:shortcode -->',
-           'slug' => 'renting_summary',
+           'slug' => 'summary',
            'order' => 4,
         ),
         'my_reservation'           => array(
            'option' => 'mybooking_plugin_settings_my_reservation_page',
            'title' => _x( 'Renting My reservation', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_rent_engine_reservation]<!-- /wp:shortcode -->',
-           'slug' => 'renting_my-reservation',
+           'slug' => 'my-reservation',
            'order' => 5,
         )
       );        
@@ -38,7 +38,7 @@
                                                'option' => 'mybooking_plugin_settings_home_test_page',
                                                'title' => _x( 'Renting Home Test', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' ),
                                                'content' => '<!-- wp:shortcode -->[mybooking_rent_engine_selector]<!-- /wp:shortcode -->',
-                                               'slug' => 'renting_home-test',
+                                               'slug' => 'home-test',
                                                'order' => 1,
                                               );
         // Choose product (search result)           
@@ -46,7 +46,7 @@
                                                'option' => 'mybooking_plugin_settings_choose_products_page',
                                                'title' => _x( 'Renting Search result', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' ),
                                                'content' => '<!-- wp:shortcode -->[mybooking_rent_engine_product_listing]<!-- /wp:shortcode -->',
-                                               'slug' => 'renting_search-result',
+                                               'slug' => 'search-result',
                                                'order' => 2,
                                               );
       }

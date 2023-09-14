@@ -13,21 +13,21 @@
            'option' => 'mybooking_plugin_settings_activities_shopping_cart_page',
            'title' => _x( 'Activities Check-out', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_activities_engine_shopping_cart]<!-- /wp:shortcode -->',
-           'slug' => 'activities_checkout',
+           'slug' => 'checkout',
            'order' => 3,
         ),
         'summary'           => array(
            'option' => 'mybooking_plugin_settings_activities_summary_page',
            'title' => _x( 'Activities Summary', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
            'content' => '<!-- wp:shortcode -->[mybooking_activities_engine_summary]<!-- /wp:shortcode -->',
-           'slug' => 'activities_summary',
+           'slug' => 'summary',
            'order' => 4,
         ),
         'my_reservation'           => array(
           'option' => 'mybooking_plugin_settings_my_reservation_page',
           'title' => _x( 'Activities My reservation', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
           'content' => '<!-- wp:shortcode -->[mybooking_activities_engine_order]<!-- /wp:shortcode -->',
-          'slug' => 'activities_my-reservation',
+          'slug' => 'my-reservation',
           'order' => 5,
         )
       );

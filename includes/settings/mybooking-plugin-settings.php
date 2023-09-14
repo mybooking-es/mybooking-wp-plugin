@@ -123,7 +123,7 @@
 
 	            <?php
 
-               $renting_wizard_info = <<<EOF
+               $renting_info = <<<EOF
                  <br>
                  <div class="postbox">
                    <div class="inside">
@@ -138,7 +138,7 @@
 										 </p>
 		                </div>
                  </div>
-                 <hr>
+                 <hr />
 EOF;
 
                $activity_info = <<<EOF
@@ -156,7 +156,7 @@ EOF;
 										 </p>
 		                </div>
                  </div>
-                 <hr>
+                 <hr />
 
 EOF;
 
@@ -175,7 +175,7 @@ EOF;
 										 </p>
 		                </div>
                  </div>
-                 <hr>
+                 <hr />
 							
 EOF;		
 								 
@@ -198,7 +198,7 @@ EOF;
 										</p>
 		              </div>
                  </div>
-                 <hr>
+                 <hr />
 
 EOF;		
 								 
@@ -222,7 +222,7 @@ EOF;
 											</p>
 		                </div>
                  </div>
-                 <hr>
+                 <hr />
 
 EOF;		
 								 
@@ -235,7 +235,7 @@ EOF;
 										 </p>
 		                </div>
                  </div>
-                 <hr>
+                 <hr />
 
 EOF;		
 								 
@@ -248,7 +248,7 @@ EOF;
 										 </p>
 		                </div>
                  </div>
-                 <hr>
+                 <hr />
 EOF;
 
 	             if ($active_tab == 'connection_options') {
@@ -258,7 +258,7 @@ EOF;
 			           echo '</table>';
 			         }
 			         else if ($active_tab == 'renting_options') {
-			         	 echo $renting_wizard_info;
+			         	 echo $renting_info;
 			      	   settings_fields('mybooking_plugin_settings_group_renting');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_renting');
@@ -481,19 +481,6 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
-		  // Product detail pages (calendar)
-		  add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
-		  									'<em>Use product detail pages</em>',
-		  									array($this, 'field_mybooking_plugin_settings_use_product_detail_pages_callback'),
-		  									'mybooking-plugin-configuration',
-		  									'mybooking_plugin_settings_section_renting');
-
-		  add_settings_field('mybooking_plugin_settings_products_url',
-		                     '<em>Product details pages URL prefix</em>',
-		                     array($this, 'field_mybooking_plugin_settings_products_url_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
-
 		  // Selector in process
 		  add_settings_field('mybooking_plugin_settings_selector_in_process',
 		                     'Selector in process',
@@ -507,7 +494,6 @@ EOF;
 		                     array($this, 'field_mybooking_plugin_settings_show_taxes_included_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
-
 
 		  // Duration context
 		  add_settings_field('mybooking_plugin_settings_duration_context',
@@ -551,6 +537,19 @@ EOF;
 		                     array($this, 'field_mybooking_plugin_settings_not_available_context_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
+
+			// Product detail pages (calendar)
+			add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
+			'<em>Use product detail pages</em>',
+			array($this, 'field_mybooking_plugin_settings_use_product_detail_pages_callback'),
+			'mybooking-plugin-configuration',
+			'mybooking_plugin_settings_section_renting');
+
+add_settings_field('mybooking_plugin_settings_products_url',
+				'<em>Product details pages URL prefix</em>',
+				array($this, 'field_mybooking_plugin_settings_products_url_callback'),
+				'mybooking-plugin-configuration',
+				'mybooking_plugin_settings_section_renting');
 
       // == Creates activities section fields
 
@@ -872,7 +871,7 @@ EOF;
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_terms_page");
 		  echo "<p class=\"description\">The terms and conditions page.</p>";
-		  echo "<hr>";
+		  echo "<hr />";
 		}
 
 		/**
@@ -912,7 +911,7 @@ EOF;
 		  echo "<p class=\"description\">Choose the selector that you want to use when you choose <em>modify reservation</em> on choose product or complete pages.</p>";
 		  echo "<p class=\"description\">Select <b>wizard</b> if you are using the Wizard selector or widget on your home page.</p>";
 		  echo "<p class=\"description\">Select <b>form</b> if you are using the Form selector or widget on yout home page.</p>";
-		  echo "<hr>";
+		  echo "<hr />";
 
 		}
 
@@ -937,7 +936,7 @@ EOF;
 		  echo "<p class=\"description\">Show taxes included.";
 		  echo "<p class=\"description\">Activate if you want to show taxes included literal in reservation.</p>";
 		  echo "<p class=\"description\">Do not activate if you do not want to show taxes included literal in reservation.</p>";
-
+			echo "<hr />";
 
 		}
 
@@ -1270,6 +1269,7 @@ EOF;
 		  echo "<p class=\"description\">Select <b>Telephone consultation</b> to show Telephone consultation message.</p>";
 		  echo "<p class=\"description\">Select <b>E-mail consultation</b> to show E-mail consultation message.</p>";
 		  echo "<p class=\"description\">Select <b>Enquiry</b> to show Enquiry message.</p>";
+			echo "<hr />";
 
 		}
 
@@ -1319,7 +1319,7 @@ EOF;
 		  echo "<p>This is the <b>prefix folder</b> that is added to the product detail page created virtually for any
 		  product if <u>Use product detail pages</u> is active.</p>";
 		  echo "</div>";
-		  echo "<hr>";
+		  echo "<hr />";
 
 		}
 
@@ -1352,7 +1352,7 @@ EOF;
 
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_terms_page");
 		  echo "<p class=\"description\">The page with the terms and conditions</p>.";
-		  echo "<hr>";
+		  echo "<hr />";
 
 		}
 
