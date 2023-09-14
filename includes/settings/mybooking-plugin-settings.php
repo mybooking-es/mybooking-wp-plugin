@@ -96,7 +96,6 @@
 
 					<h2 class="nav-tab-wrapper">
 					    <a href="?page=mybooking-plugin-configuration&tab=connection_options" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">Connection</a>
-					    <a href="?page=mybooking-plugin-configuration&tab=configuration_options" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">Modules</a>
 					    <?php if ($renting) { ?>
 					      <a href="?page=mybooking-plugin-configuration&tab=renting_options" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">Renting or Accommodation</a>
               <?php } ?>
@@ -106,11 +105,17 @@
 					    <?php if ($transfer) { ?>
 					      <a href="?page=mybooking-plugin-configuration&tab=transfer_options" class="nav-tab <?php echo $active_tab == 'transfer_options' ? 'nav-tab-active' : ''; ?>">Transfer</a>
               <?php } ?>
-					    <?php if ($google_api_places) { ?>
-					      <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">Google Api Places</a>
-					    <?php } ?>
               <a href="?page=mybooking-plugin-configuration&tab=contact_form" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">Contact Form</a>
               <a href="?page=mybooking-plugin-configuration&tab=complements_options" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">Complements</a>
+							<!-- Get onboarding settings -->
+							<?php $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info'); ?>
+							<?php $pickup_return_place_exists = array_key_exists('pickup_return_place', $onboarding_settings) ?>
+							<?php if ($pickup_return_place_exists and $onboarding_settings['pickup_return_place']) { ?>
+								<a href="?page=mybooking-plugin-configuration&tab=configuration_options" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">Integration</a>
+							<?php } ?>
+							<?php if ($google_api_places) { ?>
+					      <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">Google Api Places</a>
+					    <?php } ?>
   				    <a href="?page=mybooking-plugin-configuration&tab=css_options" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">Advanced</a>
 					</h2>
 
@@ -123,21 +128,14 @@
                  <div class="postbox">
                    <div class="inside">
 		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>vehicle rental</u>, <u>boat rental</u>, <u>properties</u> rental companies or <u>accommodation</u>.</p>
-		                 <p>You <i>must</i> create the following pages and insert a shortcode on each</p>
-		                 <ol style="list-style:square; margin-left: 20px">
-		                   <li>Create a <b>choose product</b> page and insert [mybooking_rent_engine_product_listing] shortcode</li>
-		                   <li>Create a <b>checkout page</b> and insert [mybooking_rent_engine_complete] shortcode</li>
-		                   <li>Create a <b>summary page</b> and insert [mybooking_rent_engine_summary] shortcode</li>
-		                 </ol>
-		                 <p>If you want to include a <b>search form in the front page</b>, use the widgets or the shortcodes.</p>
-		                 <ul style="list-style:square; margin-left: 20px">
-		                   <li>Mybooking Rent Engine Selector Widget or [mybooking_rent_engine_selector] shortcode</li>
-		                   <li>Mybooking Rent Engine Wizard Widget or [mybooking_rent_engine_selector_wizard] shortcode</li>
-		                 </ul>
-		                 <p>If you want to include the calendar in an <u>vehicle</u> or <u>property</u> page use:</p>
-		                 <ul style="list-style:square; margin-left: 20px">
-		                   <li>The [mybooking_rent_engine_product] shortcode. You can get this shortcode with the product id from your mybooking account</li>
-		                 </ul>
+		                 <p>
+										 	Con la configuración inicial hemos las páginas necesarias para el proceso de reserva y las hemos configurado desde aquí como puedes ver a continuación. 
+										</p>
+										<p>
+											<strong>
+												Edita esta parte solo si creas una nueva página para el proceso o para los términos y condiciones y la quieres asignar.	
+											</strong>
+										 </p>
 		                </div>
                  </div>
                  <hr>
@@ -148,55 +146,115 @@ EOF;
                  <div class="postbox">
                    <div class="inside">
 		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>activities</u> or <u>tours</u> company.</p>
-		                 <p>You <i>must</i> create the following pages and insert a shortcode on each</p>
-		                 <ol style="list-style:square; margin-left: 20px">
-		                   <li>Create a <b>checkout page</b> and insert [mybooking_activities_engine_shopping_cart] shortcode</li>
-		                   <li>Create a <b>summary page</b> and insert [mybooking_activities_engine_summary] shortcode</li>
-		                 </ol>
-		                 <p>If you want to include the calendar in an <u>activity page</u> use:</p>
-		                 <ul style="list-style:square; margin-left: 20px">
-		                   <li>The [mybooking_activities_engine_activity] shortcode. You can get this shortcode with the activity id from your mybooking account</li>
-		                 </ul>
+										 <p>
+										 	Con la configuración inicial hemos las páginas necesarias para el proceso de reserva y las hemos configurado desde aquí como puedes ver a continuación. 
+										</p>
+										<p>
+											<strong>
+												Edita esta parte solo si creas una nueva página para el proceso o para los términos y condiciones y la quieres asignar.	
+											</strong>
+										 </p>
 		                </div>
                  </div>
                  <hr>
+
 EOF;
 
-               $transfer_info = <<<EOF
+              $transfer_info = <<<EOF
                  <br>
                  <div class="postbox">
                    <div class="inside">
-		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>transfer company</u>.</p>
-		                 <p>You <i>must</i> create the following pages and insert a shortcode on each</p>
-		                 <ol style="list-style:square; margin-left: 20px">
-		                   <li>Create a <b>choose vehicle</b> page and insert [mybooking_transfer_choose_vehicle] shortcode</li>
-		                   <li>Create a <b>checkout page</b> and insert [mybooking_transfer_checkout] shortcode</li>
-		                   <li>Create a <b>summary page</b> and insert [mybooking_transfer_summary] shortcode</li>
-		                 </ol>
-		                 <p>If you want to include a search form in the front page, use the widget or the shortcode.</p>
-		                 <ul style="list-style:square; margin-left: 20px">
-		                   <li>Mybooking Transfer Engine Selector Widget or [mybooking_transfer_selector] shortcode</li>
-		                 </ul>
+		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>transfer</u> company.</p>
+										 <p>
+										 	Con la configuración inicial hemos las páginas necesarias para el proceso de reserva y las hemos configurado desde aquí como puedes ver a continuación. 
+										</p>
+										<p>
+											<strong>
+												Edita esta parte solo si creas una nueva página para el proceso o para los términos y condiciones y la quieres asignar.	
+											</strong>
+										 </p>
 		                </div>
                  </div>
                  <hr>
-EOF;
+							
+EOF;		
+								 
+							$contact_info = <<<EOF
+                 <br>
+                 <div class="postbox">
+                  <div class="inside">
+										<p>
+											Hemos desarrollado un <strong>formulario de contacto my básico</strong> para dar soporte a las necesidades de nuestros clientes. Si lo quieres usar solo tienes que pegar el shortcode [mybooking_contact] en cualquier página o post donde quieras que aparezca el formulario.
+										</p>
+										<p>
+											La ventaja que tiene es que se integra con tu back-office de Mybooking y puedes tener en un mismo lugar tanto las reservas como otros mensajes que te escriban tus clientes.
+										<br />
+											Además, puedes añadir una asunto a cada formulario de mensaje de forma que puedas identificar el contexto indicando si está en la ficha de un producto o bien en la página de contacto. 
+										</p>
+										<p>	
+											<strong>
+												En este apartado puedes configurar si quieres utilizar el captcha de Google para asegurar el envío de tus formularios de contacto.
+											</strong>
+										</p>
+		              </div>
+                 </div>
+                 <hr>
 
-							 $create_account_message = <<<EOF
-									<p>Don't you have a mybooking account? <a href="https://mybooking.es/en/sign-up" target="_blank">Start your free trial</a></p>
+EOF;		
+								 
+							$complements_info = <<<EOF
+                 <br>
+                 <div class="postbox">
+                   <div class="inside">
+										<p>
+											Esta pestaña <strong>no tiene que ver directamente con el motor de reservas</strong>. Se trata de una serie de funcionalidades extra que se han añadido al plugin para cubrir las necesidades de nuestros clientes sin que estos tenga que instalar otros plugins. Tienen una <strong>funcionalidad mínima</strong> en estos aspectos:
+											</p>
+											<ol>
+												<li>Mostrar un pop-up al cargar la home para una promoción</li>
+												<li>Mostrar los testimonios de sus clientes</li>
+												<li>Mostrar un pase de diapositivas como CTA (Call to Action)</li>
+												<li>Mostrar mensaje de cookies</li>
+											</ol>
+											<p>
+												<strong>
+													Si necesitas una funcionalidad avanzada puedes instalar un plugin concreto para cada una de ellas.
+												</strong>
+											</p>
+		                </div>
+                 </div>
+                 <hr>
+
+EOF;		
+								 
+							$google_api_places_info = <<<EOF
+                 <br>
+                 <div class="postbox">
+                   <div class="inside">
+		                 <p>
+										 	Aqui puedes configurar la integración de la web con <strong>Google Api Places</strong>.
+										 </p>
+		                </div>
+                 </div>
+                 <hr>
+
+EOF;		
+								 
+							$advanced_info = <<<EOF
+                 <br>
+                 <div class="postbox">
+                   <div class="inside">
+		                 <p>
+										 	Esta pestaña esta dedicada a los profesionales del diseño o de la maquetación. Permite configurar las librerias que se van a cargar en función de las necesidades y de las compatibilidades con otras librerias. 
+										 </p>
+		                </div>
+                 </div>
+                 <hr>
 EOF;
 
 	             if ($active_tab == 'connection_options') {
 			      	   settings_fields('mybooking_plugin_settings_group_connection');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_connection');
-			           echo '</table>';
-			           echo $create_account_message;
-			         }
-			         else if ($active_tab == 'configuration_options') {
-			      	   settings_fields('mybooking_plugin_settings_group_configuration');
-			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_configuration');
 			           echo '</table>';
 			         }
 			         else if ($active_tab == 'renting_options') {
@@ -220,30 +278,40 @@ EOF;
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_transfer');
 			           echo '</table>';
 			         }
-			         else if ($active_tab == 'google_api_places_options') {
-			      	   settings_fields('mybooking_plugin_settings_group_google_api_places');
-			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_google_api_places');
-			           echo '</table>';
-			         }
                else if ($active_tab == 'contact_form') {
+								 echo $contact_info;
 			      	   settings_fields('mybooking_plugin_settings_group_contact_form');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_contact_form');
 			           echo '</table>';
 			         }
                else if ($active_tab == 'complements_options') {
+								 echo $complements_info;
 			      	   settings_fields('mybooking_plugin_settings_group_complements');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_complements');
 			           echo '</table>';
 			         }
-			         else if ($active_tab == 'css_options') {
+							 else if ($active_tab == 'configuration_options') {
+								settings_fields('mybooking_plugin_settings_group_configuration');
+								echo '<table class="form-table">';
+								do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_configuration');
+								echo '</table>';
+							}
+							else if ($active_tab == 'google_api_places_options') {
+								echo $google_api_places_info;
+								settings_fields('mybooking_plugin_settings_group_google_api_places');
+								echo '<table class="form-table">';
+								do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_google_api_places');
+								echo '</table>';
+							}
+			        else if ($active_tab == 'css_options') {
+								 echo $advanced_info;
 			      	   settings_fields('mybooking_plugin_settings_group_css');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_css');
 			           echo '</table>';
-			         }
+			        }
 			        submit_button();
 		        ?>
 		      </form>
@@ -362,7 +430,7 @@ EOF;
       // == Creates connection fields
 
 		  add_settings_field('mybooking_plugin_settings_account_id',
-		                     'Mybooking Id or URL',
+		                     'Mybooking Client Id',
 		                     array($this, 'field_mybooking_plugin_settings_account_id_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_connection');
@@ -380,24 +448,6 @@ EOF;
 		                     'mybooking_plugin_settings_section_connection');
 
       // == Creates configuration fields
-
-		  add_settings_field('mybooking_plugin_settings_renting_selector',
-		                     'Renting or Accommodation',
-		                     array($this, 'field_mybooking_plugin_settings_renting_selector_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_configuration');
-
-      add_settings_field('mybooking_plugin_settings_activities_selector',
-		                     'Activities or Appointments',
-		                     array($this, 'field_mybooking_plugin_settings_activities_selector_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_configuration');
-
-      add_settings_field('mybooking_plugin_settings_transfer_selector',
-		                     'Transfer',
-		                     array($this, 'field_mybooking_plugin_settings_transfer_selector_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_configuration');
 
       add_settings_field('mybooking_plugin_settings_google_api_places_selector',
 		                     'Google Api Places',
@@ -719,7 +769,6 @@ EOF;
 		  }
 
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly />";
-		  echo "<p class=\"description\"><b>Mybooking account</b> like <em>mycompany.mybooking.es</em>, just the subdomain name, that is <u>mycompany</u>.";
 
 		}
 
@@ -762,66 +811,6 @@ EOF;
 		}
 
     // == Configuration
-
-		/**
-		 * Render Mybooking Renting module
-		 */
-		public function field_mybooking_plugin_settings_renting_selector_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
-		  $field = "mybooking_plugin_settings_renting_selector";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value' readonly />";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' disabled />";
-		  echo "<p class=\"description\">For vehicles</b>, <b>boats</b>, <b>properties rental</b> or <b>accomodation</b> web site.</p>";
-		}
-
-		/**
-		 * Render Mybooking Activities module
-		 */
-		public function field_mybooking_plugin_settings_activities_selector_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
-		  $field = "mybooking_plugin_settings_activities_selector";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value' readonly />";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' disabled />";
-		  echo "<p class=\"description\">For <b>tours</b>, <b>activities</b> or <b>appointments</b> web site.</p>";
-		}
-
-		/**
-		 * Render Mybooking Transfer module
-		 */
-		public function field_mybooking_plugin_settings_transfer_selector_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
-		  $field = "mybooking_plugin_settings_transfer_selector";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value' readonly />";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' disabled />";
-		  echo "<p class=\"description\">For <b>transfers</b> web site.</p>";
-		}
 
 		/**
 		 * Render Mybooking Google Places API module

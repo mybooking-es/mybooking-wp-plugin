@@ -109,7 +109,7 @@ function mybooking_plugin_onboarding_pages_page() {
 					<p>
 						<strong>Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva. </strong>
 						<br />
-						Te proponemos un <strong>buscador</strong>, sin embargo alternativamente puedes usar otros componentes que podrás visualizar <a href="/wp-admin/admin.php?page=mybooking-onboarding-components">aquí</a>. <!-- TODO -->
+						Te proponemos un <strong>buscador</strong>, sin embargo alternativamente puedes usar otros componentes que podrás visualizar <a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">aquí</a>.
 					</p>
 					<ul class="mb-onboarding-list">
 						<li>
@@ -164,7 +164,7 @@ function mybooking_plugin_onboarding_pages_page() {
 				<p>
 					<strong>Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva. </strong>
 					<br />
-					Te proponemos un <strong>catálogo de productos</strong>, sin embargo alternativamente puedes usar otros componentes que puedes visualizar <a href="/wp-admin/admin.php?page=mybooking-onboarding-components">aquí</a>.<!-- TODO -->
+					Te proponemos un <strong>catálogo de productos</strong>, sin embargo alternativamente puedes usar otros componentes que puedes visualizar <a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">aquí</a>.
 				</p>
 				<ul class="mb-onboarding-list">
 					<li>
@@ -231,8 +231,11 @@ function mybooking_plugin_onboarding_pages_page() {
 					// If last element is a / character remove that
 					var lastElementInString = url.slice(-1);
 					url = lastElementInString === '/' ? url.substring(0, url.length - 1) : url;
+					
 					// Add id parameter
-					url += '?id={id}';
+					if (url.includes('summary') || url.includes('my-reservation')) {
+						url += '?id={id}';
+					}
 
 					// Add string to clipboard
 					navigator.clipboard.writeText(url);

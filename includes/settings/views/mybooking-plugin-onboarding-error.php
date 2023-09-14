@@ -21,7 +21,7 @@ function mybooking_plugin_onboarding_error_page() {
 			Revisa tus páginas y prueba de nuevo. Si no lo logras ponte en contacto con <a href="mailto:soporte@mybooking.es"><strong>soporte@mybooking.es</strong></a>.
 		</h2>
 		<h3>
-			<a href="/wp-admin/admin.php?page=mybooking-onboarding">Volver</a><!-- TODO -->
+			<a href="<?php esc_attr(menu_page_url('mybooking-onboarding'))?>">Volver</a>
 </h3>
 	</div>
 <?php

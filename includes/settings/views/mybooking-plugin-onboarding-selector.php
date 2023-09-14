@@ -132,7 +132,6 @@ function mybooking_plugin_onboarding_selector_page() {
 								},
 								error: function(err) {
 									window.location.search = '?page=mybooking-onboarding-error'; // TODO safe
-									// alert('Por favor, revisa los datos proporcionados se ha producido un error.'); // TODO
 								},
 								beforeSend: function() {
 									$('#mb-onboarding-loading').show();
