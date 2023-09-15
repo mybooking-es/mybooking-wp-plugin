@@ -34,7 +34,7 @@
       $screen = get_current_screen();
       
       // Make sure they are only loaded on onboard process
-      if ( in_array( $screen->id, array( "mybooking_page_mybooking-onboading",
+      if ( in_array( $screen->id, array( "mybooking_page_mybooking-onboarding",
                                          "mybooking_page_mybooking-onboarding-selector",
                                          "mybooking_page_mybooking-onboarding-resume",
                                          "mybooking_page_mybooking-onboarding-error",
@@ -55,7 +55,7 @@
       $screen = get_current_screen();
       
       // Make sure they are only loaded on onboard process
-      if ( in_array( $screen->id, array( "mybooking_page_mybooking-onboading",
+      if ( in_array( $screen->id, array( "mybooking_page_mybooking-onboarding",
                                          "mybooking_page_mybooking-onboarding-selector",
                                          "mybooking_page_mybooking-onboarding-resume",
                                          "mybooking_page_mybooking-onboarding-error",
@@ -269,7 +269,7 @@
                            plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
                            dirname(__DIR__) ),
                            $mybooking_dependencies,
-                           $version,
+                           $this->version,
                            true
                          );
       wp_enqueue_script( 'mybooking-rent-engine-script');
