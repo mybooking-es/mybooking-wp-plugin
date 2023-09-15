@@ -29,30 +29,58 @@
     /**
      * Enqueue admin CSS
      */
-    public function enqueue_admin_css($version) {
+    public function enqueue_admin_css() {
       
-      // Admin CSS Styles
-      wp_enqueue_style( 'mybooking_wp_admin_css',
-                      plugins_url('/admin-assets/styles/mybooking-plugin-onboarding.css', dirname( __DIR__ ) ) );
+      $screen = get_current_screen();
+      
+      // Make sure they are only loaded on onboard process
+      if ( in_array( $screen->id, array( "mybooking_page_mybooking-onboading",
+                                         "mybooking_page_mybooking-onboarding-selector",
+                                         "mybooking_page_mybooking-onboarding-resume",
+                                         "mybooking_page_mybooking-onboarding-error",
+                                         "mybooking_page_mybooking_page_mybooking-onboarding-pages",
+                                         "mybooking_page_mybooking-onboarding-components"  ) ) ) {      
+        // Admin CSS Styles
+        wp_enqueue_style( 'mybooking_wp_admin_css',
+                          plugins_url('/admin-assets/styles/mybooking-plugin-onboarding.css', dirname( __DIR__ ) ) );
+      }
 
     }
 
     /**
      * Enqueue admin JS
      */
-    public function enqueue_admin_js($version) {
-    
-      // JQuery validate
-      wp_register_script('mybooking_wp_admin_jquery_validate',
-      plugins_url( '/admin-assets/js/jquery.validate.min.js', dirname(__DIR__) ),
-                   array( 'jquery' ), $version, true);
-      wp_enqueue_script('mybooking_wp_admin_jquery_validate');
+    public function enqueue_admin_js() {
 
-      // JQuery formparams
-      wp_register_script('mybooking_wp_admin_jquery_formparams',
-      plugins_url( '/admin-assets/js/jquery.formparams.js', dirname(__DIR__) ),
-                   array( 'jquery' ), $version, true);
-      wp_enqueue_script('mybooking_wp_admin_jquery_formparams');
+      $screen = get_current_screen();
+      
+      // Make sure they are only loaded on onboard process
+      if ( in_array( $screen->id, array( "mybooking_page_mybooking-onboading",
+                                         "mybooking_page_mybooking-onboarding-selector",
+                                         "mybooking_page_mybooking-onboarding-resume",
+                                         "mybooking_page_mybooking-onboarding-error",
+                                         "mybooking_page_mybooking_page_mybooking-onboarding-pages",
+                                         "mybooking_page_mybooking-onboarding-components"  ) ) ) {
+
+        // JQuery validate
+        wp_register_script('mybooking_wp_admin_jquery_validate',
+        plugins_url( '/admin-assets/js/jquery.validate.min.js', dirname(__DIR__) ),
+                    array( 'jquery' ), $this->version, true);
+        wp_enqueue_script('mybooking_wp_admin_jquery_validate');
+
+        // JQuery formparams
+        wp_register_script('mybooking_wp_admin_jquery_formparams',
+        plugins_url( '/admin-assets/js/jquery.formparams.js', dirname(__DIR__) ),
+                    array( 'jquery' ), $this->version, true);
+        wp_enqueue_script('mybooking_wp_admin_jquery_formparams');
+
+     
+        // Onboarding gallery
+        wp_register_script('mybooking_wp_admin_onboarding_gallery',
+        plugins_url( '/admin-assets/js/onboarding-gallery.js', dirname(__DIR__) ),
+                    array( 'jquery' ), $this->version, true);
+        wp_enqueue_script('mybooking_wp_admin_onboarding_gallery');
+      }
 
 
     }
@@ -60,7 +88,7 @@
     /**
      * Enqueue public css
      */
-    public function enqueue_public_css($version) {
+    public function enqueue_public_css() {
 
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
@@ -96,35 +124,35 @@
         // Mybooking styles
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine',
                         plugins_url('/assets/styles/mybooking-engine.css', dirname( __DIR__ ) ),
-                        array(), $version );
+                        array(), $this->version );
         // Mybooking Helpers
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-helpers',
                         plugins_url('/assets/styles/mybooking-engine-helpers.css', dirname( __DIR__ ) ),
-                        array(), $version );
+                        array(), $this->version );
         // Mybooking Selector
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-selector',
                         plugins_url('/assets/styles/mybooking-engine-selector.css', dirname( __DIR__ ) ),
-                        array(), $version );
+                        array(), $this->version );
         // Mybooking Wizard Selector
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-selector-wizard',
                         plugins_url('/assets/styles/mybooking-engine-selector-wizard.css', dirname( __DIR__ ) ),
-                        array(), $version );
+                        array(), $this->version );
         // Mybooking Transfer Selector
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-selector-trasfer',
                         plugins_url('/assets/styles/mybooking-engine-selector-transfer.css', dirname( __DIR__ ) ),
-                        array(), $version );
+                        array(), $this->version );
         // Mybooking Components
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-components',
                         plugins_url('/assets/styles/mybooking-engine-components.css', dirname( __DIR__ ) ),
-                        array(), $version );
+                        array(), $this->version );
         // Mybooking Product
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product',
                         plugins_url('/assets/styles/mybooking-engine-product.css', dirname( __DIR__ ) ),
-                        array(), $version );
+                        array(), $this->version );
         // Mybooking Modals
         wp_enqueue_style( 'mybooking_wp_css_components_jquerymodal',
                         plugins_url('/assets/styles/mybooking-engine-modals.css', dirname( __DIR__ ) ),
-                        array(), $version );
+                        array(), $this->version );
         // == Load Customizer front-end
         $customizer_css = MyBookingPluginCustomizer::getInstance()->customize_enqueue( 'front-end' );
         if ( !empty($customizer_css) ) {
@@ -141,19 +169,19 @@
         // Mybooking Planning
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-planning',
                           plugins_url('/assets/styles/mybooking-engine-planning.css', dirname( __DIR__ ) ),
-                          array(), $version );
+                          array(), $this->version );
         
         // Mybooking Product Week Planning
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product-week-planning',
                           plugins_url('/assets/styles/mybooking-engine-product-week-planning.css', dirname( __DIR__ ) ),
-                          array(), $version );
+                          array(), $this->version );
       }
 
       if ( has_shortcode( $content, 'mybooking_rent_engine_shift_picker') ) {
         // Mybooking Product Shift Picker
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-shift-picker',
                           plugins_url('/assets/styles/mybooking-engine-shift-picker.css', dirname( __DIR__ ) ),
-                          array(), $version );     
+                          array(), $this->version );     
       }
 
     }
@@ -161,7 +189,7 @@
     /**
      * Enqueue public JS
      */
-    public function enqueue_public_js($version) {
+    public function enqueue_public_js() {
 
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
@@ -169,7 +197,7 @@
       // Mybooking init
       wp_register_script( 'mybooking-init',
                           plugins_url( '/assets/js/mybooking-init.js', dirname(__DIR__) ),
-                          array(), $version, true);
+                          array(), $this->version, true);
       wp_enqueue_script( 'mybooking-init' );
       wp_localize_script( 'mybooking-init', 'mybooking_init_vars', array(
           'mybooking_site_url' => get_site_url(),
@@ -215,7 +243,7 @@
       // Uses WP moment
       wp_register_script( 'mybooking-moment-timezone-js',
                          plugins_url( '/assets/js/moment-timezone-with-data.min.js', dirname(__DIR__) ),
-                         array( 'moment' ), $version, true);
+                         array( 'moment' ), $this->version, true);
       wp_enqueue_script( 'mybooking-moment-timezone-js');
 
       $mybooking_dependencies = array('jquery',
@@ -230,7 +258,7 @@
         // Slick JS
         wp_register_script('mybooking_wp_js_slick',
                            plugins_url( '/assets/js/slick.min.js', dirname(__DIR__) ),
-                           array( 'jquery' ), $version, true);
+                           array( 'jquery' ), $this->version, true);
         wp_enqueue_script('mybooking_wp_js_slick');
         array_push($mybooking_dependencies, 'mybooking_wp_js_slick');
       }
@@ -256,7 +284,7 @@
           $registry->mybooking_rent_plugin_complements_activity_item == '1' ) {
         wp_register_script('mybooking_wp_js_complements',
                            plugins_url( '/assets/js/complements.js', dirname(__DIR__) ),
-                           array( 'jquery'), $version, true);
+                           array( 'jquery'), $this->version, true);
         wp_enqueue_script('mybooking_wp_js_complements');
       }
 
