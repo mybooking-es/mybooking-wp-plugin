@@ -33,7 +33,7 @@
       
       // Admin CSS Styles
       wp_enqueue_style( 'mybooking_wp_admin_css',
-                      plugins_url('/assets/styles/admin/mybooking-plugin-onboarding.css', dirname( __DIR__ ) ) );
+                      plugins_url('/admin-assets/styles/mybooking-plugin-onboarding.css', dirname( __DIR__ ) ) );
 
     }
 
@@ -44,13 +44,13 @@
     
       // JQuery validate
       wp_register_script('mybooking_wp_admin_jquery_validate',
-      plugins_url( '/assets/js/jquery.validate.min.js', dirname(__DIR__) ),
+      plugins_url( '/admin-assets/js/jquery.validate.min.js', dirname(__DIR__) ),
                    array( 'jquery' ), $version, true);
       wp_enqueue_script('mybooking_wp_admin_jquery_validate');
 
       // JQuery formparams
       wp_register_script('mybooking_wp_admin_jquery_formparams',
-      plugins_url( '/assets/js/jquery.formparams.js', dirname(__DIR__) ),
+      plugins_url( '/admin-assets/js/jquery.formparams.js', dirname(__DIR__) ),
                    array( 'jquery' ), $version, true);
       wp_enqueue_script('mybooking_wp_admin_jquery_formparams');
 
