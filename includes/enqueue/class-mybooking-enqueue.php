@@ -38,7 +38,7 @@
                                          "mybooking_page_mybooking-onboarding-selector",
                                          "mybooking_page_mybooking-onboarding-resume",
                                          "mybooking_page_mybooking-onboarding-error",
-                                         "mybooking_page_mybooking_page_mybooking-onboarding-pages",
+                                         "mybooking_page_mybooking-onboarding-pages",
                                          "mybooking_page_mybooking-onboarding-components"  ) ) ) {      
         // Admin CSS Styles
         wp_enqueue_style( 'mybooking_wp_admin_css',
@@ -59,7 +59,7 @@
                                          "mybooking_page_mybooking-onboarding-selector",
                                          "mybooking_page_mybooking-onboarding-resume",
                                          "mybooking_page_mybooking-onboarding-error",
-                                         "mybooking_page_mybooking_page_mybooking-onboarding-pages",
+                                         "mybooking_page_mybooking-onboarding-pages",
                                          "mybooking_page_mybooking-onboarding-components"  ) ) ) {
 
         // JQuery validate
