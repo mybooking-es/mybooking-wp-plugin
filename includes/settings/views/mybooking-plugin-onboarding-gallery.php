@@ -2,11 +2,10 @@
 	defined('ABSPATH') or die('Forbidden');
 ?>
 
-<?php
-	$galleryFolder = plugins_url('/assets/images/settings_gallery', dirname( __DIR__ ) );
-?>
-
-<div  id="mb-onboarding-gallery-container" class="mb-onboarding-gallery-container" style="display: none">
+<div id="mb-onboarding-gallery-container" 
+		 class="mb-onboarding-gallery-container" 
+		 data-root-folder="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL.'admin-assets/images' ?>"
+		 style="display: none">
 	<div class="mb-onboarding-gallery mb-onboarding-commons">
 		<div id="mb-onboarding-close-btn" class="mb-onboarding-close-btn"></div>
 		<form id="mb-onboarding-gallery-form" class="mb-onboarding-gallery-form"></form>
@@ -86,7 +85,7 @@
 			 * Gallery
 			 */
 			// Get gallery data
-			var folder = '<?php echo $galleryFolder ?>';
+			var folder = $('#mb-onboarding-gallery-container').attr('data-root-folder');
 
 			// Append loading
 			var form = $('#mb-onboarding-gallery-form');

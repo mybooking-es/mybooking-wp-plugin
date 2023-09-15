@@ -13,6 +13,11 @@ if ( ! class_exists( 'MyBookingPlugin', false ) ) {
   include_once dirname( __FILE__ ) . '/includes/mybooking-plugin.php';
 }
 
+// Create a constant to hold the plugin URL so it can be used to build
+// resources paths 
+$url = plugin_dir_url(__FILE__);
+define('MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL', $url );
+
 // Return the main instance of Mybooking Plugin
 function mybookingPlugin() {
   return MyBookingPlugin::getInstance();
