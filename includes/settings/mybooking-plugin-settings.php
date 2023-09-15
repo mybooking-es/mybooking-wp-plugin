@@ -502,7 +502,7 @@ EOF;
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
-		  // Rental Location context
+		  /* // Rental Location context
 		  add_settings_field('mybooking_plugin_settings_rental_location_context',
 		                     'Rental Location context',
 		                     array($this, 'field_mybooking_plugin_settings_rental_location_context_callback'),
@@ -521,7 +521,7 @@ EOF;
 		                     'Product context',
 		                     array($this, 'field_mybooking_plugin_settings_product_context_callback'),
 		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
+		                     'mybooking_plugin_settings_section_renting'); */
 
 
 		  // Dates context

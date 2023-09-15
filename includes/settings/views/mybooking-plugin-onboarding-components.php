@@ -219,9 +219,7 @@ function mybooking_plugin_onboarding_components_page() {
 			Lo lamentamos <strong>no se ha podido recuperar ningun componente</strong>. Por favor, vuelve a intentarlo y si se vuelve a producir un error contacta con <a href="mail:soporte@mybooking.es">soporte@mybooking.es</a>.
 		<?php } ?>
 	</div>
-
-	<!-- Scripts -->
-
+	
 	<!-- Gallery -->
 	<?php require_once ('mybooking-plugin-onboarding-gallery.php') ?>
 <?php

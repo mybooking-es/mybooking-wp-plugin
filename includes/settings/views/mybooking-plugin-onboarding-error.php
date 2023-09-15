@@ -22,7 +22,7 @@ function mybooking_plugin_onboarding_error_page() {
 		</h2>
 		<h3>
 			<a href="<?php esc_attr(menu_page_url('mybooking-onboarding'))?>">Volver</a>
-</h3>
+		</h3>
 	</div>
 <?php
 }

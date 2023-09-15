@@ -3,8 +3,7 @@
 ?>
 
 <?php
-	$plugin_dir = plugin_dir_url(__FILE__);
-	$folder = $plugin_dir.'images/';
+	$galleryFolder = plugins_url('/assets/images/settings_gallery', dirname( __DIR__ ) );
 ?>
 
 <div  id="mb-onboarding-gallery-container" class="mb-onboarding-gallery-container" style="display: none">
@@ -87,7 +86,7 @@
 			 * Gallery
 			 */
 			// Get gallery data
-			var folder = '<?php echo $folder ?>';
+			var folder = '<?php echo $galleryFolder ?>';
 
 			// Append loading
 			var form = $('#mb-onboarding-gallery-form');
@@ -110,9 +109,9 @@
 				URLS.forEach(url => {
 					HTML += '<label for="' + url + '">';
 					if (module) {
-						HTML += '<img src="' + folder  + module + '/' + type + '/' + url + '" alt="image" />';
+						HTML += '<img src="' + folder   + '/' + module + '/' + type + '/' + url + '" alt="image" />';
 					} else {
-						HTML += '<img src="' + folder  + type + '/' + url + '" alt="image" />';
+						HTML += '<img src="' + folder + '/' + type + '/' + url + '" alt="image" />';
 					}
 					
 					HTML +=   '</label>';
