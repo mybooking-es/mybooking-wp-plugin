@@ -1,6 +1,7 @@
 (function($) {
   $(document).ready(function() {
 
+    // Data
     var galleryURLS = {
       'mybooking_plugin_settings_home_test_page': [
         'vertical-selector.png',
@@ -79,7 +80,7 @@
      * Buttons events
      */
     var container = $('#mb-onboarding-gallery-container');
-    $('.mb-onboarding-list').on('click', '.mb-onboarding-gallery-btn', function() {
+    $('body').on('click', '.mb-onboarding-gallery-btn', function() {
       var element = $(this);
       var type = element.attr('data-type');
       var module = element.attr('data-module');

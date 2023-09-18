@@ -64,24 +64,33 @@
 
         // JQuery validate
         wp_register_script('mybooking_wp_admin_jquery_validate',
-        plugins_url( '/admin-assets/js/jquery.validate.min.js', dirname(__DIR__) ),
-                    array( 'jquery' ), $this->version, true);
+                    plugins_url( '/admin-assets/js/jquery.validate.min.js', dirname(__DIR__) ),
+                                  array( 'jquery' ), $this->version, true);
         wp_enqueue_script('mybooking_wp_admin_jquery_validate');
 
         // JQuery formparams
         wp_register_script('mybooking_wp_admin_jquery_formparams',
-        plugins_url( '/admin-assets/js/jquery.formparams.js', dirname(__DIR__) ),
-                    array( 'jquery' ), $this->version, true);
+                     plugins_url( '/admin-assets/js/jquery.formparams.js', dirname(__DIR__) ),
+                                  array( 'jquery' ), $this->version, true);
         wp_enqueue_script('mybooking_wp_admin_jquery_formparams');
 
      
         // Onboarding gallery
         wp_register_script('mybooking_wp_admin_onboarding_gallery',
-        plugins_url( '/admin-assets/js/onboarding-gallery.js', dirname(__DIR__) ),
-                    array( 'jquery' ), $this->version, true);
+                    plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-gallery.js', dirname(__DIR__) ),
+                                  array( 'jquery' ), $this->version, true);
         wp_enqueue_script('mybooking_wp_admin_onboarding_gallery');
-      }
 
+        // Onboarding video
+        wp_register_script('mybooking_wp_admin_onboarding_vimeo',
+                  plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-player-vimeo.js', dirname(__DIR__) ),
+                                 array( 'jquery' ), $this->version, true);
+
+        wp_register_script('mybooking_wp_admin_onboarding_video',
+                  plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-video.js', dirname(__DIR__) ),
+                                 array( 'mybooking_wp_admin_onboarding_vimeo' ), $this->version, true);
+        wp_enqueue_script('mybooking_wp_admin_onboarding_video');
+      }
 
     }
 
