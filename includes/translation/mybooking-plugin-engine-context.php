@@ -69,23 +69,28 @@
      */
     public function getRentalLocation() {
 
-        $registry = Mybooking_Registry::getInstance();
-        $returnValue = '';
+        $returnValue = esc_html_x( 'Branch Office', 'engine_context', 'mybooking-wp-plugin' );;
 
-        switch ($registry->mybooking_rent_plugin_rental_location_context) {
-          case 'branch_office':
-            $returnValue = esc_html_x( 'Branch Office', 'engine_context', 'mybooking-wp-plugin' );
-            break;
-          case 'hotel':
-            $returnValue = esc_html_x( 'Hotel', 'engine_context', 'mybooking-wp-plugin' );
-            break;
-          case 'hostel':
-            $returnValue = esc_html_x( 'Hostel', 'engine_context', 'mybooking-wp-plugin' );
-            break;
-          default:
-            $returnValue = esc_html_x( 'Branch Office', 'engine_context', 'mybooking-wp-plugin' );
+        // Get onboarding settings
+		    $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+        
+        if ( array_key_exists('booking_item_family', $onboarding_settings) ) {
+
+          $booking_item_family = $onboarding_settings['booking_item_family'];
+          switch ($booking_item_family) {
+            case 'hotel':
+              $returnValue = esc_html_x( 'Hotel', 'engine_context', 'mybooking-wp-plugin' );
+              break;
+            case 'hostel':
+              $returnValue = esc_html_x( 'Hostel', 'engine_context', 'mybooking-wp-plugin' );
+              break;
+            default:
+              $returnValue = esc_html_x( 'Branch Office', 'engine_context', 'mybooking-wp-plugin' );
+          }
+
         }
-        return $returnValue;      
+
+        return $returnValue;    
 
     }
 
@@ -94,31 +99,49 @@
      */
     public function getFamily() {
 
-        $registry = Mybooking_Registry::getInstance();
-        $returnValue = '';
+        $returnValue = esc_html_x( 'Type of product', 'engine_context', 'mybooking-wp-plugin' );
 
-        switch ($registry->mybooking_rent_plugin_family_context) {
-        	case 'product':
-        	  $returnValue = esc_html_x( 'Type of product', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;
-        	case 'family':
-        	  $returnValue = esc_html_x( 'Family', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;
-        	case 'vehicle':
-        	  $returnValue = esc_html_x( 'Type of vehicle', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;        	  
-        	case 'property':
-        	  $returnValue = esc_html_x( 'Type of property', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;
-        	case 'room':
-        	  $returnValue = esc_html_x( 'Type of room', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;
-          case 'boat':
-            $returnValue = esc_html_x( 'Type of Boat', 'engine_context', 'mybooking-wp-plugin');
-            break;  
-        	default:
-        	  $returnValue = esc_html_x( 'Family', 'engine_context', 'mybooking-wp-plugin' );
+        // Get onboarding settings
+		    $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+
+        if ( array_key_exists('booking_item_family', $onboarding_settings) ) {
+
+          $booking_item_family = $onboarding_settings['booking_item_family'];
+
+          switch ($booking_item_family) {
+            case 'property':
+              $returnValue = esc_html_x( 'Type of property', 'engine_context', 'mybooking-wp-plugin' );
+              break;
+            case 'property_resource':
+              $returnValue = esc_html_x( 'Type of property', 'engine_context', 'mybooking-wp-plugin' );
+              break;
+            case 'room':
+              $returnValue = esc_html_x( 'Type of room', 'engine_context', 'mybooking-wp-plugin' );
+              break;
+            case 'boat':
+              $returnValue = esc_html_x( 'Type of Boat', 'engine_context', 'mybooking-wp-plugin');
+              break;
+            case 'boat_charter':
+              $returnValue = esc_html_x( 'Type of Boat', 'engine_context', 'mybooking-wp-plugin');
+              break;
+            case 'car':
+              $returnValue = esc_html_x( 'Type of vehicle', 'engine_context', 'mybooking-wp-plugin' );
+              break;        	  
+            case 'car_vehicle':
+              $returnValue = esc_html_x( 'Type of vehicle', 'engine_context', 'mybooking-wp-plugin' );
+              break;      
+            case 'camper':
+              $returnValue = esc_html_x( 'Type of vehicle', 'engine_context', 'mybooking-wp-plugin' );
+              break;        	  
+            case 'camper_group':
+              $returnValue = esc_html_x( 'Type of vehicle', 'engine_context', 'mybooking-wp-plugin' );
+              break;
+            default:
+              $returnValue = esc_html_x( 'Type of product', 'engine_context', 'mybooking-wp-plugin' );
+          }
+
         }
+
         return $returnValue;
 
     }
@@ -128,29 +151,49 @@
      */
     public function getProduct() {
 
-        $registry = Mybooking_Registry::getInstance();
-        $returnValue = '';
+      $returnValue = esc_html_x( 'Type of product', 'engine_context', 'mybooking-wp-plugin' );
 
-        switch ($registry->mybooking_rent_plugin_product_context) {
-        	case 'vehicle':
-        	  $returnValue = esc_html_x( 'Vehicle', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;
-        	case 'product':
-        	  $returnValue = esc_html_x( 'Product', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;
-        	case 'property':
-        	  $returnValue = esc_html_x( 'Property', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;
-        	case 'room':
-        	  $returnValue = esc_html_x( 'Room', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;
+      // Get onboarding settings
+		  $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+
+      if ( array_key_exists('booking_item_family', $onboarding_settings) ) {
+
+        $booking_item_family = $onboarding_settings['booking_item_family'];
+        switch ($booking_item_family) {
+          case 'property':
+            $returnValue = esc_html_x( 'Property', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          case 'property_resource':
+            $returnValue = esc_html_x( 'Property', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          case 'room':
+            $returnValue = esc_html_x( 'Room', 'engine_context', 'mybooking-wp-plugin' );
+            break;
           case 'boat':
             $returnValue = esc_html_x( 'Boat', 'engine_context', 'mybooking-wp-plugin' );
             break;
-        	default:
-        	  $returnValue = esc_html_x( 'Vehicle', 'engine_context', 'mybooking-wp-plugin' );
+          case 'boat_charter':
+            $returnValue = esc_html_x( 'Boat', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          case 'car':
+            $returnValue = esc_html_x( 'Category of vehicle', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          case 'car_vehicle':
+            $returnValue = esc_html_x( 'Vehicle', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          case 'camper':
+            $returnValue = esc_html_x( 'Autocaravanning or camper', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          case 'camper_group':
+            $returnValue = esc_html_x( 'Category of autocaravanning', 'engine_context', 'mybooking-wp-plugin' );
+            break;
+          default:
+            $returnValue = esc_html_x( 'Product', 'engine_context', 'mybooking-wp-plugin' );
         }
-        return $returnValue;
+
+      }
+
+      return $returnValue;
 
     }
 
