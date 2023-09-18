@@ -76,32 +76,39 @@ function mybooking_plugin_onboarding_selector_page() {
 	?>
 	
 	<div class="mb-onboarding-selector mb-onboarding-commons">
-		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">Loading...</div>
+		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">
+			<?php echo esc_html_x( 'Loading', 'onboarding_context', 'mybooking-wp-plugin' ) ?>...
+		</div>
 		<h1>
-			Motor de reservas de Mybooking
+			<?php echo esc_html_x( 'Motor de reservas de Mybooking', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</h1>
 		<h2>
-				Tipo de negocio: <strong><?php esc_html_e($family_name) ?></strong>
-				&nbsp;
-				Modulo/s: <strong><?php if ( $module_rental ): ?> Alquiler <?php endif; ?><?php if ( $module_activities ): ?> Actividades <?php endif; ?><?php if ( $module_transfer ): ?> Transfer <?php endif; ?></strong>
+		<?php echo esc_html_x( 'Tipo de negocio', 'onboarding_context', 'mybooking-wp-plugin' ) ?>: 
+			<strong>
+				<?php esc_html_e($family_name) ?>
+			</strong>
+			&nbsp;
+			<?php echo esc_html_x( 'Modulo/s', 'onboarding_context', 'mybooking-wp-plugin' ) ?>: <strong>
+				<?php if ( $module_rental ): ?> <?php echo esc_html_x( 'Alquiler', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php endif; ?><?php if ( $module_activities ): ?> <?php echo esc_html_x( 'Actividades', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php endif; ?><?php if ( $module_transfer ): ?> <?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php endif; ?></strong>
 		</h2>
 		<h3>
-			Te agradecemos la confianza en nuestro producto y te damos la bienvenida <strong><?php esc_html_e($trade_name) ?></strong>. :D
+			<?php echo esc_html_x( 'Te agradecemos la confianza en nuestro producto y te damos la bienvenida ', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<strong><?php esc_html_e($trade_name) ?></strong> :D
 		</h3>
 		<h4>
-			Configuración:
+			<?php echo esc_html_x( 'Configuración', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 		</h4>
 		<p>
-			Para configurar el plugin <strong>vamos a utilizar la configuración actual de tu negocio de manera que con unos pocos pasos puedas empezar a utilizar tu motor de reserva.</strong>
+			<?php echo esc_html_x( 'Para configurar el plugin vamos a utilizar la configuración actual de tu negocio de manera que con unos pocos pasos puedas empezar a utilizar tu motor de reserva', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</p>
 		<p>
-			Comenzaremos generando las páginas que precisa el proceso de reserva y te proporcionaremos un listado de las páginas para que las puedas localizar e información complementaria para ayudarte a finalizar la configuración en el motor de reservas de Wordpress y en Mybooking.
+			<?php echo esc_html_x( 'Comenzaremos generando las páginas que precisa el proceso de reserva y te proporcionaremos un listado de las páginas para que las puedas localizar e información complementaria para ayudarte a finalizar la configuración en el motor de reservas de Wordpress y en Mybooking', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</p>
 		<form  id="mb-onboarding-selector-form" method="POST">
 			<br />
 			<!-- Buttons -->
 			<div class="mb-onboarding-row">
-				<input type="submit" value="Generar" />
+				<input type="submit" value="<?php echo esc_attr_x( 'Generar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" />
 			</div>
 		</form>
 	</div>

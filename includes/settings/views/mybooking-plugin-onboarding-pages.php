@@ -67,11 +67,16 @@ function mybooking_plugin_onboarding_pages_page() {
 	?>
 	
 	<div class="mb-onboarding-pages mb-onboarding-commons">
-		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">Loading...</div>
+		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">
+			<?php echo esc_html_x( 'Loading', 'onboarding_context', 'mybooking-wp-plugin' ) ?>...
+		</div>
 		<?php if ( isset($pages_ids) ) { ?>
 			<?php if ( $module_rental || $module_transfer ): ?>
 				<h2>
-					Páginas del proceso de reserva para el modulo de <strong><?php if ( $module_rental ) { ?>Alquiler<?php } elseif ( $module_transfer ) { ?>Transfer<?php } ?></strong>
+					<?php echo esc_html_x( 'Páginas del proceso de reserva para el modulo de', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					 <strong>
+						<?php if ( $module_rental ) { ?> <?php echo esc_html_x( 'Alquiler', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php } elseif ( $module_transfer ) { ?> <?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php } ?>
+					</strong>
 				</h2>
 				<hr />
 				<ul class="mb-onboarding-list">
@@ -80,28 +85,28 @@ function mybooking_plugin_onboarding_pages_page() {
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
-									Página:
+									<?php echo esc_html_x( 'Página', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 									&nbsp;
 									<strong><?php echo get_the_title( $id ) ?></strong>
 									<?php if ($home_page_id === $id) { ?>
-										(recuerda que el proceso de reserva se inicia desde aquí)
+										<?php echo esc_html_x( '(recuerda que el proceso de reserva se inicia desde aquí)', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 									<?php } ?>
 								</p>
 								<div class="mb-onboarding-row">
 									<?php if ($home_page_id === $id) { ?>
-										<a href="<?php echo get_permalink( $id ) ?>" title="Show page" target="_blank" class="mb-onboarding-row-link">
+										<a href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
 											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
 										</a>
 									<?php } ?>
-									<div data-href="<?php echo get_permalink( $id ) ?>" title="Copy page link for mybooking web configuration" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
 										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 									</div>
-									<a href="<?php echo get_edit_post_link( $id ) ?>" title="Edit page" target="_blank" class="mb-onboarding-row-link">
+									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
 										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
 									<?php $type = array_search($id, $settings) ?>
 									<?php $module = ($module_rental) ? 'mybooking_plugin_settings_renting' : 'mybooking_plugin_settings_transfer' ?>
-									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
+									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 								</div>
 							</div>
 						</li>
@@ -109,25 +114,37 @@ function mybooking_plugin_onboarding_pages_page() {
 				</ul>
 				<?php if ( !$home_page_id && array_key_exists('wc_rent_selector', $onboarding_settings) &&  $onboarding_settings['wc_rent_selector'] ) { ?>
 					<p>
-						<strong>Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva. </strong>
+						<strong>
+							<?php echo esc_html_x( 'Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						</strong>
 						<br />
-						Te proponemos un <strong>buscador</strong>, sin embargo alternativamente puedes usar otros componentes que podrás visualizar <a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">aquí</a>.
+						<?php echo esc_html_x( 'Te proponemos un', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						&nbsp;
+						<strong>
+						<?php echo esc_html_x( 'buscador', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						</strong>,
+						&nbsp;
+						<?php echo esc_html_x( 'sin embargo alternativamente puedes usar otros componentes que podrás visualizar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						&nbsp;
+						<a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">
+							<?php echo esc_html_x( 'aquí', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						</a>
 					</p>
 					<ul class="mb-onboarding-list">
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
-									Componente:
+									<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 									&nbsp;
 									<strong>
-										Buscador
+										<?php echo esc_html_x( 'Buscador', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 									</strong>
 								</p>
 								<div class="mb-onboarding-row">
-									<div data-href="[mybooking_rent_engine_selector]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
+									<div data-href="[mybooking_rent_engine_selector]" title="<?php echo esc_attr_x( 'Copy shortcode', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
 										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 									</div>
-									<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
+									<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 								</div>
 							</div>
 						</li>
@@ -136,7 +153,11 @@ function mybooking_plugin_onboarding_pages_page() {
 			<?php endif; ?>
 			<?php if ( $module_activities ): ?>
 				<h2>
-					Páginas del proceso de reserva para el modulo de <strong>Actividades</strong>
+					<?php echo esc_html_x( 'Páginas del proceso de reserva para el modulo de', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					&nbsp;
+					<strong>
+						<?php echo esc_html_x( 'Actividades', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					</strong>
 				</h2>
 				<hr />
 				<ul class="mb-onboarding-list">
@@ -145,20 +166,22 @@ function mybooking_plugin_onboarding_pages_page() {
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
-									Página:
+									<?php echo esc_html_x( 'Página', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 									&nbsp;
-									<strong><?php echo get_the_title( $id ) ?></strong>
+									<strong>
+										<?php echo get_the_title( $id ) ?>
+									</strong>
 								</p>
 								<div class="mb-onboarding-row">
-									<div data-href="<?php echo get_permalink( $id ) ?>" title="Copy page link for mybooking web configuration" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
 										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 									</div>
-									<a href="<?php echo get_edit_post_link( $id ) ?>" title="Edit page" target="_blank" class="mb-onboarding-row-link">
+									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
 										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
 									<?php $type = array_search($id, $settings) ?>
 									<?php $module = ($module_activities) ? 'mybooking_plugin_settings_activities' : '' ?>
-									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>"class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
+									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>"class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 								</div>
 							</div>
 						</li>
@@ -166,25 +189,37 @@ function mybooking_plugin_onboarding_pages_page() {
 				</ul>
 
 				<p>
-					<strong>Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva. </strong>
+					<strong>
+						<?php echo esc_html_x( 'Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					</strong>
 					<br />
-					Te proponemos un <strong>catálogo de productos</strong>, sin embargo alternativamente puedes usar otros componentes que puedes visualizar <a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">aquí</a>.
+					<?php echo esc_html_x( 'Te proponemos un', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					&nbsp;
+					<strong>
+						<?php echo esc_html_x( 'catálogo de productos', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					</strong>,
+					&nbsp;
+					<?php echo esc_html_x( 'sin embargo alternativamente puedes usar otros componentes que puedes visualizar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					&nbsp;
+					<a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">
+						<?php echo esc_html_x( 'aquí', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					</a>
 				</p>
 				<ul class="mb-onboarding-list">
 					<li>
 						<div class="mb-onboarding-row mb-onboarding-space-between">
 							<p>
-								Componente:
+								<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 								&nbsp;
 								<strong>
-									Catálogo de productos
+									<?php echo esc_html_x( 'Catálogo de productos', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 								</strong>
 							</p>
 							<div class="mb-onboarding-row">
-								<div data-href="[mybooking_activities_engine_activities]" title="Copy shortcode" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
+								<div data-href="[mybooking_activities_engine_activities]" title="<?php echo esc_attr_x( 'Copy shortcode', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
 									<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 								</div>
-								<span data-type="catalog" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="Show gallery"></span>
+								<span data-type="catalog" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 							</div>
 						</div>
 					</li>
@@ -192,10 +227,30 @@ function mybooking_plugin_onboarding_pages_page() {
 			<?php endif; ?>
 			<hr />
 			<p>
-				<strong>Recuerda seleccionar la homepage de prueba o inserir un componente de inicio para el proceso de reserva en Wordpress y añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en <i>"Guía de configuración > Web > Conexión con la página web"</i> para completar la configuración</strong>. Si tienes dudas puedes consultar el siguiente <a href="">articulo</a> donde te explicamos todo.
+				<strong>
+					<?php echo esc_html_x( 'Recuerda seleccionar la homepage de prueba o inserir un componente de inicio para el proceso de reserva en Wordpress y añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					&nbsp;
+					<i>
+						"<?php echo esc_html_x( 'Guía de configuración > Web > Conexión con la página web', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"
+					</i>
+					&nbsp;
+					<?php echo esc_html_x( 'para completar la configuración', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				</strong>
+				&nbsp;
+				<?php echo esc_html_x( 'Si tienes dudas puedes consultar el siguiente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				&nbsp;
+				<a href="#">
+					<?php echo esc_html_x( 'articulo', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				</a>
+				&nbsp;
+				<?php echo esc_html_x( 'donde te explicamos todo', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</p>
 		<?php } else { ?>
-			Lo lamentamos no se ha podido crear ninguna página. Por favor, vuelve a intentarlo y si se vuelve a producir un error contacta con <a href="mail:soporte@mybooking.es">soporte@mybooking.es</a>.
+			<?php echo esc_html_x( 'Lo lamentamos no se ha podido crear ninguna página. Por favor, vuelve a intentarlo y si se vuelve a producir un error contacta con', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			&nbsp;
+			<a href="mail:soporte@mybooking.es">
+				soporte@mybooking.es
+			</a>
 		<?php } ?>
 	</div>
 

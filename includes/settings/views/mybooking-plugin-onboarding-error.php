@@ -15,13 +15,21 @@ function mybooking_plugin_onboarding_error_page() {
 		<h1 class="mb-onboarding-row mb-onboarding-error">
 			<span class="mb-onboarding-icon dashicons dashicons-warning mb-onboarding-error"></span>
 			&nbsp;&nbsp;
-			Lo lamentamos, se ha producido un error.
+			<?php echo esc_html_x( 'Lo lamentamos, se ha producido un error', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</h1>
 		<h2>
-			Revisa tus páginas y prueba de nuevo. Si no lo logras ponte en contacto con <a href="mailto:soporte@mybooking.es"><strong>soporte@mybooking.es</strong></a>.
+			<?php echo esc_html_x( 'Revisa tus páginas y prueba de nuevo. Si no lo logras ponte en contacto con', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			&nbsp;
+			<strong>
+				<a href="mailto:soporte@mybooking.es">
+					soporte@mybooking.es
+				</a>
+			</strong>
 		</h2>
 		<h3>
-			<a href="<?php esc_attr(menu_page_url('mybooking-onboarding'))?>">Volver</a>
+			<a href="<?php esc_attr(menu_page_url('mybooking-onboarding'))?>">
+				<?php echo esc_html_x( 'Volver', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			</a>
 		</h3>
 	</div>
 <?php
