@@ -72,11 +72,10 @@
         $registry = Mybooking_Registry::getInstance();
         $returnValue = '';
 
-        // Get onboarding settings
-		    $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
-        $family = (array_key_exists('mybooking_rent_plugin_rental_location_context', $registry) and $registry->mybooking_rent_plugin_rental_location_context)  ? $registry->mybooking_rent_plugin_rental_location_context : $onboarding_settings  ['booking_item_family'];
-
-        switch ($family) {
+        switch ($registry->mybooking_rent_plugin_rental_location_context) {
+          case 'branch_office':
+            $returnValue = esc_html_x( 'Branch Office', 'engine_context', 'mybooking-wp-plugin' );
+            break;
           case 'hotel':
             $returnValue = esc_html_x( 'Hotel', 'engine_context', 'mybooking-wp-plugin' );
             break;
@@ -98,40 +97,27 @@
         $registry = Mybooking_Registry::getInstance();
         $returnValue = '';
 
-         // Get onboarding settings
-		    $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
-        $family = (array_key_exists('mybooking_rent_plugin_family_context', $registry) and $registry->mybooking_rent_plugin_family_context)  ? $registry->mybooking_rent_plugin_family_context : $onboarding_settings  ['booking_item_family'];
-
-        switch ($family) {
-          case 'property':
-        	  $returnValue = esc_html_x( 'Type of property', 'engine_context', 'mybooking-wp-plugin' );
+        switch ($registry->mybooking_rent_plugin_family_context) {
+        	case 'product':
+        	  $returnValue = esc_html_x( 'Type of product', 'engine_context', 'mybooking-wp-plugin' );
         	  break;
-          case 'property_resource':
-            $returnValue = esc_html_x( 'Type of property', 'engine_context', 'mybooking-wp-plugin' );
-            break;
-          case 'room':
-            $returnValue = esc_html_x( 'Type of room', 'engine_context', 'mybooking-wp-plugin' );
-            break;
-          case 'boat':
-            $returnValue = esc_html_x( 'Type of Boat', 'engine_context', 'mybooking-wp-plugin');
-            break;
-          case 'boat_charter':
-            $returnValue = esc_html_x( 'Type of Boat', 'engine_context', 'mybooking-wp-plugin');
-            break;
-        	case 'car':
+        	case 'family':
+        	  $returnValue = esc_html_x( 'Family', 'engine_context', 'mybooking-wp-plugin' );
+        	  break;
+        	case 'vehicle':
         	  $returnValue = esc_html_x( 'Type of vehicle', 'engine_context', 'mybooking-wp-plugin' );
         	  break;        	  
-          case 'car_vehicle':
-            $returnValue = esc_html_x( 'Type of vehicle', 'engine_context', 'mybooking-wp-plugin' );
-            break;      
-          case 'camper':
-            $returnValue = esc_html_x( 'Type of vehicle', 'engine_context', 'mybooking-wp-plugin' );
-            break;        	  
-          case 'camper_group':
-            $returnValue = esc_html_x( 'Type of vehicle', 'engine_context', 'mybooking-wp-plugin' );
-            break;
+        	case 'property':
+        	  $returnValue = esc_html_x( 'Type of property', 'engine_context', 'mybooking-wp-plugin' );
+        	  break;
+        	case 'room':
+        	  $returnValue = esc_html_x( 'Type of room', 'engine_context', 'mybooking-wp-plugin' );
+        	  break;
+          case 'boat':
+            $returnValue = esc_html_x( 'Type of Boat', 'engine_context', 'mybooking-wp-plugin');
+            break;  
         	default:
-        	  $returnValue = esc_html_x( 'Type of product', 'engine_context', 'mybooking-wp-plugin' );
+        	  $returnValue = esc_html_x( 'Family', 'engine_context', 'mybooking-wp-plugin' );
         }
         return $returnValue;
 
@@ -145,40 +131,24 @@
         $registry = Mybooking_Registry::getInstance();
         $returnValue = '';
 
-        // Get onboarding settings
-		    $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
-        $family = (array_key_exists('mybooking_rent_plugin_product_context', $registry) and $registry->mybooking_rent_plugin_product_context)  ? $registry->mybooking_rent_plugin_product_context : $onboarding_settings  ['booking_item_family'];
-
-        switch ($family) {
-          case 'property':
+        switch ($registry->mybooking_rent_plugin_product_context) {
+        	case 'vehicle':
+        	  $returnValue = esc_html_x( 'Vehicle', 'engine_context', 'mybooking-wp-plugin' );
+        	  break;
+        	case 'product':
+        	  $returnValue = esc_html_x( 'Product', 'engine_context', 'mybooking-wp-plugin' );
+        	  break;
+        	case 'property':
         	  $returnValue = esc_html_x( 'Property', 'engine_context', 'mybooking-wp-plugin' );
         	  break;
-          case 'property_resource':
-            $returnValue = esc_html_x( 'Property', 'engine_context', 'mybooking-wp-plugin' );
-            break;
-          case 'room':
-            $returnValue = esc_html_x( 'Room', 'engine_context', 'mybooking-wp-plugin' );
-            break;
+        	case 'room':
+        	  $returnValue = esc_html_x( 'Room', 'engine_context', 'mybooking-wp-plugin' );
+        	  break;
           case 'boat':
             $returnValue = esc_html_x( 'Boat', 'engine_context', 'mybooking-wp-plugin' );
             break;
-          case 'boat_charter':
-            $returnValue = esc_html_x( 'Boat', 'engine_context', 'mybooking-wp-plugin' );
-            break;
-          case 'car':
-            $returnValue = esc_html_x( 'Category of vehicle', 'engine_context', 'mybooking-wp-plugin' );
-            break;
-        	case 'car_vehicle':
-        	  $returnValue = esc_html_x( 'Vehicle', 'engine_context', 'mybooking-wp-plugin' );
-        	  break;
-          case 'camper':
-            $returnValue = esc_html_x( 'Autocaravanning or camper', 'engine_context', 'mybooking-wp-plugin' );
-            break;
-          case 'camper_group':
-            $returnValue = esc_html_x( 'Category of autocaravanning', 'engine_context', 'mybooking-wp-plugin' );
-            break;
         	default:
-        	  $returnValue = esc_html_x( 'Product', 'engine_context', 'mybooking-wp-plugin' );
+        	  $returnValue = esc_html_x( 'Vehicle', 'engine_context', 'mybooking-wp-plugin' );
         }
         return $returnValue;
 
@@ -195,13 +165,9 @@
           case 'boat':
             $returnValue = esc_html_x( 'Skipper', 'engine_context_boat', 'mybooking-wp-plugin' );
             break;
-          case 'boat_charter':
-            $returnValue = esc_html_x( 'Skipper', 'engine_context_boat', 'mybooking-wp-plugin' );
-            break;
           default:
             $returnValue = esc_html_x( 'Driver', 'engine_context', 'mybooking-wp-plugin' );
         }
-
         return $returnValue;
     }
 
@@ -214,9 +180,6 @@
 
         switch ($registry->mybooking_rent_plugin_product_context) {
           case 'boat':
-            $returnValue = esc_html_x( 'Length', 'engine_context_boat', 'mybooking-wp-plugin' );
-            break;
-          case 'boat_charter':
             $returnValue = esc_html_x( 'Length', 'engine_context_boat', 'mybooking-wp-plugin' );
             break;
           default:
@@ -236,9 +199,6 @@
           case 'boat':
             $returnValue = esc_html_x( 'Sleeve', 'engine_context_boat', 'mybooking-wp-plugin' );
             break;
-          case 'boat_charter':
-            $returnValue = esc_html_x( 'Sleeve', 'engine_context_boat', 'mybooking-wp-plugin' );
-            break;
           default:
             $returnValue = esc_html_x( 'Width', 'engine_context', 'mybooking-wp-plugin' );
         }
@@ -254,9 +214,6 @@
 
         switch ($registry->mybooking_rent_plugin_product_context) {
           case 'boat':
-            $returnValue = esc_html_x( 'Draft', 'engine_context_boat', 'mybooking-wp-plugin' );
-            break;
-          case 'boat_charter':
             $returnValue = esc_html_x( 'Draft', 'engine_context_boat', 'mybooking-wp-plugin' );
             break;
           default:
