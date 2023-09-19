@@ -449,9 +449,27 @@ EOF;
 
       // == Creates configuration fields
 
-      add_settings_field('mybooking_plugin_settings_google_api_places_selector',
+			add_settings_field('mybooking_plugin_settings_google_api_places_selector',
 		                     'Google Api Places',
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_selector_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_configuration');
+
+			add_settings_field('mybooking_plugin_settings_renting_selector',
+		                     '',
+		                     array($this, 'field_mybooking_plugin_settings_renting_selector_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_configuration');
+
+      add_settings_field('mybooking_plugin_settings_activities_selector',
+		                     '',
+		                     array($this, 'field_mybooking_plugin_settings_activities_selector_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_configuration');
+
+      add_settings_field('mybooking_plugin_settings_transfer_selector',
+		                     '',
+		                     array($this, 'field_mybooking_plugin_settings_transfer_selector_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_configuration');
 
@@ -810,6 +828,60 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		}
 
     // == Configuration
+
+		/**
+		 * Render Mybooking Renting module
+		 */
+		public function field_mybooking_plugin_settings_renting_selector_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
+		  $field = "mybooking_plugin_settings_renting_selector";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
+		}
+
+		/**
+		 * Render Mybooking Activities module
+		 */
+		public function field_mybooking_plugin_settings_activities_selector_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
+		  $field = "mybooking_plugin_settings_activities_selector";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
+		}
+
+		/**
+		 * Render Mybooking Transfer module
+		 */
+		public function field_mybooking_plugin_settings_transfer_selector_callback() {
+
+		  $settings = (array) get_option("mybooking_plugin_settings_configuration");
+		  $field = "mybooking_plugin_settings_transfer_selector";
+		  if (array_key_exists($field, $settings)) {
+		    $value = esc_attr( $settings[$field] );
+		  }
+		  else {
+        $value = '';
+		  }
+
+		  $checked = ($value == '1') ? 'checked' : '';
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
+		}
 
 		/**
 		 * Render Mybooking Google Places API module
