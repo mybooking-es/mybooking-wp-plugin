@@ -201,68 +201,111 @@
      * Get Driver
      */ 
     public function getDriver() {
-        $registry = Mybooking_Registry::getInstance();
-        $returnValue = '';
 
-        switch ($registry->mybooking_rent_plugin_product_context) {
+      $returnValue = esc_html_x( 'Driver', 'engine_context', 'mybooking-wp-plugin' );
+
+      // Get onboarding settings
+		  $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+
+      if ( array_key_exists('booking_item_family', $onboarding_settings) ) {
+        $booking_item_family = $onboarding_settings['booking_item_family'];
+        switch ($booking_item_family) {
           case 'boat':
+            $returnValue = esc_html_x( 'Skipper', 'engine_context_boat', 'mybooking-wp-plugin' );
+            break;
+          case 'boat_charter':
             $returnValue = esc_html_x( 'Skipper', 'engine_context_boat', 'mybooking-wp-plugin' );
             break;
           default:
             $returnValue = esc_html_x( 'Driver', 'engine_context', 'mybooking-wp-plugin' );
         }
+
+      }
+
         return $returnValue;
+
     }
 
     /**
      * Get Length
      */ 
     public function getLength() {
-        $registry = Mybooking_Registry::getInstance();
-        $returnValue = '';
 
-        switch ($registry->mybooking_rent_plugin_product_context) {
+      $returnValue = esc_html_x( 'Length', 'engine_context', 'mybooking-wp-plugin' );
+
+      // Get onboarding settings
+		  $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+
+      if ( array_key_exists('booking_item_family', $onboarding_settings) ) {
+        $booking_item_family = $onboarding_settings['booking_item_family'];
+        switch ($booking_item_family) {
           case 'boat':
+            $returnValue = esc_html_x( 'Length', 'engine_context_boat', 'mybooking-wp-plugin' );
+            break;
+          case 'boat_charter':
             $returnValue = esc_html_x( 'Length', 'engine_context_boat', 'mybooking-wp-plugin' );
             break;
           default:
             $returnValue = esc_html_x( 'Length', 'engine_context', 'mybooking-wp-plugin' );
         }
-        return $returnValue;
+      
+      }
+       
+      return $returnValue;
     }
 
     /**
      * Get width
      */ 
     public function getWidth() {
-        $registry = Mybooking_Registry::getInstance();
-        $returnValue = '';
+      $returnValue = esc_html_x( 'Width', 'engine_context', 'mybooking-wp-plugin' );
 
-        switch ($registry->mybooking_rent_plugin_product_context) {
+      // Get onboarding settings
+		  $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+
+      if ( array_key_exists('booking_item_family', $onboarding_settings) ) {
+        $booking_item_family = $onboarding_settings['booking_item_family'];
+        switch ($booking_item_family) {
           case 'boat':
+            $returnValue = esc_html_x( 'Sleeve', 'engine_context_boat', 'mybooking-wp-plugin' );
+            break;
+          case 'boat_charter':
             $returnValue = esc_html_x( 'Sleeve', 'engine_context_boat', 'mybooking-wp-plugin' );
             break;
           default:
             $returnValue = esc_html_x( 'Width', 'engine_context', 'mybooking-wp-plugin' );
         }
-        return $returnValue;
+
+      }
+        
+      return $returnValue;
     }
 
     /**
      * Get height
      */ 
     public function getHeight() {
-        $registry = Mybooking_Registry::getInstance();
-        $returnValue = '';
+      $returnValue = esc_html_x( 'Height', 'engine_context', 'mybooking-wp-plugin' );
 
-        switch ($registry->mybooking_rent_plugin_product_context) {
+      // Get onboarding settings
+		  $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+
+      if ( array_key_exists('booking_item_family', $onboarding_settings) ) {
+        $booking_item_family = $onboarding_settings['booking_item_family'];
+        switch ($booking_item_family) {
           case 'boat':
+            $returnValue = esc_html_x( 'Draft', 'engine_context_boat', 'mybooking-wp-plugin' );
+            break;
+          case 'boat_charter':
             $returnValue = esc_html_x( 'Draft', 'engine_context_boat', 'mybooking-wp-plugin' );
             break;
           default:
             $returnValue = esc_html_x( 'Height', 'engine_context', 'mybooking-wp-plugin' );
         }
-        return $returnValue;      
+
+      }
+
+      return $returnValue;      
     }
 
     /**
