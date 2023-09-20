@@ -1,8 +1,7 @@
 <?php
   class MyBookingPluginSettings {
 
-	  public function __construct()
-	  {
+	  public function __construct() {
 	    	$this->wp_init();
 	  }
 
@@ -21,8 +20,7 @@
 		/**
 		 * Settings page : Create new settings page
 		 */
-		public function wp_settings_page()
-    {
+		public function wp_settings_page() {
 		  add_menu_page(
         'Mybooking Plugin', // Page title
         'Mybooking', // Menu option title
@@ -57,22 +55,26 @@
 		public function mybooking_plugin_settings_page() {
 		?>
 		  <div class="wrap">
-		  	  <h1>Mybooking Settings</h1>
+		  	  <h1>
+						<?php echo esc_html_x( 'Mybooking Settings', 'settings_context', 'mybooking-wp-plugin' ) ?>
+					</h1>
 					<p>
-						<strong>Bienvenido a la página de configuración</strong>. Tras la configuración inicial esta página te permitirá actualizar algunas configuraciones que pueden cambiar en el tiempo o añadir modulos y complementos avanzados.
+						<?php echo esc_html_x( 'Bienvenido a la página de configuración. Tras la configuración inicial esta página te permitirá actualizar algunas configuraciones que pueden cambiar en el tiempo o añadir modulos y complementos avanzados', 'settings_context', 'mybooking-wp-plugin' ) ?>
 					</p>
 
 					<?php settings_errors(); ?>
 
 					<!-- Buttons -->
 					<h2>
-						Paginas y componentes generados
+						<?php echo esc_html_x( 'Paginas y componentes generados', 'settings_context', 'mybooking-wp-plugin' ) ?>
 					</h2>
-					<p>
-						Puedes ver el listado de las <strong>páginas generadas</strong> desde <a href="<?php esc_attr(menu_page_url('mybooking-onboarding-pages'))?>">aquí</a> o desde el menú, 'Páginas'.
-					<br />
-						Puedes ver el listado de los <strong>componentes</strong> que puedes usar para tu negocio desde <a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">aquí</a> o desde el menú, 'Componentes'.
-					</p>
+					<a href="<?php esc_attr(menu_page_url('mybooking-onboarding-pages'))?>">
+						<?php echo esc_html_x( 'Páginas', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					</a>
+					&nbsp;
+					<a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">
+						<?php echo esc_html_x( 'Componentes', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					</a>
 					<hr />
 
 					<!-- Tabs -->
@@ -803,8 +805,9 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly /><button type='button' title='Active' id='mybooking_plugin_settings_api_key_active_btn'><span class='dashicons dashicons-edit'></span></button>";
+		  echo "<input id='mybooking_plugin_settings_api_key_active' type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly /><button type='button' title='Active' id='mybooking_plugin_settings_api_key_active_btn'><span class='dashicons dashicons-edit'></span></button>";
 		  echo "<p class=\"description\">For the API key from your mybooking account settings</p>.";
+			echo "<script src='".MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL."admin-assets/js/mybooking-plugin-settings.js'></script>";
 		}
 
 
