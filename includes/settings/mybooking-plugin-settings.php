@@ -458,22 +458,25 @@ EOF;
 		                     'mybooking_plugin_settings_section_configuration');
 
 			add_settings_field('mybooking_plugin_settings_renting_selector',
-		                     '',
+		                     null,
 		                     array($this, 'field_mybooking_plugin_settings_renting_selector_callback'),
 		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_configuration');
+		                     'mybooking_plugin_settings_section_configuration',
+												 array('class' => 'hidden-field'));
 
       add_settings_field('mybooking_plugin_settings_activities_selector',
-		                     '',
+		                     null,
 		                     array($this, 'field_mybooking_plugin_settings_activities_selector_callback'),
 		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_configuration');
+		                     'mybooking_plugin_settings_section_configuration',
+												 array('class' => 'hidden-field'));
 
       add_settings_field('mybooking_plugin_settings_transfer_selector',
-		                     '',
+		                     null,
 		                     array($this, 'field_mybooking_plugin_settings_transfer_selector_callback'),
 		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_configuration');
+		                     'mybooking_plugin_settings_section_configuration',
+												 array('class' => 'hidden-field'));
 
       // == Creates renting wizard fields
 
@@ -846,8 +849,7 @@ add_settings_field('mybooking_plugin_settings_products_url',
         $value = '';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value'/>";
 		}
 
 		/**
@@ -864,8 +866,7 @@ add_settings_field('mybooking_plugin_settings_products_url',
         $value = '';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value'/>";
 		}
 
 		/**
@@ -882,8 +883,7 @@ add_settings_field('mybooking_plugin_settings_products_url',
         $value = '';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value'/>";
 		}
 
 		/**
