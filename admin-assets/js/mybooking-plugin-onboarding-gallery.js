@@ -1,6 +1,9 @@
 (function($) {
   $(document).ready(function() {
 
+    // Wp i18n integration
+    const { __, _x, _n, sprintf } = wp.i18n;
+
     // Data
     var galleryURLS = {
       'mybooking_plugin_settings_home_test_page': [
@@ -109,7 +112,7 @@
     $('#mb-onboarding-close-btn').on('click', function() {
       container.hide();
       // Append loading
-      form.html('<div class="mb-onboarding-loading">Loading...</div>');
+      form.html('<div class="mb-onboarding-loading">'+_x('Loading ...', 'onboarding_context_js', 'mybooking-wp-plugin')+'</div>');
     });
   });
 })(jQuery);

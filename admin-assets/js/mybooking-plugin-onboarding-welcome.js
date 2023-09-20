@@ -1,5 +1,9 @@
 (function($) {
 	$(document).ready(function() {
+		
+		// Wp i18n integration
+		const { __, _x, _n, sprintf } = wp.i18n;
+
 		/*
 		* Button events
 		*/
@@ -48,8 +52,8 @@
 					'apy_key': 'required',
 				},
 				messages: {
-					'client_id': 'Es requerido', // TODO
-					'apy_key': 'Es requerido', // TODO
+					'client_id': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin'),
+					'apy_key': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin') 
 				},
 			}
 		);

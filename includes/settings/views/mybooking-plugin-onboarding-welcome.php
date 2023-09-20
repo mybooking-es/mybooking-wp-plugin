@@ -52,8 +52,6 @@ function mybooking_plugin_onboarding_welcome_page() {
 		<!-- Video -->
 		<?php $video='login'; require_once ('mybooking-plugin-onboarding-video.php') ?>
 
-		<!-- Script -->
-		<script src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL.'admin-assets/js/mybooking-plugin-onboarding-welcome.js' ?>"></script>
 	</div>
 <?php
 }
