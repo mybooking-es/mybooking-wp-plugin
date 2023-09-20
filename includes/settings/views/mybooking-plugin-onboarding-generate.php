@@ -8,9 +8,8 @@
 *
 * https://developer.wordpress.org/reference/functions/do_settings_fields/
 */
-function mybooking_plugin_onboarding_selector_page() {
+function mybooking_plugin_onboarding_generate_page() {
 	?>
-	<!-- Styles -->
 	<?php
 		
 		$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
@@ -75,7 +74,7 @@ function mybooking_plugin_onboarding_selector_page() {
 
 	?>
 	
-	<div class="mb-onboarding-selector mb-onboarding-commons">
+	<div class="mb-onboarding-generate mb-onboarding-commons">
 		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">
 			<?php echo esc_html_x( 'Loading', 'onboarding_context', 'mybooking-wp-plugin' ) ?>...
 		</div>
@@ -104,7 +103,7 @@ function mybooking_plugin_onboarding_selector_page() {
 		<p>
 			<?php echo esc_html_x( 'Comenzaremos generando las páginas que precisa el proceso de reserva y te proporcionaremos un listado de las páginas para que las puedas localizar e información complementaria para ayudarte a finalizar la configuración en el motor de reservas de Wordpress y en Mybooking', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</p>
-		<form  id="mb-onboarding-selector-form" method="POST">
+		<form  id="mb-onboarding-generate-form" method="POST">
 			<br />
 			<!-- Buttons -->
 			<div class="mb-onboarding-row">
@@ -112,11 +111,8 @@ function mybooking_plugin_onboarding_selector_page() {
 			</div>
 		</form>
 	</div>
-
-	<!-- Script -->
-	<script src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL.'admin-assets/js/mybooking-plugin-onboarding-selector.js' ?>"></script>
 <?php
 }
 
-mybooking_plugin_onboarding_selector_page();
+mybooking_plugin_onboarding_generate_page();
 ?>

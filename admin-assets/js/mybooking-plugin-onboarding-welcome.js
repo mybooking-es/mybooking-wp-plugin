@@ -31,10 +31,11 @@
 						contentType : 'application/json; charset=utf-8',
 						crossDomain: false,
 						success: (data, textStatus, jqXHR) => {
-							window.location.search = '?page=mybooking-onboarding-selector'; // TODO safe
+							window.location.search = '?page=mybooking-onboarding-generate'; // TODO safe
 						},
 						error: function() {
-							alert('Por favor, revisa los datos proporcionados se ha producido un error.'); // TODO
+							const msg = _x('Por favor, revisa los datos proporcionados se ha producido un error', 'onboarding_context_js', 'mybooking-wp-plugin');
+							alert(msg);
 						},
 						beforeSend: function() {
 							$('#mb-onboarding-loading').show();
@@ -53,7 +54,7 @@
 				},
 				messages: {
 					'client_id': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin'),
-					'apy_key': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin') 
+					'apy_key': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin'),
 				},
 			}
 		);

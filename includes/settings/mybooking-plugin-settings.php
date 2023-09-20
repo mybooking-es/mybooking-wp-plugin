@@ -810,7 +810,6 @@ add_settings_field('mybooking_plugin_settings_products_url',
 
 		  echo "<input id='mybooking_plugin_settings_api_key_active' type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly /><button type='button' title='Active' id='mybooking_plugin_settings_api_key_active_btn'><span class='dashicons dashicons-edit'></span></button>";
 		  echo "<p class=\"description\">For the API key from your mybooking account settings</p>.";
-			echo "<script src='".MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL."admin-assets/js/mybooking-plugin-settings.js'></script>";
 		}
 
 

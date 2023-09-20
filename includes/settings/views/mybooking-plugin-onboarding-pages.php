@@ -259,9 +259,6 @@ function mybooking_plugin_onboarding_pages_page() {
 
 	<!-- Gallery -->
 	<?php require_once ('mybooking-plugin-onboarding-gallery.php') ?>
-
-	<!-- Script -->
-	<script src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL.'admin-assets/js/mybooking-plugin-onboarding-pages.js' ?>"></script>
 <?php
 }
 

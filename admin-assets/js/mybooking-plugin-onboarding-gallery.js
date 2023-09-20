@@ -4,7 +4,7 @@
     // Wp i18n integration
     const { __, _x, _n, sprintf } = wp.i18n;
 
-    // Data
+    // Data TODO
     var galleryURLS = {
       'mybooking_plugin_settings_home_test_page': [
         'vertical-selector.png',
@@ -77,7 +77,7 @@
 
     // Append loading
     var form = $('#mb-onboarding-gallery-form');
-    form.html('<div class="mb-onboarding-loading">Loading...</div>');
+    form.html('<div class="mb-onboarding-loading">' + _x('Loading ...', 'onboarding_context_js', 'mybooking-wp-plugin') + '</div>');
 
     /**
      * Buttons events

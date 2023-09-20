@@ -1,5 +1,9 @@
 (function($) {
 	$(document).ready(function() {
+
+		// Wp i18n integration
+    const { __, _x, _n, sprintf } = wp.i18n;
+		
 		function showToast(txt) {
 			// Show toast in success
 			$('.mb-onboarding-snackbar').html(txt);
@@ -19,14 +23,15 @@
 			// Add string to clipboard
 			navigator.clipboard.writeText(shortcode);
 			
-			showToast('El shortcode: "' + shortcode + '" se ha copiado en el portapapeles');
+			showToast(_x('El shortcode', 'onboarding_context_js', 'mybooking-wp-plugin') + ': ' + shortcode + +  _x(' se ha copiado en el portapapeles', 'onboarding_context_js', 'mybooking-wp-plugin'));
 		});
 
 		$('.mybooking-onboarding-get-permalink').on('click', function(event) {
 			event.preventDefault();
 			var url = $(this).attr('data-href');
 			if (url === '') {
-				showToast('Lo lamentamos se ha producido un error, revisa que la página existe, por favor.');
+				const msg = _x('Lo lamentamos se ha producido un error, revisa que la página existe, por favor', 'onboarding_context_js', 'mybooking-wp-plugin');
+				showToast(msg);
 			}
 
 			// If last element is a / character remove that
@@ -41,7 +46,7 @@
 			// Add string to clipboard
 			navigator.clipboard.writeText(url);
 			
-			showToast('El url: "' + url + '" se ha copiado en el portapapeles');
+			showToast(_x('El url', 'onboarding_context_js', 'mybooking-wp-plugin') + url +  _x(' se ha copiado en el portapapeles', 'onboarding_context_js', 'mybooking-wp-plugin'));
 		});
 	});
 })(jQuery);

@@ -1,9 +1,13 @@
 (function($) {
 	$(document).ready(function() {
+		
+		// Wp i18n integration
+    const { __, _x, _n, sprintf } = wp.i18n;
+
 		/*
 		* Form validation
 		*/
-		$('#mb-onboarding-selector-form').validate({
+		$('#mb-onboarding-generate-form').validate({
 				submitHandler: function(form) {
 					var url = '/wp-json/api/v1/setupOnboarding';
 					var params = $(form).formParams();
@@ -35,10 +39,8 @@
 				},
 				errorClass: 'error',
 				rules : {
-					'selector': 'required',
 				},
 				messages: {
-					'selector': 'Es requerido', // TODO
 				},
 			}
 		);

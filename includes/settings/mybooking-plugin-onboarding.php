@@ -31,11 +31,11 @@
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        'Mybooking Selector', // Page title
-        'Selector', // Menu option title
+        'Mybooking generate', // Page title
+        'Generate', // Menu option title
         'manage_options', // Capability
-        'mybooking-onboarding-selector', // Slug
-        array($this, 'mybooking_plugin_onboarding_selector_page')
+        'mybooking-onboarding-generate', // Slug
+        array($this, 'mybooking_plugin_onboarding_generate_page')
       ); // Callable
 
 			add_submenu_page(
@@ -82,7 +82,7 @@
     public function wp_remove_onboarding_page() {
 
 			// TODO Uncomment when finished
-			//remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-selector' );
+			//remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-generate' );
 		
 		}
 
@@ -93,8 +93,8 @@
 		public function mybooking_plugin_onboarding_welcome_page() {
 		  require_once('views/mybooking-plugin-onboarding-welcome.php');
 		}
-		public function mybooking_plugin_onboarding_selector_page() {
-		  require_once('views/mybooking-plugin-onboarding-selector.php');
+		public function mybooking_plugin_onboarding_generate_page() {
+		  require_once('views/mybooking-plugin-onboarding-generate.php');
 		}
 		public function mybooking_plugin_onboarding_resume_page() {
 		  require_once('views/mybooking-plugin-onboarding-resume.php');
