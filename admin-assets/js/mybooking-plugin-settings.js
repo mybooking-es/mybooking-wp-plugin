@@ -1,4 +1,4 @@
-(function($, i18n) {
+(function($) {
   $(document).ready(function() {
 
 		$('#mybooking_plugin_settings_api_key_active_btn').on('click', function() {
@@ -15,4 +15,4 @@
 		});
 
 	});
-})(jQuery, i18n);
+})(jQuery);
