@@ -7,7 +7,9 @@
     private function wp_init() {
 
 			// Create menu in settings
-			add_action( 'admin_menu', array($this,'wp_onboarding_page'));
+			add_action( 'admin_menu', array($this, 'wp_onboarding_page'));
+			// Remove onboarding pages from the menu
+			add_action( 'admin_head', array($this, 'wp_remove_onboarding_page'));
 
     }
 
@@ -72,6 +74,16 @@
         array($this, 'mybooking_plugin_onboarding_components_page')
       ); // Callable
 
+		}
+
+		/**
+		 * Settings page : Remove onboarding pages from the menu
+		 */		
+    public function wp_remove_onboarding_page() {
+
+			// TODO Uncomment when finished
+			//remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-selector' );
+		
 		}
 
 		/**
