@@ -34,7 +34,7 @@
 							window.location.search = '?page=mybooking-onboarding-generate'; // TODO safe
 						},
 						error: function() {
-							const msg = _x('Por favor, revisa los datos proporcionados se ha producido un error', 'onboarding_context_js', 'mybooking-wp-plugin');
+							const msg = _x('Please check the data provided, an error has occurred', 'onboarding_context_js', 'mybooking-wp-plugin');
 							alert(msg);
 						},
 						beforeSend: function() {

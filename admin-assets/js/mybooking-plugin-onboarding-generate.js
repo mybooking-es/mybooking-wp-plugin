@@ -1,8 +1,5 @@
 (function($) {
 	$(document).ready(function() {
-		
-		// Wp i18n integration
-    const { __, _x, _n, sprintf } = wp.i18n;
 
 		/*
 		* Form validation

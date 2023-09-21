@@ -7,7 +7,7 @@
 		$('#mybooking_plugin_settings_api_key_active_btn').on('click', function() {
 
 			if ($('#mybooking_plugin_settings_api_key_active').attr('readonly')) {
-				const msg =  _x('Recuerda que la APIkey debe ser la que se proporciona para la cuenta identificada en el campo Mybooking Client Id', 'onboarding_context_js', 'mybooking-wp-plugin');
+				const msg =  _x('Remember that the APIkey must be the one provided for the account identified in the Mybooking Client Id field', 'onboarding_context_js', 'mybooking-wp-plugin');
 				const isConfirmed = confirm(msg);
 
 				if (isConfirmed) {

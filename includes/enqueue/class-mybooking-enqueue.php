@@ -112,7 +112,7 @@
         }
 
         // Onboarding pages
-        if ( $screen->id == "mybooking_page_mybooking-onboarding-pages") {
+        if ( $screen->id == "mybooking_page_mybooking-onboarding-pages" || $screen->id == "mybooking_page_mybooking-onboarding-resume") {
           wp_register_script('mybooking_wp_admin_onboarding_pages',
                             plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-pages.js', dirname(__DIR__) ),
                             array( 'jquery', 'wp-i18n' ), 

@@ -14,7 +14,7 @@ function mybooking_plugin_onboarding_resume_page() {
 		<h1 class="mb-onboarding-row">
 			<span class="mb-onboarding-icon dashicons dashicons-saved"></span>
 			&nbsp;
-			<?php echo esc_html_x( 'Configuración finalizada con exito', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( 'Configuration completed successfully', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</h1>
 	</div>
 

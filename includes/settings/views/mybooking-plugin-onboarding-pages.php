@@ -68,14 +68,14 @@ function mybooking_plugin_onboarding_pages_page() {
 	
 	<div class="mb-onboarding-pages mb-onboarding-commons">
 		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">
-			<?php echo esc_html_x( 'Loading', 'onboarding_context', 'mybooking-wp-plugin' ) ?>...
+			<?php echo esc_html_x( 'Loading...', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</div>
 		<?php if ( isset($pages_ids) ) { ?>
 			<?php if ( $module_rental || $module_transfer ): ?>
 				<h2>
-					<?php echo esc_html_x( 'Páginas del proceso de reserva para el modulo de', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'Reservation process pages for the module ', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					 <strong>
-						<?php if ( $module_rental ) { ?> <?php echo esc_html_x( 'Alquiler', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php } elseif ( $module_transfer ) { ?> <?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php } ?>
+						<?php if ( $module_rental ) { ?> <?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php } elseif ( $module_transfer ) { ?> <?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php } ?>
 					</strong>
 				</h2>
 				<hr />
@@ -85,11 +85,11 @@ function mybooking_plugin_onboarding_pages_page() {
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
-									<?php echo esc_html_x( 'Página', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+									<?php echo esc_html_x( 'Page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 									&nbsp;
 									<strong><?php echo get_the_title( $id ) ?></strong>
 									<?php if ($home_page_id === $id) { ?>
-										<?php echo esc_html_x( '(recuerda que el proceso de reserva se inicia desde aquí)', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+										<?php echo esc_html_x( '(Remember that the reservation process starts from here)', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 									<?php } ?>
 								</p>
 								<div class="mb-onboarding-row">
@@ -115,29 +115,29 @@ function mybooking_plugin_onboarding_pages_page() {
 				<?php if ( !$home_page_id && array_key_exists('wc_rent_selector', $onboarding_settings) &&  $onboarding_settings['wc_rent_selector'] ) { ?>
 					<p>
 						<strong>
-							<?php echo esc_html_x( 'Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+							<?php echo esc_html_x( 'You have a configuration that does not allow us to know from which type of component you want to start the reservation process', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						</strong>
 						<br />
-						<?php echo esc_html_x( 'Te proponemos un', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'We propose a', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						&nbsp;
 						<strong>
-						<?php echo esc_html_x( 'buscador', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'searcher', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						</strong>,
 						&nbsp;
-						<?php echo esc_html_x( 'sin embargo alternativamente puedes usar otros componentes que podrás visualizar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'However, alternatively you can use other components that you can view', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						&nbsp;
 						<a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">
-							<?php echo esc_html_x( 'aquí', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+							<?php echo esc_html_x( 'here', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						</a>
 					</p>
 					<ul class="mb-onboarding-list">
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
-									<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+									<?php echo esc_html_x( 'Component', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 									&nbsp;
 									<strong>
-										<?php echo esc_html_x( 'Buscador', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+										<?php echo esc_html_x( 'Searcher', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 									</strong>
 								</p>
 								<div class="mb-onboarding-row">
@@ -153,10 +153,10 @@ function mybooking_plugin_onboarding_pages_page() {
 			<?php endif; ?>
 			<?php if ( $module_activities ): ?>
 				<h2>
-					<?php echo esc_html_x( 'Páginas del proceso de reserva para el modulo de', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'Reservation process pages for the module', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					&nbsp;
 					<strong>
-						<?php echo esc_html_x( 'Actividades', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					</strong>
 				</h2>
 				<hr />
@@ -166,7 +166,7 @@ function mybooking_plugin_onboarding_pages_page() {
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
-									<?php echo esc_html_x( 'Página', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+									<?php echo esc_html_x( 'Page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 									&nbsp;
 									<strong>
 										<?php echo get_the_title( $id ) ?>
@@ -190,29 +190,29 @@ function mybooking_plugin_onboarding_pages_page() {
 
 				<p>
 					<strong>
-						<?php echo esc_html_x( 'Tienes una configuración que no nos permite conocer desde que tipo de componente quieres iniciciar el proceso de reserva', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'You have a configuration that does not allow us to know from which type of component you want to start the reservation process', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					</strong>
 					<br />
-					<?php echo esc_html_x( 'Te proponemos un', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'We propose a', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					&nbsp;
 					<strong>
-						<?php echo esc_html_x( 'catálogo de productos', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'product catalog', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					</strong>,
 					&nbsp;
-					<?php echo esc_html_x( 'sin embargo alternativamente puedes usar otros componentes que puedes visualizar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'However alternatively you can use other components that you can display', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					&nbsp;
 					<a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">
-						<?php echo esc_html_x( 'aquí', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'here', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					</a>
 				</p>
 				<ul class="mb-onboarding-list">
 					<li>
 						<div class="mb-onboarding-row mb-onboarding-space-between">
 							<p>
-								<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+								<?php echo esc_html_x( 'Component', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 								&nbsp;
 								<strong>
-									<?php echo esc_html_x( 'Catálogo de productos', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									<?php echo esc_html_x( 'Product catalog', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 								</strong>
 							</p>
 							<div class="mb-onboarding-row">
@@ -228,25 +228,25 @@ function mybooking_plugin_onboarding_pages_page() {
 			<hr />
 			<p>
 				<strong>
-					<?php echo esc_html_x( 'Recuerda seleccionar la homepage de prueba o inserir un componente de inicio para el proceso de reserva en Wordpress y añadir los url de la página de resumen y de mi reserva a la configuración de Mybooking en', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'Remember to select the test homepage as the home page or insert a component that starts the reservation process in Wordpress and add the url of the summary page and my reservation to the Mybooking configuration in', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					&nbsp;
 					<i>
-						"<?php echo esc_html_x( 'Guía de configuración > Web > Conexión con la página web', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"
+						"<?php echo esc_html_x( 'Configuration Guide > Web > Connect to the Web Page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"
 					</i>
 					&nbsp;
-					<?php echo esc_html_x( 'para completar la configuración', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'to complete the configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 				</strong>
 				&nbsp;
-				<?php echo esc_html_x( 'Si tienes dudas puedes consultar el siguiente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-				&nbsp;
-				<a href="#">
-					<?php echo esc_html_x( 'articulo', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-				</a>
-				&nbsp;
-				<?php echo esc_html_x( 'donde te explicamos todo', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'If you have questions you can consult the following', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<strong>
+					<a href="https://help.mybooking.es/article/200-configuracion-de-la-direccion-de-las-paginas-de-resumen-y-mi-reserva" target="_blank">
+						<?php echo esc_html_x( 'article', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					</a>
+				</strong>
+				<?php echo esc_html_x( 'where we explain everything', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</p>
 		<?php } else { ?>
-			<?php echo esc_html_x( 'Lo lamentamos no se ha podido crear ninguna página. Por favor, vuelve a intentarlo y si se vuelve a producir un error contacta con', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( 'We are sorry no page could be created. Please try again and if an error occurs again, contact', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			&nbsp;
 			<a href="mail:soporte@mybooking.es">
 				soporte@mybooking.es

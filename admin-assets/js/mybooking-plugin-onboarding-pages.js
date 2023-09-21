@@ -23,14 +23,14 @@
 			// Add string to clipboard
 			navigator.clipboard.writeText(shortcode);
 			
-			showToast(_x('El shortcode', 'onboarding_context_js', 'mybooking-wp-plugin') + ': ' + shortcode + +  _x(' se ha copiado en el portapapeles', 'onboarding_context_js', 'mybooking-wp-plugin'));
+			showToast(_x('The shortcode ', 'onboarding_context_js', 'mybooking-wp-plugin') + shortcode +  _x( ' has been copied to the clipboard', 'onboarding_context_js', 'mybooking-wp-plugin'));
 		});
 
 		$('.mybooking-onboarding-get-permalink').on('click', function(event) {
 			event.preventDefault();
 			var url = $(this).attr('data-href');
 			if (url === '') {
-				const msg = _x('Lo lamentamos se ha producido un error, revisa que la página existe, por favor', 'onboarding_context_js', 'mybooking-wp-plugin');
+				const msg = _x('We are sorry, an error has occurred, check that the page exists, please', 'onboarding_context_js', 'mybooking-wp-plugin');
 				showToast(msg);
 			}
 
@@ -46,7 +46,7 @@
 			// Add string to clipboard
 			navigator.clipboard.writeText(url);
 			
-			showToast(_x('El url', 'onboarding_context_js', 'mybooking-wp-plugin') + url +  _x(' se ha copiado en el portapapeles', 'onboarding_context_js', 'mybooking-wp-plugin'));
+			showToast(_x('The url ', 'onboarding_context_js', 'mybooking-wp-plugin') + url +  _x(' has been copied to the clipboard', 'onboarding_context_js', 'mybooking-wp-plugin'));
 		});
 	});
 })(jQuery);

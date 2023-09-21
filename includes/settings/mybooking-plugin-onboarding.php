@@ -22,8 +22,8 @@
 
 		  add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        'Mybooking Welcome', // Page title
-        'Welcome', // Menu option title
+        _x('Welcome', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+        _x('Welcome', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
         'manage_options', // Capability
         'mybooking-onboarding', // Slug
         array($this, 'mybooking_plugin_onboarding_welcome_page')
@@ -31,8 +31,8 @@
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        'Mybooking generate', // Page title
-        'Generate', // Menu option title
+        _x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+        _x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
         'manage_options', // Capability
         'mybooking-onboarding-generate', // Slug
         array($this, 'mybooking_plugin_onboarding_generate_page')
@@ -40,8 +40,8 @@
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        'Mybooking Resultado', // Page title
-        'Resultado', // Menu option title
+        _x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+        _x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
         'manage_options', // Capability
         'mybooking-onboarding-resume', // Slug
         array($this, 'mybooking_plugin_onboarding_resume_page')
@@ -49,8 +49,8 @@
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        'Mybooking Error', // Page title
-        'Error', // Menu option title
+        _x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+        _x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
         'manage_options', // Capability
         'mybooking-onboarding-error', // Slug
         array($this, 'mybooking_plugin_onboarding_error_page')
@@ -58,8 +58,8 @@
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        'Mybooking Páginas', // Page title
-        'Páginas', // Menu option title
+        _x('Pages', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+        _x('Pages', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
         'manage_options', // Capability
         'mybooking-onboarding-pages', // Slug
         array($this, 'mybooking_plugin_onboarding_pages_page')
@@ -67,8 +67,8 @@
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        'Mybooking Componentes', // Page title
-        'Componentes', // Menu option title
+        _x('Components', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+        _x('Components', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
         'manage_options', // Capability
         'mybooking-onboarding-components', // Slug
         array($this, 'mybooking_plugin_onboarding_components_page')

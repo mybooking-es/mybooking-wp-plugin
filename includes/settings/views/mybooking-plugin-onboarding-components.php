@@ -58,31 +58,31 @@ function mybooking_plugin_onboarding_components_page() {
 		</div>
 		<?php if ( isset($components_ids) ) { ?>
 			<h1>
-				<?php echo esc_html_x( 'Componentes', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Components', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</h1>
 			<p>
 				<strong>
-					<?php echo esc_html_x( 'A continuación te sugerimos los componentes del plugin que podrían se utiles para tu tipo de negocio', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'Below we suggest the plugin components that could be useful for your type of business.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 				</strong>
 				<br />
-				<?php echo esc_html_x( 'Entre ellos verás componentes dirigidos a la visualización de datos y otros dirigidos a iniciar el proceso de reserva', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Among them you will see components aimed at data visualization and others aimed at starting the reservation process.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 				<br />
-				<?php echo esc_html_x( 'Tomate el tiempo de ver las imagenes que ilustran el tipo de componente. Si aun tienes dudas en este', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-				&nbsp;
-				<a href="#">
-					<?php echo esc_html_x( 'articulo', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-				</a>
-				&nbsp;
-				<?php echo esc_html_x( 'te explicamos todo', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Take the time to look at the images that illustrate the type of component. If you still have doubts on this', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<strong>
+					<a href="https://help.mybooking.es/article/201-como-obtener-el-shortcode-de-un-componente-para-una-pagina-de-producto" target="_blank">
+						<?php echo esc_html_x( 'article', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					</a>
+				</strong>
+				<?php echo esc_html_x( 'we explain everything', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</p>
 			<?php if ( $module_rental || $module_transfer ): ?>
 				<!-- Init components -->
 				<?php if ( $module_rental ) { ?>
 					<h2>
-						<?php echo esc_html_x( 'Componentes para el  modulo de', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'Components for the module', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						&nbsp;
 						<strong>
-							<?php if ( $module_rental ) { ?><?php echo esc_html_x( 'Alquiler', 'onboarding_context', 'mybooking-wp-plugin' ) ?><?php } elseif ( $module_transfer ) { ?><?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?><?php } ?>
+							<?php if ( $module_rental ) { ?><?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?><?php } elseif ( $module_transfer ) { ?><?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?><?php } ?>
 						</strong>
 					</h2>
 					<hr />
@@ -92,14 +92,14 @@ function mybooking_plugin_onboarding_components_page() {
 								<li>
 									<div class="mb-onboarding-row mb-onboarding-space-between">
 										<p>
-											<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+											<?php echo esc_html_x( 'Component', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 											&nbsp;
 											<strong>
-												<?php echo esc_html_x( 'Calendario', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+												<?php echo esc_html_x( 'Calendar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 											</strong>
 										</p>
 										<p>
-											<?php echo esc_html_x( 'Puedes añadir un calendario en la página de tu producto  para iniciar el proceso de reserva. El componente se mostrará según la configuración de tu negocio en Mybooking', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+											<?php echo esc_html_x( 'You can add a calendar on your product page to start the booking process. The component will be displayed according to the configuration of your business in Mybooking', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 										</p>
 										<div class="mb-onboarding-row">
 											<span data-type="calendar" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
@@ -111,14 +111,14 @@ function mybooking_plugin_onboarding_components_page() {
 								<li>
 									<div class="mb-onboarding-row mb-onboarding-space-between">
 										<p>
-											<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+											<?php echo esc_html_x( 'Component', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 											&nbsp;
 											<strong>
-												<?php echo esc_html_x( 'Planning por horas', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+												<?php echo esc_html_x( 'Planning by hours', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 											</strong>
 										</p>
 										<p>
-											<?php echo esc_html_x( 'Puedes añadir un planning para ver la disponibilidad horaria en un día seleccionado. Se trata de un componente puramente informativo y se puede configurar por sucursal, familia y/o categoría de producto', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+											<?php echo esc_html_x( 'You can add a schedule to see the time availability on a selected day. This is a purely informative component and can be configured by branch, family and/or product category', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 										</p>
 										<div class="mb-onboarding-row">
 											<span data-type="planning-diary" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
@@ -130,14 +130,14 @@ function mybooking_plugin_onboarding_components_page() {
 								<li>
 									<div class="mb-onboarding-row mb-onboarding-space-between">
 										<p>
-											<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+											<?php echo esc_html_x( 'Component', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 											&nbsp;
 											<strong>
-												<?php echo esc_html_x( 'Planning por dias', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+												<?php echo esc_html_x( 'Planning by days', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 											</strong>
 										</p>
 										<p>
-											<?php echo esc_html_x( 'Puedes añadir un planning que muestre la disponibilidad en un número de días preestablecido. Se trata de un componente puramente informativo y se puede configurar por sucursal, familia y/o categoría de productos', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+											<?php echo esc_html_x( 'You can add a schedule that shows availability in a pre-established number of days. This is a purely informative component and can be configured by branch, family and/or product category', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 										</p>
 										<div class="mb-onboarding-row">
 											<span data-type="planning-calendar" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
@@ -149,14 +149,14 @@ function mybooking_plugin_onboarding_components_page() {
 								<li>
 									<div class="mb-onboarding-row mb-onboarding-space-between">
 										<p>
-											<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+											<?php echo esc_html_x( 'Component', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 											&nbsp;
 											<strong>
-												<?php echo esc_html_x( 'Planning semanal', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+												<?php echo esc_html_x( 'Weekly planning', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 											</strong>
 										</p>
 										<p>
-											<?php echo esc_html_x( 'Puedes añadir un planning semanal con la disponibilidad a tu página de producto para iniciar el proceso de reserva', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+											<?php echo esc_html_x( 'You can add a weekly schedule with availability to your product page to start the reservation process', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 										</p>
 										<div class="mb-onboarding-row">
 											<span data-type="planning-weekly" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
@@ -168,14 +168,14 @@ function mybooking_plugin_onboarding_components_page() {
 								<li>
 									<div class="mb-onboarding-row mb-onboarding-space-between">
 										<p>
-											<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+											<?php echo esc_html_x( 'Component', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 											&nbsp;
 											<strong>
-												<?php echo esc_html_x( 'Selector de turnos', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+												<?php echo esc_html_x( 'Shift picker', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 											</strong>
 										</p>
 										<p>
-											<?php echo esc_html_x( 'Puedes añadir un selector de turnos para iniciar el proceso de reserva. Especialmente recomendado en productos o categorías con selección de más de una unidad y con horario por turnos', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+											<?php echo esc_html_x( 'You can add a shift selector to start the reservation process. Especially recommended in products or categories with a selection of more than one unit and with a shift schedule', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 										</p>
 										<div class="mb-onboarding-row">
 											<span data-type="shift-picker" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
@@ -187,14 +187,14 @@ function mybooking_plugin_onboarding_components_page() {
 					<?php } else { ?>
 						<p>
 							<strong>
-								<?php echo esc_html_x( 'No se ha podido recuperar ningun componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+								<?php echo esc_html_x( 'No component could be recovered', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 							</strong>
 						</p>
 					<?php } ?>
 				<?php } else { ?>
 					<p>
 					<strong>
-					<?php echo esc_html_x( 'No se ha podido recuperar ningun componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'No component could be recovered', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					</strong>
 					</p>
 				<?php } ?>
@@ -203,10 +203,10 @@ function mybooking_plugin_onboarding_components_page() {
 			<?php if ( $module_activities ): ?>
 				<!-- Init components -->
 				<h2>
-					<?php echo esc_html_x( 'Componentes para el  modulo de', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'Components for the module', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					&nbsp;
 					<strong>
-						<?php echo esc_html_x( 'Actividades', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					</strong>
 				</h2>
 				<hr />
@@ -215,14 +215,14 @@ function mybooking_plugin_onboarding_components_page() {
 						<li>
 							<div class="mb-onboarding-row mb-onboarding-space-between">
 								<p>
-									<?php echo esc_html_x( 'Componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
+									<?php echo esc_html_x( 'Component', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
 									&nbsp;
 									<strong>
-										<?php echo esc_html_x( 'Calendario', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+										<?php echo esc_html_x( 'Calendar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 									</strong>
 								</p>
 								<p>
-									<?php echo esc_html_x( 'Puedes añadir un calendario en la página de tu producto  para iniciar el proceso de reserva. El componente se mostrará según la configuración de tu negocio en Mybooking', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									<?php echo esc_html_x( 'You can add a calendar on your product page to start the booking process. The component will be displayed according to the configuration of your business in Mybooking', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 								</p>
 								<div class="mb-onboarding-row">
 									<span data-type="calendar" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
@@ -233,19 +233,19 @@ function mybooking_plugin_onboarding_components_page() {
 				<?php } else { ?>
 					<p>
 						<strong>
-							<?php echo esc_html_x( 'No se ha podido recuperar ningun componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+							<?php echo esc_html_x( 'No component could be recovered', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						</strong>
 					</p>
 				<?php } ?>
 				<!-- End components -->
 			<?php endif; ?>
 		<?php } else { ?>
-			<?php echo esc_html_x( 'Lo lamentamos', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( 'We sorry', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			&nbsp;
 			<strong>
-			 	<?php echo esc_html_x( 'no se ha podido recuperar ningun componente', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			 	<?php echo esc_html_x( 'no component could be recovered', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</strong>
-			<?php echo esc_html_x( 'Por favor, vuelve a intentarlo y si se vuelve a producir un error contacta con', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( 'Please try again and if an error occurs again, contact', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			&nbsp;
 			<a href="mail:soporte@mybooking.es">
 				soporte@mybooking.es
