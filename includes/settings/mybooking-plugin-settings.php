@@ -401,50 +401,50 @@ EOF;
       // Creates a connection settings section "mybooking_plugin_settings_section_connection"
 		  add_settings_section('mybooking_plugin_settings_section_connection',
 		                       'Connection',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
       // Creates a connection settings section "mybooking_plugin_settings_section_configuration"
 		  add_settings_section('mybooking_plugin_settings_section_configuration',
 		                       'Configuration',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 		  // Creates a renting wizard settings section "mybooking_plugin_settings_section_renting"
 		  add_settings_section('mybooking_plugin_settings_section_renting',
 		                       'Renting or Accommodation',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 		  // Creates an activities settings section "mybooking_plugin_settings_section_activities"
 		  add_settings_section('mybooking_plugin_settings_section_activities',
 		                       'Activities or Appointments',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 		  // Creates an activities settings section "mybooking_plugin_settings_section_transfer"
 		  add_settings_section('mybooking_plugin_settings_section_transfer',
 		                       'Transfer',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 
       // Creates a connection settings section "mybooking_plugin_settings_section_google_api_places"
 		  add_settings_section('mybooking_plugin_settings_section_google_api_places',
 		                       'Connection',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
       // Creates a complements setting section "mybooking_plugin_settings_section_complements"
       add_settings_section('mybooking_plugin_settings_section_complements',
 		                       'Complements',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
       // Creates a css settings section "mybooking_plugin_settings_css"
 		  add_settings_section('mybooking_plugin_settings_css',
 		                       'CSS',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 
@@ -959,20 +959,20 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose selector]</option>";
+		  $select .= "<option value=''>["._x('Choose selector', 'plugin_settings', 'mybooking-wp-plugin')."]</option>";
 
 		  if ($value == 'wizard') {
-		    $select .= "<option value='wizard' selected>Wizard</option>";
+		    $select .= "<option value='wizard' selected>"._x('Wizard', 'plugin_settings', 'mybooking-wp-plugin')."</option>";
 		  }
 		  else {
-		    $select .= "<option value='wizard'>Wizard</option>";
+		    $select .= "<option value='wizard'>"._x('Wizard', 'plugin_settings', 'mybooking-wp-plugin')."</option>";
 		  }
 
 			if ($value == 'form') {
-		    $select .= "<option value='form' selected>Form</option>";
+		    $select .= "<option value='form' selected>"._x('Form', 'plugin_settings', 'mybooking-wp-plugin')."</option>";
 		  }
 		  else {
-		    $select .= "<option value='form'>Form</option>";
+		    $select .= "<option value='form'>"._x('Form', 'plugin_settings', 'mybooking-wp-plugin')."</option>";
 		  }
 
 		  $select .= "</select>";
@@ -1011,170 +1011,6 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		}
 
 		/**
-		 * Render Mybooking Rental Location context
-		 */
-		public function field_mybooking_plugin_settings_rental_location_context_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_renting");
-		  $field = "mybooking_plugin_settings_rental_location_context";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose rental location context]</option>";
-
-		  if ($value == 'branch_office') {
-		    $select .= "<option value='branch_office' selected>Branch office</option>";
-		  }
-		  else {
-		    $select .= "<option value='branch_office'>Branch office</option>";
-		  }
-
-			if ($value == 'hotel') {
-		    $select .= "<option value='hotel' selected>Hotel</option>";
-		  }
-		  else {
-		    $select .= "<option value='family'>Hotel</option>";
-		  }
-
-		  $select .= "</select>";
-
-		  echo $select;
-		  echo "<p class=\"description\">"._x( 'Choose the rental location that describes your business context.', 'settings_context', 'mybooking-wp-plugin' )."</p>";
-
-		}
-
-		/**
-		 * Render Mybooking Family context
-		 */
-		public function field_mybooking_plugin_settings_family_context_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_renting");
-		  $field = "mybooking_plugin_settings_family_context";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose family context]</option>";
-
-		  if ($value == 'product') {
-		    $select .= "<option value='product' selected>Type of product</option>";
-		  }
-		  else {
-		    $select .= "<option value='product'>Type of product</option>";
-		  }
-
-			if ($value == 'family') {
-		    $select .= "<option value='family' selected>Family</option>";
-		  }
-		  else {
-		    $select .= "<option value='family'>Family</option>";
-		  }
-
-			if ($value == 'vehicle') {
-		    $select .= "<option value='vehicle' selected>Type of vehicle</option>";
-		  }
-		  else {
-		    $select .= "<option value='vehicle'>Type of vehicle</option>";
-		  }
-
-			if ($value == 'boat') {
-		    $select .= "<option value='boat' selected>Type of boat</option>";
-		  }
-		  else {
-		    $select .= "<option value='boat'>Type of boat</option>";
-		  }
-
-			if ($value == 'property') {
-		    $select .= "<option value='property' selected>Type of property</option>";
-		  }
-		  else {
-		    $select .= "<option value='property'>Type of property</option>";
-		  }
-
-		  if ($value == 'room') {
-		    $select .= "<option value='room' selected>Type of room</option>";
-		  }
-		  else {
-		    $select .= "<option value='room'>Type of room</option>";
-		  }
-
-		  $select .= "</select>";
-
-		  echo $select;
-		  echo "<p class=\"description\">"._x( 'Choose the family that describes your business context.', 'settings_context', 'mybooking-wp-plugin' )."</p>";
-
-		}
-
-		/**
-		 * Render Mybooking Product context
-		 */
-		public function field_mybooking_plugin_settings_product_context_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_renting");
-		  $field = "mybooking_plugin_settings_product_context";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose product context]</option>";
-
-		  if ($value == 'vehicle') {
-		    $select .= "<option value='vehicle' selected>Vehicle</option>";
-		  }
-		  else {
-		    $select .= "<option value='vehicle'>Vehicle</option>";
-		  }
-
-			if ($value == 'boat') {
-		    $select .= "<option value='boat' selected>Boat</option>";
-		  }
-		  else {
-		    $select .= "<option value='boat'>Boat</option>";
-		  }
-
-			if ($value == 'product') {
-		    $select .= "<option value='product' selected>Product</option>";
-		  }
-		  else {
-		    $select .= "<option value='product'>Product</option>";
-		  }
-
-			if ($value == 'property') {
-		    $select .= "<option value='property' selected>Property</option>";
-		  }
-		  else {
-		    $select .= "<option value='property'>Property</option>";
-		  }
-
-		  if ($value == 'room') {
-		    $select .= "<option value='room' selected>Room</option>";
-		  }
-		  else {
-		    $select .= "<option value='room'>Room</option>";
-		  }
-
-		  $select .= "</select>";
-
-		  echo $select;
-		  echo "<p class=\"description\">"._x( 'Choose the product that describes your business context.', 'settings_context', 'mybooking-wp-plugin' )."</p>";
-
-		}
-
-
-		/**
 		 * Render Mybooking Duration context
 		 */
 		public function field_mybooking_plugin_settings_duration_context_callback() {
@@ -1189,20 +1025,20 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose duration context]</option>";
+		  $select .= "<option value=''>["._x( 'Choose duration context', 'settings_context', 'mybooking-wp-plugin' )."]</option>";
 
 		  if ($value == 'days') {
-		    $select .= "<option value='days' selected>Days</option>";
+		    $select .= "<option value='days' selected>"._x( 'Days', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='days'>Days</option>";
+		    $select .= "<option value='days'>"._x( 'Days', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 			if ($value == 'nights') {
-		    $select .= "<option value='nights' selected>Nights</option>";
+		    $select .= "<option value='nights' selected>"._x( 'Nights', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='nights'>Nights</option>";
+		    $select .= "<option value='nights'>"._x( 'Nights', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 		  $select .= "</select>";
@@ -1229,48 +1065,48 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose dates context]</option>";
+		  $select .= "<option value=''>["._x( 'Choose dates context', 'settings_context', 'mybooking-wp-plugin' )."]</option>";
 
 		  if ($value == 'pickup-return') {
-		    $select .= "<option value='pickup-return' selected>Pickup/Return</option>";
+		    $select .= "<option value='pickup-return' selected>"._x( 'Pickup/Return', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='pickup-return'>Pickup/Return</option>";
+		    $select .= "<option value='pickup-return'>"._x( 'Pickup/Return', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 			if ($value == 'checkin-checkout') {
-		    $select .= "<option value='checkin-checkout' selected>Checkin/Checkout</option>";
+		    $select .= "<option value='checkin-checkout' selected>"._x( 'Checkin/Checkout', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='checkin-checkout'>Checkin/Checkout</option>";
+		    $select .= "<option value='checkin-checkout'>"._x( 'Checkin/Checkout', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 		  if ($value == 'start-end') {
-		    $select .= "<option value='start-end' selected>Start/End</option>";
+		    $select .= "<option value='start-end' selected>"._x( 'Start/End', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='start-end'>Start/End</option>";
+		    $select .= "<option value='start-end'>"._x( 'Start/End', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 			if ($value == 'arrive-departure') {
-		    $select .= "<option value='arrive-departure' selected>Arrival/Depature</option>";
+		    $select .= "<option value='arrive-departure' selected>"._x( 'Arrival/Depature', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='arrive-departure'>Arrival/Depature</option>";
+		    $select .= "<option value='arrive-departure'>"._x( 'Arrival/Depature', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 			if ($value == 'departure-entry') {
-		    $select .= "<option value='departure-entry' selected>Departure/Entry</option>";
+		    $select .= "<option value='departure-entry' selected>"._x( 'Departure/Entry', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='departure-entry'>Departure/Entry</option>";
+		    $select .= "<option value='departure-entry'>"._x( 'Departure/Entry', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 		  if ($value == 'eta-etd') {
-		  	$select .= "<option value='eta-etd' selected>Estimated Time of Arrival / Departure</option>";
+		  	$select .= "<option value='eta-etd' selected>"._x( 'Estimated Time of Arrival / Departure', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='eta-etd'>Estimated Time of Arrival / Departure</option>";
+		    $select .= "<option value='eta-etd'>"._x( 'Estimated Time of Arrival / Departure', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 		  $select .= "</select>";
@@ -1301,34 +1137,34 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose not available context]</option>";
+		  $select .= "<option value=''>["._x( 'Choose not available context', 'settings_context', 'mybooking-wp-plugin' )."]</option>";
 
 		  if ($value == 'not-available') {
-		    $select .= "<option value='not-available' selected>Not available</option>";
+		    $select .= "<option value='not-available' selected>"._x( 'Not available', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='not-available'>Not available</option>";
+		    $select .= "<option value='not-available'>"._x( 'Not available', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 			if ($value == 'check-by-phone') {
-		    $select .= "<option value='check-by-phone' selected>Telephone consultation</option>";
+		    $select .= "<option value='check-by-phone' selected>"._x( 'Telephone consultation', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='check-by-phone'>Telephone consultation</option>";
+		    $select .= "<option value='check-by-phone'>"._x( 'Telephone consultation', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 			if ($value == 'check-by-email') {
-		    $select .= "<option value='check-by-email' selected>E-mail consultation</option>";
+		    $select .= "<option value='check-by-email' selected>"._x( 'E-mail consultation', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='check-by-email'>E-mail consultation</option>";
+		    $select .= "<option value='check-by-email'>"._x( 'E-mail consultation', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 			if ($value == 'enquiry') {
-		    $select .= "<option value='enquiry' selected>Enquiry</option>";
+		    $select .= "<option value='enquiry' selected>"._x( 'Enquiry', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 		  else {
-		    $select .= "<option value='enquiry'>Enquiry</option>";
+		    $select .= "<option value='enquiry'>"._x( 'Enquiry', 'settings_context', 'mybooking-wp-plugin' )."</option>";
 		  }
 
 		  $select .= "</select>";
@@ -1983,7 +1819,7 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose page]</option>";
+		  $select .= "<option value=''>["._x( 'Choose page', 'settings_context', 'mybooking-wp-plugin' )."]</option>";
 		  foreach ($my_pages as $page => $title) {
 		     if ($value == $page) {
 		        $select .= "<option value='$page' selected>$title</option>";
@@ -2018,7 +1854,7 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_activities[$field]'>";
-		  $select .= "<option value=''>[Choose page]</option>";
+		  $select .= "<option value=''>["._x( 'Choose page', 'settings_context', 'mybooking-wp-plugin' )."]</option>";
 		  foreach ($my_pages as $page => $title) {
 		     if ($value == $page) {
 		        $select .= "<option value='$page' selected>$title</option>";
@@ -2053,7 +1889,7 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_transfer[$field]'>";
-		  $select .= "<option value=''>[Choose page]</option>";
+		  $select .= "<option value=''>["._x( 'Choose page', 'settings_context', 'mybooking-wp-plugin' )."]</option>";
 		  foreach ($my_pages as $page => $title) {
 		     if ($value == $page) {
 		        $select .= "<option value='$page' selected>$title</option>";
