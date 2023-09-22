@@ -21,6 +21,12 @@
 	font-weight: lighter;
 	line-height: 1;
 }
+.mb-onboarding-commons a.mb-onboarding-btn {
+	padding: 1rem;
+	display: inline-block;
+	text-decoration: none;
+	border: 1px solid lightgray;
+}
 .mb-onboarding-login-description {
 	margin-top: -2rem;
 }
@@ -211,6 +217,34 @@ h1.mb-onboarding-error {
 	padding: 50% 0 0 0; 
 	position: relative;
 }
+
+.mb-onboarding-video-container .mb-onboarding-video-content iframe {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%;
+}
+
+.mb-onboarding-welcome-video-container {
+	
+}
+.mb-onboarding-welcome-video-container .mb-onboarding-welcome-video-content {
+	width: 600px;
+	height: 400px;
+	max-width: 100%;
+	margin: auto;
+	position: relative;
+}
+
+.mb-onboarding-welcome-video-container .mb-onboarding-welcome-video-content iframe {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%;
+}
+
 
 /*
 * Gallery

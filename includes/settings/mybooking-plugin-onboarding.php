@@ -31,6 +31,15 @@
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
+        _x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+        _x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+        'manage_options', // Capability
+        'mybooking-onboarding-login', // Slug
+        array($this, 'mybooking_plugin_onboarding_login_page')
+      ); // Callable
+
+			add_submenu_page(
+				'mybooking-plugin-configuration', // Parent slug
         _x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
         _x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
         'manage_options', // Capability
@@ -92,6 +101,9 @@
 		 */
 		public function mybooking_plugin_onboarding_welcome_page() {
 		  require_once('views/mybooking-plugin-onboarding-welcome.php');
+		}
+		public function mybooking_plugin_onboarding_login_page() {
+		  require_once('views/mybooking-plugin-onboarding-login.php');
 		}
 		public function mybooking_plugin_onboarding_generate_page() {
 		  require_once('views/mybooking-plugin-onboarding-generate.php');

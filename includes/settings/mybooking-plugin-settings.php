@@ -143,24 +143,15 @@
 
 	            <?php
 
-               $renting_info = <<<EOF
-                 <br>
+               $renting_info = '<br>
                  <div class="postbox">
                    <div class="inside">
-		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>vehicle rental</u>, <u>boat rental</u>, <u>properties</u> rental companies or <u>accommodation</u>.</p>
-		                 <p>
-										 	Con la configuración inicial hemos las páginas necesarias para el proceso de reserva y las hemos configurado desde aquí como puedes ver a continuación. 
-										</p>
-										<p>
-											<strong>
-												Edita esta parte solo si creas una nueva página para el proceso o para los términos y condiciones y la quieres asignar.	
-											</strong>
-										 </p>
+		                 <p>'._x('This module helps you to build a <em>reservation web site</em> for a <u>vehicle rental</u>, <u>boat rental</u>, <u>properties</u> rental companies or <u>accommodation</u>.', 'settings_context', 'mybooking-wp-plugin').'</p>
+										 <p>'._x('Con la configuración inicial hemos las páginas necesarias para el proceso de reserva y las hemos configurado desde aquí como puedes ver a continuación.', 'settings_context', 'mybooking-wp-plugin').'</p>
+										 <p><strong>'._x('Edita esta parte solo si creas una nueva página para el proceso o para los términos y condiciones y la quieres asignar.', 'settings_context', 'mybooking-wp-plugin').'</strong></p>
 		                </div>
                  </div>
-                 <hr />
-
-EOF;
+                 <hr />';
 
                $activity_info = <<<EOF
                  <br>

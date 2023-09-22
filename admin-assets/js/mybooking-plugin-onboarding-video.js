@@ -18,7 +18,7 @@
 
 		if (video && video instanceof Object) {
 			// Append iframe
-			HTML = '<iframe src="' + video.url + '" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="' + video.title + '" style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>';
+			HTML = '<iframe src="' + video.url + '" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="' + video.title + '"></iframe>';
 		}
 		
 		
