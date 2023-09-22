@@ -93,20 +93,20 @@ function mybooking_plugin_onboarding_pages_page() {
 									<?php } ?>
 								</p>
 								<div class="mb-onboarding-row">
+									<?php $type = array_search($id, $settings) ?>
+										<?php $module = ($module_rental) ? 'mybooking_plugin_settings_renting' : 'mybooking_plugin_settings_transfer' ?>
+										<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 									<?php if ($home_page_id === $id) { ?>
 										<a href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
 											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
 										</a>
 									<?php } ?>
-									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
-										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
-									</div>
 									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
 										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
-									<?php $type = array_search($id, $settings) ?>
-									<?php $module = ($module_rental) ? 'mybooking_plugin_settings_renting' : 'mybooking_plugin_settings_transfer' ?>
-									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
+									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+									</div>
 								</div>
 							</div>
 						</li>
@@ -141,10 +141,10 @@ function mybooking_plugin_onboarding_pages_page() {
 									</strong>
 								</p>
 								<div class="mb-onboarding-row">
+									<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 									<div data-href="[mybooking_rent_engine_selector]" title="<?php echo esc_attr_x( 'Copy shortcode', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
 										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 									</div>
-									<span data-type="selector" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 								</div>
 							</div>
 						</li>
@@ -173,15 +173,15 @@ function mybooking_plugin_onboarding_pages_page() {
 									</strong>
 								</p>
 								<div class="mb-onboarding-row">
-									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
-										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
-									</div>
+									<?php $type = array_search($id, $settings) ?>
+										<?php $module = ($module_activities) ? 'mybooking_plugin_settings_activities' : '' ?>
+										<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>"class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
 										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
-									<?php $type = array_search($id, $settings) ?>
-									<?php $module = ($module_activities) ? 'mybooking_plugin_settings_activities' : '' ?>
-									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>"class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
+									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+									</div>
 								</div>
 							</div>
 						</li>
@@ -216,10 +216,10 @@ function mybooking_plugin_onboarding_pages_page() {
 								</strong>
 							</p>
 							<div class="mb-onboarding-row">
+								<span data-type="catalog" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 								<div data-href="[mybooking_activities_engine_activities]" title="<?php echo esc_attr_x( 'Copy shortcode', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-shortcode">
 									<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 								</div>
-								<span data-type="catalog" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 							</div>
 						</div>
 					</li>

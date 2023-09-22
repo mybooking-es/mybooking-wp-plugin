@@ -42,7 +42,7 @@ function mybooking_plugin_onboarding_login_page() {
 			</a>
 			<div class="mb-onboarding-buttons mb-onboarding-row">
 				<input type="button" value="<?php echo esc_attr_x( "I don't have a Mybooking account", 'onboarding_context', 'mybooking-wp-plugin' ) ?>"  id="mybooking-onboarding-account" class="mybooking-onboarding-account" />
-				<input type="submit" value="<?php echo esc_attr_x( 'Enter', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" />
+				<input type="submit" value="<?php echo esc_attr_x( 'Enviar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" />
 			</div>
 		</form>
 		

@@ -21,6 +21,9 @@
 	font-weight: lighter;
 	line-height: 1;
 }
+.mb-onboarding-commons .mb-onboarding-error {
+	color: red;
+}
 .mb-onboarding-commons a.mb-onboarding-btn {
 	padding: 1rem;
 	display: inline-block;
