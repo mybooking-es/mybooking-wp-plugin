@@ -260,13 +260,9 @@ EOF;
 			           echo '</table>';
 			         }
 			         else if ($active_tab == 'renting_options') {
-									echo '<br><div class="postbox"><div class="inside"><p>';
-									printf(
-										esc_html_x( 'This module helps you to build a reservation web site for a %1$svehicle rental, boat rental, properties rental companies or accommodation%2$s. With the initial configuration we have the necessary pages for the reservation process and we have configured them from here as you can see below. Edit this part only if you create a new page for the process or terms and conditions and want to assign it.', 'settings_context', 'mybooking-wp-plugin' ),
-										'<strong>',
-										'</strong>'
-									);
-									echo '</div></div><hr /></p>';
+ 								 echo '<br><div class="postbox"><div class="inside"><p>';
+								 echo wp_kses_post( _x('This module helps you to build a reservation web site for a <strong>vehicle rental, boat rental, properties rental companies or accommodation</strong>. With the initial configuration we have the necessary pages for the reservation process and we have configured them from here as you can see below. Edit this part only if you create a new page for the process or terms and conditions and want to assign it.', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo '</div></div><hr /></p>';
 			      	   settings_fields('mybooking_plugin_settings_group_renting');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_renting');
