@@ -307,11 +307,17 @@
           )
         );
 
+      // Get content
+      $content = mybooking_engine_page_current_page_content();
+
       // Moment JS TIMEZONE (0.5.33)
       // Uses WP moment
       wp_register_script( 'mybooking-moment-timezone-js',
                          plugins_url( '/assets/js/moment-timezone-with-data.min.js', dirname(__DIR__) ),
-                         array( 'moment' ), $this->version, true);
+                         array( 'moment' ), $this->version, 
+                         array(
+                          'strategy' => 'async'
+                         ));
       wp_enqueue_script( 'mybooking-moment-timezone-js');
 
       $mybooking_dependencies = array('jquery',
@@ -326,21 +332,40 @@
         // Slick JS
         wp_register_script('mybooking_wp_js_slick',
                            plugins_url( '/assets/js/slick.min.js', dirname(__DIR__) ),
-                           array( 'jquery' ), $this->version, true);
+                           array( 'jquery' ), $this->version, array(
+                            'strategy' => 'async'
+                           ));
         wp_enqueue_script('mybooking_wp_js_slick');
         array_push($mybooking_dependencies, 'mybooking_wp_js_slick');
       }
 
 
       // Enqueue the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
-      wp_register_script( 'mybooking-rent-engine-script',
-                           plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
-                           dirname(__DIR__) ),
-                           $mybooking_dependencies,
-                           $this->version,
-                           true
-                         );
-      wp_enqueue_script( 'mybooking-rent-engine-script');
+
+      if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
+           has_shortcode( $content , 'mybooking_rent_engine_selector') ) {
+            wp_register_script( 'mybooking-rent-engine-script',
+            plugins_url( '/assets/js/mybooking-js-engine-rent-selector-bundle.js',
+            dirname(__DIR__) ),
+            $mybooking_dependencies,
+            $this->version,
+            array(
+              'strategy' => 'async'
+             )
+          );
+          wp_enqueue_script( 'mybooking-rent-engine-script');
+      } else {
+        wp_register_script( 'mybooking-rent-engine-script',
+                            plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
+                            dirname(__DIR__) ),
+                            $mybooking_dependencies,
+                            $this->version,
+                            array(
+                              'strategy' => 'async'
+                             )
+                          );
+        wp_enqueue_script( 'mybooking-rent-engine-script');
+      }
 
       // Complements (testimonials, cookies, popup)
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1' ||
@@ -357,8 +382,6 @@
       }
 
       // Contact Form Google Captcha
-
-      $content = mybooking_engine_page_current_page_content();
 
       if ( is_active_widget( false, false, 'mybooking_engine_contact_widget', false ) ||
            has_shortcode( $content, 'mybooking_contact' ) ) {
