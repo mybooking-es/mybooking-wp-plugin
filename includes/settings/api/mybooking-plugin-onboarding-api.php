@@ -213,10 +213,3 @@
       return true;
     }
 }
-
-/*
-// Instance
-$instance = new MyBookingOnboardingApi();
-// Routes
-$instance->register_routes();
-*/

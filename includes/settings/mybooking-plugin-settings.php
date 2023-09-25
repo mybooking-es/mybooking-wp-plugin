@@ -143,16 +143,6 @@
 
 	            <?php
 
-               $renting_info = '<br>
-                 <div class="postbox">
-                   <div class="inside">
-		                 <p>'._x('This module helps you to build a <em>reservation web site</em> for a <u>vehicle rental</u>, <u>boat rental</u>, <u>properties</u> rental companies or <u>accommodation</u>.', 'settings_context', 'mybooking-wp-plugin').'</p>
-										 <p>'._x('Con la configuración inicial hemos las páginas necesarias para el proceso de reserva y las hemos configurado desde aquí como puedes ver a continuación.', 'settings_context', 'mybooking-wp-plugin').'</p>
-										 <p><strong>'._x('Edita esta parte solo si creas una nueva página para el proceso o para los términos y condiciones y la quieres asignar.', 'settings_context', 'mybooking-wp-plugin').'</strong></p>
-		                </div>
-                 </div>
-                 <hr />';
-
                $activity_info = <<<EOF
                  <br>
                  <div class="postbox">
@@ -270,7 +260,13 @@ EOF;
 			           echo '</table>';
 			         }
 			         else if ($active_tab == 'renting_options') {
-			         	 echo $renting_info;
+									echo '<br><div class="postbox"><div class="inside"><p>';
+									printf(
+										esc_html_x( 'This module helps you to build a reservation web site for a %1$svehicle rental, boat rental, properties rental companies or accommodation%2$s. With the initial configuration we have the necessary pages for the reservation process and we have configured them from here as you can see below. Edit this part only if you create a new page for the process or terms and conditions and want to assign it.', 'settings_context', 'mybooking-wp-plugin' ),
+										'<strong>',
+										'</strong>'
+									);
+									echo '</div></div><hr /></p>';
 			      	   settings_fields('mybooking_plugin_settings_group_renting');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_renting');
