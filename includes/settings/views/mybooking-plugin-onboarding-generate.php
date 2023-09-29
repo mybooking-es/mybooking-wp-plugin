@@ -73,44 +73,58 @@ function mybooking_plugin_onboarding_generate_page() {
 		}
 
 	?>
-	
+
+	<div class="mb-onboarding-page-header">
+		<div class="mb-onboarding-title-section">
+			<h1 class="mb-onboarding-title">
+				<?php echo esc_html_x( 'Welcome onboard', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<br>
+				<?php esc_html_e($trade_name) ?>
+			</h1>
+			<p class="mb-onboarding-description">
+				<?php echo esc_html_x( 'We will star by generating the pages that the reservation process requires. You will get a list of the pages and complementary information to complete the configuration.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			</p>
+		</div>
+	</div>
+
 	<div class="mb-onboarding-generate mb-onboarding-commons">
 		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">
-			<?php echo esc_html_x( 'Loading...', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( 'Loading', 'onboarding_context', 'mybooking-wp-plugin' ) ?>...
 		</div>
-		<h1>
-			<?php echo esc_html_x( 'Mybooking booking engine', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-		</h1>
-		<h2>
-		<?php echo esc_html_x( 'Business Type', 'onboarding_context', 'mybooking-wp-plugin' ) ?>: 
+
+		<h2 class="mb-onboarding-step-title">
+			<?php echo esc_html_x( 'Your current settings', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+		</h2>
+		<div class="mb-onboarding-setup-item">
+			<?php echo esc_html_x( 'Type of bussiness', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			<strong>
 				<?php esc_html_e($family_name) ?>
 			</strong>
-			&nbsp;
-			<?php echo esc_html_x( 'Module/s', 'onboarding_context', 'mybooking-wp-plugin' ) ?>: <strong>
-				<?php if ( $module_rental ): ?> <?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php endif; ?><?php if ( $module_activities ): ?> <?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php endif; ?><?php if ( $module_transfer ): ?> <?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php endif; ?></strong>
-		</h2>
-		<h3>
-			<?php echo esc_html_x( 'We thank you for your trust in our product and we welcome you ', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-			<strong><?php esc_html_e($trade_name) ?></strong> :D
-		</h3>
-		<h4>
-			<?php echo esc_html_x( 'Setting', 'onboarding_context', 'mybooking-wp-plugin' ) ?>:
-		</h4>
-		<p>
-			<?php echo esc_html_x( 'To configure the plugin we are going to use the current configuration of your business so that with a few steps you can start using your booking engine', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+		</div>
+		<div class="mb-onboarding-setup-item">
+			<?php echo esc_html_x( 'Module(s)', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<strong>
+				<?php if ( $module_rental ): ?> 
+					<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?> 
+					<?php endif; ?>
+				<?php if ( $module_activities ): ?> 
+					<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?> 
+					<?php endif; ?>
+				<?php if ( $module_transfer ): ?> 
+					<?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?> 
+					<?php endif; ?>
+			</strong>
+		</div>
+		
+		<p class="mb-onboarding-description">
+			<?php echo esc_html_x( 'To configure the plugin we are going to use the current configuration of your business', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</p>
-		<p>
-			<?php echo esc_html_x( 'We will begin by generating the pages that the reservation process requires and we will provide you with a list of the pages so that you can locate them and complementary information to help you finalize the configuration in the Wordpress reservation engine and in Mybooking', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-			</p>
+		
 		<form  id="mb-onboarding-generate-form" method="POST">
-			<br />
-			<!-- Buttons -->
-			<div class="mb-onboarding-row">
-				<input type="submit" value="<?php echo esc_attr_x( 'Generate', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" />
-			</div>
+			<input class="mb-onboarding-button" type="submit" value="<?php echo esc_attr_x( 'Generate', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" />
 		</form>
 	</div>
+	
 <?php
 }
 
