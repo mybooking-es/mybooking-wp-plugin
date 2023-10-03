@@ -10,6 +10,7 @@
   --mb-accent-color: #2193F2;
 
   --mb-info-color: var(--mb-accent-color);
+  --mb-info-color: var(--brand-primary); /* Theme compat */
   --mb-primary-selected-date: #2193f2;
   --mb-secondary-selected-date: #9cdbf7;
   --mb-success-color: #3DD992;
@@ -24,6 +25,8 @@
   --mb-background-color: #EEE;
   --mb-dark-background-color: #424242;
   --mb-negative-text-color: #FFF;
+
+  --mb-page-container-max-width: 1140px;  /* Theme compat */
 
   --mb-button-border-radius: var(--btn-border-radius);
   --mb-button-font-weight: var(--btn-font-w);
@@ -769,6 +772,11 @@ button.mb-button a:hover  {
 }
 
 /** PROCESS PAGES **/
+
+.mybooking-page-container {
+  max-width: var(--mb-page-container-max-width);
+  margin: 0 auto;
+}
 
 /* Complete page */
 .mybooking-process_complete .mybooking-product_description {

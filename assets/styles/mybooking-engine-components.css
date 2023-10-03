@@ -424,6 +424,7 @@
   width: 100%;
   margin: 2rem 0;
   background-color: accentcolor;
+  background-color: var(--mb-info-color);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.3em;
