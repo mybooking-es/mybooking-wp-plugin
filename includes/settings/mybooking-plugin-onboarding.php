@@ -22,73 +22,73 @@
 
 		  add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        _x('Welcome', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-        _x('Welcome', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
-        'manage_options', // Capability
-        'mybooking-onboarding', // Slug
-        array($this, 'mybooking_plugin_onboarding_welcome_page')
-      ); // Callable
+				_x('Welcome', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+				_x('Welcome', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				'manage_options', // Capability
+				'mybooking-onboarding', // Slug
+				array($this, 'mybooking_plugin_onboarding_welcome_page')
+			); // Callable
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        _x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-        _x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
-        'manage_options', // Capability
-        'mybooking-onboarding-login', // Slug
-        array($this, 'mybooking_plugin_onboarding_login_page')
-      ); // Callable
+				_x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+				_x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				'manage_options', // Capability
+				'mybooking-onboarding-login', // Slug
+				array($this, 'mybooking_plugin_onboarding_login_page')
+			); // Callable
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        _x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-        _x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
-        'manage_options', // Capability
-        'mybooking-onboarding-generate', // Slug
-        array($this, 'mybooking_plugin_onboarding_generate_page')
-      ); // Callable
+				_x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+				_x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				'manage_options', // Capability
+				'mybooking-onboarding-generate', // Slug
+				array($this, 'mybooking_plugin_onboarding_generate_page')
+			); // Callable
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        _x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-        _x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
-        'manage_options', // Capability
-        'mybooking-onboarding-resume', // Slug
-        array($this, 'mybooking_plugin_onboarding_resume_page')
-      ); // Callable
+				_x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+				_x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				'manage_options', // Capability
+				'mybooking-onboarding-resume', // Slug
+				array($this, 'mybooking_plugin_onboarding_resume_page')
+			); // Callable
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        _x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-        _x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
-        'manage_options', // Capability
-        'mybooking-onboarding-error', // Slug
-        array($this, 'mybooking_plugin_onboarding_error_page')
-      ); // Callable
+				_x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+				_x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				'manage_options', // Capability
+				'mybooking-onboarding-error', // Slug
+				array($this, 'mybooking_plugin_onboarding_error_page')
+			); // Callable
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        _x('Pages', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-        _x('Pages', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
-        'manage_options', // Capability
-        'mybooking-onboarding-pages', // Slug
-        array($this, 'mybooking_plugin_onboarding_pages_page')
-      ); // Callable
+				_x('Pages', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+				_x('Pages', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				'manage_options', // Capability
+				'mybooking-onboarding-pages', // Slug
+				array($this, 'mybooking_plugin_onboarding_pages_page')
+			); // Callable
 
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-        _x('Components', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-        _x('Components', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
-        'manage_options', // Capability
-        'mybooking-onboarding-components', // Slug
-        array($this, 'mybooking_plugin_onboarding_components_page')
-      ); // Callable
+				_x('Components', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
+				_x('Components', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				'manage_options', // Capability
+				'mybooking-onboarding-components', // Slug
+				array($this, 'mybooking_plugin_onboarding_components_page')
+			); // Callable
 
 		}
 
 		/**
 		 * Settings page : Remove onboarding pages from the menu
 		 */		
-    public function wp_remove_onboarding_page() {
+    	public function wp_remove_onboarding_page() {
 
 			// TODO Uncomment when finished
 			//remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-generate' );

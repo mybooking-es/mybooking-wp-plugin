@@ -8,17 +8,18 @@
 		$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
 
 		if ( $onboarding_settings ) {
+
 			// Set type of module 
 			$module_rental = $module_activities = $module_transfer = false;
-	    if (array_key_exists('module_rental', $onboarding_settings)) {
-				$module_rental = $onboarding_settings["module_rental"];
-	    }
+			if (array_key_exists('module_rental', $onboarding_settings)) {
+					$module_rental = $onboarding_settings["module_rental"];
+			}
 			if (array_key_exists('module_activities', $onboarding_settings)) {
 				$module_activities = $onboarding_settings["module_activities"];
-	    }
+			}
 			if (array_key_exists('module_transfer', $onboarding_settings)) {
 				$module_transfer = $onboarding_settings["module_transfer"];
-	    }
+			}
 		}
 
 		// Get settings
@@ -71,6 +72,7 @@
 		<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">
 			<?php echo esc_html_x( 'Loading...', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</div>
+		
 		<?php if ( isset($pages_ids) ) { ?>
 
 			<!-- RENTING AND TRANSFER PAGES -->
@@ -122,9 +124,11 @@
 						<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 					</strong>
 				</h2>
+
 				<ul class="mb-onboarding-list">
 					<?php foreach ($pages_ids as $key => $id) { ?>
 						<?php $post = get_post($id) ?>
+						
 						<li class="mb-onboarding-setup-item">
 							<div class="mb-onboarding-setup-item-name">
 								<strong>
@@ -134,7 +138,7 @@
 							<div class="mb-onboarding-setup-item-buttons">
 								<?php $type = array_search($id, $settings) ?>
 									<?php $module = ($module_activities) ? 'mybooking_plugin_settings_activities' : '' ?>
-									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>"class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
+									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 								<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
 									<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 								</a>

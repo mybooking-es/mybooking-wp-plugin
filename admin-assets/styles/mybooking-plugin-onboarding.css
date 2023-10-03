@@ -126,6 +126,10 @@
 	opacity: 0.5;
 }
 
+.mb-onboarding-btn-primary {
+	
+}
+
 .mb-onboarding-help-link {
 	font-size: 1.1em;
 	text-decoration: none;;
@@ -155,6 +159,12 @@
 }
 
 /* Listings */
+
+.mb-onboarding-list {
+	margin: 2rem 0 0 0;
+	padding: 0;
+	list-style: none;
+}
 
 .mb-onboarding-setup-item {
 	display: flex;
@@ -218,7 +228,7 @@
 }
 
 .mb-onboarding-component-item-image {
-	max-width: 350px;
+	max-width: 300px;
 	cursor: pointer;
 }
 
@@ -235,12 +245,6 @@
 	line-height: 1.8em;
 	text-align: left;
 	gap: 1rem;
-}
-
-.mb-onboarding-list {
-	margin: 2rem 0 0 0;
-	padding: 0;
-	list-style: none;
 }
 
 .mb-onboarding-row-link {
@@ -261,6 +265,13 @@
 
 .mb-onboarding-list .mb-onboarding-higthlight {
 	border: 2px solid black;
+}
+
+.mb-onboarding-shortcode {
+	display: inlineblock;
+	font-size: 0.8rem;
+	line-height: 1.9rem;
+	padding: 0.3rem;
 }
 
 /* Forms */

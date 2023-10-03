@@ -107,6 +107,9 @@ function mybooking_plugin_onboarding_generate_page() {
 				<?php if ( $module_rental ): ?> 
 					<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?> 
 					<?php endif; ?>
+				<?php if ( $module_rental && $module_activities ): ?> 
+					<span class="mb-onboarding-separator"></span>
+					<?php endif; ?>
 				<?php if ( $module_activities ): ?> 
 					<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?> 
 					<?php endif; ?>

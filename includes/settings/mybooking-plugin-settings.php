@@ -21,16 +21,16 @@
 		 * Settings page : Create new settings page
 		 */
 		public function wp_settings_page() {
-		  add_menu_page(
-        'Mybooking Plugin', // Page title
-        'Mybooking', // Menu option title
-        'manage_options', // Capability
-        'mybooking-plugin-configuration', // Slug
-        array($this, 'mybooking_plugin_settings_page'),
-        plugin_dir_url(__DIR__)."../assets/images/mybooking-logo-bn.png"
-      ); // Callable
+		  	add_menu_page(
+				'Mybooking Plugin', // Page title
+				'Mybooking', // Menu option title
+				'manage_options', // Capability
+				'mybooking-plugin-configuration', // Slug
+				array($this, 'mybooking_plugin_settings_page'),
+				plugin_dir_url(__DIR__)."../assets/images/mybooking-logo-bn.png"
+			); // Callable
 
-      add_submenu_page(
+      		add_submenu_page(
 		      'mybooking-plugin-configuration',
 		    	_x('Settings', 'plugin_settings', 'mybooking-wp-plugin'),
 		    	_x('Settings', 'plugin_settings', 'mybooking-wp-plugin'),
