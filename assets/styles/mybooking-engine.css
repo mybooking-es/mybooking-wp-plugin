@@ -25,6 +25,10 @@
   --mb-dark-background-color: #424242;
   --mb-negative-text-color: #FFF;
 
+  --mb-button-border-radius: var(--btn-border-radius);
+  --mb-button-font-weight: var(--btn-font-w);
+  --mb-placeholder-text-color: #888;
+
   /* Forms */
   --mb-form-field-height:  42px;
   --mb-form-field-border-color:  var(--mb-border-color);
@@ -32,10 +36,17 @@
 
   /* Selector form */
   --mb-selector-label-color: currentcolor;
+  --mb-selector-label-color: var(--selector-label-color); /* Theme compat */
   --mb-selector-padding: 2rem;
   --mb-selector-background: white;
+  --mb-selector-background: var(--home-selector-bg); /* Theme compat */
   --mb-selector-border-color: var(--mb-form-field-border-color);
+  --mb-selector-border-color: none; /* Theme compat */
   --mb-selector-field-height: var(--mb-form-field-height);
+  --mb-selector-button-bg-color: var(--selector-btn-bg-color);/* Theme compat */
+  --mb-selector-button-color: var(--selector-btn-color);
+  --mb-selector-button-border-color: var(--selector-btn-bg-color);/* Theme compat */
+  
 
   --mb-selector-promo-border: var(--mb-form-field-border-color);
   --mb-selector-promo-bg: white;
@@ -495,7 +506,8 @@ form.mybooking select,
   padding: 1rem 2rem;
   line-height: 1.1;
   text-decoration: none!important;
-  border-radius: var(--mb-border-radius);
+  font-weight: var(--mb-button-font-weight);
+  border-radius: var(--mb-button-border-radius);
 }
 
 .mb-button a,
