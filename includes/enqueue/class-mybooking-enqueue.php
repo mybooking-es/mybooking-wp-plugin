@@ -341,7 +341,7 @@
 
 
       // Enqueue the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
-
+/*
       if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
            has_shortcode( $content , 'mybooking_rent_engine_selector') ) {
             wp_register_script( 'mybooking-rent-engine-script',
@@ -354,7 +354,7 @@
              )
           );
           wp_enqueue_script( 'mybooking-rent-engine-script');
-      } else {
+      } else { */
         wp_register_script( 'mybooking-rent-engine-script',
                             plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
                             dirname(__DIR__) ),
@@ -365,7 +365,7 @@
                              )
                           );
         wp_enqueue_script( 'mybooking-rent-engine-script');
-      }
+//      }
 
       // Complements (testimonials, cookies, popup)
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1' ||
