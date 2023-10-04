@@ -26,7 +26,8 @@
 				_x('Welcome', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
 				'manage_options', // Capability
 				'mybooking-onboarding', // Slug
-				array($this, 'mybooking_plugin_onboarding_welcome_page')
+				array($this, 'mybooking_plugin_onboarding_welcome_page'),
+				-2
 			); // Callable
 
 			add_submenu_page(
@@ -90,8 +91,22 @@
 		 */		
     	public function wp_remove_onboarding_page() {
 
-			// TODO Uncomment when finished
-			//remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-generate' );
+				// Check install completed
+				$setup_completed = MybookingInstall::installCompleted();
+
+				if ( $setup_completed ) {
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-login' );
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-generate' );
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-resume' );
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-error' );
+				} else {
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-pages' );
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-components' );
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-login' );
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-generate' );
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-resume' );
+					remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-error' );				
+				}
 		
 		}
 

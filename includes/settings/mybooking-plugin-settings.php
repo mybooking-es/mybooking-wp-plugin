@@ -10,6 +10,9 @@
 			// Create menu in settings
 			add_action( 'admin_menu', array($this,'wp_settings_page'));
 
+			// Remove settings page if not setup
+			add_action( 'admin_head', array($this, 'wp_remove_settings_page'));
+
 			// Initialize settings
 			add_action( 'admin_init', array($this,'wp_settings_init'));
 
@@ -22,23 +25,38 @@
 		 */
 		public function wp_settings_page() {
 		  	add_menu_page(
-				'Mybooking Plugin', // Page title
-				'Mybooking', // Menu option title
-				'manage_options', // Capability
-				'mybooking-plugin-configuration', // Slug
-				array($this, 'mybooking_plugin_settings_page'),
-				plugin_dir_url(__DIR__)."../assets/images/mybooking-logo-bn.png"
-			); // Callable
+					'Mybooking Plugin', // Page title
+					'Mybooking', // Menu option title
+					'manage_options', // Capability
+					'mybooking-plugin-configuration', // Slug
+					array($this, 'mybooking_plugin_settings_page'),
+					plugin_dir_url(__DIR__)."../assets/images/mybooking-logo-bn.png"
+				); // Callable
 
-      		add_submenu_page(
-		      'mybooking-plugin-configuration',
-		    	wp_kses_post( _x('Settings', 'plugin_settings', 'mybooking-wp-plugin') ),
-		    	wp_kses_post( _x('Settings', 'plugin_settings', 'mybooking-wp-plugin') ),
-		    	'manage_options',
-		    	'mybooking-plugin-configuration', // The same slug as the main menu so it will be the default option
-		    	array($this, 'mybooking_plugin_settings_page'),
-  		    -1
+				add_submenu_page(
+					'mybooking-plugin-configuration',
+					wp_kses_post( _x('Settings', 'plugin_settings', 'mybooking-wp-plugin') ),
+					wp_kses_post( _x('Settings', 'plugin_settings', 'mybooking-wp-plugin') ),
+					'manage_options',
+					'mybooking-plugin-configuration', // The same slug as the main menu so it will be the default option
+					array($this, 'mybooking_plugin_settings_page'),
+					-1
 		    );
+		}
+
+		/**
+		 * Settings page : Remove settings page from the menu
+		 */		
+		public function wp_remove_settings_page() {
+
+			// Check install completed
+			$setup_completed = MybookingInstall::installCompleted();
+
+			// Remove the settings page while the wizard have not been run
+			if ( !$setup_completed ) {
+				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-plugin-configuration' );
+			}
+		
 		}
 
 		/**

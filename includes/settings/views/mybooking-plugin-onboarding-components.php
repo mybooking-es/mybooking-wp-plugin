@@ -26,10 +26,17 @@ function mybooking_plugin_onboarding_components_page() {
 				<?php echo esc_html_x( 'Components', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</h2>
 
-			<?php if ( (array_key_exists('wc_rent_selector', $onboarding_settings) &&  $onboarding_settings['wc_rent_selector']) || (array_key_exists('wc_rent_calendar', $onboarding_settings) &&  $onboarding_settings['wc_rent_calendar']) || (array_key_exists('wc_rent_daily_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_daily_planning']) || (array_key_exists('wc_rent_monthly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_monthly_planning']) || (array_key_exists('wc_rent_weekly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_weekly_planning']) || (array_key_exists('wc_rent_shift_picker', $onboarding_settings) &&  $onboarding_settings['wc_rent_shift_picker'])  || (array_key_exists('wc_activity_calendar', $onboarding_settings) &&  $onboarding_settings['wc_activity_calendar'])  || (array_key_exists('wc_transfer_selector', $onboarding_settings) &&  $onboarding_settings['wc_transfer_selector']) ) { ?>
+			<?php if ( (array_key_exists('wc_rent_selector', $onboarding_settings) && $onboarding_settings['wc_rent_selector']) || 
+								 (array_key_exists('wc_rent_calendar', $onboarding_settings) &&  $onboarding_settings['wc_rent_calendar']) || 
+								 (array_key_exists('wc_rent_daily_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_daily_planning']) || 
+								 (array_key_exists('wc_rent_monthly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_monthly_planning']) || 
+								 (array_key_exists('wc_rent_weekly_planning', $onboarding_settings) &&  $onboarding_settings['wc_rent_weekly_planning']) || 
+								 (array_key_exists('wc_rent_shift_picker', $onboarding_settings) &&  $onboarding_settings['wc_rent_shift_picker'])  || 
+								 (array_key_exists('wc_activity_calendar', $onboarding_settings) &&  $onboarding_settings['wc_activity_calendar'])  || 
+								 (array_key_exists('wc_transfer_selector', $onboarding_settings) &&  $onboarding_settings['wc_transfer_selector']) ) { ?>
 				<ul class="mb-onboarding-list">
 					<!-- RENT SELECTOR -->
-					<?php if ( $onboarding_settings['wc_rent_selector'] ): ?>
+					<?php if ( array_key_exists('wc_rent_selector', $onboarding_settings) && $onboarding_settings['wc_rent_selector'] ): ?>
 						<li class="mb-onboarding-component-item">
 							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png'; ?>" title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
 							<div class="mb-onboarding-component-item-body">
@@ -58,7 +65,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<?php endif; ?>
 
 					<!-- RENT CALENDAR -->
-					<?php if ( $onboarding_settings['wc_rent_calendar'] ): ?>
+					<?php if ( array_key_exists('wc_rent_calendar', $onboarding_settings) && $onboarding_settings['wc_rent_calendar'] ): ?>
 						<li class="mb-onboarding-component-item">
 							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
@@ -86,7 +93,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<?php endif; ?>
 
 					<!-- MONTLY PLANNING -->
-					<?php if ( $onboarding_settings['wc_rent_monthly_planning'] ): ?>
+					<?php if ( array_key_exists('wc_rent_monthly_planning', $onboarding_settings) && $onboarding_settings['wc_rent_monthly_planning'] ): ?>
 						<li class="mb-onboarding-component-item">
 							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
@@ -115,7 +122,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<?php endif; ?>
 
 					<!-- DAILY PLANNING -->
-					<?php if ( $onboarding_settings['wc_rent_daily_planning'] ): ?>
+					<?php if ( array_key_exists('wc_rent_daily_planning', $onboarding_settings) && $onboarding_settings['wc_rent_daily_planning'] ): ?>
 						<li class="mb-onboarding-component-item">
 							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
@@ -144,7 +151,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<?php endif; ?>
 
 					<!-- WEEKLY PLANNING -->
-					<?php if ( $onboarding_settings['wc_rent_weekly_planning'] ): ?>
+					<?php if ( array_key_exists('wc_rent_weekly_planning', $onboarding_settings) && $onboarding_settings['wc_rent_weekly_planning'] ): ?>
 						<li class="mb-onboarding-component-item">
 							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
@@ -173,7 +180,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<?php endif; ?>
 
 					<!-- SHIFT PICKER -->
-					<?php if ( $onboarding_settings['wc_rent_shift_picker'] ): ?>
+					<?php if ( array_key_exists('wc_rent_shift_picker', $onboarding_settings) && $onboarding_settings['wc_rent_shift_picker'] ): ?>
 						<li class="mb-onboarding-component-item">
 							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
@@ -204,7 +211,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<!-- == ACTIVITIES == -->
 
 					<!-- ACTIVITIES CALENDAR -->
-					<?php if ( $onboarding_settings['wc_activity_calendar'] ): ?>
+					<?php if ( array_key_exists('wc_activity_calendar', $onboarding_settings) && $onboarding_settings['wc_activity_calendar'] ): ?>
 						<li class="mb-onboarding-component-item">
 							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
@@ -234,7 +241,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<!-- == TRANSFER == -->
 
 					<!-- TRANSFER SELECTOR -->
-					<?php if ( $onboarding_settings['wc_transfer_selector'] ): ?>
+					<?php if ( array_key_exists('wc_transfer_selector', $onboarding_settings) && $onboarding_settings['wc_transfer_selector'] ): ?>
 						<li class="mb-onboarding-component-item">
 								<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png'; ?>" title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
 								<div class="mb-onboarding-component-item-body">
