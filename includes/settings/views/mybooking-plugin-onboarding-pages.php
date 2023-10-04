@@ -12,7 +12,7 @@
 			// Set type of module 
 			$module_rental = $module_activities = $module_transfer = false;
 			if (array_key_exists('module_rental', $onboarding_settings)) {
-					$module_rental = $onboarding_settings["module_rental"];
+				$module_rental = $onboarding_settings["module_rental"];
 			}
 			if (array_key_exists('module_activities', $onboarding_settings)) {
 				$module_activities = $onboarding_settings["module_activities"];
@@ -22,22 +22,7 @@
 			}
 		}
 
-		// Get settings
-		if ($module_rental) {
-			$settings = (array) get_option("mybooking_plugin_settings_renting");
-		}
-
-		// Get activities settings
-		if ($module_activities) {
-			$settings = (array) get_option("mybooking_plugin_settings_activities");
-		}
-
-		// Get transfer settings
-		if ($module_transfer) {
-			$settings = (array) get_option("mybooking_plugin_settings_transfer");
-		}
-
-		if ($settings) {
+		function getList ($settings) {
 			$pages_ids = array();
 			$home_page_id = 0;
 			foreach ($settings as $key => $value) {
@@ -57,14 +42,29 @@
 				// Sort the pages
 				ksort($pages_ids);
 			}
+
+			return array(
+				"pages_ids" => $pages_ids,
+				"home_page_id" => $home_page_id,
+			);
 		}
 
-		if($settings) {
-			$components_ids = array();
-			foreach ($settings as $key => $value) {
-				// Sort the components
-				ksort($components_ids);
-			}
+		// Get settings
+		if ($module_rental) {
+			$rental_settings = (array) get_option("mybooking_plugin_settings_renting");
+			$rental_obj = getList($rental_settings);
+		}
+
+		// Get activities settings
+		if ($module_activities) {
+			$activities_settings = (array) get_option("mybooking_plugin_settings_activities");
+			$activities_obj = getList($activities_settings);
+		}
+
+		// Get transfer settings
+		if ($module_transfer) {
+			$transfer_settings = (array) get_option("mybooking_plugin_settings_transfer");
+			$transfer_obj = getList($transfer_settings);
 		}
 	?>
 	
@@ -73,91 +73,146 @@
 			<?php echo esc_html_x( 'Loading...', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</div>
 		
-		<?php if ( isset($pages_ids) ) { ?>
+			<!-- RENTING -->
+			<?php if ( $module_rental ): ?>
+				<?php if ( isset($rental_obj['pages_ids']) ) { ?>
+					<h2 class="mb-onboarding-step-title">
+						<?php echo esc_html_x( 'Reservation process pages for ', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<strong>
+							<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						</strong>
+					</h2>
 
-			<!-- RENTING AND TRANSFER PAGES -->
-			<?php if ( $module_rental || $module_transfer ): ?>
-				<h2 class="mb-onboarding-step-title">
-					<?php echo esc_html_x( 'Reservation process pages for ', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-					 <strong>
-						<?php if ( $module_rental ) { ?> <?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php } elseif ( $module_transfer ) { ?> <?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?> <?php } ?>
-					</strong>
-				</h2>
-
-				<ul class="mb-onboarding-list">
-					<?php foreach ($pages_ids as $key => $id) { ?>
-						<?php $post = get_post($id) ?>
-						
-						<li class="mb-onboarding-setup-item">
-							<div class="mb-onboarding-setup-item-name">
-								<strong><?php echo get_the_title( $id ) ?></strong>
-								<?php if ($home_page_id === $id) { ?>
-									<p class="mb-onboarding-setup-item-hint"><?php echo esc_html_x( '(Reservation process starts here)', 'onboarding_context', 'mybooking-wp-plugin' ) ?></p>
-								<?php } ?>
-							</div>
-							<div class="mb-onboarding-setup-item-buttons">
-								<?php $type = array_search($id, $settings) ?>
-								<?php if ($home_page_id === $id) { ?>
-									<a href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
-										<span class="mb-onboarding-icon dashicons dashicons-external"></span>
-									</a>
-								<?php } ?>
-								<?php $module = ($module_rental) ? 'mybooking_plugin_settings_renting' : 'mybooking_plugin_settings_transfer' ?>
-								<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
-								<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
-									<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
-								</a>
-								<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
-									<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+					<ul class="mb-onboarding-list">
+						<?php foreach ($rental_obj['pages_ids'] as $key => $id) { ?>
+							<?php $post = get_post($id) ?>
+							
+							<li class="mb-onboarding-setup-item">
+								<div class="mb-onboarding-setup-item-name">
+									<strong><?php echo get_the_title( $id ) ?></strong>
+									<?php if ( $rental_obj['home_page_id'] === $id ) { ?>
+										<p class="mb-onboarding-setup-item-hint"><?php echo esc_html_x( '(Reservation process starts here)', 'onboarding_context', 'mybooking-wp-plugin' ) ?></p>
+									<?php } ?>
 								</div>
-							</div>
-						</li>
-					<?php } ?>
-				</ul>
+								<div class="mb-onboarding-setup-item-buttons">
+									<?php $type = array_search($id, $rental_settings) ?>
+									<?php if ( $rental_obj['home_page_id'] === $id ) { ?>
+										<a href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										</a>
+									<?php } ?>
+									<?php $module = ($module_rental) ? 'mybooking_plugin_settings_renting' : 'mybooking_plugin_settings_transfer' ?>
+									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
+									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
+									</a>
+									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+									</div>
+								</div>
+							</li>
+						<?php } ?>
+					</ul>
+				<?php } else { ?>
+					<?php echo esc_html_x( 'We are sorry no page could be created. Please try again and if an error occurs again, contact', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					&nbsp;
+					<a href="mail:soporte@mybooking.es">
+						soporte@mybooking.es
+					</a>
+				<?php } ?>
+			<?php endif; ?>
+
+			<!-- TRANSFER PAGES -->
+			<?php if ( $module_transfer ): ?>
+				<?php if ( isset($transfer_obj['pages_ids']) ) { ?>
+					<h2 class="mb-onboarding-step-title">
+						<?php echo esc_html_x( 'Reservation process pages for ', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<strong>
+							<?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						</strong>
+					</h2>
+
+					<ul class="mb-onboarding-list">
+						<?php foreach ($transfer_obj['pages_ids'] as $key => $id) { ?>
+							<?php $post = get_post($id) ?>
+							
+							<li class="mb-onboarding-setup-item">
+								<div class="mb-onboarding-setup-item-name">
+									<strong><?php echo get_the_title( $id ) ?></strong>
+									<?php if ($transfer_obj['home_page_id'] === $id) { ?>
+										<p class="mb-onboarding-setup-item-hint"><?php echo esc_html_x( '(Reservation process starts here)', 'onboarding_context', 'mybooking-wp-plugin' ) ?></p>
+									<?php } ?>
+								</div>
+								<div class="mb-onboarding-setup-item-buttons">
+									<?php $type = array_search($id, $rental_settings) ?>
+									<?php if ($transfer_obj['home_page_id'] === $id) { ?>
+										<a href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
+											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
+										</a>
+									<?php } ?>
+									<?php $module = ($module_rental) ? 'mybooking_plugin_settings_renting' : 'mybooking_plugin_settings_transfer' ?>
+									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
+									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
+									</a>
+									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+									</div>
+								</div>
+							</li>
+						<?php } ?>
+					</ul>
+				<?php } else { ?>
+					<?php echo esc_html_x( 'We are sorry no page could be created. Please try again and if an error occurs again, contact', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					&nbsp;
+					<a href="mail:soporte@mybooking.es">
+						soporte@mybooking.es
+					</a>
+				<?php } ?>
 			<?php endif; ?>
 
 			<!-- ACTIVITIES PAGES -->
 			<?php if ( $module_activities ): ?>
-				<h2 class="mb-onboarding-step-title">
-					<?php echo esc_html_x( 'Reservation process pages for', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-					<strong>
-						<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-					</strong>
-				</h2>
+				<?php if ( isset($activities_obj['pages_ids']) ) { ?>
+					<h2 class="mb-onboarding-step-title">
+						<?php echo esc_html_x( 'Reservation process pages for', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<strong>
+							<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						</strong>
+					</h2>
 
-				<ul class="mb-onboarding-list">
-					<?php foreach ($pages_ids as $key => $id) { ?>
-						<?php $post = get_post($id) ?>
-						
-						<li class="mb-onboarding-setup-item">
-							<div class="mb-onboarding-setup-item-name">
-								<strong>
-									<?php echo get_the_title( $id ) ?>
-								</strong>
-							</div>
-							<div class="mb-onboarding-setup-item-buttons">
-								<?php $type = array_search($id, $settings) ?>
-									<?php $module = ($module_activities) ? 'mybooking_plugin_settings_activities' : '' ?>
-									<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
-								<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
-									<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
-								</a>
-								<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
-									<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+					<ul class="mb-onboarding-list">
+						<?php foreach ($activities_obj['pages_ids'] as $key => $id) { ?>
+							<?php $post = get_post($id) ?>
+							
+							<li class="mb-onboarding-setup-item">
+								<div class="mb-onboarding-setup-item-name">
+									<strong>
+										<?php echo get_the_title( $id ) ?>
+									</strong>
 								</div>
-							</div>
-						</li>
-					<?php } ?>
-				</ul>
+								<div class="mb-onboarding-setup-item-buttons">
+									<?php $type = array_search($id, $rental_settings) ?>
+										<?php $module = ($module_activities) ? 'mybooking_plugin_settings_activities' : '' ?>
+										<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
+									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
+										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
+									</a>
+									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
+									</div>
+								</div>
+							</li>
+						<?php } ?>
+					</ul>
+				<?php } else { ?>
+					<?php echo esc_html_x( 'We are sorry no page could be created. Please try again and if an error occurs again, contact', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					&nbsp;
+					<a href="mail:soporte@mybooking.es">
+						soporte@mybooking.es
+					</a>
+				<?php } ?>
 			<?php endif; ?>
-			
-		<?php } else { ?>
-			<?php echo esc_html_x( 'We are sorry no page could be created. Please try again and if an error occurs again, contact', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-			&nbsp;
-			<a href="mail:soporte@mybooking.es">
-				soporte@mybooking.es
-			</a>
-		<?php } ?>
 	</div>
 
 	<!-- Snackbar -->

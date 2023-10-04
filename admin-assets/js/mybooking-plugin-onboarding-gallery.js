@@ -90,19 +90,21 @@
       var URLS = galleryURLS[type];
 
       var HTML = '';
-      URLS.forEach(url => {
-        HTML +=  '<input type="radio" name="selector" id="' + url + '" />';
-      });
-      URLS.forEach(url => {
-        HTML += '<label for="' + url + '">';
-        if (module) {
-          HTML += '<img src="' + folder   + '/' + module + '/' + type + '/' + url + '" alt="image" />';
-        } else {
-          HTML += '<img src="' + folder + '/' + type + '/' + url + '" alt="image" />';
-        }
-        
-        HTML +=   '</label>';
-      });
+      if (URLS && URLS.length > 0) {
+        URLS.forEach(url => {
+          HTML +=  '<input type="radio" name="selector" id="' + url + '" />';
+        });
+        URLS.forEach(url => {
+          HTML += '<label for="' + url + '">';
+          if (module) {
+            HTML += '<img src="' + folder   + '/' + module + '/' + type + '/' + url + '" alt="image" />';
+          } else {
+            HTML += '<img src="' + folder + '/' + type + '/' + url + '" alt="image" />';
+          }
+          
+          HTML +=   '</label>';
+        });
+      }
 
       // Append video
       form.html(HTML);
