@@ -151,7 +151,7 @@ function mybooking_plugin_onboarding_resume_page() {
 				<?php if ( $module_rental || $module_transfer ): ?>
 					<ul class="mb-onboarding-list">
 						<li class="mb-onboarding-component-item">
-							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png'; ?>" title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
 								<div class="mb-onboarding-setup-item-name">
 									<strong>
@@ -195,7 +195,7 @@ function mybooking_plugin_onboarding_resume_page() {
 						
 						<!-- Calendar -->
 						<li class="mb-onboarding-component-item">
-							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="catalog" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/catalog/change_me.png'; ?>">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/catalog/change_me.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
 								<div class="mb-onboarding-setup-item-name">
 									<strong>

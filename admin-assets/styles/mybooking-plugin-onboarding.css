@@ -126,10 +126,6 @@
 	opacity: 0.5;
 }
 
-.mb-onboarding-btn-primary {
-	
-}
-
 .mb-onboarding-help-link {
 	font-size: 1.1em;
 	text-decoration: none;;
@@ -228,12 +224,7 @@
 }
 
 .mb-onboarding-component-item-image {
-	max-width: 300px;
-	cursor: pointer;
-}
-
-.mb-onboarding-component-item-image:hover {
-	opacity: 0.5;
+	max-width: 40%;
 }
 
 .mb-onboarding-component-item-body {
