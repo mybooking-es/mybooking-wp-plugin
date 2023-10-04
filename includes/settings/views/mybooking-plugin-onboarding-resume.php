@@ -70,7 +70,7 @@ function mybooking_plugin_onboarding_resume_page() {
 		<div class="mb-onboarding-title-section">
 			<?php if ( isset($settings) ) { ?>
 				<h1 class="mb-onboarding-title">
-					<?php echo esc_html_x( 'Your booking engine pages had been successfully set up', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'Your booking engine pages has been successfully set up', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 				</h1>
 				<p class="mb-onboarding-description">
 					<?php echo esc_html_x( 'Your proces pages are available under Mybooking menu at sidebar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
