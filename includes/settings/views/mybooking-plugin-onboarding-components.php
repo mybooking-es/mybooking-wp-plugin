@@ -355,6 +355,9 @@ function mybooking_plugin_onboarding_components_page() {
 			</a>
 		<?php } ?>
 	</div>
+
+	<!-- Snackbar -->
+	<div id="mb-onboarding-snackbar" class="mb-onboarding-snackbar"></div>
 	
 	<!-- GALLERY -->
 	<?php require_once ('mybooking-plugin-onboarding-gallery.php') ?>

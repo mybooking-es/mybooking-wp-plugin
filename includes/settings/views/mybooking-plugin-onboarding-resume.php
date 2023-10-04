@@ -233,15 +233,15 @@ function mybooking_plugin_onboarding_resume_page() {
 						<span class="mb-onboarding-path">
 							<?php echo get_site_url(); ?>/summary
 						</span>
-						<a role="button" class="mb-onboarding-btn-primary button button-primary" data-href="<?php echo get_site_url(); ?>/summary" title="<?php echo esc_attr_x( 'Copy Summary path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
-							<?php echo esc_attr_x( 'Copy Sumary path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" data-href="<?php echo get_site_url(); ?>/summary" title="<?php echo esc_attr_x( 'Copy Summary path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
+							<?php echo esc_attr_x( 'Copy Summary path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						</a>
 					</div>
 					<div class="mb-onboarding-setup-item">
 						<span class="mb-onboarding-path">
 							<?php echo get_site_url(); ?>/my-reservation
 						</span>
-						<a role="button" class="mb-onboarding-btn-primary button button-primary" data-href="<?php echo get_site_url(); ?>/my-reservation" title="<?php echo esc_attr_x( 'Copy Reservation path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
+						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" data-href="<?php echo get_site_url(); ?>/my-reservation" title="<?php echo esc_attr_x( 'Copy Reservation path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
 							<?php echo esc_attr_x( 'Copy Reservation path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						</a>
 					</div>
