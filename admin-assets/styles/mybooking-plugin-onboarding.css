@@ -213,6 +213,12 @@
 	background-color: white;
 }
 
+.mb-onboarding-component-item-pill {
+	float: right;
+	font-size: 0.8rem;
+	display: inline-block;
+}
+
 @media (max-width: 600px) {
 	.mb-onboarding-component-item {
 		display: flex;

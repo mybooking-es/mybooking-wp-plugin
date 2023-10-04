@@ -11,60 +11,6 @@
 function mybooking_plugin_onboarding_resume_page() {
 	?>
 	<?php
-	// Get onboarding settings
-	$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
-
-	if ( $onboarding_settings ) {
-		// Set type of module 
-		$module_rental = $module_activities = $module_transfer = false;
-		if (array_key_exists('module_rental', $onboarding_settings)) {
-			$module_rental = $onboarding_settings["module_rental"];
-		}
-		if (array_key_exists('module_activities', $onboarding_settings)) {
-			$module_activities = $onboarding_settings["module_activities"];
-		}
-		if (array_key_exists('module_transfer', $onboarding_settings)) {
-			$module_transfer = $onboarding_settings["module_transfer"];
-		}
-	}
-
-	// Get settings
-	if ($module_rental) {
-		$settings = (array) get_option("mybooking_plugin_settings_renting");
-	}
-
-	// Get activities settings
-	if ($module_activities) {
-		$settings = (array) get_option("mybooking_plugin_settings_activities");
-	}
-
-	// Get transfer settings
-	if ($module_transfer) {
-		$settings = (array) get_option("mybooking_plugin_settings_transfer");
-	}
-
-	?>
-
-	<div class="mb-onboarding-page-header">
-		<div class="mb-onboarding-title-section">
-			<?php if ( isset($settings) ) { ?>
-				<h1 class="mb-onboarding-title">
-					<?php echo esc_html_x( 'Your booking engine pages had been successfully set up', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-				</h1>
-				<p class="mb-onboarding-description">
-					<?php echo esc_html_x( 'Your proces pages are available under Mybooking menu at sidebar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-				</p>
-			<?php } else { ?>
-				<h1 class="mb-onboarding-title mb-onboarding-error">
-					<span class="mb-onboarding-icon dashicons dashicons-error"></span>
-					<?php echo esc_html_x( 'An error has occurred', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
-				</h1>
-			<?php } ?>
-		</div>
-	</div>
-
-	<?php function mybooking_plugin_onboarding_pages_page() { ?>
-		<?php
 			// Get onboarding settings
 			$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
 
@@ -118,17 +64,27 @@ function mybooking_plugin_onboarding_resume_page() {
 					ksort($pages_ids);
 				}
 			}
-
-			if($settings) {
-				$components_ids = array();
-				foreach ($settings as $key => $value) {
-					// Sort the components
-					ksort($components_ids);
-				}
-			}
 		?>
-		
-		<div class="mb-onboarding-pages mb-onboarding-commons">
+
+	<div class="mb-onboarding-page-header">
+		<div class="mb-onboarding-title-section">
+			<?php if ( isset($settings) ) { ?>
+				<h1 class="mb-onboarding-title">
+					<?php echo esc_html_x( 'Your booking engine pages had been successfully set up', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				</h1>
+				<p class="mb-onboarding-description">
+					<?php echo esc_html_x( 'Your proces pages are available under Mybooking menu at sidebar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				</p>
+			<?php } else { ?>
+				<h1 class="mb-onboarding-title mb-onboarding-error">
+					<span class="mb-onboarding-icon dashicons dashicons-error"></span>
+					<?php echo esc_html_x( 'An error has occurred', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				</h1>
+			<?php } ?>
+		</div>
+	</div>
+
+	<div class="mb-onboarding-pages mb-onboarding-commons">
 			<div id="mb-onboarding-loading" class="mb-onboarding-loading" style="display: none;">
 				<?php echo esc_html_x( 'Loading...', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</div>
@@ -270,5 +226,5 @@ function mybooking_plugin_onboarding_resume_page() {
 
 		<!-- Gallery -->
 		<?php require_once ('mybooking-plugin-onboarding-gallery.php') ?>
-	<?php } mybooking_plugin_onboarding_pages_page(); ?>
+
 <?php } mybooking_plugin_onboarding_resume_page(); ?>

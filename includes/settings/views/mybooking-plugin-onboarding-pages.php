@@ -95,7 +95,7 @@
 									<?php } ?>
 								</div>
 								<div class="mb-onboarding-setup-item-buttons">
-									<?php $type = array_search($id, $rental_settings) ?>
+									<?php if ( isset($rental_settings) ) { $type = array_search($id, $rental_settings); } ?>
 									<?php if ( $rental_obj['home_page_id'] === $id ) { ?>
 										<a href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
 											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
@@ -144,7 +144,7 @@
 									<?php } ?>
 								</div>
 								<div class="mb-onboarding-setup-item-buttons">
-									<?php $type = array_search($id, $rental_settings) ?>
+									<?php if ( isset($transfer_settings) ) { $type = array_search($id, $transfer_settings); } ?>
 									<?php if ($transfer_obj['home_page_id'] === $id) { ?>
 										<a href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
 											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
@@ -192,7 +192,7 @@
 									</strong>
 								</div>
 								<div class="mb-onboarding-setup-item-buttons">
-									<?php $type = array_search($id, $rental_settings) ?>
+										<?php if ( isset($activities_settings) ) { $type = array_search($id, $activities_settings); } ?>
 										<?php $module = ($module_activities) ? 'mybooking_plugin_settings_activities' : '' ?>
 										<span data-type="<?php echo $type ?>" data-module="<?php echo $module ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-wp-plugin' ) ?>"></span>
 									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" target="_blank" class="mb-onboarding-row-link">
