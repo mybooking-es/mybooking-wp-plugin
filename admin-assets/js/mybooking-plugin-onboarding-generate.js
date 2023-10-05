@@ -4,7 +4,7 @@
 		/*
 		* Form validation
 		*/
-		$('#mb-onboarding-generate-form').validate({
+		$('#xmb-onboarding-generate-form').validate({
 				submitHandler: function(form) {
 					var url = '/wp-json/api/v1/setupOnboarding';
 					var params = $(form).formParams();

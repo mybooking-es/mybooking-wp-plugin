@@ -10,6 +10,7 @@
   require_once('utils/wpml-integration-functions.php');
   require_once('utils/themes-integration-functions.php');
 
+  require_once('mybooking-admin-functions.php');
   require_once('mybooking-class-install.php');
 
   // Routes (https://github.com/Upstatement/routes)

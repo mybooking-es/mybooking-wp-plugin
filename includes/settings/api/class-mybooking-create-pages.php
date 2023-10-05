@@ -91,11 +91,13 @@
       else {
         // Create the page
         $page = array(
-          'post_name' => esc_sql( $slug ),
-          'post_type' => 'page',
           'post_status' => 'publish',
+          'post_type' => 'page',
+          'post_author' => 1,
+          'post_name' => esc_sql( $slug ),
           'post_title' => $title,
           'post_content' => $content,
+          'comment_status' => 'closed',
           'menu_order' => $order
         );
         $page_id = wp_insert_post($page);
