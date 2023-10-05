@@ -8,7 +8,6 @@
 		$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
 
 		if ( $onboarding_settings ) {
-
 			// Set type of module 
 			$module_rental = $module_activities = $module_transfer = false;
 			if (array_key_exists('module_rental', $onboarding_settings)) {
