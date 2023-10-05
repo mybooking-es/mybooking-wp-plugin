@@ -7,44 +7,59 @@
       // Created pages (posts) ids
       $pages = array();
 
+      $oneModule = MybookingInstall::isOneModuleInstall();
+
+      $checkoutTitle = _x( 'Check out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+      $summaryTitle = _x( 'Summary', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+      $myReservationTitle = _x( 'My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+      $homeTestTitle = _x( 'Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+      $chooseProductTitle = _x( 'Search result', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+
+      if ( !$oneModule ) {
+        $checkoutTitle = _x( 'Transfer Check out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+        $summaryTitle = _x( 'Transfer Summary', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+        $myReservationTitle = _x( 'Transfer My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+        $homeTestTitle = _x( 'Transfer Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+        $chooseProductTitle = _x( 'Transfer Search result', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+      }
+
       // Define pages
       $pages_to_create = array(
-        'choose_vehicle'           				=> array(
-					'option' => 'mybooking_plugin_settings_transfer_choose_vehicle_page',
-					'title' => _x( 'Transfer Choose Vehicle', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
-					'content' => '<!-- wp:shortcode -->[mybooking_transfer_choose_vehicle]<!-- /wp:shortcode -->',
-					'slug' => 'choose-vehicle',
-					'order' => 1,
-        ),
         'checkout'           => array(
            'option' => 'mybooking_plugin_settings_transfer_checkout_page',
-           'title' => _x( 'Transfer Check-out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+           'title' => $checkoutTitle,
            'content' => '<!-- wp:shortcode -->[mybooking_transfer_checkout]<!-- /wp:shortcode -->',
            'slug' => 'checkout',
            'order' => 3,
         ),
         'summary'           => array(
            'option' => 'mybooking_plugin_settings_transfer_summary_page',
-           'title' => _x( 'Transfer Summary', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+           'title' => $summaryTitle,
            'content' => '<!-- wp:shortcode -->[mybooking_transfer_summary]<!-- /wp:shortcode -->',
            'slug' => 'summary',
            'order' => 4,
         ),
         'my_reservation'           => array(
           'option' => 'mybooking_plugin_settings_my_reservation_page',
-          'title' => _x( 'Transfer My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+          'title' => $myReservationTitle,
           'content' => '<!-- wp:shortcode -->[mybooking_transfer_reservation]<!-- /wp:shortcode -->',
           'slug' => 'my-reservation',
           'order' => 5,
        ),
 				'home_test'           				=> array(
 					'option' => 'mybooking_plugin_settings_home_test_page',
-					'title' => _x( 'Transfer Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' ),
+					'title' =>  $homeTestTitle,
 					'content' => '<!-- wp:shortcode -->[mybooking_transfer_selector]<!-- /wp:shortcode -->',
 					'slug' => 'home-test',
 					'order' => 1,
         ),
-        
+        'choose_vehicle'           				=> array(
+					'option' => 'mybooking_plugin_settings_transfer_choose_vehicle_page',
+					'title' => $chooseProductTitle,
+					'content' => '<!-- wp:shortcode -->[mybooking_transfer_choose_vehicle]<!-- /wp:shortcode -->',
+					'slug' => 'choose-vehicle',
+					'order' => 1,
+        )
       );
 
       // Create pages
