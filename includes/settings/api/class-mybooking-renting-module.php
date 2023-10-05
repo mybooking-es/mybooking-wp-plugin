@@ -15,12 +15,21 @@
       $homeTestTitle = _x( 'Home Test', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
       $chooseProductTitle = _x( 'Search result', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
 
+      $checkoutSlug = 'checkout';
+      $summarySlug = 'summary';
+      $myReservationSlug = 'my-reservation';
+
+
       if ( !$oneModule ) {
         $checkoutTitle = _x( 'Renting Check out', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
         $summaryTitle = _x( 'Renting Summary', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
         $myReservationTitle = _x( 'Renting My reservation', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
         $homeTestTitle = _x( 'Renting Home Test', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
         $chooseProductTitle = _x( 'Renting Search result', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
+
+        $checkoutSlug = 'checkout-renting';
+        $summarySlug = 'summary-renting';
+        $myReservationSlug = 'my-reservation-renting';
       }
 
       // Define pages
@@ -29,21 +38,21 @@
            'option' => 'mybooking_plugin_settings_checkout_page',
            'title' => $checkoutTitle,
            'content' => '<!-- wp:shortcode -->[mybooking_rent_engine_complete]<!-- /wp:shortcode -->',
-           'slug' => 'checkout',
+           'slug' => $checkoutSlug,
            'order' => 3,
         ),
         'summary'           => array(
            'option' => 'mybooking_plugin_settings_summary_page',
            'title' => $summaryTitle,
            'content' => '<!-- wp:shortcode -->[mybooking_rent_engine_summary]<!-- /wp:shortcode -->',
-           'slug' => 'summary',
+           'slug' => $summarySlug,
            'order' => 4,
         ),
         'my_reservation'           => array(
            'option' => 'mybooking_plugin_settings_my_reservation_page',
            'title' => $myReservationTitle,
            'content' => '<!-- wp:shortcode -->[mybooking_rent_engine_reservation]<!-- /wp:shortcode -->',
-           'slug' => 'my-reservation',
+           'slug' => $myReservationSlug,
            'order' => 5,
         )
       );        
