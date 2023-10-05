@@ -69,7 +69,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<!-- RENT CALENDAR -->
 					<?php if ( array_key_exists('wc_rent_calendar', $onboarding_settings) && $onboarding_settings['wc_rent_calendar'] ): ?>
 						<li class="mb-onboarding-component-item">
-							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
 								<div class="mb-onboarding-component-item-pill">
 									<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
@@ -94,10 +94,10 @@ function mybooking_plugin_onboarding_components_page() {
 						</li>
 					<?php endif; ?>
 
-					<!-- MONTLY PLANNING -->
+					<!-- CALENDAR PLANNING -->
 					<?php if ( array_key_exists('wc_rent_monthly_planning', $onboarding_settings) && $onboarding_settings['wc_rent_monthly_planning'] ): ?>
 						<li class="mb-onboarding-component-item">
-							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-calendar/planning-calendar.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
 								<div class="mb-onboarding-component-item-pill">
 									<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
@@ -126,7 +126,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<!-- DAILY PLANNING -->
 					<?php if ( array_key_exists('wc_rent_daily_planning', $onboarding_settings) && $onboarding_settings['wc_rent_daily_planning'] ): ?>
 						<li class="mb-onboarding-component-item">
-							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-diary"  src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-diary/planning-diary.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
 								<div class="mb-onboarding-component-item-pill">
 									<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
@@ -155,7 +155,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<!-- WEEKLY PLANNING -->
 					<?php if ( array_key_exists('wc_rent_weekly_planning', $onboarding_settings) && $onboarding_settings['wc_rent_weekly_planning'] ): ?>
 						<li class="mb-onboarding-component-item">
-							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-weekly" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-weekly/planning-weekly.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
 								<div class="mb-onboarding-component-item-pill">
 									<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
@@ -184,7 +184,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<!-- SHIFT PICKER -->
 					<?php if ( array_key_exists('wc_rent_shift_picker', $onboarding_settings) && $onboarding_settings['wc_rent_shift_picker'] ): ?>
 						<li class="mb-onboarding-component-item">
-							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/shift-picker/shift-picker.png'; ?>">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="shift-picker" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/shift-picker/shift-picker.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
 								<div class="mb-onboarding-component-item-pill">
 									<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?>

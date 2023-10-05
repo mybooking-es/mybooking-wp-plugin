@@ -460,13 +460,11 @@ h1.mb-onboarding-error {
 
 .mb-onboarding-gallery .mb-onboarding-gallery-form label {
 	display: inline-block;
-	min-height: 100%;
 	width: 100vw;
 	height: 100vh;
 	z-index: 1;
 	position: relative;
 	transition: transform 400ms ease-out;
-	vertical-align: center;
 }
 
 .mb-onboarding-gallery .mb-onboarding-gallery-form label:before,
@@ -500,6 +498,7 @@ h1.mb-onboarding-error {
 }
 
 .mb-onboarding-gallery .mb-onboarding-gallery-form label img {
+	display: block;
 	max-width: 90vw;
 	max-height: 80vh;
 	margin: 10vh auto;
