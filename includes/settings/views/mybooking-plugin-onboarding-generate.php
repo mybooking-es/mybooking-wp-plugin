@@ -57,8 +57,9 @@ function mybooking_plugin_onboarding_setup() {
 
       if ($pages !== null) {
         // OK
-				wp_redirect('mybooking-plugin-onboarding-resume.php');
-				exit;				
+				//wp_redirect('mybooking-plugin-onboarding-resume.php');
+				//exit;
+				require_once('mybooking-plugin-onboarding-resume.php');		
       }
       else {
         // ERROR
