@@ -138,23 +138,15 @@
     public function setupOnboarding($request) {
       
       // Retrieve the business info stored in login
-      //$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
-      // return 400 if no $onboarding_settings
-
-      // Pase Body as JSON
-      $data = json_decode($request->get_body(), true);
-
-      // Check valid JSON
-      if ( json_last_error() !== JSON_ERROR_NONE ) {
-        return new WP_REST_Response(array("message" => "Invalid JSON parameters"), 400); 
-      }
-
-      // Retrieve the business info stored in login
       $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
 
       $pages = array();
 
       if ( $onboarding_settings ) {
+
+        // Set the locale to the store locale to ensure pages are created in the correct language.
+        mybooking_switch_to_site_locale();
+
         // Renting
         $renting_module = new MybookingRentingModule();
         if ( array_key_exists('module_rental', $onboarding_settings) && $onboarding_settings['module_rental'] ) {
@@ -190,6 +182,10 @@
           // Clear the transfer module
           $transfer_module->clearTransferModule();            
         }
+
+        // Restore the locale to the default locale.
+        mybooking_restore_locale();
+
       }
 
       if ($pages !== null) {

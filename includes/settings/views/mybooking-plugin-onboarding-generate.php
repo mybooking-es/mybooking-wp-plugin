@@ -2,6 +2,70 @@
 	defined('ABSPATH') or die('Forbidden');
 ?>
 
+<?php 
+function mybooking_plugin_onboarding_setup() {
+      // Retrieve the business info stored in login
+      $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+
+      $pages = array();
+
+      if ( $onboarding_settings ) {
+
+        // Set the locale to the store locale to ensure pages are created in the correct language.
+        mybooking_switch_to_site_locale();
+
+        // Renting
+        $renting_module = new MybookingRentingModule();
+        if ( array_key_exists('module_rental', $onboarding_settings) && $onboarding_settings['module_rental'] ) {
+          // Create the pages
+          $pages['renting'] = $renting_module->createRentingPages($onboarding_settings['wc_rent_selector']);
+          // Configure renting module in settings
+          $renting_module->setupRentingModule();
+        } else {
+          // Clear the renting module
+          $renting_module->clearRentingModule();            
+        }
+
+        // Activities
+        $activities_module = new MybookingActivitiesModule();
+        if ( array_key_exists('module_activities', $onboarding_settings) && $onboarding_settings['module_activities'] ) {
+          // Create the pages
+          $pages['activities'] = $activities_module->createActivitiesPages();
+          // Configure activities module in settings
+          $activities_module->setupActivitiesModule();
+        } else {
+          // Clear the activities module
+          $activities_module->clearActivitiesModule();            
+        }
+
+        // Transfer
+        $transfer_module = new MybookingTransferModule();
+        if ( array_key_exists('module_transfer', $onboarding_settings) && $onboarding_settings['module_transfer'] )  {
+          // Create the pages
+          $pages['transfer'] = $transfer_module->createTransferPages();
+          // Configure transfer module in settings
+          $transfer_module->setupTransferModule();
+        } else {
+          // Clear the transfer module
+          $transfer_module->clearTransferModule();            
+        }
+
+        // Restore the locale to the default locale.
+        mybooking_restore_locale();
+
+      }
+
+      if ($pages !== null) {
+        // OK
+				wp_redirect('mybooking-plugin-onboarding-resume.php');
+				exit;				
+      }
+      else {
+        // ERROR
+      }
+} 
+?>
+
 <?php
 /**
 * Render Mybooking onboarding page
@@ -66,6 +130,7 @@ function mybooking_plugin_onboarding_generate_page() {
 					$wc_transfer_selector = $onboarding_settings["wc_transfer_selector"];
 				}
 			}
+			
 		}
 		else {
 			wp_redirect('mybooking-plugin-onboarding-welcome.php');
@@ -124,6 +189,7 @@ function mybooking_plugin_onboarding_generate_page() {
 		</p>
 		
 		<form  id="mb-onboarding-generate-form" method="POST">
+			<input type="hidden" name="process" value="true"/>
 			<input class="mb-onboarding-button" type="submit" value="<?php echo esc_attr_x( 'Generate', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" />
 		</form>
 	</div>
@@ -131,5 +197,12 @@ function mybooking_plugin_onboarding_generate_page() {
 <?php
 }
 
-mybooking_plugin_onboarding_generate_page();
+if (isset($_POST['process']) && $_POST['process'] == 'true') {
+	mybooking_plugin_onboarding_setup();
+	wp_redirect('mybooking-plugin-onboarding-resume.php');
+}
+else {
+	mybooking_plugin_onboarding_generate_page();
+}
+
 ?>
