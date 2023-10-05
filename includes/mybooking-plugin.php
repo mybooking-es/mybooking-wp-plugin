@@ -10,6 +10,8 @@
   require_once('utils/wpml-integration-functions.php');
   require_once('utils/themes-integration-functions.php');
 
+  require_once('mybooking-class-install.php');
+
   // Routes (https://github.com/Upstatement/routes)
   if ( !class_exists('AltoRouter') ) {
     require_once('routes/altorouter.php');

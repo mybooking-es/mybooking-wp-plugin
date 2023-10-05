@@ -151,7 +151,7 @@
 
               <!-- // Button -->
               <button class="mb-button btn-choose-product" data-product="<%=product.id%>">
-                <?php echo _x( 'Book it!', 'transfer_choose_product', 'mybooking-wp-plugin' ) ?>
+                <?php echo esc_html_x( 'Book it!', 'transfer_choose_product', 'mybooking-wp-plugin' ) ?>
               </button>
             </div>
           </div>

@@ -82,7 +82,7 @@ function mybooking_plugin_onboarding_generate_page() {
 				<?php esc_html_e($trade_name) ?>
 			</h1>
 			<p class="mb-onboarding-description">
-				<?php echo esc_html_x( 'We will star by generating the pages that the reservation process requires. You will get a list of the pages and complementary information to complete the configuration.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'We will start by generating the pages that the reservation process requires. You will get a list of the pages and complementary information to complete the configuration.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</p>
 		</div>
 	</div>
