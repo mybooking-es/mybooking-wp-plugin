@@ -8,7 +8,7 @@
  */
 ?>
 
-<section class="mybooking mybooking-process_summary <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<section class="mybooking mybooking-process_summary mybooking-page-container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <div class="mb-row">
 
     <!-- Reservation summary -->

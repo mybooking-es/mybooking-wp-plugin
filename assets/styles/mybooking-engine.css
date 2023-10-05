@@ -84,7 +84,7 @@
   --mb-product-custom-message-color: currentcolor;
 
   /* Product text */
-  --mb-product-name-size: 1em;
+  --mb-product-name-size: 1.3em;
   --mb-product-name-width: 300px;
   --mb-product-description-width: 300px;
   --mb-product-price-color: var(--mb-info-color);

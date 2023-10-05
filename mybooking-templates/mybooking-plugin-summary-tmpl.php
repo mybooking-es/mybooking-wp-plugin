@@ -86,7 +86,7 @@
 
   <!-- // Product details -->
 
-  <div class="mb-col-md-8 mb-col-center">
+  <div class="mb-col-md-6 mb-col-center">
 
     <!-- // Reservation status message -->
     <div class="mybooking-summary_status">
@@ -103,8 +103,8 @@
     <% for (var idx=0;idx<booking.booking_lines.length;idx++) { %>
 
       <div class="mb-section">
-        <div class="mb-card inline">
-          <div class="mb-col-md-6">
+        <div class="mb-card">
+          <div class="mb-col-md-12">
 
             <!-- // Product photo -->
             <% if (booking.booking_lines[idx].photo_full && booking.booking_lines[idx].photo_full !== '') { %>
@@ -113,7 +113,7 @@
               <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
             <% } %>
           </div>
-          <div class="mb-col-md-6">
+          <div class="mb-col-md-12">
 
             <!-- // Product name -->
             <span class="mybooking-product_name">
