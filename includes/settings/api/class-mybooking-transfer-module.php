@@ -15,12 +15,20 @@
       $homeTestTitle = _x( 'Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
       $chooseProductTitle = _x( 'Search result', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
 
+      $checkoutSlug = 'checkout';
+      $summarySlug = 'summary';
+      $myReservationSlug = 'my-reservation';
+
       if ( !$oneModule ) {
         $checkoutTitle = _x( 'Transfer Check out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
         $summaryTitle = _x( 'Transfer Summary', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
         $myReservationTitle = _x( 'Transfer My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
         $homeTestTitle = _x( 'Transfer Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
         $chooseProductTitle = _x( 'Transfer Search result', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+
+        $checkoutSlug = 'checkout-transfer';
+        $summarySlug = 'summary-transfer';
+        $myReservationSlug = 'my-reservation-transfer';
       }
 
       // Define pages
@@ -29,21 +37,21 @@
            'option' => 'mybooking_plugin_settings_transfer_checkout_page',
            'title' => $checkoutTitle,
            'content' => '<!-- wp:shortcode -->[mybooking_transfer_checkout]<!-- /wp:shortcode -->',
-           'slug' => 'checkout',
+           'slug' => $checkoutSlug,
            'order' => 3,
         ),
         'summary'           => array(
            'option' => 'mybooking_plugin_settings_transfer_summary_page',
            'title' => $summaryTitle,
            'content' => '<!-- wp:shortcode -->[mybooking_transfer_summary]<!-- /wp:shortcode -->',
-           'slug' => 'summary',
+           'slug' => $summarySlug,
            'order' => 4,
         ),
         'my_reservation'           => array(
           'option' => 'mybooking_plugin_settings_my_reservation_page',
           'title' => $myReservationTitle,
           'content' => '<!-- wp:shortcode -->[mybooking_transfer_reservation]<!-- /wp:shortcode -->',
-          'slug' => 'my-reservation',
+          'slug' => $myReservationSlug,
           'order' => 5,
        ),
 				'home_test'           				=> array(

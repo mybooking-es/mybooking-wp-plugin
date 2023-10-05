@@ -25,7 +25,7 @@
         'my-reservation.png'
       ],
       'selector': [
-        'vertical-selector.png'
+        'horizontal-selector.png'
       ],
       'catalog': [
         'catalog.png'
