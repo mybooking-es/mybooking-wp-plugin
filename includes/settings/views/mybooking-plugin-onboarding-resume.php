@@ -183,7 +183,7 @@
 			<?php echo esc_html_x( 'How to set your engine paths', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</a>
 		<span class="mb-onboarding-separator"></span>
-		<a class="mb-onboarding-help-link">
+		<a href="<?php echo 'https://'.$clientId.'.mybooking.es/login' ?>" target="_blank" class="mb-onboarding-help-link">
 			<?php echo esc_attr_x( 'Enter your account', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</a>
 		
