@@ -157,7 +157,7 @@ function mybooking_plugin_onboarding_resume_page() {
 				<!-- ACTIVITIES CALENDAR -->
 				<?php if ( array_key_exists('wc_activity_calendar', $onboarding_settings) && $onboarding_settings['wc_activity_calendar'] ): ?>
 					<li class="mb-onboarding-component-item">
-						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="catalog" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/catalog/catalog.png'; ?>">
+						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
 						<div class="mb-onboarding-component-item-body">
 							<div class="mb-onboarding-component-item-pill">
 								<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?>

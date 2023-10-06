@@ -97,7 +97,7 @@ function mybooking_plugin_onboarding_components_page() {
 					<!-- CALENDAR PLANNING -->
 					<?php if ( array_key_exists('wc_rent_monthly_planning', $onboarding_settings) && $onboarding_settings['wc_rent_monthly_planning'] ): ?>
 						<li class="mb-onboarding-component-item">
-							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-calendar/planning-calendar.png'; ?>">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-weekly" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-weekly/planning-weekly.png'; ?>">
 							<div class="mb-onboarding-component-item-body">
 								<div class="mb-onboarding-component-item-pill">
 									<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
