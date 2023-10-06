@@ -621,18 +621,6 @@ add_settings_field('mybooking_plugin_settings_products_url',
                         'mybooking-plugin-configuration',
                         'mybooking_plugin_settings_section_complements');
 
-     add_settings_field('mybooking_plugin_settings_complements_renting_item',
-		 										 wp_kses_post( _x('Renting Item module', 'plugin_settings', 'mybooking-wp-plugin') ),
-		                     array($this, 'field_mybooking_plugin_settings_complements_renting_item_callback'),
-                        'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_complements');
-
-     add_settings_field('mybooking_plugin_settings_complements_activity_item',
-		 										 wp_kses_post( _x('Activity Items module', 'plugin_settings', 'mybooking-wp-plugin') ),
-		                     array($this, 'field_mybooking_plugin_settings_complements_activity_item_callback'),
-                        'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_complements');
-
       add_settings_field('mybooking_plugin_settings_complements_cookies',
 												 wp_kses_post( _x('Cookies Notice', 'plugin_settings', 'mybooking-wp-plugin') ),
  		                     array($this, 'field_mybooking_plugin_settings_complements_cookies_callback'),
@@ -1696,60 +1684,6 @@ add_settings_field('mybooking_plugin_settings_products_url',
 			echo "</p>";
       echo "<p class=\"description\">";
 			echo wp_kses_post( _x( '<small>Create one or more Product Sliders under Mybooking menu and use [mybooking_product_slider] to show it on a page or post.</small>', 'settings_context', 'mybooking-wp-plugin' ) );
-			echo "</p>";
- 		}
-
-    /**
-     * Render Renting Items complement
-     */
-    public function field_mybooking_plugin_settings_complements_renting_item_callback() {
-
-      $settings = (array) get_option("mybooking_plugin_settings_complements");
-		  $field = "mybooking_plugin_settings_complements_renting_item";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-		  	$value = '';
-		  }
-
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">";
-			echo wp_kses_post( _x( '<b>Activate Renting Items</b> Custom Post Type in order to create single items related to renting.', 'settings_context', 'mybooking-wp-plugin' ) );
-			echo "</p>";
-      echo "<p class=\"description\">";
-			echo wp_kses_post( _x( '<small>Create one or more Renting Items under Mybooking menu and show in a template or within any page builder query block.</small>', 'settings_context', 'mybooking-wp-plugin' ) );
-			echo "</p>";
- 		}
-
-    /**
-     * Render Activity Items complement
-     */
-    public function field_mybooking_plugin_settings_complements_activity_item_callback() {
-
-      $settings = (array) get_option("mybooking_plugin_settings_complements");
-		  $field = "mybooking_plugin_settings_complements_activity_item";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-		  	$value = '';
-		  }
-
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">";
-			echo wp_kses_post( _x( '<b>Activate Activity Items</b> Custom Post Type in order to create single items related to activities.', 'settings_context', 'mybooking-wp-plugin' ) );
-			echo "</p>";
-      echo "<p class=\"description\">";
-			echo wp_kses_post( _x( '<small>Create one or more Activity Items under Mybooking menu and show in a template or within any page builder query block.</small>', 'settings_context', 'mybooking-wp-plugin' ) );
 			echo "</p>";
  		}
 
