@@ -1,35 +1,6 @@
 <?php 
 class MyBookingInstall {
 
-
- /**
-  * Load the plugin textdomain languages
-  */
-  public static function load_plugin_textdomain() {
-
-		//$locale = determine_locale();
-
-		/**
-		 * Filter to adjust the Mybooking Plugin locale to use for translations.
-		 */
-		//$locale = apply_filters( 'plugin_locale', $locale, 'mybooking-wp-plugin' );
-
-		//unload_textdomain( 'mybooking-wp-plugin' );
-    
-    $languages_folder = dirname(plugin_basename(__DIR__)).'/languages';
-
-    unload_textdomain( 'mybooking-wp-plugin' );
-    //load_text_domain( 'mybooking-wp-plugin', $locale_file);
-    load_plugin_textdomain( 'mybooking-wp-plugin', FALSE, $languages_folder );
-
-    // This module is located in includes and the languages is in the
-    // root directory of the plugin : 'mybooking-wp-plugin/languages/'
-
-    //$languages_folder = dirname(plugin_basename(__DIR__)).'/languages';
-    //load_plugin_textdomain( 'mybooking-wp-plugin', FALSE, $languages_folder );
-
-   }
-
   /**
    * Check if the install process is completed
    */

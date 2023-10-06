@@ -113,17 +113,6 @@
           wp_set_script_translations('mybooking_wp_admin_onboarding_login', 'mybooking-wp-plugin');
         }
 
-        // Onboarding generate
-        if ( $screen->id == "mybooking_page_mybooking-onboarding-generate") {
-          wp_register_script('mybooking_wp_admin_onboarding_generate',
-                            plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-generate.js', dirname(__DIR__) ),
-                            array( 'jquery', 'wp-i18n' ), 
-                            $this->version, 
-                            true);
-          wp_enqueue_script('mybooking_wp_admin_onboarding_generate');
-          wp_set_script_translations('mybooking_wp_admin_onboarding_generate', 'mybooking-wp-plugin');
-        }
-
         // Onboarding pages
         if (  $screen->id == "mybooking_page_mybooking-onboarding-resume" || $screen->id == "mybooking_page_mybooking-onboarding-pages" || $screen->id == "mybooking_page_mybooking-onboarding-components") {
           wp_register_script('mybooking_wp_admin_onboarding_pages',

@@ -10,7 +10,6 @@
   require_once('utils/wpml-integration-functions.php');
   require_once('utils/themes-integration-functions.php');
 
-  require_once('mybooking-admin-functions.php');
   require_once('mybooking-class-install.php');
 
   // Routes (https://github.com/Upstatement/routes)
@@ -52,7 +51,7 @@
   require_once('settings/mybooking-plugin-settings.php');
   // On boarding
   require_once('settings/mybooking-plugin-onboarding.php');
-  require_once('settings/api/mybooking-plugin-onboarding-api.php');
+
   // Patterns
   require_once('mybooking-patterns.php');
 
@@ -158,9 +157,6 @@
       // Register custom post types
       $cpt = new MybookingEngineCPT();
 
-      // Initialize rest api
-      add_action( 'rest_api_init', array( $this, 'wp_init_rest_api') );
-
       // Load translations
       add_action( 'plugins_loaded', array( $this, 'wp_load_plugin_textdomain' ) );
 
@@ -202,18 +198,6 @@
       // == Shortcodes
       $shortcodes = new MybookingEngineShortcodes();
 
-
-    }
-
-    /**
-     * Initialize internal rest API
-     */ 
-    public function wp_init_rest_api() {
-
-      // Instance
-      $onboarding_api = new MyBookingOnboardingApi();
-      // Routes
-      $onboarding_api->register_routes();
 
     }
 
