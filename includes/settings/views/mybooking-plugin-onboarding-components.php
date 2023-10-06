@@ -13,6 +13,20 @@ function mybooking_plugin_onboarding_components_page() {
 	<?php
 		// Get onboarding settings
 		$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
+
+		if ( $onboarding_settings ) {
+			// Set type of module 
+			$module_rental = $module_activities = $module_transfer = false;
+			if (array_key_exists('module_rental', $onboarding_settings)) {
+				$module_rental = $onboarding_settings["module_rental"];
+			}
+			if (array_key_exists('module_activities', $onboarding_settings)) {
+				$module_activities = $onboarding_settings["module_activities"];
+			}
+			if (array_key_exists('module_transfer', $onboarding_settings)) {
+				$module_transfer = $onboarding_settings["module_transfer"];
+			}
+		}
 	?>
 
 	<!-- CONTENT -->
@@ -36,7 +50,7 @@ function mybooking_plugin_onboarding_components_page() {
 								 (array_key_exists('wc_transfer_selector', $onboarding_settings) &&  $onboarding_settings['wc_transfer_selector']) ) { ?>
 				
 				<ul class="mb-onboarding-list">
-				
+
 					<!-- RENT SELECTOR -->
 					<?php if ( array_key_exists('wc_rent_selector', $onboarding_settings) && $onboarding_settings['wc_rent_selector'] ): ?>
 						<li class="mb-onboarding-component-item">
@@ -211,6 +225,35 @@ function mybooking_plugin_onboarding_components_page() {
 					<?php endif; ?>
 
 					<!-- == ACTIVITIES == -->
+
+					<!-- ACTIVITIES CATALOG -->
+					<?php if ( $module_activities ): ?>
+						<li class="mb-onboarding-component-item">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="catalog" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/catalog/catalog.png'; ?>">
+							<div class="mb-onboarding-component-item-body">
+								<div class="mb-onboarding-component-item-pill">
+									<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+								</div>
+								<div class="mb-onboarding-setup-item-name">
+									<strong>
+										<?php echo esc_html_x( 'Activities catalog', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									</strong>
+									<p>
+										<?php echo esc_html_x( 'This component shows a product grid based on your inventory. You can activate buttons and product pages checking Detail pages option on your configuration.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									</p>
+									<p>
+										<?php echo esc_html_x( 'Paste this code where you want to show the catalog:', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+										<code class="mb-onboarding-shortcode">[mybooking_activities_engine_activities]</code>
+									</p>
+								</div>
+								<div class="mb-onboarding-setup-item-buttons">
+									<button data-href="[mybooking_activities_engine_activities]" title="<?php echo esc_attr_x( 'Copy shortcode', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" class="button button-primary mb-onboarding-btn-primary mybooking-onboarding-get-shortcode">
+										<?php echo esc_attr_x( 'Copy shortcode', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									</button>
+								</div>
+							</div>
+						</li>
+					<?php endif; ?>
 
 					<!-- ACTIVITIES CALENDAR -->
 					<?php if ( array_key_exists('wc_activity_calendar', $onboarding_settings) && $onboarding_settings['wc_activity_calendar'] ): ?>
