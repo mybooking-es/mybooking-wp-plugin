@@ -9,8 +9,8 @@
       'home-test': [
         'vertical-selector.png',
       ],
-      'choose-vehicle': [
-        'choose-vehicle.png',
+      'choose-products': [
+        'choose-products.png',
       ],
       'checkout': [
         'checkout.png',
