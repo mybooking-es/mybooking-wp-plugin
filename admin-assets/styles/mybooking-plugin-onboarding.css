@@ -378,6 +378,10 @@ h1.mb-onboarding-error {
 }
 
 /* Video */
+iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+}
 
 .mb-onboarding-welcome-video-container {
 	margin-bottom: 2rem;
