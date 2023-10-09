@@ -168,7 +168,7 @@
 			         }
 			         else if ($active_tab == 'renting_options') {
 								 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>This module helps you to build a <em>reservation web site</em> for a <u>vehicle rental</u>, <u>boat rental</u>,<u> properties rental companies</u> or <u>accommodation</u>.</p><p>With the initial configuration we have the necessary pages for the reservation process and we have configured them from here as you can see below.</p><p><strong>Edit this part only if you create a new page for the process or terms and conditions and want to assign it</strong>.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p>This module helps you to build a <em>reservation web site</em> for a <u>vehicle rental</u>, <u>boat rental</u>,<u> properties rental companies</u> or <u>accommodation</u>.</p><p>With the initial configuration we have the necessary pages for the reservation process and we have also configured them here as you can see below. <strong>Edit this part only if you create a new page for the process or terms and conditions and want to assign it</strong>.</p><p>You can also define other customization aspects of the module.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_renting');
 			           echo '<table class="form-table">';
@@ -177,7 +177,7 @@
 			         }
 			         else if ($active_tab == 'activities_options') {
 								 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>This module helps you to build a <em>reservation web site</em> for a <u>activities</u> or <u>tours</u> company.</p><p>With the initial configuration we have the necessary pages for the reservation process and we have configured them from here as you can see below.</p><p><strong>Edit this part only if you create a new page for the process or terms and conditions and want to assign it</strong>.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p>This module helps you to build a <em>reservation web site</em> for a <u>activities</u> or <u>tours</u> company.</p><p>With the initial configuration we have the necessary pages for the reservation process and we have also configured them here as you can see below. <strong>Edit this part only if you create a new page for the process or terms and conditions and want to assign it</strong>.</p><p>You can also define other customization aspects of the module.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_activities');
 			           echo '<table class="form-table">';
@@ -186,7 +186,7 @@
 			         }
 			         else if ($active_tab == 'transfer_options') {
 								 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>This module helps you to build a <em>reservation web site</em> for a <u>transfer</u> company.</p><p>With the initial configuration we have the necessary pages for the reservation process and we have configured them from here as you can see below.</p><p><strong>Edit this part only if you create a new page for the process or terms and conditions and want to assign it</strong>.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p>This module helps you to build a <em>reservation web site</em> for a <u>transfer</u> company.</p><p>With the initial configuration we have the necessary pages for the reservation process and we have also configured them here as you can see below. <strong>Edit this part only if you create a new page for the process or terms and conditions and want to assign it</strong>.</p><p>You can also define other customization aspects of the module.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_transfer');
 			           echo '<table class="form-table">';
@@ -204,7 +204,7 @@
 			         }
                else if ($active_tab == 'complements_options') {
 							 	 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>This tab <strong>has nothing to do directly with the booking engine</strong>. This is a series of extra functionalities that have been added to the plugin to meet the needs of our clients without them having to install other plugins. They have <strong>minimal functionality</strong> in these aspects:</p><ol><li>Show a pop-up when loading the homepage for a promotion</li><li>Show testimonials from their clients </li><li>Show a slideshow as a CTA (Call to Action)</li><li>Show cookies message </li></ol><p><strong>If you need advanced functionality you can install a specific plugin for each of them.</strong></p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p>This tab <strong>has nothing to do directly with the booking engine</strong>. This is a series of extra functionalities that have been added to the plugin to meet the needs of our clients without them having to install other plugins. They have <strong>minimal functionality</strong> in these aspects:</p><ul><li>Show a pop-up when loading the homepage for a promotion</li><li>Show testimonials from their clients </li><li>Show a slideshow as a CTA (Call to Action)</li><li>Show cookies message </li></ul><p><strong>If you need advanced functionality you can install a specific plugin for each of them.</strong></p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_complements');
 			           echo '<table class="form-table">';

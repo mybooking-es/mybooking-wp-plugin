@@ -46,6 +46,11 @@
                           plugins_url('/admin-assets/styles/mybooking-plugin-onboarding.css', dirname( __DIR__ ) ) );
       }
 
+      if ( $screen->id == "toplevel_page_mybooking-plugin-configuration") {
+        wp_enqueue_style( 'mybooking_wp_admin_css',
+                          plugins_url('/admin-assets/styles/mybooking-plugin-setting.css', dirname( __DIR__ ) ) );
+      }
+
     }
 
     /**
