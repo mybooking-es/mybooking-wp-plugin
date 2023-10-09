@@ -9,7 +9,7 @@
  */
 ?>
 
-<section class="mybooking mybooking-process_choose <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<section class="mybooking mybooking-process_choose mybooking-page-container<?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
   <!-- Reservation detail -->
   <div id="reservation_detail"></div>

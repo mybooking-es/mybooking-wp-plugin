@@ -28,8 +28,15 @@
 
   --mb-page-container-max-width: 1140px;  /* Theme compat */
 
+  /* Buttons - Gets third party theme colors and reset for Mybooking theme compatibility */
+  --mb-button-bg-color: var(--btn-bg-color); /* Theme compat */
+  --mb-button-border-color: var(--btn-border-color); /* Theme compat */
+  --mb-button-bg-color-hover: var(--btn-bg-color-hover); /* Theme compat */
+  --mb-button-border-color-hover: var(--btn-border-color-hover); /* Theme compat */
+  --mb-button-color: var(--white); /* Theme compat */
   --mb-button-border-radius: var(--btn-border-radius);
   --mb-button-font-weight: var(--btn-font-w);
+  
   --mb-placeholder-text-color: #888;
 
   /* Forms */
@@ -511,6 +518,17 @@ form.mybooking select,
   text-decoration: none!important;
   font-weight: var(--mb-button-font-weight);
   border-radius: var(--mb-button-border-radius);
+}
+
+.mb-button:not(.icon) {
+  background-color: var(--mb-button-bg-color);
+  border-color: var(--mb-button-border-color);
+  color: var(--mb-button-color);
+}
+
+.mb-button:not(.icon):hover {
+  background-color: var(--mb-button-bg-color-hover);
+  border-color: var(--mb-button-border-color-hover);
 }
 
 .mb-button a,
