@@ -18,6 +18,7 @@
       $checkoutSlug = 'checkout';
       $summarySlug = 'summary';
       $myReservationSlug = 'my-reservation';
+      $homeTestSlug = 'home-test';
 
       if ( !$oneModule ) {
         $checkoutTitle = _x( 'Transfer Check out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
@@ -29,6 +30,7 @@
         $checkoutSlug = 'checkout-transfer';
         $summarySlug = 'summary-transfer';
         $myReservationSlug = 'my-reservation-transfer';
+        $homeTestSlug = 'home-test-transfer';
       }
 
       // Define pages
@@ -58,7 +60,7 @@
 					'option' => 'mybooking_plugin_settings_home_test_page',
 					'title' =>  $homeTestTitle,
 					'content' => '<!-- wp:shortcode -->[mybooking_transfer_selector]<!-- /wp:shortcode -->',
-					'slug' => 'home-test',
+					'slug' => $homeTestSlug,
 					'order' => 1,
         ),
         'choose_vehicle'           				=> array(

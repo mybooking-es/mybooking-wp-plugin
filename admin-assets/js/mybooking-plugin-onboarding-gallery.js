@@ -4,10 +4,10 @@
     // Wp i18n integration
     const { __, _x, _n, sprintf } = wp.i18n;
 
-    // TODO Data temp
+    // TODO Data
     var galleryURLS = {
       'home-test': [
-        'vertical-selector.png',
+        'home-test.png',
       ],
       'choose-products': [
         'choose-products.png',

@@ -18,6 +18,7 @@
       $checkoutSlug = 'checkout';
       $summarySlug = 'summary';
       $myReservationSlug = 'my-reservation';
+      $homeTestSlug = 'home-test';
 
 
       if ( !$oneModule ) {
@@ -30,6 +31,7 @@
         $checkoutSlug = 'checkout-renting';
         $summarySlug = 'summary-renting';
         $myReservationSlug = 'my-reservation-renting';
+        $homeTestSlug = 'home-test-renting';
       }
 
       // Define pages
@@ -63,7 +65,7 @@
                                                'option' => 'mybooking_plugin_settings_home_test_page',
                                                'title' => $homeTestTitle,
                                                'content' => '<!-- wp:shortcode -->[mybooking_rent_engine_selector]<!-- /wp:shortcode -->',
-                                               'slug' => 'home-test',
+                                               'slug' => $homeTestSlug,
                                                'order' => 1,
                                               );
         // Choose product (search result)           

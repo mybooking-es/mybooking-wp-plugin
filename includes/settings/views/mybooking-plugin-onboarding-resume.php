@@ -83,6 +83,27 @@
 								<?php echo esc_attr_x( 'Create a new page now', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 							</a>
 						</div>
+						<?php if ( get_page_by_path('home-test') ) : ?>
+								<p>
+									<a href="<?php echo get_permalink(get_page_by_path('home-test'))?>" target="_blank">
+										<?php echo esc_html_x( 'Go to the example test page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									</a>
+								</p>
+							<?php endif; ?>
+							<?php if ( $module_rental && get_page_by_path('home-test-renting') ) : ?>
+								<p>
+									<a href="<?php echo get_permalink(get_page_by_path('home-test-renting'))?>" target="_blank">
+										<?php echo esc_html_x( 'Go to the rent example test page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									</a>
+								</p>
+							<?php endif; ?>
+							<?php if ( $module_transfer  && get_page_by_path('home-test-transfer') ) : ?>
+								<p>
+									<a href="<?php echo get_permalink(get_page_by_path('home-test-transfer'))?>" target="_blank">
+										<?php echo esc_html_x( 'Go to the transfer example test page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									</a>
+								</p>
+							<?php endif; ?>
 					</div>
 				</li>
 			<?php endif; ?>
@@ -270,7 +291,7 @@
 			<?php echo esc_html_x( 'How to set your engine paths', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</a>
 		<span class="mb-onboarding-separator"></span>
-		<a class="mb-onboarding-help-link">
+		<a href="<?php echo 'https://'.$clientId.'.mybooking.es/login' ?>" target="_blank" class="mb-onboarding-help-link">
 			<?php echo esc_attr_x( 'Enter your account', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</a>
 		

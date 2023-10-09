@@ -289,6 +289,10 @@
 				$transfer_pages_list = $this->build_resume_page_list($transfer_settings);
 			}
 
+			// Get clientId from settings
+			$connection_settings = (array) get_option("mybooking_plugin_settings_connection");
+			$clientId = $connection_settings['mybooking_plugin_settings_account_id']; 
+
 			require_once('views/mybooking-plugin-onboarding-resume.php');
 
 		}
