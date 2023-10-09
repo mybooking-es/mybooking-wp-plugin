@@ -49,10 +49,24 @@
 									<?php echo esc_attr_x( 'Copy shortcode', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 								</button>
 							</div>
-							<?php if( get_page_by_path('home-test') ) : ?>
+							<?php if ( get_page_by_path('home-test') ) : ?>
 								<p>
 									<a href="<?php echo get_permalink(get_page_by_path('home-test'))?>" target="_blank">
 										<?php echo esc_html_x( 'Go to the example test page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									</a>
+								</p>
+							<?php endif; ?>
+							<?php if ( get_page_by_path('home-test-renting') ) : ?>
+								<p>
+									<a href="<?php echo get_permalink(get_page_by_path('home-test-renting'))?>" target="_blank">
+										<?php echo esc_html_x( 'Go to the rent example test page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									</a>
+								</p>
+							<?php endif; ?>
+							<?php if ( get_page_by_path('home-test-transfer') ) : ?>
+								<p>
+									<a href="<?php echo get_permalink(get_page_by_path('home-test-transfer'))?>" target="_blank">
+										<?php echo esc_html_x( 'Go to the transfer example test page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 									</a>
 								</p>
 							<?php endif; ?>
