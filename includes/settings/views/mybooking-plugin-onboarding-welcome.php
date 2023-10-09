@@ -24,6 +24,6 @@
 	</div>
 
 	<a class="mb-onboarding-button" href="<?php esc_attr(menu_page_url('mybooking-onboarding-login'))?>">
-		<?php echo esc_html_x( 'Enter', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+		<?php echo esc_html_x( 'Setup', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 	</a>
 </div>

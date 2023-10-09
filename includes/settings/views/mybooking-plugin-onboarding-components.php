@@ -49,6 +49,13 @@
 									<?php echo esc_attr_x( 'Copy shortcode', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 								</button>
 							</div>
+							<?php if( get_page_by_path('home-test') ) : ?>
+								<p>
+									<a href="<?php echo get_permalink(get_page_by_path('home-test'))?>" target="_blank">
+										<?php echo esc_html_x( 'Go to the example test page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									</a>
+								</p>
+							<?php endif; ?>
 						</div>
 					</li>
 				<?php endif; ?>
