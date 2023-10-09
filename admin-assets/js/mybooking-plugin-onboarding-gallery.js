@@ -4,49 +4,27 @@
     // Wp i18n integration
     const { __, _x, _n, sprintf } = wp.i18n;
 
-    // Data TODO
+    // TODO Data temp
     var galleryURLS = {
-      'mybooking_plugin_settings_home_test_page': [
+      'home-test': [
         'vertical-selector.png',
       ],
-      'mybooking_plugin_settings_choose_products_page': [
-        'search-result.png',
+      'choose-products': [
+        'choose-products.png',
       ],
-      'mybooking_plugin_settings_checkout_page': [
+      'checkout': [
         'checkout.png',
       ],
-      'mybooking_plugin_settings_summary_page': [
-        'summary.png'
-      ],
-      'rmybooking_plugin_settings_my_reservation_page': [
-        'my-reservation.png'
-      ],
-      'mybooking_plugin_settings_activities_shopping_cart_page': [
+      'shopping-cart': [
         'checkout.png',
       ],
-      'mybooking_plugin_settings_activities_summary_page': [
+      'summary': [
         'summary.png'
       ],
-      'mybooking_plugin_settings_my_reservation_page': [
-        'my-reservation.png'
-      ],
-      'mybooking_plugin_settings_home_test_page': [
-        'vertical-selector.png',
-      ],
-      'mybooking_plugin_settings_transfer_choose_vehicle_page': [
-        'choose-vehicle.png',
-      ],
-      'mybooking_plugin_settings_transfer_checkout_page': [
-        'checkout.png',
-      ],
-      'mybooking_plugin_settings_transfer_summary_page': [
-        'summary.png'
-      ],
-      'mybooking_plugin_settings_my_reservation_page': [
+      'my-reservation': [
         'my-reservation.png'
       ],
       'selector': [
-        'vertical-selector.png',
         'horizontal-selector.png'
       ],
       'catalog': [
@@ -86,23 +64,36 @@
     $('body').on('click', '.mb-onboarding-gallery-btn', function() {
       var element = $(this);
       var type = element.attr('data-type');
-      var module = element.attr('data-module');
+
+      // Remove pre and post substrings getting folder name
+      if ( type.endsWith("_page") ) {
+        var regExp = /mybooking_plugin_settings_(.*?)_page/;
+        if ( type.includes('_activities_') ) {
+          regExp = /mybooking_plugin_settings_activities_(.*?)_page/;
+        } else if ( type.includes('_transfer_') ) {
+          regExp = /mybooking_plugin_settings_transfer_(.*?)_page/;
+        }
+
+        var matches = type.match( regExp );
+        if ( matches && matches.length > 1 ) {
+          type = matches[1];
+          type = type.replace(/_/g, '-');
+        }
+      }
+
       var URLS = galleryURLS[type];
 
       var HTML = '';
-      URLS.forEach(url => {
-        HTML +=  '<input type="radio" name="selector" id="' + url + '" />';
-      });
-      URLS.forEach(url => {
-        HTML += '<label for="' + url + '">';
-        if (module) {
-          HTML += '<img src="' + folder   + '/' + module + '/' + type + '/' + url + '" alt="image" />';
-        } else {
+      if (URLS && URLS.length > 0) {
+        URLS.forEach(url => {
+          HTML +=  '<input type="radio" name="selector" id="' + url + '" />';
+        });
+        URLS.forEach(url => {
+          HTML += '<label for="' + url + '">';
           HTML += '<img src="' + folder + '/' + type + '/' + url + '" alt="image" />';
-        }
-        
-        HTML +=   '</label>';
-      });
+          HTML +=   '</label>';
+        });
+      }
 
       // Append video
       form.html(HTML);

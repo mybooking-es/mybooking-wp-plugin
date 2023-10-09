@@ -5,8 +5,6 @@
   require_once('mybooking-plugin-cpt-popup.php');
   require_once('mybooking-plugin-cpt-content-slider.php');
   require_once('mybooking-plugin-cpt-product-slider.php');
-  require_once('mybooking-plugin-cpt-renting-item.php');
-  require_once('mybooking-plugin-cpt-activity-item.php');
 
   /**
    * Manage the custom post types defined in the plugin
@@ -53,16 +51,6 @@
       // Product Slider Post Type
       if ($registry->mybooking_rent_plugin_complements_product_slider == '1') {
         $productSlider = new MyBookingPluginCPTProductSlider();
-      }
-
-      // Renting Item Post Type
-      if ($registry->mybooking_rent_plugin_complements_renting_item == '1') {
-        $rentingItem = new MyBookingPluginCPTRentingItem();
-      }
-
-      // Activity Item Post Type
-      if ($registry->mybooking_rent_plugin_complements_activity_item == '1') {
-        $activityItem = new MyBookingPluginCPTActivityItem();
       }
         
     }

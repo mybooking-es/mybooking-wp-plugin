@@ -21,9 +21,14 @@
 			var shortcode = $(this).attr('data-href');
 
 			// Add string to clipboard
-			navigator.clipboard.writeText(shortcode);
-			
-			showToast(_x('The shortcode ', 'onboarding_context_js', 'mybooking-wp-plugin') + shortcode +  _x( ' has been copied to the clipboard', 'onboarding_context_js', 'mybooking-wp-plugin'));
+			if (!navigator.clipboard) {
+				showToast(_x('Your browser unsupport clipboard copy, please copy the text above', 'onboarding_context_js', 'mybooking-wp-plugin'));
+			}
+			navigator.clipboard.writeText(shortcode).then(() => {
+				showToast(_x('The shortcode ', 'onboarding_context_js', 'mybooking-wp-plugin') + shortcode +  _x( ' has been copied to the clipboard', 'onboarding_context_js', 'mybooking-wp-plugin'));
+			}, (err) => {
+				showToast(_x('An error has occurred' + ': ' + err, 'onboarding_context_js', 'mybooking-wp-plugin'));
+			});
 		});
 
 		$('.mybooking-onboarding-get-permalink').on('click', function(event) {

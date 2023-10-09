@@ -83,24 +83,7 @@
                                   array( 'jquery' ), $this->version, true);
         wp_enqueue_script('mybooking_wp_admin_jquery_validate');
 
-        // JQuery formparams
-        wp_register_script('mybooking_wp_admin_jquery_formparams',
-                     plugins_url( '/admin-assets/js/jquery.formparams.js', dirname(__DIR__) ),
-                                  array( 'jquery' ), $this->version, true);
-        wp_enqueue_script('mybooking_wp_admin_jquery_formparams');
-
           // Internal resources                                  
-
-          // Onboarding welcome
-          if ( $screen->id == "mybooking_page_mybooking-onboarding") {
-          wp_register_script('mybooking_wp_admin_onboarding_welcome',
-                            plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-welcome.js', dirname(__DIR__) ),
-                            array( 'jquery', 'wp-i18n' ), 
-                            $this->version, 
-                            true);
-          wp_enqueue_script('mybooking_wp_admin_onboarding_welcome');
-          wp_set_script_translations('mybooking_wp_admin_onboarding_welcome', 'mybooking-wp-plugin');
-        }
 
         // Onboarding login
         if ( $screen->id == "mybooking_page_mybooking-onboarding-login") {
@@ -113,26 +96,15 @@
           wp_set_script_translations('mybooking_wp_admin_onboarding_login', 'mybooking-wp-plugin');
         }
 
-        // Onboarding generate
-        if ( $screen->id == "mybooking_page_mybooking-onboarding-generate") {
-          wp_register_script('mybooking_wp_admin_onboarding_generate',
-                            plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-generate.js', dirname(__DIR__) ),
+        // Onboarding utils
+        if (  $screen->id == "mybooking_page_mybooking-onboarding-resume" || $screen->id == "mybooking_page_mybooking-onboarding-pages" || $screen->id == "mybooking_page_mybooking-onboarding-components") {
+          wp_register_script('mybooking_wp_admin_onboarding_utils',
+                            plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-utils.js', dirname(__DIR__) ),
                             array( 'jquery', 'wp-i18n' ), 
                             $this->version, 
                             true);
-          wp_enqueue_script('mybooking_wp_admin_onboarding_generate');
-          wp_set_script_translations('mybooking_wp_admin_onboarding_generate', 'mybooking-wp-plugin');
-        }
-
-        // Onboarding pages
-        if ( $screen->id == "mybooking_page_mybooking-onboarding-pages" || $screen->id == "mybooking_page_mybooking-onboarding-resume") {
-          wp_register_script('mybooking_wp_admin_onboarding_pages',
-                            plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-pages.js', dirname(__DIR__) ),
-                            array( 'jquery', 'wp-i18n' ), 
-                            $this->version, 
-                            true);
-          wp_enqueue_script('mybooking_wp_admin_onboarding_pages');
-          wp_set_script_translations('mybooking_wp_admin_onboarding_pages', 'mybooking-wp-plugin');
+          wp_enqueue_script('mybooking_wp_admin_onboarding_utils');
+          wp_set_script_translations('mybooking_wp_admin_onboarding_utils', 'mybooking-wp-plugin');
         }
 
         // Onboarding gallery

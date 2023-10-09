@@ -1,15 +1,6 @@
 <?php
 	defined('ABSPATH') or die('Forbidden');
 ?>
-
-<?php
-/**
-* Render Mybooking onboarding page
-*
-* https://developer.wordpress.org/reference/functions/do_settings_fields/
-*/
-function mybooking_plugin_onboarding_login_page() {
-	?>
 	
 	<div class="mb-onboarding-page-header">
 		<div class="mb-onboarding-title-section">
@@ -51,8 +42,3 @@ function mybooking_plugin_onboarding_login_page() {
 
 	<!-- Video -->
 	<?php $video='login'; require_once ('mybooking-plugin-onboarding-video.php') ?>
-<?php
-}
-
-mybooking_plugin_onboarding_login_page();
-?>

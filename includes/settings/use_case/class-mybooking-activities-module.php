@@ -7,27 +7,47 @@
       // Created pages (posts) ids
       $pages = array();
 
+      $oneModule = MybookingInstall::isOneModuleInstall();
+
+      $checkoutTitle = _x( 'Check out', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
+      $summaryTitle = _x( 'Summary', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
+      $myReservationTitle = _x( 'My reservation', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
+
+      $checkoutSlug = 'checkout';
+      $summarySlug = 'summary';
+      $myReservationSlug = 'my-reservation';
+      
+      if ( !$oneModule ) {
+        $checkoutTitle = _x( 'Activities Check out', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
+        $summaryTitle = _x( 'Activities Summary', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
+        $myReservationTitle = _x( 'Activities My reservation', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
+
+        $checkoutSlug = 'checkout-activities';
+        $summarySlug = 'summary-activities';
+        $myReservationSlug = 'my-reservation-activities';
+      }
+
       // Define pages
       $pages_to_create = array(
         'checkout'           => array(
            'option' => 'mybooking_plugin_settings_activities_shopping_cart_page',
-           'title' => _x( 'Activities Check-out', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
+           'title' => $checkoutTitle,
            'content' => '<!-- wp:shortcode -->[mybooking_activities_engine_shopping_cart]<!-- /wp:shortcode -->',
-           'slug' => 'checkout',
+           'slug' => $checkoutSlug,
            'order' => 3,
         ),
         'summary'           => array(
            'option' => 'mybooking_plugin_settings_activities_summary_page',
-           'title' => _x( 'Activities Summary', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
+           'title' => $summaryTitle,
            'content' => '<!-- wp:shortcode -->[mybooking_activities_engine_summary]<!-- /wp:shortcode -->',
-           'slug' => 'summary',
+           'slug' => $summarySlug,
            'order' => 4,
         ),
         'my_reservation'           => array(
           'option' => 'mybooking_plugin_settings_my_reservation_page',
-          'title' => _x( 'Activities My reservation', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' ),
+          'title' => $myReservationTitle,
           'content' => '<!-- wp:shortcode -->[mybooking_activities_engine_order]<!-- /wp:shortcode -->',
-          'slug' => 'my-reservation',
+          'slug' => $myReservationSlug,
           'order' => 5,
         )
       );

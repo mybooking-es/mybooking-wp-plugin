@@ -79,7 +79,7 @@
         </div>
 
         <div class="mb-col-md-4">
-          <h2><?php echo _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></h2>
+          <h2><?php echo wp_kses_post( _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ) ?></h2>
           <?php
              $widget_data = array( 'code' => $args->code );
              if ( isset( $args->sales_channel_code ) ) {
