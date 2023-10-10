@@ -265,6 +265,9 @@
 						<i class="mybooking-selector_field-icon">
 							<span class="dashicons dashicons-clock"></span>
 						</i>
+						<label for="time_from">
+							<?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+						</label>
 						<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
 					</div>
 				<% } else { %>
@@ -287,6 +290,9 @@
 							<i class="mybooking-selector_field-icon">
 								<span class="dashicons dashicons-clock"></span>
 							</i>
+							<label for="time_to">
+								<?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+							</label>
 							<select class="mb-form-control" name="time_to" id="widget_time_to"></select>
 						</div>
 					<% } else { %>
@@ -297,7 +303,7 @@
 				  	<!-- // Duration -->
 				    <div class="mybooking-selector_hour">
 						<i class="mybooking-selector_field-icon">
-							<span class="dashicons dashicons-clock"></span>
+							<span class="dashicons dashicons-backup"></span>
 						</i>
 						<label for="widget_renting_duration">
 							<?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
