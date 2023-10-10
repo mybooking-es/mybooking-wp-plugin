@@ -124,7 +124,7 @@
 
 <script type="text/tpml" id="script_detailed_product">
 
-  <div class="mybooking-product_container <?php if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['grid', 'grid_only'] ) ) ): ?>mybooking-product_grid<?php else: ?>mybooking-product_list<?php endif;?>">
+  <div class="mybooking-product_container mybooking-product_grid">
 
     <?php if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['grid', 'list'] ) ) ): ?>
       <div class="mybooking-product_filter">
@@ -140,6 +140,13 @@
       <% var product = products[idx]; %>
       <div class="mybooking-product_column">
         <div class="mybooking-product">
+
+          <!-- // Few units warning -->
+          <% if (product.few_available_units) { %>
+            <span class="mybooking-product_low-availability">
+              <?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+            </span>
+          <% } %>
 
           <div class="mybooking-product_block">
             <div class="mybooking-product_image-container">
@@ -264,28 +271,21 @@
                     <% } %>
                     </div>
               <% } %>
-
-              <!-- // Few units warning -->
-              <% if (product.few_available_units) { %>
-                <span class="mybooking-product_low-availability">
-                  <?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-                </span>
-              <% } %>
             </div>
 
             <!-- // Key characteristics -->
-
-            <div class="mybooking-product_characteristics">
-              <% if (product.key_characteristics) { %>
-                <% for (characteristic in product.key_characteristics) { %>
-                  <div class="mybooking-product_characteristics-item">
-                    <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
-                    <img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
-                    <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
-                  </div>
-                <% } %>
+            
+            <% if (product.key_characteristics) { %>
+              <div class="mybooking-product_characteristics">
+              <% for (characteristic in product.key_characteristics) { %>
+                <div class="mybooking-product_characteristics-item">
+                  <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
+                  <img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
+                  <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
+                </div>
               <% } %>
-            </div>
+              </div>
+            <% } %>
 
             <div class="mybooking-product_footer <% if (product.variants_enabled) { %>mybooking-product_variant_footer<% } %>">
 
@@ -304,14 +304,12 @@
                   <div class="product-variant-resume" data-product-code="<%=product.code%>"></div>
                   
                   <!-- // Button -->
-                  <div class="card-static_btn">
-                    <button class="mb-button btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x('Select options', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %></button>
-                  </div>
+                  <button class="mb-button btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x('Select options', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %></button>
                 <% } else { %>
                   <% if (configuration.multipleProductsSelection) { %>
                     <!-- // Selector -->
                     <div class="car-listing-selector">
-                      <select class="form-control select-choose-product" data-value="<%=product.code%>">
+                      <select class="mybooking-product_select" data-value="<%=product.code%>">
                         <option value="0"><%=i18next.t('chooseProduct.selectUnits')%></option>
                         <% for (var idx2=1;idx2<=(product.available);idx2++) { %>
                         <option value="<%=idx2%>"
@@ -324,10 +322,8 @@
                     </div>
                   <% } else { %>
                     <!-- // Button -->
-                    <div class="card-static_btn">
-                      <button class="mb-button btn-choose-product"
-                        data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></a>
-                    </div>
+                    <button class="mb-button btn-choose-product"
+                        data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
                   <% } %>
                 <% } %>
 

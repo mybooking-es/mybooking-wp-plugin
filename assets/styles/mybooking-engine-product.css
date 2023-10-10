@@ -287,7 +287,7 @@ div.mybooking-product {
   position: relative;
   margin: var(--mb-product-separation);
   border: 1px solid var(--mb-border-color);
-  border-radius: var(--mb-border-radius);
+  border-radius: 10px;
   background-color: var(--mb-product-background);
   overflow: hidden;
 }
@@ -332,13 +332,6 @@ div.mybooking-product {
 }
 
 .mybooking-product_info-button {
-/*
-  line-height: 1;
-  color: var(--mb-info-color)!important;
-  position: absolute;
-  top: 1rem; 
-  right: 1rem;
-*/
   line-height: 1;
   color: var(--mb-product-info-color)!important;
   position: absolute;
@@ -467,12 +460,8 @@ div.mybooking-product {
 /* Product body */
 
 .mybooking-product_body {
-  justify-content: flex-start;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  /* height: var(--mb-product-body-height);*/
-  padding: 0.5em;
+  height: var(--mb-product-body-height);
+  padding: 1em;
   overflow-y: hidden;
 }
 
@@ -498,6 +487,7 @@ div.mybooking-product {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis!important;
+  color: var(--mb-muted-color);
 }
 
 .mybooking-product_quantity {
@@ -523,9 +513,15 @@ div.mybooking-product {
 }
 
 .mybooking-product_low-availability {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  padding: 0.5rem;
+  background-color: var(--mb-danger-color);
+  border-radius: 0 20px 20px 0;
   font-size: 12px;
-  color: red;
-  margin-top: 2px;
+  line-height: 0.8em;
+  color: var(--mb-negative-text-color);
 }
 
 .mybooking-product_price_supplement_supplement_1 {
@@ -564,8 +560,6 @@ div.mybooking-product {
 .mybooking-product_characteristics-key {
   font-size: 13px;
   font-weight: 700;
-  max-width: 40px;
-  /*overflow: hidden;*/
   height: 1rem;
 }
 
@@ -593,29 +587,34 @@ div.mybooking-product {
 
 /* Product button */
 
-[class*=".mybooking-process_"] .btn-choose-product,
-[class*=".mybooking-process_"] .btn-confirm-selection {
+[class*="mybooking-process_"] .btn-choose-product,
+[class*="mybooking-process_"] .btn-choose-variant {
+  display: block;
+}
+
+[class*="mybooking-process_"] .btn-choose-product,
+[class*="mybooking-process_"] .btn-choose-variant,
+[class*="mybooking-process_"] .btn-confirm-selection {
   min-height: var(--mb-product-btn-height)!important;
   margin: 0;
-  padding: 0.3rem 1rem;
-
+  padding: 0.3rem 2rem;
   font-size: 1.1rem;
-  text-transform: uppercase;
+  text-transform: uppercase!important;
   letter-spacing: 1px;
 }
 
-[class*=".mybooking-process_"] .btn-choose-product a,
-[class*=".mybooking-process_"] .btn-confirm-selection a {
+[class*="mybooking-process_"] .btn-choose-product a,
+[class*="mybooking-process_"] .btn-confirm-selection a {
   color: currentcolor;
   text-decoration: none!important;
 }
 
-[class*=".mybooking-process_"] .btn-choose-product a:hover,
-[class*=".mybooking-process_"] .btn-confirm-selection a:hover {
+[class*="mybooking-process_"] .btn-choose-product a:hover,
+[class*="mybooking-process_"] .btn-confirm-selection a:hover {
   color: currentcolor;
 }
 
-[class*=".mybooking-process_"] .btn-confirm-selection {
+[class*="mybooking-process_"] .btn-confirm-selection {
   float: right;
 }
 
