@@ -299,6 +299,7 @@ div.mybooking-product {
 
 .mybooking-product_info-block {
   background-color: var(--mb-product-info-background);
+  margin-bottom: 2rem;
 }
 
 /* Product image */
@@ -312,8 +313,12 @@ div.mybooking-product {
 
 .mybooking-product_image {
   width: 100%;
-  border-radius: 0!important;
+  border-radius: var(--mb-border-radius)!important;
   border-bottom: 1px solid var(--mb-border-color);
+}
+
+.mybooking-product .mybooking-product_image {
+  border-radius: 10px 10px 0 0!important;
 }
 
 .mybooking-product_info-block .mybooking-product_image {
@@ -321,6 +326,7 @@ div.mybooking-product {
   height: 100%;
   object-fit: var(--mb-product-image-fit);
   object-position: center center;
+  margin-bottom: 1rem;
 }
 
 .mybooking-product_block .mybooking-product_image {

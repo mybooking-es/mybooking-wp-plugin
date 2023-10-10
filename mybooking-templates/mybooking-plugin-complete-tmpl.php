@@ -406,7 +406,7 @@
           <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
           <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
 
-          <div class="mybooking-extra_item <%=bg%> <% if (value > 0) {%>selected-coverage<%}%>" data-extra="<%=coverage.code%>">
+          <div class="mybooking-extra_item <% if (value > 0) {%>selected-coverage<%}%>" data-extra="<%=coverage.code%>">
 
             <div class="mybooking-extra_block">
 
@@ -485,7 +485,7 @@
             <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
             <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
 
-            <div class="mybooking-extra_item <%=bg%>" data-extra="<%=extra.code%>">
+            <div class="mybooking-extra_item" data-extra="<%=extra.code%>">
 
               <div class="mybooking-extra_block">
 

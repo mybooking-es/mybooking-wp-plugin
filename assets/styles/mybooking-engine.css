@@ -26,6 +26,7 @@
   --mb-dark-background-color: #424242;
   --mb-negative-text-color: #FFF;
 
+  --mb-process-page-background: var(--process-container-bg); /* Theme compat */
   --mb-page-container-max-width: 1140px;  /* Theme compat */
 
   /* Buttons - Gets third party theme colors and reset for Mybooking theme compatibility */
@@ -64,7 +65,7 @@
 
   /* Product box */
   --mb-product-separation: 0.7rem;
-  --mb-product-background: transparent;
+  --mb-product-background: white;
   --mb-product-border-color: var(--mb-border-color);
 
   /* Product grid */
@@ -74,7 +75,7 @@
   --mb-product-image-fit: contain;
   --mb-product-image-padding:  20px;
   --mb-product-header-height: 75px;
-  --mb-product-body-height: 140px;
+  --mb-product-body-height: 90px;
   --mb-product-footer-height: 76px;
   --mb-product-btn-height: 50px;
 
@@ -120,7 +121,7 @@
   --mb-product-detail-color: currentcolor;
 
   --mb-product-total-border: var(--mb-border-color);
-  --mb-product-total-bg: transparent;
+  --mb-product-total-bg: #FFF;
   --mb-product-total-color: currentcolor;
   --mb-product-total-amount-size: 1.4em;
   --mb-product-total-amount-color: var(--mb-info-color);
@@ -652,6 +653,7 @@ button.mb-button a:hover  {
 .mb-card {
   display: block;
   border: 1px solid var(--mb-border-color);
+  background-color: #fff;
 }
 
 .mb-card.inline {
@@ -712,6 +714,7 @@ button.mb-button a:hover  {
   display: block;
   border: 1px solid var(--mb-border-color);
   border-radius: var(--mb-border-radius);
+  background-color: #FFF;
 }
 
 .mb-list.border::after {
@@ -790,10 +793,14 @@ button.mb-button a:hover  {
 }
 
 /** PROCESS PAGES **/
+.mybooking-process-page {
+  background-color: var(--mb-process-page-background);
+}
 
 .mybooking-page-container {
   max-width: var(--mb-page-container-max-width);
-  margin: 3rem auto;
+  margin: 0 auto;
+  padding: 3rem 0;
 }
 
 /* Complete page */
@@ -807,20 +814,13 @@ button.mb-button a:hover  {
 }
 
 
-/* Summary page */
-.mybooking-process_summary .mybooking-product_header {
-  background-color: #EEE;
-  border: 1px solid var(--mb-border-color);
-  border-top: none;
-}
-
-/* Reservation page */
+/* Summary page *//* Reservation page */
+.mybooking-process_summary .mybooking-product_header,
 .mybooking-process_reservation .mybooking-product_header {
-  background-color: #EEE;
+  background-color: #D5D5D5;
   border: 1px solid var(--mb-border-color);
   border-top: none;
 }
-
 
 /** COMPATIBILITY **/
 

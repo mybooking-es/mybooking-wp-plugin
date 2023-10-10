@@ -8,19 +8,19 @@
  *
  */
 ?>
-
-<section class="mybooking mybooking-process_choose mybooking-page-container<?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<div class="mybooking-process-page">
+  <section class="mybooking mybooking-process_choose mybooking-page-container<?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
   <!-- Reservation detail -->
   <div id="reservation_detail"></div>
 
   <!-- Product listing -->
   <div class="mybooking-product_listing" id="product_listing" 
-       <?php if ( array_key_exists('use_renting_detail_page', $args) && $args['use_renting_detail_page'] == 'true' ) : ?>
-       data-use-renting-detail-page="true" 
-       <?php endif; ?>></div>
-</section>
-
+      <?php if ( array_key_exists('use_renting_detail_page', $args) && $args['use_renting_detail_page'] == 'true' ) : ?>
+      data-use-renting-detail-page="true" 
+      <?php endif; ?>></div>
+  </section>
+</div>
 
 <!-- DETAILS MODAL ------------------------------------------------------------>
 
