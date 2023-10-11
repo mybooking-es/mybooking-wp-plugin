@@ -45,11 +45,11 @@
 			</div>
 			<div class="mybooking-rent-shift-picker-container">
 				<div class="mybooking-shiftpicker_navigation">
-					<button data-direction="back" class="mb-button navigation icon shiftpicker-arrow btn btn-outline" disabled>
+					<button data-direction="back" class="mb-button navigation icon shiftpicker-arrow" disabled>
 						<?php echo esc_html_x( '« Back', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
 					</button>
 					<span class="mybooking-shiftpicker_date-selected shiftpicker-text-date"></span>
-					<button data-direction="next" class="mb-button navigation icon shiftpicker-arrow btn btn-outline">
+					<button data-direction="next" class="mb-button navigation icon shiftpicker-arrow">
 						<?php echo esc_html_x( 'Next »', 'renting_shift_picker', 'mybooking-wp-plugin') ?>
 					</button>
 				</div>

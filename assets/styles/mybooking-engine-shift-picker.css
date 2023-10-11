@@ -21,6 +21,7 @@
 .mybooking-rent-shift-picker-head .field input:not([type="radio"]),
 .mybooking-rent-shift-picker-head .field .select,
 .mybooking-rent-shift-picker-head .field select {
+	font-size: 17px;
 	width: 100%;
 }
 
@@ -37,16 +38,33 @@
 	color: var(--mb-accent-color);
 	font-weight: bold;
 	border: none;
+} @media ( max-width: 1024px ) {
+  .mb-button.shiftpicker-arrow {
+    padding: 0.2rem;
+		font-size: 12px;
+  }
 }
 .mb-button.shiftpicker-arrow:hover {
 	background-color: var(--mb-accent-color);
 	border-color: var(--mb-accent-color);
 	color: var(--mb-negative-text-color);
 }
+.mb-button.shiftpicker-arrow:focus {
+	outline: none;
+}
+.mb-button.shiftpicker-arrow:disabled,
+.mb-button.shiftpicker-arrow[disabled], {
+	cursor: not-allowed;
+}
 .mybooking-shiftpicker_date-selected {
 	text-transform: capitalize;
-	font-weight: bolder;
-	font-size: 20px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 1;
+} @media ( max-width: 758px ) {
+  .mybooking-shiftpicker_date-selected {
+    font-size: 16px;
+  }
 }
 
 /*
@@ -94,6 +112,9 @@
 	background: var(--mb-accent-color);
 	border: 3px solid var(--mb-negative-text-color,#DDD);
 	box-shadow: 0 0 0 1px var(--mb-negative-text-color,#DDD);
+}
+.mybooking-rent-shift-picker-container-list input[type="radio"] {
+	box-shadow: none;
 }
 
 /*

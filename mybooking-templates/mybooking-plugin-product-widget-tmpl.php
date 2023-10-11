@@ -25,6 +25,9 @@
       <!-- // Delivery -->
       <div class="mb-form-row">
         <div class="mb-form-group">
+          <label for="pickup_place">
+						<?php echo esc_html_x( 'Pick-up place', 'renting_product_calendar', 'mybooking-wp-plugin') ?>
+					</label>
           <select id="pickup_place" name="pickup_place" placeholder="<?php echo esc_attr_x( 'Select pick-up place', 'renting_product_calendar', 'mybooking-wp-plugin') ?>" class="mb-form-control"> </select>
         </div>
       </div>
@@ -32,6 +35,9 @@
       <!-- // Collection -->
       <div class="mb-form-row mb--mt-1">
         <div class="mb-form-group">
+          <label for="return_place">
+						<?php echo esc_html_x( 'Return place', 'renting_product_calendar', 'mybooking-wp-plugin' ) ?>
+					</label>
           <select id="return_place" name="return_place" placeholder="<?php echo esc_attr_x( 'Select return place', 'renting_product_calendar', 'mybooking-wp-plugin' )?>" class="mb-form-control" disabled> </select>
         </div>
       </div>
@@ -73,7 +79,7 @@
     <div class="mb-form-group">
       <input id="date" type="hidden" name="date"/>
       <div id="mb-date-container-header" style="display:none"></div>
-      <div id="date-container" class="disabled-picker"></div>
+      <div id="date-container" class="mb-date-container-content disabled-picker"></div>
     </div>
 
     <% if (configuration.timeToFrom || configuration.timeToFromInOneDay) { %>
