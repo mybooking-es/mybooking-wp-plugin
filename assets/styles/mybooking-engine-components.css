@@ -1015,6 +1015,10 @@ fieldset legend {
 
 /** DATEPICKER RANGE **/
 
+.mb-date-container-content {
+  text-align: center;
+}
+
 .date-picker-wrapper {
   border: none;
   background-color: transparent;
@@ -1037,6 +1041,12 @@ fieldset legend {
 .date-picker-wrapper table:not(.has-background) th {
   background-color: transparent;
 }
+
+.date-picker-wrapper table .caption .next, 
+.date-picker-wrapper table .caption .prev {
+    border: none !important;
+}
+
 
 .date-picker-wrapper .month-element {
   font-size: 16px;
