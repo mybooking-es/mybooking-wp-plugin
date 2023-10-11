@@ -710,6 +710,14 @@ button.mb-button a:hover  {
   padding: 0.5rem 0;
 }
 
+.mb-list-item.mb-justify-flex-start {
+  justify-content: flex-start;
+}
+
+.mb-list-item.mb-align-flex-center {
+  align-items: center;
+}
+
 .mb-list.border {
   display: block;
   border: 1px solid var(--mb-border-color);

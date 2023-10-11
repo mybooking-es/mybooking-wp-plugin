@@ -161,17 +161,17 @@
           <div class="mybooking-product_header">
 
            <div class="mybooking-product_price">
-             <!-- // Price -->
-             <div class="mybooking-product_amount">
-               <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
-            </div>
-
-             <!-- // Taxes -->
+            <!-- // Taxes -->
             <?php if ( array_key_exists('show_taxes_included', $args ) && ( $args['show_taxes_included'] ) ): ?>
               <div class="mybooking-product_taxes">
                 <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
               </div>
             <?php endif; ?>
+
+            <!-- // Price -->
+             <div class="mybooking-product_amount">
+               <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
+            </div>
            </div>
 
            <div class="mybooking-product_discount">
@@ -410,18 +410,24 @@
         <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
       </div>
       <ul class="mb-list border">
-        <li class="mb-list-item">
+        <li class="mb-list-item mb-justify-flex-start mb-align-flex-center">
+          <span class="dashicons dashicons-businessperson"></span>
+           &nbsp;
           <%=booking.customer_fullname%> 
         </li>
 
         <% if (booking.customer_phone && booking.customer_phone != '') { %>
-          <li class="mb-list-item">
+          <li class="mb-list-item mb-justify-flex-start mb-align-flex-center">
+            <span class="dashicons dashicons-phone"></span>
+            &nbsp;
             <%=booking.customer_phone%> <%=booking.customer_mobile_phone%>
           </li>
         <% } %>
 
         <% if (booking.customer_email && booking.customer_email != '') { %>
-          <li class="mb-list-item">
+          <li class="mb-list-item mb-justify-flex-start mb-align-flex-center">
+            <span class="dashicons dashicons-email"></span>
+            &nbsp;
             <%=booking.customer_email%>
           </li>
         <% } %>
