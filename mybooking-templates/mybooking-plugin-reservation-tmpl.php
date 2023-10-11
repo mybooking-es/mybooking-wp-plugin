@@ -685,7 +685,7 @@
                      configuration.rentingFormFillDataAdditionalDriver2) { %>
                 <!-- // Additional drivers information -->
 
-                <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x('Additional drivers', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
+                <h3 class="mb-form_title"><?php echo esc_html_x('Additional drivers', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
                 <div class="mb-form-row">
                   <div class="mb-form-group mb-col-md-6">
                     <label for="driver_name"><?php echo esc_html_x("Name", 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -892,7 +892,7 @@
         <!-- // Flight -->
 
         <% if (configuration.rentingFromFillDataFlight) { %>
-          <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x('Flight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
+          <h3 class="mb-form_title"><?php echo esc_html_x('Flight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
           <div class="mb-form-row">
             <div class="mb-form-group mb-col-md-4">
               <label for="flight_company"><?php echo esc_html_x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -910,7 +910,7 @@
                 placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Estimated Time', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.flight_time%>" maxlength="5" <% if (!booking.can_edit_online){%>disabled<%}%>>
             </div>
           </div>
-          <h3 class="h4 card-title border p-3 bg-light"><?php echo esc_html_x('Return flight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
+          <h3 class="mb-form_title"><?php echo esc_html_x('Return flight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h3>
           <div class="mb-form-row">
             <div class="mb-form-group mb-col-md-4">
               <label for="flight_company_departure"><?php echo esc_html_x('Company', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
@@ -935,7 +935,7 @@
         <% if (configuration.rentingFormFillDataNamedResources) { %>
           <% for (var idx=0; idx<booking.booking_lines.length; idx++) { %>
              <% var booking_line = booking.booking_lines[idx]; %>
-             <h3 class="h4 card-title border p-3 bg-light"><%=booking_line.quantity%> x <%=booking_line.item_description%></h3>
+             <h3 class="mb-form_title"><%=booking_line.quantity%> x <%=booking_line.item_description%></h3>
              <% for (var idxResource=0; idxResource<booking.booking_lines[idx].booking_line_resources.length; idxResource++) { %>
                 <% var booking_line_resource = booking.booking_lines[idx].booking_line_resources[idxResource]; %>
                 <input type="hidden" name="booking_line_resources[<%=booking_line_resource.id%>][id]" value="<%=booking_line_resource.id%>"/>

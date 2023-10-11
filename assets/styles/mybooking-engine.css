@@ -353,6 +353,7 @@
   border: 1px solid var(--mb-form-field-border-color)!important;
   border-radius: var(--mb-border-radius);
   background-color: var(--mb-form-field-background);
+  font-size: 1em;
 }
 
 /* IOS appearance standar */
@@ -452,6 +453,10 @@ form.mybooking select,
 
 .mb-custom-date-form .mb-custom-date-item {
   width:  33.33333%;
+} @media ( max-width: 758px ) {
+  .mb-custom-date-form .mb-custom-date-item {
+    width: 100%;
+  }
 }
 
 .mb-custom-date-form select {
@@ -691,6 +696,10 @@ button.mb-button a:hover  {
   margin: 1rem 0 0 0;
   padding: 1rem;
   border-top: 1px solid var(--mb-border-color);
+} @media ( max-width: 758px ) {
+  .mb-card_footer {
+    justify-content: center;
+  }
 }
 
 /* Lists */

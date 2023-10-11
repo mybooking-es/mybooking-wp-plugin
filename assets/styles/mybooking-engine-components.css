@@ -54,6 +54,11 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
+} @media ( max-width: 758px ) {
+  .mybooking-summary_header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .mybooking-summary_details-title {
@@ -539,7 +544,6 @@
 .form-reservation-error {
   color: #EC8396;
   font-weight: bolder;
-  margin-top: -2.9rem;
 }
 
 .mybooking select.form-reservation-error,
