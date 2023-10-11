@@ -82,24 +82,24 @@
 
 <script type="text/tmpl" id="script_transfer_detailed_product">
 
+  <!-- // Product filter -->
+
+  <div class="mybooking-product_filter">
+
+    <% if (available > 0) { %>
+      <div class="mybooking-product_results-found">
+        <%=i18next.t('transfer.chooseVehicle.vehicleFound', {available: available})%>
+      </div>
+    <% } else { %>
+      <div class="mybooking-product_results-found">
+        <%=i18next.t('transfer.chooseVehicle.vehicleNotFound')%>
+      </div>
+    <% } %>
+
+    <!-- // Here will be the product switch view component -->
+  </div>
+
   <div class="mybooking-product_container mybooking-product_grid">
-
-    <!-- // Product filter -->
-
-    <div class="mybooking-product_filter">
-
-      <% if (available > 0) { %>
-        <div class="mybooking-product_results-found">
-          <%=i18next.t('transfer.chooseVehicle.vehicleFound', {available: available})%>
-        </div>
-      <% } else { %>
-        <div class="mybooking-product_results-found">
-          <%=i18next.t('transfer.chooseVehicle.vehicleNotFound')%>
-        </div>
-      <% } %>
-
-      <!-- // Here will be the product switch view component -->
-    </div>
 
     <!-- // Product list -->
 
