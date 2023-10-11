@@ -13,7 +13,7 @@
     <div class="mb-row">
 
       <!-- Reservation summary -->
-      <div id="reservation_detail"></div>
+      <div class="mb-col-md-12" id="reservation_detail"></div>
     </div>
   </section>
 </div>

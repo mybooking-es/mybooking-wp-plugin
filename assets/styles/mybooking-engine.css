@@ -200,11 +200,7 @@
   display: flex;
 } /* Fixes row overflow in certain themes */
 
-.mb-row:after {
-  content: "";
-  display: block;
-  clear: both;
-}
+
 
 /* Columns */
 

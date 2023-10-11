@@ -129,7 +129,7 @@
   }
 }
 
-[class*="mb-col-"] .mybooking-summary_detail {
+.mybooking-sidebar .mybooking-summary_detail {
   flex-flow: column;
   align-items: flex-start;
 }

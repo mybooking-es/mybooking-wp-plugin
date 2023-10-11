@@ -21,7 +21,7 @@
   <section class="mybooking mybooking-page-container mybooking-process_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
     <div class="mb-row invert">
 
-      <div class="mb-col-md-4">
+      <div class="mybooking-sidebar mb-col-md-4">
 
         <!-- Reservation detail/summary (script_reservation_summary) -->
         <div id="reservation_detail"></div>
