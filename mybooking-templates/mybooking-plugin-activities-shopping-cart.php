@@ -8,12 +8,12 @@
  *
  */
 ?>
-
-<section class="mybooking mybooking-activity_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<div class="mybooking-process-page">
+<section class="mybooking mybooking-page-container mybooking-activity_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <div class="mb-row invert">
 
     <!-- Selected products -->
-    <div class="mb-col-md-4">
+    <div class="mybooking-sidebar mb-col-md-4">
       <div id="selected_products"></div>
     </div>
 
@@ -32,3 +32,4 @@
       </div>
     </div>
 </section>
+</div>

@@ -12,6 +12,6 @@
   <div class="mb-row">
 
     <!-- Reservation summary -->
-    <div id="mybooking_transfer_reservation_detail"></div>
+    <div class="mb-col-md-12" id="mybooking_transfer_reservation_detail"></div>
   </div>
 </section>

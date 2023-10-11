@@ -14,7 +14,7 @@
 
 <script type="text/tpml" id="script_order">
 
-  <div class="mb-col-md-8 mb-col-center">
+  <div class="mb-col-md-6 mb-col-center">
 
     <!-- // Summary details -->
     <div class="mb-section mybooking-details_container">
