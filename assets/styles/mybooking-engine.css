@@ -57,6 +57,9 @@
   --mb-selector-button-bg-color: var(--selector-btn-bg-color);/* Theme compat */
   --mb-selector-button-color: var(--selector-btn-color);
   --mb-selector-button-border-color: var(--selector-btn-bg-color);/* Theme compat */
+  --mb-selector-button-bg-color-hover: var(--selector-btn-hover-bg-color); /* Theme compat */
+  --mb-selector-button-color-hover: var(--white); /* Theme compat */
+  --mb-selector-button-border-color-hover: var( --selector-btn-hover-border-color); /* Theme compat */
   
 
   --mb-selector-promo-border: var(--mb-form-field-border-color);
@@ -528,7 +531,7 @@ form.mybooking select,
   color: var(--mb-button-color);
 }
 
-.mb-button:not(.icon):hover {
+.mb-button:hover:not(.icon) {
   background-color: var(--mb-button-bg-color-hover);
   border-color: var(--mb-button-border-color-hover);
 }

@@ -552,6 +552,10 @@
   color: white!important;
 }
 
+.mybooking-selector form input.form-reservation-error::placeholder {
+  color: white!important;
+}
+
 
 /** ACTIVITIES **/
 

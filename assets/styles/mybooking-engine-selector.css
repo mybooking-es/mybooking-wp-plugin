@@ -141,6 +141,13 @@
   }
 }
 
+.mybooking-selector_vertical .mybooking-selector_button:hover,
+.mybooking-selector_button:hover {
+  background-color: var(--mb-selector-button-bg-color-hover)!important; /* Theme compat */
+  color: var(--mb-selector-button-color-hover) !important; /* Theme compat */
+  border-color: var(--mb-selector-button-border-color-hover)!important; /* Theme compat */
+}
+
 .mybooking-selector_vertical .mybooking-selector_button {
   margin-top: 1rem;
 }

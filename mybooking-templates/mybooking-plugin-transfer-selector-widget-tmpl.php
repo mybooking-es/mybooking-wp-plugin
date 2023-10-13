@@ -91,27 +91,29 @@
 		<!-- // Date and time -->
 	  <div id="return_block" class="mybooking-selector_date mybooking-selector_transfers-group" style="display:none">
 
-			<!-- // Return date -->
-	    <div class="mybooking-selector_cal">
-				<i class="mybooking-selector_field-icon">
-					<span class="dashicons dashicons-calendar-alt"></span>
-				</i>
-	      <label for="date">
-					<?php echo esc_html_x( 'Return Date', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
-				</label>
-				<input type="text" class="mb-form-control" name="return_date" id="return_date" autocomplete="off" readonly="true">
-	    </div>
+			<div class="mybooking-selector_return">
+				<!-- // Return date -->
+				<div class="mybooking-selector_cal">
+					<i class="mybooking-selector_field-icon">
+						<span class="dashicons dashicons-calendar-alt"></span>
+					</i>
+					<label for="date">
+						<?php echo esc_html_x( 'Return Date', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+					</label>
+					<input type="text" class="mb-form-control" name="return_date" id="return_date" autocomplete="off" readonly="true">
+				</div>
 
-			<!-- // Return time -->
-			<div class="mybooking-selector_hour">
-				<i class="mybooking-selector_field-icon">
-					<span class="dashicons dashicons-clock"></span>
-				</i>
-				<label for="time">
-					<?php echo esc_html_x( 'Time', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
-				</label>
-				<select class="mb-form-control" name="return_time" id="return_time"></select>
-			</div>
+				<!-- // Return time -->
+				<div class="mybooking-selector_hour">
+					<i class="mybooking-selector_field-icon">
+						<span class="dashicons dashicons-clock"></span>
+					</i>
+					<label for="time">
+						<?php echo esc_html_x( 'Time', 'transfer_form_selector', 'mybooking-wp-plugin') ?>
+					</label>
+					<select class="mb-form-control" name="return_time" id="return_time"></select>
+				</div>
+		</div>
 	  </div>
 
   <% } %>

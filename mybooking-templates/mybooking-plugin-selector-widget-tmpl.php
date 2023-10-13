@@ -281,6 +281,9 @@
 						<i class="mybooking-selector_field-icon">
 							<span class="dashicons dashicons-calendar-alt"></span>
 						</i>
+						<label for="date_from">
+							<?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?>
+						</label>
 						<input class="mb-form-control" name="date_to" id="widget_date_to" type="text" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
 					</div>
 
