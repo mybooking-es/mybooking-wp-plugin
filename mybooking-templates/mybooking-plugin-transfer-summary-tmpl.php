@@ -66,7 +66,7 @@
   </div>
 
   <div class="mb-row">
-    <div class="mb-col-md-8 mb-col-center">
+    <div class="mb-col-md-6 mb-col-center">
 
       <!-- // Reservation status message -->
       <div class="mybooking-summary_status">

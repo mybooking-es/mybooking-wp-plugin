@@ -9,7 +9,7 @@
   /*display: flex;
   flex-wrap: wrap;*/
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 0.2em;
 
   margin: 1rem auto;
@@ -314,7 +314,6 @@ div.mybooking-product {
 .mybooking-product_image {
   width: 100%;
   border-radius: var(--mb-border-radius)!important;
-  border-bottom: 1px solid var(--mb-border-color);
 }
 
 .mybooking-product .mybooking-product_image {

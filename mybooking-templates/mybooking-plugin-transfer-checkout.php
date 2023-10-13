@@ -14,32 +14,34 @@
    *
    */
 ?>
-<section class="mybooking mybooking-process_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
-  <div class="mb-row invert">
+<div class="mybooking-process-page">
+  <section class="mybooking mybooking-page-container mybooking-process_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+    <div class="mb-row invert">
 
-    <div class="mybooking-sidebar mb-col-md-4">
+      <div class="mybooking-sidebar mb-col-md-4">
 
-      <!-- Reservation detail/summary (script_reservation_summary) -->
-      <div id="mybooking_transfer_reservation_detail"></div>
-    </div>
-    <div class="mb-col-md-8">
-
-      <!-- Extras Selection (script_detailed_extra) -->
-      <div id="mybooking_transfer_extras_listing">
+        <!-- Reservation detail/summary (script_reservation_summary) -->
+        <div id="mybooking_transfer_reservation_detail"></div>
       </div>
+      <div class="mb-col-md-8">
 
-      <!-- Reservation complete -->
-      <div class="mb-section">
-        <div class="reservation_form_container">
-          <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h2>
-          <form class="mybooking-form" id="mybooking_transfer_form-reservation" name="mybooking_transfer_reservation_form" autocomplete="off">
+        <!-- Extras Selection (script_detailed_extra) -->
+        <div id="mybooking_transfer_extras_listing">
+        </div>
 
-          </form>
+        <!-- Reservation complete -->
+        <div class="mb-section">
+          <div class="reservation_form_container">
+            <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'transfer_checkout', 'mybooking-wp-plugin') ?></h2>
+            <form class="mybooking-form" id="mybooking_transfer_form-reservation" name="mybooking_transfer_reservation_form" autocomplete="off">
+
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <!-- Show extra detail modal -->
 <!-- <div class="modal fade modal-mybooking" tabindex="-1" role="dialog" id="mybooking_transfer_modalExtraDetail_MBM">

@@ -309,7 +309,7 @@
                   <% if (configuration.multipleProductsSelection) { %>
                     <!-- // Selector -->
                     <div class="car-listing-selector">
-                      <select class="mybooking-product_select" data-value="<%=product.code%>">
+                      <select class="mybooking-product_select select-choose-product" data-value="<%=product.code%>">
                         <option value="0"><%=i18next.t('chooseProduct.selectUnits')%></option>
                         <% for (var idx2=1;idx2<=(product.available);idx2++) { %>
                         <option value="<%=idx2%>"
