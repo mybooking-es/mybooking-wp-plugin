@@ -104,10 +104,6 @@
   white-space: nowrap!important;
 }
 
-.mybooking-selector form .form-reservation-error {
-  font-size: 0.8rem;
-}
-
 /** Compatibility with Twenty Twenty-Two **/
 .mybooking-selector form input.mb-form-control {
   padding:  0 0 0 5px;

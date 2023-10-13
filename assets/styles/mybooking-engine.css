@@ -126,7 +126,7 @@
   --mb-product-total-border: var(--mb-border-color);
   --mb-product-total-bg: #FFF;
   --mb-product-total-color: currentcolor;
-  --mb-product-total-amount-size: 1.4em;
+  --mb-product-total-amount-size: 1.3em;
   --mb-product-total-amount-color: var(--mb-info-color);
 
   --mb-product-activity-route-max-width: none;
@@ -355,6 +355,10 @@
   font-size: 1em;
 }
 
+.mybooking textarea {
+  padding-top: 0.5rem;
+}
+
 /* IOS appearance standar */
 form.mybooking select,
 .mybooking-selector form.mybooking-selector_form select.mb-form-control {
@@ -466,6 +470,10 @@ form.mybooking select,
   .mb-custom-date-form select {
     margin: 0;
   }
+}
+
+.mybooking-form  .mb-form-row {
+  align-items: flex-start;
 }
 
 /* Select2 */

@@ -150,7 +150,7 @@
 	  </div>
 
 		<!-- // Date and time -->
-	  <div class="mybooking-selector_date">
+	  <div class="mybooking-selector_return">
 
 			<!-- // Return date -->
 	    <div class="mybooking-selector_cal">

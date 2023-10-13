@@ -241,8 +241,12 @@
 }
 
 .mybooking-summary_total-label {
-  font-size: 1.6em;
+  font-size: 1.3em;
   font-weight: 700;
+} @media ( max-width: 575.98px ) {
+  .mybooking-summary_total-label {
+    font-size: 1em;
+  }
 }
 
 .mybooking-summary_total-amount {
@@ -281,6 +285,7 @@
 
 .mybooking-extra_box-img .extra-img {
   width: 100%;
+  max-width: 100px;
 }
 
 .mybooking-extra_item:last-of-type {
@@ -320,7 +325,7 @@
 /*  End tablet settings*/
 
 .mybooking-extra_img {
-  max-width: 150px!important;
+  max-width: 100px!important;
   margin: 0 auto 0.5rem auto;
 } @media ( min-width: 575.98px ) {
   .mybooking-extra_img {
@@ -544,6 +549,7 @@
 .form-reservation-error {
   color: #EC8396;
   font-weight: bolder;
+  font-size: 0.8rem !important;
 }
 
 .mybooking select.form-reservation-error,
@@ -1117,6 +1123,9 @@ fieldset legend {
 /** Phone prefix **/
 form .iti {
     width: 100%;
+}
+.mybooking .iti__flag-container {
+  max-height: 2.5rem;
 }
 
 /** SLICK JS **/

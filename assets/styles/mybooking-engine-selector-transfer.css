@@ -17,18 +17,6 @@
   }
 }
 
-.mybooking-selector_transfers-group  .mybooking-selector_return {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.mybooking-selector_transfers-group  .mybooking-selector_cal {
-  width: 50%;
-}
-
 .mybooking-selector_vertical .mybooking-selector_transfers-destination,
 .mybooking-selector_transfers-destination {
   display: flex;
@@ -52,6 +40,20 @@
   .mybooking-selector_transfers-return {
     flex-direction: row;
   }
+}
+
+.mybooking-selector_transfers-return  .mybooking-selector_return,
+.mybooking-selector_transfers-group .mybooking-selector_return {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.mybooking-selector_transfers-return  .mybooking-selector_cal,
+.mybooking-selector_transfers-group .mybooking-selector_cal {
+  width: 50%;
 }
 
 /** Return => Date **/

@@ -161,17 +161,17 @@
           <div class="mybooking-product_header">
 
            <div class="mybooking-product_price">
-            <!-- // Taxes -->
-            <?php if ( array_key_exists('show_taxes_included', $args ) && ( $args['show_taxes_included'] ) ): ?>
-              <div class="mybooking-product_taxes">
-                <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-              </div>
-            <?php endif; ?>
+              <!-- // Taxes -->
+              <?php if ( array_key_exists('show_taxes_included', $args ) && ( $args['show_taxes_included'] ) ): ?>
+                <div class="mybooking-product_taxes">
+                  <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                </div>
+              <?php endif; ?>
 
-            <!-- // Price -->
-             <div class="mybooking-product_amount">
-               <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
-            </div>
+              <!-- // Price -->
+              <div class="mybooking-product_amount">
+                <%=configuration.formatCurrency(booking.booking_lines[idx].item_cost)%>
+              </div>
            </div>
 
            <div class="mybooking-product_discount">

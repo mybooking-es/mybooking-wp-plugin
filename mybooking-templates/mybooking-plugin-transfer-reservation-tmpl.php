@@ -70,8 +70,8 @@
     </div>
   </div>
 
-  <div class="mb-row-flex">
-    <div class="mb-col-md-8">
+  <div class="mb-row">
+    <div class="mb-col-md-8 mb-col-center">
 
       <!-- // Reservation status message -->
 
@@ -180,17 +180,23 @@
         </div>
         <ul class="mb-list border">
           <li class="mb-list-item">
+            <span class="dashicons dashicons-businessperson"></span>
+            &nbsp;
             <%=booking.customer_name%> <%=booking.customer_surname%>
           </li>
 
           <% if (booking.customer_phone && booking.customer_phone != '') { %>
             <li class="mb-list-item">
+              <span class="dashicons dashicons-phone"></span>
+              &nbsp;
               <%=booking.customer_phone%> <%=booking.customer_mobile_phone%>
             </li>
           <% } %>
 
           <% if (booking.customer_email && booking.customer_email != '') { %>
             <li class="mb-list-item">
+              <span class="dashicons dashicons-email"></span>
+              &nbsp;
               <%=booking.customer_email%>
             </li>
           <% } %>
