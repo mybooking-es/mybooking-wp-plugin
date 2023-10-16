@@ -41,7 +41,6 @@
   display: inline-block;
   color: var(--mb-selector-label-color);
   font-size: 14px;
-  margin-bottom: 0.5rem; /* Theme compat */
 }
 
 .mybooking-selector form input:not([type="submit"]) /* Not the buttons! */,
@@ -117,13 +116,11 @@
   height: 48px;
   padding: 0.3rem 2rem!important;
   border: 1px solid var(--mb-border-color);
-  border: 1px solid var(--mb-selector-button-border-color); /* Theme compat */
   border-radius: var(--mb-button-border-radius)!important;
   outline: none!important;
   box-shadow: none!important;
   background-color: accentcolor!important;
-  background-color: var(--mb-selector-button-bg-color)!important; /* Theme compat */
-  color: var(--mb-selector-button-color)!important;
+  color: var(--mb-selector-button-color);
   font-size: 18px!important;
   line-height: 1!important;
   text-transform: uppercase;
@@ -135,13 +132,6 @@
     align-self: flex-end;
     width: auto;
   }
-}
-
-.mybooking-selector_vertical .mybooking-selector_button:hover,
-.mybooking-selector_button:hover {
-  background-color: var(--mb-selector-button-bg-color-hover)!important; /* Theme compat */
-  color: var(--mb-selector-button-color-hover) !important; /* Theme compat */
-  border-color: var(--mb-selector-button-border-color-hover)!important; /* Theme compat */
 }
 
 .mybooking-selector_vertical .mybooking-selector_button {
