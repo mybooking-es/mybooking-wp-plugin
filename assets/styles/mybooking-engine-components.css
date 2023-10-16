@@ -955,11 +955,6 @@ fieldset legend {
   z-index: 999999!important;
 }
 
-.full-size-datepicker-container .ui-datepicker {
-  border: none;
-  box-shadow: none;
-}
-
 .ui-datepicker table {
   margin: 0;
 }
@@ -999,6 +994,23 @@ fieldset legend {
   font-size: 16px;
   text-decoration: none!important;
   border-radius: 0;
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  display: none;
+}
+
+.ui-datepicker-prev:before {
+  content: "\f341";
+  font-family: "dashicons";
+  font-size: 1.5rem;
+}
+
+.ui-datepicker-next:before {
+  content: "\f345";
+  font-family: "dashicons";
+  font-size: 1.5rem;
 }
 
 .ui-state-disabled,
@@ -1118,6 +1130,43 @@ fieldset legend {
 
 .date-picker-wrapper .gap {
   display: none;
+}
+
+/** JQUERY UI IN FULL SIZE CONTAINER **/
+.full-size-datepicker-container {
+  /* Month and year */
+  /**
+  * Include datepicker in full-size-datepicker-container to make it 100%
+  */ 
+}
+
+.full-size-datepicker-container .ui-datepicker-month,
+.full-size-datepicker-container .ui-datepicker-year {
+  font-size: 2em !important;
+}
+
+.full-size-datepicker-container .ui-datepicker {
+  border: 0 !important;
+  border: none;
+  box-shadow: none;
+}
+
+.full-size-datepicker-container .ui-datepicker,
+.full-size-datepicker-container .ui-datepicker table {
+  width: 100% !important;
+  height: auto !important;
+  margin: auto;
+  border-collapse: separate;
+}
+
+.full-size-datepicker-container .ui-datepicker table th span {
+  font-size: 2em !important;
+}
+
+.full-size-datepicker-container .ui-datepicker table td span,
+.full-size-datepicker-container .ui-datepicker table td a {
+  height: 100%;
+  font-size: 2em !important;
 }
 
 /** Phone prefix **/

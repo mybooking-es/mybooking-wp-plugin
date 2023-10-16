@@ -6,6 +6,9 @@
 
 :root {
 
+  /* Structure */
+  --mb-page-container-max-width: 1140px;  /* Theme compat */
+
   /* Color palette */
   --mb-accent-color: #2193F2;
 

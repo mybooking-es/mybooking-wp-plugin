@@ -12,6 +12,13 @@
 
 <div id="wizard_container" class="selector_wizard_container mybooking-wizard_container" style="display: none">
 
+  <?php if ( function_exists('mybooking_site_logo') ) : ?>
+    <br/><br/>
+    <div class="text-center">
+        <?php mybooking_site_logo(); ?>
+    </div>
+  <?php endif; ?>
+
   <!-- Title -->
   <div id="step_title" class="selector_wizard_step_title mybooking-wizard_step-title">
     <div><?php $bloginfo = get_bloginfo(); echo $bloginfo ?></div>
