@@ -317,8 +317,6 @@ div.mybooking-product {
   align-items: center;
   width: 100%;
   margin: 0;
-  padding-top: 0.5rem;
-/*  border-top: 1px solid var(--mb-border-color); */
   font-size: 14px;
 }
 
@@ -326,7 +324,6 @@ div.mybooking-product {
   display: inline-block;
   width: auto;
   float: right;
-/*  margin-left: 0.5rem; */
 }
 
 .mybooking-product_original-price {

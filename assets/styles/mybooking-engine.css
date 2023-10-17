@@ -67,14 +67,6 @@
   --mb-product-footer-height: 76px;
   --mb-product-btn-height: 50px;
 
-  /* Product list */
-  --mb-product-list-left-width: 50%;
-  --mb-product-list-right-width: 50%;
-  --mb-product-list-image-height: 100%;
-  --mb-product-list-header-height: 70px;
-  --mb-product-list-body-height: 190px;
-  --mb-product-list-footer-height: 76px;
-
   /* Product custom message */
   --mb-product-custom-message-bg: rgba(255,255,255,0.7);
   --mb-product-custom-message-color: currentcolor;
@@ -86,11 +78,6 @@
   --mb-product-price-color: var(--mb-info-color);
   --mb-product-price-size: 1.3em;
   --mb-product-quantity-color: #2193F2;
-
-  --mb-product-list-price-size: 1.3em;
-  --mb-product-list-name-size: 1.15em;
-  --mb-product-list-name-width: 350px;
-  --mb-product-list-description-width: 350px;
 
   /* Product icons */
   --mb-product-list-keys-width: auto;

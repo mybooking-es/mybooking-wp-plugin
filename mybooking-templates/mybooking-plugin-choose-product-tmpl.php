@@ -149,17 +149,15 @@
           <% } %>
 
           <div class="mybooking-product_block">
-            <div class="mybooking-product_image-container">
-              <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
-                <span class="dashicons dashicons-plus-alt"></span> INFO
-              </span>
+            <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
+              <span class="dashicons dashicons-plus-alt"></span> INFO
+            </span>
 
-              <% if (product.full_photo && product.full_photo !== '') { %>
-                <img class="mybooking-product_image" src="<%=product.full_photo%>">
-              <% } else { %>
-                <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
-              <% } %>
-            </div>
+            <% if (product.full_photo && product.full_photo !== '') { %>
+              <img class="mybooking-product_image" src="<%=product.full_photo%>">
+            <% } else { %>
+              <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
+            <% } %>
 
             <% if (product.highlight_message && product.highlight_message != '') { %>
               <div class="mybooking-product_custom-message"><%=product.highlight_message%></div>
@@ -177,6 +175,9 @@
                       <!-- // Price (single product selection) -->
                       <% if (!product.exceeds_max && !product.be_less_than_min) { %>
                         <% if (!configuration.multipleProductsSelection && (product.availability || !configuration.hidePriceIfNotAvailable)) { %>
+                          <% if (product.price != product.base_price) { %>
+                            <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
+                          <% } %>
                           <div class="mybooking-product_amount">
                             <%=configuration.formatCurrency(+product.price +
                               (+product.category_supplement_1_cost || 0) +
@@ -184,9 +185,6 @@
                               (+product.category_supplement_3_cost || 0))
                             %>
                           </div>
-                          <% if (product.price != product.base_price) { %>
-                            <span class="mybooking-product_original-price"><%= configuration.formatCurrency(product.base_price)%></span>
-                          <% } %>
                         <% } %>
                       <% } %>
 
@@ -223,6 +221,10 @@
                 <% if (product.name != product.short_description) { %>
                   <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
                 <% } %>
+                
+                <div class="mybooking-product_description">
+                  <%=product.description%>
+                </div>
 
                 <% if (product.category_supplement_1_cost > 0) { %>
                 <div class="mybooking-product_price_supplement p-b-1">
@@ -356,7 +358,6 @@
 <!-- PRODUCT DETAIL MODAL ----------------------------------------------------->
 
 <script type="text/tmpl" id="script_product_modal">
-
   <div class="mybooking-modal_product-detail">
     <div class="mybooking-modal_product-container">
       <div class="mybooking-carousel-inner">
@@ -377,6 +378,7 @@
   </div>
 
 </script>
+
 <!-- Script that shows the product variant selection -->   
 <script type="text/tpml" id="script_variant_product_resume">
   <div class="card-static_variant_resume__container">
@@ -390,6 +392,7 @@
     <% } %>
   </div>
 </script>
+
 <script type="text/tpml" id="script_variant_product">
   <form name="variant_product_form">
     <div id="variant_product_selectors" class="mb-row">
