@@ -15,7 +15,7 @@
     <?php } ?>>
     <div class="mybooking-search_fields-container mb-form-row search_fields_container">
 
-      <button class="mybooking-search_button" type="submit">
+      <button class="mybooking-search_button mb-button" type="submit">
         <!-- <?php echo esc_attr_x( 'Search', 'activities_search', 'mybooking-wp-plugin' ) ?> -->
         <span class="dashicons dashicons-search"></span>
       </button>

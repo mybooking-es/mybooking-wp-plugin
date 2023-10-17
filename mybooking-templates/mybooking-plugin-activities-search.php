@@ -22,7 +22,7 @@
          <?php } ?>
          name="q" id="search_q" placeholder="<?php echo esc_attr_x( 'Search', 'activities_search', 'mybooking-wp-plugin' ) ?>">
 
-      <button class="mybooking-search_button" type="submit">
+      <button class="mybooking-search_button mb-button" type="submit">
         <!-- <?php echo esc_attr_x( 'Search', 'activities_search', 'mybooking-wp-plugin' ) ?> -->
         <span class="dashicons dashicons-search"></span>
       </button>

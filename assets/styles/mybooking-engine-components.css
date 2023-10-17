@@ -843,6 +843,7 @@ button.mybooking-popup_close:hover {
 } @media ( min-width: 575.98px ) {
   .mybooking-search_button {
     width: auto;
+    padding: 0 1.5rem;
   }
 }
 
