@@ -304,6 +304,8 @@
       }
 
       ob_start();
+      // Do an action to load specific content
+      do_action('mybooking_plugin_reservation_process_header');
       mybooking_engine_get_template('mybooking-plugin-choose-product.php', $data);
       return ob_get_clean();
 
