@@ -634,9 +634,14 @@
   border: 1px solid var(--mb-border-color);
   align-items: center;
   text-align: center;
+  flex-basis: 30%;
 }
 
-.mb-form-check-input {
+.mb-form-check .mb-form-check-label {
+  margin-bottom: 0 !important;
+}
+
+.mb-form-check .mb-form-check-input {
   box-shadow: none;
   margin: 0 auto;
 }
@@ -1071,9 +1076,14 @@ fieldset legend {
 
 .date-picker-wrapper table .caption .next, 
 .date-picker-wrapper table .caption .prev {
-    border: none !important;
+  font-size: 1.5rem;
+  border: none!important;
 }
 
+.date-picker-wrapper table .caption .next:hover,
+.date-picker-wrapper table .caption .prev:hover {
+
+}
 
 .date-picker-wrapper .month-element {
   font-size: 16px;
@@ -1099,6 +1109,7 @@ fieldset legend {
 
 .date-picker-wrapper .month-wrapper table .day.date-available:hover {
   background-color: var(--mb-calendar-available-hover)!important;
+  color: var(--white)!important;
 }
 
 /* Not selectable date */
@@ -1184,6 +1195,11 @@ button:not(:hover):not(:active):not(.has-background).slick-prev.slick-arrow,
 button:not(:hover):not(:active):not(.has-background).slick-next.slick-arrow,
 .slick-dots button:not(:hover):not(:active):not(.has-background){
     background-color: transparent;
+}
+
+.slick-next.slick-arrow, .slick-prev.slick-arrow,
+.slick-next.slick-arrow:hover, .slick-prev.slick-arrow:hover {
+  background-color: transparent !important;
 }
 
 /** SELECT2 **/
