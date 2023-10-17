@@ -419,9 +419,8 @@ div.mybooking-product {
 }
 
 .mybooking-product_detail .mybooking-product_characteristics {
-  border-bottom: 1px solid var(--mb-border-color);
   padding-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 } /* Product pages presentation */
 
 .mybooking-product_characteristics-item {
@@ -533,14 +532,15 @@ div.mybooking-product {
 
 .mybooking-product_detail-short {
   font-size: 1.3em;
+  border-top: 1px solid var(--mb-border-color);
   border-bottom: 1px solid var(--mb-border-color);
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding: 1rem 0;
+  margin: 1rem 0;
 }
 
 .mybooking-product_detail-description li {
   padding-left: 1rem;
-  list-style: none;
+  // list-style: none;
 }
 
 .mybooking-product_calendar-step-list {
@@ -548,6 +548,7 @@ div.mybooking-product {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-left: 0!important;
   border-top: 1px solid var(--mb-border-color);
 }
 
@@ -578,13 +579,21 @@ div.mybooking-product {
 }
 
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table {
-  border:  1px solid var(--mb-border-color);
-  border-collapse: collapse!important;
+  border-collapse: initial!important;
 }
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table td,
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table th {
   line-height: 10px;
-  border: 1px solid;
+  border: none;
+}
+
+.mybooking-product_calendar .date-picker-wrapper .month-wrapper table td {
+  border: 2px solid white;
+}
+
+
+.mybooking-product_calendar .date-picker-wrapper .month-wrapper table .day.toMonth.valid {
+  color: black;
 }
 
 .mybooking-product_calendar select {

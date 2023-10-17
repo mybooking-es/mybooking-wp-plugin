@@ -78,6 +78,7 @@
     <!-- // Date Selector -->
     <div class="mb-form-group">
       <input id="date" type="hidden" name="date"/>
+      <br/>
       <div id="mb-date-container-header" style="display:none"></div>
       <div id="date-container" class="mb-date-container-content disabled-picker"></div>
     </div>
