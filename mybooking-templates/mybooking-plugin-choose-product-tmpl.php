@@ -149,10 +149,6 @@
           <% } %>
 
           <div class="mybooking-product_block">
-            <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
-              <span class="dashicons dashicons-plus-alt"></span> INFO
-            </span>
-
             <% if (product.full_photo && product.full_photo !== '') { %>
               <img class="mybooking-product_image" src="<%=product.full_photo%>">
             <% } else { %>
@@ -221,9 +217,24 @@
                 <% if (product.name != product.short_description) { %>
                   <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
                 <% } %>
+
+                <!-- // Key characteristics -->
+              
+              <% if (product.key_characteristics) { %>
+                <div class="mybooking-product_characteristics">
+                <% for (characteristic in product.key_characteristics) { %>
+                  <div class="mybooking-product_characteristics-item">
+                    <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
+                    <img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
+                    <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
+                  </div>
+                <% } %>
+                </div>
+              <% } %>
                 
                 <div class="mybooking-product_description">
                   <%=product.description%>
+                  <div class="mybooking-product_description-overlay"></div>
                 </div>
 
                 <% if (product.category_supplement_1_cost > 0) { %>
@@ -275,20 +286,6 @@
                       </div>
                 <% } %>
               </div>
-
-              <!-- // Key characteristics -->
-              
-              <% if (product.key_characteristics) { %>
-                <div class="mybooking-product_characteristics">
-                <% for (characteristic in product.key_characteristics) { %>
-                  <div class="mybooking-product_characteristics-item">
-                    <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
-                    <img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
-                    <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
-                  </div>
-                <% } %>
-                </div>
-              <% } %>
             </div>
 
             <div class="mybooking-product_footer <% if (product.variants_enabled) { %>mybooking-product_variant_footer<% } %>">
@@ -325,15 +322,21 @@
                       </select>
                     </div>
                   <% } else { %>
+                    
                     <!-- // Button -->
-                    <button class="mb-button btn-choose-product"
-                        data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
+                    <button class="mb-button btn-choose-product" data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
+
+                    <% if (product.description && product.description !== '') { %>
+                      <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
+                        <span class="dashicons dashicons-plus-alt"></span> INFO
+                      </span>
+                    <% } %>
                   <% } %>
                 <% } %>
 
               <!-- // Not available -->
               <% } else { %>
-
+                
                 <span class="mybooking-product_not-available">
                   <?php echo esc_html( MyBookingEngineContext::getInstance()->getNotAvailableMessage() ) ?>
                 </span>
@@ -358,8 +361,8 @@
 <!-- PRODUCT DETAIL MODAL ----------------------------------------------------->
 
 <script type="text/tmpl" id="script_product_modal">
-  <div class="mybooking-modal_product-detail">
-    <div class="mybooking-modal_product-container">
+  <div class="mybooking-modal_product-detail mb-row">
+    <div class="mybooking-modal_product-container mb-col-md-6">
       <div class="mybooking-carousel-inner">
         <% for (var idx=0; idx<product.photos.length; idx++) { %>
           <div class="mybooking-carousel-item">
@@ -368,15 +371,14 @@
         <% } %>
       </div>
     </div>
-    <div class="mybooking-modal_product-description" style="display: none">
-      <%=product.description%>
+    <div class="mybooking-modal_product-info mb-col-md-6">
+      <h2 class="mybooking-product_name"><%=product.name%></h2>
+      <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
+      <div class="mybooking-product_description">
+        <%=product.description%>
+      </div>
     </div>
   </div>
-  <div class="mybooking-modal_product-actions">
-    <button id="modal_product_photos"><?php echo esc_html_x( "Photos", 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
-    <button id="modal_product_info"><?php echo esc_html_x( "Info", 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
-  </div>
-
 </script>
 
 <!-- Script that shows the product variant selection -->   

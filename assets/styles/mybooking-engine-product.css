@@ -183,11 +183,10 @@ div.mybooking-product {
 }
 
 .mybooking-product_image {
-  width: 100%;
   border-radius: var(--mb-border-radius)!important;
 }
 
-.mybooking-product .mybooking-product_image {
+.mybooking-product_grid .mybooking-product .mybooking-product_image {
   border-radius: 10px 10px 0 0!important;
 }
 
@@ -202,14 +201,13 @@ div.mybooking-product {
 
 /* Grid product image */
 .mybooking-product_grid .mybooking-product_block .mybooking-product_image {
-  /*height: 250px;*/
   width: var(--mb-product-image-width-img);
   object-fit: var(--mb-product-image-fit);
   object-position: center center;
   padding: var(--mb-product-image-padding);
 }
 
-.mybooking-product_info-button {
+.mybooking-product_grid .mybooking-product_grid .mybooking-product_info-button {
   line-height: 1;
   color: var(--mb-product-info-color)!important;
   position: absolute;
@@ -365,12 +363,22 @@ div.mybooking-product {
   color: var(--mb-muted-color);
 }
 
+.mybooking-product_name {
+  margin: 0 0 2px 0 !important;
+  font-weight: 800;
+  font-size: var(--mb-product-name-size) !important;
+}
+
 .mybooking-product_quantity {
   color: var(--mb-info-color);
 }
 
-.mybooking-product_description {
+.mybooking-product_grid .mybooking-product_description {
   display:  none;
+}
+
+.mybooking-product_description {
+  list-style: none;
 }
 
 .mybooking-product_description li {
@@ -493,6 +501,22 @@ div.mybooking-product {
 }
 
 
+/** PRODUCT MODAL **/
+
+.mybooking-detail_modal .mybooking-product_name {
+  margin: 0 0 2px 0 !important;
+  font-weight: 800;
+  font-size: 1.9em!important;
+}
+
+.mybooking-detail_modal .mybooking-product_short-description {
+  margin: 0 0 10px 0;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+
+
 /** PRODUCT DETAIL **/
 
 .mybooking-product_detail img.product-photo {
@@ -537,7 +561,7 @@ div.mybooking-product {
 
 .mybooking-product_detail-description li {
   padding-left: 1rem;
-  // list-style: none;
+  list-style: none;
 }
 
 .mybooking-product_calendar-step-list {
@@ -717,8 +741,5 @@ input.mybooking-product_calendar-not_available_turn + span.mybooking-product_cal
   padding-top: 10px;
 }
 
-.mybooking-modal_product-container,
-.mybooking-modal_product-description {
-  min-height:  500px;
-}
+
 

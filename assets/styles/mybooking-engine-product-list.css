@@ -87,14 +87,14 @@
     font-size: 1.5em;
   }
 
-} @media ( min-width: 991.98px ) {
+/*} @media ( min-width: 991.98px ) {*/
 
   .mybooking-product_list .mybooking-product_block:first-of-type {
-    width: 65%;
+    width: 60%;
   }
 
   .mybooking-product_list .mybooking-product_block:last-of-type {
-    width: 35%;
+    width: 40%;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
@@ -114,7 +114,9 @@
   .mybooking-product_list .mybooking-product_characteristics {
     width: var(--mb-product-list-keys-width);
     justify-content: flex-start;
-    padding: 0 1rem 1rem 1rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    height: initial;
   }
 
   .mybooking-product_list .mybooking-product_footer {
@@ -131,21 +133,55 @@
 }
 
 .mybooking-product_list .mybooking-product_block .mybooking-product_image {
-  width: var(--mb-product-image-width-img);
+  width: initial!important;
   object-fit: var(--mb-product-image-fit);
   object-position: center center;
   padding: var(--mb-product-image-padding);
+  height: 450px;
+  border-radius: 0!important;
 }
 
 .mybooking-product_list .mybooking-product_name {
-  margin: 0 0 2px 0 !important;
+  margin-bottom: 1rem;
   font-weight: 800;
   font-size: 1.5em;
 }
 
 .mybooking-product_list .mybooking-product_short-description {
-  margin: 0 0 10px 0;
+  margin: 0 0 1rem 0;
   font-weight: 400;
   font-size: 1em;
   color: var(--mb-muted-color);
+}
+
+.mybooking-product_list .mybooking-product_description {
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mybooking-product_list .mybooking-product_description-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  box-shadow: inset 0px -20px 20px -10px #FFF; 
+  z-index: 2;
+}
+
+.mybooking-product_info-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: auto;
+  gap: 0.3rem;
+  line-height: 1;
+  color: var(--brand-primary) !important;
+  margin-left: 1rem;
+}
+
+.mybooking-product_info-button:hover {
+  opacity: 0.5;
 }
