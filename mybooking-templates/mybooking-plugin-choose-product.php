@@ -13,7 +13,7 @@
   <section class="mybooking mybooking-process_choose mybooking-page-container<?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
   <!-- Reservation detail -->
-  <div id="reservation_detail"></div>
+  <div id="reservation_detail" class="sticky-top"></div>
 
   <!-- Product listing -->
   <div class="mybooking-product_listing" id="product_listing" 
