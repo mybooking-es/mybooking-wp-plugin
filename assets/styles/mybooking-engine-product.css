@@ -146,11 +146,6 @@
   opacity: 1;
 }
 
-.mybooking-product_results-found {
-  display: flex;
-  align-items: center;
-}
-
 /** PRODUCT ITEM **/
 
 /** To avoid conflict with product widget */
