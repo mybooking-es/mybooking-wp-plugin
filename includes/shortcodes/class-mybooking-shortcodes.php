@@ -322,6 +322,8 @@
       $data['selector_in_process'] = $registry->mybooking_rent_plugin_selector_in_process;
 
       ob_start();
+      // Do an action to load specific content
+      do_action('mybooking_plugin_reservation_process_header');
       mybooking_engine_get_template('mybooking-plugin-complete.php', $data);
       return ob_get_clean();
 
@@ -333,6 +335,8 @@
     public function wp_summary_shortcode($atts = [], $content = null, $tag = '') {
 
       ob_start();
+      // Do an action to load specific content
+      do_action('mybooking_plugin_reservation_process_header');
       mybooking_engine_get_template('mybooking-plugin-summary.php');
       return ob_get_clean();
 
