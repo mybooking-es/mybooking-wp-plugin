@@ -474,7 +474,6 @@
         $data = array();
         $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
         $data['choose_product_layout'] = get_theme_mod('mybooking_reservation_engine_rent_choose_product_layout', 'list_only');
-        do_action('mybooking_plugin_reservation_summary');
         mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php', $data);
         
         // If selector in process Wizard, load the micro-templates for the process
