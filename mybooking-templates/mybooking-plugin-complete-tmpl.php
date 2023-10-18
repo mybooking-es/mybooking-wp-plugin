@@ -12,6 +12,7 @@
  */
 ?>
 
+<?php mybooking_engine_get_template('mybooking-plugin-reservation-complete-summary-tmpl.php', $args); ?>
 
 <!-- RESERVATION DETAILS ------------------------------------------------------>
 

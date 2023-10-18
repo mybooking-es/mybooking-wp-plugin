@@ -1,3 +1,10 @@
+<?php
+  /** 
+   * The Template for showing the sticky bar in renting choose product
+   * This template can be overridden by copying it to your
+   * theme /mybooking-templates/mybooking-plugin-reservation-summary-tmpl.php
+   */
+?>
 <script type="text/tmpl" id="script_reservation_summary">
 
   <!-- // Summary details -->
