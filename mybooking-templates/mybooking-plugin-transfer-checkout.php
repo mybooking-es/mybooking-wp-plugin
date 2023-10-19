@@ -15,6 +15,9 @@
    */
 ?>
 <div class="mybooking-process-page">
+  <!-- Reservation detail sticky -->
+  <div id="mybooking_transfer_reservation_detail_sticky" class="sticky-top"></div>
+  
   <section class="mybooking mybooking-page-container mybooking-process_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
     <div class="mb-row invert">
 
