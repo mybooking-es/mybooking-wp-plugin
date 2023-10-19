@@ -115,38 +115,23 @@
 
                   <!-- // Key characteristics -->
                 
-                <% if (product.key_characteristics) { %>
-                  <div class="mybooking-product_characteristics">
-                  <% for (characteristic in product.key_characteristics) { %>
-                    <div class="mybooking-product_characteristics-item">
-                      <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
-                      <img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
-                      <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
+                  <% if (product.key_characteristics) { %>
+                    <div class="mybooking-product_characteristics">
+                    <% for (characteristic in product.key_characteristics) { %>
+                      <div class="mybooking-product_characteristics-item">
+                        <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
+                        <img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
+                        <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
+                      </div>
+                    <% } %>
                     </div>
-                  <% } %>
-                  </div>
-                <% } %>
-                  
-                  <div class="mybooking-product_description">
-                    <%=product.description%>
-                    <div class="mybooking-product_description-overlay"></div>
-                  </div>
-
-                  <% if (product.category_supplement_1_cost > 0) { %>
-                  <div class="mybooking-product_price_supplement p-b-1">
-                    <span class="mybooking-product_price_supplement_price">
-                      <small><b><%=configuration.formatCurrency(product.price)%></b>&nbsp;<?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() )?></small>
-                    </span>
-                    <span class="mybooking-product_price_supplement_supplement_1">
-                      <small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></small>
-                    </span>
-                  </div>
                   <% } %>
 
                   <% if ((product.characteristic_length && product.characteristic_length != 0) ||
                     (product.characteristic_width && product.characteristic_width != 0) ||
                     (product.characteristic_height && product.characteristic_height != 0) || 
                     (product.optional_external_driver && product.optional_external_driver != '')) { %>
+                      
                       <div class="mybooking-product_characteristics-text">
                         <!-- Length Eslora -->
                         <% if (product.characteristic_length && product.characteristic_length != 0) { %>
@@ -179,6 +164,22 @@
                           </span>
                         <% } %>
                         </div>
+                  <% } %>
+                  
+                  <div class="mybooking-product_description">
+                    <%=product.description%>
+                    <div class="mybooking-product_description-overlay"></div>
+                  </div>
+
+                  <% if (product.category_supplement_1_cost > 0) { %>
+                  <div class="mybooking-product_price_supplement p-b-1">
+                    <span class="mybooking-product_price_supplement_price">
+                      <small><b><%=configuration.formatCurrency(product.price)%></b>&nbsp;<?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() )?></small>
+                    </span>
+                    <span class="mybooking-product_price_supplement_supplement_1">
+                      <small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></small>
+                    </span>
+                  </div>
                   <% } %>
                 </div>
               </div>
@@ -250,7 +251,9 @@
         <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
       </button>
     <% } %>
+
   <?php } else {  ?>
+
     <div class="mybooking-product_container mybooking-product_grid">
 
       <% for (var idx=0;idx<products.length; idx++) { %>
@@ -472,7 +475,7 @@
 
 <script type="text/tmpl" id="script_product_modal">
   <div class="mybooking-modal_product-detail mb-row">
-    <div class="mybooking-modal_product-container mb-col-md-6">
+    <div class="mybooking-modal_product-container mb-col-md-8">
       <div class="mybooking-carousel-inner">
         <% for (var idx=0; idx<product.photos.length; idx++) { %>
           <div class="mybooking-carousel-item">
@@ -481,12 +484,13 @@
         <% } %>
       </div>
     </div>
-    <div class="mybooking-modal_product-info mb-col-md-6">
+    <div class="mybooking-modal_product-info mb-col-md-4">
       <h2 class="mybooking-product_name"><%=product.name%></h2>
       <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
       <div class="mybooking-product_description">
         <%=product.description%>
       </div>
+      <div class="mybooking-product_description-overlay"></div>
     </div>
   </div>
 </script>

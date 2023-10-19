@@ -202,7 +202,7 @@ div.mybooking-product {
   padding: var(--mb-product-image-padding);
 }
 
-.mybooking-product_grid .mybooking-product_grid .mybooking-product_info-button {
+.mybooking-product_grid .mybooking-product_info-button {
   line-height: 1;
   color: var(--mb-product-info-color)!important;
   position: absolute;
@@ -440,6 +440,11 @@ div.mybooking-product {
   height: 1rem;
 }
 
+/* Nautical characteristics */
+.mybooking-product_characteristics-text {
+  margin-bottom: 0.5rem;
+}
+
 /* Product footer */
 
 .mybooking-product_footer {
@@ -510,6 +515,22 @@ div.mybooking-product {
   font-size: 1.2em;
 }
 
+.mybooking-detail_modal .mybooking-product_description {
+  --mb-product-description-height: 400px;
+  position: relative;
+  height: var(--mb-product-description-height);
+  overflow: auto;
+}
+
+.mybooking-detail_modal .mybooking-product_description-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--mb-product-description-height);
+  box-shadow: inset 0px -20px 30px -10px #FFF; 
+  z-index: 2;
+}
 
 
 /** PRODUCT DETAIL **/
