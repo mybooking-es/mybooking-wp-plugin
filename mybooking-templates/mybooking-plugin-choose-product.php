@@ -10,10 +10,10 @@
 ?>
 
 <!-- Reservation detail -->
-<div id="reservation_detail" class="sticky-top"></div>
+<div id="reservation_detail" class="sticky-top <?php echo esc_attr( mybooking_engine_theme_align_width() )?>"></div>
 
-<div class="mybooking-process-page">
-  <section class="mybooking mybooking-process_choose mybooking-page-container<?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<div class="mybooking-process-page <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+  <section class="mybooking mybooking-process_choose mybooking-page-container">
 
   <!-- Product listing -->
   <div class="mybooking-product_listing" id="product_listing" 
