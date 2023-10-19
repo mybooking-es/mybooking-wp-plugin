@@ -15,9 +15,11 @@
 
           <div class="mybooking-product_block">
             <div class="mybooking-product_image-container">
-              <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
-                <span class="dashicons dashicons-plus-alt"></span> INFO
-              </span>
+              <% if (product.description && product.description !== '' || product.photos && product.photos.length > 0) { %>
+                <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
+                  <span class="dashicons dashicons-plus-alt"></span> INFO
+                </span>
+              <% } %>
 
               <% if (product.full_photo && product.full_photo !== '') { %>
                 <img class="mybooking-product_image" src="<%=product.full_photo%>">

@@ -31,23 +31,30 @@
 
 <script type="text/tmpl" id="script_product_modal">
   <div class="mybooking-modal_product-detail mb-row">
-    <div class="mybooking-modal_product-container mb-col-md-8">
-      <div class="mybooking-carousel-inner">
-        <% for (var idx=0; idx<product.photos.length; idx++) { %>
-          <div class="mybooking-carousel-item">
-            <img class="mybooking-carousel_item-image" src="<%=product.photos[idx].full_photo_path%>" alt="<%=product.name%>">
-          </div>
-        <% } %>
+
+    <% if (product.photos && product.photos.length > 0) { %>
+      <div class="mybooking-modal_product-container <% if (!product.description || product.description === '') { %>mb-col-md-12<% } else { %>mb-col-md-8<% } %>">
+        <div class="mybooking-carousel-inner">
+          <% for (var idx=0; idx<product.photos.length; idx++) { %>
+            <div class="mybooking-carousel-item">
+              <img class="mybooking-carousel_item-image" src="<%=product.photos[idx].full_photo_path%>" alt="<%=product.name%>">
+            </div>
+          <% } %>
+        </div>
       </div>
-    </div>
-    <div class="mybooking-modal_product-info mb-col-md-4">
-      <h2 class="mybooking-product_name"><%=product.name%></h2>
-      <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
-      <div class="mybooking-product_description">
-        <%=product.description%>
+    <% } %>
+
+    <% if (product.description && product.description !== '') { %>
+      <div class="mybooking-modal_product-info  <% if (!product.photos && product.photos.length === 0) { %>mb-col-md-12<% } else { %>mb-col-md-4<% } %>">
+        <h2 class="mybooking-product_name"><%=product.name%></h2>
+        <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
+        <div class="mybooking-product_description">
+          <%=product.description%>
+        </div>
+        <div class="mybooking-product_description-overlay"></div>
       </div>
-      <div class="mybooking-product_description-overlay"></div>
-    </div>
+    <% } %>
+    
   </div>
 </script>
 

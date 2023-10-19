@@ -192,7 +192,7 @@
                   <!-- // Button -->
                   <button class="mb-button btn-choose-product" data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
 
-                  <% if (product.description && product.description !== '') { %>
+                  <% if (product.description && product.description !== '' || product.photos && product.photos.length > 0) { %>
                     <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
                       <span class="dashicons dashicons-plus-alt"></span> INFO
                     </span>
