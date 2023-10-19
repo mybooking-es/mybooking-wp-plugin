@@ -800,6 +800,8 @@
     public function wp_transfer_choose_vehicle_shortcode($atts = [], $content = null, $tag = '') {
 
       ob_start();
+      // Do an action to load specific content
+      do_action('mybooking_plugin_reservation_process_header');
       mybooking_engine_get_template('mybooking-plugin-transfer-choose-vehicle.php');
       return ob_get_clean();
 
@@ -811,6 +813,8 @@
     public function wp_transfer_checkout_shortcode($atts = [], $content = null, $tag = '') {
 
       ob_start();
+      // Do an action to load specific content
+      do_action('mybooking_plugin_reservation_process_header');
       mybooking_engine_get_template('mybooking-plugin-transfer-checkout.php');
       return ob_get_clean();
 
@@ -822,6 +826,8 @@
     public function wp_transfer_summary_shortcode($atts = [], $content = null, $tag = '') {
 
       ob_start();
+      // Do an action to load specific content
+      do_action('mybooking_plugin_reservation_process_header');
       mybooking_engine_get_template('mybooking-plugin-transfer-summary.php');
       return ob_get_clean();
 
