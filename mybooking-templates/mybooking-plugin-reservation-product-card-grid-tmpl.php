@@ -1,140 +1,5 @@
-<?php
-/**
- *   MYBOOKING ENGINE - CHOOSE PRODUCT TEMPLATE
- *   ---------------------------------------------------------------------------
- *   The Template for showing the renting select product step - JS Microtemplates
- *   This template can be overridden by copying it to your
- *   theme/mybooking-templates/mybooking-plugin-choose-product-tmpl.php
- *
- *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
- *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
- *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
- */
-?>
-
-
-<!-- RESERVATION SUMMARY ------------------------------------------------------>
-
-<script type="text/tmpl" id="script_reservation_summary">
-
-  <!-- // Summary details -->
-
-  <div class="mb-section mybooking-details_container">
-    <div class="mybooking-summary_header">
-      <div class="mybooking-summary_details-title">
-        <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
-      </div>
-
-      <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
-        <i class="mb-button icon"><span class="dashicons dashicons-edit"></span></i><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
-      </div>
-    </div>
-
-    <% if (configuration.rentDateSelector === 'date_from_duration') { %>
-      <div class="mybooking-summary_detail">
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_date">
-            <%=shopping_cart.date_from_full_format%>
-            <!-- Half Day : show the turns -->
-            <% if (typeof shopping_cart.half_day !== 'undefined' &&
-                   shopping_cart.half_day && halfDayTurns && halfDayTurns.length > 0) { %>
-                <form name="mybooking-choose-product_duration-form" class="mybooking-choose-product_duration-form">
-                  <% for (var idx=0; idx<halfDayTurns.length; idx++) { %>
-                    <input type="radio" class="mybooking-summary-duration-turn"
-                           name="turn" value="<%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>"
-                      <% if (shopping_cart.time_from === halfDayTurns[idx].time_from &&
-                             shopping_cart.time_to === halfDayTurns[idx].time_to) {%>checked<%}%>>
-                      <% if (halfDayTurns[idx].name && halfDayTurns[idx].name !== '') { %>
-                        &nbsp;<%=halfDayTurns[idx].name%>
-                      <% } else { %>        
-                        <%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>
-                      <% } %>  
-                    </input>
-                  <% } %>
-                </form>
-            <% } else {%>
-              <% if (configuration.timeToFrom) { %>
-                ,&nbsp;<%= shopping_cart.time_from %>
-              <% } %>
-              &nbsp;(<%=shopping_cart.renting_duration_literal%>)
-            <% } %>
-          </span>
-          <% if (configuration.pickupReturnPlace) { %>
-            <span class="mybooking-summary_place">
-              <%=shopping_cart.pickup_place_customer_translation%>
-            </span>
-          <% } %>
-        </span>
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_duration">
-            <%=shopping_cart.renting_duration_literal%>
-          </span>
-        </span>
-      </div>
-
-    <% } else { %>
-
-      <div class="mybooking-summary_detail">
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_date">
-            <%=shopping_cart.date_from_full_format%>
-            <% if (configuration.timeToFrom) { %>
-              <%=shopping_cart.time_from%>
-            <% } %>
-          </span>
-          <% if (configuration.pickupReturnPlace) { %>
-            <span class="mybooking-summary_place">
-              <%=shopping_cart.pickup_place_customer_translation%>
-            </span>
-          <% } %>
-        </span>
-
-        <span class="mybooking-summary_item">
-          <span class="mybooking-summary_date">
-            <%=shopping_cart.date_to_full_format%>
-            <% if (configuration.timeToFrom) { %>
-              <%=shopping_cart.time_to%>
-            <% } %>
-          </span>
-          <% if (configuration.pickupReturnPlace) { %>
-            <span class="mybooking-summary_place">
-              <%=shopping_cart.return_place_customer_translation%>
-            </span>
-          <% } %>
-        </span>
-
-        <% if (shopping_cart.days > 0) { %>
-          <span class="mybooking-summary_item">
-            <span class="mybooking-summary_duration"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span>
-          </span>
-        <% } else if (shopping_cart.hours > 0) { %>
-          <span class="mybooking-summary_item">
-            <span class="mybooking-summary_duration"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></span>
-          </span>
-        <% } %>
-      </div>
-
-    <% } %>
-
-  </div>
-</script>
-
-
-<!-- PRODUCT LOOP ------------------------------------------------------------->
-
 <script type="text/tpml" id="script_detailed_product">
-
   <div class="mybooking-product_container mybooking-product_grid">
-
-    <?php if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['grid', 'list'] ) ) ): ?>
-      <div class="mybooking-product_filter">
-        <div class="mybooking-product_filter-btn-group">
-          <span class="mybooking-product_filter-legend"><?php echo esc_html_x( 'Order', 'renting_choose_product', 'mybooking-wp-plugin') ?></span>
-          <span class="mybooking-product_filter-btn grid js-mb-grid" title="Grid view"><i class="mb-button icon"><span class="dashicons dashicons-grid-view"></span></i></span>
-          <span class="mybooking-product_filter-btn list js-mb-list" title="List view"><i class="mb-button icon"><span class="dashicons dashicons-list-view"></span></i></span>
-        </div>
-      </div>
-    <?php endif; ?>
 
     <% for (var idx=0;idx<products.length; idx++) { %>
       <% var product = products[idx]; %>
@@ -150,9 +15,11 @@
 
           <div class="mybooking-product_block">
             <div class="mybooking-product_image-container">
-              <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
-                <span class="dashicons dashicons-plus-alt"></span> INFO
-              </span>
+              <% if (product.description && product.description !== '' || product.photos && product.photos.length > 0) { %>
+                <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
+                  <span class="dashicons dashicons-plus-alt"></span> INFO
+                </span>
+              <% } %>
 
               <% if (product.full_photo && product.full_photo !== '') { %>
                 <img class="mybooking-product_image" src="<%=product.full_photo%>">
@@ -238,6 +105,8 @@
                 (product.characteristic_width && product.characteristic_width != 0) ||
                 (product.characteristic_height && product.characteristic_height != 0) || 
                 (product.optional_external_driver && product.optional_external_driver != '')) { %>
+
+                <div class="mybooking-product_characteristics-nautical">                  
                   <div class="mybooking-product_characteristics-text">
                     <!-- Length Eslora -->
                     <% if (product.characteristic_length && product.characteristic_length != 0) { %>
@@ -259,17 +128,18 @@
                     <% if (product.optional_external_driver && product.optional_external_driver !== '') { %>
                       <span class="mybooking-product_characteristics-text-item mb-badge secondary">
                         <%=product.optional_external_driver_name%>
-                     </span>
-                     &nbsp;
+                    </span>
+                    &nbsp;
                     <% } %>
                     <!-- Driving license -->
                     <% if (product.optional_external_driver && product.optional_external_driver !== 'required' && 
-                           product.driving_license_type_name && product.driving_license_type_name !== '') { %>
+                          product.driving_license_type_name && product.driving_license_type_name !== '') { %>
                       <span class="mybooking-product_characteristics-text-item mb-badge secondary">
                         <%=product.driving_license_type_name%>
                       </span>
                     <% } %>
-                    </div>
+                  </div>
+                </div>
               <% } %>
             </div>
 
@@ -343,90 +213,9 @@
   </div>
 
   <% if (configuration.multipleProductsSelection) { %>
-    <button id="go_to_complete" class="mb-button btn-confirm-selection">
-      <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-      <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
-    </button>
+  <button id="go_to_complete" class="mb-button btn-confirm-selection">
+    <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+    <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
+  </button>
   <% } %>
-</script>
-
-
-<!-- PRODUCT DETAIL MODAL ----------------------------------------------------->
-
-<script type="text/tmpl" id="script_product_modal">
-
-  <div class="mybooking-modal_product-detail">
-    <div class="mybooking-modal_product-container">
-      <div class="mybooking-carousel-inner">
-        <% for (var idx=0; idx<product.photos.length; idx++) { %>
-          <div class="mybooking-carousel-item">
-            <img class="mybooking-carousel_item-image" src="<%=product.photos[idx].full_photo_path%>" alt="<%=product.name%>">
-          </div>
-        <% } %>
-      </div>
-    </div>
-    <div class="mybooking-modal_product-description" style="display: none">
-      <%=product.description%>
-    </div>
-  </div>
-  <div class="mybooking-modal_product-actions">
-    <button id="modal_product_photos"><?php echo esc_html_x( "Photos", 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
-    <button id="modal_product_info"><?php echo esc_html_x( "Info", 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
-  </div>
-
-</script>
-<!-- Script that shows the product variant selection -->   
-<script type="text/tpml" id="script_variant_product_resume">
-  <div class="card-static_variant_resume__container">
-    <div class="card-static_variant_resume__container_inside">
-      <% for (var idxV=0;idxV<variantsSelected.length;idxV++) { %>
-        <div class="card-static_variant_resume__box"><span class="card-static_variant_resume__box_inside"><%= variantsSelected[idxV]['quantity'] %></span> <span class="card-static_variant_resume__box_inside"><%= variantsSelected[idxV]['name'] %></span></div>
-      <% } %>
-    </div>
-    <% if (total > 0) { %>
-    <strong><span class="float-right"><%=configuration.formatCurrency(total)%></span></strong>
-    <% } %>
-  </div>
-</script>
-<script type="text/tpml" id="script_variant_product">
-  <form name="variant_product_form">
-    <div id="variant_product_selectors" class="mb-row">
-      <% if (!configuration.multipleProductsSelection) { %>
-        <div class="mb-form-group mb-col-sm-12">
-          <select name="<%= product.code %>" id="<%= product.code %>" class="form-control variant_product_selector">
-            <option value="0"><?php echo esc_html_x( 'Select', 'renting_choose_product', 'mybooking-wp-plugin') ?></option>
-            <% for (var idxV=0;idxV<variants.length;idxV++) { %>
-              <% var variant = variants[idxV]; %>
-              <option value="<%= variant.code %>" <% if  (variantsSelected[variant.code]) { %>selected<% } %>><%= variant.variant_name %> - <%=configuration.formatCurrency(variant.price)%></option>
-            <% } %>
-          </select>
-        </div>
-      <% } else { %>
-        <% for (var idxV=0;idxV<variants.length;idxV++) { %>
-          <% var variant = variants[idxV]; %>
-          <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
-            <label for="<%= variant.code %>">
-              <%= variant.variant_name %>
-            </label>
-            <select name="<%= variant.code %>" id="<%= variant.code %>" <% if  (variant.available < 1) { %>disabled<% } %> class="form-control variant_product_selector">
-              <option value="0"><?php echo esc_html_x( 'Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?></option>
-              <% for (var idxVO=1;idxVO<=variant.available;idxVO++) { %>
-                <option value="<%= idxVO %>"  <% if  (variantsSelected[variant.code] && variantsSelected[variant.code] === idxVO) { %>selected<% } %>><%= idxVO %> <% if  (idxVO > 1) { %><?php echo esc_html_x( 'units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x( 'unit', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %> - <%=configuration.formatCurrency(variant.price * idxVO)%></option>
-              <% } %>
-              </select>
-          </div>
-        <% } %>
-      <% } %>
-    </div>
-    <div class="mb-row">
-      <div class="mb-col-sm-10">
-        <h4>Total</h4>
-      </div>
-      <div class="mb-col-sm-2">
-        <h4 id="variant_product_total">
-          <span id="variant_product_total_quantity"> <%=configuration.formatCurrency(total)%></span>
-        </h4>
-      </div>
-    </div>
-  </form>
 </script>

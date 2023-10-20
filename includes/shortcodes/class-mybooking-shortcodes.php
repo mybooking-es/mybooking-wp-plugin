@@ -801,7 +801,7 @@
 
       ob_start();
       // Do an action to load specific content
-      do_action('mybooking_plugin_reservation_process_header');
+      do_action('mybooking_plugin_transfer_reservation_process_header');
       mybooking_engine_get_template('mybooking-plugin-transfer-choose-vehicle.php');
       return ob_get_clean();
 
@@ -814,7 +814,7 @@
 
       ob_start();
       // Do an action to load specific content
-      do_action('mybooking_plugin_reservation_process_header');
+      do_action('mybooking_plugin_transfer_reservation_process_header');
       mybooking_engine_get_template('mybooking-plugin-transfer-checkout.php');
       return ob_get_clean();
 
@@ -827,7 +827,7 @@
 
       ob_start();
       // Do an action to load specific content
-      do_action('mybooking_plugin_reservation_process_header');
+      do_action('mybooking_plugin_transfer_reservation_process_header');
       mybooking_engine_get_template('mybooking-plugin-transfer-summary.php');
       return ob_get_clean();
 

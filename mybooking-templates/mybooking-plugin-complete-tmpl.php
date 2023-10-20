@@ -413,7 +413,7 @@
 
               <% if (coverage.photo_path) { %>
                 <div class="mb-col-md-3 mb-col-sm-12 mybooking-extra_box-img">
-                  <img class="mybooking-extra_img js-extra-info-btn" src="<%=coverage.photo_path%>" alt="<%=coverage.name%>" data-extra="<%=coverage.code%>">
+                  <img class="mybooking-extra_img" src="<%=coverage.photo_path%>" alt="<%=coverage.name%>">
                 </div>
                 <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
                   <div class="mybooking-extra_name">
@@ -424,6 +424,12 @@
                     <div class="mybooking-extra_description">
                       <%=coverage.description%>
                     </div>
+                  <% } %>
+
+                  <% if (coverage.description && coverage.description !== '' || coverage.photo_path && coverage.photo_path !== '') { %>
+                    <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
+                      <span class="dashicons dashicons-plus-alt"></span> INFO
+                    </span>
                   <% } %>
                 </div>
 
@@ -886,24 +892,25 @@
 
 <!-- Script that shows the extra detail -->
 <script type="text/tmpl" id="script_extra_modal">
+  <div class="mybooking-modal_product-detail mb-row">
 
-  <div class="mybooking-modal_product-detail">
-    <div class="mybooking-modal_product-container">
-      <div class="mybooking-carousel-inner">
-        <% for (var idx=0; idx<extra.photos.length; idx++) { %>
-          <div class="mybooking-carousel-item">
-            <img class="mybooking-carousel_item-image" src="<%=extra.photos[idx].full_photo_path%>" alt="<%=extra.name%>">
-          </div>
-        <% } %>
+    <% if (extra.photos && extra.photos.length > 0) { %>
+      <div class="mybooking-modal_product-container <% if (!extra.description || extra.description === '') { %>mb-col-md-12<% } else { %>mb-col-md-8<% } %>">
+        <div class="mybooking-carousel-inner">
+          <% for (var idx=0; idx<extra.photos.length; idx++) { %>
+            <div class="mybooking-carousel-item">
+              <img class="mybooking-carousel_item-image" src="<%=extra.photos[idx].full_photo_path%>" alt="<%=extra.name%>">
+            </div>
+          <% } %>
+        </div>
       </div>
-    </div>
-    <div class="mybooking-modal_product-description" style="display: none">      
-      <%=extra.description%>
-    </div>
-  </div>    
-  <div class="mybooking-modal_product-actions">
-    <button id="modal_product_photos"><?php echo esc_html_x( "Photos", 'renting_complete', 'mybooking-wp-plugin') ?></button>
-    <button id="modal_product_info"><?php echo esc_html_x( "Info", 'renting_complete', 'mybooking-wp-plugin') ?></button>
-  </div> 
-  
+    <% } %>
+    <% if (extra.description && extra.description !== '') { %>
+      <div class="mybooking-modal_product-info  <% if (!extra.photos && extra.photos.length === 0) { %>mb-col-md-12<% } else { %>mb-col-md-4<% } %>">
+        <div class="mybooking-modal_product-description">      
+          <%=extra.description%>
+        </div>
+      </div>
+    <% } %>
+  </div>
 </script>

@@ -17,11 +17,11 @@
  */
 ?>
 
-<div class="mybooking-process-page">
+<div class="mybooking-process-page <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <!-- Reservation detail sticky -->
   <div id="reservation_detail_sticky" class="sticky-top"></div>
 
-  <section class="mybooking mybooking-page-container mybooking-process_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+  <section class="mybooking mybooking-page-container mybooking-process_complete">
     <div class="mb-row invert">
 
       <div class="mybooking-sidebar mb-col-md-4">

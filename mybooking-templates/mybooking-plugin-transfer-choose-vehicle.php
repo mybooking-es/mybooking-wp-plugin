@@ -9,11 +9,11 @@
  */
 ?>
 
+<!-- Reservation detail -->
+<div id="mybooking_transfer_reservation_detail" class="sticky-top"></div>
+
 <div class="mybooking-process-page">
   <section class="mybooking mybooking-page-container mybooking-process_choose <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
-
-  <!-- Reservation detail -->
-  <div id="mybooking_transfer_reservation_detail"></div>
 
   <!-- Product listing -->
   <div class="mybooking-product_listing" id="mybooking_transfer_product_listing"></div>
