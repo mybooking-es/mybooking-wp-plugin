@@ -896,14 +896,26 @@
 
     <% if (extra.photos && extra.photos.length > 0) { %>
       <div class="mybooking-modal_product-container <% if (!extra.description || extra.description === '') { %>mb-col-md-12<% } else { %>mb-col-md-8<% } %>">
-        <div class="mybooking-carousel-inner">
-          <% for (var idx=0; idx<extra.photos.length; idx++) { %>
-            <div class="mybooking-carousel-item">
-              <img class="mybooking-carousel_item-image" src="<%=extra.photos[idx].full_photo_path%>" alt="<%=extra.name%>">
-            </div>
+        <div id="mybooking-modal_extra-gallery" class="mybooking-modal_extra-gallery">
+          <% if (extra.video_source && extra.video_source !== '' &&  extra.video_url && extra.video_url !== '' && extra.video_source == 'youtube') { %>
+            <span class="js-extra-toogle-video" data-target="video">
+              <?php echo esc_html_x( 'Show video', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+            </span>
+            <span class="js-extra-toogle-video" data-target="image" style="display: none">
+              <?php echo esc_html_x( 'Show gallery', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+            </span>
           <% } %>
+          <br />
+          <div class="mybooking-carousel-inner">
+            <% for (var idx=0; idx<extra.photos.length; idx++) { %>
+              <div class="mybooking-carousel-item">
+                <img class="mybooking-carousel_item-image" src="<%=extra.photos[idx].full_photo_path%>" alt="<%=extra.name%>">
+              </div>
+            <% } %>
+          </div>
+          <div id="mybooking_transfer_extra_detail_video"></div>
         </div>
-      </div>
+       </div>
     <% } %>
     <% if (extra.description && extra.description !== '') { %>
       <div class="mybooking-modal_product-info  <% if (!extra.photos && extra.photos.length === 0) { %>mb-col-md-12<% } else { %>mb-col-md-4<% } %>">
@@ -914,3 +926,13 @@
     <% } %>
   </div>
 </script>
+
+<!-- EXTRA MODAL VIDEO ----------------------------------------------------->
+
+  <!-- Video template -->
+  <script type="text/tmpl" id="script_transfer_extra_detail_video">
+    <% if (extra.video_source && extra.video_source !== '' &&  extra.video_url && extra.video_url !== '' && extra.video_source == 'youtube') { %>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= extra.video_url %>" title="<%= extra.name %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mybooking-video-inner"></iframe>
+    <% } %>
+  </script>
+

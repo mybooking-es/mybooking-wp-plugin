@@ -403,9 +403,14 @@
   padding: 0.6rem;
   line-height: 1em;
   margin: 0;
-  width: 32px;
   text-align: center;
+} @media ( min-width: 575.98px ) {
+  .mybooking-extra_control .mb-button {
+    font-size: 0.8rem;
+    padding: 0;
+  }
 }
+
 
 .mybooking-extra_control .mb-button.btn-minus-extra {
   border-radius: var(--mb-border-radius) 0 0 var(--mb-border-radius)!important;
@@ -426,6 +431,11 @@
   min-width: 1.5rem;
   font-size: 1em;
   border-radius: 0!important;
+} @media ( min-width: 575.98px ) {
+  .mybooking-extra_control .mb-input {
+    font-size: 0.8rem!important; 
+    height: auto!important;
+  }
 }
 
 

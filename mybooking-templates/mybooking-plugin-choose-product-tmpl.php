@@ -38,11 +38,11 @@
       <div class="mybooking-modal_product-container <% if (!product.description || product.description === '') { %>mb-col-md-12<% } else { %>mb-col-md-8<% } %>">
         <div id="mybooking-modal_product-gallery" class="mybooking-modal_product-gallery">
           <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
-            <span class="js-product-toogle-video" data-target="video" class="js-product-video">
+            <span class="js-product-toogle-video" data-target="video">
               <?php echo esc_html_x( 'Show video', 'renting_choose_product', 'mybooking-wp-plugin') ?>
             </span>
-            <span class="js-product-toogle-video" data-target="image" class="js-product-image" style="display: none">
-              <?php echo esc_html_x( 'Show image', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+            <span class="js-product-toogle-video" data-target="image" style="display: none">
+              <?php echo esc_html_x( 'Show gallery', 'renting_choose_product', 'mybooking-wp-plugin') ?>
             </span>
           <% } %>
           <br />
@@ -131,11 +131,10 @@
 
 <!-- PRODUCT DETAIL MODAL VIDEO ----------------------------------------------------->
 
-
   <!-- Video template -->
   <script type="text/tmpl" id="script_transfer_product_detail_video">
     <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
-      <iframe width="560" height="315" src="<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mybooking-video-inner"></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mybooking-video-inner"></iframe>
     <% } %>
   </script>
 
