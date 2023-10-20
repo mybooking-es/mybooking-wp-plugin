@@ -411,7 +411,7 @@
 
             <div class="mybooking-extra_block">
 
-              <% if (coverage.photo_path) { %>
+              <% if (coverage.photo_path && coverage.photo_path !== '') { %>
                 <div class="mb-col-md-3 mb-col-sm-12 mybooking-extra_box-img">
                   <img class="mybooking-extra_img" src="<%=coverage.photo_path%>" alt="<%=coverage.name%>">
                 </div>
@@ -420,17 +420,15 @@
                     <%=coverage.name%>
                   </div>
 
-                  <% if (coverage.description !='') { %>
+                  <% if (coverage.description && coverage.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                     <div class="mybooking-extra_description">
                       <%=coverage.description%>
                     </div>
                   <% } %>
 
-                  <% if (coverage.description && coverage.description !== '' || coverage.photo_path && coverage.photo_path !== '') { %>
-                    <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
-                      <span class="dashicons dashicons-plus-alt"></span> INFO
-                    </span>
-                  <% } %>
+                  <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
+                    <span class="dashicons dashicons-plus-alt"></span> INFO
+                  </span>
                 </div>
 
               <% } else { %>
@@ -439,10 +437,14 @@
                     <%=coverage.name%>
                   </div>
 
-                  <% if (coverage.description !='') { %>
+                  <% if (coverage.description && coverage.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                     <div class="mybooking-extra_description">
                       <%=coverage.description%>
                     </div>
+
+                    <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
+                      <span class="dashicons dashicons-plus-alt"></span> INFO
+                    </span>
                   <% } %>
                 </div>
               <% } %>
@@ -496,19 +498,23 @@
 
               <div class="mybooking-extra_block">
 
-                <% if (extra.photo_path) { %>
+                <% if (extra.photo_path && extra.photo_path !== '') { %>
                   <div class="mb-col-md-3 mb-col-sm-12 mybooking-extra_box-img">
-                    <img class="mybooking-extra_img js-extra-info-btn" src="<%=extra.photo_path%>" alt="<%=extra.name%>" data-extra="<%=extra.code%>">
+                    <img class="mybooking-extra_img" src="<%=extra.photo_path%>" alt="<%=extra.name%>">
                   </div>
                   <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
                     <div class="mybooking-extra_name">
                       <%=extra.name%>
                     </div>
-                    <% if (extra.description !='') { %>
+                    <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                       <div class="mybooking-extra_description">
                         <%=extra.description%>
                       </div>
                     <% } %>
+
+                    <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
+                      <span class="dashicons dashicons-plus-alt"></span> INFO
+                    </span>
                   </div>
 
                 <% } else { %>
@@ -517,10 +523,14 @@
                       <%=extra.name%>
                     </div>
 
-                    <% if (extra.description !='') { %>
+                    <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                       <div class="mybooking-extra_description">
                         <%=extra.description%>
                       </div>
+
+                      <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
+                        <span class="dashicons dashicons-plus-alt"></span> INFO
+                      </span>
                     <% } %>
                   </div>
                 <% } %>
@@ -895,7 +905,7 @@
   <div class="mybooking-modal_product-detail mb-row">
 
     <% if (extra.photos && extra.photos.length > 0) { %>
-      <div class="mybooking-modal_product-container <% if (!extra.description || extra.description === '') { %>mb-col-md-12<% } else { %>mb-col-md-8<% } %>">
+      <div class="mybooking-modal_product-container <% if (!extra.description || extra.description.replace(/<p><br><\/p>/g, '') === '') { %>mb-col-md-12<% } else { %>mb-col-md-8<% } %>">
         <div id="mybooking-modal_extra-gallery" class="mybooking-modal_extra-gallery">
           <% if (extra.video_source && extra.video_source !== '' &&  extra.video_url && extra.video_url !== '' && extra.video_source == 'youtube') { %>
             <span class="js-extra-toogle-video" data-target="video">
@@ -917,8 +927,8 @@
         </div>
        </div>
     <% } %>
-    <% if (extra.description && extra.description !== '') { %>
-      <div class="mybooking-modal_product-info  <% if (!extra.photos && extra.photos.length === 0) { %>mb-col-md-12<% } else { %>mb-col-md-4<% } %>">
+    <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
+      <div class="mybooking-modal_product-info  <% if (!extra.photos || extra.photos.length === 0) { %>mb-col-md-12<% } else { %>mb-col-md-4<% } %>">
         <div class="mybooking-modal_product-description">      
           <%=extra.description%>
         </div>

@@ -15,7 +15,7 @@
 
           <div class="mybooking-product_block">
             <div class="mybooking-product_image-container">
-              <% if (product.description && product.description !== '' || product.photos && product.photos.length > 0) { %>
+              <% if (product.description && product.description.replace(/<p><br><\/p>/g, '') !== '' || product.photos && product.photos.length > 0) { %>
                 <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
                   <span class="dashicons dashicons-plus-alt"></span> INFO
                 </span>

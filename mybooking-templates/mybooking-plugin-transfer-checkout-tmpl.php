@@ -210,29 +210,37 @@
           <div class="mybooking-extra_item <%=bg%>" data-extra="<%=extra.id%>">
 
             <div class="mybooking-extra_block">
-              <% if (extra.photo_url) { %>
+              <% if (extra.photo_url && extra.photo_url != '') { %>
                 <div class="mb-col-md-3 mb-col-sm-12 mybooking-extra_box-img">
-                  <img class="extra-img js-extra-info-btn" src="<%=extra.photo_url%>" alt="<%=extra.name%>" data-extra="<%=extra.id%>">
+                  <img class="extra-img" src="<%=extra.photo_url%>" alt="<%=extra.name%>">
                 </div>
                 <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
                   <div class="mybooking-extra_name">
                     <%=extra.name%>
                   </div>
-                  <% if (extra.description !='') { %>
+                  <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                     <div class="mybooking-extra_description">
                       <%=extra.description%>
                     </div>
                   <% } %>
+                  <%=extra.code%>oo
+                  <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
+                      <span class="dashicons dashicons-plus-alt"></span> INFO
+                    </span>
                 </div>
               <% } else { %>
                 <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
                   <div class="mybooking-extra_name">
                     <%=extra.name%>
                   </div>
-                  <% if (extra.description !='') { %>
+                  <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                     <div class="mybooking-extra_description">
                       <%=extra.description%>
                     </div>
+
+                    <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
+                      <span class="dashicons dashicons-plus-alt"></span> INFO
+                    </span>
                   <% } %>
                 </div>
               <% } %>
