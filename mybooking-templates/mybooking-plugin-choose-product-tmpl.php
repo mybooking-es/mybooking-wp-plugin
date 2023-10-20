@@ -14,16 +14,18 @@
 
 
 <!-- RESERVATION SUMMARY ------------------------------------------------------>
+
 <?php mybooking_engine_get_template('mybooking-plugin-reservation-summary-tmpl.php', $args); ?>
+
 
 <!-- PRODUCT LOOP ------------------------------------------------------------->
 
 <?php 
-    if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['list', 'list_only'] ) ) ):
-        mybooking_engine_get_template('mybooking-plugin-reservation-product-card-list-tmpl.php', $args); 
-    else: 
-        mybooking_engine_get_template('mybooking-plugin-reservation-product-card-grid-tmpl.php', $args);
-    endif;
+  if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['list', 'list_only'] ) ) ):
+      mybooking_engine_get_template('mybooking-plugin-reservation-product-card-list-tmpl.php', $args); 
+  else: 
+      mybooking_engine_get_template('mybooking-plugin-reservation-product-card-grid-tmpl.php', $args);
+  endif;
 ?>
 
 

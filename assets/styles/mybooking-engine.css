@@ -547,6 +547,7 @@ button.mb-button a:hover  {
 /* Badges */
 .mb-badge {
   padding: 2px 8px;
+  margin: 0 1px;
   border-radius: 3px;
   background-color: var(--mb-dark-background-color);
   color: var(--mb-negative-text-color);

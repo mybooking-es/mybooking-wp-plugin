@@ -105,6 +105,8 @@
                 (product.characteristic_width && product.characteristic_width != 0) ||
                 (product.characteristic_height && product.characteristic_height != 0) || 
                 (product.optional_external_driver && product.optional_external_driver != '')) { %>
+
+                <div class="mybooking-product_characteristics-nautical">                  
                   <div class="mybooking-product_characteristics-text">
                     <!-- Length Eslora -->
                     <% if (product.characteristic_length && product.characteristic_length != 0) { %>
@@ -136,7 +138,8 @@
                         <%=product.driving_license_type_name%>
                       </span>
                     <% } %>
-                    </div>
+                  </div>
+                </div>
               <% } %>
             </div>
 

@@ -441,8 +441,13 @@ div.mybooking-product {
 }
 
 /* Nautical characteristics */
+.mybooking-product_characteristics-nautical {
+  margin-bottom: 1rem;
+}
+
 .mybooking-product_characteristics-text {
-  margin-bottom: 0.5rem;
+  margin-bottom: 3px;
+  line-height: 1;
 }
 
 /* Product footer */
