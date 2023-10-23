@@ -11,8 +11,8 @@
 
 <!-- Reservation detail sticky
   
-        .mybooking-transfer_choose class is present to fix missing styles 
-        due to refactorization related to adaptation to Mybooking Theme 
+  .mybooking-transfer_choose class is present to fix missing styles 
+  due to refactorization related to adaptation to Mybooking Theme 
   -->
 <div id="mybooking_transfer_reservation_detail" class="sticky-top mybooking-transfer_choose"></div>
 

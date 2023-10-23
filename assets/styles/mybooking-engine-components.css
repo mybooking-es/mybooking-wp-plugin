@@ -716,7 +716,7 @@
   width: 100%;
 } @media ( min-width: 575.98px ) {
   .mybooking-testimonial_content {
-    width: 93%;
+    width: 90%;
   }
 }
 
@@ -727,14 +727,14 @@
 } @media ( min-width: 575.98px ) {
   .mybooking-testimonial_avatar {
     justify-content: flex-start;
-    width: 7%;
+    width: 10%;
   }
 }
 
 .mybooking-testimonial_avatar img {
-  --mb-testimonial-avatar-dimensions: 40px;
+  --mb-testimonial-avatar-dimensions: 80px;
   width: var(--mb-testimonial-avatar-dimensions);
-  height: var(--mb-testimonial-avatar-dimensions);
+  height: var(--mb-testimonial-avatar-dimensions)!important;
 }
 
 
