@@ -15,8 +15,12 @@
    */
 ?>
 <div class="mybooking-process-page">
-  <!-- Reservation detail sticky -->
-  <div id="mybooking_transfer_reservation_detail_sticky" class="sticky-top"></div>
+  <!-- Reservation detail sticky
+  
+        .mybooking-transfer_choose class is present to fix missing styles 
+        due to refactorization related to adaptation to Mybooking Theme 
+  -->
+  <div id="mybooking_transfer_reservation_detail_sticky" class="sticky-top mybooking-transfer_choose"></div>
   
   <section class="mybooking mybooking-page-container mybooking-process_complete <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
     <div class="mb-row invert">
