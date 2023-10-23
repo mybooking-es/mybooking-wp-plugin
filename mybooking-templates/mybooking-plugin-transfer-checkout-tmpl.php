@@ -43,7 +43,7 @@
         <div class="mybooking-summary_details-title">
           <?php echo esc_html_x( 'Reservation summary', 'transfer_checkout', 'mybooking-wp-plugin') ?>
         </div>
-        <div class="mybooking-summary_edit" id="mybooking_transfer_modify_reservation_button" role="link">
+        <div class="mybooking-summary_edit js-modify-reservation-button" id="mybooking_transfer_modify_reservation_button" role="link">
           <i class="mb-button icon"><span class="dashicons dashicons-edit"></span></i><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
         </div>
 
@@ -223,8 +223,8 @@
                       <%=extra.description%>
                     </div>
                   <% } %>
-                  <%=extra.code%>oo
-                  <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
+                  <%=extra.code%>
+                  <span class="js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.id%>">
                       <span class="dashicons dashicons-plus-alt"></span> INFO
                     </span>
                 </div>
@@ -238,7 +238,7 @@
                       <%=extra.description%>
                     </div>
 
-                    <span class=" js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
+                    <span class="js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
                       <span class="dashicons dashicons-plus-alt"></span> INFO
                     </span>
                   <% } %>

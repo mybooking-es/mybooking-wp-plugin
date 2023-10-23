@@ -15,7 +15,7 @@
         <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
       </div>
 
-      <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
+      <div class="mybooking-summary_edit js-modify-reservation-button" id="modify_reservation_button" role="link">
         <i class="mb-button icon"><span class="dashicons dashicons-edit"></span></i><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
       </div>
     </div>
