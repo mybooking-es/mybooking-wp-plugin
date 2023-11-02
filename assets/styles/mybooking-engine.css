@@ -793,6 +793,7 @@ button.mb-button a:hover  {
 .mybooking-process_complete .mybooking-product_description {
   max-height: 10rem!important;
   overflow-y: auto;
+  margin-bottom: 1rem;
 }
 
 .mybooking-process_complete .complete-section-title {

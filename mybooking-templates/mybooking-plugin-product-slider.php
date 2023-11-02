@@ -61,7 +61,7 @@
 
                 <?php if ( $product_slider_link !='' ) {  ?>
                   <div class="mybooking-slider_product-action">
-                    <a class="mb-button mybooking-read-more-link" href="<?php echo esc_attr( $product_slider_link ) ?>">
+                    <a class="mb-button button mybooking-read-more-link" href="<?php echo esc_attr( $product_slider_link ) ?>">
                       <?php echo wp_kses_post( _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ) ?>
                     </a>
                   </div>

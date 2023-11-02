@@ -35,13 +35,13 @@
   <div class="mybooking-modal_product-detail mb-row">
 
     <% if (product.photos && product.photos.length > 0) { %>
-      <div class="mybooking-modal_product-container <% if (!product.description || product.description.replace(/<p><br><\/p>/g, '') === '') { %>mb-col-md-12<% } else { %>mb-col-md-8<% } %>">
+      <div class="mybooking-modal_product-container <% if (!product.description || product.description.replace(/<p><br><\/p>/g, '') === '') { %>mb-col-md-12<% } else { %>>mb-col-sm-12 mb-col-md-6 mb-col-lg-8<% } %>">
         <div id="mybooking-modal_product-gallery" class="mybooking-modal_product-gallery">
           <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
-            <span class="js-product-toogle-video" data-target="video">
+            <span class="js-product-toogle-video product-toogle-video-btn" data-target="video">
               <?php echo esc_html_x( 'Show video', 'renting_choose_product', 'mybooking-wp-plugin') ?>
             </span>
-            <span class="js-product-toogle-video" data-target="image" style="display: none">
+            <span class="js-product-toogle-video product-toogle-video-btn" data-target="image" style="display: none">
               <?php echo esc_html_x( 'Show gallery', 'renting_choose_product', 'mybooking-wp-plugin') ?>
             </span>
           <% } %>
@@ -59,7 +59,7 @@
     <% } %>
 
     <% if (product.description && product.description.replace(/<p><br><\/p>/g, '') !== '') { %>
-      <div class="mybooking-modal_product-info  <% if (!product.photos && product.photos.length === 0) { %>mb-col-md-12<% } else { %>mb-col-md-4<% } %>">
+      <div class="mybooking-modal_product-info  <% if (!product.photos || product.photos.length === 0) { %>mb-col-md-12<% } else { %>mb-col-sm-12 mb-col-md-6 mb-col-lg-4<% } %>">
         <h2 class="mybooking-product_name"><%=product.name%></h2>
         <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
         <div class="mybooking-product_description">
@@ -134,7 +134,9 @@
   <!-- Video template -->
   <script type="text/tmpl" id="script_transfer_product_detail_video">
     <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mybooking-video-inner"></iframe>
+      <div class="mb-video-responsive">
+        <iframe src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mybooking-video-inner"></iframe>
+      </div>
     <% } %>
   </script>
 

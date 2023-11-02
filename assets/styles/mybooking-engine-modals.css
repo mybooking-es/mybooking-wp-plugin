@@ -23,7 +23,7 @@
 } @media ( min-width: 575.98px ) {
   .mybooking-modal {
     max-width: 1200px;
-    min-width: 800px;
+    min-width: 500px;
     margin: 0;
     padding: 2rem;  
     border-radius: 10px;

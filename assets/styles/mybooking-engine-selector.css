@@ -20,10 +20,11 @@
   flex-direction: column;
   gap: 0.5rem!important;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_group {
     flex-direction: row;
+    margin-bottom: 1rem;
   }
 }
 
@@ -119,7 +120,7 @@
   border-radius: var(--mb-button-border-radius)!important;
   outline: none!important;
   box-shadow: none!important;
-  background-color: accentcolor!important;
+  background-color: var(--mb-selector-button-bg-color);
   color: var(--mb-selector-button-color);
   font-size: 18px!important;
   line-height: 1!important;
@@ -301,6 +302,10 @@
   display: inline-block;
   line-height: normal;
   color: var(--mb-selector-label-color);
+} @media ( max-width: 425px ) {
+  .mybooking-selector_field-icon {
+    display: none;
+  }
 }
 
 .mybooking-selector .form-reservation-error + .mybooking-selector_field-icon {

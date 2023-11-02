@@ -426,7 +426,7 @@
                     </div>
                   <% } %>
 
-                  <span class="js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
+                  <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
                     <span class="dashicons dashicons-plus-alt"></span> INFO
                   </span>
                 </div>
@@ -442,7 +442,7 @@
                       <%=coverage.description%>
                     </div>
 
-                    <span class="js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
+                    <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
                       <span class="dashicons dashicons-plus-alt"></span> INFO
                     </span>
                   <% } %>
@@ -512,7 +512,7 @@
                       </div>
                     <% } %>
 
-                    <span class="js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
+                    <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
                       <span class="dashicons dashicons-plus-alt"></span> INFO
                     </span>
                   </div>
@@ -528,7 +528,7 @@
                         <%=extra.description%>
                       </div>
 
-                      <span class="js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
+                      <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
                         <span class="dashicons dashicons-plus-alt"></span> INFO
                       </span>
                     <% } %>
@@ -905,7 +905,7 @@
   <div class="mybooking-modal_product-detail mb-row">
 
     <% if (extra.photos && extra.photos.length > 0) { %>
-      <div class="mybooking-modal_product-container <% if (!extra.description || extra.description.replace(/<p><br><\/p>/g, '') === '') { %>mb-col-md-12<% } else { %>mb-col-md-8<% } %>">
+      <div class="mybooking-modal_product-container <% if (!extra.description || extra.description.replace(/<p><br><\/p>/g, '') === '') { %>mb-col-md-12<% } else { %>mb-col-sm-12 mb-col-md-6 mb-col-lg-8<% } %>">
         <div id="mybooking-modal_extra-gallery" class="mybooking-modal_extra-gallery">
           <% if (extra.video_source && extra.video_source !== '' &&  extra.video_url && extra.video_url !== '' && extra.video_source == 'youtube') { %>
             <span class="js-extra-toogle-video" data-target="video">
@@ -928,7 +928,7 @@
        </div>
     <% } %>
     <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
-      <div class="mybooking-modal_product-info  <% if (!extra.photos || extra.photos.length === 0) { %>mb-col-md-12<% } else { %>mb-col-md-4<% } %>">
+      <div class="mybooking-modal_product-info  <% if (!extra.photos || extra.photos.length === 0) { %>mb-col-md-12<% } else { %>mb-col-sm-12 mb-col-md-6 mb-col-lg-4<% } %>">
         <div class="mybooking-modal_product-description">      
           <%=extra.description%>
         </div>
@@ -942,7 +942,9 @@
   <!-- Video template -->
   <script type="text/tmpl" id="script_transfer_extra_detail_video">
     <% if (extra.video_source && extra.video_source !== '' &&  extra.video_url && extra.video_url !== '' && extra.video_source == 'youtube') { %>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= extra.video_url %>" title="<%= extra.name %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mybooking-video-inner"></iframe>
+      <div class="mb-video-responsive">
+        <iframe src="https://www.youtube.com/embed/<%= extra.video_url %>" title="<%= extra.name %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mybooking-video-inner"></iframe>
+      </div>
     <% } %>
   </script>
 

@@ -330,7 +330,7 @@ div.mybooking-product {
 .mybooking-product_body {
   height: var(--mb-product-body-height);
   padding: 1em;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .mybooking-product_info-block .mybooking-product_name {
@@ -525,6 +525,10 @@ div.mybooking-product {
   position: relative;
   height: var(--mb-product-description-height);
   overflow: auto;
+} @media ( max-width: 768px ) {
+  .mybooking-detail_modal .mybooking-product_description {
+    height: auto;
+  }
 }
 
 .mybooking-detail_modal .mybooking-product_description-overlay {
@@ -760,6 +764,32 @@ input.mybooking-product_calendar-not_available_turn + span.mybooking-product_cal
 .mybooking-modal_product-actions {
   border-top: 1px solid var(--mb-border-color);
   padding-top: 10px;
+}
+
+/*
+*
+* Video
+*
+*/
+.product-toogle-video-btn {
+  cursor: pointer;
+}
+
+/* Full width video responsive classes */
+.mb-video-responsive {
+  height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	position: relative;
+}
+
+.mb-video-responsive iframe {
+  height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
 
 

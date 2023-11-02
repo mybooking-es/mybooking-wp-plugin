@@ -345,6 +345,17 @@
   line-height: 1;
 }
 
+.mybooking-extra_info-btn {
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.mybooking-extra_info-btn .dashicons, .dashicons-before:before {
+  font-size: 0.8rem;
+  position: relative;
+  top: 0.4rem;
+}
+
 .mybooking-extra_description p {
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -734,7 +745,7 @@
 .mybooking-testimonial_avatar img {
   --mb-testimonial-avatar-dimensions: 80px;
   width: var(--mb-testimonial-avatar-dimensions);
-  height: var(--mb-testimonial-avatar-dimensions)!important;
+  height: auto;
 }
 
 
@@ -814,23 +825,25 @@
 
 button.mybooking-popup_close {
 	display: inline-block;
-	position: absolute;
-	top: 0px;
-	right: 0.5em;
   color: var(--mb-popup-close-btn-color);
   font-size: var(--mb-popup-close-btn-size);
-	z-index: 45;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  width: 2em;
-  height: 2em;
+  padding: 1rem!important;
   margin:  0;
-  padding:  1em;
+  background: transparent!important;
+  box-shadow: none!important;
+  border: none!important;
+  cursor: pointer;
+  position: absolute;
+	top: 0!important;
+	right: 0!important;
+  opacity: 60%;
+  z-index: 45;
+  outline: none!important;
+  line-height: 1!important;
 }
 button.mybooking-popup_close:hover {
-  background-color: transparent;
-  border: none;
+  color: initial!important;
+  opacity: 100%;
 }
 
 
@@ -893,6 +906,10 @@ button.mybooking-popup_close:hover {
   padding: 0.5rem 1rem;
   color: var(--mb-cookies-btn-color);
   background-color: var(--mb-cookies-btn-background);
+} @media ( min-width: 992px ) {
+  .mybooking-cookies_button {
+    margin-top: 1rem;
+  }
 }
 
 .mybooking-cookies_text {

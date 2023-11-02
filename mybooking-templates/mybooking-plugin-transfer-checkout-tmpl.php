@@ -224,7 +224,7 @@
                     </div>
                   <% } %>
                   <%=extra.code%>
-                  <span class="js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.id%>">
+                  <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.id%>">
                       <span class="dashicons dashicons-plus-alt"></span> INFO
                     </span>
                 </div>
@@ -238,7 +238,7 @@
                       <%=extra.description%>
                     </div>
 
-                    <span class="js-extra-info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
+                    <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
                       <span class="dashicons dashicons-plus-alt"></span> INFO
                     </span>
                   <% } %>
