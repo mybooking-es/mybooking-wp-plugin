@@ -147,9 +147,7 @@
       $registry = Mybooking_Registry::getInstance();
 
       // Initialize customizer
-      if ( $registry->mybooking_rent_plugin_components_css ) {
-        MyBookingPluginCustomizer::getInstance();
-      }
+      MyBookingPluginCustomizer::getInstance();
 
       // Initialize the custom routes for activities and products
       add_action( 'init', array( $this, 'init_routes' ) );
@@ -222,14 +220,13 @@
       // Get the registry information
       $registry = Mybooking_Registry::getInstance();
 
-      if ( $registry->mybooking_rent_plugin_components_css ) {
-          // == Load Customizer front-end
-          $customizer_css = MyBookingPluginCustomizer::getInstance()->customize_enqueue( 'block-editor' );
-          if ( !empty($customizer_css) ) {
-                wp_register_style( 'mybooking_wp_engine_customizer-block-editor-styles', false );
-                wp_enqueue_style( 'mybooking_wp_engine_customizer-block-editor-styles' );
-                wp_add_inline_style( 'mybooking_wp_engine_customizer-block-editor-styles', $customizer_css );
-          }
+
+      // == Load Customizer front-end
+      $customizer_css = MyBookingPluginCustomizer::getInstance()->customize_enqueue( 'block-editor' );
+      if ( !empty($customizer_css) ) {
+            wp_register_style( 'mybooking_wp_engine_customizer-block-editor-styles', false );
+            wp_enqueue_style( 'mybooking_wp_engine_customizer-block-editor-styles' );
+            wp_add_inline_style( 'mybooking_wp_engine_customizer-block-editor-styles', $customizer_css );
       }
 
     }
@@ -1112,14 +1109,6 @@
 
       $settings = (array) get_option("mybooking_plugin_settings_css");
 
-      // Include custom components CSS
-      if ($settings && array_key_exists('mybooking_plugin_settings_components_css', $settings)) {
-        $registry->mybooking_rent_plugin_components_css = (trim(esc_attr( $settings["mybooking_plugin_settings_components_css"] )) == '1');
-      }
-      else {
-        $registry->mybooking_rent_plugin_components_css = '1';
-      }
-
       // Include SlickJS
       if ($settings && array_key_exists('mybooking_plugin_settings_components_js_slickjs', $settings)) {
         $registry->mybooking_rent_plugin_js_slickjs = (trim(esc_attr( $settings["mybooking_plugin_settings_components_js_slickjs"] )) == '1');
@@ -1128,13 +1117,6 @@
         $registry->mybooking_rent_plugin_js_slickjs = '1';
       }
 
-      // Custom Loader
-      if ($settings && array_key_exists('mybooking_plugin_settings_components_custom_loader', $settings)) {
-        $registry->mybooking_rent_plugin_custom_loader = (trim(esc_attr( $settings["mybooking_plugin_settings_components_custom_loader"] )) == '1');
-      }
-      else {
-        $registry->mybooking_rent_plugin_custom_loader = '';
-      }
       // JS Select 2
       if ($settings && array_key_exists('mybooking_plugin_settings_components_js_use_select2', $settings)) {
         $registry->mybooking_plugin_js_select2 = (trim(esc_attr( $settings["mybooking_plugin_settings_components_js_use_select2"] )) == '1');

@@ -629,14 +629,6 @@ add_settings_field('mybooking_plugin_settings_products_url',
 
 		  // == Create css section fields
 
-      // Custom CSS
-
-		  add_settings_field('mybooking_plugin_settings_components_css',
-												 wp_kses_post( _x('Include CSS', 'plugin_settings', 'mybooking-wp-plugin') ),
-		                     array($this, 'field_mybooking_plugin_settings_components_css_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
-
 		  // SlickJS
 		  add_settings_field('mybooking_plugin_settings_components_js_slickjs',
 												 wp_kses_post( _x('Include SlickJS', 'plugin_settings', 'mybooking-wp-plugin') ),
@@ -648,13 +640,6 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  add_settings_field('mybooking_plugin_settings_components_js_use_select2',
 												 wp_kses_post( _x('Use select2 library on selects', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_components_js_use_select2_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
-
-		  // Custom loader
-		  add_settings_field('mybooking_plugin_settings_components_custom_loader',
-												 wp_kses_post( _x('Use custom loader', 'plugin_settings', 'mybooking-wp-plugin') ),
-		                     array($this, 'field_mybooking_plugin_settings_components_custom_loader_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
@@ -1715,58 +1700,6 @@ add_settings_field('mybooking_plugin_settings_products_url',
  		}
 
     // == CSS
-
-		/**
-		 * Render Mybooking CSS
-		 */
-		public function field_mybooking_plugin_settings_components_css_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_components_css";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '1';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">";
-			echo wp_kses_post( _x( 'Include <b>CSS</b> for plugin <u>UX components</u> like <em>Jquery UI datepicker</em> and <em>Jquery DateRange</em>.', 'settings_context', 'mybooking-wp-plugin' ) );
-			echo "</p>";
-		  echo "<p class=\"description\">";
-			echo wp_kses_post( _x( '<b>¡Attention!</b> Uncheck only if you are using <u>mybooking theme<u> or a <u>custom theme with your own reservation engine templates</u>.', 'settings_context', 'mybooking-wp-plugin' ) );
-			echo "</p>";
-		}
-
-		/**
-		 * Render Mybooking Custom loader
-		 */
-		public function field_mybooking_plugin_settings_components_custom_loader_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_components_custom_loader";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">";
-			echo wp_kses_post( _x( 'Use <b>custom loader</b> to notify the user when connecting to the reservation engine...', 'settings_context', 'mybooking-wp-plugin' ) );
-			echo "</p>";
-		  echo "<p class=\"description\">";
-			echo wp_kses_post( _x( '<b>¡Attention!</b> check only if you are using mybooking theme or custom theme with its own Ajax Loader.', 'settings_context', 'mybooking-wp-plugin' ) );
-			echo "</p>";
-		}
 
 		/**
 		 * Render SlickJS
