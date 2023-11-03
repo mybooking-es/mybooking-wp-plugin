@@ -667,6 +667,10 @@
   margin: 0 auto;
 }
 
+.mb-form_title {
+  display: block;
+}
+
 /* Complete details */
 .mybooking-activity_date {
   display: flex;

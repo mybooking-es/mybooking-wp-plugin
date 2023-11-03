@@ -184,6 +184,10 @@
   min-width: 0;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_place {
+    width: 50%;
+  }
+} @media ( min-width: 1024px ) {
+  .mybooking-selector_place {
     width: 66%;
   }
 }
@@ -200,6 +204,10 @@
   gap: 0.5rem;
   width: 100%;
 } @media ( min-width: 575.98px ) {
+  .mybooking-selector_date {
+    width: 50%;
+  }
+} @media ( min-width: 1024px ) {
   .mybooking-selector_date {
     width: 33%;
   }
@@ -259,10 +267,6 @@
   }
 }
 
-.mybooking-selector_footer {
-  padding-top: 0.5rem;
-}
-
 /* Promo */
 
 .mybooking-selector_promo {
@@ -302,7 +306,8 @@
   display: inline-block;
   line-height: normal;
   color: var(--mb-selector-label-color);
-} @media ( max-width: 425px ) {
+  margin-right: 0;
+} @media ( max-width: 575.98px ) {
   .mybooking-selector_field-icon {
     display: none;
   }

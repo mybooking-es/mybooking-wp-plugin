@@ -908,10 +908,10 @@
       <div class="mybooking-modal_product-container <% if (!extra.description || extra.description.replace(/<p><br><\/p>/g, '') === '') { %>mb-col-md-12<% } else { %>mb-col-sm-12 mb-col-md-6 mb-col-lg-8<% } %>">
         <div id="mybooking-modal_extra-gallery" class="mybooking-modal_extra-gallery">
           <% if (extra.video_source && extra.video_source !== '' &&  extra.video_url && extra.video_url !== '' && extra.video_source == 'youtube') { %>
-            <span class="js-extra-toogle-video" data-target="video">
+            <span class="js-extra-toogle-video product-toogle-video-btn" data-target="video">
               <?php echo esc_html_x( 'Show video', 'renting_choose_product', 'mybooking-wp-plugin') ?>
             </span>
-            <span class="js-extra-toogle-video" data-target="image" style="display: none">
+            <span class="js-extra-toogle-video product-toogle-video-btn" data-target="image" style="display: none">
               <?php echo esc_html_x( 'Show gallery', 'renting_choose_product', 'mybooking-wp-plugin') ?>
             </span>
           <% } %>

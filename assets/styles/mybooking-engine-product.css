@@ -210,6 +210,17 @@ div.mybooking-product {
   right: 0;
   padding: 0.5rem;
   background: #999;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.mybooking-product_grid .mybooking-product_info-button .dashicons {
+  font-size: 0.9rem;
+  height:  0.9rem;
+}
+
+.mybooking-product_grid .mybooking-product_info-button:hover {
+  opacity: 1;
 }
 
 .mybooking-product_info-button:hover {
@@ -438,6 +449,7 @@ div.mybooking-product {
   font-size: 13px;
   font-weight: 700;
   height: 1rem;
+  line-height: 1;
 }
 
 /* Nautical characteristics */
@@ -466,6 +478,10 @@ div.mybooking-product {
   text-align: center;
   font-weight: bold;
   color: red;
+  height: var(--mb-product-btn-height)!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mybooking-product_select {
@@ -485,7 +501,7 @@ div.mybooking-product {
   min-height: var(--mb-product-btn-height)!important;
   margin: 0;
   padding: 0.3rem 2rem;
-  font-size: 1.1rem;
+  // font-size: 1.1rem;
   text-transform: uppercase!important;
   letter-spacing: 1px;
 }
@@ -773,6 +789,7 @@ input.mybooking-product_calendar-not_available_turn + span.mybooking-product_cal
 */
 .product-toogle-video-btn {
   cursor: pointer;
+  display: block;
 }
 
 /* Full width video responsive classes */

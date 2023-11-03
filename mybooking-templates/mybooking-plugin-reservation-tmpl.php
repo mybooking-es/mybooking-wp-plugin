@@ -760,7 +760,6 @@
                   </div>
                 </div>
                 <% if (configuration.rentingFormFillDataAdditionalDriver2) { %>
-                  <hr>
                   <div class="mb-form-row">
                     <div class="mb-form-group mb-col-md-6">
                       <label for="driver_name"><?php echo esc_html_x("Name", 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>

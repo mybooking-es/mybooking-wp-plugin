@@ -41,7 +41,7 @@
 
   /* Selector form */
   --mb-selector-label-color: currentcolor;
-  --mb-selector-padding: 2rem;
+  --mb-selector-padding: 1rem;
   --mb-selector-background: white;
   --mb-selector-border-color: var(--mb-form-field-border-color);
   --mb-selector-field-height: var(--mb-form-field-height);
@@ -830,11 +830,11 @@ body.mybooking-activity .entry {
 @media only screen and (min-width: 482px) {
 
   body.mybooking-activity .mybooking-activity_container.alignwide {
-    max-width: var(--responsive--alignwide-width, 610px);
+    // max-width: var(--responsive--alignwide-width, 610px);
     margin: 0 auto;
   }
   body.mybooking-product .mybooking-product_container.alignwide {
-    max-width: var(--responsive--alignwide-width, 610px);
+    // max-width: var(--responsive--alignwide-width, 610px);
     margin: 0 auto;
   }
 
@@ -842,7 +842,7 @@ body.mybooking-activity .entry {
   body.mybooking-product .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
   body.mybooking-activity .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator)
   {
-    max-width: var(--responsive--alignwide-width, 610px);
+    // max-width: var(--responsive--alignwide-width, 610px);
     margin: 0 auto;
   }
  
@@ -850,7 +850,7 @@ body.mybooking-activity .entry {
   body.mybooking-product .entry .entry-content > *,
   body.mybooking-activity .entry .entry-content > *
   {
-    max-width: var(--responsive--alignwide-width, 610px);
+    // max-width: var(--responsive--alignwide-width, 610px);
     margin: 0 auto;
   }
 }
