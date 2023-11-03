@@ -203,7 +203,7 @@
 }
 
 .mybooking-summary_extra-item {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .mybooking-summary_extra-quantity {
@@ -211,8 +211,8 @@
 }
 
 .mybooking-summary_extra-amount {
-  font-weight: 700;
-  font-size: 0.9em;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .mybooking-summary_deposit {
@@ -542,10 +542,14 @@
 }
 
 .mybooking-payment_amount {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 700;
   text-align: center;
   margin-bottom: 2rem;
+} @media ( min-width: 575.98px ) {
+  .mybooking-payment_amount {
+    font-size: 2.5em;
+  }
 }
 
 .mybooking-payment_custom-label {

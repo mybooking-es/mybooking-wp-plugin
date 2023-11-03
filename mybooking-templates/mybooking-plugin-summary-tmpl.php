@@ -96,7 +96,7 @@
     <% if (booking.summary_message_ok && booking.summary_message_ok !== '') { %>
       <!-- Summary message OK (defined in back-office) -->
       <div class="mb-alert warning">
-        <p><%=booking.summary_message_ok%></p>
+        <%=booking.summary_message_ok%>
       </div>
     <% } %>
 

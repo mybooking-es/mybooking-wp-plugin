@@ -85,9 +85,9 @@
         <% } else if (activity.available == 2) {%>
           <div class="mb-alert warning">
             <% if (activity.allow_select_places_for_reservation) { %>
-            <p><%=i18next.t('activities.calendarWidget.fewPlacesWarning')%></p>
+              <%=i18next.t('activities.calendarWidget.fewPlacesWarning')%>
             <% } else { %>
-            <p><%=i18next.t('activities.calendarWidget.fewNoPlacesWarning')%></p>
+              <%=i18next.t('activities.calendarWidget.fewNoPlacesWarning')%>
             <% } %>
           </div>
         <% } %>
