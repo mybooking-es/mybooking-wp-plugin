@@ -546,8 +546,7 @@
 					$pages_ids[$order] = $value;
 				}
 
-				if ($key == 'mybooking_plugin_settings_home_test_page' ||
-				    $key == 'mybooking_plugin_settings_transfer_home_test_page') {
+				if ($key == 'mybooking_plugin_settings_home_test_page') {
 					$home_page_id = $value;		
 				}
 
