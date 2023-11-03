@@ -7,6 +7,18 @@
 
   class MybookingPluginOnBoarding {
 	  
+		const PAGES_ORDER = ['mybooking_plugin_settings_home_test_page' => 1,
+												'mybooking_plugin_settings_choose_products_page' => 2,
+												'mybooking_plugin_settings_checkout_page' => 3,
+												'mybooking_plugin_settings_summary_page' => 4,
+												'mybooking_plugin_settings_my_reservation_page' => 13, // MAX for three modules
+												'mybooking_plugin_settings_choose_vehicle_page' => 7,
+												'mybooking_plugin_settings_transfer_checkout_page' => 8,
+												'mybooking_plugin_settings_transfer_summary_page' => 9,
+												'mybooking_plugin_settings_activities_shopping_cart_page' => 11,
+												'mybooking_plugin_settings_activities_summary_page' => 12
+												];
+		
 		private $last_error = null;
 
 		public function __construct() {
@@ -505,42 +517,44 @@
 			foreach ($settings as $key => $value) {
 				// Get all pages with _page end characters in key
 				if (str_ends_with($key, '_page') && ( strpos($key, '_summary_')  || strpos($key, '_my_reservation_')) ) {
-					// Push values in a array position
-					if (get_post_field('menu_order', $value)) {
-						$pages_ids[get_post_field('menu_order', $value) - 1] = $value;
-					}
-				}
 
-				// Sort the pages
-				ksort($pages_ids);
+					if (array_key_exists( $key, self::PAGES_ORDER) ) {
+						$order = self::PAGES_ORDER[$key];
+						$pages_ids[$order] = $value;
+					}
+
+				}
 			}
+			
+			// Sort the pages
+			ksort($pages_ids);
 
 			return $pages_ids;
 		}
 		
 		/**
-		 * 
+		 * Build the page list on recover
 		 */
 		private function build_pages_page_list ($settings) {
 			$pages_ids = array();
 			$home_page_id = 0;
+
 			foreach ($settings as $key => $value) {
-				// Get all pages with _page end characters in key
-				if (str_ends_with($key, '_page')) {
-					// Push values in a array position
-					if (get_post_field('menu_order', $value)) {
-						$pages_ids[get_post_field('menu_order', $value) - 1] = $value;
-					}
+
+				if (array_key_exists( $key, self::PAGES_ORDER) ) {
+					$order = self::PAGES_ORDER[$key];
+					$pages_ids[$order] = $value;
 				}
 
-				// Set home page id
-				if (str_contains($key, 'home_test') || str_contains($key, 'transfer_choose_vehicle')) {
-					$home_page_id = $value;
+				if ($key == 'mybooking_plugin_settings_home_test_page' ||
+				    $key == 'mybooking_plugin_settings_transfer_home_test_page') {
+					$home_page_id = $value;		
 				}
 
-				// Sort the pages
-				ksort($pages_ids);
 			}
+			
+			// Sort the pages
+			ksort($pages_ids);
 
 			return array(
 				"pages_ids" => $pages_ids,
