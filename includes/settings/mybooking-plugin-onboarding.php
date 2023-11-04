@@ -321,23 +321,22 @@
 		 * List of pages
 		 */
 		public function mybooking_plugin_onboarding_pages_page() {
-		
-			// Get onboarding settings
-			$onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info');
-
-			if ( $onboarding_settings ) {
-				// Set type of module 
-				$module_rental = $module_activities = $module_transfer = false;
-				if (array_key_exists('module_rental', $onboarding_settings)) {
-					$module_rental = $onboarding_settings["module_rental"];
-				}
-				if (array_key_exists('module_activities', $onboarding_settings)) {
-					$module_activities = $onboarding_settings["module_activities"];
-				}
-				if (array_key_exists('module_transfer', $onboarding_settings)) {
-					$module_transfer = $onboarding_settings["module_transfer"];
-				}
+			
+			// Get current active modules (take into account retro compatibility)
+			$settings = (array) get_option("mybooking_plugin_settings_configuration");
+			$module_rental = $module_activities = $module_transfer = false;
+			if ( array_key_exists( 'mybooking_plugin_settings_renting_selector', $settings ) && 
+					 $settings['mybooking_plugin_settings_renting_selector'] == '1' ) {
+				$module_rental = true;        
 			}
+			if ( array_key_exists( 'mybooking_plugin_settings_activities_selector', $settings ) && 
+					 $settings['mybooking_plugin_settings_activities_selector'] == '1' ) {
+				$module_activities = true;        
+			}
+			if ( array_key_exists( 'mybooking_plugin_settings_transfer_selector', $settings ) && 
+					 $settings['mybooking_plugin_settings_transfer_selector'] == '1' ) {
+				$module_transfer = true;        
+			}  
 
 			// Get settings
 			if ($module_rental) {
