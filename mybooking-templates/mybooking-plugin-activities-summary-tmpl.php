@@ -151,17 +151,23 @@
       </div>
       <ul class="mb-list border">
         <li class="mb-list-item">
+          <span class="dashicons dashicons-businessperson"></span>
+          &nbsp;
           <%=order.customer_name%> <%=order.customer_surname%>
         </li>
 
         <% if (order.customer_phone && order.customer_phone != '') { %>
           <li class="mb-list-item">
+            <span class="dashicons dashicons-phone"></span>
+            &nbsp;
             <%=order.customer_phone%> <%=order.customer_mobile_phone%>
           </li>
         <% } %>
 
         <% if (order.customer_email && order.customer_email != '') { %>
           <li class="mb-list-item">
+            <span class="dashicons dashicons-email"></span>
+            &nbsp;
             <%=order.customer_email%>
           </li>
         <% } %>

@@ -683,6 +683,12 @@ h2.mybooking-product_calendar-date-range {
 .mybooking-product_calendar-date {
   padding: 0;
   font-size: 1em;
+  min-width: 42px!important;
+} @media (max-width: 375px ) {
+	.mybooking-product_calendar-date {
+    min-width: 32px!important;
+    font-size: 0.8rem;
+	}
 }
 
 .mybooking-product_calendar-date span {

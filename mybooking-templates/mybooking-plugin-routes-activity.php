@@ -32,7 +32,7 @@
 			</div>		
 			
 		  <div class="mb-row">
-			  <div class="mb-col-md-8">
+			  <div class="mb-col-md-6 mb-col-lg-8">
 
 					<?php if (sizeof($args->photos) > 1) { ?>
 
@@ -150,7 +150,7 @@
 		      <?php } ?>
 				</div>
 
-				<div class="mb-col-md-4">
+				<div class="mb-col-md-6 mb-col-lg-4">
 					<p><?php echo esc_html( $args->short_description ) ?></p>
 			    <?php mybooking_engine_get_template('mybooking-plugin-activities-activity-widget.php', array('activity_id' => $args->id)) ?>
 				</div>

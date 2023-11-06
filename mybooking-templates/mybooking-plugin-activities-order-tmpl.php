@@ -33,7 +33,7 @@
     <%= order.summary_status %>
   </div>
 
-  <div class="mb-col-md-8">
+  <div class="mb-col-md-6 mb-col-lg-8">
 
     <!-- // Products -->
 
@@ -483,7 +483,7 @@
     <% } %>
   </div>
 
-  <div class="mb-col-md-4">
+  <div class="mb-col-md-6 mb-col-lg-4">
 
     <!-- // Customers detail -->
 
@@ -493,17 +493,23 @@
       </div>
       <ul class="mb-list border">
         <li class="mb-list-item">
+          <span class="dashicons dashicons-businessperson"></span>
+          &nbsp;
           <%=order.customer_name%> <%=order.customer_surname%>
         </li>
 
         <% if (order.customer_phone && order.customer_phone != '') { %>
           <li class="mb-list-item">
+            <span class="dashicons dashicons-phone"></span>
+            &nbsp;
             <%=order.customer_phone%> <%=order.customer_mobile_phone%>
           </li>
         <% } %>
 
         <% if (order.customer_email && order.customer_email != '') { %>
           <li class="mb-list-item">
+            <span class="dashicons dashicons-email"></span>
+            &nbsp;
             <%=order.customer_email%>
           </li>
         <% } %>

@@ -13,12 +13,12 @@
   <div class="mb-row invert">
 
     <!-- Selected products -->
-    <div class="mybooking-sidebar mb-col-md-4">
+    <div class="mybooking-sidebar mb-col-md-6 mb-col-lg-4">
       <div id="selected_products"></div>
     </div>
 
     <!-- Reservation form -->
-    <div class="mb-col-md-8">
+    <div class="mb-col-md-6 mb-col-lg-8">
       <form id="form-reservation" name="reservation_form" class="form-delivery mybooking-form" method="post" autocomplete="off">
         <div id="reservation_container"></div>
         <div id="reservation_detail"></div>
@@ -26,7 +26,7 @@
       </form>
 
       <!-- Reservation error -->
-      <div class="mb-col-md-12">
+      <div class="mb-col-md-12" style="padding: 0;">
         <div id="reservation_error" class="mb-alert danger" style="display:none"></div>
         <div id="shopping_cart_empty"></div>
       </div>

@@ -182,7 +182,7 @@
 
       <!-- // Product -->
       <% if (!configuration.hidePriceIfZero || shopping_cart.item_cost > 0) { %>
-        <div class="mybooking-summary_extras">
+        <div class="mybooking-summary_extras mb-section">
           <span class="mybooking-summary_item">
             <?php echo MyBookingEngineContext::getInstance()->getProduct() ?>:
           </span>

@@ -71,7 +71,7 @@
   </div>
 
   <div class="mb-row">
-    <div class="mb-col-md-8 mb-col-center">
+    <div class="mb-col-md-6 mb-col-lg-8 mb-col-center">
 
       <!-- // Reservation status message -->
 
@@ -217,7 +217,7 @@
 
 <script type="text/tmpl" id="script_transfer_payment_detail">
 
-  <div class="mb-col-md-4">
+  <div class="mb-col-md-6 mb-col-lg-4">
 
     <div class="mybooking-payment_amount">
       <%= i18next.t('myReservation.pay.total_payment', {amount:configuration.formatCurrency(amount) }) %>

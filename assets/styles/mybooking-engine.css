@@ -302,6 +302,21 @@
 
 
 /** FORMS & FIELDS **/
+.mybooking * {
+  outline: none;
+}
+
+.mybooking h1,
+.mybooking h2 {
+  line-height: 2.5rem;
+}
+
+.mybooking h3,
+.mybooking h4,
+.mybooking h5,
+.mybooking h6 {
+  line-height: 1.5rem;
+}
 
 .mybooking select,
 .mybooking textarea,
@@ -356,6 +371,7 @@ form.mybooking select,
 }
 
 .mb-form_legend {
+  font-size: 1.2rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
 }
@@ -364,9 +380,11 @@ form.mybooking select,
 }
 
 .mb-form-group label,
-.mb-label {
+.mb-label,
+label {
   display:  block;
   margin: 0 1rem 0.5rem 0!important;
+  line-height: 1rem;
 }
 
 .mb-form-group input:not([type=checkbox]):not([type=radio]),
@@ -701,6 +719,7 @@ button.mb-button a:hover  {
   border: 1px solid var(--mb-border-color);
   border-radius: var(--mb-border-radius);
   background-color: #FFF;
+  padding: 1rem;
 }
 
 .mb-list.border::after {
@@ -710,8 +729,9 @@ button.mb-button a:hover  {
 }
 
 .mb-list.border .mb-list-item {
-  padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--mb-border-color);
+  padding: 0.5rem 1rem;
+  padding-left: 0!important;
 }
 
 .mb-list.border .mb-list-item:last-of-type {

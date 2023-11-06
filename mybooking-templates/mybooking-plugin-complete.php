@@ -24,12 +24,12 @@
   <section class="mybooking mybooking-page-container mybooking-process_complete">
     <div class="mb-row invert">
 
-      <div class="mybooking-sidebar mb-col-md-4">
+      <div class="mybooking-sidebar mb-col-md-6 mb-col-lg-4">
 
         <!-- Reservation detail/summary (script_reservation_summary) -->
         <div id="reservation_detail"></div>
       </div>
-      <div class="mb-col-md-8">
+      <div class="mb-col-md-6 mb-col-lg-8">
 
         <!-- Extras Selection (script_detailed_extra) -->
         <div id="extras_listing"></div>
