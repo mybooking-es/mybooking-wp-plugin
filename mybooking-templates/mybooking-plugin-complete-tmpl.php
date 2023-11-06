@@ -21,7 +21,7 @@
   <!-- // Product details -->
 
   <% if (shopping_cart.items.length > 0) { %>
-    <div class="mb-section">
+    <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
       <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>
 
         <div class="mybooking-product_info-block">
@@ -113,7 +113,7 @@
 
   <!-- // Summary details -->
 
-  <div class="mb-section">
+  <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
     <div class="mybooking-summary_header">
       <div class="mybooking-summary_details-title">
         <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
