@@ -30,3 +30,21 @@ function mybooking_engine_theme_align_width() {
       return $alignwide;
 
 }
+
+/**
+ * Page template when creating reservation process pages
+ */
+function mybooking_engine_theme_template() {
+
+  $theme = wp_get_theme(); // gets the current theme
+
+  $page_template = '';
+
+  if ('Mybooking' == $theme->name || 
+      'Mybooking' == $theme->parent_theme) {
+    $page_template = 'mybooking-parts/mybooking-empty.php';
+  }
+  
+  return $page_template;
+
+}

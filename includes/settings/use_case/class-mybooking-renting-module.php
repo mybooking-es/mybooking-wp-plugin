@@ -86,7 +86,8 @@
                                      $page_to_create['slug'],
                                      $page_to_create['order'],
                                      'mybooking_plugin_settings_renting',
-                                     $page_to_create['option']);
+                                     $page_to_create['option'],
+                                     mybooking_engine_theme_template());
 
         if ($post_id) {
           array_push($pages, 

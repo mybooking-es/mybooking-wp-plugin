@@ -114,6 +114,7 @@
   <!-- // Summary details -->
 
   <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
+    
     <div class="mybooking-summary_header">
       <div class="mybooking-summary_details-title">
         <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
