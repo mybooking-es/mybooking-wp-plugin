@@ -88,7 +88,7 @@
       <div class="mb-row">
 
         <% if (showReservationForm) { %>
-          <div class="mb-col-md-8">
+          <div class="mb-col-md-6 mb-col-lg-8">
             <!-- //Customer extra data form -->
             <div id="reservation_form_container" style="display:none"></div>
             <% if (configuration.guests) { %>
@@ -110,7 +110,7 @@
           </div>
         <% } %>
 
-        <div class="<% if (showReservationForm) { %>mb-col-md-4<%} else { %>mb-col-md-offset-2 mb-col-md-8<% } %>">
+        <div class="mb-col-md-6 <% if (showReservationForm) { %>mb-col-lg-4<%} else { %>mb-col-lg-offset-2 mb-col-lg-8<% } %>">
 
           <!-- // Reservation status message -->
 
