@@ -21,7 +21,7 @@
   <!-- // Product details -->
 
   <% if (shopping_cart.items.length > 0) { %>
-    <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
+    <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
       <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>
         <div class="mybooking-product_info-block">
           <% if (shopping_cart.items[idx].photo_full && shopping_cart.items[idx].photo_full !== '') { %>
@@ -273,7 +273,7 @@
   <% } %>
 
   <!-- // Summary details -->
-  <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
+  <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
     <div class="mybooking-summary_header">
       <div class="mybooking-summary_details-title">
         <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
@@ -350,7 +350,7 @@
   </div>
 
   <% if ( (shopping_cart.driver_age_rule_description && shopping_cart.driver_age_rule_description !== '') || configuration.promotionCode ) { %>
-    <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
+    <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
       <!-- Age rule applicate  -->
       <% if (shopping_cart.driver_age_rule_description && shopping_cart.driver_age_rule_description !== '') { %>
         <div class="mb-section">
@@ -390,39 +390,124 @@
 <script type="text/template" id="script_detailed_extra">
 
 <% if (coverages && coverages.length > 0 || (extras && extras.length > 0 && extras.filter((theExtra) => theExtra.available).length > 0)) {%>
-  <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
-    <% if (coverages && coverages.length > 0) {%>
-      <div class="mb-section">
-        <h3 class="mb-section_title">
-          <?php echo esc_html_x( 'Coverage', 'renting_complete', 'mybooking-wp-plugin') ?>
-        </h3>
+  <% if (coverages && coverages.length > 0) {%>
+    <div class="mb-section">
+      <h3 class="mb-section_title">
+        <?php echo esc_html_x( 'Coverage', 'renting_complete', 'mybooking-wp-plugin') ?>
+      </h3>
 
-        <div class="mybooking-extra_container">
-          <% for (var idx=0;idx<coverages.length;idx++) { %>
-            <% var coverage = coverages[idx]; %>
-            <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
+      <div class="mybooking-extra_container">
+        <% for (var idx=0;idx<coverages.length;idx++) { %>
+          <% var coverage = coverages[idx]; %>
+          <% var value = (extrasInShoppingCart[coverage.code]) ? extrasInShoppingCart[coverage.code] : 0; %>
+          <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
+
+          <div class="mybooking-extra_item <% if (value > 0) {%>selected-coverage<%}%>" data-extra="<%=coverage.code%>">
+
+            <div class="mybooking-extra_block">
+
+              <% if (coverage.photo_path && coverage.photo_path !== '') { %>
+                <div class="mb-col-md-3 mb-col-sm-12 mybooking-extra_box-img">
+                  <img class="mybooking-extra_img" src="<%=coverage.photo_path%>" alt="<%=coverage.name%>">
+                </div>
+                <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
+                  <div class="mybooking-extra_name">
+                    <%=coverage.name%>
+                  </div>
+
+                  <% if (coverage.description && coverage.description.replace(/<p><br><\/p>/g, '') !== '') { %>
+                    <div class="mybooking-extra_description">
+                      <%=coverage.description%>
+                    </div>
+                  <% } %>
+
+                  <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
+                    <span class="dashicons dashicons-plus-alt"></span> INFO
+                  </span>
+                </div>
+
+              <% } else { %>
+                <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
+                  <div class="mybooking-extra_name">
+                    <%=coverage.name%>
+                  </div>
+
+                  <% if (coverage.description && coverage.description.replace(/<p><br><\/p>/g, '') !== '') { %>
+                    <div class="mybooking-extra_description">
+                      <%=coverage.description%>
+                    </div>
+
+                    <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
+                      <span class="dashicons dashicons-plus-alt"></span> INFO
+                    </span>
+                  <% } %>
+                </div>
+              <% } %>
+            </div>
+
+            <div class="mybooking-extra_block">
+              <div class="mb-col-md-6 mb-col-sm-12 mybooking-extra_box-price">
+                <div class="mybooking-extra_price">
+                  <%= configuration.formatExtraAmount( i18next, coverage.one_unit_price, coverage.price_calculation, shopping_cart.days, shopping_cart.hours, coverage.unit_price )%>
+                </div>
+              </div>
+
+              <div class="mb-col-md-6 mb-col-sm-12 mybooking-extra_box-control">
+
+                <% if (coverage.max_quantity > 1) { %>
+                  <div class="mybooking-extra_control">
+                    <button class="mb-button control btn-minus-extra" data-value="<%=coverage.code%>" data-max-quantity="<%=coverage.max_sellable_quantity%>">-</button>
+                    <input class="mb-input extra-input" type="text" id="extra-<%=coverage.code%>-quantity" value="<%=value%>" data-extra-code="<%=coverage.code%>" readonly/>
+                    <button class="mb-button control btn-plus-extra" data-value="<%=coverage.code%>" data-max-quantity="<%=coverage.max_sellable_quantity%>">+</button>
+                  </div>
+
+                <% } else { %>
+                  <div class="mybooking-extra_control">
+                    <input class="mb-checkbox extra-checkbox" type="checkbox" id="checkboxl<%=coverage.code%>" data-value="<%=coverage.code%>" <% if (extrasInShoppingCart[coverage.code] &&  extrasInShoppingCart[coverage.code] > 0) { %> checked="checked" <% } %>>
+                    <label class="mb-label" for="checkboxl<%=coverage.code%>"></label>
+                  </div>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+
+  <!-- Check for available extras -->
+  <% if (extras && extras.length > 0 && extras.filter((theExtra) => theExtra.available).length > 0) {%>
+    <div class="mb-section">
+      <h3 class="mb-section_title">
+        <?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-wp-plugin') ?>
+      </h3>
+      <div class="mybooking-extra_container">
+
+        <% for (var idx=0;idx<extras.length;idx++) { %>
+          <% var extra = extras[idx]; %>
+          <% if (extra.available) { %>
+            <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
             <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
 
-            <div class="mybooking-extra_item <% if (value > 0) {%>selected-coverage<%}%>" data-extra="<%=coverage.code%>">
+            <div class="mybooking-extra_item" data-extra="<%=extra.code%>">
 
               <div class="mybooking-extra_block">
 
-                <% if (coverage.photo_path && coverage.photo_path !== '') { %>
+                <% if (extra.photo_path && extra.photo_path !== '') { %>
                   <div class="mb-col-md-3 mb-col-sm-12 mybooking-extra_box-img">
-                    <img class="mybooking-extra_img" src="<%=coverage.photo_path%>" alt="<%=coverage.name%>">
+                    <img class="mybooking-extra_img" src="<%=extra.photo_path%>" alt="<%=extra.name%>">
                   </div>
                   <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
                     <div class="mybooking-extra_name">
-                      <%=coverage.name%>
+                      <%=extra.name%>
                     </div>
-
-                    <% if (coverage.description && coverage.description.replace(/<p><br><\/p>/g, '') !== '') { %>
+                    <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                       <div class="mybooking-extra_description">
-                        <%=coverage.description%>
+                        <%=extra.description%>
                       </div>
                     <% } %>
 
-                    <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
+                    <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
                       <span class="dashicons dashicons-plus-alt"></span> INFO
                     </span>
                   </div>
@@ -430,15 +515,15 @@
                 <% } else { %>
                   <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
                     <div class="mybooking-extra_name">
-                      <%=coverage.name%>
+                      <%=extra.name%>
                     </div>
 
-                    <% if (coverage.description && coverage.description.replace(/<p><br><\/p>/g, '') !== '') { %>
+                    <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                       <div class="mybooking-extra_description">
-                        <%=coverage.description%>
+                        <%=extra.description%>
                       </div>
 
-                      <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
+                      <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
                         <span class="dashicons dashicons-plus-alt"></span> INFO
                       </span>
                     <% } %>
@@ -448,120 +533,33 @@
 
               <div class="mybooking-extra_block">
                 <div class="mb-col-md-6 mb-col-sm-12 mybooking-extra_box-price">
-                  <div class="mybooking-extra_price">
-                    <%= configuration.formatExtraAmount( i18next, coverage.one_unit_price, coverage.price_calculation, shopping_cart.days, shopping_cart.hours, coverage.unit_price )%>
-                  </div>
+                <div class="mybooking-extra_price">
+                  <%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation, shopping_cart.days, shopping_cart.hours, extra.unit_price)%>
+                </div>
                 </div>
 
                 <div class="mb-col-md-6 mb-col-sm-12 mybooking-extra_box-control">
-
-                  <% if (coverage.max_quantity > 1) { %>
+                  <% if (extra.max_quantity > 1) { %>
                     <div class="mybooking-extra_control">
-                      <button class="mb-button control btn-minus-extra" data-value="<%=coverage.code%>" data-max-quantity="<%=coverage.max_sellable_quantity%>">-</button>
-                      <input class="mb-input extra-input" type="text" id="extra-<%=coverage.code%>-quantity" value="<%=value%>" data-extra-code="<%=coverage.code%>" readonly/>
-                      <button class="mb-button control btn-plus-extra" data-value="<%=coverage.code%>" data-max-quantity="<%=coverage.max_sellable_quantity%>">+</button>
+                      <button class="mb-button control btn-minus-extra" data-value="<%=extra.code%>" data-max-quantity="<%=extra.max_sellable_quantity%>">-</button>
+                      <input class="mb-input extra-input" type="text" id="extra-<%=extra.code%>-quantity" value="<%=value%>" data-extra-code="<%=extra.code%>" readonly/>
+                      <button class="mb-button control btn-plus-extra" data-value="<%=extra.code%>" data-max-quantity="<%=extra.max_sellable_quantity%>">+</button>
                     </div>
 
                   <% } else { %>
                     <div class="mybooking-extra_control">
-                      <input class="mb-checkbox extra-checkbox" type="checkbox" id="checkboxl<%=coverage.code%>" data-value="<%=coverage.code%>" <% if (extrasInShoppingCart[coverage.code] &&  extrasInShoppingCart[coverage.code] > 0) { %> checked="checked" <% } %>>
-                      <label class="mb-label" for="checkboxl<%=coverage.code%>"></label>
+                      <input class="mb-checkbox extra-checkbox" type="checkbox" id="checkboxl<%=extra.code%>" data-value="<%=extra.code%>" <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>
+                      <label class="mb-label" for="checkboxl<%=extra.code%>"></label>
                     </div>
                   <% } %>
                 </div>
               </div>
             </div>
-          <% } %>
-        </div>
+          <% } %>  
+        <% } %>
       </div>
-    <% } %>
-
-    <!-- Check for available extras -->
-    <% if (extras && extras.length > 0 && extras.filter((theExtra) => theExtra.available).length > 0) {%>
-      <div class="mb-section">
-        <h3 class="mb-section_title">
-          <?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-wp-plugin') ?>
-        </h3>
-        <div class="mybooking-extra_container">
-
-          <% for (var idx=0;idx<extras.length;idx++) { %>
-            <% var extra = extras[idx]; %>
-            <% if (extra.available) { %>
-              <% var value = (extrasInShoppingCart[extra.code]) ? extrasInShoppingCart[extra.code] : 0; %>
-              <% var bg = ((idx % 2 == 0) ? 'bg-light' : ''); %>
-
-              <div class="mybooking-extra_item" data-extra="<%=extra.code%>">
-
-                <div class="mybooking-extra_block">
-
-                  <% if (extra.photo_path && extra.photo_path !== '') { %>
-                    <div class="mb-col-md-3 mb-col-sm-12 mybooking-extra_box-img">
-                      <img class="mybooking-extra_img" src="<%=extra.photo_path%>" alt="<%=extra.name%>">
-                    </div>
-                    <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
-                      <div class="mybooking-extra_name">
-                        <%=extra.name%>
-                      </div>
-                      <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
-                        <div class="mybooking-extra_description">
-                          <%=extra.description%>
-                        </div>
-                      <% } %>
-
-                      <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
-                        <span class="dashicons dashicons-plus-alt"></span> INFO
-                      </span>
-                    </div>
-
-                  <% } else { %>
-                    <div class="mb-col-md-9 mb-col-sm-12 mybooking-extra_box-name">
-                      <div class="mybooking-extra_name">
-                        <%=extra.name%>
-                      </div>
-
-                      <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
-                        <div class="mybooking-extra_description">
-                          <%=extra.description%>
-                        </div>
-
-                        <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
-                          <span class="dashicons dashicons-plus-alt"></span> INFO
-                        </span>
-                      <% } %>
-                    </div>
-                  <% } %>
-                </div>
-
-                <div class="mybooking-extra_block">
-                  <div class="mb-col-md-6 mb-col-sm-12 mybooking-extra_box-price">
-                  <div class="mybooking-extra_price">
-                    <%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation, shopping_cart.days, shopping_cart.hours, extra.unit_price)%>
-                  </div>
-                  </div>
-
-                  <div class="mb-col-md-6 mb-col-sm-12 mybooking-extra_box-control">
-                    <% if (extra.max_quantity > 1) { %>
-                      <div class="mybooking-extra_control">
-                        <button class="mb-button control btn-minus-extra" data-value="<%=extra.code%>" data-max-quantity="<%=extra.max_sellable_quantity%>">-</button>
-                        <input class="mb-input extra-input" type="text" id="extra-<%=extra.code%>-quantity" value="<%=value%>" data-extra-code="<%=extra.code%>" readonly/>
-                        <button class="mb-button control btn-plus-extra" data-value="<%=extra.code%>" data-max-quantity="<%=extra.max_sellable_quantity%>">+</button>
-                      </div>
-
-                    <% } else { %>
-                      <div class="mybooking-extra_control">
-                        <input class="mb-checkbox extra-checkbox" type="checkbox" id="checkboxl<%=extra.code%>" data-value="<%=extra.code%>" <% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <% } %>>
-                        <label class="mb-label" for="checkboxl<%=extra.code%>"></label>
-                      </div>
-                    <% } %>
-                  </div>
-                </div>
-              </div>
-            <% } %>  
-          <% } %>
-        </div>
-      </div>
-    <% } %>
-  </div>
+    </div>
+  <% } %>
 <% } %>
 </script>
 

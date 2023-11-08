@@ -111,7 +111,7 @@
 
   <!-- // Reservation complete -->
   <div class="mb-section">
-    <div class="reservation_form_container mb-section mb--bg-white mb--br--rd mb--p-1">
+    <div class="reservation_form_container mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
       <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>
       <form id="form-reservation" name="reservation_form" autocomplete="off">
         <div class="mb-form-group mb-form-row customer_component">

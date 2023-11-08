@@ -204,7 +204,7 @@
   width: 100%;
 } /* Stacked by default on mobile */
 
-@media only screen and ( min-width: 575.98px ) {
+@media only screen and ( min-width: 769px ) {
   .mb-col-md-1        { width: 8.33%; }
   .mb-col-md-2        { width: 16.66%; }
   .mb-col-md-3        { width: 25%; }
@@ -375,7 +375,7 @@ form.mybooking select,
   font-weight: 800;
   margin-bottom: 0.5rem;
 }
-.mb-form-group {
+.mb-form-group:not([class*='mb-col-']) {
   width: 100%;
 }
 
@@ -383,7 +383,7 @@ form.mybooking select,
 .mb-label,
 label {
   display:  block;
-  margin: 0 1rem 0.5rem 0!important;
+  margin: 0.3rem 0.1rem!important;
   line-height: 1rem;
 }
 
@@ -412,8 +412,9 @@ label {
 }
 
 .mb-form-row {
-  margin: 0 0 1rem 0;
-} @media ( min-width: 575.98px ) {
+  display: inline-block;
+  width: 100%;
+} @media ( min-width: 769px ) {
   .mb-form-row {
     display: flex;
     justify-content: space-between;
@@ -444,12 +445,12 @@ label {
   }
 }
 
+.mb-custom-date-form {
+  display: flex;
+}
+
 .mb-custom-date-form .mb-custom-date-item {
   width:  33.33333%;
-} @media ( max-width: 758px ) {
-  .mb-custom-date-form .mb-custom-date-item {
-    width: 100%;
-  }
 }
 
 .mb-custom-date-form select {
@@ -679,7 +680,6 @@ button.mb-button a:hover  {
 
 .mb-card_footer {
   display: flex;
-  justify-content: flex-end;
   margin: 1rem 0 0 0;
   padding: 1rem;
   border-top: 1px solid var(--mb-border-color);

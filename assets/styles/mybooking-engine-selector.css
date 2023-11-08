@@ -186,7 +186,7 @@
   .mybooking-selector_place {
     width: 50%;
   }
-} @media ( min-width: 1024px ) {
+} @media ( min-width: 1280px ) {
   .mybooking-selector_place {
     width: 66%;
   }
@@ -207,7 +207,7 @@
   .mybooking-selector_date {
     width: 50%;
   }
-} @media ( min-width: 1024px ) {
+} @media ( min-width: 1280px ) {
   .mybooking-selector_date {
     width: 33%;
   }

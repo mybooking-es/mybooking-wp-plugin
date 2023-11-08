@@ -556,15 +556,19 @@
 .mybooking-payment_custom-label {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0;
-  font-weight: 700;
+  gap: 0.2rem;
+  margin: 0 !important;
+  font-weight: 600;
   text-align: center;
   cursor: pointer;
+  font-size: 0.7rem;
+  width: 100%;
 } @media ( min-width: 575.98px ) {
   .mybooking-payment_custom-label {
     margin: 1rem 2rem 2rem;
+    font-size: 0.9rem;
   }
 }
 
