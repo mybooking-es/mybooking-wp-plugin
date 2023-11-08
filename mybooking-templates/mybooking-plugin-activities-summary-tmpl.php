@@ -37,7 +37,7 @@
 
     <!-- // Products -->
 
-    <div id="selected_products">
+    <div id="selected_products" class="mb-section">
 
       <% for (idx in order.items) { %>
         <div class="mb-section">

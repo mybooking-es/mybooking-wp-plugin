@@ -218,138 +218,145 @@
       </div>
     <% } %>
 
-    <!-- // Extras -->
+    <% if ( booking.booking_extras.length > 0 ||  
+              ( booking.time_from_cost > 0 ||
+              booking.pickup_place_cost > 0 ||
+              booking.time_to_cost > 0 ||
+              booking.return_place_cost > 0 ||
+              booking.driver_age_cost > 0 ||
+              booking.category_supplement_1_cost > 0 ) ) { %>
+      <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
+        <!-- // Extras -->
+        <% if (booking.booking_extras.length > 0) { %>
+          <div class="mb-section">
+            <div class="mybooking-summary_details-title">
+              <?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+            </div>
 
-    <% if (booking.booking_extras.length > 0) { %>
-      <div class="mb-section">
-        <div class="mybooking-summary_details-title">
-          <?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-wp-plugin' ) ?>
-        </div>
+              <% for (var idx=0;idx<booking.booking_extras.length;idx++) { %>
+                <div class="mybooking-summary_extras">
+                  <div class="mybooking-summary_extra-item">
+                    <span class="mb-badge info mybooking-summary_extra-quantity"><%=booking.booking_extras[idx].quantity%></span>
+                    <span class="mybooking-summary_extra-name"><%=booking.booking_extras[idx].extra_description%></span>
+                  </div>
+                  <span class="mybooking-summary_extra-amount">
+                    <%=configuration.formatCurrency(booking.booking_extras[idx].extra_cost)%>
+                  </span>
+                </div>
+              <% } %>
 
-          <% for (var idx=0;idx<booking.booking_extras.length;idx++) { %>
+          </div>
+        <% } %>
+
+        <!-- // Supplements -->
+        <% if (booking.time_from_cost > 0 ||
+              booking.pickup_place_cost > 0 ||
+              booking.time_to_cost > 0 ||
+              booking.return_place_cost > 0 ||
+              booking.driver_age_cost > 0 ||
+              booking.category_supplement_1_cost > 0) { %>
+
+          <div class="mb-section">
+            <div class="mybooking-summary_details-title">
+              <?php echo esc_html_x( 'Supplements', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+            </div>
+
             <div class="mybooking-summary_extras">
-              <div class="mybooking-summary_extra-item">
-                <span class="mb-badge info mybooking-summary_extra-quantity"><%=booking.booking_extras[idx].quantity%></span>
-                <span class="mybooking-summary_extra-name"><%=booking.booking_extras[idx].extra_description%></span>
-              </div>
-              <span class="mybooking-summary_extra-amount">
-                <%=configuration.formatCurrency(booking.booking_extras[idx].extra_cost)%>
-              </span>
-            </div>
-          <% } %>
 
+              <!-- // Pick-up time -->
+              <% if (booking.time_from_cost > 0) { %>
+                <div class="mybooking-summary_extra-item">
+                <span class="mybooking-summary_extra-name">
+                  <?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                </span>
+                </div>
+                <span class="mybooking-summary_extra-amount">
+                  <%=configuration.formatCurrency(booking.time_from_cost)%>
+                </span>
+              <% } %>
+            </div>
+
+            <div class="mybooking-summary_extras">
+
+              <!-- // Pick-up place -->
+              <% if (booking.pickup_place_cost > 0) { %>
+                <div class="mybooking-summary_extra-item">
+                  <span class="mybooking-summary_extra-name">
+                    <?php echo esc_html_x( 'Pick-up place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                </div>
+                <span class="mybooking-summary_extra-amount">
+                  <%=configuration.formatCurrency(booking.pickup_place_cost)%>
+                </span>
+              <% } %>
+            </div>
+
+            <div class="mybooking-summary_extras">
+
+              <!-- // Return time -->
+              <% if (booking.time_to_cost > 0) { %>
+                <div class="mybooking-summary_extra-item">
+                <span class="mybooking-summary_extra-name">
+                  <?php echo esc_html_x( 'Return time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                </span>
+                </div>
+                <span class="mybooking-summary_extra-amount">
+                  <%=configuration.formatCurrency(booking.time_to_cost)%>
+                </span>
+              <% } %>
+            </div>
+
+            <div class="mybooking-summary_extras">
+
+              <!-- // Return place -->
+              <% if (booking.return_place_cost > 0) { %>
+                <div class="mybooking-summary_extra-item">
+                  <span class="mybooking-summary_extra-name">
+                    <?php echo esc_html_x( 'Return place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                </div>
+                <span class="mybooking-summary_extra-amount">
+                  <%=configuration.formatCurrency(booking.return_place_cost)%>
+                </span>
+              <% } %>
+            </div>
+
+            <div class="mybooking-summary_extras">
+
+              <!-- // Driver age -->
+              <% if (booking.driver_age_cost > 0) { %>
+                <div class="mybooking-summary_extra-item">
+                  <span class="mybooking-summary_extra-name">
+                    <?php echo esc_html_x( "Driver's age supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                </div>
+                <span class="mybooking-summary_extra-amount">
+                  <%=configuration.formatCurrency(booking.driver_age_cost)%>
+                </span>
+              <% } %>
+            </div>
+
+            <div class="mybooking-summary_extras">
+
+              <!-- // Petrol -->
+              <% if (booking.category_supplement_1_cost > 0) { %>
+                <div class="mybooking-summary_extra-item">
+                  <span class="mybooking-summary_extra-name">
+                    <?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                </div>
+                <span class="mybooking-summary_extra-amount">
+                  <%=configuration.formatCurrency(booking.category_supplement_1_cost)%>
+                </span>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
       </div>
     <% } %>
 
-    <!-- // Supplements -->
-
-    <% if (booking.time_from_cost > 0 ||
-          booking.pickup_place_cost > 0 ||
-          booking.time_to_cost > 0 ||
-          booking.return_place_cost > 0 ||
-          booking.driver_age_cost > 0 ||
-          booking.category_supplement_1_cost > 0) { %>
-
-      <div class="mb-section">
-        <div class="mybooking-summary_details-title">
-          <?php echo esc_html_x( 'Supplements', 'renting_summary', 'mybooking-wp-plugin' ) ?>
-        </div>
-
-        <div class="mybooking-summary_extras">
-
-          <!-- // Pick-up time -->
-          <% if (booking.time_from_cost > 0) { %>
-            <div class="mybooking-summary_extra-item">
-            <span class="mybooking-summary_extra-name">
-              <?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-            </span>
-            </div>
-            <span class="mybooking-summary_extra-amount">
-              <%=configuration.formatCurrency(booking.time_from_cost)%>
-            </span>
-          <% } %>
-        </div>
-
-        <div class="mybooking-summary_extras">
-
-          <!-- // Pick-up place -->
-          <% if (booking.pickup_place_cost > 0) { %>
-            <div class="mybooking-summary_extra-item">
-              <span class="mybooking-summary_extra-name">
-                <?php echo esc_html_x( 'Pick-up place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-              </span>
-            </div>
-            <span class="mybooking-summary_extra-amount">
-              <%=configuration.formatCurrency(booking.pickup_place_cost)%>
-            </span>
-          <% } %>
-        </div>
-
-        <div class="mybooking-summary_extras">
-
-          <!-- // Return time -->
-          <% if (booking.time_to_cost > 0) { %>
-            <div class="mybooking-summary_extra-item">
-            <span class="mybooking-summary_extra-name">
-              <?php echo esc_html_x( 'Return time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-            </span>
-            </div>
-            <span class="mybooking-summary_extra-amount">
-              <%=configuration.formatCurrency(booking.time_to_cost)%>
-            </span>
-          <% } %>
-        </div>
-
-        <div class="mybooking-summary_extras">
-
-          <!-- // Return place -->
-          <% if (booking.return_place_cost > 0) { %>
-            <div class="mybooking-summary_extra-item">
-              <span class="mybooking-summary_extra-name">
-                <?php echo esc_html_x( 'Return place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-              </span>
-            </div>
-            <span class="mybooking-summary_extra-amount">
-              <%=configuration.formatCurrency(booking.return_place_cost)%>
-            </span>
-          <% } %>
-        </div>
-
-        <div class="mybooking-summary_extras">
-
-          <!-- // Driver age -->
-          <% if (booking.driver_age_cost > 0) { %>
-            <div class="mybooking-summary_extra-item">
-              <span class="mybooking-summary_extra-name">
-                <?php echo esc_html_x( "Driver's age supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?>
-              </span>
-            </div>
-            <span class="mybooking-summary_extra-amount">
-              <%=configuration.formatCurrency(booking.driver_age_cost)%>
-            </span>
-          <% } %>
-        </div>
-
-        <div class="mybooking-summary_extras">
-
-          <!-- // Petrol -->
-          <% if (booking.category_supplement_1_cost > 0) { %>
-            <div class="mybooking-summary_extra-item">
-              <span class="mybooking-summary_extra-name">
-                <?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?>
-              </span>
-            </div>
-            <span class="mybooking-summary_extra-amount">
-              <%=configuration.formatCurrency(booking.category_supplement_1_cost)%>
-            </span>
-          <% } %>
-        </div>
-      </div>
-    <% } %>
-
+    <!-- // Deposit -->
     <% if (booking.total_deposit > 0) { %>
-
-      <!-- // Deposit -->
       <div class="mybooking-summary_deposit">
         <span class="mybooking-summary_extra-name">
           <?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
@@ -361,7 +368,6 @@
     <% } %>
 
     <!-- // Total -->
-
     <% if (!configuration.hidePriceIfZero || booking.total_cost > 0) { %>
 
       <div class="mb-section">
@@ -404,20 +410,19 @@
     <% } %>
 
     <!-- // Customer details -->
-
     <div class="mb-section">
       <div class="mybooking-summary_details-title">
         <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
       </div>
       <ul class="mb-list border">
-        <li class="mb-list-item mb-justify-flex-start mb-align-flex-center">
+        <li class="mb-list-item">
           <span class="dashicons dashicons-businessperson"></span>
            &nbsp;
           <%=booking.customer_fullname%> 
         </li>
 
         <% if (booking.customer_phone && booking.customer_phone != '') { %>
-          <li class="mb-list-item mb-justify-flex-start mb-align-flex-center">
+          <li class="mb-list-item">
             <span class="dashicons dashicons-phone"></span>
             &nbsp;
             <%=booking.customer_phone%> <%=booking.customer_mobile_phone%>
@@ -425,7 +430,7 @@
         <% } %>
 
         <% if (booking.customer_email && booking.customer_email != '') { %>
-          <li class="mb-list-item mb-justify-flex-start mb-align-flex-center">
+          <li class="mb-list-item">
             <span class="dashicons dashicons-email"></span>
             &nbsp;
             <%=booking.customer_email%>

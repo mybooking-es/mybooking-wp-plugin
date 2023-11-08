@@ -419,14 +419,14 @@
               <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
             </div>
             <ul class="mb-list border">
-              <li class="mb-list-item mb-justify-flex-start mb-align-flex-center">
+              <li class="mb-list-item">
                 <span class="dashicons dashicons-businessperson"></span>
                 &nbsp;
                 <%=booking.customer_name%> <%=booking.customer_surname%>
               </li>
 
               <% if (booking.customer_phone && booking.customer_phone != '') { %>
-                <li class="mb-list-item mb-justify-flex-start mb-align-flex-center">
+                <li class="mb-list-item">
                   <span class="dashicons dashicons-phone"></span>
                   &nbsp;
                   <%=booking.customer_phone%> <%=booking.customer_mobile_phone%>
@@ -434,7 +434,7 @@
               <% } %>
 
               <% if (booking.customer_email && booking.customer_email != '') { %>
-                <li class="mb-list-item mb-justify-flex-start mb-align-flex-center">
+                <li class="mb-list-item">
                   <span class="dashicons dashicons-email"></span>
                   &nbsp;
                   <%=booking.customer_email%>
