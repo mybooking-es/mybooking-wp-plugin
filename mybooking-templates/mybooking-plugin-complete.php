@@ -23,9 +23,7 @@
 
   <section class="mybooking mybooking-page-container mybooking-process_complete">
     <div class="mb-row invert">
-
       <div class="mybooking-sidebar mb-col-md-6 mb-col-lg-4">
-
         <!-- Reservation detail/summary (script_reservation_summary) -->
         <div id="reservation_detail"></div>
       </div>
@@ -35,78 +33,79 @@
         <div id="extras_listing"></div>
 
         <!-- Reservation complete form -->
-        <div class="reservation_form_container">
+        <div class="reservation_form_container mb-section mb--bg-white mb--br--rd mb--p-1">
+          <form class="mybooking-form" id="form-reservation" name="reservation_form" autocomplete="off">
+            <!-- Customer data -->
             <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>
 
-            <form class="mybooking-form" id="form-reservation" name="reservation_form" autocomplete="off">
-
-              <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
-                <div class="mb-form-group mb-form-row customer_component">
-                  <div class="mb-col-md-6 mb-col-sm-12">
-                    <label for="customer_name"><?php echo esc_html_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-                    <input class="mb-form-control" type="text" name="customer_name" id="customer_name" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
-                  </div>
-                  <div class="mb-col-md-6 mb-col-sm-12">
-                    <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-                    <input class="mb-form-control" type="text" name="customer_surname" id="customer_surname" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
-                  </div>
-                </div>
-
-                <div class="mb-form-group mb-form-row customer_component">
-                  <div class="mb-col-md-6 mb-col-sm-12">
-                    <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-                    <input class="mb-form-control" type="text" name="customer_email" id="customer_email" autocomplete="off" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
-                  </div>
-                  <div class="mb-col-md-6 mb-col-sm-12">
-                    <label for="customer_email"><?php echo esc_html_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-                    <input class="mb-form-control" type="text" name="confirm_customer_email" autocomplete="off" id="confirm_customer_email" placeholder="<?php echo esc_attr_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
-                  </div>
-                </div>
-
-                <div class="mb-form-group mb-form-row customer_component">
-                  <div class="mb-col-md-6 mb-col-sm-12">
-                    <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-                    <input class="mb-form-control" type="text" name="customer_phone" id="customer_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="15">
-                  </div>
-                  <div class="mb-col-md-6 mb-col-sm-12">
-                    <label for="customer_mobile_phone"><?php echo esc_html_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-                    <input class="mb-form-control" type="text" name="customer_mobile_phone" id="customer_mobile_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
-                  </div>
-                </div>
+            <div class="mb-form-group mb-form-row customer_component">
+              <div class="mb-col-md-6 mb-col-sm-12">
+                <label for="customer_name"><?php echo esc_html_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+                <input class="mb-form-control" type="text" name="customer_name" id="customer_name" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Name', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
               </div>
-
-              <h2 class="mb-section_title complete-section-title">
-                <?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?>
-              </h2>
-
-              <div class="mb-section mb--bg-white mb--br--rd mb--p-1">
-                <div class="mb-form-group mb-form-row js-mb-delivery-slot-skipper-container" style="display: none">
-                  <div class="mb-col-md-6 mb-col-sm-12 js-mb-delivery-slot" style="display: none">
-                    <label
-                      for="slot_time_from"><?php echo esc_html_x( 'Select the schedule that suits your needs', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-                    <select class="mb-form-control" id="slot_time_from" name="slot_time_from"></select>
-                  </div>
-                  <div class="mb-col-md-6 mb-col-sm-12 js-mb-optional-external-driver" style="display: none">
-                    <label
-                      for="slot_time_from"><?php echo esc_html_x( 'Will you need a skipper?', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-                    <select class="mb-form-control" id="with_optional_external_driver" name="with_optional_external_driver">
-                      <option value=""></option>
-                      <option value="false"><?php echo esc_html_x( 'No', 'renting_complete', 'mybooking-wp-plugin') ?></option>
-                      <option value="true"><?php echo esc_html_x( 'Yes', 'renting_complete', 'mybooking-wp-plugin') ?></option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="mb-form-group">
-                  <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
-                  <textarea class="mb-form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
-                </div>
+              <div class="mb-col-md-6 mb-col-sm-12">
+                <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+                <input class="mb-form-control" type="text" name="customer_surname" id="customer_surname" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Surname', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="40">
               </div>
+            </div>
 
-              <!-- Reservation : payment (script_payment_detail) -->
-              <div id="payment_detail"></div>
-            </form>
-          </div>
+            <div class="mb-form-group mb-form-row customer_component">
+              <div class="mb-col-md-6 mb-col-sm-12">
+                <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+                <input class="mb-form-control" type="text" name="customer_email" id="customer_email" autocomplete="off" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+              </div>
+              <div class="mb-col-md-6 mb-col-sm-12">
+                <label for="customer_email"><?php echo esc_html_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+                <input class="mb-form-control" type="text" name="confirm_customer_email" autocomplete="off" id="confirm_customer_email" placeholder="<?php echo esc_attr_x( 'Confirm E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50">
+              </div>
+            </div>
+
+            <div class="mb-form-group mb-form-row customer_component">
+              <div class="mb-col-md-6 mb-col-sm-12">
+                <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
+                <input class="mb-form-control" type="text" name="customer_phone" id="customer_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="15">
+              </div>
+              <div class="mb-col-md-6 mb-col-sm-12">
+                <label for="customer_mobile_phone"><?php echo esc_html_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+                <input class="mb-form-control" type="text" name="customer_mobile_phone" id="customer_mobile_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
+              </div>
+            </div>
+
+            <br/>
+
+            <!-- Aditional info -->
+            <h3 class="mb-section_title complete-section-title">
+              <?php echo esc_html_x( "Additional information", 'renting_complete', 'mybooking-wp-plugin') ?>
+            </h3>
+
+            <div class="mb-form-group mb-form-row js-mb-delivery-slot-skipper-container" style="display: none">
+              <div class="mb-col-md-6 mb-col-sm-12 js-mb-delivery-slot" style="display: none">
+                <label
+                  for="slot_time_from"><?php echo esc_html_x( 'Select the schedule that suits your needs', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+                <select class="mb-form-control" id="slot_time_from" name="slot_time_from"></select>
+              </div>
+              <div class="mb-col-md-6 mb-col-sm-12 js-mb-optional-external-driver" style="display: none">
+                <label
+                  for="slot_time_from"><?php echo esc_html_x( 'Will you need a skipper?', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+                <select class="mb-form-control" id="with_optional_external_driver" name="with_optional_external_driver">
+                  <option value=""></option>
+                  <option value="false"><?php echo esc_html_x( 'No', 'renting_complete', 'mybooking-wp-plugin') ?></option>
+                  <option value="true"><?php echo esc_html_x( 'Yes', 'renting_complete', 'mybooking-wp-plugin') ?></option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-form-group">
+              <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
+              <textarea class="mb-form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
+            </div>
+
+            <br/>
+
+            <!-- Reservation : payment (script_payment_detail) -->
+            <div id="payment_detail"></div>
+          </form>
+        </div>
       </div>
     </div>
   </section>

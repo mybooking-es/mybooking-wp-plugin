@@ -97,9 +97,10 @@
               <?php echo esc_html_x( 'Remove', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
             </div>
           <% } %>
-       </div>
-     </div>
-   <% } %>
+        </div>
+      </div>
+    </div>
+  <% } %>
 
 </script>
 
@@ -110,7 +111,7 @@
 
   <!-- // Reservation complete -->
   <div class="mb-section">
-    <div class="reservation_form_container">
+    <div class="reservation_form_container mb-section mb--bg-white mb--br--rd mb--p-1">
       <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>
       <form id="form-reservation" name="reservation_form" autocomplete="off">
         <div class="mb-form-group mb-form-row customer_component">
@@ -145,6 +146,8 @@
             <input type="text" class="mb-form-control" name="customer_mobile_phone" id="customer_mobile_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
           </div>
         </div>
+
+        <br /><br />
 
         <% if (configuration.activityCustomerVehicle) { %>
           <h3 class="mb-section_title complete-section-title"><?php echo esc_html_x( "Vehicle", 'activity_shopping_cart', 'mybooking-wp-plugin') ?></h3>
@@ -191,7 +194,6 @@
           <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?></label>
           <textarea class="mb-form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-wp-plugin') ?>"></textarea>
         </div>
-        <br>
 
         <!-- // Reservation : payment (script_payment_detail) -->
         <div id="payment_detail"></div>
@@ -249,143 +251,141 @@
   <% } %>
 
   <!-- // Payment options -->
-
   <% if (canRequestAndPay) { %>
     <div class="mb-section mybooking-payment_options">
 
-       <% if (shopping_cart.can_make_request) { %>
-         <label class="mybooking-payment_option-label" for="complete_action_request_reservation">
-           <input class="mybooking-payment_option-input" type="radio" id="complete_action_request_reservation" name="complete_action" value="request_reservation" class="complete_action">
-           <?php echo esc_html_x( 'Request reservation', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-         </label>
-       <% } %>
-
-       <% if (canPay) { %>
-         <label class="mybooking-payment_option-label" for="complete_action_pay_now">
-           <input class="mybooking-payment_option-input" type="radio" id="complete_action_pay_now" name="complete_action" value="pay_now" class="complete_action">
-           <?php echo esc_html_x( 'Pay now', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-         </label>
-       <% } %>
-    </div>
-  <% } %>
-
-  <!-- // Request reservation -->
-
-  <% if (shopping_cart.can_make_request) { %>
-    <div id="request_reservation_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>>
-      <!-- Conditions -->
-      <label for="conditions_read_request_reservation">
-        <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">
-
-        <?php if ( empty($args['terms_and_conditions']) ) { ?>
-          <?php echo esc_html_x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-        <?php } else { ?>
-          <?php /* translators: %s: terms and conditions URL */ ?>
-          <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">terms and conditions</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ) ?>
-        <?php } ?>
-      </label>
-
-      <!-- Privacy -->
-      <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
-        <br/>
-        <label for="privacy_read_request_reservation">
-          <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
-            <?php /* translators: %s: privacy policy URL */ ?>
-            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
-        </label>
-      <?php } ?>
-
-      <br/>
-
-      <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
-        <?php echo esc_html_x( 'Request reservation', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-        <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
-      </button>
-    </div>
-  <% } %>
-
-  <% if (canPay) { %>
-
-    <div id="payment_now_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>>
-      <div class="mybooking-payment_confirmation-info">
-
-        <!-- // Payment amount -->
-        <div class="mybooking-payment_amount">
-          <%=i18next.t('activities.payment.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%>
-        </div>
-
-        <!-- // Payment info -->
-        <div class="mb-alert info highlight">
-          <%=i18next.t('activities.payment.deposit_amount',{amount: configuration.formatCurrency(paymentAmount)})%>
-        </div>
-
-        <% if (shopping_cart.payment_methods.paypal_standard && shopping_cart.payment_methods.tpv_virtual) { %>
-          <div class="mb-alert secondary" role="alert">
-            <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
-          </div>
-          <div class="mybooking-payment_confirmation-box">
-           <label class="mybooking-payment_custom-label" for="payments_paypal_standard">
-            <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-            <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard"><?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-           </label>
-
-           <label class="mybooking-payment_custom-label" for="payments_credit_card">
-            <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-            <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-            <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=shopping_cart.payment_methods.tpv_virtual%>"><?php echo wp_kses_post( _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
-           </label>
-          </div>
-          <div id="payment_method_select_error"></div>
-
-        <% } else if (shopping_cart.payment_methods.paypal_standard) { %>
-          <div class="mb-alert secondary" role="alert">
-            <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
-          </div>
-          <div class="mybooking-payment_confirmation-box">
-            <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-            <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-            <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-          </div>
-
-        <% } else if (shopping_cart.payment_methods.tpv_virtual) { %>
-          <div class="mb-alert secondary" role="alert">
-            <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.', 'renting_complete', 'mybooking-wp-plugin' )  )?>
-          </div>
-          <div class="mybooking-payment_confirmation-box">
-            <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-            <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-          </div>
-        <% } %>
-      </div>
-      <div>
-        <!-- Conditions -->
-        <label for="conditions_read_pay_now">
-          <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">
-
-          <?php if ( empty($args['terms_and_conditions']) ) { ?>
-            <?php echo esc_html_x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
-          <?php } else { ?>
-            <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">terms and conditions</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ) ?>
-          <?php } ?>
+      <!-- // Request reservation -->
+      <% if (shopping_cart.can_make_request) { %>
+        <!-- // Request reservation INPUT -->
+        <label class="mybooking-payment_option-label" for="complete_action_request_reservation">
+          <input class="mybooking-payment_option-input" type="radio" id="complete_action_request_reservation" name="complete_action" value="request_reservation" class="complete_action">
+          <?php echo esc_html_x( 'Request reservation', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
         </label>
 
-        <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
-          <br/>
-          <!-- Privacy -->
-          <label for="privacy_read_pay_now">
-            <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
-            <?php /* translators: %s: privacy policy URL */ ?>
-            <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+        <!-- // Request reservation PANEL -->
+        <div id="request_reservation_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>  class="mb--p-1">
+          <!-- Conditions -->
+          <label for="conditions_read_request_reservation">
+            <input type="checkbox" id="conditions_read_request_reservation" name="conditions_read_request_reservation">
+
+            <?php if ( empty($args['terms_and_conditions']) ) { ?>
+              <?php echo esc_html_x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+            <?php } else { ?>
+              <?php /* translators: %s: terms and conditions URL */ ?>
+              <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">terms and conditions</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ) ?>
+            <?php } ?>
           </label>
-        <?php } ?>
 
-        <br/>
+          <!-- Privacy -->
+          <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
+            <br/>
+            <label for="privacy_read_request_reservation">
+              <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
+                <?php /* translators: %s: privacy policy URL */ ?>
+                <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+            </label>
+          <?php } ?>
 
-        <button type="submit" class="mb-button btn-confirm-reservation" style="float: right">
-          <%=i18next.t('activities.payment.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
-          <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
-        </button>
-      </div>
+          <br />
+
+          <button type="submit" class="mb-button btn-confirm-reservation">
+            <?php echo esc_html_x( 'Request reservation', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+            <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
+          </button>
+        </div>
+      <% } %>
+
+      <!-- // Pay now -->
+      <% if (canPay) { %>
+        <!-- // Pay now INPUT -->
+        <label class="mybooking-payment_option-label" for="complete_action_pay_now">
+          <input class="mybooking-payment_option-input" type="radio" id="complete_action_pay_now" name="complete_action" value="pay_now" class="complete_action">
+          <?php echo esc_html_x( 'Pay now', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+        </label>
+
+        <!-- // Pay now PANEL -->
+        <div id="payment_now_container" <% if (canRequestAndPay) { %>style="display:none"<%}%>  class="mb--p-1">
+          <div class="mybooking-payment_confirmation-info">
+
+            <!-- // Payment amount -->
+            <div class="mybooking-payment_amount">
+              <%=i18next.t('activities.payment.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%>
+            </div>
+
+            <!-- // Payment info -->
+            <div class="mb-alert info highlight">
+              <%=i18next.t('activities.payment.deposit_amount',{amount: configuration.formatCurrency(paymentAmount)})%>
+            </div>
+
+            <% if (shopping_cart.payment_methods.paypal_standard && shopping_cart.payment_methods.tpv_virtual) { %>
+              <div class="mb-alert secondary" role="alert">
+                <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
+              </div>
+              <div class="mybooking-payment_confirmation-box">
+              <label class="mybooking-payment_custom-label" for="payments_paypal_standard">
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+                <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard"><?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              </label>
+
+              <label class="mybooking-payment_custom-label" for="payments_credit_card">
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+                <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=shopping_cart.payment_methods.tpv_virtual%>"><?php echo wp_kses_post( _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
+              </label>
+              </div>
+              <div id="payment_method_select_error"></div>
+
+            <% } else if (shopping_cart.payment_methods.paypal_standard) { %>
+              <div class="mb-alert secondary" role="alert">
+                <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
+              </div>
+              <div class="mybooking-payment_confirmation-box">
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+              </div>
+
+            <% } else if (shopping_cart.payment_methods.tpv_virtual) { %>
+              <div class="mb-alert secondary" role="alert">
+                <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.', 'renting_complete', 'mybooking-wp-plugin' )  )?>
+              </div>
+              <div class="mybooking-payment_confirmation-box">
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+              </div>
+            <% } %>
+          </div>
+          <div>
+            <!-- Conditions -->
+            <label for="conditions_read_pay_now">
+              <input type="checkbox" id="conditions_read_pay_now" name="conditions_read_pay_now">
+
+              <?php if ( empty($args['terms_and_conditions']) ) { ?>
+                <?php echo esc_html_x( 'I have read and hereby accept the terms and conditions', 'activity_shopping_cart', 'mybooking-wp-plugin' ) ?>
+              <?php } else { ?>
+                <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">terms and conditions</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ) ?>
+              <?php } ?>
+            </label>
+
+            <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
+              <br/>
+              <!-- Privacy -->
+              <label for="privacy_read_pay_now">
+                <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
+                <?php /* translators: %s: privacy policy URL */ ?>
+                <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'activity_shopping_cart', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+              </label>
+            <?php } ?>
+
+            <br />
+
+            <button type="submit" class="mb-button btn-confirm-reservation">
+              <%=i18next.t('activities.payment.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
+              <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
+            </button>
+          </div>
+        </div>
+      <% } %>
     </div>
   <% } %>
 </script>

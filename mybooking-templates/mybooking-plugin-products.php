@@ -40,18 +40,18 @@
 
 					  <div class="mybooking-product_block">
 							<?php if ( $mybooking_product->from_price > 0 ) { ?>
-							<div class="mybooking-product_header">
-                <div class="mybooking-product_price">
+								<div class="mybooking-product_header">
+									<div class="mybooking-product_price">
 
-										<span class="mybooking-product_price-from">
-											<?php echo esc_html_x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?>
-										</span>
-										<span class="mybooking-product_amount">
-											<?php echo esc_html( number_format_i18n($mybooking_product->from_price) ) ?>€
-										</span>
+											<span class="mybooking-product_price-from">
+												<?php echo esc_html_x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?>
+											</span>
+											<span class="mybooking-product_amount">
+												<?php echo esc_html( number_format_i18n($mybooking_product->from_price) ) ?>€
+											</span>
 
+									</div>
 								</div>
-							</div>
 							<?php } ?>
 
 							<div class="mybooking-product_body">

@@ -284,7 +284,7 @@
 
 /** CONTAINERS **/
 
-.mb-section {
+.mb-section:not(:last-child) {
   margin-bottom: 2rem;
 }
 

@@ -482,16 +482,10 @@
 /* Payment options */
 
 .mybooking-payment_options {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--mb-border-color);
+
 } @media ( min-width: 575.98px ) {
   .mybooking-payment_options {
-    flex-flow: row;
+
   }
 }
 

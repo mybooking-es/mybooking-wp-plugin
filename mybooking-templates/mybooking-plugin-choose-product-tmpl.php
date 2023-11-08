@@ -117,10 +117,10 @@
       <% } %>
     </div>
     <div class="mb-row">
-      <div class="mb-col-sm-10">
+      <div class="mb-col-md-9">
         <h4>Total</h4>
       </div>
-      <div class="mb-col-sm-2">
+      <div class="mb-col-md-3 text-right">
         <h4 id="variant_product_total">
           <span id="variant_product_total_quantity"> <%=configuration.formatCurrency(total)%></span>
         </h4>

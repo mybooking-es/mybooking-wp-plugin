@@ -222,5 +222,6 @@
     <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?>
     <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
   </button>
+  <br/>
 <% } %>
 </script>
