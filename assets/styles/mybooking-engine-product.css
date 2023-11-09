@@ -503,9 +503,8 @@ div.mybooking-product {
 [class*="mybooking-process_"] .btn-choose-variant,
 [class*="mybooking-process_"] .btn-confirm-selection {
   min-height: var(--mb-product-btn-height)!important;
-  margin: 0;
+  margin: 0 1rem;
   padding: 0.3rem 2rem;
-  // font-size: 1.1rem;
   text-transform: uppercase!important;
   letter-spacing: 1px;
 }
@@ -684,7 +683,7 @@ h2.mybooking-product_calendar-date-range {
   padding: 0;
   font-size: 1em;
   min-width: 42px!important;
-} @media (max-width: 375px ) {
+} @media (max-width: 768px ) {
 	.mybooking-product_calendar-date {
     min-width: 32px!important;
     font-size: 0.8rem;

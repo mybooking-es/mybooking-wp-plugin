@@ -15,7 +15,7 @@
   <div class="entry-content">
     <div class="mybooking mybooking-product_detail mybooking-product_container">
       <div class="mb-row">
-        <div class="mb-col-md-12">
+        <div class="mb-col-md-12 mb-col-lg-12">
           <div class="mybooking-product_detail-header">
             <div class="mybooking-product_detail-title">
               <h1><?php echo esc_html( $args->name ) ?></h1>

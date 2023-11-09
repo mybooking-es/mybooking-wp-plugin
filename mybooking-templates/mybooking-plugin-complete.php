@@ -30,7 +30,7 @@
       
       <div class="mb-col-md-6 mb-col-lg-8">
         <!-- Extras Selection (script_detailed_extra) -->
-        <div id="extras_listing" class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1"></div>
+        <div id="extras_listing"></div>
 
         <!-- Reservation complete form -->
         <div class="reservation_form_container mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
