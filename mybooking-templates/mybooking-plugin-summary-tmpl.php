@@ -225,7 +225,7 @@
               booking.return_place_cost > 0 ||
               booking.driver_age_cost > 0 ||
               booking.category_supplement_1_cost > 0 ) ) { %>
-      <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+      <div class="mb-section mb-panel-container">
         <!-- // Extras -->
         <% if (booking.booking_extras.length > 0) { %>
           <div class="mb-section">

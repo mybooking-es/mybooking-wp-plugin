@@ -21,7 +21,7 @@
   <!-- // Product details -->
 
   <% if (shopping_cart.items.length > 0) { %>
-    <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+    <div class="mb-section mb-panel-container">
       <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>
         <div class="mybooking-product_info-block">
           <% if (shopping_cart.items[idx].photo_full && shopping_cart.items[idx].photo_full !== '') { %>
@@ -273,7 +273,7 @@
   <% } %>
 
   <!-- // Summary details -->
-  <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+  <div class="mb-section mb-panel-container">
     <div class="mybooking-summary_header">
       <div class="mybooking-summary_details-title">
         <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
@@ -350,7 +350,7 @@
   </div>
 
   <% if ( (shopping_cart.driver_age_rule_description && shopping_cart.driver_age_rule_description !== '') || configuration.promotionCode ) { %>
-    <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+    <div class="mb-section mb-panel-container">
       <!-- Age rule applicate  -->
       <% if (shopping_cart.driver_age_rule_description && shopping_cart.driver_age_rule_description !== '') { %>
         <div class="mb-section">
@@ -389,7 +389,7 @@
 
 <script type="text/template" id="script_detailed_extra">
   <% if (coverages && coverages.length > 0 || (extras && extras.length > 0 && extras.filter((theExtra) => theExtra.available).length > 0)) {%>
-    <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1 mb--mb-2">
+    <div class="mb-section mb-panel-container mb--mb-2">
       <% if (coverages && coverages.length > 0) {%>
         <div class="mb-section">
           <h3 class="mb-section_title">

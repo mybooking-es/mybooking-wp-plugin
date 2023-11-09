@@ -240,7 +240,7 @@
 										booking.return_place_cost > 0 ||
 										booking.driver_age_cost > 0 ||
 										booking.category_supplement_1_cost > 0 ) ) { %>
-						<div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+						<div class="mb-section mb-panel-container">
 							<!-- // Extras -->
 							<% if (booking.booking_extras.length > 0) { %>
 								<div class="mb-section">
@@ -485,7 +485,7 @@
       
       <!-- // Address -->
       <% if (configuration.rentingFormFillDataAddress) { %>
-        <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+        <div class="mb-section mb-panel-container">
 					<h2>
 						<?php echo esc_html_x( 'Customer address', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 					</h2>
@@ -537,7 +537,7 @@
       <!-- // Drivers -->
       <% if (!booking.has_optional_external_driver) { %>
         <% if (configuration.rentingFormFillDataDriverDetail) { %>
-					<div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+					<div class="mb-section mb-panel-container">
 						<!-- Driver information -->
 						<% if (booking.driver_type === 'driver') { %>
 							<h2 class="mb-form_title">
@@ -894,7 +894,7 @@
 
       <!-- // Flight -->
       <% if (configuration.rentingFromFillDataFlight) { %>
-        <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+        <div class="mb-section mb-panel-container">
 					<h2 class="mb-form_title"><?php echo esc_html_x('Flight', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h2>
 
           <div class="mb-form-row">
@@ -942,7 +942,7 @@
       
       <!-- // Named resources -->
       <% if (configuration.rentingFormFillDataNamedResources) { %>
-        <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+        <div class="mb-section mb-panel-container">
           <% for (var idx=0; idx<booking.booking_lines.length; idx++) { %>
               <% var booking_line = booking.booking_lines[idx]; %>
               <h3 class="mb-form_title"><%=booking_line.quantity%> x <%=booking_line.item_description%></h3>
@@ -1105,7 +1105,7 @@
 <!-- PAYMENT BLOCK ------------------------------------------------------------>
 
 <script type="text/tmpl" id="script_payment_detail">
-  <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+  <div class="mb-section mb-panel-container">
     <div class="mybooking-payment_amount">
       <%= i18next.t('myReservation.pay.total_payment', {amount:configuration.formatCurrency(amount) }) %>
     </div>

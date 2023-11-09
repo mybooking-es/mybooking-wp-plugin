@@ -196,7 +196,7 @@
 <script type="text/template" id="script_transfer_detailed_extra">
 
   <% if (extras && extras.length > 0) {%>
-    <div class="mb-section mb--bg-white mb--b-1 mb--br--rd mb--p-1">
+    <div class="mb-section mb-panel-container">
       <h3 class="mb-section_title complete-section-title">
         <?php echo esc_html_x( 'Extras', 'transfer_checkout', 'mybooking-wp-plugin') ?>
       </h3>

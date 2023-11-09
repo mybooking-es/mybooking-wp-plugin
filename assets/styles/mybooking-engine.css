@@ -120,6 +120,10 @@
   --mb-calendar-first-last-date:  var(--mb-primary-selected-date);
   --mb-calendar-checked-date:  var(--mb-secondary-selected-date);
 
+  /* Panel container */
+  --mb-panel-container-border-radius: var(--mb-border-radius);
+  --mb-panel-container-border-color: transparent;
+  --mb-panel-container-text-color: var(--mb-text-color);
 
   /* Complete payment buttons */
   --mb-payment-option-btn-bg: var(--mb-dark-background-color);
@@ -300,6 +304,14 @@
   
 }
 
+/* Container panel used on complete, summary and my reservation */
+.mb-panel-container {
+  border-radius: var(--mb-panel-container-border-radius)!important;
+  border: 1px solid var(--mb-panel-container-border-color)!important;
+  background-color: white!important;
+  padding: 1rem;
+  color: var(--mb-panel-container-text-color)!important;
+}
 
 /** FORMS & FIELDS **/
 .mybooking * {
