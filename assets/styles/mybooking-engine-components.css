@@ -103,11 +103,10 @@
 }
 
 .mybooking-summary_status {
-  background-color: var(--mb-background-color);
+  background-color: var(--brand-primary);
   padding: 1.25rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--mb-border-color);
-  color: #666;
+  color: var(--mb-negative-text-color);
   font-size: 1.4em;
   text-align: center;
   line-height: 1.1;
@@ -549,7 +548,7 @@
   margin-bottom: 2rem;
 } @media ( min-width: 575.98px ) {
   .mybooking-payment_amount {
-    font-size: 2.5em;
+    font-size: 2.3em;
   }
 }
 

@@ -112,7 +112,10 @@
   <!-- // Reservation complete -->
   <div class="mb-section">
     <div class="reservation_form_container mb-section mb-panel-container">
-      <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>
+      <h3 class="mb-section_title complete-section-title customer_component">
+        <?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?>
+      </h3>
+
       <form id="form-reservation" name="reservation_form" autocomplete="off">
         <div class="mb-form-group mb-form-row customer_component">
           <div class="mb-col-md-6 mb-col-sm-12">
@@ -146,8 +149,6 @@
             <input type="text" class="mb-form-control" name="customer_mobile_phone" id="customer_mobile_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Alternative phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:" maxlength="15">
           </div>
         </div>
-
-        <br /><br />
 
         <% if (configuration.activityCustomerVehicle) { %>
           <h3 class="mb-section_title complete-section-title"><?php echo esc_html_x( "Vehicle", 'activity_shopping_cart', 'mybooking-wp-plugin') ?></h3>
@@ -205,14 +206,12 @@
 <!-- Script payment -->
 
 <script type="text/tmpl" id="script_payment_detail">
-
   <?php
     $mybooking_engine_privacy_page = get_privacy_policy_url();
   ?>
 
+  <!-- // Total -->
   <% if (shopping_cart.use_rates) { %>
-    <!-- // Total -->
-
     <div class="mb-section">
       <div class="mybooking-summary_total">
         <div class="mybooking-summary_total-label">
@@ -233,9 +232,7 @@
   <% } %>
 
   <!-- // Payment hidden inputs -->
-
   <% if (canPay) { %>
-
     <% if (shopping_cart.payment_methods.paypal_standard && shopping_cart.payment_methods.tpv_virtual) { %>
       <!-- // The payment method will be selected later -->
       <input type="hidden" name="payment" value="none">

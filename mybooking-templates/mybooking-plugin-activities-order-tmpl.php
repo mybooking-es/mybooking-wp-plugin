@@ -38,109 +38,108 @@
     <!-- // Products -->
 
     <% var customers_data = false; %>
-    <div id="selected_products">
+    <div id="selected_products" class="mb-section">
 
       <% for (idx in order.items) { %>
         <% if (typeof order.items[idx].customers !== 'undefined' && typeof order.items[idx].customer_questions !== 'undefined') { %>
             <% customers_data = true; %>
         <% } %>
-        <div class="mb-section">
-          <div class="mb-card">
 
-            <!-- // Product photo -->
-            <% if (order.items[idx].photo_full != null) { %>
-              <img class="mybooking-product_image" src="<%=order.items[idx].photo_full%>" alt="">
+        <div class="mb-card">
 
-            <% } else { %>
-              <div class="mybooking-product_image-fallback">
-                <i class="fa fa-camera" aria-hidden="true"></i>
-              </div>
-            <% } %>
+          <!-- // Product photo -->
+          <% if (order.items[idx].photo_full != null) { %>
+            <img class="mybooking-product_image" src="<%=order.items[idx].photo_full%>" alt="">
 
-            <div class="mb-card_body">
+          <% } else { %>
+            <div class="mybooking-product_image-fallback">
+              <i class="fa fa-camera" aria-hidden="true"></i>
+            </div>
+          <% } %>
 
-              <!-- // Product name -->
-              <span class="mybooking-product_name">
-                <%=order.items[idx].item_description_customer_translation%>
+          <div class="mb-card_body">
+
+            <!-- // Product name -->
+            <span class="mybooking-product_name">
+              <%=order.items[idx].item_description_customer_translation%>
+            </span>
+
+            <div class="mybooking-activity_date">
+              <span class="mybooking-activity_date-item">
+                <%= configuration.formatDate(order.items[idx].date) %>
               </span>
+              <span class="mybooking-activity_date-item">
+                <%= order.items[idx].time %>
+              </span>
+            </div>
 
-              <div class="mybooking-activity_date">
-                <span class="mybooking-activity_date-item">
-                  <%= configuration.formatDate(order.items[idx].date) %>
-                </span>
-                <span class="mybooking-activity_date-item">
-                  <%= order.items[idx].time %>
-                </span>
-              </div>
-
-              <% if (order.allow_select_places_for_reservation || order.use_rates) { %>
-                <% if (order.allow_select_places_for_reservation) { %>
-                  <% if (order.use_rates) { %>
-                    <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
-                      <div class="mybooking-summary_activities">
-                        <div class="mybooking-summary_activity-item">
-                          <span class="mb-badge info mybooking-summary_activity-quantity">
-                            <%=order.items[idx]['items'][x].quantity %>
-                          </span>
-                          <span class="mybooking-summary_activity-name">
-                            <%=order.items[idx]['items'][x].item_price_description %> x
-                          </span>
-                          <span class="mybooking-summary_activity-amount">
-                            <%=configuration.formatCurrency(order.items[idx]['items'][x].item_unit_cost) %>
-                          </span>
-                        </div>
-                        <span class="mybooking-summary_activity-amount">
-                          <%=configuration.formatCurrency(order.items[idx]['items'][x].item_cost) %>
-                        </span>
-                      </div>
-                    <% } %>
-
-                  <% } else { %>
-                    <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
-                      <div class="mybooking-summary_activities">
-                        <span class="mybooking-summary_activity-quantity">
+            <% if (order.allow_select_places_for_reservation || order.use_rates) { %>
+              <% if (order.allow_select_places_for_reservation) { %>
+                <% if (order.use_rates) { %>
+                  <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
+                    <div class="mybooking-summary_activities">
+                      <div class="mybooking-summary_activity-item">
+                        <span class="mb-badge info mybooking-summary_activity-quantity">
                           <%=order.items[idx]['items'][x].quantity %>
                         </span>
                         <span class="mybooking-summary_activity-name">
-                          <%=order.items[idx]['items'][x].item_price_description %>
+                          <%=order.items[idx]['items'][x].item_price_description %> x
+                        </span>
+                        <span class="mybooking-summary_activity-amount">
+                          <%=configuration.formatCurrency(order.items[idx]['items'][x].item_unit_cost) %>
                         </span>
                       </div>
-                    <% } %>
+                      <span class="mybooking-summary_activity-amount">
+                        <%=configuration.formatCurrency(order.items[idx]['items'][x].item_cost) %>
+                      </span>
+                    </div>
+                  <% } %>
+
+                <% } else { %>
+                  <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
+                    <div class="mybooking-summary_activities">
+                      <span class="mybooking-summary_activity-quantity">
+                        <%=order.items[idx]['items'][x].quantity %>
+                      </span>
+                      <span class="mybooking-summary_activity-name">
+                        <%=order.items[idx]['items'][x].item_price_description %>
+                      </span>
+                    </div>
                   <% } %>
                 <% } %>
-
-                <!-- // Show the total -->
-                <% if (order.use_rates) { %>
-                  <div class="mybooking-summary_activities-total">
-                    <span class="mybooking-summary_activity-total-label">
-                      <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
-                    </span>
-                    <span class="mybooking-summary_activity-total-amount">
-                      <%=configuration.formatCurrency(order.items[idx]['total'])%>
-                    </span>
-                  </div>
-                <% } %>
-
-                <% if (order.use_rates) { %>
-                  <div class="mybooking-summary_activities-total">
-                    <span class="mybooking-summary_activity-total-label">
-                      <?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?>
-                    </span>
-                    <span class="mybooking-summary_activity-total-amount">
-                      <%=configuration.formatCurrency(order.total_paid)%>
-                    </span>
-                  </div>
-                  <div class="mybooking-summary_activities-total">
-                    <span class="mybooking-summary_activity-total-label">
-                      <?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?>
-                    </span>
-                    <span class="mybooking-summary_activity-total-amount mb-text-danger">
-                      <%=configuration.formatCurrency(order.total_pending)%>
-                    </span>
-                  </div>
-                <% } %>
               <% } %>
-            </div>
+
+              <!-- // Show the total -->
+              <% if (order.use_rates) { %>
+                <div class="mybooking-summary_activities-total">
+                  <span class="mybooking-summary_activity-total-label">
+                    <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                  <span class="mybooking-summary_activity-total-amount">
+                    <%=configuration.formatCurrency(order.items[idx]['total'])%>
+                  </span>
+                </div>
+              <% } %>
+
+              <% if (order.use_rates) { %>
+                <div class="mybooking-summary_activities-total">
+                  <span class="mybooking-summary_activity-total-label">
+                    <?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                  <span class="mybooking-summary_activity-total-amount">
+                    <%=configuration.formatCurrency(order.total_paid)%>
+                  </span>
+                </div>
+                <div class="mybooking-summary_activities-total">
+                  <span class="mybooking-summary_activity-total-label">
+                    <?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                  <span class="mybooking-summary_activity-total-amount mb-text-danger">
+                    <%=configuration.formatCurrency(order.total_pending)%>
+                  </span>
+                </div>
+              <% } %>
+            <% } %>
           </div>
         </div>
       <% } %>
@@ -152,9 +151,6 @@
       <div id="customers_data">
         <form class="mybooking-form" id="order_information_form" name="order_information_form">
           <div class="mb-card">
-            <div class="mb-card_header">
-               <h2><?php echo esc_html_x( 'Complete data', 'activity_my_reservation', 'mybooking-wp-plugin') ?></h2>
-            </div>
             <div class="mb-card_body">
               <div class="mb-alert info highlight">
                 <?php echo esc_html_x( 'Please complete the information to speed up the delivery process on the scheduled date', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
@@ -484,9 +480,83 @@
   </div>
 
   <div class="mb-col-md-6 mb-col-lg-4">
+    <!-- // Payment -->
+    <% if (canPay && paymentAmount > 0) { %>
+      <div class="mb-section mb-panel-container">
+        <form name="payment_form">
+          <div id="payment_now_container">
+            <div class="mybooking-payment_amount">
+              <%=i18next.t('activities.payment.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%>
+            </div>
+
+            <!-- // Payment amount -->
+            <% if (payment === 'deposit' || payment === 'total') { %>
+              <div id="payment_amount_container" class="mb-alert info highlight">
+                <%=i18next.t('activities.payment.deposit_amount',{amount: configuration.formatCurrency(paymentAmount)})%>
+              </div>
+            <% } else if (payment === 'pending') { %>
+              <div id="payment_amount_container" class="mb-alert info highlight">
+                <%=i18next.t('activities.payment.pending_amount',{amount: configuration.formatCurrency(paymentAmount)})%>
+              </div>
+            <% } %>
+
+            <!-- // Payment method -->
+            <% if (order.payment_methods.paypal_standard && order.payment_methods.tpv_virtual) { %>
+              <div class="mb-alert secondary" role="alert">
+                <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
+              </div>
+              <div class="mybooking-payment_confirmation-box">
+              <label class="mybooking-payment_custom-label" for="payments_paypal_standard">
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+                <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard"><?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              </label>
+
+              <label class="mybooking-payment_custom-label" for="payments_credit_card">
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+                <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=order.payment_methods.tpv_virtual%>"><?php echo wp_kses_post( _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
+              </label>
+              </div>
+              <div class="mb-row">
+                <div class="mb-form-group mb-col-md-12">
+                  <div id="payment_method_select_error"></div>
+                </div>
+              </div>  
+
+            <% } else if (order.payment_methods.paypal_standard) { %>
+              <div class="mb-alert secondary" role="alert">
+                <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
+              </div>
+              <div class="mybooking-payment_confirmation-box">
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>              
+                <input type="hidden" name="payment_method_value" value="paypal_standard">
+              </div>
+
+            <% } else if (order.payment_methods.tpv_virtual) { %>
+              <div class="mb-alert secondary" role="alert">
+                <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.', 'renting_complete', 'mybooking-wp-plugin' )  )?>
+              </div>
+              <div class="mybooking-payment_confirmation-box">
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+                <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+              </div>
+              <input type="hidden" name="payment_method_value" value="<%=order.payment_methods.tpv_virtual%>"/>
+            <% } %>
+
+            <button class="mb-button block" id="btn_pay" type="submit">
+              <%=i18next.t('activities.payment.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
+            </button>
+            
+            <div id="payment_error" class="mb-alert danger" style="display:none"></div>
+
+          </div>
+        </form>
+      </div>
+    <% } %>
 
     <!-- // Customers detail -->
-
     <div class="mb-section">
       <div class="mybooking-summary_details-title">
         <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
@@ -515,7 +585,6 @@
         <% } %>
 
         <% if (configuration.activityCustomerVehicle) { %>
-
             <li class="mb-list-item">
               <% if (order.customer_stock_brand && order.customer_stock_brand != '') { %>
                 <%=order.customer_stock_brand%>
@@ -530,97 +599,8 @@
                 <%=order.customer_stock_color%>
               <% } %>
             </li>
-
         <% } %>
-        
       </ul>
     </div>
-
-    <!-- // Payment -->
-
-    <% if (canPay && paymentAmount > 0) { %>
-
-      <form name="payment_form">
-        <div id="payment_now_container">
-
-          <div class="mybooking-payment_amount">
-            <%=i18next.t('activities.payment.total_payment', {amount: configuration.formatCurrency(paymentAmount)})%>
-          </div>
-
-          <!-- // Payment amount -->
-          <% if (payment === 'deposit' || payment === 'total') { %>
-            <div id="payment_amount_container" class="mb-alert info highlight">
-               <%=i18next.t('activities.payment.deposit_amount',{amount: configuration.formatCurrency(paymentAmount)})%>
-            </div>
-          <% } else if (payment === 'pending') { %>
-            <div id="payment_amount_container" class="mb-alert info highlight">
-               <%=i18next.t('activities.payment.pending_amount',{amount: configuration.formatCurrency(paymentAmount)})%>
-            </div>
-          <% } %>
-
-          <!-- // Payment method -->
-          <% if (order.payment_methods.paypal_standard && order.payment_methods.tpv_virtual) { %>
-            <div class="mb-alert secondary" role="alert">
-              <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
-            </div>
-            <div class="mybooking-payment_confirmation-box">
-             <label class="mybooking-payment_custom-label" for="payments_paypal_standard">
-              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-              <input type="radio" id="payments_paypal_standard" name="payment_method_select" class="payment_method_select" value="paypal_standard"><?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-             </label>
-
-             <label class="mybooking-payment_custom-label" for="payments_credit_card">
-              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-              <input type="radio" id="payments_credit_card" name="payment_method_select" class="payment_method_select" value="<%=order.payment_methods.tpv_virtual%>"><?php echo wp_kses_post( _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
-             </label>
-            </div>
-            <div class="mb-row">
-              <div class="mb-form-group mb-col-md-12">
-                <div id="payment_method_select_error"></div>
-              </div>
-            </div>  
-
-          <% } else if (order.payment_methods.paypal_standard) { %>
-            <div class="mb-alert secondary" role="alert">
-              <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
-            </div>
-            <div class="mybooking-payment_confirmation-box">
-              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>              
-              <input type="hidden" name="payment_method_value" value="paypal_standard">
-            </div>
-
-          <% } else if (order.payment_methods.tpv_virtual) { %>
-            <div class="mb-alert secondary" role="alert">
-              <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.', 'renting_complete', 'mybooking-wp-plugin' )  )?>
-            </div>
-            <div class="mybooking-payment_confirmation-box">
-              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
-              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-            </div>
-            <input type="hidden" name="payment_method_value" value="<%=order.payment_methods.tpv_virtual%>"/>
-          <% } %>
-
-          <div class="mb-row">
-            <div class="mb-form-group mb-col-md-12">
-              <button class="mb-button block" id="btn_pay" type="submit">
-                <%=i18next.t('activities.payment.payment_button',{amount: configuration.formatCurrency(paymentAmount)})%>
-              </button>
-            </div>
-          </div>
-          
-          <div class="mb-row">
-            <div class="mb-form-group mb-col-md-12">
-              <div id="payment_error" class="mb-alert danger" style="display:none">
-              </div>
-            </div>
-          </div>  
-
-        </div>
-
-      </form>
-    <% } %>
   </div>
 </script>
