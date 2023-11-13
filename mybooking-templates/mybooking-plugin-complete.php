@@ -36,7 +36,9 @@
         <div class="reservation_form_container mb-section mb-panel-container">
           <form class="mybooking-form" id="form-reservation" name="reservation_form" autocomplete="off">
             <!-- Customer data -->
-            <h2 class="mb-section_title complete-section-title customer_component"><?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?></h2>
+            <h3 class="mb-section_title complete-section-title customer_component">
+              <?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-wp-plugin') ?>
+            </h3>
 
             <div class="mb-form-group mb-form-row customer_component">
               <div class="mb-col-md-6 mb-col-sm-12">

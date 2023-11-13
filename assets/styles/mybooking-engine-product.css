@@ -61,6 +61,7 @@
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  align-items: center;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,6 +71,10 @@
   -ms-flex-direction: column;
   flex-direction: column;
   padding-bottom: 0;
+}
+
+.mybooking-product_grid .mybooking-product_footer .mybooking-product_footer-selector {
+  width: 100%;
 }
 
 .product-variant-resume {
@@ -380,7 +385,8 @@ div.mybooking-product {
 }
 
 .mybooking-product_quantity {
-  color: var(--mb-info-color);
+  color: var(--mb-text-color);
+  text-wrap: nowrap;
 }
 
 .mybooking-product_grid .mybooking-product_description {

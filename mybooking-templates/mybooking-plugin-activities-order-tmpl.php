@@ -152,7 +152,7 @@
         <form class="mybooking-form" id="order_information_form" name="order_information_form">
           <div class="mb-card">
             <div class="mb-card_body">
-              <div class="mb-alert info highlight">
+              <div class="mb-alert info">
                 <?php echo esc_html_x( 'Please complete the information to speed up the delivery process on the scheduled date', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
               </div>
 

@@ -42,12 +42,7 @@
 
 /** SUMMARY DETAILS **/
 
-.mybooking-details_container {
-  padding: 0 0.5rem;
-}
-
 /* Summary header */
-
 .mybooking-summary_header {
   display: flex;
   flex-flow: row nowrap;
@@ -103,13 +98,14 @@
 }
 
 .mybooking-summary_status {
-  background-color: var(--brand-primary);
-  padding: 1.25rem;
+  background-color: var(--mb-accent-color);
+  padding: .75rem 1.25rem!important;
   margin-bottom: 1rem;
   color: var(--mb-negative-text-color);
   font-size: 1.4em;
   text-align: center;
   line-height: 1.1;
+  border-radius: var(--mb-border-radius);
 }
 
 /* Summary data */
@@ -218,19 +214,67 @@
   font-size: inherit;
 }
 
-.mybooking-summary_deposit {
+.mybooking-summary_price {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid white;
+}
+
+.mybooking-summary_price .mybooking-product_price {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  flex-basis: auto;
+}
+
+.mybooking-summary_price .mybooking-product_taxes {
+  margin-top: 0.5rem;
+}
+
+.mybooking-summary_price .mybooking-product_discount .mybooking-product_price {
+  flex-direction: row;
+  gap: 0.3rem;
+} @media ( max-width: 575.98px ) {
+  .mybooking-summary_price .mybooking-product_discount .mybooking-product_price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.mybooking-summary_price,
+.mybooking-summary_deposit,
+.mybooking-summary_deposit-total {
   padding: 0.5rem;
-  margin-bottom: 2rem;
-  background: var(--mb-warning-color);
-  color: var(--mb-product-total-color);
   font-size: 1em;
   font-weight: 700;
 }
 
-/* Summary total */
+.mybooking-summary_deposit,
+.mybooking-summary_deposit-pretotal,
+.mybooking-summary_deposit-total {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+}
 
+.mybooking-summary_price,
+.mybooking-summary_deposit {
+  background-color: var(--mb-light-color);
+}
+.mybooking-summary_deposit-pretotal {
+}
+
+.mybooking-summary_deposit-total {
+  background-color: var(--mb-warning-color);
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--mb-product-total-border);
+  border-radius: var(--mb-border-radius);
+  margin-top: 0.5rem;
+}
+
+/* Summary total */
 .mybooking-summary_total {
   display: flex;
   justify-content: space-between;

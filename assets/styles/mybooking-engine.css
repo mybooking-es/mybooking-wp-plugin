@@ -613,9 +613,10 @@ button.mb-button a:hover  {
   padding: .75rem 1.25rem!important; /* Forces any element inside to get alert's padding */
   margin-bottom: 1rem;
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: var(--mb-border-radius);
   color: var(--mb-dark-background-color);
   line-height: 1.2;
+  text-align: center;
 }
 
 .mb-alert.light         { background-color: var(--mb-light-color) }
@@ -831,14 +832,22 @@ button.mb-button a:hover  {
 }
 
 /* Complete page */
-.mybooking-process_complete .mybooking-product_description {
+.mybooking-process_complete .complete-section-title {
+  margin-bottom: 0.7rem;
+}
+
+/* Complete page, Summary page, My-reservation page */
+.mybooking-process_complete .mybooking-product_description,
+.mybooking-process_summary .mybooking-product_description,
+.mybooking-process_reservation .mybooking-product_description {
   max-height: 10rem!important;
   overflow-y: auto;
   margin-bottom: 1rem;
 }
 
-.mybooking-process_complete .complete-section-title {
-  margin-bottom: 0.7rem;
+.mybooking-process_summary .mybooking-product_description,
+.mybooking-process_reservation .mybooking-product_description {
+  max-height: 7rem!important;
 }
 
 
