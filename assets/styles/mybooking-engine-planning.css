@@ -259,7 +259,6 @@
 	-webkit-appearance: none;
 	align-items: center;
 	border: 1px solid transparent;
-	border-radius: 4px;
 	box-shadow: none;
 	display: inline-flex;
 	font-size: 1rem;
@@ -272,18 +271,32 @@
 	padding-top: calc(0.375em - 1px);
 	position: relative;
 	vertical-align: top;
+	border-radius: 4px;
 	background-color: #fff;
 	border-color: #dbdbdb;
-	border-radius: 4px;
 	color: #363636;
+}
+
+.mybooking-planning-content .button[data-direction="back"] {
+	margin-left: 1rem;
+}
+
+.mybooking-planning-content .button,
+.mybooking-planning-content .button[disabled]:hover {
+	border-radius: var(--mb-button-border-radius);
+	background-color: var(--mb-button-bg-color);
+	border-color: var(--mb-button-border-color);
+	color: var(--mb-button-color);
+}
+
+.mybooking-planning-content .button:hover {
+	background-color: var(--mb-button-bg-color-hover);
+	border-color: var(--mb-button-border-color-hover);
+	color: var(--white);
+	opacity: 1;
 }
 
 .mybooking-planning-content .button[disabled] {
 	opacity: 0.6;
 	cursor: not-allowed;
-}
-
-.mybooking-planning-content .button[disabled]:hover {
-	background: initial;
-   color: initial;
 }

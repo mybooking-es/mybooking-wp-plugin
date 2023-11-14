@@ -185,9 +185,6 @@
 			<!-- // Family selector -->
 		  <% if (not_hidden_family_id && configuration.selectFamily) { %>
 		    <div class="widget_family" style="display: none">
-					<i class="mybooking-selector_field-icon">
-						<span class="dashicons dashicons-list-view"></span>
-					</i>
 		      <label for="family_id">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
 					</label>
@@ -328,9 +325,6 @@
 			<!-- // Family selector -->
 			<% if (not_hidden_family_id && configuration.selectFamily) { %>
 				<div class="widget_family" style="display: none">
-					<i class="mybooking-selector_field-icon">
-						<span class="dashicons dashicons-list-view"></span>
-					</i>
 					<label for="family_id">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
 					</label>

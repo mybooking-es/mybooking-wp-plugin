@@ -4,15 +4,6 @@
     <% if (product.photos && product.photos.length > 0) { %>
       <div class="mybooking-modal_product-container <% if (!product.description || product.description.replace(/<p><br><\/p>/g, '') === '') { %>mb-col-md-12<% } else { %>mb-col-sm-12 mb-col-md-6 mb-col-lg-8<% } %>">
         <div id="mybooking-modal_product-gallery" class="mybooking-modal_product-gallery">
-          <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
-            <span class="js-product-toogle-video" data-target="video">
-              <?php echo esc_html_x( 'Show video', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-            </span>
-            <span class="js-product-toogle-video" data-target="image" style="display: none">
-              <?php echo esc_html_x( 'Show gallery', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-            </span>
-          <% } %>
-          <br />
           <div class="mybooking-carousel-inner">
             <% for (var idx=0; idx<product.photos.length; idx++) { %>
               <div class="mybooking-carousel-item">
@@ -20,7 +11,6 @@
               </div>
             <% } %>
           </div>
-          <div id="mybooking_transfer_product_detail_video"></div>
         </div>
       </div>
     <% } %>
