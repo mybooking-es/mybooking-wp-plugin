@@ -21,7 +21,7 @@
   <!-- Reservation detail sticky -->
   <div id="reservation_detail_sticky" class="sticky-top"></div>
 
-  <section class="mybooking mybooking-page-container mybooking-process_complete">
+  <section class="mybooking mybooking-process_complete mybooking-page-container">
     <div class="mb-row invert">
       <div class="mybooking-sidebar mb-col-md-6 mb-col-lg-4">
         <!-- Reservation detail/summary (script_reservation_summary) -->

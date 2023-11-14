@@ -837,7 +837,6 @@ button.mb-button a:hover  {
 .mybooking-page-container {
   max-width: var(--mb-page-container-max-width);
   margin: 0 auto;
-  padding: 3rem 0;
 }
 
 /* Complete page */

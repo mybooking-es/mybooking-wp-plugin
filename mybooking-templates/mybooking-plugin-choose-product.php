@@ -14,12 +14,16 @@
 
 <div class="mybooking-process-page <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <section class="mybooking mybooking-process_choose mybooking-page-container">
-
-  <!-- Product listing -->
-  <div class="mybooking-product_listing" id="product_listing" 
-      <?php if ( array_key_exists('use_renting_detail_page', $args) && $args['use_renting_detail_page'] == 'true' ) : ?>
-      data-use-renting-detail-page="true" 
-      <?php endif; ?>></div>
+    <div class="mb-row">
+      <div class="mb-col-sm-12">
+        <!-- Product listing -->
+        <div class="mybooking-product_listing" id="product_listing" 
+          <?php if ( array_key_exists('use_renting_detail_page', $args) && $args['use_renting_detail_page'] == 'true' ) : ?>
+          data-use-renting-detail-page="true" 
+          <?php endif; ?>>
+        </div>
+      </div>
+    </div>
   </section>
 </div>
 
