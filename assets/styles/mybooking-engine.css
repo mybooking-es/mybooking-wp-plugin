@@ -545,6 +545,15 @@ label {
   border-radius: var(--mb-button-border-radius);
 }
 
+.mb-button:disabled,
+.mb-button[disabled],
+.mb-button:disabled:hover,
+.mb-button[disabled]:hover {
+  cursor: not-allowed;
+  background-color: var(--mb-button-bg-color)!important;
+  border-color: var(--mb-button-border-color)!important;
+}
+
 .mb-button a,
 .mb-button a:visited,
 .mb-button a:hover,
