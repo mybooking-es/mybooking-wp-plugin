@@ -298,6 +298,11 @@
   }
 }
 
+.mybooking-selector .mb-inline  .mybooking-selector_button {
+  width: 100%;
+  max-width: 100%;
+}
+
 .mybooking-selector_vertical .widget_rental_location,
 .mybooking-selector_vertical .widget_family,
 .mybooking-selector_vertical .driver_age_rule,

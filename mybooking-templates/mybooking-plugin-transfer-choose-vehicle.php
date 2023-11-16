@@ -21,6 +21,7 @@
 
   <!-- Product listing -->
   <div class="mybooking-product_listing" id="mybooking_transfer_product_listing"></div>
+  <br />
   </section>
 </div>
 
