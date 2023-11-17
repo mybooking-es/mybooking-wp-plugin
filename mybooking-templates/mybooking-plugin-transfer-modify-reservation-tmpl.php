@@ -83,12 +83,8 @@
 			<select class="mb-form-control" name="time" id="time"></select>
 		</div>
   </div>
-</div>
-
-<div class="mybooking-selector_group">
 
 	<!-- // RETURN -->
-
 	<div id="return_block" class="mybooking-selector_transfers-return" style="display:none">
 	  <div class="mybooking-selector_transfers-destination" id="return_origin_destination_block" style="display: none">
 
@@ -170,7 +166,10 @@
 	</div>
 
 	<!-- // Search button -->
-	<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_attr_x( 'Find transfer', 'transfer_form_selector', 'mybooking-wp-plugin') ?>" />
+	<div class="mybooking-selector_button-box">
+		<label></label>
+		<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_attr_x( 'Find transfer', 'transfer_form_selector', 'mybooking-wp-plugin') ?>" />
+	</div>
 </div>
 
 </script>

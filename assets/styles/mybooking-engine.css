@@ -72,11 +72,11 @@
   --mb-product-custom-message-color: currentcolor;
 
   /* Product text */
-  --mb-product-name-size: 1.3em;
+  --mb-product-name-size: 1.3rem;
   --mb-product-name-width: 300px;
   --mb-product-description-width: 300px;
   --mb-product-price-color: var(--mb-info-color);
-  --mb-product-price-size: 1.3em;
+  --mb-product-price-size: 1.3rem;
   --mb-product-quantity-color: #2193F2;
 
   /* Product icons */
@@ -158,7 +158,7 @@
 .mb-row {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 1rem;
   clear: both;
 } @media ( min-width: 575.98px ) {
   .mb-row {
@@ -595,7 +595,7 @@ button.mb-button a:hover  {
 
 /* Badges */
 .mb-badge {
-  padding: 2px 8px;
+  padding: 2px 5px;
   margin: 0 1px;
   border-radius: 3px;
   background-color: var(--mb-dark-background-color);

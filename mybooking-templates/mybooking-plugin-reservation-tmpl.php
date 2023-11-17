@@ -187,14 +187,12 @@
 
                                 <!-- // Offer -->
                                 <% if (typeof booking.booking_lines[idx].offer_name !== 'undefined' && booking.booking_lines[idx].offer_name !== null && booking.booking_lines[idx].offer_name !== '') { %>
-                                  <% if (booking.booking_lines[idx].offer_discount_type === 'percentage' && booking.booking_lines[idx].offer_value !== '') {%>
-                                    <span class="mybooking-product_discount-badge mb-badge success">
+                                  <span class="mybooking-product_discount-badge mb-badge info">
+                                    <% if (booking.booking_lines[idx].offer_discount_type === 'percentage' && booking.booking_lines[idx].offer_value !== '') {%>
                                       - <%=parseInt(booking.booking_lines[idx].offer_value)%>&#37;
-                                    </span>
-                                  <% } %>
-                                    <span class="mybooking-product_discount-badge mb-badge info">
-                                      <%=booking.booking_lines[idx].offer_name%>
-                                    </span>
+                                    <% } %>
+                                    <%=booking.booking_lines[idx].offer_name%>
+                                  </span>
                                 <% } %>
 
                                 <!-- // Promotion Code -->

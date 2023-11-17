@@ -128,7 +128,6 @@
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1px;
-  margin-top: 1.5rem;
 } @media ( min-width: 575.98px ) {
   .mybooking-selector_button {
     flex-direction: row;
@@ -136,13 +135,15 @@
   }
 }
 
-.mybooking-selector_vertical .mybooking-selector_button {
-  margin-top: 1rem;
+.mybooking-selector_vertical .mybooking-selector_button-box label {
+  display: none;
+} @media ( max-width: 575.98px ) {
+  .mybooking-selector_vertical .mybooking-selector_button-box label {
+    display: none;
+  }
 }
 
 .mb-inline .mybooking-selector_button {
-  min-width: 18%;
-  margin-top: 1.7rem;
   padding-top: 0.5rem;
   padding: 0;
 }
@@ -290,17 +291,15 @@
     width: 20%;
   }
 }
-.mybooking-selector .mybooking-selector_button {
-  max-width: 18%;
-} @media ( max-width: 575.98px ) {
-  .mybooking-selector .mybooking-selector_button {
-    max-width: 100%;
-  }
-}
 
 .mybooking-selector .mb-inline  .mybooking-selector_button {
-  width: 100%;
   max-width: 100%;
+} @media ( min-width: 575.98px ) {
+  .mybooking-selector .mybooking-selector_button {
+    width: auto;
+    word-break: keep-all;
+    display: flex;
+  }
 }
 
 .mybooking-selector_vertical .widget_rental_location,
