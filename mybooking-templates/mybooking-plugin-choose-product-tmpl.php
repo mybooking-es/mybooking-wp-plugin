@@ -26,6 +26,7 @@
   else: 
       mybooking_engine_get_template('mybooking-plugin-reservation-product-card-grid-tmpl.php', $args);
   endif;
+  mybooking_engine_get_template('mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php', $args);
 ?>
 
 
