@@ -382,6 +382,7 @@ div.mybooking-product {
   margin: 0 0 2px 0 !important;
   font-weight: 800;
   font-size: var(--mb-product-name-size) !important;
+  line-height: 1;
 }
 
 .mybooking-product_quantity {

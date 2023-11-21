@@ -19,7 +19,7 @@
 
 	<div class="mb-onboarding-welcome-video-container">
 		<div class="mb-onboarding-welcome-video-content">
-			<iframe src="https://player.vimeo.com/video/850116866?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Welcome"></iframe>
+			<iframe src="https://player.vimeo.com/video/850116866?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allowfullscreen title="Welcome"></iframe>
 		</div>
 	</div>
 

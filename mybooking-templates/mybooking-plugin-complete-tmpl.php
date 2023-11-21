@@ -1023,7 +1023,7 @@
   <script type="text/tmpl" id="script_transfer_extra_detail_video">
     <% if (extra.video_source && extra.video_source !== '' &&  extra.video_url && extra.video_url !== '' && extra.video_source == 'youtube') { %>
       <div class="mb-video-responsive">
-        <iframe src="https://www.youtube.com/embed/<%= extra.video_url %>" title="<%= extra.name %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mybooking-video-inner"></iframe>
+        <iframe src="https://www.youtube.com/embed/<%= extra.video_url %>" title="<%= extra.name %>" frameborder="0" allowfullscreen class="mybooking-video-inner"></iframe>
       </div>
     <% } %>
   </script>

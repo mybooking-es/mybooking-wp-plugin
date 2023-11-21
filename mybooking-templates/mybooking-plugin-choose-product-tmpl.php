@@ -136,7 +136,7 @@
   <script type="text/tmpl" id="script_transfer_product_detail_video">
     <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
       <div class="mb-video-responsive">
-        <iframe src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mybooking-video-inner"></iframe>
+        <iframe src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allowfullscreen class="mybooking-video-inner"></iframe>
       </div>
     <% } %>
   </script>

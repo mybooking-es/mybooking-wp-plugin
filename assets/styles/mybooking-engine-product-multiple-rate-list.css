@@ -1,0 +1,211 @@
+/*
+ *  MYBOOKING RESERVATION ENGINE - PRODUCT LIST
+ *  -----------------------------------------------------------------------------
+ *
+ *  Mobile first!
+ *  
+ *  Styles set first mobile view and then 
+ *  scales to other screen sizes when needed
+*/
+
+/* STRUCTURE - for desktop an tablet */
+.mybooking-product_multiple_rate_list {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  max-width: 900px;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_content 
+/* Set cards layout horizontal */
+{
+  
+} @media ( min-width: 769px ) {
+  .mybooking-product_multiple_rate_list .mybooking-product_content  {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+  }
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_block:first-of-type
+/* Left block */
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+} @media ( min-width: 769px ) {
+  .mybooking-product_multiple_rate_list .mybooking-product_block:first-of-type {
+    width: 30%;
+  }
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_block:last-of-type 
+/* Right block */
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+} @media ( min-width: 769px ) {
+  .mybooking-product_multiple_rate_list .mybooking-product_block:last-of-type  {
+    width: 70%;
+    flex-direction: row;
+  }
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_image-box {
+  position: relative;
+}
+.mybooking-product_multiple_rate_list .mybooking-product_block .mybooking-product_image {
+  width: 100%;
+  border-radius: 0!important;
+  padding: var(--mb-product-image-padding);
+} @media ( min-width: 769px ) {
+  .mybooking-product_multiple_rate_list .mybooking-product_block .mybooking-product_image {
+    width: initial!important;
+    object-fit: var(--mb-product-image-fit);
+    object-position: center center;
+    height: 200px;
+  }
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_custom-message {
+  bottom: 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0 0;
+  height: auto;
+  border: none;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_info-button {
+  line-height: 1.2;
+  color: var(--mb-product-info-color)!important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  background: #999;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+.mybooking-product_multiple_rate_list .mybooking-product_info-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_low-availability {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_name {
+  text-align: center;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_name,
+.mybooking-product_multiple_rate_list .mybooking-product_rate_name {
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_rate_name {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--mb-border-color);
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_short-description {
+  margin: 0 0 0.5rem 0;
+  font-weight: 400;
+  font-size: 1em;
+  color: var(--mb-muted-color);
+  text-align: center;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_description ul {
+  padding: 1rem;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_description li {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_characteristics {
+  width: var(--mb-product-list-keys-width);
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+  padding: 0;
+  height: initial;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_rate {
+  width: 100%;
+} @media ( min-width: 769px ) {
+  .mybooking-product_multiple_rate_list .mybooking-product_rate {
+    width: 33.33%;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_price {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 100%;
+  line-height: 1;
+  gap: 0.5rem;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_amount {
+  display: inline-block;
+  margin: 0;
+  color: var(--mb-product-price-color);
+  font-size: 1.9em;
+  font-weight: 900!important;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.mybooking-product_multiple_rate_list .mybooking-product_discount {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  gap: 0.5rem;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+}
+
+.mybooking-product_multiple_rate_list .mb-button.btn-choose-product {
+  width: 100%;
+  margin: 0;
+} @media ( min-width: 769px ) {
+  .mybooking-product_multiple_rate_list .mb-button.btn-choose-product {
+    width: auto;
+  }
+}
