@@ -31,6 +31,8 @@
 	</div>
 </div>
 
+<br />
+
 <div class="mybooking-selector_transfers-group">
 
 	<!-- // GOING -->
@@ -180,7 +182,7 @@
 
 <!-- // FOOTER -->
 
-<div class="mybooking-selector_group mybooking-selector_footer">
+<div class="mybooking-selector_transfers-group mybooking-selector_footer">
 
   <!-- // Seats -->
   <div class="mybooking-selector_seats">

@@ -11,7 +11,7 @@
 
 <script type="text/tmpl" id="transfer_form_selector_tmpl">
 
-<div class="mybooking-selector_group">
+<div class="mybooking-selector_transfers-group">
 	<div class="mybooking-selector_type">
 
 	  <!-- // One Way -->
@@ -28,7 +28,9 @@
 	</div>
 </div>
 
-<div class="mybooking-selector_group">
+<br />
+
+<div class="mybooking-selector_transfers-group">
 
 	<!-- // GOING -->
 
@@ -141,7 +143,7 @@
 
 <!-- // FOOTER -->
 
-<div class="mybooking-selector_group mybooking-selector_footer">
+<div class="mybooking-selector_transfers-group mybooking-selector_footer">
 
   <!-- // Seats -->
   <div class="mybooking-selector_seats">
