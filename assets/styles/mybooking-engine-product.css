@@ -510,10 +510,14 @@ div.mybooking-product {
 [class*="mybooking-process_"] .btn-choose-variant,
 [class*="mybooking-process_"] .btn-confirm-selection {
   min-height: var(--mb-product-btn-height)!important;
-  margin: 0 1rem;
+  margin: 0;
   padding: 0.3rem 2rem;
   text-transform: uppercase!important;
   letter-spacing: 1px;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 [class*="mybooking-process_"] .btn-choose-product a,

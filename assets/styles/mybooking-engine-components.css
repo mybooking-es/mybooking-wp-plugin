@@ -123,7 +123,7 @@
   justify-content: flex-start;
   gap: 1rem;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   background-color: var(--mb-product-detail-bg);
   border-top: 1px solid var(--mb-product-detail-border);
   border-bottom: 1px solid var(--mb-product-detail-border);
@@ -132,7 +132,6 @@
   .mybooking-summary_detail {
     justify-content: space-between;
     flex-flow: row;
-    padding: 1rem;
   }
 }
 

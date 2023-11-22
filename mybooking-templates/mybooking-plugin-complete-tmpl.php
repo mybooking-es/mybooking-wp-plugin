@@ -33,6 +33,7 @@
     <div class="mybooking-summary_detail">
       <span class="mybooking-summary_item">
         <span class="mybooking-summary_date">
+          <span class="dashicons dashicons-arrow-right-alt"></span>
           <%=shopping_cart.date_from_full_format%>
           <% if (configuration.timeToFrom) { %>
             <%=shopping_cart.time_from%>
@@ -47,7 +48,7 @@
 
       <span class="mybooking-summary_item">
         <span class="mybooking-summary_date">
-
+          <span class="dashicons dashicons-arrow-left-alt"></span>
           <% if (configuration.rentDateSelector === 'date_from_duration') { %>
             <!-- Duration -->
             <%= shopping_cart.renting_duration_literal %>
@@ -79,6 +80,7 @@
         <% if (shopping_cart.days > 0) { %>
           <span class="mybooking-summary_item">
             <span class="mybooking-summary_duration">
+              <span class="dashicons dashicons-calendar-alt"></span>
               <%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
             </span>
           </span>
@@ -86,6 +88,7 @@
         <% } else if (shopping_cart.hours > 0) { %>
           <span class="mybooking-summary_item">
             <span class="mybooking-summary_duration">
+              <span class="dashicons dashicons-clock"></span>
               <%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
             </span>
           </span>
