@@ -16,22 +16,6 @@
 <!-- MY RESERVATION & EXTRA DATA FORM ----------------------------------------->
 
 <script type="text/tmpl" id="script_reservation_summary">
-    <div class="mb-row">
-      <!-- // Head with localizator -->
-      <div class="mybooking-details_container mb-col-md-12">
-        <div class="mybooking-summary_header">
-          <div class="mybooking-summary_details-title">
-            <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
-          </div>
-
-          <div class="mybooking-summary_locator">
-            <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?>:
-            <span class="mybooking-summary_locator-id"><%=booking.id%></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
       <!-- // Product details -->
       <div class="mb-row">
         <% if (showReservationForm) { %>
@@ -70,12 +54,19 @@
               <div class="mybooking-summary_details-title">
                 <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
               </div>
+
+              <div class="mybooking-summary_locator">
+                <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?>:
+                <span class="mybooking-summary_locator-id"><%=booking.id%></span>
+              </div>
             </div>
 
             <div class="mybooking-summary_detail">
               <!-- Delivery -->
               <span class="mybooking-summary_item">
                 <span class="mybooking-summary_date">
+                  <span class="dashicons dashicons-arrow-right-alt"></span>
+                  &nbsp;
                   <%=booking.date_from_full_format%>
                   <% if (configuration.rentDateSelector === 'date_from_duration' && booking.days == 0) { %>
                     (<%=booking.time_from%> - <%=booking.time_to%>)
@@ -95,6 +86,8 @@
                 <span class="mybooking-summary_item">
                   <% if (configuration.rentDateSelector === 'date_from_date_to') { %>
                     <span class="mybooking-summary_date">
+                      <span class="dashicons dashicons-arrow-left-alt"></span>
+                      &nbsp;
                       <%=booking.date_to_full_format%>
                       <% if (configuration.timeToFrom) { %>
                         <%=booking.time_to%>
@@ -112,11 +105,19 @@
               <!-- Duration -->
               <% if (booking.days > 0) { %>
                 <span class="mybooking-summary_item">
-                  <span class="mybooking-summary_duration"><%=booking.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span>
+                  <span class="mybooking-summary_duration">
+                    <span class="dashicons dashicons-calendar-alt"></span>
+                    &nbsp;
+                    <%=booking.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
+                  </span>
                 </span>
               <% } else if (booking.hours > 0) { %>
                 <span class="mybooking-summary_item">
-                  <span class="mybooking-summary_duration"><%=booking.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></span>
+                  <span class="mybooking-summary_duration">
+                    <span class="dashicons dashicons-clock"></span>
+                    &nbsp;
+                    <%=booking.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+                  </span>
                 </span>
               <% } %>       
             </div>

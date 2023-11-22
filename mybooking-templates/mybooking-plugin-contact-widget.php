@@ -77,8 +77,6 @@
       </div>
     <?php } ?>
 
-    <br/>
-
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
         <div class="mb-alert danger" id="contact_form_errors" style="display: none"></div>

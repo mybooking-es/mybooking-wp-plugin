@@ -399,7 +399,7 @@ label {
   line-height: 1rem;
 }
 
-.mb-form-group input:not([type=checkbox]):not([type=radio]),
+.mb-form-group input:not([type=checkbox]):not([type=radio]):not([type=submit]),
 .mb-input {
   display: inline-block;
   width: 100%;
@@ -543,6 +543,7 @@ label {
   text-decoration: none!important;
   font-weight: var(--mb-button-font-weight);
   border-radius: var(--mb-button-border-radius);
+  text-transform: uppercase;
 }
 
 .mb-button:disabled,
