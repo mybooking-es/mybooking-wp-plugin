@@ -448,16 +448,16 @@
               </div>
             </div>
 
-            <% if (booking.total_pending > 0) { %>
-              <div class="mybooking-summary_total">
-                <div class="mybooking-summary_total-label">
-                  <?php echo esc_html_x( 'Total paid', 'renting_summary', 'mybooking-wp-plugin' ) ?>
-                </div>
-                <div class="mybooking-summary_total-amount">
-                  <%=configuration.formatCurrency(booking.total_paid)%>
-                </div>
+            <div class="mybooking-summary_total">
+              <div class="mybooking-summary_total-label">
+                <?php echo esc_html_x( 'Total paid', 'renting_summary', 'mybooking-wp-plugin' ) ?>
               </div>
+              <div class="mybooking-summary_total-amount">
+                <%=configuration.formatCurrency(booking.total_paid)%>
+              </div>
+            </div>
 
+            <% if (booking.total_pending > 0) { %>
               <div class="mybooking-summary_total mb--bg-danger">
                 <div class="mybooking-summary_total-label">
                   <?php echo esc_html_x( 'Total pending', 'renting_summary', 'mybooking-wp-plugin' ) ?>
@@ -508,5 +508,5 @@
         </ul>
       </div>
     </div>
-  <div class="mb-row">
+  </div>
 </script>

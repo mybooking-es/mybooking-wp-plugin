@@ -615,12 +615,11 @@
       <% if (!booking.has_optional_external_driver) { %>
         <% if (configuration.rentingFormFillDataDriverDetail) { %>
 					<div class="mb-section mb-panel-container">
-						<!-- Driver information -->
+            <h3 class="mb-form_title">
+							<?php echo esc_html( MyBookingEngineContext::getInstance()->getDriver() ) ?>
+						</h3>
+            <!-- Driver information -->
 						<% if (booking.driver_type === 'driver') { %>
-							<h3 class="mb-form_title">
-								<?php echo esc_html( MyBookingEngineContext::getInstance()->getDriver() ) ?>
-							</h3>
-
 							<!-- Driver -->
 							<div class="mb-form-row">
 								<div class="mb-form-group mb-col-md-6">
