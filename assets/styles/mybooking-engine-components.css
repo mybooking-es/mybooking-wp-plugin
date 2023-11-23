@@ -276,7 +276,7 @@
 }
 
 .mybooking-summary_deposit-total {
-  background-color: var(--mb-warning-color);
+  // background-color: var(--mb-warning-color);
   padding: 1.5rem 1rem;
   border: 1px solid var(--mb-product-total-border);
   border-radius: var(--mb-border-radius);
@@ -294,7 +294,7 @@
   border-radius: var(--mb-border-radius);
   background-color: var(--mb-product-total-bg);
   color: var(--mb-product-total-color);
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .mybooking-summary_total-label {

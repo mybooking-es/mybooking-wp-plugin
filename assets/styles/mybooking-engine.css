@@ -601,7 +601,7 @@ button.mb-button a:hover  {
   border-radius: 3px;
   background-color: var(--mb-dark-background-color);
   color: var(--mb-negative-text-color);
-  font-size: .7em;
+  font-size: 0.7rem;
   font-weight: bold;
   text-align: center;
 }

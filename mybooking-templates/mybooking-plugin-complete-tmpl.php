@@ -114,24 +114,22 @@
             <!-- // Product name -->
             <div class="mybooking-product_name">
               <%=shopping_cart.items[idx].item_description_customer_translation%>
-
-              <!-- Optional external driver + driving license -->
-              <% if ((typeof shopping_cart.optional_external_driver !== '' &&
-                      shopping_cart.optional_external_driver) ||
-                      (typeof shopping_cart.item_driving_license_type_name !== '' &&
-                      shopping_cart.item_driving_license_type_name) ) { %>
-                <br>      
-                <% if (typeof shopping_cart.optional_external_driver !== '' &&
-                        shopping_cart.optional_external_driver) { %>
-                    <span class="mb-badge secondary"><%=shopping_cart.optional_external_driver%></span>    
-                <% } %>
-                <% if (typeof shopping_cart.item_driving_license_type_name !== '' &&
-                        shopping_cart.item_driving_license_type_name) { %>
-                    <span class="mb-badge secondary"><%=shopping_cart.item_driving_license_type_name%></span>    
-                <% } %>
-              <% } %>
-
             </div>
+
+            <!-- Optional external driver + driving license -->
+            <% if ((typeof shopping_cart.optional_external_driver !== '' &&
+                    shopping_cart.optional_external_driver) ||
+                    (typeof shopping_cart.item_driving_license_type_name !== '' &&
+                    shopping_cart.item_driving_license_type_name) ) { %>   
+              <% if (typeof shopping_cart.optional_external_driver !== '' &&
+                      shopping_cart.optional_external_driver) { %>
+                  <span class="mb-badge secondary"><%=shopping_cart.optional_external_driver%></span>    
+              <% } %>
+              <% if (typeof shopping_cart.item_driving_license_type_name !== '' &&
+                      shopping_cart.item_driving_license_type_name) { %>
+                  <span class="mb-badge secondary"><%=shopping_cart.item_driving_license_type_name%></span>    
+              <% } %>
+            <% } %>
 
             <!-- // Product description -->
             <div class="mybooking-product_description">
@@ -417,22 +415,20 @@
 
       <!-- // Total -->
       <% if (!configuration.hidePriceIfZero || shopping_cart.total_cost > 0) { %>
-        <div class="mb-section">
-          <div class="mybooking-summary_total">
-            <div class="mybooking-summary_total-label">
-              <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
-            </div>
-            <div class="mybooking-summary_total-amount">
-              <%=configuration.formatCurrency(shopping_cart.total_cost)%>
-            </div>
+        <div class="mybooking-summary_total">
+          <div class="mybooking-summary_total-label">
+            <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
           </div>
-
-          <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-            <div class="mybooking-product_taxes">
-              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-            </div>
-          <?php endif; ?>
+          <div class="mybooking-summary_total-amount">
+            <%=configuration.formatCurrency(shopping_cart.total_cost)%>
+          </div>
         </div>
+
+        <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+          <div class="mybooking-product_taxes">
+            <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+          </div>
+        <?php endif; ?>
       <% } %>
     </div>
   <% } %>

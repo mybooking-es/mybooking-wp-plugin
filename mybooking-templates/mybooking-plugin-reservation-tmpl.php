@@ -25,16 +25,12 @@
             <% if (configuration.guests) { %>
               <!-- Passengers -->
               <br/>
-              <div id="passengers_container" class="mb-card" style="display:none">
-                <div class="mb-card_header">
-                  <h3 class="mb-form_title">
-                    <?php echo esc_html_x('Passengers', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-                  </h3>
-                </div>
-                <div class="mb-card_body">
-                  <div id="passengers_table_container"></div>
-                  <div id="passengers_form_container"></div>
-                </div>
+              <div id="passengers_container" class="mb-section mb-panel-container" style="display:none">
+                <h3 class="mb-form_title">
+                  <?php echo esc_html_x('Passengers', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+                </h3>
+                <div id="passengers_table_container"></div>
+                <div id="passengers_form_container"></div>
               </div>
               <!-- End passengers -->
             <% } %>
@@ -123,47 +119,44 @@
             <!-- Product card -->
             <% for (var idx=0;idx<booking.booking_lines.length;idx++) { %>
               <div class="mb-section">
-                <div class="mb-card">
-                  <div class="mb-col-md-12">
-                    <!-- // Product photo -->
-                    <% if (booking.booking_lines[idx].photo_full && booking.booking_lines[idx].photo_full !== '') { %>
-                      <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
-                    <% } else { %>
-                      <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
+                <div class="mb-card mb--p-1">
+                  <!-- // Product photo -->
+                  <% if (booking.booking_lines[idx].photo_full && booking.booking_lines[idx].photo_full !== '') { %>
+                    <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
+                  <% } else { %>
+                    <img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
+                  <% } %>
+
+                  <br /><br />
+
+                  <!-- // Product name -->
+                  <div class="mybooking-product_name">
+                    <%=booking.booking_lines[idx].item_description_customer_translation%>
+                  </div>
+
+                  <!-- Optional external driver + driving license -->
+                  <% if ((typeof booking.optional_external_driver !== '' &&
+                        booking.optional_external_driver) ||
+                        (typeof booking.item_driving_license_type_name !== '' &&
+                        booking.item_driving_license_type_name) ) { %>   
+                    <% if (typeof booking.optional_external_driver !== '' &&
+                          booking.optional_external_driver) { %>
+                      <span class="mb-badge secondary"><%=booking.optional_external_driver%></span>    
                     <% } %>
+                    <% if (typeof booking.item_driving_license_type_name !== '' &&
+                          booking.item_driving_license_type_name) { %>
+                      <span class="mb-badge secondary"><%=booking.item_driving_license_type_name%></span>    
+                    <% } %>
+                  <% } %>
 
-                    <br /><br />
+                  <% if (typeof booking.item_hired_info !== '' &&
+                          booking.item_hired_info) { %>
+                    <div class="mb-text-muted"><%=booking.item_hired_info%></div>
+                  <% } %>
 
-                    <!-- // Product name -->
-                    <div class="mybooking-product_name">
-                      <%=booking.booking_lines[idx].item_description_customer_translation%>
-
-                      <!-- Optional external driver + driving license -->
-                      <% if ((typeof booking.optional_external_driver !== '' &&
-                            booking.optional_external_driver) ||
-                            (typeof booking.item_driving_license_type_name !== '' &&
-                            booking.item_driving_license_type_name) ) { %>
-                        <br>      
-                        <% if (typeof booking.optional_external_driver !== '' &&
-                              booking.optional_external_driver) { %>
-                          <span class="mb-badge secondary"><%=booking.optional_external_driver%></span>    
-                        <% } %>
-                        <% if (typeof booking.item_driving_license_type_name !== '' &&
-                              booking.item_driving_license_type_name) { %>
-                          <span class="mb-badge secondary"><%=booking.item_driving_license_type_name%></span>    
-                        <% } %>
-                      <% } %>
-
-                      <% if (typeof booking.item_hired_info !== '' &&
-                              booking.item_hired_info) { %>
-                        <p class="mb-text-muted"><%=booking.item_hired_info%></p>
-                      <% } %>
-                    </div>
-
-                    <!-- //Product description -->
-                    <div class="mybooking-product_description">
-                      <%=booking.booking_lines[idx].item_full_description_customer_translation%>
-                    </div>
+                  <!-- //Product description -->
+                  <div class="mybooking-product_description">
+                    <%=booking.booking_lines[idx].item_full_description_customer_translation%>
                   </div>
                 </div>
 
@@ -465,41 +458,39 @@
 
             <!-- // Total -->
             <% if ( !configuration.hidePriceIfZero || booking.total_cost > 0 ) { %>
-              <div class="mb-section">
-                <div class="mybooking-summary_total">
-                  <div class="mybooking-summary_total-label">
-                    <?php echo esc_html_x( 'Total', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-                  </div>
-                  <div class="mybooking-summary_total-amount">
-                    <%=configuration.formatCurrency(booking.total_cost)%>
-                  </div>
+              <div class="mybooking-summary_total">
+                <div class="mybooking-summary_total-label">
+                  <?php echo esc_html_x( 'Total', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                 </div>
-
-                <ul class="mb-list border">
-                  <li class="mb-list-item">
-                    <span class="mb-list-element">
-                      <?php echo esc_html_x( 'Paid', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
-                    </span>
-                    <span class="mb-list-element secondary">
-                      <%=configuration.formatCurrency(booking.total_paid)%>
-                    </span>
-                  </li>
-                  <li class="mb-list-item">
-                    <span class="mb-list-element">
-                      <?php echo esc_html_x( 'Pending', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
-                    </span>
-                    <span class="mb-list-element <% if (booking.total_pending > 0) {%>danger<% } %> secondary">
-                      <%=configuration.formatCurrency(booking.total_pending)%>
-                    </span>
-                  </li>
-                </ul>
-
-                <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-                  <div class="mybooking-product_taxes">
-                    <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-                  </div>
-                <?php endif; ?>
+                <div class="mybooking-summary_total-amount">
+                  <%=configuration.formatCurrency(booking.total_cost)%>
+                </div>
               </div>
+
+              <ul class="mb-list border">
+                <li class="mb-list-item">
+                  <span class="mb-list-element">
+                    <?php echo esc_html_x( 'Paid', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                  <span class="mb-list-element secondary">
+                    <%=configuration.formatCurrency(booking.total_paid)%>
+                  </span>
+                </li>
+                <li class="mb-list-item">
+                  <span class="mb-list-element">
+                    <?php echo esc_html_x( 'Pending', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+                  </span>
+                  <span class="mb-list-element <% if (booking.total_pending > 0) {%>danger<% } %> secondary">
+                    <%=configuration.formatCurrency(booking.total_pending)%>
+                  </span>
+                </li>
+              </ul>
+
+              <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+                <div class="mybooking-product_taxes">
+                  <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                </div>
+              <?php endif; ?>
             <% } %>
           </div>
 
@@ -556,7 +547,7 @@
   <% if (configuration.rentingFormFillDataAddress || configuration.rentingFormFillDataDriverDetail || 
          configuration.rentingFormFillDataNamedResources) { %>
     <form class="mybooking-form" id="form-reservation" name="booking_information_form" autocomplete="off">
-      <div class="mb-alert info">
+      <div class="mb-alert light">
         <?php echo esc_html_x( 'Please complete the information to speed up the delivery process on the scheduled date', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
       </div>
       
