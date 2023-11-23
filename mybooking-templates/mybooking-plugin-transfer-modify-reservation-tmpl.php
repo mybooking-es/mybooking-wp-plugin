@@ -169,7 +169,7 @@
 
 	<!-- // Search button -->
 	<div class="mybooking-selector_button-box">
-		<label></label>
+		<label>&nbsp;</label>
 		<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_attr_x( 'Find transfer', 'transfer_form_selector', 'mybooking-wp-plugin') ?>" />
 	</div>
 </div>

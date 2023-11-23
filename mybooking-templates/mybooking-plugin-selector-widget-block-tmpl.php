@@ -183,7 +183,7 @@
 
 			<!-- // Search button -->
 			<div class="mybooking-selector_button-box">
-        <label></label>
+        <label>&nbsp;</label>
 				<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
 			</div>
 		</div>
