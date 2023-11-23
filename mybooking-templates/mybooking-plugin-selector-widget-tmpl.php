@@ -14,7 +14,7 @@
 
 <script type="text/tmpl" id="widget_form_selector_tmpl">
 
-	<% if (configuration.pickupReturnPlace || configuration.timeToFrom) { %>
+	<% if (configuration.pickupReturnPlace || configuration.timeToFrom || configuration.useDriverAgeRules) { %>
 
 		<?php mybooking_engine_get_template('mybooking-plugin-selector-widget-block-tmpl.php'); ?>
 
