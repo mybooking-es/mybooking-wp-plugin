@@ -1,5 +1,4 @@
 		<!-- // PICKUP SECTION -->
-
 		<div class="mybooking-selector_group">
 			<% if (configuration.pickupReturnPlace) { %>
 				<div class="mybooking-selector_place">
@@ -44,13 +43,13 @@
 				<!-- // Pickup time -->
 				<% if (configuration.timeToFrom) { %>
 					<div class="mybooking-selector_hour">
-					<i class="mybooking-selector_field-icon">
-						<span class="dashicons dashicons-clock"></span>
-					</i>
-					<label for="time_from">
-						<?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
-					</label>
-					<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
+						<i class="mybooking-selector_field-icon">
+							<span class="dashicons dashicons-clock"></span>
+						</i>
+						<label for="time_from">
+							<?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+						</label>
+						<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
 					</div>
 				<% } else { %>
 					<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
@@ -87,10 +86,8 @@
 		      </div>
 				</div>
 			<% } %>
-			
 
 			<div class="mybooking-selector_date">
-
 				<% if (configuration.rentDateSelector === 'date_from_duration') { %>
 				  <!-- // Duration -->
 					<div class="mybooking-selector_duration">
@@ -132,14 +129,11 @@
 			</div>
 		</div>
 
-
 		<!-- // FOOTER -->
-
 		<div class="mybooking-selector_group mybooking-selector_footer">
-
-			<!-- // Location code selector -->
+			<!-- // Rental location selector - Location code selector -->
 			<% if (not_hidden_rental_location_code && configuration.selectorRentalLocation) { %>
-		    <div class="widget_rental_location" style="display: none">
+		    <div class="mybooking-selector_location widget_rental_location" style="display: none">
 		      <label for="rental_location_code">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
 					</label>
@@ -149,7 +143,7 @@
 
 			<!-- // Family selector -->
 		  <% if (not_hidden_family_id && configuration.selectFamily) { %>
-		    <div class="widget_family" style="display: none">
+		    <div class="widget_family mybooking-selector_family" style="display: none">
 		      <label for="family_id">
 						<?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
 					</label>
@@ -159,7 +153,7 @@
 
 			<!-- Age code selector -->
       <% if (configuration.useDriverAgeRules) { %>
-        <div class="driver_age_rule" style="display: none">
+        <div class="driver_age_rule mybooking-selector_driver_age" style="display: none">
           <label for="driver_age_rule_id">
           <?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
           </label>

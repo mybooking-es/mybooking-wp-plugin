@@ -1,4 +1,5 @@
       <div class="mybooking-selector_group mb-inline">
+				<!-- // Simple location selector -->
         <% if (configuration.simpleLocation) { %>
   				<div class="mybooking-selector_simple_location">
 						<i class="mybooking-selector_field-icon">
@@ -13,7 +14,7 @@
 
 				<!-- // Family selector -->
 				<% if (not_hidden_family_id && configuration.selectFamily) { %>
-					<div class="widget_family" style="display: none">
+					<div class="widget_family mybooking-selector_family" style="display: none">
 						<label for="family_id">
 							<?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
 						</label>
@@ -22,6 +23,7 @@
 				<% } %>
 
 				<!--
+				// Rental location selector
 				// Location code selector:
 				// Opens .mybooking-selector_group
 				// only when Locator or Family fields are activated
@@ -52,7 +54,6 @@
 				<input type="hidden" name="time_from" value="<%=configuration.defaultTimeStart%>"/>
 
 				<% if (configuration.rentDateSelector === 'date_from_date_to') { %>
-					
 					<!-- // Return date -->
 					<div class="mybooking-selector_cal">
 						<i class="mybooking-selector_field-icon">
@@ -68,8 +69,8 @@
 					<input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
 
 			  <% } else if (configuration.rentDateSelector === 'date_from_duration') { %>
-				  	<!-- // Duration -->
-				    <div class="mybooking-selector_hour">
+				  <!-- // Duration -->
+				  <div class="mybooking-selector_hour">
 						<i class="mybooking-selector_field-icon">
 							<span class="dashicons dashicons-backup"></span>
 						</i>

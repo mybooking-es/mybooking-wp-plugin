@@ -140,14 +140,11 @@
       </div>
     </div>
 
-
     <!-- // FOOTER -->
-
     <div class="mybooking-selector_group mybooking-selector_footer">
-
-      <!-- // Location code selector -->
+      <!-- // Rental location selector - Location code selector -->
       <% if (not_hidden_rental_location_code && configuration.selectorRentalLocation) { %>
-        <div class="rental_location" style="display: none">
+        <div class="mybooking-selector_location rental_location" style="display: none">
           <label for="rental_location_code">
             <?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
           </label>
@@ -157,7 +154,7 @@
 
       <!-- // Family selector -->
       <% if (not_hidden_family_id && configuration.selectFamily) { %>
-        <div class="family" style="display: none">
+        <div class="family mybooking-selector_family" style="display: none">
           <label for="family_id">
             <?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
           </label>
@@ -168,7 +165,7 @@
       <!-- // Category code -->
 
       <!-- Age code selector -->
-			<div class="driver_age_rule" style="display: none">
+			<div class="driver_age_rule mybooking-selector_driver_age" style="display: none">
 				<label for="driver_age_rule_id">
 				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
 				</label>
@@ -306,7 +303,7 @@
 
       <!-- // Family selector -->
       <% if (not_hidden_family_id && configuration.selectFamily) { %>
-        <div class="family" style="display: none">
+        <div class="family mybooking-selector_family" style="display: none">
           <label for="family_id">
             <?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
           </label>
@@ -315,7 +312,7 @@
       <% } %>
 
       <!-- Age code selector -->
-			<div class="driver_age_rule" style="display: none">
+			<div class="driver_age_rule mybooking-selector_driver_age" style="display: none">
 				<label for="driver_age_rule_id">
 				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
 				</label>
