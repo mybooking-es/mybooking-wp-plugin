@@ -1,9 +1,8 @@
 		<!-- // PICKUP SECTION -->
 
 		<div class="mybooking-selector_group">
-			<div class="mybooking-selector_place">
-			  <% if (configuration.pickupReturnPlace) { %>
-
+			<% if (configuration.pickupReturnPlace) { %>
+				<div class="mybooking-selector_place">
 			    <!-- // Delivery place -->
 					<i class="mybooking-selector_field-icon">
 						<span class="dashicons dashicons-location"></span>
@@ -27,12 +26,10 @@
 		        <input class="mb-form-control" id="widget_pickup_place_other" type="text" name="pickup_place_other" />
 		        <input type="hidden" name="custom_pickup_place" value="false" />
 		      </div>
-
-				<% } %>
-			</div>
+				</div>
+			<% } %>
 
 			<div class="mybooking-selector_date">
-
 				<!-- // Pickup date -->
 				<div class="mybooking-selector_cal">
 					<i class="mybooking-selector_field-icon">
@@ -61,13 +58,10 @@
 			</div>
 		</div>
 
-
 		<!-- // RETURN SECTION -->
-
 		<div class="mybooking-selector_group">
-			<div class="mybooking-selector_place">
-				<% if (configuration.pickupReturnPlace) { %>
-
+			<% if (configuration.pickupReturnPlace) { %>
+				<div class="mybooking-selector_place">
 			    <!-- // Return place -->
 					<i class="mybooking-selector_field-icon">
 						<span class="dashicons dashicons-location"></span>
@@ -91,9 +85,9 @@
 		        <input class="mb-form-control" id="widget_return_place_other" type="text" name="return_place_other" />
 		        <input type="hidden" name="custom_return_place" value="false" />
 		      </div>
-
-				<% } %>
-			</div>
+				</div>
+			<% } %>
+			
 
 			<div class="mybooking-selector_date">
 

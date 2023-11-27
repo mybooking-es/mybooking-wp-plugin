@@ -37,10 +37,21 @@
   margin: 0;
 }
 
-/* Form elements */
+.mybooking-selector_footer {
+  justify-content: flex-end; 
+}
 
+/* 
+* 
+* Form elements
+* 
+*/
 .mybooking-selector .mb-form-control {
   padding:  10px;
+}
+/** Compatibility with Twenty Twenty-Two **/
+.mybooking-selector form input.mb-form-control {
+  padding:  0 0 0 5px;
 }
 
 .mybooking-selector form label {
@@ -55,7 +66,6 @@
   margin: 0!important;
   opacity: 1;
 }
-
 .mybooking-selector form input:not([type="submit"]) /* Not the buttons! */,
 .mybooking-selector form select {
   width: 100%;
@@ -67,7 +77,6 @@
   font-family: inherit;
   font-weight: 700!important;
 }
-
 .mybooking-selector form input[disabled]:not([type="submit"]) /* Not the buttons! */,
 .mybooking-selector form select[disabled],
 .mybooking-selector form input[disabled]:not([type="submit"]) + .mybooking-selector_field-icon,
@@ -77,7 +86,6 @@
   cursor: not-allowed;
   font-weight: 400!important;
 }
-
 .mybooking-selector form input:not([type="submit"]):focus /* Not the buttons! */,
 .mybooking-selector form select:focus {
   outline: none!important;
@@ -91,14 +99,12 @@
   border: 1px solid var(--mb-danger-color);
   font-weight: 700;
 }
-
 .mybooking-selector form input.form-reservation-error,
 .mybooking-selector form input.form-reservation-error:focus {
   font-size: 0.9em;
   display: block;
   width: 100%;
 }
-
 .mybooking-selector form label.form-reservation-error {
   position: absolute!important;
   clip: rect(0 0 0 0)!important;
@@ -109,12 +115,9 @@
   white-space: nowrap!important;
 }
 
-/** Compatibility with Twenty Twenty-Two **/
-.mybooking-selector form input.mb-form-control {
-  padding:  0 0 0 5px;
-}
-
-/* Buttons */
+/* 
+* Buttons 
+*/
 .mybooking-selector_vertical .mybooking-selector_button,
 .mybooking-selector_button {
   width: 100%;
@@ -150,20 +153,23 @@
   padding: 0;
 }
 
-/* Placeholders */
-
+/* 
+* Placeholders 
+*/
 .mybooking-selector ::placeholder {
   color: inherit!important;
   opacity: 1;
 }
-
 .mybooking-selector form input.form-reservation-error::placeholder,
 .mybooking-selector form select.form-reservation-error::placeholder {
   color: var(--mb-placeholder-text-color)!important;
 }
 
-/* Sections */
-
+/* 
+*
+* Sections 
+*
+*/
 .mybooking-selector_type {
   width: 100%;
   border-bottom: 1px solid var(--mb-border-color);
@@ -174,17 +180,10 @@
   cursor: pointer;
   padding: 0.5rem;
 }
-
 .mybooking-selector_type .mb-custom-label:hover,
 .mybooking-selector_type .mb-custom-label:focus,
 .mybooking-selector_type .mb-custom-label:active {
   color: var(--mb-info-color);
-}
-
-.mybooking-selector_vertical .mybooking-selector_place,
-.mybooking-selector_place,
-.mybooking-selector_location {
-  position: relative;
 }
 
 .mybooking-selector_vertical .mybooking-selector_date,
@@ -194,111 +193,6 @@
   justify-content: space-between;
   gap: 0.5rem;
 }
-
-/*
-.mybooking-selector_vertical .mybooking-selector_place,
-.mybooking-selector_place {
-  width: 100%;
-  min-width: 0;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector_place {
-    width: 50%;
-  }
-} @media ( min-width: 1280px ) {
-  .mybooking-selector_place {
-    width: 66%;
-  }
-}
-
-.mybooking-selector_vertical .mybooking-selector_date,
-.mybooking-selector_date {
-  width: 100%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector_date {
-    width: 50%;
-  }
-}
-
-.mybooking-selector_vertical .mybooking-selector_simple_location,
-.mybooking-selector_simple_location {
-  width: 60%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector_simple_location {
-    width: 70%;
-  }
-}
-
-.mybooking-selector_vertical .mb-inline .mybooking-selector_simple_location,
-.mb-inline .mybooking-selector_simple_location {
-  width: 100%!important;
-} @media ( min-width: 575.98px ) {
-  .mb-inline .mybooking-selector_simple_location {
-    width: 70%!important;
-  }
-}
-
-.mybooking-selector_vertical .mybooking-selector_cal,
-.mybooking-selector_cal {
-  width: 60%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector_cal {
-    width: 70%;
-  }
-}
-
-.mybooking-selector_vertical .mb-inline .mybooking-selector_cal,
-.mb-inline .mybooking-selector_cal {
-  width: 100%!important;
-} @media ( min-width: 575.98px ) {
-  .mb-inline .mybooking-selector_cal {
-    width: 70%!important;
-  }
-}
-
-.mybooking-selector_hour {
-  width: 50%;
-}
-.mybooking-selector_duration {
-  width:  100%;
-}
-
-.mybooking-selector_vertical .mb-inline .mybooking-selector_hour,
-.mb-inline .mybooking-selector_hour {
-  width: 100%;
-  min-width: 0;
-} @media ( min-width: 575.98px ) {
-  .mb-inline .mybooking-selector_hour {
-    width: 30%;
-  }
-}
-
-.mybooking-selector .widget_rental_location,
-.mybooking-selector .widget_family {
-  width: 100%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector .widget_rental_location,
-  .mybooking-selector .widget_family {
-    width: 20%;
-  }
-}
-
-.mybooking-selector .driver_age_rule {
-  width: 100%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector .driver_age_rule {
-    width: 70%;
-  }
-
-  .mybooking-selector .widget_rental_location + .driver_age_rule,
-  .mybooking-selector .widget_family + .driver_age_rule {
-    width: 40%;
-  }
-
-  .mybooking-selector .widget_rental_location + .widget_family + .driver_age_rule {
-    width: 20%;
-  }
-}
-*/
 
 .mybooking-selector .mb-inline  .mybooking-selector_button {
   max-width: 100%;
@@ -310,32 +204,22 @@
   }
 }
 
-.mybooking-selector_vertical .widget_rental_location,
-.mybooking-selector_vertical .widget_family,
-.mybooking-selector_vertical .driver_age_rule,
-.mybooking-selector_vertical .mybooking-selector_button {
-  width: 100%!important;
-  max-width: 100%;
-}
-
-/* Promo */
-.mybooking-selector_promo {
-  width: 100%;
-} @media ( min-width: 575.98px ) {
-  .mybooking-selector_promo {
-    width: 30%;
-  }
-}
-.mybooking-selector_vertical .mybooking-selector_promo {
+.mybooking-selector_location,
+.mybooking-selector_simple_location,
+.mybooking-selector_place,
+.mybooking-selector_date,
+.mybooking-selector_cal,
+.mybooking-selector_hour,
+.driver_age_rule,
+.mybooking-selector_promo,
+.mybooking-selector_duration {
+  position: relative;
   width: 100%;
 }
 
-.mybooking-selector_promo input:not([type="submit"]) {
-  border: 1px solid var(--mb-selector-promo-border)!important;
-  background-color: var(--mb-selector-promo-bg)!important;
-  opacity: var(--mb-selector-promo-opacity);
-}
-
+/* 
+* Promo 
+*/
 .mybooking-selector_vertical .mybooking-selector_promo label,
 .mybooking-selector_promo label {
   display: block;
@@ -346,6 +230,11 @@
   }
 }
 
+.mybooking-selector_promo input:not([type="submit"]) {
+  border: 1px solid var(--mb-selector-promo-border)!important;
+  background-color: var(--mb-selector-promo-bg)!important;
+  opacity: var(--mb-selector-promo-opacity);
+}
 .mybooking-selector_vertical .mybooking-selector_promo input:not([type="submit"]),
 .mybooking-selector_promo input:not([type="submit"]) {
   padding-left: 0!important;
@@ -357,8 +246,7 @@
   }
 }
 
-/* Icons */
-
+/* Icons
 .mybooking-selector_field-icon {
   display: inline-block;
   line-height: normal;
@@ -369,12 +257,14 @@
     display: none;
   }
 }
-
 .mybooking-selector .form-reservation-error + .mybooking-selector_field-icon {
   color: var(--mb-negative-text-color);
 }
+*/
 
-/* Custom location close */
+/* 
+* Custom location close
+*/
 .mybooking-selector_close-btn {
   position: absolute;
   right: 3%;
