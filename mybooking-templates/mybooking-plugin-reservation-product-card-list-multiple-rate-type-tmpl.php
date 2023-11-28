@@ -15,7 +15,6 @@
               &nbsp;
             <% } %>
 
-
             <% if (product.description && product.description.replace(/<p><br><\/p>/g, '') !== '' || product.photos && product.photos.length > 0) { %>
               <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
                 <span class="dashicons dashicons-plus-alt"></span> INFO
@@ -138,16 +137,25 @@
                         <?php echo esc_html( MyBookingEngineContext::getInstance()->getNotAvailableMessage() ) ?>
                       </div>
                     <% } else { %>
-                      <button class="mb-button btn-choose-product" data-product="<%=product.code%>"
-                        data-rate-type-id="<%=product.detailed_prices[rateIdx].id%>">
-                        <%= configuration.formatCurrency(product.detailed_prices[rateIdx].price.price) %>
-                      </button>
+                      <div class="mybooking-product_footer-btn">
+                        <!-- // Button -->
+                        <button class="mb-button btn-choose-product" data-product="<%=product.code%>"
+                          data-rate-type-id="<%=product.detailed_prices[rateIdx].id%>">
+                          <%= configuration.formatCurrency(product.detailed_prices[rateIdx].price.price) %>
+                        </button>
+
+                        <!-- // Taxes included -->
+                        <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+                          <span class="mybooking-product_taxes">
+                            <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                          </span>
+                        <?php endif; ?>
+                      </div>
                     <% } %>
                   </div>
                 <% } %>
               <% } %>
             </div>
-
           </div>
         </div>
         <br />

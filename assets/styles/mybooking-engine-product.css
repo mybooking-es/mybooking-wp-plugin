@@ -184,6 +184,7 @@ div.mybooking-product {
   justify-content: center;
   width: 100%;
   height: var(--mb-product-image-height);
+  z-index: 0;
 }
 
 .mybooking-product_image {
@@ -343,6 +344,7 @@ div.mybooking-product {
   font-size: 14px;
   color: var(--mb-product-price-color);
   text-decoration: line-through;
+  white-space: nowrap;
 }
 
 /* Product body */
@@ -422,6 +424,7 @@ div.mybooking-product {
   font-size: 12px;
   line-height: 0.8em;
   color: var(--mb-negative-text-color);
+  z-index: 100;
 }
 
 .mybooking-product_price_supplement_supplement_1 {

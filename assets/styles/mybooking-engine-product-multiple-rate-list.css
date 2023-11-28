@@ -209,3 +209,7 @@
     width: auto;
   }
 }
+
+.mybooking-product_multiple_rate_list .mybooking-product_footer-btn {
+  text-align: center;
+}

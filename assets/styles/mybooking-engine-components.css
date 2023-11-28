@@ -986,6 +986,18 @@ button.mybooking-popup_close:hover {
   color: var(--mb-cookies-color);
 }
 
+.mybooking-cookies_text a,
+.mybooking-cookies_text a:link,
+.mybooking-cookies_text a:visited,
+.mybooking-cookies_text a:hover,
+.mybooking-cookies_text a:active,
+.mybooking-cookies_link {
+  color: var(--mb-cookies-color)!important;
+}
+.mybooking-cookies_text a:hover {
+  opacity: 0.8;
+}
+
 
 /** PRODUCT SLIDER **/
 
