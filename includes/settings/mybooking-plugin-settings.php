@@ -139,10 +139,7 @@
               <a href="?page=mybooking-plugin-configuration&tab=complements_options" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Complements', 'settings_context', 'mybooking-wp-plugin' ) ?>
 							</a>
-							<!-- Get onboarding settings -->
-							<?php $onboarding_settings = (array) get_option('mybooking_plugin_onboarding_business_info'); ?>
-							<?php $pickup_return_place_exists = array_key_exists('pickup_return_place', $onboarding_settings) ?>
-							<?php if ($pickup_return_place_exists and $onboarding_settings['pickup_return_place']) { ?>
+							<?php if ($renting) { ?>
 								<a href="?page=mybooking-plugin-configuration&tab=configuration_options" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Integration', 'settings_context', 'mybooking-wp-plugin' ) ?>
 								</a>
