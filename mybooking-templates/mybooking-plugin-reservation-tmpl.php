@@ -394,13 +394,27 @@
               <% } %>
             <% } %>
 
-            <!-- Booking deposits -->
+            <!-- // Deposits -->
             <% if ( booking.total_deposit > 0 ) { %>
+              <div class="mybooking-summary_details-title">
+                <?php echo esc_html_x( 'Deposits', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+              </div>
+              
+              <!-- Booking deposits -->
               <div class="mybooking-summary_deposit-total-box">
-                <div class="mybooking-summary_details-title">
-                  <?php echo esc_html_x( 'Deposits', 'renting_summary', 'mybooking-wp-plugin' ) ?>
-                </div>
+                <!-- Driver deposit -->
+                <% if ( booking.driver_age_deposit > 0 ) { %>
+                  <div class="mybooking-summary_deposit-pretotal">
+                    <span class="mybooking-summary_extra-name">
+                      <?php echo esc_html_x( "Driver deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                    </span>
+                    <span class="mybooking-summary_extra-amount">
+                      <%=configuration.formatCurrency(booking.driver_age_deposit)%>
+                    </span>
+                  </div>
+                <% } %>
 
+                <!-- Bail deposit (total) -->
                 <% if ( booking.product_deposit_cost > 0 ) { %>
                   <div class="mybooking-summary_deposit-pretotal">
                     <span class="mybooking-summary_extra-name">
@@ -415,6 +429,8 @@
                     </span>
                   </div>
                 <% } %>
+
+                <!-- Guarantee deposit (total) -->
                 <% if ( booking.product_guarantee_cost > 0 ) { %>
                     <div class="mybooking-summary_deposit-pretotal">
                       <span class="mybooking-summary_extra-name">
@@ -441,18 +457,6 @@
                     </span>
                   </div>
                 <% } %>
-              </div>
-            <% } %>
-
-            <!-- Driver deposit -->
-            <% if ( booking.driver_age_deposit > 0 ) { %>
-              <div class="mybooking-summary_deposit">
-                <span class="mybooking-summary_extra-name">
-                  <?php echo esc_html_x( "Total deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-                </span>
-                <span class="mybooking-summary_extra-amount">
-                  <%=configuration.formatCurrency(booking.driver_age_deposit)%>
-                </span>
               </div>
             <% } %>
 
