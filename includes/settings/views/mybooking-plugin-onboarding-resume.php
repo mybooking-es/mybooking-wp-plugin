@@ -42,7 +42,7 @@
 		<ul class="mb-onboarding-list">
 			<!-- == RENT == -->
 			<!-- RENT & TRANSFER SELECTOR -->
-			<?php if ( array_key_exists('wc_rent_selector', $onboarding_settings) && $onboarding_settings['wc_rent_selector'] ): ?>
+			<?php if ( (array_key_exists('wc_rent_selector', $onboarding_settings) && $onboarding_settings['wc_rent_selector']) || (array_key_exists('wc_transfer_selector', $onboarding_settings) && $onboarding_settings['wc_transfer_selector']) ): ?>
 				<li class="mb-onboarding-component-item">
 					<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png'; ?>" title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
 					<div class="mb-onboarding-component-item-body">
