@@ -1,6 +1,6 @@
 <script type="text/tpml" id="script_detailed_product">
-  <div class="mybooking-product_container mybooking-product_grid">
-    <% if (products.length > 0) { %>
+  <% if (products.length > 0) { %>
+    <div class="mybooking-product_container mybooking-product_grid">
       <% for (var idx=0;idx<products.length; idx++) { %>
         <% var product = products[idx]; %>
         <div class="mybooking-product_column">
@@ -144,18 +144,19 @@
               </div>
 
               <!-- // Key characteristics -->
-              
-              <% if (product.key_characteristics) { %>
+              <?php if ( array_key_exists('show_key_characteristics', $args) && ( $args['show_key_characteristics'] !== 'hide' ) ): ?>
                 <div class="mybooking-product_characteristics">
-                <% for (characteristic in product.key_characteristics) { %>
-                  <div class="mybooking-product_characteristics-item">
-                    <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
-                    <img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
-                    <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
-                  </div>
-                <% } %>
+                  <% if (product.key_characteristics) { %>
+                    <% for (characteristic in product.key_characteristics) { %>
+                      <div class="mybooking-product_characteristics-item">
+                        <% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
+                        <img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
+                        <span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> </span>
+                      </div>
+                    <% } %>
+                  <% } %>
                 </div>
-              <% } %>
+              <?php endif; ?>
 
               <div class="mybooking-product_footer <% if (product.variants_enabled) { %>mybooking-product_variant_footer<% } %>">
 
@@ -210,12 +211,13 @@
           </div>
         </div>
       <% } %>
-    <% } else { %>
-      <div class="mb-alert light">
-        <?php echo esc_html_x( 'No items found', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-      </div>
-    <% } %>
-  </div>
+    </div>
+  <% } else { %>
+    <div class="mb-alert light">
+      <?php echo esc_html_x( 'No items found', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+    </div>
+  <% } %>
+  
 
   <% if (configuration.multipleProductsSelection) { %>
   <button id="go_to_complete" class="mb-button btn-confirm-selection">

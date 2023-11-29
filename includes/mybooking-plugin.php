@@ -470,6 +470,7 @@
            mybooking_engine_is_page( $registry->mybooking_rent_plugin_choose_products_page ) ) { // Renting choose product
         $data = array();
         $data['show_taxes_included'] = $registry->mybooking_rent_plugin_show_taxes_included;
+        $data['show_key_characteristics'] = get_theme_mod('mybooking_reservation_engine_product_show_key_characteristics', 'hide');
         $data['choose_product_layout'] = get_theme_mod('mybooking_reservation_engine_rent_choose_product_layout', 'grid_only');
         mybooking_engine_get_template('mybooking-plugin-choose-product-tmpl.php', $data);
         
