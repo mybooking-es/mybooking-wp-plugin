@@ -35,9 +35,7 @@
           <!-- // Custom delivery place -->
           <div id="another_pickup_place_group" style="display: none;">
             <button class="mybooking-selector_close-btn another_pickup_place_group_close">
-              <i class="fa fa-times">
-                <span class="dashicons dashicons-dismiss"></span>
-              </i>
+              <span class="dashicons dashicons-dismiss"></span>
             </button>
             <input class="mb-form-control" id="pickup_place_other" type="text" name="pickup_place_other" />
             <input type="hidden" name="custom_pickup_place" value="false" />
@@ -99,9 +97,7 @@
           <!-- // Custom delivery place -->
           <div id="another_return_place_group" style="display: none;">
             <button class="mybooking-selector_close-btn another_return_place_group_close">
-              <i class="fa fa-times">
-                <span class="dashicons dashicons-dismiss"></span>
-              </i>
+              <span class="dashicons dashicons-dismiss"></span>
             </button>
             <input class="mb-form-control" id="return_place_other" type="text" name="return_place_other" />
             <input type="hidden" name="custom_return_place" value="false" />

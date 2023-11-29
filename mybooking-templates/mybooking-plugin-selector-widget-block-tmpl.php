@@ -1,3 +1,15 @@
+		<!-- // Rental location selector - Location code selector -->
+		<% if (not_hidden_rental_location_code && configuration.selectorRentalLocation) { %>
+			<div class="mybooking-selector_group">
+		    <div class="mybooking-selector_location widget_rental_location" style="display: none">
+		      <label for="rental_location_code">
+						<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
+					</label>
+		      <select name="rental_location_code" id="widget_rental_location_code" class="mb-form-control"></select>
+		    </div>
+			</div>
+		<% } %>
+		
 		<!-- // PICKUP SECTION -->
 		<div class="mybooking-selector_group">
 			<% if (configuration.pickupReturnPlace) { %>
@@ -131,16 +143,6 @@
 
 		<!-- // FOOTER -->
 		<div class="mybooking-selector_group mybooking-selector_footer">
-			<!-- // Rental location selector - Location code selector -->
-			<% if (not_hidden_rental_location_code && configuration.selectorRentalLocation) { %>
-		    <div class="mybooking-selector_location widget_rental_location" style="display: none">
-		      <label for="rental_location_code">
-						<?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
-					</label>
-		      <select name="rental_location_code" id="widget_rental_location_code" class="mb-form-control"></select>
-		    </div>
-		  <% } %>
-
 			<!-- // Family selector -->
 		  <% if (not_hidden_family_id && configuration.selectFamily) { %>
 		    <div class="widget_family mybooking-selector_family" style="display: none">
