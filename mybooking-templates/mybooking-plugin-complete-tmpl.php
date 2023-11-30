@@ -48,8 +48,9 @@
 
       <span class="mybooking-summary_item">
         <span class="mybooking-summary_date">
-          <span class="dashicons dashicons-arrow-left-alt"></span>
+          
           <% if (configuration.rentDateSelector === 'date_from_duration') { %>
+            <span class="dashicons dashicons-clock"></span>
             <!-- Duration -->
             <%= shopping_cart.renting_duration_literal %>
             <% if ( (typeof shopping_cart.half_day !== 'undefined' && shopping_cart.half_day) || (shopping_cart.days == 0) ){ %>
@@ -61,6 +62,7 @@
             <% } %>
           <% } else { %>
             <!-- Date To -->
+            <span class="dashicons dashicons-arrow-left-alt"></span>
             <%=shopping_cart.date_to_full_format%>
             <% if (configuration.timeToFrom) { %>
               <%=shopping_cart.time_to%>

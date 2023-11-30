@@ -424,7 +424,7 @@ div.mybooking-product {
   font-size: 12px;
   line-height: 0.8em;
   color: var(--mb-negative-text-color);
-  z-index: 100;
+  z-index: 20;
 }
 
 .mybooking-product_price_supplement_supplement_1 {
