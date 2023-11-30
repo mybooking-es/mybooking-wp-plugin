@@ -122,9 +122,15 @@
 							<?php if ( $args['use_detail_pages'] ) { ?>
 							  <div class="mybooking-product_footer">
 									<button class="mb-button">
-							    	<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_productIdAnchor ) ?>">
-											<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
-										</a>
+										<?php if ( isset( $mybooking_product->external_detail_url ) ) { ?>
+											<a href="<?php echo esc_url( $mybooking_product->external_detail_url ) ?>">
+												<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
+											</a>											
+										<?php } else { ?>	
+											<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_productIdAnchor ) ?>">
+												<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
+											</a>
+										<?php } ?>
 									</button>
 							  </div>
 							<?php } ?>
