@@ -194,10 +194,10 @@
             </div>
           <% } %>
             
-          <!-- // Deposits -->
+          <!-- // Deposits TODO -->
           <!-- Product deposit -->
-          <% if ( shopping_cart.items[idx].product_deposit_cost > 0 ||
-                      shopping_cart.items[idx].product_guarantee_cost > 0 ) { %>
+          <% if ( configuration.multipleProductsSelection && ( shopping_cart.items[idx].product_deposit_cost > 0 ||
+                      shopping_cart.items[idx].product_guarantee_cost > 0 ) ) { %>
             <div class="mybooking-summary_deposit">
               <% if ( shopping_cart.items[idx].product_deposit_cost > 0 ) { %>
                 <span class="mybooking-summary_extra-name">
@@ -211,12 +211,17 @@
               <!-- Product guarantee -->
               <% if ( shopping_cart.items[idx].product_guarantee_cost > 0 ) { %>
                 <span class="mybooking-summary_extra-name">
-                  <?php echo esc_html_x( "Warranty", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                  <?php echo esc_html_x( "Guarantee", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                  <% if ( shopping_cart.items[idx].product_guarantee_reduction_amount > 0 ) { %>
+                    <br/>
+                    <?php echo esc_html_x( "Reduction", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                  <% } %>
                 </span>
                 <span class="mybooking-summary_extra-amount">
                   <%=configuration.formatCurrency(shopping_cart.items[idx].product_guarantee_cost)%>
                   <% if ( shopping_cart.items[idx].product_guarantee_reduction_amount > 0 ) { %>
-                    <%=configuration.formatCurrency(shopping_cart.items[idx].product_guarantee_reduction_amount)%>
+                    <br />
+                    - <%=configuration.formatCurrency(shopping_cart.items[idx].product_guarantee_reduction_amount)%>
                   <% } %>
                 </span>
               <% } %>
@@ -353,7 +358,7 @@
         </div>
       <% } %>
 
-      <!-- // Deposits -->
+      <!-- // Deposits TODO -->
       <% if ( shopping_cart.total_deposit > 0 ) { %>
         <div class="mybooking-summary_details-title">
           <?php echo esc_html_x( 'Deposits', 'renting_summary', 'mybooking-wp-plugin' ) ?>
@@ -361,11 +366,11 @@
 
         <!-- Booking deposits -->
         <div class="mybooking-summary_deposit-total-box">
-          <!-- Driver deposit -->
+          <!-- Driver age deposit -->
           <% if ( shopping_cart.driver_age_deposit > 0 ) { %>
             <div class="mybooking-summary_deposit-pretotal">
               <span class="mybooking-summary_extra-name">
-                <?php echo esc_html_x( "Driver deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                <?php echo esc_html_x( "Driver age deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
               </span>
               <span class="mybooking-summary_extra-amount">
                 <%=configuration.formatCurrency(shopping_cart.driver_age_deposit)%>
@@ -373,40 +378,56 @@
             </div>
           <% } %>
 
-          <!-- Bail deposit (total) -->
+          <!-- Deposit (total) -->
           <% if ( shopping_cart.product_deposit_cost > 0 ) { %>
             <div class="mybooking-summary_deposit-pretotal">
               <span class="mybooking-summary_extra-name">
-                <?php echo esc_html_x( "Total bail", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                <?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                <% if ( shopping_cart.product_deposit_reduction_amount > 0 ) { %>
+                  <br/>
+                  <?php echo esc_html_x( "Reduction", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                <% } %>
               </span>
               <span class="mybooking-summary_extra-amount">
                 <%=configuration.formatCurrency(shopping_cart.product_deposit_cost)%>
                 <% if ( shopping_cart.product_deposit_reduction_amount > 0 ) { %>
                   <br />
-                  <%=configuration.formatCurrency(shopping_cart.product_deposit_reduction_amount)%>
+                  - <%=configuration.formatCurrency(shopping_cart.product_deposit_reduction_amount)%>
                 <% } %>
               </span>
             </div>
           <% } %>
           
-          <!-- Guarantee deposit (total) -->
+          <!-- Guarantee (total) -->
           <% if ( shopping_cart.product_guarantee_cost > 0 ) { %>
               <div class="mybooking-summary_deposit-pretotal">
                 <span class="mybooking-summary_extra-name">
-                  <?php echo esc_html_x( "Total warrancy", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                  <?php echo esc_html_x( "Guarantee", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                  <% if ( shopping_cart.product_deposit_reduction_amount > 0 ) { %>
+                    <br/>
+                    <?php echo esc_html_x( "Reduction", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                  <% } %>
                 </span>
                 <span class="mybooking-summary_extra-amount">
                   <%=configuration.formatCurrency(shopping_cart.product_guarantee_cost)%>
                   <% if ( shopping_cart.product_deposit_reduction_amount > 0 ) { %>
                     <br />
-                    <%=configuration.formatCurrency(shopping_cart.product_guarantee_reduction_amount)%>
+                    - <%=configuration.formatCurrency(shopping_cart.product_guarantee_reduction_amount)%>
                   <% } %>
                 </span>
               </div>
           <% } %>
 
           <!-- Total deposit  -->
-          <% if ( shopping_cart.total_deposit > 0 ) { %>
+          <% if ( 
+                    (
+                      ( shopping_cart.driver_age_deposit > 0 && shopping_cart.product_deposit_cost > 0 ) || 
+                      ( shopping_cart.driver_age_deposit > 0 && shopping_cart.product_guarantee_cost > 0 ) || 
+                      ( shopping_cart.product_deposit_cost > 0 && shopping_cart.product_guarantee_cost > 0 ) ||
+                      shopping_cart.product_deposit_reduction_amount > 0 || shopping_cart.product_guarantee_reduction_amount > 0
+                    ) &&
+                      shopping_cart.total_deposit > 0 
+                    ) { %>
             <div class="mybooking-summary_deposit-total">
               <span class="mybooking-summary_extra-name">
                 <?php echo esc_html_x( "Total deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>

@@ -268,6 +268,12 @@
   text-align: right;
 }
 
+.mybooking-summary_deposit .mybooking-summary_extra-name,
+.mybooking-summary_deposit-pretotal .mybooking-summary_extra-name,
+.mybooking-summary_deposit-total .mybooking-summary_extra-name {
+  text-align: left;
+}
+
 .mybooking-summary_price,
 .mybooking-summary_deposit {
   background-color: var(--mb-light-color);
