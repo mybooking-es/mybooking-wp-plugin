@@ -22,6 +22,9 @@
   <div id="reservation_detail_sticky" class="sticky-top"></div>
 
   <section class="mybooking mybooking-process_complete mybooking-page-container">
+    <!-- // Multiple products items (script_mybooking-summary_product_detail_table) -->
+    <div id="mybooking_summary_product_detail_table"></div>
+  
     <div class="mb-row invert">
       <div class="mybooking-sidebar mb-col-md-6 mb-col-lg-4">
         <!-- Reservation detail/summary (script_reservation_summary) -->
@@ -118,3 +121,10 @@
   <h2 class="mybooking-modal_title modal-extra-detail-title"></h2>
   <div class="mybooking-modal_body modal-extra-detail-content"></div>
 </div>
+
+<!-- RESERVATION PRODUCT MULTIPLE TABLE ------------------------------------------------------>
+
+<script type="text/tmpl" id="script_mybooking_summary_product_detail_table">
+  <!-- TABLE IN MULTIPLE RESERVATIONS -->
+  <?php mybooking_engine_get_template( 'mybooking-plugin-complete-multiple-items-table-tmpl.php' ); ?>
+</script>
