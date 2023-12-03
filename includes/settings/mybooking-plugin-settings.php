@@ -158,6 +158,9 @@
 
 	            <?php	
 	             if ($active_tab == 'connection_options') {
+								echo '<br /><div class="postbox"><div class="inside">';
+								echo wp_kses_post( _x('<p>Set up your <b>Mybooking</b> account.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								echo '</div></div><hr />';								
 			      	   settings_fields('mybooking_plugin_settings_group_connection');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_connection');
@@ -165,7 +168,7 @@
 			         }
 			         else if ($active_tab == 'renting_options') {
 								 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>This module helps you to build a <em>reservation web site</em> for a <u>vehicle rental</u>, <u>boat rental</u>,<u> properties rental companies</u> or <u>accommodation</u>.</p><p>With the initial configuration we have the necessary pages for the reservation process and we have also configured them here as you can see below. <strong>Edit this part only if you create a new page for the process or terms and conditions and want to assign it</strong>.</p><p>You can also define other customization aspects of the module.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p>Configure the <b>renting/accommodation</b> module. It is done during the onboarding process but you can change the settings.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_renting');
 			           echo '<table class="form-table">';
@@ -174,7 +177,7 @@
 			         }
 			         else if ($active_tab == 'activities_options') {
 								 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>This module helps you to build a <em>reservation web site</em> for a <u>activities</u> or <u>tours</u> company.</p><p>With the initial configuration we have the necessary pages for the reservation process and we have also configured them here as you can see below. <strong>Edit this part only if you create a new page for the process or terms and conditions and want to assign it</strong>.</p><p>You can also define other customization aspects of the module.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p>Configure the <b>activities/appointment</b> module. It is done during the onboarding process but you can change the settings.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_activities');
 			           echo '<table class="form-table">';
@@ -183,7 +186,7 @@
 			         }
 			         else if ($active_tab == 'transfer_options') {
 								 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>This module helps you to build a <em>reservation web site</em> for a <u>transfer</u> company.</p><p>With the initial configuration we have the necessary pages for the reservation process and we have also configured them here as you can see below. <strong>Edit this part only if you create a new page for the process or terms and conditions and want to assign it</strong>.</p><p>You can also define other customization aspects of the module.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p>Configure the <b>transfer</b> module. It is done during the onboarding process but you can change the settings.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_transfer');
 			           echo '<table class="form-table">';
@@ -192,7 +195,7 @@
 			         }
                else if ($active_tab == 'contact_form') {
 								 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>We have developed a <strong>very basic contact form</strong> to support the needs of our clients. If you want to use it, you just have to paste the shortcode [mybooking_contact] on any page or post where you want the form to appear.</p><p>The advantage it has is that it integrates with your Mybooking back-office and you can have in the same place both the reservations and other messages that your clients write to you.<br />In addition, you can add a subject to each message form so that you can identify the context by indicating whether it is in a product sheet or in the contact page.</p><p><strong>In this section you can configure whether you want to use the Google captcha to ensure the sending of your contact forms.</strong></p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p>Use <b>Google Captcha</b> to protect your contact forms from spam.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_contact_form');
 			           echo '<table class="form-table">';
@@ -201,7 +204,7 @@
 			         }
                else if ($active_tab == 'complements_options') {
 							 	 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>This tab <strong>has nothing to do directly with the booking engine</strong>. This is a series of extra functionalities that have been added to the plugin to meet the needs of our clients without them having to install other plugins. They have <strong>minimal functionality</strong> in these aspects:</p><ul><li>Show a pop-up when loading the homepage for a promotion</li><li>Show testimonials from their clients </li><li>Show a slideshow as a CTA (Call to Action)</li><li>Show cookies message </li></ul><p><strong>If you need advanced functionality you can install a specific plugin for each of them.</strong></p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p>Use this basic complements to help you <b>improve</b> your reservations site.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_complements');
 			           echo '<table class="form-table">';
@@ -209,6 +212,9 @@
 			           echo '</table>';
 			         }
 							 else if ($active_tab == 'configuration_options') {
+								echo '<br /><div class="postbox"><div class="inside">';
+								echo wp_kses_post( _x('<p>Integrate reservation process with <b>third party</b> tools.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								echo '</div></div><hr />';								
 								settings_fields('mybooking_plugin_settings_group_configuration');
 								echo '<table class="form-table">';
 								do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_configuration');
@@ -216,7 +222,7 @@
 							}
 							else if ($active_tab == 'google_api_places_options') {
 								echo '<br /><div class="postbox"><div class="inside">';
-								echo wp_kses_post( _x('<p>Here you can configure the integration of the website with <strong>Google Api Places</strong>.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								echo wp_kses_post( _x('<p>Use <b>Google Api Places</b> to control delivery and collection custom address.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								echo '</div></div><hr />';
 								settings_fields('mybooking_plugin_settings_group_google_api_places');
 								echo '<table class="form-table">';
@@ -225,7 +231,7 @@
 							}
 			        else if ($active_tab == 'css_options') {
 								 echo '<br /><div class="postbox"><div class="inside">';
-								 echo wp_kses_post( _x('<p>This tab is dedicated to design or layout professionals. It allows you to configure the libraries to be loaded based on needs and compatibility with other libraries.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo wp_kses_post( _x('<p><b>Compatibility</b> settings for devolopers. Set up if you find any conflict with this JS libraries.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
 								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_css');
 			           echo '<table class="form-table">';
@@ -963,7 +969,7 @@ add_settings_field('mybooking_plugin_settings_products_url',
 			echo wp_kses_post( _x( 'Select <b>days</b> to describe duration in days.', 'settings_context', 'mybooking-wp-plugin' ) );
 			echo "</p>";
 		  echo "<p class=\"description\">";
-			echo wp_kses_post( _x( 'Select <b>nights/b> to describe duration in nights.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo wp_kses_post( _x( 'Select <b>nights</b> to describe duration in nights.', 'settings_context', 'mybooking-wp-plugin' ) );
 			echo "</p>";
 		}
 

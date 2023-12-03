@@ -7,7 +7,7 @@
 			<?php echo esc_html_x( 'Welcome to Mybooking Reservation Engine', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</h1>
 		<p class="mb-onboarding-description">
-			<?php echo esc_html_x( 'This plugin connects your web site with Mybooking, the complete solution for renting and reservations', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( 'This plugin connects to your Mybooking account in order to include a reservation engine in your website.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</p>
 	</div>	
 </div>
@@ -19,7 +19,7 @@
 
 	<div class="mb-onboarding-welcome-video-container">
 		<div class="mb-onboarding-welcome-video-content">
-			<iframe src="https://player.vimeo.com/video/850116866?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allowfullscreen title="Welcome"></iframe>
+			<iframe src="https://player.vimeo.com/video/890863610?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allowfullscreen title="Welcome"></iframe>
 		</div>
 	</div>
 

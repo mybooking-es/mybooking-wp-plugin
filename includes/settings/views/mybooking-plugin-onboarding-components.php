@@ -34,13 +34,13 @@
 							</div>
 							<div class="mb-onboarding-setup-item-name">
 								<strong>
-									<?php echo esc_html_x( 'Dates Selector', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									<?php echo esc_html_x( 'Search engine or selector', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 								</strong>
 								<p>
-									<?php echo esc_html_x( 'Is mandatory you copy the code below and paste on your home page or your booking process won\'t work.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+									<?php echo esc_html_x( 'Copy the code below and paste on your home page to start the reservation process.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 								</p>
 								<p>
-									<strong><?php echo esc_html_x( 'Paste this code on your home page:', 'onboarding_context', 'mybooking-wp-plugin' ) ?></strong>
+									<strong><?php echo esc_html_x( 'Insert this shortcode on your home page:', 'onboarding_context', 'mybooking-wp-plugin' ) ?></strong>
 									<code class="mb-onboarding-shortcode">[mybooking_rent_engine_selector]</code>
 								</p>
 							</div>

@@ -6,10 +6,10 @@
 	<div class="mb-onboarding-title-section">
 		<?php if ( $setup_completed ) { ?>
 			<h1 class="mb-onboarding-title">
-				<?php echo esc_html_x( 'Your booking engine pages has been successfully set up', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'The booking engine has been successfully set up', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</h1>
 			<p class="mb-onboarding-description">
-				<?php echo esc_html_x( 'Your proces pages are available under Mybooking menu at sidebar', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'The reservation process pages are available in the pages option within the Mybooking menu', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</p>
 		<?php } else { ?>
 			<h1 class="mb-onboarding-title mb-onboarding-error">
@@ -27,12 +27,12 @@
 
 	<?php if ( $setup_completed ) { ?>
 		<p class="mb-onboarding-pages-notice">
-			<?php echo esc_html_x( 'To complete your configuration you must to do the following:', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( 'To complete the configuration you can to do the following:', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</p>
 
 		<!-- == COMPONENTS SUGGEST == -->
 		<h2 class="mb-onboarding-step-title">
-			<?php echo esc_html_x( '1. Insert the booking starter component on your Home page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( '1. Insert the search engine or selector component on your Home page', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</h2>
 		<p>
 			<?php echo esc_html_x( 'This is the starting point to make a reservation. Copy the shortcode provided and paste it on the place you want to start a booking process, normally that\'s your home page. If you do not have a home page yet you can', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
@@ -55,13 +55,13 @@
 						</div>
 						<div class="mb-onboarding-setup-item-name">
 							<strong>
-								<?php echo esc_html_x( 'Dates Selector', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+								<?php echo esc_html_x( 'Search engine or selector', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 							</strong>
 							<p>
-								<?php echo esc_html_x( 'Is mandatory you copy the code below and paste on your home page or your booking process won\'t work.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+								<?php echo esc_html_x( 'Copy the code below and paste on your home page to start the reservation process.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 							</p>
 							<p>
-								<strong><?php echo esc_html_x( 'Paste this code on your home page:', 'onboarding_context', 'mybooking-wp-plugin' ) ?></strong>
+								<strong><?php echo esc_html_x( 'Insert this shortcode on your home page:', 'onboarding_context', 'mybooking-wp-plugin' ) ?></strong>
 								<?php if ( $module_rental ) { ?>
 									<code class="mb-onboarding-shortcode">[mybooking_rent_engine_selector]</code>
 								<?php } elseif ( $module_transfer ) { ?>
@@ -141,10 +141,10 @@
 
 		<!-- == PAGES LINKS == -->
 		<h2 class="mb-onboarding-step-title">
-			<?php echo esc_html_x( '2. Set the paths on your account', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( '2. Complete the setup on your Mybooking account', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</h2>
 		<p>
-			<?php echo esc_html_x( 'Your reservation system needs to know where Summary and Reservation pages are located, please copy and paste the adresses bellow and enter your account and set the paths.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo wp_kses_post( _x('Mybooking needs to know the URL of <b>summary</b> and <b>my reservation</b> pages in order to link to them when required. Please copy and paste the adresses below, log in into your account and set the paths.', 'onboarding_context', 'mybooking-wp-plugin' ) )?>
 		</p>
 		
 		<ul class="mb-onboarding-list">
@@ -156,9 +156,11 @@
 				<?php foreach ($rental_pages_list as $key => $id) { ?>
 					<div class="mb-onboarding-setup-item">
 						<span class="mb-onboarding-path">
-							<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>
+							<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}
 						</span>
-						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" data-href="<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>" title="<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
+						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" 
+							data-href="<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}" 
+							title="<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
 							<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						</a>
 					</div>
@@ -173,9 +175,11 @@
 				<?php foreach ($activities_pages_list as $key => $id) { ?>
 					<div class="mb-onboarding-setup-item">
 						<span class="mb-onboarding-path">
-							<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>
+							<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}
 						</span>
-						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" data-href="<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>" title="<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
+						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" 
+							 data-href="<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}" 
+							 title="<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
 							<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						</a>
 					</div>
@@ -190,9 +194,11 @@
 				<?php foreach ($transfer_pages_list as $key => $id) { ?>
 					<div class="mb-onboarding-setup-item">
 						<span class="mb-onboarding-path">
-							<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>
+							<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}
 						</span>
-						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" data-href="<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>" title="<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
+						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" 
+							 data-href="<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}" 
+							 title="<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>">
 							<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 						</a>
 					</div>
@@ -205,7 +211,7 @@
 		</a>
 		<span class="mb-onboarding-separator"></span>
 		<a href="<?php echo 'https://'.$clientId.'.mybooking.es/login' ?>" target="_blank" class="mb-onboarding-help-link">
-			<?php echo esc_attr_x( 'Enter your account', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_attr_x( 'Access to your account', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</a>
 		
 	<?php } else { ?>

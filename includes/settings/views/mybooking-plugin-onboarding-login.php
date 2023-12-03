@@ -8,10 +8,10 @@
 				<?php echo esc_html_x( 'Loading', 'onboarding_context', 'mybooking-wp-plugin' ) ?>...
 			</div>
 			<h1 class="mb-onboarding-title">
-				<?php echo esc_html_x( 'Mybooking Reservation Engine installation assitant', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Mybooking Reservation Engine installation wizard', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</h1>
 			<p class="mb-onboarding-description">
-				<?php echo esc_html_x( 'Follow the instructions to start with the configuration process to set up the booking engine on your site', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Follow the instructions to start the configuration process to set up the booking engine on your site', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			</p>
 		</div>	
 	</div>
@@ -26,7 +26,7 @@
 		</a>
 		<span class="mb-onboarding-separator"></span>
 		<a class="mybooking-onboarding-account mb-onboarding-help-link" id="mybooking-onboarding-account">
-			<?php echo esc_attr_x( 'Get your account', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_attr_x( 'Create an account', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		</a>
 		
 		<div class="mb-onboarding-row">
