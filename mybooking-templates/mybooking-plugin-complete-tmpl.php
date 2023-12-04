@@ -34,14 +34,14 @@
       <span class="mybooking-summary_item">
         <span class="mybooking-summary_date">
           <span class="dashicons dashicons-arrow-right-alt"></span>
-          <%=shopping_cart.date_from_full_format%>
+          <%=booking.date_from_full_format%>
           <% if (configuration.timeToFrom) { %>
-            <%=shopping_cart.time_from%>
+            <%=booking.time_from%>
           <% } %>
         </span>
         <% if (configuration.pickupReturnPlace) { %>
           <span class="mybooking-summary_place">
-            <%=shopping_cart.pickup_place_customer_translation%>
+            <%=booking.pickup_place_customer_translation%>
           </span>
         <% } %>
       </span>
@@ -52,46 +52,46 @@
           <% if (configuration.rentDateSelector === 'date_from_duration') { %>
             <span class="dashicons dashicons-clock"></span>
             <!-- Duration -->
-            <%= shopping_cart.renting_duration_literal %>
-            <% if ( (typeof shopping_cart.half_day !== 'undefined' && shopping_cart.half_day) || (shopping_cart.days == 0) ){ %>
-              <% if ( typeof shopping_cart.turn_description !== 'undefined' && shopping_cart.turn_description !== null && shopping_cart.turn_description !== '') { %>
-                - <%= shopping_cart.turn_description %> 
+            <%= booking.renting_duration_literal %>
+            <% if ( (typeof booking.half_day !== 'undefined' && booking.half_day) || (booking.days == 0) ){ %>
+              <% if ( typeof booking.turn_description !== 'undefined' && booking.turn_description !== null && booking.turn_description !== '') { %>
+                - <%= booking.turn_description %> 
               <% } else { %>
-                ( <%= shopping_cart.time_from %> - <%= shopping_cart.time_to %> ) 
+                ( <%= booking.time_from %> - <%= booking.time_to %> ) 
               <% } %>
             <% } %>
           <% } else { %>
             <!-- Date To -->
             <span class="dashicons dashicons-arrow-left-alt"></span>
-            <%=shopping_cart.date_to_full_format%>
+            <%=booking.date_to_full_format%>
             <% if (configuration.timeToFrom) { %>
-              <%=shopping_cart.time_to%>
+              <%=booking.time_to%>
             <% } %>
           <% } %>  
         
         </span>
         <% if (configuration.pickupReturnPlace) { %>
           <span class="mybooking-summary_place">
-            <%=shopping_cart.return_place_customer_translation%>
+            <%=booking.return_place_customer_translation%>
           </span>
         <% } %>
       </span>
 
       <!-- // Duration -->
       <% if (configuration.rentDateSelector === 'date_from_date_to') { %>
-        <% if (shopping_cart.days > 0) { %>
+        <% if (booking.days > 0) { %>
           <span class="mybooking-summary_item">
             <span class="mybooking-summary_duration">
               <span class="dashicons dashicons-calendar-alt"></span>
-              <%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
+              <%=booking.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
             </span>
           </span>
 
-        <% } else if (shopping_cart.hours > 0) { %>
+        <% } else if (booking.hours > 0) { %>
           <span class="mybooking-summary_item">
             <span class="mybooking-summary_duration">
               <span class="dashicons dashicons-clock"></span>
-              <%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+              <%=booking.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
             </span>
           </span>
         <% } %>
@@ -101,7 +101,7 @@
   </div>
 
   <!-- // Product details -->
-  <% if (shopping_cart.items.length > 0) { %>
+  <% if (booking.items.length > 0) { %>
     <div class="mb-section mb-panel-container">
       <% if ( !configuration.multipleProductsSelection ) { %>
         <!-- DETAIL IN ONE RESERVATION -->
@@ -111,24 +111,24 @@
       <% } %>
 
       <!-- // Extras -->
-      <% if (shopping_cart.extras.length > 0) { %>
+      <% if (booking.extras.length > 0) { %>
         <div class="mb-section">
           <div class="mybooking-summary_details-title">
             <?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-wp-plugin' ) ?>
           </div>
 
-          <% for (var idx=0;idx<shopping_cart.extras.length;idx++) { %>
+          <% for (var idx=0;idx<booking.extras.length;idx++) { %>
             <div class="mybooking-summary_extras">
               <div class="mybooking-summary_extra-item">
                 <span class="mb-badge info mybooking-summary_extra-quantity">
-                  <%=shopping_cart.extras[idx].quantity%>
+                  <%=booking.extras[idx].quantity%>
                 </span>
                 <span class="mybooking-summary_extra-name">
-                  <%=shopping_cart.extras[idx].extra_description%>
+                  <%=booking.extras[idx].extra_description%>
                 </span>
               </div>
               <span class="mybooking-summary_extra-amount">
-                <%=configuration.formatCurrency(shopping_cart.extras[idx].extra_cost)%>
+                <%=configuration.formatCurrency(booking.extras[idx].extra_cost)%>
               </span>
             </div>
           <% } %>
@@ -136,12 +136,12 @@
       <% } %>
 
       <!-- // Supplements -->
-      <% if (shopping_cart.time_from_cost > 0 ||
-            shopping_cart.pickup_place_cost > 0 ||
-            shopping_cart.time_to_cost > 0 ||
-            shopping_cart.return_place_cost > 0 ||
-            shopping_cart.driver_age_cost > 0 ||
-            shopping_cart.category_supplement_1_cost > 0) { %>
+      <% if (booking.time_from_cost > 0 ||
+            booking.pickup_place_cost > 0 ||
+            booking.time_to_cost > 0 ||
+            booking.return_place_cost > 0 ||
+            booking.driver_age_cost > 0 ||
+            booking.category_supplement_1_cost > 0) { %>
 
         <div class="mb-section">
           <div class="mybooking-summary_details-title">
@@ -151,14 +151,14 @@
           <div class="mybooking-summary_extras">
 
             <!-- // Pick-up time -->
-            <% if (shopping_cart.time_from_cost > 0) { %>
+            <% if (booking.time_from_cost > 0) { %>
               <div class="mybooking-summary_extra-item">
                 <span class="mybooking-summary_extra-name">
                   <?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                 </span>
               </div>
               <span class="mybooking-summary_extra-amount">
-                <%=configuration.formatCurrency(shopping_cart.time_from_cost)%>
+                <%=configuration.formatCurrency(booking.time_from_cost)%>
               </span>
             <% } %>
           </div>
@@ -166,14 +166,14 @@
           <div class="mybooking-summary_extras">
 
             <!-- // Pick-up place -->
-            <% if (shopping_cart.pickup_place_cost > 0) { %>
+            <% if (booking.pickup_place_cost > 0) { %>
               <div class="mybooking-summary_extra-item">
                 <span class="mybooking-summary_extra-name">
                   <?php echo esc_html_x( 'Pick-up place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                 </span>
               </div>
               <span class="mybooking-summary_extra-amount">
-                <%=configuration.formatCurrency(shopping_cart.pickup_place_cost)%>
+                <%=configuration.formatCurrency(booking.pickup_place_cost)%>
               </span>
             <% } %>
           </div>
@@ -181,14 +181,14 @@
           <div class="mybooking-summary_extras">
 
             <!-- // Return time -->
-            <% if (shopping_cart.time_to_cost > 0) { %>
+            <% if (booking.time_to_cost > 0) { %>
               <div class="mybooking-summary_extra-item">
               <span class="mybooking-summary_extra-name">
                 <?php echo esc_html_x( 'Return time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
               </span>
               </div>
               <span class="mybooking-summary_extra-amount">
-                <%=configuration.formatCurrency(shopping_cart.time_to_cost)%>
+                <%=configuration.formatCurrency(booking.time_to_cost)%>
               </span>
             <% } %>
           </div>
@@ -196,42 +196,42 @@
           <div class="mybooking-summary_extras">
 
             <!-- // Return place -->
-            <% if (shopping_cart.return_place_cost > 0) { %>
+            <% if (booking.return_place_cost > 0) { %>
               <div class="mybooking-summary_extra-item">
                 <span class="mybooking-summary_extra-name">
                   <?php echo esc_html_x( 'Return place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
                 </span>
               </div>
               <span class="mybooking-summary_extra-amount">
-                <%=configuration.formatCurrency(shopping_cart.return_place_cost)%>
+                <%=configuration.formatCurrency(booking.return_place_cost)%>
               </span>
             <% } %>
           </div>
 
           <div class="mybooking-summary_extras">
             <!-- // Driver age -->
-            <% if (shopping_cart.driver_age_cost > 0) { %>
+            <% if (booking.driver_age_cost > 0) { %>
               <div class="mybooking-summary_extra-item">
                 <span class="mybooking-summary_extra-name">
                   <?php echo esc_html_x( "Driver's age supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?>
                 </span>
               </div>
               <span class="mybooking-summary_extra-amount">
-                <%=configuration.formatCurrency(shopping_cart.driver_age_cost)%>
+                <%=configuration.formatCurrency(booking.driver_age_cost)%>
               </span>
             <% } %>
           </div>
 
           <div class="mybooking-summary_extras">
             <!-- // Petrol -->
-            <% if (shopping_cart.category_supplement_1_cost > 0) { %>
+            <% if (booking.category_supplement_1_cost > 0) { %>
               <div class="mybooking-summary_extra-item">
                 <span class="mybooking-summary_extra-name">
                   <?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?>
                 </span>
               </div>
               <span class="mybooking-summary_extra-amount">
-                <%=configuration.formatCurrency(shopping_cart.category_supplement_1_cost)%>
+                <%=configuration.formatCurrency(booking.category_supplement_1_cost)%>
               </span>
             <% } %>
           </div>
@@ -239,94 +239,16 @@
       <% } %>
 
       <!-- // Deposits -->
-      <% if ( shopping_cart.total_deposit > 0 ) { %>
-        <!-- Booking deposits -->
-        <div class="mybooking-summary_deposit-total-box">
-        <% if (
-            ( shopping_cart.driver_age_deposit > 0 && shopping_cart.product_deposit_cost > 0 ) || 
-            ( shopping_cart.driver_age_deposit > 0 && shopping_cart.product_guarantee_cost > 0 ) || 
-            ( shopping_cart.product_deposit_cost > 0 && shopping_cart.product_guarantee_cost > 0 ) ||
-            shopping_cart.product_deposit_reduction_amount > 0 || shopping_cart.product_guarantee_reduction_amount > 0
-          ) { %>
-            <div class="mybooking-summary_details-title">
-              <?php echo esc_html_x( 'Deposits', 'renting_summary', 'mybooking-wp-plugin' ) ?>
-            </div>
-
-            <!-- Driver age deposit -->
-            <% if ( shopping_cart.driver_age_deposit > 0 ) { %>
-              <div class="mybooking-summary_deposit-pretotal">
-                <span class="mybooking-summary_extra-name">
-                  <?php echo esc_html_x( "Driver age deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-                </span>
-                <span class="mybooking-summary_extra-amount">
-                  <%=configuration.formatCurrency(shopping_cart.driver_age_deposit)%>
-                </span>
-              </div>
-            <% } %>
-
-            <!-- Deposit (total) -->
-            <% if ( shopping_cart.product_deposit_cost > 0 ) { %>
-              <div class="mybooking-summary_deposit-pretotal">
-                <span class="mybooking-summary_extra-name">
-                  <?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-                  <% if ( shopping_cart.product_deposit_reduction_amount > 0 ) { %>
-                    <br/>
-                    <?php echo esc_html_x( "Reduction", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-                  <% } %>
-                </span>
-                <span class="mybooking-summary_extra-amount">
-                  <%=configuration.formatCurrency(shopping_cart.product_deposit_cost)%>
-                  <% if ( shopping_cart.product_deposit_reduction_amount > 0 ) { %>
-                    <br />
-                    - <%=configuration.formatCurrency(shopping_cart.product_deposit_reduction_amount)%>
-                  <% } %>
-                </span>
-              </div>
-            <% } %>
-            
-            <!-- Guarantee (total) -->
-            <% if ( shopping_cart.product_guarantee_cost > 0 ) { %>
-                <div class="mybooking-summary_deposit-pretotal">
-                  <span class="mybooking-summary_extra-name">
-                    <?php echo esc_html_x( "Guarantee", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-                    <% if ( shopping_cart.product_deposit_reduction_amount > 0 ) { %>
-                      <br/>
-                      <?php echo esc_html_x( "Reduction", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-                    <% } %>
-                  </span>
-                  <span class="mybooking-summary_extra-amount">
-                    <%=configuration.formatCurrency(shopping_cart.product_guarantee_cost)%>
-                    <% if ( shopping_cart.product_deposit_reduction_amount > 0 ) { %>
-                      <br />
-                      - <%=configuration.formatCurrency(shopping_cart.product_guarantee_reduction_amount)%>
-                    <% } %>
-                  </span>
-                </div>
-            <% } %>
-          <% } %>
-
-          <!-- Total deposit  -->
-          <% if ( shopping_cart.total_deposit > 0 ) { %>
-            <div class="mybooking-summary_deposit-total">
-              <span class="mybooking-summary_extra-name">
-                <?php echo esc_html_x( "Total deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-              </span>
-              <span class="mybooking-summary_extra-amount">
-                <%=configuration.formatCurrency( shopping_cart.total_deposit )%>
-              </span>
-            </div>
-          <% } %>
-        </div>
-      <% } %>
+      <?php mybooking_engine_get_template('mybooking-plugin-complete-deposits-tmpl.php'); ?>
 
       <!-- // Total -->
-      <% if (!configuration.hidePriceIfZero || shopping_cart.total_cost > 0) { %>
+      <% if (!configuration.hidePriceIfZero || booking.total_cost > 0) { %>
         <div class="mybooking-summary_total">
           <div class="mybooking-summary_total-label">
             <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
           </div>
           <div class="mybooking-summary_total-amount">
-            <%=configuration.formatCurrency(shopping_cart.total_cost)%>
+            <%=configuration.formatCurrency(booking.total_cost)%>
           </div>
         </div>
 
@@ -339,16 +261,16 @@
     </div>
   <% } %>
 
-  <% if ( (shopping_cart.driver_age_rule_description && shopping_cart.driver_age_rule_description !== '') || configuration.promotionCode ) { %>
+  <% if ( (booking.driver_age_rule_description && booking.driver_age_rule_description !== '') || configuration.promotionCode ) { %>
     <div class="mb-section mb-panel-container">
       <!-- Age rule applicate  -->
-      <% if (shopping_cart.driver_age_rule_description && shopping_cart.driver_age_rule_description !== '') { %>
+      <% if (booking.driver_age_rule_description && booking.driver_age_rule_description !== '') { %>
         <div class="mb-section">
           <div class="mybooking-summary_details-title">
             <?php echo esc_html_x( 'Driver age', 'renting_complete', 'mybooking-wp-plugin' ) ?>
           </div>
           <div>
-            <%= shopping_cart.driver_age_rule_description %>
+            <%= booking.driver_age_rule_description %>
           </div>
         </div>
       <% } %>
@@ -361,8 +283,8 @@
           </div>
           <form class="form-inline mybooking-form" name="complete_promotion_code">
             <div class="mb-form-group">
-            <input type="text" class="form-control" size="20" maxlength="30" id="promotion_code" placeholder="<?php echo esc_attr_x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?>" <%if (shopping_cart.promotion_code){%>value="<%=shopping_cart.promotion_code%>" disabled<%}%>>
-            <button class="mb-button block" id="apply_promotion_code_btn" type="button" <%if (shopping_cart.promotion_code){%>disabled<%}%>>
+            <input type="text" class="form-control" size="20" maxlength="30" id="promotion_code" placeholder="<?php echo esc_attr_x( 'Promotion Code', 'renting_complete', 'mybooking-wp-plugin' ) ?>" <%if (booking.promotion_code){%>value="<%=booking.promotion_code%>" disabled<%}%>>
+            <button class="mb-button block" id="apply_promotion_code_btn" type="button" <%if (booking.promotion_code){%>disabled<%}%>>
               <?php echo esc_html_x( 'Apply', 'renting_complete', 'mybooking-wp-plugin' ) ?>
             </button>
             </div>

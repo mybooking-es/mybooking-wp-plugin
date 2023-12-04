@@ -265,6 +265,7 @@
 .mybooking-summary_deposit-total {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-align: right;
 }
 
@@ -282,7 +283,6 @@
 }
 
 .mybooking-summary_deposit-total {
-  // background-color: var(--mb-warning-color);
   padding: 1.5rem 1rem;
   border: 1px solid var(--mb-product-total-border);
   border-radius: var(--mb-border-radius);
@@ -1376,7 +1376,7 @@ label.error {
 
 .mybooking-products_table .mybooking-products_table-head,
 .mybooking-products_table .mybooking-products_table-body .mb-row {
-  background-color: var(--mb-light-color);
+  background-color: var(--white);
   align-items: center;
   justify-content: space-between;
   border-radius: var(--mb-border-radius);
