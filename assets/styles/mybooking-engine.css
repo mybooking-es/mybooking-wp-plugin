@@ -274,6 +274,22 @@
   }
 }
 
+.mb-col-sm-hidden {
+  @media only screen and ( max-width: 575.97px ) {
+    display: none;
+  }
+}
+.mb-col-md-hidden {
+  @media only screen and ( min-width: 575.98px ) and ( max-width: 991.97px ) {
+    display: none;
+  }
+} 
+.mb-col-lg-hidden {
+  @media only screen and ( min-width: 991.98px ) {
+    display: none;
+  }
+}
+
 /* Grid Helpers */
 
 .mb-col-right {

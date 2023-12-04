@@ -1353,3 +1353,100 @@ label.full-width select.mb-form-control {
 label.error {
     color: var(--mb-danger-color);
 }
+
+/*
+*
+* Booking item
+*
+*/
+/*
+* Jquery validation 
+*/
+.mybooking-products_table {
+  padding: 0 1rem;
+}
+
+.mybooking-products_table .mb-row {
+  padding: 1rem 0;
+} @media ( min-width: 575.98px ) {
+  .mybooking-products_table .mybooking-product_image {
+    margin: 0;
+  }
+}
+
+.mybooking-products_table .mybooking-products_table-head,
+.mybooking-products_table .mybooking-products_table-body .mb-row {
+  background-color: var(--mb-light-color);
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--mb-border-radius);
+}
+
+.mybooking-products_table .mybooking-products_table-head {
+  background-color: var(--mb-dark-background-color);
+  color: var(--mb-negative-text-color);
+  margin: 1rem;
+  padding: 0;
+}
+
+.mybooking-products_table .mybooking-products_table-body .mb-row:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.mybooking-products_table  [class*='mb-col'] {
+  padding: 0 1rem;
+}
+
+.mybooking-products_table  .mybooking-summary_extra-name {
+  padding: 0;
+}
+
+.mybooking-products_table .mybooking-product_name,
+.mybooking-products_table .mybooking-product_description {
+  margin-top: 1rem;
+  margin: 0.5rem 0 !important;
+  
+} @media ( min-width: 575.98px ) {
+  .mybooking-products_table .mybooking-product_name,
+  .mybooking-products_table .mybooking-product_description {
+    margin: 0 !important;
+  }
+}
+
+.mybooking-products_table .mybooking-product_name {
+  margin-top: 1rem !important;
+} @media ( min-width: 575.98px ) {
+  .mybooking-products_table .mybooking-product_name {
+    margin-top: 0 !important;
+  }
+}
+
+.mybooking-products_table .mybooking-product_name,
+.mybooking-products_table .mybooking-product_description {
+  font-size: 1rem!important;
+}
+
+.mybooking-products_table .mybooking-product_description {
+  font-size: 0.8rem!important;
+  margin-bottom: 0;
+}
+
+.mybooking-summary_extra-amount {
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.mybooking-products_table .mybooking-summary_price {
+  background-color: transparent!important;
+  padding: 0;
+  display: block;
+}
+
+.mybooking-products_table .mybooking-product_price {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.mybooking-products_table .mybooking-product_price:first-child {
+  flex-direction: row !important;
+}
