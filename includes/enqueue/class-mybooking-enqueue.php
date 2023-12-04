@@ -340,14 +340,14 @@
           );
           wp_enqueue_script( 'mybooking-rent-engine-script');
       } else { */
+        // Take into account that the engine can not be loaded with async strategy if
+        // mediator is used because it can not be loaded.
         wp_register_script( 'mybooking-rent-engine-script',
                             plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
                             dirname(__DIR__) ),
                             $mybooking_dependencies,
                             $this->version,
-                            array(
-                              'strategy' => 'async'
-                             )
+                            true
                           );
         wp_enqueue_script( 'mybooking-rent-engine-script');
 //      }
