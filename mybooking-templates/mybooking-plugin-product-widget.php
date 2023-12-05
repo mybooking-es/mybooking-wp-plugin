@@ -18,16 +18,12 @@
              data-check-hourly-occupation="true"
            <?php endif; ?>  
            class="mybooking mybooking-product_calendar_container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
-      <div class="mb-row">
-        <div class="mb-col-md-12">
-          <form
-            name="search_form"
-            method="get"
-            enctype="application/x-www-form-urlencoded"
-            class="mybooking-form mybooking-product_calendar">                           
-          </form>
-        </div>
-      </div>
+      <form
+        name="search_form"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        class="mybooking-form mybooking-product_calendar">                           
+      </form>
     </div>
 
     <!-- DETAILS MODAL ------------------------------------------------------------>

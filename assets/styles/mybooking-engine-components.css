@@ -1196,7 +1196,7 @@ fieldset legend {
 }
 
 .date-picker-wrapper .month-element {
-  font-size: 16px;
+  font-size: 18px!important;
 }
 
 .date-picker-wrapper .month-wrapper table .week-name {
@@ -1210,11 +1210,13 @@ fieldset legend {
   margin-bottom: 0;
   color: inherit;
   word-break:  normal;
+  margin: 2px;
 }
 
 /* Available date */
 .date-picker-wrapper .month-wrapper table .day.date-available {
   background-color: var(--mb-calendar-available);
+  color: black;
 }
 
 .date-picker-wrapper .month-wrapper table .day.date-available:hover {
