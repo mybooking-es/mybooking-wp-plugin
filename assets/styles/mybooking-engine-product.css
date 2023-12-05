@@ -666,11 +666,6 @@ div.mybooking-product {
   border: none;
 }
 
-.mybooking-product_calendar .date-picker-wrapper .month-wrapper table td {
-  border: 2px solid white;
-}
-
-
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table .day.toMonth.valid {
   color: black;
 }

@@ -1176,7 +1176,7 @@ fieldset legend {
 .date-picker-wrapper .month-wrapper {
   border: none;
   border-radius: 0;
-  background-color: transparent;
+  background-color: transparent !important;
   padding: 0;
 }
 
@@ -1380,6 +1380,13 @@ label.error {
   align-items: center;
   justify-content: space-between;
   border-radius: var(--mb-border-radius);
+  display: flex;
+  flex-direction: column;
+} @media ( min-width: 575.98px ) {
+  .mybooking-products_table .mybooking-products_table-head,
+  .mybooking-products_table .mybooking-products_table-body .mb-row {
+    flex-direction: row;
+  }
 }
 
 .mybooking-products_table .mybooking-products_table-head {

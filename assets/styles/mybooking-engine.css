@@ -156,14 +156,8 @@
 /** FLOATED GRID **/
 
 .mb-row {
-  display: flex;
-  flex-direction: column;
   margin: 0 1rem;
   clear: both;
-} @media ( min-width: 575.98px ) {
-  .mb-row {
-    flex-direction: row;
-  }
 }
 
 .mb-row.invert {
