@@ -1152,7 +1152,6 @@ fieldset legend {
 .ui-datepicker td:not(.ui-datepicker-unselectable) .ui-state-default:hover {
   background: var(--mb-calendar-available-hover)!important;
   color: var(--mb-negative-text-color)!important;
-  border-radius: 0;
 }
 
 /** DATEPICKER RANGE **/
@@ -1291,6 +1290,10 @@ fieldset legend {
 .full-size-datepicker-container .ui-datepicker table td a {
   height: 100%;
   font-size: 2em !important;
+  border-radius: var(--mb-button-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /** Phone prefix **/
