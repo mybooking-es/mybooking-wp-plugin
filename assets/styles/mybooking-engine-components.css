@@ -1358,7 +1358,7 @@ button:not(:hover):not(:active):not(.has-background).slick-next.slick-arrow,
 /** Accomodation */
 form[name=reservation_form] textarea[name=destination_accommodation] {
   height: auto;
-  line-height: 0.6;
+  padding: 0.6rem 0.8rem!important;
 }
 
 /** Select fields in complete / my reservation **/
