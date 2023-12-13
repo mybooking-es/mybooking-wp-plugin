@@ -715,6 +715,21 @@
   gap: 10px;
 }
 
+.mb-form-check {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.mb-form-check .mb-form-check-label {
+  
+}
+
+.mb-form-check .mb-form-check-input {
+  
+}
+
 .mybooking-activity_turns .mb-form-check {
   display: flex;
   flex-flow: column;
@@ -727,11 +742,11 @@
   flex-basis: 30%;
 }
 
-.mb-form-check .mb-form-check-label {
+.mybooking-activity_turns .mb-form-check .mb-form-check-label {
   margin-bottom: 0 !important;
 }
 
-.mb-form-check .mb-form-check-input {
+.mybooking-activity_turns .mb-form-check .mb-form-check-input {
   box-shadow: none;
   margin: 0 auto;
 }
@@ -1357,8 +1372,7 @@ button:not(:hover):not(:active):not(.has-background).slick-next.slick-arrow,
 
 /** Accomodation */
 form[name=reservation_form] textarea[name=destination_accommodation] {
-  height: auto;
-  padding: 0.6rem 0.8rem!important;
+  height: var(--mb-form-field-height);
 }
 
 /** Select fields in complete / my reservation **/
