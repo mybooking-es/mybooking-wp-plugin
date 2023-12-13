@@ -1343,9 +1343,22 @@ button:not(:hover):not(:active):not(.has-background).slick-next.slick-arrow,
 }
 
 /** Date **/
+.custom-date-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+
 .custom-date-form .custom-date-item {
   display: inline-block;
-  max-width:  32.5%;
+  width:  33.3%;
+}
+
+/** Accomodation */
+form[name=reservation_form] textarea[name=destination_accommodation] {
+  height: auto;
+  line-height: 0.6;
 }
 
 /** Select fields in complete / my reservation **/
