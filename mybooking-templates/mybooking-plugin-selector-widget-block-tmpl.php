@@ -1,4 +1,15 @@
-		<!-- // Rental location selector - Location code selector -->
+<?php
+  /** 
+   * The Template for showing selector widget block product
+   * This template can be overridden by copying it to your
+   * theme /mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php
+   *
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   */
+?>
+ 		<!-- // Rental location selector - Location code selector -->
 		<% if (not_hidden_rental_location_code && configuration.selectorRentalLocation) { %>
 			<div class="mybooking-selector_group">
 		    <div class="mybooking-selector_location widget_rental_location" style="display: none">

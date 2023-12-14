@@ -1,3 +1,16 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - Choose product card list multiple rates  TEMPLATE
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the planning component
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php
+ * 
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
+?>
 <!-- Static cards (Special case multiple rate types) -->
 <script type="text/tpml" id="script_detailed_product_multiple_rates">
   <div class="mybooking-product_container mybooking-product_multiple_rate_list">

@@ -1,3 +1,16 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - SINGLE ITEM SHOPPING CART 
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing a section with the item - JS Microtemplates
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-complete-one-item-detail-tmpl.php
+ *
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
+?>
 <% for (var idx=0;idx<booking.items.length;idx++) { %>
 	<div class="mybooking-product_info-block mb-card">
 		<div class="mb-col-md-12">

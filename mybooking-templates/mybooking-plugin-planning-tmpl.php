@@ -1,3 +1,16 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - PLANNING component TEMPLATE
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the planning component
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-planning-tmpl.php
+ * 
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
+?>
 <!-- PRODUCT DETAIL MODAL ----------------------------------------------------->
 <script type="text/tmpl" id="script_product_modal">
   <div class="mybooking-modal_product-detail mb-row">

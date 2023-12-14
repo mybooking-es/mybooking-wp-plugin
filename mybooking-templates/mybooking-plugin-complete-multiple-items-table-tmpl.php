@@ -1,3 +1,16 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - MULTIPLE ITEMS SHOPPING CART in a table
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing a table with multiple items partial - JS Microtemplates
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php
+ *
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
+?>
 <% if ( configuration.multipleProductsSelection ) { %>
 	<% if ( bookings && bookings.length > 0 ) { %>
 		<div class="mybooking-products_table">

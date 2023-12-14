@@ -1,3 +1,16 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - DEPOSITS PARTIAL
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the deposit partial - JS Microtemplates
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-complete-deposits-tmpl.php
+ *
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
+?>
 <!-- // Deposits -->
 <% if ( booking.total_deposit > 0 ) { %>
 	<!-- Booking deposits -->

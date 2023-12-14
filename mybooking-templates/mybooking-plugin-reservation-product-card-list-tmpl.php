@@ -1,3 +1,16 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - Choose product card list single rates  TEMPLATE
+ *   ---------------------------------------------------------------------------
+ *   The Template for showing the planning component
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php
+ * 
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
+ */
+?>
 <script type="text/tpml" id="script_detailed_product">
 
 <div class="mybooking-product_container mybooking-product_list">
