@@ -1,4 +1,15 @@
-      <div class="mybooking-selector_group mb-inline">
+<?php
+  /** 
+   * The Template for showing selector widget inline product
+   * This template can be overridden by copying it to your
+   * theme /mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php
+   *
+   * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+   * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
+   */
+?>
+		<div class="mybooking-selector_group mb-inline">
 				<!-- // Simple location selector -->
         <% if (configuration.simpleLocation) { %>
   				<div class="mybooking-selector_simple_location">
