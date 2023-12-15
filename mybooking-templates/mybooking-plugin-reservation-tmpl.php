@@ -17,7 +17,7 @@
 
 <script type="text/tmpl" id="script_reservation_summary">
       <!-- // Product details -->
-      <div class="mb-row">
+      <div class="mb-row-flex">
         <% if (showReservationForm) { %>
           <div class="mb-col-md-6 mb-col-lg-8">
             <!-- //Customer extra data form -->
@@ -37,7 +37,7 @@
           </div>
         <% } %>
 
-        <div class="mybooking-sidebar mb-col-md-6 <% if (showReservationForm) { %>mb-col-lg-4<%} else { %>mb-col-lg-offset-2 mb-col-lg-8<% } %>">
+        <div class="mybooking-sidebar mb-col-md-6 <% if (showReservationForm) { %>mb-col-lg-4<%} else { %>mb-col-lg-8 mb-col-center<% } %>">
 
           <!-- // Reservation status message -->
           <div class="mb-section mybooking-summary_status">

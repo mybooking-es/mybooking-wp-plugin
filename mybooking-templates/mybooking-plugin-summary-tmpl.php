@@ -16,7 +16,7 @@
 <!-- RESERVATION SUMMARY ------------------------------------------------------>
 
 <script type="text/tmpl" id="script_reservation_summary">
-  <div class="mb-row">
+  <div class="mb-row-flex">
     <!-- // Product details -->
     <div class="mybooking-sidebar  mb-col-sm-12 mb-col-md-8 mb-col-center">
       <!-- // Reservation status message -->

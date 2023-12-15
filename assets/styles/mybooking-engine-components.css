@@ -55,6 +55,18 @@
     align-items: flex-start;
   }
 }
+.mybooking-sidebar:not(.mb-col-center) .mybooking-summary_header {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mybooking-sidebar:not(.mb-col-center) .mybooking-summary_locator {
+  align-items: flex-start;
+}
+
+.mybooking-sidebar:not(.mb-col-center) .mybooking-summary_locator-id {
+  margin-left: 0;
+}
 
 .mybooking-summary_details-title {
   display: flex;
@@ -95,6 +107,7 @@
   flex-direction: column;
   align-items: flex-end;
   color: var(--mb-muted-color);
+  white-space: nowrap;
 }
 
 .mybooking-summary_locator-id {

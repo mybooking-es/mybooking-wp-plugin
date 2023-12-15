@@ -171,7 +171,12 @@
 
 .mb-row-flex {
   display: flex;
-} /* Fixes row overflow in certain themes */
+  flex-direction: column;
+} @media ( min-width: 575.98px ) {
+  .mb-row-flex {
+    flex-direction: row;
+  }
+}/* Fixes row overflow in certain themes */
 
 
 
@@ -860,15 +865,10 @@ button.mb-button a:hover  {
 .mybooking-process_summary .mybooking-product_description,
 .mybooking-process_reservation .mybooking-product_description {
   max-height: 10rem!important;
+  overflow-x: hidden;
   overflow-y: auto;
   margin-bottom: 1rem;
 }
-
-.mybooking-process_summary .mybooking-product_description,
-.mybooking-process_reservation .mybooking-product_description {
-  max-height: 7rem!important;
-}
-
 
 /* Summary page *//* Reservation page */
 .mybooking-process_summary .mybooking-product_header,
