@@ -13,6 +13,7 @@
     <?php if ( array_key_exists('search_path', $args) && $args['search_path'] != '') { ?>
       action="<?php esc_url( $args['search_path'] )?>"
     <?php } ?>>
+    <?php wp_nonce_field( 'products_list', 'products_wponce' ); ?>
     <div class="mybooking-search_fields-container mb-form-row search_fields_container">
 
       <button class="mybooking-search_button mb-button" type="submit">

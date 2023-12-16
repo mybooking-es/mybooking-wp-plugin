@@ -15,16 +15,51 @@
      */
     function mybooking_engine_products_extract_query_string() {
 
+      $family_id = null;
+      $key_characteristic_1 = null;
+      $key_characteristic_2 = null;
+      $key_characteristic_3 = null;
+      $key_characteristic_4 = null;
+      $key_characteristic_5 = null;
+      $key_characteristic_6 = null;
+      $price_range = null;
+
       // Get the query parameter
-      $family_id = array_key_exists('family_id', $_GET) ? filter_input(INPUT_GET, 'family_id', FILTER_VALIDATE_INT) : null;
-      $key_characteristic_1 = array_key_exists('key_characteristic_1', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_1', FILTER_VALIDATE_INT) : null;
-      $key_characteristic_2 = array_key_exists('key_characteristic_2', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_2', FILTER_VALIDATE_INT) : null;
-      $key_characteristic_3 = array_key_exists('key_characteristic_3', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_3', FILTER_VALIDATE_INT) : null;
-      $key_characteristic_4 = array_key_exists('key_characteristic_4', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_4', FILTER_VALIDATE_INT) : null;
-      $key_characteristic_5 = array_key_exists('key_characteristic_5', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_5', FILTER_VALIDATE_INT) : null;
-      $key_characteristic_6 = array_key_exists('key_characteristic_6', $_GET) ? filter_input(INPUT_GET, 'key_characteristic_6', FILTER_VALIDATE_INT) : null;
-      $price_range = array_key_exists('price_range', $_GET) ? filter_input(INPUT_GET, 'price_range', FILTER_VALIDATE_REGEXP,
-        array("options" => array("regexp" => "/^[0-9]+-?[0-9]+?$/" ))) : null;
+      if ( isset( $_GET[ 'products_wponce'] ) && wp_verify_nonce( $_GET['products_wponce'], 'products_list' ) ) {
+
+        // Family
+        if ( isset( $_GET[ 'family_id'] ) ) {
+          $family_id = filter_input(INPUT_GET, 'family_id', FILTER_VALIDATE_INT);
+        }
+
+        // Key characteristics
+        if ( isset( $_GET[ 'key_characteristic_1'] ) ) {
+          $key_characteristic_1 = filter_input(INPUT_GET, 'key_characteristic_1', FILTER_VALIDATE_INT);
+        }
+        if ( isset( $_GET[ 'key_characteristic_2'] ) ) {
+          $key_characteristic_2 = filter_input(INPUT_GET, 'key_characteristic_2', FILTER_VALIDATE_INT);
+        }
+        if ( isset( $_GET[ 'key_characteristic_3'] ) ) {
+          $key_characteristic_3 = filter_input(INPUT_GET, 'key_characteristic_3', FILTER_VALIDATE_INT);
+        }
+        if ( isset( $_GET[ 'key_characteristic_4'] ) ) {
+          $key_characteristic_4 = filter_input(INPUT_GET, 'key_characteristic_4', FILTER_VALIDATE_INT);
+        }
+        if ( isset( $_GET[ 'key_characteristic_5'] ) ) {
+          $key_characteristic_5 = filter_input(INPUT_GET, 'key_characteristic_5', FILTER_VALIDATE_INT);
+        }                
+        if ( isset( $_GET[ 'key_characteristic_6'] ) ) {
+          $key_characteristic_6 = filter_input(INPUT_GET, 'key_characteristic_6', FILTER_VALIDATE_INT);
+        }
+
+        // Price range
+        if ( isset( $_GET[ 'price_range'] ) ) {
+          $price_range = filter_input(INPUT_GET, 'price_range', FILTER_VALIDATE_REGEXP,
+                                      array("options" => array("regexp" => "/^[0-9]+-?[0-9]+?$/" )));
+        }
+
+      }
+
       // Build the result
       $data = array( );
       if ( !empty($family_id) ) {
