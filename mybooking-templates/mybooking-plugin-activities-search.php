@@ -12,6 +12,8 @@
     <?php if ( array_key_exists('search_path', $args) && $args['search_path'] != '') { ?>
       action="<?php esc_url( $args['search_path'] )?>"
     <?php } ?>>
+    
+    <?php wp_nonce_field( 'activities_list', 'activities_wponce' ); ?>
 
     <div class="mybooking-search_fields-container mb-form-row search_fields_container">
       <!-- Extra fields go here -->

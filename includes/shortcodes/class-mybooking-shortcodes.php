@@ -541,11 +541,11 @@
 
       // Validate nonce before getting query string parameters
       if ( isset( $_GET[ 'products_wponce'] ) && wp_verify_nonce( $_GET['products_wponce'], 'products_list' ) ) {
+        // Offset
         if ( isset( $_GET[ 'offsetpage'] ) ) {
           $page = filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT );
         }
-      }
-      if ( isset( $_GET[ 'products_wponce'] ) && wp_verify_nonce( $_GET['products_wponce'], 'products_list' ) ) {
+        // Limit
         if ( isset( $_GET[ 'limit' ] ) ) {
           $limit = filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT );
         }
@@ -653,12 +653,36 @@
      */
     public function wp_activities_activities_shortcode($atts = [], $content = null, $tag = '') {
 
+      $destination_id = null;
+      $family_id = null;
+      $q = '';
+      $page = 1;
+      $limit = 12;
+      
       // Get the query, page and the limit from the request parameters
-      $destination_id = array_key_exists('destination_id', $_GET) ? filter_input(INPUT_GET, 'destination_id', FILTER_VALIDATE_INT) : null;
-      $family_id = array_key_exists('family_id', $_GET) ? filter_input(INPUT_GET, 'family_id', FILTER_VALIDATE_INT) : null;
-      $q = array_key_exists('q', $_GET) ? filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED) : '';
-      $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
-      $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
+      if ( isset( $_GET[ 'activities_wponce'] ) && wp_verify_nonce( $_GET['activities_wponce'], 'activities_list' ) ) {
+        // Destination         
+        if ( isset( $_GET[ 'destination_id'] ) ) {
+          $destination_id = filter_input(INPUT_GET, 'destination_id', FILTER_VALIDATE_INT);
+        }
+        // Family
+        if ( isset( $_GET[ 'family_id'] ) ) {
+          $family_id = filter_input(INPUT_GET, 'family_id', FILTER_VALIDATE_INT);
+        }
+        // Query
+        if ( isset( $_GET[ 'q'] ) ) {
+          $q = filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED);
+        }
+        // Page
+        if ( isset( $_GET[ 'offsetpage'] ) ) {
+          $page = filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT );
+        }
+        // Limit
+        if ( isset( $_GET[ 'limit'] ) ) {
+          $limit = filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT );
+        }
+      }
+
       if ( is_null($page) || $page === false ) {
         $page = 1;
       }
