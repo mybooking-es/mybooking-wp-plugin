@@ -188,17 +188,22 @@
 		public function mybooking_plugin_onboarding_login_page() {
 
 			if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
-				// Do the login
-				$result = $this->login();
-				if ( $result ) {
-          // Go to next step
-					wp_safe_redirect( menu_page_url('mybooking-onboarding-generate') );
-					exit;					
-				}
-				else {
-					// Go to error page
-					wp_safe_redirect( menu_page_url('mybooking-onboarding-error') );
-					exit;
+				if ( isset( $_POST['nonce_field'] ) && wp_verify_nonce( $_POST['nonce_field'], 'login' ) ) {
+					// Extract parameters
+					$clientId = sanitize_text_field( $_POST['client_id'] );
+					$apiKey = sanitize_text_field( $_POST['api_key'] );					
+					// Do the login
+					$result = $this->login( $clientId, $apiKey );
+					if ( $result ) {
+						// Go to next step
+						wp_safe_redirect( menu_page_url('mybooking-onboarding-generate') );
+						exit;					
+					}
+					else {
+						// Go to error page
+						wp_safe_redirect( menu_page_url('mybooking-onboarding-error') );
+						exit;
+					}
 				}
 			}
 			else {
@@ -215,17 +220,19 @@
 		
 			if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
 
-				$pages = $this->generate_pages();
+				if ( isset( $_POST['nonce_field'] ) && wp_verify_nonce( $_POST['nonce_field'], 'generate' ) ) {				
+					$pages = $this->generate_pages();
 
-				if ($pages !== null && !empty($pages) ) {
-          // Go to next step
-					wp_safe_redirect( menu_page_url('mybooking-onboarding-resume') );
-					exit;			
-				}
-				else {
-					// Go to error page
-					wp_safe_redirect( menu_page_url('mybooking-onboarding-error') );
-					exit;
+					if ($pages !== null && !empty($pages) ) {
+						// Go to next step
+						wp_safe_redirect( menu_page_url('mybooking-onboarding-resume') );
+						exit;			
+					}
+					else {
+						// Go to error page
+						wp_safe_redirect( menu_page_url('mybooking-onboarding-error') );
+						exit;
+					}
 				}
 
 			} else {
@@ -399,16 +406,12 @@
 		/**
 		 * Do the login to Mybooking account and retrieve customer details
 		 */
-		private function login() {
+		private function login($clientId, $apiKey) {
 
-      // Extract parameters
-      $clientId = $_POST['client_id'];
-      $apiKey = $_POST['api_key'];
-
-      // Check parameters
-      if ( empty($clientId) || empty($apiKey) ) {
+			// Check parameters
+			if ( empty($clientId) || empty($apiKey) ) {
 				return false;
-      } 
+			} 
 
 			// Build the URL prefix from the clientID
 			$urlPrefix = '';
