@@ -533,9 +533,24 @@
       $opts = mybooking_engine_products_extract_query_string();
       // Merge the parameters with shortcode attributes
       $opts = array_merge($search_filter, $opts);
+      
       // Prepare the pagination
-      $page = array_key_exists('offsetpage', $_GET) ? filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT ) : 1;
-      $limit = array_key_exists('limit', $_GET) ? filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT ) : 12;
+
+      $page = 1;
+      $limit = 12;
+
+      // Validate nonce before getting query string parameters
+      if ( isset( $_GET[ 'products_wponce'] ) && wp_verify_nonce( $_GET['products_wponce'], 'products_list' ) ) {
+        if ( isset( $_GET[ 'offsetpage'] ) ) {
+          $page = filter_input( INPUT_GET, 'offsetpage', FILTER_VALIDATE_INT );
+        }
+      }
+      if ( isset( $_GET[ 'products_wponce'] ) && wp_verify_nonce( $_GET['products_wponce'], 'products_list' ) ) {
+        if ( isset( $_GET[ 'limit' ] ) ) {
+          $limit = filter_input( INPUT_GET, 'limit', FILTER_VALIDATE_INT );
+        }
+      }
+
       if ( is_null($page) || $page === false ) {
         $page = 1;
       }
@@ -561,14 +576,14 @@
       // Get the products from the API
       $registry = Mybooking_Registry::getInstance();
       $api_client = new MybookingApiClient($registry->mybooking_rent_plugin_api_url_prefix,
-                                           $registry->mybooking_rent_plugin_api_key);
+                                          $registry->mybooking_rent_plugin_api_key);
       
       $data = $api_client->get_products( $offset, $limit, $opts );
 
       if ( $data == null) {
         $data = (object) array('total' => 0,
-                               'offset' => 0,
-                               'data' => []);
+                              'offset' => 0,
+                              'data' => []);
       }
 
       // Prepare url_detail
