@@ -98,8 +98,8 @@
 					<!-- Tabs -->
 					<?php
 					    $active_tab = 'connection_options';
-							if ( isset( $_GET[ 'tab' ] ) ) {
-								$active_tab = sanitize_title( $_GET[ 'tab' ] );
+							if ( isset( $_GET[ 'tab' ] ) && $_GET[ 'tab' ] ) {
+								$active_tab = sanitize_text_field( wp_unslash( $_GET[ 'tab' ] ) );
 								$tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
 															'activities_options', 'google_api_places_options', 'contact_form', 'complements_options',
 															'css_options');
