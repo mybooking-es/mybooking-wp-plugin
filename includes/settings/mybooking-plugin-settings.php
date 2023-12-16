@@ -97,13 +97,17 @@
 
 					<!-- Tabs -->
 					<?php
-	            $active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_title( $_GET[ 'tab' ] ) : 'connection_options';
-	            $tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
-	            						  'activities_options', 'google_api_places_options', 'contact_form', 'complements_options',
-	            						  'css_options');
-	            if ( !in_array( $active_tab, $tabs) ) {
-	            	$active_tab = 'connection_options';
-	            }
+					    $active_tab = 'connection_options';
+							if ( isset( $_GET[ 'tab' ] ) ) {
+								$active_tab = sanitize_title( $_GET[ 'tab' ] );
+								$tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
+															'activities_options', 'google_api_places_options', 'contact_form', 'complements_options',
+															'css_options');
+								if ( !in_array( $active_tab, $tabs) ) {
+									$active_tab = 'connection_options';
+								}
+							}
+
 	        ?>
 
 	        <?php
