@@ -98,13 +98,24 @@
 					<!-- Tabs -->
 					<?php
 					    $active_tab = 'connection_options';
-							if ( isset( $_GET[ 'tab' ] ) && $_GET[ 'tab' ] ) {
-								$active_tab = sanitize_text_field( wp_unslash( $_GET[ 'tab' ] ) );
-								$tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
-															'activities_options', 'google_api_places_options', 'contact_form', 'complements_options',
-															'css_options');
-								if ( !in_array( $active_tab, $tabs) ) {
-									$active_tab = 'connection_options';
+							if (isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'connection_options' ) || 
+									isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'configuration_options' ) ||
+									isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'renting_options' ) ||
+									isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'transfer_options' ) ||
+									isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'activities_options' ) ||
+									isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'google_api_places_options' ) ||
+									isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'contact_form' ) ||
+									isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'complements_options' ) ||
+									isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'css_options' )
+								  ) {
+								if ( isset( $_GET[ 'tab' ] ) ) { 
+									$active_tab = sanitize_text_field( wp_unslash( $_GET[ 'tab' ] ) );
+									$tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
+																'activities_options', 'google_api_places_options', 'contact_form', 'complements_options',
+																'css_options');
+									if ( !in_array( $active_tab, $tabs) ) {
+										$active_tab = 'connection_options';
+									}
 								}
 							}
 
@@ -119,41 +130,41 @@
 	         ?>
 
 					<h2 class="nav-tab-wrapper">
-					    <a href="?page=mybooking-plugin-configuration&tab=connection_options" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">
+					    <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=connection_options'), 'connection_options', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Connection', 'settings_context', 'mybooking-wp-plugin' ) ?>
 							</a>
 					    <?php if ($renting) { ?>
-					      <a href="?page=mybooking-plugin-configuration&tab=renting_options" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">
+					      <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=renting_options'), 'renting_options', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Renting or Accommodation', 'settings_context', 'mybooking-wp-plugin' ) ?>
 								</a>
               <?php } ?>
 					    <?php if ($activities) { ?>
-								<a href="?page=mybooking-plugin-configuration&tab=activities_options" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">
+								<a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=activities_options'), 'activities_options', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Activities or Appointments', 'settings_context', 'mybooking-wp-plugin' ) ?>
 								</a>
 					    <?php } ?>
 					    <?php if ($transfer) { ?>
-					      <a href="?page=mybooking-plugin-configuration&tab=transfer_options" class="nav-tab <?php echo $active_tab == 'transfer_options' ? 'nav-tab-active' : ''; ?>">
+					      <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=transfer_options'), 'transfer_options', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'transfer_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Transfer', 'settings_context', 'mybooking-wp-plugin' ) ?>
 								</a>
               <?php } ?>
-              <a href="?page=mybooking-plugin-configuration&tab=contact_form" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">
+              <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=contact_form'), 'contact_form', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Contact Form', 'settings_context', 'mybooking-wp-plugin' ) ?>
 							</a>
-              <a href="?page=mybooking-plugin-configuration&tab=complements_options" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">
+              <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=complements_options'), 'complements_options', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Complements', 'settings_context', 'mybooking-wp-plugin' ) ?>
 							</a>
 							<?php if ($renting) { ?>
-								<a href="?page=mybooking-plugin-configuration&tab=configuration_options" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">
+								<a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=configuration_options'), 'configuration_options', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Integration', 'settings_context', 'mybooking-wp-plugin' ) ?>
 								</a>
 							<?php } ?>
 							<?php if ($google_api_places) { ?>
-					      <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">
+					      <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=google_api_places_options'), 'google_api_places_options', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Google Api Places', 'settings_context', 'mybooking-wp-plugin' ) ?>
 								</a>
 					    <?php } ?>
-  				    <a href="?page=mybooking-plugin-configuration&tab=css_options" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">
+  				    <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=css_options'), 'css_options', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Advanced', 'settings_context', 'mybooking-wp-plugin' ) ?>
 							</a>
 					</h2>
