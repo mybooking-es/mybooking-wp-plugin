@@ -80,7 +80,8 @@ function mybooking_engine_translated_slug( $page_id ) {
 	  if ($pageId != null) {
 	  	 $current_language = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
 	  	 $page_permalink = get_permalink( $page->ID );
-	  	 $url_parsing = parse_url( $page_permalink, PHP_URL_QUERY );
+			 // Replaced parse_url by wp_parse_url
+	  	 $url_parsing = wp_parse_url( $page_permalink, PHP_URL_QUERY );
 	  	 if ( empty($url_parsing) ) {
 	  	 	 return $page_permalink.'?lang='.$current_language;	 
 	  	 }
