@@ -32,6 +32,7 @@
 		<div class="mb-onboarding-row">
 			<div class="mb-onboarding-column-center">
 				<form class="mb-onboarding-login-form" id="mb-onboarding-login-form" method="POST">
+					<?php wp_nonce_field( 'login', 'nonce_field' ); ?>
 					<input class="mb-onboarding-login-field" type="text" name="client_id" id="client_id" placeholder="<?php echo esc_attr_x( 'Client ID', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" value="" />
 					<input class="mb-onboarding-login-field" type="text" name="api_key" id="api_key" placeholder="<?php echo esc_attr_x( 'API Key', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" value="" />
 					<input class="mb-onboarding-button" type="submit" value="<?php echo esc_attr_x( 'Let\'s start', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" />

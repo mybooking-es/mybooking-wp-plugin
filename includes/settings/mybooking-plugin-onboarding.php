@@ -160,12 +160,22 @@
 				// Check it is an admin page
 				if ($pagenow == 'admin.php') {
 					// Check it is the login or genrate page
-					if ( $_SERVER['REQUEST_METHOD'] === 'POST' && 
-					     isset($_GET['page']) && 
-							 ($_GET['page'] == 'mybooking-onboarding-login' || 
-							  $_GET['page'] == 'mybooking-onboarding-generate') ) {
-						// This is required in order to redirect and make the wizard work
-						ob_start();
+					if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
+						if ( isset( $_GET['page'] ) ) {		
+							$the_page = sanitize_key( $_GET['page'] );		 
+							if ( 'mybooking-onboarding-login' == $the_page ) {
+								if ( isset( $_POST['nonce_field'] ) && wp_verify_nonce( $_POST['nonce_field'], 'login' ) ) {
+									// This is required in order to redirect and make the wizard work
+									ob_start();
+								}
+							}
+							if ( 'mybooking-onboarding-generate' == $the_page ) {
+								if ( isset( $_POST['nonce_field'] ) && wp_verify_nonce( $_POST['nonce_field'], 'generate' ) ) {
+									// This is required in order to redirect and make the wizard work
+									ob_start();
+								}
+							}
+						}
 					}
 				}
 			}

@@ -52,6 +52,7 @@
 	</p>
 	
 	<form  id="mb-onboarding-generate-form" method="POST">
+		<?php wp_nonce_field( 'generate', 'nonce_field' ); ?>
 		<input class="mb-onboarding-button" type="submit" value="<?php echo esc_attr_x( 'Do it!', 'onboarding_context', 'mybooking-wp-plugin' ) ?>" />
 	</form>
 </div>
