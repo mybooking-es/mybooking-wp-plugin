@@ -103,10 +103,26 @@
      */
     function mybooking_engine_activities_extract_query_string() {
 
+      $destination_id = null;
+      $family_id = null;
+      $q = '';
+      
       // Get the query parameter
-      $destination_id = array_key_exists('destination_id', $_GET) ? filter_input(INPUT_GET, 'destination_id', FILTER_VALIDATE_INT) : null;
-      $family_id = array_key_exists('family_id', $_GET) ? filter_input(INPUT_GET, 'family_id', FILTER_VALIDATE_INT) : null;
-      $q = array_key_exists('q', $_GET) ? filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED) : '';
+      if ( isset( $_GET[ 'activities_wponce'] ) && wp_verify_nonce( $_GET['activities_wponce'], 'activities_list' ) ) {
+        // Destination         
+        if ( isset( $_GET[ 'destination_id'] ) ) {
+          $destination_id = filter_input(INPUT_GET, 'destination_id', FILTER_VALIDATE_INT);
+        }
+        // Family
+        if ( isset( $_GET[ 'family_id'] ) ) {
+          $family_id = filter_input(INPUT_GET, 'family_id', FILTER_VALIDATE_INT);
+        }
+        // Query
+        if ( isset( $_GET[ 'q'] ) ) {
+          $q = filter_input(INPUT_GET, 'q', FILTER_SANITIZE_ENCODED);
+        }
+      }
+
       // Build the result
       $data = array( 'q' => urldecode($q) );
       if ( !empty($family_id) ) {
