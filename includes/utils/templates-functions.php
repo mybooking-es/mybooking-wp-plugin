@@ -117,7 +117,9 @@ function mybooking_engine_load_template( $template_name, $args = array(), $tempa
 		return;
 	endif;
 
-	$file = file_get_contents($template_file);
+	// Replace file_get_contents with a wordpress function
+	$filesystem = new WP_Filesystem_Direct( true );
+	$file = $filesystem->get_contents( $template_file );
 
 	return $file;
 

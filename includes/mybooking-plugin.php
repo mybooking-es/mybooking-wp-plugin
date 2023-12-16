@@ -208,7 +208,7 @@
        // root directory of the plugin : 'mybooking-wp-plugin/languages/'
 
        $languages_folder = dirname(plugin_basename(__DIR__)).'/languages';
-       load_plugin_textdomain( 'mybooking-wp-plugin', "", $languages_folder );
+       load_plugin_textdomain( 'mybooking-wp-plugin', false, $languages_folder );
 
     }
 
