@@ -97,7 +97,7 @@
         <div class="mb-form-row js-mybooking-product_calendar-time-hours" style="display: none">
           <div class="mb-form-group mb-col-md-12">
             <label class="">
-              <?php echo esc_html( MyBookingEngineContext::getInstance()->getDeliveryDate() ) ?>
+              <?php echo esc_html_x( 'Delivery time', 'renting_product_detail', 'mybooking-wp-plugin') ?>
             </label>
             <select id="time_from" name="time_from" placeholder="hh:mm" class="mb-form-control" disabled> </select>
           </div>
@@ -107,7 +107,7 @@
         <div class="mb-form-row js-mybooking-product_calendar-time-hours" style="display: none">
           <div class="mb-form-group mb-col-md-12">
             <label class="">
-              <?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?>
+              <?php echo esc_html_x( 'Return time', 'renting_product_detail', 'mybooking-wp-plugin') ?>
             </label>
             <select id="time_to" name="time_to" placeholder="hh:mm" class="mb-form-control" disabled> </select>
           </div>
