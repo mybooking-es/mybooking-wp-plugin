@@ -342,6 +342,7 @@
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+              <input type="hidden" id="payment_method_value"  name="payment_method_value" value="paypal_standard">
             </div>
 
           <% } else if (shopping_cart.payment_methods.tpv_virtual) { %>
@@ -351,6 +352,7 @@
             <div class="mybooking-payment_confirmation-box">
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
               <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+              <input type="hidden"  id="payment_method_value"  name="payment_method_value" value="<%=shopping_cart.payment_methods.tpv_virtual%>"/>
             </div>
           <% } %>
         </div>

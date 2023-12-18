@@ -102,6 +102,7 @@
         <!-- // Extras -->
         <% if (booking.extras.length > 0) { %>
           <div class="mb-section">
+            <br/>
             <div class="mybooking-summary_details-title">
               <?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-wp-plugin' ) ?>
             </div>
