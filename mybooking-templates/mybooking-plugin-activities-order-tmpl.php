@@ -13,122 +13,121 @@
 ?>
 
 <script type="text/tpml" id="script_order">
-  <div class="mb-row">
+  <div class="mb-row-flex">
     <div class="mb-col-md-6 mb-col-lg-8">
-    <!-- // Reservation status message -->
-    <div class="mybooking-summary_status">
-      <%= order.summary_status %>
-    </div>
+      <!-- // Reservation status message -->
+      <div class="mybooking-summary_status">
+        <%= order.summary_status %>
+      </div>
 
-    <!-- // Products -->
-    <% var customers_data = false; %>
       <div class="mb-section mb-panel-container mybooking-details_container">
         <div class="mybooking-summary_locator">
           <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?>:
           <span class="mybooking-summary_locator-id"><%=order.id%></span>
         </div>
       </div>
-    
+
+      <!-- // Products -->
+      <% var customers_data = false; %>
       <% for (idx in order.items) { %>
         <% if (typeof order.items[idx].customers !== 'undefined' && typeof order.items[idx].customer_questions !== 'undefined') { %>
             <% customers_data = true; %>
         <% } %>
+        
+        <div class="mb-section">
+          <div class="mb-card">
+            <!-- // Product photo -->
+            <% if (order.items[idx].photo_full != null) { %>
+              <img class="mybooking-product_image" src="<%=order.items[idx].photo_full%>" alt="">
+            <% } else { %>
+              <div class="mybooking-product_image-fallback">
+                <i class="fa fa-camera" aria-hidden="true"></i>
+              </div>
+            <% } %>
 
-        <div class="mb-card">
-
-          <!-- // Product photo -->
-          <% if (order.items[idx].photo_full != null) { %>
-            <img class="mybooking-product_image" src="<%=order.items[idx].photo_full%>" alt="">
-
-          <% } else { %>
-            <div class="mybooking-product_image-fallback">
-              <i class="fa fa-camera" aria-hidden="true"></i>
-            </div>
-          <% } %>
-
-          <div class="mb-card_body">
-
-            <!-- // Product name -->
-            <span class="mybooking-product_name">
-              <%=order.items[idx].item_description_customer_translation%>
-            </span>
-
-            <div class="mybooking-activity_date">
-              <span class="mybooking-activity_date-item">
-                <%= configuration.formatDate(order.items[idx].date) %>
+            <div class="mb-card_body">
+              <!-- // Product name -->
+              <span class="mybooking-product_name">
+                <%=order.items[idx].item_description_customer_translation%>
               </span>
-              <span class="mybooking-activity_date-item">
-                <%= order.items[idx].time %>
-              </span>
-            </div>
 
-            <% if (order.allow_select_places_for_reservation || order.use_rates) { %>
-              <% if (order.allow_select_places_for_reservation) { %>
-                <% if (order.use_rates) { %>
-                  <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
-                    <div class="mybooking-summary_activities">
-                      <div class="mybooking-summary_activity-item">
-                        <span class="mb-badge info mybooking-summary_activity-quantity">
+              <div class="mybooking-activity_date">
+                <span class="mybooking-activity_date-item">
+                  <%= configuration.formatDate(order.items[idx].date) %>
+                </span>
+                <span class="mybooking-activity_date-item">
+                  <%= order.items[idx].time %>
+                </span>
+              </div>
+
+              <% if (order.allow_select_places_for_reservation || order.use_rates) { %>
+                <% if (order.allow_select_places_for_reservation) { %>
+                  <% if (order.use_rates) { %>
+                    <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
+                      <div class="mybooking-summary_activities">
+                        <div class="mybooking-summary_activity-item">
+                          <span class="mb-badge info mybooking-summary_activity-quantity">
+                            <%=order.items[idx]['items'][x].quantity %>
+                          </span>
+                          <span class="mybooking-summary_activity-name">
+                            <%=order.items[idx]['items'][x].item_price_description %> x
+                          </span>
+                          <span class="mybooking-summary_activity-amount">
+                            <%=configuration.formatCurrency(order.items[idx]['items'][x].item_unit_cost) %>
+                          </span>
+                        </div>
+                        <span class="mybooking-summary_activity-amount">
+                          <%=configuration.formatCurrency(order.items[idx]['items'][x].item_cost) %>
+                        </span>
+                      </div>
+                    <% } %>
+                  <% } else { %>
+                    <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
+                      <div class="mybooking-summary_activities">
+                        <span class="mybooking-summary_activity-quantity">
                           <%=order.items[idx]['items'][x].quantity %>
                         </span>
                         <span class="mybooking-summary_activity-name">
-                          <%=order.items[idx]['items'][x].item_price_description %> x
-                        </span>
-                        <span class="mybooking-summary_activity-amount">
-                          <%=configuration.formatCurrency(order.items[idx]['items'][x].item_unit_cost) %>
+                          <%=order.items[idx]['items'][x].item_price_description %>
                         </span>
                       </div>
-                      <span class="mybooking-summary_activity-amount">
-                        <%=configuration.formatCurrency(order.items[idx]['items'][x].item_cost) %>
-                      </span>
-                    </div>
-                  <% } %>
-
-                <% } else { %>
-                  <% for (var x=0; x<order.items[idx]['items'].length; x++) { %>
-                    <div class="mybooking-summary_activities">
-                      <span class="mybooking-summary_activity-quantity">
-                        <%=order.items[idx]['items'][x].quantity %>
-                      </span>
-                      <span class="mybooking-summary_activity-name">
-                        <%=order.items[idx]['items'][x].item_price_description %>
-                      </span>
-                    </div>
+                    <% } %>
                   <% } %>
                 <% } %>
               <% } %>
+            </div>
+          </div>
+        </div>
+      <% } %>
 
-              <!-- // Show the total -->
-              <% if (order.use_rates) { %>
-                <div class="mybooking-summary_activities-total">
-                  <span class="mybooking-summary_activity-total-label">
-                    <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
-                  </span>
-                  <span class="mybooking-summary_activity-total-amount">
-                    <%=configuration.formatCurrency(order.items[idx]['total'])%>
-                  </span>
-                </div>
-              <% } %>
+      <!-- // Show the total -->
+      <% if (order.use_rates) { %>
+        <div class="mb-section mb-panel-container">
+          <div class="mybooking-summary_activities-total  mybooking-summary_activities-total--notborder">
+            <span class="mybooking-summary_activity-total-label">
+              <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
+            </span>
+            <span class="mybooking-summary_activity-total-amount">
+              <%=configuration.formatCurrency(order.items[idx]['total'])%>
+            </span>
+          </div>
 
-              <% if (order.use_rates) { %>
-                <div class="mybooking-summary_activities-total">
-                  <span class="mybooking-summary_activity-total-label">
-                    <?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?>
-                  </span>
-                  <span class="mybooking-summary_activity-total-amount">
-                    <%=configuration.formatCurrency(order.total_paid)%>
-                  </span>
-                </div>
-                <div class="mybooking-summary_activities-total">
-                  <span class="mybooking-summary_activity-total-label">
-                    <?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?>
-                  </span>
-                  <span class="mybooking-summary_activity-total-amount mb-text-danger">
-                    <%=configuration.formatCurrency(order.total_pending)%>
-                  </span>
-                </div>
-              <% } %>
-            <% } %>
+          <div class="mybooking-summary_activities-total">
+            <span class="mybooking-summary_activity-total-label">
+              <?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+            </span>
+            <span class="mybooking-summary_activity-total-amount">
+              <%=configuration.formatCurrency(order.total_paid)%>
+            </span>
+          </div>
+
+          <div class="mybooking-summary_activities-total">
+            <span class="mybooking-summary_activity-total-label">
+              <?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+            </span>
+            <span class="mybooking-summary_activity-total-amount mb-text-danger">
+              <%=configuration.formatCurrency(order.total_pending)%>
+            </span>
           </div>
         </div>
       <% } %>
@@ -139,7 +138,7 @@
       <% if (customers_data || order.request_customer_address) { %>
         <div id="customers_data" class="mb-section mb-panel-container">
           <form class="mybooking-form" id="order_information_form" name="order_information_form">
-            <div class="mb-alert info">
+            <div class="mb-alert lighter">
               <?php echo esc_html_x( 'Please complete the information to speed up the delivery process on the scheduled date', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
             </div>
 

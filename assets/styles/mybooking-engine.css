@@ -304,7 +304,7 @@
 /** CONTAINERS **/
 
 .mb-section:not(:last-child) {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .mb-section_title {

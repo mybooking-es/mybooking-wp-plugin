@@ -43,7 +43,6 @@
               <% } %>
 
               <div class="mb-card_body">
-
                 <!-- // Product name -->
                 <span class="mybooking-product_name">
                   <%=order.items[idx].item_description_customer_translation%>
@@ -93,38 +92,6 @@
                       <% } %>
                     <% } %>
                   <% } %>
-
-                  <!-- // Show the total -->
-
-                  <% if (order.use_rates) { %>
-                    <div class="mybooking-summary_activities-total">
-                      <span class="mybooking-summary_activity-total-label">
-                        <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
-                      </span>
-                      <span class="mybooking-summary_activity-total-amount">
-                        <%=configuration.formatCurrency(order.items[idx]['total'])%>
-                      </span>
-                    </div>
-                  <% } %>
-
-                  <% if (order.use_rates) { %>
-                    <div class="mybooking-summary_activities-total">
-                      <span class="mybooking-summary_activity-total-label">
-                        <?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?>
-                      </span>
-                      <span class="mybooking-summary_activity-total-amount">
-                        <%=configuration.formatCurrency(order.total_paid)%>
-                      </span>
-                    </div>
-                    <div class="mybooking-summary_activities-total">
-                      <span class="mybooking-summary_activity-total-label">
-                        <?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?>
-                      </span>
-                      <span class="mybooking-summary_activity-total-amount mb-text-danger">
-                        <%=configuration.formatCurrency(order.total_pending)%>
-                      </span>
-                    </div>
-                  <% } %>
                 <% } %>
               </div>
             </div>
@@ -132,7 +99,39 @@
         <% } %>
       </div>
 
-      <br/>
+      <br />
+
+      <!-- // Show the total -->
+      <% if (order.use_rates) { %>
+        <div class="mb-section mb-panel-container">
+          <div class="mybooking-summary_activities-total mybooking-summary_activities-total--notborder">
+            <span class="mybooking-summary_activity-total-label">
+              <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
+            </span>
+            <span class="mybooking-summary_activity-total-amount">
+              <%=configuration.formatCurrency(order.items[idx]['total'])%>
+            </span>
+          </div>
+
+          <div class="mybooking-summary_activities-total">
+            <span class="mybooking-summary_activity-total-label">
+              <?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+            </span>
+            <span class="mybooking-summary_activity-total-amount">
+              <%=configuration.formatCurrency(order.total_paid)%>
+            </span>
+          </div>
+          <div class="mybooking-summary_activities-total">
+            <span class="mybooking-summary_activity-total-label">
+              <?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+            </span>
+            <span class="mybooking-summary_activity-total-amount mb-text-danger">
+              <%=configuration.formatCurrency(order.total_pending)%>
+            </span>
+          </div>
+        </div>
+      <% } %>
+
       <!-- // Customers detail -->
       <div class="mb-section">
         <div class="mybooking-summary_details-title">

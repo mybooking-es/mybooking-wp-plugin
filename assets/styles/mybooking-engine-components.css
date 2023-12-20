@@ -796,6 +796,11 @@
   border-top: 1px solid var(--mb-border-color);
 }
 
+.mybooking-summary_activities-total--notborder {
+  border-top: none;
+  padding-top: 0;
+}
+
 .mybooking-summary_activity-total-label,
 .mybooking-summary_activity-total-amount {
   font-size: 1.3rem;
