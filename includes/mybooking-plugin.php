@@ -49,12 +49,9 @@
   require_once('widgets/mybooking-plugin-transfer-selector-widget.php');
   // Settings
   require_once('settings/mybooking-plugin-settings.php');
-<<<<<<< HEAD
-=======
   // On boarding
   require_once('settings/mybooking-plugin-onboarding.php');
 
->>>>>>> fb_theme_comp
   // Patterns
   require_once('mybooking-patterns.php');
 
@@ -111,10 +108,6 @@
         
         // Initialize the plugin
         $this->wp_init();
-<<<<<<< HEAD
-        // Prepare the plugin settings page
-        $settings = new MyBookingPluginSettings();
-=======
 
         if ( is_admin() ) {
           // Prepare the plugin settings page
@@ -122,7 +115,6 @@
           // Prepare the plugin onboarding page
           $onboarding = new MybookingPluginOnBoarding();
         }
->>>>>>> fb_theme_comp
     }
 
     // The object is created from within the class itself
@@ -1145,10 +1137,6 @@
 
       $registry = Mybooking_Registry::getInstance();
 
-<<<<<<< HEAD
-
-=======
->>>>>>> fb_theme_comp
       // Renting product detail route (depends on the settings)
       if ( $registry->mybooking_rent_plugin_detail_pages ) {
         $url = $registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products';
