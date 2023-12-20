@@ -324,33 +324,14 @@
         array_push($mybooking_dependencies, 'mybooking_wp_js_slick');
       }
 
-
-      // Enqueue the Engine Plugin [TO BE INCLUDED IN THE FOOTER 5th parameter true]
-/*
-      if ( is_active_widget( false, false, 'mybooking_rent_engine_selector_widget', false ) ||
-           has_shortcode( $content , 'mybooking_rent_engine_selector') ) {
-            wp_register_script( 'mybooking-rent-engine-script',
-            plugins_url( '/assets/js/mybooking-js-engine-rent-selector-bundle.js',
-            dirname(__DIR__) ),
-            $mybooking_dependencies,
-            $this->version,
-            array(
-              'strategy' => 'async'
-             )
-          );
-          wp_enqueue_script( 'mybooking-rent-engine-script');
-      } else { */
-        // Take into account that the engine can not be loaded with async strategy if
-        // mediator is used because it can not be loaded.
-        wp_register_script( 'mybooking-rent-engine-script',
-                            plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
-                            dirname(__DIR__) ),
-                            $mybooking_dependencies,
-                            $this->version,
-                            true
-                          );
-        wp_enqueue_script( 'mybooking-rent-engine-script');
-//      }
+      wp_register_script( 'mybooking-rent-engine-script',
+                          plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
+                          dirname(__DIR__) ),
+                          $mybooking_dependencies,
+                          $this->version,
+                          true
+                        );
+      wp_enqueue_script( 'mybooking-rent-engine-script');
 
       // Complements (testimonials, cookies, popup)
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1' ||
