@@ -126,7 +126,8 @@
 				    	<?php if ( $mybooking_disabled_previous ): ?>
 				    		<?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				    	<?php else: ?>
-				    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']-1).$mybooking_querystring ) ?>">
+				    	  <a class="mb-pagination_page-link" 
+									 href="<?php echo esc_url( wp_nonce_url( $args['url'].'?offsetpage='.($args['current_page']-1).$mybooking_querystring, 'activities_list', 'activities_wponce' ) ) ?>">
 				    	     <?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				    	  </a>
 				    	<?php endif ?>
@@ -143,7 +144,7 @@
 		          <?php } else { ?>
 		            <li class="mb-pagination_page-item">
 		      	      <a class="mb-pagination_page-link"
-		      	         href="<?php echo esc_url( $args['url'].'?offsetpage='.($mybooking_page).$mybooking_querystring )?>">
+		      	         href="<?php echo esc_url( wp_nonce_url( $args['url'].'?offsetpage='.($mybooking_page).$mybooking_querystring, 'activities_list', 'activities_wponce' ) )?>">
 		      	      	<?php echo esc_html( $mybooking_page ) ?>
 		      	      </a>
 		      	    </li>
@@ -155,7 +156,8 @@
 				    	<?php if ( $mybooking_disabled_next ): ?>
 				    		<?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				    	<?php else: ?>
-				    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']+1).$mybooking_querystring )?>">
+				    	  <a class="mb-pagination_page-link" 
+									 href="<?php echo esc_url( wp_nonce_url( $args['url'].'?offsetpage='.($args['current_page']+1).$mybooking_querystring, 'activities_list', 'activities_wponce' ) )?>">
 				    	     <?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				    	  </a>
 			    	  <?php endif ?>

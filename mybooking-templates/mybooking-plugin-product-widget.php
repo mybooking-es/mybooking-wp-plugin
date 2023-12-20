@@ -17,17 +17,13 @@
            <?php if ( array_key_exists('check_hourly_occupation', $args) && $args['check_hourly_occupation'] == 'yes' ) : ?>
              data-check-hourly-occupation="true"
            <?php endif; ?>  
-           class="mybooking-product_calendar_container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
-      <div class="mb-row">
-        <div class="mb-col-md-12">
-          <form
-            name="search_form"
-            method="get"
-            enctype="application/x-www-form-urlencoded"
-            class="mybooking-form mybooking-product_calendar">                           
-          </form>
-        </div>
-      </div>
+           class="mybooking mybooking-product_calendar_container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+      <form
+        name="search_form"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        class="mybooking-form mybooking-product_calendar">                           
+      </form>
     </div>
 
     <!-- DETAILS MODAL ------------------------------------------------------------>

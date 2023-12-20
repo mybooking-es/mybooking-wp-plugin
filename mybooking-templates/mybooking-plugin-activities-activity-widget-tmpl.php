@@ -85,9 +85,9 @@
         <% } else if (activity.available == 2) {%>
           <div class="mb-alert warning">
             <% if (activity.allow_select_places_for_reservation) { %>
-            <p><%=i18next.t('activities.calendarWidget.fewPlacesWarning')%></p>
+              <%=i18next.t('activities.calendarWidget.fewPlacesWarning')%>
             <% } else { %>
-            <p><%=i18next.t('activities.calendarWidget.fewNoPlacesWarning')%></p>
+              <%=i18next.t('activities.calendarWidget.fewNoPlacesWarning')%>
             <% } %>
           </div>
         <% } %>
@@ -116,7 +116,7 @@
   <% } %>
 
   <div class="form-group">
-    <button type="button" id="btn_reservation" class="mb-button block btn-choose-product">
+    <button type="button" id="btn_reservation" class="mb-button button block btn-choose-product">
       <?php echo esc_html_x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?>
     </button>
   </div>
@@ -148,7 +148,7 @@
   <% } %>
 
   <div class="form-group">
-    <button type="button" id="btn_reservation" class="mb-button block btn-choose-product">
+    <button type="button" id="btn_reservation" class="mb-button button block btn-choose-product">
       <?php echo esc_html_x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?>
     </button>
   </div>

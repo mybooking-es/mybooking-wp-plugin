@@ -15,7 +15,7 @@
   <div class="entry-content">
     <div class="mybooking mybooking-product_detail mybooking-product_container">
       <div class="mb-row">
-        <div class="mb-col-md-12">
+        <div class="mb-col-md-12 mb-col-lg-12">
           <div class="mybooking-product_detail-header">
             <div class="mybooking-product_detail-title">
               <h1><?php echo esc_html( $args->name ) ?></h1>
@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="mb-row">
-        <div class="mb-col-md-8">
+        <div class="mb-col-md-6 mb-col-lg-8">
 
           <!-- Product image -->
           <?php if (!empty( $args->photos ) && count( $args->photos ) > 1) { ?>
@@ -78,8 +78,8 @@
 
         </div>
 
-        <div class="mb-col-md-4">
-          <h2><?php echo _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></h2>
+        <div class="mb-col-md-6 mb-col-lg-4">
+          <h2><?php echo wp_kses_post( _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ) ?></h2>
           <?php
              $widget_data = array( 'code' => $args->code );
              if ( isset( $args->sales_channel_code ) ) {

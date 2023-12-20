@@ -9,15 +9,21 @@
  */
 ?>
 
-<section class="mybooking mybooking-process_choose <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
+<!-- Reservation detail sticky
+  
+  .mybooking-transfer_choose class is present to fix missing styles 
+  due to refactorization related to adaptation to Mybooking Theme 
+  -->
+<div id="mybooking_transfer_reservation_detail" class="sticky-top mybooking-transfer_choose"></div>
 
-  <!-- Reservation detail -->
-  <div id="mybooking_transfer_reservation_detail"></div>
+<div class="mybooking-process-page">
+  <section class="mybooking mybooking-page-container mybooking-process_choose <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
 
   <!-- Product listing -->
   <div class="mybooking-product_listing" id="mybooking_transfer_product_listing"></div>
-</section>
-
+  <br />
+  </section>
+</div>
 
 <!-- DETAILS MODAL ------------------------------------------------------------>
 

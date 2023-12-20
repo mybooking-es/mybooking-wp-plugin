@@ -1,0 +1,17 @@
+#mybooking_plugin_settings_api_key_active_btn {
+	line-height: 1.7em;
+	cursor: pointer;
+}
+
+input.readonly, 
+input[readonly], 
+textarea.readonly, 
+textarea[readonly],
+input.readonly:focus, 
+input[readonly]:focus, 
+textarea.readonly:focus,  
+textarea[readonly]:focus {
+	outline: none;
+	box-shadow: none;
+	cursor: not-allowed;
+}

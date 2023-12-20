@@ -5,13 +5,16 @@
  *   The Template for showing the renting complete step
  *   This template can be overridden by copying it to your
  *   theme /mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php
- *
+ * 
+ * @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ * @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound   
  */
 ?>
 
 <script type="text/tmpl" id="transfer_form_selector_tmpl">
 
-<div class="mybooking-selector_group">
+<div class="mybooking-selector_transfers-group">
 	<div class="mybooking-selector_type">
 
 	  <!-- // One Way -->
@@ -28,7 +31,9 @@
 	</div>
 </div>
 
-<div class="mybooking-selector_group">
+<br />
+
+<div class="mybooking-selector_transfers-group">
 
 	<!-- // GOING -->
 
@@ -83,12 +88,8 @@
 			<select class="mb-form-control" name="time" id="time"></select>
 		</div>
   </div>
-</div>
-
-<div class="mybooking-selector_group">
 
 	<!-- // RETURN -->
-
 	<div id="return_block" class="mybooking-selector_transfers-return" style="display:none">
 	  <div class="mybooking-selector_transfers-destination" id="return_origin_destination_block" style="display: none">
 
@@ -116,7 +117,7 @@
 	  </div>
 
 		<!-- // Date and time -->
-	  <div class="mybooking-selector_date">
+	  <div class="mybooking-selector_return">
 
 			<!-- // Return date -->
 	    <div class="mybooking-selector_cal">
@@ -145,7 +146,7 @@
 
 <!-- // FOOTER -->
 
-<div class="mybooking-selector_group mybooking-selector_footer">
+<div class="mybooking-selector_transfers-group mybooking-selector_footer">
 
   <!-- // Seats -->
   <div class="mybooking-selector_seats">
@@ -170,7 +171,10 @@
 	</div>
 
 	<!-- // Search button -->
-	<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_attr_x( 'Find transfer', 'transfer_form_selector', 'mybooking-wp-plugin') ?>" />
+	<div class="mybooking-selector_button-box">
+		<label>&nbsp;</label>
+		<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_attr_x( 'Find transfer', 'transfer_form_selector', 'mybooking-wp-plugin') ?>" />
+	</div>
 </div>
 
 </script>

@@ -10,8 +10,8 @@
   width: 90vw;
   box-sizing: border-box;
   background: #fff;
-  padding: 2rem;
-  margin-top: 4rem;
+  padding: 1rem;
+  margin: 1rem;
   -webkit-box-shadow: 0 0 20px var(--mb-dark-background-color);
   -moz-box-shadow: 0 0 20px var(--mb-dark-background-color);
   -o-box-shadow: 0 0 20px var(--mb-dark-background-color);
@@ -19,12 +19,14 @@
   box-shadow: 0 0 20px var(--mb-dark-background-color);
   text-align: left;
   word-wrap: break-word;
+  border-radius: 10px;
 } @media ( min-width: 575.98px ) {
   .mybooking-modal {
     max-width: 1200px;
-    min-width: 800px;
+    min-width: 500px;
     margin: 0;
-    padding: 3rem;
+    padding: 2rem;  
+    border-radius: 10px;
   }
 }
 

@@ -114,10 +114,10 @@ class MyBookingRentEngineSelectorWizardWidget extends WP_Widget {
     public function update( $new_instance, $old_instance ) {
         // processes widget options to be saved
         $instance = array();
-        $instance['sales_channel_code'] = ( ! empty( $new_instance['sales_channel_code'] ) ) ? strip_tags( $new_instance['sales_channel_code'] ) : '';
-        $instance['family_id'] = ( ! empty( $new_instance['family_id'] ) ) ? strip_tags( $new_instance['family_id'] ) : '';
-        $instance['category_code'] = ( ! empty( $new_instance['category_code'] ) ) ? strip_tags( $new_instance['category_code'] ) : '';
-        $instance['rental_location_code'] = ( ! empty( $new_instance['rental_location_code'] ) ) ? strip_tags( $new_instance['rental_location_code'] ) : '';
+        $instance['sales_channel_code'] = ( ! empty( $new_instance['sales_channel_code'] ) ) ? wp_strip_all_tags( $new_instance['sales_channel_code'] ) : '';
+        $instance['family_id'] = ( ! empty( $new_instance['family_id'] ) ) ? wp_strip_all_tags( $new_instance['family_id'] ) : '';
+        $instance['category_code'] = ( ! empty( $new_instance['category_code'] ) ) ? wp_strip_all_tags( $new_instance['category_code'] ) : '';
+        $instance['rental_location_code'] = ( ! empty( $new_instance['rental_location_code'] ) ) ? wp_strip_all_tags( $new_instance['rental_location_code'] ) : '';
         return $instance;        
     }
 }

@@ -5,7 +5,10 @@
  *   The Template for showing the renting complete step
  *   This template can be overridden by copying it to your
  *   theme/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php
- *
+ * 
+ *   @phpcs:disable PHPCompatibility.Miscellaneous.RemovedAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound
+ *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
  */
 ?>
 
@@ -35,9 +38,7 @@
           <!-- // Custom delivery place -->
           <div id="another_pickup_place_group" style="display: none;">
             <button class="mybooking-selector_close-btn another_pickup_place_group_close">
-              <i class="fa fa-times">
-                <span class="dashicons dashicons-dismiss"></span>
-              </i>
+              <span class="dashicons dashicons-dismiss"></span>
             </button>
             <input class="mb-form-control" id="pickup_place_other" type="text" name="pickup_place_other" />
             <input type="hidden" name="custom_pickup_place" value="false" />
@@ -65,6 +66,9 @@
             <i class="mybooking-selector_field-icon">
               <span class="dashicons dashicons-clock"></span>
             </i>
+            <label for="time_from">
+              <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+            </label>
             <select class="mb-form-control" id="time_from" name="time_from"></select>
           </div>
         <% } else { %>
@@ -96,9 +100,7 @@
           <!-- // Custom delivery place -->
           <div id="another_return_place_group" style="display: none;">
             <button class="mybooking-selector_close-btn another_return_place_group_close">
-              <i class="fa fa-times">
-                <span class="dashicons dashicons-dismiss"></span>
-              </i>
+              <span class="dashicons dashicons-dismiss"></span>
             </button>
             <input class="mb-form-control" id="return_place_other" type="text" name="return_place_other" />
             <input type="hidden" name="custom_return_place" value="false" />
@@ -126,6 +128,9 @@
             <i class="mybooking-selector_field-icon">
               <span class="dashicons dashicons-clock"></span>
             </i>
+            <label for="time_from">
+              <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+            </label>
             <select class="mb-form-control" name="time_to" id="time_to"></select>
           </div>
         <% } else { %>
@@ -134,14 +139,11 @@
       </div>
     </div>
 
-
     <!-- // FOOTER -->
-
     <div class="mybooking-selector_group mybooking-selector_footer">
-
-      <!-- // Location code selector -->
+      <!-- // Rental location selector - Location code selector -->
       <% if (not_hidden_rental_location_code && configuration.selectorRentalLocation) { %>
-        <div class="rental_location" style="display: none">
+        <div class="mybooking-selector_location rental_location" style="display: none">
           <label for="rental_location_code">
             <?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
           </label>
@@ -151,10 +153,7 @@
 
       <!-- // Family selector -->
       <% if (not_hidden_family_id && configuration.selectFamily) { %>
-        <div class="family" style="display: none">
-          <i class="mybooking-selector_field-icon fa fa-list-alt">
-            <span class="dashicons dashicons-list-view"></span>
-          </i>
+        <div class="family mybooking-selector_family" style="display: none">
           <label for="family_id">
             <?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
           </label>
@@ -165,7 +164,7 @@
       <!-- // Category code -->
 
       <!-- Age code selector -->
-			<div class="driver_age_rule" style="display: none">
+			<div class="driver_age_rule mybooking-selector_driver_age" style="display: none">
 				<label for="driver_age_rule_id">
 				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
 				</label>
@@ -181,7 +180,10 @@
       <% } %>
 
       <!-- // Search button -->
-      <input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+      <div class="mybooking-selector_button-box">
+        <label>&nbsp;</label>
+        <input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+      </div>
     </div>
 
   <% } else { %>
@@ -236,6 +238,9 @@
             <i class="mybooking-selector_field-icon">
               <span class="dashicons dashicons-clock"></span>
             </i>
+            <label for="time_from">
+							<?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+						</label>
             <select class="mb-form-control" id="time_from" name="time_from"></select>
           </div>
         <% } else { %>
@@ -259,8 +264,11 @@
           <% if (configuration.timeToFrom) { %>
             <div class="mybooking-selector_hour">
               <i class="mybooking-selector_field-icon">
-                <span class="dashicons dashicons-clock"></span>
+                <span class="dashicons dashicons-backup"></span>
               </i>
+              <label for="time_to">
+                <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+              </label>
               <select class="mb-form-control" name="time_to" id="time_to"></select>
             </div>
           <% } else { %>
@@ -294,10 +302,7 @@
 
       <!-- // Family selector -->
       <% if (not_hidden_family_id && configuration.selectFamily) { %>
-        <div class="family" style="display: none">
-          <i class="mybooking-selector_field-icon fa fa-list-alt">
-            <span class="dashicons dashicons-list-view"></span>
-          </i>
+        <div class="family mybooking-selector_family" style="display: none">
           <label for="family_id">
             <?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
           </label>
@@ -306,7 +311,7 @@
       <% } %>
 
       <!-- Age code selector -->
-			<div class="driver_age_rule" style="display: none">
+			<div class="driver_age_rule mybooking-selector_driver_age" style="display: none">
 				<label for="driver_age_rule_id">
 				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
 				</label>
@@ -322,7 +327,10 @@
       <% } %>
 
       <!-- // Search button -->
-      <input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+      <div class="mybooking-selector_button-box">
+        <label>&nbsp;</label>
+        <input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+      </div>
     </div>
 
   <% } %>

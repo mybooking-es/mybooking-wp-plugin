@@ -57,7 +57,7 @@
           $post->post_status = 'publish'; 
           $post->comment_status = 'closed';
           $post->ping_status = 'closed';
-          $post->post_name = 'activity-page-' . rand( 1, 99999 ); // append random number to avoid clash
+          $post->post_name = 'activity-page-' . wp_rand( 1, 99999 ); // append random number to avoid clash
           $post->post_type = 'page';
           $post->filter = 'raw'; // important!
 

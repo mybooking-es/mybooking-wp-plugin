@@ -105,7 +105,7 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       // Image width percentage
       $product_image_width_img = get_theme_mod('mybooking_reservation_engine_product_image_width_img', '100');
       // Product text height (grid)
-      $product_body_height = get_theme_mod('mybooking_reservation_engine_product_body_height', '60');
+      $product_body_height = get_theme_mod('mybooking_reservation_engine_product_body_height', '120');
       // Product text height (list)
       $product_list_body_height = get_theme_mod('mybooking_reservation_engine_list_product_body_height', '140');
       // Show key characteristics
@@ -297,7 +297,7 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $wp_customize->add_setting(
         'mybooking_reservation_engine_product_body_height',
         array(
-          'default'           => '60',
+          'default'           => '120',
           'type'              => 'theme_mod',
           'sanitize_callback' => 'absint',
           'capability'        => 'edit_theme_options',

@@ -55,7 +55,7 @@ class MyBookingTransferEngineSelectorWidget extends WP_Widget {
     public function update( $new_instance, $old_instance ) {
         // processes widget options to be saved
         $instance = array();
-        $instance['layout'] = ( ! empty( $new_instance['layout'] ) ) ? strip_tags( $new_instance['layout'] ) : '';
+        $instance['layout'] = ( ! empty( $new_instance['layout'] ) ) ? wp_strip_all_tags( $new_instance['layout'] ) : '';
         return $instance;        
     }
 

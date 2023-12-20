@@ -107,17 +107,22 @@
   justify-content: center;
 }
 
+.mybooking-wizard_date-calendar {
+  width: 100%;
+  text-align: center;
+}
+
+
 /* Time step */
 .mybooking-wizard_time {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  max-width: 400px;
   margin: 0 auto;
   padding: 0;
 }
 
 .mybooking-wizard_time-item {
-  flex-basis: 20%;
+  flex-basis: 30%;
 }

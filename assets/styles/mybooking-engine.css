@@ -6,6 +6,9 @@
 
 :root {
 
+  /* Structure */
+  --mb-page-container-max-width: 1140px;  /* Theme compat */
+
   /* Color palette */
   --mb-accent-color: #2193F2;
 
@@ -25,6 +28,12 @@
   --mb-dark-background-color: #424242;
   --mb-negative-text-color: #FFF;
 
+  /* Buttons - Gets third party theme colors and reset for Mybooking theme compatibility */
+  --mb-button-border-radius: var(--btn-border-radius);
+  --mb-button-font-weight: var(--btn-font-w);
+  
+  --mb-placeholder-text-color: #888;
+
   /* Forms */
   --mb-form-field-height:  42px;
   --mb-form-field-border-color:  var(--mb-border-color);
@@ -32,10 +41,11 @@
 
   /* Selector form */
   --mb-selector-label-color: currentcolor;
-  --mb-selector-padding: 2rem;
+  --mb-selector-padding: 1rem;
   --mb-selector-background: white;
   --mb-selector-border-color: var(--mb-form-field-border-color);
   --mb-selector-field-height: var(--mb-form-field-height);
+  
 
   --mb-selector-promo-border: var(--mb-form-field-border-color);
   --mb-selector-promo-bg: white;
@@ -43,7 +53,7 @@
 
   /* Product box */
   --mb-product-separation: 0.7rem;
-  --mb-product-background: transparent;
+  --mb-product-background: white;
   --mb-product-border-color: var(--mb-border-color);
 
   /* Product grid */
@@ -53,34 +63,21 @@
   --mb-product-image-fit: contain;
   --mb-product-image-padding:  20px;
   --mb-product-header-height: 75px;
-  --mb-product-body-height: 140px;
+  --mb-product-body-height: 90px;
   --mb-product-footer-height: 76px;
   --mb-product-btn-height: 50px;
-
-  /* Product list */
-  --mb-product-list-left-width: 50%;
-  --mb-product-list-right-width: 50%;
-  --mb-product-list-image-height: 100%;
-  --mb-product-list-header-height: 70px;
-  --mb-product-list-body-height: 190px;
-  --mb-product-list-footer-height: 76px;
 
   /* Product custom message */
   --mb-product-custom-message-bg: rgba(255,255,255,0.7);
   --mb-product-custom-message-color: currentcolor;
 
   /* Product text */
-  --mb-product-name-size: 1em;
+  --mb-product-name-size: 1.3rem;
   --mb-product-name-width: 300px;
   --mb-product-description-width: 300px;
   --mb-product-price-color: var(--mb-info-color);
-  --mb-product-price-size: 1.3em;
+  --mb-product-price-size: 1.3rem;
   --mb-product-quantity-color: #2193F2;
-
-  --mb-product-list-price-size: 1.3em;
-  --mb-product-list-name-size: 1.15em;
-  --mb-product-list-name-width: 350px;
-  --mb-product-list-description-width: 350px;
 
   /* Product icons */
   --mb-product-list-keys-width: auto;
@@ -99,9 +96,9 @@
   --mb-product-detail-color: currentcolor;
 
   --mb-product-total-border: var(--mb-border-color);
-  --mb-product-total-bg: transparent;
+  --mb-product-total-bg: #FFF;
   --mb-product-total-color: currentcolor;
-  --mb-product-total-amount-size: 1.4em;
+  --mb-product-total-amount-size: 1.3em;
   --mb-product-total-amount-color: var(--mb-info-color);
 
   --mb-product-activity-route-max-width: none;
@@ -123,6 +120,10 @@
   --mb-calendar-first-last-date:  var(--mb-primary-selected-date);
   --mb-calendar-checked-date:  var(--mb-secondary-selected-date);
 
+  /* Panel container */
+  --mb-panel-container-border-radius: var(--mb-border-radius);
+  --mb-panel-container-border-color: transparent;
+  --mb-panel-container-text-color: var(--mb-text-color);
 
   /* Complete payment buttons */
   --mb-payment-option-btn-bg: var(--mb-dark-background-color);
@@ -155,14 +156,8 @@
 /** FLOATED GRID **/
 
 .mb-row {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+  margin: 0 1rem;
   clear: both;
-} @media ( min-width: 575.98px ) {
-  .mb-row {
-    flex-direction: row;
-  }
 }
 
 .mb-row.invert {
@@ -176,13 +171,14 @@
 
 .mb-row-flex {
   display: flex;
-} /* Fixes row overflow in certain themes */
+  flex-direction: column;
+} @media ( min-width: 575.98px ) {
+  .mb-row-flex {
+    flex-direction: row;
+  }
+}/* Fixes row overflow in certain themes */
 
-.mb-row:after {
-  content: "";
-  display: block;
-  clear: both;
-}
+
 
 /* Columns */
 
@@ -277,6 +273,22 @@
   }
 }
 
+.mb-col-sm-hidden {
+  @media only screen and ( max-width: 575.97px ) {
+    display: none;
+  }
+}
+.mb-col-md-hidden {
+  @media only screen and ( min-width: 575.98px ) and ( max-width: 991.97px ) {
+    display: none;
+  }
+} 
+.mb-col-lg-hidden {
+  @media only screen and ( min-width: 991.98px ) {
+    display: none;
+  }
+}
+
 /* Grid Helpers */
 
 .mb-col-right {
@@ -291,8 +303,8 @@
 
 /** CONTAINERS **/
 
-.mb-section {
-  margin-bottom: 2rem;
+.mb-section:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 .mb-section_title {
@@ -307,8 +319,31 @@
   
 }
 
+/* Container panel used on complete, summary and my reservation */
+.mb-panel-container {
+  border-radius: var(--mb-panel-container-border-radius)!important;
+  border: 1px solid var(--mb-panel-container-border-color)!important;
+  background-color: white!important;
+  padding: 1rem;
+  color: var(--mb-panel-container-text-color)!important;
+}
 
 /** FORMS & FIELDS **/
+.mybooking * {
+  outline: none;
+}
+
+.mybooking h1,
+.mybooking h2 {
+  line-height: 2.5rem;
+}
+
+.mybooking h3,
+.mybooking h4,
+.mybooking h5,
+.mybooking h6 {
+  line-height: 1.5rem;
+}
 
 .mybooking select,
 .mybooking textarea,
@@ -331,6 +366,11 @@
   border: 1px solid var(--mb-form-field-border-color)!important;
   border-radius: var(--mb-border-radius);
   background-color: var(--mb-form-field-background);
+  font-size: 1em;
+}
+
+.mybooking textarea {
+  padding-top: 0.5rem;
 }
 
 /* IOS appearance standar */
@@ -358,20 +398,23 @@ form.mybooking select,
 }
 
 .mb-form_legend {
-  font-weight: 800;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
-.mb-form-group {
+.mb-form-group:not([class*='mb-col-']) {
   width: 100%;
 }
 
 .mb-form-group label,
-.mb-label {
+.mb-label,
+label {
   display:  block;
-  margin: 0 1rem 0.5rem 0!important;
+  margin: 0.3rem 0.1rem!important;
+  line-height: 1rem;
 }
 
-.mb-form-group input:not([type=checkbox]):not([type=radio]),
+.mb-form-group input:not([type=checkbox]):not([type=radio]):not([type=submit]),
 .mb-input {
   display: inline-block;
   width: 100%;
@@ -396,7 +439,8 @@ form.mybooking select,
 }
 
 .mb-form-row {
-  margin: 0 0 1rem 0;
+  display: inline-block;
+  width: 100%;
 } @media ( min-width: 575.98px ) {
   .mb-form-row {
     display: flex;
@@ -417,6 +461,15 @@ form.mybooking select,
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
+} @media only screen and ( max-width: 768px ) {
+  .mb-form-row {
+    display: inline-block;
+  }
+
+  .mb-form-row [class*='mb-col-md-'],
+  .mb-form-row [class*='mb-col-lg-'] {
+    width: 100%;
+  }
 }
 
 .mb-form-control {
@@ -426,6 +479,10 @@ form.mybooking select,
   .mb-form-control {
     margin-bottom: 0;
   }
+}
+
+.mb-custom-date-form {
+  display: flex;
 }
 
 .mb-custom-date-form .mb-custom-date-item {
@@ -440,6 +497,10 @@ form.mybooking select,
   .mb-custom-date-form select {
     margin: 0;
   }
+}
+
+.mybooking-form  .mb-form-row {
+  align-items: flex-start;
 }
 
 /* Select2 */
@@ -495,7 +556,18 @@ form.mybooking select,
   padding: 1rem 2rem;
   line-height: 1.1;
   text-decoration: none!important;
-  border-radius: var(--mb-border-radius);
+  font-weight: var(--mb-button-font-weight);
+  border-radius: var(--mb-button-border-radius);
+  text-transform: uppercase;
+}
+
+.mb-button:disabled,
+.mb-button[disabled],
+.mb-button:disabled:hover,
+.mb-button[disabled]:hover {
+  cursor: not-allowed;
+  background-color: var(--mb-button-bg-color)!important;
+  border-color: var(--mb-button-border-color)!important;
 }
 
 .mb-button a,
@@ -539,11 +611,12 @@ button.mb-button a:hover  {
 
 /* Badges */
 .mb-badge {
-  padding: 2px 8px;
+  padding: 2px 5px;
+  margin: 0 1px;
   border-radius: 3px;
   background-color: var(--mb-dark-background-color);
   color: var(--mb-negative-text-color);
-  font-size: .7em;
+  font-size: 0.7rem;
   font-weight: bold;
   text-align: center;
 }
@@ -565,9 +638,10 @@ button.mb-button a:hover  {
   padding: .75rem 1.25rem!important; /* Forces any element inside to get alert's padding */
   margin-bottom: 1rem;
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: var(--mb-border-radius);
   color: var(--mb-dark-background-color);
   line-height: 1.2;
+  text-align: center;
 }
 
 .mb-alert.light         { background-color: var(--mb-light-color) }
@@ -619,6 +693,7 @@ button.mb-button a:hover  {
 .mb-card {
   display: block;
   border: 1px solid var(--mb-border-color);
+  background-color: #fff;
 }
 
 .mb-card.inline {
@@ -652,10 +727,13 @@ button.mb-button a:hover  {
 
 .mb-card_footer {
   display: flex;
-  justify-content: flex-end;
   margin: 1rem 0 0 0;
   padding: 1rem;
   border-top: 1px solid var(--mb-border-color);
+} @media ( max-width: 758px ) {
+  .mb-card_footer {
+    justify-content: center;
+  }
 }
 
 /* Lists */
@@ -675,10 +753,20 @@ button.mb-button a:hover  {
   padding: 0.5rem 0;
 }
 
+.mb-list-item.mb-justify-flex-start {
+  justify-content: flex-start;
+}
+
+.mb-list-item.mb-align-flex-center {
+  align-items: center;
+}
+
 .mb-list.border {
   display: block;
   border: 1px solid var(--mb-border-color);
   border-radius: var(--mb-border-radius);
+  background-color: #FFF;
+  padding: 1rem;
 }
 
 .mb-list.border::after {
@@ -688,8 +776,9 @@ button.mb-button a:hover  {
 }
 
 .mb-list.border .mb-list-item {
-  padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--mb-border-color);
+  padding: 0.5rem 1rem;
+  padding-left: 0!important;
 }
 
 .mb-list.border .mb-list-item:last-of-type {
@@ -757,32 +846,37 @@ button.mb-button a:hover  {
 }
 
 /** PROCESS PAGES **/
-
-/* Complete page */
-.mybooking-process_complete .mybooking-product_description {
-  max-height: 10rem!important;
-  overflow-y: auto;
+.mybooking-process-page {
+  background-color: var(--mb-process-page-background);
 }
 
+.mybooking-page-container {
+  max-width: var(--mb-page-container-max-width);
+  margin: 0 auto;
+}
+
+/* Complete page */
 .mybooking-process_complete .complete-section-title {
   margin-bottom: 0.7rem;
 }
 
-
-/* Summary page */
-.mybooking-process_summary .mybooking-product_header {
-  background-color: #EEE;
-  border: 1px solid var(--mb-border-color);
-  border-top: none;
+/* Complete page, Summary page, My-reservation page */
+.mybooking-process_complete .mybooking-product_description,
+.mybooking-process_summary .mybooking-product_description,
+.mybooking-process_reservation .mybooking-product_description {
+  max-height: 10rem!important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-bottom: 1rem;
 }
 
-/* Reservation page */
+/* Summary page *//* Reservation page */
+.mybooking-process_summary .mybooking-product_header,
 .mybooking-process_reservation .mybooking-product_header {
-  background-color: #EEE;
+  background-color: #D5D5D5;
   border: 1px solid var(--mb-border-color);
   border-top: none;
 }
-
 
 /** COMPATIBILITY **/
 
@@ -805,11 +899,11 @@ body.mybooking-activity .entry {
 @media only screen and (min-width: 482px) {
 
   body.mybooking-activity .mybooking-activity_container.alignwide {
-    max-width: var(--responsive--alignwide-width, 610px);
+    // max-width: var(--responsive--alignwide-width, 610px);
     margin: 0 auto;
   }
   body.mybooking-product .mybooking-product_container.alignwide {
-    max-width: var(--responsive--alignwide-width, 610px);
+    // max-width: var(--responsive--alignwide-width, 610px);
     margin: 0 auto;
   }
 
@@ -817,7 +911,7 @@ body.mybooking-activity .entry {
   body.mybooking-product .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
   body.mybooking-activity .entry .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator)
   {
-    max-width: var(--responsive--alignwide-width, 610px);
+    // max-width: var(--responsive--alignwide-width, 610px);
     margin: 0 auto;
   }
  
@@ -825,7 +919,7 @@ body.mybooking-activity .entry {
   body.mybooking-product .entry .entry-content > *,
   body.mybooking-activity .entry .entry-content > *
   {
-    max-width: var(--responsive--alignwide-width, 610px);
+    // max-width: var(--responsive--alignwide-width, 610px);
     margin: 0 auto;
   }
 }

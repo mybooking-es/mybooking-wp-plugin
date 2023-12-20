@@ -124,10 +124,10 @@ class MyBookingEngineContactWidget extends WP_Widget {
     public function update( $new_instance, $old_instance ) {
         // processes widget options to be saved
         $instance = array();
-        $instance['subject'] = ( ! empty( $new_instance['subject'] ) ) ? strip_tags( $new_instance['subject'] ) : '';
-        $instance['source'] = ( ! empty( $new_instance['source'] ) ) ? strip_tags( $new_instance['source'] ) : '';
-        $instance['sales_channel_code'] = ( ! empty( $new_instance['sales_channel_code'] ) ) ? strip_tags( $new_instance['sales_channel_code'] ) : '';
-        $instance['rental_location_code'] = ( ! empty( $new_instance['rental_location_code'] ) ) ? strip_tags( $new_instance['rental_location_code'] ) : '';
+        $instance['subject'] = ( ! empty( $new_instance['subject'] ) ) ? wp_strip_all_tags( $new_instance['subject'] ) : '';
+        $instance['source'] = ( ! empty( $new_instance['source'] ) ) ? wp_strip_all_tags( $new_instance['source'] ) : '';
+        $instance['sales_channel_code'] = ( ! empty( $new_instance['sales_channel_code'] ) ) ? wp_strip_all_tags( $new_instance['sales_channel_code'] ) : '';
+        $instance['rental_location_code'] = ( ! empty( $new_instance['rental_location_code'] ) ) ? wp_strip_all_tags( $new_instance['rental_location_code'] ) : '';
         return $instance;          
     }
 }

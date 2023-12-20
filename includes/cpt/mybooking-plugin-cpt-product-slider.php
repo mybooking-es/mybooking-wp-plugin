@@ -61,45 +61,50 @@
      * Add metabox data
      */ 
     public function add_metabox_data( $product_slider_data_id ) {
-      if (  array_key_exists( 'mybooking-product-slider-title', $_POST )  ) {
-        $title = sanitize_text_field( $_POST['mybooking-product-slider-title'] );
-        update_post_meta(
-          $product_slider_data_id,
-          'mybooking-product-slider-title',
-          $title
-          );
-      }
-      if (  array_key_exists( 'mybooking-product-slider-description', $_POST )  ) {
-        $description = sanitize_text_field( $_POST['mybooking-product-slider-description'] );
-        update_post_meta(
-          $product_slider_data_id,
-          'mybooking-product-slider-description',
-          $description
-          );
-      }
-      if (  array_key_exists( 'mybooking-product-slider-offer-price', $_POST )  ) {
-        $offer_price = sanitize_text_field( $_POST['mybooking-product-slider-offer-price'] );
-        update_post_meta(
-          $product_slider_data_id,
-          'mybooking-product-slider-offer-price',
-          $offer_price
-          );
-      }
-      if (  array_key_exists( 'mybooking-product-slider-original-price', $_POST )  ) {
-        $price = sanitize_text_field( $_POST['mybooking-product-slider-original-price'] );
-        update_post_meta(
-          $product_slider_data_id,
-          'mybooking-product-slider-original-price',
-          $price
-          );
-      }
-      if (  array_key_exists( 'mybooking-product-slider-link', $_POST )  ) {
-        $link = filter_var( $_POST['mybooking-product-slider-link'], FILTER_SANITIZE_URL );
-        update_post_meta(
-          $product_slider_data_id,
-          'mybooking-product-slider-link',
-          $link     
-          );
+
+      if ( isset( $_POST['nonce_field'] ) && wp_verify_nonce( $_POST['nonce_field'], 'cpt_product_slider' ) ) {
+        
+        if ( isset( $_POST[ 'mybooking-product-slider-title' ] ) ) {
+          $title = sanitize_text_field( $_POST['mybooking-product-slider-title'] );
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-title',
+            $title
+            );
+        }
+        if ( isset( $_POST[ 'mybooking-product-slider-description' ] ) ) {
+          $description = sanitize_text_field( $_POST['mybooking-product-slider-description'] );
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-description',
+            $description
+            );
+        }
+        if ( isset( $_POST[ 'mybooking-product-slider-offer-price' ] ) ) {
+          $offer_price = sanitize_text_field( $_POST['mybooking-product-slider-offer-price'] );
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-offer-price',
+            $offer_price
+            );
+        }
+        if ( isset( $_POST[ 'mybooking-product-slider-original-price' ] ) ) {
+          $price = sanitize_text_field( $_POST['mybooking-product-slider-original-price'] );
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-original-price',
+            $price
+            );
+        }
+        if ( isset( $_POST[ 'mybooking-product-slider-link' ] ) ) {        
+          $link = filter_var( $_POST['mybooking-product-slider-link'], FILTER_SANITIZE_URL );
+          update_post_meta(
+            $product_slider_data_id,
+            'mybooking-product-slider-link',
+            $link     
+            );
+        }
+
       }
     }
 
@@ -135,6 +140,9 @@
                 <p><b>If you need more control over design, <a href="/wp-admin/admin.php?page=mybooking-plugin-configuration&tab=complements_options" target="_blank">activate Content Slider</a> component.</b></p>
               </td>
               <td>
+                
+                <?php wp_nonce_field( 'cpt_product_slider', 'nonce_field' ); ?>
+
                 <label for="mybooking-product-slider-title"><h3>Product Title</h3></label>
                 <span class="description">Explain in few words what the product is</span>
                 <br>

@@ -17,7 +17,7 @@
 		<section class="mybooking mybooking-activity mybooking-activity_container">
 
 		  <div class="mb-row">
-		    <div class="mb-col-md-12">
+		    <div class="mb-col-md-12 mb-col-lg-12">
 					<div class="mybooking-activity_header">
 						<h1 class="mybooking-activity_title">
 							<?php echo esc_html( $args->name ) ?>
@@ -32,10 +32,8 @@
 			</div>		
 			
 		  <div class="mb-row">
-			  <div class="mb-col-md-8">
-
+			  <div class="mb-col-md-6 mb-col-lg-8">
 					<?php if (sizeof($args->photos) > 1) { ?>
-
 		        <div class="mybooking-activity-carousel-inner">
 		          <?php foreach( $args->photos as $mybooking_key => $mybooking_photo ) { ?>  
 		            <div class="mybooking-carousel-item">
@@ -150,7 +148,7 @@
 		      <?php } ?>
 				</div>
 
-				<div class="mb-col-md-4">
+				<div class="mb-col-md-6 mb-col-lg-4">
 					<p><?php echo esc_html( $args->short_description ) ?></p>
 			    <?php mybooking_engine_get_template('mybooking-plugin-activities-activity-widget.php', array('activity_id' => $args->id)) ?>
 				</div>

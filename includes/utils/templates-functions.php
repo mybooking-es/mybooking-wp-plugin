@@ -27,7 +27,7 @@ function mybooking_engine_locate_template( $template_name, $template_path = '', 
 
 	// Set default plugin templates path.
 	if ( ! $default_path ) :
-		$default_path = dirname(plugin_dir_path( __FILE__ )) . '/mybooking-templates/'; // Path to the template folder
+		$default_path = dirname(plugin_dir_path( __DIR__ )) . '/mybooking-templates/'; // Path to the template folder
 	endif;
 
   $template = null;
@@ -117,7 +117,9 @@ function mybooking_engine_load_template( $template_name, $args = array(), $tempa
 		return;
 	endif;
 
-	$file = file_get_contents($template_file);
+	// Replace file_get_contents with a wordpress function
+	$filesystem = new WP_Filesystem_Direct( true );
+	$file = $filesystem->get_contents( $template_file );
 
 	return $file;
 

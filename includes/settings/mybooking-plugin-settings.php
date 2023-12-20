@@ -1,8 +1,7 @@
 <?php
   class MyBookingPluginSettings {
 
-	  public function __construct()
-	  {
+	  public function __construct() {
 	    	$this->wp_init();
 	  }
 
@@ -10,6 +9,9 @@
 
 			// Create menu in settings
 			add_action( 'admin_menu', array($this,'wp_settings_page'));
+
+			// Remove settings page if not setup
+			add_action( 'admin_head', array($this, 'wp_remove_settings_page'));
 
 			// Initialize settings
 			add_action( 'admin_init', array($this,'wp_settings_init'));
@@ -21,26 +23,40 @@
 		/**
 		 * Settings page : Create new settings page
 		 */
-		public function wp_settings_page()
-    {
-		  add_menu_page(
-        'Mybooking Plugin', // Page title
-        'Mybooking', // Menu option title
-        'manage_options', // Capability
-        'mybooking-plugin-configuration', // Slug
-        array($this, 'mybooking_plugin_settings_page'),
-        plugin_dir_url(__DIR__)."../assets/images/mybooking-logo-bn.png"
-      ); // Callable
+		public function wp_settings_page() {
+		  	add_menu_page(
+					'Mybooking Plugin', // Page title
+					'Mybooking', // Menu option title
+					'manage_options', // Capability
+					'mybooking-plugin-configuration', // Slug
+					array($this, 'mybooking_plugin_settings_page'),
+					plugin_dir_url(__DIR__)."../assets/images/mybooking-logo-bn.png"
+				); // Callable
 
-      add_submenu_page(
-		      'mybooking-plugin-configuration',
-		    	_x('Settings', 'plugin_settings', 'mybooking-wp-plugin'),
-		    	_x('Settings', 'plugin_settings', 'mybooking-wp-plugin'),
-		    	'manage_options',
-		    	'mybooking-plugin-configuration', // The same slug as the main menu so it will be the default option
-		    	array($this, 'mybooking_plugin_settings_page'),
-  		    -1
+				add_submenu_page(
+					'mybooking-plugin-configuration',
+					wp_kses_post( _x('Settings', 'plugin_settings', 'mybooking-wp-plugin') ),
+					wp_kses_post( _x('Settings', 'plugin_settings', 'mybooking-wp-plugin') ),
+					'manage_options',
+					'mybooking-plugin-configuration', // The same slug as the main menu so it will be the default option
+					array($this, 'mybooking_plugin_settings_page'),
+					-1
 		    );
+		}
+
+		/**
+		 * Settings page : Remove settings page from the menu
+		 */		
+		public function wp_remove_settings_page() {
+
+			// Check install completed
+			$setup_completed = MybookingInstall::installCompleted();
+
+			// Remove the settings page while the wizard have not been run
+			if ( !$setup_completed ) {
+				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-plugin-configuration' );
+			}
+		
 		}
 
 		/**
@@ -57,26 +73,43 @@
 		public function mybooking_plugin_settings_page() {
 		?>
 		  <div class="wrap">
-		  	  <h1>Mybooking</h1>
+		  	  <h1>
+						<?php echo esc_html_x( 'Mybooking Settings', 'settings_context', 'mybooking-wp-plugin' ) ?>
+					</h1>
+					<p>
+						<?php echo esc_html_x( 'Welcome to the settings page. After the initial configuration, this page will allow you to update some configurations that may change over time or add advanced modules and plugins.', 'settings_context', 'mybooking-wp-plugin' ) ?>
+					</p>
+
 					<?php settings_errors(); ?>
-		  	  <p>Mybooking is a platform that allow you to manage your inventory, reservations, planning, invoicing and integrate a
-		  	  reservation engine in your web site.</p>
-			 	  <h2>Quick start</h2>
-			 	  <ol>
-				 	  <li>Use your mybooking account or <a href="https://mybooking.es/en/sign-up" target="_blank">create a new account</a></li>
-				 	  <li>Setup the connection in the connection tab</li>
-				 	  <li>Setup the <b>modules</b> you want to use: renting/accommodation, activities or transfer</li>
-				 	  <li><b>Create the pages</b> and insert shortcodes</li>
-				 	  <li>Start accepting reservations</li>
-				 	</ol>
+
+					<!-- Buttons -->
+					<h2>
+						<?php echo esc_html_x( 'Generated pages and components', 'settings_context', 'mybooking-wp-plugin' ) ?>
+					</h2>
+					<a href="<?php esc_attr(menu_page_url('mybooking-onboarding-pages'))?>">
+						<?php echo esc_html_x( 'Pages', 'settings_context', 'mybooking-wp-plugin' ) ?>
+					</a>
+					&nbsp;
+					<a href="<?php esc_attr(menu_page_url('mybooking-onboarding-components'))?>">
+						<?php echo esc_html_x( 'Components', 'settings_context', 'mybooking-wp-plugin' ) ?>
+					</a>
+					<hr />
+
+					<!-- Tabs -->
 					<?php
-	            $active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_title( $_GET[ 'tab' ] ) : 'connection_options';
-	            $tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
-	            						  'activities_options', 'google_api_places_options', 'contact_form', 'complements_options',
-	            						  'css_options');
-	            if ( !in_array( $active_tab, $tabs) ) {
-	            	$active_tab = 'connection_options';
-	            }
+					    $active_tab = 'connection_options';
+							if (isset( $_GET[ 'settingstabs_wponce']) && wp_verify_nonce( $_GET['settingstabs_wponce'], 'settings_tab' )) {
+								if ( isset( $_GET[ 'tab' ] ) ) { 
+									$active_tab = sanitize_text_field( wp_unslash( $_GET[ 'tab' ] ) );
+									$tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
+																'activities_options', 'google_api_places_options', 'contact_form', 'complements_options',
+																'css_options');
+									if ( !in_array( $active_tab, $tabs) ) {
+										$active_tab = 'connection_options';
+									}
+								}
+							}
+
 	        ?>
 
 	        <?php
@@ -88,155 +121,129 @@
 	         ?>
 
 					<h2 class="nav-tab-wrapper">
-					    <a href="?page=mybooking-plugin-configuration&tab=connection_options" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">Connection</a>
-					    <a href="?page=mybooking-plugin-configuration&tab=configuration_options" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">Modules</a>
+					    <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=connection_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">
+								<?php echo esc_html_x( 'Connection', 'settings_context', 'mybooking-wp-plugin' ) ?>
+							</a>
 					    <?php if ($renting) { ?>
-					      <a href="?page=mybooking-plugin-configuration&tab=renting_options" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">Renting or Accommodation</a>
+					      <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=renting_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">
+									<?php echo esc_html_x( 'Renting or Accommodation', 'settings_context', 'mybooking-wp-plugin' ) ?>
+								</a>
               <?php } ?>
 					    <?php if ($activities) { ?>
-					      <a href="?page=mybooking-plugin-configuration&tab=activities_options" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">Activities or Appointments</a>
+								<a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=activities_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">
+									<?php echo esc_html_x( 'Activities or Appointments', 'settings_context', 'mybooking-wp-plugin' ) ?>
+								</a>
 					    <?php } ?>
 					    <?php if ($transfer) { ?>
-					      <a href="?page=mybooking-plugin-configuration&tab=transfer_options" class="nav-tab <?php echo $active_tab == 'transfer_options' ? 'nav-tab-active' : ''; ?>">Transfer</a>
+					      <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=transfer_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'transfer_options' ? 'nav-tab-active' : ''; ?>">
+									<?php echo esc_html_x( 'Transfer', 'settings_context', 'mybooking-wp-plugin' ) ?>
+								</a>
               <?php } ?>
-					    <?php if ($google_api_places) { ?>
-					      <a href="?page=mybooking-plugin-configuration&tab=google_api_places_options" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">Google Api Places</a>
+              <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=contact_form'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">
+								<?php echo esc_html_x( 'Contact Form', 'settings_context', 'mybooking-wp-plugin' ) ?>
+							</a>
+              <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=complements_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">
+								<?php echo esc_html_x( 'Complements', 'settings_context', 'mybooking-wp-plugin' ) ?>
+							</a>
+							<?php if ($renting) { ?>
+								<a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=configuration_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">
+									<?php echo esc_html_x( 'Integration', 'settings_context', 'mybooking-wp-plugin' ) ?>
+								</a>
+							<?php } ?>
+							<?php if ($google_api_places) { ?>
+					      <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=google_api_places_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">
+									<?php echo esc_html_x( 'Google Api Places', 'settings_context', 'mybooking-wp-plugin' ) ?>
+								</a>
 					    <?php } ?>
-              <a href="?page=mybooking-plugin-configuration&tab=contact_form" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">Contact Form</a>
-              <a href="?page=mybooking-plugin-configuration&tab=complements_options" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">Complements</a>
-  				    <a href="?page=mybooking-plugin-configuration&tab=css_options" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">Advanced</a>
+  				    <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=css_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">
+								<?php echo esc_html_x( 'Advanced', 'settings_context', 'mybooking-wp-plugin' ) ?>
+							</a>
 					</h2>
 
 		      <form action="options.php" method="POST">
 
-	            <?php
-
-               $renting_wizard_info = <<<EOF
-                 <br>
-                 <div class="postbox">
-                   <div class="inside">
-		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>vehicle rental</u>, <u>boat rental</u>, <u>properties</u> rental companies or <u>accommodation</u>.</p>
-		                 <p>You <i>must</i> create the following pages and insert a shortcode on each</p>
-		                 <ol style="list-style:square; margin-left: 20px">
-		                   <li>Create a <b>choose product</b> page and insert [mybooking_rent_engine_product_listing] shortcode</li>
-		                   <li>Create a <b>checkout page</b> and insert [mybooking_rent_engine_complete] shortcode</li>
-		                   <li>Create a <b>summary page</b> and insert [mybooking_rent_engine_summary] shortcode</li>
-		                 </ol>
-		                 <p>If you want to include a <b>search form in the front page</b>, use the widgets or the shortcodes.</p>
-		                 <ul style="list-style:square; margin-left: 20px">
-		                   <li>Mybooking Rent Engine Selector Widget or [mybooking_rent_engine_selector] shortcode</li>
-		                   <li>Mybooking Rent Engine Wizard Widget or [mybooking_rent_engine_selector_wizard] shortcode</li>
-		                 </ul>
-		                 <p>If you want to include the calendar in an <u>vehicle</u> or <u>property</u> page use:</p>
-		                 <ul style="list-style:square; margin-left: 20px">
-		                   <li>The [mybooking_rent_engine_product] shortcode. You can get this shortcode with the product id from your mybooking account</li>
-		                 </ul>
-		                </div>
-                 </div>
-                 <hr>
-EOF;
-
-               $activity_info = <<<EOF
-                 <br>
-                 <div class="postbox">
-                   <div class="inside">
-		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>activities</u> or <u>tours</u> company.</p>
-		                 <p>You <i>must</i> create the following pages and insert a shortcode on each</p>
-		                 <ol style="list-style:square; margin-left: 20px">
-		                   <li>Create a <b>checkout page</b> and insert [mybooking_activities_engine_shopping_cart] shortcode</li>
-		                   <li>Create a <b>summary page</b> and insert [mybooking_activities_engine_summary] shortcode</li>
-		                 </ol>
-		                 <p>If you want to include the calendar in an <u>activity page</u> use:</p>
-		                 <ul style="list-style:square; margin-left: 20px">
-		                   <li>The [mybooking_activities_engine_activity] shortcode. You can get this shortcode with the activity id from your mybooking account</li>
-		                 </ul>
-		                </div>
-                 </div>
-                 <hr>
-EOF;
-
-               $transfer_info = <<<EOF
-                 <br>
-                 <div class="postbox">
-                   <div class="inside">
-		                 <p>This module helps you to build a <em>reservation web site</em> for a <u>transfer company</u>.</p>
-		                 <p>You <i>must</i> create the following pages and insert a shortcode on each</p>
-		                 <ol style="list-style:square; margin-left: 20px">
-		                   <li>Create a <b>choose vehicle</b> page and insert [mybooking_transfer_choose_vehicle] shortcode</li>
-		                   <li>Create a <b>checkout page</b> and insert [mybooking_transfer_checkout] shortcode</li>
-		                   <li>Create a <b>summary page</b> and insert [mybooking_transfer_summary] shortcode</li>
-		                 </ol>
-		                 <p>If you want to include a search form in the front page, use the widget or the shortcode.</p>
-		                 <ul style="list-style:square; margin-left: 20px">
-		                   <li>Mybooking Transfer Engine Selector Widget or [mybooking_transfer_selector] shortcode</li>
-		                 </ul>
-		                </div>
-                 </div>
-                 <hr>
-EOF;
-
-							 $create_account_message = <<<EOF
-									<p>Don't you have a mybooking account? <a href="https://mybooking.es/en/sign-up" target="_blank">Start your free trial</a></p>
-EOF;
-
+	            <?php	
 	             if ($active_tab == 'connection_options') {
+								echo '<br /><div class="postbox"><div class="inside">';
+								echo wp_kses_post( _x('<p>Set up your <b>Mybooking</b> account.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								echo '</div></div><hr />';								
 			      	   settings_fields('mybooking_plugin_settings_group_connection');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_connection');
 			           echo '</table>';
-			           echo $create_account_message;
-			         }
-			         else if ($active_tab == 'configuration_options') {
-			      	   settings_fields('mybooking_plugin_settings_group_configuration');
-			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_configuration');
-			           echo '</table>';
 			         }
 			         else if ($active_tab == 'renting_options') {
-			         	 echo $renting_wizard_info;
+								 echo '<br /><div class="postbox"><div class="inside">';
+								 echo wp_kses_post( _x('<p>Configure the <b>renting/accommodation</b> module. It is done during the onboarding process but you can change the settings.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_renting');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_renting');
 			           echo '</table>';
 			         }
 			         else if ($active_tab == 'activities_options') {
-			         	 echo $activity_info;
+								 echo '<br /><div class="postbox"><div class="inside">';
+								 echo wp_kses_post( _x('<p>Configure the <b>activities/appointment</b> module. It is done during the onboarding process but you can change the settings.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_activities');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_activities');
 			           echo '</table>';
 			         }
 			         else if ($active_tab == 'transfer_options') {
-			         	 echo $transfer_info;
+								 echo '<br /><div class="postbox"><div class="inside">';
+								 echo wp_kses_post( _x('<p>Configure the <b>transfer</b> module. It is done during the onboarding process but you can change the settings.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_transfer');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_transfer');
 			           echo '</table>';
 			         }
-			         else if ($active_tab == 'google_api_places_options') {
-			      	   settings_fields('mybooking_plugin_settings_group_google_api_places');
-			           echo '<table class="form-table">';
-			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_google_api_places');
-			           echo '</table>';
-			         }
                else if ($active_tab == 'contact_form') {
+								 echo '<br /><div class="postbox"><div class="inside">';
+								 echo wp_kses_post( _x('<p>Use <b>Google Captcha</b> to protect your contact forms from spam.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_contact_form');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_contact_form');
 			           echo '</table>';
 			         }
                else if ($active_tab == 'complements_options') {
+							 	 echo '<br /><div class="postbox"><div class="inside">';
+								 echo wp_kses_post( _x('<p>Use this basic complements to help you <b>improve</b> your reservations site.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_complements');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_complements');
 			           echo '</table>';
 			         }
-			         else if ($active_tab == 'css_options') {
+							 else if ($active_tab == 'configuration_options') {
+								echo '<br /><div class="postbox"><div class="inside">';
+								echo wp_kses_post( _x('<p>Integrate reservation process with <b>third party</b> tools.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								echo '</div></div><hr />';								
+								settings_fields('mybooking_plugin_settings_group_configuration');
+								echo '<table class="form-table">';
+								do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_configuration');
+								echo '</table>';
+							}
+							else if ($active_tab == 'google_api_places_options') {
+								echo '<br /><div class="postbox"><div class="inside">';
+								echo wp_kses_post( _x('<p>Use <b>Google Api Places</b> to control delivery and collection custom address.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								echo '</div></div><hr />';
+								settings_fields('mybooking_plugin_settings_group_google_api_places');
+								echo '<table class="form-table">';
+								do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_section_google_api_places');
+								echo '</table>';
+							}
+			        else if ($active_tab == 'css_options') {
+								 echo '<br /><div class="postbox"><div class="inside">';
+								 echo wp_kses_post( _x('<p><b>Compatibility</b> settings for devolopers. Set up if you find any conflict with this JS libraries.</p>', 'settings_context', 'mybooking-wp-plugin' ) );
+								 echo '</div></div><hr />';
 			      	   settings_fields('mybooking_plugin_settings_group_css');
 			           echo '<table class="form-table">';
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_css');
 			           echo '</table>';
-			         }
+			        }
 			        submit_button();
 		        ?>
 		      </form>
@@ -305,225 +312,205 @@ EOF;
       // Creates a connection settings section "mybooking_plugin_settings_section_connection"
 		  add_settings_section('mybooking_plugin_settings_section_connection',
 		                       'Connection',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
       // Creates a connection settings section "mybooking_plugin_settings_section_configuration"
 		  add_settings_section('mybooking_plugin_settings_section_configuration',
 		                       'Configuration',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 		  // Creates a renting wizard settings section "mybooking_plugin_settings_section_renting"
 		  add_settings_section('mybooking_plugin_settings_section_renting',
 		                       'Renting or Accommodation',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 		  // Creates an activities settings section "mybooking_plugin_settings_section_activities"
 		  add_settings_section('mybooking_plugin_settings_section_activities',
 		                       'Activities or Appointments',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 		  // Creates an activities settings section "mybooking_plugin_settings_section_transfer"
 		  add_settings_section('mybooking_plugin_settings_section_transfer',
 		                       'Transfer',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 
       // Creates a connection settings section "mybooking_plugin_settings_section_google_api_places"
 		  add_settings_section('mybooking_plugin_settings_section_google_api_places',
 		                       'Connection',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
       // Creates a complements setting section "mybooking_plugin_settings_section_complements"
       add_settings_section('mybooking_plugin_settings_section_complements',
 		                       'Complements',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
       // Creates a css settings section "mybooking_plugin_settings_css"
 		  add_settings_section('mybooking_plugin_settings_css',
 		                       'CSS',
-		                       '',
+		                       null,
 		                       'mybooking-plugin-configuration');
 
 
       // == Creates connection fields
 
 		  add_settings_field('mybooking_plugin_settings_account_id',
-		                     'Mybooking Id or URL',
+												 wp_kses_post( _x('Mybooking Client Id', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_account_id_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_connection');
 
 		  add_settings_field('mybooking_plugin_settings_api_key',
-		                     'Mybooking API Key',
+												 wp_kses_post( _x('Mybooking API Key', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_api_key_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_connection');
 
 		  add_settings_field('mybooking_plugin_settings_sales_channel',
-		                     'Sales Channel Code',
+												 wp_kses_post( _x('Sales Channel Code', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_sales_channel_code_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_connection');
 
       // == Creates configuration fields
 
-		  add_settings_field('mybooking_plugin_settings_renting_selector',
-		                     'Renting or Accommodation',
-		                     array($this, 'field_mybooking_plugin_settings_renting_selector_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_configuration');
-
-      add_settings_field('mybooking_plugin_settings_activities_selector',
-		                     'Activities or Appointments',
-		                     array($this, 'field_mybooking_plugin_settings_activities_selector_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_configuration');
-
-      add_settings_field('mybooking_plugin_settings_transfer_selector',
-		                     'Transfer',
-		                     array($this, 'field_mybooking_plugin_settings_transfer_selector_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_configuration');
-
-      add_settings_field('mybooking_plugin_settings_google_api_places_selector',
-		                     'Google Api Places',
+			add_settings_field('mybooking_plugin_settings_google_api_places_selector',
+												 wp_kses_post( _x('Google Api Places', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_selector_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_configuration');
 
+			add_settings_field('mybooking_plugin_settings_renting_selector',
+		                     null,
+		                     array($this, 'field_mybooking_plugin_settings_renting_selector_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_configuration',
+												 array('class' => 'hidden-field'));
+
+      add_settings_field('mybooking_plugin_settings_activities_selector',
+		                     null,
+		                     array($this, 'field_mybooking_plugin_settings_activities_selector_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_configuration',
+												 array('class' => 'hidden-field'));
+
+      add_settings_field('mybooking_plugin_settings_transfer_selector',
+		                     null,
+		                     array($this, 'field_mybooking_plugin_settings_transfer_selector_callback'),
+		                     'mybooking-plugin-configuration',
+		                     'mybooking_plugin_settings_section_configuration',
+												 array('class' => 'hidden-field'));
+
       // == Creates renting wizard fields
 
 		  add_settings_field('mybooking_plugin_settings_choose_products_page',
-		                     'Choose products page',
+												 wp_kses_post( _x('Choose products page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_choose_products_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
 		  add_settings_field('mybooking_plugin_settings_checkout_page',
-		                     'Checkout page',
+												 wp_kses_post( _x('Checkout page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_checkout_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
 		  add_settings_field('mybooking_plugin_settings_summary_page',
-		                     'Summary page',
+												 wp_kses_post( _x('Summary page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_summary_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
 		  add_settings_field('mybooking_plugin_settings_terms_page',
-		                     'Terms and conditions page',
+												 wp_kses_post( _x('Terms and conditions page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_terms_page_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
-
-		  // Product detail pages (calendar)
-		  add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
-		  									'<em>Use product detail pages</em>',
-		  									array($this, 'field_mybooking_plugin_settings_use_product_detail_pages_callback'),
-		  									'mybooking-plugin-configuration',
-		  									'mybooking_plugin_settings_section_renting');
-
-		  add_settings_field('mybooking_plugin_settings_products_url',
-		                     '<em>Product details pages URL prefix</em>',
-		                     array($this, 'field_mybooking_plugin_settings_products_url_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
 		  // Selector in process
 		  add_settings_field('mybooking_plugin_settings_selector_in_process',
-		                     'Selector in process',
+												 wp_kses_post( _x('Selector in process', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_selector_in_process_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
 		  // Show taxes included
 		  add_settings_field('mybooking_plugin_settings_show_taxes_included',
-		                     'Show taxes included',
+												 wp_kses_post( _x('Show taxes included', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_show_taxes_included_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
-
 		  // Duration context
 		  add_settings_field('mybooking_plugin_settings_duration_context',
-		                     'Duration context',
+												 wp_kses_post( _x('Duration context', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_duration_context_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
-		  // Rental Location context
-		  add_settings_field('mybooking_plugin_settings_rental_location_context',
-		                     'Rental Location context',
-		                     array($this, 'field_mybooking_plugin_settings_rental_location_context_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
-
-		  // Family context
-		  add_settings_field('mybooking_plugin_settings_family_context',
-		                     'Family context',
-		                     array($this, 'field_mybooking_plugin_settings_family_context_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
-
-		  // Product context
-		  add_settings_field('mybooking_plugin_settings_product_context',
-		                     'Product context',
-		                     array($this, 'field_mybooking_plugin_settings_product_context_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_renting');
-
-
 		  // Dates context
 		  add_settings_field('mybooking_plugin_settings_dates_context',
-		                     'Dates context',
+												 wp_kses_post( _x('Dates context', 'plugin_settings', 'mybooking-wp-plugin') ) ,
 		                     array($this, 'field_mybooking_plugin_settings_dates_context_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
 		  // Not available context
 		  add_settings_field('mybooking_plugin_settings_not_available_context',
-		                     'Not available context',
+												 wp_kses_post( _x('Not available context', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_not_available_context_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_renting');
 
+			// Product detail pages (calendar)
+			add_settings_field('mybooking_plugin_settings_use_product_detail_pages',
+												 wp_kses_post( _x('<em>Use product detail pages</em>', 'plugin_settings', 'mybooking-wp-plugin') ),
+												 array($this, 'field_mybooking_plugin_settings_use_product_detail_pages_callback'),
+												 'mybooking-plugin-configuration',
+												 'mybooking_plugin_settings_section_renting');
+
+add_settings_field('mybooking_plugin_settings_products_url',
+												 wp_kses_post( _x('<em>Product details pages URL prefix</em>', 'plugin_settings', 'mybooking-wp-plugin') ),
+												 array($this, 'field_mybooking_plugin_settings_products_url_callback'),
+												 'mybooking-plugin-configuration',
+												 'mybooking_plugin_settings_section_renting');
+
       // == Creates activities section fields
 
 		  add_settings_field('mybooking_plugin_settings_activities_shopping_cart_page',
-		                     'Checkout page',
+												 wp_kses_post( _x('Checkout page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_activities_shopping_cart_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
 
 		  add_settings_field('mybooking_plugin_settings_activities_summary_page',
-		                     'Summary page',
+												 wp_kses_post( _x('Summary page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_activities_summary_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
 
 		  add_settings_field('mybooking_plugin_settings_activities_terms_page',
-		                     'Terms & conditions page',
+												 wp_kses_post( _x('Terms & conditions page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_activities_terms_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
 
 		  // Activity detail pages
 		  add_settings_field('mybooking_plugin_settings_use_activities_detail_pages',
-		  									'<em>Use detail pages</em>',
+												wp_kses_post( _x('<em>Use detail pages</em>', 'plugin_settings', 'mybooking-wp-plugin') ),
 		  									array($this, 'field_mybooking_plugin_settings_use_activities_detail_pages_callback'),
 		  									'mybooking-plugin-configuration',
 		  									'mybooking_plugin_settings_section_activities');
 
 		  add_settings_field('mybooking_plugin_settings_activities_url',
-		                     '<em>Detail pages URL prefix</em>',
+												 wp_kses_post( _x('<em>Detail pages URL prefix</em>', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_activities_url_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_activities');
@@ -531,25 +518,25 @@ EOF;
       // == Creates transfer wizard fields
 
 		  add_settings_field('mybooking_plugin_settings_transfer_choose_vehicle_page',
-		                     'Choose vehicle page',
+												 wp_kses_post( _x('Choose vehicle page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_transfer_choose_vehicle_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_transfer');
 
 		  add_settings_field('mybooking_plugin_settings_transfer_checkout_page',
-		                     'Checkout page',
+												 wp_kses_post( _x('Checkout page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_transfer_checkout_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_transfer');
 
 		  add_settings_field('mybooking_plugin_settings_transfer_summary_page',
-		                     'Summary page',
+												 wp_kses_post( _x('Summary page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_transfer_summary_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_transfer');
 
 		  add_settings_field('mybooking_plugin_settings_transfer_terms_page',
-		                     'Terms and conditions page',
+												 wp_kses_post( _x('Terms and conditions page', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_transfer_terms_page_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_transfer');
@@ -558,140 +545,112 @@ EOF;
       // == Creates google api places fields
 
 		  add_settings_field('mybooking_plugin_settings_google_api_places_api_key',
-		                     'Api Key',
+												 wp_kses_post( _x('Api Key', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_api_key_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_google_api_places');
 
 		  add_settings_field('mybooking_plugin_settings_google_api_places_restrict_country_code',
-		                     'Country code restriction',
+												 wp_kses_post( _x('Country code restriction', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_restrict_country_code_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_google_api_places');
 
 		  add_settings_field('mybooking_plugin_settings_google_api_places_restrict_bounds',
-		                     'Restrict bounds',
+												 wp_kses_post( _x('Restrict bounds', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_restrict_bounds_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_google_api_places');
 
 		  add_settings_field('mybooking_plugin_settings_google_api_places_bounds_sw_lat',
-		                     'SW Latitude',
+												 wp_kses_post( _x('SW Latitude', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_bounds_sw_lat_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_google_api_places');
 
 		  add_settings_field('mybooking_plugin_settings_google_api_places_bounds_sw_lng',
-		                     'SW Longitude',
+												 wp_kses_post( _x('SW Longitude', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_bounds_sw_lng_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_google_api_places');
 
 		  add_settings_field('mybooking_plugin_settings_google_api_places_bounds_ne_lat',
-		                     'NE Latitude',
+												 wp_kses_post( _x('NE Latitude', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_bounds_ne_lat_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_google_api_places');
 
 		  add_settings_field('mybooking_plugin_settings_google_api_places_bounds_ne_lng',
-		                     'NE Longitude',
+												 wp_kses_post( _x('NE Longitude', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_google_api_places_bounds_ne_lng_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_google_api_places');
 
       // == Create Contact form sectionn Fields
       add_settings_field('mybooking_plugin_settings_contact_form_use_google_captcha',
-		                     'Use Google captcha',
+												 wp_kses_post( _x('Use Google captcha', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_contact_form_use_google_captcha_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_contact_form');
 
       add_settings_field('mybooking_plugin_settings_contact_form_google_captcha_api_key',
-		                     'Google Captcha API Key',
+												 wp_kses_post( _x('Google Captcha API Key', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_contact_form_google_captcha_api_key_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_contact_form');
 
       add_settings_field('mybooking_plugin_settings_contact_form_include_google_captcha_js',
-		                     'Include Google Captcha JS library',
+												 wp_kses_post( _x('Include Google Captcha JS library', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_contact_form_include_google_captcha_js_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_contact_form');
 
       // == Create Complements section Fields
       add_settings_field('mybooking_plugin_settings_complements_popup',
-		                     'Promotion Pop-up',
+												 wp_kses_post( _x('Promotion Pop-up', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_complements_popup_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
       add_settings_field('mybooking_plugin_settings_complements_testimonials',
-		                     'Testimonial module',
+												 wp_kses_post( _x('Testimonial module', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_complements_testimonials_callback'),
                          'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_complements');
 
      add_settings_field('mybooking_plugin_settings_complements_product_slider',
-                        'Product Slider module',
+		 										wp_kses_post( _x('Product Slider module', 'plugin_settings', 'mybooking-wp-plugin') ),
                         array($this, 'field_mybooking_plugin_settings_complements_product_slider_callback'),
                         'mybooking-plugin-configuration',
                         'mybooking_plugin_settings_section_complements');
 
      add_settings_field('mybooking_plugin_settings_complements_content_slider',
-                        'Content Slider module',
+		 										wp_kses_post( _x('Content Slider module', 'plugin_settings', 'mybooking-wp-plugin') ),
                         array($this, 'field_mybooking_plugin_settings_complements_content_slider_callback'),
                         'mybooking-plugin-configuration',
                         'mybooking_plugin_settings_section_complements');
 
-     add_settings_field('mybooking_plugin_settings_complements_renting_item',
-		                     'Renting Item module',
-		                     array($this, 'field_mybooking_plugin_settings_complements_renting_item_callback'),
-                        'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_complements');
-
-     add_settings_field('mybooking_plugin_settings_complements_activity_item',
-		                     'Activity Items module',
-		                     array($this, 'field_mybooking_plugin_settings_complements_activity_item_callback'),
-                        'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_complements');
-
       add_settings_field('mybooking_plugin_settings_complements_cookies',
- 		                     'Cookies Notice',
+												 wp_kses_post( _x('Cookies Notice', 'plugin_settings', 'mybooking-wp-plugin') ),
  		                     array($this, 'field_mybooking_plugin_settings_complements_cookies_callback'),
                           'mybooking-plugin-configuration',
  		                     'mybooking_plugin_settings_section_complements');
 
 		  // == Create css section fields
 
-      // Custom CSS
-
-		  add_settings_field('mybooking_plugin_settings_components_css',
-		                     'Include CSS',
-		                     array($this, 'field_mybooking_plugin_settings_components_css_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
-
 		  // SlickJS
 		  add_settings_field('mybooking_plugin_settings_components_js_slickjs',
-		                     'Include SlickJS',
+												 wp_kses_post( _x('Include SlickJS', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_components_js_slickjs_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
 
 		  // Select 2
 		  add_settings_field('mybooking_plugin_settings_components_js_use_select2',
-		                     'Use select2 library on selects',
+												 wp_kses_post( _x('Use select2 library on selects', 'plugin_settings', 'mybooking-wp-plugin') ),
 		                     array($this, 'field_mybooking_plugin_settings_components_js_use_select2_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_css');
-
-		  // Custom loader
-		  add_settings_field('mybooking_plugin_settings_components_custom_loader',
-		                     'Use custom loader',
-		                     array($this, 'field_mybooking_plugin_settings_components_custom_loader_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_css');
-
 
 		}
 
@@ -711,8 +670,7 @@ EOF;
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">If you have a <b>mybooking account</b> like <em>mycompany.mybooking.es</em>, input the just the subdomain name, that is <u>mycompany</u>.";
+		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly />";
 
 		}
 
@@ -730,8 +688,10 @@ EOF;
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">Get the API key from your mybooking account settings</p>.";
+		  echo "<input id='mybooking_plugin_settings_api_key_active' type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly /><button type='button' title='Active' id='mybooking_plugin_settings_api_key_active_btn'><span class='dashicons dashicons-edit'></span></button>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'For the API key from your mybooking account settings', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
 		}
 
 
@@ -750,7 +710,9 @@ EOF;
 		  }
 
 		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
-		  echo "<p class=\"description\">If you have <b>multiple sales channels</b>, input the sales channel code that you want to use in this website";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'If you have <b>multiple sales channels</b>, input the sales channel code that you want to use in this website.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 
 		}
 
@@ -770,10 +732,7 @@ EOF;
         $value = '';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
-		  echo "<p class=\"description\">Activate if you want to create a vehicles</b>, <b>boats</b>, <b>properties rental</b> or <b>accomodation</b> web site.</p>";
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value'/>";
 		}
 
 		/**
@@ -790,10 +749,7 @@ EOF;
         $value = '';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
-		  echo "<p class=\"description\">Activate if you want to create a <b>tours</b>, <b>activities</b> or <b>appointments</b> web site.</p>";
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value'/>";
 		}
 
 		/**
@@ -810,10 +766,7 @@ EOF;
         $value = '';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
-		  echo "<p class=\"description\">Activate if you want to create a <b>transfers</b> web site.</p>";
+      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value'/>";
 		}
 
 		/**
@@ -833,7 +786,9 @@ EOF;
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
-			echo "<p class=\"description\">Activate if you want to use Google Location API to input a custom delivery or collection address in a rental website.</p>";
+			echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Activate if you want to use Google Location API to input a custom delivery or collection address in a rental website.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 
 		}
 
@@ -845,8 +800,9 @@ EOF;
 		public function field_mybooking_plugin_settings_choose_products_page_callback() {
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_choose_products_page");
-		  echo "<p class=\"description\">The page with [mybooking_rent_engine_product_listing] shortcode</p>.";
-
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The page with [mybooking_rent_engine_product_listing] shortcode.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
 		}
 
 		/**
@@ -855,8 +811,9 @@ EOF;
 		public function field_mybooking_plugin_settings_checkout_page_callback() {
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_checkout_page");
-		  echo "<p class=\"description\">The page with [mybooking_rent_engine_complete] shortcode</p>.";
-
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The page with [mybooking_rent_engine_complete] shortcode.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
 		}
 
 		/**
@@ -865,8 +822,9 @@ EOF;
 		public function field_mybooking_plugin_settings_summary_page_callback() {
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_summary_page");
-		  echo "<p class=\"description\">The page with [mybooking_rent_engine_summary] shortcode</p>.";
-
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The page with [mybooking_rent_engine_summary] shortcode.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
 		}
 
 		/**
@@ -875,8 +833,10 @@ EOF;
 		public function field_mybooking_plugin_settings_terms_page_callback() {
 
 		  $this->field_mybooking_plugin_renting_settings_page("mybooking_plugin_settings_terms_page");
-		  echo "<p class=\"description\">The terms and conditions page.</p>";
-		  echo "<hr>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The terms and conditions page.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<hr />";
 		}
 
 		/**
@@ -894,30 +854,45 @@ EOF;
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose selector]</option>";
+		  $select .= "<option value=''>[";
+			$select .= wp_kses_post( _x('Choose selector', 'plugin_settings', 'mybooking-wp-plugin') );
+			$select .= "]</option>";
 
 		  if ($value == 'wizard') {
-		    $select .= "<option value='wizard' selected>Wizard</option>";
+		    $select .= "<option value='wizard' selected>";
+				$select .= wp_kses_post( _x('Wizard', 'plugin_settings', 'mybooking-wp-plugin') );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='wizard'>Wizard</option>";
+		    $select .= "<option value='wizard'>";
+				$select .= wp_kses_post( _x('Wizard', 'plugin_settings', 'mybooking-wp-plugin') );
+				$select .= "</option>";
 		  }
 
 			if ($value == 'form') {
-		    $select .= "<option value='form' selected>Form</option>";
+		    $select .= "<option value='form' selected>";
+				$select .= wp_kses_post( _x('Form', 'plugin_settings', 'mybooking-wp-plugin') );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='form'>Form</option>";
+		    $select .= "<option value='form'>";
+				$select .= wp_kses_post( _x('Form', 'plugin_settings', 'mybooking-wp-plugin') );
+				$select .= "</option>";
 		  }
 
 		  $select .= "</select>";
 
 		  echo $select;
-		  echo "<p class=\"description\">Choose the selector that you want to use when you choose <em>modify reservation</em> on choose product or complete pages.</p>";
-		  echo "<p class=\"description\">Select <b>wizard</b> if you are using the Wizard selector or widget on your home page.</p>";
-		  echo "<p class=\"description\">Select <b>form</b> if you are using the Form selector or widget on yout home page.</p>";
-		  echo "<hr>";
-
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Choose the selector that you want to use when you choose <em>modify reservation</em> on choose product or complete pages.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>wizard</b> if you are using the Wizard selector or widget on your home page.', 'settings_context', 'mybooking-wp-plugin' ) ); 
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>form</b> if you are using the Form selector or widget on yout home page.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<hr />";
 		}
 
 		/**
@@ -938,176 +913,16 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_renting[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_renting[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Show taxes included.";
-		  echo "<p class=\"description\">Activate if you want to show taxes included literal in reservation.</p>";
-		  echo "<p class=\"description\">Do not activate if you do not want to show taxes included literal in reservation.</p>";
-
-
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Show taxes included.', 'settings_context', 'mybooking-wp-plugin' ) );
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Activate if you want to show taxes included literal in reservation.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Do not activate if you do not want to show taxes included literal in reservation.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+			echo "<hr />";
 		}
-
-		/**
-		 * Render Mybooking Rental Location context
-		 */
-		public function field_mybooking_plugin_settings_rental_location_context_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_renting");
-		  $field = "mybooking_plugin_settings_rental_location_context";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose rental location context]</option>";
-
-		  if ($value == 'branch_office') {
-		    $select .= "<option value='branch_office' selected>Branch office</option>";
-		  }
-		  else {
-		    $select .= "<option value='branch_office'>Branch office</option>";
-		  }
-
-			if ($value == 'hotel') {
-		    $select .= "<option value='hotel' selected>Hotel</option>";
-		  }
-		  else {
-		    $select .= "<option value='family'>Hotel</option>";
-		  }
-
-		  $select .= "</select>";
-
-		  echo $select;
-		  echo "<p class=\"description\">Choose the rental location that describes your business context.</p>";
-
-		}
-
-		/**
-		 * Render Mybooking Family context
-		 */
-		public function field_mybooking_plugin_settings_family_context_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_renting");
-		  $field = "mybooking_plugin_settings_family_context";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose family context]</option>";
-
-		  if ($value == 'product') {
-		    $select .= "<option value='product' selected>Type of product</option>";
-		  }
-		  else {
-		    $select .= "<option value='product'>Type of product</option>";
-		  }
-
-			if ($value == 'family') {
-		    $select .= "<option value='family' selected>Family</option>";
-		  }
-		  else {
-		    $select .= "<option value='family'>Family</option>";
-		  }
-
-			if ($value == 'vehicle') {
-		    $select .= "<option value='vehicle' selected>Type of vehicle</option>";
-		  }
-		  else {
-		    $select .= "<option value='vehicle'>Type of vehicle</option>";
-		  }
-
-			if ($value == 'boat') {
-		    $select .= "<option value='boat' selected>Type of boat</option>";
-		  }
-		  else {
-		    $select .= "<option value='boat'>Type of boat</option>";
-		  }
-
-			if ($value == 'property') {
-		    $select .= "<option value='property' selected>Type of property</option>";
-		  }
-		  else {
-		    $select .= "<option value='property'>Type of property</option>";
-		  }
-
-		  if ($value == 'room') {
-		    $select .= "<option value='room' selected>Type of room</option>";
-		  }
-		  else {
-		    $select .= "<option value='room'>Type of room</option>";
-		  }
-
-		  $select .= "</select>";
-
-		  echo $select;
-		  echo "<p class=\"description\">Choose the family that describes your business context.</p>";
-
-		}
-
-		/**
-		 * Render Mybooking Product context
-		 */
-		public function field_mybooking_plugin_settings_product_context_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_renting");
-		  $field = "mybooking_plugin_settings_product_context";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose product context]</option>";
-
-		  if ($value == 'vehicle') {
-		    $select .= "<option value='vehicle' selected>Vehicle</option>";
-		  }
-		  else {
-		    $select .= "<option value='vehicle'>Vehicle</option>";
-		  }
-
-			if ($value == 'boat') {
-		    $select .= "<option value='boat' selected>Boat</option>";
-		  }
-		  else {
-		    $select .= "<option value='boat'>Boat</option>";
-		  }
-
-			if ($value == 'product') {
-		    $select .= "<option value='product' selected>Product</option>";
-		  }
-		  else {
-		    $select .= "<option value='product'>Product</option>";
-		  }
-
-			if ($value == 'property') {
-		    $select .= "<option value='property' selected>Property</option>";
-		  }
-		  else {
-		    $select .= "<option value='property'>Property</option>";
-		  }
-
-		  if ($value == 'room') {
-		    $select .= "<option value='room' selected>Room</option>";
-		  }
-		  else {
-		    $select .= "<option value='room'>Room</option>";
-		  }
-
-		  $select .= "</select>";
-
-		  echo $select;
-		  echo "<p class=\"description\">Choose the product that describes your business context.</p>";
-
-		}
-
 
 		/**
 		 * Render Mybooking Duration context
@@ -1124,29 +939,44 @@ EOF;
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose duration context]</option>";
+		  $select .= "<option value=''>[";
+			$select .= wp_kses_post( _x( 'Choose duration context', 'settings_context', 'mybooking-wp-plugin' ) );
+			$select .= "]</option>";
 
 		  if ($value == 'days') {
-		    $select .= "<option value='days' selected>Days</option>";
+		    $select .= "<option value='days' selected>";
+				$select .= wp_kses_post( _x( 'Days', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='days'>Days</option>";
+		    $select .= "<option value='days'>";
+				$select .= wp_kses_post( _x( 'Days', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 			if ($value == 'nights') {
-		    $select .= "<option value='nights' selected>Nights</option>";
+		    $select .= "<option value='nights' selected>";
+				$select .= wp_kses_post( _x( 'Nights', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='nights'>Nights</option>";
+		    $select .= "<option value='nights'>";
+				$select .= wp_kses_post( _x( 'Nights', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 		  $select .= "</select>";
 
 		  echo $select;
-		  echo "<p class=\"description\">Choose the duration that describes your business context.</p>";
-		  echo "<p class=\"description\">Select <b>days</b> to describe duration in days.</p>";
-		  echo "<p class=\"description\">Select <b>nights/b> to describe duration in nights.</p>";
-
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Choose the duration that describes your business context.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>days</b> to describe duration in days.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>nights</b> to describe duration in nights.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 		}
 
 		/**
@@ -1164,61 +994,100 @@ EOF;
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose dates context]</option>";
+		  $select .= "<option value=''>[";
+			$select .= wp_kses_post( _x( 'Choose dates context', 'settings_context', 'mybooking-wp-plugin' ) );
+			$select .= "]</option>";
 
 		  if ($value == 'pickup-return') {
-		    $select .= "<option value='pickup-return' selected>Pickup/Return</option>";
+		    $select .= "<option value='pickup-return' selected>";
+				$select .= wp_kses_post( _x( 'Pickup/Return', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='pickup-return'>Pickup/Return</option>";
+		    $select .= "<option value='pickup-return'>";
+				$select .= wp_kses_post( _x( 'Pickup/Return', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 			if ($value == 'checkin-checkout') {
-		    $select .= "<option value='checkin-checkout' selected>Checkin/Checkout</option>";
+		    $select .= "<option value='checkin-checkout' selected>";
+				$select .= wp_kses_post( _x( 'Checkin/Checkout', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='checkin-checkout'>Checkin/Checkout</option>";
+		    $select .= "<option value='checkin-checkout'>";
+				$select .= wp_kses_post( _x( 'Checkin/Checkout', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 		  if ($value == 'start-end') {
-		    $select .= "<option value='start-end' selected>Start/End</option>";
+		    $select .= "<option value='start-end' selected>";
+				$select .= wp_kses_post( _x( 'Start/End', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='start-end'>Start/End</option>";
+		    $select .= "<option value='start-end'>";
+				$select .= wp_kses_post( _x( 'Start/End', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 			if ($value == 'arrive-departure') {
-		    $select .= "<option value='arrive-departure' selected>Arrival/Depature</option>";
+		    $select .= "<option value='arrive-departure' selected>";
+				$select .= wp_kses_post( _x( 'Arrival/Depature', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='arrive-departure'>Arrival/Depature</option>";
+		    $select .= "<option value='arrive-departure'>";
+				$select .= wp_kses_post( _x( 'Arrival/Depature', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 			if ($value == 'departure-entry') {
-		    $select .= "<option value='departure-entry' selected>Departure/Entry</option>";
+		    $select .= "<option value='departure-entry' selected>";
+				$select .= wp_kses_post( _x( 'Departure/Entry', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='departure-entry'>Departure/Entry</option>";
+		    $select .= "<option value='departure-entry'>";
+				$select .= wp_kses_post( _x( 'Departure/Entry', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 		  if ($value == 'eta-etd') {
-		  	$select .= "<option value='eta-etd' selected>Estimated Time of Arrival / Departure</option>";
+		  	$select .= "<option value='eta-etd' selected>";
+				$select .= wp_kses_post( _x( 'Estimated Time of Arrival / Departure', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='eta-etd'>Estimated Time of Arrival / Departure</option>";
+		    $select .= "<option value='eta-etd'>";
+				$select .= wp_kses_post( _x( 'Estimated Time of Arrival / Departure', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 		  $select .= "</select>";
 
 		  echo $select;
-		  echo "<p class=\"description\">Choose the start/end date that describes your business context.</p>";
-		  echo "<p class=\"description\">Select <b>pickup/return</b> to describe pickup and return dates.</p>";
-		  echo "<p class=\"description\">Select <b>checkin/checkout</b> for accommodation or properties.</p>";
-		  echo "<p class=\"description\">Select <b>start/end</b> to describe start and end period.</p>";
-		  echo "<p class=\"description\">Select <b>arrival/departure</b> to describe arrivals an departures</p>";
-		  echo "<p class=\"description\">Select <b>departure/entry</b> to describe departures and entries</p>";
-		  echo "<p class=\"description\">Select <b>eta/etd</b> to describe estimated arrival and departure times</p>";
-
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Choose the start/end date that describes your business context.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>pickup/return</b> to describe pickup and return dates.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>checkin/checkout</b> for accommodation or properties.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>start/end</b> to describe start and end period.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo"</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>arrival/departure</b> to describe arrivals an departures', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>departure/entry</b> to describe departures and entries', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>eta/etd</b> to describe estimated arrival and departure times', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo"</p>";
 		}
 
 		/**
@@ -1236,45 +1105,73 @@ EOF;
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose not available context]</option>";
+		  $select .= "<option value=''>[";
+			$select .= wp_kses_post( _x( 'Choose not available context', 'settings_context', 'mybooking-wp-plugin' ) );
+			$select .= "]</option>";
 
 		  if ($value == 'not-available') {
-		    $select .= "<option value='not-available' selected>Not available</option>";
+		    $select .= "<option value='not-available' selected>";
+				$select .= wp_kses_post( _x( 'Not available', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='not-available'>Not available</option>";
+		    $select .= "<option value='not-available'>";
+				$select .= wp_kses_post( _x( 'Not available', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 			if ($value == 'check-by-phone') {
-		    $select .= "<option value='check-by-phone' selected>Telephone consultation</option>";
+		    $select .= "<option value='check-by-phone' selected>";
+				$select .= wp_kses_post( _x( 'Telephone consultation', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='check-by-phone'>Telephone consultation</option>";
+		    $select .= "<option value='check-by-phone'>";
+				$select .= wp_kses_post( _x( 'Telephone consultation', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 			if ($value == 'check-by-email') {
-		    $select .= "<option value='check-by-email' selected>E-mail consultation</option>";
+		    $select .= "<option value='check-by-email' selected>";
+				$select .= wp_kses_post( _x( 'E-mail consultation', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='check-by-email'>E-mail consultation</option>";
+		    $select .= "<option value='check-by-email'>";
+				$select .= wp_kses_post( _x( 'E-mail consultation', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 			if ($value == 'enquiry') {
-		    $select .= "<option value='enquiry' selected>Enquiry</option>";
+		    $select .= "<option value='enquiry' selected>";
+				$select .= wp_kses_post( _x( 'Enquiry', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 		  else {
-		    $select .= "<option value='enquiry'>Enquiry</option>";
+		    $select .= "<option value='enquiry'>";
+				$select .= wp_kses_post( _x( 'Enquiry', 'settings_context', 'mybooking-wp-plugin' ) );
+				$select .= "</option>";
 		  }
 
 		  $select .= "</select>";
 
 		  echo $select;
-		  echo "<p class=\"description\">Choose the not available message that describes your business context.</p>";
-		  echo "<p class=\"description\">Select <b>Not available</b> to show not available message.</p>";
-		  echo "<p class=\"description\">Select <b>Telephone consultation</b> to show Telephone consultation message.</p>";
-		  echo "<p class=\"description\">Select <b>E-mail consultation</b> to show E-mail consultation message.</p>";
-		  echo "<p class=\"description\">Select <b>Enquiry</b> to show Enquiry message.</p>";
-
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Choose the not available message that describes your business context.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>Not available</b> to show not available message.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>Telephone consultation</b> to show Telephone consultation message.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>E-mail consultation</b> to show E-mail consultation message.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Select <b>Enquiry</b> to show Enquiry message.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+			echo "<hr />";
 		}
 
 
@@ -1292,15 +1189,25 @@ EOF;
         $value = '';
 		  }
 
+			echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'IMPORTANT: This is basic and experimental functionality', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+			echo "<br />";
+
 		  $checked = ($value == '1') ? 'checked' : '';
       echo "<input type='hidden' name='mybooking_plugin_settings_renting[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_renting[$field]' value='1' $checked class='regular-text' />";
-		  echo "<p class=\"description\">Use product detail pages.";
-		  echo "<div class=\"description\">";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Use product detail pages.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 
 		  echo "<div class=\"description\">";
-      echo "<p><b>Do not activate</b> if you have create a custom page for each one of your products with the [mybooking_rent_engine_product] or if you are using the [mybooking_rent_engine_selector] or the Selector widget in your home page.</p>";
-		  echo "<p><b>Activate</b> it if you are using the [mybooking_rent_engine_products] shortcode to <b>browse the catalog</b> and you want the plugin to automatically create a page for each product.</p>";
+      echo "<p>";
+			echo wp_kses_post( _x( '<b>Do not activate</b> if you have create a custom page for each one of your products with the [mybooking_rent_engine_product] or if you are using the [mybooking_rent_engine_selector] or the Selector widget in your home page.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p>";
+			echo wp_kses_post( _x( '<b>Activate</b> it if you are using the [mybooking_rent_engine_products] shortcode to <b>browse the catalog</b> and you want the plugin to automatically create a page for each product.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 		  echo "</div>";
 		}
 
@@ -1320,11 +1227,12 @@ EOF;
 		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_renting[$field]' value='$value' class='regular-text' />";
 		  echo "<div class=\"description\">";
-		  echo "<p>This is the <b>prefix folder</b> that is added to the product detail page created virtually for any
-		  product if <u>Use product detail pages</u> is active.</p>";
+		  echo "<p>";
+			echo wp_kses_post( _x( 'This is the <b>prefix folder</b> that is added to the product detail page created virtually for any
+		  product if <u>Use product detail pages</u> is active.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 		  echo "</div>";
-		  echo "<hr>";
-
+		  echo "<hr />";
 		}
 
     // == Activities
@@ -1335,7 +1243,9 @@ EOF;
 		public function field_mybooking_plugin_settings_activities_shopping_cart_page_callback() {
 
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_shopping_cart_page");
-			echo "<p class=\"description\">The page with [mybooking_activities_engine_shopping_cart] shortcode</p>.";
+			echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The page with [mybooking_activities_engine_shopping_cart] shortcode.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
 
 		}
 
@@ -1345,7 +1255,9 @@ EOF;
 		public function field_mybooking_plugin_settings_activities_summary_page_callback() {
 
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_summary_page");
-		  echo "<p class=\"description\">The page with [mybooking_activities_engine_summary] shortcode</p>.";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The page with [mybooking_activities_engine_summary] shortcode.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
 
 		}
 
@@ -1355,8 +1267,10 @@ EOF;
 		public function field_mybooking_plugin_settings_activities_terms_page_callback() {
 
 		  $this->field_mybooking_plugin_activities_settings_page("mybooking_plugin_settings_activities_terms_page");
-		  echo "<p class=\"description\">The page with the terms and conditions</p>.";
-		  echo "<hr>";
+			echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The page with the terms and conditions.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
+		  echo "<hr />";
 
 		}
 
@@ -1378,14 +1292,18 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_activities[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_activities[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Use detail pages.";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Use detail pages.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 
 		  echo "<div class=\"description\">";
-      echo "<p>Do not activate if you have create a custom page for each one of your activities with the [mybooking_activities_engine_activity]</p>";
-		  echo "<p>Activate it if you are using the [mybooking_activities_engine_activities] shortcode to <b>browse the activities catalog</b>";
-      echo "and you want the plugin to automatically create a page for each activity.</p>";
+      echo "<p>";
+			echo wp_kses_post( _x( 'Do not activate if you have create a custom page for each one of your activities with the [mybooking_activities_engine_activity]', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p>";
+			echo wp_kses_post( _x( 'Activate it if you are using the [mybooking_activities_engine_activities] shortcode to <b>browse the activities catalog</b> and you want the plugin to automatically create a page for each activity.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 		  echo "</div>";
-
 
 		}
 
@@ -1404,8 +1322,10 @@ EOF;
 		  }
 		  echo "<input type='text' name='mybooking_plugin_settings_activities[$field]' value='$value' class='regular-text' />";
 		  echo "<div class=\"description\">";
-		  echo "<p>This is the <b>prefix folder</b> that is added to the activity detail page created virtually for any
-		  product if <u>Use detail pages</u> is active.</p>";
+			echo "<p>";
+			echo wp_kses_post( _x( 'This is the <b>prefix folder</b> that is added to the activity detail page created virtually for any
+		  product if <u>Use detail pages</u> is active.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 		  echo "</div>";
 
 		}
@@ -1418,7 +1338,10 @@ EOF;
 		public function field_mybooking_plugin_settings_transfer_choose_vehicle_page_callback() {
 
 		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_choose_vehicle_page");
-		  echo "<p class=\"description\">The page with [mybooking_transfer_choose_vehicle] shortcode</p>.";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The page with [mybooking_transfer_choose_vehicle] shortcode.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
+
 		}
 
 		/**
@@ -1427,7 +1350,9 @@ EOF;
 		public function field_mybooking_plugin_settings_transfer_checkout_page_callback() {
 
 		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_checkout_page");
-			echo "<p class=\"description\">The page with [mybooking_transfer_checkout] shortcode</p>.";
+			echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The page with [mybooking_transfer_checkout] shortcode.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
 
 		}
 
@@ -1437,7 +1362,9 @@ EOF;
 		public function field_mybooking_plugin_settings_transfer_summary_page_callback() {
 
 		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_summary_page");
-		  echo "<p class=\"description\">The page with [mybooking_transfer_summary] shortcode</p>.";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The page with [mybooking_transfer_summary] shortcode.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
 
 		}
 
@@ -1447,7 +1374,9 @@ EOF;
 		public function field_mybooking_plugin_settings_transfer_terms_page_callback() {
 
 		  $this->field_mybooking_plugin_transfer_settings_page("mybooking_plugin_settings_transfer_terms_page");
-		  echo "<p class=\"description\">The terms and conditions page</p>.";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'The terms and conditions page', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>.";
 
 		}
 
@@ -1596,7 +1525,9 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_contact_form[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_contact_form[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Use Google Captcha on <b>Contact Form</b>.</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Use Google Captcha on <b>Contact Form</b>.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
  		}
 
 		/**
@@ -1635,7 +1566,9 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_contact_form[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_contact_form[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Include Google Captcha JS library.</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Include Google Captcha JS library.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
  		}
 
     // == Complements
@@ -1659,8 +1592,12 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\"><b>Activate Promotion Pop-ups</b> Custom Post Type in order to create promotions.</p>";
-      echo "<p class=\"description\"><small>Pop-up will be shown only in the front page.</small></p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<b>Activate Promotion Pop-ups</b> Custom Post Type in order to create promotions.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+      echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<small>Pop-up will be shown only in the front page.</small>', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
  		}
 
     /**
@@ -1682,8 +1619,12 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\"><b>Activate Testimonials</b> Custom Post Type in order to create a testimonials carousel.</p>";
-      echo "<p class=\"description\"><small>Create one or more Testimonials under Mybooking menu and use [mybooking_testimonials] to show it on a page or sidebar.</small></p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<b>Activate Testimonials</b> Custom Post Type in order to create a testimonials carousel.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+      echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<small>Create one or more Testimonials under Mybooking menu and use [mybooking_testimonials] to show it on a page or sidebar.</small>', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
  		}
 
     /**
@@ -1705,8 +1646,12 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\"><b>Activate Content Slider</b> Custom Post Type in order to create a content slider with Gutenberg native editor.</p>";
-      echo "<p class=\"description\"><small>Create one or more Sliders under Mybooking menu and use [mybooking_content_slider] to show it on a page or post.</small></p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<b>Activate Content Slider</b> Custom Post Type in order to create a content slider with Gutenberg native editor.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+      echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<small>Create one or more Sliders under Mybooking menu and use [mybooking_content_slider] to show it on a page or post.</small>', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
  		}
 
     /**
@@ -1728,54 +1673,12 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\"><b>Activate Product Slider</b> Custom Post Type in order to create a content slider to show offers with limited custom fields.</p>";
-      echo "<p class=\"description\"><small>Create one or more Product Sliders under Mybooking menu and use [mybooking_product_slider] to show it on a page or post.</small></p>";
- 		}
-
-    /**
-     * Render Renting Items complement
-     */
-    public function field_mybooking_plugin_settings_complements_renting_item_callback() {
-
-      $settings = (array) get_option("mybooking_plugin_settings_complements");
-		  $field = "mybooking_plugin_settings_complements_renting_item";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-		  	$value = '';
-		  }
-
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\"><b>Activate Renting Items</b> Custom Post Type in order to create single items related to renting.</p>";
-      echo "<p class=\"description\"><small>Create one or more Renting Items under Mybooking menu and show in a template or within any page builder query block.</small></p>";
- 		}
-
-    /**
-     * Render Activity Items complement
-     */
-    public function field_mybooking_plugin_settings_complements_activity_item_callback() {
-
-      $settings = (array) get_option("mybooking_plugin_settings_complements");
-		  $field = "mybooking_plugin_settings_complements_activity_item";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-		  	$value = '';
-		  }
-
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\"><b>Activate Activity Items</b> Custom Post Type in order to create single items related to activities.</p>";
-      echo "<p class=\"description\"><small>Create one or more Activity Items under Mybooking menu and show in a template or within any page builder query block.</small></p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<b>Activate Product Slider</b> Custom Post Type in order to create a content slider to show offers with limited custom fields.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+      echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<small>Create one or more Product Sliders under Mybooking menu and use [mybooking_product_slider] to show it on a page or post.</small>', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
  		}
 
     /**
@@ -1797,57 +1700,15 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\"><b>Activate Cookies Notice</b> in order to create a cookies warning.</p>";
-      echo "<p class=\"description\"><small>Set the privacy page at WordPress settings to link properly the info button.</small></p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<b>Activate Cookies Notice</b> in order to create a cookies warning.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+      echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<small>Set the privacy page at WordPress settings to link properly the info button.</small>', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
  		}
 
     // == CSS
-
-		/**
-		 * Render Mybooking CSS
-		 */
-		public function field_mybooking_plugin_settings_components_css_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_components_css";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '1';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">Include <b>CSS</b> for plugin <u>UX components</u> like <em>Jquery UI datepicker</em> and <em>Jquery DateRange</em>.";
-		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck only if you are using <u>mybooking theme<u> or a <u>custom theme with your own reservation engine templates</u>.";
-
-		}
-
-		/**
-		 * Render Mybooking Custom loader
-		 */
-		public function field_mybooking_plugin_settings_components_custom_loader_callback() {
-
-		  $settings = (array) get_option("mybooking_plugin_settings_css");
-		  $field = "mybooking_plugin_settings_components_custom_loader";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-        $value = '';
-		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
-		  echo "<p class=\"description\">Use <b>custom loader</b> to notify the user when connecting to the reservation engine...";
-		  echo "<p class=\"description\"><b>¡Attention!</b> check only if you are using mybooking theme or custom theme with its own Ajax Loader.";
-
-		}
 
 		/**
 		 * Render SlickJS
@@ -1867,8 +1728,12 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Include <b>slickJS</b> library. It is <b>required</b> if you are using the testimonials or slider complement";
-		  echo "<p class=\"description\"><b>¡Attention!</b> Uncheck if not testimonials or slider are used or if the theme that you are using includes slickJS.";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Include <b>slickJS</b> library. It is <b>required</b> if you are using the testimonials or slider complement.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( '<b>¡Attention!</b> Uncheck if not testimonials or slider are used or if the theme that you are using includes slickJS.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 		}
 
 
@@ -1890,8 +1755,9 @@ EOF;
       echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
 		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
 
-		  echo "<p class=\"description\">Use <b>select2</b> library on form selects.";
-
+		  echo "<p class=\"description\">";
+			echo wp_kses_post( _x( 'Use <b>select2</b> library on form selects.', 'settings_context', 'mybooking-wp-plugin' ) );
+			echo "</p>";
 		}
 
     // ------------------------
@@ -1916,7 +1782,9 @@ EOF;
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_renting[$field]'>";
-		  $select .= "<option value=''>[Choose page]</option>";
+		  $select .= "<option value=''>[";
+			$select .= wp_kses_post( _x( 'Choose page', 'settings_context', 'mybooking-wp-plugin' ) );
+			$select .= "]</option>";
 		  foreach ($my_pages as $page => $title) {
 		     if ($value == $page) {
 		        $select .= "<option value='$page' selected>$title</option>";
@@ -1951,7 +1819,9 @@ EOF;
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_activities[$field]'>";
-		  $select .= "<option value=''>[Choose page]</option>";
+		  $select .= "<option value=''>[";
+			$select .= wp_kses_post( _x( 'Choose page', 'settings_context', 'mybooking-wp-plugin' ) );
+			$select .= "]</option>";
 		  foreach ($my_pages as $page => $title) {
 		     if ($value == $page) {
 		        $select .= "<option value='$page' selected>$title</option>";
@@ -1986,7 +1856,9 @@ EOF;
 		  }
 
 		  $select = "<select name='mybooking_plugin_settings_transfer[$field]'>";
-		  $select .= "<option value=''>[Choose page]</option>";
+		  $select .= "<option value=''>[";
+			$select .= wp_kses_post( _x( 'Choose page', 'settings_context', 'mybooking-wp-plugin' ) );
+			$select .= "]</option>";
 		  foreach ($my_pages as $page => $title) {
 		     if ($value == $page) {
 		        $select .= "<option value='$page' selected>$title</option>";
@@ -2000,6 +1872,5 @@ EOF;
 		  echo $select;
 
 		}
-
 
   }

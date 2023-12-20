@@ -91,7 +91,7 @@
 
 <!-- Select date micro-template -->
 <script id="select_date_tmpl" type="txt/tmpl">
-  <div class="mybooking-wizard_date">
+  <div class="mybooking-wizard_date full-size-datepicker-container">
      <div id="selector_date" class="mybooking-wizard_date-calendar"></div>
   </div>
 </script>
@@ -101,7 +101,7 @@
 <script id="select_time_tmpl" type="txt/tmpl">
   <div class="mybooking-wizard_time">
     <% for (var idx=0; idx<times.length; idx++) { %>
-      <button type="button" class="mybooking-wizard_time-item selector_time text-center" style="width: 100%" data-value="<%=times[idx]%>"><%= times[idx] %></button>
+      <button type="button" class="mb-button mybooking-wizard_time-item selector_time text-center" style="width: 100%" data-value="<%=times[idx]%>"><%= times[idx] %></button>
     <% } %>
   </div>
 </script>
@@ -109,14 +109,11 @@
 <!-- Select age micro-template -->
 <script id="select_age_tmpl" type="txt/tmpl">
   <!-- Age code selector -->
-  <div class="row">
-    <div class="col-xs-12">
-      <% for (var idx=0; idx<ages.length; idx++) { %>
-        <button class="btn btn-light text-center mb-2 p-3 age-selector" data-age-id="<%=ages[idx]['id']%>" style="width: 100%">
-          <%=ages[idx]['description']%>
-        </button>
-        <br/><br/>
-      <% } %>
-    </div>
+  <div class="mybooking-wizard_place">
+    <% for (var idx=0; idx<ages.length; idx++) { %>
+      <button class="mb-button mybooking-wizard_place-item  age-selector" data-age-id="<%=ages[idx]['id']%>" style="width: 100%">
+        <%=ages[idx]['description']%>
+      </button>
+    <% } %>
   </div>
 </script>

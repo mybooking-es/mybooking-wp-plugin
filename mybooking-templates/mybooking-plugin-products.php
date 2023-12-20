@@ -40,18 +40,18 @@
 
 					  <div class="mybooking-product_block">
 							<?php if ( $mybooking_product->from_price > 0 ) { ?>
-							<div class="mybooking-product_header">
-                <div class="mybooking-product_price">
+								<div class="mybooking-product_header">
+									<div class="mybooking-product_price">
 
-										<span class="mybooking-product_price-from">
-											<?php echo esc_html_x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?>
-										</span>
-										<span class="mybooking-product_amount">
-											<?php echo esc_html( number_format_i18n($mybooking_product->from_price) ) ?>€
-										</span>
+											<span class="mybooking-product_price-from">
+												<?php echo esc_html_x( 'From', 'activities_list', 'mybooking-wp-plugin' ) ?>
+											</span>
+											<span class="mybooking-product_amount">
+												<?php echo esc_html( number_format_i18n($mybooking_product->from_price) ) ?>€
+											</span>
 
+									</div>
 								</div>
-							</div>
 							<?php } ?>
 
 							<div class="mybooking-product_body">
@@ -122,9 +122,15 @@
 							<?php if ( $args['use_detail_pages'] ) { ?>
 							  <div class="mybooking-product_footer">
 									<button class="mb-button">
-							    	<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_productIdAnchor ) ?>">
-											<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
-										</a>
+										<?php if ( isset( $mybooking_product->external_detail_url ) ) { ?>
+											<a href="<?php echo esc_url( $mybooking_product->external_detail_url ) ?>">
+												<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
+											</a>											
+										<?php } else { ?>	
+											<a href="<?php echo esc_url( $args['url_detail'].'/'.$mybooking_productIdAnchor ) ?>">
+												<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
+											</a>
+										<?php } ?>
 									</button>
 							  </div>
 							<?php } ?>
@@ -150,7 +156,8 @@
 				    	<?php if ( $mybooking_disabled_previous ): ?>
 				    		<?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				      <?php else: ?>
-				    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']-1).$mybooking_querystring ) ?>">
+				    	  <a class="mb-pagination_page-link" 
+									 href="<?php echo esc_url( wp_nonce_url( $args['url'].'?offsetpage='.($args['current_page']-1).$mybooking_querystring, 'products_list', 'products_wponce' ) ) ?>">
 				    	     <?php echo esc_html_x( 'Previous', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				    	  </a>
 			    		<?php endif ?>
@@ -167,7 +174,7 @@
 		          <?php } else { ?>
 		            <li class="mb-pagination_page-item">
 		      	      <a class="mb-pagination_page-link"
-		      	         href="<?php echo esc_url( $args['url'].'?offsetpage='.($mybooking_page).$mybooking_querystring )?>">
+		      	         href="<?php echo esc_url( wp_nonce_url( $args['url'].'?offsetpage='.($mybooking_page).$mybooking_querystring, 'products_list', 'products_wponce' ) )?>">
 		      	      	<?php echo esc_html( $mybooking_page ) ?>
 		      	      </a>
 		      	    </li>
@@ -179,7 +186,8 @@
 				    	<?php if ( $mybooking_disabled_next ): ?>
 				    		<?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				      <?php else: ?>
-				    	  <a class="mb-pagination_page-link" href="<?php echo esc_url( $args['url'].'?offsetpage='.($args['current_page']+1).$mybooking_querystring )?>">
+				    	  <a class="mb-pagination_page-link" 
+									href="<?php echo esc_url( wp_nonce_url( $args['url'].'?offsetpage='.($args['current_page']+1).$mybooking_querystring, 'products_list', 'products_wponce' ) )?>">
 				    	     <?php echo esc_html_x( 'Next', 'activities_list', 'mybooking-wp-plugin' ) ?>
 				    	  </a>
 			    	  <?php endif ?>

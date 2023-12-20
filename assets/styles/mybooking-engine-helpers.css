@@ -1,12 +1,20 @@
  /*
 *  MYBOOKING HELPERS
 *  --------------------------------------------------------------------------- *
-*  1- BORDERS
-*  2- MARGINS
-*  3- PADDINGS
-*  4- POSITIONS
+*  1- BACKGROUNDS
+*  2- BORDERS
+*  3- MARGINS
+*  4- PADDINGS
+*  5- POSITIONS
 */
 
+/* BACKGROUNDS ********************************************************************/
+
+.mb--bg-white {
+  background-color: white!important;
+  color: var(--mb-text-color)!important;
+  border-color: white!important;
+}
 
 .mb--bg-info {
   background-color: var(--mb-info-color)!important;
@@ -176,6 +184,11 @@
 
 .mb--no-br {
   border-right: none!important;
+}
+
+/* BORDERS RADIUS */
+.mb--br--rd {
+  border-radius: var(--mb-border-radius);
 }
 
 

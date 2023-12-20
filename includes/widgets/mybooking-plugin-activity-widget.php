@@ -44,7 +44,7 @@ class MyBookingActivitiesEngineActivityWidget extends WP_Widget {
     public function update( $new_instance, $old_instance ) {
         // processes widget options to be saved
         $instance = array();
-        $instance['activity_id'] = ( ! empty( $new_instance['activity_id'] ) ) ? strip_tags( $new_instance['activity_id'] ) : '';
+        $instance['activity_id'] = ( ! empty( $new_instance['activity_id'] ) ) ? wp_strip_all_tags( $new_instance['activity_id'] ) : '';
         return $instance;
     }
 }
