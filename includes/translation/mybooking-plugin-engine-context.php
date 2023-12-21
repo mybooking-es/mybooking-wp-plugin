@@ -355,7 +355,7 @@
             $returnValue = esc_html_x( 'Departure', 'engine_context', 'mybooking-wp-plugin' );
             break;
           case 'eta-etd':
-            $returnValue = esc_html_x( 'Estimated time of arrival', 'engine_context', 'mybooking-wp-plugin' );
+            $returnValue = esc_html_x( 'Estimated arrival', 'engine_context', 'mybooking-wp-plugin' );
             break;            
         	default:
         	  $returnValue = esc_html_x( 'Pick-up date', 'engine_context', 'mybooking-wp-plugin' );
@@ -390,7 +390,7 @@
             $returnValue = esc_html_x( 'Entry', 'engine_context', 'mybooking-wp-plugin' );
             break;              
           case 'eta-etd':
-            $returnValue = esc_html_x( 'Estimated time of departure', 'engine_context', 'mybooking-wp-plugin' );
+            $returnValue = esc_html_x( 'Estimated departure', 'engine_context', 'mybooking-wp-plugin' );
             break; 
         	default: 
         	  $returnValue = esc_html_x( 'Return date', 'engine_context', 'mybooking-wp-plugin' );   		
