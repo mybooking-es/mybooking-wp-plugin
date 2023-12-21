@@ -43,7 +43,7 @@
 
 			<!-- // Product description -->
 			<div class="mybooking-product_description">
-				<%=booking.items[idx].item_description_customer_translation%>
+				<%=booking.items[idx].item_full_description_customer_translation%>
 			</div>
 		</div>
 
