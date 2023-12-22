@@ -665,6 +665,7 @@ div.mybooking-product {
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table th {
   line-height: 10px;
   border: none;
+  max-width: 0px; // Equal width in all td an th cells
 }
 
 .mybooking-product_calendar .date-picker-wrapper .month-wrapper table .day.toMonth.valid {

@@ -254,6 +254,7 @@
 .mybooking-summary_price .mybooking-product_discount .mybooking-product_price {
   flex-direction: row;
   gap: 0.3rem;
+  flex-wrap: wrap;
 } @media ( max-width: 575.98px ) {
   .mybooking-summary_price .mybooking-product_discount .mybooking-product_price {
     flex-direction: column;

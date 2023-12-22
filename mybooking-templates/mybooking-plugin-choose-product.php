@@ -14,7 +14,7 @@
 
 <div class="mybooking-process-page <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <section class="mybooking mybooking-process_choose mybooking-page-container">
-    <div class="mb-row">
+    <div class="mb-row-flex">
       <div class="mb-col-sm-12">
         <!-- Product listing -->
         <div class="mybooking-product_listing" id="product_listing" 
