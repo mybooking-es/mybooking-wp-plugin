@@ -56,7 +56,7 @@
 
 			// Onboarding Step 2 : Login
 			add_submenu_page(
-				'mybooking-plugin-configuration', // Parent slug
+				null, // Parent slug - null to avoid to show in the menu
 				_x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
 				_x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
 				'manage_options', // Capability
@@ -66,7 +66,7 @@
 
 			// Onboarding Step 3 : Generate
 			add_submenu_page(
-				'mybooking-plugin-configuration', // Parent slug
+				null, // Parent slug - null to avoid to show in the menu
 				_x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
 				_x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
 				'manage_options', // Capability
@@ -76,7 +76,7 @@
 
 			// Onboarding Step 4 : Resume
 			add_submenu_page(
-				'mybooking-plugin-configuration', // Parent slug
+				null, // Parent slug - null to avoid to show in the menu
 				_x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
 				_x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
 				'manage_options', // Capability
@@ -84,9 +84,9 @@
 				array($this, 'mybooking_plugin_onboarding_resume_page')
 			); // Callable
 
-			// Onboarding Error (on any step)
+			// Onboarding Error (on any step) 
 			add_submenu_page(
-				'mybooking-plugin-configuration', // Parent slug
+				null, // Parent slug - null to avoid to show in the menu
 				_x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
 				_x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
 				'manage_options', // Capability
@@ -126,18 +126,9 @@
 			// Check install completed
 			$setup_completed = MybookingInstall::installCompleted();
 
-			if ( $setup_completed ) {
-				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-login' );
-				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-generate' );
-				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-resume' );
-				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-error' );
-			} else {
+			if ( !$setup_completed ) {
 				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-pages' );
 				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-components' );
-				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-login' );
-				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-generate' );
-				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-resume' );
-				remove_submenu_page( 'mybooking-plugin-configuration', 'mybooking-onboarding-error' );				
 			}
 		
 		}

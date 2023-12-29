@@ -9,9 +9,14 @@
 /* Structure */
 
 .mybooking_page_mybooking-onboarding #wpcontent,
+.admin_page_mybooking-onboarding-login #wpcontent,
+.admin_page_mybooking-onboarding-generate #wpcontent,
+.admin_page_mybooking-onboarding-resume #wpcontent,
+.admin_page_mybooking-onboarding-error #wpcontent,
 .mybooking_page_mybooking-onboarding-login #wpcontent,
 .mybooking_page_mybooking-onboarding-generate #wpcontent,
 .mybooking_page_mybooking-onboarding-resume #wpcontent,
+.mybooking_page_mybooking-onboarding-rerror #wpcontent,
 .mybooking_page_mybooking-onboarding-components #wpcontent,
 .mybooking_page_mybooking-onboarding-pages #wpcontent {
 	padding-left: 0;

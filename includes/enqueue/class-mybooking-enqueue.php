@@ -32,13 +32,13 @@
     public function enqueue_admin_css() {
       
       $screen = get_current_screen();
-      
+    
       // Make sure they are only loaded on onboard process
       if ( in_array( $screen->id, array( "mybooking_page_mybooking-onboarding",
-                                         "mybooking_page_mybooking-onboarding-login",
-                                         "mybooking_page_mybooking-onboarding-generate",
-                                         "mybooking_page_mybooking-onboarding-resume",
-                                         "mybooking_page_mybooking-onboarding-error",
+                                         "admin_page_mybooking-onboarding-login",
+                                         "admin_page_mybooking-onboarding-generate",
+                                         "admin_page_mybooking-onboarding-resume",
+                                         "admin_page_mybooking-onboarding-error",
                                          "mybooking_page_mybooking-onboarding-pages",
                                          "mybooking_page_mybooking-onboarding-components"  ) ) ) {      
         // Admin CSS Styles
@@ -73,10 +73,10 @@
       
       // Make sure they are only loaded on onboard process
       if ( in_array( $screen->id, array( "mybooking_page_mybooking-onboarding",
-                                         "mybooking_page_mybooking-onboarding-login",
-                                         "mybooking_page_mybooking-onboarding-generate",
-                                         "mybooking_page_mybooking-onboarding-resume",
-                                         "mybooking_page_mybooking-onboarding-error",
+                                         "admin_page_mybooking-onboarding-login",
+                                         "admin_page_mybooking-onboarding-generate",
+                                         "admin_page_mybooking-onboarding-resume",
+                                         "admin_page_mybooking-onboarding-error",
                                          "mybooking_page_mybooking-onboarding-pages",
                                          "mybooking_page_mybooking-onboarding-components"  ) ) ) {
 
@@ -88,10 +88,10 @@
                                   array( 'jquery' ), $this->version, true);
         wp_enqueue_script('mybooking_wp_admin_jquery_validate');
 
-          // Internal resources                                  
+        // Internal resources                                  
 
         // Onboarding login
-        if ( $screen->id == "mybooking_page_mybooking-onboarding-login") {
+        if ( $screen->id == "admin_page_mybooking-onboarding-login") {
           wp_register_script('mybooking_wp_admin_onboarding_login',
                             plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-login.js', dirname(__DIR__) ),
                             array( 'jquery', 'wp-i18n' ), 
@@ -102,7 +102,7 @@
         }
 
         // Onboarding utils
-        if (  $screen->id == "mybooking_page_mybooking-onboarding-resume" || $screen->id == "mybooking_page_mybooking-onboarding-pages" || $screen->id == "mybooking_page_mybooking-onboarding-components") {
+        if (  $screen->id == "admin_page_mybooking-onboarding-resume" || $screen->id == "mybooking_page_mybooking-onboarding-pages" || $screen->id == "mybooking_page_mybooking-onboarding-components") {
           wp_register_script('mybooking_wp_admin_onboarding_utils',
                             plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-utils.js', dirname(__DIR__) ),
                             array( 'jquery', 'wp-i18n' ), 
