@@ -848,6 +848,7 @@ button.mb-button a:hover  {
 /** PROCESS PAGES **/
 .mybooking-process-page {
   background-color: var(--mb-process-page-background);
+  clear: both;
 }
 
 .mybooking-page-container {
