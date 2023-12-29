@@ -30,7 +30,7 @@
 			// Create menu in settings
 			add_action( 'admin_menu', array($this, 'wp_onboarding_page'));
 			// Remove onboarding pages from the menu
-			add_action( 'admin_menu', array($this, 'wp_remove_onboarding_page'));
+			add_action( 'admin_head', array($this, 'wp_remove_onboarding_page'));
 			// To allow redirect in the onboarding wizard process 
 			add_action('admin_init', array($this, 'wp_check_wizard_process'));
 
