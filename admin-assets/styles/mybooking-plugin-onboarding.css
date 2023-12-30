@@ -332,6 +332,12 @@ h1.mb-onboarding-error {
 	color: red;
 }
 
+.mb-onboarding-commons label.error {
+	color: #be1010;
+	position: relative;
+	top: -0.5rem;	
+}
+
 /* Helpers */
 
 .mb-onboarding-commons .mb-onboarding-row.mb-onboarding-space-between {

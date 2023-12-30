@@ -92,13 +92,14 @@
 
         // Onboarding login
         if ( $screen->id == "admin_page_mybooking-onboarding-login") {
-          wp_register_script('mybooking_wp_admin_onboarding_login',
+          wp_enqueue_script('mybooking_wp_admin_onboarding_login',
                             plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-login.js', dirname(__DIR__) ),
                             array( 'jquery', 'wp-i18n' ), 
                             $this->version, 
                             true);
-          wp_enqueue_script('mybooking_wp_admin_onboarding_login');
-          wp_set_script_translations('mybooking_wp_admin_onboarding_login', 'mybooking-wp-plugin');
+          $language_folder = dirname( plugin_basename( __FILE__ ) ) . '/../../languages';
+          wp_set_script_translations('mybooking_wp_admin_onboarding_login', 'mybooking-wp-plugin',
+                                      $language_folder);
         }
 
         // Onboarding utils

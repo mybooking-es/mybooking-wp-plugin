@@ -20,11 +20,11 @@
 				errorClass: 'error',
 				rules : {
 					'client_id': 'required',
-					'apy_key': 'required',
+					'api_key': 'required',
 				},
 				messages: {
 					'client_id': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin'),
-					'apy_key': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin'),
+					'api_key': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin'),
 				},
 			}
 		);

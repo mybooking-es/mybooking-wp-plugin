@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2023-12-21 06:25+0000\n"
+"PO-Revision-Date: 2023-12-30 13:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.3; wp-6.2.2"
+"X-Loco-Version: 2.6.6; wp-6.4.2"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:70
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:47
@@ -1866,13 +1866,13 @@ msgstr "Tu configuración actual"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-utils.js:74
 msgctxt "onboarding_context_js"
 msgid " has been copied to the clipboard"
-msgstr ""
+msgstr "se ha copiado al portapapeles"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-gallery.js:58
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-gallery.js:106
 msgctxt "onboarding_context_js"
 msgid "Loading ..."
-msgstr ""
+msgstr "Cargando ..."
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-settings.js:10
 msgctxt "onboarding_context_js"
@@ -1880,32 +1880,36 @@ msgid ""
 "Remember that the API key must be the one provided for the account "
 "identified in the Mybooking Client Id field"
 msgstr ""
+"Recuerda que la clave API debe ser la proporcionada para la cuenta "
+"identificada en el campo Mybooking Client Id."
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-login.js:26
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-login.js:27
 msgctxt "onboarding_context_js"
 msgid "Required"
-msgstr ""
+msgstr "Obligatorio"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-utils.js:46
 msgctxt "onboarding_context_js"
 msgid "The shortcode "
-msgstr ""
+msgstr "El shortcode"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-utils.js:74
 msgctxt "onboarding_context_js"
 msgid "The url "
-msgstr ""
+msgstr "La URL"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-utils.js:56
 msgctxt "onboarding_context_js"
 msgid "We are sorry, an error has occurred, check that the page exists, please"
 msgstr ""
+"Lo sentimos, se ha producido un error, comprueba que la página existe, por "
+"favor."
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-utils.js:43
 msgctxt "onboarding_context_js"
 msgid "Your browser unsupport clipboard copy, please copy the text"
-msgstr ""
+msgstr "Su navegador no admite la copia del portapapeles, copie el texto"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:761
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-profile-password-forgotten.php:6
@@ -3526,7 +3530,7 @@ msgstr "Garantía"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:148
 msgctxt "renting_summary"
 msgid "No items found"
-msgstr ""
+msgstr "No se han encontrado elementos"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:32
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:96
