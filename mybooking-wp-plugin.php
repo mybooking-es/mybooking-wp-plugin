@@ -22,6 +22,10 @@ define('MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL', $url );
 $languages_folder = dirname( plugin_basename(__FILE__) ).'/languages';
 define('MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER', $languages_folder );
 
+// Create a constant to hold the plugin scripts languages folder (absolute path)
+$scripts_languages_folder = plugin_dir_path( __FILE__).'languages';
+define('MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER', $scripts_languages_folder );
+
 // Return the main instance of Mybooking Plugin
 function mybookingPlugin() {
   return MyBookingPlugin::getInstance();

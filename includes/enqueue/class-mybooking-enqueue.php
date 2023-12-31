@@ -70,7 +70,7 @@
         wp_enqueue_script('mybooking_wp_admin_settings');
         wp_set_script_translations('mybooking_wp_admin_settings', 
                                    'mybooking-wp-plugin',
-                                   MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
+                                   MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
       }
       
       // Make sure they are only loaded on onboard process
@@ -101,7 +101,7 @@
                             true);
           wp_set_script_translations('mybooking_wp_admin_onboarding_login', 
                                      'mybooking-wp-plugin',
-                                     MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
+                                     MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
         }
 
         // Onboarding utils
@@ -114,7 +114,7 @@
           wp_enqueue_script('mybooking_wp_admin_onboarding_utils');
           wp_set_script_translations('mybooking_wp_admin_onboarding_utils', 
                                      'mybooking-wp-plugin',
-                                      MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
+                                     MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
         }
 
         // Onboarding gallery
@@ -126,7 +126,7 @@
         wp_enqueue_script('mybooking_wp_admin_onboarding_gallery');
         wp_set_script_translations('mybooking_wp_admin_onboarding_gallery', 
                                    'mybooking-wp-plugin',
-                                    MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
+                                   MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
 
         // Onboarding video
         wp_register_script('mybooking_wp_admin_onboarding_video',
