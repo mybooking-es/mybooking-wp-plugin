@@ -63,12 +63,14 @@
       // Settings
       if ( $screen->id == "toplevel_page_mybooking-plugin-configuration") {
         wp_register_script('mybooking_wp_admin_settings',
-                          plugins_url( '/admin-assets/js/mybooking-plugin-settings.js', dirname(__DIR__) ),
+                          plugins_url( 'admin-assets/js/mybooking-plugin-settings.js', dirname(__DIR__) ),
                           array( 'jquery', 'wp-i18n' ), 
                           $this->version, 
                           true);
         wp_enqueue_script('mybooking_wp_admin_settings');
-        wp_set_script_translations('mybooking_wp_admin_settings', 'mybooking-wp-plugin');
+        wp_set_script_translations('mybooking_wp_admin_settings', 
+                                   'mybooking-wp-plugin',
+                                   MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
       }
       
       // Make sure they are only loaded on onboard process
@@ -93,38 +95,42 @@
         // Onboarding login
         if ( $screen->id == "admin_page_mybooking-onboarding-login") {
           wp_enqueue_script('mybooking_wp_admin_onboarding_login',
-                            plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-login.js', dirname(__DIR__) ),
+                            plugins_url( 'admin-assets/js/mybooking-plugin-onboarding-login.js', dirname(__DIR__) ),
                             array( 'jquery', 'wp-i18n' ), 
                             $this->version, 
                             true);
-          $language_folder = dirname( plugin_basename( __FILE__ ) ) . '/../../languages';
-          wp_set_script_translations('mybooking_wp_admin_onboarding_login', 'mybooking-wp-plugin',
-                                      $language_folder);
+          wp_set_script_translations('mybooking_wp_admin_onboarding_login', 
+                                     'mybooking-wp-plugin',
+                                     MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
         }
 
         // Onboarding utils
         if (  $screen->id == "admin_page_mybooking-onboarding-resume" || $screen->id == "mybooking_page_mybooking-onboarding-pages" || $screen->id == "mybooking_page_mybooking-onboarding-components") {
           wp_register_script('mybooking_wp_admin_onboarding_utils',
-                            plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-utils.js', dirname(__DIR__) ),
+                            plugins_url( 'admin-assets/js/mybooking-plugin-onboarding-utils.js', dirname(__DIR__) ),
                             array( 'jquery', 'wp-i18n' ), 
                             $this->version, 
                             true);
           wp_enqueue_script('mybooking_wp_admin_onboarding_utils');
-          wp_set_script_translations('mybooking_wp_admin_onboarding_utils', 'mybooking-wp-plugin');
+          wp_set_script_translations('mybooking_wp_admin_onboarding_utils', 
+                                     'mybooking-wp-plugin',
+                                      MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
         }
 
         // Onboarding gallery
         wp_register_script('mybooking_wp_admin_onboarding_gallery',
-                           plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-gallery.js', dirname(__DIR__) ),
+                           plugins_url( 'admin-assets/js/mybooking-plugin-onboarding-gallery.js', dirname(__DIR__) ),
                            array( 'jquery', 'wp-i18n' ), 
                            $this->version, 
                            true);
         wp_enqueue_script('mybooking_wp_admin_onboarding_gallery');
-        wp_set_script_translations('mybooking_wp_admin_onboarding_gallery', 'mybooking-wp-plugin');
+        wp_set_script_translations('mybooking_wp_admin_onboarding_gallery', 
+                                   'mybooking-wp-plugin',
+                                    MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
 
         // Onboarding video
         wp_register_script('mybooking_wp_admin_onboarding_video',
-                           plugins_url( '/admin-assets/js/mybooking-plugin-onboarding-video.js', dirname(__DIR__) ),
+                           plugins_url( 'admin-assets/js/mybooking-plugin-onboarding-video.js', dirname(__DIR__) ),
                            array( 'wp-i18n' ), $this->version, true);
         wp_enqueue_script('mybooking_wp_admin_onboarding_video');
       }

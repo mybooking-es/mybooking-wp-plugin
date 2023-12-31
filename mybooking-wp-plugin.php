@@ -18,10 +18,8 @@ if ( ! class_exists( 'MyBookingPlugin', false ) ) {
 $url = plugin_dir_url(__FILE__);
 define('MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL', $url );
 
-$languages_folder = plugin_dir_path( __DIR__ ) . 'languages';
-$languages_folder = "/Users/jgil/proyectos/yurak/mybooking-wp-plugin/languages";
-$languages_folder = 'mybooking-reservation-engine/languages';
-$languages_folder = basename(__DIR__) . '/languages';
+// Create a constant to hold the plugin languages folder
+$languages_folder = dirname( plugin_basename(__FILE__) ).'/languages';
 define('MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER', $languages_folder );
 
 // Return the main instance of Mybooking Plugin

@@ -206,9 +206,7 @@
 
        // This module is located in includes and the languages is in the
        // root directory of the plugin : 'mybooking-wp-plugin/languages/'
-
-       $languages_folder = dirname(plugin_basename(__DIR__)).'/languages';
-       load_plugin_textdomain( 'mybooking-wp-plugin', false, $languages_folder );
+       load_plugin_textdomain( 'mybooking-wp-plugin', false, MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
 
     }
 
