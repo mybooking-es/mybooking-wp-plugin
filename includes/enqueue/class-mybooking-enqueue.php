@@ -269,7 +269,7 @@
           'mybooking_checkout_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_checkout_page),
           'mybooking_summary_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_summary_page),
           'mybooking_terms_page' => mybooking_engine_translated_slug($registry->mybooking_rent_plugin_terms_page),
-          'mybooking_detail_pages' => $registry->mybooking_rent_plugin_detail_pages,
+          'mybooking_detail_pages' => ( $registry->mybooking_rent_plugin_detail_pages ? 'true' : 'false') ,
           'mybooking_detail_pages_url_prefix' => $registry->mybooking_rent_plugin_navigation_products_url,
           'mybooking_selector_in_process' => $registry->mybooking_rent_plugin_selector_in_process,
           // Activities

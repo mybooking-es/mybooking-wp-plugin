@@ -83,7 +83,7 @@
           return selectorInProcess;
         }
         function getRentingDetailPages() {
-          if (rentingDetailPages === '1') {
+          if (rentingDetailPages === 'true') {
             return true;
           }
           else {
