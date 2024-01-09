@@ -14,7 +14,7 @@
 
 <script type="text/tmpl" id="form_selector_tmpl">
 
-  <% if (configuration.pickupReturnPlace && configuration.timeToFrom) { %>
+  <% if (configuration.pickupReturnPlace) { %>
 
     <!-- // PICKUP SECTION -->
 
@@ -110,31 +110,43 @@
       </div>
 
       <div class="mybooking-selector_date">
-
-        <!-- // Return date -->
-        <div class="mybooking-selector_cal">
-          <i class="mybooking-selector_field-icon">
-            <span class="dashicons dashicons-calendar-alt"></span>
-          </i>
-          <label for="date_to">
-            <?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?>
-          </label>
-          <input type="text" class="mb-form-control" name="date_to" id="date_to" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
-        </div>
-
-        <!-- // Return time -->
-        <% if (configuration.timeToFrom) { %>
-          <div class="mybooking-selector_hour">
+        <% if (configuration.rentDateSelector === 'date_from_duration') { %>
+				  <!-- // Duration -->
+					<div class="mybooking-selector_duration">
+						<i class="mybooking-selector_field-icon">
+							<span class="dashicons dashicons-clock"></span>
+						</i>
+						<label for="renting_duration">
+							<?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+						</label>
+						<select class="mb-form-control" id="renting_duration" name="renting_duration"></select>
+					</div>
+				<% } else if (configuration.rentDateSelector === 'date_from_date_to') { %>	
+          <!-- // Return date -->
+          <div class="mybooking-selector_cal">
             <i class="mybooking-selector_field-icon">
-              <span class="dashicons dashicons-clock"></span>
+              <span class="dashicons dashicons-calendar-alt"></span>
             </i>
-            <label for="time_from">
-              <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+            <label for="date_to">
+              <?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionDate() ) ?>
             </label>
-            <select class="mb-form-control" name="time_to" id="time_to"></select>
+            <input type="text" class="mb-form-control" name="date_to" id="date_to" autocomplete="off" readonly="true" placeholder="dd/mm/aa">
           </div>
-        <% } else { %>
-          <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
+
+          <!-- // Return time -->
+          <% if (configuration.timeToFrom) { %>
+            <div class="mybooking-selector_hour">
+              <i class="mybooking-selector_field-icon">
+                <span class="dashicons dashicons-clock"></span>
+              </i>
+              <label for="time_from">
+                <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+              </label>
+              <select class="mb-form-control" name="time_to" id="time_to"></select>
+            </div>
+          <% } else { %>
+            <input type="hidden" name="time_to" value="<%=configuration.defaultTimeEnd%>"/>
+          <% } %>
         <% } %>
       </div>
     </div>
