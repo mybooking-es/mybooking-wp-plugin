@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.1] - 2024.01.25
+
+### Added
+
+- Extra code on select product
+
+### Fixed
+
+- Fixed simple_location_id in modify reservation
+- Fixed error in product gallery buttons
+- Fixed duration errors in modify selector
+- Fixed detail loader in preset values calendar and cell width error
+- Detail page error fixed
+
 ## [2.0.0] - 2023.12.30
 
 ### Added
