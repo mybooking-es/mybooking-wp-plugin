@@ -190,6 +190,10 @@
   align-items: center;
   padding: 0 1rem 1rem 1rem;
 }
+.mybooking-product_listing .mybooking-product_list .mybooking-product_variant_footer {
+  flex-direction: column;
+  bottom: 2rem;
+}
 
 .mybooking-product_list .mybooking-product_info-button {
   display: flex;

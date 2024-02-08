@@ -241,7 +241,7 @@ div.mybooking-product {
   display: block;
   position: absolute;
   left: 0;
-  bottom: 1px;
+  bottom: 5px;
   width: 100%;
   height: 40px;
   padding: 0.5rem;
