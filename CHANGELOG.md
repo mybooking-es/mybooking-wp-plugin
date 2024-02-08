@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.2] - 2024.02.08
+
+### Fixed
+
+- Rent Selector - Date and duration. Duration was not activated on select date
+
 ## [2.0.1] - 2024.01.25
 
 ### Added
