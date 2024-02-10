@@ -184,6 +184,11 @@
 				</div>
 			<% } %>
 
+			<!-- Company -->
+			<% if (typeof company !== 'undefined' && company && company !== '') { %>
+				<input type="hidden" name="company" value="<%=company%>"/>
+			<% } %>		
+
 			<!-- // Search button -->
 			<div class="mybooking-selector_button-box">
         <label>&nbsp;</label>

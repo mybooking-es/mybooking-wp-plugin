@@ -10,6 +10,9 @@
    */
 ?>
 		<div class="mybooking-selector_group mb-inline">
+			  <% if (typeof company !== 'undefined' && company && company !== '') { %>
+				<input type="hidden" name="company" value="<%=company%>"/>
+			  <% } %>		
 				<!-- // Simple location selector -->
         <% if (configuration.simpleLocation) { %>
   				<div class="mybooking-selector_simple_location">
