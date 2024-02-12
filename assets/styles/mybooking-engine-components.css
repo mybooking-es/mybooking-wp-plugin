@@ -1083,7 +1083,6 @@ button.mybooking-popup_close:hover {
 
 /** JQUERY DATEPICKER **/
 
-table:not(.has-background) tbody tr:nth-child(2n) td,
 fieldset,
 fieldset legend {
   background-color: white!important;
