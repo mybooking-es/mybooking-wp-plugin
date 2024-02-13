@@ -1,9 +1,10 @@
 # Changelog
 
-## [2.0.2] - 2024.02.08
+## [2.1.0] - 2024.02.13
 
 ### Fixed
 
+- Product calendar - column widths
 - Rent Selector - Date and duration. Duration was not activated on select date
 
 ## [2.0.1] - 2024.01.25
