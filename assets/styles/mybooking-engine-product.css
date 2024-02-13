@@ -249,7 +249,7 @@ div.mybooking-product {
   color: var(--mb-product-custom-message-color);
   font-size: 9px;
   font-weight: 800;
-  line-height: 25px;
+  line-height: 1;
   letter-spacing: 1px;
   text-align: center;
 }
