@@ -1188,7 +1188,7 @@ fieldset legend {
 .date-picker-wrapper {
   border: none;
   background-color: transparent;
-  max-width: 360px;
+  /*max-width: 360px;*/ /* OPTIMIZATION OF RANGE PICKER*/
   padding: 0;
   font-size: 1em;
   line-height: 20px;
