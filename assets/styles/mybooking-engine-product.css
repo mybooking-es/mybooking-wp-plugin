@@ -238,7 +238,6 @@ div.mybooking-product {
 }
 
 .mybooking-product_custom-message {
-  display: block;
   position: absolute;
   left: 0;
   bottom: 5px;
@@ -251,7 +250,9 @@ div.mybooking-product {
   font-weight: 800;
   line-height: 1;
   letter-spacing: 1px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Product header */
