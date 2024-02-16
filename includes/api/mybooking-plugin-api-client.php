@@ -113,7 +113,11 @@
      */
     public function get_products( $offset=0, $limit=20, $data=array() ) {
 
-          $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCTS.'?offset='.$offset.'&limit='.$limit;
+          $url = $this->url_prefix.MyBookingApiClient::GET_PRODUCTS.'?offset='.$offset;
+
+          if ( $limit != 0) {
+            $url = $url.'&limit='.$limit;
+          }
 
           // Append the filter parameters
           foreach($data as $filter_name => $filter_value) {

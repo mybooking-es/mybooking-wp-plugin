@@ -497,7 +497,7 @@
                                       'key_characteristic_5' => '',
                                       'key_characteristic_6' => '',
                                       'codes' => '',
-                                      'price_range' => ''                                      
+                                      'price_range' => ''                                  
                                       ), $atts ) );
 
       $search_filter = array();
@@ -562,6 +562,12 @@
       if ( is_null($limit) || $limit === false || $limit > 12 ) {
         $limit = 12;
       }
+      
+      // Make sure that if passed a list of codes is no limit
+      if ( !empty( $codes )) {
+        $limit = 0;
+      }
+
       // Build the offset
       $offset = ($page - 1) * $limit;
 
@@ -602,8 +608,14 @@
       $url_detail = $url_detail.($registry->mybooking_rent_plugin_navigation_products_url ? $registry->mybooking_rent_plugin_navigation_products_url : 'products');
 
       // Pagination
-      $total_pages = ceil($data->total / $limit);
-      $current_page = floor($data->offset / $limit) + 1;
+      if ($limit == 0) {
+        $total_pages = 1;
+        $current_page = 1;
+      }
+      else {
+        $total_pages = ceil($data->total / $limit);
+        $current_page = floor($data->offset / $limit) + 1;
+      }
       $pagination = new MyBookingUIPagination();
       $pages = $pagination->pages($total_pages, $current_page);
       $querystring = $this->wp_products_build_query_string();
