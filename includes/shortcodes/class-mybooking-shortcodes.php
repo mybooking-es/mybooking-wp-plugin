@@ -496,6 +496,7 @@
                                       'key_characteristic_4' => '',
                                       'key_characteristic_5' => '',
                                       'key_characteristic_6' => '',
+                                      'codes' => '',
                                       'price_range' => ''                                      
                                       ), $atts ) );
 
@@ -524,6 +525,10 @@
       if ( $price_range != '' ) {
         $search_filter['price_range'] = $price_range;
       }  
+      if ( $codes != '' ) {
+        $search_filter['codes'] = $codes;
+        $codes = explode(',', $codes);
+      }        
       $settingsConnection = (array) get_option('mybooking_plugin_settings_connection');
       if ($settingsConnection && array_key_exists('mybooking_plugin_settings_sales_channel_code', $settingsConnection)) {
         $search_filter['sales_channel_code'] = $settingsConnection['mybooking_plugin_settings_sales_channel_code'];
@@ -613,6 +618,7 @@
                     'url' => $url,
                     'use_detail_pages' => $registry->mybooking_rent_plugin_detail_pages,
                     'url_detail' => $url_detail,
+                    'codes' => $codes,
                     'querystring' => $querystring );
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-products.php', $data);

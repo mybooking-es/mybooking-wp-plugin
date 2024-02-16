@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.1] - 2024.02.16
+
+### New
+
+- Shorcode products : Include codes to show a list of products
+
 ## [2.1.0] - 2024.02.13
 
 ### Fixed
