@@ -240,7 +240,7 @@ div.mybooking-product {
 .mybooking-product_custom-message {
   position: absolute;
   left: 0;
-  bottom: 5px;
+  bottom: 0px;
   width: 100%;
   height: 40px;
   padding: 0.5rem;
