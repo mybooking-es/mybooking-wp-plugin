@@ -116,6 +116,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 2.1.2 =
+* New: Renting optimization by avoiding one API call to get settings
+
 = 2.1.1 =
 * New: Shortcode products add new parameter to show a sublist of products
 
@@ -471,6 +474,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 2.1.2 =
+* New: Renting optimization by avoiding one API call to get settings
 
 = 2.1.1 =
 * New: Shortcode products add new parameter to show a sublist of products

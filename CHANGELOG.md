@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.2] - 2024.02.21
+
+### New
+
+- Renting optimization : Improve speed by avoiding one call to settings 
+
 ## [2.1.1] - 2024.02.16
 
 ### New
