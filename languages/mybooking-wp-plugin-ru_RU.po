@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-25 16:57+0000\n"
-"PO-Revision-Date: 2023-12-21 06:26+0000\n"
+"PO-Revision-Date: 2024-02-28 18:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -876,10 +876,20 @@ msgctxt "engine_context"
 msgid "Check-in"
 msgstr "Регистрироваться"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:381
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:400
 msgctxt "engine_context"
 msgid "Check-out"
 msgstr "Проверить"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:358
+msgctxt "engine_context"
+msgid "Date of arrival"
+msgstr "Дата прибытия"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:412
+msgctxt "engine_context"
+msgid "Date of departure"
+msgstr "Дата выезда"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:321
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:327
@@ -889,7 +899,7 @@ msgstr ""
 "день/дней\n"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:355
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:387
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:406
 msgctxt "engine_context"
 msgid "Departure"
 msgstr "Выезд"
@@ -900,32 +910,20 @@ msgctxt "engine_context"
 msgid "Driver"
 msgstr "Водитель"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:384
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:403
 msgctxt "engine_context"
 msgid "End"
 msgstr "Конец"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:417
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:455
 msgctxt "engine_context"
 msgid "Enquiry"
 msgstr "Проверять наличие"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:390
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:409
 msgctxt "engine_context"
 msgid "Entry"
 msgstr "Вход"
-
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:358
-#| msgid "Estimated time of arrival"
-msgctxt "engine_context"
-msgid "Estimated arrival"
-msgstr "Ожидаемое прибытие"
-
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:393
-#| msgid "Estimated time of departure"
-msgctxt "engine_context"
-msgid "Estimated departure"
-msgstr "Предполагаемый выезд"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:288
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:303
@@ -954,8 +952,8 @@ msgctxt "engine_context"
 msgid "night(s)"
 msgstr "ночь (ночи)"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:408
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:420
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:446
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:458
 msgctxt "engine_context"
 msgid "Not available"
 msgstr "Недоступен"
@@ -966,12 +964,12 @@ msgctxt "engine_context"
 msgid "Pick-up date"
 msgstr "Подобрать дату"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:414
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:452
 msgctxt "engine_context"
 msgid "Please, contact us by e-mail"
 msgstr "Пожалуйста, свяжитесь с нами по электронной почте"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:411
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:449
 msgctxt "engine_context"
 msgid "Please, contact us by phone"
 msgstr "Пожалуйста, свяжитесь с нами по телефону"
@@ -987,8 +985,8 @@ msgctxt "engine_context"
 msgid "Property"
 msgstr "Имущество"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:378
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:396
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:397
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:415
 msgctxt "engine_context"
 msgid "Return date"
 msgstr "Дата возвращения"
@@ -1002,6 +1000,18 @@ msgstr "Номер"
 msgctxt "engine_context"
 msgid "Start"
 msgstr "Начинать"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:379
+#| msgid "Estimated arrival"
+msgctxt "engine_context"
+msgid "Time of arrival"
+msgstr "Время прибытия"
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:430
+#| msgid "Estimated departure"
+msgctxt "engine_context"
+msgid "Time of departure"
+msgstr "Время отправления"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:122
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:125
@@ -1070,112 +1080,112 @@ msgctxt "engine_context_boat"
 msgid "Sleeve"
 msgstr "Рукав"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:458
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:496
 msgctxt "engine_context_key_characteristic"
 msgid "Air conditioner"
 msgstr "Кондиционер"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:461
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:499
 msgctxt "engine_context_key_characteristic"
 msgid "Bathroom"
 msgstr "Ванная комната"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:464
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:502
 msgctxt "engine_context_key_characteristic"
 msgid "Baths"
 msgstr "Ванны"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:467
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:505
 msgctxt "engine_context_key_characteristic"
 msgid "Beds"
 msgstr "Кровати"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:470
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:508
 msgctxt "engine_context_key_characteristic"
 msgid "Berths"
 msgstr "Кровати"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:473
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:511
 msgctxt "engine_context_key_characteristic"
 msgid "Boat License"
 msgstr "Лицензия на лодку"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:476
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:514
 msgctxt "engine_context_key_characteristic"
 msgid "Cabin"
 msgstr "Кабина"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:479
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:517
 msgctxt "engine_context_key_characteristic"
 msgid "Doors"
 msgstr "Двери"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:482
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:520
 msgctxt "engine_context_key_characteristic"
 msgid "Driving license"
 msgstr "Водительские права"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:485
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:523
 msgctxt "engine_context_key_characteristic"
 msgid "Fuel"
 msgstr "Топливо"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:437
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:475
 msgctxt "engine_context_key_characteristic"
 msgid "Length"
 msgstr "Длина"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:488
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:526
 msgctxt "engine_context_key_characteristic"
 msgid "Pets"
 msgstr "Домашние питомцы"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:491
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:529
 msgctxt "engine_context_key_characteristic"
 msgid "Places"
 msgstr "Места"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:494
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:532
 msgctxt "engine_context_key_characteristic"
 msgid "Rooms"
 msgstr "Номера"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:497
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:535
 msgctxt "engine_context_key_characteristic"
 msgid "Seats"
 msgstr "Сиденья"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:500
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:538
 msgctxt "engine_context_key_characteristic"
 msgid "Shower"
 msgstr "Душ"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:503
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:541
 msgctxt "engine_context_key_characteristic"
 msgid "Skipper"
 msgstr "Шкипер"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:506
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:544
 msgctxt "engine_context_key_characteristic"
 msgid "Suitcases"
 msgstr "Состояние"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:509
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:547
 msgctxt "engine_context_key_characteristic"
 msgid "Transmission"
 msgstr "коробка передач"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:512
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:550
 msgctxt "engine_context_key_characteristic"
 msgid "Type"
 msgstr "Тип"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:515
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:553
 msgctxt "engine_context_key_characteristic"
 msgid "WC"
 msgstr "WC"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:518
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:556
 msgctxt "engine_context_key_characteristic"
 msgid "Wifi"
 msgstr "вай-фай"
@@ -1408,7 +1418,7 @@ msgctxt "onboarding_context"
 msgid "Edit page"
 msgstr ""
 
-#. Parent slug
+#. Parent slug - null to avoid to show in the menu
 #. Page title
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/mybooking-plugin-onboarding.php:90
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/mybooking-plugin-onboarding.php:91
@@ -1423,7 +1433,7 @@ msgid ""
 "booking engine on your site"
 msgstr ""
 
-#. Parent slug
+#. Parent slug - null to avoid to show in the menu
 #. Page title
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/mybooking-plugin-onboarding.php:70
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/mybooking-plugin-onboarding.php:71
@@ -1483,7 +1493,7 @@ msgid ""
 "booking process won't work."
 msgstr ""
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/views/mybooking-plugin-onboarding-login.php:38
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/views/mybooking-plugin-onboarding-login.php:39
 msgctxt "onboarding_context"
 msgid "Let's start"
 msgstr ""
@@ -1502,7 +1512,7 @@ msgctxt "onboarding_context"
 msgid "Loading..."
 msgstr ""
 
-#. Parent slug
+#. Parent slug - null to avoid to show in the menu
 #. Page title
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/mybooking-plugin-onboarding.php:60
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/mybooking-plugin-onboarding.php:61
@@ -1600,7 +1610,7 @@ msgctxt "onboarding_context"
 msgid "Reservation process pages for "
 msgstr ""
 
-#. Parent slug
+#. Parent slug - null to avoid to show in the menu
 #. Page title
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/mybooking-plugin-onboarding.php:80
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/settings/mybooking-plugin-onboarding.php:81
@@ -2806,16 +2816,17 @@ msgctxt "renting_form_modify_reservation"
 msgid "Modify reservation"
 msgstr "Изменить бронирование"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:169
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:316
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:181
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:328
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:171
 msgctxt "renting_form_selector"
 msgid "Age selector"
 msgstr "Селектор возраста"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:286
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:120
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:298
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:121
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:89
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:92
 msgctxt "renting_form_selector"
 msgid "Duration"
 msgstr "Продолжительность"
@@ -2826,10 +2837,10 @@ msgctxt "renting_form_selector"
 msgid "Pick-up place"
 msgstr "Место получения"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:177
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:324
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:180
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:98
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:189
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:336
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:179
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:103
 msgctxt "renting_form_selector"
 msgid "Promotion code"
 msgstr "Промо-Код"
@@ -2840,26 +2851,26 @@ msgctxt "renting_form_selector"
 msgid "Return place"
 msgstr "Место возврата"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:185
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:332
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:188
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:106
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:197
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:344
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:192
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:111
 msgctxt "renting_form_selector"
 msgid "Search"
 msgstr "Поиск"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:70
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:132
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:242
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:270
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:73
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:144
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:143
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:254
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:282
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:382
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/includes/translation/mybooking-plugin-engine-context.php:433
 msgctxt "renting_form_selector"
 msgid "Time"
 msgstr "Время"
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:202
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:20
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:214
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:23
 msgctxt "renting_form_selector"
 msgid "Where"
 msgstr "Где"

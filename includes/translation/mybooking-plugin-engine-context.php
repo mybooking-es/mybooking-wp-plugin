@@ -355,7 +355,7 @@
             $returnValue = esc_html_x( 'Departure', 'engine_context', 'mybooking-wp-plugin' );
             break;
           case 'eta-etd':
-            $returnValue = esc_html_x( 'Estimated arrival', 'engine_context', 'mybooking-wp-plugin' );
+            $returnValue = esc_html_x( 'Date of arrival', 'engine_context', 'mybooking-wp-plugin' );
             break;            
         	default:
         	  $returnValue = esc_html_x( 'Pick-up date', 'engine_context', 'mybooking-wp-plugin' );
@@ -363,6 +363,25 @@
         return $returnValue;
 		
 
+    }
+
+
+    /**
+     * Get the delivery point
+     */
+    public function getDeliveryTime() {
+
+      $registry = Mybooking_Registry::getInstance();
+        $returnValue = '';
+
+        switch ($registry->mybooking_rent_plugin_dates_context) {
+          case 'eta-etd':
+            $returnValue = esc_html_x( 'Time of arrival', 'engine_context', 'mybooking-wp-plugin' );
+            break;            
+        	default:
+        	  $returnValue = esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin' );
+         }
+        return $returnValue;
     }
 
     /**
@@ -390,13 +409,32 @@
             $returnValue = esc_html_x( 'Entry', 'engine_context', 'mybooking-wp-plugin' );
             break;              
           case 'eta-etd':
-            $returnValue = esc_html_x( 'Estimated departure', 'engine_context', 'mybooking-wp-plugin' );
+            $returnValue = esc_html_x( 'Date of departure', 'engine_context', 'mybooking-wp-plugin' );
             break; 
         	default: 
         	  $returnValue = esc_html_x( 'Return date', 'engine_context', 'mybooking-wp-plugin' );   		
         }
         return $returnValue;
     }
+
+    /**
+     * Get the delivery point
+     */
+    public function getCollectionTime() {
+
+      $registry = Mybooking_Registry::getInstance();
+        $returnValue = '';
+
+        switch ($registry->mybooking_rent_plugin_dates_context) {
+          case 'eta-etd':
+            $returnValue = esc_html_x( 'Time of departure', 'engine_context', 'mybooking-wp-plugin' );
+            break;            
+        	default:
+        	  $returnValue = esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin' );
+         }
+        return $returnValue;
+    }
+
 
     public function getNotAvailableMessage( ) {
 

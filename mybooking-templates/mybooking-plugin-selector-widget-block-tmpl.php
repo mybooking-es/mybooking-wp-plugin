@@ -70,7 +70,7 @@
 							<span class="dashicons dashicons-clock"></span>
 						</i>
 						<label for="time_from">
-							<?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+							<?php echo esc_html( MyBookingEngineContext::getInstance()->getDeliveryTime() ) ?>
 						</label>
 						<select class="mb-form-control" id="widget_time_from" name="time_from"></select>
 					</div>
@@ -141,7 +141,7 @@
 							<span class="dashicons dashicons-clock"></span>
 						</i>
 						<label for="time_to">
-							<?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+							<?php echo esc_html( MyBookingEngineContext::getInstance()->getCollectionTime() ) ?>
 						</label>
 						<select class="mb-form-control" name="time_to" id="widget_time_to"></select>
 						</div>

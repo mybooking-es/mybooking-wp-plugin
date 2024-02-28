@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.1.4] - 2024.02.28
+
+### New
+
+- Complete form : Validate of radio controls - element placement
+
+### Updated
+
+- Selector form : Literal for Estimated time of arrival
+
 ## [2.1.2] - 2024.02.21
 
 ### New
