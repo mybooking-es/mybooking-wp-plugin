@@ -175,11 +175,13 @@
       <% } %>
 
 			<!-- // Promotion code -->		
-			<div class="mybooking-selector_promo">
-				<label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
-				<input type="text" class="mb-form-control" name="promotion_code" id="widget_promotion_code" autocomplete="off"
-				<% if (typeof promotionCode !== 'undefined' && promotionCode !== '') { %> value="<%=promotionCode%>" <%}%>>
-			</div>
+			<% if (configuration.promotionCode) { %>
+				<div class="mybooking-selector_promo">
+					<label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+					<input type="text" class="mb-form-control" name="promotion_code" id="widget_promotion_code" autocomplete="off"
+					<% if (typeof promotionCode !== 'undefined' && promotionCode !== '') { %> value="<%=promotionCode%>" <%}%>>
+				</div>
+			<% } %>
 
 			<!-- Company -->
 			<% if (typeof company !== 'undefined' && company && company !== '') { %>
