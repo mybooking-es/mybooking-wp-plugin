@@ -23,28 +23,35 @@
 
 			<!-- // Product name -->
 			<div class="mybooking-product_name">
-				<%=booking.items[idx].item_description_customer_translation%>
+				<% if (booking.items[idx].item_performance_id !== null) { %>
+					<%=booking.items[idx].item_performance_description_customer_translation%>
+				<% } else { %>		
+					<%=booking.items[idx].item_description_customer_translation%>
+				<% } %>
 			</div>
+			
+			<% if (booking.items[idx].item_performance_id === null) { %>
+				<!-- Optional external driver + driving license -->
+				<% if ((typeof booking.optional_external_driver !== '' &&
+								booking.optional_external_driver) ||
+								(typeof booking.item_driving_license_type_name !== '' &&
+								booking.item_driving_license_type_name) ) { %>   
+					<% if (typeof booking.optional_external_driver !== '' &&
+									booking.optional_external_driver) { %>
+							<span class="mb-badge secondary"><%=booking.optional_external_driver%></span>    
+					<% } %>
+					<% if (typeof booking.item_driving_license_type_name !== '' &&
+									booking.item_driving_license_type_name) { %>
+							<span class="mb-badge secondary"><%=booking.item_driving_license_type_name%></span>    
+					<% } %>
+				<% } %>
 
-			<!-- Optional external driver + driving license -->
-			<% if ((typeof booking.optional_external_driver !== '' &&
-							booking.optional_external_driver) ||
-							(typeof booking.item_driving_license_type_name !== '' &&
-							booking.item_driving_license_type_name) ) { %>   
-				<% if (typeof booking.optional_external_driver !== '' &&
-								booking.optional_external_driver) { %>
-						<span class="mb-badge secondary"><%=booking.optional_external_driver%></span>    
-				<% } %>
-				<% if (typeof booking.item_driving_license_type_name !== '' &&
-								booking.item_driving_license_type_name) { %>
-						<span class="mb-badge secondary"><%=booking.item_driving_license_type_name%></span>    
-				<% } %>
+				<!-- // Product description -->
+				<div class="mybooking-product_description">
+					<%=booking.items[idx].item_full_description_customer_translation%>
+				</div>
 			<% } %>
 
-			<!-- // Product description -->
-			<div class="mybooking-product_description">
-				<%=booking.items[idx].item_full_description_customer_translation%>
-			</div>
 		</div>
 
 		<!-- // Price box -->

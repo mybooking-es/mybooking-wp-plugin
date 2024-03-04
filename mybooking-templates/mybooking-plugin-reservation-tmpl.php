@@ -134,33 +134,40 @@
 
                       <!-- // Product name -->
                       <div class="mybooking-product_name">
-                        <%=booking.booking_lines[idx].item_description_customer_translation%>
+                        <% if (booking.booking_lines[idx].item_performance_id !== null) { %>
+					                <%=booking.booking_lines[idx].item_performance_description_customer_translation%>
+				                <% } else { %>                           
+                          <%=booking.booking_lines[idx].item_description_customer_translation%>
+                        <% } %>  
                       </div>
 
-                      <!-- Optional external driver + driving license -->
-                      <% if ((typeof booking.optional_external_driver !== '' &&
-                            booking.optional_external_driver) ||
-                            (typeof booking.item_driving_license_type_name !== '' &&
-                            booking.item_driving_license_type_name) ) { %>   
-                        <% if (typeof booking.optional_external_driver !== '' &&
-                              booking.optional_external_driver) { %>
-                          <span class="mb-badge secondary"><%=booking.optional_external_driver%></span>    
+                      <% if (booking.booking_lines[idx].item_performance_id === null) { %>
+                        <!-- Optional external driver + driving license -->
+                        <% if ((typeof booking.optional_external_driver !== '' &&
+                              booking.optional_external_driver) ||
+                              (typeof booking.item_driving_license_type_name !== '' &&
+                              booking.item_driving_license_type_name) ) { %>   
+                          <% if (typeof booking.optional_external_driver !== '' &&
+                                booking.optional_external_driver) { %>
+                            <span class="mb-badge secondary"><%=booking.optional_external_driver%></span>    
+                          <% } %>
+                          <% if (typeof booking.item_driving_license_type_name !== '' &&
+                                booking.item_driving_license_type_name) { %>
+                            <span class="mb-badge secondary"><%=booking.item_driving_license_type_name%></span>    
+                          <% } %>
                         <% } %>
-                        <% if (typeof booking.item_driving_license_type_name !== '' &&
-                              booking.item_driving_license_type_name) { %>
-                          <span class="mb-badge secondary"><%=booking.item_driving_license_type_name%></span>    
+
+                        <% if (typeof booking.item_hired_info !== '' &&
+                                booking.item_hired_info) { %>
+                          <div class="mb-text-muted"><%=booking.item_hired_info%></div>
                         <% } %>
-                      <% } %>
 
-                      <% if (typeof booking.item_hired_info !== '' &&
-                              booking.item_hired_info) { %>
-                        <div class="mb-text-muted"><%=booking.item_hired_info%></div>
+                        <!-- //Product description -->
+                        <div class="mybooking-product_description">
+                          <%=booking.booking_lines[idx].item_full_description_customer_translation%>
+                        </div>
                       <% } %>
-
-                      <!-- //Product description -->
-                      <div class="mybooking-product_description">
-                        <%=booking.booking_lines[idx].item_full_description_customer_translation%>
-                      </div>
+                      
                     </div>
 
                     <% if ( (!configuration.hidePriceIfZero || booking.item_cost > 0 ) || ( booking.booking_lines[idx].item_unit_cost_base != booking.booking_lines[idx].item_unit_cost ) ) { %>

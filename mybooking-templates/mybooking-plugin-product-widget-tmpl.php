@@ -182,14 +182,23 @@
 
       <!-- // Product -->
       <% if (!configuration.hidePriceIfZero || shopping_cart.item_cost > 0) { %>
-        <div class="mybooking-summary_extras mb-section">
-          <span class="mybooking-summary_item">
-            <?php echo MyBookingEngineContext::getInstance()->getProduct() ?>:
-          </span>
-            <span class="mybooking-summary_extra-amount">
-              <%=configuration.formatCurrency(shopping_cart.item_cost)%>
-            </span>
-        </div>
+        <% if (shopping_cart.items.length > 0) { %>
+          <div class="mb-section">
+            <% for (var idx=0;idx<shopping_cart.items.length;idx++) { %>
+              <div class="mybooking-summary_extras mb-section">
+                <span class="mybooking-summary_item">
+                  <% if (shopping_cart.items[idx].item_performance_id !== null) { %>
+                    <%= shopping_cart.items[idx].item_performance_description_customer_translation %>
+                  <% } else { %>
+                    <%= shopping_cart.items[idx].item_description_customer_translation %>
+                  <% } %>   
+                </span>
+                <span class="mybooking-summary_extra-amount">
+                  <%=configuration.formatCurrency(shopping_cart.item_cost)%>
+                </span>
+              </div>
+            <% } %>  
+        <% } %>
       <% } %>
 
       <!-- // Extras -->
