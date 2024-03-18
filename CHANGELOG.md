@@ -10,6 +10,10 @@
 
 - Selector form : Literal for Estimated time of arrival
 
+### Fixed
+
+- Product list shortcode : Take into account that external_detail_url can be empty if edited in the UI
+
 ## [2.1.2] - 2024.02.21
 
 ### New

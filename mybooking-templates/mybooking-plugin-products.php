@@ -122,7 +122,8 @@
 							<?php if ( $args['use_detail_pages'] ) { ?>
 							  <div class="mybooking-product_footer">
 									<button class="mb-button">
-										<?php if ( isset( $mybooking_product->external_detail_url ) ) { ?>
+										<?php if ( isset( $mybooking_product->external_detail_url ) && 
+															!empty( $mybooking_product->external_detail_url ) ) { ?>
 											<a href="<?php echo esc_url( $mybooking_product->external_detail_url ) ?>">
 												<?php echo esc_html_x( 'More information', 'activities_list', 'mybooking-wp-plugin' ) ?>
 											</a>											
