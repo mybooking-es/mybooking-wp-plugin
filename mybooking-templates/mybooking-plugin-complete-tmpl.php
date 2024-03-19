@@ -124,7 +124,7 @@
                   <%=booking.extras[idx].quantity%>
                 </span>
                 <span class="mybooking-summary_extra-name">
-                  <%=booking.extras[idx].extra_description%>
+                  <%=booking.extras[idx].extra_description_customer_translation%>
                 </span>
               </div>
               <span class="mybooking-summary_extra-amount">
