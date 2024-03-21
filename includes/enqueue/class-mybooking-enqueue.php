@@ -205,6 +205,10 @@
       wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product-list',
                       plugins_url('/assets/styles/mybooking-engine-product-list.css', dirname( __DIR__ ) ),
                       array(), $this->version );
+      // Mybooking Product Reduce List
+      wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product-reduce-list',
+                      plugins_url('/assets/styles/mybooking-engine-product-reduce-list.css', dirname( __DIR__ ) ),
+                      array(), $this->version );
       // Mybooking Product Multiple rate list
       wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product-multiple-rate-list',
                       plugins_url('/assets/styles/mybooking-engine-product-multiple-rate-list.css', dirname( __DIR__ ) ),

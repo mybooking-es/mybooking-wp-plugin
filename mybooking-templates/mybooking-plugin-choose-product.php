@@ -22,6 +22,11 @@
           data-use-renting-detail-page="true" 
           <?php endif; ?>>
         </div>
+        <button id="go_to_complete" class="mb-button btn-confirm-selection" style="display: none">
+            <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+            <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
+        </button>
+        <br/>
       </div>
     </div>
   </section>
