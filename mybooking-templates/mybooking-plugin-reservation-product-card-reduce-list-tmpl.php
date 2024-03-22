@@ -39,8 +39,12 @@
 						</div>
 
 						<div class="mybooking-product_block mybooking-product_block-info">
+							<!-- // Product short description -->
+							<% if (product.short_description != '' && product.name != product.short_description) { %>
+								<h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
+							<% } %>
 							<div class="mybooking-product_includes">
-								<%=product.description%>
+								<%=product.rate_type.description%>
 								<div class="mybooking-product_includes-overlay"></div>
 							</div>
 
@@ -52,7 +56,7 @@
 
 									<div class="mybooking-product_price_supplement_supplement_1">
 										<small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></small>
-							</div>
+									</div>
 								</div>
 							<% } %>
 						</div>
@@ -152,10 +156,6 @@
 							<div class="mybooking-product_names">
 								<!-- // Name -->
 								<h2 class="mybooking-product_name"><%=product.name%></h2>
-								<!-- // Productdescription -->
-								<% if (product.short_description != '' && product.name != product.short_description) { %>
-									<h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
-								<% } %>
 							</div>
 
 							<!-- // Characteristics -->
