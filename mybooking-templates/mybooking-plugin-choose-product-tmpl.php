@@ -21,11 +21,14 @@
 <!-- PRODUCT LOOP ------------------------------------------------------------->
 
 <?php 
-  if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['list', 'list_only'] ) ) ):
+  if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['list', 'list_only'] ) ) ) {
       mybooking_engine_get_template('mybooking-plugin-reservation-product-card-list-tmpl.php', $args); 
-  else: 
+  } else if ( array_key_exists('choose_product_layout', $args) && ( in_array( $args['choose_product_layout'], ['reduce_list_only'] ) ) ) {
+      mybooking_engine_get_template('mybooking-plugin-reservation-product-card-reduce-list-tmpl.php', $args);
+  } else {
       mybooking_engine_get_template('mybooking-plugin-reservation-product-card-grid-tmpl.php', $args);
-  endif;
+  }
+
   mybooking_engine_get_template('mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php', $args);
 ?>
 
