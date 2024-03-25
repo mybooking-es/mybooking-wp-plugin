@@ -15,10 +15,12 @@
 <script type="text/tmpl" id="form_selector_tmpl">
 
   <% if (!not_hidden_rental_location_code) { %>
+    <input type="hidden" name="engine_fixed_rental_location" value="true"/>
     <input type="hidden" name="rental_location_code" value="<%=rental_location_code%>"/>
   <% } %>  
 
   <% if (!not_hidden_family_id) { %>
+    <input type="hidden" name="engine_fixed_family" value="true"/>
     <input type="hidden" name="family_id" value="<%=family_id%>"/>
   <%  } %>
 
