@@ -14,6 +14,14 @@
 
 <script type="text/tmpl" id="form_selector_tmpl">
 
+  <% if (!not_hidden_rental_location_code) { %>
+    <input type="hidden" name="rental_location_code" value="<%=rental_location_code%>"/>
+  <% } %>  
+
+  <% if (!not_hidden_family_id) { %>
+    <input type="hidden" name="family_id" value="<%=family_id%>"/>
+  <%  } %>
+
   <% if (configuration.pickupReturnPlace) { %>
 
     <!-- // PICKUP SECTION -->
@@ -201,14 +209,13 @@
   <% } else { %>
 
     <div class="mybooking-selector_group mb-inline">
-
         <!--
         // Location code selector:
         // Opens .mybooking-selector_group
         // only when Locator or Family fields are activated
         -->
         <!-- Simple location -->
-				<% if (configuration.simpleLocation) { %>
+				<% if (not_hidden_rental_location_code && configuration.simpleLocation) { %>
           <div class="mybooking-selector_cal">
             <label for="simple_location_id">
               <?php echo esc_html_x( 'Where', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>

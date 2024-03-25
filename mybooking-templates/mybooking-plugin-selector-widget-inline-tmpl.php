@@ -13,6 +13,7 @@
 			  <% if (typeof company !== 'undefined' && company && company !== '') { %>
 				<input type="hidden" name="company" value="<%=company%>"/>
 			  <% } %>		
+	
 				<!-- // Simple location selector -->
         <% if (not_hidden_rental_location_code && configuration.simpleLocation) { %>
   				<div class="mybooking-selector_simple_location">
