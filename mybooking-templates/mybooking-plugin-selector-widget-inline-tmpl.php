@@ -14,7 +14,7 @@
 				<input type="hidden" name="company" value="<%=company%>"/>
 			  <% } %>		
 				<!-- // Simple location selector -->
-        <% if (configuration.simpleLocation) { %>
+        <% if (not_hidden_rental_location_code && configuration.simpleLocation) { %>
   				<div class="mybooking-selector_simple_location">
 						<i class="mybooking-selector_field-icon">
 							<span class="dashicons dashicons-location"></span>
