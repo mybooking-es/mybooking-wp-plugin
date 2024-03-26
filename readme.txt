@@ -3,7 +3,7 @@ Donate link: https://mybooking.es/
 Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation, properties booking system, tours booking system, transfer booking system 
 Requires at least: 5.2
 Tested up to: 6.4
-Stable tag: 2.1.1
+Stable tag: 2.2.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -116,11 +116,12 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
-= 2.1.2 =
+= 2.2.0 =
+* New: Complete form : Validate of radio controls - element placement
 * New: Renting optimization by avoiding one API call to get settings
-
-= 2.1.1 =
 * New: Shortcode products add new parameter to show a sublist of products
+* Updated: Selector form : Literal for Estimated time of arrival
+* Fixed: Product list shortcode : Take into account that external_detail_url can be empty if edited in the UI
 
 = 2.1.0 =
 * Fixed: Product Calendar column fixed on iOS
@@ -475,11 +476,8 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
-= 2.1.2 =
-* New: Renting optimization by avoiding one API call to get settings
-
-= 2.1.1 =
-* New: Shortcode products add new parameter to show a sublist of products
+= 2.2.0 =
+* New: Fixes and improvements for rental module
 
 = 2.1.0 =
 * Fixed: Rent Selector - Date and duration. Duration was not activated on select date + Fixed columns width on iOS

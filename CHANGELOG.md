@@ -1,10 +1,12 @@
 # Changelog
 
-## [2.1.4] - 2024.02.28
+## [2.2.0] - 2024.03.27
 
 ### New
 
 - Complete form : Validate of radio controls - element placement
+- Renting optimization : Improve speed by avoiding one call to settings 
+- Shorcode products : Include codes to show a list of products
 
 ### Updated
 
@@ -14,17 +16,6 @@
 
 - Product list shortcode : Take into account that external_detail_url can be empty if edited in the UI
 
-## [2.1.2] - 2024.02.21
-
-### New
-
-- Renting optimization : Improve speed by avoiding one call to settings 
-
-## [2.1.1] - 2024.02.16
-
-### New
-
-- Shorcode products : Include codes to show a list of products
 
 ## [2.1.0] - 2024.02.13
 
