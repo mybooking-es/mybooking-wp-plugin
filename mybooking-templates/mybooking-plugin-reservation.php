@@ -24,12 +24,3 @@
   <h3 class="mybooking-modal_title mb-modal_title"></h3>
   <div class="mybooking-modal_body mb-modal_body"></div>
 </div>
-
-<!-- RESERVATION PRODUCT MULTIPLE TABLE ------------------------------------------------------>
-
-<script type="text/tmpl" id="script_mybooking_summary_product_detail_table">
-  <!-- TABLE IN MULTIPLE RESERVATIONS -->
-  <?php mybooking_engine_get_template( 'mybooking-plugin-complete-multiple-items-table-tmpl.php' ); ?>
-</script>
-
-
