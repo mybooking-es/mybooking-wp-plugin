@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.1] - 2024.03.27
+
+### New
+
+- Fixed: Progressive loading of search results
+
 ## [2.2.0] - 2024.03.27
 
 ### New
