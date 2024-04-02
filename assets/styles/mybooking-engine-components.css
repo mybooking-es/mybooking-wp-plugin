@@ -1410,10 +1410,6 @@ label.error {
 
 .mybooking-products_table .mb-row {
   padding: 1rem 0;
-} @media ( min-width: 575.98px ) {
-  .mybooking-products_table .mybooking-product_image {
-    margin: 0;
-  }
 }
 
 .mybooking-products_table .mybooking-products_table-head,
@@ -1444,6 +1440,12 @@ label.error {
 
 .mybooking-products_table  [class*='mb-col'] {
   padding: 0 1rem;
+}
+
+.mybooking-products_table .mybooking-product_image {
+  max-width: 100%;
+  margin: auto;
+  display: block;
 }
 
 .mybooking-products_table  .mybooking-summary_extra-name {

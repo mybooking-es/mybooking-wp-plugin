@@ -43,10 +43,16 @@
 							<% if (product.short_description != '' && product.name != product.short_description) { %>
 								<h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
 							<% } %>
-							<div class="mybooking-product_includes">
-								<%=product.rate_type.description%>
-								<div class="mybooking-product_includes-overlay"></div>
-							</div>
+							<% if ((product.rate_type && product.rate_type.description && product.rate_type.description  != '') || (product.description && product.description != '')) { %>
+								<div class="mybooking-product_includes">
+								<% if (product.rate_type && product.rate_type.description && product.rate_type.description != '') { %>
+									<%=product.rate_type.description%>
+								<% } else if (product.description&& product.description != '') { %>
+									<%=product.description%>
+								<% } %>
+									<div class="mybooking-product_includes-overlay"></div>
+								</div>
+							<% } %>
 
 							<% if (product.category_supplement_1_cost > 0) { %>
 								<div class="mybooking-product_price_supplement p-b-1">
