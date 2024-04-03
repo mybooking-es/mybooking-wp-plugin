@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.2] - 2024.04.03
+
+### Fixed
+
+- Product calendar when not performances
+
 ## [2.2.1] - 2024.03.27
 
 ### New

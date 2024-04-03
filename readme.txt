@@ -116,6 +116,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 2.2.2 =
+* Fixed: Product calendar without performances just allowed to select one day
+
 = 2.2.1 =
 * Fixed: Progressive loading of search results
 
@@ -478,6 +481,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 2.2.2 =
+* Fixed: Product calendar without performances just allowed to select one day
 
 = 2.2.1 =
 * Fixed: Progressive loading of search results
