@@ -17,27 +17,33 @@
 
 /* Variants */
 .card-static_variant_resume__container {
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  margin: 0 -0.5rem;
+  display: flex !important; 
+  align-items: center !important;  
+  justify-content: space-between !important; 
 }
 .card-static_variant_resume__container_inside {
   margin-top: -3px;
+  display: flex;
 }
 .card-static_variant_resume__box {
-  display: inline-block; 
   margin-right: 0.2rem; 
   border-radius: 2px; 
   border: 1px solid lightgray; 
   font-size: 12px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 .card-static_variant_resume__box_inside {
   display: inline-block;  
   padding: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 60px;
 }
 .card-static_variant_resume__box_inside:last-child {
-  background-color: lightgray;
+  background-color: white !important;
 }
 
 /** SUMMARY DETAILS **/

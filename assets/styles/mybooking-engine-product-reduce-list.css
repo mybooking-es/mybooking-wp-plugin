@@ -311,3 +311,14 @@
 .mybooking-product_reduce_list .mybooking-product_info-button:hover {
   opacity: 0.5;
 }
+
+.mybooking-product_reduce_list .mybooking-product_block-prices .product-variant-resume {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mybooking-product_reduce_list .card-static_variant_resume__container {
+  flex-direction: column;
+}
