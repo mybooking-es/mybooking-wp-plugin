@@ -58,7 +58,7 @@
 
 
     <li class="mybooking-product_calendar-step">
-      <?php echo esc_html_x('Select delivery and return dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+      <?php echo esc_html_x('Select dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
     </li>
 
     <% if (configuration.rentingProductOneJournal &&
@@ -86,7 +86,7 @@
     <% if (configuration.timeToFrom || configuration.timeToFromInOneDay) { %>
 
         <li class="mybooking-product_calendar-step js-mybooking-product_calendar-time-hours js-mybooking-product_calendar-time-ranges" style="display:none">
-          <?php echo esc_html_x('Select delivery and return time', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+          <?php echo esc_html_x('Select time', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
         </li>
 
         <div id="mybooking_product_widget_occupation_container" class="mb-form-row" style="display: none">

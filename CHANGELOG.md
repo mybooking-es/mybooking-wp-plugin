@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.3] - 2024.04.07
+
+### New
+
+- Product calendar performance_id shortcode parameter
+
 ## [2.2.2] - 2024.04.03
 
 ### Fixed

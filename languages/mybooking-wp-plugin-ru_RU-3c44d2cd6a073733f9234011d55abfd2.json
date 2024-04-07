@@ -1,0 +1,15 @@
+{
+    "translation-revision-date": "2024-04-07 21:16+0000",
+    "generator": "Loco https://localise.biz/",
+    "source": "../../../../../../../proyectos/yurak/mybooking-wp-plugin/admin-assets/js/mybooking-plugin-onboarding-login.js",
+    "domain": "mybooking-wp-plugin",
+    "locale_data": {
+        "mybooking-wp-plugin": {
+            "": {
+                "domain": "mybooking-wp-plugin",
+                "lang": "ru_RU",
+                "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);"
+            }
+        }
+    }
+}

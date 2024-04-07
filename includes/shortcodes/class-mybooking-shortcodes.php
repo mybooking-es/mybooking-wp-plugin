@@ -364,7 +364,8 @@
       extract( shortcode_atts( array('code' => '',
                                      'sales_channel_code' => '',
                                      'rental_location_code' => '',
-                                     'check_hourly_occupation' => ''), $atts ) );
+                                     'check_hourly_occupation' => '',
+                                     'performance_id' => ''), $atts ) );
 
       $data = array();
       $data['code'] = $code;
@@ -377,6 +378,9 @@
       if ( $check_hourly_occupation != '' ) {
         $data['check_hourly_occupation'] = $check_hourly_occupation;
       }
+      if ( $performance_id != '' ) {
+        $data['performance_id'] = $performance_id;
+      } 
 
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-product-widget.php', $data);

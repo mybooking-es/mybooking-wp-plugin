@@ -17,6 +17,9 @@
            <?php if ( array_key_exists('check_hourly_occupation', $args) && $args['check_hourly_occupation'] == 'yes' ) : ?>
              data-check-hourly-occupation="true"
            <?php endif; ?>  
+           <?php if ( array_key_exists('performance_id', $args) && $args['performance_id'] != '' ) : ?>
+             data-performance-id="<?php echo esc_attr( $args['performance_id'] )?>"
+           <?php endif; ?>
            class="mybooking mybooking-product_calendar_container <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
       <form
         name="search_form"
