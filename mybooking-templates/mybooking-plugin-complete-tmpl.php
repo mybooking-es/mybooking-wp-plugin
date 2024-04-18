@@ -334,6 +334,7 @@
                       <% if (coverage.description && coverage.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                         <div class="mybooking-extra_description">
                           <%=coverage.description%>
+                          <div class="mybooking-extra_description-overlay"></div>
                         </div>
                       <% } %>
 
@@ -351,6 +352,7 @@
                       <% if (coverage.description && coverage.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                         <div class="mybooking-extra_description">
                           <%=coverage.description%>
+                          <div class="mybooking-extra_description-overlay"></div>
                         </div>
 
                         <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=coverage.code%>">
@@ -420,6 +422,7 @@
                         <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                           <div class="mybooking-extra_description">
                             <%=extra.description%>
+                            <div class="mybooking-extra_description-overlay"></div>
                           </div>
                         <% } %>
 
@@ -437,6 +440,7 @@
                         <% if (extra.description && extra.description.replace(/<p><br><\/p>/g, '') !== '') { %>
                           <div class="mybooking-extra_description">
                             <%=extra.description%>
+                            <div class="mybooking-extra_description-overlay"></div>
                           </div>
 
                           <span class="js-extra-info-btn mybooking-extra_info-btn" data-toggle="modal" data-target="#infoModal" data-extra="<%=extra.code%>">
