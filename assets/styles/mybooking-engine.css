@@ -452,6 +452,20 @@ label {
   .mb-form-row.js-mybooking-product_calendar-time-hours {
     flex-direction: column;
   }
+  .mb-form-row.js-mybooking-product_calendar-time-hours .mb-form-group,
+  .mb-form-row.js-mybooking-product_calendar-time-hours select {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .mb-form-row.js-mybooking-product_calendar-time-hours .mb-form-group {
+    padding-top: 0.5rem;
+  }
+  .mb-form-row.js-mybooking-product_calendar-time-hours select {
+    color: initial !important;
+  }
+  .mb-form-row.js-mybooking-product_calendar-time-hours .form-reservation-error {
+    margin-bottom: 0.5rem;
+  }
   .mb-form-row.mb-custom-date-form {
     gap: 0.5rem;
   }
