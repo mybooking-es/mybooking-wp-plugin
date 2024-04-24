@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.4] - 2024.04.25
+
+### Fixed
+
+- Product calendar min days warning message
+
 ## [2.2.3] - 2024.04.07
 
 ### New
