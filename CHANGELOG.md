@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.6] - 2024.04.29
+
+### Fixed
+
+- Selector with rental location and duration - rental_location_code param was not used
+
 ## [2.2.5] - 2024.04.25
 
 ### Fixed
