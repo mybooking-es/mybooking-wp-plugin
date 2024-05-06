@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-25 16:57+0000\n"
-"PO-Revision-Date: 2024-04-30 15:13+0000\n"
+"PO-Revision-Date: 2024-05-03 10:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -2470,7 +2470,7 @@ msgstr "Покрытие"
 
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:657
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:499
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1121
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1208
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:762
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:233
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:332
@@ -2498,6 +2498,8 @@ msgstr "Доплата за возраст водителя"
 
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete.php:59
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete.php:60
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:500
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:501
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:299
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:301
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:133
@@ -2572,7 +2574,7 @@ msgstr "Нет"
 
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:651
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:493
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1115
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1202
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:756
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:227
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:326
@@ -2591,6 +2593,8 @@ msgstr "Бензиновая доплата"
 
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete.php:70
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete.php:71
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:504
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:505
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:314
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:316
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:144
@@ -2695,7 +2699,7 @@ msgstr "Да"
 
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:664
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:510
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1128
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1215
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:769
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:240
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:339
@@ -2712,7 +2716,7 @@ msgstr ""
 
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:674
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:521
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1139
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1226
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:779
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:250
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:350
@@ -2726,7 +2730,7 @@ msgstr ""
 
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:645
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:488
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1110
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1197
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:751
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:222
 #: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:321
@@ -2860,176 +2864,201 @@ msgctxt "renting_form_selector_wizard"
 msgid "Where?"
 msgstr "Где?"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:679
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:766
 msgctxt "renting_my_reservation"
 msgid "Additional drivers"
 msgstr "Резюме бронирования"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:484
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:486
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:526
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:528
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:721
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:723
 msgctxt "renting_my_reservation"
 msgid "Address"
 msgstr "Адрес"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:501
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:503
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:543
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:545
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:738
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:740
 msgctxt "renting_my_reservation"
 msgid "City"
 msgstr "Город"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:892
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:894
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:914
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:916
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:478
+msgctxt "renting_my_reservation"
+msgid "Client tax data"
+msgstr "Налоговые данные клиента"
+
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:979
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:981
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1001
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1003
 msgctxt "renting_my_reservation"
 msgid "Company"
 msgstr "Компания"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:494
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:496
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:516
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:517
+msgctxt "renting_my_reservation"
+msgid "Company ID"
+msgstr "Идентификатор компании"
+
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:512
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:513
+msgctxt "renting_my_reservation"
+msgid "Company name"
+msgstr "Название компании"
+
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:536
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:538
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:731
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:733
 msgctxt "renting_my_reservation"
 msgid "Complement"
 msgstr "Company"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:513
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:555
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:750
 msgctxt "renting_my_reservation"
 msgid "Country"
 msgstr "Страна"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:479
-msgctxt "renting_my_reservation"
-msgid "Customer address"
-msgstr "Aдрес клиента"
-
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:553
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:595
 msgctxt "renting_my_reservation"
 msgid "Date of birth"
 msgstr "Дата рождения"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:600
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:656
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:737
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:812
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:642
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:698
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:824
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:899
 msgctxt "renting_my_reservation"
 msgid "Date of expiry"
 msgstr "Дата истечения срока"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:581
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:637
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:718
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:793
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:623
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:679
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:805
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:880
 msgctxt "renting_my_reservation"
 msgid "Date of Issue"
 msgstr "Дата выдачи"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:965
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:967
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:969
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1031
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1033
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1035
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1052
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1054
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1056
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1118
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1120
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1122
 msgctxt "renting_my_reservation"
 msgid "Document ID"
 msgstr "ID документа"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:628
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:709
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:784
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:670
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:796
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:871
 msgctxt "renting_my_reservation"
 msgid "Driving license expedition country"
 msgstr "Страна выдачи водительских прав"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:621
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:623
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:701
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:703
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:776
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:778
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:873
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:663
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:665
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:788
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:790
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:863
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:865
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:960
 msgctxt "renting_my_reservation"
 msgid "Driving license number"
 msgstr "Номер водительского удостоверения"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:983
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:985
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:987
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1049
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1051
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1053
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1070
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1072
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1074
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1136
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1138
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1140
 msgctxt "renting_my_reservation"
 msgid "E-mail"
 msgstr "Электронная почта"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:902
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:904
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:924
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:926
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:989
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:991
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1011
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1013
 msgctxt "renting_my_reservation"
 msgid "Estimated Time"
 msgstr "Расчетное время"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:887
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:974
 msgctxt "renting_my_reservation"
 msgid "Flight"
 msgstr "Полет"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:897
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:899
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:919
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:921
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:984
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:986
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1006
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1008
 msgctxt "renting_my_reservation"
 msgid "Flight Number"
 msgstr "Номер рейса"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:992
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:994
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:996
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1058
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1060
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1062
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1079
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1081
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1083
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1145
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1147
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1149
 msgctxt "renting_my_reservation"
 msgid "Height (cm)"
 msgstr "Высота (см)"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:571
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:573
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:852
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:854
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:495
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:497
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:613
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:615
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:939
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:941
 msgctxt "renting_my_reservation"
 msgid "ID card or passport"
 msgstr "Удостоверение личности или паспорт"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:538
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:540
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:684
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:686
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:759
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:761
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:837
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:839
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:949
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:951
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:953
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1015
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1017
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1019
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:485
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:486
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:580
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:582
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:771
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:773
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:846
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:848
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:924
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:926
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1036
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1038
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1040
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1102
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1104
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1106
 msgctxt "renting_my_reservation"
 msgid "Name"
 msgstr "Имя"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:871
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:958
 msgctxt "renting_my_reservation"
 msgid "Navigation license number"
 msgstr "Номер навигационной лицензии"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:862
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:864
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:949
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:951
 msgctxt "renting_my_reservation"
 msgid "Navigation license type"
 msgstr "Тип навигационной лицензии"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:489
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:491
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:531
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:533
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:726
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:728
 msgctxt "renting_my_reservation"
 msgid "Number"
 msgstr "Число"
@@ -3039,12 +3068,12 @@ msgctxt "renting_my_reservation"
 msgid "Paid"
 msgstr "Оплачено"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:942
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1029
 msgctxt "renting_my_reservation"
 msgid "Participant"
 msgstr "Участник"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:944
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1031
 msgctxt "renting_my_reservation"
 msgid "Participants"
 msgstr "Участников"
@@ -3054,12 +3083,12 @@ msgctxt "renting_my_reservation"
 msgid "Passengers"
 msgstr "Пассажиры"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:945
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1032
 msgctxt "renting_my_reservation"
 msgid "Pax 1"
 msgstr "Человек 1"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1012
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1099
 msgctxt "renting_my_reservation"
 msgid "Pax 2"
 msgstr "Человек 2"
@@ -3069,12 +3098,12 @@ msgctxt "renting_my_reservation"
 msgid "Pending"
 msgstr "В ожидании"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:975
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:977
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:979
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1041
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1043
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1045
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1062
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1064
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1066
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1128
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1130
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1132
 msgctxt "renting_my_reservation"
 msgid "Phone number"
 msgstr "Телефонный номер"
@@ -3088,13 +3117,15 @@ msgstr ""
 "Пожалуйста, заполните информацию, чтобы ускорить процесс доставки в "
 "запланированную дату"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:518
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:520
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:560
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:562
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:755
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:757
 msgctxt "renting_my_reservation"
 msgid "Postal Code"
 msgstr "Почтовый индекс"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:909
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:996
 msgctxt "renting_my_reservation"
 msgid "Return flight"
 msgstr "Обратный рейс"
@@ -3104,107 +3135,111 @@ msgctxt "renting_my_reservation"
 msgid "Sign contract"
 msgstr "подписать контракт"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:506
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:508
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:548
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:550
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:743
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:745
 msgctxt "renting_my_reservation"
 msgid "State"
 msgstr "Состояние"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:544
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:546
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:691
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:693
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:766
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:768
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:843
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:845
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:957
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:959
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:961
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1023
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1025
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1027
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:489
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:490
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:586
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:588
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:778
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:780
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:853
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:855
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:930
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:932
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1044
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1046
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1048
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1110
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1112
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1114
 msgctxt "renting_my_reservation"
 msgid "Surname"
 msgstr "Фамилия"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1171
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1258
 msgctxt "renting_my_reservation"
 msgid "The contract can not be signed. Please, check the errors."
 msgstr "Контракт не может быть подписан. Пожалуйста, проверьте ошибки."
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1085
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1172
 msgctxt "renting_my_reservation"
 msgid "Update"
 msgstr "Обновить"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1002
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1004
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1006
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1068
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1070
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1072
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1089
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1091
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1093
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1155
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1157
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1159
 msgctxt "renting_my_reservation"
 msgid "Weight (kg)"
 msgstr "Вес (кг)"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1285
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1372
 msgctxt "renting_my_reservation_passenger"
 msgid "Add a new passenger"
 msgstr "Добавить нового пассажира"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1230
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1318
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1317
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1405
 msgctxt "renting_my_reservation_passenger"
 msgid "Date of Issue"
 msgstr "Дата выдачи"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1252
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1255
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1324
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1339
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1342
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1411
 msgctxt "renting_my_reservation_passenger"
 msgid "Email address"
 msgstr "Адрес электронной почты"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1221
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1225
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1311
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1308
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1312
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1398
 msgctxt "renting_my_reservation_passenger"
 msgid "ID card or passport"
 msgstr "удостоверение личности или паспорт"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1200
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1204
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1287
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1291
 msgctxt "renting_my_reservation_passenger"
 msgid "Name"
 msgstr "Имя"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1186
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1273
 msgctxt "renting_my_reservation_passenger"
 msgid "No passengers found in reservation"
 msgstr "Пассажиры не найдены в бронировании"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1272
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1275
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1340
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1359
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1362
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1427
 msgctxt "renting_my_reservation_passenger"
 msgid "Notes"
 msgstr "Примечания"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1261
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1264
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1331
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1348
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1351
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1418
 msgctxt "renting_my_reservation_passenger"
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1303
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1390
 msgctxt "renting_my_reservation_passenger"
 msgid "Remove"
 msgstr "Удалять"
 
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1210
-#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1214
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1297
+#: ../../../../../../../Documents/REPO/MyBookingWP/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:1301
 msgctxt "renting_my_reservation_passenger"
 msgid "Surname"
 msgstr "Фамилия"
