@@ -1419,11 +1419,11 @@
       <%= i18next.t('myReservation.pay.total_payment', {amount:configuration.formatCurrency(amount) }) %>
     </div>
 
-    <% if (booking.total_paid == 0) {%>
+    <!--<% if (booking.total_paid == 0) {%>
       <div id="payment_amount_container" class="mb-alert info highlight">
         <%= i18next.t('complete.reservationForm.booking_amount', {amount:configuration.formatCurrency(amount) }) %>
       </div>
-    <% } %>
+    <% } %>-->
 
     <form name="payment_form">
       <% if (sales_process.payment_methods.paypal_standard && sales_process.payment_methods.tpv_virtual) { %>
