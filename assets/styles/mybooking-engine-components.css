@@ -1513,3 +1513,46 @@ label.error {
 .mybooking-products_table .mybooking-product_price:first-child {
   flex-direction: row !important;
 }
+
+/* STEPS ***********************************************************************/
+.mb--steps-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.mb--steps-wrapper .mb--step {
+  background-color: var(--mb-light-color);
+  color: var(--mb-dark-color);
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--mb-border-radius);
+}
+.mb--steps-wrapper .mb--step.mb--active {
+  background-color: var(--mb-info-color);
+  color: var(--mb-negative-text-color);
+}
+.mb--steps-wrapper .mb--step.mb--disabled {
+  border: 1px solid var(--mb-muted-color);
+  color: var(--mb-muted-color);
+  cursor: not-allowed;
+}
+.mb--steps-wrapper .mb--step.mb--completed {
+  background-color: var(--mb-success-color);
+  color: var(--mb-negative-text-color);
+  cursor: not-allowed;
+}
+.mb--steps-wrapper .mb--step.mb--completed:after {
+  content: "\f12a";
+  font-family: "dashicons";
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+.mb--steps-wrapper .mb--step-number {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
