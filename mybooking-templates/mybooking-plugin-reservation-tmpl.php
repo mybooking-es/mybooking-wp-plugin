@@ -497,11 +497,11 @@
           <div class="mb-form-row">
             <div class="mb-form-group mb-col-md-6">
               <label for="customer_name"><?php echo esc_html_x( 'Name', 'renting_my_reservation', 'mybooking-wp-plugin') ?>*</label>
-              <input class="mb-form-control" type="text" name="customer_name" id="customer_name" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Name', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:*" maxlength="40" value="<%=booking.customer_name%>" disabled>
+              <input class="mb-form-control" type="text" name="customer_name" id="customer_name" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Name', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:*" maxlength="40" value="<%=booking.customer_name%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
             </div>
             <div class="mb-form-group mb-col-md-6">
               <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?>*</label>
-              <input class="mb-form-control" type="text" name="customer_surname" id="customer_surname" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:*" maxlength="40" value="<%=booking.customer_surname%>" disabled>
+              <input class="mb-form-control" type="text" name="customer_surname" id="customer_surname" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:*" maxlength="40" value="<%=booking.customer_surname%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
             </div>
           </div>
           <div class="mb-form-row">
@@ -535,11 +535,11 @@
         <div class="mb-form-row">
           <div class="mb-form-group mb-col-md-6">
             <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-            <input class="mb-form-control" type="text" name="customer_email" id="customer_email" autocomplete="off" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50" value="<%=booking.customer_email%>" disabled>
+            <input class="mb-form-control" type="text" name="customer_email" id="customer_email" autocomplete="off" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="50" value="<%=booking.customer_email%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
           </div>
           <div class="mb-form-group mb-col-md-6">
             <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>*</label>
-            <input class="mb-form-control" type="text" name="customer_phone" id="customer_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="15" value="<%=booking.customer_phone%>" disabled>
+            <input class="mb-form-control" type="text" name="customer_phone" id="customer_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>:*" maxlength="15" value="<%=booking.customer_phone%>" <% if (!booking.can_edit_online){%>disabled<%}%>>
           </div>
         </div>
 
@@ -831,12 +831,13 @@
 
             <% if (configuration.rentingFormFillDataAdditionalDriver1 || configuration.rentingFormFillDataAdditionalDriver2) { %>
               <div class="mb-section mb-panel-container there_are_additional_drivers_disabled">
-                <div class="mb-form-row">
-                  <label for="there_are_additional_drivers">
-                    <input type="checkbox" name="there_are_additional_drivers" id="there_are_additional_drivers" <% if (!booking.can_edit_online){%>disabled<%}%> data-panel="additional_drivers_panel">
-                    &nbsp;
+                <div id="additional_drivers_toogle_btn" class="mb-form-row"  data-panel="additional_drivers_panel" style="margin-bottom: -1rem; cursor: pointer;">
+                  <div class="mb-col-xs-6">
                     <?php echo esc_html_x('There are additional drivers', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-                  </label>
+                  </div>
+                  <div class="mb-col-xs-6 text-right">
+                    <i class="fa fa-arrow-circle-down"></i>
+                  </div>
                 </div>
 
                 <div id="additional_drivers_panel" style="display: none;">
@@ -906,7 +907,7 @@
                     </div>
                     <div class="mb-form-group mb-col-md-4">
                       <label
-                        for="additional_driver_1_origin_country"><?php echo esc_html_x('Document ID expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                        for="additional_driver_1_origin_country"><?php echo esc_html_x('Expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                       <select name="additional_driver_1_origin_country" id="additional_driver_1_origin_country"
                           class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>>
                       </select>
@@ -1079,7 +1080,7 @@
                     </div>
                     <div class="mb-form-group mb-col-md-4">
                       <label
-                        for="additional_driver_2_origin_country"><?php echo esc_html_x('Document ID expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+                        for="additional_driver_2_origin_country"><?php echo esc_html_x('Expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
                       <select name="additional_driver_2_origin_country" id="additional_driver_2_origin_country"
                           class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>>
                       </select>
