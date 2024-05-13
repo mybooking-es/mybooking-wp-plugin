@@ -1419,7 +1419,13 @@ label.error {
 * Jquery validation 
 */
 .mybooking-products_table {
-  padding: 0 1rem;
+  padding: 0 !important;
+  margin: 0 -0.2rem;
+} @media ( min-width: 575.98px ) {
+  .mybooking-products_table {
+    padding: 0 0.15rem !important;
+    margin: 0;
+  }
 }
 
 .mybooking-products_table .mb-row {
@@ -1531,6 +1537,11 @@ label.error {
   justify-content: center;
   padding: 0.5rem 1rem;
   border-radius: var(--mb-border-radius);
+  width: 100%;
+} @media ( min-width: 992px ) {
+  .mb--steps-wrapper .mb--step {
+    width: auto;
+  }
 }
 .mb--steps-wrapper .mb--step.mb--active {
   background-color: var(--mb-info-color);

@@ -547,7 +547,7 @@
         <h6>
           <?php echo esc_html_x( 'Address', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
         </h6>
-        <hr />
+        <hr /><br />
         <% if (configuration.rentingFormFillDataAddress) { %>
           <div class="mb-form-row">
             <div class="mb-form-group mb-col-md-6">
@@ -606,7 +606,7 @@
                 </label>
               </div>
               <!-- // Driver panel -->
-              <div id="driver_panel" <% if (booking.driver_is_customer != false) { %>style="display: none;"<% } %>>
+              <div id="driver_panel" <% if (booking.driver_is_customer != false) { %>style="display: none;"<% } %> class="driver_is_customer_disabled">
                 <br />
                 <h3 class="mb-form_title">
                   <?php echo esc_html( MyBookingEngineContext::getInstance()->getDriver() ) ?>
