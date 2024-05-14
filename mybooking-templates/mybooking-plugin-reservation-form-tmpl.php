@@ -4,7 +4,7 @@
     <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-tmpl.php'); ?>
 
     <!-- // Drivers -->
-		<% if (!booking.has_optional_external_driver && configuration.rentingFormFillDataDriverDetail) { %>
+		<% if (!booking.has_optional_external_driver) { %>
       <% if (booking.driver_type == 'driver') { %>
         <!-- DRIVERS (NOT CHARTER) ----------------------------------------------------------->
         <? mybooking_engine_get_template('mybooking-plugin-reservation-form-drivers-tmpl.php'); ?>
