@@ -829,10 +829,10 @@
           <% if (configuration.rentingFormFillDataAdditionalDriver1 || configuration.rentingFormFillDataAdditionalDriver2) { %>
             <div class="mb-section mb-panel-container there_are_additional_drivers_disabled">
               <div id="additional_drivers_toogle_btn" class="mb-form-row"  data-panel="additional_drivers_panel" style="margin-bottom: -1rem; cursor: pointer;">
-                <div class="mb-col-xs-6">
+                <div class="mb-col-sm-6">
                   <?php echo esc_html_x('There are additional drivers', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
                 </div>
-                <div class="mb-col-xs-6 text-right">
+                <div class="mb-col-sm-6 text-right">
                   <i class="fa fa-arrow-circle-down"></i>
                 </div>
               </div>
@@ -1553,12 +1553,11 @@
 <!-- PASSENGERS  BLOCK ----------------------------------------------------------->
 <script type="text/tmpl" id="script_passengers_table">
   <div id="passengers_list">
-    <div id="passengers_list__not_data" style="display:none">
+    <div id="passengers_list__not_data" style="display:none;">
       <?php echo esc_html_x('No passengers found in reservation', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
     </div>
     <div id="passengers_list__content">
     </div>
-    
 </script>
 
 <script type="text/tmpl" id="script_passengers_form">
@@ -1596,26 +1595,6 @@
           placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("ID card or passport", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>" value=""
         maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
-      <!-- <div class="mb-form-group mb-col-md-6">
-        <label for="passenger_document_id_date">
-          <?php echo esc_html_x('Date of Issue', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
-        </label>
-        <div class="custom-date-form">
-          <div class="custom-date-item">
-            <select name="passenger_document_id_date_day" id="passenger_document_id_date_day" class="form-control" <% if
-              (!booking.can_edit_online){%>disabled<%}%>></select>
-          </div>
-          <div class="custom-date-item">
-            <select name="passenger_document_id_date_month" id="passenger_document_id_date_month" class="form-control" <%
-              if (!booking.can_edit_online){%>disabled<%}%>></select>
-          </div>
-          <div class="custom-date-item">
-            <select name="passenger_document_id_date_year" id="passenger_document_id_date_year" class="form-control" <% if
-              (!booking.can_edit_online){%>disabled<%}%>></select>
-          </div>
-        </div>
-        <input type="hidden" name="passenger_document_id_date" id="passenger_document_id_date"></input>
-      </div> -->
     </div>
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-6">
@@ -1662,42 +1641,36 @@
 <script type="text/tmpl" id="script_passengers_list__item">
   <div style="padding: 0.5rem 0; font-size: 14px; clear:both;">
     <div class="mb-form-row" style="display: flex; align-items: center; justify-content: flex-start;">
-      <div class="mb-form-group mb-col-xs-1" style="width: 5%; margin-right: 1rem;">
+      <div class="mb-form-group mb-col-sm-1" style="width: 5%; margin-right: 1rem;">
         <span class="mb-badge info" style="position: relative; top: -0.1rem;"><%= index %></span>
       </div>
-      <div class="mb-form-group mb-col-xs-9" style="width: 85%;">
+      <div class="mb-form-group mb-col-sm-9" style="width: 85%;">
         <h6 style="margin: 0;">
           <%= passenger.name %> <%= passenger.surname %> 
         </h6>
       </div>
-      <div class="mb-form-group mb-col-xs-2" style="width: 10%;">
-        <button class="btn float-right" id="btn_remove_passenger" title="<?php echo esc_attr_x("Remove", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>" data-id="<%= passenger.id %>">
-          <i class="mb-button icon"><span class="dashicons dashicons-trash"></span></i>
+      <div class="mb-form-group mb-col-sm-2" style="width: 10%;">
+        <button class="float-right btn_remove_passenger" title="<?php echo esc_attr_x("Remove", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>" data-id="<%= passenger.id %>" data-name="<%= passenger.name %> <%= passenger.surname %>">
+          <i class="mb-button icon" style="opacity: 0.6;"><span class="dashicons dashicons-trash"></span></i>
         </button>
       </div>
     </div>
     <div class="mb-form-row">
-      <div class="mb-form-group mb-col-sm-4">
+      <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
         <b>
           <?php echo esc_html_x('ID card or passport', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
         </b>
         <br />
         <%= passenger.document_id %>
       </div>
-      <!-- <div class="mb-form-group mb-col-sm-4">
-        <b>
-          <?php echo esc_html_x('Date of Issue', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
-        </b>
-        <br />
-      </div> -->
-      <div class="mb-form-group mb-col-sm-4">
+      <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
         <b>
           <?php echo esc_html_x('Email address', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
         </b>
         <br />
         <%= passenger.email %>
       </div>
-      <div class="mb-form-group mb-col-sm-4">
+      <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
         <b>
           <?php echo esc_html_x('Phone number', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
         </b>
