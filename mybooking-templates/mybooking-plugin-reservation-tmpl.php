@@ -24,7 +24,7 @@
   <div class="mb-row-flex">
     <% if (showReservationForm) { %>
       <div class="mb-col-md-6 mb-col-lg-8">
-        <div class="mb-section mb-panel-container mb--steps-container-wrapper">
+        <div class="mb-section mb--steps-container-wrapper">
           <div id="reservation_customer_container" class="mb--step-container <% if (!booking.required_data_completed) { %>mb--active<% } %>">
             <!-- // Customer extra data form -->
             <div id="reservation_form_container"></div>
@@ -34,10 +34,10 @@
           </div>
 
           <!-- // Documents upload -->
-          <div id="documents_upload_container" class="mb--step-container <% if (booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
+          <div id="documents_upload_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
 
           <!-- // Contract signature -->
-          <div id="contract_signature_container" class="mb--step-container <% if (booking.required_data_completed && booking.customer_documents_uploaded &&  !booking.contract_signed) { %>mb--active<% } %>"></div>
+          <div id="contract_signature_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && booking.customer_documents_uploaded &&  !booking.contract_signed) { %>mb--active<% } %>"></div>
 
           <div class="alert alert-success" <% if (!booking.required_data_completed || !booking.customer_documents_uploaded || !booking.contract_signed) { %>style="display: none;"<% } %>>
             <?php echo esc_html_x( 'Process is complete. Thank you very much.', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
@@ -421,34 +421,36 @@
       <div id="payment_detail" class="mb-section"></div>
 
       <!-- // Customer details -->
-      <div class="mb-section">
-        <div class="mybooking-summary_details-title">
-          <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
+      <% if (!showReservationForm) { %>
+        <div class="mb-section">
+          <div class="mybooking-summary_details-title">
+            <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
+          </div>
+          <ul class="mb-list border">
+            <li class="mb-list-item">
+              <span class="dashicons dashicons-businessperson"></span>
+              &nbsp;
+              <%=booking.customer_name%> <%=booking.customer_surname%>
+            </li>
+
+            <% if (booking.customer_phone && booking.customer_phone != '') { %>
+              <li class="mb-list-item">
+                <span class="dashicons dashicons-phone"></span>
+                &nbsp;
+                <%=booking.customer_phone%> <%=booking.customer_mobile_phone%>
+              </li>
+            <% } %>
+
+            <% if (booking.customer_email && booking.customer_email != '') { %>
+              <li class="mb-list-item">
+                <span class="dashicons dashicons-email"></span>
+                &nbsp;
+                <%=booking.customer_email%>
+              </li>
+            <% } %>
+          </ul>
         </div>
-        <ul class="mb-list border">
-          <li class="mb-list-item">
-            <span class="dashicons dashicons-businessperson"></span>
-            &nbsp;
-            <%=booking.customer_name%> <%=booking.customer_surname%>
-          </li>
-
-          <% if (booking.customer_phone && booking.customer_phone != '') { %>
-            <li class="mb-list-item">
-              <span class="dashicons dashicons-phone"></span>
-              &nbsp;
-              <%=booking.customer_phone%> <%=booking.customer_mobile_phone%>
-            </li>
-          <% } %>
-
-          <% if (booking.customer_email && booking.customer_email != '') { %>
-            <li class="mb-list-item">
-              <span class="dashicons dashicons-email"></span>
-              &nbsp;
-              <%=booking.customer_email%>
-            </li>
-          <% } %>
-        </ul>
-      </div>
+      <% } %>
     </div>
   </div>
 </script>

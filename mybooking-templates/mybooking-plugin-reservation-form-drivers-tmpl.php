@@ -8,13 +8,13 @@
 			</label>
 		</div>
 		<!-- // Driver panel -->
-		<div id="driver_panel" <% if (booking.driver_is_customer != false) { %>style="display: none;"<% } %> class="driver_is_customer_disabled">
+		<div id="driver_panel">
 			<br />
 			<h3 class="mb-form_title">
 				<?php echo esc_html( MyBookingEngineContext::getInstance()->getDriver() ) ?>
 			</h3>
 			<!-- Driver -->
-			<div class="mb-form-row driver_is_customer_disabled">
+			<div class="mb-form-row driver_is_customer_disabled" <% if (booking.driver_is_customer != false) { %>style="display: none;"<% } %>>
 				<div class="mb-form-group mb-col-md-6">
 					<label for="driver_name"><?php echo esc_html_x('Name', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
 					<input class="form-control" id="driver_name" name="driver_name" type="text"
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			<div class="mb-form-row">
-				<div class="mb-form-group mb-col-md-6 driver_is_customer_disabled">
+				<div class="mb-form-group mb-col-md-6 driver_is_customer_disabled" <% if (booking.driver_is_customer != false) { %>style="display: none;"<% } %>>
 					<label for="driver_nacionality"><?php echo esc_html_x( 'Nacionality', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
 					<select name="driver_nacionality" id="driver_nacionality" class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
 				</div>
@@ -58,11 +58,11 @@
 			</h6>
 			<hr />
 			<div class="mb-form-row">
-				<div class="mb-form-group mb-col-md-4 driver_is_customer_disabled">
+				<div class="mb-form-group mb-col-md-4 driver_is_customer_disabled" <% if (booking.driver_is_customer != false) { %>style="display: none;"<% } %>>
 					<label for="driver_document_id_type_id"><?php echo esc_html_x( 'Document type', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
 					<select name="driver_document_id_type_id" id="driver_document_id_type_id" class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
 				</div>
-				<div class="mb-form-group mb-col-md-4 driver_is_customer_disabled">
+				<div class="mb-form-group mb-col-md-4 driver_is_customer_disabled" <% if (booking.driver_is_customer != false) { %>style="display: none;"<% } %>>
 					<label for="driver_document_id"><?php echo esc_html_x('ID card or passport', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
 					<input class="form-control" id="driver_document_id" name="driver_document_id" type="text"
 						placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("ID card or passport", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_document_id%>"
@@ -179,7 +179,7 @@
 			</div>
 
 			<!-- // Driver Address -->
-			<div class="driver_is_customer_disabled">
+			<div class="driver_is_customer_disabled" <% if (booking.driver_is_customer != false) { %>style="display: none;"<% } %>>
 				<h6>
 					<?php echo esc_html_x( 'Address', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 				</h6>
