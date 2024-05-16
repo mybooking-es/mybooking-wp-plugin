@@ -1,0 +1,19 @@
+<script type="text/tmpl" id="script_contract_signature">
+	<h3 class="text-primary">
+		3 | <?php echo esc_html_x( 'Sign contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+	</h3>
+	<br />
+	<h5>
+		<?php echo esc_html_x( 'To complete the process we need the signature', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+	</h5>
+	<br />
+	<h6>
+		<?php echo esc_html_x( 'Use the secure link to sign the contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+	</h6>
+	<% if (typeof booking.electronic_signature_url !== 'undefined' && booking.electronic_signature_url && booking.electronic_signature_url != '') { %>
+		<hr />
+		<button id="js_mb_electronic_signature_link" class="mb-button block">
+			<?php echo esc_html_x( 'Sign contract', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+		</button>
+	<% } %>
+</script>

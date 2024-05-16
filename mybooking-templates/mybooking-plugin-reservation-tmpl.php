@@ -12,6 +12,10 @@
  */
 ?>
 
+<!-- RESERVATION STEPS ----------------------------------------->
+
+<? mybooking_engine_get_template('mybooking-plugin-reservation-steps-tmpl.php'); ?>
+
 
 <!-- MY RESERVATION & EXTRA DATA FORM ----------------------------------------->
 
@@ -20,18 +24,29 @@
   <div class="mb-row-flex">
     <% if (showReservationForm) { %>
       <div class="mb-col-md-6 mb-col-lg-8">
+        <div class="mb-section mb-panel-container mb--steps-container-wrapper">
+          <div id="reservation_customer_container" class="mb--step-container <% if (!booking.required_data_completed) { %>mb--active<% } %>">
+            <!-- // Customer extra data form -->
+            <div id="reservation_form_container"></div>
 
-        <!-- // Customer extra data form -->
-        <div id="reservation_form_container" style="display:none;"></div>
+            <!-- // Passengers (CHARTER) -->
+            <? mybooking_engine_get_template('mybooking-plugin-reservation-passengers-tmpl.php'); ?>
+          </div>
 
-        <!-- // Passengers (CHARTER) -->
-        <? mybooking_engine_get_template('mybooking-plugin-reservation-passengers-tmpl.php'); ?>
-        
+          <!-- // Documents upload -->
+          <div id="documents_upload_container" class="mb--step-container <% if (booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
+
+          <!-- // Contract signature -->
+          <div id="contract_signature_container" class="mb--step-container <% if (booking.required_data_completed && booking.customer_documents_uploaded &&  !booking.contract_signed) { %>mb--active<% } %>"></div>
+
+          <div class="alert alert-success" <% if (!booking.required_data_completed || !booking.customer_documents_uploaded || !booking.contract_signed) { %>style="display: none;"<% } %>>
+            <?php echo esc_html_x( 'Process is complete. Thank you very much.', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+          </div>
+        </div>
       </div>
     <% } %>
 
-    <div class="mybooking-sidebar mb-col-md-6 <% if (showReservationForm) { %>mb-col-lg-4<%} else { %>mb-col-lg-8 mb-col-center<% } %>">
-
+    <div class="mybooking-sidebar mb-col-md-6 mb-col-lg-8 mb-col-center">
       <!-- // Reservation status message -->
       <div class="mb-section mybooking-summary_status">
         <%= booking.summary_status %>
@@ -445,6 +460,14 @@
 <!-- EXTRA DATA FORM ------------------------------------------------------>
 
 <?php mybooking_engine_get_template('mybooking-plugin-reservation-form-tmpl.php'); ?>
+
+<!-- DOCUMENTS UPLOAD ------------------------------------------------------>
+
+<?php mybooking_engine_get_template('mybooking-plugin-reservation-documents-tmpl.php'); ?>
+
+<!-- CONTRACT SIGNATURE ------------------------------------------------------>
+
+<?php mybooking_engine_get_template('mybooking-plugin-reservation-contract-signature-tmpl.php'); ?>
 
 <!-- PAYMENT BLOCK ------------------------------------------------------------>
 

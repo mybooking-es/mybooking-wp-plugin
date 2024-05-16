@@ -11,7 +11,7 @@
 <div class="mybooking-process-page <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <section class="mybooking mybooking-process_reservation mybooking-page-container">
     <!-- Reservation steps -->
-    <? mybooking_engine_get_template('mybooking-plugin-reservation-steps-tmpl.php'); ?>
+    <div id="mybooking_reservation_steps"></div>
     <!-- // Multiple products items (script_mybooking-summary_product_detail_table) -->
     <div id="mybooking_summary_product_detail_table"></div>
 
