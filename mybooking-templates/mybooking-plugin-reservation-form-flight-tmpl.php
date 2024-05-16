@@ -4,7 +4,7 @@
 	</h3>
 
 	<h6>
-		<?php echo esc_html_x('Go', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+		<?php echo esc_html_x('Arrival', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 	</h6>
 	<hr />
 
@@ -27,7 +27,7 @@
 	</div>
 
 	<h6>
-		<?php echo esc_html_x('Back', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+		<?php echo esc_html_x('Departure', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 	</h6>
 	<hr />
 

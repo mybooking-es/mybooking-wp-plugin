@@ -46,7 +46,7 @@
       </div>
     <% } %>
 
-    <div class="mybooking-sidebar mb-col-md-6 mb-col-lg-8 mb-col-center">
+    <div class="mybooking-sidebar mb-col-md-6 mb-col-lg-4 mb-col-center">
       <!-- // Reservation status message -->
       <div class="mb-section mybooking-summary_status">
         <%= booking.summary_status %>

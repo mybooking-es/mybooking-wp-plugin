@@ -4,7 +4,7 @@
 	</h3>
 	<br />
 	<h5>
-		<?php echo esc_html_x( 'Before signing the contract we need the documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+		<?php echo esc_html_x( 'Before signing the contract we need you to upload the documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 	</h5>
 	<br />
 	<h6>

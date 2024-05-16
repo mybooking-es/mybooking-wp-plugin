@@ -4,7 +4,7 @@
 			<label for="driver_is_customer">
 				<input type="checkbox" name="driver_is_customer" id="driver_is_customer" <% if (booking.driver_is_customer != false) { %>checked<% } %> <% if (!booking.can_edit_online){%>disabled<%}%> data-panel="driver_panel">
 				&nbsp;
-				<?php echo esc_html_x('Driver is customer', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+				<?php echo esc_html_x('The customer is the driver', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 			</label>
 		</div>
 		<!-- // Driver panel -->

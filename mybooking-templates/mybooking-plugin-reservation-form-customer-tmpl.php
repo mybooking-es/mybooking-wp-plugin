@@ -1,6 +1,6 @@
 <div class="mb-section mb-panel-container">
   <h3>
-    <?php echo esc_html_x( 'Client tax data', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+    <?php echo esc_html_x( 'Customer', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
   </h3>
 
   <% if ( booking.customer_type == 'individual' ) { %>
