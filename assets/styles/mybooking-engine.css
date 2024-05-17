@@ -37,6 +37,7 @@
   /* Forms */
   --mb-form-field-height:  42px;
   --mb-form-field-border-color:  var(--mb-border-color);
+  --mb-form-field-required-border-color: #AAA;
   --mb-form-field-background: white;
 
   /* Selector form */

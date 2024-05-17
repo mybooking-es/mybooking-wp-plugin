@@ -484,9 +484,19 @@
 /* POSITIONS ******************************************************************/
 
 .mb--vertical-center {
-  display: flex!important;
-  flex-direction: column!important;
-  align-items: center!important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.mb--flex_center {
+  justify-items: center !important;
+  align-items: center !important;
+}
+.mb--flex-justify_center {
+  justify-items: center !important;
+}
+.mb--flex-align_center {
+  align-items: center !important;
 }
 
 
@@ -496,4 +506,13 @@
 }
 .mb--txt-fw_lighter {
   font-weight: 200;
+}
+.mb--txt-align_left {
+  text-align: left;
+}
+.mb--txt-align_center {
+  text-align: center;
+}
+.mb--txt-align_right {
+  text-align: right;
 }

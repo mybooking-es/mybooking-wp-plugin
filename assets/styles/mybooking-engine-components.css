@@ -1406,8 +1406,16 @@ label.full-width select.mb-form-control {
 }
 
 /** Jquery validation **/
-label.error {
-    color: var(--mb-danger-color);
+.mybooking label.error {
+  color: var(--mb-danger-color);
+}
+.mybooking input.error,
+.mybooking select.error {
+  border: 1px solid var(--mb-danger-color) !important;
+}
+.mybooking input[required],
+.mybooking select[required] {
+  border: 1px solid var(--mb-form-field-required-border-color) !important;
 }
 
 /*

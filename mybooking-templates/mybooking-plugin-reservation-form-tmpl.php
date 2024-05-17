@@ -1,5 +1,18 @@
 <script type="text/tmpl" id="script_reservation_form">
   <form class="mybooking-form" id="form-reservation" name="booking_information_form" autocomplete="off">
+
+    <!-- // Alert form incomplete -->
+    <% if (booking.contract_errors) { %>
+      <div class="mb-alert danger mb--txt-align_left">
+        <strong><?php echo esc_html_x( 'Please fill in all the required fields', 'renting_my_reservation', 'mybooking-wp-plugin') ?></strong>
+        <ul>
+          <% Object.keys(booking.contract_errors).forEach(function(key) { %>
+            <li><%= booking.contract_errors[key] %></li>
+          <% }); %>
+        </ul>
+      </div>
+    <% } %>
+
     <!-- // Customer  -->
     <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-tmpl.php'); ?>
 
