@@ -6,7 +6,7 @@
 			<?php echo esc_html_x('Skipper is customer', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 		</label>
 	</div>
-	<div id="driver_panel" <% if (booking.driver_is_customer != false) { %>style="display: none;"<% } %> class="driver_is_customer_disabled">
+	<div id="driver_panel" class="mb-section mb-panel-container" <% if (booking.driver_is_customer) { %>style="display: none;"<% } %>>
 		<br />
 		<h3 class="mb-form_title">
 			<?php echo esc_html_x('Skipper', 'renting_my_reservation', 'mybooking-wp-plugin') ?>

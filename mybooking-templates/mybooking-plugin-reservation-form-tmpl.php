@@ -2,7 +2,7 @@
   <form class="mybooking-form" id="form-reservation" name="booking_information_form" autocomplete="off">
 
     <!-- // Alert form incomplete -->
-    <% if (booking.contract_errors) { %>
+    <% if (booking.contract_errors && booking.contract_errors.length) { %>
       <div class="mb-alert danger mb--txt-align_left">
         <strong><?php echo esc_html_x( 'Please fill in all the required fields', 'renting_my_reservation', 'mybooking-wp-plugin') ?></strong>
         <ul>
