@@ -31,7 +31,7 @@
     <!-- // Drivers -->
     <!-- configuration.driver => The business accepts a driver or skipper (rent a car, motorbikes) -->
     <!-- optional_external_driver => The item is rented with a driver or skipper (the customer can not drive it) -->
-		<% if (configuration.driver && !booking.has_optional_external_driver) { %>
+		<% if (configuration.rentingFormFillDataDriverDetail && !booking.has_optional_external_driver) { %>
       <% if (booking.driver_type == 'driver') { %>
         <!-- DRIVERS (NOT CHARTER) ----------------------------------------------------------->
         <? mybooking_engine_get_template('mybooking-plugin-reservation-form-drivers-tmpl.php'); ?>
