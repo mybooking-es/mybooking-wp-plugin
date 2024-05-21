@@ -268,7 +268,7 @@
 <% } %>
 
 <% if (configuration.rentingFormFillDataAdditionalDriver1 || configuration.rentingFormFillDataAdditionalDriver2) { %>
-	<div class="mb-section mb-panel-container" <% if (booking.driver_is_customer) { %>style="display: none;"<% } %>>
+	<div class="mb-section mb-panel-container">
 		<div id="additional_drivers_toogle_btn" class="mb-form-row mb--flex-align_center"  data-panel="additional_drivers_panel" style="margin-bottom: -1rem; cursor: pointer;">
 			<div class="mb-col-sm-6">
 				<?php echo esc_html_x('There are additional drivers', 'renting_my_reservation', 'mybooking-wp-plugin') ?>

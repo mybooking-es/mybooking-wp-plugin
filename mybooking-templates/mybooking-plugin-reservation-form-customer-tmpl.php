@@ -46,9 +46,11 @@
     <br />
   <% } %>
   
-  <h3 <% if (booking.driver_is_customer) { %>style="display: none;"<% } %> class="js-driver-is-customer-on">
-    <?php echo esc_html_x( 'Customer', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-  </h3>    
+  <% if (booking.customer_type != 'legal_entity') { %>
+    <h3 <% if (booking.driver_is_customer) { %>style="display: none;"<% } %> class="js-driver-is-customer-off">
+      <?php echo esc_html_x( 'Customer', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+    </h3>
+  <% } %>
 
   <h3 <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %> class="js-driver-is-customer-on">
     <?php echo esc_html( MyBookingEngineContext::getInstance()->getDriver() ) ?>
@@ -157,7 +159,7 @@
       </div>
       <!-- Driver origin country -->
       <div class="mb-form-group mb-col-md-4 js-driver-is-customer-on" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>>
-        <label><?php echo esc_html_x( 'Driving license expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+        <label><?php echo esc_html_x( 'Driving expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
         <select name="driver_origin_country" class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
       </div>
     </div>
@@ -207,7 +209,7 @@
   <% } %>
   <!-- End custom type individual -->
 
-  <% if (booking.driver_is_customer) { %>
+  <div <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %> class="js-driver-is-customer-on">
     <h6>
       <%=configuration.escapeHtml("<?php echo esc_attr_x('License', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>
     </h6>
@@ -279,7 +281,7 @@
         <input type="hidden" name="driver_driving_license_expiration_date"></input>
       </div>
     </div>
-  <% } %>
+  </div>
 
   <!-- // Address (an address is always required to billing system) -->
   <h6>
