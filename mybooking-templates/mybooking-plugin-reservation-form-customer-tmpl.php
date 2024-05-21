@@ -35,7 +35,7 @@
   <!-- End custom type company -->
 
   <!-- Driver is customer check -->
-  <% if (configuration.rentingFormFillDataDriverDetail && booking.customer_type != 'legal_entity') { %>
+  <% if (booking.customer_type != 'legal_entity') { %>
     <div class="mb-form-row">
       <label for="driver_is_customer">
         <input type="checkbox" name="driver_is_customer" id="driver_is_customer" <% if (booking.driver_is_customer != false) { %>checked<% } %> <% if (!booking.can_edit_online){%>disabled<%}%> data-panel="driver_panel">
