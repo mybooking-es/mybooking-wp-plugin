@@ -42,9 +42,11 @@
           <% } %>
 
           <!-- // Payment block -->
-          <div id="payment_view" class="mb-panel-container mb--step-container" style="display: none;">
-            <div id="payment_detail" style="display: none;"></div>
-          </div>
+          <% if (sales_process && sales_process.can_pay) { %>
+            <div id="payment_view" class="mb-panel-container mb--step-container" style="display: none;">
+              <div id="payment_detail"></div>
+            </div>
+          <% } %>
 
           <div class="alert alert-success" <% if (!booking.required_data_completed || !booking.customer_documents_uploaded || !booking.contract_signed) { %>style="display: none;"<% } %>>
             <?php echo esc_html_x( 'Process is complete. Thank you very much.', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>

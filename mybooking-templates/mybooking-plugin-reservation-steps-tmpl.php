@@ -40,9 +40,11 @@
       </ul>
     </div>
     <div class="mb-col-md-6 mb-col-lg-4 mb--flex-align_end">
-      <button  id="btn_payment_detail" class="mb-button mb-accent-color mb-width-100">
-        <?php echo esc_html_x( 'Pay now!', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-      </button>
+      <% if (sales_process && sales_process.can_pay) { %>
+        <button  id="btn_payment_detail" class="mb-button mb-accent-color mb-width-100">
+          <?php echo esc_html_x( 'Pay now!', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+        </button>
+      <% } %>
     </div>
   </div>
 </script>
