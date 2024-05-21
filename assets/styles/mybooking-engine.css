@@ -624,6 +624,11 @@ button.mb-button a:hover  {
   cursor: pointer;
 }
 
+.mb-button.mb-accent-color {
+  background-color: var(--mb-accent-color) !important;
+  color: var(--mb-negative-text-color) !important;
+}
+
 /* Badges */
 .mb-badge {
   padding: 2px 5px;

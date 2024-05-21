@@ -6,7 +6,8 @@
 *  3- MARGINS
 *  4- PADDINGS
 *  5- POSITIONS
-*  6- TEXT
+*  6- WIDTHS AND HEIGHTS
+*  7- TEXT
 */
 
 /* BACKGROUNDS ********************************************************************/
@@ -489,16 +490,31 @@
   align-items: center !important;
 }
 .mb--flex_center {
+  display: flex !important;
   justify-items: center !important;
   align-items: center !important;
 }
 .mb--flex-justify_center {
+  display: flex !important;
   justify-items: center !important;
 }
 .mb--flex-align_center {
+  display: flex !important;
   align-items: center !important;
 }
+.mb--flex-align_start {
+  display: flex !important;
+  align-items: flex-start !important;
+}
+.mb--flex-align_end {
+  display: flex !important;
+  align-items: flex-end !important;
+}
 
+/* WIDTHS AND HEIGHT *******************************************************/
+.mb-width-100 {
+  width: 100%!important;
+}
 
 /* TEXT ***********************************************************************/
 .mb--txt-fw_light {
