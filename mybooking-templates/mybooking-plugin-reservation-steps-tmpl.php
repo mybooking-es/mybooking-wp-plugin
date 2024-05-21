@@ -1,4 +1,16 @@
 
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION STEPS TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the steps of the reservation process
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php
+ *
+ */
+?>
 <script type="text/tmpl" id="script_reservation_steps">
   <div style="margin: 2rem;">
     <h4 class="mb--txt-fw_light"><?php echo esc_html_x( 'Please follow the steps and complete the booking process.', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h4>

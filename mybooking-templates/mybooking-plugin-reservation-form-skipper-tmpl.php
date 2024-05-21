@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION FORM SKIPPER TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the form to fill the skipper information
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php
+ *
+ */
+?>
 <div class="mb-section mb-panel-container">
 	<div class="mb-form-row">
 		<label for="driver_is_customer">

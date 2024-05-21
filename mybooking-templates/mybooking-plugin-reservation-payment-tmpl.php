@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION PAYMENT TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the payment in the reservation process
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php
+ *
+ */
+?>
 <script type="text/tmpl" id="script_payment_detail">
   <div class="mb-section mb-panel-container">
     <div class="mybooking-payment_amount">

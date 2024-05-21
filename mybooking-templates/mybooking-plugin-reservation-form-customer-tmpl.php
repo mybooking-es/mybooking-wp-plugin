@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION FORM CUSTOMER TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the form to fill the customer data in the reservation process
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php
+ *
+ */
+?>
 <div class="mb-section mb-panel-container">
   <!-- Custom type company -->
   <% if (booking.customer_type == 'legal_entity') { %>

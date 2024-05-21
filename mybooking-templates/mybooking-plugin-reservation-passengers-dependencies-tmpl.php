@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION  PASSENGERS DEPENDENCIES TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the form to fill the passengers dependencies information
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php
+ *
+ */
+?>
 <script type="text/tmpl" id="script_passengers_table">
   <div id="passengers_list">
     <div id="passengers_list__not_data" style="display:none;">

@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION FORM NAMED RESOURCES TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the form to fill the named resources information
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php
+ *
+ */
+?>
 <div class="mb-section mb-panel-container">
 	<% for (var idx=0; idx<booking.booking_lines.length; idx++) { %>
 			<% var booking_line = booking.booking_lines[idx]; %>

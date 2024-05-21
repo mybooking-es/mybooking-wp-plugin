@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION FORM TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the form
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-form-tmpl.php
+ *
+ */
+?>
 <script type="text/tmpl" id="script_reservation_form">
   <form class="mybooking-form" id="form-reservation" name="booking_information_form" autocomplete="off">
 

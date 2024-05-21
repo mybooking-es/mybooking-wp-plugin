@@ -2,9 +2,9 @@
 /**
  *   MYBOOKING ENGINE - MY RESERVATION
  *   ---------------------------------------------------------------------------
- *   The Template for showing the renting summary step
+ *   The Template for showing the renting reservation step
  *   This template can be overridden by copying it to your theme
- *   /mybooking-templates/mybooking-plugin-summary.php
+ *   /mybooking-templates/mybooking-plugin-reservation.php
  */
 ?>
 

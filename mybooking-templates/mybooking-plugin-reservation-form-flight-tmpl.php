@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION FORM FLIGHT TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the form to fill the flight information
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php
+ *
+ */
+?>
 <div id="airport-form-section" class="mb-section mb-panel-container" <% if (booking.pickup_place_type != 'airport' && booking.return_place_type != 'airport') { %>style="display: none;"<% } %>>
 	<h3 class="mb-form_title">
 		<?php echo esc_html_x('Flight', 'renting_my_reservation', 'mybooking-wp-plugin') ?>

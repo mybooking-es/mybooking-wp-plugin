@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION CONTRACT SIGNATURE TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the contract signature step in the reservation process
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php
+ *
+ */
+?>
 <script type="text/tmpl" id="script_contract_signature">
 	<h3 class="text-primary">
 		3 | <?php echo esc_html_x( 'Sign contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>

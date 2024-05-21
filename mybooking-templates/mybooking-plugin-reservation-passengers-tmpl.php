@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION PASSENGERS TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the form to fill the passengers information
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-passengers-tmpl.php
+ *
+ */
+?>
 <% if (configuration.guests) { %>
   <div id="passengers_container" class="mb-section mb-panel-container" style="display:none; margin-top: 1rem;">
     <h3 class="mb-form_title">

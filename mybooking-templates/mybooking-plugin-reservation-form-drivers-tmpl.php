@@ -1,3 +1,15 @@
+<?php
+/**
+ *   MYBOOKING ENGINE - RESERVATION FORM DRIVERS TEMPLATE
+ *   ---------------------------------------------------------------------------
+ * 
+ *   The Template for showing the form to fill the driver details in the reservation process
+ * 
+ *   This template can be overridden by copying it to your
+ *   theme/mybooking-templates/mybooking-plugin-reservation-form-drivers-tmpl.php
+ *
+ */
+?>
 <% if (configuration.rentingFormFillDataDriverDetail) { %>
 	<div id="driver_panel" class="mb-section mb-panel-container" <% if (booking.driver_is_customer) { %>style="display: none;"<% } %>>
 		<!-- // Driver panel -->
