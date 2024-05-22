@@ -35,7 +35,7 @@
   <!-- End custom type company -->
 
   <!-- Driver is customer check -->
-  <% if (configuration.rentingFormFillDataDriverDetail && booking.customer_type != 'legal_entity') { %>
+  <% if (configuration.rentingFormFillDataDriverDetail && !booking.has_optional_external_driver && booking.customer_type != 'legal_entity') { %>
     <div class="mb-form-row">
       <label for="driver_is_customer">
         <input type="checkbox" name="driver_is_customer" id="driver_is_customer" <% if (booking.driver_is_customer != false) { %>checked<% } %> <% if (!booking.can_edit_online){%>disabled<%}%> data-panel="driver_panel">
@@ -288,7 +288,8 @@
     <?php echo esc_html_x( 'Address', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
   </h6>
   <hr />
-  <% if (!booking.driver_is_customer || booking.customer_type == 'legal_entity') { %>
+  
+  <div <% if (!booking.driver_is_customer || booking.customer_type == 'legal_entity') { %>style="display: block;"<% } else { %>style="display: none;"<% } %> class="js-driver-is-customer-off">
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-6">
         <label>
@@ -344,7 +345,8 @@
           placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_zip%>"  maxlength="10" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
     </div>
-  <% } else { %>
+  </div>
+  <div <% if (booking.driver_is_customer && booking.customer_type != 'legal_entity') { %>style="display: block;"<% } else { %>style="display: none;"<% } %> class="js-driver-is-customer-on">
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-6">
         <label>
@@ -398,5 +400,5 @@
           placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_address_zip%>"  maxlength="10" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
     </div>
-  <% } %>
+  </div>
 </div>
