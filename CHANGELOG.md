@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.7] - 2024.05.22
+
+### Fixed
+
+- Checkout, Summary, My reservation - Product name, description, optional driver and license were not shown
+
 ## [2.2.6] - 2024.04.29
 
 ### Fixed

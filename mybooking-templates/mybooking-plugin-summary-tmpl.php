@@ -120,14 +120,16 @@
                   <div class="mb-col-sm-12 mb-col-md-6">
                     <!-- // Product name -->
                     <div class="mybooking-product_name">
-                      <% if (booking.booking_lines[idx].item_performance_id !== null) { %>
+                      <% if (typeof booking.booking_lines[idx].item_performance_id !== 'undefined' &&
+                             booking.booking_lines[idx].item_performance_id !== null) { %>
 					              <%=booking.booking_lines[idx].item_performance_description_customer_translation%>
 				              <% } else { %>                      
                         <%=booking.booking_lines[idx].item_description_customer_translation%>
                       <% } %>
                     </div>
                     
-                    <% if (booking.booking_lines[idx].item_performance_id === null) { %>
+                    <% if (typeof booking.booking_lines[idx].item_performance_id === 'undefined' || 
+                           booking.booking_lines[idx].item_performance_id === null) { %>
                       <!-- Optional external driver + driving license -->
                       <% if ((typeof booking.optional_external_driver !== '' &&
                             booking.optional_external_driver) ||
