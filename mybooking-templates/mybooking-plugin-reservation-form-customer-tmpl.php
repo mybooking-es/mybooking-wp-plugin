@@ -52,9 +52,11 @@
     </h3>
   <% } %>
 
-  <h3 <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %> class="js-driver-is-customer-on">
-    <?php echo esc_html( MyBookingEngineContext::getInstance()->getDriver() ) ?>
-  </h3>
+  <% if (configuration.rentingFormFillDataDriverDetail) { %>
+    <h3 <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %> class="js-driver-is-customer-on">
+      <?php echo esc_html( MyBookingEngineContext::getInstance()->getDriver() ) ?>
+    </h3>
+  <% } %>
 
   <!-- Custom type individual -->
   <% if (booking.customer_type != 'legal_entity') { %>
@@ -65,10 +67,12 @@
         </label>
         <!-- Customer name -->
         <input class="mb-form-control js-driver-is-customer-off" type="text" name="customer_name" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Name', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:*" maxlength="40" value="<%=booking.customer_name%>" <% if (!booking.can_edit_online){%>disabled<%}%>  <% if (booking.driver_is_customer) { %>style="display: none;"<% } %>>
+        <% if (configuration.rentingFormFillDataDriverDetail) { %>
         <!-- Driver name -->
         <input class="form-control js-driver-is-customer-on" name="driver_name" type="text"
               placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("Name", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_name%>"
               maxlength="40" <% if (!booking.can_edit_online){%>disabled<%}%>  <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>>
+        <% } %>
       </div>
       <div class="mb-form-group mb-col-md-6">
         <label>
@@ -76,10 +80,12 @@
         </label>
         <!-- Customer surname -->
         <input class="mb-form-control js-driver-is-customer-off" type="text" name="customer_surname" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Surname', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:*" maxlength="40" value="<%=booking.customer_surname%>" <% if (!booking.can_edit_online){%>disabled<%}%>  <% if (booking.driver_is_customer) { %>style="display: none;"<% } %>>
+        <% if (configuration.rentingFormFillDataDriverDetail) { %>
         <!-- Driver surname -->
         <input class="form-control js-driver-is-customer-on" name="driver_surname" type="text"
               placeholder="<%=configuration.escapeHtml("<?php  echo esc_attr_x("Surname", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_surname%>"
               maxlength="40" <% if (!booking.can_edit_online ){%>disabled<%}%>  <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>>
+        <% } %>
       </div>
     </div>
 
@@ -99,34 +105,38 @@
     </div>
 
     <div class="mb-form-row">
-      <div class="mb-form-group mb-col-md-6 js-driver-is-customer-on js-date-select-control" <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>>
-        <label>
-          <?php echo esc_html_x('Date of birth', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-        </label>
-        <div class="mb-form-row mb-custom-date-form">
-          <div class="mb-custom-date-item">
-            <select name="driver_date_of_birth_day"
-              class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
+      <% if (configuration.rentingFormFillDataDriverDetail) { %>
+        <div class="mb-form-group mb-col-md-6 js-driver-is-customer-on js-date-select-control" <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>>
+          <label>
+            <?php echo esc_html_x('Date of birth', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+          </label>
+          <div class="mb-form-row mb-custom-date-form">
+            <div class="mb-custom-date-item">
+              <select name="driver_date_of_birth_day"
+                class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
+            </div>
+            <div class="mb-custom-date-item">
+              <select name="driver_date_of_birth_month"
+                class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
+            </div>
+            <div class="mb-custom-date-item">
+              <select name="driver_date_of_birth_year"
+                class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
+            </div>
           </div>
-          <div class="mb-custom-date-item">
-            <select name="driver_date_of_birth_month"
-              class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
-          </div>
-          <div class="mb-custom-date-item">
-            <select name="driver_date_of_birth_year"
-              class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
-          </div>
+          <input type="hidden" name="driver_date_of_birth"></input>
         </div>
-        <input type="hidden" name="driver_date_of_birth"></input>
-      </div>
+      <% } %>
       <div class="mb-form-group <% if (booking.driver_is_customer) { %>mb-col-md-6<% } else { %>mb-col-md-12<% } %>">
         <label>
           <?php echo esc_html_x( 'Nacionality', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
         </label>
         <!-- Customer nacionality -->
         <select name="customer_nacionality" class="mb-form-control js-driver-is-customer-off" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (booking.driver_is_customer) { %>style="display: none;"<% } %>></select>
+        <% if (configuration.rentingFormFillDataDriverDetail) { %>
         <!-- Driver nacionality -->
         <select name="driver_nacionality" class="form-control js-driver-is-customer-on" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>></select>
+        <% } %>
       </div>
     </div>
 
@@ -142,8 +152,10 @@
         </label>
         <!-- Customer document type -->
         <select name="customer_document_id_type_id" class="mb-form-control js-driver-is-customer-off" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (booking.driver_is_customer) { %>style="display: none;"<% } %>></select>
+        <% if (configuration.rentingFormFillDataDriverDetail) { %>
         <!-- Driver document type -->
         <select name="driver_document_id_type_id" class="form-control js-driver-is-customer-on" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>></select>
+        <% } %>
       </div>
       <div class="mb-form-group <% if (!booking.driver_is_customer) { %>mb-col-md-6<% } else { %>mb-col-md-4<% } %>">
         <label>
@@ -152,18 +164,23 @@
         <!-- Customer document type -->
         <!-- TODO dni validation -->
         <input class="mb-form-control js-driver-is-customer-off" type="text" name="customer_document_id" autocomplete="off" placeholder="<?php echo esc_attr_x( 'ID card or passport', 'renting_my_reservation', 'mybooking-wp-plugin') ?>:*" value="<%=booking.customer_document_id%>" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (booking.driver_is_customer) { %>style="display: none;"<% } %>>
+        <% if (configuration.rentingFormFillDataDriverDetail) { %>
         <!-- Driver document type -->
         <input class="form-control js-driver-is-customer-on" name="driver_document_id" type="text"
               placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("ID card or passport", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_document_id%>"
               maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>>
+        <% } %>
       </div>
+      <% if (configuration.rentingFormFillDataDriverDetail) { %>
       <!-- Driver origin country -->
       <div class="mb-form-group mb-col-md-4 js-driver-is-customer-on" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>>
         <label><?php echo esc_html_x( 'Driving expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
         <select name="driver_origin_country" class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%>></select>
       </div>
+      <% } %>
     </div>
 
+    <% if (configuration.rentingFormFillDataDriverDetail) { %>
     <div class="mb-form-row js-driver-is-customer-on" <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %>>
       <div class="mb-form-group mb-col-md-6 js-date-select-control">
         <label>
@@ -206,9 +223,10 @@
         <input type="hidden" name="driver_document_id_expiration_date"></input>
       </div>
     </div>
+    <% } %>
   <% } %>
   <!-- End custom type individual -->
-
+  <% if (configuration.rentingFormFillDataDriverDetail) { %>
   <div <% if (!booking.driver_is_customer) { %>style="display: none;"<% } %> class="js-driver-is-customer-on">
     <h6>
       <%=configuration.escapeHtml("<?php echo esc_attr_x('License', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>
@@ -282,6 +300,7 @@
       </div>
     </div>
   </div>
+  <% } %>
 
   <!-- // Address (an address is always required to billing system) -->
   <h6>
@@ -346,6 +365,7 @@
       </div>
     </div>
   </div>
+  <% if (configuration.rentingFormFillDataDriverDetail) { %>
   <div <% if (booking.driver_is_customer && booking.customer_type != 'legal_entity') { %>style="display: block;"<% } else { %>style="display: none;"<% } %> class="js-driver-is-customer-on">
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-6">
@@ -401,4 +421,5 @@
       </div>
     </div>
   </div>
+  <% } %>
 </div>
