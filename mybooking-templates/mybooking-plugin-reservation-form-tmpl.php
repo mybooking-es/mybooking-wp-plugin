@@ -11,7 +11,7 @@
  */
 ?>
 <script type="text/tmpl" id="script_reservation_form">
-  <form class="mybooking-form" id="form-reservation" name="booking_information_form" autocomplete="off">
+  <form class="mybooking-form" id="form-reservation" name="booking_information_form" autocomplete="off" novalidate>
 
     <!-- // Alert form incomplete -->
     <% if (booking.contract_errors && booking.contract_errors.length) { %>
@@ -25,31 +25,36 @@
       </div>
     <% } %>
 
-    <!-- // Customer  -->
-    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-tmpl.php'); ?>
+    <!-- Driver is customer check -->
+    <div class="mb-section mb-panel-container">
+      <% if (configuration.rentingFormFillDataDriverDetail && !booking.has_optional_external_driver && booking.customer_type != 'legal_entity') { %>
+        <div class="mb-form-row">
+          <label>
+            <input type="checkbox" name="driver_is_customer" id="driver_is_customer" <% if (booking.driver_is_customer != false) { %>checked<% } %> <% if (!booking.can_edit_online){%>disabled<%}%>>
+            &nbsp;
+            <?php echo esc_html_x('The customer is the driver', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+          </label>
+        </div>
+        <br />
+      <% } %>
+
+      <!-- // Customer  -->
+      <div id="customer_panel_container"></div>
+    </div>
 
     <!-- // Drivers -->
-    <!-- configuration.driver => The business accepts a driver or skipper (rent a car, motorbikes) -->
-    <!-- optional_external_driver => The item is rented with a driver or skipper (the customer can not drive it) -->
-		<% if (configuration.rentingFormFillDataDriverDetail && !booking.has_optional_external_driver) { %>
-      <% if (booking.driver_type == 'driver') { %>
-        <!-- DRIVERS (NOT CHARTER) ----------------------------------------------------------->
-        <? mybooking_engine_get_template('mybooking-plugin-reservation-form-drivers-tmpl.php'); ?>
-      <% } else if (booking.driver_type === 'skipper') { %>
-        <!-- SKIPPER  (CHARTER) ----------------------------------------------------------->
-        <? mybooking_engine_get_template('mybooking-plugin-reservation-form-skipper-tmpl.php'); ?>
-      <% } %>
-    <% } %>  
+		<div id="driver_panel_container" class="mb-section"></div>
+
+    <% if (booking.driver_type == 'driver') { %>
+      <!-- ADDITIONAL DRIVERS (NOT CHARTER) ----------------------------------------------------------->
+      <? mybooking_engine_get_template('mybooking-plugin-reservation-form-additional-drivers-tmpl.php'); ?>
+    <% } %>
 
     <!-- // Flight -->
-    <% if (configuration.rentingFromFillDataFlight) { %>
-      <? mybooking_engine_get_template('mybooking-plugin-reservation-form-flight-tmpl.php'); ?>
-    <% } %>
+    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-flight-tmpl.php'); ?>
 
     <!-- // Named resources (KAYAK ETC) -->
-    <% if (configuration.rentingFormFillDataNamedResources) { %>
-			<? mybooking_engine_get_template('mybooking-plugin-reservation-form-named-resources-tmpl.php'); ?>
-    <% } %>
+		<? mybooking_engine_get_template('mybooking-plugin-reservation-form-named-resources-tmpl.php'); ?>
 
     <% if (booking.can_edit_online) { %>
       <button class="mb-button" id="btn_update_reservation">
@@ -57,4 +62,25 @@
       </button>
     <% } %>
   </form>
+</script>
+
+<script type="text/tmpl" id="script_reservation_form_customer">
+  <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-tmpl.php'); ?>
+</script>
+
+<script type="text/tmpl" id="script_reservation_form_customer_driver">
+  <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-driver-tmpl.php'); ?>
+</script>
+
+<script type="text/tmpl" id="script_reservation_form_drivers">
+  <!-- // Drivers -->
+  <!-- configuration.driver => The business accepts a driver or skipper (rent a car, motorbikes) -->
+  <!-- optional_external_driver => The item is rented with a driver or skipper (the customer can not drive it) -->
+  <% if (booking.driver_type == 'driver') { %>
+    <!-- DRIVERS (NOT CHARTER) ----------------------------------------------------------->
+    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-driver-tmpl.php'); ?>
+  <% } else if (booking.driver_type === 'skipper') { %>
+    <!-- SKIPPER  (CHARTER) ----------------------------------------------------------->
+    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-skipper-tmpl.php'); ?>
+  <% } %>
 </script>
