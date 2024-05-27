@@ -27,7 +27,7 @@
 
     <!-- Driver is customer check -->
     <div class="mb-section mb-panel-container">
-      <% if (configuration.rentingFormFillDataDriverDetail && !booking.has_optional_external_driver && booking.customer_type != 'legal_entity') { %>
+      <% if (configuration.rentingFormFillDataDriverDetail && booking.driver_type == 'driver' && !booking.has_optional_external_driver && booking.customer_type != 'legal_entity') { %>
         <div class="mb-form-row">
           <label>
             <input type="checkbox" name="driver_is_customer" id="driver_is_customer" <% if (booking.driver_is_customer != false) { %>checked<% } %> <% if (!booking.can_edit_online){%>disabled<%}%>>
@@ -42,7 +42,7 @@
       <div id="customer_panel_container"></div>
     </div>
 
-    <!-- // Drivers -->
+    <!-- // Driver -->
 		<div id="driver_panel_container" class="mb-section"></div>
 
     <% if (booking.driver_type == 'driver') { %>
@@ -72,7 +72,7 @@
   <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-driver-tmpl.php'); ?>
 </script>
 
-<script type="text/tmpl" id="script_reservation_form_drivers">
+<script type="text/tmpl" id="script_reservation_form_driver">
   <!-- // Drivers -->
   <!-- configuration.driver => The business accepts a driver or skipper (rent a car, motorbikes) -->
   <!-- optional_external_driver => The item is rented with a driver or skipper (the customer can not drive it) -->
