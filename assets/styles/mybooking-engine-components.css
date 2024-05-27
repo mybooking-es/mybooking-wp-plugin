@@ -1406,17 +1406,21 @@ label.full-width select.mb-form-control {
 }
 
 /** Jquery validation **/
-.mybooking label.error {
-  color: var(--mb-danger-color);
-}
-.mybooking input.error,
-.mybooking select.error {
-  border: 1px solid var(--mb-danger-color) !important;
+.mybooking label.error,
+.mybooking .label.label-danger {
+  color: var(--mb-danger-color) !important;
 }
 .mybooking input[required],
 .mybooking select[required] {
   border: 1px solid var(--mb-form-field-required-border-color) !important;
 }
+.mybooking input.error,
+.mybooking select.error,
+.mybooking input.is-invalid,
+.mybooking select.is-invalid {
+  border: 1px solid var(--mb-danger-color) !important;
+}
+
 
 /*
 *
