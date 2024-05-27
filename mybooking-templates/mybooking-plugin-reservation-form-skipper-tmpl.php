@@ -11,7 +11,7 @@
  */
 ?>
 <% if (configuration.rentingFormFillDataDriverDetail && !booking.has_optional_external_driver) { %>
-	<div id="driver_panel" class="mb-section mb-panel-container" <% if (booking.driver_is_customer) { %>style="display: none;"<% } %>>
+	<div id="driver_panel" class="mb-section mb-panel-container">
 		<br />
 		<h3 class="mb-form_title">
 			<?php echo esc_html_x('Skipper', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
