@@ -83,7 +83,7 @@
   </div>
 
   <h6>
-    <?php echo esc_html_x( 'ID card or passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+    <?php echo esc_html_x( 'ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
   </h6>
   <hr />
 
@@ -98,11 +98,11 @@
     </div>
     <div class="mb-form-group mb-col-md-6">
       <label>
-        <?php echo esc_html_x( 'ID card or passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+        <?php echo esc_html_x( 'ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
         <% if (required_fields.includes('customer_document_id')) { %>*<% } %>
       </label>
       <!-- Customer document type -->
-      <input class="mb-form-control" type="text" name="customer_document_id" autocomplete="off" placeholder="<?php echo esc_attr_x( 'ID card or passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" value="<%=booking.customer_document_id%>" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_document_id')) { %>required<% } %>>
+      <input class="mb-form-control" type="text" name="customer_document_id" autocomplete="off" placeholder="<?php echo esc_attr_x( 'ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" value="<%=booking.customer_document_id%>" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_document_id')) { %>required<% } %>>
     </div>
   </div>
   <!-- End custom type individual -->
