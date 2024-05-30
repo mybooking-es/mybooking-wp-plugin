@@ -25,6 +25,10 @@
     <% if (showReservationForm) { %>
       <div class="mb-col-md-6 mb-col-lg-8">
         <div class="mb-section mb--steps-container-wrapper">
+          <div class="alert alert-success" <% if (!booking.required_data_completed || !booking.customer_documents_uploaded || !booking.contract_signed) { %>style="display: none;"<% } %> style="margin-bottom: 1rem;">
+            <?php echo esc_html_x( 'Process is complete. Thank you very much.', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+          </div>
+
           <div id="reservation_customer_container" class="mb--step-container <% if (!booking.required_data_completed || !booking.engine_sign_contract) { %>mb--active<% } %>">
             <!-- // Customer extra data form -->
             <div id="reservation_form_container"></div>
@@ -38,7 +42,7 @@
             <div id="documents_upload_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
 
             <!-- // Contract signature -->
-            <div id="contract_signature_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && booking.customer_documents_uploaded &&  !booking.contract_signed) { %>mb--active<% } %>"></div>
+            <div id="contract_signature_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
           <% } %>
 
           <!-- // Payment block -->
@@ -47,10 +51,6 @@
               <div id="payment_detail"></div>
             </div>
           <% } %>
-
-          <div class="alert alert-success" <% if (!booking.required_data_completed || !booking.customer_documents_uploaded || !booking.contract_signed) { %>style="display: none;"<% } %>>
-            <?php echo esc_html_x( 'Process is complete. Thank you very much.', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
-          </div>
         </div>
       </div>
     <% } %>

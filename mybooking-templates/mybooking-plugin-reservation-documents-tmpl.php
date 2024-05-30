@@ -16,18 +16,28 @@
 			2 | <?php echo esc_html_x( 'Documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 		</h3>
 		<br />
-		<h5>
-			<?php echo esc_html_x( 'Before signing the contract we need you to upload the documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-		</h5>
-		<br />
-		<h6>
-			<?php echo esc_html_x( 'Use the secure link to upload documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-		</h6>
-		<% if (typeof booking.documentation_url !== 'undefined' && booking.documentation_url && booking.documentation_url != '') { %>
-			<hr />
-			<button id="js_mb_upload_documentation_link" class="mb-button block">
-				<?php echo esc_html_x( 'Upload documentation', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-			</button>
+		<% if (!booking.customer_documents_uploaded) { %>
+			<h5>
+				<?php echo esc_html_x( 'Before signing the contract we need you to upload the documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+			</h5>
+			<br />
+			<% if (typeof booking.documentation_url !== 'undefined' && booking.documentation_url && booking.documentation_url != '') { %>
+				<h6>
+					<?php echo esc_html_x( 'Use the secure link to upload documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+				</h6>
+				<hr />
+				<button id="js_mb_upload_documentation_link" class="mb-button block">
+					<?php echo esc_html_x( 'Upload documentation', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+				</button>
+				<% } else { %>
+					<div class="mb-alert warning">
+						<?php echo esc_html_x( 'Documentation upload is not available', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+					</div>
+			<% } %>
+		<% } else { %>
+			<h5>
+				<?php echo esc_html_x( 'Documention has been uploaded successfully', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+			</h5>
 		<% } %>
 	<% } else { %>
 		<div class="mb-alert warning">

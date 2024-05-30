@@ -20,7 +20,7 @@
         <li class="mb--step <% if (!booking.required_data_completed) { %>mb--active<% } else { %>mb--completed<% } %>">
           <a href="#reservation_customer_container">
             <span class="mb--step-number">1</span>
-            <span class="mb--step-text"><?php echo esc_html_x( 'Complete personal data', 'renting_my_reservation', 'mybooking-wp-plugin') ?></span>
+            <span class="mb--step-text"><?php echo esc_html_x( 'Complete data', 'renting_my_reservation', 'mybooking-wp-plugin') ?></span>
           </a>
         </li>
         <% if (booking.engine_sign_contract) { %>

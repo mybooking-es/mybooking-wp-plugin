@@ -16,18 +16,34 @@
 			3 | <?php echo esc_html_x( 'Sign contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 		</h3>
 		<br />
-		<h5>
-			<?php echo esc_html_x( 'To complete the process we need the signature', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-		</h5>
-		<br />
-		<h6>
-			<?php echo esc_html_x( 'Use the secure link to sign the contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
-		</h6>
-		<% if (typeof booking.electronic_signature_url !== 'undefined' && booking.electronic_signature_url && booking.electronic_signature_url != '') { %>
-			<hr />
-			<button id="js_mb_electronic_signature_link" class="mb-button block">
-				<?php echo esc_html_x( 'Sign contract', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-			</button>
+		<% if (!booking.contract_signed) { %>
+			<h5>
+				<?php echo esc_html_x( 'To complete the process we need the signature', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+			</h5>
+			<br />
+			<% if (typeof booking.electronic_signature_url !== 'undefined' && booking.electronic_signature_url && booking.electronic_signature_url != '') { %>
+				<h6>
+					<?php echo esc_html_x( 'Use the secure link to sign the contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+				</h6>
+				<hr />
+				<button id="js_mb_electronic_signature_link" class="mb-button block">
+					<?php echo esc_html_x( 'Sign contract', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+				</button>
+			<% } %>
+		<% } else { %>
+			<h5>
+				<?php echo esc_html_x( 'The contract has been signed successfully', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+			</h5>
+			<br />
+			<% if (typeof booking.signed_contract_url !== 'undefined' && booking.signed_contract_url && booking.signed_contract_url != '') { %>
+				<h6>
+					<?php echo esc_html_x( 'Use the link to view the contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+				</h6>
+				<hr />
+				<a href="<%= booking.signed_contract_url %>" target="_blank" class="mb-button block text-center">
+					<?php echo esc_html_x( 'Go to document', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+				</a>
+			<% } %>
 		<% } %>
 	<% } else { %>
 		<div class="mb-alert warning">

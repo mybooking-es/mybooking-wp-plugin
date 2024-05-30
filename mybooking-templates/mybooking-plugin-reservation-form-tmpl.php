@@ -28,7 +28,7 @@
     <!-- Driver is customer check -->
     <div class="mb-section mb-panel-container">
       <% if (configuration.rentingFormFillDataDriverDetail && booking.driver_type == 'driver' && !booking.has_optional_external_driver && booking.customer_type != 'legal_entity') { %>
-        <div class="mb-alert warning text-left">
+        <div class="mb-alert lighter text-left">
           <?php echo esc_html_x('The customer represents the contract holder. Typically, the driver is the contract holder.', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
           <strong>
             <?php echo esc_html_x("Assign a different customer from the driver only if you want the contract to be under another person's name.", 'renting_my_reservation', 'mybooking-wp-plugin') ?>
