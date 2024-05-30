@@ -25,7 +25,7 @@
     <% if (showReservationForm) { %>
       <div class="mb-col-md-6 mb-col-lg-8">
         <div class="mb-section mb--steps-container-wrapper">
-          <div id="reservation_customer_container" class="mb--step-container <% if (!booking.required_data_completed) { %>mb--active<% } %>">
+          <div id="reservation_customer_container" class="mb--step-container <% if (!booking.required_data_completed || !booking.engine_sign_contract) { %>mb--active<% } %>">
             <!-- // Customer extra data form -->
             <div id="reservation_form_container"></div>
 
@@ -33,11 +33,11 @@
             <? mybooking_engine_get_template('mybooking-plugin-reservation-passengers-tmpl.php'); ?>
           </div>
 
-          <!-- // Documents upload -->
-          <div id="documents_upload_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
-
-          <!-- // Contract signature -->
           <% if (booking.engine_sign_contract) { %>
+            <!-- // Documents upload -->
+            <div id="documents_upload_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
+
+            <!-- // Contract signature -->
             <div id="contract_signature_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && booking.customer_documents_uploaded &&  !booking.contract_signed) { %>mb--active<% } %>"></div>
           <% } %>
 

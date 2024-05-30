@@ -1410,10 +1410,10 @@ label.full-width select.mb-form-control {
 .mybooking .label.label-danger {
   color: var(--mb-danger-color) !important;
 }
-.mybooking input[required],
+/* .mybooking input[required],
 .mybooking select[required] {
   border: 1px solid var(--mb-form-field-required-border-color) !important;
-}
+} */
 .mybooking input.error,
 .mybooking select.error,
 .mybooking input.is-invalid,
