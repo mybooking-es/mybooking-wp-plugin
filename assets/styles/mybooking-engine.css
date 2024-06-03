@@ -580,8 +580,8 @@ label {
 .mb-button:disabled:hover,
 .mb-button[disabled]:hover {
   cursor: not-allowed;
-  background-color: var(--mb-button-bg-color)!important;
-  border-color: var(--mb-button-border-color)!important;
+  /*background-color: var(--mb-button-bg-color)!important;
+  border-color: var(--mb-button-border-color)!important;*/
 }
 
 .mb-button a,

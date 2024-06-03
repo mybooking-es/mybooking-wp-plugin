@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.8] - 2024.06.03
+
+### New
+
+- Checkout mediator - Improve behaviour allowing an extra validation on the checkout process or allow to
+  offer extras or coverages.
+
 ## [2.2.7] - 2024.05.22
 
 ### Fixed
