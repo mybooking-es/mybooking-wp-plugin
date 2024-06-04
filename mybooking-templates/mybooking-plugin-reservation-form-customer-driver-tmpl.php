@@ -93,7 +93,7 @@
 </div>
 
 <h6>
-	<?php echo esc_html_x( 'ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+	<?php echo esc_html_x( 'ID card or passport', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 </h6>
 <hr />
 

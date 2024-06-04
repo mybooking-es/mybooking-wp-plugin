@@ -47,11 +47,11 @@
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
         <label for="passenger_document_id">
-          <?php echo esc_html_x('ID card or passport', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('ID card/passport number', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
           *
         </label>
         <input class="form-control" id="passenger_document_id" name="passenger_document_id" type="text"
-          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("ID card or passport", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>" value=""
+          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("ID card/passport number", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>" value=""
         maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
     </div>
@@ -117,7 +117,7 @@
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
         <b>
-          <?php echo esc_html_x('ID card or passport', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('ID card/passport number', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
         </b>
         <br />
         <%= passenger.document_id %>

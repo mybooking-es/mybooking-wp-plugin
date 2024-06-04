@@ -32,9 +32,9 @@
 		</div>
 		<div class="mb-form-row">
 			<div class="mb-form-group mb-col-md-12">
-			<label for="driver_document_id"><?php echo esc_html_x('ID card or passport', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+			<label for="driver_document_id"><?php echo esc_html_x('ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
 			<input class="form-control" id="driver_document_id" name="driver_document_id" type="text"
-				placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("ID card or passport", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_document_id%>"
+				placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("ID card/passport number", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_document_id%>"
 				maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
 			</div>
 		</div>

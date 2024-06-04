@@ -1,6 +1,6 @@
 <?php
 /**
- *   MYBOOKING ENGINE - RESERVATION FORM CUSTOMER TEMPLATE
+ *   MYBOOKING ENGINE - RESERVATION FORM CUSTOMER SKIPPER TEMPLATE
  *   ---------------------------------------------------------------------------
  * 
  *   The Template for showing the form to fill the customer data in the reservation process
@@ -11,7 +11,7 @@
  */
 ?>
 <h3>
-  <?php echo esc_html_x( 'Customer', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+  <?php echo esc_html_x( 'Customer/Skipper', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 </h3>
 
 <% if (booking.customer_type == 'legal_entity') { %>
@@ -179,4 +179,32 @@
     <input class="mb-form-control" name="customer_address[zip]" type="text"
       placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_zip%>"  maxlength="10" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_address[zip]')) { %>required<% } %>>
   </div>
+</div>
+
+<!-- // Skipper data -->
+<h6>
+	<?php echo esc_html_x( 'Skipper data', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+</h6>
+<hr />
+
+<div class="mb-form-row">
+	<div class="mb-form-row">
+		<div class="mb-form-group mb-col-md-6">
+		<label
+			for="driver_driving_license_type"><?php echo esc_html_x('Navigation license type', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+		<input class="form-control" id="driver_driving_license_type" name="driver_driving_license_type"
+			type="text" placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Navigation license type', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
+			value="<%=booking.driver_driving_license_type%>"
+			maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
+		</div>
+
+		<div class="mb-form-group mb-col-md-6">
+		<label
+			for="driver_driving_license_number"><?php echo esc_html_x('Navigation license number', 'renting_my_reservation', 'mybooking-wp-plugin') ?></label>
+		<input class="form-control" id="driver_driving_license_number" name="driver_driving_license_number"
+			type="text" placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('Driving license number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
+			value="<%=booking.driver_driving_license_number%>"
+			maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
+		</div>
+	</div>
 </div>

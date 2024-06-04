@@ -27,19 +27,30 @@
 
     <!-- Driver is customer check -->
     <div class="mb-section mb-panel-container">
-      <% if (configuration.rentingFormFillDataDriverDetail && booking.driver_type == 'driver' && !booking.has_optional_external_driver && booking.customer_type != 'legal_entity') { %>
+      <% if (configuration.rentingFormFillDataDriverDetail && !booking.has_optional_external_driver && booking.customer_type != 'legal_entity') { %>
         <div class="mb-alert lighter text-left">
-          <?php echo esc_html_x('The customer represents the contract holder. Typically, the driver is the contract holder.', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-          <strong>
-            <?php echo esc_html_x("Assign a different customer from the driver only if you want the contract to be under another person's name.", 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-          </strong>
+          <% if (booking.driver_type == 'driver') { %>
+            <?php echo esc_html_x('The customer represents the contract holder. Typically, the driver is the contract holder.', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+            <strong>
+              <?php echo esc_html_x("Assign a different customer from the driver only if you want the contract to be under another person's name.", 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+            </strong>
+          <% } else if (booking.driver_type == 'skipper') { %>
+            <?php echo esc_html_x('The customer represents the contract holder. Typically, the skipper is the contract holder.', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+            <strong>
+              <?php echo esc_html_x("Assign a different customer from the skipper only if you want the contract to be under another person's name.", 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+            </strong>
+          <% } %>
           <?php echo esc_html_x('This does not affect billing, as you can always request the invoice with different tax details than those on the contract.', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
           <br /><br />
           <div class="mb-form-row">
             <label>
               <input type="checkbox" name="driver_is_customer" id="driver_is_customer" <% if (booking.driver_is_customer != false) { %>checked<% } %> <% if (!booking.can_edit_online){%>disabled<%}%>>
               &nbsp;
-              <?php echo esc_html_x('Driver is the contract holder', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+              <% if (booking.driver_type == 'driver') { %>
+                <?php echo esc_html_x('Driver is the contract holder', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+              <% } else if (booking.driver_type == 'skipper') { %>
+                <?php echo esc_html_x('Skipper is the contract holder', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+              <% } %>
             </label>
           </div>
         </div>
@@ -78,14 +89,18 @@
 </script>
 
 <script type="text/tmpl" id="script_reservation_form_customer_driver">
-  <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-driver-tmpl.php'); ?>
+  <% if (booking.driver_type === 'driver') { %>
+    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-driver-tmpl.php'); ?>
+  <% } else if (booking.driver_type === 'skipper') { %>
+    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-skipper-tmpl.php'); ?>
+  <% } %>
 </script>
 
 <script type="text/tmpl" id="script_reservation_form_driver">
   <!-- // Drivers -->
   <!-- configuration.driver => The business accepts a driver or skipper (rent a car, motorbikes) -->
   <!-- optional_external_driver => The item is rented with a driver or skipper (the customer can not drive it) -->
-  <% if (booking.driver_type == 'driver') { %>
+  <% if (booking.driver_type === 'driver') { %>
     <!-- DRIVERS (NOT CHARTER) ----------------------------------------------------------->
     <? mybooking_engine_get_template('mybooking-plugin-reservation-form-driver-tmpl.php'); ?>
   <% } else if (booking.driver_type === 'skipper') { %>
