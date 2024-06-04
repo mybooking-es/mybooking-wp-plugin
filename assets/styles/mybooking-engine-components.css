@@ -118,10 +118,10 @@
 }
 
 .mybooking-summary_status {
-  background-color: var(--mb-accent-color);
+  background-color: var(--mb-light-color);
   padding: .75rem 1.25rem!important;
   margin-bottom: 1rem;
-  color: var(--mb-negative-text-color);
+  color: var(--mb-accent-color);
   font-size: 1.4em;
   text-align: center;
   line-height: 1.1;
@@ -1551,6 +1551,7 @@ label.full-width select.mb-form-control {
   position: relative;
   width: 100%;
   padding: 0.3rem 0.5rem;
+  border: 1px solid var(--mb-muted-color);
 } @media ( min-width: 992px ) {
   .mb--steps-wrapper .mb--step {
     width: auto;
@@ -1576,7 +1577,6 @@ label.full-width select.mb-form-control {
   color: var(--mb-negative-text-color);
 }
 .mb--steps-wrapper .mb--step.mb--disabled {
-  border: 1px solid var(--mb-muted-color);
   color: var(--mb-muted-color);
 }
 .mb--steps-wrapper .mb--step.mb--completed {
@@ -1596,6 +1596,9 @@ label.full-width select.mb-form-control {
 .mb--steps-wrapper .mb--step-number {
   font-weight: 700;
   margin-right: 0.5rem;
+}
+.mb--steps-wrapper .mb--step a#btn_payment_detail {
+  color: var(--mb-accent-color) !important;
 }
 .mb--step-container {
   display: none;
