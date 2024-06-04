@@ -12,8 +12,8 @@
 ?>
 <script type="text/tmpl" id="script_contract_signature">
 	<% if (booking.engine_sign_contract) { %>
-		<h3 class="text-primary">
-			3 | <?php echo esc_html_x( 'Sign contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+		<h3>
+			<div class="badge">3</div> <?php echo esc_html_x( 'Sign contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 		</h3>
 		<br />
 		<% if (!booking.contract_signed) { %>
@@ -26,6 +26,9 @@
 					<?php echo esc_html_x( 'Use the secure link to sign the contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 				</h6>
 				<hr />
+				<small class="mb--txt-center">
+					<?php echo esc_html_x( 'Remember to reload the page after signing the contract to download it.', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+				</small>
 				<button id="js_mb_electronic_signature_link" class="mb-button block">
 					<?php echo esc_html_x( 'Sign contract', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 				</button>

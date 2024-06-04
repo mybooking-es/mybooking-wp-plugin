@@ -12,8 +12,8 @@
 ?>
 <script type="text/tmpl" id="script_documents_upload">
 	<% if (booking.engine_sign_contract) { %>
-		<h3 class="text-primary">
-			2 | <?php echo esc_html_x( 'Documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+		<h3>
+			<div class="badge">2</div> <?php echo esc_html_x( 'Documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 		</h3>
 		<br />
 		<% if (!booking.customer_documents_uploaded) { %>
@@ -26,6 +26,9 @@
 					<?php echo esc_html_x( 'Use the secure link to upload documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 				</h6>
 				<hr />
+				<small class="mb--txt-center">
+					<?php echo esc_html_x( 'Remember to reload the page after uploading the documentation to continue with the process.', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+				</small>
 				<button id="js_mb_upload_documentation_link" class="mb-button block">
 					<?php echo esc_html_x( 'Upload documentation', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 				</button>

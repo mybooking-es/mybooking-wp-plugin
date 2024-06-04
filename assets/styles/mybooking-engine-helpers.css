@@ -517,6 +517,10 @@
 }
 
 /* TEXT ***********************************************************************/
+.mb--txt-center {
+  display: block;
+  text-align: center;
+}
 .mb--txt-fw_light {
   font-weight: 300;
 }
