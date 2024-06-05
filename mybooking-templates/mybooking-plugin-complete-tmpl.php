@@ -366,7 +366,7 @@
                 <div class="mybooking-extra_block">
                   <div class="mb-col-md-6 mb-col-sm-12 mybooking-extra_box-price">
                     <div class="mybooking-extra_price">
-                      <%= configuration.formatExtraAmount( i18next, coverage.one_unit_price, coverage.price_calculation, shopping_cart.days, shopping_cart.hours, coverage.unit_price )%>
+                      <%= configuration.formatExtraAmount( i18next, coverage.one_unit_price, coverage.price_calculation, coverage.days, coverage.hours, coverage.unit_price )%>
                     </div>
                   </div>
 
@@ -454,7 +454,7 @@
                   <div class="mybooking-extra_block">
                     <div class="mb-col-md-6 mb-col-sm-12 mybooking-extra_box-price">
                     <div class="mybooking-extra_price">
-                      <%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation, shopping_cart.days, shopping_cart.hours, extra.unit_price)%>
+                      <%= configuration.formatExtraAmount(i18next, extra.one_unit_price, extra.price_calculation, extra.days, extra.hours, extra.unit_price)%>
                     </div>
                     </div>
 
