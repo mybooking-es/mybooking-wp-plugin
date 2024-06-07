@@ -33,6 +33,27 @@
     </div>
   </div>
   <!-- End custom type company -->
+
+  <!-- Custom contact information -->
+  <div class="mb-form-row">
+    <div class="mb-form-group mb-col-md-6">
+      <label>
+        <?php echo esc_html_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>
+        <% if (required_fields.includes('customer_email')) { %>*<% } %>
+      </label>
+      <input class="mb-form-control" type="text" name="customer_email" autocomplete="off" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>" maxlength="50" value="<%=booking.customer_email%>" 
+            <% if (!booking.can_edit_online || (typeof booking.customer_email !== 'undefined' && booking.customer_email != '')){%>disabled<%}%> <% if (required_fields.includes('customer_email')) { %>required<% } %>>
+    </div>
+    <div class="mb-form-group mb-col-md-6">
+      <label>
+        <?php echo esc_html_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>
+        <% if (required_fields.includes('customer_phone')) { %>*<% } %>
+      </label>
+      <input class="mb-form-control" type="text" name="customer_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>" maxlength="15" value="<%=booking.customer_phone%>" 
+      <% if (!booking.can_edit_online || (typeof booking.customer_phone !== 'undefined' && booking.customer_phone != '')){%>disabled<%}%> <% if (required_fields.includes('customer_phone')) { %>required<% } %>>
+    </div>
+  </div>
+  <!-- End custom contact information -->
 <% } else { %>
   <!-- Custom type individual -->
   <div class="mb-form-row">
