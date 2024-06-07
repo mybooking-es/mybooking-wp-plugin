@@ -34,7 +34,7 @@
             <div id="reservation_form_container"></div>
 
             <!-- // Passengers (CHARTER) -->
-            <? mybooking_engine_get_template('mybooking-plugin-reservation-passengers-tmpl.php'); ?>
+            <?php mybooking_engine_get_template('mybooking-plugin-reservation-passengers-tmpl.php'); ?>
           </div>
 
           <% if (booking.engine_sign_contract) { %>
