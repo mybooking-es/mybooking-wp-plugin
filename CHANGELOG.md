@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.9] - 2024.06.07
+
+### Fixed
+
+- Extras - Duration hours/days based on extra duration
+
 ## [2.2.8] - 2024.06.03
 
 ### New
