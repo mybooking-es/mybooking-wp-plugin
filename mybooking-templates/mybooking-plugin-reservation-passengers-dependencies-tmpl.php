@@ -127,14 +127,22 @@
           <?php echo esc_html_x('Email address', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
         </b>
         <br />
-        <%= passenger.email %>
+        <% if (passenger.email && passenger.email != '') { %>
+          <%= passenger.email %>
+        <% } else { %>
+          -
+        <% } %>
       </div>
       <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
         <b>
           <?php echo esc_html_x('Phone number', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
         </b>
         <br />
-        <%= passenger.phone_number %>
+        <% if (passenger.phone_number && passenger.phone_number != '') { %>
+         <%= passenger.phone_number %>
+        <% } else { %>
+          -
+        <% } %>
       </div>
     </div>
     <div class="mb-form-row">
