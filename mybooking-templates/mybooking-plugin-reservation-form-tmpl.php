@@ -85,7 +85,7 @@
 </script>
 
 <script type="text/tmpl" id="script_reservation_form_customer">
-phpmybooking_engine_get_template('mybooking-plugin-reservation-form-customer-tmpl.php'); ?>
+  <?php mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-tmpl.php'); ?>
 </script>
 
 <script type="text/tmpl" id="script_reservation_form_customer_driver">
