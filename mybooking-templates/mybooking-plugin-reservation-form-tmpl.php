@@ -67,14 +67,14 @@
 
     <% if (booking.driver_type == 'driver') { %>
       <!-- ADDITIONAL DRIVERS (NOT CHARTER) ----------------------------------------------------------->
-      <? mybooking_engine_get_template('mybooking-plugin-reservation-form-additional-drivers-tmpl.php'); ?>
+      <?php mybooking_engine_get_template('mybooking-plugin-reservation-form-additional-drivers-tmpl.php'); ?>
     <% } %>
 
     <!-- // Flight -->
-    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-flight-tmpl.php'); ?>
+    <?php mybooking_engine_get_template('mybooking-plugin-reservation-form-flight-tmpl.php'); ?>
 
     <!-- // Named resources (KAYAK ETC) -->
-		<? mybooking_engine_get_template('mybooking-plugin-reservation-form-named-resources-tmpl.php'); ?>
+		<?php mybooking_engine_get_template('mybooking-plugin-reservation-form-named-resources-tmpl.php'); ?>
 
     <% if (booking.can_edit_online) { %>
       <button class="mb-button" id="btn_update_reservation">
@@ -85,14 +85,14 @@
 </script>
 
 <script type="text/tmpl" id="script_reservation_form_customer">
-  <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-tmpl.php'); ?>
+phpmybooking_engine_get_template('mybooking-plugin-reservation-form-customer-tmpl.php'); ?>
 </script>
 
 <script type="text/tmpl" id="script_reservation_form_customer_driver">
   <% if (booking.driver_type === 'driver') { %>
-    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-driver-tmpl.php'); ?>
+    <?php mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-driver-tmpl.php'); ?>
   <% } else if (booking.driver_type === 'skipper') { %>
-    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-skipper-tmpl.php'); ?>
+    <?php mybooking_engine_get_template('mybooking-plugin-reservation-form-customer-skipper-tmpl.php'); ?>
   <% } %>
 </script>
 
@@ -102,9 +102,9 @@
   <!-- optional_external_driver => The item is rented with a driver or skipper (the customer can not drive it) -->
   <% if (booking.driver_type === 'driver') { %>
     <!-- DRIVERS (NOT CHARTER) ----------------------------------------------------------->
-    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-driver-tmpl.php'); ?>
+    <?php mybooking_engine_get_template('mybooking-plugin-reservation-form-driver-tmpl.php'); ?>
   <% } else if (booking.driver_type === 'skipper') { %>
     <!-- SKIPPER  (CHARTER) ----------------------------------------------------------->
-    <? mybooking_engine_get_template('mybooking-plugin-reservation-form-skipper-tmpl.php'); ?>
+    <?php mybooking_engine_get_template('mybooking-plugin-reservation-form-skipper-tmpl.php'); ?>
   <% } %>
 </script>

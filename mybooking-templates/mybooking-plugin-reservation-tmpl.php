@@ -14,7 +14,7 @@
 
 <!-- RESERVATION STEPS ----------------------------------------->
 
-<? mybooking_engine_get_template('mybooking-plugin-reservation-steps-tmpl.php'); ?>
+<?php mybooking_engine_get_template('mybooking-plugin-reservation-steps-tmpl.php'); ?>
 
 
 <!-- MY RESERVATION & EXTRA DATA FORM ----------------------------------------->
