@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.10] - 2024.06.10
+
+### Fixed
+
+- Rent checkout : Multiple products table with no price option
+
 ## [2.2.9] - 2024.06.07
 
 ### Fixed
