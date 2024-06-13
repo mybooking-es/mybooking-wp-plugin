@@ -118,6 +118,8 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 = 2.2.10 =
 * Fixed: Checkout - Multiple products table with no price option
+* Fixed: Planning - Reservations that start before first date
+* Fixed: Selector - Driver age literal translation
 
 = 2.2.9 =
 * Fixed: Checkout - Duration hours/days based on extra duration

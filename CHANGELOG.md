@@ -1,10 +1,12 @@
 # Changelog
 
-## [2.2.10] - 2024.06.10
+## [2.2.10] - 2024.06.13
 
 ### Fixed
 
 - Rent checkout : Multiple products table with no price option
+- Planning : Reservations that start before the first date
+- Driver age literal translations
 
 ## [2.2.9] - 2024.06.07
 
