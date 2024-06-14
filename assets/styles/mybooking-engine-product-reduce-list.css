@@ -114,6 +114,8 @@
   bottom: 0;
   font-size: 12px;
   font-weight: 600;
+  height: auto;
+  padding: 0.25rem;  
 }
 
 /* Prices info */
