@@ -14,7 +14,8 @@
   <form class="mybooking-form" id="form-reservation" name="booking_information_form" autocomplete="off" novalidate>
 
     <!-- // Alert form incomplete -->
-    <% if (booking.contract_errors && Object.keys(booking.contract_errors).length > 0) { %>
+    <% if (booking.can_edit_online && 
+           booking.contract_errors && Object.keys(booking.contract_errors).length > 0) { %>
       <div class="mb-alert danger mb--txt-align_left">
         <strong><?php echo esc_html_x( 'Please fill in all the required fields', 'renting_my_reservation', 'mybooking-wp-plugin') ?></strong>
         <ul>

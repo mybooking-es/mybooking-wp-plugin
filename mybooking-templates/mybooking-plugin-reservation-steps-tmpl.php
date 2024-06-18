@@ -45,7 +45,7 @@
                 <a href="#payment_view"  id="btn_payment_detail">
                   <span class="mb--step-number"><span class="dashicons dashicons-money"></span></span>
                   <span class="mb--step-text">
-                    <?php echo esc_html_x( 'Pay now!', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+                    <?php echo esc_html_x( 'Pay pending amount!', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
                   </span>
                 </a>
               </li>
