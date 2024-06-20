@@ -28,6 +28,8 @@
         <div class="mybooking-product_listing" id="product_listing" 
           <?php if ( array_key_exists('use_renting_detail_page', $args) && $args['use_renting_detail_page'] == 'true' ) : ?>
           data-use-renting-detail-page="true" 
+          <?php endif; ?> <?php if ( array_key_exists('lazy_loading', $args) && $args['lazy_loading'] == 'true' ) : ?>
+          data-lazy-loading="true" 
           <?php endif; ?>>
         </div>
         <br/>
