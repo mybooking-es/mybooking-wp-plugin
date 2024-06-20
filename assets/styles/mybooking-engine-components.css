@@ -681,6 +681,14 @@
 }
 
 
+/** My reservation form **/
+form[name=booking_information_form] input:disabled,
+form[name=booking_information_form] select:disabled {
+  background-color: #f9f9f9;
+  color: #999;
+}
+
+
 /** ACTIVITIES **/
 
 .mybooking-activity img.mybooking-activity_image {
