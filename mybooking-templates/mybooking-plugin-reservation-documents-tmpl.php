@@ -13,7 +13,7 @@
 <script type="text/tmpl" id="script_documents_upload">
 	<% if (booking.engine_sign_contract) { %>
 		<h3>
-			<div class="badge">2</div> <?php echo esc_html_x( 'Documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+			<div class="badge">2</div> <?php echo esc_html_x( 'Upload documentation', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 		</h3>
 		<br />
 		<% if (!booking.customer_documents_uploaded) { %>

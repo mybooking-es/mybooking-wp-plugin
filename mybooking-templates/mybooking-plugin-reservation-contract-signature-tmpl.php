@@ -18,7 +18,7 @@
 		<br />
 		<% if (!booking.contract_signed) { %>
 			<h5>
-				<?php echo esc_html_x( 'To complete the process we need the signature', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Please, sign the contract to finish the process', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 			</h5>
 			<br />
 			<% if (typeof booking.electronic_signature_url !== 'undefined' && booking.electronic_signature_url && booking.electronic_signature_url != '') { %>
@@ -40,11 +40,11 @@
 			<br />
 			<% if (typeof booking.signed_contract_url !== 'undefined' && booking.signed_contract_url && booking.signed_contract_url != '') { %>
 				<h6>
-					<?php echo esc_html_x( 'Use the link to view the contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'Use the link to download the contract', 'renting_complete', 'mybooking-wp-plugin' ) ?>
 				</h6>
 				<hr />
 				<a href="<%= booking.signed_contract_url %>" target="_blank" class="mb-button block text-center">
-					<?php echo esc_html_x( 'Go to document', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+					<?php echo esc_html_x( 'Download signed contract', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 				</a>
 			<% } %>
 		<% } %>
