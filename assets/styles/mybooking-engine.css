@@ -661,7 +661,7 @@ button.mb-button a:hover  {
   border-radius: var(--mb-border-radius);
   color: var(--mb-dark-background-color);
   line-height: 1.2;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .mb-alert.light         { background-color: var(--mb-light-color) }
