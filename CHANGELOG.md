@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.2.11] - 2024.06.23
+
+### Fixed
+
+- Rent selector : Modify dates preload durations
+
+### New
+
+- Shift picker component: Set up min units
+
 ## [2.2.10] - 2024.06.13
 
 ### Fixed
