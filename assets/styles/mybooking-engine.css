@@ -37,6 +37,7 @@
   /* Forms */
   --mb-form-field-height:  42px;
   --mb-form-field-border-color:  var(--mb-border-color);
+  --mb-form-field-required-border-color: #AAA;
   --mb-form-field-background: white;
 
   /* Selector form */
@@ -623,6 +624,11 @@ button.mb-button a:hover  {
   cursor: pointer;
 }
 
+.mb-button.mb-accent-color {
+  background-color: var(--mb-accent-color) !important;
+  color: var(--mb-negative-text-color) !important;
+}
+
 /* Badges */
 .mb-badge {
   padding: 2px 5px;
@@ -655,7 +661,7 @@ button.mb-button a:hover  {
   border-radius: var(--mb-border-radius);
   color: var(--mb-dark-background-color);
   line-height: 1.2;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .mb-alert.light         { background-color: var(--mb-light-color) }

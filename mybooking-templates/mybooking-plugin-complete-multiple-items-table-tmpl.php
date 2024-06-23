@@ -11,6 +11,7 @@
  *   @phpcs:disable Generic.PHP.DisallowAlternativePHPTags.MaybeASPShortOpenTagFound
  */
 ?>
+<script type="text/tmpl" id="script_mybooking_summary_product_detail_table">
 <% if ( configuration.multipleProductsSelection ) { %>
 	<% if ( bookings && bookings.length > 0 ) { %>
 		<div class="mybooking-products_table">
@@ -149,3 +150,4 @@
 		</div>
 	<% } %>
 <% } %>
+</script>

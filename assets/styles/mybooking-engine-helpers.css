@@ -6,6 +6,8 @@
 *  3- MARGINS
 *  4- PADDINGS
 *  5- POSITIONS
+*  6- WIDTHS AND HEIGHTS
+*  7- TEXT
 */
 
 /* BACKGROUNDS ********************************************************************/
@@ -483,7 +485,54 @@
 /* POSITIONS ******************************************************************/
 
 .mb--vertical-center {
-  display: flex!important;
-  flex-direction: column!important;
-  align-items: center!important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.mb--flex_center {
+  display: flex !important;
+  justify-items: center !important;
+  align-items: center !important;
+}
+.mb--flex-justify_center {
+  display: flex !important;
+  justify-items: center !important;
+}
+.mb--flex-align_center {
+  display: flex !important;
+  align-items: center !important;
+}
+.mb--flex-align_start {
+  display: flex !important;
+  align-items: flex-start !important;
+}
+.mb--flex-align_end {
+  display: flex !important;
+  align-items: flex-end !important;
+}
+
+/* WIDTHS AND HEIGHT *******************************************************/
+.mb-width-100 {
+  width: 100%!important;
+}
+
+/* TEXT ***********************************************************************/
+.mb--txt-center {
+  display: block;
+  text-align: center;
+}
+.mb--txt-fw_light {
+  font-weight: 300;
+}
+.mb--txt-fw_lighter {
+  font-weight: 200;
+}
+.mb--txt-align_left {
+  text-align: left;
+}
+.mb--txt-align_center {
+  text-align: center;
+}
+.mb--txt-align_right {
+  text-align: right;
 }

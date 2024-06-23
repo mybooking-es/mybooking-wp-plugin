@@ -118,10 +118,10 @@
 }
 
 .mybooking-summary_status {
-  background-color: var(--mb-accent-color);
+  background-color: var(--mb-light-color);
   padding: .75rem 1.25rem!important;
   margin-bottom: 1rem;
-  color: var(--mb-negative-text-color);
+  color: var(--mb-accent-color);
   font-size: 1.4em;
   text-align: center;
   line-height: 1.1;
@@ -678,6 +678,14 @@
 
 .mybooking-selector form input.form-reservation-error::placeholder {
   color: white!important;
+}
+
+
+/** My reservation form **/
+form[name=booking_information_form] input:disabled,
+form[name=booking_information_form] select:disabled {
+  background-color: #f9f9f9;
+  color: #999;
 }
 
 
@@ -1406,9 +1414,21 @@ label.full-width select.mb-form-control {
 }
 
 /** Jquery validation **/
-label.error {
-    color: var(--mb-danger-color);
+.mybooking label.error,
+.mybooking .label.label-danger {
+  color: var(--mb-danger-color) !important;
 }
+/* .mybooking input[required],
+.mybooking select[required] {
+  border: 1px solid var(--mb-form-field-required-border-color) !important;
+} */
+.mybooking input.error,
+.mybooking select.error,
+.mybooking input.is-invalid,
+.mybooking select.is-invalid {
+  border: 1px solid var(--mb-danger-color) !important;
+}
+
 
 /*
 *
@@ -1419,7 +1439,13 @@ label.error {
 * Jquery validation 
 */
 .mybooking-products_table {
-  padding: 0 1rem;
+  padding: 0 !important;
+  margin: 0 -0.2rem;
+} @media ( min-width: 575.98px ) {
+  .mybooking-products_table {
+    padding: 0 0.15rem !important;
+    margin: 0;
+  }
 }
 
 .mybooking-products_table .mb-row {
@@ -1512,4 +1538,79 @@ label.error {
 
 .mybooking-products_table .mybooking-product_price:first-child {
   flex-direction: row !important;
+}
+
+/* STEPS ***********************************************************************/
+.mb--steps-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0 !important;
+}
+.mb--steps-wrapper .mb--step {
+  background-color: var(--mb-light-color);
+  color: var(--mb-dark-color);
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: var(--mb-border-radius);
+  position: relative;
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--mb-muted-color);
+} @media ( min-width: 992px ) {
+  .mb--steps-wrapper .mb--step {
+    width: auto;
+  }
+}
+.mb--steps-wrapper .mb--step a {
+  color: inherit !important;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  vertical-align: middle;
+}
+.mb--steps-wrapper .mb--step.mb--disabled,
+.mb--steps-wrapper .mb--step.mb--disabled a {
+  cursor: not-allowed;
+}
+.mb--steps-wrapper .mb--step.mb--active {
+  background-color: var(--mb-info-color);
+  color: var(--mb-negative-text-color);
+}
+.mb--steps-wrapper .mb--step.mb--disabled {
+  color: var(--mb-muted-color);
+}
+.mb--steps-wrapper .mb--step.mb--completed {
+  background-color: var(--mb-success-color);
+  color: var(--mb-negative-text-color);
+  padding-right: 1.5rem;
+}
+.mb--steps-wrapper .mb--step.mb--completed:after {
+  content: "\f12a";
+  font-family: "dashicons";
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  margin-top: -1.2rem;
+}
+.mb--steps-wrapper .mb--step-number {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.mb--steps-wrapper .mb--step a#btn_payment_detail {
+  color: var(--mb-accent-color) !important;
+}
+.mb--step-container {
+  display: none;
+}
+.mb--step-container.mb--active {
+  display: block;
 }

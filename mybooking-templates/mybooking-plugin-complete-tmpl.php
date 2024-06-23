@@ -297,9 +297,8 @@
 </script>
 
 <!-- RESERVATION PRODUCT MULTIPLE TABLE ------------------------------------------------------>
-<script type="text/tmpl" id="script_mybooking_summary_product_detail_table">
-  <?php mybooking_engine_get_template( 'mybooking-plugin-complete-multiple-items-table-tmpl.php' ); ?>
-</script>
+
+<?php mybooking_engine_get_template( 'mybooking-plugin-complete-multiple-items-table-tmpl.php' ); ?>
 
 <!-- EXTRAS LISTING ----------------------------------------------------------->
 
