@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2024-06-24 09:29+0000\n"
+"PO-Revision-Date: 2024-06-24 12:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.6; wp-6.4.2"
+"X-Loco-Version: 2.6.7; wp-6.5.4"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities.php:70
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-products.php:47
@@ -3137,7 +3137,7 @@ msgstr "Salida"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:118
 msgctxt "renting_my_reservation"
 msgid "Document ID"
-msgstr "NIF/Id/Pasaporte"
+msgstr "NIF/Id/Nº Pasaporte"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:85
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:110
@@ -3181,7 +3181,7 @@ msgstr "El conductor es el titular del contrato"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:386
 msgctxt "renting_my_reservation"
 msgid "Driving license number"
-msgstr "Número permiso conducir"
+msgstr "Nº permiso conducir"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:66
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:68
@@ -3249,7 +3249,7 @@ msgstr "Altura (cm)"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:112
 msgctxt "renting_my_reservation"
 msgid "ID card or passport"
-msgstr "NIF/Id/Pasaporte"
+msgstr "NIF/Id/Nº Pasaporte"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:94
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:99
@@ -3267,7 +3267,7 @@ msgstr "NIF/Id/Pasaporte"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:131
 msgctxt "renting_my_reservation"
 msgid "ID card/passport number"
-msgstr "NIF/Id/Pasaporte"
+msgstr "NIF/Id/Nº Pasaporte"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:190
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:148
@@ -3283,7 +3283,7 @@ msgstr "Permiso conducir"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:375
 msgctxt "renting_my_reservation"
 msgid "License type"
-msgstr "Permiso conducir"
+msgstr "Tipo permiso conducir"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:69
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:93
@@ -3590,7 +3590,7 @@ msgstr "Usa el enlace seguro para subir la documentación"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:32
 msgctxt "renting_my_reservation"
 msgid "VAT Number"
-msgstr "NIF/Id/Pasaporte"
+msgstr "NIF/Id/Nº Pasaporte"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:85
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:87
@@ -3620,7 +3620,7 @@ msgstr "Correo electrónico"
 #| msgid "ID card or passport"
 msgctxt "renting_my_reservation_passenger"
 msgid "ID card/passport number"
-msgstr "DNI o pasaporte"
+msgstr "Nº DNI o nº pasaporte"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:32
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:36
