@@ -20,7 +20,7 @@
         <div class="mb-col-md-12 mb-col-lg-12">
           <% if (booking.engine_sign_contract) { %>
             <h4 class="mb--txt-fw_light"><?php echo esc_html_x( 'Please follow the steps and complete the booking process.', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h4>
-            <h6 class="mb--txt-fw_light"><?php echo esc_html_x( 'This way we will have everything ready for the scheduled date.', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h6>
+            <h6 class="mb--txt-fw_light"><?php echo esc_html_x( 'By providing the necessary information, we will ensure everything is ready for the delivery day.', 'renting_my_reservation', 'mybooking-wp-plugin') ?></h6>
           <% } %>
           <ul class="mb--steps-wrapper">
             <li class="mb--step <% if (!booking.required_data_completed) { %>mb--active<% } else { %>mb--completed<% } %>">

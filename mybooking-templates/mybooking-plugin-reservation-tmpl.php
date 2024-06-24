@@ -26,7 +26,7 @@
       <div class="mb-col-md-6 mb-col-lg-8">
         <div class="mb-section mb--steps-container-wrapper">
           <div class="alert alert-success" <% if (!booking.required_data_completed || !booking.customer_documents_uploaded || !booking.contract_signed) { %>style="display: none;"<% } %> style="margin-bottom: 1rem;">
-            <?php echo esc_html_x( 'Thanks, the process has been completed successfully', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+            <?php echo esc_html_x( 'Thanks, the process has been completed successfully', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
           </div>
 
           <div id="reservation_customer_container" class="mb--step-container <% if (!booking.required_data_completed || !booking.engine_sign_contract) { %>mb--active<% } %>">

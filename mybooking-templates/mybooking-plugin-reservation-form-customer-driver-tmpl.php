@@ -133,7 +133,7 @@
 	<!-- Driver origin country -->
 	<div class="mb-form-group mb-col-md-4">
 		<label>
-			<?php echo esc_html_x( 'Driving expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+			<?php echo esc_html_x( 'Expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 			<% if (required_fields.includes('driver_origin_country')) { %>*<% } %>
 		</label>
 
@@ -211,7 +211,7 @@
 	</div>
 	<div class="mb-form-group mb-col-md-4">
 		<label>
-			<?php echo esc_html_x('Driving license expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+			<?php echo esc_html_x('Expedition country', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 			<% if (required_fields.includes('driver_driving_license_country')) { %>*<% } %>
 		</label>
 		<select name="driver_driving_license_country" class="mb-form-control"

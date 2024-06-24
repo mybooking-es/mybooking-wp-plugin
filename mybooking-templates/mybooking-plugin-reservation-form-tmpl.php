@@ -43,7 +43,7 @@
           <% } %>
           <?php echo esc_html_x('This does not affect billing, as you can always request the invoice with different tax details than those on the contract.', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
           <br>
-          <strong><?php echo esc_html_x('Please, does not change if you are not sure.', 'renting_my_reservation', 'mybooking-wp-plugin') ?></strong>
+          <strong><?php echo esc_html_x('Please, do not change if you are not sure.', 'renting_my_reservation', 'mybooking-wp-plugin') ?></strong>
           <br><br>
           <div class="mb-form-row">
             <label>

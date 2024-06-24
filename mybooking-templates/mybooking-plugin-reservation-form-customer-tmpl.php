@@ -32,7 +32,7 @@
         <?php echo esc_html_x( 'VAT Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
         <% if (required_fields.includes('customer_company_document_id')) { %>*<% } %>
       </label>
-      <input class="mb-form-control" type="text" name="customer_company_document_id" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Company ID', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" maxlength="40" value="<%=booking.customer_company_document_id%>" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_company_document_id')) { %>required<% } %>>
+      <input class="mb-form-control" type="text" name="customer_company_document_id" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Company VAT Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" maxlength="40" value="<%=booking.customer_company_document_id%>" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_company_document_id')) { %>required<% } %>>
     </div>
   </div>
   <!-- End custom type company -->
