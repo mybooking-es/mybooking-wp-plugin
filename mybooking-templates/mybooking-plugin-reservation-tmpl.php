@@ -41,10 +41,10 @@
 
           <% if (booking.engine_sign_contract) { %>
             <!-- // Documents upload -->
-            <div id="documents_upload_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
+            <div id="documents_upload_container" class="mb-panel-container mb--step-container <% if (booking.can_edit_online && booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
 
             <!-- // Contract signature -->
-            <div id="contract_signature_container" class="mb-panel-container mb--step-container <% if (booking.required_data_completed && booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
+            <div id="contract_signature_container" class="mb-panel-container mb--step-container <% if (booking.can_edit_online && booking.required_data_completed && booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
           <% } %>
 
           <!-- // Payment block -->
