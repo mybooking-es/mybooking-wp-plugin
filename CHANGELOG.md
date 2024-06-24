@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.12] - 2024.06.24
+
+### Improve
+
+- Rent My reservation : Validation of fields + upload documents and sign contract integration
+
 ## [2.2.11] - 2024.06.23
 
 ### Fixed
