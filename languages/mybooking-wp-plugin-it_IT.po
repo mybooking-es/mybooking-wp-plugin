@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2024-06-24 09:31+0000\n"
+"PO-Revision-Date: 2024-06-24 10:23+0000\n"
 "Last-Translator: \n"
-"Language-Team: Italian\n"
+"Language-Team: Italiano\n"
 "Language: it_IT\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -3127,7 +3127,7 @@ msgstr "Il conducente è il titolare del contratto"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:386
 msgctxt "renting_my_reservation"
 msgid "Driving license number"
-msgstr "Numero della patente di guida"
+msgstr "N. patente di guida"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:66
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:68
@@ -3213,7 +3213,7 @@ msgstr "Carta d'identità o passaporto"
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:131
 msgctxt "renting_my_reservation"
 msgid "ID card/passport number"
-msgstr "Num. carta d'identità/passaporto"
+msgstr "Documento ID/passaporto"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:190
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:148

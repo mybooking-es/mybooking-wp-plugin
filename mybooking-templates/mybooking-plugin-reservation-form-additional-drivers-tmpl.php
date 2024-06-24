@@ -101,7 +101,7 @@
 						<% if (required_fields.includes('additional_driver_1_document_id')) { %>*<% } %>
 					</label>
 					<input class="form-control" name="additional_driver_1_document_id"
-						type="text" placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
+						type="text" placeholder="<?php echo esc_attr_x('ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>"
 						value="<%=booking.additional_driver_1_document_id%>"
 						maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('additional_driver_1_document_id')) { %>required<% } %>>
 				</div>
@@ -307,7 +307,7 @@
 							<% if (required_fields.includes('additional_driver_2_document_id')) { %>*<% } %>
 						</label>
 						<input class="form-control" name="additional_driver_2_document_id"
-							type="text" placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x('ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>"
+							type="text" placeholder="<?php echo esc_attr_x('ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>"
 							value="<%=booking.additional_driver_2_document_id%>"
 							maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('additional_driver_2_document_id')) { %>required<% } %>>
 					</div>
