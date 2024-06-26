@@ -57,13 +57,13 @@
       </div>
     <% } %>
 
-    <div class="mybooking-sidebar mb-col-md-6 mb-col-lg-4 mb-col-center">
-      <!-- // Reservation status message -->
+    <div class="mybooking-sidebar mb-col-md-6 <% if (showReservationForm) { %>mb-col-lg-4<% } else {%>mb-col-lg-6<%}%> mb-col-center">
+      <!-- Reservation status message -->
       <div class="mb-section mybooking-summary_status">
         <%= booking.summary_status %>
       </div>
 
-      <!-- // Summary details -->
+      <!-- Summary details -->
       <div class="mb-section mb-panel-container">
         <div class="mybooking-summary_header">
           <div class="mybooking-summary_details-title">
@@ -134,7 +134,7 @@
         </div>
       </div>
 
-      <!-- // Product details -->
+      <!-- Product details -->
       <% if (booking.booking_lines.length > 0) { %>
         <div class="mb-section mb-panel-container">
           <% if ( !configuration.multipleProductsSelection ) { %>
@@ -427,7 +427,7 @@
         </div>
       <% } %>
 
-      <!-- // Customer details -->
+      <!-- Customer details -->
       <% if (!showReservationForm) { %>
         <div class="mb-section">
           <div class="mybooking-summary_details-title">
@@ -458,6 +458,7 @@
           </ul>
         </div>
       <% } %>
+
     </div>
   </div>
 </script>
