@@ -197,7 +197,7 @@
                           <!-- // Offer/Promotion Code Appliance -->
                           <% if (booking.booking_lines[idx].item_unit_cost_base != booking.booking_lines[idx].item_unit_cost) { %>
                               <div class="mybooking-product_price">
-                                <% if (booking.booking_lines[idx].item_unit_cost < booking.booking_lines[idx].item_unit_cost_base) { %>
+                                <% if (new Number(booking.booking_lines[idx].item_unit_cost) < new Number(booking.booking_lines[idx].item_unit_cost_base)) { %>
                                   <span class="mybooking-product_original-price">
                                     <%=configuration.formatCurrency(booking.booking_lines[idx].item_unit_cost_base * booking.booking_lines[idx].quantity)%>
                                   </span>
