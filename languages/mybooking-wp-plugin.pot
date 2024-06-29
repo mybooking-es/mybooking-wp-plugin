@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 09:27+0000\n"
+"POT-Creation-Date: 2024-06-29 10:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -3284,7 +3284,7 @@ msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:51
 msgctxt "renting_my_reservation"
-msgid "Pay pending amount!"
+msgid "Pay now"
 msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:413

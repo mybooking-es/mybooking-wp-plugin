@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2024-06-24 10:23+0000\n"
+"PO-Revision-Date: 2024-06-29 10:22+0000\n"
 "Last-Translator: \n"
-"Language-Team: Italiano\n"
+"Language-Team: Italian\n"
 "Language: it_IT\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -3323,8 +3323,8 @@ msgstr "Pax 2"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:51
 msgctxt "renting_my_reservation"
-msgid "Pay pending amount!"
-msgstr "Pagare l'importo in sospeso"
+msgid "Pay now"
+msgstr "Paga ora"
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-tmpl.php:413
 msgctxt "renting_my_reservation"
