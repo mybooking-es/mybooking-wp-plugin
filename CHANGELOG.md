@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.1] - 2024.07.02
+
+### Fixed
+
+- Rent My reservation : Show customer phone prefix
+
 ## [2.3.0] - 2024.06.26
 
 ### Improve
