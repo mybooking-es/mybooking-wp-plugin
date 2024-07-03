@@ -130,14 +130,49 @@
   </form>
 </script>
 
+<!-- Filter microtemplate -->
+<script type="text/tpml" id="script_choose_product_filter">
+  <ul class="mybooking-chose-product-filter">
+    <li class="mybooking-chose-product-filter-item_link active">
+      Familia
+      &nbsp;
+      <i class="fa fa-angle-up"></i>
+      <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
+        <% if (filters.families.length > 0) { %>
+          <% for (var idx=0; idx<filters.families.length; idx++) { %>
+            <li data-filter="family" data-value="<%= filters.families[idx].id %>">
+              <input type="checkbox" name="family" value="<%= filters.families[idx].id %>"  />
+              &nbsp;
+              <%= filters.families[idx].name %>
+            </li>
+          <% } %>
+        <% } %>
+      </ul>
+    </li>
+    <li class="mybooking-chose-product-filter-item_link">
+      Item 1
+      &nbsp;
+      <i class="fa fa-angle-down"></i>
+      <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
+        <li data-filter="family" data-value="1">
+          Familia 1
+        </li>
+        <li data-filter="family" data-value="2">
+          Familia 2
+        </li>
+      </ul>
+    </li>
+  </ul>
+</script>
+
 <!-- PRODUCT DETAIL MODAL VIDEO ----------------------------------------------------->
 
-  <!-- Video template -->
-  <script type="text/tmpl" id="script_transfer_product_detail_video">
-    <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
-      <div class="mb-video-responsive">
-        <iframe src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allowfullscreen class="mybooking-video-inner"></iframe>
-      </div>
-    <% } %>
-  </script>
+<!-- Video template -->
+<script type="text/tmpl" id="script_transfer_product_detail_video">
+  <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
+    <div class="mb-video-responsive">
+      <iframe src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allowfullscreen class="mybooking-video-inner"></iframe>
+    </div>
+  <% } %>
+</script>
 
