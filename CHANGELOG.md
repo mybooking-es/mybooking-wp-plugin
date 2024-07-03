@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.2] - 2024.07.03
+
+### Fixed
+
+- Rent My reservation : Select2 error in list structure fixed
+
 ## [2.3.1] - 2024.07.02
 
 ### Fixed
