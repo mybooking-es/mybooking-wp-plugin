@@ -87,82 +87,94 @@
   </div>
 </script>
 
-<script type="text/tpml" id="script_variant_product">
-  <form name="variant_product_form">
-    <div id="variant_product_selectors" class="mb-row">
-      <% if (!configuration.multipleProductsSelection) { %>
-        <div class="mb-form-group mb-col-sm-12">
-          <select name="<%= product.code %>" id="<%= product.code %>" class="form-control variant_product_selector">
-            <option value="0"><?php echo esc_html_x( 'Select', 'renting_choose_product', 'mybooking-wp-plugin') ?></option>
-            <% for (var idxV=0;idxV<variants.length;idxV++) { %>
-              <% var variant = variants[idxV]; %>
-              <option value="<%= variant.code %>" <% if  (variantsSelected[variant.code]) { %>selected<% } %>><%= variant.variant_name %> - <%=configuration.formatCurrency(variant.price)%></option>
-            <% } %>
-          </select>
-        </div>
-      <% } else { %>
-        <% for (var idxV=0;idxV<variants.length;idxV++) { %>
-          <% var variant = variants[idxV]; %>
-          <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
-            <label for="<%= variant.code %>">
-              <%= variant.variant_name %>
-            </label>
-            <select name="<%= variant.code %>" id="<%= variant.code %>" <% if  (variant.available < 1) { %>disabled<% } %> class="form-control variant_product_selector">
-              <option value="0"><?php echo esc_html_x( 'Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?></option>
-              <% for (var idxVO=1;idxVO<=variant.available;idxVO++) { %>
-                <option value="<%= idxVO %>"  <% if  (variantsSelected[variant.code] && variantsSelected[variant.code] === idxVO) { %>selected<% } %>><%= idxVO %> <% if  (idxVO > 1) { %><?php echo esc_html_x( 'units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x( 'unit', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %> - <%=configuration.formatCurrency(variant.price * idxVO)%></option>
-              <% } %>
-              </select>
-          </div>
-        <% } %>
-      <% } %>
-    </div>
-    <div class="mb-row">
-      <div class="mb-col-md-9">
-        <h4>Total</h4>
-      </div>
-      <div class="mb-col-md-3 text-right">
-        <h4 id="variant_product_total">
-          <span id="variant_product_total_quantity"> <%=configuration.formatCurrency(total)%></span>
-        </h4>
-      </div>
-    </div>
-  </form>
-</script>
-
 <!-- Filter microtemplate -->
 <script type="text/tpml" id="script_choose_product_filter">
-  <ul class="mybooking-chose-product-filter">
-    <li class="mybooking-chose-product-filter-item_link active">
-      Familia
-      &nbsp;
-      <i class="fa fa-angle-up"></i>
-      <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
-        <% if (filters.families.length > 0) { %>
-          <% for (var idx=0; idx<filters.families.length; idx++) { %>
-            <li data-filter="family" data-value="<%= filters.families[idx].id %>">
-              <input type="checkbox" name="family" value="<%= filters.families[idx].id %>"  />
+  <div class="mybooking-chose-product-filter-container">
+    <form name="mybooking_choose_product_filter_form" class="mybooking-chose-product-filter-form" novalidate>
+      <ul class="mybooking-chose-product-filter">
+        <% if (filters.families && filters.families.length > 1) { %>
+          <li class="mybooking-chose-product-filter-item_section">
+            <div class="mybooking-chose-product-filter-item_section-btn">
+              <?php echo MyBookingEngineContext::getInstance()->getFamily() ?>
               &nbsp;
-              <%= filters.families[idx].name %>
-            </li>
+              <i class="fa fa-angle-down"></i>
+            </div>
+            <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
+              <% for (var idx=0; idx<filters.families.length; idx++) { %>
+                <li data-filter="family" data-value="<%= filters.families[idx].id %>">
+                  <input type="checkbox" name="family" value="<%= filters.families[idx].id %>"  />
+                  &nbsp;
+                  <label><%= filters.families[idx].name %></label>
+                  <% if (filters.families[idx].children && filters.families[idx].children.length > 1) { %>
+                    <ul>
+                      <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
+                        <li data-filter="family" data-value="<%= filters.families[idx].children[idxB].id %>">
+                          <input type="checkbox" name="family" value="<%= filters.families[idx].children[idxB].id %>"  />
+                          &nbsp;
+                          <label><%= filters.families[idx].children[idxB].name %></label>
+                        </li>
+                      <% } %>
+                    </ul>
+                  <% } %>
+                </li>
+              <% } %>
+            </ul>
+          </li>
+        <% } %>
+        <% if (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0) { %>
+          <% for (var idxC=0; idxC<filters.otherFilters.key_characteristics.length; idxC++) { %>
+            <% if (filters.otherFilters.key_characteristics[idxC].values && filters.otherFilters.key_characteristics[idxC].values.length > 1) { %>
+              <li class="mybooking-chose-product-filter-item_section">
+                <div class="mybooking-chose-product-filter-item_section-btn">
+                  <%= filters.otherFilters.key_characteristics[idxC].name %>
+                  &nbsp;
+                  <i class="fa fa-angle-down"></i>
+                </div>
+                <% if (filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
+                  <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
+                    <li data-filter="family" data-value="">
+                      <input class="js-rangeslider" type="text" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" data-type="double" data-min="<%= filters.otherFilters.key_characteristics[idxC].values[0].value %>" data-max="<%= filters.otherFilters.key_characteristics[idxC].values[filters.otherFilters.key_characteristics[idxC].values.length - 1].value %>" data-from="<%= filters.otherFilters.key_characteristics[idxC].values[0].value %>" data-to="<%= filters.otherFilters.key_characteristics[idxC].values[filters.otherFilters.key_characteristics[idxC].values.length - 1].value %>">
+                    </li>
+                  </ul>
+                <% } else { %>
+                  <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
+                    <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
+                      <li data-filter="family" data-value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>">
+                        
+                        <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value')  { %>
+                          <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
+                        <% } else { %>
+                          <input type="checkbox" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
+                        &nbsp;
+                        <% } %>
+                        <label><%= filters.otherFilters.key_characteristics[idxC].values[idxD].description %></label>
+                      </li>
+                    <% } %>
+                  </ul>
+                <% } %>
+              </li>
+            <% } %>
           <% } %>
         <% } %>
       </ul>
-    </li>
-    <li class="mybooking-chose-product-filter-item_link">
-      Item 1
-      &nbsp;
-      <i class="fa fa-angle-down"></i>
-      <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
-        <li data-filter="family" data-value="1">
-          Familia 1
-        </li>
-        <li data-filter="family" data-value="2">
-          Familia 2
-        </li>
-      </ul>
-    </li>
-  </ul>
+      <div class="mybooking-choose-product-filter-btns">
+        <button type="submit" class="mybooking-choose-product-filter-btn"
+          title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+          <i class="fa fa-filter"></i>
+          &nbsp;
+          <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+        </button>
+        <button  class="mybooking-choose-product-filter-btn"
+        title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+          <i class="fa fa-eraser"></i>
+        </button>
+        <button class="mybooking-choose-product-filter-btn"
+          title="<?php echo esc_html_x( 'More filters', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+          <i class="fa fa-sliders-h"></i>
+        </button>
+      </div>
+    </form>
+  </div>
 </script>
 
 <!-- PRODUCT DETAIL MODAL VIDEO ----------------------------------------------------->

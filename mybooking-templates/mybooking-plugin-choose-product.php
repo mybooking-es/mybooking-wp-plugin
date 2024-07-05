@@ -14,7 +14,7 @@
 
 <!-- Filter -->
 <?php if ( array_key_exists('filter', $args) ) : ?>
-  <div id="mybooking_choose_product_filter"></div>
+  <div id="mybooking_choose_product_filter" class="mybooking-page-container"></div>
 <?php endif; ?>
 
 <div class="mybooking-process-page <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">

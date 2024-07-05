@@ -152,6 +152,10 @@
       wp_enqueue_style( 'mybooking_wp_css_phone',
                         plugins_url('/assets/styles/intlTelInput.min.css', dirname( __DIR__ ) ) );
 
+      // Enqueue Range resources
+      wp_enqueue_style( 'mybooking_wp_css_ranges',
+      plugins_url('/assets/styles/ion.rangeSlider.css', dirname( __DIR__ ) ) );
+
       // Enqueue select2 + select2 bootstrap CSS
       wp_enqueue_style( 'mybooking_wp_css_components_select2',
                       plugins_url('/assets/styles/select2-4.0.1.css', dirname( __DIR__ ) ) );
@@ -334,6 +338,14 @@
         wp_enqueue_script('mybooking_wp_js_slick');
         array_push($mybooking_dependencies, 'mybooking_wp_js_slick');
       }
+      // Range Slider JS
+      wp_register_script('mybooking_wp_js_ion_range_slider',
+                          plugins_url( '/assets/js/ion.rangeSlider.js', dirname(__DIR__) ),
+                          array( 'jquery' ), $this->version, array(
+                          'strategy' => 'async'
+                          ));
+      wp_enqueue_script('mybooking_wp_js_ion_range_slider');
+      array_push($mybooking_dependencies, 'mybooking_wp_js_ion_range_slider');
 
       wp_register_script( 'mybooking-rent-engine-script',
                           plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
