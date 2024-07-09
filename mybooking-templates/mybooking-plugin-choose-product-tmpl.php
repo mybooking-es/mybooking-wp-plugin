@@ -102,16 +102,18 @@
             <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
               <% for (var idx=0; idx<filters.families.length; idx++) { %>
                 <li data-filter="family_id" data-value="<%= filters.families[idx].id %>">
-                  <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"  />
-                  &nbsp;
-                  <label><%= filters.families[idx].name %></label>
+                  <label>  
+                    <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"  />
+                    <span><%= filters.families[idx].name %></span>
+                  </label>
                   <% if (filters.families[idx].children && filters.families[idx].children.length > 1) { %>
                     <ul>
                       <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
                         <li data-filter="family_id" data-value="<%= filters.families[idx].children[idxB].id %>">
+                        <label>
                           <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  />
-                          &nbsp;
-                          <label><%= filters.families[idx].children[idxB].name %></label>
+                          <span><%= filters.families[idx].children[idxB].name %></span>
+                        </label>
                         </li>
                       <% } %>
                     </ul>
@@ -130,28 +132,25 @@
                   &nbsp;
                   <i class="fa fa-angle-down"></i>
                 </div>
-                <% if (filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
-                  <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
-                    <li data-filter="other"data-value="">
-                      <input class="js-rangeslider" type="text" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" data-type="double" data-min="<%= filters.otherFilters.key_characteristics[idxC].values[0].value %>" data-max="<%= filters.otherFilters.key_characteristics[idxC].values[filters.otherFilters.key_characteristics[idxC].values.length - 1].value %>" data-from="<%= filters.otherFilters.key_characteristics[idxC].values[0].value %>" data-to="<%= filters.otherFilters.key_characteristics[idxC].values[filters.otherFilters.key_characteristics[idxC].values.length - 1].value %>">
-                    </li>
-                  </ul>
-                <% } else { %>
-                  <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
-                    <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
-                      <li data-filter="other"data-value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>">
-                        
-                        <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value')  { %>
+                <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
+                  <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
+                    <li data-filter="other"data-value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>">
+                      <label>
+                        <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value' || filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
                           <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
                         <% } else { %>
                           <input type="checkbox" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
-                        &nbsp;
                         <% } %>
-                        <label><%= filters.otherFilters.key_characteristics[idxC].values[idxD].description %></label>
-                      </li>
-                    <% } %>
-                  </ul>
-                <% } %>
+                        <span>
+                          <%= filters.otherFilters.key_characteristics[idxC].values[idxD].description %>
+                          <% if (filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
+                            +
+                          <% } %>
+                        </span>
+                      </label>
+                    </li>
+                  <% } %>
+                </ul>
               </li>
             <% } %>
           <% } %>
