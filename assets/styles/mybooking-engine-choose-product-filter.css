@@ -40,14 +40,14 @@
 }
 
 .mybooking-chose-product-filter-form .mybooking-choose-product-filter-btns {
-	min-width: 190px;
+	min-width: 150px;
 }
 
 .mybooking-chose-product-filter-form .mybooking-choose-product-filter-btn {
 	border: none;
 	padding: 0.5rem 0.2rem;
 	filter: brightness(100%);
-	width: 20%;
+	width: 22.5%;
 	background-color: white;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	margin: 0 -2px;
@@ -57,7 +57,7 @@
 
 .mybooking-chose-product-filter-form .mybooking-choose-product-filter-btn:first-child {
 	border-radius: 4px 0 0 4px;
-	width: 60%;
+	width: 55%;
 }
 
 .mybooking-chose-product-filter-form .mybooking-choose-product-filter-btn:last-child {
@@ -70,6 +70,7 @@
 	display: inline-block;
 	margin: -2px;
 	width: 100%;
+	margin-bottom: 1rem;
 } @media (min-width: 480px) {
 	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section {
     width: 50%;
@@ -84,9 +85,13 @@
   }
 } @media (min-width: 1280px) {
 	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section {
-    width: 16.66%;
+    width: 16%;
   }
+	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section:first-child {
+		width: 20%;
+	}
 }
+
 .mybooking-chose-product-filter .mybooking-chose-product-filter-item_section label {
 	display: block;
 	background-color: #F1F1F1;
