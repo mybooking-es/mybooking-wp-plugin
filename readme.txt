@@ -3,7 +3,7 @@ Donate link: https://mybooking.es/
 Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation
 Requires at least: 5.2
 Tested up to: 6.5
-Stable tag: 2.3.2
+Stable tag: 2.3.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -115,6 +115,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 14. Transfer summary page
 
 == Changelog ==
+
+= 2.3.3 =
+* Fixed : My reservation : Select2 null fields error on update
 
 = 2.3.2 =
 * Fixed : My reservation - Select2 error in list structure fixed
@@ -520,6 +523,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 2.3.3 =
+* Fixed : My reservation : Select2 null fields error on update
 
 = 2.3.2 =
 * Fixed : My reservation - Select2 error in list structure fixed

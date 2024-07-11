@@ -166,10 +166,12 @@
   <div class="mb-form-group mb-col-md-6">
     <label>
       <?php echo esc_html_x( 'Country', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-      <% if (required_fields.includes('driver_address[country]')) { %>*<% } %>
+      <% if (required_fields.includes('customer_address[country]') || 
+						 required_fields.includes('driver_address[country]')) { %>*<% } %>
     </label>
     <select name="driver_address[country]" class="mb-form-control" <% if (!booking.can_edit_online){%>disabled<%}%> 
-    <% if (required_fields.includes('driver_address[country]')) { %>required<% } %>>
+        <% if (required_fields.includes('customer_address[country]') || 
+               required_fields.includes('driver_address[country]')) { %>*<% } %>>
     </select>
   </div>
   <div class="mb-form-group mb-col-md-6">
