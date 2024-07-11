@@ -87,7 +87,18 @@
   </div>
 </script>
 
-<!-- Filter microtemplate -->
+<!-- PRODUCT DETAIL MODAL VIDEO ----------------------------------------------------->
+
+<!-- Video template -->
+<script type="text/tmpl" id="script_transfer_product_detail_video">
+  <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
+    <div class="mb-video-responsive">
+      <iframe src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allowfullscreen class="mybooking-video-inner"></iframe>
+    </div>
+  <% } %>
+</script>
+
+<!-- FILTER TEMPLATES AND MODAL ----------------------------------------------------->
 <script type="text/tpml" id="script_choose_product_filter">
   <div id="mybooking-chose-product-filter" class="mybooking-chose-product-filter-container">
     <form name="mybooking_choose_product_filter_form" class="mybooking-chose-product-filter-form" novalidate>
@@ -101,7 +112,7 @@
             </div>
             <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
               <% for (var idx=0; idx<filters.families.length; idx++) { %>
-                <li data-filter="family_id" data-value="<%= filters.families[idx].id %>">
+                <li data-filter="family_id">
                   <label>  
                     <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"  />
                     <span><%= filters.families[idx].name %></span>
@@ -109,11 +120,11 @@
                   <% if (filters.families[idx].children && filters.families[idx].children.length > 1) { %>
                     <ul>
                       <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
-                        <li data-filter="family_id" data-value="<%= filters.families[idx].children[idxB].id %>">
-                        <label>
-                          <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  />
-                          <span><%= filters.families[idx].children[idxB].name %></span>
-                        </label>
+                        <li data-filter="family_id">
+                          <label>
+                            <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  />
+                            <span><%= filters.families[idx].children[idxB].name %></span>
+                          </label>
                         </li>
                       <% } %>
                     </ul>
@@ -134,7 +145,7 @@
                 </div>
                 <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
                   <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
-                    <li data-filter="other"data-value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>">
+                    <li data-filter="other">
                       <label>
                         <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value' || filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
                           <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
@@ -176,14 +187,101 @@
   </div>
 </script>
 
-<!-- PRODUCT DETAIL MODAL VIDEO ----------------------------------------------------->
+<script type="text/tpml" id="script_choose_product_filter_modal_content">
+  <div id="mybooking-chose-product-filter_modal"  class="mybooking-chose-product-filter-container">
+    <form name="mybooking_choose_product_filter_modal_form" class="mybooking-chose-product-filter-modal-form" novalidate>
+      <ul class="mybooking-chose-product-filter-modal">
+        <% if (filters.families && filters.families.length > 1) { %>
+          <li class="mybooking-chose-product-filter-item">
+            <span class="mybooking-chose-product-filter-item_title">
+              <?php echo MyBookingEngineContext::getInstance()->getFamily() ?>
+            </span>
+            <ul class="mybooking-chose-product-filter-item_content">
+              <% for (var idx=0; idx<filters.families.length; idx++) { %>
+                <li data-filter="family_id">
+                  <label>
+                    <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"  />
+                    <span><%= filters.families[idx].name %></span>
+                  </label>
+                  <% if (filters.families[idx].children && filters.families[idx].children.length > 1) { %>
+                    <ul>
+                      <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
+                        <li data-filter="family_id">
+                          <label>
+                            <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  />
+                            <span><%= filters.families[idx].children[idxB].name %></span>
+                          </label>
+                        </li>
+                      <% } %>
+                    </ul>
+                  <% } %>
+                </li>
+              <% } %>
+            </ul>
+          </li>
+        <% } %>
 
-<!-- Video template -->
-<script type="text/tmpl" id="script_transfer_product_detail_video">
-  <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
-    <div class="mb-video-responsive">
-      <iframe src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allowfullscreen class="mybooking-video-inner"></iframe>
+        <% if (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0) { %>
+          <% for (var idxC=0; idxC<filters.otherFilters.key_characteristics.length; idxC++) { %>
+            <% if (filters.otherFilters.key_characteristics[idxC].values && filters.otherFilters.key_characteristics[idxC].values.length > 1) { %>
+              <li class="mybooking-chose-product-filter-item">
+                <span class="mybooking-chose-product-filter-item_title">
+                <%= filters.otherFilters.key_characteristics[idxC].name %>
+                </span>
+                <ul class="mybooking-chose-product-filter-item_content">
+                  <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
+                    <li data-filter="other">
+                      <label>
+                        <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value' || filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
+                          <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
+                        <% } else { %>
+                          <input type="checkbox" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
+                        <% } %>
+                        <span>
+                          <%= filters.otherFilters.key_characteristics[idxC].values[idxD].description %>
+                          <% if (filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
+                            +
+                          <% } %>
+                        </span>
+                      </label>
+                    </li>
+                  <% } %>
+                </ul>
+              </li>
+            <% } %>
+          <% } %>
+        <% } %>
+      </ul>
+      <hr/>
+      <div class="mybooking-choose-product-filter-btns">
+        <button  id="mybooking-chose-product-filter-item_eraser" class="mybooking-choose-product-filter-btn"
+        title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+          <i class="fa fa-eraser"></i>
+        </button>
+        <button type="submit" class="mybooking-choose-product-filter-btn"
+          title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+          <i class="fa fa-filter"></i>
+          &nbsp;
+          <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+        </button>
+      </div>
+    </form>
+  </div>
+</script>
+
+<div class="modal modal-mybooking" tabindex="-1" role="dialog" id="choose_product_filter_modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <?php echo esc_html_x( 'Full filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="<?php echo esc_attr_x( 'Close', 'renting_choose_product', 'mybooking' ); ?>">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="choose_product_filter_modal_content" class="modal-body"></div>
     </div>
-  <% } %>
+  </div>
 </script>
 
