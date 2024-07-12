@@ -1,16 +1,19 @@
 .mybooking-chose-product-filter-container {
+	margin: 0.5rem 0;
+	font-size: 0.9rem;
+	clear: both;
+}
+
+.mybooking-chose-product-filter-container form {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0.5rem 2rem;
-	font-size: 0.9rem;
 }
 
 /* List */
 .mybooking-chose-product-filter-container ul {
-	padding: 0;
-	margin: 0;
+	padding: 0 !important;
+	margin: 0 !important;
 	list-style: none;
 }
 .mybooking-chose-product-filter-container ul ul ul label span {
@@ -26,8 +29,8 @@
 	list-style: none;
 	padding: 1rem;
 	margin: 0;
-	width: 90%;
-	height: 20px;
+	width: 85%;
+	height: 30px;
 	overflow: hidden;
 }
 
@@ -40,7 +43,7 @@
 }
 
 .mybooking-chose-product-filter-form .mybooking-choose-product-filter-btns {
-	width: 150px;
+	width: 15%;
 }
 
 .mybooking-chose-product-filter-container .mybooking-choose-product-filter-btn {
@@ -48,9 +51,14 @@
 	padding: 0.5rem 0.2rem;
 	filter: brightness(100%);
 	width: 22.5%;
+	color: inherit;
 	background-color: white;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	margin: 0 -2px;
+	cursor: pointer;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }  .mybooking-chose-product-filter-container .mybooking-choose-product-filter-btn:hover {
 	filter: brightness(90%);
 }
@@ -71,6 +79,7 @@
 	margin: -2px;
 	width: 100%;
 	margin-bottom: 1rem;
+	padding: 0.5rem;
 } @media (min-width: 480px) {
 	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section {
     width: 50%;
@@ -134,7 +143,7 @@
 	overflow: auto;
 	position: absolute;
   z-index: 500;
-	padding: 0.5rem;
+	padding: 0.5rem !important;
 }
 
 .mybooking-chose-product-filter .mybooking-chose-product-filter-item_section .mybooking-chose-product-filter-item_panel {
@@ -147,8 +156,11 @@
 /*
 * Modal styles
 */
-#choose_product_filter_modal_content .mybooking-chose-product-filter-container {
+#mybooking-chose-product-filter_modal .mybooking-chose-product-filter-container {
 	margin: 0;
+}
+#mybooking-chose-product-filter_modal form {
+	display: block;
 }
 .mybooking-chose-product-filter-container .mybooking-chose-product-filter-modal-form {
 	width: 100%;
@@ -192,10 +204,10 @@
 .mybooking-chose-product-filter-container .mybooking-chose-product-filter-item_content input:checked + span:after {
 	content: "\2713";
 }
-#choose_product_filter_modal_content .mybooking-choose-product-filter-btns {
+#mybooking-chose-product-filter_modal .mybooking-choose-product-filter-btns {
 	width: 100%;
 }
-#choose_product_filter_modal_content .mybooking-choose-product-filter-btn {
+#mybooking-chose-product-filter_modal .mybooking-choose-product-filter-btn {
 	width: 50%;
 }
 

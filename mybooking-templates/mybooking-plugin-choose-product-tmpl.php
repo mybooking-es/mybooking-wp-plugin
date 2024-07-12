@@ -108,7 +108,7 @@
             <div class="mybooking-chose-product-filter-item_section-btn">
               <?php echo MyBookingEngineContext::getInstance()->getFamily() ?>
               &nbsp;
-              <i class="fa fa-angle-down"></i>
+              <i class="dashicons dashicons-arrow-down"></i>
             </div>
             <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
               <% for (var idx=0; idx<filters.families.length; idx++) { %>
@@ -141,7 +141,7 @@
                 <div class="mybooking-chose-product-filter-item_section-btn">
                   <%= filters.otherFilters.key_characteristics[idxC].name %>
                   &nbsp;
-                  <i class="fa fa-angle-down"></i>
+                  <i class="dashicons dashicons-arrow-down"></i>
                 </div>
                 <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
                   <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
@@ -170,17 +170,16 @@
       <div class="mybooking-choose-product-filter-btns">
         <button type="submit" class="mybooking-choose-product-filter-btn"
           title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
-          <i class="fa fa-filter"></i>
-          &nbsp;
+          <i class="dashicons dashicons-filter"></i>
           <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
         </button>
         <button  id="mybooking-chose-product-filter-item_eraser" class="mybooking-choose-product-filter-btn"
         title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
-          <i class="fa fa-eraser"></i>
+          <i class="dashicons dashicons-editor-removeformatting"></i>
         </button>
         <button id="mybooking-choose-product-filter-btn_advanced" class="mybooking-choose-product-filter-btn"
           title="<?php echo esc_html_x( 'More filters', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
-          <i class="fa fa-sliders-h"></i>
+          <i class="dashicons dashicons-admin-settings"></i>
         </button>
       </div>
     </form>
@@ -252,16 +251,15 @@
           <% } %>
         <% } %>
       </ul>
-      <hr/>
+      <br />
       <div class="mybooking-choose-product-filter-btns">
         <button  id="mybooking-chose-product-filter-item_eraser" class="mybooking-choose-product-filter-btn"
         title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
-          <i class="fa fa-eraser"></i>
+          <i class="dashicons dashicons-editor-removeformatting"></i>
         </button>
         <button type="submit" class="mybooking-choose-product-filter-btn"
           title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
-          <i class="fa fa-filter"></i>
-          &nbsp;
+          <i class="dashicons dashicons-filter"></i>
           <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
         </button>
       </div>
@@ -269,19 +267,8 @@
   </div>
 </script>
 
-<div class="modal modal-mybooking" tabindex="-1" role="dialog" id="choose_product_filter_modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">
-          <?php echo esc_html_x( 'Full filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="<?php echo esc_attr_x( 'Close', 'renting_choose_product', 'mybooking' ); ?>">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div id="choose_product_filter_modal_content" class="modal-body"></div>
-    </div>
-  </div>
-</script>
+<!-- MODAL --------------------------------------------------------------------->
+<div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="choose_product_filter_modal_MBM"  style="margin: 3rem 1rem;">
+  <div class="mybooking-modal_body modal-product-detail-content"></div>
+</div>
 
