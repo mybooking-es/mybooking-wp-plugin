@@ -113,7 +113,7 @@
             <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
               <% for (var idx=0; idx<filters.families.length; idx++) { %>
                 <li data-filter="family_id">
-                  <label>  
+                  <label class="mybooking-chose-product-filter-item_label" data-tree-parent="true">  
                     <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"  />
                     <span><%= filters.families[idx].name %></span>
                   </label>
@@ -121,7 +121,7 @@
                     <ul>
                       <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
                         <li data-filter="family_id">
-                          <label>
+                          <label class="mybooking-chose-product-filter-item_label">
                             <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  />
                             <span><%= filters.families[idx].children[idxB].name %></span>
                           </label>
@@ -146,7 +146,7 @@
                 <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
                   <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
                     <li data-filter="other">
-                      <label>
+                      <label class="mybooking-chose-product-filter-item_label">
                         <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value' || filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
                           <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
                         <% } else { %>
@@ -168,7 +168,7 @@
         <% } %>
       </ul>
       <div class="mybooking-choose-product-filter-btns">
-        <button type="submit" class="mybooking-choose-product-filter-btn"
+        <button id="mybooking-chose-product-filter-item_send" type="submit" class="mybooking-choose-product-filter-btn"
           title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
           <i class="dashicons dashicons-filter"></i>
           <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
@@ -198,7 +198,7 @@
             <ul class="mybooking-chose-product-filter-item_content">
               <% for (var idx=0; idx<filters.families.length; idx++) { %>
                 <li data-filter="family_id">
-                  <label>
+                  <label class="mybooking-chose-product-filter-item_label" data-tree-parent="true">
                     <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"  />
                     <span><%= filters.families[idx].name %></span>
                   </label>
@@ -206,7 +206,7 @@
                     <ul>
                       <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
                         <li data-filter="family_id">
-                          <label>
+                          <label class="mybooking-chose-product-filter-item_label">
                             <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  />
                             <span><%= filters.families[idx].children[idxB].name %></span>
                           </label>
@@ -230,7 +230,7 @@
                 <ul class="mybooking-chose-product-filter-item_content">
                   <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
                     <li data-filter="other">
-                      <label>
+                      <label class="mybooking-chose-product-filter-item_label">
                         <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value' || filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
                           <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
                         <% } else { %>
@@ -257,7 +257,7 @@
         title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
           <i class="dashicons dashicons-editor-removeformatting"></i>
         </button>
-        <button type="submit" class="mybooking-choose-product-filter-btn"
+        <button id="mybooking-chose-product-filter-item_send" type="submit" class="mybooking-choose-product-filter-btn"
           title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
           <i class="dashicons dashicons-filter"></i>
           <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
