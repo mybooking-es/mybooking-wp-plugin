@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.4] - 2024.07.15
+
+### Fixed
+
+- Setup permalink on websites without translation plugin
+
 ## [2.3.3] - 2024.07.11
 
 ### Fixed

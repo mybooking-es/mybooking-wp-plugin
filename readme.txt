@@ -116,6 +116,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 2.3.4 =
+* Fixed : Setup permalink on websites without translation plugin
+
 = 2.3.3 =
 * Fixed : My reservation : Select2 null fields error on update
 
@@ -523,6 +526,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 2.3.4 =
+* Fixed : Setup permalink on websites without translation plugin
 
 = 2.3.3 =
 * Fixed : My reservation : Select2 null fields error on update

@@ -90,6 +90,13 @@ function mybooking_engine_translated_slug( $page_id ) {
 	  	 }
 	  }
   }
+	else {
+		// Get the permalink (only one language)
+		$page = get_page_by_path( $page_id );
+		if ($page != null) {
+			return get_permalink( $page->ID  );
+		}		
+	}
 
 	return $page_id;
 
