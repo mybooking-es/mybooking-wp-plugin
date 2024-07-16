@@ -104,7 +104,7 @@
     <form name="mybooking_choose_product_filter_form" class="mybooking-chose-product-filter-form" novalidate>
       <ul class="mybooking-chose-product-filter">
         <% if (filters.families && filters.families.length > 1) { %>
-          <li class="mybooking-chose-product-filter-item_section">
+          <li class="mybooking-chose-product-filter-item_section_toogle mybooking-chose-product-filter-item_section">
             <div class="mybooking-chose-product-filter-item_section-btn">
               <?php echo MyBookingEngineContext::getInstance()->getFamily() ?>
               &nbsp;
@@ -114,7 +114,8 @@
               <% for (var idx=0; idx<filters.families.length; idx++) { %>
                 <li data-filter="family_id">
                   <label class="mybooking-chose-product-filter-item_label" data-tree-parent="true">  
-                    <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"  />
+                    <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"
+                      <% if (model.family_id && model.family_id.indexOf(filters.families[idx].id) !== -1) { %>checked<% } %> />
                     <span><%= filters.families[idx].name %></span>
                   </label>
                   <% if (filters.families[idx].children && filters.families[idx].children.length > 1) { %>
@@ -122,7 +123,8 @@
                       <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
                         <li data-filter="family_id">
                           <label class="mybooking-chose-product-filter-item_label">
-                            <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  />
+                            <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  
+                              <% if (model.family_id && model.family_id.indexOf(filters.families[idx].children[idxB].id) !== -1) { %>checked<% } %> />
                             <span><%= filters.families[idx].children[idxB].name %></span>
                           </label>
                         </li>
@@ -137,7 +139,7 @@
         <% if (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0) { %>
           <% for (var idxC=0; idxC<filters.otherFilters.key_characteristics.length; idxC++) { %>
             <% if (filters.otherFilters.key_characteristics[idxC].values && filters.otherFilters.key_characteristics[idxC].values.length > 1) { %>
-              <li class="mybooking-chose-product-filter-item_section">
+              <li class="mybooking-chose-product-filter-item_section_toogle mybooking-chose-product-filter-item_section">
                 <div class="mybooking-chose-product-filter-item_section-btn">
                   <%= filters.otherFilters.key_characteristics[idxC].name %>
                   &nbsp;
@@ -148,9 +150,11 @@
                     <li data-filter="other">
                       <label class="mybooking-chose-product-filter-item_label">
                         <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value' || filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
-                          <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
+                          <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].key %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>" 
+                            <% if (model['key_characteristic_' + filters.otherFilters.key_characteristics[idxC].key] == filters.otherFilters.key_characteristics[idxC].values[idxD].value) { %>checked<% } %>  />
                         <% } else { %>
-                          <input type="checkbox" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
+                          <input type="checkbox" name="<%= filters.otherFilters.key_characteristics[idxC].key %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>" 
+                            <% if (model['key_characteristic_' + filters.otherFilters.key_characteristics[idxC].key] == filters.otherFilters.key_characteristics[idxC].values[idxD].value) { %>checked<% } %> />
                         <% } %>
                         <span>
                           <%= filters.otherFilters.key_characteristics[idxC].values[idxD].description %>
@@ -191,7 +195,7 @@
     <form name="mybooking_choose_product_filter_modal_form" class="mybooking-chose-product-filter-modal-form" novalidate>
       <ul class="mybooking-chose-product-filter-modal">
         <% if (filters.families && filters.families.length > 1) { %>
-          <li class="mybooking-chose-product-filter-item">
+          <li class="mybooking-chose-product-filter-item_section mybooking-chose-product-filter-item">
             <span class="mybooking-chose-product-filter-item_title">
               <?php echo MyBookingEngineContext::getInstance()->getFamily() ?>
             </span>
@@ -199,7 +203,8 @@
               <% for (var idx=0; idx<filters.families.length; idx++) { %>
                 <li data-filter="family_id">
                   <label class="mybooking-chose-product-filter-item_label" data-tree-parent="true">
-                    <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"  />
+                    <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>" 
+                      <% if (model.family_id && model.family_id.indexOf(filters.families[idx].id) !== -1) { %>checked<% } %> />
                     <span><%= filters.families[idx].name %></span>
                   </label>
                   <% if (filters.families[idx].children && filters.families[idx].children.length > 1) { %>
@@ -207,7 +212,8 @@
                       <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
                         <li data-filter="family_id">
                           <label class="mybooking-chose-product-filter-item_label">
-                            <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  />
+                            <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>" 
+                              <% if (model.family_id && model.family_id.indexOf(filters.families[idx].children[idxB].id) !== -1) { %>checked<% } %> />
                             <span><%= filters.families[idx].children[idxB].name %></span>
                           </label>
                         </li>
@@ -223,7 +229,7 @@
         <% if (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0) { %>
           <% for (var idxC=0; idxC<filters.otherFilters.key_characteristics.length; idxC++) { %>
             <% if (filters.otherFilters.key_characteristics[idxC].values && filters.otherFilters.key_characteristics[idxC].values.length > 1) { %>
-              <li class="mybooking-chose-product-filter-item">
+              <li class="mybooking-chose-product-filter-item_section mybooking-chose-product-filter-item">
                 <span class="mybooking-chose-product-filter-item_title">
                 <%= filters.otherFilters.key_characteristics[idxC].name %>
                 </span>
@@ -232,9 +238,11 @@
                     <li data-filter="other">
                       <label class="mybooking-chose-product-filter-item_label">
                         <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value' || filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
-                          <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
+                          <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].key %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>" 
+                            <% if (model['key_characteristic_' + filters.otherFilters.key_characteristics[idxC].key] == filters.otherFilters.key_characteristics[idxC].values[idxD].value) { %>checked<% } %>  />
                         <% } else { %>
-                          <input type="checkbox" name="<%= filters.otherFilters.key_characteristics[idxC].code %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>"  />
+                          <input type="checkbox" name="<%= filters.otherFilters.key_characteristics[idxC].key %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>" 
+                          <% if (model['key_characteristic_' + filters.otherFilters.key_characteristics[idxC].key] == filters.otherFilters.key_characteristics[idxC].values[idxD].value) { %>checked<% } %>  />
                         <% } %>
                         <span>
                           <%= filters.otherFilters.key_characteristics[idxC].values[idxD].description %>

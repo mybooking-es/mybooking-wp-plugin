@@ -74,34 +74,34 @@
 }
 
 /* Sections */
-.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section {
+.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle {
 	display: inline-block;
 	margin: -2px;
 	width: 100%;
 	margin-bottom: 1rem;
 	padding: 0.5rem;
 } @media (min-width: 480px) {
-	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section {
+	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle {
     width: 50%;
   }
 } @media (min-width: 768px) {
-	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section {
+	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle {
     width: 33.33%;
   }
 } @media (min-width: 1024px) {
-	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section {
+	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle {
     width: 25%;
   }
 } @media (min-width: 1280px) {
-	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section {
+	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle {
     width: 16%;
   }
-	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section:first-child {
+	.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle:first-child {
 		width: 20%;
 	}
 }
 
-.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section label {
+.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle label {
 	display: block;
 	background-color: #F1F1F1;
 	padding: 0.5rem;
@@ -109,16 +109,16 @@
 	vertical-align: middle;
 	border-radius: 2px;
 }
-.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section input {
+.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle input {
 	display: none;
 }
-.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section input + span:after {
+.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle input + span:after {
 	content: '';
 	color: green;
   font-size: 1.2rem;
 	float: right;
 }
-.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section input:checked + span:after {
+.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle input:checked + span:after {
 	content: "\2713";
 }
 
@@ -146,10 +146,10 @@
 	padding: 0.5rem !important;
 }
 
-.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section .mybooking-chose-product-filter-item_panel {
+.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle .mybooking-chose-product-filter-item_panel {
 	display: none;
 }
-.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section.mybooking-active .mybooking-chose-product-filter-item_panel {
+.mybooking-chose-product-filter .mybooking-chose-product-filter-item_section_toogle.mybooking-active .mybooking-chose-product-filter-item_panel {
 	display: block !important;
 }
 
