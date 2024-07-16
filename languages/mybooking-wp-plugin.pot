@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-29 10:19+0000\n"
+"POT-Creation-Date: 2024-07-16 16:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -2493,7 +2493,7 @@ msgstr ""
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:656
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:499
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:762
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:36
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:48
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:233
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:332
 msgctxt "renting_complete"
@@ -2600,7 +2600,7 @@ msgstr ""
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:650
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:493
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:756
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:30
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:42
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:227
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:326
 msgctxt "renting_complete"
@@ -2731,7 +2731,6 @@ msgstr ""
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:663
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:510
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:769
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:43
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:240
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:339
 msgctxt "renting_complete"
@@ -2741,10 +2740,17 @@ msgid ""
 "card</u> to make the payment."
 msgstr ""
 
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:55
+msgctxt "renting_complete"
+msgid ""
+"You will be redirected to <b>Paypal payment platform</b> to make the payment "
+"securely. You can use <u>Paypal</u> or <u>credit card</u> to make the "
+"payment."
+msgstr ""
+
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:673
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:521
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:779
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:54
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:250
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:350
 msgctxt "renting_complete"
@@ -2753,10 +2759,16 @@ msgid ""
 "the confirmation payment securely."
 msgstr ""
 
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:66
+msgctxt "renting_complete"
+msgid ""
+"You will be redirected to the <b>credit card payment platform</b> to make "
+"the payment securely."
+msgstr ""
+
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:644
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-order-tmpl.php:488
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:751
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:25
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:222
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:321
 msgctxt "renting_complete"
@@ -2764,6 +2776,14 @@ msgid ""
 "You will be redirected to the <b>payment platform</b> to make the "
 "confirmation payment securely. You can use <u>Paypal</u> or <u>credit "
 "card</u> to make the payment."
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:37
+msgctxt "renting_complete"
+msgid ""
+"You will be redirected to the <b>payment platform</b> to make the payment "
+"securely. You can use <u>Paypal</u> or <u>credit card</u> to make the "
+"payment."
 msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-complete-tmpl.php:795
@@ -3076,7 +3096,7 @@ msgctxt "renting_my_reservation"
 msgid "Driver is the contract holder"
 msgstr ""
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:214
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:216
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:204
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:208
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:161
@@ -3226,14 +3246,14 @@ msgctxt "renting_my_reservation"
 msgid "Name"
 msgstr ""
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:210
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:212
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:67
 msgctxt "renting_my_reservation"
 msgid "Navigation license number"
 msgstr ""
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:199
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:202
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:201
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:204
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:55
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:59
 msgctxt "renting_my_reservation"
@@ -3282,7 +3302,12 @@ msgctxt "renting_my_reservation"
 msgid "Pax 2"
 msgstr ""
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:51
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:54
+msgctxt "renting_my_reservation"
+msgid "Pay deposit"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:59
 msgctxt "renting_my_reservation"
 msgid "Pay now"
 msgstr ""
@@ -3322,8 +3347,8 @@ msgctxt "renting_my_reservation"
 msgid "Please, sign the contract to finish the process"
 msgstr ""
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:177
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:181
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:179
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:183
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:354
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:359
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:285
@@ -3332,6 +3357,11 @@ msgstr ""
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:204
 msgctxt "renting_my_reservation"
 msgid "Postal Code"
+msgstr ""
+
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:57
+msgctxt "renting_my_reservation"
+msgid "Prepay the rest"
 msgstr ""
 
 #: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:33
@@ -3357,7 +3387,7 @@ msgctxt "renting_my_reservation"
 msgid "Skipper"
 msgstr ""
 
-#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:191
+#: ../../../../../../../proyectos/yurak/mybooking-wp-plugin/mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:193
 msgctxt "renting_my_reservation"
 msgid "Skipper data"
 msgstr ""

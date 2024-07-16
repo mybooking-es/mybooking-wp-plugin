@@ -48,7 +48,16 @@
                 <a href="#payment_view"  id="btn_payment_detail">
                   <span class="mb--step-number"><span class="dashicons dashicons-money"></span></span>
                   <span class="mb--step-text">
-                    <?php echo esc_html_x( 'Pay now', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+                    <% if (booking.status === 'pending_confirmation' && 
+                           booking.total_paid == 0 && 
+                           sales_process.can_pay_deposit) { %>
+                      <?php echo esc_html_x( 'Pay deposit', 'renting_my_reservation', 'mybooking-wp-plugin') ?> 
+                    <% } else if (booking.status !== 'pending_confirmation' &&
+                                  booking.total_paid > 0) { %>    
+                      <?php echo esc_html_x( 'Prepay the rest', 'renting_my_reservation', 'mybooking-wp-plugin') ?>               
+                    <% } else { %>
+                      <?php echo esc_html_x( 'Pay now', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+                    <% } %>
                   </span>
                 </a>
               </li>
