@@ -124,7 +124,7 @@
                         <li data-filter="family_id">
                           <label class="mybooking-chose-product-filter-item_label">
                             <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  
-                              <% if (model.family_id && model.family_id.indexOf(filters.families[idx].children[idxB].id) !== -1) { %>checked<% } %> />
+                              <% if (model.family_id && ( model.family_id.indexOf(filters.families[idx].id) !== -1 || model.family_id.indexOf(filters.families[idx].children[idxB].id) !== -1)) { %>checked<% } %> />
                             <span><%= filters.families[idx].children[idxB].name %></span>
                           </label>
                         </li>
@@ -213,7 +213,7 @@
                         <li data-filter="family_id">
                           <label class="mybooking-chose-product-filter-item_label">
                             <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>" 
-                              <% if (model.family_id && model.family_id.indexOf(filters.families[idx].children[idxB].id) !== -1) { %>checked<% } %> />
+                              <% if (model.family_id && ( model.family_id.indexOf(filters.families[idx].id) !== -1 || model.family_id.indexOf(filters.families[idx].children[idxB].id) !== -1)) { %>checked<% } %> />
                             <span><%= filters.families[idx].children[idxB].name %></span>
                           </label>
                         </li>
