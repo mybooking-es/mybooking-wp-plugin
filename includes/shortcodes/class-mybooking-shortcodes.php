@@ -293,7 +293,7 @@
 
       extract( shortcode_atts( array(
         'use_renting_detail_page' => '',
-        'filter' => 'top'
+        'filter' => ''
       ), $atts ) );
 
       // Get the selector to apply in choose product

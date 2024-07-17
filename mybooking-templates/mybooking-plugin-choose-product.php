@@ -13,7 +13,7 @@
 <div id="reservation_detail" class="sticky-top <?php echo esc_attr( mybooking_engine_theme_align_width() )?>"></div>
 
 <!-- Filter -->
-<?php if ( array_key_exists('filter', $args) ) : ?>
+<?php if ( array_key_exists('filter', $args) && $args['filter'] == 'top' ) : ?>
   <div id="mybooking_choose_product_filter" class="mybooking-page-container"></div>
 <?php endif; ?>
 
@@ -26,7 +26,7 @@
           <?php if ( array_key_exists('use_renting_detail_page', $args) && $args['use_renting_detail_page'] == 'true' ) : ?>
           data-use-renting-detail-page="true" 
           <?php endif; ?>
-          <?php if ( array_key_exists('filter', $args) ) : ?>
+          <?php if ( array_key_exists('filter', $args) && $args['filter'] == 'top' ) : ?>
             filter="<?php echo esc_attr( $args['filter'] ) ?>" 
           <?php endif; ?>>
         </div>

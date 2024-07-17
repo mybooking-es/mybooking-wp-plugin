@@ -171,21 +171,23 @@
           <% } %>
         <% } %>
       </ul>
-      <div class="mybooking-choose-product-filter-btns">
-        <button id="mybooking-chose-product-filter-item_send" type="submit" class="mybooking-choose-product-filter-btn"
-          title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
-          <i class="dashicons dashicons-filter"></i>
-          <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-        </button>
-        <button  id="mybooking-chose-product-filter-item_eraser" class="mybooking-choose-product-filter-btn"
-        title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
-          <i class="dashicons dashicons-editor-removeformatting"></i>
-        </button>
-        <button id="mybooking-choose-product-filter-btn_advanced" class="mybooking-choose-product-filter-btn"
-          title="<?php echo esc_html_x( 'More filters', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
-          <i class="dashicons dashicons-admin-settings"></i>
-        </button>
-      </div>
+      <% if ((filters.families && filters.families.length > 1) || (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0)) { %>
+        <div class="mybooking-choose-product-filter-btns">
+          <button id="mybooking-chose-product-filter-item_send" type="submit" class="mybooking-choose-product-filter-btn"
+            title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+            <i class="dashicons dashicons-filter"></i>
+            <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+          </button>
+          <button  id="mybooking-chose-product-filter-item_eraser" class="mybooking-choose-product-filter-btn"
+          title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+            <i class="dashicons dashicons-editor-removeformatting"></i>
+          </button>
+          <button id="mybooking-choose-product-filter-btn_advanced" class="mybooking-choose-product-filter-btn"
+            title="<?php echo esc_html_x( 'More filters', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+            <i class="dashicons dashicons-admin-settings"></i>
+          </button>
+        </div>
+      <% } %>
     </form>
   </div>
 </script>
