@@ -87,6 +87,49 @@
   </div>
 </script>
 
+<script type="text/tpml" id="script_variant_product">
+  <form name="variant_product_form">
+    <div id="variant_product_selectors" class="mb-row">
+      <% if (!configuration.multipleProductsSelection) { %>
+        <div class="mb-form-group mb-col-sm-12">
+          <select name="<%= product.code %>" id="<%= product.code %>" class="form-control variant_product_selector">
+            <option value="0"><?php echo esc_html_x( 'Select', 'renting_choose_product', 'mybooking-wp-plugin') ?></option>
+            <% for (var idxV=0;idxV<variants.length;idxV++) { %>
+              <% var variant = variants[idxV]; %>
+              <option value="<%= variant.code %>" <% if  (variantsSelected[variant.code]) { %>selected<% } %>><%= variant.variant_name %> - <%=configuration.formatCurrency(variant.price)%></option>
+            <% } %>
+          </select>
+        </div>
+      <% } else { %>
+        <% for (var idxV=0;idxV<variants.length;idxV++) { %>
+          <% var variant = variants[idxV]; %>
+          <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
+            <label for="<%= variant.code %>">
+              <%= variant.variant_name %>
+            </label>
+            <select name="<%= variant.code %>" id="<%= variant.code %>" <% if  (variant.available < 1) { %>disabled<% } %> class="form-control variant_product_selector">
+              <option value="0"><?php echo esc_html_x( 'Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?></option>
+              <% for (var idxVO=1;idxVO<=variant.available;idxVO++) { %>
+                <option value="<%= idxVO %>"  <% if  (variantsSelected[variant.code] && variantsSelected[variant.code] === idxVO) { %>selected<% } %>><%= idxVO %> <% if  (idxVO > 1) { %><?php echo esc_html_x( 'units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x( 'unit', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %> - <%=configuration.formatCurrency(variant.price * idxVO)%></option>
+              <% } %>
+              </select>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+    <div class="mb-row">
+      <div class="mb-col-md-9">
+        <h4>Total</h4>
+      </div>
+      <div class="mb-col-md-3 text-right">
+        <h4 id="variant_product_total">
+          <span id="variant_product_total_quantity"> <%=configuration.formatCurrency(total)%></span>
+        </h4>
+      </div>
+    </div>
+  </form>
+</script>
+
 <!-- PRODUCT DETAIL MODAL VIDEO ----------------------------------------------------->
 
 <!-- Video template -->
