@@ -25,9 +25,6 @@
         <div class="mybooking-product_listing" id="product_listing" 
           <?php if ( array_key_exists('use_renting_detail_page', $args) && $args['use_renting_detail_page'] == 'true' ) : ?>
           data-use-renting-detail-page="true" 
-          <?php endif; ?>
-          <?php if ( array_key_exists('filter', $args) && $args['filter'] == 'top' ) : ?>
-            filter="<?php echo esc_attr( $args['filter'] ) ?>" 
           <?php endif; ?>>
         </div>
       </div>
