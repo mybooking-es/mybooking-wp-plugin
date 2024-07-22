@@ -156,10 +156,10 @@
 /*
 * Modal styles
 */
-#mybooking-chose-product-filter_modal .mybooking-chose-product-filter-container {
+#mybooking_choose_product_filter_modal .mybooking-chose-product-filter-container {
 	margin: 0;
 }
-#mybooking-chose-product-filter_modal form {
+#mybooking_choose_product_filter_modal form {
 	display: block;
 }
 .mybooking-chose-product-filter-container .mybooking-chose-product-filter-modal-form {
@@ -204,10 +204,10 @@
 .mybooking-chose-product-filter-container .mybooking-chose-product-filter-item_content input:checked + span:after {
 	content: "\2713";
 }
-#mybooking-chose-product-filter_modal .mybooking-choose-product-filter-btns {
+#mybooking_choose_product_filter_modal .mybooking-choose-product-filter-btns {
 	width: 100%;
 }
-#mybooking-chose-product-filter_modal .mybooking-choose-product-filter-btn {
+#mybooking_choose_product_filter_modal .mybooking-choose-product-filter-btn {
 	width: 50%;
 }
 

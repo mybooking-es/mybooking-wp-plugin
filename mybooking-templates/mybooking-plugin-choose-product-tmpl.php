@@ -142,9 +142,9 @@
 </script>
 
 <!-- FILTER TEMPLATES AND MODAL ----------------------------------------------------->
-<script type="text/tpml" id="script_choose_product_filter">
-  <div id="mybooking-chose-product-filter" class="mybooking-chose-product-filter-container">
-    <form name="mybooking_choose_product_filter_form" class="mybooking-chose-product-filter-form" novalidate>
+<script type="text/tpml" id="script_choose_product_filter_bar_content">
+  <div id="mybooking_choose_product_filter_bar" class="mybooking-chose-product-filter-container">
+    <form name="mybooking_choose_product_filter_bar_form" class="mybooking-chose-product-filter-form" novalidate>
       <ul class="mybooking-chose-product-filter">
         <% if (filters.families && filters.families.length > 1) { %>
           <li class="mybooking-chose-product-filter-item_section_toogle mybooking-chose-product-filter-item_section">
@@ -216,16 +216,16 @@
       </ul>
       <% if ((filters.families && filters.families.length > 1) || (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0)) { %>
         <div class="mybooking-choose-product-filter-btns">
-          <button id="mybooking-chose-product-filter-item_send" type="submit" class="mybooking-choose-product-filter-btn"
+          <button id="mybooking_choose_product_filter_bar__send" type="submit" class="mybooking-choose-product-filter-btn"
             title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
             <i class="dashicons dashicons-filter"></i>
             <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
           </button>
-          <button  id="mybooking-chose-product-filter-item_eraser" class="mybooking-choose-product-filter-btn"
+          <button  id="mybooking_choose_product_filter_bar__eraser" class="mybooking-choose-product-filter-btn"
           title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
             <i class="dashicons dashicons-editor-removeformatting"></i>
           </button>
-          <button id="mybooking-choose-product-filter-btn_advanced" class="mybooking-choose-product-filter-btn"
+          <button id="mybooking_choose_product_filter_bar__modal" class="mybooking-choose-product-filter-btn"
             title="<?php echo esc_html_x( 'More filters', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
             <i class="dashicons dashicons-admin-settings"></i>
           </button>
@@ -236,7 +236,7 @@
 </script>
 
 <script type="text/tpml" id="script_choose_product_filter_modal_content">
-  <div id="mybooking-chose-product-filter_modal"  class="mybooking-chose-product-filter-container">
+  <div id="mybooking_choose_product_filter_modal" class="mybooking-chose-product-filter-container">
     <form name="mybooking_choose_product_filter_modal_form" class="mybooking-chose-product-filter-modal-form" novalidate>
       <ul class="mybooking-chose-product-filter-modal">
         <% if (filters.families && filters.families.length > 1) { %>
@@ -306,11 +306,11 @@
       </ul>
       <br />
       <div class="mybooking-choose-product-filter-btns">
-        <button  id="mybooking-chose-product-filter-item_eraser" class="mybooking-choose-product-filter-btn"
+        <button  id="mybooking_choose_product_filter_modal__eraser" class="mybooking-choose-product-filter-btn"
         title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
           <i class="dashicons dashicons-editor-removeformatting"></i>
         </button>
-        <button id="mybooking-chose-product-filter-item_send" type="submit" class="mybooking-choose-product-filter-btn"
+        <button id="mybooking_choose_product_filter_modal__send" type="submit" class="mybooking-choose-product-filter-btn"
           title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
           <i class="dashicons dashicons-filter"></i>
           <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
@@ -321,7 +321,7 @@
 </script>
 
 <!-- MODAL --------------------------------------------------------------------->
-<div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="choose_product_filter_modal_MBM"  style="margin: 3rem 1rem;">
+<div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="mybooking_choose_product_filter_modal_MBM"  style="margin: 3rem 1rem;">
   <div class="mybooking-modal_body modal-product-detail-content"></div>
 </div>
 
