@@ -110,7 +110,7 @@
               <div class="mb-section">
                 <div class="mb-card">
                   <div class="mb-col-sm-12 mb-col-md-6">
-                    <!-- // Product photo -->
+                    <!-- Product photo -->
                     <% if (booking.booking_lines[idx].photo_full && booking.booking_lines[idx].photo_full !== '') { %>
                       <img class="mybooking-product_image" src="<%=booking.booking_lines[idx].photo_full%>"/>
                     <% } else { %>
@@ -118,7 +118,7 @@
                     <% } %>
                   </div>
                   <div class="mb-col-sm-12 mb-col-md-6">
-                    <!-- // Product name -->
+                    <!-- Product name -->
                     <div class="mybooking-product_name">
                       <% if (typeof booking.booking_lines[idx].item_performance_id !== 'undefined' &&
                              booking.booking_lines[idx].item_performance_id !== null) { %>
@@ -127,7 +127,13 @@
                         <%=booking.booking_lines[idx].item_description_customer_translation%>
                       <% } %>
                     </div>
-                    
+                    <% if (typeof booking.booking_lines[idx].item_rate_type_name !== 'undefined' && 
+                          booking.booking_lines[idx].item_rate_type_name && booking.booking_lines[idx].item_rate_type_name !== '') { %>
+                      <!-- Product rate type -->
+                      <div class="mybooking-product_description">
+                        <%=booking.booking_lines[idx].item_rate_type_name%>
+                      </div>
+                    <% } %>   
                     <% if (typeof booking.booking_lines[idx].item_performance_id === 'undefined' || 
                            booking.booking_lines[idx].item_performance_id === null) { %>
                       <!-- Optional external driver + driving license -->

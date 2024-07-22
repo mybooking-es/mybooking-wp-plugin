@@ -52,7 +52,13 @@
 							<div class="mybooking-product_name">
 								<%=bookings[idx].item_description_customer_translation%>
 							</div>
-
+							<% if (typeof bookings[idx].item_rate_type_name !== 'undefined' && 
+										bookings[idx].item_rate_type_name && bookings[idx].item_rate_type_name !== '') { %>
+								<!-- Product rate type -->
+								<div class="mybooking-product_description">
+									<%=bookings[idx].item_rate_type_name%>
+								</div>
+							<% } %>
 							<div class="mybooking-product_description">
 								<%=bookings[idx].item_description_customer_translation%>
 							</div>

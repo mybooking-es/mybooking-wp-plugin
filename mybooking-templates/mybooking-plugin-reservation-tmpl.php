@@ -160,6 +160,14 @@
                     <% } %>  
                   </div>
 
+                  <% if (typeof booking.booking_lines[idx].item_rate_type_name !== 'undefined' && 
+                        booking.booking_lines[idx].item_rate_type_name && booking.booking_lines[idx].item_rate_type_name !== '') { %>
+                    <!-- Product rate type -->
+                    <div class="mybooking-product_description">
+                      <%=booking.booking_lines[idx].item_rate_type_name%>
+                    </div>
+                  <% } %>
+
                   <% if (booking.booking_lines[idx].item_performance_id === null) { %>
                     <!-- Optional external driver + driving license -->
                     <% if ((typeof booking.optional_external_driver !== '' &&

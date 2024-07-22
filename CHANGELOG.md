@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.6] - 2024.07.22
+
+### New
+
+- Franchise and deposit management
+
 ## [2.3.5] - 2024.07.16
 
 ### Fixed

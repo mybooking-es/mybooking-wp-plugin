@@ -12,82 +12,80 @@
  */
 ?>
 <!-- // Deposits -->
-<% if ( booking.total_deposit > 0 ) { %>
+<% if ( (booking.deposit_hold_product_deposit_cost === 'not_hold' &&
+				 configuration.literalDepositFranchise === 'franchise') || booking.total_deposit > 0 ) { %>
 	<!-- Booking deposits -->
 	<div class="mybooking-summary_deposit-total-box">
-	<% if (
-			( booking.driver_age_deposit > 0 && booking.product_deposit_cost > 0 ) || 
-			( booking.driver_age_deposit > 0 && booking.product_guarantee_cost > 0 ) || 
-			( booking.product_deposit_cost > 0 && booking.product_guarantee_cost > 0 ) ||
-			booking.product_deposit_reduction_amount > 0 || booking.product_guarantee_reduction_amount > 0
-		) { %>
-			<div class="mybooking-summary_details-title">
-				<?php echo esc_html_x( 'Deposits', 'renting_summary', 'mybooking-wp-plugin' ) ?>
-			</div>
-
-			<!-- Driver age deposit -->
-			<% if ( booking.driver_age_deposit > 0 ) { %>
-				<div class="mybooking-summary_deposit-pretotal">
+		<% if (booking.deposit_hold_product_deposit_cost === 'not_hold' &&
+		       configuration.literalDepositFranchise === 'franchise') { %>
+				<!-- Franchise special case -->
+				<div class="mybooking-summary_deposit-total">
 					<span class="mybooking-summary_extra-name">
-						<?php echo esc_html_x( "Driver age deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+					<%=configuration.depositLiteral%>
 					</span>
 					<span class="mybooking-summary_extra-amount">
-						<%=configuration.formatCurrency(booking.driver_age_deposit)%>
+						<%=configuration.formatCurrency(booking.product_deposit_total)%>
 					</span>
 				</div>
-			<% } %>
-
-			<!-- Deposit (total) -->
-			<% if ( booking.product_deposit_cost > 0 ) { %>
-				<div class="mybooking-summary_deposit-pretotal">
-					<span class="mybooking-summary_extra-name">
-						<?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-						<% if ( booking.product_deposit_reduction_amount > 0 ) { %>
-							<br/>
-							<?php echo esc_html_x( "Reduction", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-						<% } %>
-					</span>
-					<span class="mybooking-summary_extra-amount">
-						<%=configuration.formatCurrency(booking.product_deposit_cost)%>
-						<% if ( booking.product_deposit_reduction_amount > 0 ) { %>
-							<br />
-							- <%=configuration.formatCurrency(booking.product_deposit_reduction_amount)%>
-						<% } %>
-					</span>
-				</div>
-			<% } %>
-			
-			<!-- Guarantee (total) -->
-			<% if ( booking.product_guarantee_cost > 0 ) { %>
-					<div class="mybooking-summary_deposit-pretotal">
+				<% if ( booking.total_deposit > 0 ) { %>
+					<div class="mybooking-summary_deposit-total">
 						<span class="mybooking-summary_extra-name">
-							<?php echo esc_html_x( "Guarantee", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-							<% if ( booking.product_deposit_reduction_amount > 0 ) { %>
-								<br/>
-								<?php echo esc_html_x( "Reduction", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-							<% } %>
+							<%= configuration.guaranteeLiteral %>
 						</span>
 						<span class="mybooking-summary_extra-amount">
-							<%=configuration.formatCurrency(booking.product_guarantee_cost)%>
-							<% if ( booking.product_deposit_reduction_amount > 0 ) { %>
-								<br />
-								- <%=configuration.formatCurrency(booking.product_guarantee_reduction_amount)%>
-							<% } %>
+							<%=configuration.formatCurrency( booking.total_deposit )%>
 						</span>
 					</div>
+				<% } %>				
+		<% } else { %>
+			<% if ( booking.count_deposit > 1) { %>
+				<!-- Deposit -->
+				<% if (booking.deposit_hold_product_deposit_cost === 'hold' && 
+							 booking.product_deposit_total > 0) { %>
+					<div class="mybooking-summary_deposit-total">
+						<span class="mybooking-summary_extra-name">
+							<%= configuration.depositLiteral %>
+						</span>
+						<span class="mybooking-summary_extra-amount">
+							<%= configuration.formatCurrency( booking.product_deposit_total ) %>
+						</span>
+					</div>
+				<% } %>
+				<!-- Guarantee -->
+				<% if (booking.product_guarantee_total > 0) { %>
+					<div class="mybooking-summary_deposit-total">
+						<span class="mybooking-summary_extra-name">
+							<%= configuration.guaranteeLiteral %>
+						</span>
+						<span class="mybooking-summary_extra-amount">
+							<%= configuration.formatCurrency( booking.product_guarantee_total ) %>
+						</span>
+					</div>
+				<% } %>
+				<!-- Driver age deposit-->
+				<% if (booking.driver_age_deposit > 0) { %>
+					<div class="mybooking-summary_deposit-total">
+						<span class="mybooking-summary_extra-name">
+							<%= configuration.driverDepositLiteral %>
+						</span>
+						<span class="mybooking-summary_extra-amount">
+							<%= configuration.formatCurrency( booking.driver_age_deposit ) %>
+						</span>
+					</div>	
+				<% } %>	
+			<% } %> 
+			<% if ( booking.total_deposit > 0 ) { %>
+				<!-- Total deposit  -->
+				<div class="mybooking-summary_deposit-total">
+					<span class="mybooking-summary_extra-name">
+						<%= configuration.depositTotalLiteral %>
+					</span>
+					<span class="mybooking-summary_extra-amount">
+						<%=configuration.formatCurrency( booking.total_deposit )%>
+					</span>
+				</div>
 			<% } %>
 		<% } %>
 
-		<!-- Total deposit  -->
-		<% if ( booking.total_deposit > 0 ) { %>
-			<div class="mybooking-summary_deposit-total">
-				<span class="mybooking-summary_extra-name">
-					<?php echo esc_html_x( "Total deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
-				</span>
-				<span class="mybooking-summary_extra-amount">
-					<%=configuration.formatCurrency( booking.total_deposit )%>
-				</span>
-			</div>
-		<% } %>
 	</div>
 <% } %>

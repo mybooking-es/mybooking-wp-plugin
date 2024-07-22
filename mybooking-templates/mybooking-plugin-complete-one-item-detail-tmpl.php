@@ -21,7 +21,7 @@
 				<img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
 			<% } %>  
 
-			<!-- // Product name -->
+			<!-- Product name -->
 			<div class="mybooking-product_name">
 				<% if (typeof booking.items[idx].item_performance_id !== 'undefined' && 
 							 booking.items[idx].item_performance_id !== null) { %>
@@ -30,6 +30,14 @@
 					<%=booking.items[idx].item_description_customer_translation%>
 				<% } %>
 			</div>
+			
+			<% if (typeof booking.items[idx].item_rate_type_name !== 'undefined' && 
+			       booking.items[idx].item_rate_type_name && booking.items[idx].item_rate_type_name !== '') { %>
+        <!-- Product rate type -->
+				<div class="mybooking-product_description">
+					<%=booking.items[idx].item_rate_type_name%>
+				</div>
+			<% } %>
 			
 			<% if (typeof booking.items[idx].item_performance_id === 'undefined' || 
 						 booking.items[idx].item_performance_id === null) { %>
