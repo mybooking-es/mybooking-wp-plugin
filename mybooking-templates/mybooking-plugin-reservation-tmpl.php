@@ -153,7 +153,8 @@
 
                   <!-- // Product name -->
                   <div class="mybooking-product_name">
-                    <% if (booking.booking_lines[idx].item_performance_id !== null) { %>
+                    <% if (typeof booking.booking_lines[idx].item_performance_id !== 'undefined' &&
+                           booking.booking_lines[idx].item_performance_id !== null) { %>
                       <%=booking.booking_lines[idx].item_performance_description_customer_translation%>
                     <% } else { %>                           
                       <%=booking.booking_lines[idx].item_description_customer_translation%>
