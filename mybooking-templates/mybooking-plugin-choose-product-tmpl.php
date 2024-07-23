@@ -155,7 +155,7 @@
             </div>
             <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
               <% for (var idx=0; idx<filters.families.length; idx++) { %>
-                <li data-filter="family_id">
+                <li data-filter="family_id" data-label>
                   <label class="mybooking-chose-product-filter-item_label" data-tree-parent="true">  
                     <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"
                       <% if (model.family_id && model.family_id.indexOf(filters.families[idx].id) !== -1) { %>checked<% } %> />
@@ -246,7 +246,7 @@
             </span>
             <ul class="mybooking-chose-product-filter-item_content">
               <% for (var idx=0; idx<filters.families.length; idx++) { %>
-                <li data-filter="family_id">
+                <li data-filter="family_id" data-label>
                   <label class="mybooking-chose-product-filter-item_label" data-tree-parent="true">
                     <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>" 
                       <% if (model.family_id && model.family_id.indexOf(filters.families[idx].id) !== -1) { %>checked<% } %> />
