@@ -225,7 +225,7 @@
           title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
             <i class="dashicons dashicons-editor-removeformatting"></i>
           </button>
-          <button id="mybooking_choose_product_filter_bar__modal" class="mybooking-choose-product-filter-btn"
+          <button id="mybooking_choose_product_filter__modal" class="mybooking-choose-product-filter-btn"
             title="<?php echo esc_html_x( 'More filters', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
             <i class="dashicons dashicons-admin-settings"></i>
           </button>
