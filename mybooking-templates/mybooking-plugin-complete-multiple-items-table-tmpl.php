@@ -40,8 +40,8 @@
 					<div class="mb-row">
 						<!-- // Product photo -->
 						<div class="mb-col-sm-12 mb-col-md-2">
-							<% if (bookings[idx].photo_full && bookings[idx].photo_full !== '') { %>
-								<img class="mybooking-product_image" src="<%=bookings[idx].photo_full%>"/>
+							<% if (bookings[idx].photo_medium && bookings[idx].photo_medium !== '') { %>
+								<img class="mybooking-product_image" src="<%=bookings[idx].photo_medium%>"/>
 							<% } else { %>
 								<img class="mybooking-product_image" src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/default-image-product.png' ) ?>">
 							<% } %>

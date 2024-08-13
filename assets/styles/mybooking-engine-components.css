@@ -17,27 +17,33 @@
 
 /* Variants */
 .card-static_variant_resume__container {
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  margin: 0 -0.5rem;
+  display: flex !important; 
+  align-items: center !important;  
+  justify-content: space-between !important; 
 }
 .card-static_variant_resume__container_inside {
   margin-top: -3px;
+  display: flex;
 }
 .card-static_variant_resume__box {
-  display: inline-block; 
   margin-right: 0.2rem; 
   border-radius: 2px; 
   border: 1px solid lightgray; 
   font-size: 12px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 .card-static_variant_resume__box_inside {
   display: inline-block;  
   padding: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 60px;
 }
 .card-static_variant_resume__box_inside:last-child {
-  background-color: lightgray;
+  background-color: white !important;
 }
 
 /** SUMMARY DETAILS **/
@@ -422,6 +428,24 @@
 
 .mybooking-extra_description {
   line-height: 1;
+  --extra-description-height: 150px; 
+
+  display: block;
+  max-height: var(--extra-description-height);
+  overflow: hidden;
+  position: relative;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.mybooking-extra_description-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  box-shadow: inset 0px -20px 20px -10px #FFF;
+  z-index: 2;
 }
 #extras_listing .mybooking-extra_description {
   max-height: 4rem;
@@ -1450,10 +1474,6 @@ label.full-width select.mb-form-control {
 
 .mybooking-products_table .mb-row {
   padding: 1rem 0;
-} @media ( min-width: 575.98px ) {
-  .mybooking-products_table .mybooking-product_image {
-    margin: 0;
-  }
 }
 
 .mybooking-products_table .mybooking-products_table-head,
@@ -1484,6 +1504,12 @@ label.full-width select.mb-form-control {
 
 .mybooking-products_table  [class*='mb-col'] {
   padding: 0 1rem;
+}
+
+.mybooking-products_table .mybooking-product_image {
+  max-width: 100%;
+  margin: auto;
+  display: block;
 }
 
 .mybooking-products_table  .mybooking-summary_extra-name {

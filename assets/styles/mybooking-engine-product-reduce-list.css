@@ -1,0 +1,328 @@
+/*
+ *  MYBOOKING RESERVATION ENGINE - PRODUCT LIST
+ *  -----------------------------------------------------------------------------
+ *
+ *  Mobile first!
+ *  
+ *  Styles set first mobile view and then 
+ *  scales to other screen sizes when needed
+*/
+
+/* STRUCTURE - for desktop an tablet */
+.mybooking-product_reduce_list {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+}
+
+.mybooking-product_reduce_list .mybooking-product 
+/* Set cards layout horizontal */
+{
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+* BODY
+*/
+.mybooking-product_reduce_list .mybooking-product_body
+/* Structure */
+{
+	display: flex;
+	flex-direction: column;
+  overflow-y: hidden;
+  height: auto;
+  padding: 0;
+} @media ( min-width: 576.98px ) {
+  .mybooking-product_reduce_list .mybooking-product_body {
+    flex-direction: row;
+  }
+}
+.mybooking-product_reduce_list .mybooking-product_block-image 
+/* Image block */
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--mb-border-radius) 0 0 0;
+  overflow: hidden;
+} @media ( min-width: 576.98px ) {
+  .mybooking-product_reduce_list .mybooking-product_block-image {
+    width: 33.33%;
+  }
+} @media ( min-width: 768px ) {
+  .mybooking-product_reduce_list .mybooking-product_block-image {
+    width: 30%;
+  }
+}
+.mybooking-product_reduce_list .mybooking-product_block.mybooking-product_block-info
+/* Info block */
+{
+  width: 100%;
+  padding: 1rem;
+  display: none;
+} @media ( min-width: 576.98px ) {
+  .mybooking-product_reduce_list .mybooking-product_block.mybooking-product_block-info {
+    width: 33.33%;
+    display: block;
+  }
+} @media ( min-width: 768px ) {
+  .mybooking-product_reduce_list .mybooking-product_block.mybooking-product_block-info {
+    width: 40%;
+  }
+}
+
+.mybooking-product_reduce_list .mybooking-product_block-prices 
+/* Prices block */
+{
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+} @media ( min-width: 576.98px ) {
+  .mybooking-product_reduce_list .mybooking-product_block-prices  {
+    width: 33.33%;
+  }
+} @media ( min-width: 768px ) {
+  .mybooking-product_reduce_list .mybooking-product_block-prices  {
+    width: 30%;
+  }
+}
+
+/* Images */
+.mybooking-product_reduce_list .mybooking-product_block .mybooking-product_image {
+  border-radius: 0!important;
+  object-fit: var(--mb-product-image-fit);
+  object-position: center center;
+  height: auto;
+} @media ( min-width: 576.98px ) {
+  .mybooking-product_reduce_list .mybooking-product_block .mybooking-product_image {
+    padding: var(--mb-product-image-padding);
+    height: 225px;
+  }
+}
+
+/* Custom message */
+.mybooking-product_reduce_list .mybooking-product_custom-message {
+  bottom: 0;
+  font-size: 12px;
+  font-weight: 600;
+  height: auto;
+  padding: 0.25rem;  
+}
+
+/* Prices info */
+.mybooking-product_reduce_list .mybooking-product_price {
+  line-height: 1;
+  text-align: left;
+  display: block;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.mybooking-product_reduce_list .mybooking-product_original-price {
+  min-height: 1rem;
+}
+
+.mybooking-product_reduce_list .mybooking-product_amount {
+  display: inline-block;
+  margin: 0;
+  color: var(--mb-product-price-color);
+  font-size: 1.6rem;
+  font-weight: 900!important;
+  line-height: inherit;
+  white-space: nowrap;
+  margin: 0.2rem 0;
+}
+
+.mybooking-product_reduce_list .mybooking-product_discount {
+  margin: 0;
+  font-size: 14px;
+  display: block;
+}
+.mybooking-product_reduce_list .mybooking-product_discount-badge {
+  float: none;
+}
+
+.mybooking-product_reduce_list .mybooking-product_taxes {
+  margin: 0.5rem 0;
+}
+
+/* Short description */
+.mybooking-product_reduce_list .mybooking-product_short-description {
+  margin: 0 0 0.5rem 0;
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--mb-muted-color);
+  line-height: 1;
+}
+
+/* Includes info */
+.mybooking-product_reduce_list .mybooking-product_includes
+/* Controls description and overlay height*/
+{
+  --description-height: 150px; 
+
+  display: block;
+  height: var(--description-height);
+  overflow: hidden;
+  position: relative;
+  font-weight: 400;
+  line-height: 1;
+}
+.mybooking-product_reduce_list .mybooking-product_includes li {
+  padding: 0.1rem 0;
+}
+.mybooking-product_reduce_list .mybooking-product_includes-overlay 
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--description-height);
+  box-shadow: inset 0px -20px 20px -10px #FFF; 
+  z-index: 2;
+}
+
+/* Prices */
+.mybooking-product_reduce_list .mb-button.btn-choose-product {
+  width: 100%;
+} @media ( min-width: 576.98px ) {
+  .mybooking-product_reduce_list .mb-button.btn-choose-product {
+    max-width: max-content;
+  }
+}
+
+/*
+* FOOTER
+*/
+.mybooking-product_reduce_list .mybooking-product_footer {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+	background-color: #F1F1F1;
+  height: auto;
+} 
+
+/* Name and characterists */
+.mybooking-product_reduce_list .mybooking-product_footer_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 80%;
+  gap: 1rem;
+} @media ( min-width: 768px ) {
+  .mybooking-product_reduce_list .mybooking-product_footer_left {
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+  }
+}
+.mybooking-product_reduce_list .mybooking-product_footer_left .mybooking-product_names {
+  padding: 1rem 0;
+  display: block;
+  width: 80%;
+} @media ( min-width: 576.98px ) {
+  .mybooking-product_reduce_list .mybooking-product_footer_left .mybooking-product_names {
+    width: 40%;
+  }
+} @media ( min-width: 768px ) {
+  .mybooking-product_reduce_list .mybooking-product_footer_left .mybooking-product_names {
+    width: 30%;
+  }
+}
+.mybooking-product_reduce_listing .mybooking-product_reduce_list .mybooking-product_variant_footer {
+  flex-direction: column;
+  bottom: 2rem;
+}
+
+/* Name and description */
+.mybooking-product_reduce_list .mybooking-product_name {
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-size: 1.1rem !important;
+  line-height: 1;
+  margin: 0 !important;
+}
+
+/* Characteristics */
+.mybooking-product_reduce_list .mybooking-product_block_charateristics {
+  padding: 0.5rem 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+} @media ( min-width: 768px ) {
+  .mybooking-product_reduce_list .mybooking-product_block_charateristics {
+    width: 70%;
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+.mybooking-product_reduce_list .mybooking-product_characteristics {
+  justify-content: flex-start;
+  padding: 0;
+  height: initial;
+} @media ( min-width: 576.98px ) {
+  .mybooking-product_reduce_list .mybooking-product_characteristics {
+    --mb-product-list-keys-width: 400px;
+    width: var(--mb-product-list-keys-width);
+  }
+}
+.mybooking-product_reduce_list .mybooking-product_characteristics-item {
+  justify-content: center;
+}
+.mybooking-product_reduce_list .mybooking-product_characteristics-nautical {
+  margin-bottom: 0;
+}
+.mybooking-product_reduce_list .mybooking-product_characteristics img {
+  max-width: fit-content;
+}
+
+/* Info button */
+.mybooking-product_reduce_list .mybooking-product_info-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: auto;
+  gap: 0.3rem;
+  line-height: 1;
+  color: var(--brand-primary) !important;
+  color: var(--mb-info-color) !important;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+} @media ( min-width: 768px ) {
+  .mybooking-product_reduce_list .mybooking-product_info-button {
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 10%;
+  }
+}
+.mybooking-product_reduce_list .mybooking-product_info-button:hover {
+  opacity: 0.5;
+}
+
+.mybooking-product_reduce_list .mybooking-product_block-prices .product-variant-resume {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mybooking-product_reduce_list .card-static_variant_resume__container {
+  flex-direction: column;
+}

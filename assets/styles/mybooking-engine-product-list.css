@@ -195,6 +195,18 @@
   bottom: 2rem;
 }
 
+/* Next button for multiple articles in choose product view */
+.mybooking-product_listing.mybooking-multiple_choose-margin {
+  margin-bottom: 8rem;
+}
+.mybooking-process_choose #go_to_complete {
+  position: fixed;
+  bottom: 6rem;
+  right: 5.8rem;
+  z-index: 1000;
+  margin-right: var(--mb-product-separation);
+}
+
 .mybooking-product_list .mybooking-product_info-button {
   display: flex;
   flex-direction: row;

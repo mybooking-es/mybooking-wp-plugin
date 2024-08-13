@@ -99,7 +99,7 @@
 
                 <!-- // Product name and description -->
                 <h2 class="mybooking-product_name"><%=product.name%></h2>
-                <% if (product.name != product.short_description) { %>
+                <% if (product.short_description != '' && product.name != product.short_description) { %>
                   <h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
                 <% } %>
 
@@ -229,14 +229,5 @@
     <div class="mb-alert light">
       <?php echo esc_html_x( 'No items found', 'renting_choose_product', 'mybooking-wp-plugin') ?>
     </div>
-  <% } %>
-  
-
-  <% if (configuration.multipleProductsSelection) { %>
-  <button id="go_to_complete" class="mb-button btn-confirm-selection">
-    <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-    <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
-  </button>
-  <br/>
   <% } %>
 </script>
