@@ -12,6 +12,11 @@
 <!-- Reservation detail -->
 <div id="reservation_detail" class="sticky-top <?php echo esc_attr( mybooking_engine_theme_align_width() )?>"></div>
 
+<!-- Filter -->
+<?php if ( array_key_exists('filter', $args) && $args['filter'] == 'top' ) : ?>
+  <div id="mybooking_choose_product_filter" class="mybooking-page-container"></div>
+<?php endif; ?>
+
 <div class="mybooking-process-page <?php echo esc_attr( mybooking_engine_theme_align_width() )?>">
   <section class="mybooking mybooking-process_choose mybooking-page-container">
     <div class="mb-row-flex">

@@ -291,10 +291,9 @@
      */
     public function wp_product_listing_shortcode($atts = [], $content = null, $tag = '') {
 
-      extract( shortcode_atts( array(
-                                                          'use_renting_detail_page' => '',
-                                                          'lazy_loading' => '',
-                                                        ), $atts ) );
+      extract( shortcode_atts( array('use_renting_detail_page' => '',
+                                     'lazy_loading' => '',
+                                     'filter' => ''), $atts ) );
 
       // Get the selector to apply in choose product
       $registry = Mybooking_Registry::getInstance();
@@ -304,6 +303,9 @@
       // Get the shortcode attributes
       if ( $use_renting_detail_page != '' ) {
         $data['use_renting_detail_page'] = $use_renting_detail_page;
+      }
+      if ( $filter != '' ) {
+        $data['filter'] = $filter;
       }
 
       if ( $lazy_loading != '' ) {

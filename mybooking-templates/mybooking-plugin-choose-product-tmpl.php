@@ -135,12 +135,196 @@
 
 <!-- PRODUCT DETAIL MODAL VIDEO ----------------------------------------------------->
 
-  <!-- Video template -->
-  <script type="text/tmpl" id="script_transfer_product_detail_video">
-    <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
-      <div class="mb-video-responsive">
-        <iframe src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allowfullscreen class="mybooking-video-inner"></iframe>
+<!-- Video template -->
+<script type="text/tmpl" id="script_transfer_product_detail_video">
+  <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
+    <div class="mb-video-responsive">
+      <iframe src="https://www.youtube.com/embed/<%= product.video_url %>" title="<%= product.name %>" frameborder="0" allowfullscreen class="mybooking-video-inner"></iframe>
+    </div>
+  <% } %>
+</script>
+
+<!-- FILTER TEMPLATES AND MODAL ----------------------------------------------------->
+<script type="text/tpml" id="script_choose_product_filter_bar_content">
+  <div id="mybooking_choose_product_filter_bar" class="mybooking-chose-product-filter-container">
+    <form name="mybooking_choose_product_filter_bar_form" class="mybooking-chose-product-filter-form" novalidate>
+      <ul class="mybooking-chose-product-filter">
+        <% if (filters.families && filters.families.length > 1) { %>
+          <li class="mybooking-chose-product-filter-item_section_toogle mybooking-chose-product-filter-item_section">
+            <div class="mybooking-chose-product-filter-item_section-btn">
+              <?php echo MyBookingEngineContext::getInstance()->getFamily() ?>
+              &nbsp;
+              <i class="dashicons dashicons-arrow-down"></i>
+            </div>
+            <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
+              <% for (var idx=0; idx<filters.families.length; idx++) { %>
+                <li data-filter="family_id" data-label>
+                  <label class="mybooking-chose-product-filter-item_label" data-tree-parent="true">  
+                    <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>"
+                      <% if (model.family_id && model.family_id.indexOf(filters.families[idx].id) !== -1) { %>checked<% } %> />
+                    <span><%= filters.families[idx].name %></span>
+                  </label>
+                  <% if (filters.families[idx].children && filters.families[idx].children.length > 1) { %>
+                    <ul>
+                      <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
+                        <li data-filter="family_id">
+                          <label class="mybooking-chose-product-filter-item_label">
+                            <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>"  
+                              <% if (model.family_id && ( model.family_id.indexOf(filters.families[idx].id) !== -1 || model.family_id.indexOf(filters.families[idx].children[idxB].id) !== -1)) { %>checked<% } %> />
+                            <span><%= filters.families[idx].children[idxB].name %></span>
+                          </label>
+                        </li>
+                      <% } %>
+                    </ul>
+                  <% } %>
+                </li>
+              <% } %>
+            </ul>
+          </li>
+        <% } %>
+        <% if (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0) { %>
+          <% for (var idxC=0; idxC<filters.otherFilters.key_characteristics.length; idxC++) { %>
+            <% if (filters.otherFilters.key_characteristics[idxC].values && filters.otherFilters.key_characteristics[idxC].values.length > 1) { %>
+              <li class="mybooking-chose-product-filter-item_section_toogle mybooking-chose-product-filter-item_section">
+                <div class="mybooking-chose-product-filter-item_section-btn">
+                  <%= filters.otherFilters.key_characteristics[idxC].name %>
+                  &nbsp;
+                  <i class="dashicons dashicons-arrow-down"></i>
+                </div>
+                <ul class="mybooking-chose-product-filter-item_panel" style="display: none;">
+                  <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
+                    <li data-filter="other">
+                      <label class="mybooking-chose-product-filter-item_label">
+                        <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value' || filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
+                          <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].key %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>" 
+                            <% if (model['key_characteristic_' + filters.otherFilters.key_characteristics[idxC].key] == filters.otherFilters.key_characteristics[idxC].values[idxD].value) { %>checked<% } %>  />
+                        <% } else { %>
+                          <input type="checkbox" name="<%= filters.otherFilters.key_characteristics[idxC].key %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>" 
+                            <% if (model['key_characteristic_' + filters.otherFilters.key_characteristics[idxC].key] == filters.otherFilters.key_characteristics[idxC].values[idxD].value) { %>checked<% } %> />
+                        <% } %>
+                        <span>
+                          <%= filters.otherFilters.key_characteristics[idxC].values[idxD].description %>
+                          <% if (filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
+                            +
+                          <% } %>
+                        </span>
+                      </label>
+                    </li>
+                  <% } %>
+                </ul>
+              </li>
+            <% } %>
+          <% } %>
+        <% } %>
+      </ul>
+      <% if ((filters.families && filters.families.length > 1) || (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0)) { %>
+        <div class="mybooking-choose-product-filter-btns">
+          <button id="mybooking_choose_product_filter_bar__send" type="submit" class="mybooking-choose-product-filter-btn"
+            title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+            <i class="dashicons dashicons-filter"></i>
+            <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+          </button>
+          <button  id="mybooking_choose_product_filter_bar__eraser" class="mybooking-choose-product-filter-btn"
+          title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+            <i class="dashicons dashicons-editor-removeformatting"></i>
+          </button>
+          <button id="mybooking_choose_product_filter__modal" class="mybooking-choose-product-filter-btn"
+            title="<?php echo esc_html_x( 'More filters', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+            <i class="dashicons dashicons-admin-settings"></i>
+          </button>
+        </div>
+      <% } %>
+    </form>
+  </div>
+</script>
+
+<script type="text/tpml" id="script_choose_product_filter_modal_content">
+  <div id="mybooking_choose_product_filter_modal" class="mybooking-chose-product-filter-container">
+    <form name="mybooking_choose_product_filter_modal_form" class="mybooking-chose-product-filter-modal-form" novalidate>
+      <ul class="mybooking-chose-product-filter-modal">
+        <% if (filters.families && filters.families.length > 1) { %>
+          <li class="mybooking-chose-product-filter-item_section mybooking-chose-product-filter-item">
+            <span class="mybooking-chose-product-filter-item_title">
+              <?php echo MyBookingEngineContext::getInstance()->getFamily() ?>
+            </span>
+            <ul class="mybooking-chose-product-filter-item_content">
+              <% for (var idx=0; idx<filters.families.length; idx++) { %>
+                <li data-filter="family_id" data-label>
+                  <label class="mybooking-chose-product-filter-item_label" data-tree-parent="true">
+                    <input type="checkbox" name="family_id" value="<%= filters.families[idx].id %>" 
+                      <% if (model.family_id && model.family_id.indexOf(filters.families[idx].id) !== -1) { %>checked<% } %> />
+                    <span><%= filters.families[idx].name %></span>
+                  </label>
+                  <% if (filters.families[idx].children && filters.families[idx].children.length > 1) { %>
+                    <ul>
+                      <% for (var idxB=0; idxB<filters.families[idx].children.length; idxB++) { %>
+                        <li data-filter="family_id">
+                          <label class="mybooking-chose-product-filter-item_label">
+                            <input type="checkbox" name="family_id" value="<%= filters.families[idx].children[idxB].id %>" 
+                              <% if (model.family_id && ( model.family_id.indexOf(filters.families[idx].id) !== -1 || model.family_id.indexOf(filters.families[idx].children[idxB].id) !== -1)) { %>checked<% } %> />
+                            <span><%= filters.families[idx].children[idxB].name %></span>
+                          </label>
+                        </li>
+                      <% } %>
+                    </ul>
+                  <% } %>
+                </li>
+              <% } %>
+            </ul>
+          </li>
+        <% } %>
+
+        <% if (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0) { %>
+          <% for (var idxC=0; idxC<filters.otherFilters.key_characteristics.length; idxC++) { %>
+            <% if (filters.otherFilters.key_characteristics[idxC].values && filters.otherFilters.key_characteristics[idxC].values.length > 1) { %>
+              <li class="mybooking-chose-product-filter-item_section mybooking-chose-product-filter-item">
+                <span class="mybooking-chose-product-filter-item_title">
+                <%= filters.otherFilters.key_characteristics[idxC].name %>
+                </span>
+                <ul class="mybooking-chose-product-filter-item_content">
+                  <% for (var idxD=0; idxD<filters.otherFilters.key_characteristics[idxC].values.length; idxD++) { %>
+                    <li data-filter="other">
+                      <label class="mybooking-chose-product-filter-item_label">
+                        <% if (filters.otherFilters.key_characteristics[idxC].type === 'single_value' || filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
+                          <input type="radio" name="<%= filters.otherFilters.key_characteristics[idxC].key %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>" 
+                            <% if (model['key_characteristic_' + filters.otherFilters.key_characteristics[idxC].key] == filters.otherFilters.key_characteristics[idxC].values[idxD].value) { %>checked<% } %>  />
+                        <% } else { %>
+                          <input type="checkbox" name="<%= filters.otherFilters.key_characteristics[idxC].key %>" value="<%= filters.otherFilters.key_characteristics[idxC].values[idxD].value %>" 
+                          <% if (model['key_characteristic_' + filters.otherFilters.key_characteristics[idxC].key] == filters.otherFilters.key_characteristics[idxC].values[idxD].value) { %>checked<% } %>  />
+                        <% } %>
+                        <span>
+                          <%= filters.otherFilters.key_characteristics[idxC].values[idxD].description %>
+                          <% if (filters.otherFilters.key_characteristics[idxC].type === 'range')  { %>
+                            +
+                          <% } %>
+                        </span>
+                      </label>
+                    </li>
+                  <% } %>
+                </ul>
+              </li>
+            <% } %>
+          <% } %>
+        <% } %>
+      </ul>
+      <br />
+      <div class="mybooking-choose-product-filter-btns">
+        <button  id="mybooking_choose_product_filter_modal__eraser" class="mybooking-choose-product-filter-btn"
+        title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+          <i class="dashicons dashicons-editor-removeformatting"></i>
+        </button>
+        <button id="mybooking_choose_product_filter_modal__send" type="submit" class="mybooking-choose-product-filter-btn"
+          title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+          <i class="dashicons dashicons-filter"></i>
+          <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+        </button>
       </div>
-    <% } %>
-  </script>
+    </form>
+  </div>
+</script>
+
+<!-- MODAL --------------------------------------------------------------------->
+<div class="mybooking mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="mybooking_choose_product_filter_modal_MBM"  style="margin: 3rem 1rem;">
+  <div class="mybooking-modal_body modal-product-detail-content"></div>
+</div>
 

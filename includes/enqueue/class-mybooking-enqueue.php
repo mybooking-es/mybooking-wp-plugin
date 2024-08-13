@@ -197,6 +197,10 @@
       wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-components',
                       plugins_url('/assets/styles/mybooking-engine-components.css', dirname( __DIR__ ) ),
                       array(), $this->version );
+      // Mybooking Filter
+      wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-choose-product-filter',
+                      plugins_url('/assets/styles/mybooking-engine-choose-product-filter.css', dirname( __DIR__ ) ),
+                      array(), $this->version );
       // Mybooking Product
       wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-product',
                       plugins_url('/assets/styles/mybooking-engine-product.css', dirname( __DIR__ ) ),
