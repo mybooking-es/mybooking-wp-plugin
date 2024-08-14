@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.7] - 2024.08.14
+
+### New
+
+- Renting Choose product - Filters and progressive loading - Reduced cards
+
 ## [2.3.6] - 2024.07.22
 
 ### New
