@@ -269,97 +269,117 @@
 <h6>
   <?php echo esc_html_x( 'Address', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 </h6>
+
 <hr />
 
+<!-- // Address -->
 <div class="mb-form-row">
-	<div class="mb-form-group mb-col-md-6">
-		<label>
-			<?php echo esc_html_x( 'Street', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-			<% if (required_fields.includes('customer_address[street]') || 
-						 required_fields.includes('driver_address[street]')) { %>*<% } %>
-		</label>
-		<input class="mb-form-control" name="driver_address[street]" type="text"
-			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Street', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
-			value="<%=booking.driver_address_street%>" maxlength="60" <% if (!booking.can_edit_online){%>disabled<%}%> 
-			<% if (required_fields.includes('customer_address[street]') ||
-						 required_fields.includes('driver_address[street]')) { %>required<% } %>>
-	</div>
-	<div class="mb-form-group mb-col-md-3">
-		<label>
-			<?php echo esc_html_x( 'Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-			<% if (required_fields.includes('customer_address[number]') ||
-						 required_fields.includes('driver_address[number]')) { %>*<% } %>
-		</label>
-		<input class="mb-form-control" name="driver_address[number]" type="text"
-			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
-			value="<%=booking.driver_address_number%>" maxlength="10" <% if (!booking.can_edit_online){%>disabled<%}%> 
-			<% if (required_fields.includes('customer_address[number]') ||
-						 required_fields.includes('driver_address[number]')) { %>required<% } %>>
-	</div>
-	<div class="mb-form-group mb-col-md-3">
-		<label>
-			<?php echo esc_html_x( 'Complement', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-			<% if (required_fields.includes('customer_address[complement]') || 
-						 required_fields.includes('driver_address[complement]')) { %>*<% } %>
-		</label>
-		<input class="mb-form-control" name="driver_address[complement]" type="text"
-			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Complement', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
-			value="<%=booking.driver_address_complement%>"  maxlength="20" <% if (!booking.can_edit_online){%>disabled<%}%> 
-			<% if (required_fields.includes('customer_address[complement]') ||
-						 required_fields.includes('driver_address[complement]')) { %>required<% } %>>
-	</div>
-</div>
-
-<div class="mb-form-row">
-	<div class="mb-form-group mb-col-md-6">
-		<label>
-			<?php echo esc_html_x( 'City', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-			<% if (required_fields.includes('customer_address[city]') ||
-						 required_fields.includes('driver_address[city]')) { %>*<% } %>
-		</label>
-		<input class="mb-form-control" name="driver_address[city]" type="text"
-			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
-			value="<%=booking.driver_address_city%>" maxlength="60" <% if (!booking.can_edit_online){%>disabled<%}%> 
-			<% if (required_fields.includes('customer_address[city]') ||
-						 required_fields.includes('driver_address[city]')) { %>required<% } %>>
-	</div>
-	<div class="mb-form-group mb-col-md-6">
-		<label>
-		<?php echo esc_html_x( 'State', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-		<% if (required_fields.includes('customer_address[state]') || 
-					 required_fields.includes('driver_address[state]')) { %>*<% } %>
-	</label>
-		<input class="mb-form-control" name="driver_address[state]" type="text"
-			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
-			value="<%=booking.driver_address_state%>"  maxlength="60" <% if (!booking.can_edit_online){%>disabled<%}%> 
-			<% if (required_fields.includes('customer_address[state]') ||
-						 required_fields.includes('driver_address[state]')) { %>required<% } %>>
-	</div>
-</div>
-
-<div class="mb-form-row">
+	<!-- Country -->
 	<div class="mb-form-group mb-col-md-6">
 		<label>
 			<?php echo esc_html_x( 'Country', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 			<% if (required_fields.includes('customer_address[country]') || 
-						 required_fields.includes('driver_address[country]')) { %>*<% } %>
+						required_fields.includes('driver_address[country]')) { %>*<% } %>
 		</label>
 		<select name="driver_address[country]" class="mb-form-control" <% if (!booking.can_edit_online){%>disabled<%}%> 
 			<% if (required_fields.includes('customer_address[country]') ||
-					 	 required_fields.includes('driver_address[country]')) { %>required<% } %>>
+						required_fields.includes('driver_address[country]')) { %>required<% } %>>
 		</select>
 	</div>
+
+	<!-- State -->
+	<div class="mb-form-group mb-col-md-6">
+		<label>
+			<?php echo esc_html_x( 'State', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+			<% if (required_fields.includes('customer_address[state]') || 
+						required_fields.includes('driver_address[state]')) { %>*<% } %>
+		</label>
+		<% if (configuration.sesHospedajes) { %>
+			<select name="driver_address[state_code]" class="mb-form-control" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('driver_address[state_code]')) { %>required<% } %> <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>>
+      </select>
+		<% } %>
+		<input class="mb-form-control" name="driver_address[state]" type="text"
+			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
+			value="<%=booking.driver_address_state%>"  maxlength="60" 
+			<% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('driver_address[state]')) { %>required<% } %> <% if (configuration.sesHospedajes && booking.address_country === 'ES') { %>style="display: none;"<%}%>>
+	</div>
+</div>
+
+<div class="mb-form-row">
+	<!-- City -->
+	<div class="mb-form-group mb-col-md-6">
+		<label>
+			<?php echo esc_html_x( 'City', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+			<% if (required_fields.includes('customer_address[city]') ||
+						required_fields.includes('driver_address[city]')) { %>*<% } %>
+		</label>
+		<% if (configuration.sesHospedajes) { %>
+			<select name="driver_address[city_code]" class="mb-form-control" <% if (!booking.can_edit_online || !booking.driver_address_state_code || booking.driver_address_state_code == ''){%>disabled<%}%> <% if (!booking.can_edit_online){%>disabled<%}%> 
+			<% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('driver_address[city_code]')) { %>required<% } %> <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>>
+      </select>
+		<% } %>
+		<input class="mb-form-control" name="driver_address[city]" type="text"
+			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
+			value="<%=booking.driver_address_city%>" maxlength="60" <% if (!booking.can_edit_online){%>disabled<%}%> 
+			<% if (required_fields.includes('driver_address[city]')) { %>required<% } %> <% if (configuration.sesHospedajes && booking.address_country === 'ES') { %>style="display: none;"<%}%>>
+	</div>
+
+	<!-- Zip -->
 	<div class="mb-form-group mb-col-md-6">
 		<label>
 			<?php echo esc_html_x( 'Postal Code', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 			<% if (required_fields.includes('customer_address[zip]') || 
-						 required_fields.includes('driver_address[zip]')) { %>*<% } %>
+						required_fields.includes('driver_address[zip]')) { %>*<% } %>
 		</label>
 		<input class="mb-form-control" name="driver_address[zip]" type="text"
 			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Postal Code', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
 			value="<%=booking.driver_address_zip%>"  maxlength="10" 
 			<% if (!booking.can_edit_online){%>disabled<%}%> 
 			<% if (required_fields.includes('customer_address[zip]') || 
-						 required_fields.includes('driver_address[zip]')) { %>required<% } %>>
+						required_fields.includes('driver_address[zip]')) { %>required<% } %>>
+	</div>
+</div>
+
+<div class="mb-form-row">
+	<!-- Street -->
+	<div class="mb-form-group mb-col-md-6">
+		<label>
+			<?php echo esc_html_x( 'Street', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+			<% if (required_fields.includes('customer_address[street]') || 
+						required_fields.includes('driver_address[street]')) { %>*<% } %>
+		</label>
+		<input class="mb-form-control" name="driver_address[street]" type="text"
+			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Street', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
+			value="<%=booking.driver_address_street%>" maxlength="60" <% if (!booking.can_edit_online){%>disabled<%}%> 
+			<% if (required_fields.includes('customer_address[street]') ||
+						required_fields.includes('driver_address[street]')) { %>required<% } %>>
+	</div>
+
+	<!-- Number -->
+	<div class="mb-form-group mb-col-md-3">
+		<label>
+			<?php echo esc_html_x( 'Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+			<% if (required_fields.includes('customer_address[number]') ||
+						required_fields.includes('driver_address[number]')) { %>*<% } %>
+		</label>
+		<input class="mb-form-control" name="driver_address[number]" type="text"
+			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
+			value="<%=booking.driver_address_number%>" maxlength="10" <% if (!booking.can_edit_online){%>disabled<%}%> 
+			<% if (required_fields.includes('customer_address[number]') ||
+						required_fields.includes('driver_address[number]')) { %>required<% } %>>
+	</div>
+
+	<!-- Complement -->
+	<div class="mb-form-group mb-col-md-3">
+		<label>
+			<?php echo esc_html_x( 'Complement', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+			<% if (required_fields.includes('customer_address[complement]') || 
+						required_fields.includes('driver_address[complement]')) { %>*<% } %>
+		</label>
+		<input class="mb-form-control" name="driver_address[complement]" type="text"
+			placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'Complement', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
+			value="<%=booking.driver_address_complement%>"  maxlength="20" <% if (!booking.can_edit_online){%>disabled<%}%> 
+			<% if (required_fields.includes('customer_address[complement]') ||
+						required_fields.includes('driver_address[complement]')) { %>required<% } %>>
 	</div>
 </div>
