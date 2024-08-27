@@ -164,11 +164,14 @@
                     <?php echo esc_html_x( 'State', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
                   </label>
                   <% if (configuration.sesHospedajes) { %>
-                    <select name="customer_address[state_code]" class="mb-form-control" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_address[state_code]')) { %>required<% } %> <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>>
+                    <select id="customer_address[state_code]" name="customer_address[state_code]" class="mb-form-control" 
+                    <% if (order.address_country !== 'ES') { %>style="display: none;"<%}%>>
                     </select>
                   <% } %>
                   <input class="mb-form-control" id="state" name="customer_address[state]" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_state%>"  max_length="60" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_address[state]')) { %>required<% } %> <% if (configuration.sesHospedajes && booking.address_country === 'ES') { %>style="display: none;"<%}%>>
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
+                    value="<%=order.address_state%>"  max_length="60" 
+                    <% if (configuration.sesHospedajes && order.address_country === 'ES') { %>style="display: none;"<%}%>>
                 </div>
               </div>
               <div class="mb-form-row">
@@ -178,11 +181,15 @@
                     <?php echo esc_html_x( 'City', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
                   </label>
                   <% if (configuration.sesHospedajes) { %>
-                    <select name="customer_address[city_code]" class="mb-form-control" <% if (!booking.can_edit_online || !booking.address_state_code || booking.address_state_code == ''){%>disabled<%}%> <% if (required_fields.includes('customer_address[city_code]')) { %>required<% } %> <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>>
+                    <select id="customer_address[city_code]" name="customer_address[city_code]" class="mb-form-control" 
+                    <% if (!order.address_state_code || order.address_state_code == ''){%>disabled<%}%> 
+                    <% if (order.address_country !== 'ES') { %>style="display: none;"<%}%>>
                     </select>
                   <% } %>
                   <input class="mb-form-control" id="city" name="customer_address[city]" type="text"
-                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=order.address_city%>" max_length="60" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_address[city]')) { %>required<% } %> <% if (configuration.sesHospedajes && booking.address_country === 'ES') { %>style="display: none;"<%}%>>
+                    placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
+                    value="<%=order.address_city%>" max_length="60" 
+                    <% if (configuration.sesHospedajes && order.address_country === 'ES') { %>style="display: none;"<%}%>>
                 </div>
 
                 <!-- Zip -->

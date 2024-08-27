@@ -149,7 +149,13 @@
       <?php echo esc_html_x( 'Country', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
       <% if (required_fields.includes('customer_address[country]')) { %>*<% } %>
     </label>
-    <select name="customer_address[country]" class="mb-form-control" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_address[country]')) { %>required<% } %> data-select-name="customer_address[state_code]" data-select-value="address_state_code">
+    <select name="customer_address[country]" class="mb-form-control" 
+      <% if (!booking.can_edit_online){%>disabled<%}%> 
+      <% if (required_fields.includes('customer_address[country]')) { %>required<% } %> 
+      data-state-selector-name=".customer_address_state_code_container"
+      data-state-input-name="input[name=customer_address\\[state\\]]"
+      data-city-selector-name=".customer_address_city_code_container"
+      data-city-input-name="input[name=customer_address\\[city\\]]">
     </select>
   </div>
 
@@ -160,11 +166,16 @@
       <% if (required_fields.includes('customer_address[state]')) { %>*<% } %>
     </label>
     <% if (configuration.sesHospedajes) { %>
-			<select name="customer_address[state_code]" class="mb-form-control" 
-        <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_address[state_code]')) { %>required<% } %>
-        <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%> 
-        data-select-name="customer_address[city_code]" data-select-value="address_city_code">
-      </select>
+      <div class="customer_address_state_code_container">
+        <select id="customer_address[state_code]" name="customer_address[state_code]" class="mb-form-control" 
+          <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_address[state_code]')) { %>required<% } %>
+          <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%> 
+          data-select-name="customer_address[city_code]" 
+          data-select-value="address_city_code"
+          data-code-value="<%=booking.address_state_code%>"
+          data-text-value="<%=booking.address_state%>">
+        </select>
+      </div>
     <% } %>
     <input class="mb-form-control" name="customer_address[state]" type="text"
       placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
@@ -182,8 +193,15 @@
       <% if (required_fields.includes('customer_address[city]')) { %>*<% } %>
     </label>
     <% if (configuration.sesHospedajes) { %>
-      <select name="customer_address[city_code]" class="mb-form-control" <% if (!booking.can_edit_online || !booking.address_state_code || booking.address_state_code == ''){%>disabled<%}%> <% if (required_fields.includes('customer_address[city_code]')) { %>required<% } %> <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>>
-      </select>
+      <div class="customer_address_city_code_container">
+        <select id="customer_address[city_code]" name="customer_address[city_code]" class="mb-form-control" 
+          <% if (!booking.can_edit_online || !booking.address_state_code || booking.address_state_code == ''){%>disabled<%}%> 
+          <% if (required_fields.includes('customer_address[city_code]')) { %>required<% } %> 
+          <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>
+          data-code-value="<%=booking.address_city_code%>"
+          data-text-value="<%=booking.address_city%>">
+        </select>
+      </div>
     <% } %>
     <input class="mb-form-control" name="customer_address[city]" type="text"
       placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.address_city%>" maxlength="60" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('customer_address[city]')) { %>required<% } %> <% if (configuration.sesHospedajes && booking.address_country === 'ES') { %>style="display: none;"<%}%>>
