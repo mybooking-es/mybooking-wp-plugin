@@ -387,11 +387,11 @@ if (!class_exists('MyBookingPluginCustomizer')) {
             'type'        => 'select',
             'choices'     => array(
               'list_only' => _x('List 1 product per row', 'customizer_product_catalog', 'mybooking-wp-plugin'),
-              'reduce_list_only' => _x('List 1 product per row in reduce format', 'customizer_product_catalog', 'mybooking-wp-plugin'),
               'grid_only' => _x('Grid 3 products per row', 'customizer_product_catalog', 'mybooking-wp-plugin'),
               'list'      => _x('List 1 product per row - allow change', 'customizer_product_catalog', 'mybooking-wp-plugin'),
               'grid'      => _x('Grid 3 products per row - allow change', 'customizer_product_catalog', 'mybooking-wp-plugin'),
-            ),
+              'reduce_list_only' => _x('List 1 product per row in reduce format', 'customizer_product_catalog', 'mybooking-wp-plugin')
+              ),
             'priority'    => '10',
           )
         )

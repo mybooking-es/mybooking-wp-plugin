@@ -6,6 +6,8 @@
 * Version: 2.3.7
 * Author: mybooking
 * Author URI: https://mybooking.es/
+* License: GPL v2 or later
+* License URI: https://www.gnu.org/licenses/gpl-2.0.html
 **/
 
 // Include the main Mybooking class
