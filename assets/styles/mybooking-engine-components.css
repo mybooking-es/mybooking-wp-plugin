@@ -221,11 +221,11 @@
   justify-content: space-between;
   align-items: center;
 }
-
+/*
 .mybooking-summary_extras {
   font-size: 1rem;
 }
-
+*/
 .mybooking-summary_extra-quantity {
   margin-right: 1rem;
 }
@@ -685,13 +685,13 @@
   opacity: 0.5;
 }
 
-.form-reservation-error {
+.mb-form-row label.form-reservation-error, .mb-form-row span.form-reservation-error{
   color: #EC8396;
   font-weight: bolder;
-  font-size: 0.8rem !important;
+  /*font-size: 1rem !important;*/
   line-height: normal;
   display: inline-block;
-  padding: 5px 0;
+  /*padding: 5px 0; */
 }
 
 .mybooking select.form-reservation-error,
