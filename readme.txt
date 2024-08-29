@@ -2,7 +2,7 @@
 Donate link: https://mybooking.es/
 Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation
 Requires at least: 5.2
-Tested up to: 6.5
+Tested up to: 6.6
 Stable tag: 2.3.7
 Requires PHP: 7.2
 License: GPLv2 or later
