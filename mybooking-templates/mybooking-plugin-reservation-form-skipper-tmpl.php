@@ -39,6 +39,26 @@
 			</div>
 		</div>
 		<div class="mb-form-row">
+			<div class="mb-form-group mb-col-md-6">
+				<label>
+					<?php echo esc_html_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>
+					<% if (required_fields.includes('driver_email')) { %>*<% } %>
+				</label>
+				<input class="mb-form-control" type="text" name="driver_email" autocomplete="off" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>" maxlength="50" value="<%=booking.driver_email%>" 
+							<% if (!booking.can_edit_online || (typeof booking.driver_email !== 'undefined' && booking.driver_email !== null && booking.driver_email != '')){%>disabled<%}%> <% if (required_fields.includes('driver_email')) { %>required<% } %>>
+			</div>
+			<div class="mb-form-group mb-col-md-6">
+				<label>
+					<?php echo esc_html_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>
+					<% if (required_fields.includes('driver_phone')) { %>*<% } %>
+				</label>
+				<input class="mb-form-control" type="text" name="driver_phone" autocomplete="off" 
+							placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>" 
+							maxlength="15" value="<%=booking.driver_phone%>" 
+				<% if (!booking.can_edit_online || (typeof booking.driver_phone !== 'undefined' && booking.driver_phone !== null && booking.driver_phone != '')){%>disabled<%}%> <% if (required_fields.includes('driver_phone')) { %>required<% } %>>
+			</div>
+  	</div>
+		<div class="mb-form-row">
 			<div class="mb-form-group mb-col-md-12">
 			<label for="driver_document_id"><?php echo esc_html_x('ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 				<% if (required_fields.includes('driver_document_id')) { %>*<% } %>

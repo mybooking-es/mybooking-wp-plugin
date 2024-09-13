@@ -71,6 +71,28 @@
 				<select name="driver_nacionality" class="form-control" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('driver_nacionality')) { %>required<% } %>></select>
 			</div>
 		</div>
+
+		<div class="mb-form-row">
+			<div class="mb-form-group mb-col-md-6">
+				<label>
+					<?php echo esc_html_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>
+					<% if (required_fields.includes('driver_email')) { %>*<% } %>
+				</label>
+				<input class="mb-form-control" type="text" name="driver_email" autocomplete="off" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>" maxlength="50" value="<%=booking.driver_email%>" 
+							<% if (!booking.can_edit_online || (typeof booking.driver_email !== 'undefined' && booking.driver_email !== null && booking.driver_email != '')){%>disabled<%}%> <% if (required_fields.includes('driver_email')) { %>required<% } %>>
+			</div>
+			<div class="mb-form-group mb-col-md-6">
+				<label>
+					<?php echo esc_html_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>
+					<% if (required_fields.includes('driver_phone')) { %>*<% } %>
+				</label>
+				<input class="mb-form-control" type="text" name="driver_phone" autocomplete="off" 
+							placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>" 
+							maxlength="15" value="<%=booking.driver_phone%>" 
+				<% if (!booking.can_edit_online || (typeof booking.driver_phone !== 'undefined' && booking.driver_phone !== null && booking.driver_phone != '')){%>disabled<%}%> <% if (required_fields.includes('driver_phone')) { %>required<% } %>>
+			</div>
+  	</div>
+
 		<h6>
 			<?php echo esc_attr_x( 'ID card or passport', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 		</h6>
@@ -88,7 +110,7 @@
 					<?php echo esc_html_x('ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
 					<% if (required_fields.includes('driver_document_id')) { %>*<% } %>
 				</label>
-				<input class="form-control" name="driver_document_id" type="text"
+				<input class="form-control" name="driver_document_id" id="driver_document_id" type="text"
 					placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x("ID card/passport number", 'renting_my_reservation', 'mybooking-wp-plugin') ?>")%>" value="<%=booking.driver_document_id%>"
 					maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('driver_document_id')) { %>required<% } %>>
 			</div>
@@ -252,10 +274,10 @@
 						<% if (required_fields.includes('driver_address[state]')) { %>*<% } %>
 					</label>
 					<% if (configuration.sesHospedajes) { %>
-						<div class="driver_address_state_code_container">
+						<div class="driver_address_state_code_container"
+								 <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>>
 							<select id="driver_address[state_code]" name="driver_address[state_code]" class="form-control" 
 								<% if (!booking.can_edit_online){%>disabled<%}%> 
-								<% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>
 								data-select-name="driver_address[city_code]" 
 								data-select-value="driver_city_code"
 								data-code-value="<%=booking.driver_address_state_code%>"
@@ -279,10 +301,10 @@
 						<% if (required_fields.includes('driver_address[city]')) { %>*<% } %>
 					</label>
 					<% if (configuration.sesHospedajes) { %>
-						<div class="driver_address_city_code_container">
+						<div class="driver_address_city_code_container"
+								 <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>>
 							<select id="driver_address[city_code]" name="driver_address[city_code]" class="form-control" 
 								<% if (!booking.can_edit_online || !booking.driver_address_state_code || booking.driver_address_state_code == ''){%>disabled<%}%>
-								<% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>
 								data-code-value="<%=booking.driver_address_city_code%>"
 								data-text-value="<%=booking.driver_address_city%>">
 							</select>

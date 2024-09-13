@@ -51,7 +51,7 @@
       <% if (required_fields.includes('customer_email')) { %>*<% } %>
     </label>
     <input class="mb-form-control" type="text" name="customer_email" autocomplete="off" placeholder="<?php echo esc_attr_x( 'E-mail', 'renting_complete', 'mybooking-wp-plugin') ?>" maxlength="50" value="<%=booking.customer_email%>" 
-          <% if (!booking.can_edit_online || (typeof booking.customer_email !== 'undefined' && booking.customer_email != '')){%>disabled<%}%> <% if (required_fields.includes('customer_email')) { %>required<% } %>>
+          <% if (!booking.can_edit_online || (typeof booking.customer_email !== 'undefined' && booking.customer_email !== null && booking.customer_email != '')){%>disabled<%}%> <% if (required_fields.includes('customer_email')) { %>required<% } %>>
   </div>
   <div class="mb-form-group mb-col-md-6">
     <label>
@@ -59,7 +59,7 @@
       <% if (required_fields.includes('customer_phone')) { %>*<% } %>
     </label>
     <input class="mb-form-control" type="text" name="customer_phone" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Phone number', 'renting_complete', 'mybooking-wp-plugin') ?>" maxlength="15" value="<%=booking.customer_phone%>" 
-    <% if (!booking.can_edit_online || (typeof booking.customer_phone !== 'undefined' && booking.customer_phone != '')){%>disabled<%}%> <% if (required_fields.includes('customer_phone')) { %>required<% } %>>
+    <% if (!booking.can_edit_online || (typeof booking.customer_phone !== 'undefined' && booking.customer_phone !== null && booking.customer_phone != '')){%>disabled<%}%> <% if (required_fields.includes('customer_phone')) { %>required<% } %>>
   </div>
 </div>
 
@@ -95,8 +95,9 @@
       <% if (required_fields.includes('customer_document_id') ||
              required_fields.includes('driver_document_id')) { %>*<% } %>
     </label>
-    <!-- Customer document type -->
-    <input class="mb-form-control" type="text" name="driver_document_id" autocomplete="off" placeholder="<?php echo esc_attr_x( 'ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" value="<%=booking.driver_document_id%>" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('driver_document_id')) { %>required<% } %>>
+    <!-- Customer document  -->
+    <input class="mb-form-control" type="text" name="driver_document_id" id="customer_driver_document_id"
+     autocomplete="off" placeholder="<?php echo esc_attr_x( 'ID card/passport number', 'renting_my_reservation', 'mybooking-wp-plugin') ?>" value="<%=booking.driver_document_id%>" <% if (!booking.can_edit_online){%>disabled<%}%> <% if (required_fields.includes('driver_document_id')) { %>required<% } %>>
   </div>
 </div>
 
@@ -133,10 +134,10 @@
       <% if (required_fields.includes('customer_address[state]')) { %>*<% } %>
     </label>
     <% if (configuration.sesHospedajes) { %>
-      <div class="driver_address_state_code_container">
+      <div class="driver_address_state_code_container"
+           <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>>
         <select id="driver_address[state_code]" name="driver_address[state_code]" class="mb-form-control" 
           <% if (!booking.can_edit_online){%>disabled<%}%> 
-          <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>
           data-select-name="driver_address[city_code]" 
           data-select-value="driver_city_code"
           data-code-value="<%=booking.driver_address_state_code%>"
@@ -160,10 +161,10 @@
       <% if (required_fields.includes('customer_address[city]')) { %>*<% } %>
     </label>
     <% if (configuration.sesHospedajes) { %>
-      <div class="driver_address_city_code_container">
+      <div class="driver_address_city_code_container" 
+           <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>>
         <select id="driver_address[city_code]" name="driver_address[city_code]" class="mb-form-control" 
           <% if (!booking.can_edit_online || !booking.driver_address_state_code || booking.driver_address_state_code == ''){%>disabled<%}%> 
-          <% if (booking.address_country !== 'ES') { %>style="display: none;"<%}%>
           data-code-value="<%=booking.driver_address_city_code%>"
           data-text-value="<%=booking.driver_address_city%>">
         </select>

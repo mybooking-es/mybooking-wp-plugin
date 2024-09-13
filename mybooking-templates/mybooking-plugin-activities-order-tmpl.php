@@ -154,7 +154,11 @@
                   <label for="country">
                     <?php echo esc_html_x( 'Country', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
                   </label>
-                  <select name="customer_address[country]" id="country" class="mb-form-control">
+                  <select name="customer_address[country]" id="country" class="mb-form-control"
+                          data-state-selector-name=".customer_address_state_code_container"
+                          data-state-input-name="input[name=customer_address\\[state\\]]"
+                          data-city-selector-name=".customer_address_city_code_container"
+                          data-city-input-name="input[name=customer_address\\[city\\]]">
                   </select>
                 </div>
                 
@@ -164,14 +168,20 @@
                     <?php echo esc_html_x( 'State', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
                   </label>
                   <% if (configuration.sesHospedajes) { %>
-                    <select id="customer_address[state_code]" name="customer_address[state_code]" class="mb-form-control" 
-                    <% if (order.address_country !== 'ES') { %>style="display: none;"<%}%>>
-                    </select>
+                    <div class="customer_address_state_code_container" 
+                         <% if (order.address_country !== 'ES') { %>style="display: none;"<%}%>>
+                      <select id="customer_address[state_code]" name="customer_address[state_code]" class="mb-form-control" 
+                              data-select-name="customer_address[city_code]" 
+                              data-select-value="address_city_code"
+                              data-code-value="<%=order.address_state_code%>"
+                              data-text-value="<%=order.address_state%>">
+                      </select>
+                    </div>
                   <% } %>
                   <input class="mb-form-control" id="state" name="customer_address[state]" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'State', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
-                    value="<%=order.address_state%>"  max_length="60" 
-                    <% if (configuration.sesHospedajes && order.address_country === 'ES') { %>style="display: none;"<%}%>>
+                    value="<%=order.address_state%>"  max_length="60"
+                    <% if (configuration.sesHospedajes && order.address_country === 'ES') { %>style="display: none"<%}%>>
                 </div>
               </div>
               <div class="mb-form-row">
@@ -181,10 +191,14 @@
                     <?php echo esc_html_x( 'City', 'activity_my_reservation', 'mybooking-wp-plugin') ?>
                   </label>
                   <% if (configuration.sesHospedajes) { %>
-                    <select id="customer_address[city_code]" name="customer_address[city_code]" class="mb-form-control" 
-                    <% if (!order.address_state_code || order.address_state_code == ''){%>disabled<%}%> 
-                    <% if (order.address_country !== 'ES') { %>style="display: none;"<%}%>>
-                    </select>
+                    <div class="customer_address_city_code_container"
+                         <% if (order.address_country !== 'ES') { %>style="display: none;"<%}%>>
+                      <select id="customer_address[city_code]" name="customer_address[city_code]" class="mb-form-control" 
+                         <% if (!order.address_state_code || order.address_state_code == ''){%>disabled<%}%> 
+                          data-code-value="<%=order.address_city_code%>"
+                          data-text-value="<%=order.address_city%>">
+                      </select>
+                    </div>
                   <% } %>
                   <input class="mb-form-control" id="city" name="customer_address[city]" type="text"
                     placeholder="<%=configuration.escapeHtml("<?php echo esc_attr_x( 'City', 'activity_my_reservation', 'mybooking-wp-plugin') ?>")%>" 
