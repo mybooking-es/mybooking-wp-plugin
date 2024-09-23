@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.8] - 2024.09.23
+
+### New
+
+- Hospedajes y alquileres de vehiculos required fields in my reservation form
+
 ## [2.3.7] - 2024.08.14
 
 ### New
