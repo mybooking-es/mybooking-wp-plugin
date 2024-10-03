@@ -40,20 +40,52 @@
 
 						<div class="mybooking-product_block mybooking-product_block-info">
 							<!-- // Product short description -->
-							<% if (product.short_description != '' && product.name != product.short_description) { %>
+							<% if (product.short_description != '') { %>
 								<h3 class="mybooking-product_short-description"><%=product.short_description%></h3>
 							<% } %>
 							<% if ((product.rate_type && product.rate_type.description && product.rate_type.description  != '') || (product.description && product.description != '')) { %>
 								<div class="mybooking-product_includes">
-								<% if (product.rate_type && product.rate_type.description && product.rate_type.description != '') { %>
-									<%=product.rate_type.description%>
-								<% } else if (product.description&& product.description != '') { %>
-									<%=product.description%>
-								<% } %>
+									<% if (product.description && product.description != '') { %>
+										<div class="mybooking-product_description">
+											<div>
+												<%=product.description%>
+											</div>
+										</div>
+									<% } %>
+									<% if (product.rate_type && product.rate_type.description && product.rate_type.description != '') { %>
+										<div class="mybooking-product_rate_type_description">
+											<%=product.rate_type.description%>
+										</div>
+									<% } %>
 									<div class="mybooking-product_includes-overlay"></div>
 								</div>
 							<% } %>
-
+							<div class="mybooking-product_excess_usage">
+									<div class="mb-col-md-6">
+										<small>
+											<span class="mybooking-process_excess_concept"><%= configuration.guaranteeLiteral %>:</span>
+											<%=configuration.formatCurrency(product.guarantee)%>
+										</small>
+									</div>
+									<div class="mb-col-md-6">
+										<small>
+											<span class="mybooking-process_excess_concept"><%=configuration.depositLiteral%>:</span> 
+											<%=configuration.formatCurrency(product.deposit)%>
+										</small>
+									</div>
+									<div class="mb-col-md-6">			
+										<small>
+											<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Daily Km', 'renting_choose_product', 'mybooking-wp-plugin') ?>:</span>  
+											<%= new Number(product.usage_included).toFixed(0) %>Km
+										</small>
+									</div>
+									<div class="mb-col-md-6">										
+										<small>
+										<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Extra Km', 'renting_choose_product', 'mybooking-wp-plugin') ?>:</span> 
+											<%=configuration.formatCurrency(product.usage_extra_unit_cost)%>
+										</small>
+									</div>
+							</div>
 							<% if (product.category_supplement_1_cost > 0) { %>
 								<div class="mybooking-product_price_supplement p-b-1">
 									<div class="mybooking-product_price_supplement_price">
@@ -88,6 +120,22 @@
 													%>
 												</div>
 
+												<br>
+												
+												<div class="mybooking-product_daily_amount">
+													<%=configuration.formatCurrency(+product.unit_price) %>
+													<% if (product.price_units === 'days') { %>
+														/ <?php echo MyBookingEngineContext::getInstance()->getDurationSingular() ?>
+													<% } %>
+												</div>
+
+												<!-- // Taxes included -->
+												<?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
+													<span class="mybooking-product_taxes">
+														<?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+													</span>
+												<?php endif; ?>
+
 												<!-- // Offer (single product selection) -->
 												<span class="mybooking-product_discount">
 													<% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
@@ -101,17 +149,6 @@
 									</div>
                 <% } %>
               <% } %>
-
-							<% if (!product.exceeds_max && !product.be_less_than_min) { %>
-								<% if (!configuration.multipleProductsSelection && (product.availability || !configuration.hidePriceIfNotAvailable) ) { %>
-										<!-- // Taxes included -->
-										<?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
-											<span class="mybooking-product_taxes">
-												<?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
-											</span>
-										<?php endif; ?>
-									<% } %>
-								<% } %>
 
 							<!-- // Exceeds max duration -->
               <% if (product.exceeds_max) { %>

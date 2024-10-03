@@ -331,6 +331,28 @@
     }
 
     /**
+     * Get Duration singualr
+     */
+    public function getDurationSingular() {
+
+        $registry = Mybooking_Registry::getInstance();
+        $returnValue = '';
+
+        switch ($registry->mybooking_rent_plugin_duration_context) {
+        	case 'days':
+        	  $returnValue = esc_html_x( 'day', 'engine_context', 'mybooking-wp-plugin' );
+        	  break;
+        	case 'nights':
+        	  $returnValue = esc_html_x( 'night', 'engine_context', 'mybooking-wp-plugin' );
+        	  break;
+        	default:
+        	  $returnValue = esc_html_x( 'day', 'engine_context', 'mybooking-wp-plugin' );
+         }
+        return $returnValue;
+
+    }
+
+    /**
      * Get the delivery point
      */
     public function getDeliveryDate() {

@@ -142,6 +142,16 @@
   margin: 0.2rem 0;
 }
 
+.mybooking-product_reduce_list .mybooking-product_daily_amount {
+  margin: 0;
+  color: var(--mb-product-price-color);
+  font-size: 0.8rem;
+  font-weight: 900!important;
+  line-height: inherit;
+  white-space: nowrap;
+  margin: 0.2rem 0;
+}
+
 .mybooking-product_reduce_list .mybooking-product_discount {
   margin: 0;
   font-size: 14px;
@@ -158,9 +168,9 @@
 /* Short description */
 .mybooking-product_reduce_list .mybooking-product_short-description {
   margin: 0 0 0.5rem 0;
-  font-weight: 400;
-  font-size: 0.9em;
-  color: var(--mb-muted-color);
+  font-weight: 600;
+  font-size: 1.1em;
+  /*color: var(--mb-muted-color);*/
   line-height: 1;
 }
 
@@ -168,7 +178,7 @@
 .mybooking-product_reduce_list .mybooking-product_includes
 /* Controls description and overlay height*/
 {
-  --description-height: 150px; 
+  /*--description-height: 150px; */
 
   display: block;
   height: var(--description-height);
@@ -189,6 +199,41 @@
   height: var(--description-height);
   box-shadow: inset 0px -20px 20px -10px #FFF; 
   z-index: 2;
+}
+
+/* Rate type description */
+.mybooking-product_reduce_list .mybooking-product_rate_type_description {
+  font-size: 0.8em;
+  margin-top: 0.25em;
+  margin-bottom: 1em;  
+}
+
+/* Product description */
+.mybooking-product_reduce_list .mybooking-product_description {
+  font-size: 0.8em;
+  color: var(--mb-muted-color);
+  max-height: 80px; 
+  overflow: hidden; 
+  position: relative;
+  margin-top: 0.25em;
+  margin-bottom: 1em;  
+}
+
+.mybooking-product_reduce_list .mybooking-product_description div { 
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Visible lines before elipse */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.mybooking-product_reduce_list .mybooking-product_excess_usage div {
+  padding: 0;
+}
+
+.mybooking-product_reduce_list .mybooking-product_excess_usage .mybooking-process_excess_concept {
+  font-weight: 800;
 }
 
 /* Prices */

@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.9] - 2024.10.03
+
+### New
+
+- Choose product reduced card : Include excess + deposit + daily km + km extra
+
 ## [2.3.8] - 2024.09.23
 
 ### New
