@@ -112,12 +112,21 @@
 										<!-- // Price (single product selection) -->
 										<% if (!product.exceeds_max && !product.be_less_than_min) { %>
 											<% if (!configuration.multipleProductsSelection && (product.availability || !configuration.hidePriceIfNotAvailable)) { %>
-												<div class="mybooking-product_original-price">
-													<% if (product.price != product.base_price) { %>
-														<%= configuration.formatCurrency(product.base_price)%>
-													<% } %>
-													</div>
 												
+												<% if (product.price != product.base_price) { %>
+													<div class="mybooking-product_original-price">
+														<%= configuration.formatCurrency(product.base_price)%>
+													</div>
+													<!-- // Offer (single product selection) -->
+													<span class="mybooking-product_discount">
+														<% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
+															<span class="mybooking-product_discount-badge mb-badge info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
+														<% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' && (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
+															<span class="mybooking-product_discount-badge mb-badge success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
+														<% } %>
+													</span>
+												<% } %>					
+
 												<div class="mybooking-product_amount">
 													<%=configuration.formatCurrency(+product.price +
 														(+product.category_supplement_1_cost || 0) +
@@ -142,14 +151,6 @@
 													</span>
 												<?php endif; ?>
 
-												<!-- // Offer (single product selection) -->
-												<span class="mybooking-product_discount">
-													<% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
-														<span class="mybooking-product_discount-badge mb-badge info"><%=new Number(product.offer_value)%>% <%=product.offer_name%></span>
-													<% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' && (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
-														<span class="mybooking-product_discount-badge mb-badge success"><%=new Number(product.promotion_code_value)%>% <%=shoppingCart.promotion_code%></span>
-													<% } %>
-												</span>
 											<% } %>
 										<% } %>
 									</div>
