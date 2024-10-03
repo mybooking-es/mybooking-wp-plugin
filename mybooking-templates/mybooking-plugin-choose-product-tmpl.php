@@ -222,7 +222,6 @@
           <button id="mybooking_choose_product_filter_bar__send" type="submit" class="mybooking-choose-product-filter-btn"
             title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
             <i class="dashicons dashicons-filter"></i>
-            <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
           </button>
           <button  id="mybooking_choose_product_filter_bar__eraser" class="mybooking-choose-product-filter-btn"
           title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
