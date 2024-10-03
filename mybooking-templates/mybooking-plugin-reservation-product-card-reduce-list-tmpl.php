@@ -61,30 +61,36 @@
 								</div>
 							<% } %>
 							<div class="mybooking-product_excess_usage">
-									<div class="mb-col-md-6">
-										<small>
-											<span class="mybooking-process_excess_concept"><%= configuration.guaranteeLiteral %>:</span>
-											<%=configuration.formatCurrency(product.guarantee)%>
-										</small>
-									</div>
-									<div class="mb-col-md-6">
-										<small>
-											<span class="mybooking-process_excess_concept"><%=configuration.depositLiteral%>:</span> 
-											<%=configuration.formatCurrency(product.deposit)%>
-										</small>
-									</div>
-									<div class="mb-col-md-6">			
-										<small>
-											<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Daily Km', 'renting_choose_product', 'mybooking-wp-plugin') ?>:</span>  
-											<%= new Number(product.usage_included).toFixed(0) %>Km
-										</small>
-									</div>
-									<div class="mb-col-md-6">										
-										<small>
-										<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Extra Km', 'renting_choose_product', 'mybooking-wp-plugin') ?>:</span> 
-											<%=configuration.formatCurrency(product.usage_extra_unit_cost)%>
-										</small>
-									</div>
+									<% if (new Number(product.guarantee) > 0) { %>
+										<div class="mb-col-md-6">
+											<small>
+												<span class="mybooking-process_excess_concept"><%= configuration.guaranteeLiteral %>:</span>
+												<%=configuration.formatCurrency(product.guarantee)%>
+											</small>
+										</div>
+									<% } %>
+									<% if (new Number(product.deposit) > 0 || configuration.holdProductDepositCost === 'not_hold') { %>
+										<div class="mb-col-md-6">
+											<small>
+												<span class="mybooking-process_excess_concept"><%=configuration.depositLiteral%>:</span> 
+												<%=configuration.formatCurrency(product.deposit)%>
+											</small>
+										</div>
+									<% } %>
+									<% if (new Number(product.usage_included) > 0) { %>
+										<div class="mb-col-md-6">			
+											<small>
+												<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Daily Km', 'renting_choose_product', 'mybooking-wp-plugin') ?>:</span>  
+												<%= new Number(product.usage_included).toFixed(0) %>Km
+											</small>
+										</div>
+										<div class="mb-col-md-6">										
+											<small>
+											<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Extra Km', 'renting_choose_product', 'mybooking-wp-plugin') ?>:</span> 
+												<%=configuration.formatCurrency(product.usage_extra_unit_cost)%>
+											</small>
+										</div>
+									<% } %>
 							</div>
 							<% if (product.category_supplement_1_cost > 0) { %>
 								<div class="mybooking-product_price_supplement p-b-1">

@@ -22,7 +22,7 @@
           </div>
 
           <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
-            <i class="mb-button icon"><span class="dashicons dashicons-edit"></span></i><?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+            <i class="mb-button icon"><span class="dashicons dashicons-edit"></span></i>
           </div>
         </div>
 
