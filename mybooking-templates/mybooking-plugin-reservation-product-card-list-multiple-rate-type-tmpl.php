@@ -106,7 +106,11 @@
                                   </span>
 
                                   <span class="mybooking-product_discount-badge mb-badge info">
-                                    <%=new Number(product.detailed_prices[rateIdx].price.offer_value)%>%
+                                    <% if (product.offer_discount_type == 'percentage') { %> 
+                                      <%=new Number(product.detailed_prices[rateIdx].price.offer_value)%> %
+                                    <% } else { %>
+                                      <%=configuration.formatCurrency(product.detailed_prices[rateIdx].price.offer_value) %>
+                                    <% } %>
                                       <%=product.detailed_prices[rateIdx].price.offer_name%>
                                   </span>
                                 </div>
@@ -119,8 +123,12 @@
                                     <%= configuration.formatCurrency(product.detailed_prices[rateIdx].price.base_price)%>
                                   </span>
 
-                                  <span class="mybooking-product_discount-badge mb-badge info">
-                                    <%=new Number(product.detailed_prices[rateIdx].price.promotion_code_value)%>%
+                                  <span class="mybooking-product_discount-badge mb-badge success">
+                                    <% if (product.promotion_code_discount_type == 'percentage') { %>
+                                      <%=new Number(product.detailed_prices[rateIdx].price.promotion_code_value)%> %
+                                    <% } else { %>
+                                      <%=configuration.formatCurrency(product.detailed_prices[rateIdx].price.promotion_code_value) %>
+                                    <% } %>
                                       <%=shoppingCart.promotion_code%>
                                   </span>
                                 </div>
