@@ -57,15 +57,17 @@
     <% } %>
 
 
-    <li class="mybooking-product_calendar-step">
+    <!-- // Duration selector -->
+    <li class="mybooking-product_calendar-step duration_scope_class_selector" style="display: none;">
       <?php echo esc_html_x('Select dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
     </li>
 
     <% if (configuration.rentingProductOneJournal &&
            configuration.rentingProductMultipleJournals) { %>
-      <div class="mb-form-row">
+      <div class="mb-form-row duration_scope_class_selector" style="display: none;">
         <div class="mb-form-group">
-          <input type="radio" name="duration_scope" value="in_one_day" checked/>&nbsp;<?php echo esc_html_x('Hours or one full day', 'renting_product_detail', 'mybooking-wp-plugin' ) ?><br>
+          <input type="radio" name="duration_scope" value="in_one_day" checked/>&nbsp;<?php echo esc_html_x('Hours or one full day', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
+          <br />
           <input type="radio" name="duration_scope" value="days"/>&nbsp;<?php echo esc_html_x('Period of dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
         </div>
       </div>
