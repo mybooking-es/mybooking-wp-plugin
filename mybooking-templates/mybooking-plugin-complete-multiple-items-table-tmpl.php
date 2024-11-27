@@ -98,7 +98,7 @@
 
 						<!-- // Price box -->
 						<div class="mb-col-sm-12 mb-col-md-2">
-							<% if (!configuration.hidePriceIfZero || booking.item_cost > 0) { %>
+							<% if (!configuration.hidePriceIfZero || bookings[idx].item_cost > 0) { %>
 								<span class="mybooking-summary_extra-name mb-col-md-hidden mb-col-lg-hidden">
 									<?php echo esc_html_x( "Price", 'renting_summary', 'mybooking-wp-plugin' ) ?>
 								</span>
