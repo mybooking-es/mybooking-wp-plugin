@@ -58,7 +58,7 @@
 
 
     <!-- // Duration selector -->
-    <li class="mybooking-product_calendar-step duration_scope_class_selector" style="display: none;">
+    <li class="mybooking-product_calendar-step">
       <?php echo esc_html_x('Select dates', 'renting_product_detail', 'mybooking-wp-plugin' ) ?>
     </li>
 
