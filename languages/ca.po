@@ -1,13 +1,12 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Understrap Mybooking Child\n"
+"Project-Id-Version: MyBooking Reservation Engine for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-20 22:42+0000\n"
-"PO-Revision-Date: 2024-10-03 18:35+0000\n"
+"PO-Revision-Date: 2024-10-03 18:32+0000\n"
 "Last-Translator: \n"
-"Language-Team: German\n"
-"Language: de_DE\n"
+"Language-Team: Catalan\n"
+"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,526 +16,450 @@ msgstr ""
 
 #: mybooking-templates/mybooking-plugin-activities.php:70
 #: mybooking-templates/mybooking-plugin-products.php:47
-#, fuzzy
 msgctxt "activities_list"
 msgid "From"
-msgstr "Von"
+msgstr "Des de"
 
 #: mybooking-templates/mybooking-plugin-activities.php:103
 #: mybooking-templates/mybooking-plugin-products.php:128
 #: mybooking-templates/mybooking-plugin-products.php:132
-#, fuzzy
 msgctxt "activities_list"
 msgid "More information"
-msgstr "Mehr Informationen"
+msgstr "Més informació"
 
 #: mybooking-templates/mybooking-plugin-activities.php:157
 #: mybooking-templates/mybooking-plugin-activities.php:161
 #: mybooking-templates/mybooking-plugin-products.php:188
 #: mybooking-templates/mybooking-plugin-products.php:192
-#, fuzzy
 msgctxt "activities_list"
 msgid "Next"
-msgstr "Nächster"
+msgstr "Següent"
 
 #: mybooking-templates/mybooking-plugin-activities.php:18
-#, fuzzy
 msgctxt "activities_list"
 msgid "No results found"
-msgstr "keine Ergebnisse gefunden"
+msgstr "Sense resultats"
 
 #: mybooking-templates/mybooking-plugin-activities.php:121
 #: mybooking-templates/mybooking-plugin-products.php:152
-#, fuzzy
 msgctxt "activities_list"
 msgid "Page navigation"
-msgstr "Seitennavigation"
+msgstr "Un cop"
 
 #: mybooking-templates/mybooking-plugin-activities.php:127
 #: mybooking-templates/mybooking-plugin-activities.php:131
 #: mybooking-templates/mybooking-plugin-products.php:158
 #: mybooking-templates/mybooking-plugin-products.php:162
-#, fuzzy
 msgctxt "activities_list"
 msgid "Previous"
-msgstr "Bisherige"
+msgstr "Anterior"
 
 #: mybooking-templates/mybooking-plugin-activities-search-tmpl.php:24
-#, fuzzy
 msgctxt "activities_search"
 msgid "Category"
-msgstr "Kategorie"
+msgstr "Categoria"
 
 #: mybooking-templates/mybooking-plugin-activities-search-tmpl.php:17
-#, fuzzy
 msgctxt "activities_search"
 msgid "Destination"
-msgstr "Ziel"
+msgstr "Destinació"
 
 #: mybooking-templates/mybooking-plugin-products-search.php:20
 #: mybooking-templates/mybooking-plugin-activities-search.php:25
 #: mybooking-templates/mybooking-plugin-activities-search.php:28
-#, fuzzy
 msgctxt "activities_search"
 msgid "Search"
-msgstr "Suche"
+msgstr "Cerca"
 
 #: mybooking-templates/mybooking-plugin-routes-activity.php:87
-#, fuzzy
 msgctxt "activity_detail"
 msgid "Ages"
-msgstr "Alter"
+msgstr "Edats"
 
 #: mybooking-templates/mybooking-plugin-routes-activity.php:76
-#, fuzzy
 msgctxt "activity_detail"
 msgid "Dates and timetables"
-msgstr "Termine und Fahrpläne"
+msgstr "Dates i horaris"
 
 #: mybooking-templates/mybooking-plugin-routes-activity.php:98
-#, fuzzy
 msgctxt "activity_detail"
 msgid "Difficulty"
-msgstr "Schwierigkeit"
+msgstr "Dificultat"
 
 #: mybooking-templates/mybooking-plugin-routes-activity.php:109
-#, fuzzy
 msgctxt "activity_detail"
 msgid "Meeting point"
-msgstr "Treffpunkt"
+msgstr "Punt de trobada"
 
 #: mybooking-templates/mybooking-plugin-routes-activity.php:65
-#, fuzzy
 msgctxt "activity_detail"
 msgid "Prices"
-msgstr "Preise"
+msgstr "Preus"
 
 #: mybooking-templates/mybooking-plugin-routes-activity.php:142
-#, fuzzy
 msgctxt "activity_detail"
 msgid "Recomendations"
-msgstr "Empfehlungen"
+msgstr "Recomanacions"
 
 #: mybooking-templates/mybooking-plugin-routes-activity.php:131
-#, fuzzy
 msgctxt "activity_detail"
 msgid "What to bring?"
-msgstr "Was zu bringen?"
+msgstr "Què portar?"
 
 #: mybooking-templates/mybooking-plugin-routes-activity.php:120
-#, fuzzy
 msgctxt "activity_detail"
 msgid "What's included?"
-msgstr "Was ist inbegriffen?"
+msgstr "Què inclou?"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:223
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:226
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Address"
-msgstr "Adresse"
+msgstr "Adreça"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:371
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:374
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Allergies"
-msgstr "Allergies"
+msgstr "Al·lèrgies"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:378
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:380
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:382
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Allergies detail"
-msgstr "Allergien Detail"
+msgstr "Detall de les al·lèrgies"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:191
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:204
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "City"
-msgstr "Stadt"
+msgstr "Ciutat"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:241
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:244
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Complement"
-msgstr "Ergänzen"
+msgstr "Complement"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:155
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Country"
-msgstr "Land"
+msgstr "País"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:148
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Customer address"
-msgstr "Kundenadresse"
+msgstr "Adreça del client"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:305
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:307
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:309
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Date of birth"
-msgstr "Geburtsdatum"
+msgstr "Data de naixement"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:429
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:432
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Diseases"
-msgstr "Krankheiten"
+msgstr "Malalties"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:436
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:438
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:440
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Diseases detail"
-msgstr "Krankheitsdetail"
+msgstr "Detall de malalties"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:294
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:296
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:298
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Document ID"
-msgstr "Dokument Identifikation"
+msgstr "Identificador del document"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:330
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:332
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:334
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "E-mail"
-msgstr "E-Mail-Adresse"
+msgstr "E-mail"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:344
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:346
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:348
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Height (cm)"
-msgstr "Höhe (cm)"
+msgstr "Alçada (cm)"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:389
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:392
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Intolerances"
-msgstr "Unverträglichkeiten"
+msgstr "Intoleràncies"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:396
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:398
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:400
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Intolerances detail"
-msgstr "Unverträglichkeiten Detail"
+msgstr "Detall de les intoleràncies"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:274
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:276
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:278
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Name"
-msgstr "Name"
+msgstr "Nom"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:458
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:472
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Never"
-msgstr "Noch nie"
+msgstr "Mai"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:490
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:502
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "No"
-msgstr "Nein"
+msgstr "No"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:232
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:235
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Number"
-msgstr "Nummer"
+msgstr "Número"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:459
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:473
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Once"
-msgstr "Einmal"
+msgstr "Un cop"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:269
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Participant"
-msgstr "Teilnehmer"
+msgstr "Participant"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:319
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:321
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:323
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Phone number"
-msgstr "Telefonnummer"
+msgstr "Número de telèfon"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:142
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid ""
 "Please complete the information to speed up the delivery process on the "
 "scheduled date"
 msgstr ""
-"Bitte vervollständigen Sie die Informationen, um den Lieferprozess zum "
-"geplanten Termin zu beschleunigen"
+"Completeu la informació per accelerar el procés d’entrega a la data prevista"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:212
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:215
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Postal Code"
-msgstr "Postleitzahl"
+msgstr "Codi Postal"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:457
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:471
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:489
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:501
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Select the option"
-msgstr "Wählen Sie die Option"
+msgstr "Seleccioneu l'opció"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:409
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:412
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Slight injuries"
-msgstr "Leichte Verletzungen"
+msgstr "Lesions lleus"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:416
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:418
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:420
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Slight injuries detail"
-msgstr "Leichte Verletzungen Detail"
+msgstr "Detall de lesions lleus"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:168
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:182
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "State"
-msgstr "Zustand"
+msgstr "Província"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:282
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:284
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:286
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Surname"
-msgstr "Nachname"
+msgstr "Cognom"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:461
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:475
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Three or more times"
-msgstr "Drei oder mehr Mal"
+msgstr "Tres o més vegades"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:460
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:474
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Twice"
-msgstr "Zweimal"
+msgstr "Dues vegades"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:515
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Update"
-msgstr "Aktualisieren"
+msgstr "Actualització"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:355
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:357
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:359
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Weight (kg)"
-msgstr "Gewicht (kg)"
+msgstr "Pes (kg)"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:491
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:503
-#, fuzzy
 msgctxt "activity_my_reservation"
 msgid "Yes"
-msgstr "Ja"
+msgstr "Sí"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:159
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:161
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "Brand"
-msgstr "Marke"
+msgstr "Marca"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:183
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:185
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "Color"
-msgstr "Farbe"
+msgstr "Color"
 
 #. %s: privacy policy URL
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:282
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:377
-#, fuzzy, php-format
 msgctxt "activity_shopping_cart"
 msgid ""
 "I have read and accept the <a href=\"%s\" target=\"_blank\">privacy policy</"
 "a>"
 msgstr ""
-"Ich habe die <a href=\"%s\" target=\"_blank\">Datenschutzerklärung</a> "
-"gelesen und akzeptiere sie"
+"He llegit i accepto la <a href=\"%s\" target=\"_blank\">política de "
+"privacitat</a>"
 
 #. %s: terms and conditions URL
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:272
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:367
-#, fuzzy, php-format
 msgctxt "activity_shopping_cart"
 msgid ""
 "I have read and hereby accept the <a href=\"%s\" target=\"_blank\">terms and "
 "conditions</a>"
 msgstr ""
-"Ich habe die <a href=\"%s\" target=\"_blank\">Allgemeinen "
-"Geschäftsbedingungen</a> gelesen und akzeptiere sie hiermit"
+"He llegit i accepto els <a href=\"%s\" target=\"_blank\"> termes i "
+"condicions </a>"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:269
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:365
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "I have read and hereby accept the terms and conditions"
-msgstr ""
-"Ich habe die Allgemeinen Geschäftsbedingungen gelesen und akzeptiere sie "
-"hiermit"
+msgstr "He llegit i accepto els termes i condicions"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:166
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:168
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "Model"
-msgstr "Modell"
+msgstr "Model"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:301
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "Pay now"
-msgstr "Zahlen Sie jetzt"
+msgstr "Paga ara"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:258
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:289
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "Request reservation"
-msgstr "Reservierung anfordern"
+msgstr "Sol·licita reserva"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:19
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "Shopping cart is empty"
-msgstr "Der Einkaufswagen ist leer"
+msgstr "El carretó de la compra està buit"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:176
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:178
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "Stock plate"
-msgstr "Nummernschild"
+msgstr "Matrícula"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:219
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "Total"
-msgstr "Gesamt"
+msgstr "Total"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:154
-#, fuzzy
 msgctxt "activity_shopping_cart"
 msgid "Vehicle"
-msgstr "Fahrzeug"
+msgstr "Vehicle"
 
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:97
-#, fuzzy
 msgctxt "activity_shopping_cart_item"
 msgid "Remove"
-msgstr "Entfernen"
+msgstr "Elimina"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:108
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:85
 #: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:109
-#, fuzzy
 msgctxt "activity_shopping_cart_item"
 msgid "Total"
-msgstr "Gesamt"
+msgstr "Total"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:117
 #: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:118
-#, fuzzy
 msgctxt "activity_summary"
 msgid "Paid"
-msgstr "Bezahlt"
+msgstr "Pagat"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:126
 #: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:126
-#, fuzzy
 msgctxt "activity_summary"
 msgid "Pending"
-msgstr "Reservierungs-ID"
+msgstr "Pendent"
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:120
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:152
-#, fuzzy
 msgctxt "activity_tickets_form_selector"
 msgid "Book now"
-msgstr "Buchen Sie jetzt"
+msgstr "Reserva ara"
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:106
-#, fuzzy
 msgctxt "activity_tickets_form_selector"
 msgid "People"
-msgstr "Personen"
+msgstr "Persones"
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:142
-#, fuzzy
 msgctxt "activity_tickets_form_selector"
 msgid "Please, select an option"
-msgstr "Bitte wähle eine Option"
+msgstr "Seleccioneu una opció"
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:20
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:59
-#, fuzzy
 msgctxt "activity_tickets_form_selector"
 msgid "Select date"
-msgstr "Datum auswählen"
+msgstr "Seleccioneu la data"
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:39
-#, fuzzy
 msgctxt "activity_tickets_form_selector"
 msgid "Select hour"
-msgstr "Stunde auswählen"
+msgstr "Seleccioneu l’hora"
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:35
-#, fuzzy
 msgctxt "activity_tickets_form_selector"
 msgid "We are sorry. There are not schedules available"
-msgstr "Wir entschuldigen uns. Es sind keine Zeitpläne verfügbar"
+msgstr "Ho sentim. No hi ha horaris disponibles"
 
 #: includes/mybooking-patterns.php:24
 msgctxt "Block pattern category"
@@ -725,149 +648,126 @@ msgstr ""
 
 #: mybooking-templates/mybooking-plugin-contact-widget.php:44
 #: mybooking-templates/mybooking-plugin-contact-widget.php:45
-#, fuzzy
 msgctxt "contact_form"
 msgid "E-mail"
-msgstr "E-Mail-Adresse"
+msgstr "E-mail"
 
 #. %s: privacy policy URL
 #: mybooking-templates/mybooking-plugin-contact-widget.php:74
-#, fuzzy, php-format
 msgctxt "contact_form"
 msgid ""
 "I have read and accept the <a href=\"%s\" target=\"_blank\">privacy policy</"
 "a>"
 msgstr ""
-"Ich habe die <a href=\"%s\" target=\"_blank\">Datenschutzerklärung</a> "
-"gelesen und akzeptiere sie"
+"He llegit i accepto la <a href=\"%s\" target=\"_blank\">política de "
+"privacitat</a>"
 
 #: mybooking-templates/mybooking-plugin-contact-widget.php:58
 #: mybooking-templates/mybooking-plugin-contact-widget.php:59
-#, fuzzy
 msgctxt "contact_form"
 msgid "Message"
-msgstr "Botschaft"
+msgstr "Missatge"
 
 #: mybooking-templates/mybooking-plugin-contact-widget.php:33
 #: mybooking-templates/mybooking-plugin-contact-widget.php:34
-#, fuzzy
 msgctxt "contact_form"
 msgid "Name"
-msgstr "Name"
+msgstr "Nom"
 
 #: mybooking-templates/mybooking-plugin-contact-widget.php:51
 #: mybooking-templates/mybooking-plugin-contact-widget.php:52
-#, fuzzy
 msgctxt "contact_form"
 msgid "Phone number"
-msgstr "Telefonnummer"
+msgstr "Número de telèfon"
 
 #: mybooking-templates/mybooking-plugin-contact-widget.php:92
-#, fuzzy
 msgctxt "contact_form"
 msgid "Send"
-msgstr "Senden"
+msgstr "Envia"
 
 #: mybooking-templates/mybooking-plugin-contact-widget.php:37
 #: mybooking-templates/mybooking-plugin-contact-widget.php:38
-#, fuzzy
 msgctxt "contact_form"
 msgid "Surname"
-msgstr "Nachname"
+msgstr "Cognom"
 
 #: mybooking-templates/mybooking-plugin-cookies-notice.php:24
-#, fuzzy
 msgctxt "cookie_notice"
 msgid "More"
-msgstr "Mehr"
+msgstr "Més"
 
 #: mybooking-templates/mybooking-plugin-cookies-notice.php:29
-#, fuzzy
 msgctxt "cookie_notice"
 msgid "Ok"
 msgstr "Ok"
 
 #: mybooking-templates/mybooking-plugin-cookies-notice.php:20
-#, fuzzy
 msgctxt "cookie_notice"
 msgid "This website uses cookies to ensure you get the best experience"
-msgstr ""
-"Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste "
-"Erfahrung machen"
+msgstr "Aquest lloc web utilitza cookies per garantir la millor experiència"
 
 #: includes/customizer/mybooking-plugin-customizer.php:170
-#, fuzzy
 msgctxt "customizer_panel"
 msgid "Customise your installation of Mybooking Reservation Engine"
-msgstr "Passen Sie Ihre Installation von Mybooking Reservation Engine an"
+msgstr "Personalitzeu la vostra instal·lació de Mybooking Reservation Engine"
 
 #: includes/customizer/mybooking-plugin-customizer.php:169
-#, fuzzy
 msgctxt "customizer_panel"
 msgid "Mybooking Reservation Engine"
 msgstr "Mybooking Reservation Engine"
 
 #: includes/customizer/mybooking-plugin-customizer.php:214
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Choose depending on the images that you are using for your products"
-msgstr ""
-"Wählen Sie abhängig von den Bildern, die Sie für Ihre Produkte verwenden"
+msgstr "Escollir en funció de les imatges que fas servir pels teus productes"
 
 #: includes/customizer/mybooking-plugin-customizer.php:281
-#, fuzzy
 #| msgid "Choose depending on the images that you are using for your products"
 msgctxt "customizer_product_catalog"
 msgid ""
 "Choose depending on the images that you are using for your products (in %)"
-msgstr "Wählen Sie je nach den Bildern, die Sie für Ihre Produkte verwenden"
+msgstr ""
+"Trieu en funció de les imatges que feu servir per als vostres productes"
 
 #: includes/customizer/mybooking-plugin-customizer.php:380
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid ""
 "Choose depending on the layout to show the products in the choose product "
 "page"
 msgstr ""
-"Wählen Sie je nach Layout, um die Produkte auf der Produktauswahlseite "
-"anzuzeigen"
+"Trieu en funció del disseny per mostrar els productes a la pàgina de "
+"selecció del producte"
 
 #: includes/customizer/mybooking-plugin-customizer.php:314
 #: includes/customizer/mybooking-plugin-customizer.php:347
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Choose product card body height (in px)"
-msgstr "Wählen Sie die Körpergröße der Produktkarte (in px)"
+msgstr "Trieu l'alçada del cos de la targeta del producte (en px)"
 
 #: includes/customizer/mybooking-plugin-customizer.php:188
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Customize the product card"
-msgstr "Passen Sie die Produktkarte an"
+msgstr "Personalitza la targeta del producte"
 
 #: includes/customizer/mybooking-plugin-customizer.php:390
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Grid 3 products per row"
-msgstr "Raster 3 Produkte pro Reihe"
+msgstr "Quadrícula 3 productes per fila"
 
 #: includes/customizer/mybooking-plugin-customizer.php:392
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Grid 3 products per row - allow change"
-msgstr "Raster 3 Produkte pro Reihe - Änderung zulassen"
+msgstr "Quadrícula 3 productes per fila: permet el canvi"
 
 #: includes/customizer/mybooking-plugin-customizer.php:389
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "List 1 product per row"
-msgstr "Listen Sie 1 Produkt pro Zeile auf"
+msgstr "Llista 1 producte per fila"
 
 #: includes/customizer/mybooking-plugin-customizer.php:391
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "List 1 product per row - allow change"
-msgstr "1 Produkt pro Zeile auflisten - Änderung zulassen"
+msgstr "Llista 1 producte per fila: permet el canvi"
 
 #: includes/customizer/mybooking-plugin-customizer.php:393
 msgctxt "customizer_product_catalog"
@@ -875,83 +775,70 @@ msgid "List 1 product per row in reduce format"
 msgstr ""
 
 #: includes/customizer/mybooking-plugin-customizer.php:254
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "No"
-msgstr "Nein"
+msgstr "No"
 
 #: includes/customizer/mybooking-plugin-customizer.php:221
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Photo"
 msgstr "Foto"
 
 #: includes/customizer/mybooking-plugin-customizer.php:213
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Product background"
-msgstr "Hintergrundbild des Produkts"
+msgstr "Imatge de fons del producte"
 
 #: includes/customizer/mybooking-plugin-customizer.php:186
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Product card"
-msgstr "Produktkarte"
+msgstr "Targeta de producte"
 
 #: includes/customizer/mybooking-plugin-customizer.php:313
-#, fuzzy
 #| msgid "Product card Body Height"
 msgctxt "customizer_product_catalog"
 msgid "Product card Body Height (Grid)"
-msgstr "Produktkarte Körpergröße"
+msgstr "Targeta de producte Alçada del cos"
 
 #: includes/customizer/mybooking-plugin-customizer.php:346
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Product card Body Height (List)"
-msgstr "Produktkarte Körpergröße (Liste)"
+msgstr "Alçada de la tarjeta del producte (Llista)"
 
 #: includes/customizer/mybooking-plugin-customizer.php:280
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Product card Image Width"
-msgstr "Produktkarte Bildbreite"
+msgstr "Amplada de la imatge de la targeta del producte"
 
 #: includes/customizer/mybooking-plugin-customizer.php:246
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Product show characteristics"
-msgstr "Produkteigenschaften anzeigen"
+msgstr "Mostrar característiques del producte"
 
 #: includes/customizer/mybooking-plugin-customizer.php:379
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Renting choose product layout"
-msgstr "Vermietung Produktlayout wählen"
+msgstr "Lloguer escollir la disposició del producte"
 
 #: includes/customizer/mybooking-plugin-customizer.php:247
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Show caracteritics icons"
-msgstr "Charaktersymbole anzeigen"
+msgstr "Mostrar les icones de les característiques"
 
 #: includes/customizer/mybooking-plugin-customizer.php:220
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Transparent background"
-msgstr "Transparenter Bildhintergrund"
+msgstr "Fons transparent"
 
 #: includes/customizer/mybooking-plugin-customizer.php:253
-#, fuzzy
 msgctxt "customizer_product_catalog"
 msgid "Yes"
-msgstr "Ja"
+msgstr "Si"
 
 #: includes/translation/mybooking-plugin-engine-context.php:374
-#, fuzzy
 msgctxt "engine_context"
 msgid "Arrive"
-msgstr "Ankommen"
+msgstr "Arribada"
 
 #: includes/translation/mybooking-plugin-engine-context.php:185
 msgctxt "engine_context"
@@ -960,17 +847,15 @@ msgstr ""
 
 #: includes/translation/mybooking-plugin-engine-context.php:173
 #: includes/translation/mybooking-plugin-engine-context.php:176
-#, fuzzy
 msgctxt "engine_context"
 msgid "Boat"
-msgstr "Boot"
+msgstr "Embarcació"
 
 #: includes/translation/mybooking-plugin-engine-context.php:72
 #: includes/translation/mybooking-plugin-engine-context.php:88
-#, fuzzy
 msgctxt "engine_context"
 msgid "Branch Office"
-msgstr "Niederlassung"
+msgstr "Sucursal"
 
 #: includes/translation/mybooking-plugin-engine-context.php:188
 msgctxt "engine_context"
@@ -983,455 +868,383 @@ msgid "Category of vehicle"
 msgstr ""
 
 #: includes/translation/mybooking-plugin-engine-context.php:368
-#, fuzzy
 msgctxt "engine_context"
 msgid "Check-in"
-msgstr "Check-in"
+msgstr "Entrada"
 
 #: includes/translation/mybooking-plugin-engine-context.php:422
-#, fuzzy
 msgctxt "engine_context"
 msgid "Check-out"
-msgstr "Check-out"
+msgstr "Sortida"
 
 #: includes/translation/mybooking-plugin-engine-context.php:380
-#, fuzzy
 msgctxt "engine_context"
 msgid "Date of arrival"
-msgstr "Datum der Ankunft"
+msgstr "Data d'arribada"
 
 #: includes/translation/mybooking-plugin-engine-context.php:434
-#, fuzzy
 msgctxt "engine_context"
 msgid "Date of departure"
-msgstr "Datum der Abreise"
+msgstr "Data de sortida"
 
 #: includes/translation/mybooking-plugin-engine-context.php:343
 #: includes/translation/mybooking-plugin-engine-context.php:349
-#, fuzzy
 msgctxt "engine_context"
 msgid "day"
-msgstr "tag"
+msgstr "dia"
 
 #: includes/translation/mybooking-plugin-engine-context.php:321
 #: includes/translation/mybooking-plugin-engine-context.php:327
-#, fuzzy
 msgctxt "engine_context"
 msgid "day(s)"
-msgstr "tag(e)"
+msgstr "Dia/es"
 
 #: includes/translation/mybooking-plugin-engine-context.php:377
 #: includes/translation/mybooking-plugin-engine-context.php:428
-#, fuzzy
 msgctxt "engine_context"
 msgid "Departure"
-msgstr "Abfahrt"
+msgstr "Sortida"
 
 #: includes/translation/mybooking-plugin-engine-context.php:205
 #: includes/translation/mybooking-plugin-engine-context.php:220
-#, fuzzy
 msgctxt "engine_context"
 msgid "Driver"
-msgstr "Treiber"
+msgstr "Conductor"
 
 #: includes/translation/mybooking-plugin-engine-context.php:425
-#, fuzzy
 msgctxt "engine_context"
 msgid "End"
-msgstr "Ende"
+msgstr "Final"
 
 #: includes/translation/mybooking-plugin-engine-context.php:477
-#, fuzzy
 msgctxt "engine_context"
 msgid "Enquiry"
-msgstr "Verfügbarkeitsanfrage"
+msgstr "Consultar disponibilitat"
 
 #: includes/translation/mybooking-plugin-engine-context.php:431
-#, fuzzy
 msgctxt "engine_context"
 msgid "Entry"
-msgstr "Eintrag"
+msgstr "Entrada"
 
 #: includes/translation/mybooking-plugin-engine-context.php:288
 #: includes/translation/mybooking-plugin-engine-context.php:303
-#, fuzzy
 msgctxt "engine_context"
 msgid "Height"
-msgstr "Länge"
+msgstr "Alçada"
 
 #: includes/translation/mybooking-plugin-engine-context.php:85
-#, fuzzy
 msgctxt "engine_context"
 msgid "Hostel"
-msgstr "Herberge"
+msgstr "Alberg"
 
 #: includes/translation/mybooking-plugin-engine-context.php:82
-#, fuzzy
 msgctxt "engine_context"
 msgid "Hotel"
 msgstr "Hotel"
 
 #: includes/translation/mybooking-plugin-engine-context.php:234
 #: includes/translation/mybooking-plugin-engine-context.php:249
-#, fuzzy
 msgctxt "engine_context"
 msgid "Length"
-msgstr "Höhe"
+msgstr "Longitud"
 
 #: includes/translation/mybooking-plugin-engine-context.php:346
-#, fuzzy
 msgctxt "engine_context"
 msgid "night"
-msgstr "nacht"
+msgstr "nit"
 
 #: includes/translation/mybooking-plugin-engine-context.php:324
-#, fuzzy
 msgctxt "engine_context"
 msgid "night(s)"
-msgstr "nächte"
+msgstr "nit(s)"
 
 #: includes/translation/mybooking-plugin-engine-context.php:468
 #: includes/translation/mybooking-plugin-engine-context.php:480
-#, fuzzy
 msgctxt "engine_context"
 msgid "Not available"
-msgstr "Nicht verfügbar"
+msgstr "No disponible"
 
 #: includes/translation/mybooking-plugin-engine-context.php:365
 #: includes/translation/mybooking-plugin-engine-context.php:383
-#, fuzzy
 msgctxt "engine_context"
 msgid "Pick-up date"
-msgstr "Liefertermin"
+msgstr "Data de recollida"
 
 #: includes/translation/mybooking-plugin-engine-context.php:474
-#, fuzzy
 msgctxt "engine_context"
 msgid "Please, contact us by e-mail"
-msgstr "Bitte kontaktieren Sie uns per E-Mail"
+msgstr "Si us plau, poseu-vos en contacte per correu electrònic"
 
 #: includes/translation/mybooking-plugin-engine-context.php:471
-#, fuzzy
 msgctxt "engine_context"
 msgid "Please, contact us by phone"
-msgstr "Bitte kontaktieren Sie uns telefonisch"
+msgstr "Si us plau, poseu-vos en contacte per telèfon"
 
 #: includes/translation/mybooking-plugin-engine-context.php:191
-#, fuzzy
 msgctxt "engine_context"
 msgid "Product"
-msgstr "Produkt"
+msgstr "Producte"
 
 #: includes/translation/mybooking-plugin-engine-context.php:164
 #: includes/translation/mybooking-plugin-engine-context.php:167
-#, fuzzy
 msgctxt "engine_context"
 msgid "Property"
-msgstr "Eigentum"
+msgstr "Propietat"
 
 #: includes/translation/mybooking-plugin-engine-context.php:419
 #: includes/translation/mybooking-plugin-engine-context.php:437
-#, fuzzy
 msgctxt "engine_context"
 msgid "Return date"
-msgstr "Rückgabedatum\n"
+msgstr "Data de retorn"
 
 #: includes/translation/mybooking-plugin-engine-context.php:170
-#, fuzzy
 msgctxt "engine_context"
 msgid "Room"
-msgstr "Zimmer"
+msgstr "Habitació"
 
 #: includes/translation/mybooking-plugin-engine-context.php:371
-#, fuzzy
 msgctxt "engine_context"
 msgid "Start"
-msgstr "Start"
+msgstr "Començar"
 
 #: includes/translation/mybooking-plugin-engine-context.php:401
-#, fuzzy
 #| msgid "Estimated arrival"
 msgctxt "engine_context"
 msgid "Time of arrival"
-msgstr "Zeitpunkt der Ankunft"
+msgstr "Hora d'arribada"
 
 #: includes/translation/mybooking-plugin-engine-context.php:452
-#, fuzzy
 #| msgid "Estimated departure"
 msgctxt "engine_context"
 msgid "Time of departure"
-msgstr "Zeitpunkt der Abreise"
+msgstr "Hora de sortida"
 
 #: includes/translation/mybooking-plugin-engine-context.php:122
 #: includes/translation/mybooking-plugin-engine-context.php:125
-#, fuzzy
 msgctxt "engine_context"
 msgid "Type of Boat"
-msgstr "Bootstyp"
+msgstr "Tipus d&#39;embarcació"
 
 #: includes/translation/mybooking-plugin-engine-context.php:102
 #: includes/translation/mybooking-plugin-engine-context.php:140
 #: includes/translation/mybooking-plugin-engine-context.php:154
-#, fuzzy
 msgctxt "engine_context"
 msgid "Type of product"
-msgstr "Produkttyp"
+msgstr "Tipus de producte"
 
 #: includes/translation/mybooking-plugin-engine-context.php:113
 #: includes/translation/mybooking-plugin-engine-context.php:116
-#, fuzzy
 msgctxt "engine_context"
 msgid "Type of property"
-msgstr "Art des Vermögens"
+msgstr "Tipus de propietat"
 
 #: includes/translation/mybooking-plugin-engine-context.php:119
-#, fuzzy
 msgctxt "engine_context"
 msgid "Type of room"
-msgstr "Zimmertyp"
+msgstr "Tipus d'habitació"
 
 #: includes/translation/mybooking-plugin-engine-context.php:128
 #: includes/translation/mybooking-plugin-engine-context.php:131
 #: includes/translation/mybooking-plugin-engine-context.php:134
 #: includes/translation/mybooking-plugin-engine-context.php:137
-#, fuzzy
 msgctxt "engine_context"
 msgid "Type of vehicle"
-msgstr "Fahrzeugtyp"
+msgstr "Tipus de vehicle"
 
 #: includes/translation/mybooking-plugin-engine-context.php:182
-#, fuzzy
 msgctxt "engine_context"
 msgid "Vehicle"
-msgstr "Fahrzeug"
+msgstr "Vehicle"
 
 #: includes/translation/mybooking-plugin-engine-context.php:261
 #: includes/translation/mybooking-plugin-engine-context.php:276
-#, fuzzy
 msgctxt "engine_context"
 msgid "Width"
-msgstr "Breite"
+msgstr "Amplada"
 
 #: includes/translation/mybooking-plugin-engine-context.php:297
 #: includes/translation/mybooking-plugin-engine-context.php:300
-#, fuzzy
 msgctxt "engine_context_boat"
 msgid "Draft"
-msgstr "Tiefgang"
+msgstr "Calat"
 
 #: includes/translation/mybooking-plugin-engine-context.php:243
 #: includes/translation/mybooking-plugin-engine-context.php:246
-#, fuzzy
 msgctxt "engine_context_boat"
 msgid "Length"
-msgstr "Bootslänge"
+msgstr "Eslora"
 
 #: includes/translation/mybooking-plugin-engine-context.php:214
 #: includes/translation/mybooking-plugin-engine-context.php:217
-#, fuzzy
 msgctxt "engine_context_boat"
 msgid "Skipper"
-msgstr "Kapitän"
+msgstr "Patró"
 
 #: includes/translation/mybooking-plugin-engine-context.php:270
 #: includes/translation/mybooking-plugin-engine-context.php:273
-#, fuzzy
 msgctxt "engine_context_boat"
 msgid "Sleeve"
-msgstr "Ärmel"
+msgstr "Manga"
 
 #: includes/translation/mybooking-plugin-engine-context.php:518
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Air conditioner"
-msgstr "Klimaanlage"
+msgstr "Aire acondicionat"
 
 #: includes/translation/mybooking-plugin-engine-context.php:521
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Bathroom"
-msgstr "das Badezimmer\n"
+msgstr "Bany"
 
 #: includes/translation/mybooking-plugin-engine-context.php:524
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Baths"
-msgstr "Bad "
+msgstr "Banys"
 
 #: includes/translation/mybooking-plugin-engine-context.php:527
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Beds"
-msgstr "Betten"
+msgstr "Llits"
 
 #: includes/translation/mybooking-plugin-engine-context.php:530
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Berths"
-msgstr "Liegeplätze"
+msgstr "Amarratges"
 
 #: includes/translation/mybooking-plugin-engine-context.php:533
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Boat License"
-msgstr "Bootsführerschein"
+msgstr "Llicència de navegació"
 
 #: includes/translation/mybooking-plugin-engine-context.php:536
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Cabin"
-msgstr "Kabine"
+msgstr "Cabina"
 
 #: includes/translation/mybooking-plugin-engine-context.php:539
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Doors"
-msgstr "Türen"
+msgstr "Portes"
 
 #: includes/translation/mybooking-plugin-engine-context.php:542
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Driving license"
-msgstr "Fahrerlaubnis"
+msgstr "Permís de conduir"
 
 #: includes/translation/mybooking-plugin-engine-context.php:545
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Fuel"
-msgstr "Treibstoff"
+msgstr "Combustible"
 
 #: includes/translation/mybooking-plugin-engine-context.php:497
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Length"
-msgstr "Länge"
+msgstr "Llargada"
 
 #: includes/translation/mybooking-plugin-engine-context.php:548
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Pets"
-msgstr "Haustiere"
+msgstr "Animals de companyia"
 
 #: includes/translation/mybooking-plugin-engine-context.php:551
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Places"
-msgstr "Setzt"
+msgstr "Places"
 
 #: includes/translation/mybooking-plugin-engine-context.php:554
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Rooms"
-msgstr "Räume"
+msgstr "Habitacions"
 
 #: includes/translation/mybooking-plugin-engine-context.php:557
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Seats"
-msgstr "Sitze"
+msgstr "Seients"
 
 #: includes/translation/mybooking-plugin-engine-context.php:560
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Shower"
-msgstr "Dusche"
+msgstr "Dutxa"
 
 #: includes/translation/mybooking-plugin-engine-context.php:563
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Skipper"
-msgstr "Kapitän"
+msgstr "Patró"
 
 #: includes/translation/mybooking-plugin-engine-context.php:566
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Suitcases"
-msgstr "Koffer"
+msgstr "Maletes"
 
 #: includes/translation/mybooking-plugin-engine-context.php:569
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Transmission"
-msgstr "Übertragung"
+msgstr "Transmissió"
 
 #: includes/translation/mybooking-plugin-engine-context.php:572
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Type"
-msgstr "der Typ"
+msgstr "Tipus"
 
 #: includes/translation/mybooking-plugin-engine-context.php:575
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "WC"
-msgstr "Toilette"
+msgstr "WC"
 
 #: includes/translation/mybooking-plugin-engine-context.php:578
-#, fuzzy
 msgctxt "engine_context_key_characteristic"
 msgid "Wifi"
 msgstr "Wifi"
 
 #. Author URI of the plugin
-#, fuzzy
 msgid "https://mybooking.es/"
 msgstr "https://mybooking.es/"
 
 #. URI of the plugin
-#, fuzzy
 msgid "https://www.mybooking.es/"
 msgstr "https://www.mybooking.es/"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:741
-#, fuzzy
 msgctxt "login"
 msgid "Enter username or email"
-msgstr "Geben Sie den Benutzernamen oder die E-Mail-Adresse ein"
+msgstr "Introduïu el nom d&#39;usuari o el correu electrònic"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:750
-#, fuzzy
 msgctxt "login"
 msgid "Forgot password?"
-msgstr "Passwort vergessen?"
+msgstr "Ha oblidat la clau d&#39;accès"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:727
-#, fuzzy
 msgctxt "login"
 msgid "Have account"
-msgstr "Konto haben"
+msgstr "Tinc compte"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:748
-#, fuzzy
 msgctxt "login"
 msgid "Login"
-msgstr "Login"
+msgstr "Iniciar sessió"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:733
-#, fuzzy
 msgctxt "login"
 msgid "New customer"
-msgstr "Neukunde"
+msgstr "Nou client"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:744
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:745
-#, fuzzy
 msgctxt "login"
 msgid "Password"
-msgstr "Passwort"
+msgstr "Contrasenya"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:740
-#, fuzzy
 msgctxt "login"
 msgid "Username or email"
-msgstr "Benutzername oder E-Mail-Adresse"
+msgstr "Nom d&#39;usuari o correu electrònic"
 
 #. Author of the plugin
-#, fuzzy
 msgid "mybooking"
-msgstr "MyBooking"
+msgstr "mybooking"
 
 #. Name of the plugin
-#, fuzzy
 msgid "MyBooking Reservation Engine"
 msgstr "MyBooking Reservation Engine"
 
@@ -1835,10 +1648,9 @@ msgstr ""
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:44
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:97
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:144
-#, fuzzy
 msgctxt "onboarding_context"
 msgid "Show gallery"
-msgstr "Galerie anzeigen"
+msgstr "Mostra la galeria"
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:39
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:92
@@ -2064,40 +1876,35 @@ msgstr ""
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:769
 #: mybooking-templates/mybooking-plugin-profile-password-forgotten.php:6
-#, fuzzy
 msgctxt "password_forgotten"
 msgid "Enter username or email"
-msgstr "Geben Sie den Benutzernamen oder die E-Mail-Adresse ein"
+msgstr "Introduïu el nom d&#39;usuari o el correu electrònic"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:764
-#, fuzzy
 msgctxt "password_forgotten"
 msgid ""
 "Please, fill the form with the username or email and send to reset your "
 "password"
 msgstr ""
-"Bitte füllen Sie das Formular mit dem Benutzernamen oder der E-Mail-Adresse "
-"aus und senden Sie es, um Ihr Passwort zurückzusetzen"
+"Empleneu el formulari amb el nom d&#39;usuari o el correu electrònic i "
+"envieu-lo per restablir la vostra contrasenya"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:772
 #: mybooking-templates/mybooking-plugin-profile-password-forgotten.php:9
-#, fuzzy
 msgctxt "password_forgotten"
 msgid "Send"
-msgstr "Senden"
+msgstr "Enviar"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:768
 #: mybooking-templates/mybooking-plugin-profile-password-forgotten.php:5
-#, fuzzy
 msgctxt "password_forgotten"
 msgid "Username or email"
-msgstr "Benutzername oder E-Mail-Adresse"
+msgstr "Nom d&#39;usuari o correu electrònic"
 
 #: mybooking-templates/mybooking-plugin-planning.php:25
-#, fuzzy
 msgctxt "planning"
 msgid "Date"
-msgstr "Datum"
+msgstr "Data"
 
 #: includes/settings/use_case/class-mybooking-activities-module.php:21
 msgctxt "plugin_custom_activities_pages"
@@ -2379,10 +2186,9 @@ msgstr ""
 
 #: includes/settings/mybooking-plugin-settings.php:38
 #: includes/settings/mybooking-plugin-settings.php:39
-#, fuzzy
 msgctxt "plugin_settings"
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr "Configuració"
 
 #: includes/settings/mybooking-plugin-settings.php:446
 msgctxt "plugin_settings"
@@ -2439,158 +2245,135 @@ msgid "Wizard"
 msgstr ""
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:16
-#, fuzzy
 msgctxt "popup_content"
 msgid "Add popup ad"
-msgstr "Erstellen"
+msgstr "Afegeix anunci popup"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:18
-#, fuzzy
 msgctxt "popup_content"
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr "Editar"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:19
-#, fuzzy
 msgctxt "popup_content"
 msgid "Edit popup ad"
-msgstr "Bearbeiten Pop-Up Werbung"
+msgstr "Editar anunci popup"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:17
 #: includes/cpt/mybooking-plugin-cpt-popup.php:20
-#, fuzzy
 msgctxt "popup_content"
 msgid "New popup ad"
-msgstr "Erstellen"
+msgstr "Nou anunci popup"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:24
-#, fuzzy
 msgctxt "popup_content"
 msgid "No popup ad found"
-msgstr "Keine Pop-Up Werbung gefunden"
+msgstr "No s'ha trobat cap anunci emergent"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:25
-#, fuzzy
 msgctxt "popup_content"
 msgid "No popup ad on bin"
-msgstr "Keine Pop-Up Werbung im Papierkorb gefunden"
+msgstr "No s'ha trobat cap anunci emergent a la paperera"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:26
-#, fuzzy
 msgctxt "popup_content"
 msgid "Parent popup ad"
-msgstr "Übergeordnete Pop-Up Werbung"
+msgstr "Anunci emergent principal"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:15
-#, fuzzy
 msgctxt "popup_content"
 msgid "Popup ad"
-msgstr "Pop-up Werbung"
+msgstr "Anunci emergent"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:14
-#, fuzzy
 msgctxt "popup_content"
 msgid "Popup ads"
-msgstr "Pop-Up Werbung"
+msgstr "Anuncis emergents"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:23
-#, fuzzy
 msgctxt "popup_content"
 msgid "Search popup ad"
-msgstr "Pop-Up Werbung durschsuchen"
+msgstr "Cercar anunci emergent"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:21
-#, fuzzy
 msgctxt "popup_content"
 msgid "See"
-msgstr "Anschauen"
+msgstr "Veure"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:22
-#, fuzzy
 msgctxt "popup_content"
 msgid "See popup ad"
-msgstr "Anschauen Pop-Up Werbung"
+msgstr "Veure anunci emergent"
 
 #: mybooking-templates/mybooking-plugin-profile-change-password.php:5
 #: mybooking-templates/mybooking-plugin-profile-change-password.php:6
-#, fuzzy
 msgctxt "profile_change_password"
 msgid "Password"
-msgstr "Passwort"
+msgstr "Contrasenya"
 
 #: mybooking-templates/mybooking-plugin-profile-change-password.php:9
-#, fuzzy
 msgctxt "profile_change_password"
 msgid "Send"
-msgstr "Senden"
+msgstr "Enviar"
 
 #: mybooking-templates/mybooking-plugin-promotions-popup.php:30
-#, fuzzy
 msgctxt "promotions_popup"
 msgid "Close"
-msgstr "Schließen"
+msgstr "Tancar"
 
 #: mybooking-templates/mybooking-plugin-product-slider.php:65
 #: mybooking-templates/mybooking-plugin-routes-product.php:82
 #: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:210
 #: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:184
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:209
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Book it!"
-msgstr "Auswählen"
+msgstr "Reserva'l"
 
 #: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:78
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Daily Km"
-msgstr "Tägliche km"
+msgstr "Km diaris"
 
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:66
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "day(s)"
-msgstr "Tage"
+msgstr "dia(s)"
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:31
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:29
 #: mybooking-templates/mybooking-plugin-reservation-summary-tmpl.php:25
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:47
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr "Editar"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:228
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:313
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Eraser"
-msgstr "Löschen"
+msgstr "Esborra"
 
 #: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:84
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Extra Km"
-msgstr "Zusätzliche km"
+msgstr "Km extra"
 
 #: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:25
 #: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:25
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:26
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php:26
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Few units left!"
-msgstr "Nur noch wenige Einheiten übrig!"
+msgstr "Queden poques unitats!"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:223
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:225
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:317
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:319
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Filter"
-msgstr "Filter"
+msgstr "Filtrar"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:61
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:94
@@ -2599,43 +2382,37 @@ msgstr "Filter"
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:130
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:74
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:166
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "hour(s)"
-msgstr "Std"
+msgstr "hora/es"
 
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:82
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "minute(s)"
-msgstr "Minute"
+msgstr "minut"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:175
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "minutes(s)"
-msgstr "Protokoll"
+msgstr "minuts"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:232
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "More filters"
-msgstr "Mehr Filter"
+msgstr "Més filtres"
 
 #: mybooking-templates/mybooking-plugin-choose-product.php:25
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Next"
-msgstr "Nächste"
+msgstr "Següent"
 
 #: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:230
 #: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:274
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:234
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php:179
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "No items found"
-msgstr "Keine Elemente gefunden"
+msgstr "No s&#39;han trobat elements"
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:17
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:25
@@ -2643,48 +2420,42 @@ msgstr "Keine Elemente gefunden"
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:31
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:70
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:29
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Reservation summary"
-msgstr "Reservierung"
+msgstr "Resum de la reserva"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:99
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Select"
-msgstr "Wählen"
+msgstr "Seleccioneu"
 
 #: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:191
 #: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:166
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:190
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Select options"
-msgstr "Optionen wählen"
+msgstr "Escollir opcions"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:114
 #: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:191
 #: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:166
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:190
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Select units"
-msgstr "Einheiten auswählen"
+msgstr "Escollir unitats"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:49
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:827
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Show gallery"
-msgstr "Galerie anzeigen"
+msgstr "Mostra la galeria"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:46
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:824
-#, fuzzy
 #| msgid "Order"
 msgctxt "renting_choose_product"
 msgid "Show video"
-msgstr "Video anzeigen"
+msgstr "Mostra el vídeo"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:179
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:257
@@ -2703,30 +2474,26 @@ msgstr "Video anzeigen"
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:228
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php:164
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:305
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "Taxes included"
-msgstr "Steuern inbegriffen"
+msgstr "Impostos inclosos"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:116
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "unit"
-msgstr "einheit"
+msgstr "unitat"
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:116
-#, fuzzy
 msgctxt "renting_choose_product"
 msgid "units"
-msgstr "einheiten"
+msgstr "unitats"
 
 #: mybooking-templates/mybooking-plugin-complete.php:83
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:586
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:192
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Additional information"
-msgstr "Zusätzliche Information"
+msgstr "Informació adicional"
 
 #: mybooking-templates/mybooking-plugin-complete.php:74
 #: mybooking-templates/mybooking-plugin-complete.php:75
@@ -2734,30 +2501,26 @@ msgstr "Zusätzliche Information"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:322
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:148
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:149
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Alternative phone number"
-msgstr "Alternatives Telefon"
+msgstr "Nombre de telèfon alternatiu"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:288
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Apply"
-msgstr "Zutreffen"
+msgstr "Enviar"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:624
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:731
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Book now and pay now"
-msgstr "Buchen Sie jetzt und zahlen Sie jetzt"
+msgstr "Reserva ahora y paga ahora"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:583
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:693
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Book now and pay on arrival"
-msgstr "Buchen Sie jetzt und zahlen Sie bei der Ankunft"
+msgstr "Reserveu ara i pagueu a l&#39;arribada"
 
 #: mybooking-templates/mybooking-plugin-complete.php:104
 #: mybooking-templates/mybooking-plugin-complete.php:105
@@ -2765,17 +2528,15 @@ msgstr "Buchen Sie jetzt und zahlen Sie bei der Ankunft"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:591
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:195
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:196
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Comments"
-msgstr "Bemerkungen"
+msgstr "Comentaris"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:612
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:719
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Confirm"
-msgstr "Bestätigen"
+msgstr "Confirmar"
 
 #: mybooking-templates/mybooking-plugin-complete.php:63
 #: mybooking-templates/mybooking-plugin-complete.php:64
@@ -2783,16 +2544,14 @@ msgstr "Bestätigen"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:307
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:137
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:138
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Confirm E-mail"
-msgstr "Email bestätigen"
+msgstr "Confirmar email"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:311
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Coverage"
-msgstr "Abdeckung"
+msgstr "Cobertura"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:656
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:557
@@ -2800,31 +2559,27 @@ msgstr "Abdeckung"
 #: mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:48
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:233
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:332
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Credit or debit card"
-msgstr "Kredit- oder Debitkarte"
+msgstr "Targeta de crèdit o dèbit"
 
 #: mybooking-templates/mybooking-plugin-complete.php:43
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:116
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Customer's details"
-msgstr "Kundendaten"
+msgstr "Detalls del client"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:270
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Driver age"
-msgstr "Alter des Fahrers"
+msgstr "Edat del conductor"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:216
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:333
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:371
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Driver's age supplement"
-msgstr "Alterszuschlag des Fahrers"
+msgstr "Suplement d’edat del conductor"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:50
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:53
@@ -2844,10 +2599,9 @@ msgstr "Alterszuschlag des Fahrers"
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:47
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:84
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:87
-#, fuzzy
 msgctxt "renting_complete"
 msgid "E-mail"
-msgstr "E-Mail-Adresse"
+msgstr "E-mail"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:87
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:117
@@ -2855,7 +2609,6 @@ msgstr "E-Mail-Adresse"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:126
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:112
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:209
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Extras"
 msgstr "Extras"
@@ -2866,14 +2619,13 @@ msgstr "Extras"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:676
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:714
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:804
-#, fuzzy, php-format
 msgctxt "renting_complete"
 msgid ""
 "I have read and accept the <a href=\"%s\" target=\"_blank\">privacy policy</"
 "a>"
 msgstr ""
-"Ich habe die <a href=\"%s\" target=\"_blank\">Datenschutzerklärung</a> "
-"gelesen und akzeptiere sie"
+"He llegit i accepto la <a href=\"%s\" target=\"_blank\">política de "
+"privacitat</a>"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:555
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:596
@@ -2881,14 +2633,13 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:668
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:706
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:796
-#, fuzzy, php-format
 msgctxt "renting_complete"
 msgid ""
 "I have read and hereby accept the <a href=\"%s\" "
 "target=\"_blank\">conditions</a> of rental"
 msgstr ""
-"Ich habe die <a href=\"%s\" target=\"_blank\">Mietbedingungen</a> gelesen "
-"und akzeptiere sie hiermit"
+"He llegit i accepto les <a href=\"%s\" target=\"_blank\"> condicions </a> de "
+"lloguer"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:553
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:594
@@ -2896,10 +2647,9 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:666
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:704
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:794
-#, fuzzy
 msgctxt "renting_complete"
 msgid "I have read and hereby accept the conditions of rental"
-msgstr "Ich habe die Mietbedingungen gelesen und akzeptiere sie hiermit"
+msgstr "He llegit i accepto les condicions de lloguer"
 
 #: mybooking-templates/mybooking-plugin-complete.php:48
 #: mybooking-templates/mybooking-plugin-complete.php:49
@@ -2907,16 +2657,14 @@ msgstr "Ich habe die Mietbedingungen gelesen und akzeptiere sie hiermit"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:286
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:122
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:123
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Name"
-msgstr "Vorname"
+msgstr "Nom"
 
 #: mybooking-templates/mybooking-plugin-complete.php:97
-#, fuzzy
 msgctxt "renting_complete"
 msgid "No"
-msgstr "Nein"
+msgstr "No"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:650
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:551
@@ -2924,7 +2672,6 @@ msgstr "Nein"
 #: mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:42
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:227
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:326
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Paypal"
 msgstr "Paypal"
@@ -2935,10 +2682,9 @@ msgstr "Paypal"
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:386
 #: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:96
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:166
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Petrol supplement"
-msgstr "Benzinzusatz"
+msgstr "Suplement de combustible"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:58
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:61
@@ -2958,20 +2704,18 @@ msgstr "Benzinzusatz"
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:55
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:92
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:95
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Phone number"
-msgstr "Telefonnummer"
+msgstr "Número de telèfon"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:128
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:172
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:291
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:326
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:252
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Pick-up place supplement"
-msgstr "Abholplatzzuschlag"
+msgstr "Suplement de lloc de recollida"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:114
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:157
@@ -2979,58 +2723,51 @@ msgstr "Abholplatzzuschlag"
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:311
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:140
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:237
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Pick-up time supplement"
-msgstr "Abholzeitzuschlag"
+msgstr "Suplement d'hora de recollida"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:282
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:286
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Promotion Code"
-msgstr "Aktionscode"
+msgstr "Codi de promoció"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:542
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:571
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:655
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:681
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Request reservation"
-msgstr "Reservierung anfordern"
+msgstr "Sol·licita reserva"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:156
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:202
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:319
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:356
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:282
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Return place supplement"
-msgstr "Rückgabezusatz"
+msgstr "Suplement de tornada"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:142
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:187
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:305
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:341
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:267
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Return time supplement"
-msgstr "Rückgabezeitzuschlag"
+msgstr "Suplement de d'hora de devolució"
 
 #: mybooking-templates/mybooking-plugin-complete.php:89
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Select the schedule that suits your needs"
-msgstr "Wählen Sie den Zeitplan, der Ihren Bedürfnissen entspricht"
+msgstr "Seleccioneu l&#39;horari que s&#39;adapti a les vostres necessitats"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:148
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Supplements"
-msgstr "Ergänzungen"
+msgstr "Suplements"
 
 #: mybooking-templates/mybooking-plugin-complete.php:52
 #: mybooking-templates/mybooking-plugin-complete.php:53
@@ -3038,10 +2775,9 @@ msgstr "Ergänzungen"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:292
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:126
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:127
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Surname"
-msgstr "Nachname"
+msgstr "Cognom"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:170
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:248
@@ -3052,187 +2788,167 @@ msgstr "Nachname"
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:155
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:153
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:296
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Total"
-msgstr "Gesamt"
+msgstr "Total"
 
 #: mybooking-templates/mybooking-plugin-complete.php:94
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Will you need a skipper?"
-msgstr "Brauchen Sie einen Skipper?"
+msgstr "Necessitaràs un patró?"
 
 #: mybooking-templates/mybooking-plugin-complete.php:98
-#, fuzzy
 msgctxt "renting_complete"
 msgid "Yes"
-msgstr "Ja"
+msgstr "Si"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:663
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:568
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:769
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:240
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:339
-#, fuzzy
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to <b>Paypal payment platform</b> to make the "
 "confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</"
 "u> to make the payment."
 msgstr ""
-"Sie werden zur <b>Paypal-Zahlungsplattform</b> weitergeleitet, um die "
-"Bestätigungszahlung sicher durchzuführen. Sie können die Zahlung mit "
-"<u>Paypal</u> oder <u>Kreditkarte </u> ausführen."
+"La confirmació de la reserva es realitza de forma segura a la <b>plataforma "
+"Paypal</b>, un cop hagi completat el formulari de reserva. Podeu utilitzar "
+"<u>Paypal</u> o <u>targeta de crèdit</u> per fer el pagament."
 
 #: mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:55
-#, fuzzy
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to <b>Paypal payment platform</b> to make the payment "
 "securely. You can use <u>Paypal</u> or <u>credit card</u> to make the "
 "payment."
 msgstr ""
-"Sie werden zur <b>Paypal-Zahlungsplattform</b> weitergeleitet, um die "
-"Zahlung sicher durchzuführen. Sie können für die Zahlung <u>Paypal</u> oder "
-"<u>Kreditkarte</u> verwenden."
+"Se us redirigirà a la <b>plataforma de pagament Paypal</b> per fer el "
+"pagament de manera segura. Podeu utilitzar <u>Paypal</u> o la <u>targeta de "
+"crèdit</u> per fer el pagament."
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:673
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:579
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:779
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:250
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:350
-#, fuzzy
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>credit card payment platform</b> to make "
 "the confirmation payment securely."
 msgstr ""
-"Sie werden zur <b>Kreditkartenzahlungsplattform</b> weitergeleitet, um die "
-"Bestätigungszahlung sicher durchzuführen. "
+"La confirmació de la reserva es realitza de forma segura a la <b>plataforma "
+"bancària</b>, un cop hagi completat el formulari de reserva. "
 
 #: mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:66
-#, fuzzy
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>credit card payment platform</b> to make "
 "the payment securely."
 msgstr ""
-"Sie werden zur <b>Kreditkarten-Zahlungsplattform</b> weitergeleitet, um die "
-"Zahlung sicher durchzuführen."
+"Se us redirigirà a la <b>plataforma de pagament amb targeta de crèdit</b> "
+"per fer el pagament de manera segura."
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:644
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:546
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:751
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:222
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:321
-#, fuzzy
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>payment platform</b> to make the "
 "confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</"
 "u> to make the payment."
 msgstr ""
-"Sie werden zur <b>Zahlungsplattform</b> weitergeleitet, um die "
-"Bestätigungszahlung sicher durchzuführen. Sie können die Zahlung mit "
-"<u>Paypal</u> oder <u>Kreditkarte</u> ausführen."
+"La confirmació de la reserva es realitza de forma segura a la <b>plataforma "
+"de pagament</b>, un cop hagi completat el formulari de reserva. Podeu "
+"utilitzar <u>Paypal</u> o <u>targeta de crèdit</u> per fer el pagament."
 
 #: mybooking-templates/mybooking-plugin-reservation-payment-tmpl.php:37
-#, fuzzy
 msgctxt "renting_complete"
 msgid ""
 "You will be redirected to the <b>payment platform</b> to make the payment "
 "securely. You can use <u>Paypal</u> or <u>credit card</u> to make the "
 "payment."
 msgstr ""
-"Sie werden zur <b>Zahlungsplattform</b> weitergeleitet, um die Zahlung "
-"sicher durchzuführen. Sie können für die Zahlung <u>PayPal</u> oder "
-"<u>Kreditkarte</u> verwenden."
+"Se us redirigirà a la <b>plataforma de pagament</b> per fer el pagament de "
+"manera segura. Podeu utilitzar <u>Paypal</u> o la <u>targeta de crèdit</u> "
+"per fer el pagament."
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:795
-#, fuzzy
 msgctxt "renting_complete_create_account"
 msgid "Create account and book a reservation"
-msgstr "Erstellen Sie ein Konto und buchen Sie eine Reservierung"
+msgstr "Crea un compte i reserva una reserva"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:801
-#, fuzzy
 msgctxt "renting_complete_create_account"
 msgid "Only book a reservation"
-msgstr "Buchen Sie nur eine Reservierung"
+msgstr "Només fer reserva"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:806
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:807
-#, fuzzy
 msgctxt "renting_complete_create_account"
 msgid "Password"
-msgstr "Passwort"
+msgstr "Contrasenya"
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:808
-#, fuzzy
 msgctxt "renting_complete_create_account"
 msgid ""
 "Password must contain upper case letter, lower case letter, digit and symbol "
 "(@ ! * - _)"
 msgstr ""
-"Das Passwort muss Großbuchstaben, Kleinbuchstaben, Ziffer und Symbol (@! * - "
-"_) enthalten."
+"La contrasenya ha de contenir lletra majúscula, minúscula, dígit i símbol "
+"(@! * - _)"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation.php:15
 #: mybooking-templates/mybooking-plugin-modify-reservation.php:15
-#, fuzzy
 msgctxt "renting_form_modify_reservation"
 msgid "Modify reservation"
-msgstr "Reservierung ändern"
+msgstr "Modificar la reserva"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:191
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:337
 #: mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:171
-#, fuzzy
 msgctxt "renting_form_selector"
 msgid "Age selector"
-msgstr "Altersauswahl"
+msgstr "Selector d&#39;edat"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:130
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:307
 #: mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:121
 #: mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:93
-#, fuzzy
 msgctxt "renting_form_selector"
 msgid "Duration"
-msgstr "Dauer"
+msgstr "Duració"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:40
 #: mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:33
-#, fuzzy
 msgctxt "renting_form_selector"
 msgid "Pick-up place"
-msgstr "Lieferort"
+msgstr "Lloc de recollida"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:199
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:345
 #: mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:180
 #: mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:102
-#, fuzzy
 msgctxt "renting_form_selector"
 msgid "Promotion code"
-msgstr "Aktionscode"
+msgstr "Codi de promoció"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:102
 #: mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:92
-#, fuzzy
 msgctxt "renting_form_selector"
 msgid "Return place"
-msgstr "Rückgabeort"
+msgstr "Lloc de retorn"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:207
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:353
 #: mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:194
 #: mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:111
-#, fuzzy
 msgctxt "renting_form_selector"
 msgid "Search"
-msgstr "Suche"
+msgstr "Cerca"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:80
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:153
@@ -3240,111 +2956,95 @@ msgstr "Suche"
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:291
 #: includes/translation/mybooking-plugin-engine-context.php:404
 #: includes/translation/mybooking-plugin-engine-context.php:455
-#, fuzzy
 msgctxt "renting_form_selector"
 msgid "Time"
-msgstr "Stunde"
+msgstr "Hora"
 
 #: mybooking-templates/mybooking-plugin-modify-reservation-tmpl.php:223
 #: mybooking-templates/mybooking-plugin-selector-widget-inline-tmpl.php:24
-#, fuzzy
 msgctxt "renting_form_selector"
 msgid "Where"
-msgstr "Wo"
+msgstr "On"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget-tmpl.php:66
-#, fuzzy
 msgctxt "renting_form_selector_wizard"
 msgid "All"
-msgstr "Alles"
+msgstr "Tot"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:42
-#, fuzzy
 msgctxt "renting_form_selector_wizard"
 msgid "Book"
-msgstr "Buch"
+msgstr "Reserva"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:27
-#, fuzzy
 msgctxt "renting_form_selector_wizard"
 msgid "Select a location"
-msgstr "Daten müssen"
+msgstr "Seleccioneu una ubicació"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:38
-#, fuzzy
 msgctxt "renting_form_selector_wizard"
 msgid "Select dates"
-msgstr "Daten auswählen"
+msgstr "Seleccioneu les dates"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:36
-#, fuzzy
 msgctxt "renting_form_selector_wizard"
 msgid "When?"
-msgstr "Wann?"
+msgstr "Quan?"
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget.php:25
-#, fuzzy
 msgctxt "renting_form_selector_wizard"
 msgid "Where?"
-msgstr "Wo?"
+msgstr "On?"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:31
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Additional drivers"
-msgstr "Zusätzliche Fahrer"
+msgstr "Conductors adicionals"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:106
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:270
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:248
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:163
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Address"
-msgstr "Adresse"
+msgstr "Adreça"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:23
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Arrival"
-msgstr "Ankunft"
+msgstr "Arribada"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:39
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid ""
 "Assign a different customer from the driver only if you want the contract to "
 "be under another person's name."
 msgstr ""
-"Weisen Sie einen anderen Kunden als den Fahrer nur dann zu, wenn der Vertrag "
-"auf den Namen einer anderen Person ausgestellt werden soll."
+"Assigna un client diferent del conductor només si vols que el titular del "
+"contracte sigui diferent al conductor"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:42
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid ""
 "Assign a different customer from the skipper only if you want the contract "
 "to be under another person's name."
 msgstr ""
-"Weisen Sie einen anderen Kunden als den Skipper nur dann zu, wenn der "
-"Vertrag auf den Namen einer anderen Person ausgestellt werden soll."
+"Assigna un client diferent del patró només si vols que el titular del "
+"contracte sigui diferent al conductor"
 
 #: mybooking-templates/mybooking-plugin-reservation-documents-tmpl.php:24
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Before signing the contract we need you to upload the documentation"
-msgstr ""
-"Bevor Sie den Vertrag unterschreiben, müssen Sie die Unterlagen hochladen"
+msgstr "Abans de signar el contract necessitem que carreguis la documentació"
 
 #: mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:23
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid ""
 "By providing the necessary information, we will ensure everything is ready "
 "for the delivery day."
 msgstr ""
-"Durch Bereitstellung der notwendigen Informationen stellen wir sicher, dass "
-"alles für den Liefertermin bereit ist."
+"En proporcionar la informació necessària, ens assegurarem que tot estigui a "
+"punt per al dia de l'entrega."
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:160
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:174
@@ -3354,32 +3054,28 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:314
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:216
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:231
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "City"
-msgstr "Stadt"
+msgstr "Ciutat"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:29
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:31
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:52
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:54
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Company"
-msgstr "Unternehmen"
+msgstr "Empresa"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:25
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:28
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Company name"
-msgstr "Firmenname"
+msgstr "Nom de l'empresa"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:35
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Company VAT Number"
-msgstr "USt-IdNr."
+msgstr "NIF de l'empresa"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:221
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:225
@@ -3389,54 +3085,47 @@ msgstr "USt-IdNr."
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:359
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:273
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:277
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Complement"
-msgstr "Ergänzen"
+msgstr "Complement"
 
 #: mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:29
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Complete data"
-msgstr "Vollständige Daten"
+msgstr "Omplir les dades"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:115
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:280
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:257
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:173
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Country"
-msgstr "Land"
+msgstr "País"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:17
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Customer"
-msgstr "Kunde"
+msgstr "Client"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:17
-#, fuzzy
 #| msgid "Customer address"
 msgctxt "renting_my_reservation"
 msgid "Customer/Driver"
-msgstr "Kunde/Fahrer"
+msgstr "Client/Conductor"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:17
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Customer/Skipper"
-msgstr "Kunde/Kapitän"
+msgstr "Client/Patró"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:71
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:47
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:66
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:272
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:104
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Date of birth"
-msgstr "Geburtsdatum"
+msgstr "Data de naixement"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:168
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:247
@@ -3446,10 +3135,9 @@ msgstr "Geburtsdatum"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:218
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:348
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:424
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Date of expiry"
-msgstr "Gültig bis"
+msgstr "Data de caducitat"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:147
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:226
@@ -3459,16 +3147,14 @@ msgstr "Gültig bis"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:197
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:327
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:403
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Date of Issue"
-msgstr "Ausgabedatum"
+msgstr "Data d'emissió\n"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:46
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Departure"
-msgstr "Abflug"
+msgstr "Sortida"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:48
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:50
@@ -3476,10 +3162,9 @@ msgstr "Abflug"
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:114
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:116
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:118
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Document ID"
-msgstr "Dokument Identifikation"
+msgstr "Identificador del document"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:85
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:110
@@ -3487,34 +3172,29 @@ msgstr "Dokument Identifikation"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:93
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:299
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:142
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Document type"
-msgstr "Dokumententyp"
+msgstr "Tipus de document"
 
 #: mybooking-templates/mybooking-plugin-reservation-documents-tmpl.php:40
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Documentation upload is not available"
-msgstr "Die Dokumenten-Upload-Funktion ist nicht verfügbar"
+msgstr "La càrrega de documentació no hi és disponible"
 
 #: mybooking-templates/mybooking-plugin-reservation-documents-tmpl.php:45
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Documention has been uploaded successfully"
-msgstr "Die Dokumentation wurde erfolgreich hochgeladen"
+msgstr "La documentació s'ha carregat correctament"
 
 #: mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:50
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Download signed contract"
-msgstr "Vertrag herunterladen"
+msgstr "Descarrega el contracte signat"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:53
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Driver is the contract holder"
-msgstr "Der Fahrer ist der Vertragsinhaber"
+msgstr "El conductor és el titular del contracte"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:258
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:204
@@ -3526,10 +3206,9 @@ msgstr "Der Fahrer ist der Vertragsinhaber"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:180
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:382
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:386
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Driving license number"
-msgstr "Führerscheinnummer"
+msgstr "Num. permís de conduir"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:66
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:68
@@ -3537,19 +3216,17 @@ msgstr "Führerscheinnummer"
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:132
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:134
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:136
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "E-mail"
-msgstr "E-Mail-Adresse"
+msgstr "E-mail"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:39
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:41
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:62
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:64
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Estimated Time"
-msgstr "Geschätzte Zeit"
+msgstr "Hora aproximada"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:136
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:214
@@ -3559,31 +3236,27 @@ msgstr "Geschätzte Zeit"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:186
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:316
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:392
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Expedition country"
-msgstr "Ausstellungsland"
+msgstr "País d'expedició"
 
 #: mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:42
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Firm contract"
-msgstr "Fester Vertrag"
+msgstr "Signar contracte"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:19
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Flight"
-msgstr "Flug"
+msgstr "Vol"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:34
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:36
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:57
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:59
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Flight Number"
-msgstr "Flugnummer"
+msgstr "Nombre de vol"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:75
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:77
@@ -3591,10 +3264,9 @@ msgstr "Flugnummer"
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:141
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:143
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:145
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Height (cm)"
-msgstr "Höhe (cm)"
+msgstr "Alçada (cm)"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:78
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:103
@@ -3602,10 +3274,9 @@ msgstr "Höhe (cm)"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:87
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:293
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:135
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "ID card or passport"
-msgstr "Personalausweis oder Reisepass"
+msgstr "DNI o passaport"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:94
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:100
@@ -3621,28 +3292,25 @@ msgstr "Personalausweis oder Reisepass"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:310
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:150
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:155
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "ID card/passport number"
-msgstr "Ausweis-/Passnummer"
+msgstr "NIF/pasaport"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:190
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:170
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:163
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:369
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "License"
-msgstr "Lizenz"
+msgstr "Permís"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:197
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:176
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:169
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:375
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "License type"
-msgstr "Lizenztyp"
+msgstr "Tipus de permís"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:69
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:93
@@ -3650,10 +3318,9 @@ msgstr "Lizenztyp"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:59
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:265
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:126
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Nacionality"
-msgstr "Nationalität"
+msgstr "Nacionalitat"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:23
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:29
@@ -3675,26 +3342,23 @@ msgstr "Nationalität"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:247
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:65
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:69
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Name"
-msgstr "Vorname"
+msgstr "Nom"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:254
 #: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:87
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Navigation license number"
-msgstr "Navigationslizenznummer"
+msgstr "Número de llicència de navegació"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:243
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:246
 #: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:75
 #: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:79
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Navigation license type"
-msgstr "Art der Navigationslizenz"
+msgstr "Tipus de llicència de navegació"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:209
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:213
@@ -3704,65 +3368,54 @@ msgstr "Art der Navigationslizenz"
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:349
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:263
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:267
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Number"
-msgstr "Nummer"
+msgstr "Número"
 
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:414
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Paid"
-msgstr "Bezahlt"
+msgstr "Pagat"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:25
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Participant"
-msgstr "Teilnehmer"
+msgstr "Participant"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:27
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Participants"
-msgstr "Teilnehmer"
+msgstr "Participants"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-tmpl.php:19
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Passengers"
-msgstr "Passagiere"
+msgstr "Passatgers"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:28
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Pax 1"
 msgstr "Pax 1"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:95
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Pax 2"
 msgstr "Pax 2"
 
 #: mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:54
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Pay deposit"
-msgstr "Anzahlung leisten"
+msgstr "Pagar paga i senyal"
 
 #: mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:59
-#, fuzzy
-#| msgid "Pay now!"
 msgctxt "renting_my_reservation"
 msgid "Pay now"
-msgstr "Zahlen Sie jetzt"
+msgstr "Paga ara"
 
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:422
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Pending"
-msgstr "steht aus"
+msgstr "Pendent"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:58
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:60
@@ -3770,35 +3423,31 @@ msgstr "steht aus"
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:124
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:126
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:128
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Phone number"
-msgstr "Telefonnummer"
+msgstr "Número de telèfon"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:23
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Please fill in all the required fields"
-msgstr "Bitte füllen Sie alle Pflichtfelder aus"
+msgstr "Si us plau omplir els camps obligatoris"
 
 #: mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:22
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Please follow the steps and complete the booking process."
 msgstr ""
-"Bitte folgen Sie den Schritten und vervollständigen Sie den Buchungsprozess."
+"Si us plau, segueix les següents passes per completar el procés de reserva"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:46
-#, fuzzy
+#| msgid "Please, does not change if you are not sure."
 msgctxt "renting_my_reservation"
 msgid "Please, do not change if you are not sure."
-msgstr "Bitte ändern Sie es nicht, wenn Sie sich nicht sicher sind."
+msgstr "Si us plau, no ho canvïis si no ho tens clar"
 
 #: mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:24
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Please, sign the contract to finish the process"
-msgstr "Bitte unterschreiben Sie den Vertrag, um den Prozess abzuschließen."
+msgstr "Si us plau, signa el contracte per finalitzar el procés"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:183
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:187
@@ -3808,59 +3457,51 @@ msgstr "Bitte unterschreiben Sie den Vertrag, um den Prozess abzuschließen."
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:327
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:241
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:245
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Postal Code"
-msgstr "Postleitzahl"
+msgstr "Codi Postal"
 
 #: mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:57
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Prepay the rest"
-msgstr "Rest vorauszahlen"
+msgstr "Prepagar la resta"
 
 #: mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:33
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Remember to reload the page after signing the contract to download it."
 msgstr ""
-"Bitte laden Sie die Seite nach der Vertragsunterzeichnung neu, um ihn "
-"herunterzuladen."
+"Recorda recarregar la pàgina després de signar el contracte per poder-lo "
+"descarregar"
 
 #: mybooking-templates/mybooking-plugin-reservation-documents-tmpl.php:33
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid ""
 "Remember to reload the page after uploading the documentation to continue "
 "with the process."
 msgstr ""
-"Bitte laden Sie die Seite nach dem Hochladen der Dokumente neu, um mit dem "
-"Prozess fortzufahren."
+"Recorda recarregar la pàgina després de carregar la documentació per "
+"continuar amb el procés"
 
 #: mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:19
 #: mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:36
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Sign contract"
-msgstr "Unterschreibe den Vertrag"
+msgstr "Signar contracte"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:19
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Skipper"
-msgstr "Skipper"
+msgstr "Patró"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:235
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Skipper data"
-msgstr "Skipperdaten"
+msgstr "Dades del patró"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:55
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Skipper is the contract holder"
-msgstr "Der Skipper ist der Vertragsinhaber"
+msgstr "El patró és el titular del contracte"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:133
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:149
@@ -3870,10 +3511,9 @@ msgstr "Der Skipper ist der Vertragsinhaber"
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:289
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:189
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:205
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "State"
-msgstr "Zustand"
+msgstr "Província"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:197
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:201
@@ -3883,10 +3523,9 @@ msgstr "Zustand"
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:339
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:253
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:257
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Street"
-msgstr "Straße"
+msgstr "Carrer"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:36
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:41
@@ -3908,104 +3547,89 @@ msgstr "Straße"
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:257
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:73
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:77
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Surname"
-msgstr "Nachname"
+msgstr "Cognom"
 
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:29
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Thanks, the process has been completed successfully"
-msgstr "Vielen Dank, der Prozess wurde erfolgreich abgeschlossen"
+msgstr "Gràcies, el procés s'ha completat amb èxit"
 
 #: mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:41
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "The contract has been signed successfully"
-msgstr "Der Vertrag wurde erfolgreich unterzeichnet"
+msgstr "El contracte s'ha signat amb èxit"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:38
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid ""
 "The customer represents the contract holder. Typically, the driver is the "
 "contract holder."
 msgstr ""
-"Der Kunde stellt den Vertragsinhaber dar. Normalerweise ist der Fahrer der "
-"Vertragsinhaber."
+"El client representa el titular del contracte. Normalment, el conductor "
+"acostuma a ser-ho."
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:41
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid ""
 "The customer represents the contract holder. Typically, the skipper is the "
 "contract holder."
 msgstr ""
-"Der Kunde repräsentiert den Vertragsinhaber. Normalerweise ist der Skipper "
-"der Vertragsinhaber."
+"El client representa el titular del contracte. Normalment, el patró acostuma "
+"a ser-ho"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:20
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "There are additional drivers"
-msgstr "Es gibt zusätzliche Fahrer"
+msgstr "Hi han conductors adicionals"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:44
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid ""
 "This does not affect billing, as you can always request the invoice with "
 "different tax details than those on the contract."
 msgstr ""
-"Dies hat keine Auswirkungen auf die Abrechnung, da Sie jederzeit eine "
-"Rechnung mit anderen Steuerdetails als die im Vertrag angegebenen anfordern "
-"können."
+"No afecta a la facturació, ja que pots demanar la factura a nom d'una "
+"empresa o persona diferent al titular del contracte."
 
 #: mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:56
 #: mybooking-templates/mybooking-plugin-reservation-documents-tmpl.php:50
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "This step is not available for this reservation"
-msgstr "Dieser Schritt ist für diese Reservierung nicht verfügbar."
+msgstr "Aquest pas no està disponible per a aquesta reserva"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-tmpl.php:84
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Update"
-msgstr "Aktualisieren"
+msgstr "Actualització"
 
 #: mybooking-templates/mybooking-plugin-reservation-steps-tmpl.php:36
 #: mybooking-templates/mybooking-plugin-reservation-documents-tmpl.php:19
 #: mybooking-templates/mybooking-plugin-reservation-documents-tmpl.php:36
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Upload documentation"
-msgstr "Dokumente hochladen"
+msgstr "Carregar la documentació"
 
 #: mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:46
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Use the link to download the contract"
-msgstr "Verwenden Sie den Link, um den Vertrag herunterzuladen"
+msgstr "Fer servir l'enllaç per desacarregar el contracte"
 
 #: mybooking-templates/mybooking-plugin-reservation-contract-signature-tmpl.php:29
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Use the secure link to sign the contract"
-msgstr "Benutzen Sie den sicheren Link, um den Vertrag zu unterschreiben."
+msgstr "Fes servir l'enllaç segur per signar el contracte"
 
 #: mybooking-templates/mybooking-plugin-reservation-documents-tmpl.php:29
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Use the secure link to upload documentation"
-msgstr "Verwenden Sie den sicheren Link, um die Dokumentation hochzuladen."
+msgstr "Fes servir l'enllaç segur per carregar la documentació"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:32
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "VAT Number"
-msgstr "USt-IdNr."
+msgstr "CIF"
 
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:85
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:87
@@ -4013,84 +3637,73 @@ msgstr "USt-IdNr."
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:151
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:153
 #: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:155
-#, fuzzy
 msgctxt "renting_my_reservation"
 msgid "Weight (kg)"
-msgstr "Gewicht (kg)"
+msgstr "Pes (kg)"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:97
-#, fuzzy
 msgctxt "renting_my_reservation_passenger"
 msgid "Add a new passenger"
-msgstr "Fügen Sie einen neuen Passagier hinzu"
+msgstr "Afegeix un nou passatger"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:64
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:67
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:130
-#, fuzzy
 msgctxt "renting_my_reservation_passenger"
 msgid "Email address"
-msgstr "E-Mail-Addresse"
+msgstr "Correu electrònic"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:53
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:57
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:123
-#, fuzzy
 #| msgid "ID card or passport"
 msgctxt "renting_my_reservation_passenger"
 msgid "ID card/passport number"
-msgstr "Personalausweis oder Reisepass"
+msgstr "DNI o passaport"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:32
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:36
-#, fuzzy
 msgctxt "renting_my_reservation_passenger"
 msgid "Name"
-msgstr "Name"
+msgstr "Nom"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:19
-#, fuzzy
 msgctxt "renting_my_reservation_passenger"
 msgid "No passengers found in reservation"
-msgstr "Keine Passagiere in der Reservierung gefunden"
+msgstr "No s&#39;han trobat passatgers a la reserva"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:84
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:87
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:154
-#, fuzzy
 msgctxt "renting_my_reservation_passenger"
 msgid "Notes"
-msgstr "Anmerkungen"
+msgstr "Notes"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:73
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:76
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:141
-#, fuzzy
 msgctxt "renting_my_reservation_passenger"
 msgid "Phone number"
-msgstr "Telefonnummer"
+msgstr "Número de telèfon"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:115
-#, fuzzy
 msgctxt "renting_my_reservation_passenger"
 msgid "Remove"
-msgstr "Entfernen"
+msgstr "Eliminar"
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:42
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:46
-#, fuzzy
 msgctxt "renting_my_reservation_passenger"
 msgid "Surname"
-msgstr "Nachname"
+msgstr "Cognoms"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:188
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:194
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:314
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:320
-#, fuzzy
 msgctxt "renting_product_calendar"
 msgid "Book Now!"
-msgstr "Buchen Sie jetzt!"
+msgstr "Reserva ara"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:29
 msgctxt "renting_product_calendar"
@@ -4099,10 +3712,9 @@ msgstr ""
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:32
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:147
-#, fuzzy
 msgctxt "renting_product_calendar"
 msgid "Reservation summary"
-msgstr "Reservierung"
+msgstr "Resum de la reserva"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:39
 msgctxt "renting_product_calendar"
@@ -4110,191 +3722,162 @@ msgid "Return place"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:49
-#, fuzzy, php-format
 msgctxt "renting_product_calendar"
 msgid "Select %s"
-msgstr "Auswählen %s"
+msgstr "Seleccioneu %s"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:31
-#, fuzzy
 msgctxt "renting_product_calendar"
 msgid "Select pick-up place"
-msgstr "Abholort auswählen"
+msgstr "Seleccioneu el lloc de recollida"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:41
-#, fuzzy
 msgctxt "renting_product_calendar"
 msgid "Select return place"
-msgstr "Wählen Sie den Rückgabeort"
+msgstr "Seleccioneu el lloc de tornada"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:195
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:321
-#, fuzzy
 msgctxt "renting_product_calendar"
 msgid "Sorry, there is no availability during these hours"
-msgstr "Leider ist während dieser Zeiten keine Verfügbarkeit verfügbar"
+msgstr "Ho sentim, no hi ha disponibilitat durant aquestes hores"
 
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:200
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:326
-#, fuzzy
 msgctxt "renting_product_calendar"
 msgid ""
 "Sorry, there is no availability for the entire period. The calendar shows "
 "those days when there is availability, but it may not be available for "
 "certain consecutive dates."
 msgstr ""
-"Leider gibt es keine Verfügbarkeit für den gesamten Zeitraum. Der Kalender "
-"zeigt die Tage an, an denen Verfügbarkeit besteht, ist jedoch möglicherweise "
-"an bestimmten aufeinander folgenden Daten nicht verfügbar."
+"Ho sentim, no hi ha disponibilitat per a tot el període. El calendari mostra "
+"els dies en què hi ha disponibilitat, però és possible que no estigui "
+"disponible per a determinades dates consecutives."
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:22
-#, fuzzy
 msgctxt "renting_product_detail"
 msgid "Choose delivery and return places"
-msgstr "Wählen Sie Liefer- und Rückgabeorte"
+msgstr "Trieu llocs de lliurament i devolució"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:100
-#, fuzzy
 msgctxt "renting_product_detail"
 msgid "Delivery time"
-msgstr "Lieferzeit"
+msgstr "Hora d'entrega"
 
 #: mybooking-templates/mybooking-plugin-routes-product.php:27
-#, fuzzy, php-format
 msgctxt "renting_product_detail"
 msgid "From <span class=\"mybooking-product_detail-amount\">%s€</span>"
-msgstr "Von <span class=\"mybooking-product_detail-amount\">%s€</span>"
+msgstr "Des de <span class=\"mybooking-product_detail-amount\">%s€</span>"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:68
-#, fuzzy
 msgctxt "renting_product_detail"
 msgid "Hours or one full day"
-msgstr "Stunden oder einen ganzen Tag"
+msgstr "Hores o un dia sencer"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:69
-#, fuzzy
 msgctxt "renting_product_detail"
 msgid "Period of dates"
-msgstr "Zeitraum von Tagen"
+msgstr "Període de dies"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:110
-#, fuzzy
 msgctxt "renting_product_detail"
 msgid "Return time"
-msgstr "Zeit zurück drehen"
+msgstr "Hora de tornada"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:61
-#, fuzzy
 msgctxt "renting_product_detail"
 msgid "Select dates"
-msgstr "Wählen Sie Daten aus"
+msgstr "Escollir dates"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:89
-#, fuzzy
 msgctxt "renting_product_detail"
 msgid "Select time"
-msgstr "Wählen Sie die Uhrzeit aus"
+msgstr "Escollir horari"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:346
-#, fuzzy
 msgctxt "renting_product_detail"
 msgid ""
 "We are sorry. There are not defined times. Please, configure them at the "
 "calendar"
 msgstr ""
-"Wir entschuldigen uns. Es gibt keine festgelegten Fahrpläne. Bitte "
-"konfigurieren Sie diese im Kalender"
+"Ho sentim. No hi ha horaris definits. Si us plau, configureu-los al calendari"
 
 #: mybooking-templates/mybooking-plugin-products-search-tmpl.php:27
 #: mybooking-templates/mybooking-plugin-products-search-tmpl.php:29
-#, fuzzy
 msgctxt "renting_product_search"
 msgid "Daily price"
-msgstr "Tagespreis"
+msgstr "Preu diari"
 
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:34
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "available"
-msgstr "Zurück"
+msgstr "disponible"
 
 #: mybooking-templates/mybooking-plugin-shift-picker.php:64
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "Book it!"
-msgstr "Buche es!"
+msgstr "Reserva'l!"
 
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:98
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "From"
-msgstr "Aus"
+msgstr "Des de"
 
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:104
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "hours"
-msgstr "Std."
+msgstr "hores"
 
 #: mybooking-templates/mybooking-plugin-shift-picker.php:53
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "Next »"
-msgstr "Nächste"
+msgstr "Pròxim"
 
 #: mybooking-templates/mybooking-plugin-shift-picker.php:39
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "Pick a day"
-msgstr "Suche dir einen Tag aus"
+msgstr "Tria un dia"
 
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:54
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "Reservation summary"
-msgstr "Zusammenfassung der Reservierung"
+msgstr "Resum de la reserva"
 
 #: mybooking-templates/mybooking-plugin-shift-picker.php:16
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "Select a shift"
-msgstr "Wählen Sie eine Schicht aus"
+msgstr "Seleccioneu un torn"
 
 #: mybooking-templates/mybooking-plugin-shift-picker.php:29
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "Select quantity"
-msgstr "Wählen Sie die Menge"
+msgstr "Seleccioneu la quantitat"
 
 #: mybooking-templates/mybooking-plugin-shift-picker.php:19
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid ""
 "Select the number of vehicles and the day you want to reserve to see the "
 "available shifts."
 msgstr ""
-"Wählen Sie die Anzahl der Fahrzeuge und den Tag aus, den Sie reservieren "
-"möchten, um die verfügbaren Schichten anzuzeigen."
+"Seleccioneu el nombre de vehicles i el dia que voleu reservar per veure els "
+"torns disponibles."
 
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:101
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "to"
-msgstr "Zu"
+msgstr "a"
 
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:41
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "Unavailable"
-msgstr "Nicht verfügbar"
+msgstr "No disponible"
 
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:19
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:34
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:92
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "Unit(s)"
-msgstr "Einheiten"
+msgstr "Unitat(s)"
 
 #: mybooking-templates/mybooking-plugin-shift-picker.php:71
 msgctxt "renting_shift_picker"
@@ -4304,10 +3887,9 @@ msgid ""
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-shift-picker.php:49
-#, fuzzy
 msgctxt "renting_shift_picker"
 msgid "« Back"
-msgstr "Zurück"
+msgstr "Tornar"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:602
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:159
@@ -4315,84 +3897,73 @@ msgstr "Zurück"
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:443
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:171
 #: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:138
-#, fuzzy
 msgctxt "renting_summary"
 msgid "Customer's details"
-msgstr "Kundendaten"
+msgstr "Detalls del client"
 
 #: mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:23
 #: mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:71
-#, fuzzy
 msgctxt "renting_summary"
 msgid "Deposit"
-msgstr "Anzahlung"
+msgstr "Deposit"
 
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:98
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:242
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:275
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:107
-#, fuzzy
 msgctxt "renting_summary"
 msgid "Extras"
 msgstr "Extras"
 
 #: mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:28
 #: mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:87
-#, fuzzy
 msgctxt "renting_summary"
 msgid "Guarantee"
-msgstr "Garantie"
+msgstr "Garantia"
 
 #: mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:155
-#, fuzzy
 msgctxt "renting_summary"
 msgid "No items found"
-msgstr "Keine Elemente gefunden"
+msgstr "No s'han trobat elements"
 
 #: mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:33
 #: mybooking-templates/mybooking-plugin-complete-multiple-items-table-tmpl.php:103
-#, fuzzy
 msgctxt "renting_summary"
 msgid "Price"
-msgstr "Preis"
+msgstr "Preu"
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:25
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:34
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:74
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:33
 #: mybooking-templates/mybooking-plugin-activities-summary-tmpl.php:27
-#, fuzzy
 msgctxt "renting_summary"
 msgid "Reservation Id"
-msgstr "Reservierungs-ID"
+msgstr "Identificador de reserva"
 
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:269
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:302
-#, fuzzy
 msgctxt "renting_summary"
 msgid "Supplements"
-msgstr "Ergänzungen"
+msgstr "Suplements"
 
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:374
-#, fuzzy
 msgctxt "renting_summary"
 msgid "Total paid"
-msgstr "Ganz bezahlt"
+msgstr "Total pagat"
 
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:384
-#, fuzzy
 msgctxt "renting_summary"
 msgid "Total pending"
-msgstr "Insgesamt ausstehend"
+msgstr "Total pendent"
 
 #. Description of the plugin
-#, fuzzy
 msgid ""
 "Reservation Engine WordPress frontend for Mybooking. Transforms wordpress "
 "into a rental / accommodation / tours reservation engine."
 msgstr ""
-"Reservierungs-Engine WordPress-Frontend für Mybooking. Verwandelt WordPress "
-"in eine Reservierungsmaschine für Vermietung / Unterkunft / Touren."
+"Motor de reserva Frontend de WordPress per a Mybooking. Transforma wordpress "
+"en un motor de reserva de lloguer / allotjament / excursions."
 
 #: includes/settings/mybooking-plugin-settings.php:1650
 msgctxt "settings_context"
@@ -5087,90 +4658,76 @@ msgid "Testimonial"
 msgstr ""
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:16
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "Add testimonial"
-msgstr "Erstellen"
+msgstr "Afegeix testimoni"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:18
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr "Editar"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:19
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "Edit testimonial"
-msgstr "Bearbeiten referenz"
+msgstr "Editar testimoni"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:17
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:20
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "New testimonial"
-msgstr "Erstellen"
+msgstr "Nou testimoni"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:24
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "No testimonial found"
-msgstr "Keine referenz gefunden."
+msgstr "No s'ha trobat cap testimoni"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:25
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "No testimonial found on bin"
-msgstr "Keine referenz im Papierkorb gefunden."
+msgstr "Cap testimoni a la paperera"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:26
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "Parent testimonial"
-msgstr "Übergeordnete referenz"
+msgstr "Testimoni dels pares"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:23
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "Search testimonial"
-msgstr "Referenz durschsuchen"
+msgstr "Cercar testimoni"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:21
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "See"
-msgstr "Anschauen"
+msgstr "Veure"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:22
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "See testimonial"
-msgstr "Anschauen referenz"
+msgstr "Veure testimoni"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:15
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "Testimonial"
-msgstr "Referenz"
+msgstr "Testimoni"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:14
-#, fuzzy
 msgctxt "testimonial_content"
 msgid "Testimonials"
-msgstr "Referenzen"
+msgstr "Testimonis"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:436
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Accommodation"
-msgstr "Unterkunft"
+msgstr "Allotjament"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:335
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:337
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Address"
-msgstr "Adresse"
+msgstr "Adreça"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:463
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:465
@@ -5180,73 +4737,62 @@ msgstr "Adresse"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:533
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:562
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:563
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Address or hotel name"
-msgstr "Adresse oder Hotelname"
+msgstr "Adreça o nom de l'hotel"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:107
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Adults: "
-msgstr "Erwachsene:"
+msgstr "Adults:"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:331
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Billing address"
-msgstr "Rechnungsadresse"
+msgstr "Adreça de facturació"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:111
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Children: "
-msgstr "Kinder:"
+msgstr "Nens:"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:342
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:344
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "City"
-msgstr "Stadt"
+msgstr "Ciutat"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout.php:60
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Close"
-msgstr "Nah dran"
+msgstr "Tanca"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:354
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Country"
-msgstr "Land"
+msgstr "País"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout.php:42
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Customer's details"
-msgstr "Kundendaten"
+msgstr "Dades del client"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:490
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:555
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Drop off"
-msgstr "Abgabe"
+msgstr "Tornada"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:381
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:383
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Dropoff address (hotel, resource, address, terminal)"
-msgstr "Abgabeadresse (Hotel, Ressource, Adresse, Terminal)"
+msgstr "Adreça de lliurament (hotel, recurs, adreça, terminal)"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:200
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Extras"
-msgstr "Extras"
+msgstr "Extres"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:409
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:430
@@ -5254,10 +4800,9 @@ msgstr "Extras"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:509
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:544
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:574
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Flight estimated time"
-msgstr "Geschätzte Flugzeit"
+msgstr "Hora de vol"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:403
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:424
@@ -5265,141 +4810,121 @@ msgstr "Geschätzte Flugzeit"
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:505
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:540
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:570
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Flight number"
-msgstr "Flugnummer"
+msgstr "Número de vol"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:428
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:543
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:573
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Flight or Vessel estimated time"
-msgstr "Geschätzte Flug- oder Schiffszeit"
+msgstr "Hora estimada de vol o vaixell"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:407
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:479
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:508
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Flight or vessel estimated time"
-msgstr "Flight or vessel estimated time"
+msgstr "Hora estimada de vol o vaixell"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:422
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:539
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:569
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Flight or Vessel number"
-msgstr "Flug- oder Schiffsnummer"
+msgstr "Número de vol o vaixell"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:401
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:473
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:504
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Flight or vessel number"
-msgstr "Flug- oder Schiffsnummer"
+msgstr "Número de vol o vaixell"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:115
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Infants: "
-msgstr "Kleinkinder:"
+msgstr "Nadons:"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:440
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:442
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Name of Hotel / Complex / Villa and address"
-msgstr "Name des Hotels / Komplexes / Villa und Adresse"
+msgstr "Nom de l'hotel / complex / vila i adreça"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:396
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Outward Journey Details"
-msgstr "Details zur Hinfahrt"
+msgstr "Detalls del viatge d'anada"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:455
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:525
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Pickup"
-msgstr "Abholen"
+msgstr "Recollida"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:373
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:375
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Pickup address (hotel, resource, address, terminal)"
-msgstr "Abholadresse (Hotel, Ressource, Adresse, Terminal)"
+msgstr "Adreça de recollida (hotel, recurs, adreça, terminal)"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:359
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:361
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Postal Code"
-msgstr "Postleitzahl"
+msgstr "Codi postal"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:44
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Reservation summary"
-msgstr "Zusammenfassung der Reservierung"
+msgstr "Resum de la reserva"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:417
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Return Journey Details"
-msgstr "Details zur Rückreise"
+msgstr "Detalls del viatge de tornada"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:519
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Round trip details"
-msgstr "Details zur Hin- und Rückfahrt"
+msgstr "Detalls d'anada i tornada"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:347
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:349
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "State"
-msgstr "Provinz"
+msgstr "Província"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:393
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Transfer details"
-msgstr "Überweisungsdetails"
+msgstr "Detalls de la transferència"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:449
-#, fuzzy
 msgctxt "transfer_checkout"
 msgid "Trip details"
-msgstr "Reisedetails"
+msgstr "Detalls del viatge"
 
 #: mybooking-templates/mybooking-plugin-transfer-choose-vehicle-tmpl.php:91
-#, fuzzy
 msgctxt "transfer_choose_product"
 msgid "Book it!"
-msgstr "Buche es!"
+msgstr "Reserva'l!"
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:67
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:66
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:70
-#, fuzzy
 msgctxt "transfer_choose_vehicle"
 msgid "Adults"
-msgstr "Erwachsene"
+msgstr "Adults"
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:68
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:67
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:71
-#, fuzzy
 msgctxt "transfer_choose_vehicle"
 msgid "Children"
-msgstr "Kinder"
+msgstr "Nens"
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:45
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:60
@@ -5407,24 +4932,21 @@ msgstr "Kinder"
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:59
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:48
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:63
-#, fuzzy
 msgctxt "transfer_choose_vehicle"
 msgid "Destination"
-msgstr "Ziel"
+msgstr "Destinació"
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:69
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:68
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:72
-#, fuzzy
 msgctxt "transfer_choose_vehicle"
 msgid "Infants"
-msgstr "Kleinkinder"
+msgstr "Infants"
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:23
-#, fuzzy
 msgctxt "transfer_choose_vehicle"
 msgid "One Way"
-msgstr "Einweg"
+msgstr "Una direcció"
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:41
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:56
@@ -5432,10 +4954,9 @@ msgstr "Einweg"
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:55
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:44
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:59
-#, fuzzy
 msgctxt "transfer_choose_vehicle"
 msgid "Origin"
-msgstr "Herkunft"
+msgstr "Origen"
 
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:28
 msgctxt "transfer_choose_vehicle"
@@ -5448,120 +4969,103 @@ msgid "Reservation summary"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-summary-tmpl.php:21
-#, fuzzy
 msgctxt "transfer_choose_vehicle"
 msgid "Round trip"
-msgstr "Rundfahrt"
+msgstr "Viatge d'anada i tornada"
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:151
-#, fuzzy
 msgctxt "transfer_complete"
 msgid "Supplements"
-msgstr "Ergänzungen"
+msgstr "Suplements"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:156
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:192
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Adults"
-msgstr "Erwachsene"
+msgstr "Adults"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:162
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:198
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Children"
-msgstr "Kinder"
+msgstr "Nens"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:75
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:75
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Date"
-msgstr "Datum"
+msgstr "Data"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:59
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:59
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Destination"
-msgstr "Ziel"
+msgstr "Destinació"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:176
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:212
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Find transfer"
-msgstr "Überweisung finden"
+msgstr "Cercar transfer"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:168
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:204
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Infants"
-msgstr "Kleinkinder"
+msgstr "Nadons"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:23
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:23
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "One way"
-msgstr "Einweg"
+msgstr "Una direcció"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:48
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:48
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Origin"
-msgstr "Herkunft"
+msgstr "Origen"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:128
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:103
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:163
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Return Date"
-msgstr "Rückflugdatum"
+msgstr "Retorn"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:113
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:148
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Return Destination"
-msgstr "Rückreiseziel"
+msgstr "Destinació de tornada"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:102
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:137
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Return Origin"
-msgstr "Rückkehr Herkunft"
+msgstr "Origen de retorn"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:29
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:29
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Round trip"
-msgstr "Rundfahrt"
+msgstr "Viatge d'anada i tornada"
 
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:86
 #: mybooking-templates/mybooking-plugin-transfer-modify-reservation-tmpl.php:139
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:86
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:114
 #: mybooking-templates/mybooking-plugin-transfer-selector-widget-tmpl.php:174
-#, fuzzy
 msgctxt "transfer_form_selector"
 msgid "Time"
-msgstr "Stunde"
+msgstr "Hora"
 
 #: mybooking-templates/mybooking-plugin-transfer-reservation-tmpl.php:128
-#, fuzzy
 msgctxt "transfer_reservation"
 msgid "Supplements"
-msgstr "Ergänzungen"
+msgstr "Suplements"
 
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:119
-#, fuzzy
 msgctxt "transfer_summary"
 msgid "Supplements"
-msgstr "Ergänzungen"
+msgstr "Suplements"

@@ -1195,7 +1195,7 @@
 
       // Get plugin version
       if ( $this->version == null) {
-        $plugin_file = dirname(__DIR__).'/mybooking-wp-plugin.php';
+        $plugin_file = dirname(__DIR__).'/mybooking-reservation-engine.php';
         $plugin_data = get_file_data( $plugin_file, ['Version' => 'Version'] );
         $this->version = $plugin_data['Version'];
       }

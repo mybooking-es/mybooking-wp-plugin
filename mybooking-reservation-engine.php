@@ -33,4 +33,4 @@ function mybookingPlugin() {
   return MyBookingPlugin::getInstance();
 }
 
-$GLOBALS['mybooking-wp-plugin'] = mybookingPlugin();
+$GLOBALS['mybooking-reservation-engine'] = mybookingPlugin();
