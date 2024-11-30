@@ -5,7 +5,6 @@
 * Description: Reservation Engine WordPress frontend for Mybooking. Transforms wordpress into a rental / accommodation / tours reservation engine.
 * Version: 2.4.0
 * Author: mybooking
-* Text Domain: mybooking-wp-plugin
 * Author URI: https://mybooking.es/
 * License: GPL v2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html

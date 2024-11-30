@@ -21,7 +21,7 @@
 
   <!-- Title -->
   <div id="step_title" class="selector_wizard_step_title mybooking-wizard_step-title">
-    <div><?php $bloginfo = get_bloginfo(); echo $bloginfo ?></div>
+    <div><?php $bloginfo = get_bloginfo(); echo esc_html( $bloginfo ) ?></div>
   </div>
 
   <!-- Close btn -->

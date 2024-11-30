@@ -7,7 +7,7 @@
 		<h1 class="mb-onboarding-title">
 			<?php echo esc_html_x( 'Welcome onboard', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 			<br>
-			<?php esc_html_e($trade_name) ?>
+			<?php esc_html($trade_name) ?>
 		</h1>
 		<p class="mb-onboarding-description">
 			<?php echo esc_html_x( 'We will automatically setup the plugin based on your current account settings.', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
@@ -26,7 +26,7 @@
 	<div class="mb-onboarding-setup-item">
 		<?php echo esc_html_x( 'Type of bussiness', 'onboarding_context', 'mybooking-wp-plugin' ) ?>
 		<strong>
-			<?php esc_html_e($family_name) ?>
+			<?php esc_html($family_name) ?>
 		</strong>
 	</div>
 	<div class="mb-onboarding-setup-item">

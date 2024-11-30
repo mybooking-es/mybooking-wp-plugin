@@ -120,7 +120,7 @@
             <span class="mybooking-summary_item">
               <span class="mybooking-summary_duration">
                 <span class="dashicons dashicons-calendar-alt"></span>
-                <%=booking.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
+                <%=booking.days%> <?php echo esc_html( MyBookingEngineContext::getInstance()->getDuration() ) ?>
               </span>
             </span>
           <% } else if (booking.hours > 0) { %>

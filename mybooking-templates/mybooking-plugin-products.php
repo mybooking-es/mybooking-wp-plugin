@@ -76,24 +76,24 @@
 									<!-- Length Eslora-->
 									<?php if ( property_exists( $mybooking_product, 'characteristic_length' ) && $mybooking_product->characteristic_length &&
 														 $mybooking_product->characteristic_length != 0) { ?>
-										<span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html(MyBookingEngineContext::getInstance()->getLength() ) ?> <?php echo number_format_i18n($mybooking_product->characteristic_length, 2)?> m.</small></span>
+										<span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html(MyBookingEngineContext::getInstance()->getLength() ) ?> <?php echo esc_html( number_format_i18n($mybooking_product->characteristic_length, 2) )?> m.</small></span>
 									<?php } ?>
 									<!-- Width Manga -->
 									<?php if ( property_exists( $mybooking_product, 'characteristic_width' ) && $mybooking_product->characteristic_width && 
 														 $mybooking_product->characteristic_width != 0) { ?>
-										<span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html(MyBookingEngineContext::getInstance()->getWidth() ) ?> <?php echo number_format_i18n($mybooking_product->characteristic_width, 2)?> m.</small></span>
+										<span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html(MyBookingEngineContext::getInstance()->getWidth() ) ?> <?php echo esc_html( number_format_i18n($mybooking_product->characteristic_width, 2) )?> m.</small></span>
 									<?php } ?>
 									<!-- Height Calado -->
 									<?php if ( property_exists( $mybooking_product, 'characteristic_width' ) && 
 									          $mybooking_product->characteristic_height && $mybooking_product->characteristic_height != 0) { ?>
-										<span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html(MyBookingEngineContext::getInstance()->getHeight() ) ?> <?php echo number_format_i18n($mybooking_product->characteristic_height,2) ?> m.</small></span>
+										<span class="mybooking-product_characteristics-text-item"><small><?php echo esc_html(MyBookingEngineContext::getInstance()->getHeight() ) ?> <?php echo esc_html( number_format_i18n($mybooking_product->characteristic_height,2) ) ?> m.</small></span>
 									<?php } ?>
 								</div>
 								<div class="mybooking-product_characteristics-text">
 									<!-- Optional external driver (skipper) -->
 									<?php if ( property_exists( $mybooking_product, 'optional_external_driver' ) && 
 														!empty( $mybooking_product->optional_external_driver ) ) { ?>
-										<span class="mybooking-product_characteristics-text-item mb-badge secondary"><?php echo $mybooking_product->optional_external_driver_name ?></span>
+										<span class="mybooking-product_characteristics-text-item mb-badge secondary"><?php echo esc_html( $mybooking_product->optional_external_driver_name ) ?></span>
 										&nbsp;
 									<?php } ?>
 									<!-- Driving license -->
@@ -101,7 +101,7 @@
 														 $mybooking_product->optional_external_driver != 'required' && 
 											   !empty( $mybooking_product->driving_license_type_name ) ) { ?>
 										<span class="mybooking-product_characteristics-text-item mb-badge secondary">
-										<?php echo $mybooking_product->driving_license_type_name ?></span>
+										<?php echo esc_html( $mybooking_product->driving_license_type_name ) ?></span>
 									<?php } ?>
 								</div>
 								<?php } ?>

@@ -46,6 +46,7 @@
     <!-- // Rental location selector -->
     <% if (not_hidden_rental_location_code && configuration.selectRentalLocation) { %>
       <li class="mybooking-product_calendar-step">
+        <?php /* translators: %s: rental location context literal */ ?>
         <?php echo wp_kses_post ( sprintf( _x( 'Select %s', 'renting_product_calendar', 'mybooking-wp-plugin' ), MyBookingEngineContext::getInstance()->getRentalLocation() ) )?>
       </li>
       <div class="mb-form-row">
@@ -156,7 +157,7 @@
           <div class="mybooking-summary_extras">
             <span class="mybooking-summary_item">
               <span class="mybooking-summary_duration">
-                <%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
+                <%=shopping_cart.days%> <?php echo esc_html( MyBookingEngineContext::getInstance()->getDuration() ) ?>
               </span>
             </span>
           </div>

@@ -665,6 +665,7 @@
           <?php if ( empty($args['terms_and_conditions']) ) { ?>
             <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
           <?php } else { ?>
+            <?php /* translators: %s: terms and conditions URL */ ?>
             <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) )?>
           <?php } ?>
         </label>
@@ -673,6 +674,7 @@
           <!-- Privacy -->
           <label for="privacy_read_request_reservation">
             <input type="checkbox" id="privacy_read_request_reservation" name="privacy_read_request_reservation">
+              <?php /* translators: %s: privacy policy URL */ ?>
               <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
           </label>
         <?php } ?>
@@ -703,6 +705,7 @@
           <?php if ( empty($args['terms_and_conditions']) ) { ?>
             <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-wp-plugin' ) ?>
           <?php } else { ?>
+            <?php /* translators: %s: terms and conditions URL */ ?>
             <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-wp-plugin' ), $args['terms_and_conditions'] ) ) ?>
           <?php } ?>
         </label>
@@ -711,6 +714,7 @@
           <!-- Privacy -->
           <label for="privacy_read_payment_on_delivery">
             <input type="checkbox" id="privacy_read_payment_on_delivery" name="privacy_read_payment_on_delivery">
+              <?php /* translators: %s: privacy policy URL */ ?>
               <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
           </label>
         <?php } ?>

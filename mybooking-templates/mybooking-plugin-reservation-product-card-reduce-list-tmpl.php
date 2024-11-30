@@ -141,7 +141,7 @@
 												<div class="mybooking-product_daily_amount">
 													<%=configuration.formatCurrency(+product.unit_price) %>
 													<% if (product.price_units === 'days') { %>
-														/ <?php echo MyBookingEngineContext::getInstance()->getDurationSingular() ?>
+														/ <?php echo esc_html( MyBookingEngineContext::getInstance()->getDurationSingular() ) ?>
 													<% } %>
 												</div>
 

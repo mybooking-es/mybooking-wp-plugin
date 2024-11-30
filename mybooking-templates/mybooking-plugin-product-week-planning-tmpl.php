@@ -49,7 +49,7 @@
             <div class="mybooking-summary_extras text-center">
               <span class="mybooking-summary_item">
                 <span class="mybooking-summary_duration text-center">
-                  <%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?>
+                  <%=shopping_cart.days%> <?php echo esc_html( MyBookingEngineContext::getInstance()->getDuration() )?>
                 </span>
               </span>
             </div>
@@ -71,7 +71,7 @@
       <% if (!configuration.hidePriceIfZero || shopping_cart.item_cost > 0) { %>
         <div class="mybooking-summary_extras text-center">
           <span class="mybooking-summary_item">
-            <?php echo MyBookingEngineContext::getInstance()->getProduct() ?>:
+            <?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() ) ?>:
           </span>
           <span class="mybooking-summary_extra-amount">
             <%=configuration.formatCurrency(shopping_cart.item_cost)%>

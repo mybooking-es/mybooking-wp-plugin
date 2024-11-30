@@ -100,7 +100,7 @@
 
             <% if (shopping_cart.days > 0) { %>
               <span class="mybooking-summary_item">
-                <span class="mybooking-summary_duration"><%=shopping_cart.days%> <?php echo MyBookingEngineContext::getInstance()->getDuration() ?></span>
+                <span class="mybooking-summary_duration"><%=shopping_cart.days%> <?php echo esc_html( MyBookingEngineContext::getInstance()->getDuration() ) ?></span>
               </span>
             <% } else if (shopping_cart.hours > 0) { %>
               <span class="mybooking-summary_item">

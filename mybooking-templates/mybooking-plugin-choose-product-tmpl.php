@@ -152,7 +152,7 @@
         <% if (filters.families && filters.families.length > 1) { %>
           <li class="mybooking-chose-product-filter-item_section_toogle mybooking-chose-product-filter-item_section">
             <div class="mybooking-chose-product-filter-item_section-btn">
-              <?php echo MyBookingEngineContext::getInstance()->getFamily() ?>
+              <?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
               &nbsp;
               <i class="dashicons dashicons-arrow-down"></i>
             </div>
@@ -244,7 +244,7 @@
         <% if (filters.families && filters.families.length > 1) { %>
           <li class="mybooking-chose-product-filter-item_section mybooking-chose-product-filter-item">
             <span class="mybooking-chose-product-filter-item_title">
-              <?php echo MyBookingEngineContext::getInstance()->getFamily() ?>
+              <?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
             </span>
             <ul class="mybooking-chose-product-filter-item_content">
               <% for (var idx=0; idx<filters.families.length; idx++) { %>

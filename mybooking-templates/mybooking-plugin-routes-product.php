@@ -24,6 +24,7 @@
             <!-- From price -->
             <?php if ($args->from_price > 0) { ?>
              <div class="mybooking-product_detail-price">
+             <?php /* translators: %s: product price */ ?>
                <?php echo wp_kses_post( sprintf( _x('From <span class="mybooking-product_detail-amount">%s€</span>', 'renting_product_detail', 'mybooking-wp-plugin' ), number_format_i18n( $args->from_price ) ) )?>
              </div>
             <?php } ?>
