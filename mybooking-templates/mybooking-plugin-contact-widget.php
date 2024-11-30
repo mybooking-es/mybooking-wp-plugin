@@ -30,33 +30,33 @@
 
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-6">
-        <label for="customer_name"><?php echo esc_html_x( 'Name', 'contact_form', 'mybooking-wp-plugin') ?>*</label>
-        <input type="text" class="mb-form-control" name="customer_name" id="customer_name" placeholder="<?php echo esc_attr_x( 'Name', 'contact_form', 'mybooking-wp-plugin') ?>:*">
+        <label for="customer_name"><?php echo esc_html_x( 'Name', 'contact_form', 'mybooking-reservation-engine') ?>*</label>
+        <input type="text" class="mb-form-control" name="customer_name" id="customer_name" placeholder="<?php echo esc_attr_x( 'Name', 'contact_form', 'mybooking-reservation-engine') ?>:*">
       </div>
       <div class="mb-form-group mb-col-md-6">
-        <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'contact_form', 'mybooking-wp-plugin') ?>*</label>
-        <input type="text" class="mb-form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo esc_attr_x( 'Surname', 'contact_form', 'mybooking-wp-plugin') ?>:*">
+        <label for="customer_surname"><?php echo esc_html_x( 'Surname', 'contact_form', 'mybooking-reservation-engine') ?>*</label>
+        <input type="text" class="mb-form-control" name="customer_surname" id="customer_surname" placeholder="<?php echo esc_attr_x( 'Surname', 'contact_form', 'mybooking-reservation-engine') ?>:*">
       </div>
     </div>
 
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
-        <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'contact_form', 'mybooking-wp-plugin') ?>*</label>
-        <input type="text" class="mb-form-control" name="customer_email" id="customer_email" placeholder="<?php echo esc_attr_x( 'E-mail', 'contact_form', 'mybooking-wp-plugin') ?>:*">
+        <label for="customer_email"><?php echo esc_html_x( 'E-mail', 'contact_form', 'mybooking-reservation-engine') ?>*</label>
+        <input type="text" class="mb-form-control" name="customer_email" id="customer_email" placeholder="<?php echo esc_attr_x( 'E-mail', 'contact_form', 'mybooking-reservation-engine') ?>:*">
       </div>
     </div>
 
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
-        <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'contact_form', 'mybooking-wp-plugin') ?>*</label>
-        <input type="text" class="mb-form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo esc_attr_x( 'Phone number', 'contact_form', 'mybooking-wp-plugin') ?>:*">
+        <label for="customer_phone"><?php echo esc_html_x( 'Phone number', 'contact_form', 'mybooking-reservation-engine') ?>*</label>
+        <input type="text" class="mb-form-control" name="customer_phone" id="customer_phone" placeholder="<?php echo esc_attr_x( 'Phone number', 'contact_form', 'mybooking-reservation-engine') ?>:*">
       </div>
     </div>
 
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
-        <label for="customer_name"><?php echo esc_html_x( 'Message', 'contact_form', 'mybooking-wp-plugin') ?>*</label>
-        <textarea class="mb-form-control" name="comments" id="comments" rows="10" placeholder="<?php echo esc_attr_x( 'Message', 'contact_form', 'mybooking-wp-plugin') ?>"></textarea>
+        <label for="customer_name"><?php echo esc_html_x( 'Message', 'contact_form', 'mybooking-reservation-engine') ?>*</label>
+        <textarea class="mb-form-control" name="comments" id="comments" rows="10" placeholder="<?php echo esc_attr_x( 'Message', 'contact_form', 'mybooking-reservation-engine') ?>"></textarea>
       </div>
     </div>
 
@@ -71,7 +71,7 @@
           <div class="mb-form-group mb-col-md-12">
             <input type="checkbox" id="privacy_read" name="privacy_read">
               <?php /* translators: %s: privacy policy URL */ ?>
-              <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'contact_form', 'mybooking-wp-plugin' ), $mybooking_engine_privacy_page ) )?>
+              <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'contact_form', 'mybooking-reservation-engine' ), $mybooking_engine_privacy_page ) )?>
           </div>
         </label>
       </div>
@@ -89,7 +89,7 @@
 
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
-        <input id="send_message_button" type="submit" class="mb-button" value="<?php echo esc_attr_x( 'Send', 'contact_form', 'mybooking-wp-plugin') ?>">
+        <input id="send_message_button" type="submit" class="mb-button" value="<?php echo esc_attr_x( 'Send', 'contact_form', 'mybooking-reservation-engine') ?>">
       </div>
     </div>
 

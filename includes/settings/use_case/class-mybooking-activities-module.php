@@ -9,18 +9,18 @@
 
       $oneModule = MybookingInstall::isOneModuleInstall();
 
-      $checkoutTitle = _x( 'Check out', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
-      $summaryTitle = _x( 'Summary', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
-      $myReservationTitle = _x( 'My reservation', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
+      $checkoutTitle = _x( 'Check out', 'plugin_custom_activities_pages', 'mybooking-reservation-engine' );
+      $summaryTitle = _x( 'Summary', 'plugin_custom_activities_pages', 'mybooking-reservation-engine' );
+      $myReservationTitle = _x( 'My reservation', 'plugin_custom_activities_pages', 'mybooking-reservation-engine' );
 
       $checkoutSlug = 'checkout';
       $summarySlug = 'summary';
       $myReservationSlug = 'my-reservation';
       
       if ( !$oneModule ) {
-        $checkoutTitle = _x( 'Activities Check out', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
-        $summaryTitle = _x( 'Activities Summary', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
-        $myReservationTitle = _x( 'Activities My reservation', 'plugin_custom_activities_pages', 'mybooking-wp-plugin' );
+        $checkoutTitle = _x( 'Activities Check out', 'plugin_custom_activities_pages', 'mybooking-reservation-engine' );
+        $summaryTitle = _x( 'Activities Summary', 'plugin_custom_activities_pages', 'mybooking-reservation-engine' );
+        $myReservationTitle = _x( 'Activities My reservation', 'plugin_custom_activities_pages', 'mybooking-reservation-engine' );
 
         $checkoutSlug = 'checkout-activities';
         $summarySlug = 'summary-activities';

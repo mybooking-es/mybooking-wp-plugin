@@ -37,7 +37,7 @@
             <span class="dashicons dashicons-location"></span>
           </i>
           <label for="pickup_place">
-            <?php echo esc_html_x( 'Pick-up place', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+            <?php echo esc_html_x( 'Pick-up place', 'renting_form_selector', 'mybooking-reservation-engine') ?>
           </label>
 
           <!-- // List pickup place -->
@@ -77,7 +77,7 @@
               <span class="dashicons dashicons-clock"></span>
             </i>
             <label for="time_from">
-              <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+              <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-reservation-engine') ?>
             </label>
             <select class="mb-form-control" id="time_from" name="time_from"></select>
           </div>
@@ -99,7 +99,7 @@
             <span class="dashicons dashicons-location"></span>
           </i>
           <label for="return_place">
-            <?php echo esc_html_x( 'Return place', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+            <?php echo esc_html_x( 'Return place', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>
           </label>
 
           <!-- // List return place -->
@@ -127,7 +127,7 @@
 							<span class="dashicons dashicons-clock"></span>
 						</i>
 						<label for="renting_duration">
-							<?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+							<?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>
 						</label>
 						<select class="mb-form-control" id="renting_duration" name="renting_duration"></select>
 					</div>
@@ -150,7 +150,7 @@
                 <span class="dashicons dashicons-clock"></span>
               </i>
               <label for="time_from">
-                <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+                <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-reservation-engine') ?>
               </label>
               <select class="mb-form-control" name="time_to" id="time_to"></select>
             </div>
@@ -188,7 +188,7 @@
       <!-- Age code selector -->
 			<div class="driver_age_rule mybooking-selector_driver_age" style="display: none">
 				<label for="driver_age_rule_id">
-				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>
 				</label>
 				<select name="driver_age_rule_id" id="driver_age_rule_id"></select>
 			</div>
@@ -196,7 +196,7 @@
       <!-- // Promotion code -->
       <% if (configuration.promotionCode) { %>
         <div class="mybooking-selector_promo">
-          <label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+          <label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-reservation-engine' ) ?></label>
           <input type="text" class="mb-form-control" name="promotion_code" id="promotion_code" autocomplete="off">
         </div>
       <% } %>
@@ -204,7 +204,7 @@
       <!-- // Search button -->
       <div class="mybooking-selector_button-box">
         <label>&nbsp;</label>
-        <input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+        <input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-reservation-engine') ?>" />
       </div>
     </div>
 
@@ -220,7 +220,7 @@
 				<% if (not_hidden_rental_location_code && configuration.simpleLocation) { %>
           <div class="mybooking-selector_cal">
             <label for="simple_location_id">
-              <?php echo esc_html_x( 'Where', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Where', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>
             </label>
             <select class="mb-form-control" id="simple_location_id" name="simple_location_id" ></select>
           </div>
@@ -260,7 +260,7 @@
               <span class="dashicons dashicons-clock"></span>
             </i>
             <label for="time_from">
-							<?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+							<?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-reservation-engine') ?>
 						</label>
             <select class="mb-form-control" id="time_from" name="time_from"></select>
           </div>
@@ -288,7 +288,7 @@
                 <span class="dashicons dashicons-backup"></span>
               </i>
               <label for="time_to">
-                <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-wp-plugin') ?>
+                <?php echo esc_html_x( 'Time', 'renting_form_selector', 'mybooking-reservation-engine') ?>
               </label>
               <select class="mb-form-control" name="time_to" id="time_to"></select>
             </div>
@@ -304,7 +304,7 @@
               <span class="dashicons dashicons-clock"></span>
             </i>
             <label for="renting_duration">
-              <?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>
             </label>
             <select class="mb-form-control" id="renting_duration" name="renting_duration"></select>
           </div>
@@ -334,7 +334,7 @@
       <!-- Age code selector -->
 			<div class="driver_age_rule mybooking-selector_driver_age" style="display: none">
 				<label for="driver_age_rule_id">
-				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Age selector', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>
 				</label>
 				<select name="driver_age_rule_id" id="driver_age_rule_id"></select>
 			</div>
@@ -342,7 +342,7 @@
       <!-- // Promotion code -->
       <% if (configuration.promotionCode) { %>
         <div class="mybooking-selector_promo">
-          <label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+          <label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-reservation-engine' ) ?></label>
           <input type="text" class="mb-form-control" name="promotion_code" id="promotion_code" autocomplete="off">
         </div>
       <% } %>
@@ -350,7 +350,7 @@
       <!-- // Search button -->
       <div class="mybooking-selector_button-box">
         <label>&nbsp;</label>
-        <input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+        <input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-reservation-engine') ?>" />
       </div>
     </div>
 

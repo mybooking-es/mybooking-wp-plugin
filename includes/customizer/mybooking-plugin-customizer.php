@@ -166,8 +166,8 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $wp_customize->add_panel(
         'mybooking_reservation_engine_settings_panel',
         array(
-          'title' => _x('Mybooking Reservation Engine', 'customizer_panel', 'mybooking-wp-plugin'),
-          'description' => _x('Customise your installation of Mybooking Reservation Engine', 'customizer_panel', 'mybooking-wp-plugin'),
+          'title' => _x('Mybooking Reservation Engine', 'customizer_panel', 'mybooking-reservation-engine'),
+          'description' => _x('Customise your installation of Mybooking Reservation Engine', 'customizer_panel', 'mybooking-reservation-engine'),
           'priority' => 10,
         )
       );
@@ -183,9 +183,9 @@ if (!class_exists('MyBookingPluginCustomizer')) {
       $wp_customize->add_section(
         'mybooking_reservation_engine_renting_options',
         array(
-          'title'       => _x('Product card', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+          'title'       => _x('Product card', 'customizer_product_catalog', 'mybooking-reservation-engine'),
           'capability'  => 'edit_theme_options',
-          'description' => _x('Customize the product card', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+          'description' => _x('Customize the product card', 'customizer_product_catalog', 'mybooking-reservation-engine'),
           'priority'    => 50,
           'panel'        => 'mybooking_reservation_engine_settings_panel',
         )
@@ -210,15 +210,15 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_product_image_bg',
           array(
-            'label'       => _x('Product background', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'label'       => _x('Product background', 'customizer_product_catalog', 'mybooking-reservation-engine'),
             'description' => _x('Choose depending on the images that you are using for your products', 
-                                'customizer_product_catalog', 'mybooking-wp-plugin'),
+                                'customizer_product_catalog', 'mybooking-reservation-engine'),
             'section'     => 'mybooking_reservation_engine_renting_options',
             'settings'    => 'mybooking_reservation_engine_product_image_bg',
             'type'        => 'select',
             'choices'     => array(
-              'transparent' => _x('Transparent background', 'customizer_product_catalog', 'mybooking-wp-plugin'),
-              'background'  => _x('Photo', 'customizer_product_catalog', 'mybooking-wp-plugin')
+              'transparent' => _x('Transparent background', 'customizer_product_catalog', 'mybooking-reservation-engine'),
+              'background'  => _x('Photo', 'customizer_product_catalog', 'mybooking-reservation-engine')
             ),
           )
         )
@@ -243,15 +243,15 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_product_show_key_characteristics',
           array(
-            'label'       => _x('Product show characteristics', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'label'       => _x('Product show characteristics', 'customizer_product_catalog', 'mybooking-reservation-engine'),
             'description' => _x('Show caracteritics icons', 
-                                'customizer_product_catalog', 'mybooking-wp-plugin'),
+                                'customizer_product_catalog', 'mybooking-reservation-engine'),
             'section'     => 'mybooking_reservation_engine_renting_options',
             'settings'    => 'mybooking_reservation_engine_product_show_key_characteristics',
             'type'        => 'select',
             'choices'     => array(
-              'show' => _x('Yes', 'customizer_product_catalog', 'mybooking-wp-plugin'),
-              'hide' => _x('No', 'customizer_product_catalog', 'mybooking-wp-plugin')
+              'show' => _x('Yes', 'customizer_product_catalog', 'mybooking-reservation-engine'),
+              'hide' => _x('No', 'customizer_product_catalog', 'mybooking-reservation-engine')
             ),
           )
         )
@@ -277,11 +277,11 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_product_image_width_img',
           array(
-            'label'       => _x('Product card Image Width', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'label'       => _x('Product card Image Width', 'customizer_product_catalog', 'mybooking-reservation-engine'),
             'description' => _x(
               'Choose depending on the images that you are using for your products (in %)',
               'customizer_product_catalog',
-              'mybooking-wp-plugin'
+              'mybooking-reservation-engine'
             ),
             'section'     => 'mybooking_reservation_engine_renting_options',
             'settings'    => 'mybooking_reservation_engine_product_image_width_img',
@@ -310,11 +310,11 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_product_body_height',
           array(
-            'label'       => _x('Product card Body Height (Grid)', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'label'       => _x('Product card Body Height (Grid)', 'customizer_product_catalog', 'mybooking-reservation-engine'),
             'description' => _x(
               'Choose product card body height (in px)',
               'customizer_product_catalog',
-              'mybooking-wp-plugin'
+              'mybooking-reservation-engine'
             ),
             'section'     => 'mybooking_reservation_engine_renting_options',
             'settings'    => 'mybooking_reservation_engine_product_body_height',
@@ -343,11 +343,11 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_list_product_body_height',
           array(
-            'label'       => _x('Product card Body Height (List)', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'label'       => _x('Product card Body Height (List)', 'customizer_product_catalog', 'mybooking-reservation-engine'),
             'description' => _x(
               'Choose product card body height (in px)',
               'customizer_product_catalog',
-              'mybooking-wp-plugin'
+              'mybooking-reservation-engine'
             ),
             'section'     => 'mybooking_reservation_engine_renting_options',
             'settings'    => 'mybooking_reservation_engine_list_product_body_height',
@@ -376,21 +376,21 @@ if (!class_exists('MyBookingPluginCustomizer')) {
           $wp_customize,
           'mybooking_reservation_engine_rent_choose_product_layout',
           array(
-            'label'       => _x('Renting choose product layout', 'customizer_product_catalog', 'mybooking-wp-plugin'),
+            'label'       => _x('Renting choose product layout', 'customizer_product_catalog', 'mybooking-reservation-engine'),
             'description' => _x(
               'Choose depending on the layout to show the products in the choose product page',
               'customizer_product_catalog',
-              'mybooking-wp-plugin'
+              'mybooking-reservation-engine'
             ),
             'section'     => 'mybooking_reservation_engine_renting_options',
             'settings'    => 'mybooking_reservation_engine_rent_choose_product_layout',
             'type'        => 'select',
             'choices'     => array(
-              'list_only' => _x('List 1 product per row', 'customizer_product_catalog', 'mybooking-wp-plugin'),
-              'grid_only' => _x('Grid 3 products per row', 'customizer_product_catalog', 'mybooking-wp-plugin'),
-              'list'      => _x('List 1 product per row - allow change', 'customizer_product_catalog', 'mybooking-wp-plugin'),
-              'grid'      => _x('Grid 3 products per row - allow change', 'customizer_product_catalog', 'mybooking-wp-plugin'),
-              'reduce_list_only' => _x('List 1 product per row in reduce format', 'customizer_product_catalog', 'mybooking-wp-plugin')
+              'list_only' => _x('List 1 product per row', 'customizer_product_catalog', 'mybooking-reservation-engine'),
+              'grid_only' => _x('Grid 3 products per row', 'customizer_product_catalog', 'mybooking-reservation-engine'),
+              'list'      => _x('List 1 product per row - allow change', 'customizer_product_catalog', 'mybooking-reservation-engine'),
+              'grid'      => _x('Grid 3 products per row - allow change', 'customizer_product_catalog', 'mybooking-reservation-engine'),
+              'reduce_list_only' => _x('List 1 product per row in reduce format', 'customizer_product_catalog', 'mybooking-reservation-engine')
               ),
             'priority'    => '10',
           )

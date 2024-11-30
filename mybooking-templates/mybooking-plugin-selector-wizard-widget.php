@@ -22,9 +22,9 @@
 					<span class="dashicons dashicons-location"></span>
 				</i>
         <label for="place_holder">
-          <?php echo esc_html_x( 'Where?', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( 'Where?', 'renting_form_selector_wizard', 'mybooking-reservation-engine') ?>
         </label>
-        <input type="text" class="mb-form-control" id="place_holder" aria-describedby="pickupPlaceHolder" placeholder="<?php echo esc_attr_x( 'Select a location', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?>" readonly="true">
+        <input type="text" class="mb-form-control" id="place_holder" aria-describedby="pickupPlaceHolder" placeholder="<?php echo esc_attr_x( 'Select a location', 'renting_form_selector_wizard', 'mybooking-reservation-engine') ?>" readonly="true">
       </div>
 
       <!-- Date -->
@@ -33,13 +33,13 @@
 					<span class="dashicons dashicons-calendar-alt"></span>
 				</i>
         <label for="from_holder">
-          <?php echo esc_html_x( 'When?', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( 'When?', 'renting_form_selector_wizard', 'mybooking-reservation-engine') ?>
         </label>
-        <input type="text" class="mb-form-control" id="from_holder" aria-describedby="FromHolder" placeholder="<?php echo esc_attr_x( 'Select dates', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?>" readonly="true">
+        <input type="text" class="mb-form-control" id="from_holder" aria-describedby="FromHolder" placeholder="<?php echo esc_attr_x( 'Select dates', 'renting_form_selector_wizard', 'mybooking-reservation-engine') ?>" readonly="true">
       </div>
       <div class="mybooking-selector_button-box">
         <label>&nbsp;</label>
-        <button class="mb-button mybooking-selector_button button" id="btn_reservation" type="button"><?php echo esc_html_x( 'Book', 'renting_form_selector_wizard', 'mybooking-wp-plugin') ?></button>
+        <button class="mb-button mybooking-selector_button button" id="btn_reservation" type="button"><?php echo esc_html_x( 'Book', 'renting_form_selector_wizard', 'mybooking-reservation-engine') ?></button>
       </div>
     </div>
 

@@ -23,7 +23,7 @@
               <!-- // Few units warning -->
               <% if (product.few_available_units) { %>
                 <span class="mybooking-product_low-availability">
-                  <?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                  <?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-reservation-engine') ?>
                 </span>
               <% } else { %>
                 &nbsp;
@@ -172,7 +172,7 @@
                           <!-- // Taxes included -->
                           <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
                             <span class="mybooking-product_taxes">
-                              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-reservation-engine') ?>
                             </span>
                           <?php endif; ?>
                         </div>
@@ -187,7 +187,7 @@
         <% } %>
       <% } else { %>
         <div class="mb-alert light">
-          <?php echo esc_html_x( 'No items found', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( 'No items found', 'renting_choose_product', 'mybooking-reservation-engine') ?>
         </div>
       <% } %>
     </div>

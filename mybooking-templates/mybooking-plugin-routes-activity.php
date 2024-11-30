@@ -62,7 +62,7 @@
 					<?php if (!empty($args->detailed_info_price)) { ?>
 		      	<div class="mybooking-activity_detail">
 				      <div class="mybooking-activity_detail-name">
-								<?php echo esc_html_x('Prices', 'activity_detail', 'mybooking-wp-plugin'); ?>
+								<?php echo esc_html_x('Prices', 'activity_detail', 'mybooking-reservation-engine'); ?>
 							</div>
 				      <div class="mybooking-activity_detail-description">
 								<?php echo wp_kses_post( $args->detailed_info_price ) ?>
@@ -73,7 +73,7 @@
 					<?php if (!empty($args->detailed_info_timetable_duration)) { ?>
 		      	<div class="mybooking-activity_detail">
 				      <div class="mybooking-activity_detail-name">
-								<?php echo esc_html_x('Dates and timetables', 'activity_detail', 'mybooking-wp-plugin'); ?>
+								<?php echo esc_html_x('Dates and timetables', 'activity_detail', 'mybooking-reservation-engine'); ?>
 							</div>
 				      <div class="mybooking-activity_detail-description">
 								<?php echo wp_kses_post( $args->detailed_info_timetable_duration ) ?>
@@ -84,7 +84,7 @@
 		      <?php if (!empty($args->detailed_info_ages)) { ?>
 						<div class="mybooking-activity_detail">
 				      <div class="mybooking-activity_detail-name">
-								<?php echo esc_html_x('Ages', 'activity_detail', 'mybooking-wp-plugin'); ?>
+								<?php echo esc_html_x('Ages', 'activity_detail', 'mybooking-reservation-engine'); ?>
 							</div>
 				      <div class="mybooking-activity_detail-description">
 								<?php echo wp_kses_post( $args->detailed_info_ages ) ?>
@@ -95,7 +95,7 @@
 		      <?php if (!empty($args->detailed_info_difficulty_level)) { ?>
 		      	<div class="mybooking-activity_detail">
 				      <div class="mybooking-activity_detail-name">
-								<?php echo esc_html_x('Difficulty', 'activity_detail', 'mybooking-wp-plugin'); ?>
+								<?php echo esc_html_x('Difficulty', 'activity_detail', 'mybooking-reservation-engine'); ?>
 							</div>
 				      <div class="mybooking-activity_detail-description">
 								<?php echo wp_kses_post( $args->detailed_info_difficulty_level ) ?>
@@ -106,7 +106,7 @@
 		      <?php if (!empty($args->detailed_info_meeting_point)) { ?>
 		      	<div class="mybooking-activity_detail">
 				      <div class="mybooking-activity_detail-name">
-								<?php echo esc_html_x('Meeting point', 'activity_detail', 'mybooking-wp-plugin'); ?>
+								<?php echo esc_html_x('Meeting point', 'activity_detail', 'mybooking-reservation-engine'); ?>
 							</div>
 				     	<div class="mybooking-activity_detail-description">
 								<?php echo wp_kses_post( $args->detailed_info_meeting_point ) ?>
@@ -117,7 +117,7 @@
 		      <?php if (!empty($args->detailed_info_what_includes)) { ?>
 		        <div class="mybooking-activity_detail">
 				      <div class="mybooking-activity_detail-name">
-								<?php echo esc_html_x('What\'s included?', 'activity_detail', 'mybooking-wp-plugin'); ?>
+								<?php echo esc_html_x('What\'s included?', 'activity_detail', 'mybooking-reservation-engine'); ?>
 							</div>
 				      <div class="mybooking-activity_detail-description">
 								<?php echo wp_kses_post( $args->detailed_info_what_includes ) ?>
@@ -128,7 +128,7 @@
 					<?php if (!empty($args->detailed_info_what_to_bring)) { ?>
 		      	<div class="mybooking-activity_detail">
 				      <div class="mybooking-activity_detail-name">
-								<?php echo esc_html_x('What to bring?', 'activity_detail', 'mybooking-wp-plugin'); ?>
+								<?php echo esc_html_x('What to bring?', 'activity_detail', 'mybooking-reservation-engine'); ?>
 							</div>
 				      <div class="mybooking-activity_detail-description">
 								<?php echo wp_kses_post( $args->detailed_info_what_to_bring ) ?>
@@ -139,7 +139,7 @@
 		      <?php if (!empty($args->detailed_info_recommendations)) { ?>
 		      	<div class="mybooking-activity_detail">
 				      <div class="mybooking-activity_detail-name">
-								<?php echo esc_html_x('Recomendations', 'activity_detail', 'mybooking-wp-plugin'); ?>
+								<?php echo esc_html_x('Recomendations', 'activity_detail', 'mybooking-reservation-engine'); ?>
 							</div>
 				      <div class="mybooking-activity_detail-description">
 								<?php echo wp_kses_post( $args->detailed_info_recommendations ) ?>

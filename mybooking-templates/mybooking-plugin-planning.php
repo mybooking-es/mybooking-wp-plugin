@@ -22,7 +22,7 @@
   <form class="mybooking-planning-head">
     <div class="field">
       <label  class="label">
-        <?php echo esc_html_x( 'Date', 'planning', 'mybooking-wp-plugin' ) ?>
+        <?php echo esc_html_x( 'Date', 'planning', 'mybooking-reservation-engine' ) ?>
       </label>
       <div class="control">
         <input type="text" name="date"  />
@@ -37,7 +37,7 @@
         <?php echo esc_html( MyBookingEngineContext::getInstance()->getRentalLocation() ) ?>
       </label>
       <div class="control">
-        <div class="select" data-default="<?php echo esc_attr( 'All', 'planning', 'mybooking-wp-plugin' ) ?>">
+        <div class="select" data-default="<?php echo esc_attr( 'All', 'planning', 'mybooking-reservation-engine' ) ?>">
           <select name="rentalLocation" style="min-width: 300px;">
           </select>
         </div>
@@ -48,7 +48,7 @@
         <?php echo esc_html( MyBookingEngineContext::getInstance()->getFamily() ) ?>
       </label>
       <div class="control">
-        <div class="select" data-default="<?php echo esc_attr( 'All', 'planning', 'mybooking-wp-plugin' ) ?>">
+        <div class="select" data-default="<?php echo esc_attr( 'All', 'planning', 'mybooking-reservation-engine' ) ?>">
           <select name="family" style="min-width: 300px;">
           </select>
         </div>
@@ -59,7 +59,7 @@
         <?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() ) ?>
       </label>
       <div class="control">
-        <div class="select" data-default="<?php echo esc_attr( 'All', 'planning', 'mybooking-wp-plugin' ) ?>">
+        <div class="select" data-default="<?php echo esc_attr( 'All', 'planning', 'mybooking-reservation-engine' ) ?>">
           <select name="category" style="min-width: 300px;">
           </select>
         </div>

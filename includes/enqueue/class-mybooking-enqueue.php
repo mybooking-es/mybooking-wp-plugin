@@ -69,7 +69,7 @@
                           true);
         wp_enqueue_script('mybooking_wp_admin_settings');
         wp_set_script_translations('mybooking_wp_admin_settings', 
-                                   'mybooking-wp-plugin',
+                                   'mybooking-reservation-engine',
                                    MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
       }
       
@@ -100,7 +100,7 @@
                             $this->version, 
                             true);
           wp_set_script_translations('mybooking_wp_admin_onboarding_login', 
-                                     'mybooking-wp-plugin',
+                                     'mybooking-reservation-engine',
                                      MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
         }
 
@@ -113,7 +113,7 @@
                             true);
           wp_enqueue_script('mybooking_wp_admin_onboarding_utils');
           wp_set_script_translations('mybooking_wp_admin_onboarding_utils', 
-                                     'mybooking-wp-plugin',
+                                     'mybooking-reservation-engine',
                                      MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
         }
 
@@ -125,7 +125,7 @@
                            true);
         wp_enqueue_script('mybooking_wp_admin_onboarding_gallery');
         wp_set_script_translations('mybooking_wp_admin_onboarding_gallery', 
-                                   'mybooking-wp-plugin',
+                                   'mybooking-reservation-engine',
                                    MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
 
         // Onboarding video

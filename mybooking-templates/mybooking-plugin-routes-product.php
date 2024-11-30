@@ -25,7 +25,7 @@
             <?php if ($args->from_price > 0) { ?>
              <div class="mybooking-product_detail-price">
              <?php /* translators: %s: product price */ ?>
-               <?php echo wp_kses_post( sprintf( _x('From <span class="mybooking-product_detail-amount">%s€</span>', 'renting_product_detail', 'mybooking-wp-plugin' ), number_format_i18n( $args->from_price ) ) )?>
+               <?php echo wp_kses_post( sprintf( _x('From <span class="mybooking-product_detail-amount">%s€</span>', 'renting_product_detail', 'mybooking-reservation-engine' ), number_format_i18n( $args->from_price ) ) )?>
              </div>
             <?php } ?>
           </div>
@@ -80,7 +80,7 @@
         </div>
 
         <div class="mb-col-md-6 mb-col-lg-4">
-          <h2><?php echo wp_kses_post( _x( 'Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ) ?></h2>
+          <h2><?php echo wp_kses_post( _x( 'Book it!', 'renting_choose_product', 'mybooking-reservation-engine') ) ?></h2>
           <?php
              $widget_data = array( 'code' => $args->code );
              if ( isset( $args->sales_channel_code ) ) {

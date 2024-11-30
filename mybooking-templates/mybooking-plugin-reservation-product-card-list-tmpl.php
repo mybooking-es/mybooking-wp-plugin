@@ -23,7 +23,7 @@
           <!-- // Few units warning -->
           <% if (product.few_available_units) { %>
             <span class="mybooking-product_low-availability">
-              <?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+              <?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-reservation-engine') ?>
             </span>
           <% } %>
 
@@ -73,7 +73,7 @@
                           <!-- // Taxes included -->
                           <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
                             <span class="mybooking-product_taxes">
-                              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-reservation-engine') ?>
                             </span>
                           <?php endif; ?>
 
@@ -168,7 +168,7 @@
                     <small><b><%=configuration.formatCurrency(product.price)%></b>&nbsp;<?php echo esc_html( MyBookingEngineContext::getInstance()->getProduct() )?></small>
                   </span>
                   <span class="mybooking-product_price_supplement_supplement_1">
-                    <small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></small>
+                    <small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-reservation-engine' ) ?></small>
                   </span>
                 </div>
                 <% } %>
@@ -192,7 +192,7 @@
                   <div class="product-variant-resume" data-product-code="<%=product.code%>"></div>
                   
                   <!-- // Button -->
-                  <button class="mb-button btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x('Select options', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %></button>
+                  <button class="mb-button btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_product', 'mybooking-reservation-engine') ?><% } else { %><?php echo esc_html_x('Select options', 'renting_choose_product', 'mybooking-reservation-engine') ?><% } %></button>
                 <% } else { %>
                   <% if (configuration.multipleProductsSelection) { %>
                     <!-- // Selector -->
@@ -211,7 +211,7 @@
                   <% } else { %>
                     
                     <!-- // Button -->
-                    <button class="mb-button btn-choose-product" data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
+                    <button class="mb-button btn-choose-product" data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-reservation-engine') ?></button>
 
                     <% if (product.description && product.description.replace(/<p><br><\/p>/g, '') !== '' || product.photos && product.photos.length > 0) { %>
                       <span class="mybooking-product_info-button js-product-info-btn" data-toggle="modal" data-target="#infoModal" data-product="<%=product.code%>">
@@ -236,7 +236,7 @@
     <% } %>
   <% } else { %>
     <div class="mb-alert light">
-      <?php echo esc_html_x( 'No items found', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+      <?php echo esc_html_x( 'No items found', 'renting_choose_product', 'mybooking-reservation-engine') ?>
     </div>
   <% } %>
 </div>

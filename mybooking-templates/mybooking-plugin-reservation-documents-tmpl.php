@@ -16,38 +16,38 @@
 <script type="text/tmpl" id="script_documents_upload">
 	<% if (booking.engine_sign_contract) { %>
 		<h3>
-			<div class="badge">2</div> <?php echo esc_html_x( 'Upload documentation', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+			<div class="badge">2</div> <?php echo esc_html_x( 'Upload documentation', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
 		</h3>
 		<br />
 		<% if (!booking.customer_documents_uploaded) { %>
 			<h5>
-				<?php echo esc_html_x( 'Before signing the contract we need you to upload the documentation', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Before signing the contract we need you to upload the documentation', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
 			</h5>
 			<br />
 			<% if (typeof booking.documentation_url !== 'undefined' && booking.documentation_url && booking.documentation_url != '') { %>
 				<h6>
-					<?php echo esc_html_x( 'Use the secure link to upload documentation', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'Use the secure link to upload documentation', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
 				</h6>
 				<hr />
 				<small class="mb--txt-center">
-					<?php echo esc_html_x( 'Remember to reload the page after uploading the documentation to continue with the process.', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+					<?php echo esc_html_x( 'Remember to reload the page after uploading the documentation to continue with the process.', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
 				</small>
 				<button id="js_mb_upload_documentation_link" class="mb-button block">
-					<?php echo esc_html_x( 'Upload documentation', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+					<?php echo esc_html_x( 'Upload documentation', 'renting_my_reservation', 'mybooking-reservation-engine') ?>
 				</button>
 				<% } else { %>
 					<div class="mb-alert warning">
-						<?php echo esc_html_x( 'Documentation upload is not available', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( 'Documentation upload is not available', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
 					</div>
 			<% } %>
 		<% } else { %>
 			<h5>
-				<?php echo esc_html_x( 'Documention has been uploaded successfully', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Documention has been uploaded successfully', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
 			</h5>
 		<% } %>
 	<% } else { %>
 		<div class="mb-alert warning">
-			<?php echo esc_html_x( 'This step is not available for this reservation', 'renting_my_reservation', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( 'This step is not available for this reservation', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
 		</div>
 	<% } %>
 </script>

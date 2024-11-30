@@ -26,11 +26,11 @@
       <div class="mb-section mb-panel-container mybooking-details_container">
         <div class="mybooking-summary_header">
           <div class="mybooking-summary_details-title">
-            <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+            <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-reservation-engine' ) ?>
           </div>
 
           <div class="mybooking-summary_locator">
-            <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?>:
+            <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-reservation-engine') ?>:
             <span class="mybooking-summary_locator-id"><%=booking.id%></span>
           </div>
         </div>
@@ -41,11 +41,11 @@
               <%=booking.date%> <%=booking.time%>
             </span>
             <span class="mybooking-summary_place">
-              <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+              <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
               <%=booking.origin_point_name%>
             </span>
             <span class="mybooking-summary_place">
-              <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+              <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
               <%=booking.destination_point_name%>
             </span>
           </span>
@@ -56,20 +56,20 @@
                 <%=booking.date%> <%=booking.time%>
               </span>
               <span class="mybooking-summary_place">
-                <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+                <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
                 <%=booking.origin_point_name%>
               </span>
               <span class="mybooking-summary_place">
-                <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+                <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
                 <%=booking.destination_point_name%>
               </span>
             </span>
           <% } %>
 
           <span class="mybooking-summary_item">
-            <?php echo esc_html_x( 'Adults', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=booking.number_of_adults%></br>
-            <?php echo esc_html_x( 'Children', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=booking.number_of_children%></br>
-            <?php echo esc_html_x( 'Infants', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=booking.number_of_infants%>
+            <?php echo esc_html_x( 'Adults', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>: <%=booking.number_of_adults%></br>
+            <?php echo esc_html_x( 'Children', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>: <%=booking.number_of_children%></br>
+            <?php echo esc_html_x( 'Infants', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>: <%=booking.number_of_infants%>
           </span>
         </div>
       </div>
@@ -104,7 +104,7 @@
           <div class="mb-section">
             <br/>
             <div class="mybooking-summary_details-title">
-              <?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-reservation-engine' ) ?>
             </div>
 
             <% for (var idx=0;idx<booking.extras.length;idx++) { %>
@@ -125,7 +125,7 @@
         <% if (booking.supplements.length > 0) { %>
           <div class="mb-section">
             <div class="mybooking-summary_details-title">
-              <?php echo esc_html_x( 'Supplements', 'transfer_reservation', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Supplements', 'transfer_reservation', 'mybooking-reservation-engine' ) ?>
             </div>
 
             <% for (var idx=0;idx<booking.supplements.length;idx++) { %>
@@ -150,7 +150,7 @@
         <div class="mb-section">
           <div class="mybooking-summary_total">
             <div class="mybooking-summary_total-label">
-              <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-reservation-engine' ) ?>
             </div>
             <div class="mybooking-summary_total-amount">
               <%=configuration.formatCurrency(booking.total_cost)%>
@@ -159,7 +159,7 @@
 
           <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
             <div class="mybooking-product_taxes">
-              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-reservation-engine') ?>
             </div>
           <?php endif; ?>
         </div>
@@ -168,7 +168,7 @@
       <!-- // Customer details -->
       <div class="mb-section">
         <div class="mybooking-summary_details-title">
-          <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-reservation-engine') ?>
         </div>
         <ul class="mb-list border">
           <li class="mb-list-item">
@@ -219,25 +219,25 @@
   <form name="payment_form">
     <% if (sales_process.payment_methods.paypal_standard && sales_process.payment_methods.tpv_virtual) { %>
       <div class="mb-alert secondary" role="alert">
-        <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) )?>
+        <?php echo wp_kses_post( _x( 'You will be redirected to the <b>payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-reservation-engine' ) )?>
       </div>
       <div class="mybooking-payment_confirmation-box">
       <label class="mybooking-payment_custom-label" for="payments_paypal_standard">
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
-        <input type="radio" id="payments_paypal_standard" name="payment_method_id" class="payment_method_select" value="paypal_standard"><?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+        <input type="radio" id="payments_paypal_standard" name="payment_method_id" class="payment_method_select" value="paypal_standard"><?php echo esc_html_x( 'Paypal', 'renting_complete', 'mybooking-reservation-engine' ) ?>
       </label>
 
       <label class="mybooking-payment_custom-label" for="payments_credit_card">
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
-        <input type="radio" id="payments_credit_card" name="payment_method_id" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>"><?php echo wp_kses_post( _x( 'Credit or debit card', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
+        <input type="radio" id="payments_credit_card" name="payment_method_id" class="payment_method_select" value="<%=sales_process.payment_methods.tpv_virtual%>"><?php echo wp_kses_post( _x( 'Credit or debit card', 'renting_complete', 'mybooking-reservation-engine' ) ) ?>
       </label>
       </div>
       <div id="payment_method_select_error"></div>
 
     <% } else if (sales_process.payment_methods.paypal_standard) { %>
       <div class="mb-alert secondary" role="alert">
-        <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-wp-plugin' ) ) ?>
+        <?php echo wp_kses_post( _x( 'You will be redirected to <b>Paypal payment platform</b> to make the confirmation payment securely. You can use <u>Paypal</u> or <u>credit card</u> to make the payment.', 'renting_complete', 'mybooking-reservation-engine' ) ) ?>
       </div>
       <div class="mybooking-payment_confirmation-box">
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-paypal.jpg') ?>"/>
@@ -247,7 +247,7 @@
       <input type="hidden" name="payment_method_id" value="paypal_standard" data-payment-method="paypal_standard">
     <% } else if (sales_process.payment_methods.tpv_virtual) { %>
       <div class="mb-alert secondary" role="alert">
-        <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.', 'renting_complete', 'mybooking-wp-plugin' )  )?>
+        <?php echo wp_kses_post( _x( 'You will be redirected to the <b>credit card payment platform</b> to make the confirmation payment securely.', 'renting_complete', 'mybooking-reservation-engine' )  )?>
       </div>
       <div class="mybooking-payment_confirmation-box">
         <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>

@@ -24,7 +24,7 @@
       <div id="selected_products">
         <div class="mb-section mb-panel-container mybooking-details_container">
           <div class="mybooking-summary_locator">
-            <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?>:
+            <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-reservation-engine') ?>:
             <span class="mybooking-summary_locator-id"><%=order.id%></span>
           </div>
         </div>
@@ -106,7 +106,7 @@
         <div class="mb-section mb-panel-container">
           <div class="mybooking-summary_activities-total mybooking-summary_activities-total--notborder">
             <span class="mybooking-summary_activity-total-label">
-              <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Total', 'activity_shopping_cart_item', 'mybooking-reservation-engine' ) ?>
             </span>
             <span class="mybooking-summary_activity-total-amount">
               <%=configuration.formatCurrency(order.items[idx]['total'])%>
@@ -115,7 +115,7 @@
 
           <div class="mybooking-summary_activities-total">
             <span class="mybooking-summary_activity-total-label">
-              <?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Paid', 'activity_summary', 'mybooking-reservation-engine' ) ?>
             </span>
             <span class="mybooking-summary_activity-total-amount">
               <%=configuration.formatCurrency(order.total_paid)%>
@@ -123,7 +123,7 @@
           </div>
           <div class="mybooking-summary_activities-total">
             <span class="mybooking-summary_activity-total-label">
-              <?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Pending', 'activity_summary', 'mybooking-reservation-engine' ) ?>
             </span>
             <span class="mybooking-summary_activity-total-amount mb-text-danger">
               <%=configuration.formatCurrency(order.total_pending)%>
@@ -135,7 +135,7 @@
       <!-- // Customers detail -->
       <div class="mb-section">
         <div class="mybooking-summary_details-title">
-          <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-reservation-engine') ?>
         </div>
         <ul class="mb-list border">
           <li class="mb-list-item">

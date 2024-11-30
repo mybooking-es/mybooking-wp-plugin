@@ -22,7 +22,7 @@
 						<!-- // Few units warning -->
 						<% if (product.few_available_units) { %>
 							<span class="mybooking-product_low-availability">
-								<?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+								<?php echo esc_html_x( 'Few units left!', 'renting_choose_product', 'mybooking-reservation-engine') ?>
 							</span>
 						<% } %>
 
@@ -80,13 +80,13 @@
 									<% if (new Number(product.usage_included) > 0) { %>
 										<div class="mb-col-md-6">			
 											<small>
-												<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Daily Km', 'renting_choose_product', 'mybooking-wp-plugin') ?>:</span>  
+												<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Daily Km', 'renting_choose_product', 'mybooking-reservation-engine') ?>:</span>  
 												<%= new Number(product.usage_included).toFixed(0) %>Km
 											</small>
 										</div>
 										<div class="mb-col-md-6">										
 											<small>
-											<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Extra Km', 'renting_choose_product', 'mybooking-wp-plugin') ?>:</span> 
+											<span class="mybooking-process_excess_concept"><?php echo esc_html_x( 'Extra Km', 'renting_choose_product', 'mybooking-reservation-engine') ?>:</span> 
 												<%=configuration.formatCurrency(product.usage_extra_unit_cost)%>
 											</small>
 										</div>
@@ -99,7 +99,7 @@
 									</div>
 
 									<div class="mybooking-product_price_supplement_supplement_1">
-										<small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?></small>
+										<small><b><%=configuration.formatCurrency(product.category_supplement_1_cost)%></b>&nbsp;<?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-reservation-engine' ) ?></small>
 									</div>
 								</div>
 							<% } %>
@@ -148,7 +148,7 @@
 												<!-- // Taxes included -->
 												<?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
 													<span class="mybooking-product_taxes">
-														<?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+														<?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-reservation-engine') ?>
 													</span>
 												<?php endif; ?>
 
@@ -171,7 +171,7 @@
                 <% if (product.variants_enabled) { %>
                   <div class="product-variant-resume" data-product-code="<%=product.code%>"></div>
                   <!-- // Button -->
-                  <button class="mb-button btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x('Select options', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %></button>
+                  <button class="mb-button btn-choose-variant" data-toggle="modal" data-target="#modalVariantSelector" data-product="<%=product.code%>"><% if (configuration.multipleProductsSelection) { %><?php echo esc_html_x('Select units', 'renting_choose_product', 'mybooking-reservation-engine') ?><% } else { %><?php echo esc_html_x('Select options', 'renting_choose_product', 'mybooking-reservation-engine') ?><% } %></button>
                 <% } else { %>
                   <% if (configuration.multipleProductsSelection) { %>
                     <!-- // Selector -->
@@ -189,7 +189,7 @@
                     </div>
                   <% } else { %>
                     <!-- // Button -->
-                    <button class="mb-button btn-choose-product" data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-wp-plugin') ?></button>
+                    <button class="mb-button btn-choose-product" data-product="<%=product.code%>"><?php echo esc_html_x('Book it!', 'renting_choose_product', 'mybooking-reservation-engine') ?></button>
                   <% } %>
                 <% } %>
 
@@ -282,7 +282,7 @@
     <% } %>
   <% } else { %>
     <div class="mb-alert light">
-      <?php echo esc_html_x( 'No items found', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+      <?php echo esc_html_x( 'No items found', 'renting_choose_product', 'mybooking-reservation-engine') ?>
     </div>
   <% } %>
 </div>

@@ -9,11 +9,11 @@
 
       $oneModule = MybookingInstall::isOneModuleInstall();
 
-      $checkoutTitle = _x( 'Check out', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
-      $summaryTitle = _x( 'Summary', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
-      $myReservationTitle = _x( 'My reservation', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
-      $homeTestTitle = _x( 'Home Test', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
-      $chooseProductTitle = _x( 'Search result', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
+      $checkoutTitle = _x( 'Check out', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
+      $summaryTitle = _x( 'Summary', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
+      $myReservationTitle = _x( 'My reservation', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
+      $homeTestTitle = _x( 'Home Test', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
+      $chooseProductTitle = _x( 'Search result', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
 
       $checkoutSlug = 'checkout';
       $summarySlug = 'summary';
@@ -22,11 +22,11 @@
 
 
       if ( !$oneModule ) {
-        $checkoutTitle = _x( 'Renting Check out', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
-        $summaryTitle = _x( 'Renting Summary', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
-        $myReservationTitle = _x( 'Renting My reservation', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
-        $homeTestTitle = _x( 'Renting Home Test', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
-        $chooseProductTitle = _x( 'Renting Search result', 'plugin_custom_renting_pages', 'mybooking-wp-plugin' );
+        $checkoutTitle = _x( 'Renting Check out', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
+        $summaryTitle = _x( 'Renting Summary', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
+        $myReservationTitle = _x( 'Renting My reservation', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
+        $homeTestTitle = _x( 'Renting Home Test', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
+        $chooseProductTitle = _x( 'Renting Search result', 'plugin_custom_renting_pages', 'mybooking-reservation-engine' );
 
         $checkoutSlug = 'checkout-renting';
         $summarySlug = 'summary-renting';

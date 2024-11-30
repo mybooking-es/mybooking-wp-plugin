@@ -17,7 +17,7 @@
 
 <script type="text/tmpl" id="script_cyclic_calendar">
  <ol class="mybooking-product_calendar-step-list">
-  <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
+  <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-reservation-engine' ) ?></li>
 
   <form name="select_date_form" id="select_date_form" class="mybooking-form">
     <input type="hidden" name="activity_id" id="activity_id" value="<%=activity_id%>"/>
@@ -32,11 +32,11 @@
 
   <% if (isEmptyTurns) {%>
     <div class="mb-alert warning">
-      <?php echo esc_html_x( 'We are sorry. There are not schedules available', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?>
+      <?php echo esc_html_x( 'We are sorry. There are not schedules available', 'activity_tickets_form_selector', 'mybooking-reservation-engine' ) ?>
     </div>
 
   <% } else { %>
-    <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
+    <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'Select hour', 'activity_tickets_form_selector', 'mybooking-reservation-engine' ) ?></li>
 
     <div class="mb-form-group">
       <% for (turn in turns) { %>
@@ -56,7 +56,7 @@
 
 <script type="text/tmpl" id="script_multiple_dates_selector">
 <ol class="mybooking-product_calendar-step-list">
-  <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
+  <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'Select date', 'activity_tickets_form_selector', 'mybooking-reservation-engine' ) ?></li>
 
   <form name="select_date_form" id="select_date_form" class="mybooking-form">
     <input type="hidden" name="activity_id" id="activity_id" value="<%=activity.id%>"/>
@@ -103,7 +103,7 @@
 
 <script type="text/tmpl" id="script_tickets">
 
-  <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'People', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></li>
+  <li class="mybooking-product_calendar-step"><?php echo esc_html_x( 'People', 'activity_tickets_form_selector', 'mybooking-reservation-engine' ) ?></li>
 
   <% for (item in tickets) { %>
    <div class="form-group">
@@ -117,7 +117,7 @@
 
   <div class="form-group">
     <button type="button" id="btn_reservation" class="mb-button button block btn-choose-product">
-      <?php echo esc_html_x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?>
+      <?php echo esc_html_x( 'Book now', 'activity_tickets_form_selector', 'mybooking-reservation-engine' ) ?>
     </button>
   </div>
 </script>
@@ -139,7 +139,7 @@
     <!-- // There are more than 1 option, allow the customer to pick up one -->
     <div class="form-group">
       <select name="selected_tickets_full_mode" class="mb-form-control">
-        <option value=""><?php echo esc_html_x( 'Please, select an option', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?></option>
+        <option value=""><?php echo esc_html_x( 'Please, select an option', 'activity_tickets_form_selector', 'mybooking-reservation-engine' ) ?></option>
       <% for (item in tickets) { %>
         <option value="<%=item%>"><%=tickets[item][0]["description"]%></option>
       <% } %>
@@ -149,7 +149,7 @@
 
   <div class="form-group">
     <button type="button" id="btn_reservation" class="mb-button button block btn-choose-product">
-      <?php echo esc_html_x( 'Book now', 'activity_tickets_form_selector', 'mybooking-wp-plugin' ) ?>
+      <?php echo esc_html_x( 'Book now', 'activity_tickets_form_selector', 'mybooking-reservation-engine' ) ?>
     </button>
   </div>
 </script>

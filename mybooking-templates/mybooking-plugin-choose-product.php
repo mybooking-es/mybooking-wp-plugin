@@ -22,7 +22,7 @@
     <div class="mb-row-flex">
       <div class="mb-col-sm-12">
         <button id="go_to_complete" class="mb-button btn-confirm-selection" style="display: none;">
-          <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( 'Next', 'renting_choose_product', 'mybooking-reservation-engine') ?>
           <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
         </button>
         <!-- Product listing -->

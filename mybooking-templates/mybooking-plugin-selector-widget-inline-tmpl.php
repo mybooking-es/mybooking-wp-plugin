@@ -21,7 +21,7 @@
 							<span class="dashicons dashicons-location"></span>
 						</i>
 						<label for="widget_simple_location_id">
-							<?php echo esc_html_x( 'Where', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+							<?php echo esc_html_x( 'Where', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>
 						</label>
 						<select name="simple_location_id" id="widget_simple_location_id" class="mb-form-control"></select>
 					</div>
@@ -90,7 +90,7 @@
 							<span class="dashicons dashicons-backup"></span>
 						</i>
 						<label for="widget_renting_duration">
-							<?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-wp-plugin' ) ?>
+							<?php echo esc_html_x( 'Duration', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>
 						</label>
 						<select class="mb-form-control" id="widget_renting_duration" name="renting_duration"></select>
 					</div>
@@ -99,7 +99,7 @@
 				<!-- // Promotion code -->
 				<% if (configuration.promotionCode) { %>
 					<div class="mybooking-selector_promo">
-						<label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-wp-plugin' ) ?></label>
+						<label for="promotion_code"><?php echo esc_html_x( 'Promotion code', 'renting_form_selector', 'mybooking-reservation-engine' ) ?></label>
 						<input type="text" class="mb-form-control" name="promotion_code" id="widget_promotion_code" autocomplete="off"
 							<% if (typeof promotionCode !== 'undefined' && promotionCode !== '') { %> value="<%=promotionCode%>" <%}%>>
 					</div>
@@ -108,6 +108,6 @@
 				<!-- // Search button -->
 				<div class="mybooking-selector_button-box">
 					<label>&nbsp;</label>
-					<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-wp-plugin') ?>" />
+					<input class="mb-button mybooking-selector_button" type="submit" value="<?php echo esc_html_x( 'Search', 'renting_form_selector', 'mybooking-reservation-engine') ?>" />
 				</div>
       </div>        

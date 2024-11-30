@@ -63,7 +63,7 @@
 <script id="select_place_multiple_destinations_tmpl" type="txt/tmpl">
   <div class="mybooking-wizard_place-filter">
     <button class="mb-button mybooking-wizard_place-item destination-selector" type="button" data-destination-id="all" style="background-color: transparent;border: 1px solid var(--mb-border-color);">
-      <?php echo esc_html_x( 'All', 'renting_form_selector_wizard', 'mybooking-wp-plugin' ) ?>
+      <?php echo esc_html_x( 'All', 'renting_form_selector_wizard', 'mybooking-reservation-engine' ) ?>
     </button>
     <% for (var idx=0; idx<places.destinations.length; idx++) { %>
       <button class="mb-button mybooking-wizard_place-item destination-selector" type="button" data-destination-id="<%=places.destinations[idx].id%>">

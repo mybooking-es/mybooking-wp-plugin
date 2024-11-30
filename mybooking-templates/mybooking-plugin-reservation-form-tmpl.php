@@ -20,7 +20,7 @@
     <% if (booking.can_edit_online && 
            booking.contract_errors && Object.keys(booking.contract_errors).length > 0) { %>
       <div class="mb-alert danger mb--txt-align_left">
-        <strong><?php echo esc_html_x( 'Please fill in all the required fields', 'renting_my_reservation', 'mybooking-wp-plugin') ?></strong>
+        <strong><?php echo esc_html_x( 'Please fill in all the required fields', 'renting_my_reservation', 'mybooking-reservation-engine') ?></strong>
         <br><br>
         <ul>
           <% Object.keys(booking.contract_errors).forEach(function(key) { %>
@@ -35,24 +35,24 @@
       <% if (configuration.rentingFormFillDataDriverDetail && !booking.has_optional_external_driver && booking.customer_type != 'legal_entity') { %>
         <div class="mb-alert lighter">
           <% if (booking.driver_type == 'driver') { %>
-            <?php echo esc_html_x('The customer represents the contract holder. Typically, the driver is the contract holder.', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-            <?php echo esc_html_x("Assign a different customer from the driver only if you want the contract to be under another person's name.", 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+            <?php echo esc_html_x('The customer represents the contract holder. Typically, the driver is the contract holder.', 'renting_my_reservation', 'mybooking-reservation-engine') ?>
+            <?php echo esc_html_x("Assign a different customer from the driver only if you want the contract to be under another person's name.", 'renting_my_reservation', 'mybooking-reservation-engine') ?>
           <% } else if (booking.driver_type == 'skipper') { %>
-            <?php echo esc_html_x('The customer represents the contract holder. Typically, the skipper is the contract holder.', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
-            <?php echo esc_html_x("Assign a different customer from the skipper only if you want the contract to be under another person's name.", 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+            <?php echo esc_html_x('The customer represents the contract holder. Typically, the skipper is the contract holder.', 'renting_my_reservation', 'mybooking-reservation-engine') ?>
+            <?php echo esc_html_x("Assign a different customer from the skipper only if you want the contract to be under another person's name.", 'renting_my_reservation', 'mybooking-reservation-engine') ?>
           <% } %>
-          <?php echo esc_html_x('This does not affect billing, as you can always request the invoice with different tax details than those on the contract.', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('This does not affect billing, as you can always request the invoice with different tax details than those on the contract.', 'renting_my_reservation', 'mybooking-reservation-engine') ?>
           <br>
-          <strong><?php echo esc_html_x('Please, do not change if you are not sure.', 'renting_my_reservation', 'mybooking-wp-plugin') ?></strong>
+          <strong><?php echo esc_html_x('Please, do not change if you are not sure.', 'renting_my_reservation', 'mybooking-reservation-engine') ?></strong>
           <br><br>
           <div class="mb-form-row">
             <label>
               <input type="checkbox" name="driver_is_customer" id="driver_is_customer" <% if (booking.driver_is_customer != false) { %>checked<% } %> <% if (!booking.can_edit_online){%>disabled<%}%>>
               &nbsp;
               <% if (booking.driver_type == 'driver') { %>
-                <?php echo esc_html_x('Driver is the contract holder', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+                <?php echo esc_html_x('Driver is the contract holder', 'renting_my_reservation', 'mybooking-reservation-engine') ?>
               <% } else if (booking.driver_type == 'skipper') { %>
-                <?php echo esc_html_x('Skipper is the contract holder', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+                <?php echo esc_html_x('Skipper is the contract holder', 'renting_my_reservation', 'mybooking-reservation-engine') ?>
               <% } %>
             </label>
           </div>
@@ -81,7 +81,7 @@
 
     <% if (booking.can_edit_online) { %>
       <button class="mb-button" id="btn_update_reservation">
-          <?php echo esc_html_x( 'Update', 'renting_my_reservation', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( 'Update', 'renting_my_reservation', 'mybooking-reservation-engine') ?>
       </button>
     <% } %>
   </form>

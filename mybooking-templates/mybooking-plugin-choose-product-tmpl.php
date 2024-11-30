@@ -43,10 +43,10 @@
         <div id="mybooking-modal_product-gallery" class="mybooking-modal_product-gallery">
           <% if (product.video_source && product.video_source !== '' &&  product.video_url && product.video_url !== '' && product.video_source == 'youtube') { %>
             <span class="js-product-toogle-video product-toogle-video-btn" data-target="video">
-              <?php echo esc_html_x( 'Show video', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+              <?php echo esc_html_x( 'Show video', 'renting_choose_product', 'mybooking-reservation-engine') ?>
             </span>
             <span class="js-product-toogle-video product-toogle-video-btn" data-target="image" style="display: none">
-              <?php echo esc_html_x( 'Show gallery', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+              <?php echo esc_html_x( 'Show gallery', 'renting_choose_product', 'mybooking-reservation-engine') ?>
             </span>
           <% } %>
           <br />
@@ -96,7 +96,7 @@
       <% if (!configuration.multipleProductsSelection) { %>
         <div class="mb-form-group mb-col-sm-12">
           <select name="<%= product.code %>" id="<%= product.code %>" class="form-control variant_product_selector">
-            <option value="0"><?php echo esc_html_x( 'Select', 'renting_choose_product', 'mybooking-wp-plugin') ?></option>
+            <option value="0"><?php echo esc_html_x( 'Select', 'renting_choose_product', 'mybooking-reservation-engine') ?></option>
             <% for (var idxV=0;idxV<variants.length;idxV++) { %>
               <% var variant = variants[idxV]; %>
               <option value="<%= variant.code %>" <% if  (variantsSelected[variant.code]) { %>selected<% } %>><%= variant.variant_name %> - <%=configuration.formatCurrency(variant.price)%></option>
@@ -111,9 +111,9 @@
               <%= variant.variant_name %>
             </label>
             <select name="<%= variant.code %>" id="<%= variant.code %>" <% if  (variant.available < 1) { %>disabled<% } %> class="form-control variant_product_selector">
-              <option value="0"><?php echo esc_html_x( 'Select units', 'renting_choose_product', 'mybooking-wp-plugin') ?></option>
+              <option value="0"><?php echo esc_html_x( 'Select units', 'renting_choose_product', 'mybooking-reservation-engine') ?></option>
               <% for (var idxVO=1;idxVO<=variant.available;idxVO++) { %>
-                <option value="<%= idxVO %>"  <% if  (variantsSelected[variant.code] && variantsSelected[variant.code] === idxVO) { %>selected<% } %>><%= idxVO %> <% if  (idxVO > 1) { %><?php echo esc_html_x( 'units', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } else { %><?php echo esc_html_x( 'unit', 'renting_choose_product', 'mybooking-wp-plugin') ?><% } %> - <%=configuration.formatCurrency(variant.price * idxVO)%></option>
+                <option value="<%= idxVO %>"  <% if  (variantsSelected[variant.code] && variantsSelected[variant.code] === idxVO) { %>selected<% } %>><%= idxVO %> <% if  (idxVO > 1) { %><?php echo esc_html_x( 'units', 'renting_choose_product', 'mybooking-reservation-engine') ?><% } else { %><?php echo esc_html_x( 'unit', 'renting_choose_product', 'mybooking-reservation-engine') ?><% } %> - <%=configuration.formatCurrency(variant.price * idxVO)%></option>
               <% } %>
               </select>
           </div>
@@ -220,15 +220,15 @@
       <% if ((filters.families && filters.families.length > 1) || (filters.otherFilters.key_characteristics && filters.otherFilters.key_characteristics.length > 0)) { %>
         <div class="mybooking-choose-product-filter-btns">
           <button id="mybooking_choose_product_filter_bar__send" type="submit" class="mybooking-choose-product-filter-btn"
-            title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+            title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-reservation-engine') ?>">
             <i class="dashicons dashicons-filter"></i>
           </button>
           <button  id="mybooking_choose_product_filter_bar__eraser" class="mybooking-choose-product-filter-btn"
-          title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+          title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-reservation-engine') ?>">
             <i class="dashicons dashicons-editor-removeformatting"></i>
           </button>
           <button id="mybooking_choose_product_filter__modal" class="mybooking-choose-product-filter-btn"
-            title="<?php echo esc_html_x( 'More filters', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+            title="<?php echo esc_html_x( 'More filters', 'renting_choose_product', 'mybooking-reservation-engine') ?>">
             <i class="dashicons dashicons-admin-settings"></i>
           </button>
         </div>
@@ -309,13 +309,13 @@
       <br />
       <div class="mybooking-choose-product-filter-btns">
         <button  id="mybooking_choose_product_filter_modal__eraser" class="mybooking-choose-product-filter-btn"
-        title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+        title="<?php echo esc_html_x( 'Eraser', 'renting_choose_product', 'mybooking-reservation-engine') ?>">
           <i class="dashicons dashicons-editor-removeformatting"></i>
         </button>
         <button id="mybooking_choose_product_filter_modal__send" type="submit" class="mybooking-choose-product-filter-btn"
-          title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>">
+          title="<?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-reservation-engine') ?>">
           <i class="dashicons dashicons-filter"></i>
-          <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( 'Filter', 'renting_choose_product', 'mybooking-reservation-engine') ?>
         </button>
       </div>
     </form>

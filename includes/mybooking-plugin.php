@@ -205,8 +205,8 @@
     function wp_load_plugin_textdomain() {
 
        // This module is located in includes and the languages is in the
-       // root directory of the plugin : 'mybooking-wp-plugin/languages/'
-       load_plugin_textdomain( 'mybooking-wp-plugin', false, MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
+       // root directory of the plugin : 'mybooking-reservation-engine/languages/'
+       load_plugin_textdomain( 'mybooking-reservation-engine', false, MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
 
     }
 

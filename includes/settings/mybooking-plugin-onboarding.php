@@ -46,8 +46,8 @@
 			// Onboarding Step 1 : Welcome
 		  add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-				_x('Welcome', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-				_x('Welcome', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				_x('Welcome', 'onboarding_context', 'mybooking-reservation-engine'), // Page title
+				_x('Welcome', 'onboarding_context', 'mybooking-reservation-engine'), // Menu option title
 				'manage_options', // Capability
 				'mybooking-onboarding', // Slug
 				array($this, 'mybooking_plugin_onboarding_welcome_page'),
@@ -57,8 +57,8 @@
 			// Onboarding Step 2 : Login
 			add_submenu_page(
 				null, // Parent slug - null to avoid to show in the menu
-				_x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-				_x('Login', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				_x('Login', 'onboarding_context', 'mybooking-reservation-engine'), // Page title
+				_x('Login', 'onboarding_context', 'mybooking-reservation-engine'), // Menu option title
 				'manage_options', // Capability
 				'mybooking-onboarding-login', // Slug
 				array($this, 'mybooking_plugin_onboarding_login_page')
@@ -67,8 +67,8 @@
 			// Onboarding Step 3 : Generate
 			add_submenu_page(
 				null, // Parent slug - null to avoid to show in the menu
-				_x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-				_x('Generate', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				_x('Generate', 'onboarding_context', 'mybooking-reservation-engine'), // Page title
+				_x('Generate', 'onboarding_context', 'mybooking-reservation-engine'), // Menu option title
 				'manage_options', // Capability
 				'mybooking-onboarding-generate', // Slug
 				array($this, 'mybooking_plugin_onboarding_generate_page')
@@ -77,8 +77,8 @@
 			// Onboarding Step 4 : Resume
 			add_submenu_page(
 				null, // Parent slug - null to avoid to show in the menu
-				_x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-				_x('Results', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				_x('Results', 'onboarding_context', 'mybooking-reservation-engine'), // Page title
+				_x('Results', 'onboarding_context', 'mybooking-reservation-engine'), // Menu option title
 				'manage_options', // Capability
 				'mybooking-onboarding-resume', // Slug
 				array($this, 'mybooking_plugin_onboarding_resume_page')
@@ -87,8 +87,8 @@
 			// Onboarding Error (on any step) 
 			add_submenu_page(
 				null, // Parent slug - null to avoid to show in the menu
-				_x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-				_x('Error', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				_x('Error', 'onboarding_context', 'mybooking-reservation-engine'), // Page title
+				_x('Error', 'onboarding_context', 'mybooking-reservation-engine'), // Menu option title
 				'manage_options', // Capability
 				'mybooking-onboarding-error', // Slug
 				array($this, 'mybooking_plugin_onboarding_error_page')
@@ -98,8 +98,8 @@
 			// TODO Refactor extract from onboarding
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-				_x('Pages', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-				_x('Pages', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				_x('Pages', 'onboarding_context', 'mybooking-reservation-engine'), // Page title
+				_x('Pages', 'onboarding_context', 'mybooking-reservation-engine'), // Menu option title
 				'manage_options', // Capability
 				'mybooking-onboarding-pages', // Slug
 				array($this, 'mybooking_plugin_onboarding_pages_page')
@@ -109,8 +109,8 @@
 			// TODO Refactor extract from onboarding
 			add_submenu_page(
 				'mybooking-plugin-configuration', // Parent slug
-				_x('Components', 'onboarding_context', 'mybooking-wp-plugin'), // Page title
-				_x('Components', 'onboarding_context', 'mybooking-wp-plugin'), // Menu option title
+				_x('Components', 'onboarding_context', 'mybooking-reservation-engine'), // Page title
+				_x('Components', 'onboarding_context', 'mybooking-reservation-engine'), // Menu option title
 				'manage_options', // Capability
 				'mybooking-onboarding-components', // Slug
 				array($this, 'mybooking_plugin_onboarding_components_page')

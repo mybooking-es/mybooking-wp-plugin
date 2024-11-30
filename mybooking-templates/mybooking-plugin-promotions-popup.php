@@ -27,7 +27,7 @@ foreach($mybooking_engine_popup_items as $mybooking_engine_popup_item) : ?>
       <div class="mybooking-popup" tabindex="-1" role="dialog">
         <?php $mybooking_engine_featured_img_url = get_the_post_thumbnail_url( $mybooking_engine_popup_item, 'full' ); ?>
         <div class="mybooking-popup_content" style="background-image: url(<?php echo esc_url( $mybooking_engine_featured_img_url ) ?>)">
-          <button class="mybooking-popup_close close" aria-hidden="true" aria-label="<?php echo esc_attr_x( 'Close', 'promotions_popup', 'mybooking-wp-plugin' ); ?>">
+          <button class="mybooking-popup_close close" aria-hidden="true" aria-label="<?php echo esc_attr_x( 'Close', 'promotions_popup', 'mybooking-reservation-engine' ); ?>">
             &times;
           </button>
           <div class="mybooking-popup_post">

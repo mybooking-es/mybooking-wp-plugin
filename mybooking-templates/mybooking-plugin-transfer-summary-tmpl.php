@@ -22,10 +22,10 @@
       <div class="mb-section mb-panel-container mybooking-details_container">
         <div class="mybooking-summary_header">
           <div class="mybooking-summary_details-title">
-            <?php echo esc_html_x( 'Reservation summary', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>
+            <?php echo esc_html_x( 'Reservation summary', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>
 
             <div class="mybooking-summary_locator">
-              <?php echo esc_html_x( 'Reservation Id', 'transfer_choose_vehicle', 'mybooking-wp-plugin') ?>
+              <?php echo esc_html_x( 'Reservation Id', 'transfer_choose_vehicle', 'mybooking-reservation-engine') ?>
               <span class="mybooking-summary_locator-id"><%=booking.id%></span>
             </div>
           </div>
@@ -37,11 +37,11 @@
               <%=booking.date%> <%=booking.time%>
             </span>
             <span class="mybooking-summary_place">
-              <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+              <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
               <%=booking.origin_point_name%>
             </span>
             <span class="mybooking-summary_place">
-              <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+              <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
               <%=booking.destination_point_name%>
             </span>
           </span>
@@ -52,20 +52,20 @@
                 <%=booking.date%> <%=booking.time%>
               </span>
               <span class="mybooking-summary_place">
-                <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+                <?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
                 <%=booking.origin_point_name%>
               </span>
               <span class="mybooking-summary_place">
-                <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+                <?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
                 <%=booking.destination_point_name%>
               </span>
             </span>
           <% } %>
 
           <span class="mybooking-summary_item">
-            <?php echo esc_html_x( 'Adults', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=booking.number_of_adults%></br>
-            <?php echo esc_html_x( 'Children', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=booking.number_of_children%></br>
-            <?php echo esc_html_x( 'Infants', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=booking.number_of_infants%>
+            <?php echo esc_html_x( 'Adults', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>: <%=booking.number_of_adults%></br>
+            <?php echo esc_html_x( 'Children', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>: <%=booking.number_of_children%></br>
+            <?php echo esc_html_x( 'Infants', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>: <%=booking.number_of_infants%>
           </span>
         </div>
       </div>
@@ -95,7 +95,7 @@
           <div class="mb-section">
             <br/>
             <div class="mybooking-summary_details-title">
-              <?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-reservation-engine' ) ?>
             </div>
 
             <% for (var idx=0;idx<booking.extras.length;idx++) { %>
@@ -116,7 +116,7 @@
         <% if (booking.supplements.length > 0) { %>
           <div class="mb-section">
             <div class="mybooking-summary_details-title">
-              <?php echo esc_html_x( 'Supplements', 'transfer_summary', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Supplements', 'transfer_summary', 'mybooking-reservation-engine' ) ?>
             </div>
 
             <% for (var idx=0;idx<booking.supplements.length;idx++) { %>
@@ -140,7 +140,7 @@
         <!-- // Total -->
         <div class="mybooking-summary_total">
           <div class="mybooking-summary_total-label">
-            <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+            <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-reservation-engine' ) ?>
           </div>
           <div class="mybooking-summary_total-amount">
             <%=configuration.formatCurrency(booking.total_cost)%>
@@ -148,7 +148,7 @@
         </div>
         <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
           <div class="mybooking-product_taxes">
-            <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+            <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-reservation-engine') ?>
           </div>
         <?php endif; ?>
       </div>
@@ -156,7 +156,7 @@
       <!-- // Customer details -->
       <div class="mb-section">
         <div class="mybooking-summary_details-title">
-          <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-reservation-engine') ?>
         </div>
         <ul class="mb-list border">
           <li class="mb-list-item">

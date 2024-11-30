@@ -29,7 +29,7 @@
     <!-- // Available -->
     <% } else if (product_available) { %>
       <h2 class="mybooking-summary_details-title text-center">
-        <?php echo esc_html_x( 'Reservation summary', 'renting_product_calendar', 'mybooking-wp-plugin') ?>
+        <?php echo esc_html_x( 'Reservation summary', 'renting_product_calendar', 'mybooking-reservation-engine') ?>
       </h2>
 
       <hr>
@@ -58,7 +58,7 @@
             <div class="mybooking-summary_extras text-center">
               <span class="mybooking-summary_item">
                 <span class="mybooking-summary_duration">
-                  <%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+                  <%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-reservation-engine' ) ?>
                 </span>
               </span>
             </div>
@@ -84,7 +84,7 @@
       <% if (shopping_cart.extras.length > 0) { %>
         <div class="mb-section">
           <div class="mybooking-summary_details-title text-center">
-            <?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+            <?php echo esc_html_x( 'Extras', 'renting_complete', 'mybooking-reservation-engine' ) ?>
           </div>
 
           <% for (var idx=0;idx<shopping_cart.extras.length;idx++) { %>
@@ -111,7 +111,7 @@
         <% if (shopping_cart.time_from_cost > 0) { %>
           <div class="mybooking-summary_extra-item">
             <span class="mybooking-summary_extra-name">
-              <?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-reservation-engine' ) ?>
             </span>
             <span class="mybooking-summary_extra-amount">
               <%=configuration.formatCurrency(shopping_cart.time_from_cost)%>
@@ -125,7 +125,7 @@
         <% if (shopping_cart.pickup_place_cost > 0) { %>
           <div class="mybooking-summary_extra-item">
             <span class="mybooking-summary_extra-name">
-              <?php echo esc_html_x( 'Pick-up place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Pick-up place supplement', 'renting_complete', 'mybooking-reservation-engine' ) ?>
             </span>
             <span class="mybooking-summary_extra-amount">
               <%=configuration.formatCurrency(shopping_cart.pickup_place_cost)%>
@@ -139,7 +139,7 @@
         <% if (shopping_cart.time_to_cost > 0) { %>
           <div class="mybooking-summary_extra-item">
             <span class="mybooking-summary_extra-name">
-              <?php echo esc_html_x( 'Return time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Return time supplement', 'renting_complete', 'mybooking-reservation-engine' ) ?>
             </span>
             <span class="mybooking-summary_extra-amount">
               <%=configuration.formatCurrency(shopping_cart.time_to_cost)%>
@@ -153,7 +153,7 @@
         <% if (shopping_cart.return_place_cost > 0) { %>
           <div class="mybooking-summary_extra-item">
             <span class="mybooking-summary_extra-name">
-              <?php echo esc_html_x( 'Return place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+              <?php echo esc_html_x( 'Return place supplement', 'renting_complete', 'mybooking-reservation-engine' ) ?>
             </span>
             <span class="mybooking-summary_extra-amount">
               <%=configuration.formatCurrency(shopping_cart.return_place_cost)%>
@@ -167,7 +167,7 @@
         <div class="mb-section">
           <div class="mybooking-summary_total text-center">
             <span class="mybooking-summary_total-label">
-              <b><?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>:</b>
+              <b><?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-reservation-engine' ) ?>:</b>
             </span>
             <span class="mybooking-summary_total-amount">
               <b><%=configuration.formatCurrency(shopping_cart.total_cost)%></b>
@@ -176,7 +176,7 @@
 
           <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
             <div class="mybooking-product_taxes">
-              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+              <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-reservation-engine') ?>
             </div>
           <?php endif; ?>
         </div>
@@ -185,19 +185,19 @@
       <!-- // Reservation button -->
       <br />
       <div class="mb-form-group text-center">
-         <input id="add_to_shopping_cart_btn" class="btn btn-primary btn-choose-product" type="submit" value="<?php echo esc_attr_x( 'Book Now!', 'renting_product_calendar', 'mybooking-wp-plugin') ?>"/>
+         <input id="add_to_shopping_cart_btn" class="btn btn-primary btn-choose-product" type="submit" value="<?php echo esc_attr_x( 'Book Now!', 'renting_product_calendar', 'mybooking-reservation-engine') ?>"/>
       </div>
 
     <% } else { %>
       <% if (product_type == 'resource') { %>
         <div class="mb-alert danger  text-center">
-          <?php echo esc_html_x( 'Book Now!', 'renting_product_calendar', 'mybooking-wp-plugin') ?>
-          <?php echo esc_html_x( 'Sorry, there is no availability during these hours', 'renting_product_calendar', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( 'Book Now!', 'renting_product_calendar', 'mybooking-reservation-engine') ?>
+          <?php echo esc_html_x( 'Sorry, there is no availability during these hours', 'renting_product_calendar', 'mybooking-reservation-engine') ?>
         </div>
 
       <% } else if (product_type == 'category_of_resources') { %>
         <div class="mb-alert warning  text-center">
-          <?php echo esc_html_x( 'Sorry, there is no availability for the entire period. The calendar shows those days when there is availability, but it may not be available for certain consecutive dates.', 'renting_product_calendar', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( 'Sorry, there is no availability for the entire period. The calendar shows those days when there is availability, but it may not be available for certain consecutive dates.', 'renting_product_calendar', 'mybooking-reservation-engine') ?>
         </div>
       <% } %>
     <% } %>

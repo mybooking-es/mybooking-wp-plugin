@@ -28,10 +28,10 @@
       <div class="mb-section mb-panel-container">
         <div class="mybooking-summary_header">
           <div class="mybooking-summary_details-title">
-            <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+            <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-reservation-engine' ) ?>
 
             <div class="mybooking-summary_locator">
-              <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-wp-plugin') ?>
+              <?php echo esc_html_x( 'Reservation Id', 'renting_summary', 'mybooking-reservation-engine') ?>
               <span class="mybooking-summary_locator-id"><%=booking.id%></span>
             </div>
           </div>
@@ -88,7 +88,7 @@
             <span class="mybooking-summary_item">
               <span class="mybooking-summary_duration">
                 <span class="dashicons dashicons-clock"></span>
-                <%=booking.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+                <%=booking.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-reservation-engine' ) ?>
               </span>
             </span>
           <% } %>
@@ -208,7 +208,7 @@
                       <!-- // Taxes -->
                       <?php if ( array_key_exists('show_taxes_included', $args ) && ( $args['show_taxes_included'] ) ): ?>
                         <div class="mybooking-product_taxes">
-                          <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                          <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-reservation-engine') ?>
                         </div>
                       <?php endif; ?>
                     </div>
@@ -239,7 +239,7 @@
           <% if ( booking.booking_extras.length > 0 ) { %>
             <div class="mb-section">
               <div class="mybooking-summary_details-title">
-                <?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                <?php echo esc_html_x( 'Extras', 'renting_summary', 'mybooking-reservation-engine' ) ?>
               </div>
 
               <% for (var idx=0;idx<booking.booking_extras.length;idx++) { %>
@@ -266,7 +266,7 @@
 
             <div class="mb-section">
               <div class="mybooking-summary_details-title">
-                <?php echo esc_html_x( 'Supplements', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                <?php echo esc_html_x( 'Supplements', 'renting_summary', 'mybooking-reservation-engine' ) ?>
               </div>
 
               <div class="mybooking-summary_extras">
@@ -274,7 +274,7 @@
                 <% if (booking.time_from_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
-                      <?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <?php echo esc_html_x( 'Pick-up time supplement', 'renting_complete', 'mybooking-reservation-engine' ) ?>
                     </span>
                   </div>
                   <span class="mybooking-summary_extra-amount">
@@ -288,7 +288,7 @@
                 <% if (booking.pickup_place_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
-                      <?php echo esc_html_x( 'Pick-up place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <?php echo esc_html_x( 'Pick-up place supplement', 'renting_complete', 'mybooking-reservation-engine' ) ?>
                     </span>
                   </div>
                   <span class="mybooking-summary_extra-amount">
@@ -302,7 +302,7 @@
                 <% if (booking.time_to_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
-                      <?php echo esc_html_x( 'Return time supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <?php echo esc_html_x( 'Return time supplement', 'renting_complete', 'mybooking-reservation-engine' ) ?>
                     </span>
                   </div>
                   <span class="mybooking-summary_extra-amount">
@@ -316,7 +316,7 @@
                 <% if (booking.return_place_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
-                      <?php echo esc_html_x( 'Return place supplement', 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <?php echo esc_html_x( 'Return place supplement', 'renting_complete', 'mybooking-reservation-engine' ) ?>
                     </span>
                   </div>
                   <span class="mybooking-summary_extra-amount">
@@ -330,7 +330,7 @@
                 <% if (booking.driver_age_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
-                      <?php echo esc_html_x( "Driver's age supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <?php echo esc_html_x( "Driver's age supplement", 'renting_complete', 'mybooking-reservation-engine' ) ?>
                     </span>
                   </div>
                   <span class="mybooking-summary_extra-amount">
@@ -344,7 +344,7 @@
                 <% if (booking.category_supplement_1_cost > 0) { %>
                   <div class="mybooking-summary_extra-item">
                     <span class="mybooking-summary_extra-name">
-                      <?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                      <?php echo esc_html_x( "Petrol supplement", 'renting_complete', 'mybooking-reservation-engine' ) ?>
                     </span>
                   </div>
                   <span class="mybooking-summary_extra-amount">
@@ -362,7 +362,7 @@
           <% if (!configuration.hidePriceIfZero || booking.total_cost > 0) { %>
             <div class="mybooking-summary_total">
               <div class="mybooking-summary_total-label">
-                <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-wp-plugin' ) ?>
+                <?php echo esc_html_x( "Total", 'renting_complete', 'mybooking-reservation-engine' ) ?>
               </div>
               <div class="mybooking-summary_total-amount">
                 <%=configuration.formatCurrency(booking.total_cost)%>
@@ -371,7 +371,7 @@
 
             <div class="mybooking-summary_total">
               <div class="mybooking-summary_total-label">
-                <?php echo esc_html_x( 'Total paid', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                <?php echo esc_html_x( 'Total paid', 'renting_summary', 'mybooking-reservation-engine' ) ?>
               </div>
               <div class="mybooking-summary_total-amount">
                 <%=configuration.formatCurrency(booking.total_paid)%>
@@ -381,7 +381,7 @@
             <% if (booking.total_pending > 0) { %>
               <div class="mybooking-summary_total mb--bg-danger">
                 <div class="mybooking-summary_total-label">
-                  <?php echo esc_html_x( 'Total pending', 'renting_summary', 'mybooking-wp-plugin' ) ?>
+                  <?php echo esc_html_x( 'Total pending', 'renting_summary', 'mybooking-reservation-engine' ) ?>
                 </div>
                 <div class="mybooking-summary_total-amount mb-text-negative">
                   <%=configuration.formatCurrency(booking.total_pending)%>
@@ -391,7 +391,7 @@
 
             <?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
               <div class="mybooking-product_taxes">
-                <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+                <?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-reservation-engine') ?>
               </div>
             <?php endif; ?>
           <% } %>
@@ -401,7 +401,7 @@
       <!-- // Customer details -->
       <div class="mb-section mb-panel-container">
         <div class="mybooking-summary_details-title">
-          <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x( "Customer's details", 'renting_summary', 'mybooking-reservation-engine') ?>
         </div>
         <ul class="mb-list border">
           <li class="mb-list-item">

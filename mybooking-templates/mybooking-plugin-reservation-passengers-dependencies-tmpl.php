@@ -16,7 +16,7 @@
 <script type="text/tmpl" id="script_passengers_table">
   <div id="passengers_list">
     <div id="passengers_list__not_data" style="display:none;">
-      <?php echo esc_html_x('No passengers found in reservation', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+      <?php echo esc_html_x('No passengers found in reservation', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
     </div>
     <div id="passengers_list__content">
     </div>
@@ -29,51 +29,51 @@
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-6">
         <label for="passenger_name">
-          <?php echo esc_html_x('Name', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('Name', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
           *
         </label>
         <input class="form-control" id="passenger_name" name="passenger_name" type="text"
-          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("Name", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>"
+          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("Name", 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>")%>"
         value=""
         maxlength="40" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
       <div class="mb-form-group mb-col-md-6">
         <label for="">
-          <?php echo esc_html_x('Surname', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('Surname', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
           *
         </label>
         <input class="form-control" id="passenger_surname" name="passenger_surname" type="text"
-          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("Surname", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>" value=""
+          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("Surname", 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>")%>" value=""
         maxlength="40" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
     </div>
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
         <label for="passenger_document_id">
-          <?php echo esc_html_x('ID card/passport number', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('ID card/passport number', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
           *
         </label>
         <input class="form-control" id="passenger_document_id" name="passenger_document_id" type="text"
-          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("ID card/passport number", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>" value=""
+          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x("ID card/passport number", 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>")%>" value=""
         maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
     </div>
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-6">
         <label for="passenger_email">
-          <?php echo esc_html_x('Email address', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('Email address', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
         </label>
         <input class="form-control" id="passenger_email" name="passenger_email" type="text"
-          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x('Email address', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>"
+          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x('Email address', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>")%>"
         value=""
         maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
       <div class="mb-form-group mb-col-md-6">
         <label for="passenger_phone_number">
-          <?php echo esc_html_x('Phone number', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('Phone number', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
         </label>
         <input class="form-control" id="passenger_phone_number" name="passenger_phone_number" type="text"
-          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x('Phone number', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>"
+          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x('Phone number', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>")%>"
         value=""
         maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
@@ -81,10 +81,10 @@
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-md-12">
         <label for="passenger_notes">
-          <?php echo esc_html_x('Notes', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('Notes', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
         </label>
         <input class="form-control" id="passenger_notes" name="passenger_notes" type="text"
-          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x('Notes', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>")%>"
+          placeholder="<%=configuration.escapeHtml(" <?php echo esc_attr_x('Notes', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>")%>"
         value=""
         maxlength="50" <% if (!booking.can_edit_online){%>disabled<%}%>>
       </div>
@@ -94,7 +94,7 @@
 
     <div class="mb-card_footer" style="margin: 0 -1rem;">
       <button class="mb-button" id="btn_add_passenger" <% if (!booking.can_edit_online){%>disabled<%}%>>
-        <?php echo esc_html_x('Add a new passenger', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+        <?php echo esc_html_x('Add a new passenger', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
       </button>
     </div>
   </form>
@@ -112,7 +112,7 @@
         </h6>
       </div>
       <div class="mb-form-group mb-col-sm-2" style="width: 10%;">
-        <button class="float-right btn_remove_passenger" title="<?php echo esc_attr_x("Remove", 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>" data-id="<%= passenger.id %>" data-name="<%= passenger.name %> <%= passenger.surname %>">
+        <button class="float-right btn_remove_passenger" title="<?php echo esc_attr_x("Remove", 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>" data-id="<%= passenger.id %>" data-name="<%= passenger.name %> <%= passenger.surname %>">
           <i class="mb-button icon" style="opacity: 0.6;"><span class="dashicons dashicons-trash"></span></i>
         </button>
       </div>
@@ -120,14 +120,14 @@
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
         <b>
-          <?php echo esc_html_x('ID card/passport number', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('ID card/passport number', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
         </b>
         <br />
         <%= passenger.document_id %>
       </div>
       <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
         <b>
-          <?php echo esc_html_x('Email address', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('Email address', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
         </b>
         <br />
         <% if (passenger.email && passenger.email != '') { %>
@@ -138,7 +138,7 @@
       </div>
       <div class="mb-form-group mb-col-sm-12 mb-col-md-4">
         <b>
-          <?php echo esc_html_x('Phone number', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('Phone number', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
         </b>
         <br />
         <% if (passenger.phone_number && passenger.phone_number != '') { %>
@@ -151,7 +151,7 @@
     <div class="mb-form-row">
       <div class="mb-form-group mb-col-sm-12" style="margin-bottom: 0;">
         <b>
-          <?php echo esc_html_x('Notes', 'renting_my_reservation_passenger', 'mybooking-wp-plugin') ?>
+          <?php echo esc_html_x('Notes', 'renting_my_reservation_passenger', 'mybooking-reservation-engine') ?>
         </b>
         <br />
         <%= passenger.notes %>

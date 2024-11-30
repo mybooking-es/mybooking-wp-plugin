@@ -9,11 +9,11 @@
 
       $oneModule = MybookingInstall::isOneModuleInstall();
 
-      $checkoutTitle = _x( 'Check out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
-      $summaryTitle = _x( 'Summary', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
-      $myReservationTitle = _x( 'My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
-      $homeTestTitle = _x( 'Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
-      $chooseProductTitle = _x( 'Search result', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+      $checkoutTitle = _x( 'Check out', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
+      $summaryTitle = _x( 'Summary', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
+      $myReservationTitle = _x( 'My reservation', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
+      $homeTestTitle = _x( 'Home Test', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
+      $chooseProductTitle = _x( 'Search result', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
 
       $checkoutSlug = 'checkout';
       $summarySlug = 'summary';
@@ -21,11 +21,11 @@
       $homeTestSlug = 'home-test';
 
       if ( !$oneModule ) {
-        $checkoutTitle = _x( 'Transfer Check out', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
-        $summaryTitle = _x( 'Transfer Summary', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
-        $myReservationTitle = _x( 'Transfer My reservation', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
-        $homeTestTitle = _x( 'Transfer Home Test', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
-        $chooseProductTitle = _x( 'Transfer Search result', 'plugin_custom_transfer_pages', 'mybooking-wp-plugin' );
+        $checkoutTitle = _x( 'Transfer Check out', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
+        $summaryTitle = _x( 'Transfer Summary', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
+        $myReservationTitle = _x( 'Transfer My reservation', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
+        $homeTestTitle = _x( 'Transfer Home Test', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
+        $chooseProductTitle = _x( 'Transfer Search result', 'plugin_custom_transfer_pages', 'mybooking-reservation-engine' );
 
         $checkoutSlug = 'checkout-transfer';
         $summarySlug = 'summary-transfer';

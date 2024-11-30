@@ -95,7 +95,7 @@
 					<!-- // Taxes -->
 					<?php if ( array_key_exists('show_taxes_included', $args) && ( $args['show_taxes_included'] ) ): ?>
 						<div class="mybooking-product_taxes">
-							<?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-wp-plugin') ?>
+							<?php echo esc_html_x( 'Taxes included', 'renting_choose_product', 'mybooking-reservation-engine') ?>
 						</div>
 					<?php endif; ?>
 				</div>

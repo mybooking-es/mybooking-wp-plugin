@@ -24,9 +24,9 @@
 	<% if (typeof keyCharacteristics['price_ranges'] !== 'undefined' &&
 	       Object.keys(keyCharacteristics['price_ranges']).length > 0 ) { %>
 		<div class="mb-form-group">
-      <label for="price_range"><?php echo esc_attr_x( 'Daily price', 'renting_product_search', 'mybooking-wp-plugin' )?></label>
+      <label for="price_range"><?php echo esc_attr_x( 'Daily price', 'renting_product_search', 'mybooking-reservation-engine' )?></label>
 			<select name="price_range" id="mybooking_price_range" class="mb-form-control mybooking-price-range" <?php if ( array_key_exists('price_range', $args) && $args['price_range'] != '') { ?>data-value="<?php echo esc_attr( $args['price_range'] )?>"<?php } ?>>
-			  <option value=""><?php echo esc_attr_x( 'Daily price', 'renting_product_search', 'mybooking-wp-plugin' )?></option>
+			  <option value=""><?php echo esc_attr_x( 'Daily price', 'renting_product_search', 'mybooking-reservation-engine' )?></option>
 			  <% for (idx in keyCharacteristics['price_ranges']) { %>
 			  	<option value="<%=idx%>"><%=keyCharacteristics['price_ranges'][idx]%></option>
 			  <% } %>

@@ -18,7 +18,7 @@
       <div class="mb-col-md-12">
         <div class="mybooking-summary_header">
           <div class="mybooking-summary_details-title">
-            <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+            <?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-reservation-engine' ) ?>
           </div>
 
           <div class="mybooking-summary_edit" id="modify_reservation_button" role="link">
@@ -104,7 +104,7 @@
               </span>
             <% } else if (shopping_cart.hours > 0) { %>
               <span class="mybooking-summary_item">
-                <span class="mybooking-summary_duration"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-wp-plugin' ) ?></span>
+                <span class="mybooking-summary_duration"><%=shopping_cart.hours%> <?php echo esc_html_x( 'hour(s)', 'renting_choose_product', 'mybooking-reservation-engine' ) ?></span>
               </span>
             <% } %>
           </div>

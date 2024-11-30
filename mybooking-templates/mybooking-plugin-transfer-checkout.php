@@ -39,7 +39,7 @@
         <div class="mb-section mb-panel-container">
           <div class="reservation_form_container">
             <h3 class="mb-section_title complete-section-title customer_component">
-              <?php echo esc_html_x( "Customer's details", 'transfer_checkout', 'mybooking-wp-plugin') ?>
+              <?php echo esc_html_x( "Customer's details", 'transfer_checkout', 'mybooking-reservation-engine') ?>
             </h3>
 
             <form class="mybooking-form" id="mybooking_transfer_form-reservation" name="mybooking_transfer_reservation_form" autocomplete="off">
@@ -57,7 +57,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title modal-extra-detail-title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="<?php echo esc_attr_x( 'Close', 'transfer_checkout', 'mybooking-wp-plugin' ); ?>">
+        <button type="button" class="close" data-dismiss="modal" aria-label="<?php echo esc_attr_x( 'Close', 'transfer_checkout', 'mybooking-reservation-engine' ); ?>">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

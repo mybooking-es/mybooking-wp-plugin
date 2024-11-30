@@ -20,17 +20,17 @@
 				<div class="mb-col-md-4 mb-col-sm-hidden"></div>
 				<div class="mb-col-md-2 mb-col-sm-hidden">
 					<span class="mybooking-summary_extra-name">
-						<?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-reservation-engine' ) ?>
 					</span>
 				</div>
 				<div class="mb-col-md-2 mb-col-sm-hidden">
 					<span class="mybooking-summary_extra-name">
-						<?php echo esc_html_x( "Guarantee", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( "Guarantee", 'renting_summary', 'mybooking-reservation-engine' ) ?>
 					</span>
 				</div>
 				<div class="mb-col-md-2 mb-col-sm-hidden">
 					<span class="mybooking-summary_extra-name">
-						<?php echo esc_html_x( "Price", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+						<?php echo esc_html_x( "Price", 'renting_summary', 'mybooking-reservation-engine' ) ?>
 					</span>
 				</div>
 			</div>
@@ -68,7 +68,7 @@
 						<div class="mb-col-sm-12 mb-col-md-2">
 							<% if ( bookings[idx].product_deposit_cost > 0 ) { %>
 								<span class="mybooking-summary_extra-name mb-col-md-hidden mb-col-lg-hidden">
-									<?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+									<?php echo esc_html_x( "Deposit", 'renting_summary', 'mybooking-reservation-engine' ) ?>
 								</span>
 								<span class="mybooking-summary_extra-amount">
 									<%=configuration.formatCurrency(bookings[idx].product_deposit_cost)%>
@@ -84,7 +84,7 @@
 						<div class="mb-col-sm-12 mb-col-md-2">
 							<% if ( bookings[idx].product_guarantee_cost > 0 ) { %>
 								<span class="mybooking-summary_extra-name mb-col-md-hidden mb-col-lg-hidden">
-									<?php echo esc_html_x( "Guarantee", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+									<?php echo esc_html_x( "Guarantee", 'renting_summary', 'mybooking-reservation-engine' ) ?>
 								</span>
 								<span class="mybooking-summary_extra-amount">
 									<%=configuration.formatCurrency(bookings[idx].product_guarantee_cost)%>
@@ -100,7 +100,7 @@
 						<div class="mb-col-sm-12 mb-col-md-2">
 							<% if (!configuration.hidePriceIfZero || bookings[idx].item_cost > 0) { %>
 								<span class="mybooking-summary_extra-name mb-col-md-hidden mb-col-lg-hidden">
-									<?php echo esc_html_x( "Price", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+									<?php echo esc_html_x( "Price", 'renting_summary', 'mybooking-reservation-engine' ) ?>
 								</span>
 								<div class="mybooking-summary_price">
 									<div>
@@ -152,7 +152,7 @@
 		</div>
 	<% } else { %>
 		<div class="mb-alert">
-			<?php echo esc_html_x( "No items found", 'renting_summary', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( "No items found", 'renting_summary', 'mybooking-reservation-engine' ) ?>
 		</div>
 	<% } %>
 <% } %>

@@ -14,13 +14,13 @@
 <div class="mb-section mybooking-details_container">
 	<div class="mybooking-summary_header">
 		<div class="mybooking-summary_details-title">
-			<?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-wp-plugin' ) ?> ⟶
+			<?php echo esc_html_x( 'Reservation summary', 'renting_choose_product', 'mybooking-reservation-engine' ) ?> ⟶
 
 			<!-- // Type of reservation -->
 			<% if (shopping_cart.round_trip) { %>
-				<?php echo esc_html_x( 'Round trip', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'Round trip', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>
 			<% } else { %>
-				<?php echo esc_html_x( 'One Way', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>
+				<?php echo esc_html_x( 'One Way', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>
 			<% } %>
 		</div>
 
@@ -28,7 +28,7 @@
 			<i class="mb-button icon">
 				<span class="dashicons dashicons-edit"></span>
 			</i>
-			<?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-wp-plugin' ) ?>
+			<?php echo esc_html_x( 'Edit', 'renting_choose_product', 'mybooking-reservation-engine' ) ?>
 		</div>
 	</div>
 
@@ -38,11 +38,11 @@
 				<%=configuration.formatDate(shopping_cart.date)%> <%=shopping_cart.time%>
 			</span>
 			<span class="mybooking-summary_place">
-				<?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+				<?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
 				<%=shopping_cart.origin_point_name%>
 			</span>
 			<span class="mybooking-summary_place">
-				<?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+				<?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
 				<%=shopping_cart.destination_point_name%>
 			</span>
 		</span>
@@ -53,20 +53,20 @@
 					<%=configuration.formatDate(shopping_cart.return_date)%> <%=shopping_cart.return_time%>
 				</span>
 				<span class="mybooking-summary_place">
-					<?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+					<?php echo esc_html_x( 'Origin', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
 					<%=shopping_cart.return_origin_point_name%>
 				</span>
 				<span class="mybooking-summary_place">
-					<?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?> ⟶
+					<?php echo esc_html_x( 'Destination', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?> ⟶
 					<%=shopping_cart.return_destination_point_name%>
 				</span>
 			</span>
 		<% } %>
 
 		<span class="mybooking-summary_item">
-			<?php echo esc_html_x( 'Adults', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.number_of_adults%></br>
-			<?php echo esc_html_x( 'Children', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.number_of_children%></br>
-			<?php echo esc_html_x( 'Infants', 'transfer_choose_vehicle', 'mybooking-wp-plugin' ) ?>: <%=shopping_cart.number_of_infants%>
+			<?php echo esc_html_x( 'Adults', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>: <%=shopping_cart.number_of_adults%></br>
+			<?php echo esc_html_x( 'Children', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>: <%=shopping_cart.number_of_children%></br>
+			<?php echo esc_html_x( 'Infants', 'transfer_choose_vehicle', 'mybooking-reservation-engine' ) ?>: <%=shopping_cart.number_of_infants%>
 		</span>
 	</div>
 </div>

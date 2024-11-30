@@ -12,7 +12,7 @@
 <!-- MODIFY TRANSFER MODAL ------------------------------------------------------------->
 
 <div class="mybooking mybooking-selector mybooking-detail_modal mybooking-modal modal-mybooking" tabindex="-1" role="dialog" id="mybooking_transfer_modify_reservation_modal_MBM" aria-labelledby="modifyTransferReservationModal">
-  <h3 class="mybooking-modal_title"><?php echo esc_html_x( 'Modify reservation', 'renting_form_modify_reservation', 'mybooking-wp-plugin') ?></h3>
+  <h3 class="mybooking-modal_title"><?php echo esc_html_x( 'Modify reservation', 'renting_form_modify_reservation', 'mybooking-reservation-engine') ?></h3>
   <div class="mybooking-modal_body">
     <form
       name="mybooking_transfer_search_form"

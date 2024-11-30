@@ -22,10 +22,10 @@
          <?php if ( array_key_exists('q', $args) && $args['q'] != '') { ?>
            value="<?php echo esc_attr( $args['q'] )?>"
          <?php } ?>
-         name="q" id="search_q" placeholder="<?php echo esc_attr_x( 'Search', 'activities_search', 'mybooking-wp-plugin' ) ?>">
+         name="q" id="search_q" placeholder="<?php echo esc_attr_x( 'Search', 'activities_search', 'mybooking-reservation-engine' ) ?>">
 
       <button class="mybooking-search_button mb-button" type="submit">
-        <!-- <?php echo esc_attr_x( 'Search', 'activities_search', 'mybooking-wp-plugin' ) ?> -->
+        <!-- <?php echo esc_attr_x( 'Search', 'activities_search', 'mybooking-reservation-engine' ) ?> -->
         <span class="dashicons dashicons-search"></span>
       </button>
 
