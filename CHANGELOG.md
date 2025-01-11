@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.4.0] - 2024.11.30
+## [2.4.0] - 2025.01.11
 
 ### New
 
@@ -9,6 +9,7 @@
 ### Fixed
 
 - Calendar for category/rental location
+- Text domain changed to match the plugin slug
 
 ## [2.3.8] - 2024.09.23
 

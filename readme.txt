@@ -116,6 +116,11 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 2.4.0 =
+* New : Choose product reduced card : Include excess + deposit + daily km + km extra
+* Fixed: Calendar for category/rental location
+* Fixed: Text domain changed to match the plugin slug
+
 = 2.3.8 =
 * New :  My reservation - Hospedajes and alquileres de vehiculos required fields
 
@@ -538,6 +543,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 2.4.0 =
+* Choose product card reduced + Fixed calendar for category/rental location + Text domain changed to slug
 
 = 2.3.8 =
 * New :  My reservation - Hospedajes and alquileres de vehiculos required fields
