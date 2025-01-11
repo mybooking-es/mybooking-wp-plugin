@@ -24,11 +24,11 @@ class MyBookingActivitiesEngineActivityWidget extends WP_Widget {
  
     public function form( $instance ) {
         // outputs the options form in the admin
-        $activity_id = ! empty( $instance['activity_id'] ) ? $instance['activity_id'] : esc_html__( '', 'text_domain' );
+        $activity_id = ! empty( $instance['activity_id'] ) ? $instance['activity_id'] : '';
             ?>
             <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'activity_id' ) ); ?>">
-            <?php esc_attr_e( 'activity_id:', 'text_domain' ); ?>
+            <?php esc_attr_e( 'activity_id:', 'mybooking-reservation-engine' ); ?>
             </label> 
             
             <input 

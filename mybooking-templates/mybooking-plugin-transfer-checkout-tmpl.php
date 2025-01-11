@@ -797,6 +797,7 @@
               <?php if ( empty($args['terms_and_conditions']) ) { ?>
                 <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-reservation-engine' ) ?>
               <?php } else { ?>
+                <?php /* translators: %s: terms and conditions URL */ ?>
                 <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-reservation-engine' ), $args['terms_and_conditions'] ) )?>
               <?php } ?>
           </label>
@@ -805,6 +806,7 @@
             <!-- Privacy -->
             <label for="privacy_read_pay_now">
               <input type="checkbox" id="privacy_read_pay_now" name="privacy_read_pay_now">
+                <?php /* translators: %s: terms and conditions URL */ ?>
                 <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-reservation-engine' ), $mybooking_engine_privacy_page ) )?>
             </label>
           <?php } ?>

@@ -59,14 +59,14 @@ class MyBookingEngineContactWidget extends WP_Widget {
  
     public function form( $instance ) {
         // outputs the options form in the admin
-        $subject = ! empty( $instance['subject'] ) ? $instance['subject'] : esc_html__( '', 'text_domain' );
-        $source = ! empty( $instance['source'] ) ? $instance['source'] : esc_html__( '', 'text_domain' );
-        $rental_location_code = ! empty( $instance['rental_location_code'] ) ? $instance['rental_location_code'] : esc_html__( '', 'text_domain' );
-        $sales_channel_code = ! empty( $instance['sales_channel_code'] ) ? $instance['sales_channel_code'] : esc_html__( '', 'text_domain' );
+        $subject = ! empty( $instance['subject'] ) ? $instance['subject'] : '';
+        $source = ! empty( $instance['source'] ) ? $instance['source'] : '';
+        $rental_location_code = ! empty( $instance['rental_location_code'] ) ? $instance['rental_location_code'] : '';
+        $sales_channel_code = ! empty( $instance['sales_channel_code'] ) ? $instance['sales_channel_code'] : '';
             ?>
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'subject' ) ); ?>">
-                <?php esc_attr_e( 'subject:', 'text_domain' ); ?>
+                <?php esc_attr_e( 'subject:', 'mybooking-reservation-engine' ); ?>
                 </label> 
                 
                 <input 
@@ -79,7 +79,7 @@ class MyBookingEngineContactWidget extends WP_Widget {
             </p>
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>">
-                <?php esc_attr_e( 'source:', 'text_domain' ); ?>
+                <?php esc_attr_e( 'source:', 'mybooking-reservation-engine' ); ?>
                 </label> 
                 
                 <input 
@@ -92,7 +92,7 @@ class MyBookingEngineContactWidget extends WP_Widget {
             </p>
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'rental_location_code' ) ); ?>">
-                <?php esc_attr_e( 'rental_location_code:', 'text_domain' ); ?>
+                <?php esc_attr_e( 'rental_location_code:', 'mybooking-reservation-engine' ); ?>
                 </label> 
                 
                 <input 
@@ -105,7 +105,7 @@ class MyBookingEngineContactWidget extends WP_Widget {
             </p>
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'sales_channel_code' ) ); ?>">
-                <?php esc_attr_e( 'sales_channel_code:', 'text_domain' ); ?>
+                <?php esc_attr_e( 'sales_channel_code:', 'mybooking-reservation-engine' ); ?>
                 </label> 
                 
                 <input 

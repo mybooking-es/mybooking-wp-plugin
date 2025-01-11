@@ -35,18 +35,18 @@ class MyBookingTransferEngineSelectorWidget extends WP_Widget {
 
     public function form( $instance ) {
         // outputs the options form in the admin
-        $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( '', 'text_domain' );
+        $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : '';
             ?>
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>">
-                <?php esc_attr_e( 'layout:', 'text_domain' ); ?>
+                <?php esc_attr_e( 'layout:', 'mybooking-reservation-engine' ); ?>
                 </label> 
                 
                 <select class="widefat"
                         id="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>"
                         name="<?php echo esc_attr( $this->get_field_name( 'layout' ) ); ?>">
-                    <option value="horizontal" <?php if ( $layout != 'vertical' ) :?>selected<?php endif; ?>><?php esc_attr_e( 'horizontal', 'text_domain' ); ?></option>   
-                    <option value="vertical" <?php if ( $layout == 'vertical' ) :?>selected<?php endif; ?>><?php esc_attr_e( 'vertical', 'text_domain' ); ?></option>
+                    <option value="horizontal" <?php if ( $layout != 'vertical' ) :?>selected<?php endif; ?>><?php esc_attr_e( 'horizontal', 'mybooking-reservation-engine' ); ?></option>   
+                    <option value="vertical" <?php if ( $layout == 'vertical' ) :?>selected<?php endif; ?>><?php esc_attr_e( 'vertical', 'mybooking-reservation-engine' ); ?></option>
                 </select>        
             </p>            
             <?php        
