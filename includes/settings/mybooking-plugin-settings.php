@@ -121,41 +121,41 @@
 	         ?>
 
 					<h2 class="nav-tab-wrapper">
-					    <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=connection_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">
+					    <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=connection_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'connection_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Connection', 'settings_context', 'mybooking-reservation-engine' ) ?>
 							</a>
 					    <?php if ($renting) { ?>
-					      <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=renting_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">
+					      <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=renting_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'renting_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Renting or Accommodation', 'settings_context', 'mybooking-reservation-engine' ) ?>
 								</a>
               <?php } ?>
 					    <?php if ($activities) { ?>
-								<a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=activities_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">
+								<a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=activities_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Activities or Appointments', 'settings_context', 'mybooking-reservation-engine' ) ?>
 								</a>
 					    <?php } ?>
 					    <?php if ($transfer) { ?>
-					      <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=transfer_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'transfer_options' ? 'nav-tab-active' : ''; ?>">
+					      <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=transfer_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'transfer_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Transfer', 'settings_context', 'mybooking-reservation-engine' ) ?>
 								</a>
               <?php } ?>
-              <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=contact_form'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">
+              <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=contact_form'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'contact_form' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Contact Form', 'settings_context', 'mybooking-reservation-engine' ) ?>
 							</a>
-              <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=complements_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">
+              <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=complements_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'complements_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Complements', 'settings_context', 'mybooking-reservation-engine' ) ?>
 							</a>
 							<?php if ($renting) { ?>
-								<a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=configuration_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">
+								<a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=configuration_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'configuration_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Integration', 'settings_context', 'mybooking-reservation-engine' ) ?>
 								</a>
 							<?php } ?>
 							<?php if ($google_api_places) { ?>
-					      <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=google_api_places_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">
+					      <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=google_api_places_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Google Api Places', 'settings_context', 'mybooking-reservation-engine' ) ?>
 								</a>
 					    <?php } ?>
-  				    <a href="<?php echo wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=css_options'), 'settings_tab', 'settingstabs_wponce')?>" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">
+  				    <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=css_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Advanced', 'settings_context', 'mybooking-reservation-engine' ) ?>
 							</a>
 					</h2>

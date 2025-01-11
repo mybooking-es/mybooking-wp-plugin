@@ -24,7 +24,7 @@
 							
 							<li class="mb-onboarding-setup-item">
 								<div class="mb-onboarding-setup-item-name">
-									<strong><?php echo get_the_title( $id ) ?></strong>
+									<strong><?php echo esc_html( get_the_title( $id ) ); ?></strong>
 									<?php if ( $rental_obj['home_page_id'] === $id ) { ?>
 										<p class="mb-onboarding-setup-item-hint"><?php echo esc_html_x( '(Reservation process starts here)', 'onboarding_context', 'mybooking-reservation-engine' ) ?></p>
 									<?php } ?>
@@ -36,16 +36,16 @@
 										
 									} ?>
 									<?php if ( $rental_obj['home_page_id'] === $id ) { ?>
-										<a href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
+										<a href="<?php echo esc_url( get_permalink( $id ) )?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
 											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
 										</a>
 									<?php } ?>
 									<?php $module = ($module_rental) ? 'mybooking_plugin_settings_renting' : 'mybooking_plugin_settings_transfer' ?>
-									<span data-type="<?php echo $type ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-reservation-engine' ) ?>"></span>
-									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
+									<span data-type="<?php echo esc_attr( $type ) ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-reservation-engine' ) ?>"></span>
+									<a href="<?php echo esc_url( get_edit_post_link( $id ) ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
 										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
-									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+									<div data-href="<?php echo esc_url( get_permalink( $id ) ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
 										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 									</div>
 								</div>
@@ -81,7 +81,7 @@
 							
 							<li class="mb-onboarding-setup-item">
 								<div class="mb-onboarding-setup-item-name">
-									<strong><?php echo get_the_title( $id ) ?></strong>
+									<strong><?php echo esc_html( get_the_title( $id ) )?></strong>
 									<?php if ($transfer_obj['home_page_id'] === $id) { ?>
 										<p class="mb-onboarding-setup-item-hint"><?php echo esc_html_x( '(Reservation process starts here)', 'onboarding_context', 'mybooking-reservation-engine' ) ?></p>
 									<?php } ?>
@@ -89,16 +89,16 @@
 								<div class="mb-onboarding-setup-item-buttons">
 									<?php if ( isset($transfer_settings) ) { $type = array_search($id, $transfer_settings); } ?>
 									<?php if ($transfer_obj['home_page_id'] === $id) { ?>
-										<a href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
+										<a href="<?php echo esc_url( get_permalink( $id ) )?>" title="<?php echo esc_attr_x( 'Show page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
 											<span class="mb-onboarding-icon dashicons dashicons-external"></span>
 										</a>
 									<?php } ?>
 									<?php $module = ($module_rental) ? 'mybooking_plugin_settings_renting' : 'mybooking_plugin_settings_transfer' ?>
-									<span data-type="<?php echo $type ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-reservation-engine' ) ?>"></span>
-									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
+									<span data-type="<?php echo esc_attr( $type ) ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-reservation-engine' ) ?>"></span>
+									<a href="<?php echo esc_url( get_edit_post_link( $id ) )?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
 										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
-									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+									<div data-href="<?php echo esc_url( get_permalink( $id ) )?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
 										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 									</div>
 								</div>
@@ -135,17 +135,17 @@
 							<li class="mb-onboarding-setup-item">
 								<div class="mb-onboarding-setup-item-name">
 									<strong>
-										<?php echo get_the_title( $id ) ?>
+										<?php echo esc_html( get_the_title( $id ) )?>
 									</strong>
 								</div>
 								<div class="mb-onboarding-setup-item-buttons">
 										<?php if ( isset($activities_settings) ) { $type = array_search($id, $activities_settings); } ?>
 										<?php $module = ($module_activities) ? 'mybooking_plugin_settings_activities' : '' ?>
-										<span data-type="<?php echo $type ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-reservation-engine' ) ?>"></span>
-									<a href="<?php echo get_edit_post_link( $id ) ?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
+										<span data-type="<?php echo esc_attr( $type ) ?>" class="mb-onboarding-gallery-btn mb-onboarding-row-link mb-onboarding-icon dashicons dashicons-visibility" title="<?php echo esc_attr_x( 'Show gallery', 'onboarding_context', 'mybooking-reservation-engine' ) ?>"></span>
+									<a href="<?php echo esc_url( get_edit_post_link( $id ) )?>" title="<?php echo esc_attr_x( 'Edit page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" target="_blank" class="mb-onboarding-row-link">
 										<span class="mb-onboarding-icon dashicons dashicons-edit"></span>
 									</a>
-									<div data-href="<?php echo get_permalink( $id ) ?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
+									<div data-href="<?php echo esc_url( get_permalink( $id ) )?>" title="<?php echo esc_attr_x( 'Copy page link for mybooking web configuration', 'onboarding_context', 'mybooking-reservation-engine' ) ?>" class="mb-onboarding-row-link mybooking-onboarding-get-permalink">
 										<span class="mb-onboarding-icon dashicons dashicons-admin-page"></span>
 									</div>
 								</div>

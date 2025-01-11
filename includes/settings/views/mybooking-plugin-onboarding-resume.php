@@ -44,7 +44,8 @@
 			<!-- RENT & TRANSFER SELECTOR -->
 			<?php if ( (array_key_exists('wc_rent_selector', $onboarding_settings) && $onboarding_settings['wc_rent_selector']) || (array_key_exists('wc_transfer_selector', $onboarding_settings) && $onboarding_settings['wc_transfer_selector']) ): ?>
 				<li class="mb-onboarding-component-item">
-					<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png'; ?>" title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-reservation-engine' ) ?>">
+					<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" 
+							src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png' ); ?>" title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-reservation-engine' ) ?>">
 					<div class="mb-onboarding-component-item-body">
 						<div class="mb-onboarding-component-item-pill">
 							<?php if ( $module_rental ) { ?>
@@ -85,21 +86,21 @@
 						</div>
 						<?php if ( get_page_by_path('home-test') ) : ?>
 								<p>
-									<a href="<?php echo get_permalink(get_page_by_path('home-test'))?>" target="_blank">
+									<a href="<?php echo esc_url( get_permalink(get_page_by_path('home-test')) )?>" target="_blank">
 										<?php echo esc_html_x( 'Go to the example test page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 									</a>
 								</p>
 							<?php endif; ?>
 							<?php if ( $module_rental && get_page_by_path('home-test-renting') ) : ?>
 								<p>
-									<a href="<?php echo get_permalink(get_page_by_path('home-test-renting'))?>" target="_blank">
+									<a href="<?php echo esc_url( get_permalink(get_page_by_path('home-test-renting')) )?>" target="_blank">
 										<?php echo esc_html_x( 'Go to the rent example test page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 									</a>
 								</p>
 							<?php endif; ?>
 							<?php if ( $module_transfer  && get_page_by_path('home-test-transfer') ) : ?>
 								<p>
-									<a href="<?php echo get_permalink(get_page_by_path('home-test-transfer'))?>" target="_blank">
+									<a href="<?php echo esc_url( get_permalink(get_page_by_path('home-test-transfer')) )?>" target="_blank">
 										<?php echo esc_html_x( 'Go to the transfer example test page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 									</a>
 								</p>
@@ -112,7 +113,8 @@
 			<!-- ACTIVITIES CALENDAR -->
 			<?php if ( array_key_exists('wc_activity_calendar', $onboarding_settings) && $onboarding_settings['wc_activity_calendar'] ): ?>
 				<li class="mb-onboarding-component-item">
-					<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
+					<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" 
+							 src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png' ); ?>">
 					<div class="mb-onboarding-component-item-body">
 						<div class="mb-onboarding-component-item-pill">
 							<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
@@ -156,10 +158,10 @@
 				<?php foreach ($rental_pages_list as $key => $id) { ?>
 					<div class="mb-onboarding-setup-item">
 						<span class="mb-onboarding-path">
-							<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}
+							<?php echo esc_url( get_site_url() . '/' . get_post_field('post_name', $id) . '?id={id}' ) ?>
 						</span>
 						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" 
-							data-href="<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}" 
+							data-href="<?php echo esc_url( get_site_url() . '/' . get_post_field('post_name', $id) . '?id={id}' ) ?>" 
 							title="<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-reservation-engine' ) ?>">
 							<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 						</a>
@@ -175,10 +177,10 @@
 				<?php foreach ($activities_pages_list as $key => $id) { ?>
 					<div class="mb-onboarding-setup-item">
 						<span class="mb-onboarding-path">
-							<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}
+							<?php echo esc_url( get_site_url() . '/' . get_post_field('post_name', $id) . '?id={id}' ) ?>
 						</span>
 						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" 
-							 data-href="<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}" 
+							 data-href="<?php echo esc_url( get_site_url() . '/' . get_post_field('post_name', $id) . '?id={id}' ) ?>" 
 							 title="<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-reservation-engine' ) ?>">
 							<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 						</a>
@@ -194,10 +196,10 @@
 				<?php foreach ($transfer_pages_list as $key => $id) { ?>
 					<div class="mb-onboarding-setup-item">
 						<span class="mb-onboarding-path">
-							<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}
+						<?php echo esc_url( get_site_url() . '/' . get_post_field('post_name', $id) . '?id={id}' ) ?>
 						</span>
 						<a role="button" class="mb-onboarding-btn-primary button button-primary mybooking-onboarding-get-shortcode" 
-							 data-href="<?php echo get_site_url(); ?>/<?php echo get_post_field('post_name', $id) ?>?id={id}" 
+							 data-href="<?php echo esc_url( get_site_url() . '/' . get_post_field('post_name', $id) . '?id={id}' ) ?>" 
 							 title="<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-reservation-engine' ) ?>">
 							<?php echo esc_attr_x( 'Copy path', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 						</a>
@@ -210,7 +212,7 @@
 			<?php echo esc_html_x( 'How to set your engine paths', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 		</a>
 		<span class="mb-onboarding-separator"></span>
-		<a href="<?php echo 'https://'.$clientId.'.mybooking.es/login' ?>" target="_blank" class="mb-onboarding-help-link">
+		<a href="<?php echo esc_url( 'https://'.$clientId.'.mybooking.es/login' ) ?>" target="_blank" class="mb-onboarding-help-link">
 			<?php echo esc_attr_x( 'Access to your account', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 		</a>
 		

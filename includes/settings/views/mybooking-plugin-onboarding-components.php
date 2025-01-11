@@ -27,7 +27,9 @@
 				<!-- RENT SELECTOR -->
 				<?php if ( array_key_exists('wc_rent_selector', $onboarding_settings) && $onboarding_settings['wc_rent_selector'] ): ?>
 					<li class="mb-onboarding-component-item">
-						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png'; ?>" title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-reservation-engine' ) ?>">
+						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" 
+								src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png' ); ?>" 
+								title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-reservation-engine' ) ?>">
 						<div class="mb-onboarding-component-item-body">
 							<div class="mb-onboarding-component-item-pill">
 								<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
@@ -51,21 +53,21 @@
 							</div>
 							<?php if ( get_page_by_path('home-test') ) : ?>
 								<p>
-									<a href="<?php echo get_permalink(get_page_by_path('home-test'))?>" target="_blank">
+									<a href="<?php echo esc_url( get_permalink(get_page_by_path('home-test')) )?>" target="_blank">
 										<?php echo esc_html_x( 'Go to the example test page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 									</a>
 								</p>
 							<?php endif; ?>
 							<?php if ( get_page_by_path('home-test-renting') ) : ?>
 								<p>
-									<a href="<?php echo get_permalink(get_page_by_path('home-test-renting'))?>" target="_blank">
+									<a href="<?php echo esc_url( get_permalink(get_page_by_path('home-test-renting')) )?>" target="_blank">
 										<?php echo esc_html_x( 'Go to the rent example test page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 									</a>
 								</p>
 							<?php endif; ?>
 							<?php if ( get_page_by_path('home-test-transfer') ) : ?>
 								<p>
-									<a href="<?php echo get_permalink(get_page_by_path('home-test-transfer'))?>" target="_blank">
+									<a href="<?php echo esc_url( get_permalink(get_page_by_path('home-test-transfer')) )?>" target="_blank">
 										<?php echo esc_html_x( 'Go to the transfer example test page', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
 									</a>
 								</p>
@@ -77,7 +79,8 @@
 				<!-- RENT CALENDAR -->
 				<?php if ( array_key_exists('wc_rent_calendar', $onboarding_settings) && $onboarding_settings['wc_rent_calendar'] ): ?>
 					<li class="mb-onboarding-component-item">
-						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
+						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" 
+								 src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png' ); ?>">
 						<div class="mb-onboarding-component-item-body">
 							<div class="mb-onboarding-component-item-pill">
 								<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
@@ -105,7 +108,8 @@
 				<!-- CALENDAR PLANNING -->
 				<?php if ( array_key_exists('wc_rent_monthly_planning', $onboarding_settings) && $onboarding_settings['wc_rent_monthly_planning'] ): ?>
 					<li class="mb-onboarding-component-item">
-						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-weekly" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-weekly/planning-weekly.png'; ?>">
+						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-weekly" 
+								 src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-weekly/planning-weekly.png' ); ?>">
 						<div class="mb-onboarding-component-item-body">
 							<div class="mb-onboarding-component-item-pill">
 								<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
@@ -134,7 +138,8 @@
 				<!-- DAILY PLANNING -->
 				<?php if ( array_key_exists('wc_rent_daily_planning', $onboarding_settings) && $onboarding_settings['wc_rent_daily_planning'] ): ?>
 					<li class="mb-onboarding-component-item">
-						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-diary"  src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-diary/planning-diary.png'; ?>">
+						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-diary"  
+								 src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-diary/planning-diary.png' ); ?>">
 						<div class="mb-onboarding-component-item-body">
 							<div class="mb-onboarding-component-item-pill">
 								<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
@@ -163,7 +168,8 @@
 				<!-- WEEKLY PLANNING -->
 				<?php if ( array_key_exists('wc_rent_weekly_planning', $onboarding_settings) && $onboarding_settings['wc_rent_weekly_planning'] ): ?>
 					<li class="mb-onboarding-component-item">
-						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-weekly" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-weekly/planning-weekly.png'; ?>">
+						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="planning-weekly" 
+								 src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/planning-weekly/planning-weekly.png' ); ?>">
 						<div class="mb-onboarding-component-item-body">
 							<div class="mb-onboarding-component-item-pill">
 								<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
@@ -192,7 +198,8 @@
 				<!-- SHIFT PICKER -->
 				<?php if ( array_key_exists('wc_rent_shift_picker', $onboarding_settings) && $onboarding_settings['wc_rent_shift_picker'] ): ?>
 					<li class="mb-onboarding-component-item">
-						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="shift-picker" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/shift-picker/shift-picker.png'; ?>">
+						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="shift-picker" 
+								 src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/shift-picker/shift-picker.png' ); ?>">
 						<div class="mb-onboarding-component-item-body">
 							<div class="mb-onboarding-component-item-pill">
 								<?php echo esc_html_x( 'Renting', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
@@ -223,7 +230,8 @@
 				<!-- ACTIVITIES CATALOG -->
 				<?php if ( $module_activities ): ?>
 					<li class="mb-onboarding-component-item">
-						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="catalog" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/catalog/catalog.png'; ?>">
+						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="catalog" 
+								 src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/catalog/catalog.png' ); ?>">
 						<div class="mb-onboarding-component-item-body">
 							<div class="mb-onboarding-component-item-pill">
 								<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
@@ -252,7 +260,8 @@
 				<!-- ACTIVITIES CALENDAR -->
 				<?php if ( array_key_exists('wc_activity_calendar', $onboarding_settings) && $onboarding_settings['wc_activity_calendar'] ): ?>
 					<li class="mb-onboarding-component-item">
-						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png'; ?>">
+						<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="calendar" 
+								 src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/calendar/calendar.png' ); ?>">
 						<div class="mb-onboarding-component-item-body">
 							<div class="mb-onboarding-component-item-pill">
 								<?php echo esc_html_x( 'Activities', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
@@ -282,7 +291,9 @@
 				<!-- TRANSFER SELECTOR -->
 				<?php if ( array_key_exists('wc_transfer_selector', $onboarding_settings) && $onboarding_settings['wc_transfer_selector'] ): ?>
 					<li class="mb-onboarding-component-item">
-							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" src="<?php echo MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png'; ?>" title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-reservation-engine' ) ?>">
+							<img class="mb-onboarding-component-item-image mb-onboarding-gallery-btn" data-type="selector" 
+									 src="<?php echo esc_url( MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL . 'admin-assets/images/selector/horizontal-selector.png' ); ?>" 
+									 title="<?php echo esc_attr_x( 'Click to zoom', 'onboarding_context', 'mybooking-reservation-engine' ) ?>">
 							<div class="mb-onboarding-component-item-body">
 								<div class="mb-onboarding-component-item-pill">
 									<?php echo esc_html_x( 'Transfer', 'onboarding_context', 'mybooking-reservation-engine' ) ?>
