@@ -692,8 +692,16 @@
 		  	$value = '';
 		  }
 
-		  echo "<input id='mybooking_plugin_settings_api_key_active' type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly /><button type='button' title='Active' id='mybooking_plugin_settings_api_key_active_btn'><span class='dashicons dashicons-edit'></span></button>";
-		  echo "<p class=\"description\">";
+			echo sprintf(
+					'<input id="mybooking_plugin_settings_api_key_active" type="text" name="mybooking_plugin_settings_connection[%s]" value="%s" class="regular-text" readonly />
+					<button type="button" title="%s" id="mybooking_plugin_settings_api_key_active_btn">
+							<span class="dashicons dashicons-edit"></span>
+					</button>',
+					esc_attr( $field ),
+					esc_attr( $value ),
+					esc_attr( 'Active' )
+			);
+			echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'For the API key from your mybooking account settings', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>.";
 		}
@@ -713,7 +721,11 @@
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_connection[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'If you have <b>multiple sales channels</b>, input the sales channel code that you want to use in this website.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -736,7 +748,11 @@
         $value = '';
 		  }
 
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value'/>";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_configuration[%s]" value="%s" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		}
 
 		/**
@@ -753,7 +769,11 @@
         $value = '';
 		  }
 
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value'/>";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_configuration[%s]" value="%s" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		}
 
 		/**
@@ -770,7 +790,11 @@
         $value = '';
 		  }
 
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value='$value'/>";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_configuration[%s]" value="%s" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		}
 
 		/**
@@ -788,8 +812,15 @@
 		  }
 
 		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_configuration[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_configuration[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_configuration[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_configuration[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, 1, false ) ? 'checked' : ''
+			);
 			echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Activate if you want to use Google Location API to input a custom delivery or collection address in a rental website.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -886,7 +917,16 @@
 
 		  $select .= "</select>";
 
-		  echo $select;
+			echo wp_kses( $select, array(
+				'select' => array(
+						'name' => true,
+				),
+				'option' => array(
+						'value' => true,
+						'selected' => true,
+				),
+			) );
+
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Choose the selector that you want to use when you choose <em>modify reservation</em> on choose product or complete pages.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -912,10 +952,16 @@
 		  else {
         $value = '';
 		  }
-
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_renting[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_renting[$field]' value='1' $checked class='regular-text' />";
+			
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_renting[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_renting[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Show taxes included.', 'settings_context', 'mybooking-reservation-engine' ) );
@@ -971,7 +1017,15 @@
 
 		  $select .= "</select>";
 
-		  echo $select;
+			echo wp_kses( $select, array(
+				'select' => array(
+						'name' => true,
+				),
+				'option' => array(
+						'value' => true,
+						'selected' => true,
+				),
+			) );
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Choose the duration that describes your business context.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -1070,7 +1124,15 @@
 
 		  $select .= "</select>";
 
-		  echo $select;
+			echo wp_kses( $select, array(
+				'select' => array(
+						'name' => true,
+				),
+				'option' => array(
+						'value' => true,
+						'selected' => true,
+				),
+			) );
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Choose the start/end date that describes your business context.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -1159,7 +1221,15 @@
 
 		  $select .= "</select>";
 
-		  echo $select;
+			echo wp_kses( $select, array(
+				'select' => array(
+						'name' => true,
+				),
+				'option' => array(
+						'value' => true,
+						'selected' => true,
+				),
+			) );
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Choose the not available message that describes your business context.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -1198,9 +1268,15 @@
 			echo "</p>";
 			echo "<br />";
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_renting[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_renting[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_renting[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_renting[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Use product detail pages.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -1229,7 +1305,11 @@
 		  else {
 		  	$value = 'products';
 		  }
-		  echo "<input type='text' name='mybooking_plugin_settings_renting[$field]' value='$value' class='regular-text' />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_renting[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		  echo "<div class=\"description\">";
 		  echo "<p>";
 			echo wp_kses_post( _x( 'This is the <b>prefix folder</b> that is added to the product detail page created virtually for any
@@ -1292,10 +1372,15 @@
         $value = '';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_activities[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_activities[$field]' value='1' $checked class='regular-text' />";
-
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_activities[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_activities[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Use detail pages.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -1324,7 +1409,12 @@
 		  else {
 		  	$value = 'activities';
 		  }
-		  echo "<input type='text' name='mybooking_plugin_settings_activities[$field]' value='$value' class='regular-text' />";
+
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_activities[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		  echo "<div class=\"description\">";
 			echo "<p>";
 			echo wp_kses_post( _x( 'This is the <b>prefix folder</b> that is added to the activity detail page created virtually for any
@@ -1401,7 +1491,12 @@
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_google_api_places[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
+
 		}
 
 		/**
@@ -1418,7 +1513,12 @@
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_google_api_places[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
+
 		}
 
 		/**
@@ -1435,9 +1535,16 @@
         $value = '';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_google_api_places[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_google_api_places[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_google_api_places[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_google_api_places[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
+
 		}
 
 		/**
@@ -1454,7 +1561,11 @@
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_google_api_places[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		}
 
 		/**
@@ -1471,7 +1582,11 @@
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_google_api_places[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		}
 
 		/**
@@ -1488,7 +1603,11 @@
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_google_api_places[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		}
 
 		/**
@@ -1505,7 +1624,11 @@
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_google_api_places[$field]' value='$value' class='regular-text' />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_google_api_places[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 		}
 
 		// == Contact Form
@@ -1524,10 +1647,15 @@
 		  	$value = '';
 		  }
 
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_contact_form[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_contact_form[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_contact_form[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_contact_form[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Use Google Captcha on <b>Contact Form</b>.', 'settings_context', 'mybooking-reservation-engine' ) );
@@ -1548,7 +1676,12 @@
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_contact_form[$field]' value='$value' class='regular-text' />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_contact_form[%s]" value="%s" class="regular-text" />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
+
 		}
 
     /**
@@ -1565,10 +1698,15 @@
 		  	$value = '';
 		  }
 
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_contact_form[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_contact_form[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_contact_form[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_contact_form[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Include Google Captcha JS library.', 'settings_context', 'mybooking-reservation-engine' ) );
@@ -1591,10 +1729,15 @@
 		  	$value = '';
 		  }
 
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_complements[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_complements[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( '<b>Activate Promotion Pop-ups</b> Custom Post Type in order to create promotions.', 'settings_context', 'mybooking-reservation-engine' ) );
@@ -1618,11 +1761,16 @@
 		  	$value = '';
 		  }
 
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
-
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_complements[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_complements[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
+			
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( '<b>Activate Testimonials</b> Custom Post Type in order to create a testimonials carousel.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -1645,10 +1793,15 @@
 		  	$value = '';
 		  }
 
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_complements[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_complements[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( '<b>Activate Content Slider</b> Custom Post Type in order to create a content slider with Gutenberg native editor.', 'settings_context', 'mybooking-reservation-engine' ) );
@@ -1672,10 +1825,15 @@
 		  	$value = '';
 		  }
 
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_complements[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_complements[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( '<b>Activate Product Slider</b> Custom Post Type in order to create a content slider to show offers with limited custom fields.', 'settings_context', 'mybooking-reservation-engine' ) );
@@ -1699,10 +1857,15 @@
 		  	$value = '';
 		  }
 
-      $checked = ($value == '1') ? 'checked' : '';
-
-      echo "<input type='hidden' name='mybooking_plugin_settings_complements[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_complements[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_complements[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_complements[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( '<b>Activate Cookies Notice</b> in order to create a cookies warning.', 'settings_context', 'mybooking-reservation-engine' ) );
@@ -1728,9 +1891,15 @@
         $value = '1';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_css[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_css[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
 
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Include <b>slickJS</b> library. It is <b>required</b> if you are using the testimonials or slider complement.', 'settings_context', 'mybooking-reservation-engine' ) );
@@ -1755,10 +1924,16 @@
         $value = '';
 		  }
 
-		  $checked = ($value == '1') ? 'checked' : '';
-      echo "<input type='hidden' name='mybooking_plugin_settings_css[$field]' value=''/>";
-		  echo "<input type='checkbox' name='mybooking_plugin_settings_css[$field]' value='1' $checked class='regular-text' />";
-
+			echo sprintf(
+					'<input type="hidden" name="mybooking_plugin_settings_css[%s]" value="" />',
+					esc_attr( $field )
+			);
+			echo sprintf(
+					'<input type="checkbox" name="mybooking_plugin_settings_css[%s]" value="1" %s class="regular-text" />',
+					esc_attr( $field ),
+					checked( $value, '1', false ) ? 'checked' : ''
+			);
+			
 		  echo "<p class=\"description\">";
 			echo wp_kses_post( _x( 'Use <b>select2</b> library on form selects.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
@@ -1799,7 +1974,15 @@
 		  }
 		  $select .= "</select>";
 
-		  echo $select;
+			echo wp_kses( $select, array(
+				'select' => array(
+						'name' => true,
+				),
+				'option' => array(
+						'value' => true,
+						'selected' => true,
+				),
+			) );
 
 		}
 
@@ -1836,7 +2019,15 @@
 		  }
 		  $select .= "</select>";
 
-		  echo $select;
+			echo wp_kses( $select, array(
+				'select' => array(
+						'name' => true,
+				),
+				'option' => array(
+						'value' => true,
+						'selected' => true,
+				),
+			) );
 
 		}
 
@@ -1873,7 +2064,15 @@
 		  }
 		  $select .= "</select>";
 
-		  echo $select;
+			echo wp_kses( $select, array(
+				'select' => array(
+						'name' => true,
+				),
+				'option' => array(
+						'value' => true,
+						'selected' => true,
+				),
+			) );
 
 		}
 
