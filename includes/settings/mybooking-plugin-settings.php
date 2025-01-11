@@ -476,7 +476,7 @@
 												 'mybooking-plugin-configuration',
 												 'mybooking_plugin_settings_section_renting');
 
-add_settings_field('mybooking_plugin_settings_products_url',
+			add_settings_field('mybooking_plugin_settings_products_url',
 												 wp_kses_post( _x('<em>Product details pages URL prefix</em>', 'plugin_settings', 'mybooking-reservation-engine') ),
 												 array($this, 'field_mybooking_plugin_settings_products_url_callback'),
 												 'mybooking-plugin-configuration',
@@ -670,7 +670,11 @@ add_settings_field('mybooking_plugin_settings_products_url',
 		  	$value = '';
 		  }
 
-		  echo "<input type='text' name='mybooking_plugin_settings_connection[$field]' value='$value' class='regular-text' readonly />";
+			echo sprintf(
+					'<input type="text" name="mybooking_plugin_settings_connection[%s]" value="%s" class="regular-text" readonly />',
+					esc_attr( $field ),
+					esc_attr( $value )
+			);
 
 		}
 

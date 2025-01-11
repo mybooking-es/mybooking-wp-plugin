@@ -80,7 +80,7 @@ function mybooking_engine_get_template( $template_name, $args = array(), $tempat
 	$template_file = mybooking_engine_locate_template( $template_name, $tempate_path, $default_path );
 
 	if ( ! file_exists( $template_file ) ) :
-		_doing_it_wrong( __FUNCTION__, sprintf( '<code>%s</code> does not exist.', $template_file ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, sprintf( '<code>%s</code> does not exist.', esc_html( $template_file ) ), '1.0.0' );
 		return;
 	endif;
 
@@ -113,7 +113,7 @@ function mybooking_engine_load_template( $template_name, $args = array(), $tempa
 	$template_file = mybooking_engine_locate_template( $template_name, $tempate_path, $default_path );
 
 	if ( ! file_exists( $template_file ) ) :
-		_doing_it_wrong( __FUNCTION__, sprintf( '<code>%s</code> does not exist.', $template_file ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, sprintf( '<code>%s</code> does not exist.', esc_html( $template_file ) ), '1.0.0' );
 		return;
 	endif;
 
