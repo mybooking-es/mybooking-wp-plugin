@@ -40,12 +40,12 @@
 
 			// Add string to clipboard
 			if (!navigator.clipboard) {
-				showToast(_x('Your browser unsupport clipboard copy, please copy the text', 'onboarding_context_js', 'mybooking-wp-plugin'), 'error');
+				showToast(_x('Your browser unsupport clipboard copy, please copy the text', 'onboarding_context_js', 'mybooking-reservation-engine'), 'error');
 			}
 			navigator.clipboard.writeText(shortcode).then(() => {
-				showToast(_x('The shortcode ', 'onboarding_context_js', 'mybooking-wp-plugin') + shortcode +  _x( ' has been copied to the clipboard', 'onboarding_context_js', 'mybooking-wp-plugin'));
+				showToast(_x('The shortcode ', 'onboarding_context_js', 'mybooking-reservation-engine') + shortcode +  _x( ' has been copied to the clipboard', 'onboarding_context_js', 'mybooking-reservation-engine'));
 			}, (err) => {
-				showToast(_x('An error has occurred' + ': ' + err, 'onboarding_context_js', 'mybooking-wp-plugin'), 'error');
+				showToast(_x('An error has occurred' + ': ' + err, 'onboarding_context_js', 'mybooking-reservation-engine'), 'error');
 			});
 		});
 
@@ -53,7 +53,7 @@
 			event.preventDefault();
 			var url = $(this).attr('data-href');
 			if (url === '') {
-				const msg = _x('We are sorry, an error has occurred, check that the page exists, please', 'onboarding_context_js', 'mybooking-wp-plugin');
+				const msg = _x('We are sorry, an error has occurred, check that the page exists, please', 'onboarding_context_js', 'mybooking-reservation-engine');
 				showToast(msg, 'error');
 			}
 
@@ -68,12 +68,12 @@
 
 			// Add string to clipboard
 			if (!navigator.clipboard) {
-				showToast(_x('Your browser unsupport clipboard copy, please copy: ' + url, 'onboarding_context_js', 'mybooking-wp-plugin'), 'error');
+				showToast(_x('Your browser unsupport clipboard copy, please copy: ' + url, 'onboarding_context_js', 'mybooking-reservation-engine'), 'error');
 			}
 			navigator.clipboard.writeText(url).then(() => {
-				showToast(_x('The url ', 'onboarding_context_js', 'mybooking-wp-plugin') + url +  _x(' has been copied to the clipboard', 'onboarding_context_js', 'mybooking-wp-plugin'));
+				showToast(_x('The url ', 'onboarding_context_js', 'mybooking-reservation-engine') + url +  _x(' has been copied to the clipboard', 'onboarding_context_js', 'mybooking-reservation-engine'));
 			}, (err) => {
-				showToast(_x('An error has occurred' + ': ' + err, 'onboarding_context_js', 'mybooking-wp-plugin'), 'error');
+				showToast(_x('An error has occurred' + ': ' + err, 'onboarding_context_js', 'mybooking-reservation-engine'), 'error');
 			});
 		});
 	});

@@ -23,8 +23,8 @@
 					'api_key': 'required',
 				},
 				messages: {
-					'client_id': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin'),
-					'api_key': _x('Required', 'onboarding_context_js', 'mybooking-wp-plugin'),
+					'client_id': _x('Required', 'onboarding_context_js', 'mybooking-reservation-engine'),
+					'api_key': _x('Required', 'onboarding_context_js', 'mybooking-reservation-engine'),
 				},
 			}
 		);

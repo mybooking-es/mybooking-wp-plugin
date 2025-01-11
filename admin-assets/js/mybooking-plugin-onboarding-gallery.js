@@ -55,7 +55,7 @@
 
     // Append loading
     var form = $('#mb-onboarding-gallery-form');
-    form.html('<div class="mb-onboarding-loading">' + _x('Loading ...', 'onboarding_context_js', 'mybooking-wp-plugin') + '</div>');
+    form.html('<div class="mb-onboarding-loading">' + _x('Loading ...', 'onboarding_context_js', 'mybooking-reservation-engine') + '</div>');
 
     /**
      * Buttons events
@@ -103,7 +103,7 @@
     $('#mb-onboarding-close-btn').on('click', function() {
       container.hide();
       // Append loading
-      form.html('<div class="mb-onboarding-loading">'+_x('Loading ...', 'onboarding_context_js', 'mybooking-wp-plugin')+'</div>');
+      form.html('<div class="mb-onboarding-loading">'+_x('Loading ...', 'onboarding_context_js', 'mybooking-reservation-engine')+'</div>');
     });
   });
 })(jQuery);
