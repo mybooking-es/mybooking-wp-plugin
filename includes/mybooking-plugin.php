@@ -158,6 +158,9 @@
       // Load translations
       add_action( 'plugins_loaded', array( $this, 'wp_load_plugin_textdomain' ) );
 
+      // Override GlotPress translations with custom translations in case they are defined
+      add_filter('load_textdomain_mofile', array($this, 'override_load_textdomain_mofile'), 10, 2);
+
       // Apply body tags on reservation pages
       add_filter( 'body_class', array( $this, 'wp_body_class' ) );
 
@@ -208,6 +211,21 @@
        // root directory of the plugin : 'mybooking-reservation-engine/languages/'
        load_plugin_textdomain( 'mybooking-reservation-engine', false, MYBOOKING_RESERVATION_ENGINE_LANGUAGES_FOLDER);
 
+    }
+
+    function override_load_textdomain_mofile($mofile, $domain) {
+        if ($domain === 'mybooking-reservation-engine') {
+            // Ruta a las traducciones incluidas en el plugin
+            $custom_mofile = MYBOOKING_RESERVATION_ENGINE_PLUGIN_PATH . 'languages/'. basename($mofile);
+            
+            // Si existe el archivo en el plugin, lo usamos
+            if (file_exists($custom_mofile)) {
+                return $custom_mofile;
+            }
+        }
+
+        // Si no, devuelve el archivo original
+        return $mofile;
     }
 
     /**

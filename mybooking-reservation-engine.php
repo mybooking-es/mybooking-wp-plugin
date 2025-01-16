@@ -3,7 +3,7 @@
 * Plugin Name: MyBooking Reservation Engine
 * Plugin URI: https://www.mybooking.es/
 * Description: Reservation Engine WordPress frontend for Mybooking. Transforms wordpress into a rental / accommodation / tours reservation engine.
-* Version: 2.4.0
+* Version: 2.4.1
 * Author: mybooking
 * Author URI: https://mybooking.es/
 * License: GPL v2 or later
@@ -19,6 +19,10 @@ if ( ! class_exists( 'MyBookingPlugin', false ) ) {
 // resources paths 
 $url = plugin_dir_url(__FILE__);
 define('MYBOOKING_RESERVATION_ENGINE_PLUGIN_URL', $url );
+
+// Create a constant to hold the plugin path
+$plugin_path = plugin_dir_path(__FILE__);
+define('MYBOOKING_RESERVATION_ENGINE_PLUGIN_PATH', $plugin_path );
 
 // Create a constant to hold the plugin languages folder
 $languages_folder = dirname( plugin_basename(__FILE__) ).'/languages';

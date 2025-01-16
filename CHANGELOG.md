@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.4.1] - 2025.01.16
+
+### Fixed
+
+- Custom translations of the plugin priority before GlotPress
+
 ## [2.4.0] - 2025.01.11
 
 ### New
