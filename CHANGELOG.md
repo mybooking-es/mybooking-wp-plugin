@@ -1,11 +1,5 @@
 # Changelog
 
-## [2.4.1] - 2025.01.16
-
-### Fixed
-
-- Main file refactor restored due to deactivation of the plugin
-
 ## [2.4.0] - 2025.01.11
 
 ### New
