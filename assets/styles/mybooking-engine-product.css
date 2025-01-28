@@ -327,9 +327,9 @@ div.mybooking-product {
   display: flex;
   flex-direction: row;
   flex-basis: 100%;
-  gap: 1rem;
+  gap: 0.1rem !important;
   justify-content: space-between;
-  align-items: center;
+  align-items: center !important;
   width: 100%;
   margin: 0;
   font-size: 14px;
@@ -339,6 +339,7 @@ div.mybooking-product {
   display: inline-block;
   width: auto;
   float: right;
+  line-height: 1;
 }
 
 .mybooking-product_original-price {

@@ -84,9 +84,26 @@
                           <?php endif; ?>
 
                           <% if (product.offer_discount_type == 'percentage' || product.offer_discount_type == 'amount') { %>
-                            <span class="mybooking-product_discount-badge mb-badge info"><% if (product.offer_discount_type == 'percentage') { %><%=new Number(product.offer_value)%> %<% } else { %><%=configuration.formatCurrency(product.offer_value) %><% } %> <%=product.offer_name%></span>
-                          <% } else if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' && (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
-                            <span class="mybooking-product_discount-badge mb-badge success"><% if (product.promotion_code_discount_type == 'percentage') { %><%=new Number(product.promotion_code_value)%> % <% } else { %><%=configuration.formatCurrency(product.promotion_code_value)%><% } %> <%=shoppingCart.promotion_code%></span>
+                            <span class="mybooking-product_discount-badge mb-badge info">
+                              <% if (product.offer_discount_type == 'percentage') { %>
+                                <%=new Number(product.offer_value)%> %
+                              <% } else { %>
+                                <%=configuration.formatCurrency(product.offer_value) %>
+                              <% } %>
+                              &nbsp;
+                              <%=product.offer_name%>A
+                            </span>
+                          <% } %>
+                          <% if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' && (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
+                            <span class="mybooking-product_discount-badge mb-badge success">
+                              <% if (product.promotion_code_discount_type == 'percentage') { %>
+                                <%=new Number(product.promotion_code_value)%> % 
+                              <% } else { %>
+                                <%=configuration.formatCurrency(product.promotion_code_value)%>
+                              <% } %>
+                              &nbsp;
+                              <%=shoppingCart.promotion_code%>B
+                            </span>
                           <% } %>
                         </span>
                       <% } %>

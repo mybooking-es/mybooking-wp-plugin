@@ -98,41 +98,39 @@
                             !configuration.hidePriceIfNotAvailable) ) { %>
                             <% if (product.detailed_prices[rateIdx].price.price !=product.detailed_prices[rateIdx].price.base_price) {
                               %>
-                              <% if (product.detailed_prices[rateIdx].price.offer_discount_type=='percentage' ||
-                                product.detailed_prices[rateIdx].price.offer_discount_type=='amount' ) { %>
-                                <div class="mybooking-product_discount">
-                                  <span class="mybooking-product_original-price">
-                                    <%= configuration.formatCurrency(product.detailed_prices[rateIdx].price.base_price)%>
-                                  </span>
+                              <div class="mybooking-product_discount">
+                                <span class="mybooking-product_original-price">
+                                  <%= configuration.formatCurrency(product.detailed_prices[rateIdx].price.base_price)%>
+                                </span>
 
+                                <% if (product.detailed_prices[rateIdx].price.offer_discount_type=='percentage' ||
+                                  product.detailed_prices[rateIdx].price.offer_discount_type=='amount' ) { %>
                                   <span class="mybooking-product_discount-badge mb-badge info">
                                     <% if (product.offer_discount_type == 'percentage') { %> 
                                       <%=new Number(product.detailed_prices[rateIdx].price.offer_value)%> %
                                     <% } else { %>
                                       <%=configuration.formatCurrency(product.detailed_prices[rateIdx].price.offer_value) %>
                                     <% } %>
-                                      <%=product.detailed_prices[rateIdx].price.offer_name%>
+                                    &nbsp;
+                                    <%=product.detailed_prices[rateIdx].price.offer_name%>
                                   </span>
-                                </div>
-                              <% } else if (typeof shoppingCart.promotion_code !=='undefined' && shoppingCart.promotion_code !==null
-                                && shoppingCart.promotion_code !=='' &&
-                                (product.detailed_prices[rateIdx].price.promotion_code_discount_type=='percentage' ||
-                                product.detailed_prices[rateIdx].price.promotion_code_discount_type=='amount' ) ) { %>
-                                <div class="mybooking-product_discount">
-                                  <span class="mybooking-product_original-price">
-                                    <%= configuration.formatCurrency(product.detailed_prices[rateIdx].price.base_price)%>
-                                  </span>
+                                <% } %>
 
+                                <% if (typeof shoppingCart.promotion_code !=='undefined' && shoppingCart.promotion_code !==null
+                                  && shoppingCart.promotion_code !=='' &&
+                                  (product.detailed_prices[rateIdx].price.promotion_code_discount_type=='percentage' ||
+                                  product.detailed_prices[rateIdx].price.promotion_code_discount_type=='amount' ) ) { %>
                                   <span class="mybooking-product_discount-badge mb-badge success">
                                     <% if (product.promotion_code_discount_type == 'percentage') { %>
                                       <%=new Number(product.detailed_prices[rateIdx].price.promotion_code_value)%> %
                                     <% } else { %>
                                       <%=configuration.formatCurrency(product.detailed_prices[rateIdx].price.promotion_code_value) %>
                                     <% } %>
-                                      <%=shoppingCart.promotion_code%>
+                                    &nbsp;
+                                    <%=shoppingCart.promotion_code%>
                                   </span>
-                                </div>
-                              <% } %>
+                                <% } %>
+                              </div>
                             <% } %>
                           <% } %>
                         <% } %>

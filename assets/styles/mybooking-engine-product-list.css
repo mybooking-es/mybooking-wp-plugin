@@ -121,7 +121,6 @@
 
 .mybooking-product_list .mybooking-product_discount {
   display: flex;
-  flex-direction: column;
   flex-basis: 100%;
   gap: 0.5rem;
   align-items: flex-start;
