@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.4.2] - 2025.01.16
+
+### Fixed
+
+- Show both offers and promotion code discount on select product and checkout
+- Calendar : Manage max days
+- Wizard : All destinations button was transparent. No text shown
+
 ## [2.4.1] - 2025.01.16
 
 ### Fixed
