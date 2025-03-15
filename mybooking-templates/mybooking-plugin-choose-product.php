@@ -33,6 +33,7 @@
           data-lazy-loading="true" 
           <?php endif; ?>>
         </div>
+        <div id="mybooking-product_loader"></div>
         <br/>
       </div>
     </div>
