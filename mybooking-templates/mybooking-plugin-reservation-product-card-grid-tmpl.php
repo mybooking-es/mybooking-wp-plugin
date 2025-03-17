@@ -91,7 +91,7 @@
                                 <%=configuration.formatCurrency(product.offer_value) %>
                               <% } %>
                               &nbsp;
-                              <%=product.offer_name%>A
+                              <%=product.offer_name%>
                             </span>
                           <% } %>
                           <% if (typeof shoppingCart.promotion_code !== 'undefined' && shoppingCart.promotion_code !== null && shoppingCart.promotion_code !== '' && (product.promotion_code_discount_type == 'percentage' || product.promotion_code_discount_type == 'amount') ) { %>
@@ -102,7 +102,7 @@
                                 <%=configuration.formatCurrency(product.promotion_code_value)%>
                               <% } %>
                               &nbsp;
-                              <%=shoppingCart.promotion_code%>B
+                              <%=shoppingCart.promotion_code%>
                             </span>
                           <% } %>
                         </span>

@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.4.3] - 2025.03.17
+
+### Fixed
+
+- Fixed letters adding error in discount label
+
 ## [2.4.2] - 2025.03.15
 
 ### Fixed
