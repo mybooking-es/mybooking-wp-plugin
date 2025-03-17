@@ -555,6 +555,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
+= 2.4.3 =
+* Fixed letters adding error in discount label
+
 = 2.4.2 =
 * Fix show both offers and promotion code, calendar max days and wizard style
 
