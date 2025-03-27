@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.4.4] - 2025.03.27
+
+### Fixed
+
+- Fixed wizard multi language with lang in query params
+
 ## [2.4.3] - 2025.03.17
 
 ### Fixed
