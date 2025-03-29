@@ -6,6 +6,10 @@
 
 - Fixed wizard multi language with lang in query params
 
+### New
+
+- Selector : Filter pickup/return places by sales channel code
+
 ## [2.4.3] - 2025.03.17
 
 ### Fixed
