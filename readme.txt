@@ -117,7 +117,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 == Changelog ==
 
 = 2.4.4 =
-* Fixed selector wizard multi language
+* Fixed selector wizard multi language + pickup/return places sales channel
 
 = 2.4.3 =
 * Fixed letters adding error in discount label
@@ -559,7 +559,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 == Upgrade Notice ==
 
 = 2.4.4 =
-* Fixed selector wizard multi language
+* Fixed selector wizard multi language + pickup/return places sales channel
 
 = 2.4.3 =
 * Fixed letters adding error in discount label

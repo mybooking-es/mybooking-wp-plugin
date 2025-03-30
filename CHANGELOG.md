@@ -8,7 +8,7 @@
 
 ### New
 
-- Selector : Filter pickup/return places by sales channel code
+- Selector and selector wizard : Filter pickup/return places by sales channel code
 
 ## [2.4.3] - 2025.03.17
 
