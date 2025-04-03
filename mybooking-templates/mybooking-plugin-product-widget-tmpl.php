@@ -354,6 +354,7 @@
       <input type="hidden" name="turn" value="<%=turns[0].time_from%>-<%=turns[0].time_to%>"/>
     <% } else { %>
       <% for (var idx=0; idx<turns.length; idx++) { %>
+      <div style="margin-bottom: 0.5rem; border: 1px solid #ebebeb; padding: 0.5rem;">
         <input type="radio" name="turn" value="<%=turns[idx].time_from%>-<%=turns[idx].time_to%>" <% if (!turns[idx].availability){%>disabled<% } %>
                class="<% if (turns[idx].availability){%>mybooking-product_calendar-available_turn<% } else {%>mybooking-product_calendar-not_available_turn<% } %>">
           <span class="<% if (turns[idx].availability){%>mybooking-product_calendar-available_turn<% } else {%>mybooking-product_calendar-not_available_turn<% } %>">
@@ -363,6 +364,7 @@
               <%=turns[idx].time_from%>-<%=turns[idx].time_to%>&nbsp;
             <% } %>
           </span>
+        </div>
       <% } %>
     <% } %>
   <% } %>
