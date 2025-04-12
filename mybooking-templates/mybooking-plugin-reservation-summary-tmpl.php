@@ -31,24 +31,7 @@
             <span class="mybooking-summary_item">
               <span class="mybooking-summary_date">
                 <%=shopping_cart.date_from_full_format%>
-                <!-- Half Day : show the turns -->
-                <% if (typeof shopping_cart.half_day !== 'undefined' &&
-                      shopping_cart.half_day && halfDayTurns && halfDayTurns.length > 0) { %>
-                    <form name="mybooking-choose-product_duration-form" class="mybooking-choose-product_duration-form">
-                      <% for (var idx=0; idx<halfDayTurns.length; idx++) { %>
-                        <input type="radio" class="mybooking-summary-duration-turn"
-                              name="turn" value="<%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>"
-                          <% if (shopping_cart.time_from === halfDayTurns[idx].time_from &&
-                                shopping_cart.time_to === halfDayTurns[idx].time_to) {%>checked<%}%>>
-                          <% if (halfDayTurns[idx].name && halfDayTurns[idx].name !== '') { %>
-                            &nbsp;<%=halfDayTurns[idx].name%>
-                          <% } else { %>        
-                            <%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>
-                          <% } %>  
-                        </input>
-                      <% } %>
-                    </form>
-                <% } else {%>
+                <% if (typeof halfDayTurns === 'undefined' || !halfDayTurns || halfDayTurns.length === 0) { %>
                   <% if (configuration.timeToFrom) { %>
                     ,&nbsp;<%= shopping_cart.time_from %>
                   <% } %>
@@ -67,6 +50,25 @@
               </span>
             </span>
           </div>
+          <!-- Show the turns -->
+          <% if (halfDayTurns && halfDayTurns.length > 0) { %>
+            <div>
+              <form name="mybooking-choose-product_duration-form" class="mybooking-choose-product_duration-form">
+                <% for (var idx=0; idx<halfDayTurns.length; idx++) { %>
+                  <input type="radio" class="mybooking-summary-duration-turn"
+                        name="turn" value="<%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>"
+                    <% if (shopping_cart.time_from === halfDayTurns[idx].time_from &&
+                          shopping_cart.time_to === halfDayTurns[idx].time_to) {%>checked<%}%>>
+                    <% if (halfDayTurns[idx].name && halfDayTurns[idx].name !== '') { %>
+                      &nbsp;<%=halfDayTurns[idx].name%>
+                    <% } else { %>        
+                      <%=halfDayTurns[idx].time_from%>-<%=halfDayTurns[idx].time_to%>
+                    <% } %>  
+                  </input>
+                <% } %>
+              </form>
+            </div>
+          <% } %>
 
         <% } else { %>
           <div class="mybooking-summary_detail">
