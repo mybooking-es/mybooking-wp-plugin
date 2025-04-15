@@ -132,6 +132,9 @@
        // Shorcode Renting Shift Picker
        add_shortcode( 'mybooking_rent_engine_shift_picker', array( $this, 'wp_rent_shift_picker_shortcode' ) );
 
+      // Shortcode New Customer Form
+      add_shortcode( 'mybooking_rent_engine_new_customer', array( $this, 'wp_rent_new_customer_shortcode') );
+
       // -- Activities shortcodes
 
       // Shortcode Activities - Search
@@ -1073,5 +1076,27 @@
 
     }
 
+    /**
+     * New Customer Form shortcode
+     */
+    public function wp_rent_new_customer_shortcode($atts = [], $content = null, $tag = '') {
+      extract( shortcode_atts( array(), $atts ) ); 
+
+      // Try to get configuration/settings via the Registry
+      $registry = null;
+      if ( class_exists('Mybooking_Registry') ) {
+          $registry = Mybooking_Registry::getInstance();
+      }
+      
+      // Prepare data for the template, only include registry if it exists
+      $data = array();
+      if (!is_null($registry)) {
+          $data['registry_object'] = $registry;
+      }
+
+      ob_start();
+      mybooking_engine_get_template('mybooking-plugin-new-customer-form.php', $data); 
+      return ob_get_clean();
+    }
 
 }

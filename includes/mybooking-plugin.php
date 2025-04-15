@@ -319,6 +319,12 @@
         $classes[] = 'reservation';
       }
 
+      // Renting shortcode : customer data
+      if ( $registry->mybooking_plugin_renting_module &&
+           has_shortcode( $content, 'mybooking_rent_engine_new_customer') ) {
+        $classes[] = 'new_customer';
+      }
+
       // Renting shortcodes : product search
       if ( $registry->mybooking_plugin_renting_module &&
            has_shortcode( $content, 'mybooking_rent_engine_products_search') ) {
