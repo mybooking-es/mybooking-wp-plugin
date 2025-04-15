@@ -661,6 +661,13 @@
          mybooking_engine_get_template('mybooking-plugin-selector-wizard-container.php');
       }
 
+      // Renting Selector
+      if ( $registry->mybooking_plugin_renting_module &&
+           has_shortcode ( $content, 'mybooking_rent_engine_new_customer')
+         ) {
+        mybooking_engine_get_template( 'mybooking-plugin-new-customer-form-tmpl.php');
+      }
+
       if ( $registry->mybooking_plugin_renting_module &&
            $current_page_modify_reservation &&
            $registry->mybooking_rent_plugin_selector_in_process == 'form' ) {
