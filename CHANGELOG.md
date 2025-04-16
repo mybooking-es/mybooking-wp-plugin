@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.5.1] - 2025.04.16
+
+### Fixed
+
+- No locations shown
+
 ## [2.5.0] - 2025.04.16
 
 ### Fixed
