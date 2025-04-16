@@ -2,7 +2,7 @@
 Donate link: https://mybooking.es/
 Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation
 Requires at least: 5.2
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag: 2.4.4
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -116,7 +116,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
-= 2.4.4 =
+= 2.5.0 =
 * Fixed selector wizard multi language + pickup/return places sales channel
 
 = 2.4.3 =
@@ -558,7 +558,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
-= 2.4.4 =
+= 2.5.0 =
 * Fixed selector wizard multi language + pickup/return places sales channel
 
 = 2.4.3 =
