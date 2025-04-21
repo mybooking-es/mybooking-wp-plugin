@@ -199,8 +199,13 @@
       // == Shortcodes
       $shortcodes = new MybookingEngineShortcodes();
 
+      // Polylang => Include the query string in URL (required for summary and my reservation)
+      if ( function_exists( 'pll_current_language' ) ) {
+        add_filter( 'pll_the_language_link', array( $this, 'wp_pll_language_link' ) );
+      }
 
-    }
+
+    } 
 
     /**
      * Load the plugin textdomain languages
@@ -1244,6 +1249,16 @@
         return $page->post_name;
       }
 
+    }
+
+    /**
+     * Polylang URL compatibility
+     */
+    function wp_pll_language_link( $url ) {
+      if ( ! empty( $_SERVER['QUERY_STRING'] ) ) {
+        return $url . '?' . $_SERVER['QUERY_STRING'];
+      }
+      return $url;      
     }
 
   }
