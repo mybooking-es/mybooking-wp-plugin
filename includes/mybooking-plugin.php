@@ -152,6 +152,9 @@
       // Initialize the custom routes for activities and products
       add_action( 'init', array( $this, 'init_routes' ) );
 
+      // When plugins are loaded
+      add_action( 'init', array( $this, 'wp_plugins_loaded' ) );
+
       // Register custom post types
       $cpt = new MybookingEngineCPT();
 
@@ -198,12 +201,6 @@
 
       // == Shortcodes
       $shortcodes = new MybookingEngineShortcodes();
-
-      // Polylang => Include the query string in URL (required for summary and my reservation)
-      if ( function_exists( 'pll_current_language' ) ) {
-        add_filter( 'pll_the_language_link', array( $this, 'wp_pll_language_link' ) );
-      }
-
 
     } 
 
@@ -1247,6 +1244,15 @@
 
       if ( $page = get_post( $pageId ) ) {
         return $page->post_name;
+      }
+
+    }
+
+    function wp_plugins_loaded() {
+
+      // Polylang => Include the query string in URL (required for summary and my reservation)
+      if ( function_exists( 'pll_current_language' ) ) {
+        add_filter( 'pll_the_language_link', array( $this, 'wp_pll_language_link' ) );
       }
 
     }
