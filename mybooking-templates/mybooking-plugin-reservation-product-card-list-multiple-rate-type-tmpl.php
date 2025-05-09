@@ -106,7 +106,7 @@
                                 <% if (product.detailed_prices[rateIdx].price.offer_discount_type=='percentage' ||
                                   product.detailed_prices[rateIdx].price.offer_discount_type=='amount' ) { %>
                                   <span class="mybooking-product_discount-badge mb-badge info">
-                                    <% if (product.offer_discount_type == 'percentage') { %> 
+                                    <% if (product.detailed_prices[rateIdx].price.offer_discount_type == 'percentage') { %> 
                                       <%=new Number(product.detailed_prices[rateIdx].price.offer_value)%> %
                                     <% } else { %>
                                       <%=configuration.formatCurrency(product.detailed_prices[rateIdx].price.offer_value) %>
