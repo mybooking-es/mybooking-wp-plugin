@@ -277,6 +277,16 @@
   padding: 0 !important;
 }
 
+#widget_another_pickup_place_group,
+#widget_another_return_place_group {
+  position: relative;
+}
+#widget_another_pickup_place_group .mybooking-selector_close-btn,
+#widget_another_return_place_group .mybooking-selector_close-btn {
+  top: 50%;
+  margin-top: -10px;
+}
+
 .mybooking-selector_close-btn:hover {
   background-color: transparent;
   color:  var(--mb-border-color);
