@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.5.2] - 2025.05.15
+
+### New
+
+- Custom HFCM form checkout for ses hospedajes 
+
+### Fixed
+
+- Selector error in exact address field
+
+
 ## [2.5.1] - 2025.04.16
 
 ### Fixed

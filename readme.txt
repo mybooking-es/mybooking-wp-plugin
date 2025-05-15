@@ -561,6 +561,16 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Upgrade Notice ==
 
+## [2.5.2] - 2025.05.15
+
+### New
+
+- Custom HFCM form checkout for ses hospedajes 
+
+### Fixed
+
+- Selector error in exact address field
+
 = 2.5.1 =
 * Fixed no locations shown
 
