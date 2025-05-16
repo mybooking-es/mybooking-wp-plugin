@@ -217,7 +217,7 @@
 									<div class="mybooking-product_characteristics">
 									<% for (characteristic in product.key_characteristics) { %>
 										<div class="mybooking-product_characteristics-item">
-											<% var characteristic_image_path = '<?php echo esc_url( plugin_dir_url( __DIR__ ).'assets/images/key_characteristics/' ) ?>'+characteristic+'.svg'; %>
+											<% var characteristic_image_path = '<?php echo esc_url( mybooking_engine_get_characteristics_icons_url() ); ?>'+characteristic+'.svg'; %>
 											<img class="mybooking-product_characteristics-img" src="<%=characteristic_image_path%>" />
 											<span class="mybooking-product_characteristics-key"><%=product.key_characteristics[characteristic]%> 
 											  <% if (characteristic === 'load') { %>Kg<% } %>
