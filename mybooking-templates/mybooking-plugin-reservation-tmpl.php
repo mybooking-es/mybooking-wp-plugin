@@ -175,7 +175,7 @@
                           booking.optional_external_driver) ||
                           (typeof booking.item_driving_license_type_name !== '' &&
                           booking.item_driving_license_type_name) ) { %>   
-                      <% if (typeof booking.optional_external_driver !== '' &&
+                        <% if (typeof booking.optional_external_driver === 'string' &&
                             booking.optional_external_driver) { %>
                         <span class="mb-badge secondary"><%=booking.optional_external_driver%></span>    
                       <% } %>
