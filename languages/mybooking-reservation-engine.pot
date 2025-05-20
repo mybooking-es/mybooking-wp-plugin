@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyBooking Reservation Engine\n"
-"POT-Creation-Date: 2025-01-11 20:57+0100\n"
+"POT-Creation-Date: 2025-05-20 14:18+0200\n"
 "PO-Revision-Date: 2025-01-11 20:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,14 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: mybooking-reservation-engine.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -2601,31 +2600,37 @@ msgid "Country"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:168
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:182
 msgctxt "activity_my_reservation"
 msgid "State"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:191
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:204
 msgctxt "activity_my_reservation"
 msgid "City"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:212
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:215
 msgctxt "activity_my_reservation"
 msgid "Postal Code"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:223
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:226
 msgctxt "activity_my_reservation"
 msgid "Address"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:232
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:235
 msgctxt "activity_my_reservation"
 msgid "Number"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:241
+#: mybooking-templates/mybooking-plugin-activities-order-tmpl.php:244
 msgctxt "activity_my_reservation"
 msgid "Complement"
 msgstr ""
@@ -2914,6 +2919,8 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:134
 #: mybooking-templates/mybooking-plugin-complete.php:59
 #: mybooking-templates/mybooking-plugin-complete.php:60
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:50
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:53
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:52
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:55
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:50
@@ -2946,6 +2953,8 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-activities-shopping-cart-tmpl.php:145
 #: mybooking-templates/mybooking-plugin-complete.php:70
 #: mybooking-templates/mybooking-plugin-complete.php:71
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:58
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:61
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:60
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:63
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:58
@@ -3031,9 +3040,9 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:179
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:308
 #: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:82
-#: mybooking-templates/mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php:175
+#: mybooking-templates/mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php:173
 #: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:76
-#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:151
+#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:152
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:243
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:432
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:165
@@ -3141,9 +3150,9 @@ msgid "Select"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-choose-product-tmpl.php:114
-#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:194
-#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:195
-#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:174
+#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:211
+#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:196
+#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:175
 msgctxt "renting_choose_product"
 msgid "Select units"
 msgstr ""
@@ -3224,7 +3233,7 @@ msgstr ""
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:94
 #: mybooking-templates/mybooking-plugin-product-week-planning-tmpl.php:61
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:169
-#: mybooking-templates/mybooking-plugin-reservation-summary-tmpl.php:107
+#: mybooking-templates/mybooking-plugin-reservation-summary-tmpl.php:109
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:130
 #: mybooking-templates/mybooking-plugin-shift-picker-tmpl.php:74
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:91
@@ -3292,8 +3301,8 @@ msgid "Driver's age supplement"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-complete-tmpl.php:230
-#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:112
-#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:171
+#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:129
+#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:172
 #: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:102
 #: mybooking-templates/mybooking-plugin-reservation-tmpl.php:386
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:347
@@ -3618,15 +3627,311 @@ msgctxt "renting_form_modify_reservation"
 msgid "Modify reservation"
 msgstr ""
 
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:19
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:17
+msgctxt "renting_my_reservation"
+msgid "Customer/Driver"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:26
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:31
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:37
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:41
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:243
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:247
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:23
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:30
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:23
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:29
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:65
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:69
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:27
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:31
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:32
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:34
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:36
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:98
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:100
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:102
+#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:23
+#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:27
+msgctxt "renting_my_reservation"
+msgid "Name"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:37
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:42
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:47
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:51
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:253
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:257
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:37
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:43
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:36
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:41
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:73
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:77
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:36
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:40
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:40
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:42
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:44
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:106
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:108
+#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:110
+#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:32
+#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:36
+msgctxt "renting_my_reservation"
+msgid "Surname"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:69
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:66
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:272
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:71
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:104
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:47
+msgctxt "renting_my_reservation"
+msgid "Date of birth"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:91
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:59
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:265
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:93
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:69
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:126
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:68
+msgctxt "renting_my_reservation"
+msgid "Nacionality"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:101
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:87
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:293
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:103
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:78
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:135
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:97
+msgctxt "renting_my_reservation"
+msgid "ID card or passport"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:108
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:93
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:299
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:110
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:85
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:142
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:103
+msgctxt "renting_my_reservation"
+msgid "Document type"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:118
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:124
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:100
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:104
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:306
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:310
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:122
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:128
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:94
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:100
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:150
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:155
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:110
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:114
+#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:63
+#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:67
+msgctxt "renting_my_reservation"
+msgid "ID card/passport number"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:131
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:210
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:110
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:186
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:316
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:392
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:136
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:214
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:119
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:193
+msgctxt "renting_my_reservation"
+msgid "Expedition country"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:142
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:222
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:121
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:197
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:327
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:403
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:147
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:226
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:128
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:204
+msgctxt "renting_my_reservation"
+msgid "Date of Issue"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:163
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:244
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:142
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:218
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:348
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:424
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:168
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:247
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:149
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:225
+msgctxt "renting_my_reservation"
+msgid "Date of expiry"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:186
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:163
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:369
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:190
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:170
+msgctxt "renting_my_reservation"
+msgid "License"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:193
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:169
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:375
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:197
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:176
+msgctxt "renting_my_reservation"
+msgid "License type"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:201
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:205
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:176
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:180
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:382
+#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:386
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:204
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:208
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:258
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:183
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:187
+#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:91
+msgctxt "renting_my_reservation"
+msgid "Driving license number"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:267
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:270
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:106
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:163
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:248
+msgctxt "renting_my_reservation"
+msgid "Address"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:277
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:280
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:115
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:173
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:257
+msgctxt "renting_my_reservation"
+msgid "Country"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:291
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:294
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:298
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:315
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:133
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:149
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:189
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:205
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:273
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:289
+msgctxt "renting_my_reservation"
+msgid "State"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:304
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:307
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:326
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:341
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:160
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:174
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:216
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:231
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:300
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:314
+msgctxt "renting_my_reservation"
+msgid "City"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:314
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:318
+msgctxt "renting_my_reservation"
+msgid "Zip Code"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:327
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:331
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:367
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:372
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:197
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:201
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:253
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:257
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:335
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:339
+msgctxt "renting_my_reservation"
+msgid "Street"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:337
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:341
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:381
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:386
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:209
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:213
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:263
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:267
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:345
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:349
+msgctxt "renting_my_reservation"
+msgid "Number"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:347
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:351
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:395
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:400
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:221
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:225
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:273
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:277
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:355
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:359
+msgctxt "renting_my_reservation"
+msgid "Complement"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:359
+msgctxt "renting_new_customer"
+msgid "Submit"
+msgstr ""
+
 #: mybooking-templates/mybooking-plugin-planning.php:25
 msgctxt "planning"
 msgid "Date"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-product-slider.php:65
-#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:213
-#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:214
-#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:192
+#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:230
+#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:215
+#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:193
 #: mybooking-templates/mybooking-plugin-routes-product.php:83
 msgctxt "renting_choose_product"
 msgid "Book it!"
@@ -3843,217 +4148,16 @@ msgctxt "renting_my_reservation"
 msgid "Additional drivers"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:37
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:243
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:23
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:23
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:29
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:65
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:69
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:27
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:32
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:34
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:36
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:98
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:100
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:102
-#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:23
-msgctxt "renting_my_reservation"
-msgid "Name"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:47
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:253
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:37
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:36
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:41
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:73
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:77
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:36
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:40
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:42
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:44
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:106
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:108
-#: mybooking-templates/mybooking-plugin-reservation-form-named-resources-tmpl.php:110
-#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:32
-msgctxt "renting_my_reservation"
-msgid "Surname"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:59
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:265
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:93
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:69
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:126
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:68
-msgctxt "renting_my_reservation"
-msgid "Nacionality"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:66
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:272
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:71
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:104
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:47
-msgctxt "renting_my_reservation"
-msgid "Date of birth"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:87
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:293
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:103
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:78
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:135
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:97
-msgctxt "renting_my_reservation"
-msgid "ID card or passport"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:93
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:299
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:110
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:85
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:142
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:103
-msgctxt "renting_my_reservation"
-msgid "Document type"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:100
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:104
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:306
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:310
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:122
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:94
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:100
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:150
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:155
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:110
-#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:63
-msgctxt "renting_my_reservation"
-msgid "ID card/passport number"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:110
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:186
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:316
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:392
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:136
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:214
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:119
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:193
-msgctxt "renting_my_reservation"
-msgid "Expedition country"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:121
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:197
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:327
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:403
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:147
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:226
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:128
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:204
-msgctxt "renting_my_reservation"
-msgid "Date of Issue"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:142
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:218
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:348
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:424
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:168
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:247
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:149
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:225
-msgctxt "renting_my_reservation"
-msgid "Date of expiry"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:169
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:375
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:197
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:176
-msgctxt "renting_my_reservation"
-msgid "License type"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:176
-#: mybooking-templates/mybooking-plugin-reservation-form-additional-drivers-tmpl.php:382
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:204
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:183
-msgctxt "renting_my_reservation"
-msgid "Driving license number"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:17
-msgctxt "renting_my_reservation"
-msgid "Customer/Driver"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:270
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:106
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:163
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:248
-msgctxt "renting_my_reservation"
-msgid "Address"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:280
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:115
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:173
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:257
-msgctxt "renting_my_reservation"
-msgid "Country"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:298
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:133
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:189
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:273
-msgctxt "renting_my_reservation"
-msgid "State"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:326
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:160
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:216
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:300
-msgctxt "renting_my_reservation"
-msgid "City"
-msgstr ""
-
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:350
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:355
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:183
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:187
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:241
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:245
 #: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:323
+#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:327
 msgctxt "renting_my_reservation"
 msgid "Postal Code"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:367
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:197
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:253
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:335
-msgctxt "renting_my_reservation"
-msgid "Street"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:381
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:209
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:263
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:345
-msgctxt "renting_my_reservation"
-msgid "Number"
-msgstr ""
-
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-driver-tmpl.php:395
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:221
-#: mybooking-templates/mybooking-plugin-reservation-form-customer-tmpl.php:273
-#: mybooking-templates/mybooking-plugin-reservation-form-driver-tmpl.php:355
-msgctxt "renting_my_reservation"
-msgid "Complement"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:17
@@ -4067,7 +4171,9 @@ msgid "Skipper data"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:243
+#: mybooking-templates/mybooking-plugin-reservation-form-customer-skipper-tmpl.php:246
 #: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:75
+#: mybooking-templates/mybooking-plugin-reservation-form-skipper-tmpl.php:79
 msgctxt "renting_my_reservation"
 msgid "Navigation license type"
 msgstr ""
@@ -4110,19 +4216,25 @@ msgid "Arrival"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:29
+#: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:31
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:52
+#: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:54
 msgctxt "renting_my_reservation"
 msgid "Company"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:34
+#: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:36
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:57
+#: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:59
 msgctxt "renting_my_reservation"
 msgid "Flight Number"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:39
+#: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:41
 #: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:62
+#: mybooking-templates/mybooking-plugin-reservation-form-flight-tmpl.php:64
 msgctxt "renting_my_reservation"
 msgid "Estimated Time"
 msgstr ""
@@ -4273,34 +4385,40 @@ msgid "No passengers found in reservation"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:32
+#: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:36
 msgctxt "renting_my_reservation_passenger"
 msgid "Name"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:42
+#: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:46
 msgctxt "renting_my_reservation_passenger"
 msgid "Surname"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:53
+#: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:57
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:123
 msgctxt "renting_my_reservation_passenger"
 msgid "ID card/passport number"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:64
+#: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:67
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:130
 msgctxt "renting_my_reservation_passenger"
 msgid "Email address"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:73
+#: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:76
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:141
 msgctxt "renting_my_reservation_passenger"
 msgid "Phone number"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:84
+#: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:87
 #: mybooking-templates/mybooking-plugin-reservation-passengers-dependencies-tmpl.php:154
 msgctxt "renting_my_reservation_passenger"
 msgid "Notes"
@@ -4352,17 +4470,17 @@ msgctxt "renting_choose_product"
 msgid "Few units left!"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:194
-#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:195
-#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:174
+#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:211
+#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:196
+#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:175
 msgctxt "renting_choose_product"
 msgid "Select options"
 msgstr ""
 
-#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:233
-#: mybooking-templates/mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php:190
-#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:239
-#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:285
+#: mybooking-templates/mybooking-plugin-reservation-product-card-grid-tmpl.php:250
+#: mybooking-templates/mybooking-plugin-reservation-product-card-list-multiple-rate-type-tmpl.php:188
+#: mybooking-templates/mybooking-plugin-reservation-product-card-list-tmpl.php:240
+#: mybooking-templates/mybooking-plugin-reservation-product-card-reduce-list-tmpl.php:286
 msgctxt "renting_choose_product"
 msgid "No items found"
 msgstr ""
@@ -4488,6 +4606,16 @@ msgstr ""
 #, php-format
 msgctxt "renting_product_detail"
 msgid "From <span class=\"mybooking-product_detail-amount\">%s€</span>"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:48
+msgctxt "renting_form_selector"
+msgid "Pickup address"
+msgstr ""
+
+#: mybooking-templates/mybooking-plugin-selector-widget-block-tmpl.php:107
+msgctxt "renting_form_selector"
+msgid "Collection address"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-selector-wizard-widget-tmpl.php:66
@@ -4657,16 +4785,19 @@ msgid "Billing address"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:335
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:337
 msgctxt "transfer_checkout"
 msgid "Address"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:342
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:344
 msgctxt "transfer_checkout"
 msgid "City"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:347
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:349
 msgctxt "transfer_checkout"
 msgid "State"
 msgstr ""
@@ -4677,6 +4808,7 @@ msgid "Country"
 msgstr ""
 
 #: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:359
+#: mybooking-templates/mybooking-plugin-transfer-checkout-tmpl.php:361
 msgctxt "transfer_checkout"
 msgid "Postal Code"
 msgstr ""

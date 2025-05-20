@@ -77,6 +77,11 @@
   font-family: inherit;
   font-weight: 700!important;
 }
+.mybooking-selector form input:not([type="submit"])::placeholder {
+    color: #bbbbbb !important;
+}
+
+
 .mybooking-selector form input[disabled]:not([type="submit"]) /* Not the buttons! */,
 .mybooking-selector form select[disabled],
 .mybooking-selector form input[disabled]:not([type="submit"]) + .mybooking-selector_field-icon,
