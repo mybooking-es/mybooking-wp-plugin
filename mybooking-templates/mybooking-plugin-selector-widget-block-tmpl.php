@@ -40,12 +40,12 @@
 
 		      <!-- // Custom delivery place -->
 		      <div id="widget_another_pickup_place_group" style="display: none;">
-						<button class="mybooking-selector_close-btn widget_another_pickup_place_group_close">
+						<button type="button" class="mybooking-selector_close-btn widget_another_pickup_place_group_close">
 							<i>
 								<span class="dashicons dashicons-dismiss"></span>
 							</i>
 						</button>
-		        <input class="mb-form-control" id="widget_pickup_place_other" type="text" name="pickup_place_other" />
+		        <input class="mb-form-control" id="widget_pickup_place_other" type="text" name="pickup_place_other" placeholder="<?php echo esc_html_x( 'Pickup address', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>" />
 		        <input type="hidden" name="custom_pickup_place" value="false" />
 		      </div>
 				</div>
@@ -99,12 +99,12 @@
 
 		      <!-- // Custom delivery place -->
 		      <div id="widget_another_return_place_group" style="display: none;">
-						<button class="mybooking-selector_close-btn widget_another_return_place_group_close">
+						<button type="button" class="mybooking-selector_close-btn widget_another_return_place_group_close">
 							<i>
 								<span class="dashicons dashicons-dismiss"></span>
 							</i>
 						</button>
-		        <input class="mb-form-control" id="widget_return_place_other" type="text" name="return_place_other" />
+		        <input class="mb-form-control" id="widget_return_place_other" type="text" name="return_place_other" placeholder="<?php echo esc_html_x( 'Collection address', 'renting_form_selector', 'mybooking-reservation-engine' ) ?>" />
 		        <input type="hidden" name="custom_return_place" value="false" />
 		      </div>
 				</div>
