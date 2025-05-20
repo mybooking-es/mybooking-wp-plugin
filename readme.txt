@@ -3,7 +3,7 @@ Donate link: https://mybooking.es/
 Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation
 Requires at least: 5.2
 Tested up to: 6.8
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -115,6 +115,11 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 14. Transfer summary page
 
 == Changelog ==
+
+= 2.5.2 =
+* Fixed Polylang links with query params
+* Fixed Rent - Select product with multiple prices : Show the offer with % instead of with currency
+* Fixed Rent - Custom delivery and collection address on rent selector
 
 = 2.5.1 =
 * Fixed no locations shown
@@ -560,6 +565,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 2.5.2 =
+* Fixed polylang url with query string for my reservation and summary translation + selector
 
 = 2.5.1 =
 * Fixed no locations shown

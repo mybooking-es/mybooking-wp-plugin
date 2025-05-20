@@ -1262,8 +1262,24 @@
      * Polylang URL compatibility
      */
     function wp_pll_language_link( $url ) {
-      if ( ! empty( $_SERVER['QUERY_STRING'] ) ) {
-        return $url . '?' . $_SERVER['QUERY_STRING'];
+
+      // Get the current page content
+      $content = mybooking_engine_page_current_page_content();
+      // It only applies for summary and my reservation pages
+      if ( has_shortcode( $content, 'mybooking_rent_engine_summary' ) || 
+           has_shortcode( $content, 'mybooking_rent_engine_reservation') ||
+           has_shortcode( $content, 'mybooking_activities_engine_summary') ||
+           has_shortcode( $content, 'mybooking_activities_engine_order') ||
+           has_shortcode( $content, 'mybooking_transfer_summary') ||
+           has_shortcode( $content, 'mybooking_transfer_reservation') ) {
+        if ( ! empty( $_SERVER['QUERY_STRING'] ) ) {
+          // Just append the query string to the URL
+          $query_string = $_SERVER['QUERY_STRING'];
+          // If the URL does not already contain a query string, append it
+          if ( strpos( $url, '?' ) === false && strpos( $url, $query_string ) === false ) {
+            return $url . '?' . $query_string;
+          }
+        }
       }
       return $url;      
     }
