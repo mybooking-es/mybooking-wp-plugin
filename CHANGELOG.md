@@ -1,15 +1,11 @@
 # Changelog
 
-## [2.5.2] - 2025.05.15
-
-### New
-
-- Custom HFCM form checkout for ses hospedajes 
+## [2.5.2] - 2025.05.08
 
 ### Fixed
 
-- Selector error in exact address field
-
+- Polylang links with query params
+- Select product with multiple prices : Show the offer with % instead of with currency
 
 ## [2.5.1] - 2025.04.16
 

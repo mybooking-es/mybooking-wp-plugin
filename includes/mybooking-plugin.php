@@ -5,6 +5,7 @@
 
   // == Utilities
   require_once('utils/templates-functions.php');
+  require_once('utils/assets-functions.php');
   require_once('utils/page-functions.php');  
   require_once('utils/extract-query-string-functions.php');  
   require_once('utils/wpml-integration-functions.php');
