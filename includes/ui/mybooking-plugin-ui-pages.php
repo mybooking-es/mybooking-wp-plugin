@@ -56,7 +56,7 @@
           $post->post_date = current_time( 'mysql' );
           $post->post_date_gmt = current_time( 'mysql', 1 );
           $post->post_title = $data->name;
-          $post->post_content = $data->short_description;
+          $post->post_content = !empty($data->short_description) ? $data->short_description : '';
           $post->post_status = 'publish';
           $post->comment_status = 'closed';
           $post->ping_status = 'closed';
