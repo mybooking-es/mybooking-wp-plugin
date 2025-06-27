@@ -189,6 +189,7 @@ div.mybooking-product {
 
 .mybooking-product_image {
   border-radius: var(--mb-border-radius)!important;
+  max-width: 100%;
 }
 
 .mybooking-product_grid .mybooking-product .mybooking-product_image {
