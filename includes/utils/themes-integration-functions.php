@@ -22,6 +22,8 @@ function mybooking_engine_theme_align_width() {
         'Twenty Twenty-Three' == $theme->parent_theme ||	        				
 				'Twenty Twenty-Four' == $theme->name ||
         'Twenty Twenty-Four' == $theme->parent_theme ||	
+				'Twenty Twenty-Five' == $theme->name ||
+        'Twenty Twenty-Five' == $theme->parent_theme ||	
         'Twenty Nineteen' == $theme->name ||
         'Twenty Nineteen' == $theme->parent_theme ||
         'Varia' == $theme->name ||
