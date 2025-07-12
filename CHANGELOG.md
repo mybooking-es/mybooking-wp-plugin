@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.5.3] - 2025.07.12
+
+### Fixed
+
+- Selector : allow to search pickup/return places
+
 ## [2.5.2] - 2025.05.20
 
 ### Fixed
