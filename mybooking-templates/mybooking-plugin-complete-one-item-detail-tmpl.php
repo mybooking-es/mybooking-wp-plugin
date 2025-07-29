@@ -85,8 +85,24 @@
 										<% if (booking.items[idx].offer_discount_type === 'percentage' && booking.items[idx].offer_value !== '') {%>
 											<%=parseInt(booking.items[idx].offer_value)%>&#37;
 										<% } %>
+										&nbsp;
 										<%=booking.items[idx].offer_name%>
 									</span>
+								<% } %>
+
+								<!-- // Promotion code -->
+								<% if (configuration.promotionCode) { %>
+									<% if (typeof booking.promotion_code !== 'undefined' && booking.promotion_code !== null && booking.promotion_code !== '' && (booking.items[idx].promotion_code_discount_type == 'percentage' || booking.items[idx].promotion_code_discount_type == 'amount') ) { %>
+										<span class="mybooking-product_discount-badge mb-badge success">
+											<% if (booking.items[idx].promotion_code_discount_type == 'percentage') { %>
+												<%=new Number(booking.items[idx].promotion_code_value)%>&#37; 
+											<% } else { %>
+												<%=configuration.formatCurrency(booking.items[idx].promotion_code_value)%>
+											<% } %>
+											&nbsp;
+											<%=booking.promotion_code%>
+										</span>
+									<% } %>
 								<% } %>
 							</div>
 						<% } %>
