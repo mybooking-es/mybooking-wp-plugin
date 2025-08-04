@@ -19,6 +19,14 @@
   <div class="mb-row-flex">
     <!-- // Product details -->
     <div class="mybooking-sidebar  mb-col-sm-12 mb-col-md-8 mb-col-center">
+      <% if (booking.pay_now && booking.total_pending && Number(booking.total_pending) > 0) { %>
+        <div id="payment_view">
+          <div id="payment_detail"></div>
+        </div>
+      <% } %>
+
+      <br />
+
       <!-- // Reservation status message -->
       <div class="mybooking-summary_status">
         <%= booking.summary_status %>
@@ -435,3 +443,7 @@
 <!-- RESERVATION PRODUCT MULTIPLE TABLE ------------------------------------------------------>
 
 <?php mybooking_engine_get_template( 'mybooking-plugin-complete-multiple-items-table-tmpl.php' ); ?>
+
+<!-- PAYMENT BLOCK ------------------------------------------------------------>
+
+<?php mybooking_engine_get_template('mybooking-plugin-reservation-payment-tmpl.php'); ?>
