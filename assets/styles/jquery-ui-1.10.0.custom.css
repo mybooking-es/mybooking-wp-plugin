@@ -1366,6 +1366,12 @@ input[type=file]:focus, input[type=checkbox]:focus, select:focus {
   outline: 1px dotted #666;
 }
 
+input[type=checkbox], input[type=radio] {
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: middle;
+}
+
 input[type="text"],
 input[type="password"],
 .ui-autocomplete-input,

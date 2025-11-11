@@ -223,6 +223,7 @@
                                      'family_id' => '',
                                      'category_code' => '',
                                      'rental_location_code' => '',
+                                     'search_places' => '',
                                      'layout' => '' ), $atts ) );
 
       $data = array();
@@ -242,6 +243,10 @@
 
       if ( $rental_location_code != '' ) {
         $data['rental_location_code'] = $rental_location_code;
+      }
+
+      if ( $search_places != '' ) {
+        $data['search_places'] = $search_places;
       }
 
       if ( $layout != '' ) {

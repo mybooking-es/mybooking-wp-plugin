@@ -31,6 +31,10 @@
       <input type="hidden" name="engine_fixed_product" value="true"/>
     <?php endif; ?>
 
+    <?php if ( array_key_exists('search_places', $args) && $args['search_places'] != '' ) : ?>
+      <input type="hidden" name="search_places" value="<?php echo esc_attr( $args['search_places'] )?>"/>
+    <?php endif; ?>
+
     <?php if ( array_key_exists('rental_location_code', $args) && $args['rental_location_code'] != '' ) : ?>
       <input type="hidden" name="rental_location_code" value="<?php echo esc_attr( $args['rental_location_code'] )?>"/>
       <input type="hidden" name="engine_fixed_rental_location" value="true"/>
