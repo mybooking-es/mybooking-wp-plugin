@@ -62,6 +62,14 @@
                 </a>
               </li>
             <% } %>
+            <% if (deposit_process && deposit_process.can_receive_deposit && !booking.deposit_received) { %>
+              <li class="mb--step">
+                <a href="#deposit_view" id="btn_deposit_detail">
+                  <span class="mb--step-number"><span class="dashicons dashicons-money-alt"></span></span>
+                  <span class="mb--step-text"><?php echo esc_html_x( 'Pay deposit', 'renting_my_reservation', 'mybooking-reservation-engine') ?></span>
+                </a>
+              </li>
+            <% } %>
           </ul>
         </div>
     </div>

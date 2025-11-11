@@ -53,6 +53,13 @@
               <div id="payment_detail"></div>
             </div>
           <% } %>
+
+          <!-- // Deposit payment block -->
+          <% if (deposit_process && deposit_process.can_receive_deposit && !booking.deposit_received) { %>
+            <div id="deposit_view" class="mb-panel-container mb--step-container" style="display: none;">
+              <div id="deposit_detail"></div>
+            </div>
+          <% } %>
         </div>
       </div>
     <% } %>
@@ -491,6 +498,10 @@
 <!-- PAYMENT BLOCK ------------------------------------------------------------>
 
 <?php mybooking_engine_get_template('mybooking-plugin-reservation-payment-tmpl.php'); ?>
+
+<!-- DEPOSIT PAYMENT BLOCK ------------------------------------------------------------>
+
+<?php mybooking_engine_get_template('mybooking-plugin-reservation-deposit-tmpl.php'); ?>
 
 <!-- PASSENGERS  (CHARTER) ----------------------------------------------------------->
 

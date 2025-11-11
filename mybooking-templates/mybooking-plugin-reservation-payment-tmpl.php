@@ -73,7 +73,9 @@
         <input type="hidden" name="payment_method_id" value="<%=sales_process.payment_methods.tpv_virtual%>"/>
       <% } %>
 
-      <% if (sales_process.can_pay_deposit) { %>
+      <% if (sales_process.can_pay_pending) { %>
+        <input type="hidden" name="payment" value="pending"/>
+      <% } else if (sales_process.can_pay_deposit) { %>
         <input type="hidden" name="payment" value="deposit"/>
       <% } else if (booking.total_paid == 0) {%>
         <input type="hidden" name="payment" value="total"/>
