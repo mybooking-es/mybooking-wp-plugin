@@ -66,7 +66,7 @@
               <li class="mb--step">
                 <a href="#deposit_view" id="btn_deposit_detail">
                   <span class="mb--step-number"><span class="dashicons dashicons-money-alt"></span></span>
-                  <span class="mb--step-text"><?php echo esc_html_x( 'Pay deposit', 'renting_my_reservation', 'mybooking-reservation-engine') ?></span>
+                  <span class="mb--step-text"><?php echo esc_html_x( 'Security deposit', 'renting_my_reservation', 'mybooking-reservation-engine') ?></span>
                 </a>
               </li>
             <% } %>

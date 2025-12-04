@@ -1,10 +1,12 @@
 # Changelog
 
-## [2.5.3] - 2025.07.12
+## [2.6.0] - 2025.12.04
 
 ### Fixed
 
 - Selector : allow to search pickup/return places
+- Calendar : Avoid to scroll
+- My reservation : Pay deposit
 
 ## [2.5.2] - 2025.05.20
 
