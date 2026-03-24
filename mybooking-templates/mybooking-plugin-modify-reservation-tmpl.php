@@ -14,6 +14,10 @@
 
 <script type="text/tmpl" id="form_selector_tmpl">
 
+  <% if (sales_channel_code && sales_channel_code != '') { %>
+    <input type="hidden" name="sales_channel_code" value="<%=sales_channel_code%>"/>
+  <% } %>
+  
   <% if (!not_hidden_rental_location_code) { %>
     <input type="hidden" name="engine_fixed_rental_location" value="true"/>
     <input type="hidden" name="rental_location_code" value="<%=rental_location_code%>"/>

@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.6.1] - 2026.03.24
+
+### Fixed
+- Modify reservation take into account sales channel code on search form
+
 ## [2.6.0] - 2025.12.04
 
 ### Fixed
