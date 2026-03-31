@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   /** 
    * The Template for showing the sticky bar in transfer complete
    * This template can be overridden by copying it to your

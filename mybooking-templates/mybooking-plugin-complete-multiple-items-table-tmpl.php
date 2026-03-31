@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  *   MYBOOKING ENGINE - MULTIPLE ITEMS SHOPPING CART in a table
  *   ---------------------------------------------------------------------------

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 class MyBookingRentEngineSelectorWizardWidget extends WP_Widget {
  
     public function __construct() {

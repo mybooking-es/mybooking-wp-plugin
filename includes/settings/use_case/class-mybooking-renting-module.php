@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   class MybookingRentingModule extends MybookingCreatePages {
     /**
     * Create renting pages

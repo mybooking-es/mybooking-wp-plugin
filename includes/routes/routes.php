@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /*
 Plugin Name: Routes
 Plugin URI: http://routes.upstatement.com

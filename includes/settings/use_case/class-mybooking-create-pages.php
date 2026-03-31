@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   // @phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
   // @phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching
   class MybookingCreatePages {

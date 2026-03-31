@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 <div class="mb-row">
   <div class="mb-col-md-12">
     <form name="mybooking_password_forgotten_form" autocomplete="off" class="mybooking-form">

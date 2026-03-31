@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  *   MYBOOKING ENGINE - PLANNING component TEMPLATE
  *   ---------------------------------------------------------------------------

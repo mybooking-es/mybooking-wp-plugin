@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 class MyBookingTransferEngineSelectorWidget extends WP_Widget {
  
     public function __construct() {

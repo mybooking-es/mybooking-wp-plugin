@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   class MybookingTransferModule extends MybookingCreatePages {
     /**
     * Create transfer pages

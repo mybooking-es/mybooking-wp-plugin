@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 	require_once( 'use_case/class-mybooking-create-pages.php' );
 	require_once( 'use_case/class-mybooking-renting-module.php' );

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
   // == Registry
   require_once('registry/mybooking-plugin-registry.php');

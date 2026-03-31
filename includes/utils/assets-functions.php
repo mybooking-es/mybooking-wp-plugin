@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   /**
    * Retrieve the URL for the characteristics icons.
    *

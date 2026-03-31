@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 class Mybooking_Registry {
     /**
      * Array to store items

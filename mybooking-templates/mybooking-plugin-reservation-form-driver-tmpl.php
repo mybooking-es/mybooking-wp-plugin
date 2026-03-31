@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  *   MYBOOKING ENGINE - RESERVATION FORM DRIVERS TEMPLATE
  *   ---------------------------------------------------------------------------

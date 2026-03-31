@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   class MyBookingPluginCPTTestimonial {
 
 	  public function __construct()

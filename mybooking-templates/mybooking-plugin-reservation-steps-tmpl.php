@@ -1,4 +1,4 @@
-
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 <?php
 /**
  *   MYBOOKING ENGINE - RESERVATION STEPS TEMPLATE

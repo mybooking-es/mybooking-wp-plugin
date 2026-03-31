@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   class MybookingActivitiesModule extends MybookingCreatePages {
     /**
     * Create activities pages

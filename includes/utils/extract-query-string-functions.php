@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
     /**
      * Extract Query String parameters for products
      *

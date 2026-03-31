@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   /** 
    * The Template for showing selector widget inline product
    * This template can be overridden by copying it to your

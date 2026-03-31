@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 class MyBookingEngineContactWidget extends WP_Widget {
  
     public function __construct() {

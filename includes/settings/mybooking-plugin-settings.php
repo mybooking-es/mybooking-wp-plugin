@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   class MyBookingPluginSettings {
 
 	  public function __construct() {

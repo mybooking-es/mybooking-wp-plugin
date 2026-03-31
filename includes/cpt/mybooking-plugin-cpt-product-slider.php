@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   class MyBookingPluginCPTProductSlider {
 
 	  public function __construct()

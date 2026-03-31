@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
   /**
    * The Template for showing the transfer checkout step - JS microtemplates
    *

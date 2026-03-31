@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
 * Plugin Name: MyBooking Reservation Engine
 * Plugin URI: https://www.mybooking.es/
