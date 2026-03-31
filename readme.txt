@@ -118,6 +118,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 = 2.6.1 =
 * Fixed Modify reservation - Include sales channel code
+* Added translations - : Portuguese, Polish, Finnish, Dutch, Estonian
 
 = 2.6.0 =
 * Fixed Calendar - scroll
@@ -575,7 +576,7 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 == Upgrade Notice ==
 
 = 2.6.1 =
-* Fixed Modify reservation - Include sales channel code
+* Fixed Modify reservation - Include sales channel code + added translations
 
 = 2.6.0 =
 * Fixed Calendar scroll + Allow pay deposit

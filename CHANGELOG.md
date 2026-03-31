@@ -5,6 +5,9 @@
 ### Fixed
 - Modify reservation take into account sales channel code on search form
 
+### New
+- Added translations: Portuguese, Polish, Finnish, Dutch, Estonian
+
 ## [2.6.0] - 2025.12.04
 
 ### Fixed
