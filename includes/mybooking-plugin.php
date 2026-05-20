@@ -201,6 +201,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       // Register Contact widget
       add_action( 'widgets_init', array( $this, 'wp_contact_widget' ) );
 
+      // == Contact form AJAX handler
+      add_action( 'wp_ajax_mybooking_contact', array( $this, 'wp_contact_ajax_handler' ) );
+      add_action( 'wp_ajax_nopriv_mybooking_contact', array( $this, 'wp_contact_ajax_handler' ) );
+
       // == Shortcodes
       $shortcodes = new MybookingEngineShortcodes();
 
@@ -1282,7 +1286,41 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           }
         }
       }
-      return $url;      
+      return $url;
+    }
+
+    /**
+     * AJAX handler: proxy contact form to myBooking API
+     * Verifies nonce, forwards form data (including g-recaptcha-response) as JSON
+     */
+    public function wp_contact_ajax_handler() {
+
+      if ( ! check_ajax_referer( 'mybooking_contact', 'nonce', false ) ) {
+        wp_send_json_error( array( 'message' => 'Invalid request' ), 403 );
+        return;
+      }
+
+      $registry = Mybooking_Registry::getInstance();
+
+      $exclude = array( 'action', 'nonce' );
+      $payload = array();
+      foreach ( $_POST as $key => $value ) {
+        if ( ! in_array( $key, $exclude, true ) ) {
+          $payload[ $key ] = sanitize_text_field( $value );
+        }
+      }
+
+      $api_client = new MyBookingApiClient(
+        $registry->mybooking_rent_plugin_api_url_prefix,
+        $registry->mybooking_rent_plugin_api_key
+      );
+
+      if ( $api_client->post_contact( $payload ) ) {
+        wp_send_json_success();
+      } else {
+        wp_send_json_error( array( 'message' => 'Error sending message' ), 500 );
+      }
+
     }
 
   }

@@ -304,7 +304,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'mybooking_phone_utils_path' => plugins_url( '/assets/js/intlTelInput-utils.js', dirname(__DIR__) ),
           // Custom Loader
           'mybooking_custom_loader' => 'false',
-          'mybooking_js_select2' => ( $registry->mybooking_plugin_js_select2 == '1' ? 'true' : 'false')
+          'mybooking_js_select2' => ( $registry->mybooking_plugin_js_select2 == '1' ? 'true' : 'false'),
+          // Contact form
+          'mybooking_ajax_url' => admin_url('admin-ajax.php'),
+          'mybooking_contact_nonce' => wp_create_nonce('mybooking_contact')
           )
         );
 
