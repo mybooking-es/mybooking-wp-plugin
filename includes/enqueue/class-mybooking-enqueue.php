@@ -307,7 +307,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'mybooking_js_select2' => ( $registry->mybooking_plugin_js_select2 == '1' ? 'true' : 'false'),
           // Contact form
           'mybooking_ajax_url' => admin_url('admin-ajax.php'),
-          'mybooking_contact_nonce' => wp_create_nonce('mybooking_contact')
+          'mybooking_contact_nonce' => wp_create_nonce('mybooking_contact'),
+          'mybooking_recaptcha_mode' => $registry->mybooking_rent_plugin_contact_form_captcha_mode,
+          'mybooking_recaptcha_site_key' => $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key ?: ''
           )
         );
 
@@ -367,21 +369,27 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       }
 
       // Contact Form Google Captcha
+      $captcha_mode = $registry->mybooking_rent_plugin_contact_form_captcha_mode;
+      if ( ( is_active_widget( false, false, 'mybooking_engine_contact_widget', false ) ||
+             has_shortcode( $content, 'mybooking_contact' ) ) &&
+           $captcha_mode !== '' &&
+           $registry->mybooking_rent_plugin_contact_form_include_google_captcha_js ) {
 
-      if ( is_active_widget( false, false, 'mybooking_engine_contact_widget', false ) ||
-           has_shortcode( $content, 'mybooking_contact' ) ) {
-        if ( $registry->mybooking_rent_plugin_contact_form_use_google_captcha &&
-             $registry->mybooking_rent_plugin_contact_form_include_google_captcha_js ) {
+        if ( $captcha_mode === 'enterprise' ) {
+          $captcha_api_url = 'https://www.google.com/recaptcha/enterprise.js?render=' . urlencode( $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key );
+        }
+
+        // v2 is Legacy but still working in several sites.
+        elseif ( $captcha_mode === 'v2' ) {
           $language = MyBookingEngineContext::getInstance()->getCurrentLanguageCode();
           $captcha_api_url = 'https://www.google.com/recaptcha/api.js';
           if ( isset( $language ) ) {
-            $captcha_api_url = $captcha_api_url.'?hl='.$language;
+            $captcha_api_url .= '?hl=' . $language;
           }
-          // Google Captcha
-          wp_register_script('mybooking_wp_google_captcha',
-                             $captcha_api_url);
-          wp_enqueue_script('mybooking_wp_google_captcha');
         }
+
+        wp_register_script('mybooking_wp_google_captcha', $captcha_api_url);
+        wp_enqueue_script('mybooking_wp_google_captcha');
 
       }
 

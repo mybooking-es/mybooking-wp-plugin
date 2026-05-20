@@ -963,10 +963,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         $data['rental_location_code'] = $rental_location_code;
       }
 
-      // Get Google API Captcha
+      // Get captcha settings
       $registry = Mybooking_Registry::getInstance();
-      if ( $registry->mybooking_rent_plugin_contact_form_use_google_captcha &&
+      if ( $registry->mybooking_rent_plugin_contact_form_captcha_mode !== '' &&
            !empty( $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key ) ) {
+        $data['captcha_mode'] = $registry->mybooking_rent_plugin_contact_form_captcha_mode;
         $data['google_captcha_api_key'] = $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key;
       }
 

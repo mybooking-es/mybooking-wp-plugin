@@ -84,7 +84,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       </div>
     </div>
 
-    <?php if ( array_key_exists('google_captcha_api_key', $args) && !empty( $args['google_captcha_api_key'] ) ): ?>
+    <?php
+    // Only for v2. reCaptcha enterprise doesn't need the validation checkbox.
+    if ( array_key_exists('google_captcha_api_key', $args) && !empty( $args['google_captcha_api_key'] ) &&
+               isset( $args['captcha_mode'] ) && $args['captcha_mode'] === 'v2' ): ?>
       <div class="g-recaptcha mt-1 mb-3" data-sitekey="<?php echo esc_attr( $args['google_captcha_api_key'] )?>"></div>
     <?php endif; ?>
 

@@ -18,5 +18,38 @@
 
 		});
 
+		// Captcha mode conditional visibility
+		function applyCaptchaVisibility(mode) {
+			const $rowSiteKey = $('#mybooking_captcha_site_key').closest('tr');
+			const $rowIncludeJs = $('#mybooking_captcha_include_js').closest('tr');
+			const $rowCloudKey = $('#mybooking_captcha_cloud_api_key').closest('tr');
+			const $rowProjectId = $('#mybooking_captcha_project_id').closest('tr');
+
+			if (mode === '') {
+				$rowSiteKey.hide();
+				$rowIncludeJs.hide();
+				$rowCloudKey.hide();
+				$rowProjectId.hide();
+			} else if (mode === 'v2') {
+				$rowSiteKey.show();
+				$rowIncludeJs.show();
+				$rowCloudKey.hide();
+				$rowProjectId.hide();
+			} else if (mode === 'enterprise') {
+				$rowSiteKey.show();
+				$rowIncludeJs.show();
+				$rowCloudKey.show();
+				$rowProjectId.show();
+			}
+		}
+
+	  const $captchaModeSelect = $('#mybooking_captcha_mode_select');
+	  if ($captchaModeSelect.length) {
+			applyCaptchaVisibility($captchaModeSelect.val());
+			$captchaModeSelect.on('change', function() {
+				applyCaptchaVisibility($(this).val());
+			});
+		}
+
 	});
 })(jQuery);
