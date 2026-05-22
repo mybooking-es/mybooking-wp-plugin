@@ -201,6 +201,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       // Register Contact widget
       add_action( 'widgets_init', array( $this, 'wp_contact_widget' ) );
 
+      // == Contact form AJAX handler
+      add_action( 'wp_ajax_mybooking_contact', array( $this, 'wp_contact_ajax_handler' ) );
+      add_action( 'wp_ajax_nopriv_mybooking_contact', array( $this, 'wp_contact_ajax_handler' ) );
+
       // == Shortcodes
       $shortcodes = new MybookingEngineShortcodes();
 
@@ -1064,25 +1068,36 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
       // == Contact Form
 
-      $registry->mybooking_rent_plugin_contact_form_use_google_captcha = false;
+      $registry->mybooking_rent_plugin_contact_form_captcha_mode = '';
       $registry->mybooking_rent_plugin_contact_form_include_google_captcha_js = false;
       $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key = null;
+      $registry->mybooking_rent_plugin_contact_form_google_captcha_cloud_api_key = null;
+      $registry->mybooking_rent_plugin_contact_form_google_captcha_project_id = null;
       $settings = (array) get_option("mybooking_plugin_settings_contact_form");
 
-      // Use Google Captcha on Contact Form
-      if ( $settings && array_key_exists("mybooking_plugin_settings_contact_form_use_google_captcha", $settings) ) {
-        $registry->mybooking_rent_plugin_contact_form_use_google_captcha = (trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_use_google_captcha"] )) == '1');
-        if ( $registry->mybooking_rent_plugin_contact_form_use_google_captcha ) {
-          // Google Captcha API Key
-          if ( $settings && array_key_exists("mybooking_plugin_settings_contact_form_google_captcha_api_key", $settings) ) {
-            $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_google_captcha_api_key"] ));
-            if ( !empty( $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key ) ) {
-              // Include google captcha JS
-              if ( $settings && array_key_exists("mybooking_plugin_settings_contact_form_include_google_captcha_js", $settings) ) {
-                $registry->mybooking_rent_plugin_contact_form_include_google_captcha_js = (trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_include_google_captcha_js"] )) == '1');
-              }
-            }
-          }
+      // Captcha mode (backwards compatible: old checkbox '1' maps to 'v2')
+      if ( $settings && array_key_exists("mybooking_plugin_settings_contact_form_captcha_mode", $settings) ) {
+        $registry->mybooking_rent_plugin_contact_form_captcha_mode = trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_captcha_mode"] ));
+      } elseif ( $settings && !empty( $settings["mybooking_plugin_settings_contact_form_use_google_captcha"] ) ) {
+        $registry->mybooking_rent_plugin_contact_form_captcha_mode = 'v2';
+      }
+
+      if ( $registry->mybooking_rent_plugin_contact_form_captcha_mode !== '' ) {
+        // Site Key
+        if ( array_key_exists("mybooking_plugin_settings_contact_form_google_captcha_api_key", $settings) ) {
+          $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_google_captcha_api_key"] ));
+        }
+        // Include JS
+        if ( array_key_exists("mybooking_plugin_settings_contact_form_include_google_captcha_js", $settings) ) {
+          $registry->mybooking_rent_plugin_contact_form_include_google_captcha_js = (trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_include_google_captcha_js"] )) == '1');
+        }
+        // Enterprise: Cloud API Key
+        if ( array_key_exists("mybooking_plugin_settings_contact_form_google_captcha_cloud_api_key", $settings) ) {
+          $registry->mybooking_rent_plugin_contact_form_google_captcha_cloud_api_key = trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_google_captcha_cloud_api_key"] ));
+        }
+        // Enterprise: Project ID
+        if ( array_key_exists("mybooking_plugin_settings_contact_form_google_captcha_project_id", $settings) ) {
+          $registry->mybooking_rent_plugin_contact_form_google_captcha_project_id = trim(esc_attr( $settings["mybooking_plugin_settings_contact_form_google_captcha_project_id"] ));
         }
       }
 
@@ -1282,7 +1297,88 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           }
         }
       }
-      return $url;      
+      return $url;
+    }
+
+    /**
+     * AJAX handler: proxy contact form to myBooking API
+     * Verifies nonce, forwards form data (including g-recaptcha-response) as JSON
+     */
+    public function wp_contact_ajax_handler() {
+
+      if ( ! check_ajax_referer( 'mybooking_contact', 'nonce', false ) ) {
+        wp_send_json_error( array( 'message' => 'Invalid request' ), 403 );
+        return;
+      }
+
+      $registry = Mybooking_Registry::getInstance();
+
+      $exclude = array( 'action', 'nonce' );
+      $payload = array();
+      foreach ( $_POST as $key => $value ) {
+        if ( ! in_array( $key, $exclude, true ) ) {
+          $payload[ $key ] = sanitize_text_field( $value );
+        }
+      }
+
+      $captcha_mode  = $registry->mybooking_rent_plugin_contact_form_captcha_mode;
+      $cloud_api_key = $registry->mybooking_rent_plugin_contact_form_google_captcha_cloud_api_key;
+      $project_id = $registry->mybooking_rent_plugin_contact_form_google_captcha_project_id;
+      $site_key = $registry->mybooking_rent_plugin_contact_form_google_captcha_api_key;
+
+      $token  = $payload['g-recaptcha-response'] ?? '';
+      $result = $this->verify_recaptcha_enterprise( $captcha_mode, $token, $site_key, $project_id, $cloud_api_key );
+      if ( $result !== null ) {
+        wp_send_json_error( array( 'message' => $result['message'] ), $result['code'] );
+        return;
+      }
+
+      $api_client = new MyBookingApiClient(
+        $registry->mybooking_rent_plugin_api_url_prefix,
+        $registry->mybooking_rent_plugin_api_key
+      );
+
+      if ( $api_client->post_contact( $payload ) ) {
+        wp_send_json_success();
+      } else {
+        wp_send_json_error( array( 'message' => 'Error sending message' ), 500 );
+      }
+
+    }
+
+    private function verify_recaptcha_enterprise( $captcha_mode, $token, $site_key, $project_id, $cloud_api_key ) {
+      if ( $captcha_mode !== 'enterprise' || empty( $cloud_api_key ) || empty( $project_id ) || empty( $site_key ) ) {
+        return null;
+      }
+
+      if ( empty( $token ) ) {
+        return array( 'message' => 'Captcha token missing', 'code' => 422 );
+      }
+
+      $assessment_url = 'https://recaptchaenterprise.googleapis.com/v1/projects/' . $project_id . '/assessments?key=' . $cloud_api_key;
+      $assessment_response = wp_remote_post( $assessment_url, array(
+        'headers' => array( 'Content-Type' => 'application/json; charset=utf-8' ),
+        'body'    => wp_json_encode( array(
+          'event' => array(
+            'token'          => $token,
+            'expectedAction' => 'contact',
+            'siteKey'        => $site_key,
+          ),
+        ) ),
+        'timeout' => 10,
+      ) );
+
+      if ( is_wp_error( $assessment_response ) ) {
+        return array( 'message' => 'Captcha verification error', 'code' => 500 );
+      }
+
+      $assessment = json_decode( wp_remote_retrieve_body( $assessment_response ) );
+      if ( empty( $assessment->tokenProperties->valid ) ||
+           $assessment->riskAnalysis->score < 0.5 ) {
+        return array( 'message' => 'Captcha verification failed', 'code' => 422 );
+      }
+
+      return null;
     }
 
   }

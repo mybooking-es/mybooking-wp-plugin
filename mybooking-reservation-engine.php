@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 * Plugin Name: MyBooking Reservation Engine
 * Plugin URI: https://www.mybooking.es/
 * Description: Reservation Engine WordPress frontend for Mybooking. Transforms wordpress into a rental / accommodation / tours reservation engine.
-* Version: 2.6.1
+* Version: 2.6.2
 * Author: mybooking
 * Author URI: https://mybooking.es/
 * License: GPL v2 or later

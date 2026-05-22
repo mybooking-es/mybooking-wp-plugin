@@ -588,11 +588,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		                     'mybooking_plugin_settings_section_google_api_places');
 
       // == Create Contact form sectionn Fields
-      add_settings_field('mybooking_plugin_settings_contact_form_use_google_captcha',
-												 wp_kses_post( _x('Use Google captcha', 'plugin_settings', 'mybooking-reservation-engine') ),
-		                     array($this, 'field_mybooking_plugin_settings_contact_form_use_google_captcha_callback'),
-		                     'mybooking-plugin-configuration',
-		                     'mybooking_plugin_settings_section_contact_form');
+      add_settings_field('mybooking_plugin_settings_contact_form_captcha_mode',
+                         wp_kses_post( _x('Anti-spam captcha', 'plugin_settings', 'mybooking-reservation-engine') ),
+                         array($this, 'field_mybooking_plugin_settings_contact_form_captcha_mode_callback'),
+                         'mybooking-plugin-configuration',
+                         'mybooking_plugin_settings_section_contact_form');
 
       add_settings_field('mybooking_plugin_settings_contact_form_google_captcha_api_key',
 												 wp_kses_post( _x('Google Captcha API Key', 'plugin_settings', 'mybooking-reservation-engine') ),
@@ -605,6 +605,18 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		                     array($this, 'field_mybooking_plugin_settings_contact_form_include_google_captcha_js_callback'),
 		                     'mybooking-plugin-configuration',
 		                     'mybooking_plugin_settings_section_contact_form');
+
+      add_settings_field('mybooking_plugin_settings_contact_form_google_captcha_cloud_api_key',
+                         wp_kses_post( _x('reCAPTCHA Enterprise Cloud API Key', 'plugin_settings', 'mybooking-reservation-engine') ),
+                         array($this, 'field_mybooking_plugin_settings_contact_form_google_captcha_cloud_api_key_callback'),
+                         'mybooking-plugin-configuration',
+                         'mybooking_plugin_settings_section_contact_form');
+
+      add_settings_field('mybooking_plugin_settings_contact_form_google_captcha_project_id',
+                         wp_kses_post( _x('reCAPTCHA Enterprise Project ID', 'plugin_settings', 'mybooking-reservation-engine') ),
+                         array($this, 'field_mybooking_plugin_settings_contact_form_google_captcha_project_id_callback'),
+                         'mybooking-plugin-configuration',
+                         'mybooking_plugin_settings_section_contact_form');
 
       // == Create Complements section Fields
       add_settings_field('mybooking_plugin_settings_complements_popup',
@@ -1637,31 +1649,33 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     /**
      * Use Google captcha on contact form
      */
-    public function field_mybooking_plugin_settings_contact_form_use_google_captcha_callback() {
+    public function field_mybooking_plugin_settings_contact_form_captcha_mode_callback() {
 
       $settings = (array) get_option("mybooking_plugin_settings_contact_form");
-		  $field = "mybooking_plugin_settings_contact_form_use_google_captcha";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-		  	$value = '';
-		  }
+      $field    = "mybooking_plugin_settings_contact_form_captcha_mode";
 
-			echo sprintf(
-					'<input type="hidden" name="mybooking_plugin_settings_contact_form[%s]" value="" />',
-					esc_attr( $field )
-			);
-			echo sprintf(
-					'<input type="checkbox" name="mybooking_plugin_settings_contact_form[%s]" value="1" %s class="regular-text" />',
-					esc_attr( $field ),
-					checked( $value, '1', false ) ? 'checked' : ''
-			);
+      // Backwards compatibility: if new field not set but old checkbox was checked → v2
+      if ( array_key_exists( $field, $settings ) ) {
+        $value = esc_attr( $settings[ $field ] );
+      } elseif ( ! empty( $settings['mybooking_plugin_settings_contact_form_use_google_captcha'] ) ) {
+        $value = 'v2';
+      } else {
+        $value = '';
+      }
 
-		  echo "<p class=\"description\">";
-			echo wp_kses_post( _x( 'Use Google Captcha on <b>Contact Form</b>.', 'settings_context', 'mybooking-reservation-engine' ) );
-			echo "</p>";
- 		}
+      $options = array(
+        ''           => _x( 'None', 'captcha_mode', 'mybooking-reservation-engine' ),
+        'v2'         => _x( 'reCAPTCHA V2', 'captcha_mode', 'mybooking-reservation-engine' ),
+        'enterprise' => _x( 'reCAPTCHA Enterprise', 'captcha_mode', 'mybooking-reservation-engine' ),
+      );
+
+      echo '<select name="' . esc_attr( 'mybooking_plugin_settings_contact_form[' . $field . ']' ) . '" id="mybooking_captcha_mode_select">';
+      foreach ( $options as $opt_value => $opt_label ) {
+        echo '<option value="' . esc_attr( $opt_value ) . '"' . selected( $value, $opt_value, false ) . '>' . esc_html( $opt_label ) . '</option>';
+      }
+      echo '</select>';
+
+    }
 
 		/**
 		 * Google captcha API KEY for contact form
@@ -1670,15 +1684,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		  $settings = (array) get_option("mybooking_plugin_settings_contact_form");
 		  $field = "mybooking_plugin_settings_contact_form_google_captcha_api_key";
-		  if (array_key_exists($field, $settings)) {
-		    $value = esc_attr( $settings[$field] );
-		  }
-		  else {
-		  	$value = '';
-		  }
+		  $value = array_key_exists($field, $settings) ? esc_attr( $settings[$field] ) : '';
 
 			echo sprintf(
-					'<input type="text" name="mybooking_plugin_settings_contact_form[%s]" value="%s" class="regular-text" />',
+					'<input type="text" name="mybooking_plugin_settings_contact_form[%s]" value="%s" class="regular-text" id="mybooking_captcha_site_key" />',
 					esc_attr( $field ),
 					esc_attr( $value )
 			);
@@ -1700,11 +1709,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		  }
 
 			echo sprintf(
-					'<input type="hidden" name="mybooking_plugin_settings_contact_form[%s]" value="" />',
+					'<input type="hidden" name="mybooking_plugin_settings_contact_form[%s]" value="" id="mybooking_captcha_include_js_hidden" />',
 					esc_attr( $field )
 			);
 			echo sprintf(
-					'<input type="checkbox" name="mybooking_plugin_settings_contact_form[%s]" value="1" %s class="regular-text" />',
+					'<input type="checkbox" name="mybooking_plugin_settings_contact_form[%s]" value="1" %s class="regular-text" id="mybooking_captcha_include_js" />',
 					esc_attr( $field ),
 					checked( $value, '1', false ) ? 'checked' : ''
 			);
@@ -1713,6 +1722,46 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			echo wp_kses_post( _x( 'Include Google Captcha JS library.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
  		}
+
+    /**
+     * reCAPTCHA Enterprise Cloud API Key
+     */
+    public function field_mybooking_plugin_settings_contact_form_google_captcha_cloud_api_key_callback() {
+
+      $settings = (array) get_option("mybooking_plugin_settings_contact_form");
+      $field = "mybooking_plugin_settings_contact_form_google_captcha_cloud_api_key";
+      $value = array_key_exists($field, $settings) ? esc_attr( $settings[$field] ) : '';
+
+      echo sprintf(
+        '<input type="text" name="mybooking_plugin_settings_contact_form[%s]" value="%s" class="regular-text" id="mybooking_captcha_cloud_api_key" />',
+        esc_attr( $field ),
+        esc_attr( $value )
+      );
+      echo '<p class="description">';
+      echo wp_kses_post( _x( 'Google Cloud API Key for server-side reCAPTCHA Enterprise verification.', 'settings_context', 'mybooking-reservation-engine' ) );
+      echo '</p>';
+
+    }
+
+    /**
+     * reCAPTCHA Enterprise Project ID
+     */
+    public function field_mybooking_plugin_settings_contact_form_google_captcha_project_id_callback() {
+
+      $settings = (array) get_option("mybooking_plugin_settings_contact_form");
+      $field = "mybooking_plugin_settings_contact_form_google_captcha_project_id";
+      $value = array_key_exists($field, $settings) ? esc_attr( $settings[$field] ) : '';
+
+      echo sprintf(
+        '<input type="text" name="mybooking_plugin_settings_contact_form[%s]" value="%s" class="regular-text" id="mybooking_captcha_project_id" />',
+        esc_attr( $field ),
+        esc_attr( $value )
+      );
+      echo '<p class="description">';
+      echo wp_kses_post( _x( 'Google Cloud Project ID for reCAPTCHA Enterprise.', 'settings_context', 'mybooking-reservation-engine' ) );
+      echo '</p>';
+
+    }
 
     // == Complements
 

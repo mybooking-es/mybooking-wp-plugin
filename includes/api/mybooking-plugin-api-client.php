@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     const GET_PRODUCT = '/api/booking/frontend/products/';
     const GET_DESTINATIONS = '/api/booking/frontend/destinations';
     const GET_CATEGORIES = '/api/booking/frontend/categories';
+    const POST_CONTACT = '/api/booking/frontend/contact';
 
     private $url_prefix;
     private $api_key;
@@ -199,6 +200,34 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
     }
 
+
+    /**
+     * Post a contact form to myBooking
+     *
+     * @param array $payload Form data including g-recaptcha-response
+     * @return bool true on success, false on error
+     */
+    public function post_contact( $payload ) {
+
+      $url = $this->url_prefix . self::POST_CONTACT;
+      if ( isset( $this->api_key ) && ! empty( $this->api_key ) ) {
+        $url .= '?api_key=' . $this->api_key;
+      }
+
+      $response = wp_remote_post( $url, array(
+        'headers' => array( 'Content-Type' => 'application/json; charset=utf-8' ),
+        'body'    => wp_json_encode( $payload ),
+        'timeout' => 15,
+      ) );
+
+      if ( is_wp_error( $response ) ) {
+        return false;
+      }
+
+      $status_code = wp_remote_retrieve_response_code( $response );
+      return $status_code >= 200 && $status_code < 300;
+
+    }
 
   }
 ?>
