@@ -3,7 +3,7 @@
 ## [2.6.2] - 2026.05.21
 
 ### New
-- - Added reCaptcha enterprise option as a anti-bot in the contact form setting.
+- Added reCaptcha enterprise option as a anti-bot in the contact form setting.
 
 
 ## [2.6.1] - 2026.03.24
