@@ -40,12 +40,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             <?php mybooking_engine_get_template('mybooking-plugin-reservation-passengers-tmpl.php'); ?>
           </div>
 
-          <% if (booking.engine_sign_contract) { %>
+          <% if (booking.engine_upload_documentation) { %> 
             <!-- // Documents upload -->
             <div id="documents_upload_container" class="mb-panel-container mb--step-container <% if (booking.can_edit_online && booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
-
+          <% } %>
+          
+          <% if (booking.engine_sign_contract) { %>
             <!-- // Contract signature -->
-            <div id="contract_signature_container" class="mb-panel-container mb--step-container <% if (booking.can_edit_online && booking.required_data_completed && booking.customer_documents_uploaded) { %>mb--active<% } %>"></div>
+            <div id="contract_signature_container" class="mb-panel-container mb--step-container <% if (booking.can_edit_online && booking.required_data_completed && (booking.customer_documents_uploaded || !booking.engine_upload_documentation) && !booking.contract_signed) { %>mb--active<% } %>"></div>
           <% } %>
 
           <!-- // Payment block -->

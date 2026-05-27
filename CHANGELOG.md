@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.6.3] - 2026.05.27
+
+### New
+- Apply category customize in my reservation.
+
 ## [2.6.2] - 2026.05.21
 
 ### New
