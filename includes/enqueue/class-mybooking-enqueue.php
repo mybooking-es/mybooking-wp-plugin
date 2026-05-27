@@ -250,8 +250,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         // Mybooking Product Shift Picker
         wp_enqueue_style( 'mybooking_wp_css_components_mybooking-engine-shift-picker',
                           plugins_url('/assets/styles/mybooking-engine-shift-picker.css', dirname( __DIR__ ) ),
-                          array(), $this->version );     
+                          array(), $this->version );
       }
+
+      // Tariff Selector
+      wp_enqueue_style( 'mybooking-tariff-selector',
+                        plugins_url('/assets/styles/tariff-selector.css', dirname( __DIR__ ) ),
+                        array(), '1.0.0' );
 
     }
 
@@ -348,6 +353,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                           true
                         );
       wp_enqueue_script( 'mybooking-rent-engine-script');
+
+      wp_localize_script( 'mybooking-rent-engine-script', 'mybookingTariffStrings', array(
+        'details_button'      => _x( 'Rate details', 'tariff_selector', 'mybooking-reservation-engine' ),
+        'details_modal_title' => _x( 'Rate details', 'tariff_selector', 'mybooking-reservation-engine' ),
+      ) );
 
       // Complements (testimonials, cookies, popup)
       if ($registry->mybooking_rent_plugin_complements_testimonials == '1' ||

@@ -1,0 +1,107 @@
+/* Tariff Selector — estilos genéricos para tariff cards
+   Sobrescribibles desde cualquier child theme con selectores de mayor especificidad */
+
+/* ── Grid de cards ───────────────────────────────────────────────── */
+.mybooking-tariff-selector {
+  display: flex;
+  flex-direction: row;
+  gap: .875rem;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.mybooking-tariff-selector--mode-extended{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mybooking-tariff-selector--mode-compact {
+  
+}
+
+/* ── Card base ───────────────────────────────────────────────────── */
+.mybooking-tariff-card {
+  border: 2px solid var(--mb-border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+}
+
+.mybooking-tariff-card:hover {
+  border-color: #000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Estado activo ───────────────────────────────────────────────── */
+.mybooking-tariff-card--active {
+  border-color: var(--mb-calendar-step-bg);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Contenido de la card ────────────────────────────────────────── */
+.mybooking-tariff-card__name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.mybooking-tariff-card__description {
+  font-size: 1rem;
+  color: #2f2f2f;
+  white-space: pre-line;
+  line-height: 1.25;
+}
+.mybooking-tariff-selector--mode-extended .mybooking-tariff-card{
+  flex: 1 1 100%;
+}
+
+.mybooking-tariff-selector--mode-compact .mybooking-tariff-card {
+  flex: 1 1 calc(33.333% - 0.66rem);
+  padding: 8px 12px;
+}
+.mybooking-tariff-selector--mode-compact .mybooking-tariff-card__name {
+  margin-bottom: 0;
+  font-size: .875rem;
+  text-align: center;
+}
+
+/* ── Botón de detalles (modo compact) ───────────────────────────── */
+.mybooking-tariff-details-btn-wrap {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Modal de detalles ──────────────────────────────────────────── */
+.mybooking-tariff-details-modal__title {
+  margin: 0 0 1rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.mybooking-tariff-details-modal__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mybooking-tariff-card--modal {
+  cursor: pointer;
+}
+
+@media only screen and ( max-width: 575.97px ) {
+  .mybooking-tariff-selector--mode-extended,
+  .mybooking-tariff-details-modal__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and ( min-width: 575.98px ) and ( max-width: 991.97px ) {
+  .mybooking-tariff-selector--mode-extended,
+  .mybooking-tariff-details-modal__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
