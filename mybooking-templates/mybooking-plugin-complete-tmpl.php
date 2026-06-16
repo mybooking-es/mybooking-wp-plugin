@@ -501,18 +501,21 @@ if ( ! defined( 'ABSPATH' ) ) exit;
      if (sales_process.can_pay_on_delivery) {
        selectionOptions += 1;
      }
-     if (sales_process.can_pay) {
+     if (sales_process.can_pay && !sales_process.can_tokenize) {
        selectionOptions += 1;
        if (sales_process.can_pay_deposit) {
           paymentAmount = shopping_cart.booking_amount;
        } else {
           paymentAmount = shopping_cart.total_cost;
        }
+     }
+     if (sales_process.can_tokenize) {
+       selectionOptions += 1;
      } %>
 
   <!-- // Payment hidden inputs -->
 
-  <% if (sales_process.can_pay) { %>
+  <% if (sales_process.can_pay && !sales_process.can_tokenize) { %>
 
     <% if (sales_process.payment_methods.paypal_standard && sales_process.payment_methods.tpv_virtual) { %>
       <!-- // The payment method will be selected later -->
@@ -527,9 +530,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <input type="hidden" name="payment" value="<%=sales_process.payment_methods.tpv_virtual%>">
     <% } %>
 
-  <% } else { %>
+  <% } else if (!sales_process.can_tokenize) { %>
     <input type="hidden" name="payment" value="none">
   <% } %>
+  <!-- // When can_tokenize, the tokenize container provides its own payment hidden input -->
 
   <!-- // Payment options -->
   <div class="mb-section mybooking-payment_options">
@@ -621,7 +625,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <% } %>
 
     <!-- // Pay now -->
-    <% if ( sales_process.can_pay ) { %>
+    <% if ( sales_process.can_pay && !sales_process.can_tokenize ) { %>
       <!-- // Pay now INPUT -->
       <% if ( selectionOptions > 1 ) { %>
         <label class="mybooking-payment_option-label" for="complete_action_pay_now">
@@ -716,6 +720,79 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         </div>
       </div>
     <% } %>
+
+    <!-- // Tokenize (guarantee with card) -->
+    <% if (sales_process.can_tokenize) { %>
+      <!-- // Tokenize INPUT (radio, solo cuando hay más de una opción) -->
+      <% if (selectionOptions > 1) { %>
+        <label class="mybooking-payment_option-label" for="complete_action_tokenize">
+          <input class="mybooking-payment_option-input" type="radio"
+                 id="complete_action_tokenize" name="complete_action"
+                 value="tokenize" class="complete_action">
+          <%=i18next.t('complete.reservationForm.tokenize_button')%>
+        </label>
+      <% } %>
+
+      <!-- // Tokenize PANEL -->
+      <div id="tokenize_container" <% if (selectionOptions > 1) { %>style="display:none"<% } %> class="mb--p-1">
+
+        <!-- Hidden input: payment method (mismo gateway que el TPV virtual) -->
+        <input type="hidden" name="payment" value="<%=sales_process.payment_methods.tpv_virtual%>">
+
+        <div class="mybooking-payment_confirmation-info">
+          <!-- Info: Stripe no cobra nada, Redsys/Addon cobran 0,01€ reembolsable -->
+          <div class="mb-alert info highlight">
+            <% if (sales_process.payment_methods.tpv_virtual === 'stripe') { %>
+              <%=i18next.t('complete.reservationForm.tokenize_info_stripe')%>
+            <% } else { %>
+              <%=i18next.t('complete.reservationForm.tokenize_info_charge')%>
+            <% } %>
+          </div>
+
+          <% if (sales_process.payment_methods.tpv_virtual) { %>
+            <div class="mb-alert secondary" role="alert">
+              <%=i18next.t('complete.reservationForm.tokenize_redirect_info')%>
+            </div>
+            <div class="mybooking-payment_confirmation-box">
+              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-visa.jpg') ?>"/>
+              <img src="<?php echo esc_url( plugin_dir_url(__DIR__).'/assets/images/pm-mastercard.jpg') ?>"/>
+            </div>
+          <% } %>
+        </div>
+
+        <div>
+          <!-- Conditions -->
+          <label for="conditions_read_tokenize">
+            <input type="checkbox" id="conditions_read_tokenize" name="conditions_read_tokenize">
+
+            <?php if ( empty($args['terms_and_conditions']) ) { ?>
+              <?php echo esc_html_x( 'I have read and hereby accept the conditions of rental', 'renting_complete', 'mybooking-reservation-engine' ) ?>
+            <?php } else { ?>
+              <?php /* translators: %s: terms and conditions URL */ ?>
+              <?php echo wp_kses_post ( sprintf( _x( 'I have read and hereby accept the <a href="%s" target="_blank">conditions</a> of rental', 'renting_complete', 'mybooking-reservation-engine' ), $args['terms_and_conditions'] ) )?>
+            <?php } ?>
+          </label>
+
+          <?php if ( !empty($mybooking_engine_privacy_page) ) { ?>
+            <br/>
+            <!-- Privacy -->
+            <label for="privacy_read_tokenize">
+              <input type="checkbox" id="privacy_read_tokenize" name="privacy_read_tokenize">
+                <?php /* translators: %s: privacy policy URL */ ?>
+                <?php echo wp_kses_post ( sprintf( _x( 'I have read and accept the <a href="%s" target="_blank">privacy policy</a>', 'renting_complete', 'mybooking-reservation-engine' ), $mybooking_engine_privacy_page ) )?>
+            </label>
+          <?php } ?>
+
+          <br />
+
+          <button type="submit" class="mb-button btn-confirm-reservation">
+            <%=i18next.t('complete.reservationForm.tokenize_button')%>
+            <i class="mb-button icon"><span class="dashicons dashicons-arrow-right-alt"></span></i>
+          </button>
+        </div>
+      </div>
+    <% } %>
+
   </div>
 </script>
 
