@@ -1,10 +1,15 @@
 # Changelog
 
+## [2.6.3] - 2026.05.27
+
+### New
+- Apply category customize in my reservation.
+- Ability for showing detailed prices in calendar widget via shortcode
+
 ## [2.6.2] - 2026.05.21
 
 ### New
-- - Added reCaptcha enterprise option as a anti-bot in the contact form setting.
-
+- Added reCaptcha enterprise option as a anti-bot in the contact form setting.
 
 ## [2.6.1] - 2026.03.24
 
