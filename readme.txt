@@ -116,6 +116,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 
 == Changelog ==
 
+= 2.6.4 =
+* Added : Customize customer by category
+
 = 2.6.3 =
 * Apply category customize in my reservation:  Driver and additional drivers
 
@@ -580,6 +583,9 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 2.6.4 =
+* Added : Customize customer by category
 
 = 2.6.3 =
 * Apply category customize in my reservation:  Driver and additional drivers
