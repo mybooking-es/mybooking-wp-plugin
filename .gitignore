@@ -2,3 +2,9 @@
 **/*.pot~
 **/*.po~
 .vscode
+
+# Agent interaction files (local context only — do not push to shared repo)
+CLAUDE.md
+docs/
+.github/prompts/
+.github/copilot-instructions.md

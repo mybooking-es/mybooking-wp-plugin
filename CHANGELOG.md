@@ -1,5 +1,6 @@
 # Changelog
 
+<<<<<<< HEAD
 ## [2.6.3] - 2026.05.27
 
 ### New
@@ -10,6 +11,12 @@
 ### New
 - Added reCaptcha enterprise option as a anti-bot in the contact form setting.
 
+=======
+## [2.7.0] - 2026.05.27
+
+### Added
+- Ability for showing detailed prices in calendar widget via shortcode
+>>>>>>> detailed-prices-in-calendar-widget
 
 ## [2.6.1] - 2026.03.24
 

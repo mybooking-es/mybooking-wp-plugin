@@ -383,7 +383,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                                      'sales_channel_code' => '',
                                      'rental_location_code' => '',
                                      'check_hourly_occupation' => '',
-                                     'performance_id' => ''), $atts ) );
+                                     'performance_id' => '',
+                                     'show_rates_mode' => 'compact'), $atts ) );
 
       $data = array();
       $data['code'] = $code;
@@ -398,7 +399,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       }
       if ( $performance_id != '' ) {
         $data['performance_id'] = $performance_id;
-      } 
+      }
+      $data['show_rates_mode'] = in_array($show_rates_mode, array('compact', 'extended')) ? $show_rates_mode : 'compact';
 
       ob_start();
       mybooking_engine_get_template('mybooking-plugin-product-widget.php', $data);
