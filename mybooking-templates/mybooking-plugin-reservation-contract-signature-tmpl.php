@@ -17,7 +17,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <script type="text/tmpl" id="script_contract_signature">
 	<% if (booking.engine_sign_contract) { %>
 		<h3>
-			<div class="badge">3</div> <?php echo esc_html_x( 'Sign contract', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
+		  <% if (booking.engine_upload_documentation) { %>
+		    <div class="badge">3</div> 
+			<% } else { %>
+			  <div class="badge">2</div> 
+		  <% } %>
+			<?php echo esc_html_x( 'Sign contract', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
 		</h3>
 		<br />
 		<% if (!booking.contract_signed) { %>

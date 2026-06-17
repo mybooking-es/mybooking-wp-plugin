@@ -5376,3 +5376,8 @@ msgstr "mybooking"
 #. Author URI of the plugin/theme
 msgid "https://mybooking.es/"
 msgstr "https://www.mybooking.es/"
+
+#: includes/enqueue/class-mybooking-enqueue.php
+msgctxt "tariff_selector"
+msgid "Rate details"
+msgstr "Detalle de las tarifas"

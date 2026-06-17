@@ -29,16 +29,22 @@
                 <span class="mb--step-text"><?php echo esc_html_x( 'Complete data', 'renting_my_reservation', 'mybooking-reservation-engine') ?></span>
               </a>
             </li>
-            <% if (booking.engine_sign_contract) { %>   
+            <% if (booking.engine_upload_documentation) { %>
               <li class="mb--step <% if (booking.can_edit_online && booking.required_data_completed && !booking.customer_documents_uploaded) { %>mb--active<% } else if (booking.customer_documents_uploaded) { %>mb--completed<% } else { %>mb--disabled<% } %>">
                 <a href="#documents_upload_container">
                   <span class="mb--step-number">2</span>
                   <span class="mb--step-text"><?php echo esc_html_x( 'Upload documentation', 'renting_my_reservation', 'mybooking-reservation-engine') ?></span>
                 </a>
               </li>
-              <li class="mb--step <% if (booking.can_edit_online && booking.required_data_completed && booking.customer_documents_uploaded && !booking.contract_signed) { %>mb--active<% } else if (booking.contract_signed) { %>mb--completed<% } else { %>mb--disabled<% } %>">
+            <% } %>
+            <% if (booking.engine_sign_contract) { %>   
+              <li class="mb--step <% if (booking.can_edit_online && booking.required_data_completed && (booking.customer_documents_uploaded || !booking.engine_upload_documentation) && !booking.contract_signed) { %>mb--active<% } else if (booking.contract_signed) { %>mb--completed<% } else { %>mb--disabled<% } %>">
                 <a href="#contract_signature_container">
-                  <span class="mb--step-number">3</span>
+                  <% if (booking.engine_upload_documentation) { %>
+                    <span class="mb--step-number">3</span>
+                  <% } else { %>
+                    <span class="mb--step-number">2</span>
+                  <% } %>
                   <span class="mb--step-text"><?php echo esc_html_x( 'Firm contract', 'renting_my_reservation', 'mybooking-reservation-engine') ?></span>
                 </a>
               </li>

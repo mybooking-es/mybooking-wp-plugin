@@ -4005,7 +4005,7 @@ msgstr "Choisissez les lieux de livraison et de retour"
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:29
 msgctxt "renting_product_calendar"
 msgid "Pick-up place"
-msgstr ""
+msgstr "Lieu de prise en charge"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:31
 msgctxt "renting_product_calendar"
@@ -4015,7 +4015,7 @@ msgstr "Sélectionnez le lieu de prise en charge"
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:39
 msgctxt "renting_product_calendar"
 msgid "Return place"
-msgstr ""
+msgstr "Lieu de retour"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:41
 msgctxt "renting_product_calendar"
@@ -5230,3 +5230,8 @@ msgstr "mybooking"
 #. Author URI of the plugin/theme
 msgid "https://mybooking.es/"
 msgstr "https://mybooking.es/"
+
+#: includes/enqueue/class-mybooking-enqueue.php
+msgctxt "tariff_selector"
+msgid "Rate details"
+msgstr "Détails des tarifs"
