@@ -354,7 +354,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                           plugins_url( '/assets/js/mybooking-js-engine-bundle.js',
                           dirname(__DIR__) ),
                           $mybooking_dependencies,
-                          $this->version,
+                          filemtime( dirname(__DIR__) . '/assets/js/mybooking-js-engine-bundle.js' ),
                           true
                         );
       wp_enqueue_script( 'mybooking-rent-engine-script');
