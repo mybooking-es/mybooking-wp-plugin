@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.6.5] - 2026.06.22
+### NEW
+- Now the plugin allow tokenized payments
+
 ## [2.6.4] - 2026.06.16
 
 ### New
