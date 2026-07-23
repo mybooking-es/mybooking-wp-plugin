@@ -5367,3 +5367,277 @@ msgstr "https://mybooking.es/"
 msgctxt "tariff_selector"
 msgid "Rate details"
 msgstr "Tariefdetails"
+
+msgctxt "checkout_form_builder"
+msgid "New section"
+msgstr "Nieuwe sectie"
+
+msgctxt "checkout_form_builder"
+msgid "+ Add section"
+msgstr "+ Sectie toevoegen"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (1 column)"
+msgstr "+ Rij (1 kolom)"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (2 columns)"
+msgstr "+ Rij (2 kolommen)"
+
+msgctxt "checkout_form_builder"
+msgid "Section title"
+msgstr "Sectietitel"
+
+msgctxt "checkout_form_builder"
+msgid "Subtitle (optional)"
+msgstr "Ondertitel (optioneel)"
+
+msgctxt "checkout_form_builder"
+msgid "Remove section"
+msgstr "Sectie verwijderen"
+
+msgctxt "checkout_form_builder"
+msgid "Remove row"
+msgstr "Rij verwijderen"
+
+msgctxt "checkout_form_builder"
+msgid "Remove"
+msgstr "Verwijderen"
+
+msgctxt "checkout_form_builder"
+msgid "Required"
+msgstr "Verplicht"
+
+msgctxt "checkout_form_builder"
+msgid "Drag to reorder"
+msgstr "Slepen om te herordenen"
+
+msgctxt "checkout_form_builder"
+msgid "Drop field here"
+msgstr "Veld hier neerzetten"
+
+msgctxt "checkout_form_builder"
+msgid "Available fields"
+msgstr "Beschikbare velden"
+
+msgctxt "checkout_form_builder"
+msgid "All fields are placed in the form."
+msgstr "Alle velden zijn in het formulier geplaatst."
+
+msgctxt "checkout_form_builder"
+msgid "Error: builder data not found."
+msgstr "Fout: gegevens van de builder niet gevonden."
+
+msgctxt "checkout_form_builder"
+msgid "This section contains required fields and cannot be removed."
+msgstr "Deze sectie bevat verplichte velden en kan niet worden verwijderd."
+
+msgctxt "checkout_form_builder"
+msgid "This row contains required fields and cannot be removed."
+msgstr "Deze rij bevat verplichte velden en kan niet worden verwijderd."
+
+msgctxt "checkout_form_builder"
+msgid "This field is required and cannot be removed."
+msgstr "Dit veld is verplicht en kan niet worden verwijderd."
+
+msgctxt "checkout_form_builder"
+msgid "Cannot replace a required field."
+msgstr "Een verplicht veld kan niet worden vervangen."
+
+msgctxt "checkout_form_builder"
+msgid "Label"
+msgstr "Label"
+
+msgctxt "checkout_form_builder"
+msgid "Placeholder"
+msgstr "Plaatshouder"
+
+msgctxt "checkout_form_builder"
+msgid "Required field"
+msgstr "Verplicht veld"
+
+msgctxt "checkout_form_builder"
+msgid "Field settings"
+msgstr "Veldinstellingen"
+
+msgctxt "checkout_form_builder"
+msgid "&#10003; Done"
+msgstr "&#10003; Klaar"
+
+msgctxt "checkout_form_builder"
+msgid "PH"
+msgstr "PH"
+
+msgctxt "checkout_form_builder"
+msgid "Req."
+msgstr "Verpl."
+
+
+msgctxt "renting_complete"
+msgid "City"
+msgstr "Stad"
+
+msgctxt "renting_complete"
+msgid "Street"
+msgstr "Straat"
+
+msgctxt "renting_complete"
+msgid "Number"
+msgstr "Huisnummer"
+
+msgctxt "renting_complete"
+msgid "Complement"
+msgstr "Toevoeging"
+
+msgctxt "renting_complete"
+msgid "Postal code"
+msgstr "Postcode"
+
+msgctxt "renting_complete"
+msgid "State"
+msgstr "Provincie"
+
+msgctxt "renting_complete"
+msgid "Country"
+msgstr "Land"
+
+msgctxt "renting_complete"
+msgid "Date of birth"
+msgstr "Geboortedatum"
+
+msgctxt "renting_complete"
+msgid "ID document"
+msgstr "Identiteitsbewijs"
+
+msgctxt "renting_complete"
+msgid "Driver name"
+msgstr "Voornaam bestuurder"
+
+msgctxt "renting_complete"
+msgid "Driver surname"
+msgstr "Achternaam bestuurder"
+
+msgctxt "renting_complete"
+msgid "Driver ID document"
+msgstr "Identiteitsbewijs bestuurder"
+
+msgctxt "renting_complete"
+msgid "License number"
+msgstr "Rijbewijsnummer"
+
+msgctxt "renting_complete"
+msgid "License country"
+msgstr "Land rijbewijs"
+
+msgctxt "renting_complete"
+msgid "License expiry date"
+msgstr "Vervaldatum rijbewijs"
+
+msgctxt "renting_complete"
+msgid "License issue date"
+msgstr "Afgiftedatum rijbewijs"
+
+msgctxt "renting_complete"
+msgid "Airline"
+msgstr "Luchtvaartmaatschappij"
+
+msgctxt "renting_complete"
+msgid "Flight number"
+msgstr "Vluchtnummer"
+
+msgctxt "renting_complete"
+msgid "Destination airport"
+msgstr "Bestemmingsluchthaven"
+
+msgctxt "renting_complete"
+msgid "Origin airport"
+msgstr "Vertrekluchthaven"
+
+msgctxt "renting_complete"
+msgid "Expected arrival time"
+msgstr "Verwachte aankomsttijd"
+
+msgctxt "renting_complete"
+msgid "Expected return time"
+msgstr "Verwachte retourtijd"
+
+msgctxt "renting_complete"
+msgid "Return airline"
+msgstr "Luchtvaartmaatschappij retour"
+
+msgctxt "renting_complete"
+msgid "Return flight number"
+msgstr "Retourvluchtnummer"
+
+msgctxt "renting_complete"
+msgid "Delivery slot"
+msgstr "Bezorgtijdvak"
+
+msgctxt "renting_complete"
+msgid "Skipper / External driver"
+msgstr "Schipper / Externe bestuurder"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Name"
+msgstr "Extra bestuurder 1 — Voornaam"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Surname"
+msgstr "Extra bestuurder 1 — Achternaam"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Date of birth"
+msgstr "Extra bestuurder 1 — Geboortedatum"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — ID document"
+msgstr "Extra bestuurder 1 — Identiteitsbewijs"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License number"
+msgstr "Extra bestuurder 1 — Rijbewijsnummer"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License country"
+msgstr "Extra bestuurder 1 — Land rijbewijs"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License expiry"
+msgstr "Extra bestuurder 1 — Vervaldatum rijbewijs"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License issue date"
+msgstr "Extra bestuurder 1 — Afgiftedatum rijbewijs"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Name"
+msgstr "Extra bestuurder 2 — Voornaam"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Surname"
+msgstr "Extra bestuurder 2 — Achternaam"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Date of birth"
+msgstr "Extra bestuurder 2 — Geboortedatum"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — ID document"
+msgstr "Extra bestuurder 2 — Identiteitsbewijs"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License number"
+msgstr "Extra bestuurder 2 — Rijbewijsnummer"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License country"
+msgstr "Extra bestuurder 2 — Land rijbewijs"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License expiry"
+msgstr "Extra bestuurder 2 — Vervaldatum rijbewijs"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License issue date"
+msgstr "Extra bestuurder 2 — Afgiftedatum rijbewijs"
+

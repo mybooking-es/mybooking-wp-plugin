@@ -5334,3 +5334,277 @@ msgstr "https://mybooking.es/"
 msgctxt "tariff_selector"
 msgid "Rate details"
 msgstr "Tariifide üksikasjad"
+
+msgctxt "checkout_form_builder"
+msgid "New section"
+msgstr "Uus jaotis"
+
+msgctxt "checkout_form_builder"
+msgid "+ Add section"
+msgstr "+ Lisa jaotis"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (1 column)"
+msgstr "+ Rida (1 veerg)"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (2 columns)"
+msgstr "+ Rida (2 veergu)"
+
+msgctxt "checkout_form_builder"
+msgid "Section title"
+msgstr "Jaotise pealkiri"
+
+msgctxt "checkout_form_builder"
+msgid "Subtitle (optional)"
+msgstr "Alapealkiri (valikuline)"
+
+msgctxt "checkout_form_builder"
+msgid "Remove section"
+msgstr "Eemalda jaotis"
+
+msgctxt "checkout_form_builder"
+msgid "Remove row"
+msgstr "Eemalda rida"
+
+msgctxt "checkout_form_builder"
+msgid "Remove"
+msgstr "Eemalda"
+
+msgctxt "checkout_form_builder"
+msgid "Required"
+msgstr "Kohustuslik"
+
+msgctxt "checkout_form_builder"
+msgid "Drag to reorder"
+msgstr "Lohista järjestamiseks"
+
+msgctxt "checkout_form_builder"
+msgid "Drop field here"
+msgstr "Lase väli siia"
+
+msgctxt "checkout_form_builder"
+msgid "Available fields"
+msgstr "Saadaolevad väljad"
+
+msgctxt "checkout_form_builder"
+msgid "All fields are placed in the form."
+msgstr "Kõik väljad on vormis."
+
+msgctxt "checkout_form_builder"
+msgid "Error: builder data not found."
+msgstr "Viga: koostaja andmeid ei leitud."
+
+msgctxt "checkout_form_builder"
+msgid "This section contains required fields and cannot be removed."
+msgstr "See jaotis sisaldab kohustuslikke välju ja seda ei saa eemaldada."
+
+msgctxt "checkout_form_builder"
+msgid "This row contains required fields and cannot be removed."
+msgstr "See rida sisaldab kohustuslikke välju ja seda ei saa eemaldada."
+
+msgctxt "checkout_form_builder"
+msgid "This field is required and cannot be removed."
+msgstr "See väli on kohustuslik ja seda ei saa eemaldada."
+
+msgctxt "checkout_form_builder"
+msgid "Cannot replace a required field."
+msgstr "Kohustuslikku välja ei saa asendada."
+
+msgctxt "checkout_form_builder"
+msgid "Label"
+msgstr "Silt"
+
+msgctxt "checkout_form_builder"
+msgid "Placeholder"
+msgstr "Kohatäide"
+
+msgctxt "checkout_form_builder"
+msgid "Required field"
+msgstr "Kohustuslik väli"
+
+msgctxt "checkout_form_builder"
+msgid "Field settings"
+msgstr "Välja seaded"
+
+msgctxt "checkout_form_builder"
+msgid "&#10003; Done"
+msgstr "&#10003; Valmis"
+
+msgctxt "checkout_form_builder"
+msgid "PH"
+msgstr "KT"
+
+msgctxt "checkout_form_builder"
+msgid "Req."
+msgstr "Kohust."
+
+
+msgctxt "renting_complete"
+msgid "City"
+msgstr "Linn"
+
+msgctxt "renting_complete"
+msgid "Street"
+msgstr "Tänav"
+
+msgctxt "renting_complete"
+msgid "Number"
+msgstr "Number"
+
+msgctxt "renting_complete"
+msgid "Complement"
+msgstr "Täiendus"
+
+msgctxt "renting_complete"
+msgid "Postal code"
+msgstr "Sihtnumber"
+
+msgctxt "renting_complete"
+msgid "State"
+msgstr "Maakond"
+
+msgctxt "renting_complete"
+msgid "Country"
+msgstr "Riik"
+
+msgctxt "renting_complete"
+msgid "Date of birth"
+msgstr "Sünnikuupäev"
+
+msgctxt "renting_complete"
+msgid "ID document"
+msgstr "Isikudokument"
+
+msgctxt "renting_complete"
+msgid "Driver name"
+msgstr "Juhi eesnimi"
+
+msgctxt "renting_complete"
+msgid "Driver surname"
+msgstr "Juhi perekonnanimi"
+
+msgctxt "renting_complete"
+msgid "Driver ID document"
+msgstr "Juhi isikudokument"
+
+msgctxt "renting_complete"
+msgid "License number"
+msgstr "Juhiloa number"
+
+msgctxt "renting_complete"
+msgid "License country"
+msgstr "Juhiloa riik"
+
+msgctxt "renting_complete"
+msgid "License expiry date"
+msgstr "Juhiloa kehtivuse lõpp"
+
+msgctxt "renting_complete"
+msgid "License issue date"
+msgstr "Juhiloa väljastamise kuupäev"
+
+msgctxt "renting_complete"
+msgid "Airline"
+msgstr "Lennufirma"
+
+msgctxt "renting_complete"
+msgid "Flight number"
+msgstr "Lennu number"
+
+msgctxt "renting_complete"
+msgid "Destination airport"
+msgstr "Sihtlennujaam"
+
+msgctxt "renting_complete"
+msgid "Origin airport"
+msgstr "Lähtelelnnujaam"
+
+msgctxt "renting_complete"
+msgid "Expected arrival time"
+msgstr "Eeldatav saabumisaeg"
+
+msgctxt "renting_complete"
+msgid "Expected return time"
+msgstr "Eeldatav tagastusaeg"
+
+msgctxt "renting_complete"
+msgid "Return airline"
+msgstr "Tagasilennufirma"
+
+msgctxt "renting_complete"
+msgid "Return flight number"
+msgstr "Tagasilennu number"
+
+msgctxt "renting_complete"
+msgid "Delivery slot"
+msgstr "Tarnimise ajavahemik"
+
+msgctxt "renting_complete"
+msgid "Skipper / External driver"
+msgstr "Kapten / Väline juht"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Name"
+msgstr "Lisajuht 1 — Eesnimi"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Surname"
+msgstr "Lisajuht 1 — Perekonnanimi"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Date of birth"
+msgstr "Lisajuht 1 — Sünnikuupäev"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — ID document"
+msgstr "Lisajuht 1 — Isikudokument"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License number"
+msgstr "Lisajuht 1 — Juhiloa number"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License country"
+msgstr "Lisajuht 1 — Juhiloa riik"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License expiry"
+msgstr "Lisajuht 1 — Juhiloa kehtivuse lõpp"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License issue date"
+msgstr "Lisajuht 1 — Juhiloa väljastamine"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Name"
+msgstr "Lisajuht 2 — Eesnimi"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Surname"
+msgstr "Lisajuht 2 — Perekonnanimi"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Date of birth"
+msgstr "Lisajuht 2 — Sünnikuupäev"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — ID document"
+msgstr "Lisajuht 2 — Isikudokument"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License number"
+msgstr "Lisajuht 2 — Juhiloa number"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License country"
+msgstr "Lisajuht 2 — Juhiloa riik"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License expiry"
+msgstr "Lisajuht 2 — Juhiloa kehtivuse lõpp"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License issue date"
+msgstr "Lisajuht 2 — Juhiloa väljastamine"
+

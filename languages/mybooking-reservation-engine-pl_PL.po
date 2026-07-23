@@ -5357,3 +5357,277 @@ msgstr "https://mybooking.es/"
 msgctxt "tariff_selector"
 msgid "Rate details"
 msgstr "Szczegóły taryfy"
+
+msgctxt "checkout_form_builder"
+msgid "New section"
+msgstr "Nowa sekcja"
+
+msgctxt "checkout_form_builder"
+msgid "+ Add section"
+msgstr "+ Dodaj sekcję"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (1 column)"
+msgstr "+ Wiersz (1 kolumna)"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (2 columns)"
+msgstr "+ Wiersz (2 kolumny)"
+
+msgctxt "checkout_form_builder"
+msgid "Section title"
+msgstr "Tytuł sekcji"
+
+msgctxt "checkout_form_builder"
+msgid "Subtitle (optional)"
+msgstr "Podtytuł (opcjonalny)"
+
+msgctxt "checkout_form_builder"
+msgid "Remove section"
+msgstr "Usuń sekcję"
+
+msgctxt "checkout_form_builder"
+msgid "Remove row"
+msgstr "Usuń wiersz"
+
+msgctxt "checkout_form_builder"
+msgid "Remove"
+msgstr "Usuń"
+
+msgctxt "checkout_form_builder"
+msgid "Required"
+msgstr "Wymagane"
+
+msgctxt "checkout_form_builder"
+msgid "Drag to reorder"
+msgstr "Przeciągnij, aby zmienić kolejność"
+
+msgctxt "checkout_form_builder"
+msgid "Drop field here"
+msgstr "Upuść pole tutaj"
+
+msgctxt "checkout_form_builder"
+msgid "Available fields"
+msgstr "Dostępne pola"
+
+msgctxt "checkout_form_builder"
+msgid "All fields are placed in the form."
+msgstr "Wszystkie pola są umieszczone w formularzu."
+
+msgctxt "checkout_form_builder"
+msgid "Error: builder data not found."
+msgstr "Błąd: nie znaleziono danych konstruktora."
+
+msgctxt "checkout_form_builder"
+msgid "This section contains required fields and cannot be removed."
+msgstr "Ta sekcja zawiera wymagane pola i nie można jej usunąć."
+
+msgctxt "checkout_form_builder"
+msgid "This row contains required fields and cannot be removed."
+msgstr "Ten wiersz zawiera wymagane pola i nie można go usunąć."
+
+msgctxt "checkout_form_builder"
+msgid "This field is required and cannot be removed."
+msgstr "To pole jest wymagane i nie można go usunąć."
+
+msgctxt "checkout_form_builder"
+msgid "Cannot replace a required field."
+msgstr "Nie można zastąpić wymaganego pola."
+
+msgctxt "checkout_form_builder"
+msgid "Label"
+msgstr "Etykieta"
+
+msgctxt "checkout_form_builder"
+msgid "Placeholder"
+msgstr "Symbol zastępczy"
+
+msgctxt "checkout_form_builder"
+msgid "Required field"
+msgstr "Pole wymagane"
+
+msgctxt "checkout_form_builder"
+msgid "Field settings"
+msgstr "Ustawienia pola"
+
+msgctxt "checkout_form_builder"
+msgid "&#10003; Done"
+msgstr "&#10003; Gotowe"
+
+msgctxt "checkout_form_builder"
+msgid "PH"
+msgstr "SZ"
+
+msgctxt "checkout_form_builder"
+msgid "Req."
+msgstr "Wymag."
+
+
+msgctxt "renting_complete"
+msgid "City"
+msgstr "Miasto"
+
+msgctxt "renting_complete"
+msgid "Street"
+msgstr "Ulica"
+
+msgctxt "renting_complete"
+msgid "Number"
+msgstr "Numer"
+
+msgctxt "renting_complete"
+msgid "Complement"
+msgstr "Uzupełnienie adresu"
+
+msgctxt "renting_complete"
+msgid "Postal code"
+msgstr "Kod pocztowy"
+
+msgctxt "renting_complete"
+msgid "State"
+msgstr "Województwo"
+
+msgctxt "renting_complete"
+msgid "Country"
+msgstr "Kraj"
+
+msgctxt "renting_complete"
+msgid "Date of birth"
+msgstr "Data urodzenia"
+
+msgctxt "renting_complete"
+msgid "ID document"
+msgstr "Dokument tożsamości"
+
+msgctxt "renting_complete"
+msgid "Driver name"
+msgstr "Imię kierowcy"
+
+msgctxt "renting_complete"
+msgid "Driver surname"
+msgstr "Nazwisko kierowcy"
+
+msgctxt "renting_complete"
+msgid "Driver ID document"
+msgstr "Dokument tożsamości kierowcy"
+
+msgctxt "renting_complete"
+msgid "License number"
+msgstr "Numer prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "License country"
+msgstr "Kraj wydania prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "License expiry date"
+msgstr "Data ważności prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "License issue date"
+msgstr "Data wydania prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "Airline"
+msgstr "Linia lotnicza"
+
+msgctxt "renting_complete"
+msgid "Flight number"
+msgstr "Numer lotu"
+
+msgctxt "renting_complete"
+msgid "Destination airport"
+msgstr "Port lotniczy docelowy"
+
+msgctxt "renting_complete"
+msgid "Origin airport"
+msgstr "Port lotniczy wylotu"
+
+msgctxt "renting_complete"
+msgid "Expected arrival time"
+msgstr "Przewidywana godzina przylotu"
+
+msgctxt "renting_complete"
+msgid "Expected return time"
+msgstr "Przewidywana godzina zwrotu"
+
+msgctxt "renting_complete"
+msgid "Return airline"
+msgstr "Linia lotnicza powrotna"
+
+msgctxt "renting_complete"
+msgid "Return flight number"
+msgstr "Numer lotu powrotnego"
+
+msgctxt "renting_complete"
+msgid "Delivery slot"
+msgstr "Okno dostawy"
+
+msgctxt "renting_complete"
+msgid "Skipper / External driver"
+msgstr "Skipper / Zewnętrzny kierowca"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Name"
+msgstr "Dodatkowy kierowca 1 — Imię"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Surname"
+msgstr "Dodatkowy kierowca 1 — Nazwisko"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Date of birth"
+msgstr "Dodatkowy kierowca 1 — Data urodzenia"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — ID document"
+msgstr "Dodatkowy kierowca 1 — Dokument tożsamości"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License number"
+msgstr "Dodatkowy kierowca 1 — Numer prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License country"
+msgstr "Dodatkowy kierowca 1 — Kraj prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License expiry"
+msgstr "Dodatkowy kierowca 1 — Ważność prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License issue date"
+msgstr "Dodatkowy kierowca 1 — Data wydania prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Name"
+msgstr "Dodatkowy kierowca 2 — Imię"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Surname"
+msgstr "Dodatkowy kierowca 2 — Nazwisko"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Date of birth"
+msgstr "Dodatkowy kierowca 2 — Data urodzenia"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — ID document"
+msgstr "Dodatkowy kierowca 2 — Dokument tożsamości"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License number"
+msgstr "Dodatkowy kierowca 2 — Numer prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License country"
+msgstr "Dodatkowy kierowca 2 — Kraj prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License expiry"
+msgstr "Dodatkowy kierowca 2 — Ważność prawa jazdy"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License issue date"
+msgstr "Dodatkowy kierowca 2 — Data wydania prawa jazdy"
+

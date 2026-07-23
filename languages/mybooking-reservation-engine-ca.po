@@ -5230,3 +5230,277 @@ msgstr "https://mybooking.es/"
 msgctxt "tariff_selector"
 msgid "Rate details"
 msgstr "Detalls de les tarifes"
+
+msgctxt "checkout_form_builder"
+msgid "New section"
+msgstr "Nova secció"
+
+msgctxt "checkout_form_builder"
+msgid "+ Add section"
+msgstr "+ Afegir secció"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (1 column)"
+msgstr "+ Fila (1 columna)"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (2 columns)"
+msgstr "+ Fila (2 columnes)"
+
+msgctxt "checkout_form_builder"
+msgid "Section title"
+msgstr "Títol de secció"
+
+msgctxt "checkout_form_builder"
+msgid "Subtitle (optional)"
+msgstr "Subtítol (opcional)"
+
+msgctxt "checkout_form_builder"
+msgid "Remove section"
+msgstr "Eliminar secció"
+
+msgctxt "checkout_form_builder"
+msgid "Remove row"
+msgstr "Eliminar fila"
+
+msgctxt "checkout_form_builder"
+msgid "Remove"
+msgstr "Eliminar"
+
+msgctxt "checkout_form_builder"
+msgid "Required"
+msgstr "Obligatori"
+
+msgctxt "checkout_form_builder"
+msgid "Drag to reorder"
+msgstr "Arrossegar per reordenar"
+
+msgctxt "checkout_form_builder"
+msgid "Drop field here"
+msgstr "Deixar camp aquí"
+
+msgctxt "checkout_form_builder"
+msgid "Available fields"
+msgstr "Camps disponibles"
+
+msgctxt "checkout_form_builder"
+msgid "All fields are placed in the form."
+msgstr "Tots els camps estan al formulari."
+
+msgctxt "checkout_form_builder"
+msgid "Error: builder data not found."
+msgstr "Error: no s'han trobat les dades del constructor."
+
+msgctxt "checkout_form_builder"
+msgid "This section contains required fields and cannot be removed."
+msgstr "Aquesta secció conté camps obligatoris i no es pot eliminar."
+
+msgctxt "checkout_form_builder"
+msgid "This row contains required fields and cannot be removed."
+msgstr "Aquesta fila conté camps obligatoris i no es pot eliminar."
+
+msgctxt "checkout_form_builder"
+msgid "This field is required and cannot be removed."
+msgstr "Aquest camp és obligatori i no es pot eliminar."
+
+msgctxt "checkout_form_builder"
+msgid "Cannot replace a required field."
+msgstr "No es pot substituir un camp obligatori."
+
+msgctxt "checkout_form_builder"
+msgid "Label"
+msgstr "Etiqueta"
+
+msgctxt "checkout_form_builder"
+msgid "Placeholder"
+msgstr "Marcador de posició"
+
+msgctxt "checkout_form_builder"
+msgid "Required field"
+msgstr "Camp obligatori"
+
+msgctxt "checkout_form_builder"
+msgid "Field settings"
+msgstr "Configuració del camp"
+
+msgctxt "checkout_form_builder"
+msgid "&#10003; Done"
+msgstr "&#10003; Fet"
+
+msgctxt "checkout_form_builder"
+msgid "PH"
+msgstr "MP"
+
+msgctxt "checkout_form_builder"
+msgid "Req."
+msgstr "Oblig."
+
+
+msgctxt "renting_complete"
+msgid "City"
+msgstr "Ciutat"
+
+msgctxt "renting_complete"
+msgid "Street"
+msgstr "Carrer"
+
+msgctxt "renting_complete"
+msgid "Number"
+msgstr "Número"
+
+msgctxt "renting_complete"
+msgid "Complement"
+msgstr "Complement"
+
+msgctxt "renting_complete"
+msgid "Postal code"
+msgstr "Codi postal"
+
+msgctxt "renting_complete"
+msgid "State"
+msgstr "Província"
+
+msgctxt "renting_complete"
+msgid "Country"
+msgstr "País"
+
+msgctxt "renting_complete"
+msgid "Date of birth"
+msgstr "Data de naixement"
+
+msgctxt "renting_complete"
+msgid "ID document"
+msgstr "Document d'identitat"
+
+msgctxt "renting_complete"
+msgid "Driver name"
+msgstr "Nom del conductor"
+
+msgctxt "renting_complete"
+msgid "Driver surname"
+msgstr "Cognoms del conductor"
+
+msgctxt "renting_complete"
+msgid "Driver ID document"
+msgstr "Document d'identitat del conductor"
+
+msgctxt "renting_complete"
+msgid "License number"
+msgstr "Número de carnet"
+
+msgctxt "renting_complete"
+msgid "License country"
+msgstr "País del carnet"
+
+msgctxt "renting_complete"
+msgid "License expiry date"
+msgstr "Data de venciment del carnet"
+
+msgctxt "renting_complete"
+msgid "License issue date"
+msgstr "Data d'expedició del carnet"
+
+msgctxt "renting_complete"
+msgid "Airline"
+msgstr "Aerolínia"
+
+msgctxt "renting_complete"
+msgid "Flight number"
+msgstr "Número de vol"
+
+msgctxt "renting_complete"
+msgid "Destination airport"
+msgstr "Aeroport de destinació"
+
+msgctxt "renting_complete"
+msgid "Origin airport"
+msgstr "Aeroport d'origen"
+
+msgctxt "renting_complete"
+msgid "Expected arrival time"
+msgstr "Hora d'arribada prevista"
+
+msgctxt "renting_complete"
+msgid "Expected return time"
+msgstr "Hora de retorn prevista"
+
+msgctxt "renting_complete"
+msgid "Return airline"
+msgstr "Aerolínia de retorn"
+
+msgctxt "renting_complete"
+msgid "Return flight number"
+msgstr "Número de vol de retorn"
+
+msgctxt "renting_complete"
+msgid "Delivery slot"
+msgstr "Franja de lliurament"
+
+msgctxt "renting_complete"
+msgid "Skipper / External driver"
+msgstr "Patró / Conductor extern"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Name"
+msgstr "Conductor addicional 1 — Nom"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Surname"
+msgstr "Conductor addicional 1 — Cognoms"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Date of birth"
+msgstr "Conductor addicional 1 — Data de naixement"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — ID document"
+msgstr "Conductor addicional 1 — Document d'identitat"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License number"
+msgstr "Conductor addicional 1 — Número de carnet"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License country"
+msgstr "Conductor addicional 1 — País del carnet"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License expiry"
+msgstr "Conductor addicional 1 — Venciment del carnet"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License issue date"
+msgstr "Conductor addicional 1 — Expedició del carnet"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Name"
+msgstr "Conductor addicional 2 — Nom"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Surname"
+msgstr "Conductor addicional 2 — Cognoms"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Date of birth"
+msgstr "Conductor addicional 2 — Data de naixement"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — ID document"
+msgstr "Conductor addicional 2 — Document d'identitat"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License number"
+msgstr "Conductor addicional 2 — Número de carnet"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License country"
+msgstr "Conductor addicional 2 — País del carnet"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License expiry"
+msgstr "Conductor addicional 2 — Venciment del carnet"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License issue date"
+msgstr "Conductor addicional 2 — Expedició del carnet"
+

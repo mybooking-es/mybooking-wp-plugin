@@ -5338,3 +5338,277 @@ msgstr "https://mybooking.es/"
 msgctxt "tariff_selector"
 msgid "Rate details"
 msgstr "Tariffitiedot"
+
+msgctxt "checkout_form_builder"
+msgid "New section"
+msgstr "Uusi osio"
+
+msgctxt "checkout_form_builder"
+msgid "+ Add section"
+msgstr "+ Lisää osio"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (1 column)"
+msgstr "+ Rivi (1 sarake)"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (2 columns)"
+msgstr "+ Rivi (2 saraketta)"
+
+msgctxt "checkout_form_builder"
+msgid "Section title"
+msgstr "Osion otsikko"
+
+msgctxt "checkout_form_builder"
+msgid "Subtitle (optional)"
+msgstr "Alaotsikko (valinnainen)"
+
+msgctxt "checkout_form_builder"
+msgid "Remove section"
+msgstr "Poista osio"
+
+msgctxt "checkout_form_builder"
+msgid "Remove row"
+msgstr "Poista rivi"
+
+msgctxt "checkout_form_builder"
+msgid "Remove"
+msgstr "Poista"
+
+msgctxt "checkout_form_builder"
+msgid "Required"
+msgstr "Pakollinen"
+
+msgctxt "checkout_form_builder"
+msgid "Drag to reorder"
+msgstr "Vedä järjestääksesi"
+
+msgctxt "checkout_form_builder"
+msgid "Drop field here"
+msgstr "Pudota kenttä tähän"
+
+msgctxt "checkout_form_builder"
+msgid "Available fields"
+msgstr "Käytettävissä olevat kentät"
+
+msgctxt "checkout_form_builder"
+msgid "All fields are placed in the form."
+msgstr "Kaikki kentät ovat lomakkeessa."
+
+msgctxt "checkout_form_builder"
+msgid "Error: builder data not found."
+msgstr "Virhe: muodostimen tietoja ei löydy."
+
+msgctxt "checkout_form_builder"
+msgid "This section contains required fields and cannot be removed."
+msgstr "Tämä osio sisältää pakollisia kenttiä eikä sitä voi poistaa."
+
+msgctxt "checkout_form_builder"
+msgid "This row contains required fields and cannot be removed."
+msgstr "Tämä rivi sisältää pakollisia kenttiä eikä sitä voi poistaa."
+
+msgctxt "checkout_form_builder"
+msgid "This field is required and cannot be removed."
+msgstr "Tämä kenttä on pakollinen eikä sitä voi poistaa."
+
+msgctxt "checkout_form_builder"
+msgid "Cannot replace a required field."
+msgstr "Pakollista kenttää ei voi korvata."
+
+msgctxt "checkout_form_builder"
+msgid "Label"
+msgstr "Otsikko"
+
+msgctxt "checkout_form_builder"
+msgid "Placeholder"
+msgstr "Paikkamerkki"
+
+msgctxt "checkout_form_builder"
+msgid "Required field"
+msgstr "Pakollinen kenttä"
+
+msgctxt "checkout_form_builder"
+msgid "Field settings"
+msgstr "Kentän asetukset"
+
+msgctxt "checkout_form_builder"
+msgid "&#10003; Done"
+msgstr "&#10003; Valmis"
+
+msgctxt "checkout_form_builder"
+msgid "PH"
+msgstr "PH"
+
+msgctxt "checkout_form_builder"
+msgid "Req."
+msgstr "Pakoll."
+
+
+msgctxt "renting_complete"
+msgid "City"
+msgstr "Kaupunki"
+
+msgctxt "renting_complete"
+msgid "Street"
+msgstr "Katu"
+
+msgctxt "renting_complete"
+msgid "Number"
+msgstr "Numero"
+
+msgctxt "renting_complete"
+msgid "Complement"
+msgstr "Lisätiedot"
+
+msgctxt "renting_complete"
+msgid "Postal code"
+msgstr "Postinumero"
+
+msgctxt "renting_complete"
+msgid "State"
+msgstr "Maakunta"
+
+msgctxt "renting_complete"
+msgid "Country"
+msgstr "Maa"
+
+msgctxt "renting_complete"
+msgid "Date of birth"
+msgstr "Syntymäaika"
+
+msgctxt "renting_complete"
+msgid "ID document"
+msgstr "Henkilöllisyystodistus"
+
+msgctxt "renting_complete"
+msgid "Driver name"
+msgstr "Kuljettajan etunimi"
+
+msgctxt "renting_complete"
+msgid "Driver surname"
+msgstr "Kuljettajan sukunimi"
+
+msgctxt "renting_complete"
+msgid "Driver ID document"
+msgstr "Kuljettajan henkilöllisyystodistus"
+
+msgctxt "renting_complete"
+msgid "License number"
+msgstr "Ajokortin numero"
+
+msgctxt "renting_complete"
+msgid "License country"
+msgstr "Ajokortin maa"
+
+msgctxt "renting_complete"
+msgid "License expiry date"
+msgstr "Ajokortin voimassaoloaika"
+
+msgctxt "renting_complete"
+msgid "License issue date"
+msgstr "Ajokortin myöntämispäivä"
+
+msgctxt "renting_complete"
+msgid "Airline"
+msgstr "Lentoyhtiö"
+
+msgctxt "renting_complete"
+msgid "Flight number"
+msgstr "Lennon numero"
+
+msgctxt "renting_complete"
+msgid "Destination airport"
+msgstr "Kohdelentokenttä"
+
+msgctxt "renting_complete"
+msgid "Origin airport"
+msgstr "Lähtölentokenttä"
+
+msgctxt "renting_complete"
+msgid "Expected arrival time"
+msgstr "Arvioitu saapumisaika"
+
+msgctxt "renting_complete"
+msgid "Expected return time"
+msgstr "Arvioitu palautusaika"
+
+msgctxt "renting_complete"
+msgid "Return airline"
+msgstr "Paluulentoyhtiö"
+
+msgctxt "renting_complete"
+msgid "Return flight number"
+msgstr "Paluulennon numero"
+
+msgctxt "renting_complete"
+msgid "Delivery slot"
+msgstr "Toimitusaikaväli"
+
+msgctxt "renting_complete"
+msgid "Skipper / External driver"
+msgstr "Kapteeni / Ulkoinen kuljettaja"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Name"
+msgstr "Lisäkuljettaja 1 — Etunimi"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Surname"
+msgstr "Lisäkuljettaja 1 — Sukunimi"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Date of birth"
+msgstr "Lisäkuljettaja 1 — Syntymäaika"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — ID document"
+msgstr "Lisäkuljettaja 1 — Henkilöllisyystodistus"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License number"
+msgstr "Lisäkuljettaja 1 — Ajokortin numero"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License country"
+msgstr "Lisäkuljettaja 1 — Ajokortin maa"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License expiry"
+msgstr "Lisäkuljettaja 1 — Ajokortin voimassaolo"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License issue date"
+msgstr "Lisäkuljettaja 1 — Ajokortin myöntämispäivä"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Name"
+msgstr "Lisäkuljettaja 2 — Etunimi"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Surname"
+msgstr "Lisäkuljettaja 2 — Sukunimi"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Date of birth"
+msgstr "Lisäkuljettaja 2 — Syntymäaika"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — ID document"
+msgstr "Lisäkuljettaja 2 — Henkilöllisyystodistus"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License number"
+msgstr "Lisäkuljettaja 2 — Ajokortin numero"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License country"
+msgstr "Lisäkuljettaja 2 — Ajokortin maa"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License expiry"
+msgstr "Lisäkuljettaja 2 — Ajokortin voimassaolo"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License issue date"
+msgstr "Lisäkuljettaja 2 — Ajokortin myöntämispäivä"
+

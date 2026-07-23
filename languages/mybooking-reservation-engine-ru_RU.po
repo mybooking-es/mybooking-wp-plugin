@@ -5233,3 +5233,277 @@ msgstr "https://mybooking.es/"
 msgctxt "tariff_selector"
 msgid "Rate details"
 msgstr "Подробности о тарифах"
+
+msgctxt "checkout_form_builder"
+msgid "New section"
+msgstr "Новый раздел"
+
+msgctxt "checkout_form_builder"
+msgid "+ Add section"
+msgstr "+ Добавить раздел"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (1 column)"
+msgstr "+ Строка (1 столбец)"
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (2 columns)"
+msgstr "+ Строка (2 столбца)"
+
+msgctxt "checkout_form_builder"
+msgid "Section title"
+msgstr "Заголовок раздела"
+
+msgctxt "checkout_form_builder"
+msgid "Subtitle (optional)"
+msgstr "Подзаголовок (необязательно)"
+
+msgctxt "checkout_form_builder"
+msgid "Remove section"
+msgstr "Удалить раздел"
+
+msgctxt "checkout_form_builder"
+msgid "Remove row"
+msgstr "Удалить строку"
+
+msgctxt "checkout_form_builder"
+msgid "Remove"
+msgstr "Удалить"
+
+msgctxt "checkout_form_builder"
+msgid "Required"
+msgstr "Обязательное"
+
+msgctxt "checkout_form_builder"
+msgid "Drag to reorder"
+msgstr "Перетащить для сортировки"
+
+msgctxt "checkout_form_builder"
+msgid "Drop field here"
+msgstr "Перетащить поле сюда"
+
+msgctxt "checkout_form_builder"
+msgid "Available fields"
+msgstr "Доступные поля"
+
+msgctxt "checkout_form_builder"
+msgid "All fields are placed in the form."
+msgstr "Все поля размещены в форме."
+
+msgctxt "checkout_form_builder"
+msgid "Error: builder data not found."
+msgstr "Ошибка: данные конструктора не найдены."
+
+msgctxt "checkout_form_builder"
+msgid "This section contains required fields and cannot be removed."
+msgstr "Этот раздел содержит обязательные поля и не может быть удалён."
+
+msgctxt "checkout_form_builder"
+msgid "This row contains required fields and cannot be removed."
+msgstr "Эта строка содержит обязательные поля и не может быть удалена."
+
+msgctxt "checkout_form_builder"
+msgid "This field is required and cannot be removed."
+msgstr "Это поле является обязательным и не может быть удалено."
+
+msgctxt "checkout_form_builder"
+msgid "Cannot replace a required field."
+msgstr "Невозможно заменить обязательное поле."
+
+msgctxt "checkout_form_builder"
+msgid "Label"
+msgstr "Метка"
+
+msgctxt "checkout_form_builder"
+msgid "Placeholder"
+msgstr "Заполнитель"
+
+msgctxt "checkout_form_builder"
+msgid "Required field"
+msgstr "Обязательное поле"
+
+msgctxt "checkout_form_builder"
+msgid "Field settings"
+msgstr "Настройки поля"
+
+msgctxt "checkout_form_builder"
+msgid "&#10003; Done"
+msgstr "&#10003; Готово"
+
+msgctxt "checkout_form_builder"
+msgid "PH"
+msgstr "ЗП"
+
+msgctxt "checkout_form_builder"
+msgid "Req."
+msgstr "Обяз."
+
+
+msgctxt "renting_complete"
+msgid "City"
+msgstr "Город"
+
+msgctxt "renting_complete"
+msgid "Street"
+msgstr "Улица"
+
+msgctxt "renting_complete"
+msgid "Number"
+msgstr "Номер"
+
+msgctxt "renting_complete"
+msgid "Complement"
+msgstr "Дополнение к адресу"
+
+msgctxt "renting_complete"
+msgid "Postal code"
+msgstr "Почтовый индекс"
+
+msgctxt "renting_complete"
+msgid "State"
+msgstr "Регион"
+
+msgctxt "renting_complete"
+msgid "Country"
+msgstr "Страна"
+
+msgctxt "renting_complete"
+msgid "Date of birth"
+msgstr "Дата рождения"
+
+msgctxt "renting_complete"
+msgid "ID document"
+msgstr "Documento de identidad"
+
+msgctxt "renting_complete"
+msgid "Driver name"
+msgstr "Имя водителя"
+
+msgctxt "renting_complete"
+msgid "Driver surname"
+msgstr "Фамилия водителя"
+
+msgctxt "renting_complete"
+msgid "Driver ID document"
+msgstr "Документ водителя"
+
+msgctxt "renting_complete"
+msgid "License number"
+msgstr "Номер водительских прав"
+
+msgctxt "renting_complete"
+msgid "License country"
+msgstr "Страна выдачи прав"
+
+msgctxt "renting_complete"
+msgid "License expiry date"
+msgstr "Срок действия прав"
+
+msgctxt "renting_complete"
+msgid "License issue date"
+msgstr "Дата выдачи прав"
+
+msgctxt "renting_complete"
+msgid "Airline"
+msgstr "Авиакомпания"
+
+msgctxt "renting_complete"
+msgid "Flight number"
+msgstr "Номер рейса"
+
+msgctxt "renting_complete"
+msgid "Destination airport"
+msgstr "Аэропорт назначения"
+
+msgctxt "renting_complete"
+msgid "Origin airport"
+msgstr "Аэропорт вылета"
+
+msgctxt "renting_complete"
+msgid "Expected arrival time"
+msgstr "Ожидаемое время прибытия"
+
+msgctxt "renting_complete"
+msgid "Expected return time"
+msgstr "Ожидаемое время возврата"
+
+msgctxt "renting_complete"
+msgid "Return airline"
+msgstr "Авиакомпания обратного рейса"
+
+msgctxt "renting_complete"
+msgid "Return flight number"
+msgstr "Номер обратного рейса"
+
+msgctxt "renting_complete"
+msgid "Delivery slot"
+msgstr "Временной слот доставки"
+
+msgctxt "renting_complete"
+msgid "Skipper / External driver"
+msgstr "Шкипер / Внешний водитель"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Name"
+msgstr "Дополнительный водитель 1 — Имя"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Surname"
+msgstr "Дополнительный водитель 1 — Фамилия"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Date of birth"
+msgstr "Дополнительный водитель 1 — Дата рождения"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — ID document"
+msgstr "Дополнительный водитель 1 — Документ"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License number"
+msgstr "Дополнительный водитель 1 — Номер прав"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License country"
+msgstr "Дополнительный водитель 1 — Страна прав"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License expiry"
+msgstr "Дополнительный водитель 1 — Срок действия прав"
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License issue date"
+msgstr "Дополнительный водитель 1 — Дата выдачи прав"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Name"
+msgstr "Дополнительный водитель 2 — Имя"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Surname"
+msgstr "Дополнительный водитель 2 — Фамилия"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Date of birth"
+msgstr "Дополнительный водитель 2 — Дата рождения"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — ID document"
+msgstr "Дополнительный водитель 2 — Документ"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License number"
+msgstr "Дополнительный водитель 2 — Номер прав"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License country"
+msgstr "Дополнительный водитель 2 — Страна прав"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License expiry"
+msgstr "Дополнительный водитель 2 — Срок действия прав"
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License issue date"
+msgstr "Дополнительный водитель 2 — Дата выдачи прав"
+
