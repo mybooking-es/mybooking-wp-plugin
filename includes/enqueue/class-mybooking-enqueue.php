@@ -65,13 +65,50 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       if ( $screen->id == "toplevel_page_mybooking-plugin-configuration") {
         wp_register_script('mybooking_wp_admin_settings',
                           plugins_url( 'admin-assets/js/mybooking-plugin-settings.js', dirname(__DIR__) ),
-                          array( 'jquery', 'wp-i18n' ), 
-                          $this->version, 
+                          array( 'jquery', 'wp-i18n' ),
+                          $this->version,
                           true);
         wp_enqueue_script('mybooking_wp_admin_settings');
-        wp_set_script_translations('mybooking_wp_admin_settings', 
+        wp_set_script_translations('mybooking_wp_admin_settings',
                                    'mybooking-reservation-engine',
                                    MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
+
+        // Checkout form builder
+        wp_register_script('mybooking_wp_admin_checkout_form_builder',
+                           plugins_url( 'admin-assets/js/checkout-form-builder.js', dirname(__DIR__) ),
+                           array( 'jquery', 'jquery-ui-sortable', 'wp-i18n' ),
+                           $this->version,
+                           true);
+        wp_enqueue_script('mybooking_wp_admin_checkout_form_builder');
+        wp_localize_script('mybooking_wp_admin_checkout_form_builder', 'mybookingCheckoutFormStrings', array(
+          'new_section'           => _x( 'New section',                                             'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'add_section'           => _x( '+ Add section',                                           'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'add_row_1col'          => _x( '+ Row (1 column)',                                        'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'add_row_2col'          => _x( '+ Row (2 columns)',                                       'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'section_title_ph'      => _x( 'Section title',                                           'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'section_subtitle_ph'   => _x( 'Subtitle (optional)',                                     'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'remove_section'        => _x( 'Remove section',                                          'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'remove_row'            => _x( 'Remove row',                                              'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'remove_field'          => _x( 'Remove',                                                  'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'field_required'        => _x( 'Required',                                                'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'drag_reorder'          => _x( 'Drag to reorder',                                         'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'drop_here'             => _x( 'Drop field here',                                         'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'available_fields'      => _x( 'Available fields',                                        'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'all_placed'            => _x( 'All fields are placed in the form.',                      'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'no_data'               => _x( 'Error: builder data not found.',                          'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'cannot_remove_section' => _x( 'This section contains required fields and cannot be removed.', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'cannot_remove_row'     => _x( 'This row contains required fields and cannot be removed.',     'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'cannot_remove_field'   => _x( 'This field is required and cannot be removed.',                'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'cannot_replace_locked' => _x( 'Cannot replace a required field.',                            'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'field_label'           => _x( 'Label',                                                       'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'field_placeholder'     => _x( 'Placeholder',                                                 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'field_required_label'  => _x( 'Required field',                                              'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'field_settings'        => _x( 'Field settings',                                              'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'field_settings_done'   => _x( '&#10003; Done',                                               'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tag_label'             => _x( 'Label',                                                       'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tag_placeholder'       => _x( 'PH',                                                          'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tag_required'          => _x( 'Req.',                                                        'checkout_form_builder', 'mybooking-reservation-engine' ),
+        ) );
       }
       
       // Make sure they are only loaded on onboard process

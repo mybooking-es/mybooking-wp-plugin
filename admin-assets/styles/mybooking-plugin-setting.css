@@ -3,15 +3,510 @@
 	cursor: pointer;
 }
 
-input.readonly, 
-input[readonly], 
-textarea.readonly, 
+input.readonly,
+input[readonly],
+textarea.readonly,
 textarea[readonly],
-input.readonly:focus, 
-input[readonly]:focus, 
-textarea.readonly:focus,  
+input.readonly:focus,
+input[readonly]:focus,
+textarea.readonly:focus,
 textarea[readonly]:focus {
 	outline: none;
 	box-shadow: none;
 	cursor: not-allowed;
+}
+
+/* ── Checkout Form Builder ──────────────────────────────────────────────── */
+
+.mbcf-layout {
+	display: flex;
+	gap: 20px;
+	align-items: flex-start;
+}
+
+.mbcf-form-area {
+	flex: 1 1 0;
+	min-width: 0;
+}
+
+.mbcf-palette-area {
+	flex: 0 0 240px;
+	width: 240px;
+}
+
+/* Add-section bar */
+.mbcf-add-section-bar {
+	margin-bottom: 12px;
+}
+
+/* Sections list */
+#mbcf-sections {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+/* Section — styled as WP postbox */
+.mbcf-section {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+}
+
+.mbcf-section-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 12px;
+	border-bottom: 1px solid #eee;
+	background: #f6f7f7;
+	border-radius: 4px 4px 0 0;
+}
+
+.mbcf-section-titles {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.mbcf-section-title {
+	font-weight: 600;
+}
+
+.mbcf-section-subtitle {
+	font-size: 12px;
+	color: #666;
+}
+
+.mbcf-section-footer {
+	padding: 8px 12px;
+	border-top: 1px solid #eee;
+	background: #f6f7f7;
+	border-radius: 0 0 4px 4px;
+	display: flex;
+	gap: 6px;
+}
+
+/* Rows */
+.mbcf-rows {
+	padding: 8px 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	min-height: 36px;
+}
+
+.mbcf-row {
+	display: flex;
+	align-items: stretch;
+	gap: 6px;
+}
+
+.mbcf-row-slots {
+	flex: 1;
+	display: flex;
+	gap: 6px;
+}
+
+.mbcf-row-slots--1col {
+	flex-direction: column;
+}
+
+.mbcf-row-slots--2col {
+	flex-direction: row;
+}
+
+/* Slots */
+.mbcf-slot {
+	flex: 1;
+	min-height: 40px;
+	border-radius: 4px;
+	padding: 0 8px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	transition: background 0.15s, border-color 0.15s;
+}
+
+.mbcf-slot--empty {
+	border: 2px dashed #bbb;
+	background: #fafafa;
+	color: #999;
+	font-size: 12px;
+	cursor: default;
+}
+
+.mbcf-slot--empty.mbcf-drag-over {
+	border-color: #2271b1;
+	background: #e8f0fa;
+}
+
+.mbcf-slot--filled {
+	border: 1px solid #c3c4c7;
+	background: #fff;
+	flex-direction: column;
+	align-items: stretch;
+	cursor: default;
+	padding: 4px 8px;
+}
+
+.mbcf-slot--filled.mbcf-drag-over {
+	border-color: #2271b1;
+	background: #e8f0fa;
+}
+
+.mbcf-slot--filled.mbcf-is-dragging {
+	opacity: 0.45;
+}
+
+.mbcf-field-label {
+	flex: 1;
+	font-size: 13px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.mbcf-field-label--locked {
+	color: #444;
+	font-weight: 500;
+}
+
+/* Handle icons */
+.mbcf-section-handle,
+.mbcf-row-handle,
+.mbcf-drag-handle {
+	color: #aaa;
+	cursor: grab;
+	flex-shrink: 0;
+}
+
+.mbcf-section-handle:hover,
+.mbcf-row-handle:hover,
+.mbcf-drag-handle:hover {
+	color: #555;
+}
+
+/* Remove buttons */
+.mbcf-remove-section,
+.mbcf-remove-row,
+.mbcf-remove-field {
+	flex-shrink: 0;
+	background: none;
+	border: none;
+	color: #a00;
+	cursor: pointer;
+	padding: 0 4px;
+	font-size: 14px;
+	line-height: 1;
+}
+
+.mbcf-remove-section:hover,
+.mbcf-remove-row:hover,
+.mbcf-remove-field:hover {
+	color: #d63638;
+}
+
+.mbcf-locked {
+	flex-shrink: 0;
+	color: #aaa;
+	font-size: 14px;
+}
+
+/* Badges */
+.mbcf-badge {
+	display: inline-block;
+	font-size: 10px;
+	padding: 1px 5px;
+	border-radius: 10px;
+	font-weight: 600;
+	line-height: 1.4;
+	flex-shrink: 0;
+}
+
+.mbcf-badge--date {
+	background: #e2f0fb;
+	color: #0070a8;
+}
+
+.mbcf-badge--tel {
+	background: #eaf5ea;
+	color: #1d6b1d;
+}
+
+.mbcf-badge--special {
+	background: #fef3cd;
+	color: #7a5400;
+}
+
+/* jQuery UI Sortable placeholders */
+.mbcf-section-placeholder {
+	height: 60px;
+	border: 2px dashed #2271b1;
+	background: #e8f0fa;
+	border-radius: 4px;
+}
+
+.mbcf-row-placeholder {
+	height: 40px;
+	border: 2px dashed #2271b1;
+	background: #e8f0fa;
+	border-radius: 4px;
+}
+
+/* Field palette */
+.mbcf-palette {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 12px;
+}
+
+.mbcf-palette-title {
+	font-size: 13px;
+	font-weight: 600;
+	margin: 0 0 10px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid #eee;
+}
+
+.mbcf-palette-group {
+	margin-bottom: 10px;
+}
+
+.mbcf-palette-group-label {
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #888;
+	margin-bottom: 5px;
+	letter-spacing: 0.04em;
+}
+
+.mbcf-palette-items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+.mbcf-palette-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	background: #f0f0f1;
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	padding: 3px 8px;
+	font-size: 12px;
+	cursor: grab;
+	transition: background 0.15s;
+}
+
+.mbcf-palette-item:hover {
+	background: #dcdcde;
+}
+
+.mbcf-palette-item.mbcf-is-dragging {
+	opacity: 0.45;
+}
+
+.mbcf-palette-item-label {
+	white-space: nowrap;
+}
+
+.mbcf-palette-empty {
+	font-size: 12px;
+	color: #888;
+	font-style: italic;
+}
+
+.mbcf-slot-hint {
+	font-size: 11px;
+	color: #aaa;
+}
+
+/* Slot header row (handle + label + badges + buttons) */
+.mbcf-slot-header {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 32px;
+	cursor: grab;
+}
+
+.mbcf-slot--settings-open .mbcf-slot-header {
+	cursor: default;
+}
+
+/* Field settings panel */
+.mbcf-field-settings {
+	display: none;
+	padding-top: 8px;
+	border-top: 1px solid #eee;
+	margin-top: 4px;
+}
+
+.mbcf-slot--settings-open .mbcf-field-settings {
+	display: block;
+}
+
+.mbcf-field-settings-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 6px;
+}
+
+.mbcf-field-settings-label {
+	flex: 0 0 82px;
+	font-size: 12px;
+	color: #555;
+	text-align: right;
+}
+
+.mbcf-field-settings .mbcf-field-label-override,
+.mbcf-field-settings .mbcf-field-placeholder-override {
+	flex: 1;
+	height: 26px;
+	font-size: 12px;
+	padding: 0 6px;
+}
+
+.mbcf-field-settings-row--check {
+	padding-left: 90px;
+	font-size: 12px;
+}
+
+.mbcf-field-settings-row--actions {
+	padding-left: 90px;
+}
+
+.mbcf-field-settings-btn {
+	flex-shrink: 0;
+	background: none;
+	border: none;
+	color: #999;
+	cursor: pointer;
+	padding: 0 2px;
+	line-height: 1;
+}
+
+.mbcf-field-settings-btn:hover,
+.mbcf-slot--settings-open .mbcf-field-settings-btn {
+	color: #2271b1;
+}
+
+/* Responsive: on narrow screens stack palette below form */
+@media (max-width: 900px) {
+	.mbcf-layout {
+		flex-direction: column;
+	}
+	.mbcf-palette-area {
+		flex: none;
+		width: 100%;
+	}
+	.mbcf-palette-items {
+		flex-direction: row;
+	}
+}
+
+/* ── Slot customization tags ────────────────────────────────────────────── */
+
+.mbcf-slot-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin: 2px 0 4px 26px;
+}
+
+.mbcf-slot-tag {
+	display: inline-block;
+	font-size: 10px;
+	padding: 1px 6px;
+	border-radius: 10px;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.mbcf-slot-tag--label {
+	background: #e8f5e9;
+	color: #1b5e20;
+}
+
+.mbcf-slot-tag--placeholder {
+	background: #e3f2fd;
+	color: #0d47a1;
+}
+
+.mbcf-slot-tag--required {
+	background: #fff3e0;
+	color: #e65100;
+}
+
+/* ── Language tabs ──────────────────────────────────────────────────────── */
+
+.mbcf-lang-tabs {
+	display: flex;
+	gap: 0;
+	margin-bottom: 8px;
+	border-bottom: 1px solid #ddd;
+}
+
+.mbcf-lang-tab {
+	background: #f0f0f1;
+	border: 1px solid #ddd;
+	border-bottom: none;
+	cursor: pointer;
+	font-size: 11px;
+	padding: 3px 9px;
+	color: #555;
+	margin-bottom: -1px;
+	border-radius: 3px 3px 0 0;
+	line-height: 1.6;
+}
+
+.mbcf-lang-tab:hover {
+	background: #e8e8e8;
+}
+
+.mbcf-lang-tab--active {
+	background: #fff;
+	color: #2271b1;
+	font-weight: 600;
+	border-bottom-color: #fff;
+}
+
+.mbcf-lang-content {
+	display: none;
+}
+
+.mbcf-lang-content--active {
+	display: block;
+}
+
+/* ── Language pills (inside slot customization tags) ────────────────────── */
+
+.mbcf-slot-tag .mbcf-lang-pill {
+	display: inline-block;
+	font-size: 9px;
+	padding: 0 4px;
+	border-radius: 7px;
+	line-height: 1.5;
+	font-weight: 700;
+	margin-left: 3px;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.mbcf-slot-tag .mbcf-lang-pill--set {
+	background: rgba(0, 0, 0, 0.18);
+	color: inherit;
+}
+
+.mbcf-slot-tag .mbcf-lang-pill--empty {
+	background: transparent;
+	border: 1px solid rgba(0, 0, 0, 0.18);
+	color: rgba(0, 0, 0, 0.3);
+	line-height: 1.3;
 }
