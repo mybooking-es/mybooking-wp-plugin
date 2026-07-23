@@ -53,6 +53,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   require_once('settings/mybooking-plugin-settings.php');
   // On boarding
   require_once('settings/mybooking-plugin-onboarding.php');
+  // Checkout form builder
+  require_once('checkout-form/mybooking-checkout-form-fields.php');
+  require_once('checkout-form/class-mybooking-account-settings.php');
+  require_once('checkout-form/class-mybooking-checkout-form-config.php');
 
   // Patterns
   require_once('mybooking-patterns.php');
