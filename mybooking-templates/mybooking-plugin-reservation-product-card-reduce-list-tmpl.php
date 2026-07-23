@@ -62,7 +62,21 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 								</div>
 							<% } %>
 							<div class="mybooking-product_excess_usage">
-									<% if (new Number(product.guarantee) > 0) { %>
+									<%
+									  var validVisibilityModes = ['always', 'never', 'greater_than_zero'];
+									  var showExcessMode = (settings && validVisibilityModes.indexOf(settings.show_excess) >= 0) ? settings.show_excess : 'legacy';
+									  var showDepositMode = (settings && validVisibilityModes.indexOf(settings.show_deposit) >= 0) ? settings.show_deposit : 'legacy';
+									  var isVisibleByMode = function(mode, amount, legacyCondition) {
+									    if (mode === 'always') return true;
+									    if (mode === 'never') return false;
+									    if (mode === 'greater_than_zero') return amount > 0;
+									    return legacyCondition;
+									  };
+									  var showGuarantee = isVisibleByMode(showExcessMode, new Number(product.guarantee), new Number(product.guarantee) > 0);
+									  var showDeposit = isVisibleByMode(showDepositMode, new Number(product.deposit),
+									    new Number(product.deposit) > 0 || configuration.holdProductDepositCost === 'not_hold');
+									%>
+									<% if (showGuarantee) { %>
 										<div class="mb-col-md-6">
 											<small>
 												<span class="mybooking-process_excess_concept"><%= configuration.guaranteeLiteral %>:</span>
@@ -70,10 +84,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 											</small>
 										</div>
 									<% } %>
-									<% if (new Number(product.deposit) > 0 || configuration.holdProductDepositCost === 'not_hold') { %>
+									<% if (showDeposit) { %>
 										<div class="mb-col-md-6">
 											<small>
-												<span class="mybooking-process_excess_concept"><%=configuration.depositLiteral%>:</span> 
+												<span class="mybooking-process_excess_concept"><%=configuration.depositLiteral%>:</span>
 												<%=configuration.formatCurrency(product.deposit)%>
 											</small>
 										</div>
