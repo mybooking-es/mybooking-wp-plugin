@@ -104,7 +104,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 									$active_tab = sanitize_text_field( wp_unslash( $_GET[ 'tab' ] ) );
 									$tabs = array('connection_options', 'configuration_options', 'renting_options', 'transfer_options',
 																'activities_options', 'google_api_places_options', 'contact_form', 'complements_options',
-																'css_options');
+																'css_options', 'checkout_form_builder');
 									if ( !in_array( $active_tab, $tabs) ) {
 										$active_tab = 'connection_options';
 									}
@@ -159,6 +159,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   				    <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=css_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Advanced', 'settings_context', 'mybooking-reservation-engine' ) ?>
 							</a>
+						<?php if ($renting) { ?>
+							<a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=checkout_form_builder'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'checkout_form_builder' ? 'nav-tab-active' : ''; ?>">
+								<?php echo esc_html_x( 'Checkout Form', 'settings_context', 'mybooking-reservation-engine' ) ?>
+							</a>
+						<?php } ?>
 					</h2>
 
 		      <form action="options.php" method="POST">
@@ -245,6 +250,40 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			           do_settings_fields('mybooking-plugin-configuration','mybooking_plugin_settings_css');
 			           echo '</table>';
 			        }
+			        else if ($active_tab == 'checkout_form_builder') {
+							$cf_config    = MyBookingCheckoutFormConfig::get();
+							$cf_features  = MyBookingAccountSettings::get_features();
+							$cf_available = MyBookingCheckoutFormConfig::get_available_fields($cf_features);
+							$cf_default_lang = get_locale();
+							$cf_installed    = get_available_languages();
+							$cf_langs        = array_values( array_unique( array_merge( [ $cf_default_lang ], $cf_installed ) ) );
+
+							echo '<br /><div class="postbox"><div class="inside">';
+							echo wp_kses_post( _x(
+								'<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. '
+								. 'Each row can contain one or two fields. '
+								. 'Fields marked with <strong>*</strong> are required and cannot be removed.</p>',
+								'settings_context', 'mybooking-reservation-engine'
+							) );
+							echo '</div></div><hr />';
+
+							settings_fields('mybooking_plugin_settings_group_checkout_form');
+							?>
+							<div id="mybooking-checkout-form-builder"
+								 data-config="<?php echo esc_attr( wp_json_encode( $cf_config ) ); ?>"
+								 data-fields="<?php echo esc_attr( wp_json_encode( $cf_available ) ); ?>"
+								 data-langs="<?php echo esc_attr( wp_json_encode( $cf_langs ) ); ?>"
+								 data-default-lang="<?php echo esc_attr( $cf_default_lang ); ?>">
+								<p class="description">
+									<?php echo esc_html_x( 'The form constructor requires JavaScript. Please enable JavaScript in your browser.', 'settings_context', 'mybooking-reservation-engine' ); ?>
+								</p>
+							</div>
+							<input type="hidden"
+								   name="mybooking_checkout_form_config"
+								   id="mybooking-checkout-form-config-input"
+								   value="<?php echo esc_attr( wp_json_encode( $cf_config ) ); ?>" />
+							<?php
+						}
 			        submit_button();
 		        ?>
 		      </form>
@@ -307,6 +346,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		  register_setting('mybooking_plugin_settings_group_css',
 		                   'mybooking_plugin_settings_css');
+
+		  register_setting(
+		    'mybooking_plugin_settings_group_checkout_form',
+		    'mybooking_checkout_form_config',
+		    array(
+		      'type'              => 'string',
+		      'sanitize_callback' => array( $this, 'sanitize_checkout_form_config' ),
+		    )
+		  );
 
       // == Creates setting sections
 
@@ -1988,6 +2036,43 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			echo wp_kses_post( _x( 'Use <b>select2</b> library on form selects.', 'settings_context', 'mybooking-reservation-engine' ) );
 			echo "</p>";
 		}
+
+    // == Checkout Form Builder
+
+    /**
+     * Sanitize and validate the checkout form config JSON submitted from the builder.
+     * Decodes the JSON string, validates the structure, and returns a PHP array.
+     * On failure, keeps the existing config and adds a settings error.
+     */
+    public function sanitize_checkout_form_config( $input ) {
+
+      if ( is_array( $input ) ) {
+        $config = $input;
+      } else {
+        $config = json_decode( wp_unslash( $input ), true );
+      }
+
+      if ( ! is_array( $config ) ) {
+        add_settings_error(
+          'mybooking_checkout_form_config',
+          'invalid_json',
+          esc_html_x( 'Invalid checkout form configuration: could not parse the data.', 'settings_context', 'mybooking-reservation-engine' )
+        );
+        return MyBookingCheckoutFormConfig::get();
+      }
+
+      $error = MyBookingCheckoutFormConfig::validate( $config );
+      if ( $error !== null ) {
+        add_settings_error(
+          'mybooking_checkout_form_config',
+          $error->get_error_code(),
+          $error->get_error_message()
+        );
+        return MyBookingCheckoutFormConfig::get();
+      }
+
+      return $config;
+    }
 
     // ------------------------
 
