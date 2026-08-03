@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 ?>
 <script type="text/tmpl" id="script_documents_upload">
-	<% if (booking.engine_sign_contract) { %>
+	<% if (booking.engine_upload_documentation) { %>
 		<h3>
 			<div class="badge">2</div> <?php echo esc_html_x( 'Upload documentation', 'renting_my_reservation', 'mybooking-reservation-engine' ) ?>
 		</h3>

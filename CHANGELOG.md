@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.6.5] - 2026.08.03
+
+### Fixed
+- My reservation - Only upload documentation without signature is not working.
+
 ## [2.6.4] - 2026.06.16
 
 ### New
