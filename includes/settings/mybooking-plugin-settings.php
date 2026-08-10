@@ -130,6 +130,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 									<?php echo esc_html_x( 'Renting or Accommodation', 'settings_context', 'mybooking-reservation-engine' ) ?>
 								</a>
               <?php } ?>
+							<?php if ($renting) { ?>
+							<a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=checkout_form_builder'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'checkout_form_builder' ? 'nav-tab-active' : ''; ?>">
+								<?php echo esc_html_x( 'Checkout Form', 'checkout_form_builder', 'mybooking-reservation-engine' ) ?>
+							</a>
+						<?php } ?>
 					    <?php if ($activities) { ?>
 								<a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=activities_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'activities_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Activities or Appointments', 'settings_context', 'mybooking-reservation-engine' ) ?>
@@ -159,11 +164,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   				    <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=css_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Advanced', 'settings_context', 'mybooking-reservation-engine' ) ?>
 							</a>
-						<?php if ($renting) { ?>
-							<a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=checkout_form_builder'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'checkout_form_builder' ? 'nav-tab-active' : ''; ?>">
-								<?php echo esc_html_x( 'Checkout Form', 'checkout_form_builder', 'mybooking-reservation-engine' ) ?>
-							</a>
-						<?php } ?>
 					</h2>
 
 		      <form action="options.php" method="POST">
@@ -2051,7 +2051,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       if ( is_array( $input ) ) {
         $config = $input;
       } else {
-        $config = json_decode( wp_unslash( $input ), true );
+        $config = json_decode( $input, true );
       }
 
       if ( ! is_array( $config ) ) {

@@ -94,6 +94,10 @@
     return JSON.parse(JSON.stringify(obj));
   }
 
+  function normalizeLangMap(v) {
+    return v && typeof v === 'object' && !Array.isArray(v) ? v : {};
+  }
+
   // ── Language helpers ─────────────────────────────────────────────────────────
 
   var LANG_NAMES = {
@@ -159,6 +163,7 @@
 
   function migrateTitle(raw) {
     if (raw && typeof raw === 'object' && raw.preset !== undefined) {
+      raw.by_lang = normalizeLangMap(raw.by_lang);
       return raw;
     }
     var s = typeof raw === 'string' ? raw : '';
@@ -250,6 +255,7 @@
 
   function migrateSubtitle(raw) {
     if (raw && typeof raw === 'object' && raw.fallback !== undefined) {
+      raw.by_lang = normalizeLangMap(raw.by_lang);
       return raw;
     }
     var s = typeof raw === 'string' ? raw : '';
@@ -270,16 +276,13 @@
         }
         config.field_overrides[key] = migrated;
       }
+      if (config.field_overrides[key]) {
+        config.field_overrides[key].by_lang = normalizeLangMap(config.field_overrides[key].by_lang);
+      }
     });
     config.sections.forEach(function (sec) {
       sec.title = migrateTitle(sec.title);
-      if (sec.title && Array.isArray(sec.title.by_lang)) {
-        sec.title.by_lang = {};
-      }
       sec.subtitle = migrateSubtitle(sec.subtitle);
-      if (sec.subtitle && Array.isArray(sec.subtitle.by_lang)) {
-        sec.subtitle.by_lang = {};
-      }
     });
     return config;
   }
@@ -321,9 +324,7 @@
       }
       state.config.field_overrides[key] = migrated;
     }
-    if (!state.config.field_overrides[key].by_lang) {
-      state.config.field_overrides[key].by_lang = {};
-    }
+    state.config.field_overrides[key].by_lang = normalizeLangMap(state.config.field_overrides[key].by_lang);
     return state.config.field_overrides[key];
   }
 
@@ -452,7 +453,7 @@
     if (!s.title || typeof s.title !== 'object') {
       s.title = { preset: 'custom', fallback: '', by_lang: {} };
     }
-    if (!s.title.by_lang) s.title.by_lang = {};
+    s.title.by_lang = normalizeLangMap(s.title.by_lang);
     s.title.by_lang[lang] = value;
     syncInput();
   }
@@ -483,7 +484,7 @@
     if (!s.subtitle || typeof s.subtitle !== 'object') {
       s.subtitle = { fallback: '', by_lang: {} };
     }
-    if (!s.subtitle.by_lang) s.subtitle.by_lang = {};
+    s.subtitle.by_lang = normalizeLangMap(s.subtitle.by_lang);
     s.subtitle.by_lang[lang] = value;
     syncInput();
   }
@@ -1235,34 +1236,13 @@
         ? (typeof rawDefaultConfig === 'string' ? JSON.parse(rawDefaultConfig) : rawDefaultConfig)
         : null;
 
-      if (!state.config.field_overrides || Array.isArray(state.config.field_overrides)) {
-        state.config.field_overrides = {};
-      }
-
-      // Migrate flat field_overrides to by_lang structure
-      Object.keys(state.config.field_overrides).forEach(function (key) {
-        var ov = state.config.field_overrides[key];
-        if (ov && !ov.by_lang && (ov.label !== undefined || ov.placeholder !== undefined)) {
-          var lang = state.defaultLang || '';
-          var migrated = { required: ov.required, by_lang: {} };
-          if (ov.label || ov.placeholder) {
-            migrated.by_lang[lang] = {
-              label:       ov.label       || '',
-              placeholder: ov.placeholder || ''
-            };
-          }
-          state.config.field_overrides[key] = migrated;
-        }
-      });
-
-      // Migrate section titles and subtitles to new schema
-      state.config.sections.forEach(function (sec) {
-        sec.title = migrateTitle(sec.title);
-        sec.subtitle = migrateSubtitle(sec.subtitle);
-      });
+      state.config = normalizeConfigShape(state.config);
 
       initEvents();
       initDragEvents();
+      $builder.closest('form').on('submit.mbcf', function () {
+        syncInput();
+      });
       render();
     } catch (err) {
       $builder.html('<p class="notice notice-error">' + escHtml(str('builder_error', 'Builder error:')) + ' ' + escHtml(String(err)) + '</p>');
