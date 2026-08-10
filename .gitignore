@@ -7,5 +7,7 @@
 CLAUDE.md
 docs/
 code-guidance/
+tests/
+tests/**
 .github/prompts/
 .github/copilot-instructions.md
