@@ -5507,3 +5507,100 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Дополнительный водитель 2 — Дата выдачи прав"
 
+
+
+msgid "Config must be an array."
+msgstr "Конфигурация должна быть массивом."
+
+msgid "Config must contain a sections array."
+msgstr "Конфигурация должна содержать массив sections."
+
+msgid "Override by_lang for field \"%s\" must be an array."
+msgstr "Переопределение by_lang для поля \"%s\" должно быть массивом."
+
+msgid "Override for field \"%s\" must be an array."
+msgstr "Переопределение поля \"%s\" должно быть массивом."
+
+msgid "Required field \"%s\" must be present in the form."
+msgstr "Обязательное поле \"%s\" должно присутствовать в форме."
+
+msgid "Row %d in section %d has an invalid layout."
+msgstr "Строка %d в разделе %d имеет недопустимую компоновку."
+
+msgid "Row %d in section %d has no fields array."
+msgstr "Строка %d в разделе %d не содержит массив fields."
+
+msgid "Row %d in section %d is not an array."
+msgstr "Строка %d в разделе %d не является массивом."
+
+msgid "Section %d is not an array."
+msgstr "Раздел %d не является массивом."
+
+msgid "Unknown field in overrides: %s"
+msgstr "Неизвестное поле в переопределениях: %s"
+
+msgid "Unknown field: %s"
+msgstr "Неизвестное поле: %s"
+
+msgid "field_overrides must be an array."
+msgstr "field_overrides должен быть массивом."
+
+msgctxt "checkout_form_builder"
+msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Создайте <b>форму оформления бронирования</b>, перетаскивая поля в разделы и строки. Каждая строка может содержать одно или два поля. Поля, отмеченные <strong>*</strong>, обязательны и не могут быть удалены.</p>"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 1"
+msgstr "Дополнительный водитель 1"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 2"
+msgstr "Дополнительный водитель 2"
+
+msgctxt "checkout_form_builder"
+msgid "Address"
+msgstr "Адрес"
+
+msgctxt "checkout_form_builder"
+msgid "Builder error:"
+msgstr "Ошибка конструктора:"
+
+msgctxt "checkout_form_builder"
+msgid "Checkout Form"
+msgstr "Форма оформления бронирования"
+
+msgctxt "checkout_form_builder"
+msgid "Customer"
+msgstr "Клиент"
+
+msgctxt "checkout_form_builder"
+msgid "Driver"
+msgstr "Водитель"
+
+msgctxt "checkout_form_builder"
+msgid "Engine fields"
+msgstr "Поля движка"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (arrival)"
+msgstr "Рейс (прибытие)"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (departure)"
+msgstr "Рейс (отправление)"
+
+msgctxt "checkout_form_builder"
+msgid "Invalid checkout form configuration: could not parse the data."
+msgstr "Недопустимая конфигурация формы оформления бронирования: не удалось разобрать данные."
+
+msgctxt "checkout_form_builder"
+msgid "The form constructor requires JavaScript. Please enable JavaScript in your browser."
+msgstr "Для конструктора формы требуется JavaScript. Включите JavaScript в браузере."
+
+msgctxt "checkout_form_builder"
+msgid "date"
+msgstr "дата"
+
+msgctxt "checkout_form_builder"
+msgid "tel"
+msgstr "тел."

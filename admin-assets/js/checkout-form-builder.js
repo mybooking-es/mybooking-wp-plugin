@@ -347,8 +347,8 @@
       var byLang   = override.by_lang || {};
 
       var typeBadges = '';
-      if (f.datepicker)   typeBadges += '<span class="mbcf-badge mbcf-badge--date">date</span>';
-      if (f.has_intl_tel) typeBadges += '<span class="mbcf-badge mbcf-badge--tel">tel</span>';
+      if (f.datepicker)   typeBadges += '<span class="mbcf-badge mbcf-badge--date">' + escHtml(str('badge_date', 'date')) + '</span>';
+      if (f.has_intl_tel) typeBadges += '<span class="mbcf-badge mbcf-badge--tel">' + escHtml(str('badge_tel', 'tel')) + '</span>';
       if (f.special)      typeBadges += '<span class="mbcf-badge mbcf-badge--special">&#9670;</span>';
 
       var removeBtn = locked
@@ -541,8 +541,8 @@
         groups[group].forEach(function (key) {
           var f = state.fields[key];
           var badges = '';
-          if (f.datepicker)   badges += '<span class="mbcf-badge mbcf-badge--date">date</span>';
-          if (f.has_intl_tel) badges += '<span class="mbcf-badge mbcf-badge--tel">tel</span>';
+          if (f.datepicker)   badges += '<span class="mbcf-badge mbcf-badge--date">' + escHtml(str('badge_date', 'date')) + '</span>';
+          if (f.has_intl_tel) badges += '<span class="mbcf-badge mbcf-badge--tel">' + escHtml(str('badge_tel', 'tel')) + '</span>';
           if (f.special)      badges += '<span class="mbcf-badge mbcf-badge--special">&#9670;</span>';
           html += '<div class="mbcf-palette-item" draggable="true" data-field="' + escAttr(key) + '">'
             + '<span class="mbcf-palette-item-label">' + escHtml(fieldDisplayLabel(key)) + '</span>'
@@ -822,7 +822,7 @@
       initDragEvents();
       render();
     } catch (err) {
-      $builder.html('<p class="notice notice-error">Builder error: ' + escHtml(String(err)) + '</p>');
+      $builder.html('<p class="notice notice-error">' + escHtml(str('builder_error', 'Builder error:')) + ' ' + escHtml(String(err)) + '</p>');
       if (window.console && console.error) {
         console.error('[mbcf] init error:', err);
       }

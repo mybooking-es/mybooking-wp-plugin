@@ -5641,3 +5641,100 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Extra bestuurder 2 — Afgiftedatum rijbewijs"
 
+
+
+msgid "Config must be an array."
+msgstr "De configuratie moet een array zijn."
+
+msgid "Config must contain a sections array."
+msgstr "De configuratie moet een sections-array bevatten."
+
+msgid "Override by_lang for field \"%s\" must be an array."
+msgstr "De by_lang-override voor veld \"%s\" moet een array zijn."
+
+msgid "Override for field \"%s\" must be an array."
+msgstr "De override voor veld \"%s\" moet een array zijn."
+
+msgid "Required field \"%s\" must be present in the form."
+msgstr "Het verplichte veld \"%s\" moet in het formulier aanwezig zijn."
+
+msgid "Row %d in section %d has an invalid layout."
+msgstr "Rij %d in sectie %d heeft een ongeldige lay-out."
+
+msgid "Row %d in section %d has no fields array."
+msgstr "Rij %d in sectie %d bevat geen fields-array."
+
+msgid "Row %d in section %d is not an array."
+msgstr "Rij %d in sectie %d is geen array."
+
+msgid "Section %d is not an array."
+msgstr "Sectie %d is geen array."
+
+msgid "Unknown field in overrides: %s"
+msgstr "Onbekend veld in overrides: %s"
+
+msgid "Unknown field: %s"
+msgstr "Onbekend veld: %s"
+
+msgid "field_overrides must be an array."
+msgstr "field_overrides moet een array zijn."
+
+msgctxt "checkout_form_builder"
+msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Bouw uw <b>checkoutformulier</b> door velden naar secties en rijen te slepen. Elke rij kan één of twee velden bevatten. Velden met <strong>*</strong> zijn verplicht en kunnen niet worden verwijderd.</p>"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 1"
+msgstr "Extra chauffeur 1"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 2"
+msgstr "Extra chauffeur 2"
+
+msgctxt "checkout_form_builder"
+msgid "Address"
+msgstr "Adres"
+
+msgctxt "checkout_form_builder"
+msgid "Builder error:"
+msgstr "Fout in formulierbouwer:"
+
+msgctxt "checkout_form_builder"
+msgid "Checkout Form"
+msgstr "Checkoutformulier"
+
+msgctxt "checkout_form_builder"
+msgid "Customer"
+msgstr "Klant"
+
+msgctxt "checkout_form_builder"
+msgid "Driver"
+msgstr "Chauffeur"
+
+msgctxt "checkout_form_builder"
+msgid "Engine fields"
+msgstr "Enginevelden"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (arrival)"
+msgstr "Vlucht (aankomst)"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (departure)"
+msgstr "Vlucht (vertrek)"
+
+msgctxt "checkout_form_builder"
+msgid "Invalid checkout form configuration: could not parse the data."
+msgstr "Ongeldige configuratie van het checkoutformulier: de gegevens konden niet worden verwerkt."
+
+msgctxt "checkout_form_builder"
+msgid "The form constructor requires JavaScript. Please enable JavaScript in your browser."
+msgstr "De formulierbouwer vereist JavaScript. Schakel JavaScript in uw browser in."
+
+msgctxt "checkout_form_builder"
+msgid "date"
+msgstr "datum"
+
+msgctxt "checkout_form_builder"
+msgid "tel"
+msgstr "tel."

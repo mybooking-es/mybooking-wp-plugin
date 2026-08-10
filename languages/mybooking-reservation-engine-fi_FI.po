@@ -5612,3 +5612,100 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Lisäkuljettaja 2 — Ajokortin myöntämispäivä"
 
+
+
+msgid "Config must be an array."
+msgstr "Määrityksen on oltava taulukko."
+
+msgid "Config must contain a sections array."
+msgstr "Määrityksen on sisällettävä sections-taulukko."
+
+msgid "Override by_lang for field \"%s\" must be an array."
+msgstr "Kentän \"%s\" by_lang-ohituksen on oltava taulukko."
+
+msgid "Override for field \"%s\" must be an array."
+msgstr "Kentän \"%s\" ohituksen on oltava taulukko."
+
+msgid "Required field \"%s\" must be present in the form."
+msgstr "Pakollisen kentän \"%s\" on oltava lomakkeessa."
+
+msgid "Row %d in section %d has an invalid layout."
+msgstr "Rivillä %d osiossa %d on virheellinen asettelu."
+
+msgid "Row %d in section %d has no fields array."
+msgstr "Rivi %d osiossa %d ei sisällä fields-taulukkoa."
+
+msgid "Row %d in section %d is not an array."
+msgstr "Rivi %d osiossa %d ei ole taulukko."
+
+msgid "Section %d is not an array."
+msgstr "Osio %d ei ole taulukko."
+
+msgid "Unknown field in overrides: %s"
+msgstr "Tuntematon kenttä ohituksissa: %s"
+
+msgid "Unknown field: %s"
+msgstr "Tuntematon kenttä: %s"
+
+msgid "field_overrides must be an array."
+msgstr "field_overrides-kohdan on oltava taulukko."
+
+msgctxt "checkout_form_builder"
+msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Rakenna <b>checkout-lomake</b> vetämällä ja pudottamalla kenttiä osioihin ja riveille. Jokaisella rivillä voi olla yksi tai kaksi kenttää. <strong>*</strong>-merkillä merkityt kentät ovat pakollisia eikä niitä voi poistaa.</p>"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 1"
+msgstr "Lisäkuljettaja 1"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 2"
+msgstr "Lisäkuljettaja 2"
+
+msgctxt "checkout_form_builder"
+msgid "Address"
+msgstr "Osoite"
+
+msgctxt "checkout_form_builder"
+msgid "Builder error:"
+msgstr "Lomakkeen rakentajan virhe:"
+
+msgctxt "checkout_form_builder"
+msgid "Checkout Form"
+msgstr "Checkout-lomake"
+
+msgctxt "checkout_form_builder"
+msgid "Customer"
+msgstr "Asiakas"
+
+msgctxt "checkout_form_builder"
+msgid "Driver"
+msgstr "Kuljettaja"
+
+msgctxt "checkout_form_builder"
+msgid "Engine fields"
+msgstr "Moottorin kentät"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (arrival)"
+msgstr "Lento (saapuminen)"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (departure)"
+msgstr "Lento (lähtö)"
+
+msgctxt "checkout_form_builder"
+msgid "Invalid checkout form configuration: could not parse the data."
+msgstr "Virheellinen checkout-lomakkeen määritys: tietoja ei voitu jäsentää."
+
+msgctxt "checkout_form_builder"
+msgid "The form constructor requires JavaScript. Please enable JavaScript in your browser."
+msgstr "Lomakkeen rakentaja vaatii JavaScriptin. Ota JavaScript käyttöön selaimessasi."
+
+msgctxt "checkout_form_builder"
+msgid "date"
+msgstr "päivämäärä"
+
+msgctxt "checkout_form_builder"
+msgid "tel"
+msgstr "puh."

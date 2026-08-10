@@ -5608,3 +5608,100 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Lisajuht 2 — Juhiloa väljastamine"
 
+
+
+msgid "Config must be an array."
+msgstr "Konfiguratsioon peab olema massiiv."
+
+msgid "Config must contain a sections array."
+msgstr "Konfiguratsioon peab sisaldama sections-massiivi."
+
+msgid "Override by_lang for field \"%s\" must be an array."
+msgstr "Välja \"%s\" by_lang-ülekirjutus peab olema massiiv."
+
+msgid "Override for field \"%s\" must be an array."
+msgstr "Välja \"%s\" ülekirjutus peab olema massiiv."
+
+msgid "Required field \"%s\" must be present in the form."
+msgstr "Kohustuslik väli \"%s\" peab vormil olemas olema."
+
+msgid "Row %d in section %d has an invalid layout."
+msgstr "Real %d jaotises %d on vigane paigutus."
+
+msgid "Row %d in section %d has no fields array."
+msgstr "Rida %d jaotises %d ei sisalda fields-massiivi."
+
+msgid "Row %d in section %d is not an array."
+msgstr "Rida %d jaotises %d ei ole massiiv."
+
+msgid "Section %d is not an array."
+msgstr "Jaotis %d ei ole massiiv."
+
+msgid "Unknown field in overrides: %s"
+msgstr "Tundmatu väli ülekirjutustes: %s"
+
+msgid "Unknown field: %s"
+msgstr "Tundmatu väli: %s"
+
+msgid "field_overrides must be an array."
+msgstr "field_overrides peab olema massiiv."
+
+msgctxt "checkout_form_builder"
+msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Koostage oma <b>checkout-vorm</b>, lohistades välju jaotistesse ja ridadesse. Iga rida võib sisaldada ühte või kahte välja. Märgiga <strong>*</strong> tähistatud väljad on kohustuslikud ja neid ei saa eemaldada.</p>"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 1"
+msgstr "Lisajuht 1"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 2"
+msgstr "Lisajuht 2"
+
+msgctxt "checkout_form_builder"
+msgid "Address"
+msgstr "Aadress"
+
+msgctxt "checkout_form_builder"
+msgid "Builder error:"
+msgstr "Koostaja viga:"
+
+msgctxt "checkout_form_builder"
+msgid "Checkout Form"
+msgstr "Checkout-vorm"
+
+msgctxt "checkout_form_builder"
+msgid "Customer"
+msgstr "Klient"
+
+msgctxt "checkout_form_builder"
+msgid "Driver"
+msgstr "Juht"
+
+msgctxt "checkout_form_builder"
+msgid "Engine fields"
+msgstr "Mootori väljad"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (arrival)"
+msgstr "Lend (saabumine)"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (departure)"
+msgstr "Lend (väljumine)"
+
+msgctxt "checkout_form_builder"
+msgid "Invalid checkout form configuration: could not parse the data."
+msgstr "Checkout-vormi konfiguratsioon on vigane: andmeid ei saanud töödelda."
+
+msgctxt "checkout_form_builder"
+msgid "The form constructor requires JavaScript. Please enable JavaScript in your browser."
+msgstr "Vormi koostaja vajab JavaScripti. Palun lubage brauseris JavaScript."
+
+msgctxt "checkout_form_builder"
+msgid "date"
+msgstr "kuupäev"
+
+msgctxt "checkout_form_builder"
+msgid "tel"
+msgstr "tel."

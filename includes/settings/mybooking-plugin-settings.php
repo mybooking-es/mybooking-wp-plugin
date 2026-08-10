@@ -152,16 +152,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 								</a>
 							<?php } ?>
 							<?php if ($google_api_places) { ?>
-					      <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=google_api_places_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">
+								<a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=google_api_places_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'google_api_places_options' ? 'nav-tab-active' : ''; ?>">
 									<?php echo esc_html_x( 'Google Api Places', 'settings_context', 'mybooking-reservation-engine' ) ?>
 								</a>
-					    <?php } ?>
+					  	<?php } ?>
   				    <a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=css_options'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'css_options' ? 'nav-tab-active' : ''; ?>">
 								<?php echo esc_html_x( 'Advanced', 'settings_context', 'mybooking-reservation-engine' ) ?>
 							</a>
 						<?php if ($renting) { ?>
 							<a href="<?php echo esc_url( wp_nonce_url(admin_url('options.php?page=mybooking-plugin-configuration&tab=checkout_form_builder'), 'settings_tab', 'settingstabs_wponce') )?>" class="nav-tab <?php echo $active_tab == 'checkout_form_builder' ? 'nav-tab-active' : ''; ?>">
-								<?php echo esc_html_x( 'Checkout Form', 'settings_context', 'mybooking-reservation-engine' ) ?>
+								<?php echo esc_html_x( 'Checkout Form', 'checkout_form_builder', 'mybooking-reservation-engine' ) ?>
 							</a>
 						<?php } ?>
 					</h2>
@@ -263,7 +263,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 								'<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. '
 								. 'Each row can contain one or two fields. '
 								. 'Fields marked with <strong>*</strong> are required and cannot be removed.</p>',
-								'settings_context', 'mybooking-reservation-engine'
+								'checkout_form_builder', 'mybooking-reservation-engine'
 							) );
 							echo '</div></div><hr />';
 
@@ -275,7 +275,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 								 data-langs="<?php echo esc_attr( wp_json_encode( $cf_langs ) ); ?>"
 								 data-default-lang="<?php echo esc_attr( $cf_default_lang ); ?>">
 								<p class="description">
-									<?php echo esc_html_x( 'The form constructor requires JavaScript. Please enable JavaScript in your browser.', 'settings_context', 'mybooking-reservation-engine' ); ?>
+									<?php echo esc_html_x( 'The form constructor requires JavaScript. Please enable JavaScript in your browser.', 'checkout_form_builder', 'mybooking-reservation-engine' ); ?>
 								</p>
 							</div>
 							<input type="hidden"
@@ -2056,7 +2056,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         add_settings_error(
           'mybooking_checkout_form_config',
           'invalid_json',
-          esc_html_x( 'Invalid checkout form configuration: could not parse the data.', 'settings_context', 'mybooking-reservation-engine' )
+          esc_html_x( 'Invalid checkout form configuration: could not parse the data.', 'checkout_form_builder', 'mybooking-reservation-engine' )
         );
         return MyBookingCheckoutFormConfig::get();
       }

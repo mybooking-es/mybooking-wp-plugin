@@ -5509,3 +5509,100 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Conducteur supplémentaire 2 — Délivrance du permis"
 
+
+
+msgid "Config must be an array."
+msgstr "La configuration doit être un tableau."
+
+msgid "Config must contain a sections array."
+msgstr "La configuration doit contenir un tableau sections."
+
+msgid "Override by_lang for field \"%s\" must be an array."
+msgstr "La surcharge by_lang du champ \"%s\" doit être un tableau."
+
+msgid "Override for field \"%s\" must be an array."
+msgstr "La surcharge du champ \"%s\" doit être un tableau."
+
+msgid "Required field \"%s\" must be present in the form."
+msgstr "Le champ obligatoire \"%s\" doit être présent dans le formulaire."
+
+msgid "Row %d in section %d has an invalid layout."
+msgstr "La ligne %d de la section %d a une disposition invalide."
+
+msgid "Row %d in section %d has no fields array."
+msgstr "La ligne %d de la section %d ne contient pas de tableau fields."
+
+msgid "Row %d in section %d is not an array."
+msgstr "La ligne %d de la section %d n’est pas un tableau."
+
+msgid "Section %d is not an array."
+msgstr "La section %d n’est pas un tableau."
+
+msgid "Unknown field in overrides: %s"
+msgstr "Champ inconnu dans les surcharges : %s"
+
+msgid "Unknown field: %s"
+msgstr "Champ inconnu : %s"
+
+msgid "field_overrides must be an array."
+msgstr "field_overrides doit être un tableau."
+
+msgctxt "checkout_form_builder"
+msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Créez votre <b>formulaire de réservation</b> en faisant glisser-déposer les champs dans des sections et des lignes. Chaque ligne peut contenir un ou deux champs. Les champs marqués d’un <strong>*</strong> sont obligatoires et ne peuvent pas être supprimés.</p>"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 1"
+msgstr "Conducteur supplémentaire 1"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 2"
+msgstr "Conducteur supplémentaire 2"
+
+msgctxt "checkout_form_builder"
+msgid "Address"
+msgstr "Adresse"
+
+msgctxt "checkout_form_builder"
+msgid "Builder error:"
+msgstr "Erreur du constructeur :"
+
+msgctxt "checkout_form_builder"
+msgid "Checkout Form"
+msgstr "Formulaire de réservation"
+
+msgctxt "checkout_form_builder"
+msgid "Customer"
+msgstr "Client"
+
+msgctxt "checkout_form_builder"
+msgid "Driver"
+msgstr "Conducteur"
+
+msgctxt "checkout_form_builder"
+msgid "Engine fields"
+msgstr "Champs du moteur"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (arrival)"
+msgstr "Vol (arrivée)"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (departure)"
+msgstr "Vol (départ)"
+
+msgctxt "checkout_form_builder"
+msgid "Invalid checkout form configuration: could not parse the data."
+msgstr "Configuration du formulaire de réservation invalide : impossible d’analyser les données."
+
+msgctxt "checkout_form_builder"
+msgid "The form constructor requires JavaScript. Please enable JavaScript in your browser."
+msgstr "Le constructeur de formulaire nécessite JavaScript. Veuillez activer JavaScript dans votre navigateur."
+
+msgctxt "checkout_form_builder"
+msgid "date"
+msgstr "date"
+
+msgctxt "checkout_form_builder"
+msgid "tel"
+msgstr "tél."

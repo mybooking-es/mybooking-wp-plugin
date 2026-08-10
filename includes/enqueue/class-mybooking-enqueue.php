@@ -108,6 +108,17 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'tag_label'             => _x( 'Label',                                                       'checkout_form_builder', 'mybooking-reservation-engine' ),
           'tag_placeholder'       => _x( 'PH',                                                          'checkout_form_builder', 'mybooking-reservation-engine' ),
           'tag_required'          => _x( 'Req.',                                                        'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_customer'            => _x( 'Customer',            'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_address'             => _x( 'Address',             'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_flight_arrival'      => _x( 'Flight (arrival)',    'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_flight_departure'    => _x( 'Flight (departure)',  'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_driver'              => _x( 'Driver',              'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_additional_driver_1' => _x( 'Additional driver 1', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_additional_driver_2' => _x( 'Additional driver 2', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_engine'              => _x( 'Engine fields',       'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'badge_date'                => _x( 'date',                'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'badge_tel'                 => _x( 'tel',                 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'builder_error'             => _x( 'Builder error:',      'checkout_form_builder', 'mybooking-reservation-engine' ),
         ) );
       }
       

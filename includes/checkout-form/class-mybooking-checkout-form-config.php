@@ -76,12 +76,13 @@ class MyBookingCheckoutFormConfig {
    * Returns the default config: two core rows (name+surname, email+confirm).
    * Mirrors the current static form layout in mybooking-plugin-complete.php.
    */
+
   public static function get_default() {
     return [
       'sections' => [
         [
           'id'       => self::uuid(),
-          'title'    => __( "Customer's details", 'mybooking-reservation-engine' ),
+          'title'    => _x( "Customer's details", 'renting_complete', 'mybooking-reservation-engine' ),
           'subtitle' => '',
           'rows'     => [
             [

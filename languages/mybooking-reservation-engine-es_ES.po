@@ -5655,3 +5655,100 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Conductor adicional 2 — Expedición del carnet"
 
+
+
+msgid "Config must be an array."
+msgstr "La configuración debe ser un array."
+
+msgid "Config must contain a sections array."
+msgstr "La configuración debe contener un array de secciones."
+
+msgid "Override by_lang for field \"%s\" must be an array."
+msgstr "El override by_lang del campo \"%s\" debe ser un array."
+
+msgid "Override for field \"%s\" must be an array."
+msgstr "El override del campo \"%s\" debe ser un array."
+
+msgid "Required field \"%s\" must be present in the form."
+msgstr "El campo obligatorio \"%s\" debe estar presente en el formulario."
+
+msgid "Row %d in section %d has an invalid layout."
+msgstr "La fila %d de la sección %d tiene un layout no válido."
+
+msgid "Row %d in section %d has no fields array."
+msgstr "La fila %d de la sección %d no contiene un array de campos."
+
+msgid "Row %d in section %d is not an array."
+msgstr "La fila %d de la sección %d no es un array."
+
+msgid "Section %d is not an array."
+msgstr "La sección %d no es un array."
+
+msgid "Unknown field in overrides: %s"
+msgstr "Campo desconocido en los overrides: %s"
+
+msgid "Unknown field: %s"
+msgstr "Campo desconocido: %s"
+
+msgid "field_overrides must be an array."
+msgstr "field_overrides debe ser un array."
+
+msgctxt "checkout_form_builder"
+msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Crea tu <b>formulario de checkout</b> arrastrando y soltando campos en secciones y filas. Cada fila puede contener uno o dos campos. Los campos marcados con <strong>*</strong> son obligatorios y no se pueden eliminar.</p>"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 1"
+msgstr "Conductor adicional 1"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 2"
+msgstr "Conductor adicional 2"
+
+msgctxt "checkout_form_builder"
+msgid "Address"
+msgstr "Dirección"
+
+msgctxt "checkout_form_builder"
+msgid "Builder error:"
+msgstr "Error del constructor:"
+
+msgctxt "checkout_form_builder"
+msgid "Checkout Form"
+msgstr "Formulario de checkout"
+
+msgctxt "checkout_form_builder"
+msgid "Customer"
+msgstr "Cliente"
+
+msgctxt "checkout_form_builder"
+msgid "Driver"
+msgstr "Conductor"
+
+msgctxt "checkout_form_builder"
+msgid "Engine fields"
+msgstr "Campos del motor"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (arrival)"
+msgstr "Vuelo (llegada)"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (departure)"
+msgstr "Vuelo (salida)"
+
+msgctxt "checkout_form_builder"
+msgid "Invalid checkout form configuration: could not parse the data."
+msgstr "Configuración del formulario de checkout no válida: no se han podido interpretar los datos."
+
+msgctxt "checkout_form_builder"
+msgid "The form constructor requires JavaScript. Please enable JavaScript in your browser."
+msgstr "El constructor del formulario requiere JavaScript. Activa JavaScript en tu navegador."
+
+msgctxt "checkout_form_builder"
+msgid "date"
+msgstr "fecha"
+
+msgctxt "checkout_form_builder"
+msgid "tel"
+msgstr "tel."

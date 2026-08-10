@@ -5631,3 +5631,100 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Dodatkowy kierowca 2 — Data wydania prawa jazdy"
 
+
+
+msgid "Config must be an array."
+msgstr "Konfiguracja musi być tablicą."
+
+msgid "Config must contain a sections array."
+msgstr "Konfiguracja musi zawierać tablicę sections."
+
+msgid "Override by_lang for field \"%s\" must be an array."
+msgstr "Nadpisanie by_lang pola \"%s\" musi być tablicą."
+
+msgid "Override for field \"%s\" must be an array."
+msgstr "Nadpisanie pola \"%s\" musi być tablicą."
+
+msgid "Required field \"%s\" must be present in the form."
+msgstr "Wymagane pole \"%s\" musi znajdować się w formularzu."
+
+msgid "Row %d in section %d has an invalid layout."
+msgstr "Wiersz %d w sekcji %d ma nieprawidłowy układ."
+
+msgid "Row %d in section %d has no fields array."
+msgstr "Wiersz %d w sekcji %d nie zawiera tablicy fields."
+
+msgid "Row %d in section %d is not an array."
+msgstr "Wiersz %d w sekcji %d nie jest tablicą."
+
+msgid "Section %d is not an array."
+msgstr "Sekcja %d nie jest tablicą."
+
+msgid "Unknown field in overrides: %s"
+msgstr "Nieznane pole w nadpisaniach: %s"
+
+msgid "Unknown field: %s"
+msgstr "Nieznane pole: %s"
+
+msgid "field_overrides must be an array."
+msgstr "field_overrides musi być tablicą."
+
+msgctxt "checkout_form_builder"
+msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Zbuduj <b>formularz finalizacji rezerwacji</b>, przeciągając i upuszczając pola w sekcjach i wierszach. Każdy wiersz może zawierać jedno lub dwa pola. Pola oznaczone <strong>*</strong> są wymagane i nie można ich usunąć.</p>"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 1"
+msgstr "Dodatkowy kierowca 1"
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 2"
+msgstr "Dodatkowy kierowca 2"
+
+msgctxt "checkout_form_builder"
+msgid "Address"
+msgstr "Adres"
+
+msgctxt "checkout_form_builder"
+msgid "Builder error:"
+msgstr "Błąd kreatora:"
+
+msgctxt "checkout_form_builder"
+msgid "Checkout Form"
+msgstr "Formularz finalizacji rezerwacji"
+
+msgctxt "checkout_form_builder"
+msgid "Customer"
+msgstr "Klient"
+
+msgctxt "checkout_form_builder"
+msgid "Driver"
+msgstr "Kierowca"
+
+msgctxt "checkout_form_builder"
+msgid "Engine fields"
+msgstr "Pola silnika"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (arrival)"
+msgstr "Lot (przylot)"
+
+msgctxt "checkout_form_builder"
+msgid "Flight (departure)"
+msgstr "Lot (wylot)"
+
+msgctxt "checkout_form_builder"
+msgid "Invalid checkout form configuration: could not parse the data."
+msgstr "Nieprawidłowa konfiguracja formularza finalizacji rezerwacji: nie udało się przetworzyć danych."
+
+msgctxt "checkout_form_builder"
+msgid "The form constructor requires JavaScript. Please enable JavaScript in your browser."
+msgstr "Kreator formularza wymaga JavaScriptu. Włącz JavaScript w przeglądarce."
+
+msgctxt "checkout_form_builder"
+msgid "date"
+msgstr "data"
+
+msgctxt "checkout_form_builder"
+msgid "tel"
+msgstr "tel."

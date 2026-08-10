@@ -5164,3 +5164,371 @@ msgstr ""
 msgctxt "tariff_selector"
 msgid "Rate details"
 msgstr ""
+
+msgid "Config must be an array."
+msgstr ""
+
+msgid "Config must contain a sections array."
+msgstr ""
+
+msgid "Override by_lang for field \"%s\" must be an array."
+msgstr ""
+
+msgid "Override for field \"%s\" must be an array."
+msgstr ""
+
+msgid "Required field \"%s\" must be present in the form."
+msgstr ""
+
+msgid "Row %d in section %d has an invalid layout."
+msgstr ""
+
+msgid "Row %d in section %d has no fields array."
+msgstr ""
+
+msgid "Row %d in section %d is not an array."
+msgstr ""
+
+msgid "Section %d is not an array."
+msgstr ""
+
+msgid "Unknown field in overrides: %s"
+msgstr ""
+
+msgid "Unknown field: %s"
+msgstr ""
+
+msgid "field_overrides must be an array."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "&#10003; Done"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "+ Add section"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (1 column)"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "+ Row (2 columns)"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 1"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Additional driver 2"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Address"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "All fields are placed in the form."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Available fields"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Builder error:"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Cannot replace a required field."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Checkout Form"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Customer"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Drag to reorder"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Driver"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Drop field here"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Engine fields"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Error: builder data not found."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Field settings"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Flight (arrival)"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Flight (departure)"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Invalid checkout form configuration: could not parse the data."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Label"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "New section"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "PH"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Placeholder"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Remove"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Remove row"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Remove section"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Req."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Required"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Required field"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Section title"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Subtitle (optional)"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "The form constructor requires JavaScript. Please enable JavaScript in your browser."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "This field is required and cannot be removed."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "This row contains required fields and cannot be removed."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "This section contains required fields and cannot be removed."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "date"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "tel"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Date of birth"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — ID document"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License country"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License expiry"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License issue date"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — License number"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Name"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 1 — Surname"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Date of birth"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — ID document"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License country"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License expiry"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License issue date"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — License number"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Name"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Additional driver 2 — Surname"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Airline"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "City"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Complement"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Country"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Date of birth"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Delivery slot"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Destination airport"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Driver ID document"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Driver name"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Driver surname"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Expected arrival time"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Expected return time"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Flight number"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "ID document"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "License country"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "License expiry date"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "License issue date"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "License number"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Number"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Origin airport"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Postal code"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Return airline"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Return flight number"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Skipper / External driver"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "State"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Street"
+msgstr ""
