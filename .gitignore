@@ -6,5 +6,6 @@
 # Agent interaction files (local context only — do not push to shared repo)
 CLAUDE.md
 docs/
+code-guidance/
 .github/prompts/
 .github/copilot-instructions.md
