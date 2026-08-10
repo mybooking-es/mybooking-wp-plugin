@@ -183,9 +183,9 @@
 
   function buildSectionTitlePills(section) {
     if (!state.langs.length) return '';
-    var title = section.title;
+    var title  = section.title;
     var byLang = (title && title.by_lang) ? title.by_lang : {};
-    var pills = '';
+    var pills  = '';
     state.langs.forEach(function (lang) {
       var val    = byLang[lang] || '';
       var hasVal = !!(val && val.trim && val.trim());
@@ -194,7 +194,25 @@
         + escHtml(langShortCode(lang))
         + '</span>';
     });
-    return pills ? '<span class="mbcf-section-title-pills">' + pills + '</span>' : '';
+    // Wrap in mbcf-slot-tag so existing pill CSS applies; mbcf-section-title-langs removes left margin
+    return pills
+      ? '<div class="mbcf-slot-tags mbcf-section-title-langs"><span class="mbcf-slot-tag mbcf-slot-tag--title">' + pills + '</span></div>'
+      : '';
+  }
+
+  function isSectionTitleCustomized(section) {
+    var title = section.title;
+    if (!title || typeof title !== 'object') return false;
+    if (title.preset === 'custom') return true;
+    if (title.fallback && title.fallback.trim()) return true;
+    if (title.by_lang) {
+      var langs = Object.keys(title.by_lang);
+      for (var i = 0; i < langs.length; i++) {
+        var val = title.by_lang[langs[i]];
+        if (val && val.trim && val.trim()) return true;
+      }
+    }
+    return false;
   }
 
   function normalizeConfigShape(config) {
@@ -706,21 +724,23 @@
   }
 
   function renderSection(section) {
-    var rowsHtml       = section.rows.map(renderRow).join('');
-    var titleText      = resolvedTitle(section, state.defaultLang);
-    var titlePills     = buildSectionTitlePills(section);
+    var rowsHtml        = section.rows.map(renderRow).join('');
+    var titleText       = resolvedTitle(section, state.defaultLang);
     var titleEditorHtml = renderSectionTitleEditor(section);
+    var pillsHtml       = isSectionTitleCustomized(section) ? buildSectionTitlePills(section) : '';
 
     return '<div class="mbcf-section postbox" data-section-id="' + section.id + '">'
       + '<div class="mbcf-section-header inside">'
         + '<span class="mbcf-section-handle dashicons dashicons-menu" title="' + escAttr(str('drag_reorder', 'Drag to reorder')) + '"></span>'
-        + '<div class="mbcf-section-title-display">'
-          + '<span class="mbcf-section-title-text">' + escHtml(titleText) + '</span>'
-          + '<button type="button" class="mbcf-section-title-edit-btn button-link"'
-            + ' data-section="' + section.id + '"'
-            + ' title="' + escAttr(str('edit_section_title', 'Edit section title')) + '">'
-            + '<span class="dashicons dashicons-edit"></span></button>'
-          + titlePills
+        + '<div class="mbcf-section-titles">'
+          + '<div class="mbcf-section-title-display">'
+            + '<span class="mbcf-section-title-text">' + escHtml(titleText) + '</span>'
+            + '<button type="button" class="mbcf-section-title-edit-btn button-link"'
+              + ' data-section="' + section.id + '"'
+              + ' title="' + escAttr(str('edit_section_title', 'Edit section title')) + '">'
+              + '<span class="dashicons dashicons-edit"></span></button>'
+          + '</div>'
+          + pillsHtml
         + '</div>'
         + '<input type="text" class="mbcf-section-subtitle" data-section="' + section.id + '"'
           + ' value="' + escAttr(section.subtitle || '') + '"'

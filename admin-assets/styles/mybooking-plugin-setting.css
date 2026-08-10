@@ -68,10 +68,22 @@ textarea[readonly]:focus {
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
+	min-width: 0;
 }
 
 .mbcf-section-title {
 	font-weight: 600;
+}
+
+.mbcf-section-title-display {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+/* Section title language pills — remove slot-tags left indent */
+.mbcf-section-title-langs.mbcf-slot-tags {
+	margin: 0;
 }
 
 .mbcf-section-subtitle {
@@ -429,7 +441,7 @@ textarea[readonly]:focus {
 	line-height: 1.5;
 }
 
-.mbcf-slot-tag--label {
+.mbcf-slot-tag--label, .mbcf-slot-tag--title  {
 	background: #e8f5e9;
 	color: #1b5e20;
 }
