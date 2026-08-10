@@ -20,7 +20,10 @@ require_once __DIR__ . '/mybooking-checkout-form-section-title-presets.php';
  *           'fallback' => string,  // used when preset='custom' and no by_lang override
  *           'by_lang'  => [],      // locale => override string
  *         ],
- *         'subtitle' => string,    // legacy plain string, not multilingual in this phase
+ *         'subtitle' => [
+ *           'fallback' => string,  // default subtitle; no preset, no gettext
+ *           'by_lang'  => [],      // locale => override string
+ *         ],
  *         'rows'     => [
  *           [
  *             'id'     => string (UUID v4),
@@ -106,7 +109,7 @@ class MyBookingCheckoutFormConfig {
             'fallback' => '',
             'by_lang'  => [],
           ],
-          'subtitle' => '',
+          'subtitle' => [ 'fallback' => '', 'by_lang' => [] ],
           'rows'     => [
             [
               'id'     => self::uuid(),
@@ -231,8 +234,7 @@ class MyBookingCheckoutFormConfig {
         && preg_match( '/^[a-zA-Z0-9_\-]{1,100}$/', $section['id'] )
         ? $section['id'] : self::uuid();
       $title    = self::normalize_section_title( isset( $section['title'] ) ? $section['title'] : '' );
-      $subtitle = isset( $section['subtitle'] ) && is_string( $section['subtitle'] )
-        ? sanitize_text_field( $section['subtitle'] ) : '';
+      $subtitle = self::normalize_section_subtitle( isset( $section['subtitle'] ) ? $section['subtitle'] : '' );
 
       $sections_out[] = [
         'id'       => $sec_id,
@@ -254,8 +256,8 @@ class MyBookingCheckoutFormConfig {
       if ( empty( $sections_out ) ) {
         $sections_out[] = [
           'id'       => self::uuid(),
-          'title'    => '',
-          'subtitle' => '',
+          'title'    => self::normalize_section_title( '' ),
+          'subtitle' => self::normalize_section_subtitle( '' ),
           'rows'     => [],
         ];
       }
@@ -452,6 +454,58 @@ class MyBookingCheckoutFormConfig {
       $available[ $key ] = $field;
     }
     return $available;
+  }
+
+  /**
+   * Normalizes a section subtitle to the canonical localized text schema.
+   *
+   * No preset, no gettext fallback. Resolution order: by_lang → fallback → empty.
+   * Legacy plain string → { fallback: sanitized_string, by_lang: [] }.
+   *
+   * @param  mixed $raw  Raw subtitle value (string or array).
+   * @return array       Normalized subtitle: { fallback, by_lang }
+   */
+  private static function normalize_section_subtitle( $raw ) {
+    if ( is_string( $raw ) ) {
+      return [ 'fallback' => sanitize_text_field( $raw ), 'by_lang' => [] ];
+    }
+    if ( ! is_array( $raw ) ) {
+      return [ 'fallback' => '', 'by_lang' => [] ];
+    }
+    $fallback = ( isset( $raw['fallback'] ) && is_string( $raw['fallback'] ) )
+      ? sanitize_text_field( $raw['fallback'] ) : '';
+    $by_lang = [];
+    if ( isset( $raw['by_lang'] ) && is_array( $raw['by_lang'] ) ) {
+      foreach ( $raw['by_lang'] as $lang => $val ) {
+        if ( ! is_string( $lang ) || $lang === '' ) {
+          continue;
+        }
+        $by_lang[ $lang ] = is_string( $val ) ? sanitize_text_field( $val ) : '';
+      }
+    }
+    return [ 'fallback' => $fallback, 'by_lang' => $by_lang ];
+  }
+
+  /**
+   * Resolves a localized text object to a string for a given locale.
+   *
+   * Resolution: by_lang[locale] (non-empty) → fallback → empty string.
+   * Shared by title custom-fallback resolution and subtitle resolution.
+   * P4 frontend can call this to render the subtitle in the current locale.
+   *
+   * @param  mixed  $text    Localized text: { fallback, by_lang } or legacy string.
+   * @param  string $locale  WordPress locale code, e.g. 'es_ES'.
+   * @return string
+   */
+  public static function resolve_localized_text( $text, $locale ) {
+    if ( ! is_array( $text ) ) {
+      return is_string( $text ) ? $text : '';
+    }
+    $by_lang = isset( $text['by_lang'] ) && is_array( $text['by_lang'] ) ? $text['by_lang'] : [];
+    if ( $locale && isset( $by_lang[ $locale ] ) && $by_lang[ $locale ] !== '' ) {
+      return $by_lang[ $locale ];
+    }
+    return isset( $text['fallback'] ) ? (string) $text['fallback'] : '';
   }
 
   /**

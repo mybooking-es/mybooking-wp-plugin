@@ -182,11 +182,10 @@
     return title.fallback || '';
   }
 
-  function buildSectionTitlePills(section) {
+  function buildLocalizedTextPills(byLang, cssModifier) {
     if (!state.langs.length) return '';
-    var title  = section.title;
-    var byLang = (title && title.by_lang) ? title.by_lang : {};
-    var pills  = '';
+    byLang = byLang || {};
+    var pills = '';
     state.langs.forEach(function (lang) {
       var val    = byLang[lang] || '';
       var hasVal = !!(val && val.trim && val.trim());
@@ -195,10 +194,21 @@
         + escHtml(langShortCode(lang))
         + '</span>';
     });
-    // Wrap in mbcf-slot-tag so existing pill CSS applies; mbcf-section-title-langs removes left margin
     return pills
-      ? '<div class="mbcf-slot-tags mbcf-section-title-langs"><span class="mbcf-slot-tag mbcf-slot-tag--title">' + pills + '</span></div>'
+      ? '<div class="mbcf-slot-tags mbcf-section-' + cssModifier + '-langs">'
+        + '<span class="mbcf-slot-tag mbcf-slot-tag--' + cssModifier + '">' + pills + '</span>'
+        + '</div>'
       : '';
+  }
+
+  function buildSectionTitlePills(section) {
+    var byLang = (section.title && section.title.by_lang) ? section.title.by_lang : {};
+    return buildLocalizedTextPills(byLang, 'title');
+  }
+
+  function buildSectionSubtitlePills(section) {
+    var byLang = (section.subtitle && section.subtitle.by_lang) ? section.subtitle.by_lang : {};
+    return buildLocalizedTextPills(byLang, 'subtitle');
   }
 
   function isSectionTitleCustomized(section) {
@@ -214,6 +224,36 @@
       }
     }
     return false;
+  }
+
+  function isSectionSubtitleSet(section) {
+    var sub = section.subtitle;
+    if (!sub || typeof sub !== 'object') return false;
+    if (sub.fallback && sub.fallback.trim()) return true;
+    if (sub.by_lang) {
+      var keys = Object.keys(sub.by_lang);
+      for (var i = 0; i < keys.length; i++) {
+        var val = sub.by_lang[keys[i]];
+        if (val && val.trim && val.trim()) return true;
+      }
+    }
+    return false;
+  }
+
+  function resolvedSubtitle(section, lang) {
+    var sub = section.subtitle;
+    if (!sub || typeof sub !== 'object') return (typeof sub === 'string' ? sub : '');
+    var override = sub.by_lang && lang ? (sub.by_lang[lang] || '') : '';
+    if (override && override.trim()) return override;
+    return sub.fallback || '';
+  }
+
+  function migrateSubtitle(raw) {
+    if (raw && typeof raw === 'object' && raw.fallback !== undefined) {
+      return raw;
+    }
+    var s = typeof raw === 'string' ? raw : '';
+    return { fallback: s, by_lang: {} };
   }
 
   function normalizeConfigShape(config) {
@@ -235,6 +275,10 @@
       sec.title = migrateTitle(sec.title);
       if (sec.title && Array.isArray(sec.title.by_lang)) {
         sec.title.by_lang = {};
+      }
+      sec.subtitle = migrateSubtitle(sec.subtitle);
+      if (sec.subtitle && Array.isArray(sec.subtitle.by_lang)) {
+        sec.subtitle.by_lang = {};
       }
     });
     return config;
@@ -308,7 +352,7 @@
     var sec = {
       id:       uuid(),
       title:    { preset: p, fallback: '', by_lang: {} },
-      subtitle: '',
+      subtitle: { fallback: '', by_lang: {} },
       rows:     []
     };
     state.config.sections.push(sec);
@@ -423,9 +467,25 @@
     syncInput();
   }
 
-  function setSectionSubtitle(sectionId, subtitle) {
+  function setSectionSubtitleFallback(sectionId, value) {
     var s = getSectionById(sectionId);
-    if (s) { s.subtitle = subtitle; syncInput(); }
+    if (!s) return;
+    if (!s.subtitle || typeof s.subtitle !== 'object') {
+      s.subtitle = { fallback: '', by_lang: {} };
+    }
+    s.subtitle.fallback = value;
+    syncInput();
+  }
+
+  function setSectionSubtitleByLang(sectionId, lang, value) {
+    var s = getSectionById(sectionId);
+    if (!s) return;
+    if (!s.subtitle || typeof s.subtitle !== 'object') {
+      s.subtitle = { fallback: '', by_lang: {} };
+    }
+    if (!s.subtitle.by_lang) s.subtitle.by_lang = {};
+    s.subtitle.by_lang[lang] = value;
+    syncInput();
   }
 
   function reorderSections(newOrder) {
@@ -487,66 +547,55 @@
     return pills;
   }
 
-  function renderSectionTitleEditor(section) {
-    var title = (section.title && typeof section.title === 'object')
-      ? section.title
-      : { preset: 'custom', fallback: (section.title || ''), by_lang: {} };
-    var isCustom = (title.preset === 'custom');
-    var byLang   = title.by_lang || {};
+  function renderLocTextEditor(section, type, localizedText, labelStr, getPlaceholder) {
+    var byLang     = (localizedText && localizedText.by_lang) ? localizedText.by_lang : {};
+    var fallbackVal = (localizedText && localizedText.fallback) ? localizedText.fallback : '';
 
     var activeLang    = state.defaultLang || (state.langs.length ? state.langs[0] : '');
     var langsToRender = state.langs.length ? state.langs : (activeLang ? [activeLang] : ['']);
     var isMultiLang   = langsToRender.length > 1;
 
-    var html = '<div class="mbcf-section-title-editor" style="display:none">';
+    var html = '<div class="mbcf-section-' + type + '-editor" style="display:none">';
 
     if (!isMultiLang) {
-      // Single-lang: one fallback input (preset or custom); placeholder = preset gettext when preset intact
-      var singlePh = isCustom ? '' : str('preset_' + title.preset, title.preset);
       html += '<div class="mbcf-field-settings-row">'
-        + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
-        + '<input type="text" class="mbcf-section-title-fallback"'
+        + '<span class="mbcf-field-settings-label">' + labelStr + '</span>'
+        + '<input type="text" class="mbcf-section-' + type + '-fallback"'
           + ' data-section="' + escAttr(section.id) + '"'
-          + ' value="' + escAttr(title.fallback || '') + '"'
-          + ' placeholder="' + escAttr(singlePh) + '" />'
+          + ' value="' + escAttr(fallbackVal) + '"'
+          + ' placeholder="' + escAttr(getPlaceholder('')) + '" />'
         + '</div>';
     } else {
-      // Multi-lang: fallback input for both preset and custom; placeholder = preset gettext when preset intact
-      var fallbackPh = isCustom ? '' : str('preset_' + title.preset, title.preset);
       html += '<div class="mbcf-field-settings-row">'
-        + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
-        + '<input type="text" class="mbcf-section-title-fallback"'
+        + '<span class="mbcf-field-settings-label">' + labelStr + '</span>'
+        + '<input type="text" class="mbcf-section-' + type + '-fallback"'
           + ' data-section="' + escAttr(section.id) + '"'
-          + ' value="' + escAttr(title.fallback || '') + '"'
-          + ' placeholder="' + escAttr(fallbackPh) + '" />'
+          + ' value="' + escAttr(fallbackVal) + '"'
+          + ' placeholder="' + escAttr(getPlaceholder('')) + '" />'
         + '</div>';
 
-      // Lang tabs
       html += '<div class="mbcf-lang-tabs">';
       langsToRender.forEach(function (lang) {
         var isActive = (lang === activeLang);
         html += '<button type="button"'
-          + ' class="mbcf-section-title-tab mbcf-lang-tab' + (isActive ? ' mbcf-lang-tab--active' : '') + '"'
-          + ' data-section-title="' + escAttr(section.id) + '" data-lang="' + escAttr(lang) + '"'
+          + ' class="mbcf-section-' + type + '-tab mbcf-lang-tab' + (isActive ? ' mbcf-lang-tab--active' : '') + '"'
+          + ' data-section-' + type + '="' + escAttr(section.id) + '" data-lang="' + escAttr(lang) + '"'
           + ' title="' + escAttr(lang) + '">'
           + escHtml(langFriendlyName(lang))
           + '</button>';
       });
       html += '</div>';
 
-      // Per-lang content
       langsToRender.forEach(function (lang) {
-        var isActive     = (lang === activeLang);
-        var overrideVal  = byLang[lang] || '';
-        var ph           = (title.fallback && title.fallback.trim())
-          ? title.fallback
-          : (!isCustom ? str('preset_' + title.preset, title.preset) : '');
+        var isActive    = (lang === activeLang);
+        var overrideVal = byLang[lang] || '';
+        var ph = (fallbackVal && fallbackVal.trim()) ? fallbackVal : getPlaceholder(lang);
 
-        html += '<div class="mbcf-section-title-content mbcf-lang-content' + (isActive ? ' mbcf-lang-content--active' : '') + '"'
-          + ' data-section-title="' + escAttr(section.id) + '" data-lang="' + escAttr(lang) + '">'
+        html += '<div class="mbcf-section-' + type + '-content mbcf-lang-content' + (isActive ? ' mbcf-lang-content--active' : '') + '"'
+          + ' data-section-' + type + '="' + escAttr(section.id) + '" data-lang="' + escAttr(lang) + '">'
           + '<div class="mbcf-field-settings-row">'
-            + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
-            + '<input type="text" class="mbcf-section-title-by-lang"'
+            + '<span class="mbcf-field-settings-label">' + labelStr + '</span>'
+            + '<input type="text" class="mbcf-section-' + type + '-by-lang"'
               + ' data-section="' + escAttr(section.id) + '" data-lang="' + escAttr(lang) + '"'
               + ' value="' + escAttr(overrideVal) + '"'
               + ' placeholder="' + escAttr(ph) + '" />'
@@ -556,12 +605,31 @@
     }
 
     html += '<div class="mbcf-field-settings-row mbcf-field-settings-row--actions">'
-      + '<button type="button" class="mbcf-section-title-editor-close button button-small">'
+      + '<button type="button" class="mbcf-section-' + type + '-editor-close button button-small">'
         + str('field_settings_done', '&#10003; Done') + '</button>'
       + '</div>'
       + '</div>';
 
     return html;
+  }
+
+  function renderSectionTitleEditor(section) {
+    var title = (section.title && typeof section.title === 'object')
+      ? section.title
+      : { preset: 'custom', fallback: (section.title || ''), by_lang: {} };
+    var isCustom = (title.preset === 'custom');
+    return renderLocTextEditor(section, 'title', title, str('section_title_label', 'Title'), function () {
+      return isCustom ? '' : str('preset_' + title.preset, title.preset);
+    });
+  }
+
+  function renderSectionSubtitleEditor(section) {
+    var sub = (section.subtitle && typeof section.subtitle === 'object')
+      ? section.subtitle
+      : { fallback: (typeof section.subtitle === 'string' ? section.subtitle : ''), by_lang: {} };
+    return renderLocTextEditor(section, 'subtitle', sub, str('section_subtitle_ph', 'Subtitle (optional)'), function () {
+      return '';
+    });
   }
 
   function renderSlot(row, slotIndex) {
@@ -711,10 +779,37 @@
   }
 
   function renderSection(section) {
-    var rowsHtml        = section.rows.map(renderRow).join('');
-    var titleText       = resolvedTitle(section, state.defaultLang);
-    var titleEditorHtml = renderSectionTitleEditor(section);
-    var pillsHtml       = isSectionTitleCustomized(section) ? buildSectionTitlePills(section) : '';
+    var rowsHtml           = section.rows.map(renderRow).join('');
+    var titleText          = resolvedTitle(section, state.defaultLang);
+    var titleEditorHtml    = renderSectionTitleEditor(section);
+    var subtitleEditorHtml = renderSectionSubtitleEditor(section);
+    var titlePillsHtml     = isSectionTitleCustomized(section) ? buildSectionTitlePills(section) : '';
+
+    var subtitleText    = resolvedSubtitle(section, state.defaultLang);
+    var subtitleIsSet   = isSectionSubtitleSet(section);
+    var subtitlePillsHtml = subtitleIsSet ? buildSectionSubtitlePills(section) : '';
+
+    var subtitleHeaderHtml;
+    if (subtitleIsSet) {
+      subtitleHeaderHtml = '<div class="mbcf-section-subtitle-row">'
+        + '<div class="mbcf-section-subtitle-display">'
+          + '<span class="mbcf-section-subtitle-text">' + escHtml(subtitleText) + '</span>'
+          + '<button type="button" class="mbcf-section-subtitle-edit-btn button-link"'
+            + ' data-section="' + section.id + '"'
+            + ' title="' + escAttr(str('edit_section_subtitle', 'Edit section subtitle')) + '">'
+            + '<span class="dashicons dashicons-edit"></span></button>'
+        + '</div>'
+        + subtitlePillsHtml
+        + '</div>';
+    } else {
+      subtitleHeaderHtml = '<div class="mbcf-section-subtitle-row">'
+        + '<button type="button" class="mbcf-section-subtitle-edit-btn mbcf-section-subtitle-add button-link"'
+          + ' data-section="' + section.id + '">'
+          + escHtml(str('section_subtitle_ph', 'Subtitle (optional)'))
+          + ' <span class="dashicons dashicons-edit"></span>'
+        + '</button>'
+        + '</div>';
+    }
 
     return '<div class="mbcf-section postbox" data-section-id="' + section.id + '">'
       + '<div class="mbcf-section-header inside">'
@@ -727,15 +822,14 @@
               + ' title="' + escAttr(str('edit_section_title', 'Edit section title')) + '">'
               + '<span class="dashicons dashicons-edit"></span></button>'
           + '</div>'
-          + pillsHtml
+          + titlePillsHtml
         + '</div>'
-        + '<input type="text" class="mbcf-section-subtitle" data-section="' + section.id + '"'
-          + ' value="' + escAttr(section.subtitle || '') + '"'
-          + ' placeholder="' + escAttr(str('section_subtitle_ph', 'Subtitle (optional)')) + '" />'
+        + subtitleHeaderHtml
         + '<button type="button" class="mbcf-remove-section button-link" data-section="' + section.id + '"'
           + ' title="' + escAttr(str('remove_section', 'Remove section')) + '">&#x2715;</button>'
       + '</div>'
       + titleEditorHtml
+      + subtitleEditorHtml
       + '<div class="mbcf-rows" data-section-id="' + section.id + '">' + rowsHtml + '</div>'
       + '<div class="mbcf-section-footer inside">'
         + '<button type="button" class="mbcf-add-row button button-small" data-section="' + section.id + '" data-layout="1col">'
@@ -986,6 +1080,26 @@
       render();
     });
 
+    // Section subtitle editor — open/close
+    $b.on('click.mbcf', '.mbcf-section-subtitle-edit-btn', function (e) {
+      e.stopPropagation();
+      var $sec   = $(this).closest('.mbcf-section');
+      var isOpen = $sec.hasClass('mbcf-section--subtitle-open');
+      $b.find('.mbcf-section--subtitle-open').each(function () {
+        $(this).removeClass('mbcf-section--subtitle-open');
+        $(this).find('.mbcf-section-subtitle-editor').hide();
+      });
+      if (!isOpen) {
+        $sec.addClass('mbcf-section--subtitle-open');
+        $sec.find('.mbcf-section-subtitle-editor').show();
+      }
+    });
+
+    $b.on('click.mbcf', '.mbcf-section-subtitle-editor-close', function (e) {
+      e.stopPropagation();
+      render();
+    });
+
     // Section title lang tab switch
     $b.on('click.mbcf', '.mbcf-section-title-tab', function (e) {
       e.stopPropagation();
@@ -997,6 +1111,17 @@
       $editor.find('.mbcf-section-title-content[data-lang="' + lang + '"]').addClass('mbcf-lang-content--active');
     });
 
+    // Section subtitle lang tab switch
+    $b.on('click.mbcf', '.mbcf-section-subtitle-tab', function (e) {
+      e.stopPropagation();
+      var $editor = $(this).closest('.mbcf-section-subtitle-editor');
+      var lang    = $(this).data('lang');
+      $editor.find('.mbcf-section-subtitle-tab').removeClass('mbcf-lang-tab--active');
+      $(this).addClass('mbcf-lang-tab--active');
+      $editor.find('.mbcf-section-subtitle-content').removeClass('mbcf-lang-content--active');
+      $editor.find('.mbcf-section-subtitle-content[data-lang="' + lang + '"]').addClass('mbcf-lang-content--active');
+    });
+
     // Section title inputs
     $b.on('input.mbcf', '.mbcf-section-title-by-lang', function () {
       setSectionTitleByLang($(this).data('section'), $(this).data('lang'), $(this).val());
@@ -1006,8 +1131,13 @@
       setSectionTitleFallback($(this).data('section'), $(this).val());
     });
 
-    $b.on('input.mbcf', '.mbcf-section-subtitle', function () {
-      setSectionSubtitle($(this).data('section'), $(this).val());
+    // Section subtitle inputs
+    $b.on('input.mbcf', '.mbcf-section-subtitle-fallback', function () {
+      setSectionSubtitleFallback($(this).data('section'), $(this).val());
+    });
+
+    $b.on('input.mbcf', '.mbcf-section-subtitle-by-lang', function () {
+      setSectionSubtitleByLang($(this).data('section'), $(this).data('lang'), $(this).val());
     });
 
     // Toggle field settings panel
@@ -1125,9 +1255,10 @@
         }
       });
 
-      // Migrate section titles to new schema
+      // Migrate section titles and subtitles to new schema
       state.config.sections.forEach(function (sec) {
         sec.title = migrateTitle(sec.title);
+        sec.subtitle = migrateSubtitle(sec.subtitle);
       });
 
       initEvents();
