@@ -57,11 +57,12 @@
   ];
 
   var state = {
-    config:      null,  // { sections, field_overrides }
-    fields:      {},    // catalog keyed by field key
-    strings:     {},    // i18n from window.mybookingCheckoutFormStrings
-    langs:       [],    // available locale codes, e.g. ['es_ES', 'en_US']
-    defaultLang: ''     // current admin locale, e.g. 'es_ES'
+    config:        null,  // { sections, field_overrides }
+    defaultConfig: null,  // parsed from data-default-config; never mutated
+    fields:        {},    // catalog keyed by field key
+    strings:       {},    // i18n from window.mybookingCheckoutFormStrings
+    langs:         [],    // available locale codes, e.g. ['es_ES', 'en_US']
+    defaultLang:   ''     // current admin locale, e.g. 'es_ES'
   };
 
   // ── Basic utilities ─────────────────────────────────────────────────────────
@@ -87,6 +88,10 @@
 
   function str(key, fallback) {
     return state.strings[key] || fallback;
+  }
+
+  function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
   }
 
   // ── Language helpers ─────────────────────────────────────────────────────────
@@ -190,6 +195,49 @@
         + '</span>';
     });
     return pills ? '<span class="mbcf-section-title-pills">' + pills + '</span>' : '';
+  }
+
+  function normalizeConfigShape(config) {
+    if (!config.field_overrides || Array.isArray(config.field_overrides)) {
+      config.field_overrides = {};
+    }
+    Object.keys(config.field_overrides).forEach(function (key) {
+      var ov = config.field_overrides[key];
+      if (ov && !ov.by_lang && (ov.label !== undefined || ov.placeholder !== undefined)) {
+        var lang = state.defaultLang || '';
+        var migrated = { required: ov.required, by_lang: {} };
+        if (ov.label || ov.placeholder) {
+          migrated.by_lang[lang] = { label: ov.label || '', placeholder: ov.placeholder || '' };
+        }
+        config.field_overrides[key] = migrated;
+      }
+    });
+    config.sections.forEach(function (sec) {
+      sec.title = migrateTitle(sec.title);
+      if (sec.title && Array.isArray(sec.title.by_lang)) {
+        sec.title.by_lang = {};
+      }
+    });
+    return config;
+  }
+
+  function showResetNotice() {
+    var msg = str('reset_notice', 'Default form restored in the editor. Save changes to apply.');
+    var $notice = $('<div class="notice notice-success mbcf-reset-notice is-dismissible"><p>' + escHtml(msg) + '</p></div>');
+    $('#' + BUILDER_ID).before($notice);
+    setTimeout(function () { $notice.fadeOut(400, function () { $notice.remove(); }); }, 4000);
+  }
+
+  function resetToDefault() {
+    if (!state.defaultConfig) return;
+    // eslint-disable-next-line no-alert
+    if (!window.confirm(str('reset_confirm', 'Restore the default checkout form? Unsaved builder changes will be replaced.'))) {
+      return;
+    }
+    state.config = normalizeConfigShape(deepClone(state.defaultConfig));
+    syncInput();
+    render();
+    showResetNotice();
   }
 
   // ── Override utilities (by_lang structure) ──────────────────────────────────
@@ -758,6 +806,15 @@
     return html;
   }
 
+  function renderActions() {
+    if (!state.defaultConfig) return '';
+    return '<div class="mbcf-builder-actions">'
+      + '<button type="button" id="mbcf-reset-default" class="mbcf-reset-btn button button-secondary">'
+      + escHtml(str('reset_default', 'Reset to default'))
+      + '</button>'
+      + '</div>';
+  }
+
   function render() {
     var sectionsHtml = state.config.sections.map(renderSection).join('');
 
@@ -768,6 +825,7 @@
       + '<div class="mbcf-palette-area">'
         + renderSectionTitlePresets()
         + renderPalette()
+        + renderActions()
       + '</div>'
     + '</div>';
 
@@ -996,6 +1054,11 @@
       ensureOverride(key).required = val;
       syncInput();
     });
+
+    // Reset to default
+    $b.on('click.mbcf', '#mbcf-reset-default', function () {
+      resetToDefault();
+    });
   }
 
   // ── Bootstrap ───────────────────────────────────────────────────────────────
@@ -1004,10 +1067,11 @@
     var $builder = $('#' + BUILDER_ID);
     if (!$builder.length) return;
 
-    var rawConfig      = $builder.data('config');
-    var rawFields      = $builder.data('fields');
-    var rawLangs       = $builder.data('langs');
-    var rawDefaultLang = $builder.data('default-lang');
+    var rawConfig        = $builder.data('config');
+    var rawFields        = $builder.data('fields');
+    var rawLangs         = $builder.data('langs');
+    var rawDefaultLang   = $builder.data('default-lang');
+    var rawDefaultConfig = $builder.data('default-config');
 
     if (!rawConfig || !rawFields) {
       $builder.html('<p class="notice notice-error">' +
@@ -1029,6 +1093,10 @@
       if (!state.langs.length && state.defaultLang) {
         state.langs = [state.defaultLang];
       }
+
+      state.defaultConfig = rawDefaultConfig
+        ? (typeof rawDefaultConfig === 'string' ? JSON.parse(rawDefaultConfig) : rawDefaultConfig)
+        : null;
 
       if (!state.config.field_overrides || Array.isArray(state.config.field_overrides)) {
         state.config.field_overrides = {};
