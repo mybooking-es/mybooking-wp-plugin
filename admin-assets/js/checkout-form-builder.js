@@ -174,6 +174,7 @@
     if (!title.preset) return title.fallback || '';
     var override = title.by_lang && lang ? (title.by_lang[lang] || '') : '';
     if (override && override.trim()) return override;
+    if (title.fallback && title.fallback.trim()) return title.fallback;
     if (title.preset !== 'custom') {
       var presetName = str('preset_' + title.preset, title.preset);
       if (presetName) return presetName;
@@ -500,39 +501,25 @@
     var html = '<div class="mbcf-section-title-editor" style="display:none">';
 
     if (!isMultiLang) {
-      // Single-lang: one input
-      var singleVal, singlePh;
-      if (isCustom) {
-        singleVal = title.fallback || '';
-        singlePh  = '';
-        html += '<div class="mbcf-field-settings-row">'
-          + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
-          + '<input type="text" class="mbcf-section-title-fallback"'
-            + ' data-section="' + escAttr(section.id) + '"'
-            + ' value="' + escAttr(singleVal) + '"'
-            + ' placeholder="' + escAttr(singlePh) + '" />'
-          + '</div>';
-      } else {
-        singleVal = byLang[activeLang] || '';
-        singlePh  = str('preset_' + title.preset, title.preset);
-        html += '<div class="mbcf-field-settings-row">'
-          + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
-          + '<input type="text" class="mbcf-section-title-by-lang"'
-            + ' data-section="' + escAttr(section.id) + '" data-lang="' + escAttr(activeLang) + '"'
-            + ' value="' + escAttr(singleVal) + '"'
-            + ' placeholder="' + escAttr(singlePh) + '" />'
-          + '</div>';
-      }
+      // Single-lang: one fallback input (preset or custom); placeholder = preset gettext when preset intact
+      var singlePh = isCustom ? '' : str('preset_' + title.preset, title.preset);
+      html += '<div class="mbcf-field-settings-row">'
+        + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
+        + '<input type="text" class="mbcf-section-title-fallback"'
+          + ' data-section="' + escAttr(section.id) + '"'
+          + ' value="' + escAttr(title.fallback || '') + '"'
+          + ' placeholder="' + escAttr(singlePh) + '" />'
+        + '</div>';
     } else {
-      // Multi-lang
-      if (isCustom) {
-        html += '<div class="mbcf-field-settings-row">'
-          + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
-          + '<input type="text" class="mbcf-section-title-fallback"'
-            + ' data-section="' + escAttr(section.id) + '"'
-            + ' value="' + escAttr(title.fallback || '') + '" />'
-          + '</div>';
-      }
+      // Multi-lang: fallback input for both preset and custom; placeholder = preset gettext when preset intact
+      var fallbackPh = isCustom ? '' : str('preset_' + title.preset, title.preset);
+      html += '<div class="mbcf-field-settings-row">'
+        + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
+        + '<input type="text" class="mbcf-section-title-fallback"'
+          + ' data-section="' + escAttr(section.id) + '"'
+          + ' value="' + escAttr(title.fallback || '') + '"'
+          + ' placeholder="' + escAttr(fallbackPh) + '" />'
+        + '</div>';
 
       // Lang tabs
       html += '<div class="mbcf-lang-tabs">';
@@ -551,9 +538,9 @@
       langsToRender.forEach(function (lang) {
         var isActive     = (lang === activeLang);
         var overrideVal  = byLang[lang] || '';
-        var ph           = isCustom
-          ? (title.fallback || '')
-          : str('preset_' + title.preset, title.preset);
+        var ph           = (title.fallback && title.fallback.trim())
+          ? title.fallback
+          : (!isCustom ? str('preset_' + title.preset, title.preset) : '');
 
         html += '<div class="mbcf-section-title-content mbcf-lang-content' + (isActive ? ' mbcf-lang-content--active' : '') + '"'
           + ' data-section-title="' + escAttr(section.id) + '" data-lang="' + escAttr(lang) + '">'
