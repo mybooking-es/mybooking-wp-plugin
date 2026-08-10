@@ -71,13 +71,13 @@ if ( ! function_exists( 'mybooking_checkout_form_fields' ) ) {
       'group'        => 'customer',
     ],
 
-    // ── Customer (optional) ─────────────────────────────────────────────────
+    // ── Customer (core — locked, cont.) ────────────────────────────────────
     'confirm_customer_email' => [
       'type'         => 'text',
       'label'        => _x( 'Confirm E-mail', 'renting_complete', 'mybooking-reservation-engine' ),
       'placeholder'  => _x( 'Confirm E-mail', 'renting_complete', 'mybooking-reservation-engine' ),
-      'required'     => false,
-      'removable'    => true,
+      'required'     => true,
+      'removable'    => false,
       'maxlength'    => 50,
       'has_intl_tel' => false,
       'datepicker'   => '',
@@ -88,8 +88,8 @@ if ( ! function_exists( 'mybooking_checkout_form_fields' ) ) {
       'type'         => 'tel',
       'label'        => _x( 'Phone number', 'renting_complete', 'mybooking-reservation-engine' ),
       'placeholder'  => _x( 'Phone number', 'renting_complete', 'mybooking-reservation-engine' ),
-      'required'     => false,
-      'removable'    => true,
+      'required'     => true,
+      'removable'    => false,
       'maxlength'    => 15,
       'has_intl_tel' => true,
       'datepicker'   => '',

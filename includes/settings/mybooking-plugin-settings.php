@@ -2040,9 +2040,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     // == Checkout Form Builder
 
     /**
-     * Sanitize and validate the checkout form config JSON submitted from the builder.
-     * Decodes the JSON string, validates the structure, and returns a PHP array.
-     * On failure, keeps the existing config and adds a settings error.
+     * Sanitize and normalize the checkout form config JSON submitted from the builder.
+     * Decodes the JSON string, normalizes the structure, and returns a PHP array.
+     * On failure, returns the default config (never get() — avoids potential recursion
+     * if the stored value is also corrupt).
      */
     public function sanitize_checkout_form_config( $input ) {
 
@@ -2058,20 +2059,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'invalid_json',
           esc_html_x( 'Invalid checkout form configuration: could not parse the data.', 'checkout_form_builder', 'mybooking-reservation-engine' )
         );
-        return MyBookingCheckoutFormConfig::get();
+        return MyBookingCheckoutFormConfig::get_default();
       }
 
-      $error = MyBookingCheckoutFormConfig::validate( $config );
-      if ( $error !== null ) {
+      $normalized = MyBookingCheckoutFormConfig::normalize( $config );
+      if ( $normalized === null ) {
         add_settings_error(
           'mybooking_checkout_form_config',
-          $error->get_error_code(),
-          $error->get_error_message()
+          'invalid_config',
+          esc_html_x( 'Invalid checkout form configuration.', 'checkout_form_builder', 'mybooking-reservation-engine' )
         );
-        return MyBookingCheckoutFormConfig::get();
+        return MyBookingCheckoutFormConfig::get_default();
       }
 
-      return $config;
+      return $normalized;
     }
 
     // ------------------------
