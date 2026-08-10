@@ -5606,3 +5606,64 @@ msgstr "date"
 msgctxt "checkout_form_builder"
 msgid "tel"
 msgstr "tél."
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr "Informations du client"
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr "Adresse du client"
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr "Vol d’arrivée"
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr "Vol de départ"
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr "Informations du conducteur"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr "Conducteur supplémentaire 1"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr "Conducteur supplémentaire 2"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr "Informations supplémentaires"
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr "Titres de section"
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr "Titre personnalisé"
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr "Modifier le titre de la section"
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr "Titre"
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr "Rétablir les valeurs par défaut"
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr "Restaurer le formulaire de réservation par défaut ? Les modifications non enregistrées du constructeur seront remplacées."
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr "Le formulaire par défaut a été restauré dans l’éditeur. Enregistrez les modifications pour l’appliquer."
+

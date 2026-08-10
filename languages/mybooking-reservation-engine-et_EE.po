@@ -5705,3 +5705,64 @@ msgstr "kuupäev"
 msgctxt "checkout_form_builder"
 msgid "tel"
 msgstr "tel."
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr "Kliendi andmed"
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr "Kliendi aadress"
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr "Saabuv lend"
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr "Väljuv lend"
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr "Juhi andmed"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr "Lisajuht 1"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr "Lisajuht 2"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr "Lisateave"
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr "Jaotiste pealkirjad"
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr "Kohandatud pealkiri"
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr "Muuda jaotise pealkirja"
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr "Pealkiri"
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr "Taasta vaikeseaded"
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr "Kas taastada vaikimisi checkout-vorm? Koostaja salvestamata muudatused asendatakse."
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr "Vaikevorm taastati redaktoris. Rakendamiseks salvesta muudatused."
+

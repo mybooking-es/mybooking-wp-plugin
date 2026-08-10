@@ -5605,3 +5605,64 @@ msgstr "data"
 msgctxt "checkout_form_builder"
 msgid "tel"
 msgstr "tel."
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr "Dati del cliente"
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr "Indirizzo del cliente"
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr "Volo di arrivo"
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr "Volo di partenza"
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr "Dati del conducente"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr "Conducente aggiuntivo 1"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr "Conducente aggiuntivo 2"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr "Informazioni aggiuntive"
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr "Titoli delle sezioni"
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr "Titolo personalizzato"
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr "Modifica titolo della sezione"
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr "Titolo"
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr "Ripristina predefiniti"
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr "Ripristinare il modulo di checkout predefinito? Le modifiche non salvate del generatore verranno sostituite."
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr "Il modulo predefinito è stato ripristinato nell’editor. Salva le modifiche per applicarlo."
+

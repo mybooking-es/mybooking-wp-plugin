@@ -5604,3 +5604,64 @@ msgstr "дата"
 msgctxt "checkout_form_builder"
 msgid "tel"
 msgstr "тел."
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr "Данные клиента"
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr "Адрес клиента"
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr "Рейс прибытия"
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr "Рейс отправления"
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr "Данные водителя"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr "Дополнительный водитель 1"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr "Дополнительный водитель 2"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr "Дополнительная информация"
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr "Заголовки разделов"
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr "Пользовательский заголовок"
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr "Изменить заголовок раздела"
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr "Заголовок"
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr "Восстановить по умолчанию"
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr "Восстановить стандартную форму оформления бронирования? Несохранённые изменения конструктора будут заменены."
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr "Стандартная форма восстановлена в редакторе. Сохраните изменения, чтобы применить её."
+

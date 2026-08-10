@@ -5601,3 +5601,64 @@ msgstr "data"
 msgctxt "checkout_form_builder"
 msgid "tel"
 msgstr "tel."
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr "Dades del client"
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr "Adreça del client"
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr "Vol d'arribada"
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr "Vol de sortida"
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr "Dades del conductor"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr "Conductor addicional 1"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr "Conductor addicional 2"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr "Informació addicional"
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr "Títols de secció"
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr "Títol personalitzat"
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr "Edita el títol de la secció"
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr "Títol"
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr "Restableix els valors predeterminats"
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr "Vols restablir el formulari de checkout predeterminat? Els canvis no desats del constructor se substituiran."
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr "S'ha restablert el formulari predeterminat a l'editor. Desa els canvis per aplicar-lo."
+

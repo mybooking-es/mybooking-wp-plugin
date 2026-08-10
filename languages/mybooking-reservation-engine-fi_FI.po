@@ -5709,3 +5709,64 @@ msgstr "päivämäärä"
 msgctxt "checkout_form_builder"
 msgid "tel"
 msgstr "puh."
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr "Asiakkaan tiedot"
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr "Asiakkaan osoite"
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr "Saapuva lento"
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr "Lähtevä lento"
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr "Kuljettajan tiedot"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr "Lisäkuljettaja 1"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr "Lisäkuljettaja 2"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr "Lisätiedot"
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr "Osioiden otsikot"
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr "Mukautettu otsikko"
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr "Muokkaa osion otsikkoa"
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr "Otsikko"
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr "Palauta oletusasetukset"
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr "Palautetaanko checkout-lomakkeen oletusversio? Lomakkeen rakentajan tallentamattomat muutokset korvataan."
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr "Oletuslomake palautettiin editorissa. Tallenna muutokset ottaaksesi sen käyttöön."
+

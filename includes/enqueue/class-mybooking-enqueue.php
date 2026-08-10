@@ -119,6 +119,24 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'badge_date'                => _x( 'date',                'checkout_form_builder', 'mybooking-reservation-engine' ),
           'badge_tel'                 => _x( 'tel',                 'checkout_form_builder', 'mybooking-reservation-engine' ),
           'builder_error'             => _x( 'Builder error:',      'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // P2B: section title UI
+          'section_titles'            => _x( 'Section titles',      'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'custom_title'              => _x( 'Custom title',         'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'edit_section_title'        => _x( 'Edit section title',  'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'section_title_label'       => _x( 'Title',               'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // P2B: preset names resolved for admin locale
+          'preset_customer_details'       => _x( "Customer's details",    'checkout_form_section_title', 'mybooking-reservation-engine' ),
+          'preset_customer_address'       => _x( 'Customer address',       'checkout_form_section_title', 'mybooking-reservation-engine' ),
+          'preset_arrival_flight'         => _x( 'Arrival flight',         'checkout_form_section_title', 'mybooking-reservation-engine' ),
+          'preset_departure_flight'       => _x( 'Departure flight',       'checkout_form_section_title', 'mybooking-reservation-engine' ),
+          'preset_driver_details'         => _x( 'Driver details',         'checkout_form_section_title', 'mybooking-reservation-engine' ),
+          'preset_additional_driver_1'    => _x( 'Additional driver 1',   'checkout_form_section_title', 'mybooking-reservation-engine' ),
+          'preset_additional_driver_2'    => _x( 'Additional driver 2',   'checkout_form_section_title', 'mybooking-reservation-engine' ),
+          'preset_additional_information' => _x( 'Additional information','checkout_form_section_title', 'mybooking-reservation-engine' ),
+          // P2C reset strings (added ahead; compiled once)
+          'reset_default'  => _x( 'Reset to default',                                                                              'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'reset_confirm'  => _x( 'Restore the default checkout form? Unsaved builder changes will be replaced.',                  'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'reset_notice'   => _x( 'Default form restored in the editor. Save changes to apply.',                                   'checkout_form_builder', 'mybooking-reservation-engine' ),
         ) );
       }
       

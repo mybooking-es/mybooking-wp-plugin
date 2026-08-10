@@ -5609,3 +5609,64 @@ msgstr "Datum"
 msgctxt "checkout_form_builder"
 msgid "tel"
 msgstr "Tel."
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr "Kundendaten"
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr "Kundenadresse"
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr "Ankunftsflug"
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr "Abflug"
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr "Fahrerdaten"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr "Zusätzlicher Fahrer 1"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr "Zusätzlicher Fahrer 2"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr "Zusätzliche Informationen"
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr "Abschnittstitel"
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr "Benutzerdefinierter Titel"
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr "Abschnittstitel bearbeiten"
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr "Titel"
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr "Auf Standard zurücksetzen"
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr "Standard-Checkout-Formular wiederherstellen? Nicht gespeicherte Änderungen im Builder werden ersetzt."
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr "Das Standardformular wurde im Editor wiederhergestellt. Speichern Sie die Änderungen, um es anzuwenden."
+

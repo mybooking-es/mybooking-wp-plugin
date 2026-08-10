@@ -5728,3 +5728,64 @@ msgstr "data"
 msgctxt "checkout_form_builder"
 msgid "tel"
 msgstr "tel."
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr "Dane klienta"
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr "Adres klienta"
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr "Lot przylotowy"
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr "Lot wylotowy"
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr "Dane kierowcy"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr "Dodatkowy kierowca 1"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr "Dodatkowy kierowca 2"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr "Dodatkowe informacje"
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr "Tytuły sekcji"
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr "Niestandardowy tytuł"
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr "Edytuj tytuł sekcji"
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr "Tytuł"
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr "Przywróć domyślne"
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr "Przywrócić domyślny formularz finalizacji rezerwacji? Niezapisane zmiany w kreatorze zostaną zastąpione."
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr "Domyślny formularz został przywrócony w edytorze. Zapisz zmiany, aby go zastosować."
+

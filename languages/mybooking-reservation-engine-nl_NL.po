@@ -5738,3 +5738,64 @@ msgstr "datum"
 msgctxt "checkout_form_builder"
 msgid "tel"
 msgstr "tel."
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr "Klantgegevens"
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr "Adres van de klant"
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr "Aankomstvlucht"
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr "Vertrekvlucht"
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr "Gegevens bestuurder"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr "Extra bestuurder 1"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr "Extra bestuurder 2"
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr "Aanvullende informatie"
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr "Sectietitels"
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr "Aangepaste titel"
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr "Sectietitel bewerken"
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr "Titel"
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr "Standaard herstellen"
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr "Het standaard checkoutformulier herstellen? Niet-opgeslagen wijzigingen in de formulierbouwer worden vervangen."
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr "Het standaardformulier is in de editor hersteld. Sla de wijzigingen op om het toe te passen."
+

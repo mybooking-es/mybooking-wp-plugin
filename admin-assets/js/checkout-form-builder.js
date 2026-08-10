@@ -15,6 +15,13 @@
  *                  data-langs="[...]" data-default-lang="es_ES">
  * Output:     <input type="hidden" id="mybooking-checkout-form-config-input">
  *
+ * Section title schema (new in P2B):
+ *   title: {
+ *     preset:   'customer_details' | ... | 'custom',
+ *     fallback: string,  // used when preset='custom' and no by_lang override
+ *     by_lang:  { locale: string }  // per-lang override; empty string = use preset/fallback
+ *   }
+ *
  * field_overrides structure (by_lang):
  *   {
  *     customer_name: {
@@ -31,6 +38,23 @@
 
   var BUILDER_ID = 'mybooking-checkout-form-builder';
   var INPUT_ID   = 'mybooking-checkout-form-config-input';
+
+  var SECTION_PRESETS = [
+    'customer_details',
+    'customer_address',
+    'arrival_flight',
+    'departure_flight',
+    'driver_details',
+    'additional_driver_1',
+    'additional_driver_2',
+    'additional_information'
+  ];
+
+  var CUSTOMER_DETAILS_STRINGS = [
+    "Customer's details", "Dades del client", "Kundendaten", "Datos del cliente",
+    "Kliendi andmed", "Asiakkaan tiedot", "Informations du client", "Dati del cliente",
+    "Klantgegevens", "Dane klienta", "Dados do cliente", "Данные клиента"
+  ];
 
   var state = {
     config:      null,  // { sections, field_overrides }
@@ -126,15 +150,55 @@
     $('#' + INPUT_ID).val(JSON.stringify(state.config));
   }
 
+  // ── Section title helpers ────────────────────────────────────────────────────
+
+  function migrateTitle(raw) {
+    if (raw && typeof raw === 'object' && raw.preset !== undefined) {
+      return raw;
+    }
+    var s = typeof raw === 'string' ? raw : '';
+    if (CUSTOMER_DETAILS_STRINGS.indexOf(s) !== -1) {
+      return { preset: 'customer_details', fallback: '', by_lang: {} };
+    }
+    return { preset: 'custom', fallback: s, by_lang: {} };
+  }
+
+  function resolvedTitle(section, lang) {
+    var title = section.title;
+    if (!title || typeof title === 'string') return title || '';
+    if (!title.preset) return title.fallback || '';
+    var override = title.by_lang && lang ? (title.by_lang[lang] || '') : '';
+    if (override && override.trim()) return override;
+    if (title.preset !== 'custom') {
+      var presetName = str('preset_' + title.preset, title.preset);
+      if (presetName) return presetName;
+    }
+    return title.fallback || '';
+  }
+
+  function buildSectionTitlePills(section) {
+    if (!state.langs.length) return '';
+    var title = section.title;
+    var byLang = (title && title.by_lang) ? title.by_lang : {};
+    var pills = '';
+    state.langs.forEach(function (lang) {
+      var val    = byLang[lang] || '';
+      var hasVal = !!(val && val.trim && val.trim());
+      pills += '<span class="mbcf-lang-pill mbcf-lang-pill--' + (hasVal ? 'set' : 'empty') + '"'
+        + ' title="' + escAttr(langFriendlyName(lang)) + '">'
+        + escHtml(langShortCode(lang))
+        + '</span>';
+    });
+    return pills ? '<span class="mbcf-section-title-pills">' + pills + '</span>' : '';
+  }
+
   // ── Override utilities (by_lang structure) ──────────────────────────────────
 
-  // Returns or creates the override object for a field, migrating old flat structure.
   function ensureOverride(key) {
     if (!state.config.field_overrides[key]) {
       state.config.field_overrides[key] = { by_lang: {} };
     }
     var ov = state.config.field_overrides[key];
-    // Migrate old flat structure: { label, placeholder, required } → { required, by_lang: {...} }
     if (!ov.by_lang && (ov.label !== undefined || ov.placeholder !== undefined)) {
       var lang = state.defaultLang || '';
       var migrated = { required: ov.required, by_lang: {} };
@@ -152,7 +216,6 @@
     return state.config.field_overrides[key];
   }
 
-  // Returns or creates the by_lang entry for a specific language.
   function ensureByLang(key, lang) {
     var ov = ensureOverride(key);
     if (!ov.by_lang[lang]) {
@@ -161,7 +224,6 @@
     return ov.by_lang[lang];
   }
 
-  // Returns true if any language has a non-empty value for the given property.
   function hasOverrideText(key, prop) {
     var ov = state.config.field_overrides[key];
     if (!ov || !ov.by_lang) return false;
@@ -174,14 +236,22 @@
 
   // ── Mutations ───────────────────────────────────────────────────────────────
 
-  function addSection() {
-    state.config.sections.push({
+  function addSection(preset, openEditor) {
+    var p = (typeof preset === 'string' && preset) ? preset : 'custom';
+    var sec = {
       id:       uuid(),
-      title:    str('new_section', 'New section'),
+      title:    { preset: p, fallback: '', by_lang: {} },
       subtitle: '',
       rows:     []
-    });
+    };
+    state.config.sections.push(sec);
     render();
+    if (openEditor) {
+      var $sec = $('[data-section-id="' + sec.id + '"]');
+      $sec.find('.mbcf-section-title-editor').show();
+      $sec.addClass('mbcf-section--title-open');
+      $sec.find('.mbcf-section-title-by-lang, .mbcf-section-title-fallback').first().focus();
+    }
   }
 
   function removeSection(sectionId) {
@@ -234,7 +304,6 @@
     render();
   }
 
-  // Place fieldKey into a slot, swapping with existing content if needed.
   function placeFieldInSlot(fieldKey, targetRowId, targetSlotIndex, sourceRowId, sourceSlotIndex) {
     var targetCtx = getRowContext(targetRowId);
     if (!targetCtx) return;
@@ -248,13 +317,11 @@
     }
 
     if (sourceRowId !== null && sourceRowId !== undefined) {
-      // Moving from another slot — swap
       var sourceCtx = getRowContext(sourceRowId);
       if (sourceCtx) {
         sourceCtx.row.fields[sourceSlotIndex] = existingKeyInTarget || null;
       }
     } else {
-      // From palette — remove any other occurrence in the form
       state.config.sections.forEach(function (s) {
         s.rows.forEach(function (r) {
           r.fields = r.fields.map(function (k, i) {
@@ -268,9 +335,25 @@
     render();
   }
 
-  function setSectionTitle(sectionId, title) {
+  function setSectionTitleByLang(sectionId, lang, value) {
     var s = getSectionById(sectionId);
-    if (s) { s.title = title; syncInput(); }
+    if (!s) return;
+    if (!s.title || typeof s.title !== 'object') {
+      s.title = { preset: 'custom', fallback: '', by_lang: {} };
+    }
+    if (!s.title.by_lang) s.title.by_lang = {};
+    s.title.by_lang[lang] = value;
+    syncInput();
+  }
+
+  function setSectionTitleFallback(sectionId, value) {
+    var s = getSectionById(sectionId);
+    if (!s) return;
+    if (!s.title || typeof s.title !== 'object') {
+      s.title = { preset: 'custom', fallback: '', by_lang: {} };
+    }
+    s.title.fallback = value;
+    syncInput();
   }
 
   function setSectionSubtitle(sectionId, subtitle) {
@@ -337,6 +420,97 @@
     return pills;
   }
 
+  function renderSectionTitleEditor(section) {
+    var title = (section.title && typeof section.title === 'object')
+      ? section.title
+      : { preset: 'custom', fallback: (section.title || ''), by_lang: {} };
+    var isCustom = (title.preset === 'custom');
+    var byLang   = title.by_lang || {};
+
+    var activeLang    = state.defaultLang || (state.langs.length ? state.langs[0] : '');
+    var langsToRender = state.langs.length ? state.langs : (activeLang ? [activeLang] : ['']);
+    var isMultiLang   = langsToRender.length > 1;
+
+    var html = '<div class="mbcf-section-title-editor" style="display:none">';
+
+    if (!isMultiLang) {
+      // Single-lang: one input
+      var singleVal, singlePh;
+      if (isCustom) {
+        singleVal = title.fallback || '';
+        singlePh  = '';
+        html += '<div class="mbcf-field-settings-row">'
+          + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
+          + '<input type="text" class="mbcf-section-title-fallback"'
+            + ' data-section="' + escAttr(section.id) + '"'
+            + ' value="' + escAttr(singleVal) + '"'
+            + ' placeholder="' + escAttr(singlePh) + '" />'
+          + '</div>';
+      } else {
+        singleVal = byLang[activeLang] || '';
+        singlePh  = str('preset_' + title.preset, title.preset);
+        html += '<div class="mbcf-field-settings-row">'
+          + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
+          + '<input type="text" class="mbcf-section-title-by-lang"'
+            + ' data-section="' + escAttr(section.id) + '" data-lang="' + escAttr(activeLang) + '"'
+            + ' value="' + escAttr(singleVal) + '"'
+            + ' placeholder="' + escAttr(singlePh) + '" />'
+          + '</div>';
+      }
+    } else {
+      // Multi-lang
+      if (isCustom) {
+        html += '<div class="mbcf-field-settings-row">'
+          + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
+          + '<input type="text" class="mbcf-section-title-fallback"'
+            + ' data-section="' + escAttr(section.id) + '"'
+            + ' value="' + escAttr(title.fallback || '') + '" />'
+          + '</div>';
+      }
+
+      // Lang tabs
+      html += '<div class="mbcf-lang-tabs">';
+      langsToRender.forEach(function (lang) {
+        var isActive = (lang === activeLang);
+        html += '<button type="button"'
+          + ' class="mbcf-section-title-tab mbcf-lang-tab' + (isActive ? ' mbcf-lang-tab--active' : '') + '"'
+          + ' data-section-title="' + escAttr(section.id) + '" data-lang="' + escAttr(lang) + '"'
+          + ' title="' + escAttr(lang) + '">'
+          + escHtml(langFriendlyName(lang))
+          + '</button>';
+      });
+      html += '</div>';
+
+      // Per-lang content
+      langsToRender.forEach(function (lang) {
+        var isActive     = (lang === activeLang);
+        var overrideVal  = byLang[lang] || '';
+        var ph           = isCustom
+          ? (title.fallback || '')
+          : str('preset_' + title.preset, title.preset);
+
+        html += '<div class="mbcf-section-title-content mbcf-lang-content' + (isActive ? ' mbcf-lang-content--active' : '') + '"'
+          + ' data-section-title="' + escAttr(section.id) + '" data-lang="' + escAttr(lang) + '">'
+          + '<div class="mbcf-field-settings-row">'
+            + '<span class="mbcf-field-settings-label">' + str('section_title_label', 'Title') + '</span>'
+            + '<input type="text" class="mbcf-section-title-by-lang"'
+              + ' data-section="' + escAttr(section.id) + '" data-lang="' + escAttr(lang) + '"'
+              + ' value="' + escAttr(overrideVal) + '"'
+              + ' placeholder="' + escAttr(ph) + '" />'
+          + '</div>'
+          + '</div>';
+      });
+    }
+
+    html += '<div class="mbcf-field-settings-row mbcf-field-settings-row--actions">'
+      + '<button type="button" class="mbcf-section-title-editor-close button button-small">'
+        + str('field_settings_done', '&#10003; Done') + '</button>'
+      + '</div>'
+      + '</div>';
+
+    return html;
+  }
+
   function renderSlot(row, slotIndex) {
     var key = row.fields[slotIndex];
 
@@ -357,7 +531,6 @@
             + ' data-row="' + row.id + '" data-slot="' + slotIndex + '"'
             + ' title="' + escAttr(str('remove_field', 'Remove')) + '">&#x2715;</button>';
 
-      // Customization tags — lang pills show per-language state in multi-lang sites
       var currentRequired = (override.required !== undefined) ? override.required : (f.required || false);
       var multiLang = state.langs.length > 1;
       var tags = '';
@@ -380,7 +553,6 @@
         ? '<div class="mbcf-slot-tags">' + tags + '</div>'
         : '';
 
-      // Language tabs and per-language input blocks
       var activeLang = state.defaultLang || (state.langs.length ? state.langs[0] : '');
       var langsToRender = state.langs.length ? state.langs : (activeLang ? [activeLang] : ['']);
 
@@ -486,21 +658,29 @@
   }
 
   function renderSection(section) {
-    var rowsHtml = section.rows.map(renderRow).join('');
+    var rowsHtml       = section.rows.map(renderRow).join('');
+    var titleText      = resolvedTitle(section, state.defaultLang);
+    var titlePills     = buildSectionTitlePills(section);
+    var titleEditorHtml = renderSectionTitleEditor(section);
+
     return '<div class="mbcf-section postbox" data-section-id="' + section.id + '">'
       + '<div class="mbcf-section-header inside">'
         + '<span class="mbcf-section-handle dashicons dashicons-menu" title="' + escAttr(str('drag_reorder', 'Drag to reorder')) + '"></span>'
-        + '<div class="mbcf-section-titles">'
-          + '<input type="text" class="mbcf-section-title regular-text" data-section="' + section.id + '"'
-            + ' value="' + escAttr(section.title) + '"'
-            + ' placeholder="' + escAttr(str('section_title_ph', 'Section title')) + '" />'
-          + '<input type="text" class="mbcf-section-subtitle" data-section="' + section.id + '"'
-            + ' value="' + escAttr(section.subtitle) + '"'
-            + ' placeholder="' + escAttr(str('section_subtitle_ph', 'Subtitle (optional)')) + '" />'
+        + '<div class="mbcf-section-title-display">'
+          + '<span class="mbcf-section-title-text">' + escHtml(titleText) + '</span>'
+          + '<button type="button" class="mbcf-section-title-edit-btn button-link"'
+            + ' data-section="' + section.id + '"'
+            + ' title="' + escAttr(str('edit_section_title', 'Edit section title')) + '">'
+            + '<span class="dashicons dashicons-edit"></span></button>'
+          + titlePills
         + '</div>'
+        + '<input type="text" class="mbcf-section-subtitle" data-section="' + section.id + '"'
+          + ' value="' + escAttr(section.subtitle || '') + '"'
+          + ' placeholder="' + escAttr(str('section_subtitle_ph', 'Subtitle (optional)')) + '" />'
         + '<button type="button" class="mbcf-remove-section button-link" data-section="' + section.id + '"'
           + ' title="' + escAttr(str('remove_section', 'Remove section')) + '">&#x2715;</button>'
       + '</div>'
+      + titleEditorHtml
       + '<div class="mbcf-rows" data-section-id="' + section.id + '">' + rowsHtml + '</div>'
       + '<div class="mbcf-section-footer inside">'
         + '<button type="button" class="mbcf-add-row button button-small" data-section="' + section.id + '" data-layout="1col">'
@@ -510,6 +690,27 @@
           + str('add_row_2col', '+ Row (2 columns)') + '</button>'
       + '</div>'
       + '</div>';
+  }
+
+  function renderSectionTitlePresets() {
+    var html = '<div class="mbcf-section-presets">'
+      + '<h3 class="mbcf-palette-title">' + str('section_titles', 'Section titles') + '</h3>'
+      + '<div class="mbcf-preset-buttons">';
+
+    SECTION_PRESETS.forEach(function (preset) {
+      html += '<button type="button" class="mbcf-preset-btn button button-small"'
+        + ' data-preset="' + escAttr(preset) + '">'
+        + escHtml(str('preset_' + preset, preset))
+        + '</button>';
+    });
+
+    html += '<button type="button" class="mbcf-preset-btn mbcf-preset-btn--custom button button-secondary"'
+      + ' data-preset="custom">'
+      + escHtml(str('custom_title', 'Custom title'))
+      + '</button>';
+
+    html += '</div></div>';
+    return html;
   }
 
   function renderPalette() {
@@ -562,13 +763,10 @@
 
     var html = '<div class="mbcf-layout">'
       + '<div class="mbcf-form-area">'
-        + '<div class="mbcf-add-section-bar">'
-          + '<button type="button" class="button button-secondary" id="mbcf-add-section">'
-            + str('add_section', '+ Add section') + '</button>'
-        + '</div>'
         + '<div id="mbcf-sections">' + sectionsHtml + '</div>'
       + '</div>'
       + '<div class="mbcf-palette-area">'
+        + renderSectionTitlePresets()
         + renderPalette()
       + '</div>'
     + '</div>';
@@ -680,7 +878,11 @@
   function initEvents() {
     var $b = $('#' + BUILDER_ID);
 
-    $b.on('click.mbcf', '#mbcf-add-section', addSection);
+    // Section preset buttons
+    $b.on('click.mbcf', '.mbcf-preset-btn', function () {
+      var preset = $(this).data('preset');
+      addSection(preset, preset === 'custom');
+    });
 
     $b.on('click.mbcf', '.mbcf-remove-section', function () {
       removeSection($(this).data('section'));
@@ -699,8 +901,44 @@
       removeFieldFromSlot($(this).data('row'), parseInt($(this).data('slot'), 10));
     });
 
-    $b.on('input.mbcf', '.mbcf-section-title', function () {
-      setSectionTitle($(this).data('section'), $(this).val());
+    // Section title editor — open/close
+    $b.on('click.mbcf', '.mbcf-section-title-edit-btn', function (e) {
+      e.stopPropagation();
+      var $sec   = $(this).closest('.mbcf-section');
+      var isOpen = $sec.hasClass('mbcf-section--title-open');
+      $b.find('.mbcf-section--title-open').each(function () {
+        $(this).removeClass('mbcf-section--title-open');
+        $(this).find('.mbcf-section-title-editor').hide();
+      });
+      if (!isOpen) {
+        $sec.addClass('mbcf-section--title-open');
+        $sec.find('.mbcf-section-title-editor').show();
+      }
+    });
+
+    $b.on('click.mbcf', '.mbcf-section-title-editor-close', function (e) {
+      e.stopPropagation();
+      render();
+    });
+
+    // Section title lang tab switch
+    $b.on('click.mbcf', '.mbcf-section-title-tab', function (e) {
+      e.stopPropagation();
+      var $editor = $(this).closest('.mbcf-section-title-editor');
+      var lang    = $(this).data('lang');
+      $editor.find('.mbcf-section-title-tab').removeClass('mbcf-lang-tab--active');
+      $(this).addClass('mbcf-lang-tab--active');
+      $editor.find('.mbcf-section-title-content').removeClass('mbcf-lang-content--active');
+      $editor.find('.mbcf-section-title-content[data-lang="' + lang + '"]').addClass('mbcf-lang-content--active');
+    });
+
+    // Section title inputs
+    $b.on('input.mbcf', '.mbcf-section-title-by-lang', function () {
+      setSectionTitleByLang($(this).data('section'), $(this).data('lang'), $(this).val());
+    });
+
+    $b.on('input.mbcf', '.mbcf-section-title-fallback', function () {
+      setSectionTitleFallback($(this).data('section'), $(this).val());
     });
 
     $b.on('input.mbcf', '.mbcf-section-subtitle', function () {
@@ -720,14 +958,13 @@
       }
     });
 
-    // Close field settings — re-render so tags update
     $b.on('click.mbcf', '.mbcf-field-settings-close', function (e) {
       e.stopPropagation();
       render();
     });
 
-    // Language tab switch (no re-render, pure DOM toggle)
-    $b.on('click.mbcf', '.mbcf-lang-tab', function (e) {
+    // Language tab switch for field settings (scoped to .mbcf-field-settings)
+    $b.on('click.mbcf', '.mbcf-field-settings .mbcf-lang-tab', function (e) {
       e.stopPropagation();
       var $panel  = $(this).closest('.mbcf-field-settings');
       var lang    = $(this).data('lang');
@@ -737,7 +974,6 @@
       $panel.find('.mbcf-lang-content[data-lang="' + lang + '"]').addClass('mbcf-lang-content--active');
     });
 
-    // Label override — save to by_lang structure
     $b.on('input.mbcf', '.mbcf-field-label-override', function () {
       var key  = $(this).data('field');
       var lang = $(this).data('lang');
@@ -746,7 +982,6 @@
       syncInput();
     });
 
-    // Placeholder override — save to by_lang structure
     $b.on('input.mbcf', '.mbcf-field-placeholder-override', function () {
       var key  = $(this).data('field');
       var lang = $(this).data('lang');
@@ -755,7 +990,6 @@
       syncInput();
     });
 
-    // Required override
     $b.on('change.mbcf', '.mbcf-field-required-override', function () {
       var key = $(this).data('field');
       var val = $(this).prop('checked');
@@ -792,17 +1026,15 @@
         : [];
       state.defaultLang = rawDefaultLang || (state.langs.length ? state.langs[0] : '');
 
-      // Ensure langs has at least one entry
       if (!state.langs.length && state.defaultLang) {
         state.langs = [state.defaultLang];
       }
 
-      // Ensure field_overrides is a plain object
       if (!state.config.field_overrides || Array.isArray(state.config.field_overrides)) {
         state.config.field_overrides = {};
       }
 
-      // Migrate any flat field_overrides to by_lang structure
+      // Migrate flat field_overrides to by_lang structure
       Object.keys(state.config.field_overrides).forEach(function (key) {
         var ov = state.config.field_overrides[key];
         if (ov && !ov.by_lang && (ov.label !== undefined || ov.placeholder !== undefined)) {
@@ -816,6 +1048,11 @@
           }
           state.config.field_overrides[key] = migrated;
         }
+      });
+
+      // Migrate section titles to new schema
+      state.config.sections.forEach(function (sec) {
+        sec.title = migrateTitle(sec.title);
       });
 
       initEvents();

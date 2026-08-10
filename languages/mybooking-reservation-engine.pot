@@ -5532,3 +5532,64 @@ msgstr ""
 msgctxt "renting_complete"
 msgid "Street"
 msgstr ""
+
+msgctxt "checkout_form_section_title"
+msgid "Customer's details"
+msgstr ""
+
+msgctxt "checkout_form_section_title"
+msgid "Customer address"
+msgstr ""
+
+msgctxt "checkout_form_section_title"
+msgid "Arrival flight"
+msgstr ""
+
+msgctxt "checkout_form_section_title"
+msgid "Departure flight"
+msgstr ""
+
+msgctxt "checkout_form_section_title"
+msgid "Driver details"
+msgstr ""
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 1"
+msgstr ""
+
+msgctxt "checkout_form_section_title"
+msgid "Additional driver 2"
+msgstr ""
+
+msgctxt "checkout_form_section_title"
+msgid "Additional information"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Section titles"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Custom title"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Edit section title"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Title"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Reset to default"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Restore the default checkout form? Unsaved builder changes will be replaced."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Default form restored in the editor. Save changes to apply."
+msgstr ""
+

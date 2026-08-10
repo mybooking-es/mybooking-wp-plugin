@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 require_once __DIR__ . '/mybooking-checkout-form-fields.php';
+require_once __DIR__ . '/mybooking-checkout-form-section-title-presets.php';
 
 /**
  * Reads, writes, and validates the checkout form configuration stored in wp_options.
@@ -14,8 +15,12 @@ require_once __DIR__ . '/mybooking-checkout-form-fields.php';
  *     'sections' => [
  *       [
  *         'id'       => string (UUID v4),
- *         'title'    => string,
- *         'subtitle' => string,
+ *         'title'    => [
+ *           'preset'   => string,  // known preset key or 'custom'
+ *           'fallback' => string,  // used when preset='custom' and no by_lang override
+ *           'by_lang'  => [],      // locale => override string
+ *         ],
+ *         'subtitle' => string,    // legacy plain string, not multilingual in this phase
  *         'rows'     => [
  *           [
  *             'id'     => string (UUID v4),
@@ -96,7 +101,11 @@ class MyBookingCheckoutFormConfig {
       'sections' => [
         [
           'id'       => self::uuid(),
-          'title'    => _x( "Customer's details", 'renting_complete', 'mybooking-reservation-engine' ),
+          'title'    => [
+            'preset'   => 'customer_details',
+            'fallback' => '',
+            'by_lang'  => [],
+          ],
           'subtitle' => '',
           'rows'     => [
             [
@@ -221,8 +230,7 @@ class MyBookingCheckoutFormConfig {
       $sec_id   = isset( $section['id'] ) && is_string( $section['id'] )
         && preg_match( '/^[a-zA-Z0-9_\-]{1,100}$/', $section['id'] )
         ? $section['id'] : self::uuid();
-      $title    = isset( $section['title'] )    && is_string( $section['title'] )
-        ? sanitize_text_field( $section['title'] )    : '';
+      $title    = self::normalize_section_title( isset( $section['title'] ) ? $section['title'] : '' );
       $subtitle = isset( $section['subtitle'] ) && is_string( $section['subtitle'] )
         ? sanitize_text_field( $section['subtitle'] ) : '';
 
@@ -444,6 +452,51 @@ class MyBookingCheckoutFormConfig {
       $available[ $key ] = $field;
     }
     return $available;
+  }
+
+  /**
+   * Normalizes a section title to the canonical array schema.
+   *
+   * Legacy string → migrated: known customer_details strings → preset key;
+   *                            any other string → preset 'custom', fallback = sanitized string.
+   * Array → validated: preset checked against whitelist, fallback sanitized, by_lang sanitized.
+   *
+   * @param  mixed $raw  Raw title value.
+   * @return array       Normalized title: { preset, fallback, by_lang }
+   */
+  private static function normalize_section_title( $raw ) {
+    $valid_presets = mybooking_checkout_form_section_title_preset_keys();
+
+    if ( is_string( $raw ) ) {
+      if ( in_array( $raw, mybooking_checkout_form_customer_details_strings(), true ) ) {
+        return [ 'preset' => 'customer_details', 'fallback' => '', 'by_lang' => [] ];
+      }
+      $sanitized = sanitize_text_field( $raw );
+      return [ 'preset' => 'custom', 'fallback' => $sanitized, 'by_lang' => [] ];
+    }
+
+    if ( ! is_array( $raw ) ) {
+      return [ 'preset' => 'custom', 'fallback' => '', 'by_lang' => [] ];
+    }
+
+    $preset = ( isset( $raw['preset'] ) && is_string( $raw['preset'] )
+      && ( in_array( $raw['preset'], $valid_presets, true ) || $raw['preset'] === 'custom' ) )
+      ? $raw['preset'] : 'custom';
+
+    $fallback = ( isset( $raw['fallback'] ) && is_string( $raw['fallback'] ) )
+      ? sanitize_text_field( $raw['fallback'] ) : '';
+
+    $by_lang = [];
+    if ( isset( $raw['by_lang'] ) && is_array( $raw['by_lang'] ) ) {
+      foreach ( $raw['by_lang'] as $lang => $val ) {
+        if ( ! is_string( $lang ) || $lang === '' ) {
+          continue;
+        }
+        $by_lang[ $lang ] = is_string( $val ) ? sanitize_text_field( $val ) : '';
+      }
+    }
+
+    return [ 'preset' => $preset, 'fallback' => $fallback, 'by_lang' => $by_lang ];
   }
 
   /**
