@@ -5593,3 +5593,23 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr ""
 
+msgctxt "checkout_form_builder"
+msgid "Edit section subtitle"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Section removed."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Translated"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Not translated"
+msgstr ""
+

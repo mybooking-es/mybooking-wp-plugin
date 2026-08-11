@@ -30,8 +30,18 @@ textarea[readonly]:focus {
 }
 
 .mbcf-palette-area {
-	flex: 0 0 240px;
-	width: 240px;
+	flex: 0 0 clamp(270px, 24vw, 320px);
+	width: clamp(270px, 24vw, 320px);
+	position: sticky;
+	top: 46px;
+	max-height: calc(100vh - 128px);
+	overflow-y: auto;
+	overflow-x: hidden;
+	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
 /* Add-section bar */
@@ -55,7 +65,7 @@ textarea[readonly]:focus {
 
 .mbcf-section-header {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 8px;
 	padding: 10px 12px;
 	border-bottom: 1px solid #eee;
@@ -63,33 +73,6 @@ textarea[readonly]:focus {
 	border-radius: 4px 4px 0 0;
 }
 
-.mbcf-section-titles {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-	min-width: 0;
-}
-
-.mbcf-section-title {
-	font-weight: 600;
-}
-
-.mbcf-section-title-display {
-	display: flex;
-	align-items: center;
-	gap: 6px;
-}
-
-/* Section title language pills — remove slot-tags left indent */
-.mbcf-section-title-langs.mbcf-slot-tags {
-	margin: 0;
-}
-
-.mbcf-section-subtitle {
-	font-size: 12px;
-	color: #666;
-}
 
 .mbcf-section-footer {
 	padding: 8px 12px;
@@ -97,7 +80,9 @@ textarea[readonly]:focus {
 	background: #f6f7f7;
 	border-radius: 0 0 4px 4px;
 	display: flex;
-	gap: 6px;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
 }
 
 /* Rows */
@@ -201,7 +186,6 @@ textarea[readonly]:focus {
 }
 
 /* Remove buttons */
-.mbcf-remove-section,
 .mbcf-remove-row,
 .mbcf-remove-field {
 	flex-shrink: 0;
@@ -214,7 +198,6 @@ textarea[readonly]:focus {
 	line-height: 1;
 }
 
-.mbcf-remove-section:hover,
 .mbcf-remove-row:hover,
 .mbcf-remove-field:hover {
 	color: #d63638;
@@ -325,6 +308,9 @@ textarea[readonly]:focus {
 
 .mbcf-palette-item-label {
 	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 160px;
 }
 
 .mbcf-palette-empty {
@@ -417,6 +403,11 @@ textarea[readonly]:focus {
 	.mbcf-palette-area {
 		flex: none;
 		width: 100%;
+		position: static;
+		max-height: none;
+		overflow-y: visible;
+		overflow-x: visible;
+		scrollbar-gutter: auto;
 	}
 	.mbcf-palette-items {
 		flex-direction: row;
@@ -521,4 +512,274 @@ textarea[readonly]:focus {
 	border: 1px solid rgba(0, 0, 0, 0.18);
 	color: rgba(0, 0, 0, 0.3);
 	line-height: 1.3;
+}
+
+/* ── Section lang pills (title/subtitle) ───────────────────────────────── */
+
+.mbcf-section-title-langs,
+.mbcf-section-subtitle-langs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3px;
+	margin-top: 3px;
+}
+
+.mbcf-section-title-langs .mbcf-lang-pill,
+.mbcf-section-subtitle-langs .mbcf-lang-pill {
+	display: inline-block;
+	font-size: 9px;
+	padding: 1px 5px;
+	border-radius: 7px;
+	line-height: 1.5;
+	font-weight: 700;
+	white-space: nowrap;
+	cursor: default;
+}
+
+.mbcf-lang-pill--set {
+	background: #2271b1;
+	color: #fff;
+}
+
+.mbcf-lang-pill--empty {
+	background: transparent;
+	border: 1px solid #bbb;
+	color: #aaa;
+}
+
+/* ── Section card BEM family ────────────────────────────────────────────── */
+
+.mbcf-section-meta-cols {
+	flex: 1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 6px;
+	min-width: 0;
+}
+
+.mbcf-section-meta-col {
+	min-width: 0;
+}
+
+.mbcf-section-actions {
+	flex-shrink: 0;
+	display: flex;
+	align-items: flex-start;
+	padding-top: 2px;
+}
+
+.mbcf-section-card {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 5px 8px;
+	min-width: 0;
+}
+
+.mbcf-section-card--subtitle-empty {
+	background: #fafafa;
+}
+
+.mbcf-section-card__meta {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	min-width: 0;
+}
+
+.mbcf-section-card__text {
+	flex: 1;
+	font-size: 13px;
+	font-weight: 600;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-width: 0;
+}
+
+.mbcf-section-card--subtitle .mbcf-section-card__text {
+	font-size: 12px;
+	font-weight: 400;
+	color: #555;
+}
+
+.mbcf-section-card__text--muted {
+	color: #aaa;
+	font-weight: 400;
+	font-style: italic;
+}
+
+/* Section remove / protected actions */
+
+.mbcf-section-card__remove-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	background: none;
+	border: none;
+	color: #a00;
+	cursor: pointer;
+	padding: 2px 4px;
+	font-size: 12px;
+	line-height: 1.4;
+	white-space: nowrap;
+}
+
+.mbcf-section-card__remove-btn:hover {
+	color: #d63638;
+}
+
+.mbcf-section-card__remove-btn .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+}
+
+.mbcf-section-protected {
+	color: #aaa;
+	font-size: 16px;
+	padding: 2px 4px;
+	cursor: default;
+}
+
+/* Row remove icon button */
+
+.mbcf-remove-row {
+	display: inline-flex;
+	align-items: center;
+}
+
+.mbcf-remove-row .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+}
+
+/* Sidebar panel wrapper */
+
+.mbcf-sidebar-panel {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 12px;
+}
+
+/* ── Sticky builder action bar ──────────────────────────────────────────── */
+
+.mbcf-builder-actions {
+	position: sticky;
+	bottom: 0;
+	background: #fff;
+	border-top: 1px solid #c3c4c7;
+	padding: 10px 0;
+	margin-top: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	z-index: 10;
+}
+
+/* ── Admin confirm modal ────────────────────────────────────────────────── */
+
+.mybooking-admin-modal {
+	padding: 0;
+	border: none;
+	border-radius: 6px;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
+	max-width: 480px;
+	width: calc(100vw - 32px);
+	overflow: visible;
+}
+
+.mybooking-admin-modal::backdrop {
+	background: rgba(0, 0, 0, 0.35);
+}
+
+.mybooking-admin-modal__surface {
+	padding: 0;
+}
+
+.mybooking-admin-modal__header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 8px;
+	padding: 16px 20px 12px;
+	border-bottom: 1px solid #c3c4c7;
+}
+
+.mybooking-admin-modal__title {
+	font-size: 15px;
+	font-weight: 600;
+	margin: 0;
+	padding: 0;
+	line-height: 1.4;
+}
+
+.mybooking-admin-modal__close {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	line-height: 1;
+	color: #787c82;
+	padding: 0 2px;
+	flex-shrink: 0;
+	margin-top: -2px;
+}
+
+.mybooking-admin-modal__close:hover {
+	color: #1d2327;
+}
+
+.mybooking-admin-modal__body {
+	padding: 16px 20px;
+}
+
+.mybooking-admin-modal__body p {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.6;
+	color: #1d2327;
+}
+
+.mybooking-admin-modal__actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 8px;
+	padding: 12px 20px 16px;
+	border-top: 1px solid #c3c4c7;
+}
+
+.mybooking-admin-modal[data-variant="danger"] .mybooking-admin-modal__confirm {
+	background: #d63638;
+	border-color: #b32d2e;
+	color: #fff;
+}
+
+.mybooking-admin-modal[data-variant="danger"] .mybooking-admin-modal__confirm:hover {
+	background: #b32d2e;
+	border-color: #8a1f20;
+}
+
+.mybooking-admin-modal[data-variant="danger"] .mybooking-admin-modal__confirm:focus {
+	box-shadow: 0 0 0 2px #fff, 0 0 0 4px #d63638;
+	outline: none;
+}
+
+/* ── Preset buttons ─────────────────────────────────────────────────────── */
+
+.mbcf-preset-btn--custom {
+	border-style: dashed;
+}
+
+.mbcf-preset-btn__plus {
+	display: inline-block;
+	font-size: 15px;
+	line-height: 1;
+	margin-right: 2px;
+	vertical-align: middle;
+	font-weight: 400;
 }

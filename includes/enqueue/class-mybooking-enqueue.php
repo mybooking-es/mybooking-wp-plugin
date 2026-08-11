@@ -73,10 +73,22 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                                    'mybooking-reservation-engine',
                                    MYBOOKING_RESERVATION_ENGINE_SCRIPTS_LANGUAGES_FOLDER);
 
+        // Admin modal (reusable confirm dialog)
+        wp_register_script('mybooking_wp_admin_modal',
+                           plugins_url( 'admin-assets/js/mybooking-admin-modal.js', dirname(__DIR__) ),
+                           array( 'jquery' ),
+                           $this->version,
+                           true);
+        wp_enqueue_script('mybooking_wp_admin_modal');
+        wp_localize_script('mybooking_wp_admin_modal', 'mybookingAdminModalStrings', array(
+          'cancel' => __( 'Cancel' ),
+          'close'  => __( 'Close' ),
+        ) );
+
         // Checkout form builder
         wp_register_script('mybooking_wp_admin_checkout_form_builder',
                            plugins_url( 'admin-assets/js/checkout-form-builder.js', dirname(__DIR__) ),
-                           array( 'jquery', 'jquery-ui-sortable', 'wp-i18n' ),
+                           array( 'jquery', 'jquery-ui-sortable', 'wp-i18n', 'wp-a11y', 'mybooking_wp_admin_modal' ),
                            $this->version,
                            true);
         wp_enqueue_script('mybooking_wp_admin_checkout_form_builder');
@@ -137,6 +149,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'reset_default'  => _x( 'Reset to default',                                                                              'checkout_form_builder', 'mybooking-reservation-engine' ),
           'reset_confirm'  => _x( 'Restore the default checkout form? Unsaved builder changes will be replaced.',                  'checkout_form_builder', 'mybooking-reservation-engine' ),
           'reset_notice'   => _x( 'Default form restored in the editor. Save changes to apply.',                                   'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // P2B.5 new strings
+          'edit_section_subtitle' => _x( 'Edit section subtitle',                                                                                                                                         'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'remove_section_confirm' => _x( 'Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes.', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'section_removed'        => _x( 'Section removed.',                                                                                                         'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'translated'             => _x( 'Translated',                                                                                                               'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'not_translated'         => _x( 'Not translated',                                                                                                           'checkout_form_builder', 'mybooking-reservation-engine' ),
         ) );
       }
       

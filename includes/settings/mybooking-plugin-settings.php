@@ -283,9 +283,17 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 								   name="mybooking_checkout_form_config"
 								   id="mybooking-checkout-form-config-input"
 								   value="<?php echo esc_attr( wp_json_encode( $cf_config ) ); ?>" />
+							<div class="mbcf-builder-actions">
+								<?php submit_button( null, 'primary', 'submit', false ); ?>
+								<button type="button" id="mbcf-reset-default" class="button button-secondary">
+									<?php echo esc_html_x( 'Reset to default', 'checkout_form_builder', 'mybooking-reservation-engine' ); ?>
+								</button>
+							</div>
 							<?php
 						}
-			        submit_button();
+			        else {
+			        	submit_button();
+			        }
 		        ?>
 		      </form>
 		  </div>

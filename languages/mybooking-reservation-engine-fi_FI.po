@@ -5770,3 +5770,23 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "Oletuslomake palautettiin editorissa. Tallenna muutokset ottaaksesi sen käyttöön."
 
+
+msgctxt "checkout_form_builder"
+msgid "Edit section subtitle"
+msgstr "Muokkaa osion alaotsikkoa"
+
+msgctxt "checkout_form_builder"
+msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
+msgstr "Poistetaanko tämä osio? Sen kentät palautuvat Käytettävissä oleviin kenttiin. Muutokset tallennetaan vasta, kun napsautat Tallenna muutokset."
+
+msgctxt "checkout_form_builder"
+msgid "Section removed."
+msgstr "Osio poistettu."
+
+msgctxt "checkout_form_builder"
+msgid "Translated"
+msgstr "Käännetty"
+
+msgctxt "checkout_form_builder"
+msgid "Not translated"
+msgstr "Ei käännetty"

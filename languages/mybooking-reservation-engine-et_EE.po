@@ -5766,3 +5766,23 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "Vaikevorm taastati redaktoris. Rakendamiseks salvesta muudatused."
 
+
+msgctxt "checkout_form_builder"
+msgid "Edit section subtitle"
+msgstr "Muuda jaotise alapealkirja"
+
+msgctxt "checkout_form_builder"
+msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
+msgstr "Kas eemaldada see jaotis? Selle väljad naasevad jaotisse Saadaolevad väljad. Muudatused salvestatakse alles pärast nupu „Salvesta muudatused“ klõpsamist."
+
+msgctxt "checkout_form_builder"
+msgid "Section removed."
+msgstr "Jaotis eemaldatud."
+
+msgctxt "checkout_form_builder"
+msgid "Translated"
+msgstr "Tõlgitud"
+
+msgctxt "checkout_form_builder"
+msgid "Not translated"
+msgstr "Tõlkimata"

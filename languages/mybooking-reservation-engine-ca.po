@@ -5662,3 +5662,23 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "S'ha restablert el formulari predeterminat a l'editor. Desa els canvis per aplicar-lo."
 
+
+msgctxt "checkout_form_builder"
+msgid "Edit section subtitle"
+msgstr "Edita el subtítol de la secció"
+
+msgctxt "checkout_form_builder"
+msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
+msgstr "Vols eliminar aquesta secció? Els seus camps tornaran a Camps disponibles. Els canvis no es desaran fins que faces clic a Desa els canvis."
+
+msgctxt "checkout_form_builder"
+msgid "Section removed."
+msgstr "Secció eliminada."
+
+msgctxt "checkout_form_builder"
+msgid "Translated"
+msgstr "Traduït"
+
+msgctxt "checkout_form_builder"
+msgid "Not translated"
+msgstr "Sense traduir"

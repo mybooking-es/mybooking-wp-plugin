@@ -5665,3 +5665,23 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "Стандартная форма восстановлена в редакторе. Сохраните изменения, чтобы применить её."
 
+
+msgctxt "checkout_form_builder"
+msgid "Edit section subtitle"
+msgstr "Изменить подзаголовок раздела"
+
+msgctxt "checkout_form_builder"
+msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
+msgstr "Удалить этот раздел? Его поля вернутся в список «Доступные поля». Изменения будут сохранены только после нажатия «Сохранить изменения»."
+
+msgctxt "checkout_form_builder"
+msgid "Section removed."
+msgstr "Раздел удалён."
+
+msgctxt "checkout_form_builder"
+msgid "Translated"
+msgstr "Переведено"
+
+msgctxt "checkout_form_builder"
+msgid "Not translated"
+msgstr "Не переведено"

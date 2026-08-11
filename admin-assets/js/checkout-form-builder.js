@@ -192,16 +192,20 @@
     byLang = byLang || {};
     var pills = '';
     state.langs.forEach(function (lang) {
-      var val    = byLang[lang] || '';
-      var hasVal = !!(val && val.trim && val.trim());
+      var val      = byLang[lang] || '';
+      var hasVal   = !!(val && val.trim && val.trim());
+      var friendly = langFriendlyName(lang);
+      var status   = hasVal ? str('translated', 'Translated') : str('not_translated', 'Not translated');
+      var ariaLabel = friendly + ' — ' + status;
       pills += '<span class="mbcf-lang-pill mbcf-lang-pill--' + (hasVal ? 'set' : 'empty') + '"'
-        + ' title="' + escAttr(langFriendlyName(lang)) + '">'
+        + ' title="' + escAttr(friendly) + '"'
+        + ' aria-label="' + escAttr(ariaLabel) + '">'
         + escHtml(langShortCode(lang))
         + '</span>';
     });
     return pills
-      ? '<div class="mbcf-slot-tags mbcf-section-' + cssModifier + '-langs">'
-        + '<span class="mbcf-slot-tag mbcf-slot-tag--' + cssModifier + '">' + pills + '</span>'
+      ? '<div class="mbcf-section-' + cssModifier + '-langs">'
+        + pills
         + '</div>'
       : '';
   }
@@ -287,8 +291,21 @@
     return config;
   }
 
+  function announce(message) {
+    if (window.wp && wp.a11y && typeof wp.a11y.speak === 'function') {
+      wp.a11y.speak(message);
+    }
+  }
+
   function showResetNotice() {
     var msg = str('reset_notice', 'Default form restored in the editor. Save changes to apply.');
+    var $existing = $('.mbcf-reset-notice');
+    if ($existing.length) {
+      $existing.stop(true, true).show();
+      $existing.find('p').text(msg);
+      setTimeout(function () { $existing.fadeOut(400, function () { $existing.remove(); }); }, 4000);
+      return;
+    }
     var $notice = $('<div class="notice notice-success mbcf-reset-notice is-dismissible"><p>' + escHtml(msg) + '</p></div>');
     $('#' + BUILDER_ID).before($notice);
     setTimeout(function () { $notice.fadeOut(400, function () { $notice.remove(); }); }, 4000);
@@ -296,14 +313,22 @@
 
   function resetToDefault() {
     if (!state.defaultConfig) return;
-    // eslint-disable-next-line no-alert
-    if (!window.confirm(str('reset_confirm', 'Restore the default checkout form? Unsaved builder changes will be replaced.'))) {
-      return;
-    }
-    state.config = normalizeConfigShape(deepClone(state.defaultConfig));
-    syncInput();
-    render();
-    showResetNotice();
+    var $trigger = $('#mbcf-reset-default');
+    var opener   = $trigger.length ? $trigger[0] : null;
+    MyBookingAdminModal.confirm({
+      title:       str('reset_default', 'Reset to default'),
+      message:     str('reset_confirm', 'Restore the default checkout form? Unsaved builder changes will be replaced.'),
+      confirmText: str('reset_default', 'Reset to default'),
+      variant:     'default',
+      opener:      opener
+    }).then(function (confirmed) {
+      if (!confirmed) return;
+      state.config = normalizeConfigShape(deepClone(state.defaultConfig));
+      syncInput();
+      render();
+      showResetNotice();
+      announce(str('reset_notice', 'Default form restored in the editor. Save changes to apply.'));
+    });
   }
 
   // ── Override utilities (by_lang structure) ──────────────────────────────────
@@ -362,23 +387,40 @@
       var $sec = $('[data-section-id="' + sec.id + '"]');
       $sec.find('.mbcf-section-title-editor').show();
       $sec.addClass('mbcf-section--title-open');
+      $sec.find('.mbcf-section-title-edit-btn').attr('aria-expanded', 'true');
       $sec.find('.mbcf-section-title-by-lang, .mbcf-section-title-fallback').first().focus();
     }
   }
 
-  function removeSection(sectionId) {
-    var section = getSectionById(sectionId);
-    if (!section) return;
-    var hasLocked = section.rows.some(function (r) {
+  function sectionHasLockedFields(section) {
+    return section.rows.some(function (r) {
       return r.fields.some(function (k) { return k && isLocked(k); });
     });
-    if (hasLocked) {
-      // eslint-disable-next-line no-alert
-      alert(str('cannot_remove_section', 'This section contains required fields and cannot be removed.'));
-      return;
-    }
-    state.config.sections = state.config.sections.filter(function (s) { return s.id !== sectionId; });
-    render();
+  }
+
+  function removeSection(sectionId, opener) {
+    var section = getSectionById(sectionId);
+    if (!section) return;
+    if (sectionHasLockedFields(section)) return;
+    MyBookingAdminModal.confirm({
+      title:       str('remove_section', 'Remove section'),
+      message:     str('remove_section_confirm', 'Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes.'),
+      confirmText: str('remove_section', 'Remove section'),
+      variant:     'danger',
+      opener:      opener || null
+    }).then(function (confirmed) {
+      if (!confirmed) return;
+      state.config.sections = state.config.sections.filter(function (s) { return s.id !== sectionId; });
+      render();
+      var $sections = $('#mbcf-sections');
+      var $last = $sections.children('.mbcf-section').last();
+      if ($last.length) {
+        $last.find('.mbcf-section-card__remove-btn, .mbcf-section-card__handle').first().focus();
+      } else {
+        $sections.closest('.mbcf-form-area').find('.mbcf-preset-btn').first().focus();
+      }
+      announce(str('section_removed', 'Section removed.'));
+    });
   }
 
   function addRow(sectionId, layout) {
@@ -556,7 +598,9 @@
     var langsToRender = state.langs.length ? state.langs : (activeLang ? [activeLang] : ['']);
     var isMultiLang   = langsToRender.length > 1;
 
-    var html = '<div class="mbcf-section-' + type + '-editor" style="display:none">';
+    var editorId = 'mbcf-section-' + type + '-editor-' + section.id;
+
+    var html = '<div class="mbcf-section-' + type + '-editor" id="' + escAttr(editorId) + '" style="display:none">';
 
     if (!isMultiLang) {
       html += '<div class="mbcf-field-settings-row">'
@@ -606,7 +650,10 @@
     }
 
     html += '<div class="mbcf-field-settings-row mbcf-field-settings-row--actions">'
-      + '<button type="button" class="mbcf-section-' + type + '-editor-close button button-small">'
+      + '<button type="button"'
+        + ' class="mbcf-section-' + type + '-editor-close button button-small"'
+        + ' data-section="' + escAttr(section.id) + '"'
+        + ' data-editor-type="' + escAttr(type) + '">'
         + str('field_settings_done', '&#10003; Done') + '</button>'
       + '</div>'
       + '</div>';
@@ -775,7 +822,10 @@
         + slotsHtml
       + '</div>'
       + '<button type="button" class="mbcf-remove-row button-link" data-row="' + row.id + '"'
-        + ' title="' + escAttr(str('remove_row', 'Remove row')) + '">&#x2715;</button>'
+        + ' title="' + escAttr(str('remove_row', 'Remove row')) + '">'
+        + '<span class="dashicons dashicons-trash" aria-hidden="true"></span>'
+        + '<span class="screen-reader-text">' + escHtml(str('remove_row', 'Remove row')) + '</span>'
+      + '</button>'
       + '</div>';
   }
 
@@ -786,69 +836,116 @@
     var subtitleEditorHtml = renderSectionSubtitleEditor(section);
     var titlePillsHtml     = isSectionTitleCustomized(section) ? buildSectionTitlePills(section) : '';
 
-    var subtitleText    = resolvedSubtitle(section, state.defaultLang);
-    var subtitleIsSet   = isSectionSubtitleSet(section);
+    var subtitleText      = resolvedSubtitle(section, state.defaultLang);
+    var subtitleIsSet     = isSectionSubtitleSet(section);
     var subtitlePillsHtml = subtitleIsSet ? buildSectionSubtitlePills(section) : '';
 
-    var subtitleHeaderHtml;
+    var isLocked        = sectionHasLockedFields(section);
+    var titleEditorId   = 'mbcf-section-title-editor-' + section.id;
+    var subtitleEditorId = 'mbcf-section-subtitle-editor-' + section.id;
+
+    // Title card
+    var titleCardHtml = '<div class="mbcf-section-card mbcf-section-card--title">'
+      + '<div class="mbcf-section-card__meta">'
+        + '<span class="mbcf-section-card__text">' + escHtml(titleText) + '</span>'
+        + '<button type="button"'
+          + ' class="mbcf-section-title-edit-btn button-link"'
+          + ' data-section="' + escAttr(section.id) + '"'
+          + ' aria-label="' + escAttr(str('edit_section_title', 'Edit section title')) + '"'
+          + ' aria-expanded="false"'
+          + ' aria-controls="' + escAttr(titleEditorId) + '">'
+          + '<span class="dashicons dashicons-edit" aria-hidden="true"></span>'
+        + '</button>'
+      + '</div>'
+      + titlePillsHtml
+      + '</div>';
+
+    // Subtitle card
+    var subtitleCardHtml;
     if (subtitleIsSet) {
-      subtitleHeaderHtml = '<div class="mbcf-section-subtitle-row">'
-        + '<div class="mbcf-section-subtitle-display">'
-          + '<span class="mbcf-section-subtitle-text">' + escHtml(subtitleText) + '</span>'
-          + '<button type="button" class="mbcf-section-subtitle-edit-btn button-link"'
-            + ' data-section="' + section.id + '"'
-            + ' title="' + escAttr(str('edit_section_subtitle', 'Edit section subtitle')) + '">'
-            + '<span class="dashicons dashicons-edit"></span></button>'
+      subtitleCardHtml = '<div class="mbcf-section-card mbcf-section-card--subtitle">'
+        + '<div class="mbcf-section-card__meta">'
+          + '<span class="mbcf-section-card__text">' + escHtml(subtitleText) + '</span>'
+          + '<button type="button"'
+            + ' class="mbcf-section-subtitle-edit-btn button-link"'
+            + ' data-section="' + escAttr(section.id) + '"'
+            + ' aria-label="' + escAttr(str('edit_section_subtitle', 'Edit section subtitle')) + '"'
+            + ' aria-expanded="false"'
+            + ' aria-controls="' + escAttr(subtitleEditorId) + '">'
+            + '<span class="dashicons dashicons-edit" aria-hidden="true"></span>'
+          + '</button>'
         + '</div>'
         + subtitlePillsHtml
         + '</div>';
     } else {
-      subtitleHeaderHtml = '<div class="mbcf-section-subtitle-row">'
-        + '<button type="button" class="mbcf-section-subtitle-edit-btn mbcf-section-subtitle-add button-link"'
-          + ' data-section="' + section.id + '">'
-          + escHtml(str('section_subtitle_ph', 'Subtitle (optional)'))
-          + ' <span class="dashicons dashicons-edit"></span>'
+      subtitleCardHtml = '<div class="mbcf-section-card mbcf-section-card--subtitle mbcf-section-card--subtitle-empty">'
+        + '<button type="button"'
+          + ' class="mbcf-section-subtitle-edit-btn mbcf-section-subtitle-add button-link"'
+          + ' data-section="' + escAttr(section.id) + '"'
+          + ' aria-label="' + escAttr(str('edit_section_subtitle', 'Edit section subtitle')) + '"'
+          + ' aria-expanded="false"'
+          + ' aria-controls="' + escAttr(subtitleEditorId) + '">'
+          + '<span class="mbcf-section-card__text mbcf-section-card__text--muted">'
+            + escHtml(str('section_subtitle_ph', 'Subtitle (optional)'))
+          + '</span>'
+          + ' <span class="dashicons dashicons-edit" aria-hidden="true"></span>'
         + '</button>'
         + '</div>';
     }
 
-    return '<div class="mbcf-section postbox" data-section-id="' + section.id + '">'
+    // Remove / protected action
+    var removeHtml;
+    if (isLocked) {
+      removeHtml = '<span class="mbcf-section-protected dashicons dashicons-lock"'
+        + ' title="' + escAttr(str('cannot_remove_section', 'This section contains required fields and cannot be removed.')) + '"'
+        + ' aria-hidden="true"></span>';
+    } else {
+      removeHtml = '<button type="button"'
+        + ' class="mbcf-section-card__remove-btn button-link"'
+        + ' data-section="' + escAttr(section.id) + '">'
+        + '<span class="dashicons dashicons-trash" aria-hidden="true"></span>'
+        + ' ' + escHtml(str('remove_section', 'Remove section'))
+        + '</button>';
+    }
+
+    // Build title editor HTML with stable ID
+    var titleEditorWithId = titleEditorHtml.replace(
+      'class="mbcf-section-title-editor"',
+      'class="mbcf-section-title-editor" id="' + escAttr(titleEditorId) + '"'
+    );
+    var subtitleEditorWithId = subtitleEditorHtml.replace(
+      'class="mbcf-section-subtitle-editor"',
+      'class="mbcf-section-subtitle-editor" id="' + escAttr(subtitleEditorId) + '"'
+    );
+
+    return '<div class="mbcf-section postbox" data-section-id="' + escAttr(section.id) + '">'
       + '<div class="mbcf-section-header inside">'
         + '<span class="mbcf-section-handle dashicons dashicons-menu" title="' + escAttr(str('drag_reorder', 'Drag to reorder')) + '"></span>'
-        + '<div class="mbcf-section-titles">'
-          + '<div class="mbcf-section-title-display">'
-            + '<span class="mbcf-section-title-text">' + escHtml(titleText) + '</span>'
-            + '<button type="button" class="mbcf-section-title-edit-btn button-link"'
-              + ' data-section="' + section.id + '"'
-              + ' title="' + escAttr(str('edit_section_title', 'Edit section title')) + '">'
-              + '<span class="dashicons dashicons-edit"></span></button>'
-          + '</div>'
-          + titlePillsHtml
+        + '<div class="mbcf-section-meta-cols">'
+          + '<div class="mbcf-section-meta-col">' + titleCardHtml + '</div>'
+          + '<div class="mbcf-section-meta-col">' + subtitleCardHtml + '</div>'
         + '</div>'
-        + subtitleHeaderHtml
-        + '<button type="button" class="mbcf-remove-section button-link" data-section="' + section.id + '"'
-          + ' title="' + escAttr(str('remove_section', 'Remove section')) + '">&#x2715;</button>'
+        + '<div class="mbcf-section-actions">' + removeHtml + '</div>'
       + '</div>'
-      + titleEditorHtml
-      + subtitleEditorHtml
-      + '<div class="mbcf-rows" data-section-id="' + section.id + '">' + rowsHtml + '</div>'
+      + titleEditorWithId
+      + subtitleEditorWithId
+      + '<div class="mbcf-rows" data-section-id="' + escAttr(section.id) + '">' + rowsHtml + '</div>'
       + '<div class="mbcf-section-footer inside">'
-        + '<button type="button" class="mbcf-add-row button button-small" data-section="' + section.id + '" data-layout="1col">'
+        + '<button type="button" class="mbcf-add-row button button-secondary" data-section="' + escAttr(section.id) + '" data-layout="1col">'
           + str('add_row_1col', '+ Row (1 column)') + '</button>'
-        + '&nbsp;'
-        + '<button type="button" class="mbcf-add-row button button-small" data-section="' + section.id + '" data-layout="2col">'
+        + '<button type="button" class="mbcf-add-row button button-secondary" data-section="' + escAttr(section.id) + '" data-layout="2col">'
           + str('add_row_2col', '+ Row (2 columns)') + '</button>'
       + '</div>'
       + '</div>';
   }
 
   function renderSectionTitlePresets() {
-    var html = '<div class="mbcf-section-presets">'
+    var html = '<div class="mbcf-sidebar-panel mbcf-section-presets">'
       + '<h3 class="mbcf-palette-title">' + str('section_titles', 'Section titles') + '</h3>'
       + '<div class="mbcf-preset-buttons">';
 
     SECTION_PRESETS.forEach(function (preset) {
-      html += '<button type="button" class="mbcf-preset-btn button button-small"'
+      html += '<button type="button" class="mbcf-preset-btn button button-secondary"'
         + ' data-preset="' + escAttr(preset) + '">'
         + escHtml(str('preset_' + preset, preset))
         + '</button>';
@@ -856,6 +953,7 @@
 
     html += '<button type="button" class="mbcf-preset-btn mbcf-preset-btn--custom button button-secondary"'
       + ' data-preset="custom">'
+      + '<span class="mbcf-preset-btn__plus" aria-hidden="true">+</span> '
       + escHtml(str('custom_title', 'Custom title'))
       + '</button>';
 
@@ -878,7 +976,7 @@
       groups[group].push(key);
     });
 
-    var html = '<div class="mbcf-palette"><h3 class="mbcf-palette-title">'
+    var html = '<div class="mbcf-sidebar-panel mbcf-palette"><h3 class="mbcf-palette-title">'
       + str('available_fields', 'Available fields') + '</h3>';
 
     if (groupOrder.length === 0) {
@@ -896,7 +994,7 @@
           if (f.has_intl_tel) badges += '<span class="mbcf-badge mbcf-badge--tel">' + escHtml(str('badge_tel', 'tel')) + '</span>';
           if (f.special)      badges += '<span class="mbcf-badge mbcf-badge--special">&#9670;</span>';
           html += '<div class="mbcf-palette-item" draggable="true" data-field="' + escAttr(key) + '">'
-            + '<span class="mbcf-palette-item-label">' + escHtml(fieldDisplayLabel(key)) + '</span>'
+            + '<span class="mbcf-palette-item-label" title="' + escAttr(fieldDisplayLabel(key)) + '">' + escHtml(fieldDisplayLabel(key)) + '</span>'
             + badges
             + '</div>';
         });
@@ -906,15 +1004,6 @@
 
     html += '</div>';
     return html;
-  }
-
-  function renderActions() {
-    if (!state.defaultConfig) return '';
-    return '<div class="mbcf-builder-actions">'
-      + '<button type="button" id="mbcf-reset-default" class="mbcf-reset-btn button button-secondary">'
-      + escHtml(str('reset_default', 'Reset to default'))
-      + '</button>'
-      + '</div>';
   }
 
   function render() {
@@ -927,7 +1016,6 @@
       + '<div class="mbcf-palette-area">'
         + renderSectionTitlePresets()
         + renderPalette()
-        + renderActions()
       + '</div>'
     + '</div>';
 
@@ -1044,8 +1132,9 @@
       addSection(preset, preset === 'custom');
     });
 
-    $b.on('click.mbcf', '.mbcf-remove-section', function () {
-      removeSection($(this).data('section'));
+    $b.on('click.mbcf', '.mbcf-section-card__remove-btn', function () {
+      var sectionId = $(this).data('section');
+      removeSection(sectionId, this);
     });
 
     $b.on('click.mbcf', '.mbcf-add-row', function () {
@@ -1061,44 +1150,66 @@
       removeFieldFromSlot($(this).data('row'), parseInt($(this).data('slot'), 10));
     });
 
-    // Section title editor — open/close
+    // Section title editor — open/close with aria-expanded + focus
     $b.on('click.mbcf', '.mbcf-section-title-edit-btn', function (e) {
       e.stopPropagation();
-      var $sec   = $(this).closest('.mbcf-section');
+      var $btn   = $(this);
+      var $sec   = $btn.closest('.mbcf-section');
       var isOpen = $sec.hasClass('mbcf-section--title-open');
       $b.find('.mbcf-section--title-open').each(function () {
         $(this).removeClass('mbcf-section--title-open');
         $(this).find('.mbcf-section-title-editor').hide();
+        $(this).find('.mbcf-section-title-edit-btn').attr('aria-expanded', 'false');
       });
       if (!isOpen) {
         $sec.addClass('mbcf-section--title-open');
-        $sec.find('.mbcf-section-title-editor').show();
+        var $editor = $sec.find('.mbcf-section-title-editor');
+        $editor.show();
+        $btn.attr('aria-expanded', 'true');
+        $editor.find('input, button').first().focus();
       }
     });
 
     $b.on('click.mbcf', '.mbcf-section-title-editor-close', function (e) {
       e.stopPropagation();
-      render();
+      var sectionId = $(this).data('section');
+      var $sec = $b.find('[data-section-id="' + sectionId + '"]');
+      $sec.removeClass('mbcf-section--title-open');
+      $sec.find('.mbcf-section-title-editor').hide();
+      var $opener = $sec.find('.mbcf-section-title-edit-btn');
+      $opener.attr('aria-expanded', 'false');
+      $opener.focus();
     });
 
-    // Section subtitle editor — open/close
+    // Section subtitle editor — open/close with aria-expanded + focus
     $b.on('click.mbcf', '.mbcf-section-subtitle-edit-btn', function (e) {
       e.stopPropagation();
-      var $sec   = $(this).closest('.mbcf-section');
+      var $btn   = $(this);
+      var $sec   = $btn.closest('.mbcf-section');
       var isOpen = $sec.hasClass('mbcf-section--subtitle-open');
       $b.find('.mbcf-section--subtitle-open').each(function () {
         $(this).removeClass('mbcf-section--subtitle-open');
         $(this).find('.mbcf-section-subtitle-editor').hide();
+        $(this).find('.mbcf-section-subtitle-edit-btn').attr('aria-expanded', 'false');
       });
       if (!isOpen) {
         $sec.addClass('mbcf-section--subtitle-open');
-        $sec.find('.mbcf-section-subtitle-editor').show();
+        var $editor = $sec.find('.mbcf-section-subtitle-editor');
+        $editor.show();
+        $btn.attr('aria-expanded', 'true');
+        $editor.find('input, button').first().focus();
       }
     });
 
     $b.on('click.mbcf', '.mbcf-section-subtitle-editor-close', function (e) {
       e.stopPropagation();
-      render();
+      var sectionId = $(this).data('section');
+      var $sec = $b.find('[data-section-id="' + sectionId + '"]');
+      $sec.removeClass('mbcf-section--subtitle-open');
+      $sec.find('.mbcf-section-subtitle-editor').hide();
+      var $opener = $sec.find('.mbcf-section-subtitle-edit-btn');
+      $opener.attr('aria-expanded', 'false');
+      $opener.focus();
     });
 
     // Section title lang tab switch
@@ -1193,8 +1304,8 @@
       syncInput();
     });
 
-    // Reset to default
-    $b.on('click.mbcf', '#mbcf-reset-default', function () {
+    // Reset to default — delegated from parent form (button is in static PHP action bar)
+    $b.closest('form').on('click.mbcf', '#mbcf-reset-default', function () {
       resetToDefault();
     });
   }

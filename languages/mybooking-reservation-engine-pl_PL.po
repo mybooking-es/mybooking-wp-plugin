@@ -5789,3 +5789,23 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "Domyślny formularz został przywrócony w edytorze. Zapisz zmiany, aby go zastosować."
 
+
+msgctxt "checkout_form_builder"
+msgid "Edit section subtitle"
+msgstr "Edytuj podtytuł sekcji"
+
+msgctxt "checkout_form_builder"
+msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
+msgstr "Usunąć tę sekcję? Jej pola wrócą do Dostępnych pól. Zmiany zostaną zapisane dopiero po kliknięciu Zapisz zmiany."
+
+msgctxt "checkout_form_builder"
+msgid "Section removed."
+msgstr "Sekcja usunięta."
+
+msgctxt "checkout_form_builder"
+msgid "Translated"
+msgstr "Przełumaczone"
+
+msgctxt "checkout_form_builder"
+msgid "Not translated"
+msgstr "Nieprzełumaczone"
