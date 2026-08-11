@@ -5682,3 +5682,31 @@ msgstr "Traduït"
 msgctxt "checkout_form_builder"
 msgid "Not translated"
 msgstr "Sense traduir"
+
+msgctxt "checkout_form_builder"
+msgid "Section templates"
+msgstr "Plantilles de secció"
+
+msgctxt "checkout_form_builder"
+msgid "Configure"
+msgstr "Configura"
+
+msgctxt "checkout_form_builder"
+msgid "Already in form"
+msgstr "Ja és al formulari"
+
+msgctxt "checkout_form_builder"
+msgid "Move selected fields"
+msgstr "Mou els camps seleccionats"
+
+msgctxt "checkout_form_builder"
+msgid "Some selected fields are already in the form. They will be moved to the new section. Continue?"
+msgstr "Alguns camps seleccionats ja són al formulari. Es mouran a la nova secció. Vols continuar?"
+
+msgctxt "checkout_form_builder"
+msgid "Section added."
+msgstr "Secció afegida."
+
+msgctxt "checkout_form_builder"
+msgid "All fields in this template are already in the form."
+msgstr "Tots els camps d'aquesta plantilla ja són al formulari."

@@ -5613,3 +5613,30 @@ msgctxt "checkout_form_builder"
 msgid "Not translated"
 msgstr ""
 
+msgctxt "checkout_form_builder"
+msgid "Section templates"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Configure"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Already in form"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Move selected fields"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Some selected fields are already in the form. They will be moved to the new section. Continue?"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Section added."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "All fields in this template are already in the form."
+msgstr ""

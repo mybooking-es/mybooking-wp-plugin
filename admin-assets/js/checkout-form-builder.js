@@ -57,12 +57,13 @@
   ];
 
   var state = {
-    config:        null,  // { sections, field_overrides }
-    defaultConfig: null,  // parsed from data-default-config; never mutated
-    fields:        {},    // catalog keyed by field key
-    strings:       {},    // i18n from window.mybookingCheckoutFormStrings
-    langs:         [],    // available locale codes, e.g. ['es_ES', 'en_US']
-    defaultLang:   ''     // current admin locale, e.g. 'es_ES'
+    config:           null,  // { sections, field_overrides }
+    defaultConfig:    null,  // parsed from data-default-config; never mutated
+    sectionTemplates: {},    // catalog from data-section-templates
+    fields:           {},    // catalog keyed by field key
+    strings:          {},    // i18n from window.mybookingCheckoutFormStrings
+    langs:            [],    // available locale codes, e.g. ['es_ES', 'en_US']
+    defaultLang:      ''     // current admin locale, e.g. 'es_ES'
   };
 
   // ── Basic utilities ─────────────────────────────────────────────────────────
@@ -553,6 +554,146 @@
     }
   }
 
+  // ── Section template insertion ───────────────────────────────────────────────
+
+  function templateFieldsInForm(templateKey) {
+    var tpl = state.sectionTemplates[templateKey];
+    if (!tpl) return [];
+    var allKeys = [];
+    tpl.rows.forEach(function (row) {
+      row.forEach(function (k) { if (k) allKeys.push(k); });
+    });
+    var inForm = fieldsInForm();
+    return allKeys.filter(function (k) { return inForm.indexOf(k) !== -1; });
+  }
+
+  function templateAvailableFields(templateKey) {
+    var tpl = state.sectionTemplates[templateKey];
+    if (!tpl) return [];
+    var allKeys = [];
+    tpl.rows.forEach(function (row) {
+      row.forEach(function (k) { if (k) allKeys.push(k); });
+    });
+    var inForm = fieldsInForm();
+    return allKeys.filter(function (k) { return inForm.indexOf(k) === -1; });
+  }
+
+  function insertSectionTemplate(templateKey, selectedFields) {
+    var tpl = state.sectionTemplates[templateKey];
+    if (!tpl) { return; }
+
+    // Validate uniqueness of selectedFields and catalog membership
+    var uniqueSelected = [];
+    var tplAllKeys = [];
+    tpl.rows.forEach(function (row) {
+      row.forEach(function (k) { if (k) tplAllKeys.push(k); });
+    });
+    var fieldCatalog = state.fields;
+    for (var si = 0; si < selectedFields.length; si++) {
+      var sk = selectedFields[si];
+      if (uniqueSelected.indexOf(sk) !== -1) { return; }
+      if (tplAllKeys.indexOf(sk) === -1) { return; }
+      if (!fieldCatalog[sk]) { return; }
+      uniqueSelected.push(sk);
+    }
+
+    if (uniqueSelected.length === 0) { return; }
+
+    // Deep snapshot for rollback
+    var snapshot = deepClone(state.config);
+
+    try {
+      // Detach each selected field that is already in the form
+      uniqueSelected.forEach(function (key) {
+        state.config.sections.forEach(function (s) {
+          s.rows.forEach(function (r) {
+            for (var fi = 0; fi < r.fields.length; fi++) {
+              if (r.fields[fi] === key) {
+                r.fields[fi] = null;
+              }
+            }
+          });
+        });
+      });
+
+      // Remove source rows where all slots are null
+      // but NEVER auto-remove a section (may have user data in title/subtitle)
+      state.config.sections.forEach(function (s) {
+        s.rows = s.rows.filter(function (r) {
+          return r.fields.some(function (k) { return k !== null; });
+        });
+      });
+
+      // Build new section rows (pack from catalog template order)
+      var newRows = [];
+      tpl.rows.forEach(function (catalogRow) {
+        var picked = catalogRow.filter(function (k) {
+          return uniqueSelected.indexOf(k) !== -1;
+        });
+        if (picked.length === 0) { return; }
+        var row;
+        if (picked.length >= 2) {
+          row = { id: uuid(), layout: '2col', fields: [ picked[0], picked[1] ] };
+        } else {
+          row = { id: uuid(), layout: '1col', fields: [ picked[0] ] };
+        }
+        newRows.push(row);
+      });
+
+      var newSection = {
+        id:       uuid(),
+        title:    { preset: tpl.title_preset, fallback: '', by_lang: {} },
+        subtitle: { fallback: '', by_lang: {} },
+        rows:     newRows,
+      };
+
+      state.config.sections.push(newSection);
+
+      // Verify global field uniqueness
+      var allInForm = fieldsInForm();
+      var seen = {};
+      for (var di = 0; di < allInForm.length; di++) {
+        if (seen[allInForm[di]]) {
+          // Duplicate detected — rollback
+          state.config = snapshot;
+          return;
+        }
+        seen[allInForm[di]] = true;
+      }
+
+      syncInput();
+      render();
+
+      // Focus new section and announce
+      var $newSec = $('[data-section-id="' + newSection.id + '"]');
+      if ($newSec.length) {
+        $newSec.find('.mbcf-section-title-edit-btn').focus();
+      }
+      announce(str('section_added', 'Section added.'));
+
+    } catch (e) {
+      state.config = snapshot;
+      if (window.console && console.error) {
+        console.error('[mbcf] insertSectionTemplate error:', e);
+      }
+    }
+  }
+
+  function openTemplateConfigurator(templateKey) {
+    var $b = $('#' + BUILDER_ID);
+    $b.find('.mbcf-tpl-configurator').each(function () {
+      if ($(this).data('tpl') !== templateKey) {
+        $(this).hide();
+        var $btn = $b.find('.mbcf-tpl-configure-btn[data-tpl="' + $(this).data('tpl') + '"]');
+        $btn.attr('aria-expanded', 'false');
+      }
+    });
+    var $panel = $b.find('.mbcf-tpl-configurator[data-tpl="' + templateKey + '"]');
+    var $configBtn = $b.find('.mbcf-tpl-configure-btn[data-tpl="' + templateKey + '"]');
+    $panel.show();
+    $configBtn.attr('aria-expanded', 'true');
+  }
+
   // ── Rendering ───────────────────────────────────────────────────────────────
 
   var GROUP_LABELS = {
@@ -939,8 +1080,118 @@
       + '</div>';
   }
 
+  function renderSectionTemplatesPanel() {
+    var templates = state.sectionTemplates;
+    var keys = Object.keys(templates);
+    if (!keys.length) return '';
+
+    var html = '<div class="mbcf-sidebar-panel mbcf-section-templates-panel">'
+      + '<h3 class="mbcf-palette-title">' + escHtml(str('section_templates', 'Section templates')) + '</h3>';
+
+    keys.forEach(function (key) {
+      var tpl = templates[key];
+      var presetTitle = str('preset_' + tpl.title_preset, tpl.title_preset);
+      var placed   = templateFieldsInForm(key);
+      var available = templateAvailableFields(key);
+      var tplAllKeys = [];
+      tpl.rows.forEach(function (row) { row.forEach(function (k) { if (k) tplAllKeys.push(k); }); });
+      var allPlaced = (available.length === 0);
+      var panelId = 'mbcf-tpl-configurator-' + escAttr(key);
+
+      html += '<div class="mbcf-tpl-card" data-tpl="' + escAttr(key) + '">';
+
+      // Card header: title + actions
+      html += '<div class="mbcf-tpl-card__header">'
+        + '<span class="mbcf-tpl-card__title">' + escHtml(presetTitle) + '</span>'
+        + '<div class="mbcf-tpl-card__actions">';
+
+      // Quick Add button
+      if (allPlaced) {
+        html += '<button type="button" class="mbcf-tpl-quick-add button button-secondary" data-tpl="' + escAttr(key) + '" disabled>'
+          + escHtml(str('add_section', '+ Add section'))
+          + '</button>';
+      } else {
+        html += '<button type="button" class="mbcf-tpl-quick-add button button-secondary" data-tpl="' + escAttr(key) + '">'
+          + escHtml(str('add_section', '+ Add section'))
+          + '</button>';
+      }
+
+      // Configure disclosure button
+      html += '<button type="button" class="mbcf-tpl-configure-btn button-link" data-tpl="' + escAttr(key) + '"'
+        + ' aria-expanded="false" aria-controls="' + escAttr(panelId) + '">'
+        + escHtml(str('configure', 'Configure'))
+        + ' <span class="mbcf-tpl-configure-caret" aria-hidden="true">&#9660;</span>'
+        + '</button>';
+
+      html += '</div>'; // .mbcf-tpl-card__actions
+
+      // All-placed notice
+      if (allPlaced) {
+        html += '<div class="mbcf-tpl-card__notice">'
+          + escHtml(str('all_fields_in_template', 'All fields in this template are already in the form.'))
+          + '</div>';
+      }
+
+      html += '</div>'; // .mbcf-tpl-card__header
+
+      // Configure disclosure panel (hidden)
+      html += '<div class="mbcf-tpl-configurator" id="' + escAttr(panelId) + '" data-tpl="' + escAttr(key) + '" style="display:none">';
+      html += '<div class="mbcf-tpl-field-list">';
+
+      tpl.rows.forEach(function (row) {
+        row.forEach(function (fieldKey) {
+          if (!fieldKey) return;
+          var fieldDef = state.fields[fieldKey];
+          var label = fieldDef ? (fieldDef.label || fieldKey) : fieldKey;
+          var isInForm = (placed.indexOf(fieldKey) !== -1);
+          var locked = isLocked(fieldKey);
+
+          var checkId = 'mbcf-tpl-chk-' + escAttr(key) + '-' + escAttr(fieldKey);
+
+          html += '<div class="mbcf-tpl-field-row">';
+          html += '<label class="mbcf-tpl-field-label">'
+            + '<input type="checkbox" class="mbcf-tpl-field-check"'
+              + ' id="' + escAttr(checkId) + '"'
+              + ' data-tpl="' + escAttr(key) + '"'
+              + ' data-field="' + escAttr(fieldKey) + '"'
+              + (isInForm ? '' : ' checked')
+              + ' />'
+            + ' ' + escHtml(label);
+
+          if (isInForm) {
+            var status = str('already_in_form', 'Already in form');
+            if (locked) {
+              status += ' — ' + str('field_required', 'Required');
+            }
+            html += ' <span class="mbcf-tpl-field-status">' + escHtml(status) + '</span>';
+          }
+
+          html += '</label>';
+          html += '</div>'; // .mbcf-tpl-field-row
+        });
+      });
+
+      html += '</div>'; // .mbcf-tpl-field-list
+
+      // CTA inside configurator
+      var ctaId = 'mbcf-tpl-confirm-' + escAttr(key);
+      html += '<div class="mbcf-tpl-configurator__cta">'
+        + '<button type="button" class="mbcf-tpl-confirm-btn button button-secondary" id="' + escAttr(ctaId) + '" data-tpl="' + escAttr(key) + '">'
+        + escHtml(str('add_section', '+ Add section'))
+        + '</button>'
+        + '</div>';
+
+      html += '</div>'; // .mbcf-tpl-configurator
+
+      html += '</div>'; // .mbcf-tpl-card
+    });
+
+    html += '</div>'; // .mbcf-sidebar-panel
+    return html;
+  }
+
   function renderSectionTitlePresets() {
-    var html = '<div class="mbcf-sidebar-panel mbcf-section-presets">'
+    var html = '<div class="mbcf-sidebar-panel">'
       + '<h3 class="mbcf-palette-title">' + str('section_titles', 'Section titles') + '</h3>'
       + '<div class="mbcf-preset-buttons">';
 
@@ -1014,6 +1265,7 @@
         + '<div id="mbcf-sections">' + sectionsHtml + '</div>'
       + '</div>'
       + '<div class="mbcf-palette-area">'
+        + renderSectionTemplatesPanel()
         + renderSectionTitlePresets()
         + renderPalette()
       + '</div>'
@@ -1308,6 +1560,101 @@
     $b.closest('form').on('click.mbcf', '#mbcf-reset-default', function () {
       resetToDefault();
     });
+
+    // ── Section template events ────────────────────────────────────────────────
+
+    // Quick Add button
+    $b.on('click.mbcf', '.mbcf-tpl-quick-add', function () {
+      var key = $(this).data('tpl');
+      var tpl = state.sectionTemplates[key];
+      if (!tpl) return;
+
+      var placed    = templateFieldsInForm(key);
+      var available = templateAvailableFields(key);
+
+      if (available.length === 0) {
+        // All placed — do nothing (button is disabled, but guard anyway)
+        return;
+      }
+
+      if (placed.length > 0) {
+        // Any already placed → open Configure instead, no mutation
+        openTemplateConfigurator(key);
+        return;
+      }
+
+      // All available → insert immediately
+      var allKeys = [];
+      tpl.rows.forEach(function (row) {
+        row.forEach(function (k) { if (k) allKeys.push(k); });
+      });
+      insertSectionTemplate(key, allKeys);
+    });
+
+    // Configure disclosure toggle
+    $b.on('click.mbcf', '.mbcf-tpl-configure-btn', function () {
+      var key = $(this).data('tpl');
+      var $panel = $b.find('.mbcf-tpl-configurator[data-tpl="' + key + '"]');
+      var isOpen = $panel.is(':visible');
+
+      // Close all other configurators
+      $b.find('.mbcf-tpl-configurator').each(function () {
+        if ($(this).data('tpl') !== key) {
+          $(this).hide();
+          var $btn = $b.find('.mbcf-tpl-configure-btn[data-tpl="' + $(this).data('tpl') + '"]');
+          $btn.attr('aria-expanded', 'false');
+        }
+      });
+
+      if (isOpen) {
+        $panel.hide();
+        $(this).attr('aria-expanded', 'false');
+      } else {
+        $panel.show();
+        $(this).attr('aria-expanded', 'true');
+        // Focus first checkbox
+        $panel.find('.mbcf-tpl-field-check').first().focus();
+      }
+    });
+
+    // Checkbox change — enable/disable CTA
+    $b.on('change.mbcf', '.mbcf-tpl-field-check', function () {
+      var key = $(this).data('tpl');
+      var $panel = $b.find('.mbcf-tpl-configurator[data-tpl="' + key + '"]');
+      var anyChecked = $panel.find('.mbcf-tpl-field-check:checked').length > 0;
+      $panel.find('.mbcf-tpl-confirm-btn').prop('disabled', !anyChecked);
+    });
+
+    // Confirm CTA inside configurator
+    $b.on('click.mbcf', '.mbcf-tpl-confirm-btn', function () {
+      var key = $(this).data('tpl');
+      var $panel = $b.find('.mbcf-tpl-configurator[data-tpl="' + key + '"]');
+      var selectedFields = [];
+      $panel.find('.mbcf-tpl-field-check:checked').each(function () {
+        selectedFields.push($(this).data('field'));
+      });
+      if (selectedFields.length === 0) return;
+
+      var inForm = fieldsInForm();
+      var hasConflict = selectedFields.some(function (k) {
+        return inForm.indexOf(k) !== -1;
+      });
+
+      if (hasConflict) {
+        MyBookingAdminModal.confirm({
+          title:       str('move_selected_fields', 'Move selected fields'),
+          message:     str('move_selected_confirm', 'Some selected fields are already in the form. They will be moved to the new section. Continue?'),
+          confirmText: str('add_section', '+ Add section'),
+          variant:     'default',
+          opener:      this
+        }).then(function (confirmed) {
+          if (!confirmed) return;
+          insertSectionTemplate(key, selectedFields);
+        });
+      } else {
+        insertSectionTemplate(key, selectedFields);
+      }
+    });
   }
 
   // ── Bootstrap ───────────────────────────────────────────────────────────────
@@ -1316,11 +1663,12 @@
     var $builder = $('#' + BUILDER_ID);
     if (!$builder.length) return;
 
-    var rawConfig        = $builder.data('config');
-    var rawFields        = $builder.data('fields');
-    var rawLangs         = $builder.data('langs');
-    var rawDefaultLang   = $builder.data('default-lang');
-    var rawDefaultConfig = $builder.data('default-config');
+    var rawConfig           = $builder.data('config');
+    var rawFields           = $builder.data('fields');
+    var rawLangs            = $builder.data('langs');
+    var rawDefaultLang      = $builder.data('default-lang');
+    var rawDefaultConfig    = $builder.data('default-config');
+    var rawSectionTemplates = $builder.data('section-templates');
 
     if (!rawConfig || !rawFields) {
       $builder.html('<p class="notice notice-error">' +
@@ -1346,6 +1694,10 @@
       state.defaultConfig = rawDefaultConfig
         ? (typeof rawDefaultConfig === 'string' ? JSON.parse(rawDefaultConfig) : rawDefaultConfig)
         : null;
+
+      state.sectionTemplates = rawSectionTemplates
+        ? (typeof rawSectionTemplates === 'string' ? JSON.parse(rawSectionTemplates) : rawSectionTemplates)
+        : {};
 
       state.config = normalizeConfigShape(state.config);
 

@@ -5786,3 +5786,31 @@ msgstr "Tõlgitud"
 msgctxt "checkout_form_builder"
 msgid "Not translated"
 msgstr "Tõlkimata"
+
+msgctxt "checkout_form_builder"
+msgid "Section templates"
+msgstr "Jaotise mallid"
+
+msgctxt "checkout_form_builder"
+msgid "Configure"
+msgstr "Seadista"
+
+msgctxt "checkout_form_builder"
+msgid "Already in form"
+msgstr "Juba vormis"
+
+msgctxt "checkout_form_builder"
+msgid "Move selected fields"
+msgstr "Teisalda valitud väljad"
+
+msgctxt "checkout_form_builder"
+msgid "Some selected fields are already in the form. They will be moved to the new section. Continue?"
+msgstr "Mõned valitud väljad on juba vormis. Need teisaldatakse uude jaotisesse. Kas jätkata?"
+
+msgctxt "checkout_form_builder"
+msgid "Section added."
+msgstr "Jaotis lisatud."
+
+msgctxt "checkout_form_builder"
+msgid "All fields in this template are already in the form."
+msgstr "Kõik selle malli väljad on juba vormis."

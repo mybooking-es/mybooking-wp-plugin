@@ -5685,3 +5685,31 @@ msgstr "Переведено"
 msgctxt "checkout_form_builder"
 msgid "Not translated"
 msgstr "Не переведено"
+
+msgctxt "checkout_form_builder"
+msgid "Section templates"
+msgstr "Шаблоны разделов"
+
+msgctxt "checkout_form_builder"
+msgid "Configure"
+msgstr "Настроить"
+
+msgctxt "checkout_form_builder"
+msgid "Already in form"
+msgstr "Уже в форме"
+
+msgctxt "checkout_form_builder"
+msgid "Move selected fields"
+msgstr "Переместить выбранные поля"
+
+msgctxt "checkout_form_builder"
+msgid "Some selected fields are already in the form. They will be moved to the new section. Continue?"
+msgstr "Некоторые выбранные поля уже находятся в форме. Они будут перемещены в новый раздел. Продолжить?"
+
+msgctxt "checkout_form_builder"
+msgid "Section added."
+msgstr "Раздел добавлен."
+
+msgctxt "checkout_form_builder"
+msgid "All fields in this template are already in the form."
+msgstr "Все поля этого шаблона уже находятся в форме."

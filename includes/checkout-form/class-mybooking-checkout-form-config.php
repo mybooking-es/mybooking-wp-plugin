@@ -3,6 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 require_once __DIR__ . '/mybooking-checkout-form-fields.php';
 require_once __DIR__ . '/mybooking-checkout-form-section-title-presets.php';
+require_once __DIR__ . '/mybooking-checkout-form-section-templates.php';
 
 /**
  * Reads, writes, and validates the checkout form configuration stored in wp_options.

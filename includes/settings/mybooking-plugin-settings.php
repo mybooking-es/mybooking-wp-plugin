@@ -274,7 +274,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 								 data-fields="<?php echo esc_attr( wp_json_encode( $cf_available ) ); ?>"
 								 data-langs="<?php echo esc_attr( wp_json_encode( $cf_langs ) ); ?>"
 								 data-default-lang="<?php echo esc_attr( $cf_default_lang ); ?>"
-								 data-default-config="<?php echo esc_attr( wp_json_encode( MyBookingCheckoutFormConfig::get_default() ) ); ?>">
+								 data-default-config="<?php echo esc_attr( wp_json_encode( MyBookingCheckoutFormConfig::get_default() ) ); ?>"
+								 data-section-templates="<?php echo esc_attr( wp_json_encode( mybooking_checkout_form_section_templates() ) ); ?>">
 								<p class="description">
 									<?php echo esc_html_x( 'The form constructor requires JavaScript. Please enable JavaScript in your browser.', 'checkout_form_builder', 'mybooking-reservation-engine' ); ?>
 								</p>

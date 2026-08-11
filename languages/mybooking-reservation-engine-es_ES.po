@@ -5833,3 +5833,31 @@ msgstr "Traducido"
 msgctxt "checkout_form_builder"
 msgid "Not translated"
 msgstr "Sin traducir"
+
+msgctxt "checkout_form_builder"
+msgid "Section templates"
+msgstr "Plantillas de sección"
+
+msgctxt "checkout_form_builder"
+msgid "Configure"
+msgstr "Configurar"
+
+msgctxt "checkout_form_builder"
+msgid "Already in form"
+msgstr "Ya está en el formulario"
+
+msgctxt "checkout_form_builder"
+msgid "Move selected fields"
+msgstr "Mover campos seleccionados"
+
+msgctxt "checkout_form_builder"
+msgid "Some selected fields are already in the form. They will be moved to the new section. Continue?"
+msgstr "Algunos campos seleccionados ya están en el formulario. Se moverán a la nueva sección. ¿Continuar?"
+
+msgctxt "checkout_form_builder"
+msgid "Section added."
+msgstr "Sección añadida."
+
+msgctxt "checkout_form_builder"
+msgid "All fields in this template are already in the form."
+msgstr "Todos los campos de esta plantilla ya están en el formulario."

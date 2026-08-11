@@ -5790,3 +5790,31 @@ msgstr "Käännetty"
 msgctxt "checkout_form_builder"
 msgid "Not translated"
 msgstr "Ei käännetty"
+
+msgctxt "checkout_form_builder"
+msgid "Section templates"
+msgstr "Osion mallit"
+
+msgctxt "checkout_form_builder"
+msgid "Configure"
+msgstr "Määritä"
+
+msgctxt "checkout_form_builder"
+msgid "Already in form"
+msgstr "Jo lomakkeessa"
+
+msgctxt "checkout_form_builder"
+msgid "Move selected fields"
+msgstr "Siirrä valitut kentät"
+
+msgctxt "checkout_form_builder"
+msgid "Some selected fields are already in the form. They will be moved to the new section. Continue?"
+msgstr "Osa valituista kentistä on jo lomakkeessa. Ne siirretään uuteen osioon. Jatketaanko?"
+
+msgctxt "checkout_form_builder"
+msgid "Section added."
+msgstr "Osio lisätty."
+
+msgctxt "checkout_form_builder"
+msgid "All fields in this template are already in the form."
+msgstr "Kaikki tämän mallin kentät ovat jo lomakkeessa."

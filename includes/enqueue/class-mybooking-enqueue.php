@@ -155,6 +155,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'section_removed'        => _x( 'Section removed.',                                                                                                         'checkout_form_builder', 'mybooking-reservation-engine' ),
           'translated'             => _x( 'Translated',                                                                                                               'checkout_form_builder', 'mybooking-reservation-engine' ),
           'not_translated'         => _x( 'Not translated',                                                                                                           'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // P2B.6 new strings
+          'section_templates'      => _x( 'Section templates',                                                                                                        'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'configure'              => _x( 'Configure',                                                                                                                'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'already_in_form'        => _x( 'Already in form',                                                                                                          'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'move_selected_fields'   => _x( 'Move selected fields',                                                                                                     'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'move_selected_confirm'  => _x( 'Some selected fields are already in the form. They will be moved to the new section. Continue?',                            'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'section_added'          => _x( 'Section added.',                                                                                                           'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'all_fields_in_template' => _x( 'All fields in this template are already in the form.',                                                                      'checkout_form_builder', 'mybooking-reservation-engine' ),
         ) );
       }
       

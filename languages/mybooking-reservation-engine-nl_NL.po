@@ -5819,3 +5819,31 @@ msgstr "Vertaald"
 msgctxt "checkout_form_builder"
 msgid "Not translated"
 msgstr "Niet vertaald"
+
+msgctxt "checkout_form_builder"
+msgid "Section templates"
+msgstr "Sectiesjablonen"
+
+msgctxt "checkout_form_builder"
+msgid "Configure"
+msgstr "Configureren"
+
+msgctxt "checkout_form_builder"
+msgid "Already in form"
+msgstr "Al in het formulier"
+
+msgctxt "checkout_form_builder"
+msgid "Move selected fields"
+msgstr "Geselecteerde velden verplaatsen"
+
+msgctxt "checkout_form_builder"
+msgid "Some selected fields are already in the form. They will be moved to the new section. Continue?"
+msgstr "Sommige geselecteerde velden staan al in het formulier. Ze worden naar de nieuwe sectie verplaatst. Doorgaan?"
+
+msgctxt "checkout_form_builder"
+msgid "Section added."
+msgstr "Sectie toegevoegd."
+
+msgctxt "checkout_form_builder"
+msgid "All fields in this template are already in the form."
+msgstr "Alle velden van dit sjabloon staan al in het formulier."
