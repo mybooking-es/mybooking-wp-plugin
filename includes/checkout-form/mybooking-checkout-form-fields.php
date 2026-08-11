@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *   group        : logical grouping for the admin panel UI
  */
 
+
 /**
  * Returns the checkout field catalog with labels translated to the current admin locale.
  * Uses static memoization — first call happens at admin page render, after the text domain
