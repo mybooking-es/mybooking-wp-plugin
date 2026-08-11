@@ -5232,10 +5232,6 @@ msgid "Rate details"
 msgstr "Detalls de les tarifes"
 
 msgctxt "checkout_form_builder"
-msgid "New section"
-msgstr "Nova secció"
-
-msgctxt "checkout_form_builder"
 msgid "+ Add section"
 msgstr "+ Afegir secció"
 
@@ -5278,14 +5274,6 @@ msgstr "Arrossegar per reordenar"
 msgctxt "checkout_form_builder"
 msgid "Drop field here"
 msgstr "Deixar camp aquí"
-
-msgctxt "checkout_form_builder"
-msgid "Available fields"
-msgstr "Camps disponibles"
-
-msgctxt "checkout_form_builder"
-msgid "All fields are placed in the form."
-msgstr "Tots els camps estan al formulari."
 
 msgctxt "checkout_form_builder"
 msgid "Error: builder data not found."
@@ -5334,7 +5322,6 @@ msgstr "MP"
 msgctxt "checkout_form_builder"
 msgid "Req."
 msgstr "Oblig."
-
 
 msgctxt "renting_complete"
 msgid "City"
@@ -5504,8 +5491,6 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Conductor addicional 2 — Expedició del carnet"
 
-
-
 msgid "Config must be an array."
 msgstr "La configuració ha de ser un array."
 
@@ -5543,20 +5528,8 @@ msgid "field_overrides must be an array."
 msgstr "field_overrides ha de ser un array."
 
 msgctxt "checkout_form_builder"
-msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
-msgstr "<p>Crea el teu <b>formulari de checkout</b> arrossegant i deixant anar camps dins de seccions i files. Cada fila pot contenir un o dos camps. Els camps marcats amb <strong>*</strong> són obligatoris i no es poden eliminar.</p>"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 1"
-msgstr "Conductor addicional 1"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 2"
-msgstr "Conductor addicional 2"
-
-msgctxt "checkout_form_builder"
-msgid "Address"
-msgstr "Adreça"
+msgid "<p>Build your <b>checkout form</b> from section templates. Use <b>Configure</b> to choose or move fields, then arrange sections, rows and fields as needed. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Crea el teu <b>formulari de checkout</b> a partir de plantilles de seccions. Utilitza <b>Configura</b> per triar o moure camps, i després organitza les seccions, files i camps com necesites. Els camps marcats amb <strong>*</strong> són obligatoris i no es poden eliminar.</p>"
 
 msgctxt "checkout_form_builder"
 msgid "Builder error:"
@@ -5567,24 +5540,8 @@ msgid "Checkout Form"
 msgstr "Formulari de checkout"
 
 msgctxt "checkout_form_builder"
-msgid "Customer"
-msgstr "Client"
-
-msgctxt "checkout_form_builder"
-msgid "Driver"
-msgstr "Conductor"
-
-msgctxt "checkout_form_builder"
 msgid "Engine fields"
 msgstr "Camps del motor"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (arrival)"
-msgstr "Vol (arribada)"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (departure)"
-msgstr "Vol (sortida)"
 
 msgctxt "checkout_form_builder"
 msgid "Invalid checkout form configuration: could not parse the data."
@@ -5635,14 +5592,6 @@ msgid "Additional information"
 msgstr "Informació addicional"
 
 msgctxt "checkout_form_builder"
-msgid "Section titles"
-msgstr "Títols de secció"
-
-msgctxt "checkout_form_builder"
-msgid "Custom title"
-msgstr "Títol personalitzat"
-
-msgctxt "checkout_form_builder"
 msgid "Edit section title"
 msgstr "Edita el títol de la secció"
 
@@ -5662,14 +5611,13 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "S'ha restablert el formulari predeterminat a l'editor. Desa els canvis per aplicar-lo."
 
-
 msgctxt "checkout_form_builder"
 msgid "Edit section subtitle"
 msgstr "Edita el subtítol de la secció"
 
 msgctxt "checkout_form_builder"
-msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
-msgstr "Vols eliminar aquesta secció? Els seus camps tornaran a Camps disponibles. Els canvis no es desaran fins que faces clic a Desa els canvis."
+msgid "Remove this section? Its fields will become available again in Section templates. Changes will not be saved until you click Save Changes."
+msgstr "¿Eliminar aquesta secció? Els seus camps estaran disponibles de nou a Plantilles de seccions. Els canvis no es guardaran fins que facis clic a Desar canvis."
 
 msgctxt "checkout_form_builder"
 msgid "Section removed."
@@ -5710,3 +5658,15 @@ msgstr "Secció afegida."
 msgctxt "checkout_form_builder"
 msgid "All fields in this template are already in the form."
 msgstr "Tots els camps d'aquesta plantilla ja són al formulari."
+
+msgctxt "checkout_form_builder"
+msgid "Custom section"
+msgstr "Secció personalitzada"
+
+msgctxt "checkout_form_builder"
+msgid "Select available fields"
+msgstr "Selecciona els camps disponibles"
+
+msgctxt "checkout_form_builder"
+msgid "Clear selection"
+msgstr "Esborrar selecció"

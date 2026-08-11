@@ -39,17 +39,6 @@
   var BUILDER_ID = 'mybooking-checkout-form-builder';
   var INPUT_ID   = 'mybooking-checkout-form-config-input';
 
-  var SECTION_PRESETS = [
-    'customer_details',
-    'customer_address',
-    'arrival_flight',
-    'departure_flight',
-    'driver_details',
-    'additional_driver_1',
-    'additional_driver_2',
-    'additional_information'
-  ];
-
   var CUSTOMER_DETAILS_STRINGS = [
     "Customer's details", "Dades del client", "Kundendaten", "Datos del cliente",
     "Kliendi andmed", "Asiakkaan tiedot", "Informations du client", "Dati del cliente",
@@ -374,25 +363,6 @@
 
   // ── Mutations ───────────────────────────────────────────────────────────────
 
-  function addSection(preset, openEditor) {
-    var p = (typeof preset === 'string' && preset) ? preset : 'custom';
-    var sec = {
-      id:       uuid(),
-      title:    { preset: p, fallback: '', by_lang: {} },
-      subtitle: { fallback: '', by_lang: {} },
-      rows:     []
-    };
-    state.config.sections.push(sec);
-    render();
-    if (openEditor) {
-      var $sec = $('[data-section-id="' + sec.id + '"]');
-      $sec.find('.mbcf-section-title-editor').show();
-      $sec.addClass('mbcf-section--title-open');
-      $sec.find('.mbcf-section-title-edit-btn').attr('aria-expanded', 'true');
-      $sec.find('.mbcf-section-title-by-lang, .mbcf-section-title-fallback').first().focus();
-    }
-  }
-
   function sectionHasLockedFields(section) {
     return section.rows.some(function (r) {
       return r.fields.some(function (k) { return k && isLocked(k); });
@@ -405,7 +375,7 @@
     if (sectionHasLockedFields(section)) return;
     MyBookingAdminModal.confirm({
       title:       str('remove_section', 'Remove section'),
-      message:     str('remove_section_confirm', 'Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes.'),
+      message:     str('remove_section_confirm', 'Remove this section? Its fields will become available again in Section templates. Changes will not be saved until you click Save Changes.'),
       confirmText: str('remove_section', 'Remove section'),
       variant:     'danger',
       opener:      opener || null
@@ -418,7 +388,10 @@
       if ($last.length) {
         $last.find('.mbcf-section-card__remove-btn, .mbcf-section-card__handle').first().focus();
       } else {
-        $sections.closest('.mbcf-form-area').find('.mbcf-preset-btn').first().focus();
+        var $sidebar = $('#' + BUILDER_ID).find('.mbcf-builder-sidebar');
+        var $quickAdd = $sidebar.find('.mbcf-tpl-quick-add:not(:disabled)').first();
+        if ($quickAdd.length) { $quickAdd.focus(); }
+        else { $sidebar.find('.mbcf-tpl-configure-btn').first().focus(); }
       }
       announce(str('section_removed', 'Section removed.'));
     });
@@ -476,14 +449,6 @@
       if (sourceCtx) {
         sourceCtx.row.fields[sourceSlotIndex] = existingKeyInTarget || null;
       }
-    } else {
-      state.config.sections.forEach(function (s) {
-        s.rows.forEach(function (r) {
-          r.fields = r.fields.map(function (k, i) {
-            return (k === fieldKey && !(r.id === targetRowId && i === targetSlotIndex)) ? null : k;
-          });
-        });
-      });
     }
 
     targetCtx.row.fields[targetSlotIndex] = fieldKey;
@@ -578,83 +543,57 @@
     return allKeys.filter(function (k) { return inForm.indexOf(k) === -1; });
   }
 
-  function insertSectionTemplate(templateKey, selectedFields) {
-    var tpl = state.sectionTemplates[templateKey];
-    if (!tpl) { return; }
+  function insertSectionFromPlan(options) {
+    var allowedFields  = options.allowedFields;
+    var selectedFields = options.selectedFields;
+    var rows           = options.rows;
+    var title          = options.title;
+    var allowEmptyFields = !!options.allowEmptyFields;
 
-    // Validate uniqueness of selectedFields and catalog membership
     var uniqueSelected = [];
-    var tplAllKeys = [];
-    tpl.rows.forEach(function (row) {
-      row.forEach(function (k) { if (k) tplAllKeys.push(k); });
-    });
-    var fieldCatalog = state.fields;
+    var fieldCatalog   = state.fields;
     for (var si = 0; si < selectedFields.length; si++) {
       var sk = selectedFields[si];
       if (uniqueSelected.indexOf(sk) !== -1) { return; }
-      if (tplAllKeys.indexOf(sk) === -1) { return; }
-      if (!fieldCatalog[sk]) { return; }
+      if (allowedFields.indexOf(sk) === -1)  { return; }
+      if (!fieldCatalog[sk])                 { return; }
       uniqueSelected.push(sk);
     }
 
-    if (uniqueSelected.length === 0) { return; }
+    if (!allowEmptyFields && uniqueSelected.length === 0) { return; }
 
-    // Deep snapshot for rollback
     var snapshot = deepClone(state.config);
 
     try {
-      // Detach each selected field that is already in the form
       uniqueSelected.forEach(function (key) {
         state.config.sections.forEach(function (s) {
           s.rows.forEach(function (r) {
             for (var fi = 0; fi < r.fields.length; fi++) {
-              if (r.fields[fi] === key) {
-                r.fields[fi] = null;
-              }
+              if (r.fields[fi] === key) { r.fields[fi] = null; }
             }
           });
         });
       });
 
-      // Remove source rows where all slots are null
-      // but NEVER auto-remove a section (may have user data in title/subtitle)
       state.config.sections.forEach(function (s) {
         s.rows = s.rows.filter(function (r) {
           return r.fields.some(function (k) { return k !== null; });
         });
       });
 
-      // Build new section rows (pack from catalog template order)
-      var newRows = [];
-      tpl.rows.forEach(function (catalogRow) {
-        var picked = catalogRow.filter(function (k) {
-          return uniqueSelected.indexOf(k) !== -1;
-        });
-        if (picked.length === 0) { return; }
-        var row;
-        if (picked.length >= 2) {
-          row = { id: uuid(), layout: '2col', fields: [ picked[0], picked[1] ] };
-        } else {
-          row = { id: uuid(), layout: '1col', fields: [ picked[0] ] };
-        }
-        newRows.push(row);
-      });
-
       var newSection = {
         id:       uuid(),
-        title:    { preset: tpl.title_preset, fallback: '', by_lang: {} },
+        title:    title,
         subtitle: { fallback: '', by_lang: {} },
-        rows:     newRows,
+        rows:     rows
       };
 
       state.config.sections.push(newSection);
 
-      // Verify global field uniqueness
       var allInForm = fieldsInForm();
       var seen = {};
       for (var di = 0; di < allInForm.length; di++) {
         if (seen[allInForm[di]]) {
-          // Duplicate detected — rollback
           state.config = snapshot;
           return;
         }
@@ -664,7 +603,6 @@
       syncInput();
       render();
 
-      // Focus new section and announce
       var $newSec = $('[data-section-id="' + newSection.id + '"]');
       if ($newSec.length) {
         $newSec.find('.mbcf-section-title-edit-btn').focus();
@@ -674,8 +612,91 @@
     } catch (e) {
       state.config = snapshot;
       if (window.console && console.error) {
-        console.error('[mbcf] insertSectionTemplate error:', e);
+        console.error('[mbcf] insertSectionFromPlan error:', e);
       }
+    }
+  }
+
+  function insertSectionTemplate(templateKey, selectedFields) {
+    var tpl = state.sectionTemplates[templateKey];
+    if (!tpl) { return; }
+
+    var tplAllKeys = [];
+    tpl.rows.forEach(function (row) {
+      row.forEach(function (k) { if (k) tplAllKeys.push(k); });
+    });
+
+    var newRows = [];
+    tpl.rows.forEach(function (catalogRow) {
+      var picked = catalogRow.filter(function (k) {
+        return selectedFields.indexOf(k) !== -1;
+      });
+      if (picked.length === 0) { return; }
+      if (picked.length >= 2) {
+        newRows.push({ id: uuid(), layout: '2col', fields: [ picked[0], picked[1] ] });
+      } else {
+        newRows.push({ id: uuid(), layout: '1col', fields: [ picked[0] ] });
+      }
+    });
+
+    insertSectionFromPlan({
+      allowedFields:   tplAllKeys,
+      selectedFields:  selectedFields,
+      rows:            newRows,
+      title:           { preset: tpl.title_preset, fallback: '', by_lang: {} },
+      allowEmptyFields: false
+    });
+  }
+
+  function insertCustomSection(title, selectedFields) {
+    var allFieldKeys = Object.keys(state.fields);
+    var rows = [];
+    var coveredKeys = {};
+
+    Object.keys(state.sectionTemplates).forEach(function (tplKey) {
+      var tpl = state.sectionTemplates[tplKey];
+      tpl.rows.forEach(function (catalogRow) {
+        catalogRow.forEach(function (k) { if (k) coveredKeys[k] = true; });
+        var picked = catalogRow.filter(function (k) {
+          return k && selectedFields.indexOf(k) !== -1;
+        });
+        if (!picked.length) return;
+        if (picked.length >= 2) {
+          rows.push({ id: uuid(), layout: '2col', fields: [picked[0], picked[1]] });
+        } else {
+          rows.push({ id: uuid(), layout: '1col', fields: [picked[0]] });
+        }
+      });
+    });
+
+    allFieldKeys.forEach(function (k) {
+      if (!coveredKeys[k] && selectedFields.indexOf(k) !== -1) {
+        rows.push({ id: uuid(), layout: '1col', fields: [k] });
+      }
+    });
+
+    insertSectionFromPlan({
+      allowedFields:   allFieldKeys,
+      selectedFields:  selectedFields,
+      rows:            rows,
+      title:           { preset: 'custom', fallback: title.trim(), by_lang: {} },
+      allowEmptyFields: true
+    });
+  }
+
+  function confirmAndInsertSection(selectedFields, insertFn, ctaEl) {
+    var inForm = fieldsInForm();
+    var hasConflict = selectedFields.some(function (k) { return inForm.indexOf(k) !== -1; });
+    if (hasConflict) {
+      MyBookingAdminModal.confirm({
+        title:       str('move_selected_fields', 'Move selected fields'),
+        message:     str('move_selected_confirm', 'Some selected fields are already in the form. They will be moved to the new section. Continue?'),
+        confirmText: str('add_section', '+ Add section'),
+        variant:     'default',
+        opener:      ctaEl || null
+      }).then(function (confirmed) { if (!confirmed) return; insertFn(); });
+    } else {
+      insertFn();
     }
   }
 
@@ -695,21 +716,6 @@
   }
 
   // ── Rendering ───────────────────────────────────────────────────────────────
-
-  var GROUP_LABELS = {
-    customer:            'Customer',
-    address:             'Address',
-    flight_arrival:      'Flight (arrival)',
-    flight_departure:    'Flight (departure)',
-    driver:              'Driver',
-    additional_driver_1: 'Additional driver 1',
-    additional_driver_2: 'Additional driver 2',
-    engine:              'Engine fields'
-  };
-
-  function groupLabel(group) {
-    return str('group_' + group, GROUP_LABELS[group] || group);
-  }
 
   function fieldDisplayLabel(key) {
     if (!state.fields[key]) return key;
@@ -1086,7 +1092,7 @@
     if (!keys.length) return '';
 
     var html = '<div class="mbcf-sidebar-panel mbcf-section-templates-panel">'
-      + '<h3 class="mbcf-palette-title">' + escHtml(str('section_templates', 'Section templates')) + '</h3>';
+      + '<h3 class="mbcf-sidebar-panel__title">' + escHtml(str('section_templates', 'Section templates')) + '</h3>';
 
     keys.forEach(function (key) {
       var tpl = templates[key];
@@ -1186,89 +1192,111 @@
       html += '</div>'; // .mbcf-tpl-card
     });
 
-    html += '</div>'; // .mbcf-sidebar-panel
-    return html;
-  }
-
-  function renderSectionTitlePresets() {
-    var html = '<div class="mbcf-sidebar-panel">'
-      + '<h3 class="mbcf-palette-title">' + str('section_titles', 'Section titles') + '</h3>'
-      + '<div class="mbcf-preset-buttons">';
-
-    SECTION_PRESETS.forEach(function (preset) {
-      html += '<button type="button" class="mbcf-preset-btn button button-secondary"'
-        + ' data-preset="' + escAttr(preset) + '">'
-        + escHtml(str('preset_' + preset, preset))
-        + '</button>';
-    });
-
-    html += '<button type="button" class="mbcf-preset-btn mbcf-preset-btn--custom button button-secondary"'
-      + ' data-preset="custom">'
-      + '<span class="mbcf-preset-btn__plus" aria-hidden="true">+</span> '
-      + escHtml(str('custom_title', 'Custom title'))
-      + '</button>';
-
-    html += '</div></div>';
-    return html;
-  }
-
-  function renderPalette() {
-    var used = fieldsInForm();
-    var groups = {};
-    var groupOrder = [];
-
-    Object.keys(state.fields).forEach(function (key) {
-      if (used.indexOf(key) !== -1) return;
-      var group = state.fields[key].group || 'other';
-      if (!groups[group]) {
-        groups[group] = [];
-        groupOrder.push(group);
-      }
-      groups[group].push(key);
-    });
-
-    var html = '<div class="mbcf-sidebar-panel mbcf-palette"><h3 class="mbcf-palette-title">'
-      + str('available_fields', 'Available fields') + '</h3>';
-
-    if (groupOrder.length === 0) {
-      html += '<p class="mbcf-palette-empty">'
-        + str('all_placed', 'All fields are placed in the form.') + '</p>';
-    } else {
-      groupOrder.forEach(function (group) {
-        html += '<div class="mbcf-palette-group">'
-          + '<div class="mbcf-palette-group-label">' + escHtml(groupLabel(group)) + '</div>'
-          + '<div class="mbcf-palette-items">';
-        groups[group].forEach(function (key) {
-          var f = state.fields[key];
-          var badges = '';
-          if (f.datepicker)   badges += '<span class="mbcf-badge mbcf-badge--date">' + escHtml(str('badge_date', 'date')) + '</span>';
-          if (f.has_intl_tel) badges += '<span class="mbcf-badge mbcf-badge--tel">' + escHtml(str('badge_tel', 'tel')) + '</span>';
-          if (f.special)      badges += '<span class="mbcf-badge mbcf-badge--special">&#9670;</span>';
-          html += '<div class="mbcf-palette-item" draggable="true" data-field="' + escAttr(key) + '">'
-            + '<span class="mbcf-palette-item-label" title="' + escAttr(fieldDisplayLabel(key)) + '">' + escHtml(fieldDisplayLabel(key)) + '</span>'
-            + badges
-            + '</div>';
+    // ── Custom section card (always last) ─────────────────────────────────────
+    var inFormForCustom = fieldsInForm();
+    var coveredByTpl = {};
+    html += '<div class="mbcf-tpl-card mbcf-tpl-card--custom">';
+    html += '<div class="mbcf-tpl-card__header">'
+      + '<span class="mbcf-tpl-card__title">'
+        + '<span class="mbcf-custom-btn__plus" aria-hidden="true">+</span> '
+        + escHtml(str('custom_section', 'Custom section'))
+      + '</span>'
+      + '</div>';
+    html += '<div class="mbcf-tpl-custom-title-row">'
+      + '<input type="text" class="mbcf-custom-section-title regular-text"'
+        + ' placeholder="' + escAttr(str('section_title_label', 'Title')) + '" />'
+      + '</div>';
+    html += '<div class="mbcf-tpl-custom-utils">'
+      + '<button type="button" class="mbcf-custom-select-available button-link">'
+        + escHtml(str('select_available_fields', 'Select available fields'))
+      + '</button>'
+      + ' <button type="button" class="mbcf-custom-clear-selection button-link">'
+        + escHtml(str('clear_selection', 'Clear selection'))
+      + '</button>'
+      + '</div>';
+    html += '<div class="mbcf-tpl-field-list">';
+    Object.keys(state.sectionTemplates).forEach(function (tplKey) {
+      var tpl = state.sectionTemplates[tplKey];
+      var groupTitle = str('preset_' + tpl.title_preset, tpl.title_preset);
+      html += '<div class="mbcf-tpl-custom-group">'
+        + '<div class="mbcf-tpl-custom-group-label">' + escHtml(groupTitle) + '</div>';
+      tpl.rows.forEach(function (row) {
+        row.forEach(function (fieldKey) {
+          if (!fieldKey) return;
+          coveredByTpl[fieldKey] = true;
+          var fieldDef = state.fields[fieldKey];
+          var label    = fieldDef ? (fieldDef.label || fieldKey) : fieldKey;
+          var isInForm = (inFormForCustom.indexOf(fieldKey) !== -1);
+          var locked   = isLocked(fieldKey);
+          var checkId  = 'mbcf-custom-chk-' + escAttr(fieldKey);
+          html += '<div class="mbcf-tpl-field-row">'
+            + '<label class="mbcf-tpl-field-label">'
+              + '<input type="checkbox" class="mbcf-tpl-field-check mbcf-custom-field-check"'
+                + ' id="' + escAttr(checkId) + '"'
+                + ' data-field="' + escAttr(fieldKey) + '"'
+                + (isInForm ? '' : ' checked')
+                + ' />'
+              + ' ' + escHtml(label);
+          if (isInForm) {
+            var status = str('already_in_form', 'Already in form');
+            if (locked) { status += ' — ' + str('field_required', 'Required'); }
+            html += ' <span class="mbcf-tpl-field-status">' + escHtml(status) + '</span>';
+          }
+          html += '</label></div>';
         });
-        html += '</div></div>';
       });
+      html += '</div>';
+    });
+    var engineFields = Object.keys(state.fields).filter(function (k) { return !coveredByTpl[k]; });
+    if (engineFields.length) {
+      html += '<div class="mbcf-tpl-custom-group">'
+        + '<div class="mbcf-tpl-custom-group-label">' + escHtml(str('group_engine', 'Engine fields')) + '</div>';
+      engineFields.forEach(function (fieldKey) {
+        var fieldDef = state.fields[fieldKey];
+        var label    = fieldDef ? (fieldDef.label || fieldKey) : fieldKey;
+        var isInForm = (inFormForCustom.indexOf(fieldKey) !== -1);
+        var locked   = isLocked(fieldKey);
+        var checkId  = 'mbcf-custom-chk-' + escAttr(fieldKey);
+        html += '<div class="mbcf-tpl-field-row">'
+          + '<label class="mbcf-tpl-field-label">'
+            + '<input type="checkbox" class="mbcf-tpl-field-check mbcf-custom-field-check"'
+              + ' id="' + escAttr(checkId) + '"'
+              + ' data-field="' + escAttr(fieldKey) + '"'
+              + (isInForm ? '' : ' checked')
+              + ' />'
+            + ' ' + escHtml(label);
+        if (isInForm) {
+          var status2 = str('already_in_form', 'Already in form');
+          if (locked) { status2 += ' — ' + str('field_required', 'Required'); }
+          html += ' <span class="mbcf-tpl-field-status">' + escHtml(status2) + '</span>';
+        }
+        html += '</label></div>';
+      });
+      html += '</div>';
     }
+    html += '</div>'; // .mbcf-tpl-field-list
+    html += '<div class="mbcf-tpl-configurator__cta">'
+      + '<button type="button" class="mbcf-custom-confirm-btn button button-secondary" disabled>'
+        + escHtml(str('add_section', '+ Add section'))
+      + '</button>'
+      + '</div>';
+    html += '</div>'; // .mbcf-tpl-card--custom
 
-    html += '</div>';
+    html += '</div>'; // .mbcf-sidebar-panel
     return html;
   }
 
   function render() {
     var sectionsHtml = state.config.sections.map(renderSection).join('');
+    var sectionTemplatesLabel = str('section_templates', 'Section templates');
 
     var html = '<div class="mbcf-layout">'
       + '<div class="mbcf-form-area">'
         + '<div id="mbcf-sections">' + sectionsHtml + '</div>'
       + '</div>'
-      + '<div class="mbcf-palette-area">'
+      + '<aside class="mbcf-builder-sidebar" aria-label="' + escAttr(sectionTemplatesLabel) + '">'
         + renderSectionTemplatesPanel()
-        + renderSectionTitlePresets()
-        + renderPalette()
-      + '</div>'
+      + '</aside>'
     + '</div>';
 
     $('#' + BUILDER_ID).html(html);
@@ -1320,15 +1348,6 @@
   function initDragEvents() {
     var $doc = $(document);
 
-    $doc.on('dragstart.mbcf', '.mbcf-palette-item', function (e) {
-      drag.field    = $(this).data('field');
-      drag.fromRow  = null;
-      drag.fromSlot = null;
-      e.originalEvent.dataTransfer.effectAllowed = 'move';
-      e.originalEvent.dataTransfer.setData('text/plain', drag.field);
-      $(this).addClass('mbcf-is-dragging');
-    });
-
     $doc.on('dragstart.mbcf', '.mbcf-slot--filled', function (e) {
       if ($(this).hasClass('mbcf-slot--settings-open')) {
         e.preventDefault();
@@ -1346,7 +1365,7 @@
       $(this).addClass('mbcf-is-dragging');
     });
 
-    $doc.on('dragend.mbcf', '.mbcf-palette-item, .mbcf-slot--filled', function () {
+    $doc.on('dragend.mbcf', '.mbcf-slot--filled', function () {
       drag.field = drag.fromRow = drag.fromSlot = null;
       $(this).removeClass('mbcf-is-dragging');
     });
@@ -1377,12 +1396,6 @@
 
   function initEvents() {
     var $b = $('#' + BUILDER_ID);
-
-    // Section preset buttons
-    $b.on('click.mbcf', '.mbcf-preset-btn', function () {
-      var preset = $(this).data('preset');
-      addSection(preset, preset === 'custom');
-    });
 
     $b.on('click.mbcf', '.mbcf-section-card__remove-btn', function () {
       var sectionId = $(this).data('section');
@@ -1617,15 +1630,16 @@
       }
     });
 
-    // Checkbox change — enable/disable CTA
+    // Checkbox change — enable/disable CTA (standard templates only)
     $b.on('change.mbcf', '.mbcf-tpl-field-check', function () {
+      if ($(this).closest('.mbcf-tpl-card--custom').length) return;
       var key = $(this).data('tpl');
       var $panel = $b.find('.mbcf-tpl-configurator[data-tpl="' + key + '"]');
       var anyChecked = $panel.find('.mbcf-tpl-field-check:checked').length > 0;
       $panel.find('.mbcf-tpl-confirm-btn').prop('disabled', !anyChecked);
     });
 
-    // Confirm CTA inside configurator
+    // Confirm CTA inside standard template configurator
     $b.on('click.mbcf', '.mbcf-tpl-confirm-btn', function () {
       var key = $(this).data('tpl');
       var $panel = $b.find('.mbcf-tpl-configurator[data-tpl="' + key + '"]');
@@ -1634,26 +1648,47 @@
         selectedFields.push($(this).data('field'));
       });
       if (selectedFields.length === 0) return;
-
-      var inForm = fieldsInForm();
-      var hasConflict = selectedFields.some(function (k) {
-        return inForm.indexOf(k) !== -1;
-      });
-
-      if (hasConflict) {
-        MyBookingAdminModal.confirm({
-          title:       str('move_selected_fields', 'Move selected fields'),
-          message:     str('move_selected_confirm', 'Some selected fields are already in the form. They will be moved to the new section. Continue?'),
-          confirmText: str('add_section', '+ Add section'),
-          variant:     'default',
-          opener:      this
-        }).then(function (confirmed) {
-          if (!confirmed) return;
-          insertSectionTemplate(key, selectedFields);
-        });
-      } else {
+      var ctaEl = this;
+      confirmAndInsertSection(selectedFields, function () {
         insertSectionTemplate(key, selectedFields);
-      }
+      }, ctaEl);
+    });
+
+    // ── Custom section events ──────────────────────────────────────────────────
+
+    $b.on('input.mbcf', '.mbcf-custom-section-title', function () {
+      var titleVal = $(this).val().trim();
+      $(this).closest('.mbcf-tpl-card--custom').find('.mbcf-custom-confirm-btn')
+        .prop('disabled', titleVal === '');
+    });
+
+    $b.on('click.mbcf', '.mbcf-custom-select-available', function () {
+      var inForm = fieldsInForm();
+      $(this).closest('.mbcf-tpl-card--custom').find('.mbcf-custom-field-check').each(function () {
+        var fieldKey = $(this).data('field');
+        $(this).prop('checked', inForm.indexOf(fieldKey) === -1);
+      });
+    });
+
+    $b.on('click.mbcf', '.mbcf-custom-clear-selection', function () {
+      $(this).closest('.mbcf-tpl-card--custom').find('.mbcf-custom-field-check')
+        .prop('checked', false);
+    });
+
+    $b.on('click.mbcf', '.mbcf-custom-confirm-btn', function () {
+      var $card = $(this).closest('.mbcf-tpl-card--custom');
+      var titleVal = $card.find('.mbcf-custom-section-title').val().trim();
+      if (!titleVal) return;
+      var selectedFields = [];
+      $card.find('.mbcf-custom-field-check:checked').each(function () {
+        selectedFields.push($(this).data('field'));
+      });
+      var ctaEl = this;
+      confirmAndInsertSection(selectedFields, function () {
+        insertCustomSection(titleVal, selectedFields);
+        $card.find('.mbcf-custom-section-title').val('');
+        $card.find('.mbcf-custom-confirm-btn').prop('disabled', true);
+      }, ctaEl);
     });
   }
 

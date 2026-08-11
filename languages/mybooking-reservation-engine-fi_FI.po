@@ -5340,10 +5340,6 @@ msgid "Rate details"
 msgstr "Tariffitiedot"
 
 msgctxt "checkout_form_builder"
-msgid "New section"
-msgstr "Uusi osio"
-
-msgctxt "checkout_form_builder"
 msgid "+ Add section"
 msgstr "+ Lisää osio"
 
@@ -5386,14 +5382,6 @@ msgstr "Vedä järjestääksesi"
 msgctxt "checkout_form_builder"
 msgid "Drop field here"
 msgstr "Pudota kenttä tähän"
-
-msgctxt "checkout_form_builder"
-msgid "Available fields"
-msgstr "Käytettävissä olevat kentät"
-
-msgctxt "checkout_form_builder"
-msgid "All fields are placed in the form."
-msgstr "Kaikki kentät ovat lomakkeessa."
 
 msgctxt "checkout_form_builder"
 msgid "Error: builder data not found."
@@ -5442,7 +5430,6 @@ msgstr "PH"
 msgctxt "checkout_form_builder"
 msgid "Req."
 msgstr "Pakoll."
-
 
 msgctxt "renting_complete"
 msgid "City"
@@ -5612,8 +5599,6 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Lisäkuljettaja 2 — Ajokortin myöntämispäivä"
 
-
-
 msgid "Config must be an array."
 msgstr "Määrityksen on oltava taulukko."
 
@@ -5651,20 +5636,8 @@ msgid "field_overrides must be an array."
 msgstr "field_overrides-kohdan on oltava taulukko."
 
 msgctxt "checkout_form_builder"
-msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
-msgstr "<p>Rakenna <b>checkout-lomake</b> vetämällä ja pudottamalla kenttiä osioihin ja riveille. Jokaisella rivillä voi olla yksi tai kaksi kenttää. <strong>*</strong>-merkillä merkityt kentät ovat pakollisia eikä niitä voi poistaa.</p>"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 1"
-msgstr "Lisäkuljettaja 1"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 2"
-msgstr "Lisäkuljettaja 2"
-
-msgctxt "checkout_form_builder"
-msgid "Address"
-msgstr "Osoite"
+msgid "<p>Build your <b>checkout form</b> from section templates. Use <b>Configure</b> to choose or move fields, then arrange sections, rows and fields as needed. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Luo <b>kassalomakkeesi</b> osiomalleista. Käytä <b>Konfiguroi</b>-toimintoa kenttien valitsemiseen tai siirtämiseen, ja järjestä sitten osiot, rivit ja kentät tarpeen mukaan. <strong>*</strong>-merkityt kentät ovat pakollisia eikä niitä voi poistaa.</p>"
 
 msgctxt "checkout_form_builder"
 msgid "Builder error:"
@@ -5675,24 +5648,8 @@ msgid "Checkout Form"
 msgstr "Checkout-lomake"
 
 msgctxt "checkout_form_builder"
-msgid "Customer"
-msgstr "Asiakas"
-
-msgctxt "checkout_form_builder"
-msgid "Driver"
-msgstr "Kuljettaja"
-
-msgctxt "checkout_form_builder"
 msgid "Engine fields"
 msgstr "Moottorin kentät"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (arrival)"
-msgstr "Lento (saapuminen)"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (departure)"
-msgstr "Lento (lähtö)"
 
 msgctxt "checkout_form_builder"
 msgid "Invalid checkout form configuration: could not parse the data."
@@ -5743,14 +5700,6 @@ msgid "Additional information"
 msgstr "Lisätiedot"
 
 msgctxt "checkout_form_builder"
-msgid "Section titles"
-msgstr "Osioiden otsikot"
-
-msgctxt "checkout_form_builder"
-msgid "Custom title"
-msgstr "Mukautettu otsikko"
-
-msgctxt "checkout_form_builder"
 msgid "Edit section title"
 msgstr "Muokkaa osion otsikkoa"
 
@@ -5770,14 +5719,13 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "Oletuslomake palautettiin editorissa. Tallenna muutokset ottaaksesi sen käyttöön."
 
-
 msgctxt "checkout_form_builder"
 msgid "Edit section subtitle"
 msgstr "Muokkaa osion alaotsikkoa"
 
 msgctxt "checkout_form_builder"
-msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
-msgstr "Poistetaanko tämä osio? Sen kentät palautuvat Käytettävissä oleviin kenttiin. Muutokset tallennetaan vasta, kun napsautat Tallenna muutokset."
+msgid "Remove this section? Its fields will become available again in Section templates. Changes will not be saved until you click Save Changes."
+msgstr "Poista tämä osio? Sen kentät ovat jälleen saatavilla Osiomallissa. Muutoksia ei tallenneta ennen kuin napsautat Tallenna muutokset."
 
 msgctxt "checkout_form_builder"
 msgid "Section removed."
@@ -5818,3 +5766,15 @@ msgstr "Osio lisätty."
 msgctxt "checkout_form_builder"
 msgid "All fields in this template are already in the form."
 msgstr "Kaikki tämän mallin kentät ovat jo lomakkeessa."
+
+msgctxt "checkout_form_builder"
+msgid "Custom section"
+msgstr "Mukautettu osio"
+
+msgctxt "checkout_form_builder"
+msgid "Select available fields"
+msgstr "Valitse saatavilla olevat kentät"
+
+msgctxt "checkout_form_builder"
+msgid "Clear selection"
+msgstr "Tyhjennä valinta"

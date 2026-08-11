@@ -5369,10 +5369,6 @@ msgid "Rate details"
 msgstr "Tariefdetails"
 
 msgctxt "checkout_form_builder"
-msgid "New section"
-msgstr "Nieuwe sectie"
-
-msgctxt "checkout_form_builder"
 msgid "+ Add section"
 msgstr "+ Sectie toevoegen"
 
@@ -5415,14 +5411,6 @@ msgstr "Slepen om te herordenen"
 msgctxt "checkout_form_builder"
 msgid "Drop field here"
 msgstr "Veld hier neerzetten"
-
-msgctxt "checkout_form_builder"
-msgid "Available fields"
-msgstr "Beschikbare velden"
-
-msgctxt "checkout_form_builder"
-msgid "All fields are placed in the form."
-msgstr "Alle velden zijn in het formulier geplaatst."
 
 msgctxt "checkout_form_builder"
 msgid "Error: builder data not found."
@@ -5471,7 +5459,6 @@ msgstr "PH"
 msgctxt "checkout_form_builder"
 msgid "Req."
 msgstr "Verpl."
-
 
 msgctxt "renting_complete"
 msgid "City"
@@ -5641,8 +5628,6 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Extra bestuurder 2 — Afgiftedatum rijbewijs"
 
-
-
 msgid "Config must be an array."
 msgstr "De configuratie moet een array zijn."
 
@@ -5680,20 +5665,8 @@ msgid "field_overrides must be an array."
 msgstr "field_overrides moet een array zijn."
 
 msgctxt "checkout_form_builder"
-msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
-msgstr "<p>Bouw uw <b>checkoutformulier</b> door velden naar secties en rijen te slepen. Elke rij kan één of twee velden bevatten. Velden met <strong>*</strong> zijn verplicht en kunnen niet worden verwijderd.</p>"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 1"
-msgstr "Extra chauffeur 1"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 2"
-msgstr "Extra chauffeur 2"
-
-msgctxt "checkout_form_builder"
-msgid "Address"
-msgstr "Adres"
+msgid "<p>Build your <b>checkout form</b> from section templates. Use <b>Configure</b> to choose or move fields, then arrange sections, rows and fields as needed. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Bouw uw <b>afrekenformulier</b> vanuit sectiesjablonen. Gebruik <b>Configureren</b> om velden te kiezen of te verplaatsen, en rangschik vervolgens secties, rijen en velden naar behoefte. Velden gemarkeerd met <strong>*</strong> zijn verplicht en kunnen niet worden verwijderd.</p>"
 
 msgctxt "checkout_form_builder"
 msgid "Builder error:"
@@ -5704,24 +5677,8 @@ msgid "Checkout Form"
 msgstr "Checkoutformulier"
 
 msgctxt "checkout_form_builder"
-msgid "Customer"
-msgstr "Klant"
-
-msgctxt "checkout_form_builder"
-msgid "Driver"
-msgstr "Chauffeur"
-
-msgctxt "checkout_form_builder"
 msgid "Engine fields"
 msgstr "Enginevelden"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (arrival)"
-msgstr "Vlucht (aankomst)"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (departure)"
-msgstr "Vlucht (vertrek)"
 
 msgctxt "checkout_form_builder"
 msgid "Invalid checkout form configuration: could not parse the data."
@@ -5772,14 +5729,6 @@ msgid "Additional information"
 msgstr "Aanvullende informatie"
 
 msgctxt "checkout_form_builder"
-msgid "Section titles"
-msgstr "Sectietitels"
-
-msgctxt "checkout_form_builder"
-msgid "Custom title"
-msgstr "Aangepaste titel"
-
-msgctxt "checkout_form_builder"
 msgid "Edit section title"
 msgstr "Sectietitel bewerken"
 
@@ -5799,14 +5748,13 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "Het standaardformulier is in de editor hersteld. Sla de wijzigingen op om het toe te passen."
 
-
 msgctxt "checkout_form_builder"
 msgid "Edit section subtitle"
 msgstr "Sectieondertitel bewerken"
 
 msgctxt "checkout_form_builder"
-msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
-msgstr "Deze sectie verwijderen? De velden ervan keren terug naar Beschikbare velden. Wijzigingen worden pas opgeslagen nadat je op Wijzigingen opslaan hebt geklikt."
+msgid "Remove this section? Its fields will become available again in Section templates. Changes will not be saved until you click Save Changes."
+msgstr "Deze sectie verwijderen? De velden worden opnieuw beschikbaar in Sectiesjablonen. Wijzigingen worden pas opgeslagen als u op Wijzigingen opslaan klikt."
 
 msgctxt "checkout_form_builder"
 msgid "Section removed."
@@ -5847,3 +5795,15 @@ msgstr "Sectie toegevoegd."
 msgctxt "checkout_form_builder"
 msgid "All fields in this template are already in the form."
 msgstr "Alle velden van dit sjabloon staan al in het formulier."
+
+msgctxt "checkout_form_builder"
+msgid "Custom section"
+msgstr "Aangepaste sectie"
+
+msgctxt "checkout_form_builder"
+msgid "Select available fields"
+msgstr "Selecteer beschikbare velden"
+
+msgctxt "checkout_form_builder"
+msgid "Clear selection"
+msgstr "Selectie wissen"

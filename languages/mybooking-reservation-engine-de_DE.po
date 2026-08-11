@@ -5240,10 +5240,6 @@ msgid "Rate details"
 msgstr "Tarifdetails"
 
 msgctxt "checkout_form_builder"
-msgid "New section"
-msgstr "Neuer Abschnitt"
-
-msgctxt "checkout_form_builder"
 msgid "+ Add section"
 msgstr "+ Abschnitt hinzufügen"
 
@@ -5286,14 +5282,6 @@ msgstr "Ziehen zum Neuanordnen"
 msgctxt "checkout_form_builder"
 msgid "Drop field here"
 msgstr "Feld hier ablegen"
-
-msgctxt "checkout_form_builder"
-msgid "Available fields"
-msgstr "Verfügbare Felder"
-
-msgctxt "checkout_form_builder"
-msgid "All fields are placed in the form."
-msgstr "Alle Felder sind im Formular platziert."
 
 msgctxt "checkout_form_builder"
 msgid "Error: builder data not found."
@@ -5342,7 +5330,6 @@ msgstr "PH"
 msgctxt "checkout_form_builder"
 msgid "Req."
 msgstr "Pflicht."
-
 
 msgctxt "renting_complete"
 msgid "City"
@@ -5512,8 +5499,6 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Zusätzlicher Fahrer 2 — Ausstellungsdatum"
 
-
-
 msgid "Config must be an array."
 msgstr "Die Konfiguration muss ein Array sein."
 
@@ -5551,20 +5536,8 @@ msgid "field_overrides must be an array."
 msgstr "field_overrides muss ein Array sein."
 
 msgctxt "checkout_form_builder"
-msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
-msgstr "<p>Erstellen Sie Ihr <b>Checkout-Formular</b>, indem Sie Felder per Drag-and-drop in Abschnitte und Zeilen ziehen. Jede Zeile kann ein oder zwei Felder enthalten. Mit <strong>*</strong> gekennzeichnete Felder sind Pflichtfelder und können nicht entfernt werden.</p>"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 1"
-msgstr "Zusätzlicher Fahrer 1"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 2"
-msgstr "Zusätzlicher Fahrer 2"
-
-msgctxt "checkout_form_builder"
-msgid "Address"
-msgstr "Adresse"
+msgid "<p>Build your <b>checkout form</b> from section templates. Use <b>Configure</b> to choose or move fields, then arrange sections, rows and fields as needed. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Erstellen Sie Ihr <b>Checkout-Formular</b> aus Abschnittsvorlagen. Verwenden Sie <b>Konfigurieren</b>, um Felder auszuwählen oder zu verschieben, und ordnen Sie dann Abschnitte, Zeilen und Felder nach Bedarf an. Mit <strong>*</strong> markierte Felder sind Pflichtfelder und können nicht entfernt werden.</p>"
 
 msgctxt "checkout_form_builder"
 msgid "Builder error:"
@@ -5575,24 +5548,8 @@ msgid "Checkout Form"
 msgstr "Checkout-Formular"
 
 msgctxt "checkout_form_builder"
-msgid "Customer"
-msgstr "Kunde"
-
-msgctxt "checkout_form_builder"
-msgid "Driver"
-msgstr "Fahrer"
-
-msgctxt "checkout_form_builder"
 msgid "Engine fields"
 msgstr "Engine-Felder"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (arrival)"
-msgstr "Flug (Ankunft)"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (departure)"
-msgstr "Flug (Abflug)"
 
 msgctxt "checkout_form_builder"
 msgid "Invalid checkout form configuration: could not parse the data."
@@ -5643,14 +5600,6 @@ msgid "Additional information"
 msgstr "Zusätzliche Informationen"
 
 msgctxt "checkout_form_builder"
-msgid "Section titles"
-msgstr "Abschnittstitel"
-
-msgctxt "checkout_form_builder"
-msgid "Custom title"
-msgstr "Benutzerdefinierter Titel"
-
-msgctxt "checkout_form_builder"
 msgid "Edit section title"
 msgstr "Abschnittstitel bearbeiten"
 
@@ -5670,14 +5619,13 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "Das Standardformular wurde im Editor wiederhergestellt. Speichern Sie die Änderungen, um es anzuwenden."
 
-
 msgctxt "checkout_form_builder"
 msgid "Edit section subtitle"
 msgstr "Abschnittsuntertitel bearbeiten"
 
 msgctxt "checkout_form_builder"
-msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
-msgstr "Diesen Abschnitt entfernen? Seine Felder kehren zu „Verfügbare Felder“ zurück. Die Änderungen werden erst gespeichert, wenn „Änderungen speichern“ angeklickt wird."
+msgid "Remove this section? Its fields will become available again in Section templates. Changes will not be saved until you click Save Changes."
+msgstr "Diesen Abschnitt entfernen? Seine Felder werden in den Abschnittsvorlagen wieder verfügbar. Änderungen werden erst gespeichert, wenn Sie auf Änderungen speichern klicken."
 
 msgctxt "checkout_form_builder"
 msgid "Section removed."
@@ -5718,3 +5666,15 @@ msgstr "Abschnitt hinzugefügt."
 msgctxt "checkout_form_builder"
 msgid "All fields in this template are already in the form."
 msgstr "Alle Felder dieser Vorlage befinden sich bereits im Formular."
+
+msgctxt "checkout_form_builder"
+msgid "Custom section"
+msgstr "Benutzerdefinierter Abschnitt"
+
+msgctxt "checkout_form_builder"
+msgid "Select available fields"
+msgstr "Verfügbare Felder auswählen"
+
+msgctxt "checkout_form_builder"
+msgid "Clear selection"
+msgstr "Auswahl aufheben"

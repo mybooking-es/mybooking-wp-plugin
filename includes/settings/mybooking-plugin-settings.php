@@ -260,9 +260,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 							echo '<br /><div class="postbox"><div class="inside">';
 							echo wp_kses_post( _x(
-								'<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. '
-								. 'Each row can contain one or two fields. '
-								. 'Fields marked with <strong>*</strong> are required and cannot be removed.</p>',
+								'<p>Build your <b>checkout form</b> from section templates. Use <b>Configure</b> to choose or move fields, then arrange sections, rows and fields as needed. Fields marked with <strong>*</strong> are required and cannot be removed.</p>',
 								'checkout_form_builder', 'mybooking-reservation-engine'
 							) );
 							echo '</div></div><hr />';

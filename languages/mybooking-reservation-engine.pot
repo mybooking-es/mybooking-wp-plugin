@@ -5218,27 +5218,7 @@ msgid "+ Row (2 columns)"
 msgstr ""
 
 msgctxt "checkout_form_builder"
-msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
-msgstr ""
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 1"
-msgstr ""
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 2"
-msgstr ""
-
-msgctxt "checkout_form_builder"
-msgid "Address"
-msgstr ""
-
-msgctxt "checkout_form_builder"
-msgid "All fields are placed in the form."
-msgstr ""
-
-msgctxt "checkout_form_builder"
-msgid "Available fields"
+msgid "<p>Build your <b>checkout form</b> from section templates. Use <b>Configure</b> to choose or move fields, then arrange sections, rows and fields as needed. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
 msgstr ""
 
 msgctxt "checkout_form_builder"
@@ -5254,15 +5234,7 @@ msgid "Checkout Form"
 msgstr ""
 
 msgctxt "checkout_form_builder"
-msgid "Customer"
-msgstr ""
-
-msgctxt "checkout_form_builder"
 msgid "Drag to reorder"
-msgstr ""
-
-msgctxt "checkout_form_builder"
-msgid "Driver"
 msgstr ""
 
 msgctxt "checkout_form_builder"
@@ -5282,23 +5254,11 @@ msgid "Field settings"
 msgstr ""
 
 msgctxt "checkout_form_builder"
-msgid "Flight (arrival)"
-msgstr ""
-
-msgctxt "checkout_form_builder"
-msgid "Flight (departure)"
-msgstr ""
-
-msgctxt "checkout_form_builder"
 msgid "Invalid checkout form configuration: could not parse the data."
 msgstr ""
 
 msgctxt "checkout_form_builder"
 msgid "Label"
-msgstr ""
-
-msgctxt "checkout_form_builder"
-msgid "New section"
 msgstr ""
 
 msgctxt "checkout_form_builder"
@@ -5566,14 +5526,6 @@ msgid "Additional information"
 msgstr ""
 
 msgctxt "checkout_form_builder"
-msgid "Section titles"
-msgstr ""
-
-msgctxt "checkout_form_builder"
-msgid "Custom title"
-msgstr ""
-
-msgctxt "checkout_form_builder"
 msgid "Edit section title"
 msgstr ""
 
@@ -5598,7 +5550,7 @@ msgid "Edit section subtitle"
 msgstr ""
 
 msgctxt "checkout_form_builder"
-msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
+msgid "Remove this section? Its fields will become available again in Section templates. Changes will not be saved until you click Save Changes."
 msgstr ""
 
 msgctxt "checkout_form_builder"
@@ -5639,4 +5591,16 @@ msgstr ""
 
 msgctxt "checkout_form_builder"
 msgid "All fields in this template are already in the form."
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Custom section"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Select available fields"
+msgstr ""
+
+msgctxt "checkout_form_builder"
+msgid "Clear selection"
 msgstr ""

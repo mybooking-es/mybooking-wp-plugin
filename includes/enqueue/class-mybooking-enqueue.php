@@ -93,7 +93,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                            true);
         wp_enqueue_script('mybooking_wp_admin_checkout_form_builder');
         wp_localize_script('mybooking_wp_admin_checkout_form_builder', 'mybookingCheckoutFormStrings', array(
-          'new_section'           => _x( 'New section',                                             'checkout_form_builder', 'mybooking-reservation-engine' ),
           'add_section'           => _x( '+ Add section',                                           'checkout_form_builder', 'mybooking-reservation-engine' ),
           'add_row_1col'          => _x( '+ Row (1 column)',                                        'checkout_form_builder', 'mybooking-reservation-engine' ),
           'add_row_2col'          => _x( '+ Row (2 columns)',                                       'checkout_form_builder', 'mybooking-reservation-engine' ),
@@ -105,8 +104,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'field_required'        => _x( 'Required',                                                'checkout_form_builder', 'mybooking-reservation-engine' ),
           'drag_reorder'          => _x( 'Drag to reorder',                                         'checkout_form_builder', 'mybooking-reservation-engine' ),
           'drop_here'             => _x( 'Drop field here',                                         'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'available_fields'      => _x( 'Available fields',                                        'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'all_placed'            => _x( 'All fields are placed in the form.',                      'checkout_form_builder', 'mybooking-reservation-engine' ),
           'no_data'               => _x( 'Error: builder data not found.',                          'checkout_form_builder', 'mybooking-reservation-engine' ),
           'cannot_remove_section' => _x( 'This section contains required fields and cannot be removed.', 'checkout_form_builder', 'mybooking-reservation-engine' ),
           'cannot_remove_row'     => _x( 'This row contains required fields and cannot be removed.',     'checkout_form_builder', 'mybooking-reservation-engine' ),
@@ -120,23 +117,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'tag_label'             => _x( 'Label',                                                       'checkout_form_builder', 'mybooking-reservation-engine' ),
           'tag_placeholder'       => _x( 'PH',                                                          'checkout_form_builder', 'mybooking-reservation-engine' ),
           'tag_required'          => _x( 'Req.',                                                        'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'group_customer'            => _x( 'Customer',            'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'group_address'             => _x( 'Address',             'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'group_flight_arrival'      => _x( 'Flight (arrival)',    'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'group_flight_departure'    => _x( 'Flight (departure)',  'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'group_driver'              => _x( 'Driver',              'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'group_additional_driver_1' => _x( 'Additional driver 1', 'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'group_additional_driver_2' => _x( 'Additional driver 2', 'checkout_form_builder', 'mybooking-reservation-engine' ),
           'group_engine'              => _x( 'Engine fields',       'checkout_form_builder', 'mybooking-reservation-engine' ),
           'badge_date'                => _x( 'date',                'checkout_form_builder', 'mybooking-reservation-engine' ),
           'badge_tel'                 => _x( 'tel',                 'checkout_form_builder', 'mybooking-reservation-engine' ),
           'builder_error'             => _x( 'Builder error:',      'checkout_form_builder', 'mybooking-reservation-engine' ),
-          // P2B: section title UI
-          'section_titles'            => _x( 'Section titles',      'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'custom_title'              => _x( 'Custom title',         'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // section title UI
           'edit_section_title'        => _x( 'Edit section title',  'checkout_form_builder', 'mybooking-reservation-engine' ),
           'section_title_label'       => _x( 'Title',               'checkout_form_builder', 'mybooking-reservation-engine' ),
-          // P2B: preset names resolved for admin locale
+          // preset names resolved for admin locale
           'preset_customer_details'       => _x( "Customer's details",    'checkout_form_section_title', 'mybooking-reservation-engine' ),
           'preset_customer_address'       => _x( 'Customer address',       'checkout_form_section_title', 'mybooking-reservation-engine' ),
           'preset_arrival_flight'         => _x( 'Arrival flight',         'checkout_form_section_title', 'mybooking-reservation-engine' ),
@@ -145,17 +133,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'preset_additional_driver_1'    => _x( 'Additional driver 1',   'checkout_form_section_title', 'mybooking-reservation-engine' ),
           'preset_additional_driver_2'    => _x( 'Additional driver 2',   'checkout_form_section_title', 'mybooking-reservation-engine' ),
           'preset_additional_information' => _x( 'Additional information','checkout_form_section_title', 'mybooking-reservation-engine' ),
-          // P2C reset strings (added ahead; compiled once)
+          // reset strings
           'reset_default'  => _x( 'Reset to default',                                                                              'checkout_form_builder', 'mybooking-reservation-engine' ),
           'reset_confirm'  => _x( 'Restore the default checkout form? Unsaved builder changes will be replaced.',                  'checkout_form_builder', 'mybooking-reservation-engine' ),
           'reset_notice'   => _x( 'Default form restored in the editor. Save changes to apply.',                                   'checkout_form_builder', 'mybooking-reservation-engine' ),
-          // P2B.5 new strings
+          // strings
           'edit_section_subtitle' => _x( 'Edit section subtitle',                                                                                                                                         'checkout_form_builder', 'mybooking-reservation-engine' ),
-          'remove_section_confirm' => _x( 'Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes.', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'remove_section_confirm' => _x( 'Remove this section? Its fields will become available again in Section templates. Changes will not be saved until you click Save Changes.', 'checkout_form_builder', 'mybooking-reservation-engine' ),
           'section_removed'        => _x( 'Section removed.',                                                                                                         'checkout_form_builder', 'mybooking-reservation-engine' ),
           'translated'             => _x( 'Translated',                                                                                                               'checkout_form_builder', 'mybooking-reservation-engine' ),
           'not_translated'         => _x( 'Not translated',                                                                                                           'checkout_form_builder', 'mybooking-reservation-engine' ),
-          // P2B.6 new strings
           'section_templates'      => _x( 'Section templates',                                                                                                        'checkout_form_builder', 'mybooking-reservation-engine' ),
           'configure'              => _x( 'Configure',                                                                                                                'checkout_form_builder', 'mybooking-reservation-engine' ),
           'already_in_form'        => _x( 'Already in form',                                                                                                          'checkout_form_builder', 'mybooking-reservation-engine' ),
@@ -163,6 +150,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'move_selected_confirm'  => _x( 'Some selected fields are already in the form. They will be moved to the new section. Continue?',                            'checkout_form_builder', 'mybooking-reservation-engine' ),
           'section_added'          => _x( 'Section added.',                                                                                                           'checkout_form_builder', 'mybooking-reservation-engine' ),
           'all_fields_in_template' => _x( 'All fields in this template are already in the form.',                                                                      'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // custom section strings
+          'custom_section'          => _x( 'Custom section',          'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'select_available_fields' => _x( 'Select available fields', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'clear_selection'         => _x( 'Clear selection',         'checkout_form_builder', 'mybooking-reservation-engine' ),
         ) );
       }
       

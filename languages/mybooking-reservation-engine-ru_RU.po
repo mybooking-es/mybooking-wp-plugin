@@ -5235,10 +5235,6 @@ msgid "Rate details"
 msgstr "Подробности о тарифах"
 
 msgctxt "checkout_form_builder"
-msgid "New section"
-msgstr "Новый раздел"
-
-msgctxt "checkout_form_builder"
 msgid "+ Add section"
 msgstr "+ Добавить раздел"
 
@@ -5281,14 +5277,6 @@ msgstr "Перетащить для сортировки"
 msgctxt "checkout_form_builder"
 msgid "Drop field here"
 msgstr "Перетащить поле сюда"
-
-msgctxt "checkout_form_builder"
-msgid "Available fields"
-msgstr "Доступные поля"
-
-msgctxt "checkout_form_builder"
-msgid "All fields are placed in the form."
-msgstr "Все поля размещены в форме."
 
 msgctxt "checkout_form_builder"
 msgid "Error: builder data not found."
@@ -5337,7 +5325,6 @@ msgstr "ЗП"
 msgctxt "checkout_form_builder"
 msgid "Req."
 msgstr "Обяз."
-
 
 msgctxt "renting_complete"
 msgid "City"
@@ -5507,8 +5494,6 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Дополнительный водитель 2 — Дата выдачи прав"
 
-
-
 msgid "Config must be an array."
 msgstr "Конфигурация должна быть массивом."
 
@@ -5546,20 +5531,8 @@ msgid "field_overrides must be an array."
 msgstr "field_overrides должен быть массивом."
 
 msgctxt "checkout_form_builder"
-msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
-msgstr "<p>Создайте <b>форму оформления бронирования</b>, перетаскивая поля в разделы и строки. Каждая строка может содержать одно или два поля. Поля, отмеченные <strong>*</strong>, обязательны и не могут быть удалены.</p>"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 1"
-msgstr "Дополнительный водитель 1"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 2"
-msgstr "Дополнительный водитель 2"
-
-msgctxt "checkout_form_builder"
-msgid "Address"
-msgstr "Адрес"
+msgid "<p>Build your <b>checkout form</b> from section templates. Use <b>Configure</b> to choose or move fields, then arrange sections, rows and fields as needed. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Создавайте <b>форму оформления заказа</b> из шаблонов разделов. Используйте <b>Настроить</b>, чтобы выбрать или переместить поля, затем расположите разделы, строки и поля по своему усмотрению. Поля, отмеченные <strong>*</strong>, обязательны и не могут быть удалены.</p>"
 
 msgctxt "checkout_form_builder"
 msgid "Builder error:"
@@ -5570,24 +5543,8 @@ msgid "Checkout Form"
 msgstr "Форма оформления бронирования"
 
 msgctxt "checkout_form_builder"
-msgid "Customer"
-msgstr "Клиент"
-
-msgctxt "checkout_form_builder"
-msgid "Driver"
-msgstr "Водитель"
-
-msgctxt "checkout_form_builder"
 msgid "Engine fields"
 msgstr "Поля движка"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (arrival)"
-msgstr "Рейс (прибытие)"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (departure)"
-msgstr "Рейс (отправление)"
 
 msgctxt "checkout_form_builder"
 msgid "Invalid checkout form configuration: could not parse the data."
@@ -5638,14 +5595,6 @@ msgid "Additional information"
 msgstr "Дополнительная информация"
 
 msgctxt "checkout_form_builder"
-msgid "Section titles"
-msgstr "Заголовки разделов"
-
-msgctxt "checkout_form_builder"
-msgid "Custom title"
-msgstr "Пользовательский заголовок"
-
-msgctxt "checkout_form_builder"
 msgid "Edit section title"
 msgstr "Изменить заголовок раздела"
 
@@ -5665,14 +5614,13 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "Стандартная форма восстановлена в редакторе. Сохраните изменения, чтобы применить её."
 
-
 msgctxt "checkout_form_builder"
 msgid "Edit section subtitle"
 msgstr "Изменить подзаголовок раздела"
 
 msgctxt "checkout_form_builder"
-msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
-msgstr "Удалить этот раздел? Его поля вернутся в список «Доступные поля». Изменения будут сохранены только после нажатия «Сохранить изменения»."
+msgid "Remove this section? Its fields will become available again in Section templates. Changes will not be saved until you click Save Changes."
+msgstr "Удалить этот раздел? Его поля снова станут доступны в шаблонах разделов. Изменения не будут сохранены до нажатия кнопки Сохранить изменения."
 
 msgctxt "checkout_form_builder"
 msgid "Section removed."
@@ -5713,3 +5661,15 @@ msgstr "Раздел добавлен."
 msgctxt "checkout_form_builder"
 msgid "All fields in this template are already in the form."
 msgstr "Все поля этого шаблона уже находятся в форме."
+
+msgctxt "checkout_form_builder"
+msgid "Custom section"
+msgstr "Пользовательский раздел"
+
+msgctxt "checkout_form_builder"
+msgid "Select available fields"
+msgstr "Выбрать доступные поля"
+
+msgctxt "checkout_form_builder"
+msgid "Clear selection"
+msgstr "Очистить выбор"

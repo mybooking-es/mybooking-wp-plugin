@@ -5336,10 +5336,6 @@ msgid "Rate details"
 msgstr "Tariifide üksikasjad"
 
 msgctxt "checkout_form_builder"
-msgid "New section"
-msgstr "Uus jaotis"
-
-msgctxt "checkout_form_builder"
 msgid "+ Add section"
 msgstr "+ Lisa jaotis"
 
@@ -5382,14 +5378,6 @@ msgstr "Lohista järjestamiseks"
 msgctxt "checkout_form_builder"
 msgid "Drop field here"
 msgstr "Lase väli siia"
-
-msgctxt "checkout_form_builder"
-msgid "Available fields"
-msgstr "Saadaolevad väljad"
-
-msgctxt "checkout_form_builder"
-msgid "All fields are placed in the form."
-msgstr "Kõik väljad on vormis."
 
 msgctxt "checkout_form_builder"
 msgid "Error: builder data not found."
@@ -5438,7 +5426,6 @@ msgstr "KT"
 msgctxt "checkout_form_builder"
 msgid "Req."
 msgstr "Kohust."
-
 
 msgctxt "renting_complete"
 msgid "City"
@@ -5608,8 +5595,6 @@ msgctxt "renting_complete"
 msgid "Additional driver 2 — License issue date"
 msgstr "Lisajuht 2 — Juhiloa väljastamine"
 
-
-
 msgid "Config must be an array."
 msgstr "Konfiguratsioon peab olema massiiv."
 
@@ -5647,20 +5632,8 @@ msgid "field_overrides must be an array."
 msgstr "field_overrides peab olema massiiv."
 
 msgctxt "checkout_form_builder"
-msgid "<p>Build your <b>checkout form</b> by dragging and dropping fields into sections and rows. Each row can contain one or two fields. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
-msgstr "<p>Koostage oma <b>checkout-vorm</b>, lohistades välju jaotistesse ja ridadesse. Iga rida võib sisaldada ühte või kahte välja. Märgiga <strong>*</strong> tähistatud väljad on kohustuslikud ja neid ei saa eemaldada.</p>"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 1"
-msgstr "Lisajuht 1"
-
-msgctxt "checkout_form_builder"
-msgid "Additional driver 2"
-msgstr "Lisajuht 2"
-
-msgctxt "checkout_form_builder"
-msgid "Address"
-msgstr "Aadress"
+msgid "<p>Build your <b>checkout form</b> from section templates. Use <b>Configure</b> to choose or move fields, then arrange sections, rows and fields as needed. Fields marked with <strong>*</strong> are required and cannot be removed.</p>"
+msgstr "<p>Looge oma <b>kassavormi</b> sektsiooni mallide abil. Kasutage <b>Seadista</b>, et valida või liigutada välju, seejärel korraldage sektsioonid, read ja väljad vastavalt vajadusele. Väljad, mis on märgitud <strong>*</strong>-ga, on kohustuslikud ega saa eemaldada.</p>"
 
 msgctxt "checkout_form_builder"
 msgid "Builder error:"
@@ -5671,24 +5644,8 @@ msgid "Checkout Form"
 msgstr "Checkout-vorm"
 
 msgctxt "checkout_form_builder"
-msgid "Customer"
-msgstr "Klient"
-
-msgctxt "checkout_form_builder"
-msgid "Driver"
-msgstr "Juht"
-
-msgctxt "checkout_form_builder"
 msgid "Engine fields"
 msgstr "Mootori väljad"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (arrival)"
-msgstr "Lend (saabumine)"
-
-msgctxt "checkout_form_builder"
-msgid "Flight (departure)"
-msgstr "Lend (väljumine)"
 
 msgctxt "checkout_form_builder"
 msgid "Invalid checkout form configuration: could not parse the data."
@@ -5739,14 +5696,6 @@ msgid "Additional information"
 msgstr "Lisateave"
 
 msgctxt "checkout_form_builder"
-msgid "Section titles"
-msgstr "Jaotiste pealkirjad"
-
-msgctxt "checkout_form_builder"
-msgid "Custom title"
-msgstr "Kohandatud pealkiri"
-
-msgctxt "checkout_form_builder"
 msgid "Edit section title"
 msgstr "Muuda jaotise pealkirja"
 
@@ -5766,14 +5715,13 @@ msgctxt "checkout_form_builder"
 msgid "Default form restored in the editor. Save changes to apply."
 msgstr "Vaikevorm taastati redaktoris. Rakendamiseks salvesta muudatused."
 
-
 msgctxt "checkout_form_builder"
 msgid "Edit section subtitle"
 msgstr "Muuda jaotise alapealkirja"
 
 msgctxt "checkout_form_builder"
-msgid "Remove this section? Its fields will return to Available fields. Changes will not be saved until you click Save Changes."
-msgstr "Kas eemaldada see jaotis? Selle väljad naasevad jaotisse Saadaolevad väljad. Muudatused salvestatakse alles pärast nupu „Salvesta muudatused“ klõpsamist."
+msgid "Remove this section? Its fields will become available again in Section templates. Changes will not be saved until you click Save Changes."
+msgstr "Eemaldada see sektsioon? Selle väljad muutuvad sektsioonimallides uuesti kättesaadavaks. Muudatused ei salvestata enne, kui klõpsate Salvesta muudatused."
 
 msgctxt "checkout_form_builder"
 msgid "Section removed."
@@ -5814,3 +5762,15 @@ msgstr "Jaotis lisatud."
 msgctxt "checkout_form_builder"
 msgid "All fields in this template are already in the form."
 msgstr "Kõik selle malli väljad on juba vormis."
+
+msgctxt "checkout_form_builder"
+msgid "Custom section"
+msgstr "Kohandatud sektsioon"
+
+msgctxt "checkout_form_builder"
+msgid "Select available fields"
+msgstr "Vali saadaolevad väljad"
+
+msgctxt "checkout_form_builder"
+msgid "Clear selection"
+msgstr "Tühista valik"
