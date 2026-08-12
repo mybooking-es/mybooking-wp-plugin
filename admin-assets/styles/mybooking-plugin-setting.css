@@ -873,3 +873,156 @@ textarea[readonly]:focus {
 	margin-bottom: 4px;
 	letter-spacing: 0.04em;
 }
+
+.mbcf-tpl-custom-subgroup {
+	margin-bottom: 6px;
+	padding-left: 6px;
+}
+
+.mbcf-tpl-custom-subgroup-label {
+	font-size: 11px;
+	font-weight: 500;
+	color: #555;
+	margin-bottom: 2px;
+	padding-left: 2px;
+}
+
+/* ── Template panel parent group headers ────────────────────────────────── */
+
+.mbcf-tpl-group {
+	margin-bottom: 10px;
+}
+
+.mbcf-tpl-group-label {
+	font-size: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #646970;
+	letter-spacing: 0.05em;
+	padding: 4px 0 3px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 4px;
+}
+
+/* ── Required-by-engine / required-by-account forced badge ─────────────── */
+
+.mbcf-badge--required-forced {
+	background: #fef0e0;
+	color: #8a4500;
+}
+
+.mbcf-forced-note {
+	font-size: 11px;
+	font-style: italic;
+	color: #646970;
+	font-weight: 400;
+}
+
+/* ── Profile toolbar panel ──────────────────────────────────────────────── */
+
+.mbcf-profile-toolbar {}
+
+.mbcf-profile-mode {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-bottom: 10px;
+}
+
+.mbcf-profile-mode-opt {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.mbcf-profile-mode-opt input[type="radio"] {
+	margin: 0;
+	flex-shrink: 0;
+}
+
+.mbcf-profile-info {
+	margin-bottom: 8px;
+	font-size: 12px;
+	background: #f6f7f7;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	padding: 6px 8px;
+}
+
+.mbcf-profile-info-row {
+	display: flex;
+	gap: 4px;
+	margin-bottom: 3px;
+	flex-wrap: wrap;
+}
+
+.mbcf-profile-info-row:last-child {
+	margin-bottom: 0;
+}
+
+.mbcf-profile-info-label {
+	color: #646970;
+	flex-shrink: 0;
+}
+
+.mbcf-profile-info-value {
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.mbcf-profile-unavailable {
+	font-size: 12px;
+	color: #787c82;
+	font-style: italic;
+	margin-bottom: 8px;
+}
+
+.mbcf-profile-toolbar-actions {
+	margin-bottom: 4px;
+}
+
+.mbcf-profile-manual {
+	margin-top: 4px;
+}
+
+.mbcf-profile-manual-engines {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-bottom: 8px;
+}
+
+.mbcf-profile-manual-engine {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.mbcf-profile-manual-engine input[type="checkbox"] {
+	margin: 0;
+	flex-shrink: 0;
+}
+
+.mbcf-profile-manual-bl {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex-wrap: wrap;
+}
+
+.mbcf-profile-manual-bl-label {
+	font-size: 12px;
+	color: #555;
+	flex-shrink: 0;
+}
+
+.mbcf-profile-bl-select {
+	font-size: 12px;
+	height: 26px;
+	flex: 1;
+	min-width: 0;
+}

@@ -9,5 +9,7 @@ docs/
 code-guidance/
 tests/
 tests/**
+tools/
+tools/**
 .github/prompts/
 .github/copilot-instructions.md

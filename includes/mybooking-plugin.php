@@ -209,6 +209,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       add_action( 'wp_ajax_mybooking_contact', array( $this, 'wp_contact_ajax_handler' ) );
       add_action( 'wp_ajax_nopriv_mybooking_contact', array( $this, 'wp_contact_ajax_handler' ) );
 
+      // == Builder profile preferences AJAX handlers (admin only)
+      add_action( 'wp_ajax_mbcf_save_profile_prefs',    array( $this, 'mbcf_save_profile_prefs_handler' ) );
+      add_action( 'wp_ajax_mbcf_flush_profile_cache',   array( $this, 'mbcf_flush_profile_cache_handler' ) );
+
       // == Shortcodes
       $shortcodes = new MybookingEngineShortcodes();
 
@@ -1302,6 +1306,74 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         }
       }
       return $url;
+    }
+
+    /**
+     * AJAX handler: save builder profile preferences to a dedicated WP option.
+     * Accepts a JSON-encoded `prefs` POST param: { mode, show_all?, engines?, renting_business_line? }
+     * Returns authoritative { prefs, profile, engine_required } so JS can update state atomically.
+     */
+    public function mbcf_save_profile_prefs_handler() {
+      check_ajax_referer( 'mbcf_profile_prefs', 'nonce' );
+      if ( ! current_user_can( 'manage_options' ) ) {
+        wp_send_json_error( array( 'message' => 'Unauthorized' ), 403 );
+        return;
+      }
+      $raw   = isset( $_POST['prefs'] ) ? sanitize_text_field( wp_unslash( $_POST['prefs'] ) ) : '';
+      $prefs = json_decode( $raw, true );
+      if ( ! is_array( $prefs ) ) {
+        wp_send_json_error( array( 'message' => 'Invalid prefs' ), 400 );
+        return;
+      }
+      // show_all is an independent boolean; mode must be 'auto' or 'manual' only.
+      $allowed_modes = array( 'auto', 'manual' );
+      $mode = isset( $prefs['mode'] ) ? $prefs['mode'] : 'auto';
+      if ( ! in_array( $mode, $allowed_modes, true ) ) { $mode = 'auto'; }
+      $clean = array(
+        'mode'     => $mode,
+        'show_all' => ! empty( $prefs['show_all'] ),
+      );
+      if ( $mode === 'manual' ) {
+        $allowed_engines = array( 'renting', 'activities', 'transfers' );
+        $engines_raw = isset( $prefs['engines'] ) && is_array( $prefs['engines'] ) ? $prefs['engines'] : array();
+        $clean['engines'] = array_values( array_filter( $engines_raw, function( $e ) use ( $allowed_engines ) {
+          return in_array( $e, $allowed_engines, true );
+        } ) );
+        // Normalize empty engines to all-engines so prefs and profile stay consistent.
+        if ( empty( $clean['engines'] ) ) {
+          $clean['engines'] = array( 'renting', 'activities', 'transfers' );
+        }
+        $allowed_bls = array( 'vehicle', 'boat', 'accommodation', 'generic' );
+        $bl = isset( $prefs['renting_business_line'] ) ? $prefs['renting_business_line'] : 'generic';
+        $clean['renting_business_line'] = in_array( $bl, $allowed_bls, true ) ? $bl : 'generic';
+      }
+      MyBookingAccountSettings::save_profile_preferences( $clean );
+      $profile         = MyBookingAccountSettings::get_account_profile();
+      $engine_required = MyBookingAccountSettings::get_engine_required( $profile );
+      wp_send_json_success( array(
+        'prefs'           => $clean,
+        'profile'         => $profile,
+        'engine_required' => $engine_required,
+      ) );
+    }
+
+    /**
+     * AJAX handler: flush the builder account profile transient cache and respond.
+     * Returns authoritative { profile, engine_required } so JS can update state without a page reload.
+     */
+    public function mbcf_flush_profile_cache_handler() {
+      check_ajax_referer( 'mbcf_profile_prefs', 'nonce' );
+      if ( ! current_user_can( 'manage_options' ) ) {
+        wp_send_json_error( array( 'message' => 'Unauthorized' ), 403 );
+        return;
+      }
+      MyBookingAccountSettings::flush_cache();
+      $profile         = MyBookingAccountSettings::get_account_profile();
+      $engine_required = MyBookingAccountSettings::get_engine_required( $profile );
+      wp_send_json_success( array(
+        'profile'         => $profile,
+        'engine_required' => $engine_required,
+      ) );
     }
 
     /**

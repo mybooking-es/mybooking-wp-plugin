@@ -5807,3 +5807,152 @@ msgstr "Selecteer beschikbare velden"
 msgctxt "checkout_form_builder"
 msgid "Clear selection"
 msgstr "Selectie wissen"
+
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation"
+msgstr "Accommodatie"
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation details"
+msgstr "Accommodatiegegevens"
+
+msgctxt "checkout_form_builder"
+msgid "Activities"
+msgstr "Activiteiten"
+
+msgctxt "checkout_form_builder"
+msgid "Activity customer vehicle"
+msgstr "Voertuig activiteitklant"
+
+msgctxt "checkout_form_builder"
+msgid "Automatic (MyBooking API)"
+msgstr "Automatisch (MyBooking API)"
+
+msgctxt "checkout_form_builder"
+msgid "Boats / skipper"
+msgstr "Boten / schipper"
+
+msgctxt "checkout_form_builder"
+msgid "Business profile"
+msgstr "Bedrijfsprofiel"
+
+msgctxt "checkout_form_builder"
+msgid "Company details"
+msgstr "Bedrijfsgegevens"
+
+msgctxt "checkout_form_builder"
+msgid "Customer classification"
+msgstr "Klantclassificatie"
+
+msgctxt "checkout_form_builder"
+msgid "Customer identity"
+msgstr "Identiteit klant"
+
+msgctxt "checkout_form_builder"
+msgid "Detected engines"
+msgstr "Gedetecteerde engines"
+
+msgctxt "checkout_form_builder"
+msgid "Driver / renter"
+msgstr "Bestuurder / huurder"
+
+msgctxt "checkout_form_builder"
+msgid "Driver address"
+msgstr "Adres bestuurder"
+
+msgctxt "checkout_form_builder"
+msgid "Driver identity"
+msgstr "Identiteit bestuurder"
+
+msgctxt "checkout_form_builder"
+msgid "Driver license"
+msgstr "Rijbewijs"
+
+msgctxt "checkout_form_builder"
+msgid "General"
+msgstr "Algemeen"
+
+msgctxt "checkout_form_builder"
+msgid "Generic renting"
+msgstr "Algemene verhuur"
+
+msgctxt "checkout_form_builder"
+msgid "License / permit number"
+msgstr "Licentie- / rijbewijsnummer"
+
+msgctxt "checkout_form_builder"
+msgid "Manual override"
+msgstr "Handmatige configuratie"
+
+msgctxt "checkout_form_builder"
+msgid "Profile detection unavailable"
+msgstr "Profieldetectie niet beschikbaar"
+
+msgctxt "checkout_form_builder"
+msgid "Refresh profile"
+msgstr "Profiel vernieuwen"
+
+msgctxt "checkout_form_builder"
+msgid "Renting"
+msgstr "Verhuur"
+
+msgctxt "checkout_form_builder"
+msgid "Renting family"
+msgstr "Verhuurfamilie"
+
+msgctxt "checkout_form_builder"
+msgid "Required by account"
+msgstr "Verplicht door account"
+
+msgctxt "checkout_form_builder"
+msgid "Required by engine"
+msgstr "Verplicht door engine"
+
+msgctxt "checkout_form_builder"
+msgid "Show all MyBooking fields"
+msgstr "Alle MyBooking-velden tonen"
+
+msgctxt "checkout_form_builder"
+msgid "Skipper / navigation"
+msgstr "Schipper / navigatie"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer outbound details"
+msgstr "Details heenreis transfer"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer return details"
+msgstr "Details retourtransfer"
+
+msgctxt "checkout_form_builder"
+msgid "Transfers"
+msgstr "Transfers"
+
+msgctxt "checkout_form_builder"
+msgid "Vehicles"
+msgstr "Voertuigen"
+
+msgctxt "renting_complete"
+msgid "Company contact name"
+msgstr "Naam contactpersoon bedrijf"
+
+msgctxt "renting_complete"
+msgid "Customer classifier"
+msgstr "Klantclassificatie"
+
+msgctxt "renting_complete"
+msgid "Customer type"
+msgstr "Klanttype"
+
+msgctxt "renting_complete"
+msgid "Destination accommodation"
+msgstr "Accommodatie op bestemming"
+
+msgctxt "renting_complete"
+msgid "Nationality"
+msgstr "Nationaliteit"
+
+msgctxt "renting_complete"
+msgid "Number of adults"
+msgstr "Aantal volwassenen"

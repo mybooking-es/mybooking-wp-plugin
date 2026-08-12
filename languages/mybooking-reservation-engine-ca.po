@@ -5670,3 +5670,152 @@ msgstr "Selecciona els camps disponibles"
 msgctxt "checkout_form_builder"
 msgid "Clear selection"
 msgstr "Esborrar selecció"
+
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation"
+msgstr "Allotjament"
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation details"
+msgstr "Dades de l'allotjament"
+
+msgctxt "checkout_form_builder"
+msgid "Activities"
+msgstr "Activitats"
+
+msgctxt "checkout_form_builder"
+msgid "Activity customer vehicle"
+msgstr "Vehicle del client de l'activitat"
+
+msgctxt "checkout_form_builder"
+msgid "Automatic (MyBooking API)"
+msgstr "Automàtic (API de MyBooking)"
+
+msgctxt "checkout_form_builder"
+msgid "Boats / skipper"
+msgstr "Embarcacions / patró"
+
+msgctxt "checkout_form_builder"
+msgid "Business profile"
+msgstr "Perfil de negoci"
+
+msgctxt "checkout_form_builder"
+msgid "Company details"
+msgstr "Dades de l'empresa"
+
+msgctxt "checkout_form_builder"
+msgid "Customer classification"
+msgstr "Classificació del client"
+
+msgctxt "checkout_form_builder"
+msgid "Customer identity"
+msgstr "Identitat del client"
+
+msgctxt "checkout_form_builder"
+msgid "Detected engines"
+msgstr "Motors detectats"
+
+msgctxt "checkout_form_builder"
+msgid "Driver / renter"
+msgstr "Conductor / arrendatari"
+
+msgctxt "checkout_form_builder"
+msgid "Driver address"
+msgstr "Adreça del conductor"
+
+msgctxt "checkout_form_builder"
+msgid "Driver identity"
+msgstr "Identitat del conductor"
+
+msgctxt "checkout_form_builder"
+msgid "Driver license"
+msgstr "Permís de conduir"
+
+msgctxt "checkout_form_builder"
+msgid "General"
+msgstr "General"
+
+msgctxt "checkout_form_builder"
+msgid "Generic renting"
+msgstr "Lloguer genèric"
+
+msgctxt "checkout_form_builder"
+msgid "License / permit number"
+msgstr "Número de llicència / permís"
+
+msgctxt "checkout_form_builder"
+msgid "Manual override"
+msgstr "Configuració manual"
+
+msgctxt "checkout_form_builder"
+msgid "Profile detection unavailable"
+msgstr "No s'ha pogut detectar el perfil"
+
+msgctxt "checkout_form_builder"
+msgid "Refresh profile"
+msgstr "Actualitza el perfil"
+
+msgctxt "checkout_form_builder"
+msgid "Renting"
+msgstr "Lloguer"
+
+msgctxt "checkout_form_builder"
+msgid "Renting family"
+msgstr "Família de lloguer"
+
+msgctxt "checkout_form_builder"
+msgid "Required by account"
+msgstr "Obligatori pel compte"
+
+msgctxt "checkout_form_builder"
+msgid "Required by engine"
+msgstr "Obligatori pel motor"
+
+msgctxt "checkout_form_builder"
+msgid "Show all MyBooking fields"
+msgstr "Mostra tots els camps de MyBooking"
+
+msgctxt "checkout_form_builder"
+msgid "Skipper / navigation"
+msgstr "Patró / navegació"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer outbound details"
+msgstr "Detalls del trasllat d'anada"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer return details"
+msgstr "Detalls del trasllat de tornada"
+
+msgctxt "checkout_form_builder"
+msgid "Transfers"
+msgstr "Trasllats"
+
+msgctxt "checkout_form_builder"
+msgid "Vehicles"
+msgstr "Vehicles"
+
+msgctxt "renting_complete"
+msgid "Company contact name"
+msgstr "Nom del contacte de l'empresa"
+
+msgctxt "renting_complete"
+msgid "Customer classifier"
+msgstr "Classificació del client"
+
+msgctxt "renting_complete"
+msgid "Customer type"
+msgstr "Tipus de client"
+
+msgctxt "renting_complete"
+msgid "Destination accommodation"
+msgstr "Allotjament de destinació"
+
+msgctxt "renting_complete"
+msgid "Nationality"
+msgstr "Nacionalitat"
+
+msgctxt "renting_complete"
+msgid "Number of adults"
+msgstr "Nombre d'adults"

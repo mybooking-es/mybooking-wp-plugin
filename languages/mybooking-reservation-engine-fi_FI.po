@@ -5778,3 +5778,152 @@ msgstr "Valitse saatavilla olevat kentät"
 msgctxt "checkout_form_builder"
 msgid "Clear selection"
 msgstr "Tyhjennä valinta"
+
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation"
+msgstr "Majoitus"
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation details"
+msgstr "Majoitustiedot"
+
+msgctxt "checkout_form_builder"
+msgid "Activities"
+msgstr "Aktiviteetit"
+
+msgctxt "checkout_form_builder"
+msgid "Activity customer vehicle"
+msgstr "Aktiviteettiasiakkaan ajoneuvo"
+
+msgctxt "checkout_form_builder"
+msgid "Automatic (MyBooking API)"
+msgstr "Automaattinen (MyBooking API)"
+
+msgctxt "checkout_form_builder"
+msgid "Boats / skipper"
+msgstr "Veneet / kippari"
+
+msgctxt "checkout_form_builder"
+msgid "Business profile"
+msgstr "Liiketoimintaprofiili"
+
+msgctxt "checkout_form_builder"
+msgid "Company details"
+msgstr "Yrityksen tiedot"
+
+msgctxt "checkout_form_builder"
+msgid "Customer classification"
+msgstr "Asiakasluokitus"
+
+msgctxt "checkout_form_builder"
+msgid "Customer identity"
+msgstr "Asiakkaan henkilötiedot"
+
+msgctxt "checkout_form_builder"
+msgid "Detected engines"
+msgstr "Havaitut moottorit"
+
+msgctxt "checkout_form_builder"
+msgid "Driver / renter"
+msgstr "Kuljettaja / vuokraaja"
+
+msgctxt "checkout_form_builder"
+msgid "Driver address"
+msgstr "Kuljettajan osoite"
+
+msgctxt "checkout_form_builder"
+msgid "Driver identity"
+msgstr "Kuljettajan henkilötiedot"
+
+msgctxt "checkout_form_builder"
+msgid "Driver license"
+msgstr "Ajokortti"
+
+msgctxt "checkout_form_builder"
+msgid "General"
+msgstr "Yleinen"
+
+msgctxt "checkout_form_builder"
+msgid "Generic renting"
+msgstr "Yleinen vuokraus"
+
+msgctxt "checkout_form_builder"
+msgid "License / permit number"
+msgstr "Lisenssin / luvan numero"
+
+msgctxt "checkout_form_builder"
+msgid "Manual override"
+msgstr "Manuaalinen määritys"
+
+msgctxt "checkout_form_builder"
+msgid "Profile detection unavailable"
+msgstr "Profiilin tunnistus ei ole käytettävissä"
+
+msgctxt "checkout_form_builder"
+msgid "Refresh profile"
+msgstr "Päivitä profiili"
+
+msgctxt "checkout_form_builder"
+msgid "Renting"
+msgstr "Vuokraus"
+
+msgctxt "checkout_form_builder"
+msgid "Renting family"
+msgstr "Vuokrauksen tuoteryhmä"
+
+msgctxt "checkout_form_builder"
+msgid "Required by account"
+msgstr "Tilin vaatima"
+
+msgctxt "checkout_form_builder"
+msgid "Required by engine"
+msgstr "Moottorin vaatima"
+
+msgctxt "checkout_form_builder"
+msgid "Show all MyBooking fields"
+msgstr "Näytä kaikki MyBooking-kentät"
+
+msgctxt "checkout_form_builder"
+msgid "Skipper / navigation"
+msgstr "Kippari / navigointi"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer outbound details"
+msgstr "Menokuljetuksen tiedot"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer return details"
+msgstr "Paluukuljetuksen tiedot"
+
+msgctxt "checkout_form_builder"
+msgid "Transfers"
+msgstr "Kuljetukset"
+
+msgctxt "checkout_form_builder"
+msgid "Vehicles"
+msgstr "Ajoneuvot"
+
+msgctxt "renting_complete"
+msgid "Company contact name"
+msgstr "Yrityksen yhteyshenkilön nimi"
+
+msgctxt "renting_complete"
+msgid "Customer classifier"
+msgstr "Asiakasluokitus"
+
+msgctxt "renting_complete"
+msgid "Customer type"
+msgstr "Asiakastyyppi"
+
+msgctxt "renting_complete"
+msgid "Destination accommodation"
+msgstr "Majoitus kohteessa"
+
+msgctxt "renting_complete"
+msgid "Nationality"
+msgstr "Kansalaisuus"
+
+msgctxt "renting_complete"
+msgid "Number of adults"
+msgstr "Aikuisten määrä"

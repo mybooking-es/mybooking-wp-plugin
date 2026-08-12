@@ -154,6 +154,45 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'custom_section'          => _x( 'Custom section',          'checkout_form_builder', 'mybooking-reservation-engine' ),
           'select_available_fields' => _x( 'Select available fields', 'checkout_form_builder', 'mybooking-reservation-engine' ),
           'clear_selection'         => _x( 'Clear selection',         'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // P3.1 — profile toolbar
+          'profile_auto'              => _x( 'Automatic (MyBooking API)',     'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'profile_manual'            => _x( 'Manual override',               'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'profile_show_all'          => _x( 'Show all MyBooking fields',     'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'profile_unavailable'       => _x( 'Profile detection unavailable', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'profile_refresh'           => _x( 'Refresh profile',               'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'profile_detected_engines'  => _x( 'Detected engines',              'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'profile_renting_family'    => _x( 'Renting family',                'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'profile_business_profile'  => _x( 'Business profile',              'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // P3.1 — required badges
+          'badge_required_by_engine'  => _x( 'Required by engine',  'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'badge_required_by_account' => _x( 'Required by account', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // P3.1 — parent group labels
+          'group_general'       => _x( 'General',        'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_accommodation' => _x( 'Accommodation',  'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_driver'        => _x( 'Driver / renter', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_vehicles'      => _x( 'Vehicles',        'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_boats'         => _x( 'Boats / skipper', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_activities'    => _x( 'Activities',      'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'group_transfers'     => _x( 'Transfers',       'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // P3.1 — engine and renting family labels
+          'engine_renting'  => _x( 'Renting',        'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'family_generic'  => _x( 'Generic renting', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // P3.1 — template name labels (section template panel)
+          'tmpl_accommodation_details'     => _x( 'Accommodation details',     'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_activity_customer_vehicle' => _x( 'Activity customer vehicle', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_company_details'           => _x( 'Company details',           'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_customer_classification'   => _x( 'Customer classification',   'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_customer_identity'         => _x( 'Customer identity',         'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_driver_address'            => _x( 'Driver address',            'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_driver_identity'           => _x( 'Driver identity',           'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_driver_license'            => _x( 'Driver license',            'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_license_permit_number'     => _x( 'License / permit number',   'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_skipper_navigation'        => _x( 'Skipper / navigation',      'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_transfer_outbound'         => _x( 'Transfer outbound details', 'checkout_form_builder', 'mybooking-reservation-engine' ),
+          'tmpl_transfer_return'           => _x( 'Transfer return details',   'checkout_form_builder', 'mybooking-reservation-engine' ),
+          // AJAX — not translated; prefixed with _ to signal they are not display strings
+          '_ajax_url'            => admin_url( 'admin-ajax.php' ),
+          '_nonce_profile_prefs' => wp_create_nonce( 'mbcf_profile_prefs' ),
         ) );
       }
       

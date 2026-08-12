@@ -5675,3 +5675,152 @@ msgstr "Sélectionner les champs disponibles"
 msgctxt "checkout_form_builder"
 msgid "Clear selection"
 msgstr "Effacer la sélection"
+
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation"
+msgstr "Hébergement"
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation details"
+msgstr "Détails de l'hébergement"
+
+msgctxt "checkout_form_builder"
+msgid "Activities"
+msgstr "Activités"
+
+msgctxt "checkout_form_builder"
+msgid "Activity customer vehicle"
+msgstr "Véhicule du client de l'activité"
+
+msgctxt "checkout_form_builder"
+msgid "Automatic (MyBooking API)"
+msgstr "Automatique (API MyBooking)"
+
+msgctxt "checkout_form_builder"
+msgid "Boats / skipper"
+msgstr "Bateaux / skipper"
+
+msgctxt "checkout_form_builder"
+msgid "Business profile"
+msgstr "Profil d'activité"
+
+msgctxt "checkout_form_builder"
+msgid "Company details"
+msgstr "Données de l'entreprise"
+
+msgctxt "checkout_form_builder"
+msgid "Customer classification"
+msgstr "Classification du client"
+
+msgctxt "checkout_form_builder"
+msgid "Customer identity"
+msgstr "Identité du client"
+
+msgctxt "checkout_form_builder"
+msgid "Detected engines"
+msgstr "Moteurs détectés"
+
+msgctxt "checkout_form_builder"
+msgid "Driver / renter"
+msgstr "Conducteur / locataire"
+
+msgctxt "checkout_form_builder"
+msgid "Driver address"
+msgstr "Adresse du conducteur"
+
+msgctxt "checkout_form_builder"
+msgid "Driver identity"
+msgstr "Identité du conducteur"
+
+msgctxt "checkout_form_builder"
+msgid "Driver license"
+msgstr "Permis de conduire"
+
+msgctxt "checkout_form_builder"
+msgid "General"
+msgstr "Général"
+
+msgctxt "checkout_form_builder"
+msgid "Generic renting"
+msgstr "Location générique"
+
+msgctxt "checkout_form_builder"
+msgid "License / permit number"
+msgstr "Numéro de licence / permis"
+
+msgctxt "checkout_form_builder"
+msgid "Manual override"
+msgstr "Configuration manuelle"
+
+msgctxt "checkout_form_builder"
+msgid "Profile detection unavailable"
+msgstr "Détection du profil indisponible"
+
+msgctxt "checkout_form_builder"
+msgid "Refresh profile"
+msgstr "Actualiser le profil"
+
+msgctxt "checkout_form_builder"
+msgid "Renting"
+msgstr "Location"
+
+msgctxt "checkout_form_builder"
+msgid "Renting family"
+msgstr "Famille de location"
+
+msgctxt "checkout_form_builder"
+msgid "Required by account"
+msgstr "Obligatoire pour le compte"
+
+msgctxt "checkout_form_builder"
+msgid "Required by engine"
+msgstr "Obligatoire pour le moteur"
+
+msgctxt "checkout_form_builder"
+msgid "Show all MyBooking fields"
+msgstr "Afficher tous les champs MyBooking"
+
+msgctxt "checkout_form_builder"
+msgid "Skipper / navigation"
+msgstr "Skipper / navigation"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer outbound details"
+msgstr "Détails du transfert aller"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer return details"
+msgstr "Détails du transfert retour"
+
+msgctxt "checkout_form_builder"
+msgid "Transfers"
+msgstr "Transferts"
+
+msgctxt "checkout_form_builder"
+msgid "Vehicles"
+msgstr "Véhicules"
+
+msgctxt "renting_complete"
+msgid "Company contact name"
+msgstr "Nom du contact de l'entreprise"
+
+msgctxt "renting_complete"
+msgid "Customer classifier"
+msgstr "Classification du client"
+
+msgctxt "renting_complete"
+msgid "Customer type"
+msgstr "Type de client"
+
+msgctxt "renting_complete"
+msgid "Destination accommodation"
+msgstr "Hébergement de destination"
+
+msgctxt "renting_complete"
+msgid "Nationality"
+msgstr "Nationalité"
+
+msgctxt "renting_complete"
+msgid "Number of adults"
+msgstr "Nombre d'adultes"

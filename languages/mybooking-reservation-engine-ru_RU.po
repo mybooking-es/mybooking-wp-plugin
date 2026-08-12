@@ -5673,3 +5673,152 @@ msgstr "Выбрать доступные поля"
 msgctxt "checkout_form_builder"
 msgid "Clear selection"
 msgstr "Очистить выбор"
+
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation"
+msgstr "Размещение"
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation details"
+msgstr "Данные размещения"
+
+msgctxt "checkout_form_builder"
+msgid "Activities"
+msgstr "Активности"
+
+msgctxt "checkout_form_builder"
+msgid "Activity customer vehicle"
+msgstr "Транспорт клиента активности"
+
+msgctxt "checkout_form_builder"
+msgid "Automatic (MyBooking API)"
+msgstr "Автоматически (API MyBooking)"
+
+msgctxt "checkout_form_builder"
+msgid "Boats / skipper"
+msgstr "Лодки / шкипер"
+
+msgctxt "checkout_form_builder"
+msgid "Business profile"
+msgstr "Профиль бизнеса"
+
+msgctxt "checkout_form_builder"
+msgid "Company details"
+msgstr "Данные компании"
+
+msgctxt "checkout_form_builder"
+msgid "Customer classification"
+msgstr "Классификация клиента"
+
+msgctxt "checkout_form_builder"
+msgid "Customer identity"
+msgstr "Идентификация клиента"
+
+msgctxt "checkout_form_builder"
+msgid "Detected engines"
+msgstr "Обнаруженные движки"
+
+msgctxt "checkout_form_builder"
+msgid "Driver / renter"
+msgstr "Водитель / арендатор"
+
+msgctxt "checkout_form_builder"
+msgid "Driver address"
+msgstr "Адрес водителя"
+
+msgctxt "checkout_form_builder"
+msgid "Driver identity"
+msgstr "Идентификация водителя"
+
+msgctxt "checkout_form_builder"
+msgid "Driver license"
+msgstr "Водительское удостоверение"
+
+msgctxt "checkout_form_builder"
+msgid "General"
+msgstr "Общее"
+
+msgctxt "checkout_form_builder"
+msgid "Generic renting"
+msgstr "Общая аренда"
+
+msgctxt "checkout_form_builder"
+msgid "License / permit number"
+msgstr "Номер лицензии / удостоверения"
+
+msgctxt "checkout_form_builder"
+msgid "Manual override"
+msgstr "Ручная настройка"
+
+msgctxt "checkout_form_builder"
+msgid "Profile detection unavailable"
+msgstr "Определение профиля недоступно"
+
+msgctxt "checkout_form_builder"
+msgid "Refresh profile"
+msgstr "Обновить профиль"
+
+msgctxt "checkout_form_builder"
+msgid "Renting"
+msgstr "Аренда"
+
+msgctxt "checkout_form_builder"
+msgid "Renting family"
+msgstr "Семейство аренды"
+
+msgctxt "checkout_form_builder"
+msgid "Required by account"
+msgstr "Обязательно для аккаунта"
+
+msgctxt "checkout_form_builder"
+msgid "Required by engine"
+msgstr "Обязательно для движка"
+
+msgctxt "checkout_form_builder"
+msgid "Show all MyBooking fields"
+msgstr "Показать все поля MyBooking"
+
+msgctxt "checkout_form_builder"
+msgid "Skipper / navigation"
+msgstr "Шкипер / навигация"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer outbound details"
+msgstr "Данные трансфера туда"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer return details"
+msgstr "Данные обратного трансфера"
+
+msgctxt "checkout_form_builder"
+msgid "Transfers"
+msgstr "Трансферы"
+
+msgctxt "checkout_form_builder"
+msgid "Vehicles"
+msgstr "Транспорт"
+
+msgctxt "renting_complete"
+msgid "Company contact name"
+msgstr "Контактное лицо компании"
+
+msgctxt "renting_complete"
+msgid "Customer classifier"
+msgstr "Классификация клиента"
+
+msgctxt "renting_complete"
+msgid "Customer type"
+msgstr "Тип клиента"
+
+msgctxt "renting_complete"
+msgid "Destination accommodation"
+msgstr "Размещение в месте назначения"
+
+msgctxt "renting_complete"
+msgid "Nationality"
+msgstr "Гражданство"
+
+msgctxt "renting_complete"
+msgid "Number of adults"
+msgstr "Количество взрослых"

@@ -5774,3 +5774,152 @@ msgstr "Vali saadaolevad väljad"
 msgctxt "checkout_form_builder"
 msgid "Clear selection"
 msgstr "Tühista valik"
+
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation"
+msgstr "Majutus"
+
+msgctxt "checkout_form_builder"
+msgid "Accommodation details"
+msgstr "Majutuse andmed"
+
+msgctxt "checkout_form_builder"
+msgid "Activities"
+msgstr "Tegevused"
+
+msgctxt "checkout_form_builder"
+msgid "Activity customer vehicle"
+msgstr "Tegevuse kliendi sõiduk"
+
+msgctxt "checkout_form_builder"
+msgid "Automatic (MyBooking API)"
+msgstr "Automaatne (MyBookingu API)"
+
+msgctxt "checkout_form_builder"
+msgid "Boats / skipper"
+msgstr "Paadid / kippar"
+
+msgctxt "checkout_form_builder"
+msgid "Business profile"
+msgstr "Äriprofiil"
+
+msgctxt "checkout_form_builder"
+msgid "Company details"
+msgstr "Ettevõtte andmed"
+
+msgctxt "checkout_form_builder"
+msgid "Customer classification"
+msgstr "Kliendi klassifikatsioon"
+
+msgctxt "checkout_form_builder"
+msgid "Customer identity"
+msgstr "Kliendi isikuandmed"
+
+msgctxt "checkout_form_builder"
+msgid "Detected engines"
+msgstr "Tuvastatud mootorid"
+
+msgctxt "checkout_form_builder"
+msgid "Driver / renter"
+msgstr "Juht / rentnik"
+
+msgctxt "checkout_form_builder"
+msgid "Driver address"
+msgstr "Juhi aadress"
+
+msgctxt "checkout_form_builder"
+msgid "Driver identity"
+msgstr "Juhi isikuandmed"
+
+msgctxt "checkout_form_builder"
+msgid "Driver license"
+msgstr "Juhiluba"
+
+msgctxt "checkout_form_builder"
+msgid "General"
+msgstr "Üldine"
+
+msgctxt "checkout_form_builder"
+msgid "Generic renting"
+msgstr "Üldine rentimine"
+
+msgctxt "checkout_form_builder"
+msgid "License / permit number"
+msgstr "Litsentsi / loa number"
+
+msgctxt "checkout_form_builder"
+msgid "Manual override"
+msgstr "Käsitsi seadistus"
+
+msgctxt "checkout_form_builder"
+msgid "Profile detection unavailable"
+msgstr "Profiili tuvastamine pole saadaval"
+
+msgctxt "checkout_form_builder"
+msgid "Refresh profile"
+msgstr "Värskenda profiili"
+
+msgctxt "checkout_form_builder"
+msgid "Renting"
+msgstr "Rentimine"
+
+msgctxt "checkout_form_builder"
+msgid "Renting family"
+msgstr "Rendipere"
+
+msgctxt "checkout_form_builder"
+msgid "Required by account"
+msgstr "Konto poolt kohustuslik"
+
+msgctxt "checkout_form_builder"
+msgid "Required by engine"
+msgstr "Mootori poolt kohustuslik"
+
+msgctxt "checkout_form_builder"
+msgid "Show all MyBooking fields"
+msgstr "Kuva kõiki MyBookingu välju"
+
+msgctxt "checkout_form_builder"
+msgid "Skipper / navigation"
+msgstr "Kippar / navigeerimine"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer outbound details"
+msgstr "Väljuva transfeeri andmed"
+
+msgctxt "checkout_form_builder"
+msgid "Transfer return details"
+msgstr "Tagasisõidu transfeeri andmed"
+
+msgctxt "checkout_form_builder"
+msgid "Transfers"
+msgstr "Transfeerid"
+
+msgctxt "checkout_form_builder"
+msgid "Vehicles"
+msgstr "Sõidukid"
+
+msgctxt "renting_complete"
+msgid "Company contact name"
+msgstr "Ettevõtte kontaktisiku nimi"
+
+msgctxt "renting_complete"
+msgid "Customer classifier"
+msgstr "Kliendi klassifikaator"
+
+msgctxt "renting_complete"
+msgid "Customer type"
+msgstr "Kliendi tüüp"
+
+msgctxt "renting_complete"
+msgid "Destination accommodation"
+msgstr "Sihtkoha majutus"
+
+msgctxt "renting_complete"
+msgid "Nationality"
+msgstr "Kodakondsus"
+
+msgctxt "renting_complete"
+msgid "Number of adults"
+msgstr "Täiskasvanute arv"

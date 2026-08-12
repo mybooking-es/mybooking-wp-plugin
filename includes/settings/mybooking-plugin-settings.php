@@ -257,6 +257,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 							$cf_default_lang = get_locale();
 							$cf_installed    = get_available_languages();
 							$cf_langs        = array_values( array_unique( array_merge( [ $cf_default_lang ], $cf_installed ) ) );
+							$cf_profile             = MyBookingAccountSettings::get_account_profile();
+							$cf_profile_prefs       = MyBookingAccountSettings::get_profile_preferences();
+							$cf_engine_required     = MyBookingAccountSettings::get_engine_required( $cf_profile );
+							$cf_title_preset_keys   = array_keys( mybooking_checkout_form_section_title_presets() );
 
 							echo '<br /><div class="postbox"><div class="inside">';
 							echo wp_kses_post( _x(
@@ -273,7 +277,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 								 data-langs="<?php echo esc_attr( wp_json_encode( $cf_langs ) ); ?>"
 								 data-default-lang="<?php echo esc_attr( $cf_default_lang ); ?>"
 								 data-default-config="<?php echo esc_attr( wp_json_encode( MyBookingCheckoutFormConfig::get_default() ) ); ?>"
-								 data-section-templates="<?php echo esc_attr( wp_json_encode( mybooking_checkout_form_section_templates() ) ); ?>">
+								 data-section-templates="<?php echo esc_attr( wp_json_encode( mybooking_checkout_form_section_templates() ) ); ?>"
+								 data-profile="<?php echo esc_attr( wp_json_encode( $cf_profile ) ); ?>"
+								 data-profile-preferences="<?php echo esc_attr( wp_json_encode( $cf_profile_prefs ) ); ?>"
+								 data-engine-required="<?php echo esc_attr( wp_json_encode( $cf_engine_required ) ); ?>"
+								 data-title-presets="<?php echo esc_attr( wp_json_encode( $cf_title_preset_keys ) ); ?>">
 								<p class="description">
 									<?php echo esc_html_x( 'The form constructor requires JavaScript. Please enable JavaScript in your browser.', 'checkout_form_builder', 'mybooking-reservation-engine' ); ?>
 								</p>
