@@ -837,7 +837,7 @@
       var byLang   = override.by_lang || {};
 
       var typeBadges = '';
-      if (f.datepicker)   typeBadges += '<span class="mbcf-badge mbcf-badge--date">' + escHtml(str('badge_date', 'date')) + '</span>';
+      if (f.type === 'date') typeBadges += '<span class="mbcf-badge mbcf-badge--date">' + escHtml(str('badge_date', 'date')) + '</span>';
       if (f.has_intl_tel) typeBadges += '<span class="mbcf-badge mbcf-badge--tel">' + escHtml(str('badge_tel', 'tel')) + '</span>';
       if (f.special)      typeBadges += '<span class="mbcf-badge mbcf-badge--special">&#9670;</span>';
 
