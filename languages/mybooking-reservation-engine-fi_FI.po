@@ -5927,3 +5927,79 @@ msgstr "Kansalaisuus"
 msgctxt "renting_complete"
 msgid "Number of adults"
 msgstr "Aikuisten määrä"
+
+msgctxt "renting_complete"
+msgid "Document type"
+msgstr "Asiakirjan tyyppi"
+
+msgctxt "renting_complete"
+msgid "ID card/passport number"
+msgstr "Henkilökortin/passin numero"
+
+msgctxt "renting_complete"
+msgid "Expedition country"
+msgstr "Retkikunta"
+
+msgctxt "renting_complete"
+msgid "Company name"
+msgstr "Yrityksen nimi"
+
+msgctxt "renting_complete"
+msgid "Company VAT Number"
+msgstr "Yrityksen arvonlisäveronumero"
+
+msgctxt "renting_complete"
+msgid "Date of Issue"
+msgstr "Päivämäärä"
+
+msgctxt "renting_complete"
+msgid "Date of expiry"
+msgstr "Vanhenemispäivä"
+
+msgctxt "renting_complete"
+msgid "License type"
+msgstr "Lisenssityyppi"
+
+msgctxt "renting_complete"
+msgid "Navigation license type"
+msgstr "Navigointilupatyyppi"
+
+msgctxt "renting_complete"
+msgid "Brand"
+msgstr "Valmistaja"
+
+msgctxt "renting_complete"
+msgid "Model"
+msgstr "Malli"
+
+msgctxt "renting_complete"
+msgid "Stock plate"
+msgstr "Vakiolevy"
+
+msgctxt "renting_complete"
+msgid "Color"
+msgstr "Väri"
+
+msgctxt "renting_complete"
+msgid "Pickup address"
+msgstr "Noutopisteen osoite"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel number"
+msgstr "Lento- tai aluksen numero"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel estimated time"
+msgstr "Lento- tai aluksen arvioitu aika"
+
+msgctxt "renting_complete"
+msgid "Dropoff address"
+msgstr "Toimitusosoite"
+
+msgctxt "renting_complete"
+msgid "Return pickup address"
+msgstr "Paluumatkan nouto-osoite"
+
+msgctxt "renting_complete"
+msgid "Return dropoff address"
+msgstr "Paluumatkan toimitusosoite"

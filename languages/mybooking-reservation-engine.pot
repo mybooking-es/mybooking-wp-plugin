@@ -5753,3 +5753,79 @@ msgstr ""
 msgctxt "renting_complete"
 msgid "Number of adults"
 msgstr ""
+
+msgctxt "renting_complete"
+msgid "Document type"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "ID card/passport number"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Expedition country"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Company name"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Company VAT Number"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Date of Issue"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Date of expiry"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "License type"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Navigation license type"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Brand"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Model"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Stock plate"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Color"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Pickup address"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Flight or vessel number"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Flight or vessel estimated time"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Dropoff address"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Return pickup address"
+msgstr ""
+
+msgctxt "renting_complete"
+msgid "Return dropoff address"
+msgstr ""

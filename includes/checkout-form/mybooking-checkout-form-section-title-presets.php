@@ -43,6 +43,14 @@ function mybooking_checkout_form_section_title_preset_keys() {
   return array_keys( mybooking_checkout_form_section_title_presets() );
 }
 
+function mybooking_checkout_form_section_title_preset_strings() {
+  $strings = [];
+  foreach ( mybooking_checkout_form_section_title_presets() as $key => $label ) {
+    $strings[ 'preset_' . $key ] = $label;
+  }
+  return $strings;
+}
+
 /**
  * Known translations of "Customer's details" across all supported locales.
  * Used by the normalizer to migrate legacy string titles to preset schema.

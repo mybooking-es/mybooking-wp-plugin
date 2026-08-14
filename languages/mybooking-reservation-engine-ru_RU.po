@@ -5822,3 +5822,79 @@ msgstr "Гражданство"
 msgctxt "renting_complete"
 msgid "Number of adults"
 msgstr "Количество взрослых"
+
+msgctxt "renting_complete"
+msgid "Document type"
+msgstr "Тип документа"
+
+msgctxt "renting_complete"
+msgid "ID card/passport number"
+msgstr "Номер паспорта"
+
+msgctxt "renting_complete"
+msgid "Expedition country"
+msgstr "Страна выдачи"
+
+msgctxt "renting_complete"
+msgid "Company name"
+msgstr "Название компании"
+
+msgctxt "renting_complete"
+msgid "Company VAT Number"
+msgstr "Номер НДС компании"
+
+msgctxt "renting_complete"
+msgid "Date of Issue"
+msgstr "Дата выдачи"
+
+msgctxt "renting_complete"
+msgid "Date of expiry"
+msgstr "Дата истечения срока"
+
+msgctxt "renting_complete"
+msgid "License type"
+msgstr "Тип лицензии"
+
+msgctxt "renting_complete"
+msgid "Navigation license type"
+msgstr "Тип навигационной лицензии"
+
+msgctxt "renting_complete"
+msgid "Brand"
+msgstr "марка"
+
+msgctxt "renting_complete"
+msgid "Model"
+msgstr "модель"
+
+msgctxt "renting_complete"
+msgid "Stock plate"
+msgstr "автомобильный номер"
+
+msgctxt "renting_complete"
+msgid "Color"
+msgstr "Цвет"
+
+msgctxt "renting_complete"
+msgid "Pickup address"
+msgstr "Адрес получения"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel number"
+msgstr "Номер рейса или судна"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel estimated time"
+msgstr "Расчетное время полета или судна"
+
+msgctxt "renting_complete"
+msgid "Dropoff address"
+msgstr "Адрес возврата"
+
+msgctxt "renting_complete"
+msgid "Return pickup address"
+msgstr "Адрес получения для обратной поездки"
+
+msgctxt "renting_complete"
+msgid "Return dropoff address"
+msgstr "Адрес возврата для обратной поездки"

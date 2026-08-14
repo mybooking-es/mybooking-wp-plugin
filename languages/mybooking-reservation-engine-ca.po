@@ -5819,3 +5819,79 @@ msgstr "Nacionalitat"
 msgctxt "renting_complete"
 msgid "Number of adults"
 msgstr "Nombre d'adults"
+
+msgctxt "renting_complete"
+msgid "Document type"
+msgstr "Tipus de document"
+
+msgctxt "renting_complete"
+msgid "ID card/passport number"
+msgstr "NIF/pasaport"
+
+msgctxt "renting_complete"
+msgid "Expedition country"
+msgstr "País d'expedició"
+
+msgctxt "renting_complete"
+msgid "Company name"
+msgstr "Nom de l'empresa"
+
+msgctxt "renting_complete"
+msgid "Company VAT Number"
+msgstr "NIF de l'empresa"
+
+msgctxt "renting_complete"
+msgid "Date of Issue"
+msgstr "Data d'emissió"
+
+msgctxt "renting_complete"
+msgid "Date of expiry"
+msgstr "Data de caducitat"
+
+msgctxt "renting_complete"
+msgid "License type"
+msgstr "Tipus de permís"
+
+msgctxt "renting_complete"
+msgid "Navigation license type"
+msgstr "Tipus de llicència de navegació"
+
+msgctxt "renting_complete"
+msgid "Brand"
+msgstr "Marca"
+
+msgctxt "renting_complete"
+msgid "Model"
+msgstr "Model"
+
+msgctxt "renting_complete"
+msgid "Stock plate"
+msgstr "Matrícula"
+
+msgctxt "renting_complete"
+msgid "Color"
+msgstr "Color"
+
+msgctxt "renting_complete"
+msgid "Pickup address"
+msgstr "Adreça de recollida"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel number"
+msgstr "Número de vol o vaixell"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel estimated time"
+msgstr "Hora estimada de vol o vaixell"
+
+msgctxt "renting_complete"
+msgid "Dropoff address"
+msgstr "Adreça de lliurament"
+
+msgctxt "renting_complete"
+msgid "Return pickup address"
+msgstr "Adreça de recollida de tornada"
+
+msgctxt "renting_complete"
+msgid "Return dropoff address"
+msgstr "Adreça de lliurament de tornada"

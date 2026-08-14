@@ -5956,3 +5956,79 @@ msgstr "Nationaliteit"
 msgctxt "renting_complete"
 msgid "Number of adults"
 msgstr "Aantal volwassenen"
+
+msgctxt "renting_complete"
+msgid "Document type"
+msgstr "Document type"
+
+msgctxt "renting_complete"
+msgid "ID card/passport number"
+msgstr "ID-kaart/paspoortnummer"
+
+msgctxt "renting_complete"
+msgid "Expedition country"
+msgstr "Expeditiegebied"
+
+msgctxt "renting_complete"
+msgid "Company name"
+msgstr "Bedrijfsnaam"
+
+msgctxt "renting_complete"
+msgid "Company VAT Number"
+msgstr "Bedrijfs-btwnummer"
+
+msgctxt "renting_complete"
+msgid "Date of Issue"
+msgstr "Datum van Afgifte"
+
+msgctxt "renting_complete"
+msgid "Date of expiry"
+msgstr "Vervaldatum"
+
+msgctxt "renting_complete"
+msgid "License type"
+msgstr "Soort licentie"
+
+msgctxt "renting_complete"
+msgid "Navigation license type"
+msgstr "Type navigatievergunning"
+
+msgctxt "renting_complete"
+msgid "Brand"
+msgstr "Merk"
+
+msgctxt "renting_complete"
+msgid "Model"
+msgstr "Model"
+
+msgctxt "renting_complete"
+msgid "Stock plate"
+msgstr "Standaard plaat"
+
+msgctxt "renting_complete"
+msgid "Color"
+msgstr "Kleur"
+
+msgctxt "renting_complete"
+msgid "Pickup address"
+msgstr "Ophaaladres"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel number"
+msgstr "Vlucht- of vaartuignummer"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel estimated time"
+msgstr "Geschatte vlucht- of vaartuigtijd"
+
+msgctxt "renting_complete"
+msgid "Dropoff address"
+msgstr "Afleveradres"
+
+msgctxt "renting_complete"
+msgid "Return pickup address"
+msgstr "Ophaaladres voor de terugrit"
+
+msgctxt "renting_complete"
+msgid "Return dropoff address"
+msgstr "Afleveradres voor de terugrit"

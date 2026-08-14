@@ -5946,3 +5946,79 @@ msgstr "Narodowość"
 msgctxt "renting_complete"
 msgid "Number of adults"
 msgstr "Liczba dorosłych"
+
+msgctxt "renting_complete"
+msgid "Document type"
+msgstr "Typ dokumentu"
+
+msgctxt "renting_complete"
+msgid "ID card/passport number"
+msgstr "Numer dowodu osobistego/paszportu"
+
+msgctxt "renting_complete"
+msgid "Expedition country"
+msgstr "Kraj ekspedycji"
+
+msgctxt "renting_complete"
+msgid "Company name"
+msgstr "Nazwa firmy"
+
+msgctxt "renting_complete"
+msgid "Company VAT Number"
+msgstr "Numer VAT firmy"
+
+msgctxt "renting_complete"
+msgid "Date of Issue"
+msgstr "Data nadania"
+
+msgctxt "renting_complete"
+msgid "Date of expiry"
+msgstr "Data ważności"
+
+msgctxt "renting_complete"
+msgid "License type"
+msgstr "Typ licencji"
+
+msgctxt "renting_complete"
+msgid "Navigation license type"
+msgstr "Typ licencji żeglugowej"
+
+msgctxt "renting_complete"
+msgid "Brand"
+msgstr "Marka"
+
+msgctxt "renting_complete"
+msgid "Model"
+msgstr "Model"
+
+msgctxt "renting_complete"
+msgid "Stock plate"
+msgstr "Tablica stockowa"
+
+msgctxt "renting_complete"
+msgid "Color"
+msgstr "Kolor"
+
+msgctxt "renting_complete"
+msgid "Pickup address"
+msgstr "Adres odbioru"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel number"
+msgstr "Numer lotu lub jednostki"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel estimated time"
+msgstr "Szacowany czas lotu lub statku"
+
+msgctxt "renting_complete"
+msgid "Dropoff address"
+msgstr "Adres przekazania"
+
+msgctxt "renting_complete"
+msgid "Return pickup address"
+msgstr "Adres odbioru w drodze powrotnej"
+
+msgctxt "renting_complete"
+msgid "Return dropoff address"
+msgstr "Adres przekazania w drodze powrotnej"

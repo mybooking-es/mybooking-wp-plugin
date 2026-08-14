@@ -5923,3 +5923,79 @@ msgstr "Kodakondsus"
 msgctxt "renting_complete"
 msgid "Number of adults"
 msgstr "Täiskasvanute arv"
+
+msgctxt "renting_complete"
+msgid "Document type"
+msgstr "Dokumendi tüüp"
+
+msgctxt "renting_complete"
+msgid "ID card/passport number"
+msgstr "ID-kaardi/passi number"
+
+msgctxt "renting_complete"
+msgid "Expedition country"
+msgstr "Ekspeditsioonimaa"
+
+msgctxt "renting_complete"
+msgid "Company name"
+msgstr "Ettevõtte nimi"
+
+msgctxt "renting_complete"
+msgid "Company VAT Number"
+msgstr "Ettevõtte käibemaksunumber"
+
+msgctxt "renting_complete"
+msgid "Date of Issue"
+msgstr "Väljastamise kuupäev"
+
+msgctxt "renting_complete"
+msgid "Date of expiry"
+msgstr "Aegumiskuupäev"
+
+msgctxt "renting_complete"
+msgid "License type"
+msgstr "Litsentsi tüüp"
+
+msgctxt "renting_complete"
+msgid "Navigation license type"
+msgstr "Navigatsiooniloa tüüp"
+
+msgctxt "renting_complete"
+msgid "Brand"
+msgstr "Bränd"
+
+msgctxt "renting_complete"
+msgid "Model"
+msgstr "Mudel"
+
+msgctxt "renting_complete"
+msgid "Stock plate"
+msgstr "Originaalplaat"
+
+msgctxt "renting_complete"
+msgid "Color"
+msgstr "Värv"
+
+msgctxt "renting_complete"
+msgid "Pickup address"
+msgstr "Kättesaamise aadress"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel number"
+msgstr "Lennu või laeva number"
+
+msgctxt "renting_complete"
+msgid "Flight or vessel estimated time"
+msgstr "Lennu või laeva hinnanguline aeg"
+
+msgctxt "renting_complete"
+msgid "Dropoff address"
+msgstr "Üleandmise aadress"
+
+msgctxt "renting_complete"
+msgid "Return pickup address"
+msgstr "Tagasisõidu kättesaamise aadress"
+
+msgctxt "renting_complete"
+msgid "Return dropoff address"
+msgstr "Tagasisõidu üleandmise aadress"
