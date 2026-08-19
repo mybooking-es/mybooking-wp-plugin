@@ -5899,3 +5899,7 @@ msgstr "Indirizzo di ritiro per il ritorno"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Indirizzo di riconsegna per il ritorno"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Numero di persone"

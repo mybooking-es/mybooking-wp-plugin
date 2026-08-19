@@ -111,6 +111,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             'cannot_remove_field'   => _x( 'This field is required and cannot be removed.',                'checkout_form_builder', 'mybooking-reservation-engine' ),
             'cannot_replace_locked' => _x( 'Cannot replace a required field.',                            'checkout_form_builder', 'mybooking-reservation-engine' ),
             'field_label'           => _x( 'Label',                                                       'checkout_form_builder', 'mybooking-reservation-engine' ),
+            'field_number_of_people'=> _x( 'Number of people',                                            'renting_complete',      'mybooking-reservation-engine' ),
             'field_placeholder'     => _x( 'Placeholder',                                                 'checkout_form_builder', 'mybooking-reservation-engine' ),
             'field_required_label'  => _x( 'Required field',                                              'checkout_form_builder', 'mybooking-reservation-engine' ),
             'field_settings'        => _x( 'Field settings',                                              'checkout_form_builder', 'mybooking-reservation-engine' ),

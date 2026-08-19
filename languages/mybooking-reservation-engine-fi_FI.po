@@ -6003,3 +6003,7 @@ msgstr "Paluumatkan nouto-osoite"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Paluumatkan toimitusosoite"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Henkilömäärä"

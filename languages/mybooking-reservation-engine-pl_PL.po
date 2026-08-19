@@ -6022,3 +6022,7 @@ msgstr "Adres odbioru w drodze powrotnej"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Adres przekazania w drodze powrotnej"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Liczba osób"

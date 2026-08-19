@@ -1085,7 +1085,7 @@ if ( ! function_exists( 'mybooking_checkout_form_fields' ) ) {
       'special'               => '',
       'group'                 => 'accommodation_details',
       'engine_targets'        => [ 'renting' ],
-      'business_lines'        => [ 'accommodation' ],
+      'business_lines'        => [ 'accommodation', 'vehicle' ],
       'runtime_name'          => 'number_of_adults',
       'runtime_name_by_engine'=> [],
       'option_source'         => '',

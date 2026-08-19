@@ -980,6 +980,9 @@
 
   function fieldDisplayLabel(key) {
     if (!state.fields[key]) return key;
+    if (key === 'number_of_adults' && computeRentingBL() === 'vehicle') {
+      return str('field_number_of_people', 'Number of people');
+    }
     return state.fields[key].label || key;
   }
 
@@ -1305,7 +1308,11 @@
             + '<input type="text" class="mbcf-field-placeholder-override"'
               + ' data-field="' + escAttr(key) + '" data-lang="' + escAttr(lang) + '"'
               + ' value="' + escAttr(lv.placeholder || '') + '"'
-              + ' placeholder="' + escAttr(f.placeholder || '') + '" />'
+              + ' placeholder="' + escAttr(
+                  key === 'number_of_adults' && computeRentingBL() === 'vehicle'
+                    ? fieldDisplayLabel(key)
+                    : (f.placeholder || '')
+                ) + '" />'
           + '</div>'
           + '</div>';
       });
@@ -1568,7 +1575,7 @@
             if (!fieldKey) return;
             if (!isFieldVisible(fieldKey) && placed.indexOf(fieldKey) === -1) return;
             var fieldDef   = state.fields[fieldKey];
-            var label      = fieldDef ? (fieldDef.label || fieldKey) : fieldKey;
+            var label      = fieldDisplayLabel(fieldKey);
             var isInForm   = (placed.indexOf(fieldKey) !== -1);
             var fieldLocked = isLocked(fieldKey);
             var checkId    = 'mbcf-tpl-chk-' + escAttr(key) + '-' + escAttr(fieldKey);

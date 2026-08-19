@@ -94,6 +94,7 @@ if ( ! function_exists( 'mybooking_checkout_form_section_templates' ) ) {
         'title_preset' => 'additional_information',
         'parent_group' => 'general',
         'rows'         => [
+          [ 'number_of_adults' ],
           [ 'comments' ],
         ],
       ],
@@ -103,7 +104,7 @@ if ( ! function_exists( 'mybooking_checkout_form_section_templates' ) ) {
         'title_preset' => 'accommodation_details',
         'parent_group' => 'accommodation',
         'rows'         => [
-          [ 'number_of_adults', 'destination_accommodation' ],
+          [ 'destination_accommodation' ],
         ],
       ],
 

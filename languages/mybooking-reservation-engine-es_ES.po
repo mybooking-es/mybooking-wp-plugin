@@ -6046,3 +6046,7 @@ msgstr "Dirección de recogida de vuelta"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Dirección de destino de vuelta"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Número de personas"

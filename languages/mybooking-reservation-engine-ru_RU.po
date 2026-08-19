@@ -5898,3 +5898,7 @@ msgstr "Адрес получения для обратной поездки"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Адрес возврата для обратной поездки"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Количество человек"

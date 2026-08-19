@@ -5900,3 +5900,7 @@ msgstr "Adresse de prise en charge du retour"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Adresse de dépôt du retour"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Nombre de personnes"

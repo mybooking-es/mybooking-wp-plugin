@@ -6035,3 +6035,7 @@ msgstr "Endereço de recolha do regresso"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Endereço de entrega do regresso"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Número de pessoas"

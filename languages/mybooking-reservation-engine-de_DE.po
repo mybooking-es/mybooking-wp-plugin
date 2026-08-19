@@ -5903,3 +5903,7 @@ msgstr "Abholadresse für die Rückfahrt"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Abgabeadresse für die Rückfahrt"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Anzahl der Personen"

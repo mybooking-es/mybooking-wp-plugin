@@ -5895,3 +5895,7 @@ msgstr "Adreça de recollida de tornada"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Adreça de lliurament de tornada"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Nombre de persones"

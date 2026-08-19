@@ -6032,3 +6032,7 @@ msgstr "Ophaaladres voor de terugrit"
 msgctxt "renting_complete"
 msgid "Return dropoff address"
 msgstr "Afleveradres voor de terugrit"
+
+msgctxt "renting_complete"
+msgid "Number of people"
+msgstr "Aantal personen"

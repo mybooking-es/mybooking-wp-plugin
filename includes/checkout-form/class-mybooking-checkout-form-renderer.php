@@ -349,7 +349,7 @@ class MyBookingCheckoutFormRenderer {
     return $core_required || $account_required || $forced_by_engine || $saved_required;
   }
 
-  private static function localized_field_text( $key, $prop, $field, $config, $locale, $engine ) {
+  private static function localized_field_text( $key, $prop, $field, $config, $locale, $engine, $profile ) {
     if ( isset( $config['field_overrides'][ $key ]['by_lang'][ $locale ][ $prop ] ) ) {
       $value = (string) $config['field_overrides'][ $key ]['by_lang'][ $locale ][ $prop ];
       if ( $value !== '' ) {
@@ -357,6 +357,15 @@ class MyBookingCheckoutFormRenderer {
       }
     }
 
+    // number_of_adults remains the inherited runtime/API contract. For vehicle
+    // renting only, present that same field as "Number of people".
+    if ( $engine === self::ENGINE
+      && $key === 'number_of_adults'
+      && ( $prop === 'label' || $prop === 'placeholder' )
+      && isset( $profile['renting_business_line'] )
+      && (string) $profile['renting_business_line'] === 'vehicle' ) {
+      return _x( 'Number of people', 'renting_complete', 'mybooking-reservation-engine' );
+    }
     // The Builder's generic special labels are admin taxonomy. Renting Complete
     // has two long-standing frontend labels; keep those exact defaults so P4R
     // changes field selection, never the existing checkout wording/appearance.
@@ -513,8 +522,8 @@ class MyBookingCheckoutFormRenderer {
     $name = self::runtime_name( $key, $field, $engine );
     $id = $key;
     $required = self::effective_required( $key, $field, $config, $profile, $engine_required );
-    $label = self::localized_field_text( $key, 'label', $field, $config, $locale, $engine );
-    $placeholder = self::localized_field_text( $key, 'placeholder', $field, $config, $locale, $engine );
+    $label = self::localized_field_text( $key, 'label', $field, $config, $locale, $engine, $profile );
+    $placeholder = self::localized_field_text( $key, 'placeholder', $field, $config, $locale, $engine, $profile );
     $label_for = $id;
     if ( $key === 'confirm_customer_email' || $key === 'with_optional_external_driver' ) {
       // Preserve the two historical Complete label-for quirks byte-for-DOM compatible.
