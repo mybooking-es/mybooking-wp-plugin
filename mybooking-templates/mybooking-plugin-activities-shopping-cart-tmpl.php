@@ -113,11 +113,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   <!-- // Reservation complete -->
   <div class="mb-section">
     <div class="reservation_form_container mb-section mb-panel-container">
+      <?php if ( get_option( MyBookingCheckoutFormConfig::OPTION_KEY, null ) === null ) : ?>
       <h3 class="mb-section_title complete-section-title customer_component">
         <?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-reservation-engine') ?>
       </h3>
+      <?php endif; ?>
 
       <form id="form-reservation" name="reservation_form" autocomplete="off">
+        <?php if ( get_option( MyBookingCheckoutFormConfig::OPTION_KEY, null ) === null ) : ?>
         <div class="mb-form-group mb-form-row customer_component">
           <div class="mb-col-md-6 mb-col-sm-12">
             <label for="customer_name"><?php echo esc_html_x( 'Name', 'renting_complete', 'mybooking-reservation-engine') ?>*</label>
@@ -196,6 +199,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-reservation-engine') ?></label>
           <textarea class="mb-form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-reservation-engine') ?>"></textarea>
         </div>
+        <?php else : ?>
+        <!-- Configurable checkout fields: P4A preserves Activities' legacy mb-* markup via the shared renderer -->
+        <?php MyBookingCheckoutFormRenderer::render_activities(); ?>
+        <?php endif; ?>
 
         <!-- // Reservation : payment (script_payment_detail) -->
         <div id="payment_detail"></div>

@@ -7,17 +7,17 @@ require_once __DIR__ . '/class-mybooking-checkout-form-config.php';
 require_once __DIR__ . '/class-mybooking-account-settings.php';
 
 /**
- * Frontend renderer for the configurable Renting checkout fields.
+ * Frontend renderer for the unified configurable checkout fields.
  *
- * P4R deliberately preserves the existing Complete template's visual/DOM
- * vocabulary: the outer page/form/payment structure remains in
- * mybooking-plugin-complete.php and this class only replaces the static field
- * block with the same mb-* rows, columns, labels and controls selected by the
- * normalized Builder configuration.
+ * P4R established the visual/DOM contract against Renting Complete. P4A adds
+ * the Activities adapter without changing that vocabulary: each engine filters
+ * the same normalized Builder configuration and renders only its proven ordinary
+ * fields using the historical mb-* rows, columns, labels and controls.
  */
 class MyBookingCheckoutFormRenderer {
 
   const ENGINE = 'renting';
+  const ENGINE_ACTIVITIES = 'activities';
 
   /** Six fields that make up the legacy/static customer block. */
   private static $legacy_customer_fields = [
@@ -43,23 +43,39 @@ class MyBookingCheckoutFormRenderer {
   }
 
   /**
+   * Echo the Activities configurable block inside script_reservation_form.
+   */
+  public static function render_activities() {
+    echo self::get_activities_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renderer escapes leaf values.
+  }
+
+  /**
    * Build Renting checkout HTML. Optional args exist to make the renderer
    * deterministic and snapshot-testable without changing production behavior.
-   *
-   * @param array|null  $config  Normalized checkout config. Null = Config::get().
-   * @param array|null  $profile Account profile. Null = AccountSettings::get_account_profile().
-   * @param string|null $locale  Frontend WP locale. Null = get_locale().
-   * @return string
    */
   public static function get_renting_html( $config = null, $profile = null, $locale = null ) {
+    return self::get_engine_html( self::ENGINE, $config, $profile, $locale );
+  }
+
+  /**
+   * Build Activities checkout HTML from the same normalized Builder config.
+   */
+  public static function get_activities_html( $config = null, $profile = null, $locale = null ) {
+    return self::get_engine_html( self::ENGINE_ACTIVITIES, $config, $profile, $locale );
+  }
+
+  /**
+   * Engine-neutral renderer core used by the proven P4 adapters.
+   */
+  private static function get_engine_html( $engine, $config = null, $profile = null, $locale = null ) {
     $config  = is_array( $config ) ? $config : MyBookingCheckoutFormConfig::get();
     $profile = is_array( $profile ) ? $profile : MyBookingAccountSettings::get_account_profile();
     $locale  = is_string( $locale ) && $locale !== '' ? $locale : get_locale();
 
     $catalog = mybooking_checkout_form_fields();
-    $prepared = self::prepare_sections( $config, $profile, $catalog );
+    $prepared = self::prepare_sections( $config, $profile, $catalog, $engine );
     $visible_keys = $prepared['visible_keys'];
-    $engine_required = self::renting_engine_required( $profile );
+    $engine_required = self::engine_required( $profile, $engine );
 
     $html = '';
     $rendered_section_count = 0;
@@ -69,8 +85,9 @@ class MyBookingCheckoutFormRenderer {
       $rows    = $prepared_section['rows'];
       $had_configured_rows = ! empty( $section['rows'] );
 
-      // A section that became empty only because P4R filtered non-Renting/out-of-
-      // business-line fields is not an intentional title-only section.
+      // A section that became empty only because the active engine adapter
+      // filtered unsupported/out-of-profile fields is not an intentional
+      // title-only section.
       if ( $had_configured_rows && empty( $rows ) ) {
         continue;
       }
@@ -86,7 +103,11 @@ class MyBookingCheckoutFormRenderer {
       }
 
       if ( $rendered_section_count > 0 ) {
-        $html .= "\n            <br/>\n\n";
+        if ( $engine === self::ENGINE ) {
+          $html .= "\n            <br/>\n\n";
+        } else {
+          $html .= "\n";
+        }
       }
 
       $legacy_customer_section = self::is_legacy_customer_section( $rows );
@@ -122,34 +143,36 @@ class MyBookingCheckoutFormRenderer {
           $catalog,
           $locale,
           $engine_required,
-          $visible_keys
+          $visible_keys,
+          $engine
         );
       }
 
       $rendered_section_count++;
     }
 
-    // Keep Engine-owned features safe even when a legacy/corrupt/custom config
-    // omits their Builder placement. These fallbacks are hidden and serialized
-    // away by Engine unless the corresponding runtime feature activates them.
-    $fallbacks = [];
-    foreach ( self::$engine_specials as $special_key ) {
-      if ( empty( $prepared['rendered_specials'][ $special_key ] ) ) {
-        $fallbacks[] = $special_key;
+    // Renting has two existing Engine-owned specials that require hidden DOM
+    // fallbacks. Other adapters have no ordinary-field fallback infrastructure.
+    if ( $engine === self::ENGINE ) {
+      $fallbacks = [];
+      foreach ( self::$engine_specials as $special_key ) {
+        if ( empty( $prepared['rendered_specials'][ $special_key ] ) ) {
+          $fallbacks[] = $special_key;
+        }
       }
-    }
-    if ( ! empty( $fallbacks ) ) {
-      if ( $rendered_section_count > 0 ) {
-        $html .= "\n";
+      if ( ! empty( $fallbacks ) ) {
+        if ( $rendered_section_count > 0 ) {
+          $html .= "\n";
+        }
+        $html .= self::render_special_fallbacks(
+          $fallbacks,
+          $catalog,
+          $config,
+          $profile,
+          $locale,
+          $engine_required
+        );
       }
-      $html .= self::render_special_fallbacks(
-        $fallbacks,
-        $catalog,
-        $config,
-        $profile,
-        $locale,
-        $engine_required
-      );
     }
 
     return $html;
@@ -184,7 +207,7 @@ class MyBookingCheckoutFormRenderer {
    * Filter the engine-neutral saved config for the Renting frontend adapter,
    * while preserving configured row geometry (including null slots).
    */
-  private static function prepare_sections( $config, $profile, $catalog ) {
+  private static function prepare_sections( $config, $profile, $catalog, $engine ) {
     $sections_out = [];
     $visible_keys = [];
     $rendered_specials = [];
@@ -209,10 +232,10 @@ class MyBookingCheckoutFormRenderer {
 
         for ( $i = 0; $i < $slot_count; $i++ ) {
           $key = array_key_exists( $i, $raw_fields ) ? $raw_fields[ $i ] : null;
-          if ( is_string( $key ) && isset( $catalog[ $key ] ) && self::is_field_supported( $key, $catalog[ $key ], $profile ) ) {
+          if ( is_string( $key ) && isset( $catalog[ $key ] ) && self::is_field_supported_for_engine( $key, $catalog[ $key ], $profile, $engine ) ) {
             $fields[] = $key;
             $visible_keys[ $key ] = true;
-            if ( in_array( $key, self::$engine_specials, true ) ) {
+            if ( $engine === self::ENGINE && in_array( $key, self::$engine_specials, true ) ) {
               $rendered_specials[ $key ] = true;
             }
             $has_visible = true;
@@ -241,46 +264,73 @@ class MyBookingCheckoutFormRenderer {
   }
 
   /**
-   * Frontend P4R support gate: Renting target + active Renting business line +
-   * runtime/feature guard. Admin show-all never overrides frontend support.
+   * Backward-compatible public P4R support gate.
    */
   public static function is_field_supported( $key, $field, $profile ) {
+    return self::is_field_supported_for_engine( $key, $field, $profile, self::ENGINE );
+  }
+
+  /**
+   * Engine adapter support gate: target + business/profile family + runtime guard.
+   * Admin show-all never overrides frontend support.
+   */
+  public static function is_field_supported_for_engine( $key, $field, $profile, $engine ) {
     $targets = isset( $field['engine_targets'] ) ? (array) $field['engine_targets'] : [];
-    if ( ! empty( $targets ) && ! in_array( self::ENGINE, $targets, true ) ) {
+    if ( ! empty( $targets ) && ! in_array( $engine, $targets, true ) ) {
       return false;
     }
 
-    $business_line = isset( $profile['renting_business_line'] ) ? (string) $profile['renting_business_line'] : 'generic';
-    if ( $business_line !== 'generic' ) {
-      $business_lines = isset( $field['business_lines'] ) ? (array) $field['business_lines'] : [];
-      if ( ! empty( $business_lines )
+    $business_lines = isset( $field['business_lines'] ) ? (array) $field['business_lines'] : [];
+    if ( $engine === self::ENGINE ) {
+      $business_line = isset( $profile['renting_business_line'] ) ? (string) $profile['renting_business_line'] : 'generic';
+      if ( $business_line !== 'generic'
+        && ! empty( $business_lines )
         && ! in_array( 'common', $business_lines, true )
         && ! in_array( $business_line, $business_lines, true ) ) {
         return false;
       }
+    } elseif ( ! empty( $business_lines )
+      && ! in_array( 'common', $business_lines, true )
+      && ! in_array( $engine, $business_lines, true ) ) {
+      return false;
     }
 
     $features = isset( $profile['features'] ) && is_array( $profile['features'] ) ? $profile['features'] : [];
 
-    if ( $key === 'slot_time_from' && empty( $features['delivery_slots'] ) ) {
-      return false;
-    }
-    if ( $key === 'with_optional_external_driver' && empty( $features['optional_external_driver'] ) ) {
-      return false;
+    if ( $engine === self::ENGINE ) {
+      if ( $key === 'slot_time_from' && empty( $features['delivery_slots'] ) ) {
+        return false;
+      }
+      if ( $key === 'with_optional_external_driver' && empty( $features['optional_external_driver'] ) ) {
+        return false;
+      }
     }
 
     $guard = isset( $field['runtime_guard'] ) ? (string) $field['runtime_guard'] : '';
-    if ( $guard !== '' && empty( $features[ $guard ] ) ) {
+    if ( $guard !== '' && ! self::feature_enabled( $features, $guard ) ) {
       return false;
     }
 
     return true;
   }
 
-  private static function renting_engine_required( $profile ) {
-    $renting_profile = is_array( $profile ) ? $profile : [];
-    $renting_profile['engines'] = [ self::ENGINE ];
-    return MyBookingAccountSettings::get_engine_required( $renting_profile );
+  /**
+   * frontend/settings is snake_case while Engine configuration exposes selected
+   * guards in camelCase. Accept both representations without changing catalog
+   * contracts or inventing feature values.
+   */
+  private static function feature_enabled( $features, $guard ) {
+    if ( ! empty( $features[ $guard ] ) ) {
+      return true;
+    }
+    $snake = strtolower( preg_replace( '/(?<!^)[A-Z]/', '_$0', (string) $guard ) );
+    return $snake !== $guard && ! empty( $features[ $snake ] );
+  }
+
+  private static function engine_required( $profile, $engine ) {
+    $engine_profile = is_array( $profile ) ? $profile : [];
+    $engine_profile['engines'] = [ $engine ];
+    return MyBookingAccountSettings::get_engine_required( $engine_profile );
   }
 
   private static function effective_required( $key, $field, $config, $profile, $engine_required ) {
@@ -299,7 +349,7 @@ class MyBookingCheckoutFormRenderer {
     return $core_required || $account_required || $forced_by_engine || $saved_required;
   }
 
-  private static function localized_field_text( $key, $prop, $field, $config, $locale ) {
+  private static function localized_field_text( $key, $prop, $field, $config, $locale, $engine ) {
     if ( isset( $config['field_overrides'][ $key ]['by_lang'][ $locale ][ $prop ] ) ) {
       $value = (string) $config['field_overrides'][ $key ]['by_lang'][ $locale ][ $prop ];
       if ( $value !== '' ) {
@@ -310,20 +360,36 @@ class MyBookingCheckoutFormRenderer {
     // The Builder's generic special labels are admin taxonomy. Renting Complete
     // has two long-standing frontend labels; keep those exact defaults so P4R
     // changes field selection, never the existing checkout wording/appearance.
-    if ( $prop === 'label' && $key === 'slot_time_from' ) {
+    if ( $engine === self::ENGINE && $prop === 'label' && $key === 'slot_time_from' ) {
       return _x( 'Select the schedule that suits your needs', 'renting_complete', 'mybooking-reservation-engine' );
     }
-    if ( $prop === 'label' && $key === 'with_optional_external_driver' ) {
+    if ( $engine === self::ENGINE && $prop === 'label' && $key === 'with_optional_external_driver' ) {
       return _x( 'Will you need a skipper?', 'renting_complete', 'mybooking-reservation-engine' );
+    }
+
+    // Activities historically translates the customer-vehicle controls in the
+    // activity_shopping_cart context. Reuse that exact frontend context instead
+    // of the Builder catalog context so existing translations remain byte-for-
+    // wording compatible with the legacy microtemplate.
+    if ( $engine === self::ENGINE_ACTIVITIES && self::is_activity_vehicle_field( $key ) ) {
+      $activity_vehicle_text = [
+        'customer_stock_brand' => 'Brand',
+        'customer_stock_model' => 'Model',
+        'customer_stock_plate' => 'Stock plate',
+        'customer_stock_color' => 'Color',
+      ];
+      if ( isset( $activity_vehicle_text[ $key ] ) && ( $prop === 'label' || $prop === 'placeholder' ) ) {
+        return _x( $activity_vehicle_text[ $key ], 'activity_shopping_cart', 'mybooking-reservation-engine' );
+      }
     }
 
     return isset( $field[ $prop ] ) ? (string) $field[ $prop ] : '';
   }
 
-  private static function runtime_name( $key, $field ) {
-    if ( isset( $field['runtime_name_by_engine'][ self::ENGINE ] )
-      && (string) $field['runtime_name_by_engine'][ self::ENGINE ] !== '' ) {
-      return (string) $field['runtime_name_by_engine'][ self::ENGINE ];
+  private static function runtime_name( $key, $field, $engine ) {
+    if ( isset( $field['runtime_name_by_engine'][ $engine ] )
+      && (string) $field['runtime_name_by_engine'][ $engine ] !== '' ) {
+      return (string) $field['runtime_name_by_engine'][ $engine ];
     }
     if ( isset( $field['runtime_name'] ) && (string) $field['runtime_name'] !== '' ) {
       return (string) $field['runtime_name'];
@@ -331,12 +397,12 @@ class MyBookingCheckoutFormRenderer {
     return $key;
   }
 
-  private static function render_row( $row, $config, $profile, $catalog, $locale, $engine_required, $visible_keys ) {
+  private static function render_row( $row, $config, $profile, $catalog, $locale, $engine_required, $visible_keys, $engine ) {
     $layout = $row['layout'] === '1col' ? '1col' : '2col';
     $fields = $row['fields'];
     $row_keys = array_values( array_filter( $fields, 'is_string' ) );
     $row_is_legacy_customer = ! empty( $row_keys ) && count( array_diff( $row_keys, self::$legacy_customer_fields ) ) === 0;
-    $special_keys = array_values( array_intersect( $row_keys, self::$engine_specials ) );
+    $special_keys = $engine === self::ENGINE ? array_values( array_intersect( $row_keys, self::$engine_specials ) ) : [];
     $has_special = ! empty( $special_keys );
     $only_special = $has_special && count( array_diff( $row_keys, self::$engine_specials ) ) === 0;
     $both_special = count( $special_keys ) === 2;
@@ -352,10 +418,10 @@ class MyBookingCheckoutFormRenderer {
       if ( in_array( $key, self::$legacy_customer_fields, true ) ) {
         $classes[] = 'customer_component';
       }
-      if ( $key === 'slot_time_from' || $key === 'with_optional_external_driver' ) {
+      if ( $engine === self::ENGINE && ( $key === 'slot_time_from' || $key === 'with_optional_external_driver' ) ) {
         $classes[] = $key === 'slot_time_from' ? 'js-mb-delivery-slot' : 'js-mb-optional-external-driver';
       }
-      if ( self::is_company_field( $key ) && ! empty( $visible_keys['customer_type'] ) ) {
+      if ( $engine === self::ENGINE && self::is_company_field( $key ) && ! empty( $visible_keys['customer_type'] ) ) {
         $classes[] = 'mybooking_customer_legal_entity';
       }
       if ( isset( $catalog[ $key ]['type'] ) && $catalog[ $key ]['type'] === 'date' ) {
@@ -378,7 +444,7 @@ class MyBookingCheckoutFormRenderer {
       }
 
       $html = '            <div class="' . esc_attr( implode( ' ', $classes ) ) . '"' . $attrs . ">\n";
-      $html .= self::render_field_control( $key, $catalog[ $key ], $config, $profile, $locale, $engine_required, $visible_keys, 14 );
+      $html .= self::render_field_control( $key, $catalog[ $key ], $config, $profile, $locale, $engine_required, $visible_keys, 14, $engine );
       $html .= "            </div>\n";
       return $html;
     }
@@ -408,7 +474,7 @@ class MyBookingCheckoutFormRenderer {
         if ( ! $row_is_legacy_customer && in_array( $key, self::$legacy_customer_fields, true ) ) {
           $classes[] = 'customer_component';
         }
-        if ( self::is_company_field( $key ) && ! empty( $visible_keys['customer_type'] ) ) {
+        if ( $engine === self::ENGINE && self::is_company_field( $key ) && ! empty( $visible_keys['customer_type'] ) ) {
           $classes[] = 'mybooking_customer_legal_entity';
         }
         if ( isset( $catalog[ $key ]['type'] ) && $catalog[ $key ]['type'] === 'date' ) {
@@ -422,10 +488,10 @@ class MyBookingCheckoutFormRenderer {
           $classes[] = 'js-mb-ses-address';
           $attrs .= ' data-mb-address-scope="' . esc_attr( $field_address_scope ) . '"';
         }
-        if ( $key === 'slot_time_from' ) {
+        if ( $engine === self::ENGINE && $key === 'slot_time_from' ) {
           $classes[] = 'js-mb-delivery-slot';
           $attrs .= ' style="display: none"';
-        } elseif ( $key === 'with_optional_external_driver' ) {
+        } elseif ( $engine === self::ENGINE && $key === 'with_optional_external_driver' ) {
           $classes[] = 'js-mb-optional-external-driver';
           $attrs .= ' style="display: none"';
         }
@@ -433,7 +499,7 @@ class MyBookingCheckoutFormRenderer {
 
       $html .= '              <div class="' . esc_attr( implode( ' ', $classes ) ) . '"' . $attrs . ">\n";
       if ( is_string( $key ) && isset( $catalog[ $key ] ) ) {
-        $html .= self::render_field_control( $key, $catalog[ $key ], $config, $profile, $locale, $engine_required, $visible_keys, 16 );
+        $html .= self::render_field_control( $key, $catalog[ $key ], $config, $profile, $locale, $engine_required, $visible_keys, 16, $engine );
       }
       $html .= "              </div>\n";
     }
@@ -442,18 +508,18 @@ class MyBookingCheckoutFormRenderer {
     return $html;
   }
 
-  private static function render_field_control( $key, $field, $config, $profile, $locale, $engine_required, $visible_keys, $indent ) {
+  private static function render_field_control( $key, $field, $config, $profile, $locale, $engine_required, $visible_keys, $indent, $engine ) {
     $pad = str_repeat( ' ', $indent );
-    $name = self::runtime_name( $key, $field );
+    $name = self::runtime_name( $key, $field, $engine );
     $id = $key;
     $required = self::effective_required( $key, $field, $config, $profile, $engine_required );
-    $label = self::localized_field_text( $key, 'label', $field, $config, $locale );
-    $placeholder = self::localized_field_text( $key, 'placeholder', $field, $config, $locale );
+    $label = self::localized_field_text( $key, 'label', $field, $config, $locale, $engine );
+    $placeholder = self::localized_field_text( $key, 'placeholder', $field, $config, $locale, $engine );
     $label_for = $id;
     if ( $key === 'confirm_customer_email' || $key === 'with_optional_external_driver' ) {
       // Preserve the two historical Complete label-for quirks byte-for-DOM compatible.
       $label_for = 'customer_email';
-      if ( $key === 'with_optional_external_driver' ) {
+      if ( $engine === self::ENGINE && $key === 'with_optional_external_driver' ) {
         $label_for = 'slot_time_from';
       }
     }
@@ -464,12 +530,12 @@ class MyBookingCheckoutFormRenderer {
     }
     $html .= "</label>\n";
 
-    if ( $key === 'slot_time_from' ) {
+    if ( $engine === self::ENGINE && $key === 'slot_time_from' ) {
       $html .= $pad . '<select class="mb-form-control" id="slot_time_from" name="slot_time_from"></select>' . "\n";
       return $html;
     }
 
-    if ( $key === 'with_optional_external_driver' ) {
+    if ( $engine === self::ENGINE && $key === 'with_optional_external_driver' ) {
       $html .= $pad . '<select class="mb-form-control" id="with_optional_external_driver" name="with_optional_external_driver">' . "\n";
       $html .= $pad . '  <option value=""></option>' . "\n";
       $html .= $pad . '  <option value="false">' . esc_html_x( 'No', 'renting_complete', 'mybooking-reservation-engine' ) . '</option>' . "\n";
@@ -498,7 +564,7 @@ class MyBookingCheckoutFormRenderer {
 
     if ( isset( $field['type'] ) && $field['type'] === 'select' ) {
       $html .= $pad . '<select class="mb-form-control" id="' . esc_attr( $id ) . '" name="' . esc_attr( $name ) . '"';
-      if ( $required && ! self::engine_forced_select_owns_required( $key ) ) {
+      if ( $required && ! self::engine_forced_select_owns_required( $key, $engine ) ) {
         $html .= ' required';
       }
       $html .= '></select>' . "\n";
@@ -522,6 +588,11 @@ class MyBookingCheckoutFormRenderer {
       $ph = $placeholder;
       if ( in_array( $key, self::$legacy_customer_fields, true ) ) {
         $ph .= ':' . ( $required ? '*' : '' );
+      } elseif ( $engine === self::ENGINE_ACTIVITIES && self::is_activity_vehicle_field( $key ) && $required ) {
+        // Existing Activities vehicle placeholders include the visible required
+        // star (Brand*, Model*, Stock plate*). Keep that wording in configured
+        // layouts as well; Color gains it only when the Builder makes it required.
+        $ph .= '*';
       }
       $html .= ' placeholder="' . esc_attr( $ph ) . '"';
     }
@@ -530,14 +601,14 @@ class MyBookingCheckoutFormRenderer {
       $html .= ' maxlength="' . esc_attr( (string) $field['maxlength'] ) . '"';
     }
 
-    if ( $required && ! self::legacy_core_owns_required( $key ) && ! self::hardcoded_engine_required_owns_required( $key ) ) {
+    if ( $required && ! self::legacy_core_owns_required( $key ) && ! self::hardcoded_engine_required_owns_required( $key, $engine ) ) {
       $html .= ' required';
     }
 
     // Non-visual bridge for Complete's historical airport-only required policy.
     // This avoids adding/restructuring DOM containers and does not change legacy
     // overrides that continue to use #airport-form-section.
-    if ( $required && self::is_airport_conditional_field( $key ) ) {
+    if ( $engine === self::ENGINE && $required && self::is_airport_conditional_field( $key ) ) {
       $html .= ' data-mb-runtime-required="airport"';
     }
 
@@ -626,6 +697,15 @@ class MyBookingCheckoutFormRenderer {
     return ! empty( $keys ) && count( array_diff( $keys, self::$legacy_customer_fields ) ) === 0;
   }
 
+  private static function is_activity_vehicle_field( $key ) {
+    return in_array( $key, [
+      'customer_stock_brand',
+      'customer_stock_model',
+      'customer_stock_plate',
+      'customer_stock_color',
+    ], true );
+  }
+
   private static function is_company_field( $key ) {
     return in_array( $key, [
       'customer_company_name',
@@ -648,7 +728,10 @@ class MyBookingCheckoutFormRenderer {
     return in_array( $key, [ 'flight_company', 'flight_number', 'flight_time' ], true );
   }
 
-  private static function hardcoded_engine_required_owns_required( $key ) {
+  private static function hardcoded_engine_required_owns_required( $key, $engine ) {
+    if ( $engine !== self::ENGINE ) {
+      return false;
+    }
     return in_array( $key, [
       'customer_company_name',
       'customer_company_contact_name',
@@ -656,8 +739,8 @@ class MyBookingCheckoutFormRenderer {
     ], true );
   }
 
-  private static function engine_forced_select_owns_required( $key ) {
-    return in_array( $key, [ 'customer_type', 'customer_classifier_id' ], true );
+  private static function engine_forced_select_owns_required( $key, $engine ) {
+    return $engine === self::ENGINE && in_array( $key, [ 'customer_type', 'customer_classifier_id' ], true );
   }
 
   private static function needs_autocomplete_off( $key, $field ) {
@@ -688,7 +771,7 @@ class MyBookingCheckoutFormRenderer {
         $classes = [ 'mb-col-md-6', 'mb-col-sm-12', $key === 'slot_time_from' ? 'js-mb-delivery-slot' : 'js-mb-optional-external-driver' ];
         $html .= '              <div class="' . esc_attr( implode( ' ', $classes ) ) . '" style="display: none">' . "\n";
         if ( isset( $missing_map[ $key ] ) && isset( $catalog[ $key ] ) ) {
-          $html .= self::render_field_control( $key, $catalog[ $key ], $config, $profile, $locale, $engine_required, [], 16 );
+          $html .= self::render_field_control( $key, $catalog[ $key ], $config, $profile, $locale, $engine_required, [], 16, self::ENGINE );
         }
         $html .= "              </div>\n";
       }
@@ -707,7 +790,7 @@ class MyBookingCheckoutFormRenderer {
     }
     $special_class = $key === 'slot_time_from' ? 'js-mb-delivery-slot' : 'js-mb-optional-external-driver';
     $html = '            <div class="mb-form-group ' . esc_attr( $special_class ) . '" style="display: none">' . "\n";
-    $html .= self::render_field_control( $key, $catalog[ $key ], $config, $profile, $locale, $engine_required, [], 14 );
+    $html .= self::render_field_control( $key, $catalog[ $key ], $config, $profile, $locale, $engine_required, [], 14, self::ENGINE );
     $html .= "            </div>\n";
     return $html;
   }
