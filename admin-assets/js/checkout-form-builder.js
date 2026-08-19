@@ -276,6 +276,103 @@
     return used;
   }
 
+  function atomicGroupKeys(fieldKey) {
+    var field = state.fields[fieldKey];
+    var group = field && field.atomic_group ? field.atomic_group : '';
+    if (!group) return [fieldKey];
+    return Object.keys(state.fields).filter(function (key) {
+      return state.fields[key] && state.fields[key].atomic_group === group;
+    });
+  }
+
+  function normalizeAtomicSelection(selectedFields, allowedFields) {
+    var allowed = {};
+    (allowedFields || []).forEach(function (key) { allowed[key] = true; });
+    var selected = [];
+    (selectedFields || []).forEach(function (key) {
+      if (selected.indexOf(key) === -1) selected.push(key);
+    });
+
+    var touchedGroups = {};
+    selected.slice().forEach(function (key) {
+      var field = state.fields[key];
+      var group = field && field.atomic_group ? field.atomic_group : '';
+      if (group) touchedGroups[group] = true;
+    });
+
+    Object.keys(touchedGroups).forEach(function (group) {
+      var members = Object.keys(state.fields).filter(function (key) {
+        return state.fields[key] && state.fields[key].atomic_group === group;
+      });
+      var allAllowed = members.length > 0 && members.every(function (key) { return !!allowed[key]; });
+      selected = selected.filter(function (key) {
+        return !(state.fields[key] && state.fields[key].atomic_group === group);
+      });
+      if (allAllowed) {
+        members.forEach(function (key) {
+          if (selected.indexOf(key) === -1) selected.push(key);
+        });
+      }
+    });
+
+    return selected;
+  }
+
+  function syncAtomicCheckboxes($scope, fieldKey, checked) {
+    var members = atomicGroupKeys(fieldKey);
+    if (members.length <= 1) return;
+    members.forEach(function (key) {
+      $scope.find('.mbcf-tpl-field-check[data-field="' + key + '"]').prop('checked', checked);
+    });
+  }
+
+  function normalizeAtomicCheckboxState($scope) {
+    var groups = {};
+    $scope.find('.mbcf-tpl-field-check:checked').each(function () {
+      var key = $(this).data('field');
+      var field = state.fields[key];
+      var group = field && field.atomic_group ? field.atomic_group : '';
+      if (group) groups[group] = true;
+    });
+    Object.keys(groups).forEach(function (group) {
+      Object.keys(state.fields).forEach(function (key) {
+        if (state.fields[key] && state.fields[key].atomic_group === group) {
+          $scope.find('.mbcf-tpl-field-check[data-field="' + key + '"]').prop('checked', true);
+        }
+      });
+    });
+  }
+
+  function cleanupEmptyRows() {
+    state.config.sections.forEach(function (section) {
+      section.rows = section.rows.filter(function (row) {
+        return row.fields.some(function (key) { return key !== null; });
+      });
+    });
+  }
+
+  function clearAtomicGroupsForKeys(keys) {
+    var groups = {};
+    (keys || []).forEach(function (key) {
+      var field = state.fields[key];
+      var group = field && field.atomic_group ? field.atomic_group : '';
+      if (group) groups[group] = true;
+    });
+    if (!Object.keys(groups).length) return;
+
+    state.config.sections.forEach(function (section) {
+      section.rows.forEach(function (row) {
+        for (var i = 0; i < row.fields.length; i++) {
+          var key = row.fields[i];
+          if (!key || !state.fields[key]) continue;
+          var group = state.fields[key].atomic_group || '';
+          if (group && groups[group]) row.fields[i] = null;
+        }
+      });
+    });
+    cleanupEmptyRows();
+  }
+
   function getSectionById(id) {
     return state.config.sections.find(function (s) { return s.id === id; }) || null;
   }
@@ -528,7 +625,12 @@
       opener:      opener || null
     }).then(function (confirmed) {
       if (!confirmed) return;
+      var removedKeys = [];
+      section.rows.forEach(function (row) {
+        row.fields.forEach(function (key) { if (key) removedKeys.push(key); });
+      });
       state.config.sections = state.config.sections.filter(function (s) { return s.id !== sectionId; });
+      clearAtomicGroupsForKeys(removedKeys);
       render();
       var $sections = $('#mbcf-sections');
       var $last = $sections.children('.mbcf-section').last();
@@ -561,7 +663,9 @@
       alert(str('cannot_remove_row', 'This row contains required fields and cannot be removed.'));
       return;
     }
+    var removedKeys = ctx.row.fields.filter(function (key) { return !!key; });
     ctx.section.rows = ctx.section.rows.filter(function (r) { return r.id !== rowId; });
+    clearAtomicGroupsForKeys(removedKeys);
     render();
   }
 
@@ -575,7 +679,12 @@
       alert(str('cannot_remove_field', 'This field is required and cannot be removed.'));
       return;
     }
-    ctx.row.fields[slotIndex] = null;
+    var atomicMembers = atomicGroupKeys(key);
+    if (atomicMembers.length > 1) {
+      clearAtomicGroupsForKeys([key]);
+    } else {
+      ctx.row.fields[slotIndex] = null;
+    }
     render();
   }
 
@@ -771,6 +880,7 @@
     if (!tpl) { return; }
 
     var tplVisibleKeys = visibleTemplateFields(templateKey);
+    selectedFields = normalizeAtomicSelection(selectedFields, tplVisibleKeys);
 
     var newRows = [];
     tpl.rows.forEach(function (catalogRow) {
@@ -796,6 +906,11 @@
 
   function insertCustomSection(title, selectedFields) {
     var allFieldKeys = Object.keys(state.fields);
+    var inForm = fieldsInForm();
+    var allowedFields = allFieldKeys.filter(function (key) {
+      return isFieldVisible(key) || inForm.indexOf(key) !== -1;
+    });
+    selectedFields = normalizeAtomicSelection(selectedFields, allowedFields);
     var rows = [];
     var coveredKeys = {};
 
@@ -822,7 +937,7 @@
     });
 
     insertSectionFromPlan({
-      allowedFields:   allFieldKeys,
+      allowedFields:   allowedFields,
       selectedFields:  selectedFields,
       rows:            rows,
       title:           { preset: 'custom', fallback: title.trim(), by_lang: {} },
@@ -1960,9 +2075,13 @@
       }
     });
 
-    // Checkbox change — enable/disable CTA (standard templates only)
+    // Atomic groups (country+state+city) are selected as one Builder unit.
+    // Legacy partial saved configs remain readable, but any new checkbox mutation
+    // resolves the group to all-or-none before insertion.
     $b.on('change.mbcf', '.mbcf-tpl-field-check', function () {
-      if ($(this).closest('.mbcf-tpl-card--custom').length) return;
+      var $card = $(this).closest('.mbcf-tpl-card');
+      syncAtomicCheckboxes($card, $(this).data('field'), $(this).prop('checked'));
+      if ($card.hasClass('mbcf-tpl-card--custom')) return;
       var key = $(this).data('tpl');
       var $panel = $b.find('.mbcf-tpl-configurator[data-tpl="' + key + '"]');
       var anyChecked = $panel.find('.mbcf-tpl-field-check:checked').length > 0;
@@ -1977,6 +2096,7 @@
       $panel.find('.mbcf-tpl-field-check:checked').each(function () {
         selectedFields.push($(this).data('field'));
       });
+      selectedFields = normalizeAtomicSelection(selectedFields, visibleTemplateFields(key));
       if (selectedFields.length === 0) return;
       var ctaEl = this;
       confirmAndInsertSection(selectedFields, function () {
@@ -1994,10 +2114,12 @@
 
     $b.on('click.mbcf', '.mbcf-custom-select-available', function () {
       var inForm = fieldsInForm();
-      $(this).closest('.mbcf-tpl-card--custom').find('.mbcf-custom-field-check').each(function () {
+      var $card = $(this).closest('.mbcf-tpl-card--custom');
+      $card.find('.mbcf-custom-field-check').each(function () {
         var fieldKey = $(this).data('field');
         $(this).prop('checked', inForm.indexOf(fieldKey) === -1);
       });
+      normalizeAtomicCheckboxState($card);
     });
 
     $b.on('click.mbcf', '.mbcf-custom-clear-selection', function () {
@@ -2013,6 +2135,11 @@
       $card.find('.mbcf-custom-field-check:checked').each(function () {
         selectedFields.push($(this).data('field'));
       });
+      var customAllowed = [];
+      $card.find('.mbcf-custom-field-check').each(function () {
+        customAllowed.push($(this).data('field'));
+      });
+      selectedFields = normalizeAtomicSelection(selectedFields, customAllowed);
       var ctaEl = this;
       confirmAndInsertSection(selectedFields, function () {
         insertCustomSection(titleVal, selectedFields);

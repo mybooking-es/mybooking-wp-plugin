@@ -39,6 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         <!-- Reservation complete form -->
         <div class="reservation_form_container mb-section mb-panel-container">
           <form class="mybooking-form" id="form-reservation" name="reservation_form" autocomplete="off">
+            <?php if ( get_option( MyBookingCheckoutFormConfig::OPTION_KEY, null ) === null ) : ?>
             <!-- Customer data -->
             <h3 class="mb-section_title complete-section-title customer_component">
               <?php echo esc_html_x( "Customer's details", 'renting_complete', 'mybooking-reservation-engine') ?>
@@ -105,6 +106,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
               <label for="comments"><?php echo esc_html_x( 'Comments', 'renting_complete', 'mybooking-reservation-engine') ?></label>
               <textarea class="mb-form-control" name="comments" id="comments" placeholder="<?php echo esc_attr_x( 'Comments', 'renting_complete', 'mybooking-reservation-engine') ?>"></textarea>
             </div>
+
+            <?php else : ?>
+            <!-- Configurable checkout fields: P4R preserves the legacy mb-* markup via the renderer -->
+            <?php MyBookingCheckoutFormRenderer::render_renting(); ?>
+            <?php endif; ?>
 
             <br/>
 

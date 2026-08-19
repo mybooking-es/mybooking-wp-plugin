@@ -81,6 +81,18 @@ class MyBookingCheckoutFormConfig {
     if ( $normalized === null ) {
       return new WP_Error( 'invalid_config', __( 'Invalid checkout form configuration.', 'mybooking-reservation-engine' ) );
     }
+
+    // Apply the same atomic-mutation boundary used by the real WordPress
+    // Settings sanitize callback. This method can also be used by internal
+    // callers without weakening the production save path.
+    $atomic_validation = self::validate_atomic_mutation(
+      $normalized,
+      get_option( self::OPTION_KEY, null )
+    );
+    if ( is_wp_error( $atomic_validation ) ) {
+      return $atomic_validation;
+    }
+
     update_option( self::OPTION_KEY, $normalized, false );
     return true;
   }
@@ -435,6 +447,93 @@ class MyBookingCheckoutFormConfig {
       }
     }
     return $locked;
+  }
+
+  /**
+   * Returns atomic Builder field groups declared by catalog metadata.
+   *
+   * Atomic groups are an admin/save invariant for new mutations, not a read-time
+   * migration. Legacy partial configs therefore remain readable and are handled
+   * safely by the frontend/Engine compatibility gates.
+   *
+   * @return array<string,array<int,string>>
+   */
+  public static function get_atomic_field_groups() {
+    $groups = [];
+    foreach ( mybooking_checkout_form_fields() as $key => $field ) {
+      $group = isset( $field['atomic_group'] ) ? (string) $field['atomic_group'] : '';
+      if ( $group === '' ) {
+        continue;
+      }
+      if ( ! isset( $groups[ $group ] ) ) {
+        $groups[ $group ] = [];
+      }
+      $groups[ $group ][] = $key;
+    }
+    return $groups;
+  }
+
+  /**
+   * Validate an already-normalized config against the atomic-group mutation
+   * policy, using the raw currently-stored option as the compatibility baseline.
+   *
+   * New configs must contain every member of each touched atomic group or none.
+   * Existing legacy partial groups may remain only while their presence set is
+   * unchanged; they may also be removed completely.
+   *
+   * @param array $normalized New normalized configuration.
+   * @param mixed $stored     Raw currently-stored option, or null when absent.
+   * @return true|WP_Error
+   */
+  public static function validate_atomic_mutation( $normalized, $stored = null ) {
+    if ( ! is_array( $normalized ) ) {
+      return new WP_Error( 'invalid_config', __( 'Invalid checkout form configuration.', 'mybooking-reservation-engine' ) );
+    }
+
+    $stored_normalized = is_array( $stored ) ? self::normalize( $stored ) : null;
+
+    foreach ( self::get_atomic_field_groups() as $group_fields ) {
+      $new_present = self::present_fields_from_group( $normalized, $group_fields );
+      if ( empty( $new_present ) || count( $new_present ) === count( $group_fields ) ) {
+        continue;
+      }
+
+      $old_present = is_array( $stored_normalized )
+        ? self::present_fields_from_group( $stored_normalized, $group_fields )
+        : [];
+
+      if ( $new_present !== $old_present ) {
+        return new WP_Error( 'invalid_atomic_group', __( 'Invalid checkout form configuration.', 'mybooking-reservation-engine' ) );
+      }
+    }
+
+    return true;
+  }
+
+  /**
+   * Return group members currently present in config, in canonical group order.
+   */
+  private static function present_fields_from_group( $config, $group_fields ) {
+    $present = [];
+    $seen = [];
+    $sections = isset( $config['sections'] ) && is_array( $config['sections'] ) ? $config['sections'] : [];
+    foreach ( $sections as $section ) {
+      $rows = isset( $section['rows'] ) && is_array( $section['rows'] ) ? $section['rows'] : [];
+      foreach ( $rows as $row ) {
+        $fields = isset( $row['fields'] ) && is_array( $row['fields'] ) ? $row['fields'] : [];
+        foreach ( $fields as $key ) {
+          if ( is_string( $key ) && in_array( $key, $group_fields, true ) ) {
+            $seen[ $key ] = true;
+          }
+        }
+      }
+    }
+    foreach ( $group_fields as $key ) {
+      if ( isset( $seen[ $key ] ) ) {
+        $present[] = $key;
+      }
+    }
+    return $present;
   }
 
   /**

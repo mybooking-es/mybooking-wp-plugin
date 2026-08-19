@@ -2063,6 +2063,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
      */
     public function sanitize_checkout_form_config( $input ) {
 
+      // Return the exact old Options API value on every rejected submission.
+      // update_option() compares the sanitized value with get_option(); returning
+      // that same raw value makes the rejected save a true no-op. The false
+      // default is deliberate: it also preserves option *absence* on a legacy
+      // installation, instead of creating the Builder default after an error.
+      $stored = get_option( MyBookingCheckoutFormConfig::OPTION_KEY, false );
+
       if ( is_array( $input ) ) {
         $config = $input;
       } else {
@@ -2075,7 +2082,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'invalid_json',
           esc_html_x( 'Invalid checkout form configuration: could not parse the data.', 'checkout_form_builder', 'mybooking-reservation-engine' )
         );
-        return MyBookingCheckoutFormConfig::get_default();
+        return $stored;
       }
 
       $normalized = MyBookingCheckoutFormConfig::normalize( $config );
@@ -2085,7 +2092,19 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           'invalid_config',
           esc_html_x( 'Invalid checkout form configuration.', 'checkout_form_builder', 'mybooking-reservation-engine' )
         );
-        return MyBookingCheckoutFormConfig::get_default();
+        return $stored;
+      }
+
+      // Enforce the same atomic address-pack mutation policy used by the internal
+      // Config::save() API so a crafted/stale POST cannot bypass the Builder UI.
+      $atomic_validation = MyBookingCheckoutFormConfig::validate_atomic_mutation( $normalized, $stored );
+      if ( is_wp_error( $atomic_validation ) ) {
+        add_settings_error(
+          'mybooking_checkout_form_config',
+          'invalid_atomic_group',
+          esc_html_x( 'Invalid checkout form configuration.', 'checkout_form_builder', 'mybooking-reservation-engine' )
+        );
+        return $stored;
       }
 
       return $normalized;

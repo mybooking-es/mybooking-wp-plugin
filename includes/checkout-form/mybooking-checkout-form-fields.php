@@ -241,6 +241,7 @@ if ( ! function_exists( 'mybooking_checkout_form_fields' ) ) {
       'runtime_name_by_engine'=> [ 'transfers' => 'customer_address_city' ],
       'option_source'         => '',
       'runtime_guard'         => '',
+      'atomic_group'          => 'customer_address_geo',
     ],
     'state' => [
       'type'                  => 'text',
@@ -258,6 +259,7 @@ if ( ! function_exists( 'mybooking_checkout_form_fields' ) ) {
       'runtime_name_by_engine'=> [ 'transfers' => 'customer_address_state' ],
       'option_source'         => '',
       'runtime_guard'         => '',
+      'atomic_group'          => 'customer_address_geo',
     ],
     'country' => [
       'type'                  => 'select',
@@ -275,6 +277,7 @@ if ( ! function_exists( 'mybooking_checkout_form_fields' ) ) {
       'runtime_name_by_engine'=> [ 'transfers' => 'customer_address_country' ],
       'option_source'         => 'engine_countries',
       'runtime_guard'         => '',
+      'atomic_group'          => 'customer_address_geo',
     ],
     'zip' => [
       'type'                  => 'text',
@@ -1267,6 +1270,7 @@ if ( ! function_exists( 'mybooking_checkout_form_fields' ) ) {
       'runtime_name_by_engine'=> [],
       'option_source'         => 'engine_countries',
       'runtime_guard'         => '',
+      'atomic_group'          => 'driver_address_geo',
     ],
     'driver_address_state' => [
       'type'                  => 'text',
@@ -1284,6 +1288,7 @@ if ( ! function_exists( 'mybooking_checkout_form_fields' ) ) {
       'runtime_name_by_engine'=> [],
       'option_source'         => '',
       'runtime_guard'         => '',
+      'atomic_group'          => 'driver_address_geo',
     ],
     'driver_address_city' => [
       'type'                  => 'text',
@@ -1301,6 +1306,7 @@ if ( ! function_exists( 'mybooking_checkout_form_fields' ) ) {
       'runtime_name_by_engine'=> [],
       'option_source'         => '',
       'runtime_guard'         => '',
+      'atomic_group'          => 'driver_address_geo',
     ],
     'driver_address_zip' => [
       'type'                  => 'text',
