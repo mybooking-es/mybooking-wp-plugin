@@ -22,6 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   var showExcessMode = resolveVisibilityMode(settings ? settings.show_excess : undefined);
   var showDepositMode = resolveVisibilityMode(settings ? settings.show_deposit : undefined);
   var isFranchise = booking.deposit_hold_product_deposit_cost === 'not_hold' && configuration.literalDepositFranchise === 'franchise';
+  var hasMultipleDeposits = booking.count_deposit > 1;
+  var legacyNonFranchiseVisible = booking.total_deposit > 0;
 
   var isVisibleByMode = function(mode, amount, legacyCondition) {
     if (mode === 'always') return true;
@@ -30,19 +32,30 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     return legacyCondition;
   };
 
-  var showFE = isFranchise && isVisibleByMode(showExcessMode, booking.product_deposit_total, booking.product_deposit_total > 0);
-  var showFD = isFranchise && isVisibleByMode(showDepositMode, booking.total_deposit, booking.total_deposit > 0);
-  var showNFE = !isFranchise && isVisibleByMode(showExcessMode, booking.product_deposit_total, booking.product_deposit_total > 0);
-  var showNFD = !isFranchise && isVisibleByMode(showDepositMode, booking.product_guarantee_total, booking.product_guarantee_total > 0);
-  var showDA = booking.driver_age_deposit > 0;
-  var showTT = showFE || showFD || showNFE || showNFD || showDA;
-  var showBox = showTT || showDA;
+  var showFranchiseDeposit = isFranchise &&
+    isVisibleByMode(showExcessMode, booking.product_deposit_total, true);
+  var showFranchiseGuarantee = isFranchise &&
+    isVisibleByMode(showDepositMode, booking.total_deposit, booking.total_deposit > 0);
+  var showHoldDeposit = !isFranchise && hasMultipleDeposits &&
+    booking.deposit_hold_product_deposit_cost === 'hold' &&
+    isVisibleByMode(showDepositMode, booking.product_deposit_total,
+      legacyNonFranchiseVisible && booking.product_deposit_total > 0);
+  var showGuarantee = !isFranchise && hasMultipleDeposits &&
+    isVisibleByMode(showDepositMode, booking.product_guarantee_total,
+      legacyNonFranchiseVisible && booking.product_guarantee_total > 0);
+  var showDriverAgeDeposit = !isFranchise && hasMultipleDeposits &&
+    isVisibleByMode(showDepositMode, booking.driver_age_deposit,
+      legacyNonFranchiseVisible && booking.driver_age_deposit > 0);
+  var showTotalDeposit = !isFranchise &&
+    isVisibleByMode(showDepositMode, booking.total_deposit, booking.total_deposit > 0);
+  var showDepositBox = showFranchiseDeposit || showFranchiseGuarantee || showHoldDeposit ||
+    showGuarantee || showDriverAgeDeposit || showTotalDeposit;
 %>
-<% if (showBox) { %>
+<% if (showDepositBox) { %>
 	<!-- Booking deposits -->
 	<div class="mybooking-summary_deposit-total-box">
 		<% if (isFranchise) { %>
-			<% if (showFE) { %>
+			<% if (showFranchiseDeposit) { %>
 				<div class="mybooking-summary_deposit-total mybooking-summary_deposit-total--franchise mybooking-summary_deposit-total--excess">
 					<span class="mybooking-summary_extra-name">
 						<%=configuration.depositLiteral%>
@@ -52,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 					</span>
 				</div>
 			<% } %>
-			<% if (showFD) { %>
+			<% if (showFranchiseGuarantee) { %>
 				<div class="mybooking-summary_deposit-total mybooking-summary_deposit-total--franchise mybooking-summary_deposit-total--deposit">
 					<span class="mybooking-summary_extra-name">
 						<%= configuration.guaranteeLiteral %>
@@ -63,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				</div>
 			<% } %>
 		<% } else { %>
-			<% if (showNFE) { %>
+			<% if (showHoldDeposit) { %>
 				<div class="mybooking-summary_deposit-total mybooking-summary_deposit-total--non-franchise mybooking-summary_deposit-total--excess">
 					<span class="mybooking-summary_extra-name">
 						<%= configuration.depositLiteral %>
@@ -73,7 +86,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 					</span>
 				</div>
 			<% } %>
-			<% if (showNFD) { %>
+			<% if (showGuarantee) { %>
 				<div class="mybooking-summary_deposit-total mybooking-summary_deposit-total--non-franchise mybooking-summary_deposit-total--deposit">
 					<span class="mybooking-summary_extra-name">
 						<%= configuration.guaranteeLiteral %>
@@ -83,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 					</span>
 				</div>
 			<% } %>
-			<% if (showDA) { %>
+			<% if (showDriverAgeDeposit) { %>
 				<div class="mybooking-summary_deposit-total mybooking-summary_deposit-total--driver-age">
 					<span class="mybooking-summary_extra-name">
 						<%= configuration.driverDepositLiteral %>
@@ -93,17 +106,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 					</span>
 				</div>
 			<% } %>
-		<% } %>
-		<% if (showTT) { %>
-			<!-- Total deposit -->
-			<div class="mybooking-summary_deposit-total mybooking-summary_deposit-total--total">
-				<span class="mybooking-summary_extra-name">
-					<%= configuration.depositTotalLiteral %>
-				</span>
-				<span class="mybooking-summary_extra-amount">
-					<%=configuration.formatCurrency(booking.total_deposit)%>
-				</span>
-			</div>
+			<% if (showTotalDeposit) { %>
+				<div class="mybooking-summary_deposit-total mybooking-summary_deposit-total--total">
+					<span class="mybooking-summary_extra-name">
+						<%= configuration.depositTotalLiteral %>
+					</span>
+					<span class="mybooking-summary_extra-amount">
+						<%=configuration.formatCurrency(booking.total_deposit)%>
+					</span>
+				</div>
+			<% } %>
 		<% } %>
 	</div>
 <% } %>

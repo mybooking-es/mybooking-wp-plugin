@@ -62,28 +62,32 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 								</div>
 							<% } %>
 							<div class="mybooking-product_excess_usage">
-								<%
-									var validVisibilityModes = ['always', 'never', 'greater_than_zero'];
-									var resolveVisibilityMode = function(value) {
-										if (value === null) return 'never';
-										return validVisibilityModes.indexOf(value) >= 0 ? value : 'legacy';
-									};
-									var showExcessMode = resolveVisibilityMode(settings ? settings.show_excess : undefined);
-									var showDepositMode = resolveVisibilityMode(settings ? settings.show_deposit : undefined);
+                                <%
+                                    var validVisibilityModes = ['always', 'never', 'greater_than_zero'];
+                                    var resolveVisibilityMode = function(value) {
+                                        if (value === null) return 'never';
+                                        return validVisibilityModes.indexOf(value) >= 0 ? value : 'legacy';
+                                    };
+                                    var showExcessMode = resolveVisibilityMode(settings ? settings.show_excess : undefined);
+                                    var showDepositMode = resolveVisibilityMode(settings ? settings.show_deposit : undefined);
+                                    var isFranchise = configuration.holdProductDepositCost === 'not_hold' &&
+                                        configuration.literalDepositFranchise === 'franchise';
 
-									var isVisibleByMode = function(mode, amount, legacyCondition) {
-										if (mode === 'always') return true;
-										if (mode === 'never') return false;
-										if (mode === 'greater_than_zero') return amount > 0;
-										return legacyCondition;
-									};
+                                    var isVisibleByMode = function(mode, amount, legacyCondition) {
+                                        if (mode === 'always') return true;
+                                        if (mode === 'never') return false;
+                                        if (mode === 'greater_than_zero') return amount > 0;
+                                        return legacyCondition;
+                                    };
 
-									var productGuarantee = new Number(product.guarantee);
-									var productDeposit = new Number(product.deposit);
-									var showGuarantee = isVisibleByMode(showDepositMode, productGuarantee, productGuarantee > 0);
-									var showDeposit = isVisibleByMode(showExcessMode, productDeposit,
-										productDeposit > 0 || configuration.holdProductDepositCost === 'not_hold');
-								%>
+                                    var productGuarantee = new Number(product.guarantee);
+                                    var productDeposit = new Number(product.deposit);
+                                    var productDepositMode = isFranchise ? showExcessMode : showDepositMode;
+                                    var showGuarantee = isVisibleByMode(showDepositMode, productGuarantee,
+                                        productGuarantee > 0);
+                                    var showDeposit = isVisibleByMode(productDepositMode, productDeposit,
+                                        productDeposit > 0 || configuration.holdProductDepositCost === 'not_hold');
+                                %>
 								<% if (showGuarantee) { %>
 									<div class="mb-col-md-6">
 										<small>
