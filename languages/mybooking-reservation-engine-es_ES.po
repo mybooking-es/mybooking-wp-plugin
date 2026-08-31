@@ -22,7 +22,6 @@ msgstr ""
 
 #: admin-assets/js/mybooking-plugin-onboarding-gallery.js:58
 #: admin-assets/js/mybooking-plugin-onboarding-gallery.js:106
-#, fuzzy
 #| msgctxt "onboarding_context"
 #| msgid "Loading..."
 msgctxt "onboarding_context_js"
@@ -33,60 +32,57 @@ msgstr "Cargando..."
 #: admin-assets/js/mybooking-plugin-onboarding-login.js:27
 msgctxt "onboarding_context_js"
 msgid "Required"
-msgstr ""
+msgstr "Obligatorio"
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:43
 msgctxt "onboarding_context_js"
 msgid "Your browser unsupport clipboard copy, please copy the text"
-msgstr ""
+msgstr "Tu navegador no permite copiar al portapapeles. Copia el texto manualmente."
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:46
-#, fuzzy
 #| msgctxt "onboarding_context"
 #| msgid "Copy shortcode"
 msgctxt "onboarding_context_js"
 msgid "The shortcode "
-msgstr "Copiar el shortcode"
+msgstr "El shortcode "
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:46
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:74
 msgctxt "onboarding_context_js"
 msgid " has been copied to the clipboard"
-msgstr ""
+msgstr " se ha copiado al portapapeles"
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:48
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:76
-#, fuzzy
 #| msgctxt "onboarding_context"
 #| msgid "An error has occurred"
 msgctxt "onboarding_context_js"
 msgid "An error has occurred: "
-msgstr "Lo sentimos, ha ocurrido un error"
+msgstr "Se ha producido un error: "
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:56
-#, fuzzy
 #| msgctxt "onboarding_context"
 #| msgid "We are sorry, an error has occurred"
 msgctxt "onboarding_context_js"
 msgid "We are sorry, an error has occurred, check that the page exists, please"
-msgstr "Lo sentimos, se ha producido un error"
+msgstr "Lo sentimos, se ha producido un error. Comprueba que la página existe."
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:71
 msgctxt "onboarding_context_js"
 msgid "Your browser unsupport clipboard copy, please copy: "
-msgstr ""
+msgstr "Tu navegador no permite copiar al portapapeles. Copia manualmente: "
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:74
 msgctxt "onboarding_context_js"
 msgid "The url "
-msgstr ""
+msgstr "La URL "
 
 #: admin-assets/js/mybooking-plugin-settings.js:10
 msgctxt "onboarding_context_js"
 msgid ""
 "Remember that the API key must be the one provided for the account "
 "identified in the Mybooking Client Id field"
-msgstr ""
+msgstr "Recuerda que la clave API debe ser la proporcionada para la cuenta identificada en el campo Id Cliente Mybooking."
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:14
 msgctxt "slider_content"
@@ -916,7 +912,7 @@ msgstr "Contexto no disponible"
 #: includes/settings/mybooking-plugin-settings.php:474
 msgctxt "plugin_settings"
 msgid "<em>Use product detail pages</em>"
-msgstr "Usar páginas de los detalles de producto"
+msgstr "<em>Usar páginas de detalle de producto</em>"
 
 #: includes/settings/mybooking-plugin-settings.php:480
 msgctxt "plugin_settings"
@@ -1102,9 +1098,7 @@ msgctxt "settings_context"
 msgid ""
 "Select <b>wizard</b> if you are using the Wizard selector or widget on your "
 "home page."
-msgstr ""
-"Seleccionar <b>wizard</b> si estás utilizando el selector de <b>wizard</b> "
-"en tu página de inicio."
+msgstr "Seleccionar <b>wizard</b> si estás utilizando el selector o widget Wizard en tu página de inicio."
 
 #: includes/settings/mybooking-plugin-settings.php:937
 msgctxt "settings_context"
@@ -1339,10 +1333,7 @@ msgid ""
 "<b>Activate</b> it if you are using the [mybooking_rent_engine_products] "
 "shortcode to <b>browse the catalog</b> and you want the plugin to "
 "automatically create a page for each product."
-msgstr ""
-"<b>Activar</b> si estás usando el shortcode [mybooking_rent_engine_products] "
-"para navegar por el catálogo de pruebas y quieres que el plugin cree "
-"automáticamente una página para cada producto."
+msgstr "<b>Activar</b> si estás usando el shortcode [mybooking_rent_engine_products] para <b>navegar por el catálogo</b> y quieres que el plugin cree automáticamente una página para cada producto."
 
 #: includes/settings/mybooking-plugin-settings.php:1315
 msgctxt "settings_context"
@@ -1350,10 +1341,7 @@ msgid ""
 "This is the <b>prefix folder</b> that is added to the product detail page "
 "created virtually for any\n"
 "\t\t  product if <u>Use product detail pages</u> is active."
-msgstr ""
-"Es el <b>prefijo</b> que se añade a las páginas de detalle de los productos "
-"creadas virtualmente para cada uno de los productos creados en tu cuenta de "
-"Mybooking."
+msgstr "Es el <b>prefijo</b> que se añade a la página de detalle del producto creada virtualmente si está activa la opción <u>Usar páginas de detalle de producto</u>."
 
 #: includes/settings/mybooking-plugin-settings.php:1331
 msgctxt "settings_context"
@@ -1403,10 +1391,7 @@ msgid ""
 "This is the <b>prefix folder</b> that is added to the activity detail page "
 "created virtually for any\n"
 "\t\t  product if <u>Use detail pages</u> is active."
-msgstr ""
-"Es el <b>prefijo</b> que se añade a las páginas de detalle de las "
-"actividades creadas virtualmente para cada uno de las actividades creadas en "
-"tu cuenta de Mybooking."
+msgstr "Es el <b>prefijo</b> que se añade a la página de detalle de la actividad creada virtualmente si está activa la opción <u>Usar páginas de detalle</u>."
 
 #: includes/settings/mybooking-plugin-settings.php:1436
 msgctxt "settings_context"
@@ -1544,7 +1529,7 @@ msgstr ""
 #: includes/settings/mybooking-plugin-settings.php:1938
 msgctxt "settings_context"
 msgid "Use <b>select2</b> library on form selects."
-msgstr "Usar la libraría JS select2 en los formularios."
+msgstr "Usar la librería <b>select2</b> en los selectores de los formularios."
 
 #: includes/settings/mybooking-plugin-settings.php:1965
 #: includes/settings/mybooking-plugin-settings.php:2010

@@ -24,118 +24,118 @@ msgstr ""
 #: admin-assets/js/mybooking-plugin-onboarding-gallery.js:106
 msgctxt "onboarding_context_js"
 msgid "Loading ..."
-msgstr ""
+msgstr "Carregant..."
 
 #: admin-assets/js/mybooking-plugin-onboarding-login.js:26
 #: admin-assets/js/mybooking-plugin-onboarding-login.js:27
 msgctxt "onboarding_context_js"
 msgid "Required"
-msgstr ""
+msgstr "Obligatori"
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:43
 msgctxt "onboarding_context_js"
 msgid "Your browser unsupport clipboard copy, please copy the text"
-msgstr ""
+msgstr "El vostre navegador no permet copiar al porta-retalls; copieu el text manualment"
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:46
 msgctxt "onboarding_context_js"
 msgid "The shortcode "
-msgstr ""
+msgstr "El shortcode "
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:46
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:74
 msgctxt "onboarding_context_js"
 msgid " has been copied to the clipboard"
-msgstr ""
+msgstr " s'ha copiat al porta-retalls"
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:48
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:76
 msgctxt "onboarding_context_js"
 msgid "An error has occurred: "
-msgstr ""
+msgstr "S'ha produït un error: "
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:56
 msgctxt "onboarding_context_js"
 msgid "We are sorry, an error has occurred, check that the page exists, please"
-msgstr ""
+msgstr "Ho sentim, s'ha produït un error. Comproveu que la pàgina existeix."
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:71
 msgctxt "onboarding_context_js"
 msgid "Your browser unsupport clipboard copy, please copy: "
-msgstr ""
+msgstr "El vostre navegador no permet copiar al porta-retalls; copieu manualment: "
 
 #: admin-assets/js/mybooking-plugin-onboarding-utils.js:74
 msgctxt "onboarding_context_js"
 msgid "The url "
-msgstr ""
+msgstr "L'URL "
 
 #: admin-assets/js/mybooking-plugin-settings.js:10
 msgctxt "onboarding_context_js"
 msgid ""
 "Remember that the API key must be the one provided for the account "
 "identified in the Mybooking Client Id field"
-msgstr ""
+msgstr "Recordeu que la clau API ha de ser la proporcionada per al compte identificat al camp ID de client Mybooking"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:14
 msgctxt "slider_content"
 msgid "Content Slider"
-msgstr ""
+msgstr "Carrusel de continguts"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:15
 msgctxt "slider_content"
 msgid "Testimonial"
-msgstr ""
+msgstr "Testimoni"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:16
 msgctxt "slider_content"
 msgid "Add slider"
-msgstr ""
+msgstr "Afegeix carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:17
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:20
 msgctxt "slider_content"
 msgid "New slider"
-msgstr ""
+msgstr "Nou carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:18
 msgctxt "slider_content"
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:19
 msgctxt "slider_content"
 msgid "Edit slider"
-msgstr ""
+msgstr "Edita el carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:21
 msgctxt "slider_content"
 msgid "See"
-msgstr ""
+msgstr "Veure"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:22
 msgctxt "slider_content"
 msgid "See slider"
-msgstr ""
+msgstr "Mostra el carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:23
 msgctxt "slider_content"
 msgid "Search slider"
-msgstr ""
+msgstr "Cerca carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:24
 msgctxt "slider_content"
 msgid "No slider found"
-msgstr ""
+msgstr "No s'ha trobat cap carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:25
 msgctxt "slider_content"
 msgid "No slider found on bin"
-msgstr ""
+msgstr "No s'ha trobat cap carrusel a la paperera"
 
 #: includes/cpt/mybooking-plugin-cpt-content-slider.php:26
 msgctxt "slider_content"
 msgid "Parent slider"
-msgstr ""
+msgstr "Carrusel pare"
 
 #: includes/cpt/mybooking-plugin-cpt-popup.php:14
 msgctxt "popup_content"
@@ -201,63 +201,63 @@ msgstr "Anunci emergent principal"
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:19
 msgctxt "slider_product"
 msgid "Product Slider"
-msgstr ""
+msgstr "Carrusel de productes"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:20
 msgctxt "slider_product"
 msgid "Testimonial"
-msgstr ""
+msgstr "Testimoni"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:21
 msgctxt "slider_product"
 msgid "Add slider"
-msgstr ""
+msgstr "Afegeix carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:22
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:25
 msgctxt "slider_product"
 msgid "New slider"
-msgstr ""
+msgstr "Nou carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:23
 msgctxt "slider_product"
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:24
 msgctxt "slider_product"
 msgid "Edit slider"
-msgstr ""
+msgstr "Edita el carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:26
 msgctxt "slider_product"
 msgid "See"
-msgstr ""
+msgstr "Veure"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:27
 msgctxt "slider_product"
 msgid "See slider"
-msgstr ""
+msgstr "Mostra el carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:28
 msgctxt "slider_product"
 msgid "Search slider"
-msgstr ""
+msgstr "Cerca carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:29
 msgctxt "slider_product"
 msgid "No slider found"
-msgstr ""
+msgstr "No s'ha trobat cap carrusel"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:30
 msgctxt "slider_product"
 msgid "No slider found on bin"
-msgstr ""
+msgstr "No s'ha trobat cap carrusel a la paperera"
 
 #: includes/cpt/mybooking-plugin-cpt-product-slider.php:31
 msgctxt "slider_product"
 msgid "Parent slider"
-msgstr ""
+msgstr "Carrusel pare"
 
 #: includes/cpt/mybooking-plugin-cpt-testimonial.php:14
 msgctxt "testimonial_content"
@@ -445,235 +445,235 @@ msgstr "Quadrícula 3 productes per fila: permet el canvi"
 #: includes/customizer/mybooking-plugin-customizer.php:393
 msgctxt "customizer_product_catalog"
 msgid "List 1 product per row in reduce format"
-msgstr ""
+msgstr "Mostra 1 producte per fila en format reduït"
 
 #: includes/mybooking-patterns.php:24
 msgctxt "Block pattern category"
 msgid "Mybooking"
-msgstr ""
+msgstr "Mybooking"
 
 #: includes/mybooking-patterns.php:35
 msgctxt "Block pattern title"
 msgid "Classic Selector"
-msgstr ""
+msgstr "Selector clàssic"
 
 #: includes/mybooking-patterns.php:36
 msgctxt "Block pattern description"
 msgid "Classic dates selector form"
-msgstr ""
+msgstr "Formulari clàssic de selecció de dates"
 
 #: includes/mybooking-patterns.php:46
 msgctxt "Block pattern title"
 msgid "Wizard Selector"
-msgstr ""
+msgstr "Selector assistent"
 
 #: includes/mybooking-patterns.php:47
 msgctxt "Block pattern description"
 msgid "Wizard dates selector form"
-msgstr ""
+msgstr "Formulari assistent de selecció de dates"
 
 #: includes/mybooking-patterns.php:57
 msgctxt "Block pattern title"
 msgid "Transfer Selector"
-msgstr ""
+msgstr "Selector de trasllat"
 
 #: includes/mybooking-patterns.php:58
 msgctxt "Block pattern description"
 msgid "Transfer dates selector form"
-msgstr ""
+msgstr "Formulari de selecció de dates de trasllat"
 
 #: includes/mybooking-patterns.php:69
 msgctxt "Block pattern title"
 msgid "Choose Product"
-msgstr ""
+msgstr "Selecciona producte"
 
 #: includes/mybooking-patterns.php:70
 msgctxt "Block pattern description"
 msgid "List of your product groups or categories from Mybooking backend"
-msgstr ""
+msgstr "Llista dels grups o categories de productes del backend de Mybooking"
 
 #: includes/mybooking-patterns.php:80
 msgctxt "Block pattern title"
 msgid "Choose Transfer"
-msgstr ""
+msgstr "Selecciona trasllat"
 
 #: includes/mybooking-patterns.php:81
 msgctxt "Block pattern description"
 msgid "List of your transfers from Mybooking backend"
-msgstr ""
+msgstr "Llista dels trasllats del backend de Mybooking"
 
 #: includes/mybooking-patterns.php:93
 msgctxt "Block pattern title"
 msgid "Complete Reservation"
-msgstr ""
+msgstr "Completa la reserva"
 
 #: includes/mybooking-patterns.php:94
 msgctxt "Block pattern description"
 msgid "Complete reservation page"
-msgstr ""
+msgstr "Pàgina per completar la reserva"
 
 #: includes/mybooking-patterns.php:104
 msgctxt "Block pattern title"
 msgid "Complete Activities"
-msgstr ""
+msgstr "Completa les activitats"
 
 #: includes/mybooking-patterns.php:105
 msgctxt "Block pattern description"
 msgid "Complete reservation activities page"
-msgstr ""
+msgstr "Pàgina per completar la reserva d'activitats"
 
 #: includes/mybooking-patterns.php:115
 msgctxt "Block pattern title"
 msgid "Complete Transfers"
-msgstr ""
+msgstr "Completa els trasllats"
 
 #: includes/mybooking-patterns.php:116
 msgctxt "Block pattern description"
 msgid "Complete reservation transfers page"
-msgstr ""
+msgstr "Pàgina per completar la reserva de trasllats"
 
 #: includes/mybooking-patterns.php:128
 msgctxt "Block pattern title"
 msgid "Reservation Summary"
-msgstr ""
+msgstr "Resum de la reserva"
 
 #: includes/mybooking-patterns.php:129
 msgctxt "Block pattern description"
 msgid "Reservation summary page"
-msgstr ""
+msgstr "Pàgina de resum de la reserva"
 
 #: includes/mybooking-patterns.php:139
 msgctxt "Block pattern title"
 msgid "Activities Summary"
-msgstr ""
+msgstr "Resum d'activitats"
 
 #: includes/mybooking-patterns.php:140
 msgctxt "Block pattern description"
 msgid "Activities summary page"
-msgstr ""
+msgstr "Pàgina de resum d'activitats"
 
 #: includes/mybooking-patterns.php:150
 msgctxt "Block pattern title"
 msgid "Transfers Summary"
-msgstr ""
+msgstr "Resum de trasllats"
 
 #: includes/mybooking-patterns.php:151
 msgctxt "Block pattern description"
 msgid "Transfers summary page"
-msgstr ""
+msgstr "Pàgina de resum de trasllats"
 
 #: includes/mybooking-patterns.php:162
 msgctxt "Block pattern title"
 msgid "Reservation"
-msgstr ""
+msgstr "Reserva"
 
 #: includes/mybooking-patterns.php:163
 msgctxt "Block pattern description"
 msgid "Reservation page"
-msgstr ""
+msgstr "Pàgina de reserva"
 
 #: includes/mybooking-patterns.php:173
 msgctxt "Block pattern title"
 msgid "Activities Reservation"
-msgstr ""
+msgstr "Reserva d'activitats"
 
 #: includes/mybooking-patterns.php:174
 msgctxt "Block pattern description"
 msgid "Activities reservation page"
-msgstr ""
+msgstr "Pàgina de reserva d'activitats"
 
 #: includes/mybooking-patterns.php:184
 msgctxt "Block pattern title"
 msgid "Transfers Reservation"
-msgstr ""
+msgstr "Reserva de trasllats"
 
 #: includes/mybooking-patterns.php:185
 msgctxt "Block pattern description"
 msgid "Transfers reservation page"
-msgstr ""
+msgstr "Pàgina de reserva de trasllats"
 
 #: includes/mybooking-patterns.php:196
 msgctxt "Block pattern title"
 msgid "Vehicle Catalog"
-msgstr ""
+msgstr "Catàleg de vehicles"
 
 #: includes/mybooking-patterns.php:197
 msgctxt "Block pattern description"
 msgid "Insert a list of vehicles with links to details pages"
-msgstr ""
+msgstr "Insereix una llista de vehicles amb enllaços a les pàgines de detall"
 
 #: includes/mybooking-patterns.php:207
 msgctxt "Block pattern title"
 msgid "Activities Catalog"
-msgstr ""
+msgstr "Catàleg d'activitats"
 
 #: includes/mybooking-patterns.php:208
 msgctxt "Block pattern description"
 msgid "Insert a list of activities with links to details pages"
-msgstr ""
+msgstr "Insereix una llista d'activitats amb enllaços a les pàgines de detall"
 
 #: includes/mybooking-patterns.php:219
 msgctxt "Block pattern title"
 msgid "Calendar Camper"
-msgstr ""
+msgstr "Calendari camper"
 
 #: includes/mybooking-patterns.php:220
 msgctxt "Block pattern description"
 msgid "Insert a calendar for a camper or charter detail page"
-msgstr ""
+msgstr "Insereix un calendari per a la pàgina de detall d'un camper o xàrter"
 
 #: includes/mybooking-patterns.php:230
 msgctxt "Block pattern title"
 msgid "Calendar Activities"
-msgstr ""
+msgstr "Calendari d'activitats"
 
 #: includes/mybooking-patterns.php:231
 msgctxt "Block pattern description"
 msgid "Insert a calendar for an activity detail page"
-msgstr ""
+msgstr "Insereix un calendari per a la pàgina de detall d'una activitat"
 
 #: includes/settings/mybooking-plugin-onboarding.php:49
 #: includes/settings/mybooking-plugin-onboarding.php:50
 msgctxt "onboarding_context"
 msgid "Welcome"
-msgstr ""
+msgstr "Benvingut"
 
 #: includes/settings/mybooking-plugin-onboarding.php:60
 #: includes/settings/mybooking-plugin-onboarding.php:61
 msgctxt "onboarding_context"
 msgid "Login"
-msgstr ""
+msgstr "Iniciar sessió"
 
 #: includes/settings/mybooking-plugin-onboarding.php:70
 #: includes/settings/mybooking-plugin-onboarding.php:71
 msgctxt "onboarding_context"
 msgid "Generate"
-msgstr ""
+msgstr "Genera"
 
 #: includes/settings/mybooking-plugin-onboarding.php:80
 #: includes/settings/mybooking-plugin-onboarding.php:81
 msgctxt "onboarding_context"
 msgid "Results"
-msgstr ""
+msgstr "Resultats"
 
 #: includes/settings/mybooking-plugin-onboarding.php:90
 #: includes/settings/mybooking-plugin-onboarding.php:91
 msgctxt "onboarding_context"
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: includes/settings/mybooking-plugin-onboarding.php:101
 #: includes/settings/mybooking-plugin-onboarding.php:102
 msgctxt "onboarding_context"
 msgid "Pages"
-msgstr ""
+msgstr "Pàgines"
 
 #: includes/settings/mybooking-plugin-onboarding.php:112
 #: includes/settings/mybooking-plugin-onboarding.php:113
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:13
 msgctxt "onboarding_context"
 msgid "Components"
-msgstr ""
+msgstr "Components"
 
 #: includes/settings/mybooking-plugin-settings.php:38
 #: includes/settings/mybooking-plugin-settings.php:39
@@ -684,7 +684,7 @@ msgstr "Configuració"
 #: includes/settings/mybooking-plugin-settings.php:77
 msgctxt "settings_context"
 msgid "Mybooking Settings"
-msgstr ""
+msgstr "Configuració de Mybooking"
 
 #: includes/settings/mybooking-plugin-settings.php:80
 msgctxt "settings_context"
@@ -692,577 +692,577 @@ msgid ""
 "Welcome to the settings page. After the initial configuration, this page "
 "will allow you to update some configurations that may change over time or "
 "add advanced modules and plugins."
-msgstr ""
+msgstr "Benvingut a la pàgina de configuració. Després de la configuració inicial, aquesta pàgina us permetrà actualitzar algunes opcions que poden canviar amb el temps o afegir mòduls i complements avançats."
 
 #: includes/settings/mybooking-plugin-settings.php:87
 msgctxt "settings_context"
 msgid "Generated pages and components"
-msgstr ""
+msgstr "Pàgines i components generats"
 
 #: includes/settings/mybooking-plugin-settings.php:90
 msgctxt "settings_context"
 msgid "Pages"
-msgstr ""
+msgstr "Pàgines"
 
 #: includes/settings/mybooking-plugin-settings.php:94
 msgctxt "settings_context"
 msgid "Components"
-msgstr ""
+msgstr "Components"
 
 #: includes/settings/mybooking-plugin-settings.php:125
 msgctxt "settings_context"
 msgid "Connection"
-msgstr ""
+msgstr "Connexió"
 
 #: includes/settings/mybooking-plugin-settings.php:129
 msgctxt "settings_context"
 msgid "Renting or Accommodation"
-msgstr ""
+msgstr "Lloguer o allotjament"
 
 #: includes/settings/mybooking-plugin-settings.php:134
 msgctxt "settings_context"
 msgid "Activities or Appointments"
-msgstr ""
+msgstr "Activitats o cites"
 
 #: includes/settings/mybooking-plugin-settings.php:139
 msgctxt "settings_context"
 msgid "Transfer"
-msgstr ""
+msgstr "Trasllat"
 
 #: includes/settings/mybooking-plugin-settings.php:143
 msgctxt "settings_context"
 msgid "Contact Form"
-msgstr ""
+msgstr "Formulari de contacte"
 
 #: includes/settings/mybooking-plugin-settings.php:146
 msgctxt "settings_context"
 msgid "Complements"
-msgstr ""
+msgstr "Complements"
 
 #: includes/settings/mybooking-plugin-settings.php:150
 msgctxt "settings_context"
 msgid "Integration"
-msgstr ""
+msgstr "Integració"
 
 #: includes/settings/mybooking-plugin-settings.php:155
 msgctxt "settings_context"
 msgid "Google Api Places"
-msgstr ""
+msgstr "Google API Places"
 
 #: includes/settings/mybooking-plugin-settings.php:159
 msgctxt "settings_context"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançat"
 
 #: includes/settings/mybooking-plugin-settings.php:168
 msgctxt "settings_context"
 msgid "<p>Set up your <b>Mybooking</b> account.</p>"
-msgstr ""
+msgstr "<p>Configureu el vostre compte de <b>Mybooking</b>.</p>"
 
 #: includes/settings/mybooking-plugin-settings.php:177
 msgctxt "settings_context"
 msgid ""
 "<p>Configure the <b>renting/accommodation</b> module. It is done during the "
 "onboarding process but you can change the settings.</p>"
-msgstr ""
+msgstr "<p>Configureu el mòdul de <b>lloguer/allotjament</b>. Es configura durant el procés d'onboarding, però podeu canviar-ne els paràmetres.</p>"
 
 #: includes/settings/mybooking-plugin-settings.php:186
 msgctxt "settings_context"
 msgid ""
 "<p>Configure the <b>activities/appointment</b> module. It is done during the "
 "onboarding process but you can change the settings.</p>"
-msgstr ""
+msgstr "<p>Configureu el mòdul d'<b>activitats/cites</b>. Es configura durant el procés d'onboarding, però podeu canviar-ne els paràmetres.</p>"
 
 #: includes/settings/mybooking-plugin-settings.php:195
 msgctxt "settings_context"
 msgid ""
 "<p>Configure the <b>transfer</b> module. It is done during the onboarding "
 "process but you can change the settings.</p>"
-msgstr ""
+msgstr "<p>Configureu el mòdul de <b>trasllats</b>. Es configura durant el procés d'onboarding, però podeu canviar-ne els paràmetres.</p>"
 
 #: includes/settings/mybooking-plugin-settings.php:204
 msgctxt "settings_context"
 msgid ""
 "<p>Use <b>Google Captcha</b> to protect your contact forms from spam.</p>"
-msgstr ""
+msgstr "<p>Utilitzeu <b>Google Captcha</b> per protegir els formularis de contacte del correu brossa.</p>"
 
 #: includes/settings/mybooking-plugin-settings.php:213
 msgctxt "settings_context"
 msgid ""
 "<p>Use this basic complements to help you <b>improve</b> your reservations "
 "site.</p>"
-msgstr ""
+msgstr "<p>Utilitzeu aquests complements bàsics per ajudar-vos a <b>millorar</b> el vostre lloc de reserves.</p>"
 
 #: includes/settings/mybooking-plugin-settings.php:222
 msgctxt "settings_context"
 msgid "<p>Integrate reservation process with <b>third party</b> tools.</p>"
-msgstr ""
+msgstr "<p>Integreu el procés de reserva amb eines de <b>tercers</b>.</p>"
 
 #: includes/settings/mybooking-plugin-settings.php:231
 msgctxt "settings_context"
 msgid ""
 "<p>Use <b>Google Api Places</b> to control delivery and collection custom "
 "address.</p>"
-msgstr ""
+msgstr "<p>Utilitzeu <b>Google API Places</b> per controlar les adreces personalitzades de lliurament i recollida.</p>"
 
 #: includes/settings/mybooking-plugin-settings.php:240
 msgctxt "settings_context"
 msgid ""
 "<p><b>Compatibility</b> settings for devolopers. Set up if you find any "
 "conflict with this JS libraries.</p>"
-msgstr ""
+msgstr "<p>Paràmetres de <b>compatibilitat</b> per a desenvolupadors. Configureu-los si detecteu algun conflicte amb aquestes llibreries JS.</p>"
 
 #: includes/settings/mybooking-plugin-settings.php:365
 msgctxt "plugin_settings"
 msgid "Mybooking Client Id"
-msgstr ""
+msgstr "ID de client Mybooking"
 
 #: includes/settings/mybooking-plugin-settings.php:371
 msgctxt "plugin_settings"
 msgid "Mybooking API Key"
-msgstr ""
+msgstr "Clau API Mybooking"
 
 #: includes/settings/mybooking-plugin-settings.php:377
 msgctxt "plugin_settings"
 msgid "Sales Channel Code"
-msgstr ""
+msgstr "Codi del canal de venda"
 
 #: includes/settings/mybooking-plugin-settings.php:385
 msgctxt "plugin_settings"
 msgid "Google Api Places"
-msgstr ""
+msgstr "Google API Places"
 
 #: includes/settings/mybooking-plugin-settings.php:414
 msgctxt "plugin_settings"
 msgid "Choose products page"
-msgstr ""
+msgstr "Pàgina de selecció de productes"
 
 #: includes/settings/mybooking-plugin-settings.php:420
 #: includes/settings/mybooking-plugin-settings.php:488
 #: includes/settings/mybooking-plugin-settings.php:527
 msgctxt "plugin_settings"
 msgid "Checkout page"
-msgstr ""
+msgstr "Pàgina de checkout"
 
 #: includes/settings/mybooking-plugin-settings.php:426
 #: includes/settings/mybooking-plugin-settings.php:494
 #: includes/settings/mybooking-plugin-settings.php:533
 msgctxt "plugin_settings"
 msgid "Summary page"
-msgstr ""
+msgstr "Pàgina de resum"
 
 #: includes/settings/mybooking-plugin-settings.php:432
 #: includes/settings/mybooking-plugin-settings.php:539
 msgctxt "plugin_settings"
 msgid "Terms and conditions page"
-msgstr ""
+msgstr "Pàgina de termes i condicions"
 
 #: includes/settings/mybooking-plugin-settings.php:439
 msgctxt "plugin_settings"
 msgid "Selector in process"
-msgstr ""
+msgstr "Selector durant el procés"
 
 #: includes/settings/mybooking-plugin-settings.php:446
 msgctxt "plugin_settings"
 msgid "Show taxes included"
-msgstr ""
+msgstr "Mostra impostos inclosos"
 
 #: includes/settings/mybooking-plugin-settings.php:453
 msgctxt "plugin_settings"
 msgid "Duration context"
-msgstr ""
+msgstr "Context de durada"
 
 #: includes/settings/mybooking-plugin-settings.php:460
 msgctxt "plugin_settings"
 msgid "Dates context"
-msgstr ""
+msgstr "Context de dates"
 
 #: includes/settings/mybooking-plugin-settings.php:467
 msgctxt "plugin_settings"
 msgid "Not available context"
-msgstr ""
+msgstr "Context de no disponible"
 
 #: includes/settings/mybooking-plugin-settings.php:474
 msgctxt "plugin_settings"
 msgid "<em>Use product detail pages</em>"
-msgstr ""
+msgstr "<em>Utilitza pàgines de detall de producte</em>"
 
 #: includes/settings/mybooking-plugin-settings.php:480
 msgctxt "plugin_settings"
 msgid "<em>Product details pages URL prefix</em>"
-msgstr ""
+msgstr "<em>Prefix URL de les pàgines de detall de producte</em>"
 
 #: includes/settings/mybooking-plugin-settings.php:500
 msgctxt "plugin_settings"
 msgid "Terms & conditions page"
-msgstr ""
+msgstr "Pàgina de termes i condicions"
 
 #: includes/settings/mybooking-plugin-settings.php:507
 msgctxt "plugin_settings"
 msgid "<em>Use detail pages</em>"
-msgstr ""
+msgstr "<em>Utilitza pàgines de detall</em>"
 
 #: includes/settings/mybooking-plugin-settings.php:513
 msgctxt "plugin_settings"
 msgid "<em>Detail pages URL prefix</em>"
-msgstr ""
+msgstr "<em>Prefix URL de les pàgines de detall</em>"
 
 #: includes/settings/mybooking-plugin-settings.php:521
 msgctxt "plugin_settings"
 msgid "Choose vehicle page"
-msgstr ""
+msgstr "Pàgina de selecció de vehicle"
 
 #: includes/settings/mybooking-plugin-settings.php:548
 msgctxt "plugin_settings"
 msgid "Api Key"
-msgstr ""
+msgstr "Clau API"
 
 #: includes/settings/mybooking-plugin-settings.php:554
 msgctxt "plugin_settings"
 msgid "Country code restriction"
-msgstr ""
+msgstr "Restricció per codi de país"
 
 #: includes/settings/mybooking-plugin-settings.php:560
 msgctxt "plugin_settings"
 msgid "Restrict bounds"
-msgstr ""
+msgstr "Límits de restricció"
 
 #: includes/settings/mybooking-plugin-settings.php:566
 msgctxt "plugin_settings"
 msgid "SW Latitude"
-msgstr ""
+msgstr "Latitud SO"
 
 #: includes/settings/mybooking-plugin-settings.php:572
 msgctxt "plugin_settings"
 msgid "SW Longitude"
-msgstr ""
+msgstr "Longitud SO"
 
 #: includes/settings/mybooking-plugin-settings.php:578
 msgctxt "plugin_settings"
 msgid "NE Latitude"
-msgstr ""
+msgstr "Latitud NE"
 
 #: includes/settings/mybooking-plugin-settings.php:584
 msgctxt "plugin_settings"
 msgid "NE Longitude"
-msgstr ""
+msgstr "Longitud NE"
 
 #: includes/settings/mybooking-plugin-settings.php:591
 msgctxt "plugin_settings"
 msgid "Use Google captcha"
-msgstr ""
+msgstr "Utilitza Google Captcha"
 
 #: includes/settings/mybooking-plugin-settings.php:597
 msgctxt "plugin_settings"
 msgid "Google Captcha API Key"
-msgstr ""
+msgstr "Clau API de Google Captcha"
 
 #: includes/settings/mybooking-plugin-settings.php:603
 msgctxt "plugin_settings"
 msgid "Include Google Captcha JS library"
-msgstr ""
+msgstr "Inclou la llibreria JS de Google Captcha"
 
 #: includes/settings/mybooking-plugin-settings.php:610
 msgctxt "plugin_settings"
 msgid "Promotion Pop-up"
-msgstr ""
+msgstr "Finestra emergent de promoció"
 
 #: includes/settings/mybooking-plugin-settings.php:616
 msgctxt "plugin_settings"
 msgid "Testimonial module"
-msgstr ""
+msgstr "Mòdul de testimonis"
 
 #: includes/settings/mybooking-plugin-settings.php:622
 msgctxt "plugin_settings"
 msgid "Product Slider module"
-msgstr ""
+msgstr "Mòdul de carrusel de productes"
 
 #: includes/settings/mybooking-plugin-settings.php:628
 msgctxt "plugin_settings"
 msgid "Content Slider module"
-msgstr ""
+msgstr "Mòdul de carrusel de continguts"
 
 #: includes/settings/mybooking-plugin-settings.php:634
 msgctxt "plugin_settings"
 msgid "Cookies Notice"
-msgstr ""
+msgstr "Avís de cookies"
 
 #: includes/settings/mybooking-plugin-settings.php:643
 msgctxt "plugin_settings"
 msgid "Include SlickJS"
-msgstr ""
+msgstr "Inclou SlickJS"
 
 #: includes/settings/mybooking-plugin-settings.php:650
 msgctxt "plugin_settings"
 msgid "Use select2 library on selects"
-msgstr ""
+msgstr "Utilitza la llibreria select2 als selectors"
 
 #: includes/settings/mybooking-plugin-settings.php:705
 msgctxt "settings_context"
 msgid "For the API key from your mybooking account settings"
-msgstr ""
+msgstr "Per a la clau API de la configuració del vostre compte Mybooking"
 
 #: includes/settings/mybooking-plugin-settings.php:730
 msgctxt "settings_context"
 msgid ""
 "If you have <b>multiple sales channels</b>, input the sales channel code "
 "that you want to use in this website."
-msgstr ""
+msgstr "Si teniu <b>diversos canals de venda</b>, introduïu el codi del canal de venda que voleu utilitzar en aquest lloc web."
 
 #: includes/settings/mybooking-plugin-settings.php:825
 msgctxt "settings_context"
 msgid ""
 "Activate if you want to use Google Location API to input a custom delivery "
 "or collection address in a rental website."
-msgstr ""
+msgstr "Activeu-ho si voleu utilitzar l'API de Google Location per introduir una adreça personalitzada de lliurament o recollida en un lloc web de lloguer."
 
 #: includes/settings/mybooking-plugin-settings.php:839
 msgctxt "settings_context"
 msgid "The page with [mybooking_rent_engine_product_listing] shortcode."
-msgstr ""
+msgstr "La pàgina amb el shortcode [mybooking_rent_engine_product_listing]."
 
 #: includes/settings/mybooking-plugin-settings.php:850
 msgctxt "settings_context"
 msgid "The page with [mybooking_rent_engine_complete] shortcode."
-msgstr ""
+msgstr "La pàgina amb el shortcode [mybooking_rent_engine_complete]."
 
 #: includes/settings/mybooking-plugin-settings.php:861
 msgctxt "settings_context"
 msgid "The page with [mybooking_rent_engine_summary] shortcode."
-msgstr ""
+msgstr "La pàgina amb el shortcode [mybooking_rent_engine_summary]."
 
 #: includes/settings/mybooking-plugin-settings.php:872
 msgctxt "settings_context"
 msgid "The terms and conditions page."
-msgstr ""
+msgstr "La pàgina de termes i condicions."
 
 #: includes/settings/mybooking-plugin-settings.php:893
 msgctxt "plugin_settings"
 msgid "Choose selector"
-msgstr ""
+msgstr "Tria el selector"
 
 #: includes/settings/mybooking-plugin-settings.php:898
 #: includes/settings/mybooking-plugin-settings.php:903
 msgctxt "plugin_settings"
 msgid "Wizard"
-msgstr ""
+msgstr "Assistent"
 
 #: includes/settings/mybooking-plugin-settings.php:909
 #: includes/settings/mybooking-plugin-settings.php:914
 msgctxt "plugin_settings"
 msgid "Form"
-msgstr ""
+msgstr "Formulari"
 
 #: includes/settings/mybooking-plugin-settings.php:931
 msgctxt "settings_context"
 msgid ""
 "Choose the selector that you want to use when you choose <em>modify "
 "reservation</em> on choose product or complete pages."
-msgstr ""
+msgstr "Trieu el selector que voleu utilitzar quan seleccioneu <em>modifica la reserva</em> a les pàgines de selecció de producte o checkout."
 
 #: includes/settings/mybooking-plugin-settings.php:934
 msgctxt "settings_context"
 msgid ""
 "Select <b>wizard</b> if you are using the Wizard selector or widget on your "
 "home page."
-msgstr ""
+msgstr "Seleccioneu <b>assistent</b> si utilitzeu el selector o widget Assistent a la pàgina d'inici."
 
 #: includes/settings/mybooking-plugin-settings.php:937
 msgctxt "settings_context"
 msgid ""
 "Select <b>form</b> if you are using the Form selector or widget on yout home "
 "page."
-msgstr ""
+msgstr "Seleccioneu <b>formulari</b> si utilitzeu el selector o widget Formulari a la pàgina d'inici."
 
 #: includes/settings/mybooking-plugin-settings.php:967
 msgctxt "settings_context"
 msgid "Show taxes included."
-msgstr ""
+msgstr "Mostra els impostos inclosos."
 
 #: includes/settings/mybooking-plugin-settings.php:969
 msgctxt "settings_context"
 msgid "Activate if you want to show taxes included literal in reservation."
-msgstr ""
+msgstr "Activeu-ho si voleu mostrar el text d'impostos inclosos a la reserva."
 
 #: includes/settings/mybooking-plugin-settings.php:972
 msgctxt "settings_context"
 msgid ""
 "Do not activate if you do not want to show taxes included literal in "
 "reservation."
-msgstr ""
+msgstr "No ho activeu si no voleu mostrar el text d'impostos inclosos a la reserva."
 
 #: includes/settings/mybooking-plugin-settings.php:993
 msgctxt "settings_context"
 msgid "Choose duration context"
-msgstr ""
+msgstr "Trieu el context de durada"
 
 #: includes/settings/mybooking-plugin-settings.php:998
 #: includes/settings/mybooking-plugin-settings.php:1003
 msgctxt "settings_context"
 msgid "Days"
-msgstr ""
+msgstr "Dies"
 
 #: includes/settings/mybooking-plugin-settings.php:1009
 #: includes/settings/mybooking-plugin-settings.php:1014
 msgctxt "settings_context"
 msgid "Nights"
-msgstr ""
+msgstr "Nits"
 
 #: includes/settings/mybooking-plugin-settings.php:1030
 msgctxt "settings_context"
 msgid "Choose the duration that describes your business context."
-msgstr ""
+msgstr "Trieu la durada que descriu el context del vostre negoci."
 
 #: includes/settings/mybooking-plugin-settings.php:1033
 msgctxt "settings_context"
 msgid "Select <b>days</b> to describe duration in days."
-msgstr ""
+msgstr "Seleccioneu <b>dies</b> per descriure la durada en dies."
 
 #: includes/settings/mybooking-plugin-settings.php:1036
 msgctxt "settings_context"
 msgid "Select <b>nights</b> to describe duration in nights."
-msgstr ""
+msgstr "Seleccioneu <b>nits</b> per descriure la durada en nits."
 
 #: includes/settings/mybooking-plugin-settings.php:1056
 msgctxt "settings_context"
 msgid "Choose dates context"
-msgstr ""
+msgstr "Trieu el context de dates"
 
 #: includes/settings/mybooking-plugin-settings.php:1061
 #: includes/settings/mybooking-plugin-settings.php:1066
 msgctxt "settings_context"
 msgid "Pickup/Return"
-msgstr ""
+msgstr "Lliurament/Devolució"
 
 #: includes/settings/mybooking-plugin-settings.php:1072
 #: includes/settings/mybooking-plugin-settings.php:1077
 msgctxt "settings_context"
 msgid "Checkin/Checkout"
-msgstr ""
+msgstr "Check-in/Check-out"
 
 #: includes/settings/mybooking-plugin-settings.php:1083
 #: includes/settings/mybooking-plugin-settings.php:1088
 msgctxt "settings_context"
 msgid "Start/End"
-msgstr ""
+msgstr "Inici/Fi"
 
 #: includes/settings/mybooking-plugin-settings.php:1094
 #: includes/settings/mybooking-plugin-settings.php:1099
 msgctxt "settings_context"
 msgid "Arrival/Depature"
-msgstr ""
+msgstr "Arribada/Sortida"
 
 #: includes/settings/mybooking-plugin-settings.php:1105
 #: includes/settings/mybooking-plugin-settings.php:1110
 msgctxt "settings_context"
 msgid "Departure/Entry"
-msgstr ""
+msgstr "Sortida/Entrada"
 
 #: includes/settings/mybooking-plugin-settings.php:1116
 #: includes/settings/mybooking-plugin-settings.php:1121
 msgctxt "settings_context"
 msgid "Estimated Time of Arrival / Departure"
-msgstr ""
+msgstr "Hora estimada d'arribada / sortida"
 
 #: includes/settings/mybooking-plugin-settings.php:1137
 msgctxt "settings_context"
 msgid "Choose the start/end date that describes your business context."
-msgstr ""
+msgstr "Trieu la data d'inici/fi que descriu el context del vostre negoci."
 
 #: includes/settings/mybooking-plugin-settings.php:1140
 msgctxt "settings_context"
 msgid "Select <b>pickup/return</b> to describe pickup and return dates."
-msgstr ""
+msgstr "Seleccioneu <b>lliurament/devolució</b> per descriure les dates de lliurament i devolució."
 
 #: includes/settings/mybooking-plugin-settings.php:1143
 msgctxt "settings_context"
 msgid "Select <b>checkin/checkout</b> for accommodation or properties."
-msgstr ""
+msgstr "Seleccioneu <b>check-in/check-out</b> per a allotjaments o propietats."
 
 #: includes/settings/mybooking-plugin-settings.php:1146
 msgctxt "settings_context"
 msgid "Select <b>start/end</b> to describe start and end period."
-msgstr ""
+msgstr "Seleccioneu <b>inici/fi</b> per descriure el període d'inici i fi."
 
 #: includes/settings/mybooking-plugin-settings.php:1149
 msgctxt "settings_context"
 msgid "Select <b>arrival/departure</b> to describe arrivals an departures"
-msgstr ""
+msgstr "Seleccioneu <b>arribada/sortida</b> per descriure arribades i sortides."
 
 #: includes/settings/mybooking-plugin-settings.php:1152
 msgctxt "settings_context"
 msgid "Select <b>departure/entry</b> to describe departures and entries"
-msgstr ""
+msgstr "Seleccioneu <b>sortida/entrada</b> per descriure sortides i entrades."
 
 #: includes/settings/mybooking-plugin-settings.php:1155
 msgctxt "settings_context"
 msgid "Select <b>eta/etd</b> to describe estimated arrival and departure times"
-msgstr ""
+msgstr "Seleccioneu <b>eta/etd</b> per descriure les hores estimades d'arribada i sortida."
 
 #: includes/settings/mybooking-plugin-settings.php:1175
 msgctxt "settings_context"
 msgid "Choose not available context"
-msgstr ""
+msgstr "Trieu el context de no disponible"
 
 #: includes/settings/mybooking-plugin-settings.php:1180
 #: includes/settings/mybooking-plugin-settings.php:1185
 msgctxt "settings_context"
 msgid "Not available"
-msgstr ""
+msgstr "No disponible"
 
 #: includes/settings/mybooking-plugin-settings.php:1191
 #: includes/settings/mybooking-plugin-settings.php:1196
 msgctxt "settings_context"
 msgid "Telephone consultation"
-msgstr ""
+msgstr "Consulta telefònica"
 
 #: includes/settings/mybooking-plugin-settings.php:1202
 #: includes/settings/mybooking-plugin-settings.php:1207
 msgctxt "settings_context"
 msgid "E-mail consultation"
-msgstr ""
+msgstr "Consulta per correu electrònic"
 
 #: includes/settings/mybooking-plugin-settings.php:1213
 #: includes/settings/mybooking-plugin-settings.php:1218
 msgctxt "settings_context"
 msgid "Enquiry"
-msgstr ""
+msgstr "Consultar disponibilitat"
 
 #: includes/settings/mybooking-plugin-settings.php:1234
 msgctxt "settings_context"
 msgid "Choose the not available message that describes your business context."
-msgstr ""
+msgstr "Trieu el missatge de no disponible que descriu el context del vostre negoci."
 
 #: includes/settings/mybooking-plugin-settings.php:1237
 msgctxt "settings_context"
 msgid "Select <b>Not available</b> to show not available message."
-msgstr ""
+msgstr "Seleccioneu <b>No disponible</b> per mostrar el missatge de no disponible."
 
 #: includes/settings/mybooking-plugin-settings.php:1240
 msgctxt "settings_context"
 msgid ""
 "Select <b>Telephone consultation</b> to show Telephone consultation message."
-msgstr ""
+msgstr "Seleccioneu <b>Consulta telefònica</b> per mostrar el missatge de consulta telefònica."
 
 #: includes/settings/mybooking-plugin-settings.php:1243
 msgctxt "settings_context"
 msgid "Select <b>E-mail consultation</b> to show E-mail consultation message."
-msgstr ""
+msgstr "Seleccioneu <b>Consulta per correu electrònic</b> per mostrar el missatge de consulta per correu electrònic."
 
 #: includes/settings/mybooking-plugin-settings.php:1246
 msgctxt "settings_context"
 msgid "Select <b>Enquiry</b> to show Enquiry message."
-msgstr ""
+msgstr "Seleccioneu <b>Consulta</b> per mostrar el missatge de consulta."
 
 #: includes/settings/mybooking-plugin-settings.php:1267
 msgctxt "settings_context"
 msgid "IMPORTANT: This is basic and experimental functionality"
-msgstr ""
+msgstr "IMPORTANT: Aquesta és una funcionalitat bàsica i experimental"
 
 #: includes/settings/mybooking-plugin-settings.php:1281
 msgctxt "settings_context"
 msgid "Use product detail pages."
-msgstr ""
+msgstr "Utilitza pàgines de detall de producte."
 
 #: includes/settings/mybooking-plugin-settings.php:1286
 msgctxt "settings_context"
@@ -1270,7 +1270,7 @@ msgid ""
 "<b>Do not activate</b> if you have create a custom page for each one of your "
 "products with the [mybooking_rent_engine_product] or if you are using the "
 "[mybooking_rent_engine_selector] or the Selector widget in your home page."
-msgstr ""
+msgstr "<b>No ho activeu</b> si heu creat una pàgina personalitzada per a cadascun dels vostres productes amb [mybooking_rent_engine_product], o si utilitzeu [mybooking_rent_engine_selector] o el widget Selector a la pàgina d'inici."
 
 #: includes/settings/mybooking-plugin-settings.php:1289
 msgctxt "settings_context"
@@ -1278,7 +1278,7 @@ msgid ""
 "<b>Activate</b> it if you are using the [mybooking_rent_engine_products] "
 "shortcode to <b>browse the catalog</b> and you want the plugin to "
 "automatically create a page for each product."
-msgstr ""
+msgstr "<b>Activeu-ho</b> si utilitzeu el shortcode [mybooking_rent_engine_products] per <b>navegar pel catàleg</b> i voleu que el complement creï automàticament una pàgina per a cada producte."
 
 #: includes/settings/mybooking-plugin-settings.php:1315
 msgctxt "settings_context"
@@ -1286,34 +1286,34 @@ msgid ""
 "This is the <b>prefix folder</b> that is added to the product detail page "
 "created virtually for any\n"
 "\t\t  product if <u>Use product detail pages</u> is active."
-msgstr ""
+msgstr "Aquesta és la <b>carpeta prefix</b> que s'afegeix a la pàgina de detall del producte creada virtualment per a qualsevol producte si està activa l'opció <u>Utilitza pàgines de detall de producte</u>."
 
 #: includes/settings/mybooking-plugin-settings.php:1331
 msgctxt "settings_context"
 msgid "The page with [mybooking_activities_engine_shopping_cart] shortcode."
-msgstr ""
+msgstr "La pàgina amb el shortcode [mybooking_activities_engine_shopping_cart]."
 
 #: includes/settings/mybooking-plugin-settings.php:1343
 msgctxt "settings_context"
 msgid "The page with [mybooking_activities_engine_summary] shortcode."
-msgstr ""
+msgstr "La pàgina amb el shortcode [mybooking_activities_engine_summary]."
 
 #: includes/settings/mybooking-plugin-settings.php:1355
 msgctxt "settings_context"
 msgid "The page with the terms and conditions."
-msgstr ""
+msgstr "La pàgina amb els termes i condicions."
 
 #: includes/settings/mybooking-plugin-settings.php:1385
 msgctxt "settings_context"
 msgid "Use detail pages."
-msgstr ""
+msgstr "Utilitza pàgines de detall."
 
 #: includes/settings/mybooking-plugin-settings.php:1390
 msgctxt "settings_context"
 msgid ""
 "Do not activate if you have create a custom page for each one of your "
 "activities with the [mybooking_activities_engine_activity]"
-msgstr ""
+msgstr "No ho activeu si heu creat una pàgina personalitzada per a cadascuna de les vostres activitats amb [mybooking_activities_engine_activity]"
 
 #: includes/settings/mybooking-plugin-settings.php:1393
 msgctxt "settings_context"
@@ -1321,7 +1321,7 @@ msgid ""
 "Activate it if you are using the [mybooking_activities_engine_activities] "
 "shortcode to <b>browse the activities catalog</b> and you want the plugin to "
 "automatically create a page for each activity."
-msgstr ""
+msgstr "Activeu-ho si utilitzeu el shortcode [mybooking_activities_engine_activities] per <b>navegar pel catàleg d'activitats</b> i voleu que el complement creï automàticament una pàgina per a cada activitat."
 
 #: includes/settings/mybooking-plugin-settings.php:1420
 msgctxt "settings_context"
@@ -1329,273 +1329,273 @@ msgid ""
 "This is the <b>prefix folder</b> that is added to the activity detail page "
 "created virtually for any\n"
 "\t\t  product if <u>Use detail pages</u> is active."
-msgstr ""
+msgstr "Aquesta és la <b>carpeta prefix</b> que s'afegeix a la pàgina de detall de l'activitat creada virtualment si està activa l'opció <u>Utilitza pàgines de detall</u>."
 
 #: includes/settings/mybooking-plugin-settings.php:1436
 msgctxt "settings_context"
 msgid "The page with [mybooking_transfer_choose_vehicle] shortcode."
-msgstr ""
+msgstr "La pàgina amb el shortcode [mybooking_transfer_choose_vehicle]."
 
 #: includes/settings/mybooking-plugin-settings.php:1448
 msgctxt "settings_context"
 msgid "The page with [mybooking_transfer_checkout] shortcode."
-msgstr ""
+msgstr "La pàgina amb el shortcode [mybooking_transfer_checkout]."
 
 #: includes/settings/mybooking-plugin-settings.php:1460
 msgctxt "settings_context"
 msgid "The page with [mybooking_transfer_summary] shortcode."
-msgstr ""
+msgstr "La pàgina amb el shortcode [mybooking_transfer_summary]."
 
 #: includes/settings/mybooking-plugin-settings.php:1472
 msgctxt "settings_context"
 msgid "The terms and conditions page"
-msgstr ""
+msgstr "La pàgina de termes i condicions"
 
 #: includes/settings/mybooking-plugin-settings.php:1661
 msgctxt "settings_context"
 msgid "Use Google Captcha on <b>Contact Form</b>."
-msgstr ""
+msgstr "Utilitza Google Captcha al <b>formulari de contacte</b>."
 
 #: includes/settings/mybooking-plugin-settings.php:1712
 msgctxt "settings_context"
 msgid "Include Google Captcha JS library."
-msgstr ""
+msgstr "Inclou la llibreria JS de Google Captcha."
 
 #: includes/settings/mybooking-plugin-settings.php:1743
 msgctxt "settings_context"
 msgid ""
 "<b>Activate Promotion Pop-ups</b> Custom Post Type in order to create "
 "promotions."
-msgstr ""
+msgstr "<b>Activeu les finestres emergents de promoció</b> per crear promocions."
 
 #: includes/settings/mybooking-plugin-settings.php:1746
 msgctxt "settings_context"
 msgid "<small>Pop-up will be shown only in the front page.</small>"
-msgstr ""
+msgstr "<small>La finestra emergent només es mostrarà a la pàgina d'inici.</small>"
 
 #: includes/settings/mybooking-plugin-settings.php:1775
 msgctxt "settings_context"
 msgid ""
 "<b>Activate Testimonials</b> Custom Post Type in order to create a "
 "testimonials carousel."
-msgstr ""
+msgstr "<b>Activeu els testimonis</b> per crear un carrusel de testimonis."
 
 #: includes/settings/mybooking-plugin-settings.php:1778
 msgctxt "settings_context"
 msgid ""
 "<small>Create one or more Testimonials under Mybooking menu and use "
 "[mybooking_testimonials] to show it on a page or sidebar.</small>"
-msgstr ""
+msgstr "<small>Creeu un o més testimonis al menú Mybooking i utilitzeu [mybooking_testimonials] per mostrar-los en una pàgina o barra lateral.</small>"
 
 #: includes/settings/mybooking-plugin-settings.php:1807
 msgctxt "settings_context"
 msgid ""
 "<b>Activate Content Slider</b> Custom Post Type in order to create a content "
 "slider with Gutenberg native editor."
-msgstr ""
+msgstr "<b>Activeu el carrusel de continguts</b> per crear un carrusel de continguts amb l'editor natiu de Gutenberg."
 
 #: includes/settings/mybooking-plugin-settings.php:1810
 msgctxt "settings_context"
 msgid ""
 "<small>Create one or more Sliders under Mybooking menu and use "
 "[mybooking_content_slider] to show it on a page or post.</small>"
-msgstr ""
+msgstr "<small>Creeu un o més carrusels al menú Mybooking i utilitzeu [mybooking_content_slider] per mostrar-los en una pàgina o entrada.</small>"
 
 #: includes/settings/mybooking-plugin-settings.php:1839
 msgctxt "settings_context"
 msgid ""
 "<b>Activate Product Slider</b> Custom Post Type in order to create a content "
 "slider to show offers with limited custom fields."
-msgstr ""
+msgstr "<b>Activeu el carrusel de productes</b> per crear un carrusel de continguts que mostri ofertes amb un conjunt limitat de camps personalitzats."
 
 #: includes/settings/mybooking-plugin-settings.php:1842
 msgctxt "settings_context"
 msgid ""
 "<small>Create one or more Product Sliders under Mybooking menu and use "
 "[mybooking_product_slider] to show it on a page or post.</small>"
-msgstr ""
+msgstr "<small>Creeu un o més carrusels de productes al menú Mybooking i utilitzeu [mybooking_product_slider] per mostrar-los en una pàgina o entrada.</small>"
 
 #: includes/settings/mybooking-plugin-settings.php:1871
 msgctxt "settings_context"
 msgid "<b>Activate Cookies Notice</b> in order to create a cookies warning."
-msgstr ""
+msgstr "<b>Activeu l'avís de cookies</b> per crear un avís de cookies."
 
 #: includes/settings/mybooking-plugin-settings.php:1874
 msgctxt "settings_context"
 msgid ""
 "<small>Set the privacy page at WordPress settings to link properly the info "
 "button.</small>"
-msgstr ""
+msgstr "<small>Configureu la pàgina de privadesa als ajustos de WordPress perquè el botó d'informació hi enllaci correctament.</small>"
 
 #: includes/settings/mybooking-plugin-settings.php:1905
 msgctxt "settings_context"
 msgid ""
 "Include <b>slickJS</b> library. It is <b>required</b> if you are using the "
 "testimonials or slider complement."
-msgstr ""
+msgstr "Inclou la llibreria <b>SlickJS</b>. És <b>obligatòria</b> si utilitzeu el complement de testimonis o carrusel."
 
 #: includes/settings/mybooking-plugin-settings.php:1908
 msgctxt "settings_context"
 msgid ""
 "<b>¡Attention!</b> Uncheck if not testimonials or slider are used or if the "
 "theme that you are using includes slickJS."
-msgstr ""
+msgstr "<b>Atenció!</b> Desmarqueu-ho si no utilitzeu testimonis ni carrusels, o si el tema que utilitzeu ja inclou SlickJS."
 
 #: includes/settings/mybooking-plugin-settings.php:1938
 msgctxt "settings_context"
 msgid "Use <b>select2</b> library on form selects."
-msgstr ""
+msgstr "Utilitza la llibreria <b>select2</b> als selectors dels formularis."
 
 #: includes/settings/mybooking-plugin-settings.php:1965
 #: includes/settings/mybooking-plugin-settings.php:2010
 #: includes/settings/mybooking-plugin-settings.php:2055
 msgctxt "settings_context"
 msgid "Choose page"
-msgstr ""
+msgstr "Tria la pàgina"
 
 #: includes/settings/use_case/class-mybooking-activities-module.php:12
 msgctxt "plugin_custom_activities_pages"
 msgid "Check out"
-msgstr ""
+msgstr "Checkout"
 
 #: includes/settings/use_case/class-mybooking-activities-module.php:13
 msgctxt "plugin_custom_activities_pages"
 msgid "Summary"
-msgstr ""
+msgstr "Resum"
 
 #: includes/settings/use_case/class-mybooking-activities-module.php:14
 msgctxt "plugin_custom_activities_pages"
 msgid "My reservation"
-msgstr ""
+msgstr "La meva reserva"
 
 #: includes/settings/use_case/class-mybooking-activities-module.php:21
 msgctxt "plugin_custom_activities_pages"
 msgid "Activities Check out"
-msgstr ""
+msgstr "Checkout d'activitats"
 
 #: includes/settings/use_case/class-mybooking-activities-module.php:22
 msgctxt "plugin_custom_activities_pages"
 msgid "Activities Summary"
-msgstr ""
+msgstr "Resum d'activitats"
 
 #: includes/settings/use_case/class-mybooking-activities-module.php:23
 msgctxt "plugin_custom_activities_pages"
 msgid "Activities My reservation"
-msgstr ""
+msgstr "La meva reserva d'activitats"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:12
 msgctxt "plugin_custom_renting_pages"
 msgid "Check out"
-msgstr ""
+msgstr "Checkout"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:13
 msgctxt "plugin_custom_renting_pages"
 msgid "Summary"
-msgstr ""
+msgstr "Resum"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:14
 msgctxt "plugin_custom_renting_pages"
 msgid "My reservation"
-msgstr ""
+msgstr "La meva reserva"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:15
 msgctxt "plugin_custom_renting_pages"
 msgid "Home Test"
-msgstr ""
+msgstr "Pàgina d'inici de prova"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:16
 msgctxt "plugin_custom_renting_pages"
 msgid "Search result"
-msgstr ""
+msgstr "Resultat de cerca"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:25
 msgctxt "plugin_custom_renting_pages"
 msgid "Renting Check out"
-msgstr ""
+msgstr "Checkout de lloguer"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:26
 msgctxt "plugin_custom_renting_pages"
 msgid "Renting Summary"
-msgstr ""
+msgstr "Resum de lloguer"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:27
 msgctxt "plugin_custom_renting_pages"
 msgid "Renting My reservation"
-msgstr ""
+msgstr "La meva reserva de lloguer"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:28
 msgctxt "plugin_custom_renting_pages"
 msgid "Renting Home Test"
-msgstr ""
+msgstr "Pàgina d'inici de prova de lloguer"
 
 #: includes/settings/use_case/class-mybooking-renting-module.php:29
 msgctxt "plugin_custom_renting_pages"
 msgid "Renting Search result"
-msgstr ""
+msgstr "Resultat de cerca de lloguer"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:12
 msgctxt "plugin_custom_transfer_pages"
 msgid "Check out"
-msgstr ""
+msgstr "Checkout"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:13
 msgctxt "plugin_custom_transfer_pages"
 msgid "Summary"
-msgstr ""
+msgstr "Resum"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:14
 msgctxt "plugin_custom_transfer_pages"
 msgid "My reservation"
-msgstr ""
+msgstr "La meva reserva"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:15
 msgctxt "plugin_custom_transfer_pages"
 msgid "Home Test"
-msgstr ""
+msgstr "Pàgina d'inici de prova"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:16
 msgctxt "plugin_custom_transfer_pages"
 msgid "Search result"
-msgstr ""
+msgstr "Resultat de cerca"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:24
 msgctxt "plugin_custom_transfer_pages"
 msgid "Transfer Check out"
-msgstr ""
+msgstr "Checkout de trasllat"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:25
 msgctxt "plugin_custom_transfer_pages"
 msgid "Transfer Summary"
-msgstr ""
+msgstr "Resum de trasllat"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:26
 msgctxt "plugin_custom_transfer_pages"
 msgid "Transfer My reservation"
-msgstr ""
+msgstr "La meva reserva de trasllat"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:27
 msgctxt "plugin_custom_transfer_pages"
 msgid "Transfer Home Test"
-msgstr ""
+msgstr "Pàgina d'inici de prova de trasllat"
 
 #: includes/settings/use_case/class-mybooking-transfer-module.php:28
 msgctxt "plugin_custom_transfer_pages"
 msgid "Transfer Search result"
-msgstr ""
+msgstr "Resultat de cerca de trasllat"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:8
 #: includes/settings/views/mybooking-plugin-onboarding-generate.php:20
 #: includes/settings/views/mybooking-plugin-onboarding-login.php:8
 msgctxt "onboarding_context"
 msgid "Loading"
-msgstr ""
+msgstr "Carregant"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:32
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:296
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:48
 msgctxt "onboarding_context"
 msgid "Click to zoom"
-msgstr ""
+msgstr "Feu clic per ampliar"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:35
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:86
@@ -1609,13 +1609,13 @@ msgstr ""
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:156
 msgctxt "onboarding_context"
 msgid "Renting"
-msgstr ""
+msgstr "Lloguer"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:39
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:59
 msgctxt "onboarding_context"
 msgid "Search engine or selector"
-msgstr ""
+msgstr "Motor de reserves o selector"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:42
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:62
@@ -1623,13 +1623,13 @@ msgctxt "onboarding_context"
 msgid ""
 "Copy the code below and paste on your home page to start the reservation "
 "process."
-msgstr ""
+msgstr "Copieu el codi següent i enganxeu-lo a la pàgina d'inici per començar el procés de reserva."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:45
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:65
 msgctxt "onboarding_context"
 msgid "Insert this shortcode on your home page:"
-msgstr ""
+msgstr "Inseriu aquest shortcode a la pàgina d'inici:"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:50
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:51
@@ -1653,32 +1653,32 @@ msgstr ""
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:136
 msgctxt "onboarding_context"
 msgid "Copy shortcode"
-msgstr ""
+msgstr "Copia el shortcode"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:57
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:90
 msgctxt "onboarding_context"
 msgid "Go to the example test page"
-msgstr ""
+msgstr "Ves a la pàgina de prova d'exemple"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:64
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:97
 msgctxt "onboarding_context"
 msgid "Go to the rent example test page"
-msgstr ""
+msgstr "Ves a la pàgina de prova d'exemple de lloguer"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:71
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:104
 msgctxt "onboarding_context"
 msgid "Go to the transfer example test page"
-msgstr ""
+msgstr "Ves a la pàgina de prova d'exemple de trasllat"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:90
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:271
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:124
 msgctxt "onboarding_context"
 msgid "Calendar"
-msgstr ""
+msgstr "Calendari"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:93
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:127
@@ -1687,24 +1687,24 @@ msgid ""
 "The booking calendar is shown automatically in generated pages when you "
 "activate the Detail pages option. In case you don't, you must create the "
 "product pages and insert calendars manually for each of them."
-msgstr ""
+msgstr "El calendari de reserves es mostra automàticament a les pàgines generades quan activeu l'opció Pàgines de detall. Si no l'activeu, heu de crear les pàgines de producte i inserir manualment els calendaris a cadascuna."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:96
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:277
 msgctxt "onboarding_context"
 msgid "Copy the shortcodes from your Mybooking account."
-msgstr ""
+msgstr "Copieu els shortcodes del vostre compte Mybooking."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:100
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:281
 msgctxt "onboarding_context"
 msgid "How to get the calendar codes"
-msgstr ""
+msgstr "Com obtenir els codis de calendari"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:119
 msgctxt "onboarding_context"
 msgid "Planning by days"
-msgstr ""
+msgstr "Planificació per dies"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:122
 msgctxt "onboarding_context"
@@ -1712,7 +1712,7 @@ msgid ""
 "You can add a schedule that shows availability in a pre-established number "
 "of days. This is a purely informative component and can be configured by "
 "branch, family and/or product category"
-msgstr ""
+msgstr "Podeu afegir una planificació que mostri la disponibilitat en un nombre predefinit de dies. És un component purament informatiu i es pot configurar per sucursal, família i/o categoria de producte."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:125
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:155
@@ -1720,12 +1720,12 @@ msgstr ""
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:215
 msgctxt "onboarding_context"
 msgid "Paste this code where you want to show the component:"
-msgstr ""
+msgstr "Enganxeu aquest codi on vulgueu mostrar el component:"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:149
 msgctxt "onboarding_context"
 msgid "Planning by hours"
-msgstr ""
+msgstr "Planificació per hores"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:152
 msgctxt "onboarding_context"
@@ -1733,24 +1733,24 @@ msgid ""
 "You can add a schedule to see the time availability on a selected day. This "
 "is a purely informative component and can be configured by branch, family "
 "and/or product category"
-msgstr ""
+msgstr "Podeu afegir una planificació per veure la disponibilitat horària d'un dia seleccionat. És un component purament informatiu i es pot configurar per sucursal, família i/o categoria de producte."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:179
 msgctxt "onboarding_context"
 msgid "Weekly planning"
-msgstr ""
+msgstr "Planificació setmanal"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:182
 msgctxt "onboarding_context"
 msgid ""
 "You can add a weekly schedule with availability to your product page to "
 "start the reservation process"
-msgstr ""
+msgstr "Podeu afegir una planificació setmanal amb disponibilitat a la pàgina del producte per iniciar el procés de reserva."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:209
 msgctxt "onboarding_context"
 msgid "Shift picker"
-msgstr ""
+msgstr "Selector de torn"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:212
 msgctxt "onboarding_context"
@@ -1758,7 +1758,7 @@ msgid ""
 "You can add a shift selector to start the reservation process. Especially "
 "recommended for products or categories with a shift schedule and several "
 "units."
-msgstr ""
+msgstr "Podeu afegir un selector de torns per iniciar el procés de reserva. Especialment recomanat per a productes o categories amb horaris per torns i diverses unitats."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:237
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:267
@@ -1768,12 +1768,12 @@ msgstr ""
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:175
 msgctxt "onboarding_context"
 msgid "Activities"
-msgstr ""
+msgstr "Activitats"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:241
 msgctxt "onboarding_context"
 msgid "Activities catalog"
-msgstr ""
+msgstr "Catàleg d'activitats"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:244
 msgctxt "onboarding_context"
@@ -1781,13 +1781,13 @@ msgid ""
 "This component shows a product grid based on your inventory. You can "
 "activate buttons and product pages checking Detail pages option on your "
 "configuration."
-msgstr ""
+msgstr "Aquest component mostra una graella de productes basada en el vostre inventari. Podeu activar botons i pàgines de producte marcant l'opció Pàgines de detall a la configuració."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:247
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:130
 msgctxt "onboarding_context"
 msgid "Paste this code where you want to show the catalog:"
-msgstr ""
+msgstr "Enganxeu aquest codi on vulgueu mostrar el catàleg:"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:274
 msgctxt "onboarding_context"
@@ -1795,7 +1795,7 @@ msgid ""
 "The booking calendar is shown automatically when you activate the Detail "
 "pages option. In case you don't, you must create the product pages and "
 "insert calendars manually for each of them."
-msgstr ""
+msgstr "El calendari de reserves es mostra automàticament quan activeu l'opció Pàgines de detall. Si no l'activeu, heu de crear les pàgines de producte i inserir manualment els calendaris a cadascuna."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:299
 #: includes/settings/views/mybooking-plugin-onboarding-generate.php:45
@@ -1804,165 +1804,165 @@ msgstr ""
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:194
 msgctxt "onboarding_context"
 msgid "Transfer"
-msgstr ""
+msgstr "Trasllat"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:303
 msgctxt "onboarding_context"
 msgid "Dates Selector"
-msgstr ""
+msgstr "Selector de dates"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:306
 msgctxt "onboarding_context"
 msgid ""
 "Is mandatory you copy the code below and paste on your home page or your "
 "booking process won't work."
-msgstr ""
+msgstr "És obligatori copiar el codi següent i enganxar-lo a la pàgina d'inici; en cas contrari, el procés de reserva no funcionarà."
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:309
 msgctxt "onboarding_context"
 msgid "Paste this code on your home page:"
-msgstr ""
+msgstr "Enganxeu aquest codi a la pàgina d'inici:"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:323
 msgctxt "onboarding_context"
 msgid "Components could not be recovered for this type of business"
-msgstr ""
+msgstr "No s'han pogut recuperar els components per a aquest tipus de negoci"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:326
 msgctxt "onboarding_context"
 msgid "We sorry"
-msgstr ""
+msgstr "Ho sentim"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:328
 msgctxt "onboarding_context"
 msgid "no component could be recovered"
-msgstr ""
+msgstr "No s'ha pogut recuperar cap component"
 
 #: includes/settings/views/mybooking-plugin-onboarding-components.php:330
 msgctxt "onboarding_context"
 msgid "Please try again and if an error occurs again, contact"
-msgstr ""
+msgstr "Torneu-ho a provar i, si l'error es repeteix, contacteu amb nosaltres"
 
 #: includes/settings/views/mybooking-plugin-onboarding-error.php:9
 msgctxt "onboarding_context"
 msgid "We are sorry, an error has occurred"
-msgstr ""
+msgstr "Ho sentim, s'ha produït un error"
 
 #: includes/settings/views/mybooking-plugin-onboarding-error.php:12
 msgctxt "onboarding_context"
 msgid "Check your pages and try again. If you can't get it, contact"
-msgstr ""
+msgstr "Comproveu les pàgines i torneu-ho a provar. Si no ho aconseguiu, contacteu amb nosaltres"
 
 #: includes/settings/views/mybooking-plugin-onboarding-error.php:22
 msgctxt "onboarding_context"
 msgid "Return"
-msgstr ""
+msgstr "Torna"
 
 #: includes/settings/views/mybooking-plugin-onboarding-generate.php:8
 msgctxt "onboarding_context"
 msgid "Welcome onboard"
-msgstr ""
+msgstr "Benvingut a bord"
 
 #: includes/settings/views/mybooking-plugin-onboarding-generate.php:13
 msgctxt "onboarding_context"
 msgid ""
 "We will automatically setup the plugin based on your current account "
 "settings."
-msgstr ""
+msgstr "Configurarem automàticament el complement segons la configuració actual del vostre compte."
 
 #: includes/settings/views/mybooking-plugin-onboarding-generate.php:24
 msgctxt "onboarding_context"
 msgid "Your current settings"
-msgstr ""
+msgstr "La vostra configuració actual"
 
 #: includes/settings/views/mybooking-plugin-onboarding-generate.php:27
 msgctxt "onboarding_context"
 msgid "Type of bussiness"
-msgstr ""
+msgstr "Tipus de negoci"
 
 #: includes/settings/views/mybooking-plugin-onboarding-generate.php:33
 msgctxt "onboarding_context"
 msgid "Module(s)"
-msgstr ""
+msgstr "Mòdul(s)"
 
 #: includes/settings/views/mybooking-plugin-onboarding-generate.php:51
 msgctxt "onboarding_context"
 msgid ""
 "To configure the plugin we are going to use the current configuration of "
 "your business"
-msgstr ""
+msgstr "Per configurar el complement utilitzarem la configuració actual del vostre negoci"
 
 #: includes/settings/views/mybooking-plugin-onboarding-generate.php:56
 msgctxt "onboarding_context"
 msgid "Do it!"
-msgstr ""
+msgstr "Fes-ho!"
 
 #: includes/settings/views/mybooking-plugin-onboarding-login.php:11
 msgctxt "onboarding_context"
 msgid "Mybooking Reservation Engine installation wizard"
-msgstr ""
+msgstr "Assistent d'instal·lació del motor de reserves Mybooking"
 
 #: includes/settings/views/mybooking-plugin-onboarding-login.php:14
 msgctxt "onboarding_context"
 msgid ""
 "Follow the instructions to start the configuration process to set up the "
 "booking engine on your site"
-msgstr ""
+msgstr "Seguiu les instruccions per iniciar el procés de configuració i instal·lar el motor de reserves al vostre lloc web"
 
 #: includes/settings/views/mybooking-plugin-onboarding-login.php:21
 msgctxt "onboarding_context"
 msgid "Insert your client ID and API key"
-msgstr ""
+msgstr "Introduïu el vostre ID de client i la clau API"
 
 #: includes/settings/views/mybooking-plugin-onboarding-login.php:25
 msgctxt "onboarding_context"
 msgid "Get your client ID and API key"
-msgstr ""
+msgstr "Obteniu el vostre ID de client i la clau API"
 
 #: includes/settings/views/mybooking-plugin-onboarding-login.php:29
 msgctxt "onboarding_context"
 msgid "Create an account"
-msgstr ""
+msgstr "Crea un compte"
 
 #: includes/settings/views/mybooking-plugin-onboarding-login.php:36
 msgctxt "onboarding_context"
 msgid "Client ID"
-msgstr ""
+msgstr "ID de client"
 
 #: includes/settings/views/mybooking-plugin-onboarding-login.php:37
 msgctxt "onboarding_context"
 msgid "API Key"
-msgstr ""
+msgstr "Clau API"
 
 #: includes/settings/views/mybooking-plugin-onboarding-login.php:39
 msgctxt "onboarding_context"
 msgid "Let's start"
-msgstr ""
+msgstr "Comencem"
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:7
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:25
 #: includes/settings/views/mybooking-plugin-onboarding-welcome.php:17
 msgctxt "onboarding_context"
 msgid "Loading..."
-msgstr ""
+msgstr "Carregant..."
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:14
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:71
 msgctxt "onboarding_context"
 msgid "Reservation process pages for "
-msgstr ""
+msgstr "Pàgines del procés de reserva per a "
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:29
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:86
 msgctxt "onboarding_context"
 msgid "(Reservation process starts here)"
-msgstr ""
+msgstr "(El procés de reserva comença aquí)"
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:39
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:92
 msgctxt "onboarding_context"
 msgid "Show page"
-msgstr ""
+msgstr "Mostra la pàgina"
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:44
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:97
@@ -1976,21 +1976,21 @@ msgstr "Mostra la galeria"
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:145
 msgctxt "onboarding_context"
 msgid "Edit page"
-msgstr ""
+msgstr "Edita la pàgina"
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:48
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:101
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:148
 msgctxt "onboarding_context"
 msgid "Copy page link for mybooking web configuration"
-msgstr ""
+msgstr "Copia l'enllaç de la pàgina per a la configuració web de Mybooking"
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:56
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:109
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:156
 msgctxt "onboarding_context"
 msgid "We have not been able to recover any pages"
-msgstr ""
+msgstr "No hem pogut recuperar cap pàgina"
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:59
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:112
@@ -2000,39 +2000,39 @@ msgctxt "onboarding_context"
 msgid ""
 "We are sorry no page could be created. Please try again and if an error "
 "occurs again, contact"
-msgstr ""
+msgstr "Ho sentim, no s'ha pogut crear cap pàgina. Torneu-ho a provar i, si l'error es repeteix, contacteu amb nosaltres"
 
 #: includes/settings/views/mybooking-plugin-onboarding-pages.php:124
 msgctxt "onboarding_context"
 msgid "Reservation process pages for"
-msgstr ""
+msgstr "Pàgines del procés de reserva per a"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:9
 msgctxt "onboarding_context"
 msgid "The booking engine has been successfully set up"
-msgstr ""
+msgstr "El motor de reserves s'ha configurat correctament"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:12
 msgctxt "onboarding_context"
 msgid ""
 "The reservation process pages are available in the pages option within the "
 "Mybooking menu"
-msgstr ""
+msgstr "Les pàgines del procés de reserva estan disponibles a l'opció Pàgines del menú Mybooking"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:17
 msgctxt "onboarding_context"
 msgid "An error has occurred"
-msgstr ""
+msgstr "S'ha produït un error"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:30
 msgctxt "onboarding_context"
 msgid "To complete the configuration you can to do the following:"
-msgstr ""
+msgstr "Per completar la configuració podeu fer el següent:"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:35
 msgctxt "onboarding_context"
 msgid "1. Insert the search engine or selector component on your Home page"
-msgstr ""
+msgstr "1. Inseriu el motor de reserves o el component selector a la pàgina d'inici"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:38
 msgctxt "onboarding_context"
@@ -2040,27 +2040,27 @@ msgid ""
 "This is the starting point to make a reservation. Copy the shortcode "
 "provided and paste it on the place you want to start a booking process, "
 "normally that's your home page. If you do not have a home page yet you can"
-msgstr ""
+msgstr "Aquest és el punt de partida per fer una reserva. Copieu el shortcode proporcionat i enganxeu-lo al lloc on vulgueu iniciar el procés de reserva, normalment la pàgina d'inici. Si encara no teniu pàgina d'inici, podeu"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:39
 msgctxt "onboarding_context"
 msgid "create it now"
-msgstr ""
+msgstr "crear-la ara"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:83
 msgctxt "onboarding_context"
 msgid "Create a new page and paste the shortcode inside"
-msgstr ""
+msgstr "Creeu una pàgina nova i enganxeu-hi el shortcode"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:84
 msgctxt "onboarding_context"
 msgid "Create a new page now"
-msgstr ""
+msgstr "Crea una pàgina nova ara"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:146
 msgctxt "onboarding_context"
 msgid "2. Complete the setup on your Mybooking account"
-msgstr ""
+msgstr "2. Completeu la configuració al vostre compte Mybooking"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:149
 msgctxt "onboarding_context"
@@ -2068,7 +2068,7 @@ msgid ""
 "Mybooking needs to know the URL of <b>summary</b> and <b>my reservation</b> "
 "pages in order to link to them when required. Please copy and paste the "
 "adresses below, log in into your account and set the paths."
-msgstr ""
+msgstr "Mybooking necessita conèixer l'URL de les pàgines de <b>resum</b> i <b>la meva reserva</b> per poder-hi enllaçar quan sigui necessari. Copieu i enganxeu les adreces següents, inicieu sessió al vostre compte i configureu les rutes."
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:165
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:166
@@ -2078,34 +2078,34 @@ msgstr ""
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:204
 msgctxt "onboarding_context"
 msgid "Copy path"
-msgstr ""
+msgstr "Copia la ruta"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:212
 msgctxt "onboarding_context"
 msgid "How to set your engine paths"
-msgstr ""
+msgstr "Com configurar les rutes del motor"
 
 #: includes/settings/views/mybooking-plugin-onboarding-resume.php:216
 msgctxt "onboarding_context"
 msgid "Access to your account"
-msgstr ""
+msgstr "Accediu al vostre compte"
 
 #: includes/settings/views/mybooking-plugin-onboarding-welcome.php:7
 msgctxt "onboarding_context"
 msgid "Welcome to Mybooking Reservation Engine"
-msgstr ""
+msgstr "Benvingut al motor de reserves Mybooking"
 
 #: includes/settings/views/mybooking-plugin-onboarding-welcome.php:10
 msgctxt "onboarding_context"
 msgid ""
 "This plugin connects to your Mybooking account in order to include a "
 "reservation engine in your website."
-msgstr ""
+msgstr "Aquest complement es connecta al vostre compte Mybooking per incloure un motor de reserves al vostre lloc web."
 
 #: includes/settings/views/mybooking-plugin-onboarding-welcome.php:27
 msgctxt "onboarding_context"
 msgid "Setup"
-msgstr ""
+msgstr "Configura"
 
 #: includes/translation/mybooking-plugin-engine-context.php:72
 #: includes/translation/mybooking-plugin-engine-context.php:88
@@ -2175,7 +2175,7 @@ msgstr "Embarcació"
 #: includes/translation/mybooking-plugin-engine-context.php:179
 msgctxt "engine_context"
 msgid "Category of vehicle"
-msgstr ""
+msgstr "Categoria de vehicle"
 
 #: includes/translation/mybooking-plugin-engine-context.php:182
 msgctxt "engine_context"
@@ -2185,12 +2185,12 @@ msgstr "Vehicle"
 #: includes/translation/mybooking-plugin-engine-context.php:185
 msgctxt "engine_context"
 msgid "Autocaravanning or camper"
-msgstr ""
+msgstr "Autocaravana o camper"
 
 #: includes/translation/mybooking-plugin-engine-context.php:188
 msgctxt "engine_context"
 msgid "Category of autocaravanning"
-msgstr ""
+msgstr "Categoria d'autocaravana"
 
 #: includes/translation/mybooking-plugin-engine-context.php:191
 msgctxt "engine_context"
@@ -2478,32 +2478,32 @@ msgstr "Wifi"
 
 #: includes/widgets/mybooking-plugin-activity-widget.php:31
 msgid "activity_id:"
-msgstr ""
+msgstr "id d'activitat:"
 
 #: includes/widgets/mybooking-plugin-contact-widget.php:69
 msgid "subject:"
-msgstr ""
+msgstr "assumpte:"
 
 #: includes/widgets/mybooking-plugin-contact-widget.php:82
 msgid "source:"
-msgstr ""
+msgstr "origen:"
 
 #: includes/widgets/mybooking-plugin-contact-widget.php:95
 #: includes/widgets/mybooking-plugin-rent-selector-widget.php:109
 #: includes/widgets/mybooking-plugin-rent-selector-wizard-widget.php:101
 msgid "rental_location_code:"
-msgstr ""
+msgstr "codi de sucursal:"
 
 #: includes/widgets/mybooking-plugin-contact-widget.php:108
 #: includes/widgets/mybooking-plugin-rent-selector-widget.php:73
 #: includes/widgets/mybooking-plugin-rent-selector-wizard-widget.php:65
 msgid "sales_channel_code:"
-msgstr ""
+msgstr "codi del canal de venda:"
 
 #: includes/widgets/mybooking-plugin-rent-selector-widget.php:85
 #: includes/widgets/mybooking-plugin-rent-selector-wizard-widget.php:77
 msgid "family_id:"
-msgstr ""
+msgstr "id de família:"
 
 #: includes/widgets/mybooking-plugin-rent-selector-widget.php:97
 #: includes/widgets/mybooking-plugin-rent-selector-wizard-widget.php:89
@@ -2513,17 +2513,17 @@ msgstr "codi de la categoria"
 #: includes/widgets/mybooking-plugin-rent-selector-widget.php:121
 #: includes/widgets/mybooking-plugin-transfer-selector-widget.php:42
 msgid "layout:"
-msgstr ""
+msgstr "disposició:"
 
 #: includes/widgets/mybooking-plugin-rent-selector-widget.php:127
 #: includes/widgets/mybooking-plugin-transfer-selector-widget.php:48
 msgid "horizontal"
-msgstr ""
+msgstr "horitzontal"
 
 #: includes/widgets/mybooking-plugin-rent-selector-widget.php:128
 #: includes/widgets/mybooking-plugin-transfer-selector-widget.php:49
 msgid "vertical"
-msgstr ""
+msgstr "vertical"
 
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:20
 #: mybooking-templates/mybooking-plugin-activities-activity-widget-tmpl.php:59
@@ -3900,7 +3900,7 @@ msgstr "Ciutat"
 #: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:318
 msgctxt "renting_my_reservation"
 msgid "Zip Code"
-msgstr ""
+msgstr "Codi postal"
 
 #: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:327
 #: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:331
@@ -3947,7 +3947,7 @@ msgstr "Complement"
 #: mybooking-templates/mybooking-plugin-new-customer-form-tmpl.php:359
 msgctxt "renting_new_customer"
 msgid "Submit"
-msgstr ""
+msgstr "Envia"
 
 #: mybooking-templates/mybooking-plugin-planning.php:25
 msgctxt "planning"
@@ -4003,7 +4003,7 @@ msgstr "Trieu llocs de lliurament i devolució"
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:29
 msgctxt "renting_product_calendar"
 msgid "Pick-up place"
-msgstr ""
+msgstr "Lloc de recollida"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:31
 msgctxt "renting_product_calendar"
@@ -4013,7 +4013,7 @@ msgstr "Seleccioneu el lloc de recollida"
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:39
 msgctxt "renting_product_calendar"
 msgid "Return place"
-msgstr ""
+msgstr "Lloc de retorn"
 
 #: mybooking-templates/mybooking-plugin-product-widget-tmpl.php:41
 msgctxt "renting_product_calendar"
@@ -4838,7 +4838,7 @@ msgctxt "renting_shift_picker"
 msgid ""
 "We are sorry, the minimum number of rentable units is higher than the "
 "maximum available."
-msgstr ""
+msgstr "Ho sentim, el nombre mínim d'unitats reservables és superior al màxim disponible."
 
 #: mybooking-templates/mybooking-plugin-summary-tmpl.php:374
 msgctxt "renting_summary"
@@ -5190,12 +5190,12 @@ msgstr "Suplements"
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:25
 msgctxt "transfer_choose_vehicle"
 msgid "Reservation summary"
-msgstr ""
+msgstr "Resum de la reserva"
 
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:28
 msgctxt "transfer_choose_vehicle"
 msgid "Reservation Id"
-msgstr ""
+msgstr "Identificador de reserva"
 
 #: mybooking-templates/mybooking-plugin-transfer-summary-tmpl.php:119
 msgctxt "transfer_summary"
