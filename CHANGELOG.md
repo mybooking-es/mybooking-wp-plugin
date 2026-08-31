@@ -1,10 +1,21 @@
 # Changelog
 
-## [2.6.5] - 2026.06.23
+## [2.6.6] - 2026.08.31
 
 ### New
-- Engine translations for 5 new languages: Estonian, Finnish, Dutch, Polish & Portuguese.
-- Ability to show/hide Franchise and Deposits in fron end.
+- Engine translations for five new languages: Estonian, Finnish, Dutch, Polish & Portuguese.
+- Ability to control Franchise and Deposit visibility in the front-end.
+
+### Fixed
+- My reservation - Allow documentation uploads when no signature is required.
+- Apply Franchise and Deposit visibility settings consistently in product cards, checkout and lazy-loaded products.
+- Complete Engine localization coverage for all 12 supported languages, including Datepicker locales.
+- Complete and synchronize WordPress gettext catalogs for all 11 plugin locales.
+
+## [2.6.5] - 2026.08.03
+
+### Fixed
+- My reservation - Only upload documentation without signature is not working.
 
 ## [2.6.4] - 2026.06.16
 

@@ -3,7 +3,7 @@ Donate link: https://mybooking.es/
 Tags: online booking system, booking system, online booking engine, booking engine, car rental reservation
 Requires at least: 5.9
 Tested up to: 7.0
-Stable tag: 2.6.4
+Stable tag: 2.6.6
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -115,6 +115,16 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 14. Transfer summary page
 
 == Changelog ==
+
+= 2.6.6 =
+* Added : Engine translations for Estonian, Finnish, Dutch, Polish and Portuguese
+* Added : Franchise and deposit visibility controls in the front-end
+* Fixed : My reservation - Allow documentation uploads when no signature is required
+* Fixed : Apply Franchise and Deposit visibility settings consistently, including lazy-loaded products
+* Fixed : Complete and synchronize translations for all supported locales
+
+= 2.6.5 =
+* Fixed : Only upload documentation without signature
 
 = 2.6.4 =
 * Added : Customize customer by category
@@ -583,6 +593,12 @@ Yes, mybooking plugin can connect to Paypal, Redsys, Payment Addons, Cecebank an
 * First release.
 
 == Upgrade Notice ==
+
+= 2.6.6 =
+* Added franchise/deposit visibility controls and five Engine languages; fixed document uploads without signature and completed translation coverage.
+
+= 2.6.5 =
+* Fixed : Only upload documentation without signature
 
 = 2.6.4 =
 * Added : Customize customer by category
