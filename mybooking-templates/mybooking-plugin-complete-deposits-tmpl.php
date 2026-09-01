@@ -44,8 +44,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     isVisibleByMode(showDepositMode, booking.product_guarantee_total,
       legacyNonFranchiseVisible && booking.product_guarantee_total > 0);
   var showDriverAgeDeposit = !isFranchise && hasMultipleDeposits &&
-    isVisibleByMode(showDepositMode, booking.driver_age_deposit,
-      legacyNonFranchiseVisible && booking.driver_age_deposit > 0);
+    booking.driver_age_deposit > 0 &&
+    isVisibleByMode(showDepositMode, booking.driver_age_deposit, legacyNonFranchiseVisible);
   var showTotalDeposit = !isFranchise &&
     isVisibleByMode(showDepositMode, booking.total_deposit, booking.total_deposit > 0);
   var showDepositBox = showFranchiseDeposit || showFranchiseGuarantee || showHoldDeposit ||

@@ -82,11 +82,18 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
                                     var productGuarantee = new Number(product.guarantee);
                                     var productDeposit = new Number(product.deposit);
-                                    var productDepositMode = isFranchise ? showExcessMode : showDepositMode;
+                                    var legacyProductDepositVisible = productDeposit > 0 ||
+                                        configuration.holdProductDepositCost === 'not_hold';
                                     var showGuarantee = isVisibleByMode(showDepositMode, productGuarantee,
                                         productGuarantee > 0);
-                                    var showDeposit = isVisibleByMode(productDepositMode, productDeposit,
-                                        productDeposit > 0 || configuration.holdProductDepositCost === 'not_hold');
+                                    var showDeposit = false;
+                                    if (isFranchise) {
+                                        showDeposit = isVisibleByMode(showExcessMode, productDeposit,
+                                            legacyProductDepositVisible);
+                                    } else if (configuration.holdProductDepositCost === 'hold') {
+                                        showDeposit = isVisibleByMode(showDepositMode, productDeposit,
+                                            productDeposit > 0);
+                                    }
                                 %>
 								<% if (showGuarantee) { %>
 									<div class="mb-col-md-6">
