@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.6.6] - 2026.10.28
+
+### Fixed
+- Checkout - Customer access - 2FA.
+
 ## [2.6.5] - 2026.08.03
 
 ### Fixed
