@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.6.7] - 2026.11.12
+
+### Fixed
+- Reservation engine texts in Portuguese, Polish, Dutch, Finnish and Estonian. 2.6.1 only added the WordPress translations; the engine showed these languages in English and requested the API in English.
+
 ## [2.6.6] - 2026.10.28
 
 ### Fixed
